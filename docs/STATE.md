@@ -67,7 +67,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
   - selected-KO fallback through existing targeting helper.
 
 ### Pending
-- Build/browser verification of the latest interaction edit.
+- Browser verification of the latest interaction edit; the latest branch production build passed. A KO-containing replay fixture is needed to exercise selected-KO fallback in the browser.
 - Accessible player preview.
 - Movement joystick and player override input.
 - Skill controls.
