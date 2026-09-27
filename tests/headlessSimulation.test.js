@@ -113,3 +113,19 @@ test('stronger advantaged ally fixture reaches victory', () => {
   assert.equal(result.result, 'victory');
   assert.ok(result.enemies.every((actor) => actor.hp === 0));
 });
+
+test('optional snapshots expose immutable-by-copy Arena state at each simulation step', () => {
+  const { allies, enemies } = teams();
+  const frames = [];
+  const result = simulateHeadless3v3({
+    allies, enemies, characterDefinitions, abilityDefinitions,
+    onStep: (frame) => frames.push(frame),
+  });
+  assert.ok(frames.length > 1);
+  assert.equal(frames[0].elapsedSeconds, 0);
+  assert.equal(frames[0].allies.length + frames[0].enemies.length, 6);
+  assert.deepEqual(frames.at(-1), result);
+  assert.equal(frames[0].allies[0].hp, 120);
+  assert.notStrictEqual(frames[0].allies[0], allies[0]);
+  assert.ok(frames.some((frame) => frame.allies[0].x > 0));
+});

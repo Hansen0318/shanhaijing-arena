@@ -44,6 +44,7 @@ export function simulateHeadless3v3({
   abilityDefinitions,
   stepSeconds = 0.25,
   maxSeconds = BATTLE_LIMIT_SECONDS,
+  onStep = null,
 }) {
   if (allies.length !== 3 || enemies.length !== 3) {
     throw new RangeError('Headless M0 simulation requires exactly 3 allies and 3 enemies');
@@ -56,15 +57,15 @@ export function simulateHeadless3v3({
   const targetIds = new Map(actors.map((actor) => [actor.instanceId, null]));
   let elapsedSeconds = 0;
 
+  const snapshot = (result) => ({
+    result, elapsedSeconds, allies: snapshotTeam(allies), enemies: snapshotTeam(enemies),
+  });
+  if (onStep) onStep(snapshot(resolveBattleState(allies, enemies, elapsedSeconds)));
+
   while (elapsedSeconds <= maxSeconds) {
     const before = resolveBattleState(allies, enemies, elapsedSeconds);
     if (before !== 'running') {
-      return {
-        result: before,
-        elapsedSeconds,
-        allies: snapshotTeam(allies),
-        enemies: snapshotTeam(enemies),
-      };
+      return snapshot(before);
     }
 
     for (const actor of actors) {
@@ -140,23 +141,14 @@ export function simulateHeadless3v3({
 
     elapsedSeconds = Math.min(maxSeconds, elapsedSeconds + stepSeconds);
     const after = resolveBattleState(allies, enemies, elapsedSeconds);
+    const frame = snapshot(after);
+    if (onStep) onStep(frame);
     if (after !== 'running') {
-      return {
-        result: after,
-        elapsedSeconds,
-        allies: snapshotTeam(allies),
-        enemies: snapshotTeam(enemies),
-      };
+      return frame;
     }
 
     if (elapsedSeconds === maxSeconds) {
-      const final = resolveBattleState(allies, enemies, elapsedSeconds);
-      return {
-        result: final,
-        elapsedSeconds,
-        allies: snapshotTeam(allies),
-        enemies: snapshotTeam(enemies),
-      };
+      return frame;
     }
   }
 
