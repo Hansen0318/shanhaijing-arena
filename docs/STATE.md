@@ -64,12 +64,15 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Battle resolution / 90-second timeout helper.
 - Player override -> 2s AI handoff helper.
 - Soft-target / KO fallback targeting helpers.
-- 14 deterministic tests passing locally.
-- Immutable Character definition and per-battle state model with HP/KO gates and initial ability state slots on active PR branch.
-- Character plus directly affected control-handoff targeted tests: 9 / 9 passing.
+- Existing deterministic core evidence: 14 / 14 passing.
+- Immutable Character definition and per-battle state model with HP/KO gates and ability runtime slots.
+- Character plus directly affected control-handoff evidence: 9 / 9 passing.
+- Declarative Ability definition and shared ready/executing/cooldown lifecycle.
+- Ability target validation, KO cancellation, zero-cooldown Basic behavior, and shared AI/player execution surface.
+- Ability isolated tests: 10 / 10 passing.
+- Ability + Character impacted targeted tests: 16 / 16 passing.
 
 ### Pending
-- Ability cooldown/execution.
 - AI decision/state loop.
 - Headless 3v3 simulation.
 - Rendering engine integration.
