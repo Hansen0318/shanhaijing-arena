@@ -41,11 +41,13 @@ A new Chat / Work / Codex session must be able to continue without the player re
 Before substantial work:
 1. inspect/sync latest remote `main`;
 2. read this `AGENTS.md`;
-3. read the **CURRENT HANDOFF POINTER** at the top of `WORK_PROGRESS.md`;
-4. read `docs/STATE.md`;
-5. read only the system specs relevant to the next action;
-6. inspect any recorded active feature branch / PR / safe checkpoint;
-7. continue from the first unfinished item only.
+3. read `docs/DEVELOPMENT_PLAYBOOK.md`;
+4. read `docs/PROJECT_BOUNDARIES.md`;
+5. read the **CURRENT HANDOFF POINTER** at the top of `WORK_PROGRESS.md`;
+6. read `docs/STATE.md`;
+7. read only the system specs relevant to the next action;
+8. inspect any recorded active feature branch / PR / safe checkpoint;
+9. continue from the first unfinished item only.
 
 Do not ask the player to restate prior decisions unless canonical repo documents are genuinely missing or contradictory.
 
@@ -122,6 +124,7 @@ Avoid unrelated refactors during feature work.
 
 ## 10. Engineering architecture rules
 - This is a new game architecture; do **not** port tower-defense gameplay assumptions or code.
+- `docs/PROJECT_BOUNDARIES.md` is mandatory and defines the contamination firewall.
 - Keep systems modular: Character, Controller, Ability, Targeting, Movement, Status, Camera, Team, Battle.
 - Player input overrides AI immediately.
 - After 2.0 seconds without valid combat input, full AI control resumes for the selected character.
