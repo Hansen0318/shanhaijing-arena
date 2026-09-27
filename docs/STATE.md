@@ -73,9 +73,10 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - AI impacted evidence: 27 / 27 passing.
 - Headless impacted integration evidence: 38 / 38 passing.
 - Rendering/build stack selection and architecture boundary documented.
+- Renderer code and exact-version lockfile checkpointed on the active branch; 48/48 Node tests and Vite production build passed. Bounded browser smoke is still required before renderer engineering PASS.
 
 ### Pending
-- Vite/Phaser dependency/build/runtime integration.
+- Bounded browser verification of the minimal Vite/Phaser scene and six visible actors (local preview inaccessible to cloud browser).
 - Arena, touch input, camera, HUD, VFX.
 - Runtime/mobile and player smoke.
 
