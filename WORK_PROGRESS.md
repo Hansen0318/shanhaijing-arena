@@ -5,70 +5,58 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Latest completed implementation slice: M0 Basic AI intent loop
-- Latest completed Chat-first slice: AI contract + implementation + targeted verification
-- Recovery rule: inspect the active branch/PR first; do **not** recreate completed deterministic core, Character, Ability, or AI slices
-- Next exact step: implement the **headless 3v3 simulation** by integrating existing Character, Targeting, ControlHandoff, Ability, AI, type, and battle-resolution contracts; keep it renderer-free
+- Latest completed implementation slice: deterministic M0 headless 3v3 simulation
+- Latest completed Chat-first slice: headless simulation contract + CombatResolver + integration tests
+- Recovery rule: inspect the active branch/PR first; do **not** recreate completed deterministic core, Character, Ability, AI, or headless simulation slices
+- Next exact step: select and integrate the rendering/build stack, then expose the existing combat state in a minimal mobile-landscape arena
 - Canonical state: `docs/STATE.md`
 - Workflow: `docs/DEVELOPMENT_PLAYBOOK.md`
-- AI contract: `docs/AI_SYSTEM.md`
+- Headless contract: `docs/HEADLESS_SIMULATION_M0.md`
 - Test scope: `docs/TEST_STRATEGY.md`
 - Preflight: `docs/PREFLIGHT_M0.md`
 
 ## Current status
-Deterministic combat core, Character model, Ability lifecycle, and Basic AI intent loop are complete on the active branch. PR #1 remains open. Rendering is still intentionally absent.
+The framework-independent M0 combat foundation now runs through deterministic 3v3 headless resolution. PR #1 remains open. Rendering/build integration is the first unfinished item.
 
-## Implemented M0 core slice
-- Type multiplier rule.
-- KO / team HP score / victory-defeat timeout rule.
-- 2-second control handoff timer.
-- Soft-target retention and nearest-target fallback.
-- Nearest surviving ally helper for selected-character KO.
+## Implemented slices
+- Deterministic type, KO, battle resolution, handoff, and targeting core.
+- Character definition and per-battle state.
+- Ability definition and shared execution lifecycle.
+- Basic AI intent loop.
+- Prototype-only deterministic direct-damage resolver.
+- Headless 3v3 simulation with movement intents, Basic cadence, shared Ability execution, type multiplier, KO, and existing battle termination.
 
-## Implemented M0 Character slice
-- Immutable definition snapshot and shared player/enemy per-battle state.
-- HP clamp, terminal KO, selection/action/heal gates.
-- Independent ability runtime slots and existing control handoff state.
-
-## Implemented M0 Ability slice
-- Declarative active Ability definitions.
-- Shared ready/executing/cooldown lifecycle.
-- Cooldown, target validation, KO cancellation, Basic zero-cooldown behavior.
-- Shared AI/player execution surface.
-
-## Implemented M0 AI slice
-- Framework-independent deterministic AI intent decision in `src/combat/ai.js`.
-- KO and player-override gates.
-- Existing soft-target retention/fallback reuse.
-- Positive-priority non-Basic selection with deterministic tie order.
-- Basic fallback.
-- Move intent when no usable ability can reach target.
-- AI returns intent only; Ability execution still uses shared `startAbility()`.
+## Headless prototype rules
+- Direct-damage formula and Basic cadence are documented in `docs/HEADLESS_SIMULATION_M0.md`.
+- They are deterministic M0 harness rules, not final balance.
+- Simulation step is 0.25s.
+- Rendering, collision/avoidance, animation windup, projectiles, camera, HUD, VFX, and touch controls are intentionally not part of the headless harness.
 
 ## Verification
 - Existing deterministic core: **14 / 14 PASS** recorded evidence.
 - Character + direct handoff: **9 / 9 PASS** recorded evidence.
 - Ability isolated: **10 / 10 PASS**.
 - Ability + Character impacted: **16 / 16 PASS**.
-- AI + Targeting + ControlHandoff + Ability impacted targeted run: **27 / 27 PASS**.
-- Tests used Node built-in runner in an isolated reconstruction of exact fetched branch source because direct clone was blocked by executor DNS.
-- Browser/mobile smoke: **not applicable yet**.
+- AI + Targeting + ControlHandoff + Ability impacted: **27 / 27 PASS**.
+- Headless integration plus directly affected Character / Ability / AI / Targeting / ControlHandoff: **38 / 38 PASS**.
+- Repeated identical 3v3 fixture produced identical result/final state.
+- Stronger advantaged ally fixture resolved to victory without player input.
+- Tests used Node built-in runner in an isolated reconstruction of exact fetched branch source because direct GitHub clone was blocked by executor DNS.
+- Browser/mobile smoke: **not started** because renderer/build stack is not integrated.
 - Player smoke: **not started**.
 
 ## Known blockers / defects
-- None in deterministic core, Character, Ability, or AI slices.
-- Rendering stack is intentionally not locked yet.
-- Headless 3v3 simulation is the first unfinished item.
+- None in the headless combat foundation.
+- Rendering/build stack integration is now the first unfinished item.
 
 ## Remaining M0 work
-1. Headless 3v3 simulation.
-2. Select/integrate rendering stack.
-3. Mobile-landscape arena.
-4. Character selection UI.
-5. Soft-follow camera.
-6. Touch controls and player override integration.
-7. HUD / damage numbers / KO presentation.
-8. Runtime/mobile smoke and final M0 verification.
+1. Select/integrate rendering/build stack.
+2. Mobile-landscape arena.
+3. Character selection UI.
+4. Soft-follow camera.
+5. Touch controls and player override integration.
+6. HUD / damage numbers / KO presentation.
+7. Runtime/mobile smoke and final M0 verification.
 
 ## Prototype exit criteria
 See `docs/STATE.md` and `docs/TEST_STRATEGY.md`.
