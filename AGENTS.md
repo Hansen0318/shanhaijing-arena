@@ -11,27 +11,29 @@ These rules are permanent for substantial Chat / Work / Codex development unless
 - **Work**: substantial implementation, integration, executable test/debug loops, browser/runtime smoke, optimization, Git operations, deployment.
 - **GitHub**: single source of truth. Conversation memory is not authoritative.
 
-## 2. Chat-first delegation
-Before delegating to Work, Chat must complete every safe, order-independent task it can reliably do first.
+## 2. Chat-first delegation / minimum Work scope
+**Token/session efficiency is a hard rule.** Before delegating anything to Work, Chat must complete the maximum safe, order-independent scope it can reliably do with available GitHub, file, image, reasoning, and bounded-edit tools.
 
 Typical Chat-owned work:
-- requirements/specification;
-- GitHub inspection;
+- requirements/specification and decision locking;
+- GitHub inspection and state comparison;
 - architecture decisions;
 - documentation/hard-rule updates;
 - root-cause narrowing;
-- bounded deterministic code changes with independent verification;
-- asset direction and approved visual specifications.
+- static/code review;
+- asset inventory, visual direction, image/static inspection;
+- bounded repository edits that can be independently verified without a full runtime;
+- preparation of exact acceptance criteria and the smallest Work handoff.
 
-Work is preferred when the remaining task materially requires:
-- a checked-out repository and iterative multi-file implementation;
+Work receives **only the irreducible executable delta** that genuinely needs its environment, for example:
+- checked-out repository + iterative multi-file implementation;
 - dependency installation/build tooling;
-- executable TDD/debug loops;
-- browser/runtime/devtools smoke;
+- executable TDD/debug loops after substantial code changes;
+- browser/runtime/devtools verification that cannot be delegated to the player;
 - long-running integration/optimization;
-- release/deployment verification.
+- merge/deploy when Work owns a substantial implementation.
 
-Do not send Work to repeat analysis or documentation already completed by Chat.
+If a task mixes Chat-owned and Work-only parts, Chat finishes its part first and then hands Work only the unresolved engineering delta. Do not send Work to rediscover design, repeat documentation, redo static analysis, or execute broad checks merely for convenience.
 
 ## 3. Mandatory zero-context bootstrap
 A new Chat / Work / Codex session must be able to continue without the player reconstructing the previous conversation.
@@ -130,30 +132,58 @@ Avoid unrelated refactors during feature work.
 - AI and player input must feed the same shared character/ability systems; do not create duplicated manual/AI combat engines.
 - Add machine-checkable tests for deterministic rules where practical.
 
-## 11. Verification vs player smoke
+## 11. Verification vs player-owned smoke
 Keep engineering verification and player acceptance separate.
 
+**Player smoke is the default for checks the player can efficiently perform on the real device/build**, especially:
+- game feel / fun;
+- touch-control feel;
+- camera comfort;
+- visual readability;
+- animation/VFX clarity;
+- balance feel;
+- device-specific layout;
+- short end-to-end play confirmation after a localized change.
+
+Work should not spend session/token budget duplicating player-owned smoke unless:
+- the user explicitly asks Work to do it;
+- an automated/browser check is required to diagnose a defect;
+- release cannot be considered technically safe without that runtime evidence.
+
+When player smoke is appropriate, Work/Chat should deploy or provide a testable build and give the player a **small targeted checklist for the changed scope**, not ask them to replay unrelated content.
+
 Use precise status labels:
-- **ENGINEERING PASS**: all required engineering checks that the executor owns have fresh successful evidence.
-- **ENGINEERING PASS / PLAYER SMOKE PENDING**: engineering checks pass and only an explicitly delegated player/device smoke remains.
-- **PASS / PLAYER VERIFIED**: required player smoke has also been confirmed.
+- **ENGINEERING PASS**: all required engineering checks owned by the executor passed.
+- **ENGINEERING PASS / PLAYER SMOKE PENDING**: engineering checks pass and only targeted player/device acceptance remains.
+- **PASS / PLAYER VERIFIED**: the required player smoke was actually confirmed.
 - **FAIL / INCOMPLETE**: a required engineering check failed or required executor-owned verification could not be completed.
 - **RELEASE BLOCKED**: engineering passed but merge/deploy cannot be completed due to a concrete blocker.
 
-Never claim player-verified visual success before the player actually confirms it.
+Never claim player-verified visual/gameplay success before the player actually confirms it.
 
-## 12. Quality gates
-Before merge/release of M0:
-- targeted tests pass;
-- full test/check pass;
-- landscape mobile runtime smoke passes at representative phone sizes;
-- 3v3 battle can complete without player input;
-- manual override and 2s AI-resume work;
-- KO, team switching, victory/defeat work;
-- type counter rules are correct;
-- no regression in locked combat rules.
+## 12. Risk-based verification: test only what the change can break
+Verification scope must be proportional to change impact. **Do not automatically run the entire test suite or full game flow for every small edit.**
 
-Full browser/runtime smoke is required when the changed scope affects rendering, controls, camera, timing, or interaction. Pure framework-independent deterministic helpers may use targeted automated verification until they are integrated.
+Use the smallest sufficient layer:
+- **Level A — static / local check**: documentation, isolated data, naming, or a trivially bounded helper with no shared runtime effect.
+- **Level B — targeted tests**: default for small/local code changes. Run tests covering the touched module plus directly affected contracts.
+- **Level C — impacted regression**: use when a shared subsystem changes. Test the affected dependency surface, not unrelated gameplay.
+- **Level D — full regression / broad runtime smoke**: reserve for changes to shared architecture, battle lifecycle, persistence/progression, build/release infrastructure, dependency upgrades, large refactors, or when narrower evidence cannot establish safety.
+
+Rules:
+- A previously recorded PASS remains reusable evidence when later changes cannot materially affect that verified scope.
+- Do not rerun a full suite merely because the session restarted.
+- Do not replay the whole game when only one bounded mechanic changed.
+- If a targeted test fails in a way suggesting wider coupling, escalate the verification scope.
+- Before final release, use the minimum release checks appropriate to the actual changed surface; a full regression is not ceremonial.
+
+For M0, the eventual complete prototype release must have evidence for:
+- 3v3 battle completion without player input;
+- manual override and 2s AI-resume;
+- KO/team switching/victory-defeat;
+- type-counter correctness;
+- stable landscape runtime for the integrated combat surface.
+This does **not** mean every intermediate edit must rerun all of them.
 
 ## 13. Default delivery flow
 Unless the user explicitly requests feature-branch-only / no-merge / no-deploy:
@@ -181,3 +211,27 @@ For non-trivial changes identify:
 - Prototype assets may be placeholders.
 - Do not produce final roster art before the combat prototype passes.
 - Approved production art must not be regenerated/restyled merely because a new session begins.
+
+## 16. Work handoff contract
+Every Work handoff must be deliberately small.
+
+Before creating a Work task, Chat should state internally/record in the handoff:
+1. what Chat already completed;
+2. the exact capability gap that requires Work;
+3. the smallest implementation delta Work owns;
+4. the minimum sufficient engineering checks;
+5. which acceptance checks are delegated to the player;
+6. where Work must checkpoint if interrupted.
+
+A Work task must not contain broad phrases such as "fully test everything" or "recheck the whole game" unless the actual change impact justifies that scope.
+
+## 17. Interruption protection / recoverability
+For any substantial Work task:
+- create the feature branch or recover the existing one before new implementation;
+- push an early coherent checkpoint instead of waiting for final completion;
+- checkpoint again before long browser/runtime steps;
+- if session/token capacity becomes uncertain, stop adding scope and push immediately;
+- update `WORK_PROGRESS.md` with latest remote SHA, completed work, remaining work, actual verification evidence, known failures, and the single next exact step;
+- on the next session, recovery of the existing remote checkpoint happens before any reimplementation.
+
+If push fails or the environment dies before push, the next session must first search the existing workspace/reflog/local branch for recoverable work and push it. Never silently start over.
