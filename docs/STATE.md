@@ -56,6 +56,24 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 9. Type advantage rules are verifiably correct.
 10. Stable mobile landscape smoke test passes.
 
+## Implementation status
+
+### Completed on `feat/m0-combat-core-20260927`
+- Framework-independent deterministic combat core.
+- Type triangle helper.
+- Battle resolution / 90-second timeout helper.
+- Player override -> 2s AI handoff helper.
+- Soft-target / KO fallback targeting helpers.
+- 14 deterministic tests passing locally.
+
+### Pending
+- Character state/data model.
+- Ability cooldown/execution.
+- AI decision/state loop.
+- Headless 3v3 simulation.
+- Rendering engine integration.
+- Arena, touch input, camera, HUD, VFX.
+
 ## Open questions for prototype testing
 These are tunable, not blockers:
 - Is 2.0s AI resume optimal, or should it move to 1.5/2.5s?
