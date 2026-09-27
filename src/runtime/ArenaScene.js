@@ -7,7 +7,8 @@ export class ArenaScene extends Phaser.Scene {
   constructor() { super('Arena'); }
 
   create() {
-    this.frames = createDemoBattleFrames();
+    const selectedKoFixture = new URLSearchParams(window.location.search).get('fixture') === 'ko';
+    this.frames = createDemoBattleFrames({ selectedKoFixture });
     this.frameIndex = 0;
     this.accumulator = 0;
     this.actorViews = new Map();
@@ -38,17 +39,13 @@ export class ArenaScene extends Phaser.Scene {
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
-    // Read-only smoke metadata for bounded runtime checks.
     window.__arenaSmoke = {
       sceneReady: true,
       actorCount: this.actorViews.size,
       frameCount: this.frames.length,
+      fixture: selectedKoFixture ? 'ko' : 'default',
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
     };
-  }
-
-  actorSnapshot(frame, id) {
-    return [...frame.allies, ...frame.enemies].find((actor) => actor.instanceId === id) ?? null;
   }
 
   selectAlly(id, frame) {
@@ -77,7 +74,10 @@ export class ArenaScene extends Phaser.Scene {
     const selected = frame.allies.find((ally) => ally.instanceId === this.selectedId) ?? null;
     if (selected && selected.hp > 0) return;
 
-    const fallback = selected ? nearestSurvivingAlly(selected, frame.allies) : frame.allies.find((ally) => ally.hp > 0) ?? null;
+    const fallback = selected
+      ? nearestSurvivingAlly(selected, frame.allies)
+      : frame.allies.find((ally) => ally.hp > 0) ?? null;
+
     if (fallback) {
       this.selectAlly(fallback.instanceId, frame);
       return;
