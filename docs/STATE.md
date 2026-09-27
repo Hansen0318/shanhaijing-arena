@@ -37,11 +37,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 ## Not in prototype
 - Final character art.
 - Full animation production.
-- Chapter select / 1-1 to 1-5 implementation.
-- Story scenes.
-- Character unlock economy.
-- Fragment farming.
-- T3/T2/T1 implementation.
+- Chapter select / story / unlock economy / fragment farming / T3-T1 implementation.
 - Large roster.
 - PvP, guilds, equipment, gacha, ranking.
 
@@ -60,29 +56,20 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 ## Implementation status
 
 ### Completed on `feat/m0-combat-core-20260927`
-- Framework-independent deterministic combat core.
-- Character definition and per-battle state model.
-- Shared Ability definition/runtime lifecycle.
-- Deterministic Basic AI intent loop.
-- Prototype deterministic direct-damage resolver.
-- Deterministic 3v3 headless simulation integrating Character, Targeting, ControlHandoff, Ability, AI, type multiplier, KO, movement, Basic cadence, and battle resolution.
-- Existing core evidence: 14 / 14 passing.
-- Character/direct handoff evidence: 9 / 9 passing.
-- Ability isolated evidence: 10 / 10 passing.
-- Ability + Character evidence: 16 / 16 passing.
-- AI impacted evidence: 27 / 27 passing.
-- Headless impacted integration evidence: 38 / 38 passing.
-- Rendering/build stack selection and architecture boundary documented.
-- Renderer code and exact-version lockfile checkpointed on the active branch; 48/48 Node tests and Vite production build passed. Bounded browser smoke is still required before renderer engineering PASS.
+- Framework-independent deterministic combat core through headless 3v3.
+- Existing core/headless evidence retained, including **38 / 38** impacted integration PASS.
+- Phaser/Vite renderer bootstrap and exact dependency lockfile.
+- Previous renderer checkpoint: **48 / 48 Node PASS** and **Vite build PASS**.
+- Chat-first first interaction implementation:
+  - allied placeholder selection;
+  - selected visual state;
+  - camera soft-retarget;
+  - selected-KO fallback through existing targeting helper.
 
 ### Pending
-- Bounded browser verification of the minimal Vite/Phaser scene and six visible actors (local preview inaccessible to cloud browser).
-- Arena, touch input, camera, HUD, VFX.
+- Build/browser verification of the latest interaction edit.
+- Accessible player preview.
+- Movement joystick and player override input.
+- Skill controls.
+- Minimum HUD/VFX readability.
 - Runtime/mobile and player smoke.
-
-## Open questions for prototype testing
-These are tunable, not blockers:
-- Is 2.0s AI resume optimal, or should it move to 1.5/2.5s?
-- Is 90s match length appropriate?
-- Is +/-15% type modifier strong enough to matter without dominating team building?
-- Is one Special enough, or does the final game need a second Special?
