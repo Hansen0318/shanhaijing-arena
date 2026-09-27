@@ -9,6 +9,7 @@
 - Recovery rule: inspect the active branch/PR first; do **not** recreate this slice from `main`
 - Next exact step: implement Character state/data model, then Ability cooldown/execution, then headless 3v3 simulation
 - Canonical state: `docs/STATE.md`
+- Workflow: `docs/DEVELOPMENT_PLAYBOOK.md`
 - Preflight: `docs/PREFLIGHT_M0.md`
 
 ## Current status
