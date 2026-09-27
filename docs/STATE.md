@@ -32,6 +32,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Skill set: Basic, Heavy, Special, Awakening, Passive.
 - KO character cannot be selected or healed in v1.
 - If selected character is KO, camera/selection moves smoothly to the nearest surviving ally.
+- M0 runtime stack: Phaser 4.2.1 + Vite 8.3.1 + plain JavaScript/ESM.
 
 ## Not in prototype
 - Final character art.
@@ -64,16 +65,17 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Shared Ability definition/runtime lifecycle.
 - Deterministic Basic AI intent loop.
 - Prototype deterministic direct-damage resolver.
-- Deterministic 3v3 headless simulation integrating Character, Targeting, ControlHandoff, Ability, AI, type multiplier, KO, movement intent, Basic cadence, and battle resolution.
+- Deterministic 3v3 headless simulation integrating Character, Targeting, ControlHandoff, Ability, AI, type multiplier, KO, movement, Basic cadence, and battle resolution.
 - Existing core evidence: 14 / 14 passing.
 - Character/direct handoff evidence: 9 / 9 passing.
 - Ability isolated evidence: 10 / 10 passing.
 - Ability + Character evidence: 16 / 16 passing.
 - AI impacted evidence: 27 / 27 passing.
 - Headless impacted integration evidence: 38 / 38 passing.
+- Rendering/build stack selection and architecture boundary documented.
 
 ### Pending
-- Rendering/build stack integration.
+- Vite/Phaser dependency/build/runtime integration.
 - Arena, touch input, camera, HUD, VFX.
 - Runtime/mobile and player smoke.
 
