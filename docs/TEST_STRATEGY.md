@@ -23,22 +23,35 @@ Automate where practical:
 ### M0 Character/Ability targeted gate
 For the Character + Ability implementation slice, use **Level B targeted verification** by default.
 
-Required new tests:
+Character tests already completed:
 1. immutable definition is not mutated by battle-state updates;
 2. state initializes from definition with full HP and valid runtime identifiers;
 3. damage clamps at 0 and healing clamps at max HP;
 4. healing a KO target is rejected;
-5. KO combatant cannot begin an ability;
-6. ability transitions ready -> executing -> cooldown -> ready;
-7. cooldown tick clamps at 0;
-8. invalid/dead target cannot start a targeted ability;
-9. AI/player intents call the same ability execution surface;
-10. Basic remains automatic/no-button data with category Basic and zero declared cooldown.
+5. KO prevents action and selection;
+6. type and role remain independent;
+7. invalid state inputs are rejected.
+
+Required Ability tests:
+1. active ability definition validation covers category, nonnegative cooldown/range, targeting identifier, and deterministic effect data;
+2. valid request transitions `ready -> executing` and stores target id when required;
+3. successful finish transitions `executing -> cooldown` and copies the definition cooldown;
+4. cooldown tick clamps at `0` and then returns `cooldown -> ready`;
+5. zero-cooldown Basic finishes directly to `ready`;
+6. KO caster cannot begin an ability;
+7. missing, KO, or out-of-range target cannot begin a targeted ability;
+8. KO during execution cancels a caster-required pending execution, clears target state, applies no effect, and does not start cooldown;
+9. duplicate start while `executing` or `cooldown` is rejected;
+10. negative/nonfinite cooldown tick input is rejected;
+11. AI and player-originated requests call the same execution API and produce the same state transition for equivalent inputs.
 
 Required impacted regression:
-- rerun existing deterministic tests for type multiplier, battle resolution, targeting/KO fallback, and player-override handoff **only if** the new model imports or changes those shared contracts.
+- rerun `tests/character.test.js` because Ability integrates with Character `abilityState`;
+- rerun existing targeting tests only if production targeting code is changed;
+- rerun handoff/type/battle-resolution tests only if their production contracts are changed or imported into Ability implementation.
 
 Do not run browser/mobile smoke for this slice unless rendering/runtime integration is introduced.
+Do not run full regression unless targeted failure demonstrates wider coupling.
 
 ### Runtime smoke
 Verify on mobile-landscape representative sizes:
