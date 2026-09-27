@@ -1,0 +1,13 @@
+{
+  "name": "shanhaijing-arena",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "npm test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
