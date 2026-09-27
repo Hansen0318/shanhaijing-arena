@@ -1,10 +1,19 @@
 # Work Progress
 
-## Current milestone
-**M0 — Combat Prototype foundation**
+## CURRENT HANDOFF POINTER
+- Project: **Shanhaijing Arena**
+- Milestone: **M0 — Combat Prototype foundation**
+- Active feature branch: `feat/m0-combat-core-20260927`
+- Active PR: **#1 — M0: combat core foundation**
+- Latest completed slice: framework-independent deterministic combat core
+- Recovery rule: inspect the active branch/PR first; do **not** recreate this slice from `main`
+- Next exact step: implement Character state/data model, then Ability cooldown/execution, then headless 3v3 simulation
+- Canonical state: `docs/STATE.md`
+- Workflow: `docs/DEVELOPMENT_PLAYBOOK.md`
+- Preflight: `docs/PREFLIGHT_M0.md`
 
 ## Current status
-Repository initialized. No production gameplay implementation yet.
+Design/spec foundation is complete. First framework-independent combat-core slice is implemented on the active branch.
 
 ## Completed design decisions
 - Mobile landscape.
@@ -23,8 +32,35 @@ Repository initialized. No production gameplay implementation yet.
 - Character progression concept: T3 -> T2 -> T1 with character fragments.
 - Campaign concept: chapters with 1-1 through 1-5 story stages.
 
-## Next action
-Build a minimal combat prototype with placeholder actors before implementing meta/progression systems.
+## Implemented M0 core slice
+- Type multiplier rule.
+- KO / team HP score / victory-defeat timeout rule.
+- 2-second control handoff timer.
+- Soft-target retention and nearest-target fallback.
+- Nearest surviving ally helper for selected-character KO.
+- Deterministic tests for these rules.
+
+## Verification
+- Deterministic tests: **14 / 14 PASS** using Node built-in test runner.
+- Rendering/browser/mobile smoke: **not applicable yet**; rendering is not implemented in this slice.
+- Player smoke: **not started**.
+
+## Known blockers / defects
+- None in the deterministic core slice.
+- Rendering stack is intentionally not locked yet.
+
+## Remaining M0 work
+1. Character state/data model.
+2. Ability cooldown/execution state.
+3. Basic AI decision loop.
+4. Headless 3v3 simulation.
+5. Select/integrate rendering stack.
+6. Mobile-landscape arena.
+7. Character selection UI.
+8. Soft-follow camera.
+9. Touch controls and player override integration.
+10. HUD / damage numbers / KO presentation.
+11. Runtime/mobile smoke and final M0 verification.
 
 ## Prototype exit criteria
 See `docs/STATE.md` and `docs/TEST_STRATEGY.md`.
