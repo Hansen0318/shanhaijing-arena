@@ -98,15 +98,39 @@ Per combatant, each active ability tracks mutable execution state separately fro
 
 Minimum runtime state:
 - `cooldownRemaining`;
-- execution phase/state sufficient to distinguish ready vs executing vs cooldown;
+- phase: `ready`, `executing`, or `cooldown`;
 - current execution target identifier when applicable.
+
+### Locked execution boundary
+To avoid implementation ambiguity, M0 uses this deterministic lifecycle:
+
+1. **start**: a valid request changes `ready -> executing` immediately and records the resolved target id when applicable.
+2. **finish**: successful execution resolution changes `executing -> cooldown` and sets `cooldownRemaining = definition.cooldown`.
+3. If the configured cooldown is `0`, finishing returns directly to `ready`.
+4. **tick**: cooldown time is reduced by a nonnegative delta and clamps at `0`; reaching `0` changes `cooldown -> ready`.
+5. **cancel**: if the caster becomes KO before an execution that requires an active caster resolves, clear the execution target and return the slot to `ready` without applying that pending effect or starting cooldown.
+
+Cooldown therefore begins at **successful execution resolution**, not at request/start time.
+
+### Shared execution API boundary
+AI and player control must submit the same ability request shape into the same execution surface. Controller source may be carried as metadata for diagnostics, but it must not select different combat code paths.
+
+The ability layer must not choose targets itself. Existing targeting systems resolve/retain/fallback targets. Ability execution receives the resolved target (or target id/state) and validates it against the ability targeting contract before start.
+
+At minimum, start validation must reject:
+- KO caster;
+- non-`ready` ability slot;
+- missing/invalid target for an ability that requires a target;
+- KO target for a targeting rule that requires a living target;
+- target outside effective range.
+
+Target validation should remain a small dependency/predicate or helper boundary rather than embedding target-selection policy inside the Ability state machine.
 
 Required deterministic behavior:
 - cooldown never becomes negative;
 - an ability can start only when the character is living, the ability is ready, and its target is valid for its targeting contract;
 - starting an ability transitions it out of ready state immediately;
-- cooldown begins at the deterministic execution boundary chosen by the implementation and is tested consistently;
-- invalid/dead targets are rejected or re-resolved through the shared targeting system rather than silently accepted;
+- invalid/dead targets are rejected rather than silently executed;
 - KO during execution cancels any future action/effect that requires the caster to remain active;
 - AI and player intents invoke the same ability execution API.
 
@@ -116,7 +140,8 @@ For M0:
 - Basic has cooldown `0` in definition data;
 - attack cadence is derived from Attack Speed by the combat/ability runtime rather than represented as a user-facing cooldown;
 - both allied and enemy AI use the same Basic execution path;
-- manual control does not create a separate Basic implementation.
+- manual control does not create a separate Basic implementation;
+- a Basic execution still uses the same start/finish validation lifecycle, but finishing returns the slot to `ready` immediately because declared cooldown is zero.
 
 ## Enemy/player parity
 Enemies and player-controlled heroes use the same core character and ability model.
@@ -130,9 +155,11 @@ Character/Ability core is accepted when deterministic tests establish:
 4. all three Types and all three Roles are accepted independently;
 5. ability ready -> execution -> cooldown -> ready transitions are deterministic;
 6. cooldown reaches zero without becoming negative;
-7. invalid/KO targets cannot start a targeted ability;
-8. the same execution API can be called by AI or player intent without duplicated combat logic;
-9. existing type, battle-resolution, targeting, and 2-second handoff tests remain green if the new model touches their contracts.
+7. invalid/KO/out-of-range targets cannot start a targeted ability;
+8. KO during execution cancels pending caster-required resolution without starting cooldown;
+9. Basic uses the same execution path and returns to ready after successful finish because cooldown is zero;
+10. the same execution API can be called by AI or player intent without duplicated combat logic;
+11. existing type, battle-resolution, targeting, and 2-second handoff tests remain green if the new model touches their contracts.
 
 ## Future progression concept
 - Recruit character at T3.
