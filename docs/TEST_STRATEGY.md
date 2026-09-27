@@ -5,7 +5,12 @@
 ### Deterministic rules
 Automate where practical:
 - type counter multiplier;
+- character definition/state separation;
+- HP damage/heal clamping;
+- KO prevents action, selection, and healing;
 - cooldown transitions;
+- ability readiness/execution/cooldown lifecycle;
+- invalid or KO target rejection at ability start;
 - HP/damage/heal;
 - KO state;
 - victory/defeat;
@@ -14,6 +19,26 @@ Automate where practical:
 - player-override timer;
 - 2.0s AI resume;
 - dead character cannot be reselected.
+
+### M0 Character/Ability targeted gate
+For the Character + Ability implementation slice, use **Level B targeted verification** by default.
+
+Required new tests:
+1. immutable definition is not mutated by battle-state updates;
+2. state initializes from definition with full HP and valid runtime identifiers;
+3. damage clamps at 0 and healing clamps at max HP;
+4. healing a KO target is rejected;
+5. KO combatant cannot begin an ability;
+6. ability transitions ready -> executing -> cooldown -> ready;
+7. cooldown tick clamps at 0;
+8. invalid/dead target cannot start a targeted ability;
+9. AI/player intents call the same ability execution surface;
+10. Basic remains automatic/no-button data with category Basic and zero declared cooldown.
+
+Required impacted regression:
+- rerun existing deterministic tests for type multiplier, battle resolution, targeting/KO fallback, and player-override handoff **only if** the new model imports or changes those shared contracts.
+
+Do not run browser/mobile smoke for this slice unless rendering/runtime integration is introduced.
 
 ### Runtime smoke
 Verify on mobile-landscape representative sizes:
