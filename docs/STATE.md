@@ -60,23 +60,22 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 
 ### Completed on `feat/m0-combat-core-20260927`
 - Framework-independent deterministic combat core.
-- Type triangle helper.
-- Battle resolution / 90-second timeout helper.
-- Player override -> 2s AI handoff helper.
-- Soft-target / KO fallback targeting helpers.
-- Existing deterministic core evidence: 14 / 14 passing.
-- Immutable Character definition and per-battle state model.
-- Character + direct handoff evidence: 9 / 9 passing.
-- Declarative Ability definition and shared execution lifecycle.
+- Character definition and per-battle state model.
+- Shared Ability definition/runtime lifecycle.
+- Deterministic Basic AI intent loop.
+- Prototype deterministic direct-damage resolver.
+- Deterministic 3v3 headless simulation integrating Character, Targeting, ControlHandoff, Ability, AI, type multiplier, KO, movement intent, Basic cadence, and battle resolution.
+- Existing core evidence: 14 / 14 passing.
+- Character/direct handoff evidence: 9 / 9 passing.
 - Ability isolated evidence: 10 / 10 passing.
-- Ability + Character impacted evidence: 16 / 16 passing.
-- Deterministic Basic AI intent loop using shared Targeting / ControlHandoff / Ability contracts.
-- AI impacted targeted evidence: 27 / 27 passing.
+- Ability + Character evidence: 16 / 16 passing.
+- AI impacted evidence: 27 / 27 passing.
+- Headless impacted integration evidence: 38 / 38 passing.
 
 ### Pending
-- Headless 3v3 simulation.
-- Rendering engine integration.
+- Rendering/build stack integration.
 - Arena, touch input, camera, HUD, VFX.
+- Runtime/mobile and player smoke.
 
 ## Open questions for prototype testing
 These are tunable, not blockers:
