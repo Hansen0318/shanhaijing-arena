@@ -11,46 +11,43 @@ Automate where practical:
 - cooldown transitions;
 - ability readiness/execution/cooldown lifecycle;
 - invalid or KO target rejection at ability start;
-- HP/damage/heal;
-- KO state;
+- AI target retention/fallback;
+- player-override suppression and 2.0s AI resume;
+- AI ability priority/fallback;
 - victory/defeat;
 - 90s timeout tiebreak;
-- invalid target handling;
-- player-override timer;
-- 2.0s AI resume;
 - dead character cannot be reselected.
 
-### M0 Character/Ability targeted gate
-For the Character + Ability implementation slice, use **Level B targeted verification** by default.
+### Completed Character / Ability evidence
+Character and Ability slices use Level B targeted verification.
+- Character + direct handoff evidence: 9 / 9 PASS.
+- Ability isolated evidence: 10 / 10 PASS.
+- Ability + Character impacted evidence: 16 / 16 PASS.
 
-Character tests already completed:
-1. immutable definition is not mutated by battle-state updates;
-2. state initializes from definition with full HP and valid runtime identifiers;
-3. damage clamps at 0 and healing clamps at max HP;
-4. healing a KO target is rejected;
-5. KO prevents action and selection;
-6. type and role remain independent;
-7. invalid state inputs are rejected.
+### M0 Basic AI targeted gate
+Use **Level B targeted verification**.
 
-Required Ability tests:
-1. active ability definition validation covers category, nonnegative cooldown/range, targeting identifier, and deterministic effect data;
-2. valid request transitions `ready -> executing` and stores target id when required;
-3. successful finish transitions `executing -> cooldown` and copies the definition cooldown;
-4. cooldown tick clamps at `0` and then returns `cooldown -> ready`;
-5. zero-cooldown Basic finishes directly to `ready`;
-6. KO caster cannot begin an ability;
-7. missing, KO, or out-of-range target cannot begin a targeted ability;
-8. KO during execution cancels a caster-required pending execution, clears target state, applies no effect, and does not start cooldown;
-9. duplicate start while `executing` or `cooldown` is rejected;
-10. negative/nonfinite cooldown tick input is rejected;
-11. AI and player-originated requests call the same execution API and produce the same state transition for equivalent inputs.
+Required AI tests:
+1. KO actor -> idle;
+2. player override -> idle immediately;
+3. exact 2.0s handoff boundary resumes AI;
+4. living current target is retained;
+5. KO current target falls back to nearest living enemy;
+6. no living enemy -> idle;
+7. highest valid positive-priority non-Basic ability is selected;
+8. equal priority uses Awakening > Special > Heavy tie order;
+9. cooling/invalid/out-of-range prioritized ability is skipped;
+10. Basic is selected as fallback when valid;
+11. move intent is returned when chosen target is outside all usable ability ranges;
+12. emitted AI ability intent can be executed through shared `startAbility()`.
 
 Required impacted regression:
-- rerun `tests/character.test.js` because Ability integrates with Character `abilityState`;
-- rerun existing targeting tests only if production targeting code is changed;
-- rerun handoff/type/battle-resolution tests only if their production contracts are changed or imported into Ability implementation.
+- rerun targeting tests because AI imports the existing targeting helper;
+- rerun control-handoff tests because AI imports controller arbitration;
+- rerun Ability tests because AI validates against Ability contracts;
+- do not rerun battle-resolution/type tests unless their production contracts are changed.
 
-Do not run browser/mobile smoke for this slice unless rendering/runtime integration is introduced.
+Do not run browser/mobile smoke for this slice.
 Do not run full regression unless targeted failure demonstrates wider coupling.
 
 ### Runtime smoke
