@@ -65,9 +65,10 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Player override -> 2s AI handoff helper.
 - Soft-target / KO fallback targeting helpers.
 - 14 deterministic tests passing locally.
+- Immutable Character definition and per-battle state model with HP/KO gates and initial ability state slots on active PR branch.
+- Character plus directly affected control-handoff targeted tests: 9 / 9 passing.
 
 ### Pending
-- Character state/data model.
 - Ability cooldown/execution.
 - AI decision/state loop.
 - Headless 3v3 simulation.
