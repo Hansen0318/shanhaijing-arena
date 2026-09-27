@@ -5,10 +5,10 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Latest completed implementation slice: M0 Character definition and per-battle state (`6366a499` safe remote checkpoint)
-- Latest completed Chat-first slice: Ability execution boundary/API/target-validation contract + exact Level B targeted test scope
-- Recovery rule: inspect the active branch/PR first; do **not** recreate the completed deterministic core or Character slice
-- Next exact step: implement Ability definition + shared execution lifecycle against `docs/CHARACTER_SYSTEM.md`; run Ability + Character targeted tests only, escalating only if changed imports/contracts require it
+- Latest completed implementation slice: M0 Ability definition + shared execution lifecycle
+- Latest completed Chat-first slice: Ability implementation, targeted tests, and verification
+- Recovery rule: inspect the active branch/PR first; do **not** recreate the completed deterministic core, Character slice, or Ability slice
+- Next exact step: define and implement the **Basic AI decision loop** using the existing Character, Targeting, ControlHandoff, and Ability APIs; keep it framework-independent and do not start headless 3v3 until the AI slice passes
 - Canonical state: `docs/STATE.md`
 - Workflow: `docs/DEVELOPMENT_PLAYBOOK.md`
 - Character/Ability contract: `docs/CHARACTER_SYSTEM.md`
@@ -16,7 +16,7 @@
 - Preflight: `docs/PREFLIGHT_M0.md`
 
 ## Current status
-Design/spec foundation, deterministic combat core, and the Character model slice are complete on the active branch. PR #1 remains open. Chat has now removed the remaining Ability design ambiguity before executable implementation.
+Design/spec foundation, deterministic combat core, Character model, and Ability lifecycle are complete on the active branch. PR #1 remains open. Rendering is still intentionally absent.
 
 ## Completed design decisions
 - Mobile landscape.
@@ -32,8 +32,6 @@ Design/spec foundation, deterministic combat core, and the Character model slice
 - Skill model: Basic / Heavy / Special / Awakening / Passive.
 - Basic has no cooldown and is automatic.
 - Enemy characters use the same core character rules/data model as player characters.
-- Character progression concept: T3 -> T2 -> T1 with character fragments.
-- Campaign concept: chapters with 1-1 through 1-5 story stages.
 
 ## Implemented M0 core slice
 - Type multiplier rule.
@@ -44,49 +42,47 @@ Design/spec foundation, deterministic combat core, and the Character model slice
 - Deterministic tests for these rules.
 
 ## Implemented M0 Character slice
-- Immutable definition snapshot: identity, type/role, five stats, active ability references and passive references.
-- Shared player/enemy per-battle state: runtime/team identifiers, bounded HP, arena coordinates, target identifier, independent active ability runtime slots, and existing control handoff instance.
-- Derived KO gates for action and selection; zero-HP KO is terminal and cannot be healed.
-- Framework-independent code in `src/combat/character.js` with deterministic tests in `tests/character.test.js`.
-- Safe remote checkpoint: `6366a4991d6e09242a0e465c372c259bcc991e13`.
+- Immutable definition snapshot and shared player/enemy per-battle Character state.
+- HP clamp, terminal KO, selection/action/heal gates.
+- Independent ability runtime slots and existing control handoff state.
+- Framework-independent code in `src/combat/character.js`.
 
-## Chat-first Ability contract completed
-- Ability definitions stay declarative and renderer-free.
-- Runtime phases are exactly `ready / executing / cooldown`.
-- Cooldown begins on successful execution finish/resolution, not on start.
-- Zero-cooldown Basic returns directly to ready after finish.
-- Cooldown ticking clamps at zero.
-- KO caster cannot start; caster KO during caster-required execution cancels pending resolution without cooldown.
-- Target selection remains in Targeting; Ability only validates a resolved target.
-- Targeted start rejects missing, KO, or out-of-range targets.
-- AI/player use the same ability request/execution API.
-- Exact Level B Ability test cases are recorded in `docs/TEST_STRATEGY.md`.
+## Implemented M0 Ability slice
+- Declarative immutable active Ability definition.
+- Shared `ready -> executing -> cooldown -> ready` lifecycle.
+- Cooldown starts on successful finish/resolution and clamps at zero.
+- Basic requires declared cooldown 0 and returns directly to ready after finish.
+- KO caster start rejection and KO-during-execution cancellation.
+- Resolved-target validation for missing/KO/out-of-range targets.
+- Target selection remains outside Ability.
+- AI/player source metadata uses the same start/finish execution surface.
+- Production code: `src/combat/ability.js`.
+- Targeted tests: `tests/ability.test.js`.
 
 ## Verification
-- Existing deterministic core tests: **14 / 14 PASS** recorded evidence.
-- Character targeted tests and directly imported control-handoff tests: **9 / 9 PASS**.
-- Character implementation static review against contract: **PASS**.
-- Ability contract/static dependency review against current Character + Targeting code: **PASS**.
-- No runtime tests were rerun for Chat-only documentation changes because they cannot invalidate executable behavior.
-- Rendering/browser/mobile smoke: **not applicable yet**.
+- Existing deterministic core: **14 / 14 PASS** recorded evidence; not rerun because Ability did not modify those production contracts.
+- Previous Character + directly affected handoff: **9 / 9 PASS** recorded evidence.
+- Ability isolated targeted tests: **10 / 10 PASS**.
+- Ability + Character impacted targeted run: **16 / 16 PASS**.
+- Verification used Node built-in test runner in an isolated local reconstruction of the exact fetched branch source because direct GitHub clone was blocked by executor DNS. Source/test files were fetched/written from the active branch contents; no dependency installation or renderer/runtime was involved.
+- Browser/mobile smoke: **not applicable yet**.
 - Player smoke: **not started**.
 
 ## Known blockers / defects
-- None in deterministic core or Character slice.
+- None in deterministic core, Character, or Ability slices.
 - Rendering stack is intentionally not locked yet.
-- Ability executable implementation is the first unfinished item.
+- Basic AI decision loop is the first unfinished item.
 
 ## Remaining M0 work
-1. Ability cooldown/execution implementation + targeted deterministic tests.
-2. Basic AI decision loop.
-3. Headless 3v3 simulation.
-4. Select/integrate rendering stack.
-5. Mobile-landscape arena.
-6. Character selection UI.
-7. Soft-follow camera.
-8. Touch controls and player override integration.
-9. HUD / damage numbers / KO presentation.
-10. Runtime/mobile smoke and final M0 verification.
+1. Basic AI decision loop.
+2. Headless 3v3 simulation.
+3. Select/integrate rendering stack.
+4. Mobile-landscape arena.
+5. Character selection UI.
+6. Soft-follow camera.
+7. Touch controls and player override integration.
+8. HUD / damage numbers / KO presentation.
+9. Runtime/mobile smoke and final M0 verification.
 
 ## Prototype exit criteria
 See `docs/STATE.md` and `docs/TEST_STRATEGY.md`.
