@@ -65,15 +65,15 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Player override -> 2s AI handoff helper.
 - Soft-target / KO fallback targeting helpers.
 - Existing deterministic core evidence: 14 / 14 passing.
-- Immutable Character definition and per-battle state model with HP/KO gates and ability runtime slots.
-- Character plus directly affected control-handoff evidence: 9 / 9 passing.
-- Declarative Ability definition and shared ready/executing/cooldown lifecycle.
-- Ability target validation, KO cancellation, zero-cooldown Basic behavior, and shared AI/player execution surface.
-- Ability isolated tests: 10 / 10 passing.
-- Ability + Character impacted targeted tests: 16 / 16 passing.
+- Immutable Character definition and per-battle state model.
+- Character + direct handoff evidence: 9 / 9 passing.
+- Declarative Ability definition and shared execution lifecycle.
+- Ability isolated evidence: 10 / 10 passing.
+- Ability + Character impacted evidence: 16 / 16 passing.
+- Deterministic Basic AI intent loop using shared Targeting / ControlHandoff / Ability contracts.
+- AI impacted targeted evidence: 27 / 27 passing.
 
 ### Pending
-- AI decision/state loop.
 - Headless 3v3 simulation.
 - Rendering engine integration.
 - Arena, touch input, camera, HUD, VFX.
