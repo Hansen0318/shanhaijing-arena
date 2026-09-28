@@ -9,6 +9,7 @@
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
 - Current slice: **movement joystick + shared player override input**
 - Current status: **PLAYER-CONFIRMED WORKING BASELINE RESTORED; RUNTIME PACING PASS; AI RESUME DELAY SET TO 0s / IMMEDIATE**
+- Latest visual-only slice: **Arena sand color A — ENGINEERING PASS / PLAYER SMOKE PENDING**; source commit `9b9fe641848a412e2b10e26493a73532ba4551bc`; [Pages run 36436079695](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36436079695): Test / Build / Deploy success; public preview visibly shows sand ground and dark markings. Player to assess field/actor/empty-space proportions on device; no geometry or controls changed.
 
 ## Protected mobile input baseline
 Player confirmed this path works on iPhone Chrome:
@@ -69,3 +70,9 @@ Therefore player smoke performed during those failed runs was still exercising t
 The stale AI test is now updated to the canonical behavior:
 - valid input instant => player override;
 - immediately after input stops => AI.
+
+## Arena sand color A (2026-09-28)
+- `src/runtime/ArenaScene.js`: field rectangle fill `#8E7B5A`, center line and ellipse stroke `#5F513B`; camera/outer background remains `#253648`.
+- Source commit `9b9fe641848a412e2b10e26493a73532ba4551bc` (pushed to active branch); GitHub Actions run `36436079695`: Test, Build, Pages Deploy all success. No separate local test/build repeated.
+- Public preview https://hansen0318.github.io/shanhaijing-arena/ observed sand field, dark markings, and dark exterior in browser. This verifies deployed appearance only; player device/size-ratio assessment is pending.
+- Exact next action: player evaluates field, actors, and empty-space proportions from the preview; then return to the separately pending joystick position/sensitivity decisions. Do not start those changes as part of the color slice.
