@@ -5,45 +5,44 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Current status: **IMMUTABLE 960x540 CSS-CONTAIN STAGE IMPLEMENTED — AUTO VERIFY / PLAYER SMOKE PENDING**
+- Current status: **IOS SAFARI DIRECT-LANDSCAPE OFFSET FIXED IN DOM HOST — AUTO VERIFY / PLAYER SMOKE PENDING**
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
 
-## Final viewport strategy
-Player confirmed the desired behavior is the original simple model:
-- one fixed landscape 16:9 game surface;
-- landscape: scale the whole surface uniformly to fit;
-- portrait: shrink the same landscape surface and fit it inside the portrait screen;
-- never re-layout or re-project the battle based on orientation;
-- camera never moves on selection.
+## Reproduced player behavior
+- portrait load -> rotate to landscape: composition can be correct;
+- direct landscape reload: fixed 16:9 stage can be vertically offset/clipped;
+- both default and KO URLs show the same issue.
 
-## Implementation
-- Phaser logical surface remains exactly 960x540.
-- Phaser Scale Manager runtime scaling is disabled with `Phaser.Scale.NONE`.
-- Browser CSS alone centers and uniformly contains the canvas.
-- `#game` uses a fixed 16:9 aspect ratio and a width constrained by both viewport width and viewport height.
-- canvas fills that 16:9 host proportionally.
-- no runtime resize listener or Arena transform.
-- no combat/AI/Ability/KO changes.
+This proves the internal Arena/camera is not the remaining problem. The discrepancy is between iPhone Safari's layout viewport used by CSS centering and its actual visible `visualViewport` during direct landscape load.
 
-## Expected behavior
-Landscape:
-- whole 16:9 Arena visible and centered;
-- no crop;
-- no camera movement;
-- selection changes highlight only.
+## Fix
+Internal game remains unchanged:
+- Phaser surface: immutable 960x540;
+- Scale Manager: NONE;
+- camera: fixed;
+- no startFollow;
+- no runtime Arena reprojection.
 
-Portrait:
-- exact same landscape Arena shrinks to fit width;
-- no rearrangement;
-- no offset caused by orientation-specific geometry;
-- blank space above/below is acceptable.
+Outer host only:
+- `#game` is positioned explicitly from `window.visualViewport.width/height/offsetLeft/offsetTop`;
+- one uniform contain scale is calculated from 960x540;
+- host is centered inside the actual visible browser viewport;
+- host resyncs on pageshow, resize, orientationchange and visualViewport resize/scroll;
+- short post-load resyncs handle Safari chrome settling after direct landscape refresh.
+
+## Expected
+- direct landscape reload and portrait->landscape transition produce the same centered composition;
+- portrait shows the exact same 16:9 stage scaled down;
+- no crop, no camera movement, no actor rearrangement.
 
 ## Required verification
 - tests PASS;
 - build PASS;
 - Pages deploy PASS;
-- repeated portrait/landscape loads show the same composition, only uniformly scaled.
+- player repeats direct landscape reload several times;
+- player repeats portrait -> landscape -> reload;
+- composition remains identical apart from uniform scale.
 
 ## Gate
-After player smoke PASS, proceed to `movement joystick + shared player override input`.
+After PASS, proceed to `movement joystick + shared player override input`.
