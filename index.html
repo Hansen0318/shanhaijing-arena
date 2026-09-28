@@ -24,16 +24,14 @@
         position: fixed;
         left: 0;
         top: 0;
-        width: 960px;
-        height: 540px;
         overflow: hidden;
         background: #253648;
+        touch-action: none;
       }
 
       #game canvas {
         display: block;
-        width: 100% !important;
-        height: 100% !important;
+        touch-action: none;
       }
     </style>
   </head>
@@ -42,50 +40,40 @@
 
     <script>
       (() => {
-        const STAGE_WIDTH = 960;
-        const STAGE_HEIGHT = 540;
-        const game = document.getElementById('game');
+        const gameHost = document.getElementById('game');
 
         function syncGameHostToVisualViewport() {
           const vv = window.visualViewport;
-          const viewportWidth = vv ? vv.width : window.innerWidth;
-          const viewportHeight = vv ? vv.height : window.innerHeight;
-          const offsetLeft = vv ? vv.offsetLeft : 0;
-          const offsetTop = vv ? vv.offsetTop : 0;
+          const width = vv ? vv.width : window.innerWidth;
+          const height = vv ? vv.height : window.innerHeight;
+          const left = vv ? vv.offsetLeft : 0;
+          const top = vv ? vv.offsetTop : 0;
 
-          const scale = Math.min(
-            viewportWidth / STAGE_WIDTH,
-            viewportHeight / STAGE_HEIGHT,
-          );
+          gameHost.style.left = left + 'px';
+          gameHost.style.top = top + 'px';
+          gameHost.style.width = width + 'px';
+          gameHost.style.height = height + 'px';
 
-          const width = STAGE_WIDTH * scale;
-          const height = STAGE_HEIGHT * scale;
-          const left = offsetLeft + (viewportWidth - width) / 2;
-          const top = offsetTop + (viewportHeight - height) / 2;
-
-          game.style.width = `${width}px`;
-          game.style.height = `${height}px`;
-          game.style.left = `${left}px`;
-          game.style.top = `${top}px`;
+          window.dispatchEvent(new Event('arena-viewport-sync'));
         }
 
-        function resyncAfterSafariSettles() {
+        function resyncAfterBrowserChromeSettles() {
           syncGameHostToVisualViewport();
           requestAnimationFrame(syncGameHostToVisualViewport);
           setTimeout(syncGameHostToVisualViewport, 80);
           setTimeout(syncGameHostToVisualViewport, 240);
         }
 
-        window.addEventListener('pageshow', resyncAfterSafariSettles);
-        window.addEventListener('resize', resyncAfterSafariSettles);
-        window.addEventListener('orientationchange', resyncAfterSafariSettles);
+        window.addEventListener('pageshow', resyncAfterBrowserChromeSettles);
+        window.addEventListener('resize', resyncAfterBrowserChromeSettles);
+        window.addEventListener('orientationchange', resyncAfterBrowserChromeSettles);
 
         if (window.visualViewport) {
           window.visualViewport.addEventListener('resize', syncGameHostToVisualViewport);
           window.visualViewport.addEventListener('scroll', syncGameHostToVisualViewport);
         }
 
-        resyncAfterSafariSettles();
+        resyncAfterBrowserChromeSettles();
       })();
     </script>
 
