@@ -38,6 +38,8 @@ AI should not make the handoff feel abrupt:
 - Current M0 logical viewport: 960x540.
 - Current M0 arena world: 1280x720.
 - Both use 16:9 to prevent camera motion from revealing outside-world empty bands.
+- Mobile landscape display scaling uses cover/envelop semantics, not FIT letterboxing: the battlefield must cover the available viewport without distortion; minor cropping is allowed, unused bars are not.
+- Portrait is not the acceptance orientation for M0; landscape behavior takes precedence.
 - Combat/HUD controls are screen-space overlays above the battlefield and must not move with the world camera.
 
 ## Camera
