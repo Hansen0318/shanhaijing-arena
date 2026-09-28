@@ -23,8 +23,8 @@ The joystick controls the currently selected living ally's actual combat positio
 
 ## AI handoff
 - While valid joystick input is active, the selected actor's AI intent is suppressed by `ControlHandoff`.
-- After joystick release, the actor remains under player ownership but idle until the existing 1.0 second timeout expires.
-- At 1.0 seconds without valid player input, full AI resumes automatically.
+- After joystick release, player ownership ends immediately.
+- With no valid joystick input, full AI resumes on the next simulation step.
 - No AUTO/MANUAL label, icon, countdown, or toggle is shown.
 - Other actors continue AI normally.
 
@@ -50,7 +50,7 @@ It forces A2 KO during the live runtime so fallback selection can be checked wit
 - player input immediately owns movement;
 - dead-zone/zero input does not refresh ownership;
 - Arena bounds clamp;
-- AI resumes after 1 second without valid input;
+- AI resumes immediately after valid input stops;
 - existing headless deterministic simulation remains green.
 
 ## Player smoke
@@ -61,7 +61,7 @@ On mobile landscape:
 4. Camera never moves.
 5. Switch to A1/A3; joystick controls newly selected ally.
 6. Release joystick: character stops manual movement.
-7. After about 1 second, AI resumes moving/fighting.
+7. AI resumes moving/fighting immediately after release.
 8. Other actors continue AI while selected actor is manually controlled.
 9. No viewport/camera regression.
 10. KO fixture still falls back selection without moving camera.
@@ -75,7 +75,7 @@ Current runtime smoke tuning:
 - visual base radius remains generous for touch acquisition;
 - full input magnitude is reached at a smaller input radius for faster response;
 - dead zone is small;
-- runtime fixture uses lower move speed and higher HP than the canonical deterministic headless fixture so manual switching and the 1-second AI resume can actually be observed.
+- runtime fixture uses lower move speed and higher HP than the canonical deterministic headless fixture so manual switching and the immediate AI resume can actually be observed.
 
 Do not copy these temporary smoke stats into production balance without a separate balance decision.
 
