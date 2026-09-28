@@ -2,8 +2,6 @@ import Phaser from 'phaser';
 import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
 import { createDemoBattleSession } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
-import { hitTestCircle, joystickVectorFromPoint } from './arenaInput.js';
-import { CanvasTouchAdapter } from './canvasTouchAdapter.js';
 
 const SIM_STEP_SECONDS = 0.05;
 const JOYSTICK = Object.freeze({
@@ -13,7 +11,6 @@ const JOYSTICK = Object.freeze({
   inputRadius: 30,
   knobRadius: 22,
   deadZone: 0.03,
-  acquireRadius: 72,
 });
 
 export class ArenaScene extends Phaser.Scene {
@@ -63,17 +60,13 @@ export class ArenaScene extends Phaser.Scene {
 
       if (allied) {
         marker.setInteractive({ useHandCursor: true });
-        marker.on('pointerdown', () => {
-          this.selectAlly(actor.instanceId, this.session.snapshot());
-        });
+        marker.on('pointerdown', () => this.selectAlly(actor.instanceId, this.session.snapshot()));
       }
 
       this.actorViews.set(actor.instanceId, { marker, label, allied });
     }
 
     this.createJoystick();
-    this.bindPhaserInput();
-    this.bindCanvasTouchInput();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
@@ -83,7 +76,6 @@ export class ArenaScene extends Phaser.Scene {
       fixture: this.selectedKoFixture ? 'ko' : 'default',
       runtimeMode: 'live',
       cameraMode: 'fixed',
-      inputMode: 'canvas-touch-adapter+phaser-desktop',
       stageWidth: ARENA_STAGE.width,
       stageHeight: ARENA_STAGE.height,
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
@@ -109,94 +101,66 @@ export class ArenaScene extends Phaser.Scene {
     ).setDepth(21);
 
     this.joystickBase.setInteractive(
-      new Phaser.Geom.Circle(JOYSTICK.radius, JOYSTICK.radius, JOYSTICK.acquireRadius),
+      new Phaser.Geom.Circle(JOYSTICK.radius, JOYSTICK.radius, JOYSTICK.radius),
       Phaser.Geom.Circle.Contains,
     );
 
     this.joystickBase.on('pointerdown', (pointer) => {
       if (!this.selectedId) return;
       this.joystickPointerId = pointer.id;
-      this.updateJoystickFromStagePoint({ x: pointer.x, y: pointer.y });
-    });
-  }
-
-  bindCanvasTouchInput() {
-    this.touchAdapter = new CanvasTouchAdapter({
-      canvas: this.game.canvas,
-      logicalWidth: ARENA_STAGE.width,
-      logicalHeight: ARENA_STAGE.height,
-      onStart: (point, touchId) => {
-        if (this.selectedId && hitTestCircle(point, JOYSTICK, JOYSTICK.acquireRadius)) {
-          this.joystickPointerId = `touch:${touchId}`;
-          this.updateJoystickFromStagePoint(point);
-          return true;
-        }
-
-        const frame = this.session.snapshot();
-        for (const ally of frame.allies) {
-          if (ally.hp <= 0) continue;
-          const actorPoint = arenaToStage(ally);
-          if (hitTestCircle(point, actorPoint, 42)) {
-            this.selectAlly(ally.instanceId, frame);
-            return true;
-          }
-        }
-        return false;
-      },
-      onMove: (point, touchId) => {
-        if (this.joystickPointerId !== `touch:${touchId}`) return false;
-        this.updateJoystickFromStagePoint(point);
-        return true;
-      },
-      onEnd: (_point, touchId) => {
-        if (this.joystickPointerId !== `touch:${touchId}`) return false;
-        this.releaseJoystick();
-        return true;
-      },
+      this.updateJoystickFromPointer(pointer);
     });
 
-    this.touchAdapter.start();
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => this.touchAdapter.stop());
-  }
+    this.input.on('pointermove', (pointer) => {
+      if (pointer.id !== this.joystickPointerId) return;
+      this.updateJoystickFromPointer(pointer);
+    });
 
-  pointerPoint(pointer) {
-    return { x: pointer.x, y: pointer.y };
-  }
-
-  bindPhaserInput() {
-    this.input.on('pointermove', this.handlePointerMove, this);
-    this.input.on('pointerup', this.handlePointerUp, this);
-    this.input.on('pointerupoutside', this.handlePointerUp, this);
+    this.input.on('pointerup', (pointer) => {
+      if (pointer.id !== this.joystickPointerId) return;
+      this.releaseJoystick();
+    });
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.input.off('pointermove', this.handlePointerMove, this);
-      this.input.off('pointerup', this.handlePointerUp, this);
-      this.input.off('pointerupoutside', this.handlePointerUp, this);
+      this.input.off('pointermove');
+      this.input.off('pointerup');
     });
   }
 
-  handlePointerMove(pointer) {
-    if (!pointer.isDown || pointer.id !== this.joystickPointerId) return;
-    this.updateJoystickFromStagePoint(this.pointerPoint(pointer));
+  pointerToStage(pointer) {
+    const rect = this.game.canvas.getBoundingClientRect();
+    const event = pointer.event;
+    const clientX = Number.isFinite(event?.clientX) ? event.clientX : rect.left + pointer.x;
+    const clientY = Number.isFinite(event?.clientY) ? event.clientY : rect.top + pointer.y;
+
+    return {
+      x: (clientX - rect.left) * (ARENA_STAGE.width / rect.width),
+      y: (clientY - rect.top) * (ARENA_STAGE.height / rect.height),
+    };
   }
 
-  handlePointerUp(pointer) {
-    if (pointer.id !== this.joystickPointerId) return;
-    this.releaseJoystick();
-  }
+  updateJoystickFromPointer(pointer) {
+    const point = this.pointerToStage(pointer);
+    const dx = point.x - JOYSTICK.x;
+    const dy = point.y - JOYSTICK.y;
+    const distance = Math.hypot(dx, dy);
+    const rawMagnitude = Math.min(1, distance / JOYSTICK.inputRadius);
+    const magnitude = rawMagnitude <= JOYSTICK.deadZone
+      ? 0
+      : (rawMagnitude - JOYSTICK.deadZone) / (1 - JOYSTICK.deadZone);
 
-  updateJoystickFromStagePoint(point) {
-    const vector = joystickVectorFromPoint(point, JOYSTICK);
-    this.joystickVector = { x: vector.x, y: vector.y };
-
-    if (vector.magnitude <= 0) {
+    if (distance <= 0.001 || magnitude <= 0) {
+      this.joystickVector = { x: 0, y: 0 };
       this.joystickKnob.setPosition(JOYSTICK.x, JOYSTICK.y);
       return;
     }
 
+    const nx = dx / distance;
+    const ny = dy / distance;
+    this.joystickVector = { x: nx * magnitude, y: ny * magnitude };
     this.joystickKnob.setPosition(
-      JOYSTICK.x + vector.x * JOYSTICK.radius,
-      JOYSTICK.y + vector.y * JOYSTICK.radius,
+      JOYSTICK.x + nx * JOYSTICK.radius * magnitude,
+      JOYSTICK.y + ny * JOYSTICK.radius * magnitude,
     );
   }
 
