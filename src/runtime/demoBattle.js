@@ -33,8 +33,8 @@ export const demoCharacterDefinitions = {
 // Runtime-only smoke fixture: slower and longer-lived so manual control,
 // character switching and 2-second AI handoff can be observed.
 export const runtimeCharacterDefinitions = {
-  ally: character('ally_runtime', 'power', { maxHp: 260, atk: 16, def: 6, moveSpeed: 1.4, attackSpeed: 1.0 }),
-  enemy: character('enemy_runtime', 'speed', { maxHp: 220, atk: 13, def: 5, moveSpeed: 1.2, attackSpeed: 0.9 }),
+  ally: character('ally', 'power', { maxHp: 260, atk: 16, def: 6, moveSpeed: 1.4, attackSpeed: 1.0 }),
+  enemy: character('enemy', 'speed', { maxHp: 220, atk: 13, def: 5, moveSpeed: 1.2, attackSpeed: 0.9 }),
 };
 
 function createTeams(definitions) {
