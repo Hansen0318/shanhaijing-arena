@@ -8,7 +8,7 @@
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
 - Current slice: **movement joystick + shared player override input**
-- Current status: **PLAYER-CONFIRMED WORKING BASELINE RESTORED; RUNTIME PACING PASS; AI RESUME TUNED TO 1.0s**
+- Current status: **PLAYER-CONFIRMED WORKING BASELINE RESTORED; RUNTIME PACING PASS; AI RESUME DELAY SET TO 0s / IMMEDIATE**
 
 ## Protected mobile input baseline
 Player confirmed this path works on iPhone Chrome:
@@ -40,22 +40,23 @@ Player then confirmed movement works again with the slower runtime fixture.
 - canonical deterministic headless fixture remains unchanged.
 
 ## New canonical control handoff
-Player judged 2.0s AI resume too slow.
+Player judged the 1.0s grace period unnecessary.
 
 Shared `ControlHandoff` is now:
-- manual input overrides immediately;
-- after **1.0s** without valid player combat input, full AI resumes;
+- valid manual input overrides immediately;
+- while joystick input remains active, player control is refreshed every simulation step;
+- when valid player input stops, AI resumes on the **next simulation step** with **0s intentional delay**;
 - selected character remains selected;
 - no AUTO/MANUAL UI.
 
-This is a shared rule for joystick and future player skill input, not a runtime-only exception.
+Implementation detail: timeout is 0ms and the active-input comparison is inclusive (`<=`) so the exact frame receiving player input is still owned by the player.
 
 ## Next gate
 After automated tests/build/deploy PASS, player smoke:
 1. select A1/A2/A3;
 2. move selected ally;
 3. release joystick;
-4. observe AI resume at about 1 second;
+4. release joystick and observe AI resume immediately;
 5. confirm camera/viewport remain unchanged.
 
 After PASS, next isolated feel change can be joystick position only.
