@@ -13,12 +13,12 @@
 
 ## Protected mobile input baseline
 Player confirmed this path works on iPhone Chrome:
-- fixed 960x540 Phaser surface;
+- fixed 1120x540 Phaser surface (previous player-confirmed 960x540 input architecture retained);
 - `Phaser.Scale.NONE`;
 - outer DOM performs visual contain/positioning;
 - A1/A2/A3 use Phaser GameObject `setInteractive()`;
 - joystick base uses Phaser GameObject input;
-- joystick movement converts pointer client coordinates through canvas `getBoundingClientRect()` back to the fixed 960x540 stage.
+- joystick movement converts pointer client coordinates through canvas `getBoundingClientRect()` back to the fixed logical stage (now 1120x540).
 
 Do not migrate this input/display architecture again without a separate regression-safe experiment.
 
@@ -92,3 +92,11 @@ Changes:
 - simulation coordinates, battle logic, character stats, joystick logic, and AI handoff are unchanged.
 
 Player/runtime smoke is still required after deploy; visual proportion is not pre-marked PASS.
+
+## Arena 1120x540 widening verification (2026-09-29)
+- Chat widening checkpoint `4d13321a660ea25a4cedddb96eb7a7857b4827fa`: stage/canvas/DOM width 1120, height 540, projection padding 200 (720px actor span), sand fill and center line track stage width, ellipse 280x170. No joystick/input architecture or battle logic change.
+- Initial Actions run `36499677507` failed only because `tests/arenaProjection.test.js` still asserted 960 width and old projected x coordinates (59/61 pass); build/deploy skipped. Work changed only that stale test's expected width and x values in commit `23c4e759551c24d149203c2574ee0109e5921046`.
+- Actions run `36500167030` for that commit: 61/61 tests PASS, Vite build PASS, Pages deploy PASS.
+- Public browser smoke: stage visually wider with unchanged height, sand fill covers visible canvas, line spans the wider stage, center ellipse and actor markers preserve logical size, actor horizontal projection span remains 720 per code/test. No observed clipping, overflow, anomalous black borders, or camera shift. A1/A2/A3 selection highlight worked. Pointer drag on joystick moved selected A3 left; after release knob recentered and A3 moved right under AI. No browser pointer regression observed.
+- Cloud browser pointer drag does not prove real iPhone touch. Real-device touch alignment and visual proportion remain PLAYER SMOKE PENDING. Do not label either as player verified.
+- Exact next step: player opens https://hansen0318.github.io/shanhaijing-arena/ on device and checks widened field proportion and touch selection/joystick movement. No joystick position/sensitivity changes in this slice.
