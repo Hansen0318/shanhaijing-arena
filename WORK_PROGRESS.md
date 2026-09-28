@@ -76,3 +76,19 @@ The stale AI test is now updated to the canonical behavior:
 - Source commit `9b9fe641848a412e2b10e26493a73532ba4551bc` (pushed to active branch); GitHub Actions run `36436079695`: Test, Build, Pages Deploy all success. No separate local test/build repeated.
 - Public preview https://hansen0318.github.io/shanhaijing-arena/ observed sand field, dark markings, and dark exterior in browser. This verifies deployed appearance only; player device/size-ratio assessment is pending.
 - Exact next action: player evaluates field, actors, and empty-space proportions from the preview; then return to the separately pending joystick position/sensitivity decisions. Do not start those changes as part of the color slice.
+
+
+## Arena horizontal widening — Chat implementation
+Chat-side minimal implementation prepared for a wider logical stage while preserving the protected mobile input architecture.
+
+Changes:
+- logical stage width: 960 -> 1120;
+- logical stage height remains 540;
+- horizontal projection padding: 120 -> 200, preserving the original 720px actor projection span and adding 80px visible space on each side;
+- Phaser remains Scale.NONE;
+- outer DOM still performs contain/centering;
+- pointer mapping still uses ARENA_STAGE.width / canvas rect width, so it follows the new logical width without an input-architecture change;
+- center ellipse remains 280x170;
+- simulation coordinates, battle logic, character stats, joystick logic, and AI handoff are unchanged.
+
+Player/runtime smoke is still required after deploy; visual proportion is not pre-marked PASS.
