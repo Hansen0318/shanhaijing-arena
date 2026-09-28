@@ -35,8 +35,9 @@ The joystick controls the currently selected living ally's actual combat positio
 - If selected ally becomes KO, nearest-living-ally fallback still applies.
 
 ## Input mapping
-The canvas is visually CSS-scaled on mobile while the logical stage remains 960x540.
-Joystick pointer coordinates therefore map native client coordinates through the canvas DOM bounding rect back into logical stage coordinates. Do not assume CSS pixels equal Phaser logical coordinates.
+Phaser Scale Manager owns display scaling and Phaser Input Manager owns pointer/touch coordinate conversion.
+Runtime joystick and ally selection consume Phaser pointer coordinates directly in the fixed 960x540 logical stage.
+Do not reintroduce manual DOM client-coordinate conversion or document-level touch capture for normal controls.
 
 ## KO fixture
 `?fixture=ko` remains a deterministic smoke route.
@@ -74,3 +75,11 @@ Current runtime smoke tuning:
 - runtime fixture uses lower move speed and higher HP than the canonical deterministic headless fixture so manual switching and the 2-second AI resume can actually be observed.
 
 Do not copy these temporary smoke stats into production balance without a separate balance decision.
+
+
+## Input architecture correction
+Earlier CSS-only canvas scaling plus manual DOM/touch mapping was retired after mobile input proved unreliable.
+Canonical runtime path is now:
+`visualViewport host -> Phaser Scale Manager -> Phaser Input Manager -> Arena controls`.
+
+This keeps display scale and hit testing under the same framework transform and is the required pattern for future skill buttons and multi-touch.
