@@ -73,8 +73,8 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 
 ### Pending
 - Fixed fullscreen Arena / iPhone Safari viewport presentation: **ENGINEERING PASS / PLAYER SMOKE PASS**.
-- Next exact implementation: **movement joystick + shared player override input**.
-- Skill controls.
+- Movement joystick + shared player override: **CODE / CORE TEST PASS; runtime/mobile smoke pending**.
+- Skill controls: Heavy / Special / Awakening.
 - Minimum HUD/VFX readability.
 - Natural combat presentation / AI movement readability.
 - Runtime/mobile and player smoke for later slices.
