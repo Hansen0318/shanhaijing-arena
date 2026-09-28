@@ -34,21 +34,26 @@ export class CanvasTouchAdapter {
   }
 
   start() {
-    this.canvas.addEventListener('touchstart', this.handleStart, { passive: false });
-    this.canvas.addEventListener('touchmove', this.handleMove, { passive: false });
-    this.canvas.addEventListener('touchend', this.handleEnd, { passive: false });
-    this.canvas.addEventListener('touchcancel', this.handleEnd, { passive: false });
+    this.eventTarget = document;
+    this.eventTarget.addEventListener('touchstart', this.handleStart, { capture: true, passive: false });
+    this.eventTarget.addEventListener('touchmove', this.handleMove, { capture: true, passive: false });
+    this.eventTarget.addEventListener('touchend', this.handleEnd, { capture: true, passive: false });
+    this.eventTarget.addEventListener('touchcancel', this.handleEnd, { capture: true, passive: false });
   }
 
   stop() {
-    this.canvas.removeEventListener('touchstart', this.handleStart);
-    this.canvas.removeEventListener('touchmove', this.handleMove);
-    this.canvas.removeEventListener('touchend', this.handleEnd);
-    this.canvas.removeEventListener('touchcancel', this.handleEnd);
+    if (this.eventTarget) {
+      this.eventTarget.removeEventListener('touchstart', this.handleStart, true);
+      this.eventTarget.removeEventListener('touchmove', this.handleMove, true);
+      this.eventTarget.removeEventListener('touchend', this.handleEnd, true);
+      this.eventTarget.removeEventListener('touchcancel', this.handleEnd, true);
+    }
+    this.eventTarget = null;
     this.activeTouchId = null;
   }
 
   handleStart(event) {
+    if (event.target !== this.canvas) return;
     const touches = event.changedTouches;
     for (let index = 0; index < touches.length; index += 1) {
       const touch = touches.item ? touches.item(index) : touches[index];
@@ -63,6 +68,7 @@ export class CanvasTouchAdapter {
 
   handleMove(event) {
     if (this.activeTouchId === null) return;
+    if (event.target !== this.canvas) return;
     const touches = event.changedTouches;
     for (let index = 0; index < touches.length; index += 1) {
       const touch = touches.item ? touches.item(index) : touches[index];
@@ -75,6 +81,7 @@ export class CanvasTouchAdapter {
 
   handleEnd(event) {
     if (this.activeTouchId === null) return;
+    if (event.target !== this.canvas) return;
     const touches = event.changedTouches;
     for (let index = 0; index < touches.length; index += 1) {
       const touch = touches.item ? touches.item(index) : touches[index];
