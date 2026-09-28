@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
 import { createDemoBattleSession } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
+import { hitTestCircle, joystickVectorFromPoint } from './arenaInput.js';
 
 const SIM_STEP_SECONDS = 0.05;
 const JOYSTICK = Object.freeze({
@@ -11,6 +12,7 @@ const JOYSTICK = Object.freeze({
   inputRadius: 30,
   knobRadius: 22,
   deadZone: 0.03,
+  acquireRadius: 72,
 });
 
 export class ArenaScene extends Phaser.Scene {
@@ -62,7 +64,7 @@ export class ArenaScene extends Phaser.Scene {
     }
 
     this.createJoystick();
-    this.bindCanvasPointerInput();
+    this.bindPhaserInput();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
@@ -72,6 +74,7 @@ export class ArenaScene extends Phaser.Scene {
       fixture: this.selectedKoFixture ? 'ko' : 'default',
       runtimeMode: 'live',
       cameraMode: 'fixed',
+      inputMode: 'phaser',
       stageWidth: ARENA_STAGE.width,
       stageHeight: ARENA_STAGE.height,
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
@@ -98,144 +101,73 @@ export class ArenaScene extends Phaser.Scene {
     ).setDepth(21);
   }
 
-  clientToStage(clientX, clientY) {
-    const rect = this.game.canvas.getBoundingClientRect();
-    return {
-      x: (clientX - rect.left) * (ARENA_STAGE.width / rect.width),
-      y: (clientY - rect.top) * (ARENA_STAGE.height / rect.height),
-    };
+  pointerPoint(pointer) {
+    return { x: pointer.x, y: pointer.y };
   }
 
-  bindCanvasPointerInput() {
-    const documentTarget = document;
-
-    const handleStageDown = (point, pointerId) => {
-      const joystickDistance = Math.hypot(point.x - JOYSTICK.x, point.y - JOYSTICK.y);
-      if (joystickDistance <= JOYSTICK.radius * 1.45 && this.selectedId) {
-        this.joystickPointerId = pointerId;
-        this.updateJoystickFromStagePoint(point);
-        return true;
-      }
-
-      const frame = this.session.snapshot();
-      for (const ally of frame.allies) {
-        if (ally.hp <= 0) continue;
-        const actorPoint = arenaToStage(ally);
-        const hitRadius = 42;
-        if (Math.hypot(point.x - actorPoint.x, point.y - actorPoint.y) <= hitRadius) {
-          this.selectAlly(ally.instanceId, frame);
-          return true;
-        }
-      }
-      return false;
-    };
-
-    this.onTouchStart = (event) => {
-      const touches = event.changedTouches;
-      for (let index = 0; index < touches.length; index += 1) {
-        const touch = touches.item ? touches.item(index) : touches[index];
-        if (!touch) continue;
-        const point = this.clientToStage(touch.clientX, touch.clientY);
-        window.__arenaLastInput = { type: 'touchstart', x: point.x, y: point.y };
-        if (handleStageDown(point, touch.identifier)) {
-          event.preventDefault();
-          break;
-        }
-      }
-    };
-
-    this.onTouchMove = (event) => {
-      if (this.joystickPointerId === null) return;
-      const touches = event.changedTouches;
-      for (let index = 0; index < touches.length; index += 1) {
-        const touch = touches.item ? touches.item(index) : touches[index];
-        if (!touch || touch.identifier !== this.joystickPointerId) continue;
-        const point = this.clientToStage(touch.clientX, touch.clientY);
-        window.__arenaLastInput = { type: 'touchmove', x: point.x, y: point.y };
-        this.updateJoystickFromStagePoint(point);
-        event.preventDefault();
-        break;
-      }
-    };
-
-    this.onTouchEnd = (event) => {
-      if (this.joystickPointerId === null) return;
-      const touches = event.changedTouches;
-      for (let index = 0; index < touches.length; index += 1) {
-        const touch = touches.item ? touches.item(index) : touches[index];
-        if (!touch || touch.identifier !== this.joystickPointerId) continue;
-        window.__arenaLastInput = { type: 'touchend' };
-        this.releaseJoystick();
-        event.preventDefault();
-        break;
-      }
-    };
-
-    this.onDocumentPointerDown = (event) => {
-      if (event.pointerType === 'touch') return;
-      const handled = handleStageDown(
-        this.clientToStage(event.clientX, event.clientY),
-        event.pointerId,
-      );
-      if (handled) event.preventDefault();
-    };
-
-    this.onDocumentPointerMove = (event) => {
-      if (event.pointerType === 'touch') return;
-      if (event.pointerId !== this.joystickPointerId) return;
-      this.updateJoystickFromStagePoint(this.clientToStage(event.clientX, event.clientY));
-      event.preventDefault();
-    };
-
-    this.onDocumentPointerUp = (event) => {
-      if (event.pointerType === 'touch') return;
-      if (event.pointerId !== this.joystickPointerId) return;
-      this.releaseJoystick();
-      event.preventDefault();
-    };
-
-    documentTarget.addEventListener('touchstart', this.onTouchStart, { capture: true, passive: false });
-    documentTarget.addEventListener('touchmove', this.onTouchMove, { capture: true, passive: false });
-    documentTarget.addEventListener('touchend', this.onTouchEnd, { capture: true, passive: false });
-    documentTarget.addEventListener('touchcancel', this.onTouchEnd, { capture: true, passive: false });
-    documentTarget.addEventListener('pointerdown', this.onDocumentPointerDown, { capture: true, passive: false });
-    documentTarget.addEventListener('pointermove', this.onDocumentPointerMove, { capture: true, passive: false });
-    documentTarget.addEventListener('pointerup', this.onDocumentPointerUp, { capture: true, passive: false });
-    documentTarget.addEventListener('pointercancel', this.onDocumentPointerUp, { capture: true, passive: false });
+  bindPhaserInput() {
+    this.input.on('pointerdown', this.handlePointerDown, this);
+    this.input.on('pointermove', this.handlePointerMove, this);
+    this.input.on('pointerup', this.handlePointerUp, this);
+    this.input.on('pointerupoutside', this.handlePointerUp, this);
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      documentTarget.removeEventListener('touchstart', this.onTouchStart, true);
-      documentTarget.removeEventListener('touchmove', this.onTouchMove, true);
-      documentTarget.removeEventListener('touchend', this.onTouchEnd, true);
-      documentTarget.removeEventListener('touchcancel', this.onTouchEnd, true);
-      documentTarget.removeEventListener('pointerdown', this.onDocumentPointerDown, true);
-      documentTarget.removeEventListener('pointermove', this.onDocumentPointerMove, true);
-      documentTarget.removeEventListener('pointerup', this.onDocumentPointerUp, true);
-      documentTarget.removeEventListener('pointercancel', this.onDocumentPointerUp, true);
+      this.input.off('pointerdown', this.handlePointerDown, this);
+      this.input.off('pointermove', this.handlePointerMove, this);
+      this.input.off('pointerup', this.handlePointerUp, this);
+      this.input.off('pointerupoutside', this.handlePointerUp, this);
     });
   }
 
-  updateJoystickFromStagePoint(point) {
-    const dx = point.x - JOYSTICK.x;
-    const dy = point.y - JOYSTICK.y;
-    const distance = Math.hypot(dx, dy);
-    const rawMagnitude = Math.min(1, distance / JOYSTICK.inputRadius);
-    const magnitude = rawMagnitude <= JOYSTICK.deadZone
-      ? 0
-      : (rawMagnitude - JOYSTICK.deadZone) / (1 - JOYSTICK.deadZone);
+  handlePointerDown(pointer) {
+    const point = this.pointerPoint(pointer);
+    window.__arenaLastInput = { type: 'pointerdown', x: point.x, y: point.y };
 
-    if (distance <= 0.001 || magnitude <= 0) {
-      this.joystickVector = { x: 0, y: 0 };
+    if (
+      this.selectedId
+      && hitTestCircle(point, JOYSTICK, JOYSTICK.acquireRadius)
+    ) {
+      this.joystickPointerId = pointer.id;
+      this.updateJoystickFromStagePoint(point);
+      return;
+    }
+
+    const frame = this.session.snapshot();
+    for (const ally of frame.allies) {
+      if (ally.hp <= 0) continue;
+      const actorPoint = arenaToStage(ally);
+      if (hitTestCircle(point, actorPoint, 42)) {
+        this.selectAlly(ally.instanceId, frame);
+        return;
+      }
+    }
+  }
+
+  handlePointerMove(pointer) {
+    if (pointer.id !== this.joystickPointerId || !pointer.isDown) return;
+    const point = this.pointerPoint(pointer);
+    window.__arenaLastInput = { type: 'pointermove', x: point.x, y: point.y };
+    this.updateJoystickFromStagePoint(point);
+  }
+
+  handlePointerUp(pointer) {
+    if (pointer.id !== this.joystickPointerId) return;
+    window.__arenaLastInput = { type: 'pointerup', x: pointer.x, y: pointer.y };
+    this.releaseJoystick();
+  }
+
+  updateJoystickFromStagePoint(point) {
+    const vector = joystickVectorFromPoint(point, JOYSTICK);
+    this.joystickVector = { x: vector.x, y: vector.y };
+
+    if (vector.magnitude <= 0) {
       this.joystickKnob.setPosition(JOYSTICK.x, JOYSTICK.y);
       return;
     }
 
-    const nx = dx / distance;
-    const ny = dy / distance;
-    this.joystickVector = { x: nx * magnitude, y: ny * magnitude };
     this.joystickKnob.setPosition(
-      JOYSTICK.x + nx * JOYSTICK.radius * magnitude,
-      JOYSTICK.y + ny * JOYSTICK.radius * magnitude,
+      JOYSTICK.x + vector.x * JOYSTICK.radius,
+      JOYSTICK.y + vector.y * JOYSTICK.radius,
     );
   }
 
