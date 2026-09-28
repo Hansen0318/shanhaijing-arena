@@ -31,9 +31,19 @@ AI should not make the handoff feel abrupt:
 - preserve current facing/position where reasonable;
 - then resume normal decisions.
 
+## Fullscreen arena presentation
+- The landscape viewport is fully occupied by the arena presentation.
+- Do not present the battlefield as a smaller framed rectangle floating inside unused screen space.
+- The arena world is larger than the logical viewport so camera movement reads as movement through the battlefield rather than movement of a map card.
+- Current M0 logical viewport: 960x540.
+- Current M0 arena world: 1280x720.
+- Both use 16:9 to prevent camera motion from revealing outside-world empty bands.
+- Combat/HUD controls are screen-space overlays above the battlefield and must not move with the world camera.
+
 ## Camera
 - Soft-follow selected character with damping/dead zone.
 - Do not hard-lock every frame to exact center.
 - Keep useful forward combat space visible.
-- Clamp camera to arena boundaries.
+- Clamp camera to arena-world boundaries so no outside-world blank area appears.
 - Character switching transitions smoothly rather than snapping.
+- Camera motion must read as moving through one continuous fullscreen arena, not as sliding a bordered battlefield around the screen.
