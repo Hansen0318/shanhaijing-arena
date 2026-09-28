@@ -67,9 +67,10 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
   - selected-KO fallback through existing targeting helper.
 
 ### Pending
-- Browser verification of the latest interaction edit; the latest branch production build passed. A KO-containing replay fixture is needed to exercise selected-KO fallback in the browser.
-- Accessible player preview.
-- Movement joystick and player override input.
+- **ENGINEERING PASS / PLAYER SMOKE PENDING** for first interaction: Pages deployment [run #7, retry 2](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36362372635) PASS; browser default and `?fixture=ko` smoke verified scene, six markers, A1/A2/A3 selection, highlight, camera retarget, enemy click no-op, replay and selected-A2 KO fallback, with no blocking application errors.
+- Player preview: https://hansen0318.github.io/shanhaijing-arena/ (`?fixture=ko` for deterministic selected KO).
+- Player device/feel smoke for the first interaction remains pending.
+- Next exact implementation: movement joystick + shared player override input.
 - Skill controls.
 - Minimum HUD/VFX readability.
 - Runtime/mobile and player smoke.
