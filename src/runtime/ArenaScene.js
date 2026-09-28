@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { arenaToWorld } from './arenaProjection.js';
+import { arenaToWorld, ARENA_WORLD } from './arenaProjection.js';
 import { createDemoBattleFrames } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 
@@ -14,17 +14,32 @@ export class ArenaScene extends Phaser.Scene {
     this.actorViews = new Map();
     this.selectedId = 'a2';
 
-    this.cameras.main.setBackgroundColor('#17212b');
-    this.cameras.main.setBounds(0, 0, 1120, 620);
-    this.add.rectangle(555, 270, 760, 320, 0x253648).setStrokeStyle(2, 0x526579);
+    this.cameras.main.setBackgroundColor('#1a2734');
+    this.cameras.main.setBounds(0, 0, ARENA_WORLD.width, ARENA_WORLD.height);
+
+    // The arena world itself fills the camera. There is no smaller framed battlefield
+    // floating inside the viewport; future HUD/controls remain screen-space overlays.
+    this.add.rectangle(
+      ARENA_WORLD.width / 2,
+      ARENA_WORLD.height / 2,
+      ARENA_WORLD.width,
+      ARENA_WORLD.height,
+      0x253648,
+    );
+
+    // Subtle world-space orientation guides only; they move naturally with the camera.
+    this.add.line(0, 0, 160, ARENA_WORLD.height / 2, ARENA_WORLD.width - 160, ARENA_WORLD.height / 2, 0x344a5f, 0.55)
+      .setOrigin(0, 0);
+    this.add.ellipse(ARENA_WORLD.width / 2, ARENA_WORLD.height / 2, 260, 150)
+      .setStrokeStyle(2, 0x344a5f, 0.55);
 
     const first = this.frames[0];
     for (const actor of [...first.allies, ...first.enemies]) {
       const { x, y } = arenaToWorld(actor);
       const allied = actor.instanceId.startsWith('a');
-      const marker = this.add.circle(x, y, 22, allied ? 0x58c8dc : 0xee9475)
+      const marker = this.add.circle(x, y, 24, allied ? 0x58c8dc : 0xee9475)
         .setStrokeStyle(3, allied ? 0xc6f6ff : 0xffd3bf);
-      const label = this.add.text(x, y - 38, actor.instanceId.toUpperCase(), {
+      const label = this.add.text(x, y - 42, actor.instanceId.toUpperCase(), {
         fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff',
       }).setOrigin(0.5);
 
@@ -44,6 +59,8 @@ export class ArenaScene extends Phaser.Scene {
       actorCount: this.actorViews.size,
       frameCount: this.frames.length,
       fixture: selectedKoFixture ? 'ko' : 'default',
+      worldWidth: ARENA_WORLD.width,
+      worldHeight: ARENA_WORLD.height,
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
     };
   }
@@ -94,7 +111,7 @@ export class ArenaScene extends Phaser.Scene {
       const view = this.actorViews.get(actor.instanceId);
       const position = arenaToWorld(actor);
       view.marker.setPosition(position.x, position.y).setAlpha(actor.hp > 0 ? 1 : 0.35);
-      view.label.setPosition(position.x, position.y - 38).setAlpha(actor.hp > 0 ? 1 : 0.5);
+      view.label.setPosition(position.x, position.y - 42).setAlpha(actor.hp > 0 ? 1 : 0.5);
     }
     this.ensureLivingSelection(frame);
     this.refreshSelectionVisuals();
