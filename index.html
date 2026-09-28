@@ -33,24 +33,10 @@
         display: block;
         touch-action: none;
       }
-
-      #dom-input-debug {
-        position: fixed;
-        left: 8px;
-        bottom: 8px;
-        z-index: 2147483647;
-        pointer-events: none;
-        white-space: pre;
-        font: 12px/1.25 monospace;
-        color: #fff;
-        background: rgba(0, 0, 0, 0.82);
-        padding: 6px 8px;
-      }
     </style>
   </head>
   <body>
     <div id="game"></div>
-    <div id="dom-input-debug">Document: idle</div>
 
     <script>
       (() => {
@@ -88,43 +74,6 @@
         }
 
         resyncAfterBrowserChromeSettles();
-      })();
-
-      (() => {
-        const debug = document.getElementById('dom-input-debug');
-
-        function canvasRectText() {
-          const canvas = document.querySelector('#game canvas');
-          if (!canvas) return 'canvas: missing';
-          const rect = canvas.getBoundingClientRect();
-          return 'canvas: ' +
-            Math.round(rect.left) + ',' + Math.round(rect.top) + ' ' +
-            Math.round(rect.width) + 'x' + Math.round(rect.height);
-        }
-
-        function update(label, event, x, y) {
-          const target = event.target;
-          const targetName = target
-            ? target.tagName + (target.id ? '#' + target.id : '')
-            : 'none';
-
-          debug.textContent = [
-            'Document: ' + label,
-            'target: ' + targetName,
-            'client: ' + Math.round(x) + ',' + Math.round(y),
-            canvasRectText(),
-          ].join('\n');
-        }
-
-        document.addEventListener('touchstart', (event) => {
-          const touch = event.changedTouches && event.changedTouches[0];
-          if (!touch) return;
-          update('touchstart', event, touch.clientX, touch.clientY);
-        }, { capture: true, passive: true });
-
-        document.addEventListener('pointerdown', (event) => {
-          update('pointerdown/' + event.pointerType, event, event.clientX, event.clientY);
-        }, { capture: true, passive: true });
       })();
     </script>
 
