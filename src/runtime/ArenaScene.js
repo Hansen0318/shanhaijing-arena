@@ -64,7 +64,9 @@ export class ArenaScene extends Phaser.Scene {
     }
 
     this.createJoystick();
+    this.createInputDebugOverlay();
     this.bindPhaserInput();
+    this.bindDiagnosticDomInput();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
@@ -81,6 +83,74 @@ export class ArenaScene extends Phaser.Scene {
       get controlSource() { return window.__arenaSceneControlSource ?? 'ai'; },
       get lastInput() { return window.__arenaLastInput ?? null; },
     };
+  }
+
+  createInputDebugOverlay() {
+    this.inputDebugText = this.add.text(12, 12, 'DOM: idle\nPhaser: idle', {
+      fontFamily: 'monospace',
+      fontSize: '16px',
+      color: '#ffffff',
+      backgroundColor: '#000000',
+      padding: { x: 6, y: 4 },
+    }).setDepth(1000).setScrollFactor(0);
+
+    this.debugState = {
+      dom: 'idle',
+      phaser: 'idle',
+      domPoint: null,
+      phaserPoint: null,
+    };
+    this.refreshInputDebugOverlay();
+  }
+
+  refreshInputDebugOverlay() {
+    if (!this.inputDebugText) return;
+    const domPoint = this.debugState.domPoint
+      ? `(${Math.round(this.debugState.domPoint.x)}, ${Math.round(this.debugState.domPoint.y)})`
+      : '-';
+    const phaserPoint = this.debugState.phaserPoint
+      ? `(${Math.round(this.debugState.phaserPoint.x)}, ${Math.round(this.debugState.phaserPoint.y)})`
+      : '-';
+
+    this.inputDebugText.setText([
+      `DOM: ${this.debugState.dom} ${domPoint}`,
+      `Phaser: ${this.debugState.phaser} ${phaserPoint}`,
+      `Selected: ${this.selectedId ?? 'none'}`,
+      `Stick: ${this.joystickPointerId ?? 'none'}`,
+    ]);
+  }
+
+  bindDiagnosticDomInput() {
+    const canvas = this.game.canvas;
+
+    this.onDiagnosticPointerDown = (event) => {
+      this.debugState.dom = 'down';
+      this.debugState.domPoint = { x: event.clientX, y: event.clientY };
+      this.refreshInputDebugOverlay();
+    };
+    this.onDiagnosticPointerMove = (event) => {
+      if (!event.buttons && event.pointerType !== 'touch') return;
+      this.debugState.dom = 'move';
+      this.debugState.domPoint = { x: event.clientX, y: event.clientY };
+      this.refreshInputDebugOverlay();
+    };
+    this.onDiagnosticPointerUp = (event) => {
+      this.debugState.dom = 'up';
+      this.debugState.domPoint = { x: event.clientX, y: event.clientY };
+      this.refreshInputDebugOverlay();
+    };
+
+    canvas.addEventListener('pointerdown', this.onDiagnosticPointerDown);
+    canvas.addEventListener('pointermove', this.onDiagnosticPointerMove);
+    canvas.addEventListener('pointerup', this.onDiagnosticPointerUp);
+    canvas.addEventListener('pointercancel', this.onDiagnosticPointerUp);
+
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      canvas.removeEventListener('pointerdown', this.onDiagnosticPointerDown);
+      canvas.removeEventListener('pointermove', this.onDiagnosticPointerMove);
+      canvas.removeEventListener('pointerup', this.onDiagnosticPointerUp);
+      canvas.removeEventListener('pointercancel', this.onDiagnosticPointerUp);
+    });
   }
 
   createJoystick() {
@@ -121,6 +191,9 @@ export class ArenaScene extends Phaser.Scene {
 
   handlePointerDown(pointer) {
     const point = this.pointerPoint(pointer);
+    this.debugState.phaser = 'down';
+    this.debugState.phaserPoint = point;
+    this.refreshInputDebugOverlay();
     window.__arenaLastInput = { type: 'pointerdown', x: point.x, y: point.y };
 
     if (
@@ -144,13 +217,20 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   handlePointerMove(pointer) {
-    if (pointer.id !== this.joystickPointerId || !pointer.isDown) return;
+    if (!pointer.isDown) return;
     const point = this.pointerPoint(pointer);
+    this.debugState.phaser = 'move';
+    this.debugState.phaserPoint = point;
+    this.refreshInputDebugOverlay();
+    if (pointer.id !== this.joystickPointerId) return;
     window.__arenaLastInput = { type: 'pointermove', x: point.x, y: point.y };
     this.updateJoystickFromStagePoint(point);
   }
 
   handlePointerUp(pointer) {
+    this.debugState.phaser = 'up';
+    this.debugState.phaserPoint = { x: pointer.x, y: pointer.y };
+    this.refreshInputDebugOverlay();
     if (pointer.id !== this.joystickPointerId) return;
     window.__arenaLastInput = { type: 'pointerup', x: pointer.x, y: pointer.y };
     this.releaseJoystick();
@@ -189,6 +269,7 @@ export class ArenaScene extends Phaser.Scene {
     this.selectedId = id;
     window.__arenaSceneSelectedId = id;
     this.refreshSelectionVisuals();
+    this.refreshInputDebugOverlay();
     return true;
   }
 
