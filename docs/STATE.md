@@ -82,9 +82,11 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 
 
 ## 2026-09-28 visual strategy update
-Product Owner replaced selected-character camera follow with a fixed fullscreen Arena view.
-- Landscape fullscreen is canonical.
+Product Owner replaced selected-character camera follow with a fixed contained Arena stage.
+- Landscape fullscreen browser viewport is canonical.
+- Arena design space is fixed at 960x540.
+- Arena stage uses uniform contain scaling and centered offsets.
 - Selection affects highlight/HUD only.
 - Camera never retargets on A1/A2/A3.
-- Viewport-relative projection keeps the whole canonical 3v3 arena visible.
-- Previous soft-follow / larger scrolling-world presentation is retired for M0.
+- No scrolling world is used for M0 presentation.
+- Previous soft-follow / selected-character camera strategy is retired.
