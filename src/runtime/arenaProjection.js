@@ -1,11 +1,11 @@
 export const ARENA_STAGE = Object.freeze({
-  width: 960,
+  width: 1120,
   height: 540,
   xMin: 0,
   xMax: 10,
   yMin: -2,
   yMax: 2,
-  horizontalPadding: 120,
+  horizontalPadding: 200,
   verticalPadding: 86,
 });
 
