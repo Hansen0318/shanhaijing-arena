@@ -60,3 +60,21 @@ KO URL:
 
 ## Gate
 Do not add Heavy / Special / Awakening until this input architecture passes mobile smoke.
+
+
+## Regression bisect after mobile input recovery
+Player confirmed the exact baseline restore is interactive again:
+- ally selection works;
+- joystick works;
+- selected ally moves.
+
+Proceeding one change at a time.
+
+### Step 1
+Only runtime demo pacing is changed:
+- runtime ally move speed 1.4;
+- runtime enemy move speed 1.2;
+- runtime HP increased;
+- runtime attack pacing reduced.
+
+No input, joystick geometry, camera, scale, viewport, or ArenaScene changes in this step.
