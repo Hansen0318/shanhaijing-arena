@@ -7,9 +7,8 @@ new Phaser.Game({
   width: 960,
   height: 540,
   backgroundColor: '#253648',
-  scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
-  },
+  // Keep one immutable 960x540 game surface.
+  // Browser CSS alone scales this canvas proportionally to fit the screen.
+  scale: { mode: Phaser.Scale.NONE },
   scene: [ArenaScene],
 });
