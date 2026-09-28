@@ -72,7 +72,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Fullscreen Arena interactive browser smoke on the deployed default and `?fixture=ko` URLs: PASS. Landscape canvas has a continuous world background without the former bordered card; six actors render as replay advances, A1/A2/A3 highlight and camera retarget work, top/bottom and observed left-to-right camera positions do not reveal outside-world blank space, enemy click is no-op, and A2 KO falls back to A1. No blocking page-origin runtime/console error. **Fullscreen arena/camera defect resolved; ENGINEERING PASS / PLAYER SMOKE PASS for this slice.**
 
 ### Pending
-- **ENGINEERING PASS / PLAYER SMOKE PENDING** for first interaction: Pages deployment [run #7, retry 2](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36362372635) PASS; browser default and `?fixture=ko` smoke verified scene, six markers, A1/A2/A3 selection, highlight, camera retarget, enemy click no-op, replay and selected-A2 KO fallback, with no blocking application errors.
+- First interaction and fullscreen arena/camera presentation: **ENGINEERING PASS / PLAYER SMOKE PASS**. Current fullscreen deployment and browser evidence are recorded in `WORK_PROGRESS.md`.
 - Player preview: https://hansen0318.github.io/shanhaijing-arena/ (`?fixture=ko` for deterministic selected KO).
 - Fullscreen arena interactive player/browser smoke has passed; later joystick and skill-control device feel remain pending.
 - Next exact implementation: movement joystick + shared player override input.
