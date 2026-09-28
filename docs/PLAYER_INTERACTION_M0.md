@@ -1,52 +1,23 @@
 # M0 First Player-Testable Interaction Slice
 
-## Goal
-Create the smallest meaningful player-visible interaction before joystick/skills/final art.
-
-## Scope
-This slice includes:
-- three allied selection controls;
-- selected-character visual state;
-- fixed fullscreen Arena presentation;
-- selected identity remains stable while replay frames advance.
-
-No gameplay mutation is introduced. The combat snapshot replay remains read-only.
-
-## Interaction
-- The three allied placeholders are directly tappable/clickable.
-- Tapping an allied placeholder selects it.
-- Tapping an enemy does nothing.
-- The selected allied marker has an obvious ring/outline state.
-- Selecting A1/A2/A3 must not move, pan, zoom, or retarget the camera.
-- Selection does not reset merely because AI continues or the replay advances.
-- No AUTO/MANUAL indicator is shown.
-
-## Fullscreen fixed-arena requirement
-- The entire landscape game viewport reads as battlefield.
-- No small bordered arena rectangle.
-- Camera is fixed.
-- Actor simulation coordinates are projected into the visible viewport with proportional margins.
-- The complete 3v3 formation should be visible whenever actors remain inside canonical arena bounds.
-- Future portraits, joystick, skill buttons, timer, HP, and other HUD elements are screen-space overlays.
-
-## Initial selection
-Default selected ally: `a2`.
-
-## KO behavior
-- if the selected ally becomes KO in a replay frame, automatically select the nearest living ally using the existing Arena targeting helper;
-- camera remains fixed;
-- if no allied survivor exists, retain no selected actor.
+## Fixed-stage interaction contract
+- Arena is a fixed 960x540 logical stage.
+- It is uniformly contained and centered inside the real viewport.
+- All six actors should fit in the same battle view when inside canonical bounds.
+- A1/A2/A3 selection only changes the white selection outline.
+- Selection does not move, pan, zoom, or resize the Arena.
+- Enemy tap is no-op.
+- KO fallback changes selected ally only.
+- Replay continues on the same fixed stage.
 
 ## Player smoke
-Check:
-1. landscape battlefield fills viewport;
-2. no floating battlefield frame;
-3. all six placeholders are visible when expected;
-4. tapping A1/A2/A3 changes selected highlight;
-5. camera/view does not move when selection changes;
-6. actor scale remains stable and reasonable;
-7. enemy tapping does not change selection;
-8. replay keeps running;
-9. KO fallback changes selection without moving the view.
+Landscape:
+1. entire Arena stage visible at once;
+2. Arena proportions look stable;
+3. no cropping or excessive zoom;
+4. no camera movement when selecting A1/A2/A3;
+5. six actors stay visible when expected;
+6. replay movement stays inside same fixed stage;
+7. KO fallback does not move view.
 
-No final-art, joystick, skill-button, HUD, VFX, or balance judgment belongs to this smoke.
+Portrait is only a containment sanity check and is not the target play orientation.
