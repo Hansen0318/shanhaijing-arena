@@ -66,6 +66,11 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
   - camera soft-retarget;
   - selected-KO fallback through existing targeting helper.
 
+### Latest fullscreen arena verification
+- Fullscreen Arena world/presentation code complete: viewport 960x540, world 1280x720, 16:9, camera clamped to world bounds.
+- GitHub Actions on latest branch: **49 / 49 tests PASS**, production build PASS, Pages deploy PASS.
+- Remaining verification for this slice is interactive browser/player smoke only; automated build/deploy work is complete.
+
 ### Pending
 - **ENGINEERING PASS / PLAYER SMOKE PENDING** for first interaction: Pages deployment [run #7, retry 2](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36362372635) PASS; browser default and `?fixture=ko` smoke verified scene, six markers, A1/A2/A3 selection, highlight, camera retarget, enemy click no-op, replay and selected-A2 KO fallback, with no blocking application errors.
 - Player preview: https://hansen0318.github.io/shanhaijing-arena/ (`?fixture=ko` for deterministic selected KO).
