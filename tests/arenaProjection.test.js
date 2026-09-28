@@ -1,17 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { arenaToWorld, ARENA_WORLD } from '../src/runtime/arenaProjection.js';
+import { arenaToViewport, ARENA_LAYOUT } from '../src/runtime/arenaProjection.js';
 
-test('arena world is larger than the 960x540 viewport and keeps 16:9 aspect ratio', () => {
-  assert.equal(ARENA_WORLD.width, 1280);
-  assert.equal(ARENA_WORLD.height, 720);
-  assert.equal(ARENA_WORLD.width / ARENA_WORLD.height, 16 / 9);
-  assert.ok(ARENA_WORLD.width > 960);
-  assert.ok(ARENA_WORLD.height > 540);
+test('fixed-view arena layout keeps symmetric viewport padding', () => {
+  assert.equal(ARENA_LAYOUT.horizontalPaddingRatio, 0.12);
+  assert.equal(ARENA_LAYOUT.verticalPaddingRatio, 0.16);
 });
 
-test('one stable projection maps Arena coordinates into the fullscreen world', () => {
-  assert.deepEqual(arenaToWorld({ x: 0, y: -2 }), { x: 160, y: 120 });
-  assert.deepEqual(arenaToWorld({ x: 10, y: 2 }), { x: 1120, y: 600 });
-  assert.deepEqual(arenaToWorld({ x: 5, y: 0 }), { x: 640, y: 360 });
+test('960x540 viewport maps the whole 0..10, -2..2 arena inside the screen', () => {
+  assert.deepEqual(arenaToViewport({ x: 0, y: -2 }), { x: 115.19999999999999, y: 86.4 });
+  assert.deepEqual(arenaToViewport({ x: 10, y: 2 }), { x: 844.8, y: 453.59999999999997 });
+  assert.deepEqual(arenaToViewport({ x: 5, y: 0 }), { x: 480, y: 270 });
+});
+
+test('projection adapts to viewport size without changing camera', () => {
+  assert.deepEqual(arenaToViewport({ x: 5, y: 0 }, { width: 1170, height: 532 }), { x: 585, y: 266 });
+  assert.deepEqual(arenaToViewport({ x: 5, y: 0 }, { width: 390, height: 844 }), { x: 195, y: 422 });
 });
