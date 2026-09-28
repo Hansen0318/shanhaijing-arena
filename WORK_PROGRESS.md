@@ -52,8 +52,23 @@ A completed Actions run after BattleSession + tests + demo-session integration r
 - keeps the accepted fixed camera and viewport architecture untouched;
 - keeps KO fixture via deterministic forced A2 KO in runtime.
 
+## Latest player-smoke feedback
+Player confirmed the joystick renders but reported:
+- stick response too insensitive;
+- stick should sit closer to the lower-left edge;
+- runtime characters move too fast and the battle is too short to test character switching, release-stop behavior, and 2-second AI resume.
+
+Chat tuning applied:
+- joystick center moved from 105,435 -> 74,466 on the 960x540 stage;
+- visual radius 50, but full control magnitude now reached at input radius 30;
+- dead zone reduced to 0.03;
+- runtime player-smoke fixture separated from canonical headless fixture;
+- runtime move speed slowed (ally 1.4 / enemy 1.2);
+- runtime HP increased and attack pacing reduced to keep the test battle alive longer;
+- canonical deterministic headless stats remain unchanged.
+
 ## Current gate
-The latest ArenaScene joystick commit still requires its final automated build/deploy result plus real browser/mobile interaction smoke.
+Run targeted automated regression/build/deploy for this tuning, then real browser/mobile interaction smoke.
 
 Do not broaden into skill buttons yet.
 
