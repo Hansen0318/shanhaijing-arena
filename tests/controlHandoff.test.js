@@ -7,18 +7,20 @@ test('AI controls before any player input', () => {
   assert.equal(handoff.controlSource(1000), 'ai');
 });
 
-test('player input overrides immediately and full AI resumes at 1 second', () => {
+test('player owns the exact active-input instant and AI resumes immediately after', () => {
   const handoff = new ControlHandoff();
   handoff.registerPlayerInput(1000);
   assert.equal(handoff.controlSource(1000), 'player');
-  assert.equal(handoff.controlSource(1999), 'player');
-  assert.equal(handoff.controlSource(2000), 'ai');
+  assert.equal(handoff.controlSource(1001), 'ai');
 });
 
-test('new input resets the handoff timer', () => {
+test('each new valid input refreshes ownership only for that input instant', () => {
   const handoff = new ControlHandoff();
   handoff.registerPlayerInput(1000);
+  assert.equal(handoff.controlSource(1000), 'player');
+  assert.equal(handoff.controlSource(1001), 'ai');
+
   handoff.registerPlayerInput(2500);
-  assert.equal(handoff.controlSource(3499), 'player');
-  assert.equal(handoff.controlSource(3500), 'ai');
+  assert.equal(handoff.controlSource(2500), 'player');
+  assert.equal(handoff.controlSource(2501), 'ai');
 });
