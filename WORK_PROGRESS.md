@@ -5,93 +5,58 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Fixed Arena / iPhone Safari viewport: **ENGINEERING PASS / PLAYER SMOKE PASS**
+- Fixed Arena / iPhone viewport strategy retained.
 - Current slice: **movement joystick + shared player override input**
-- Current status: **CODE + CORE TESTS COMPLETE; LATEST RUNTIME BUILD/DEPLOY + INTERACTIVE MOBILE SMOKE PENDING**
+- Current status: **INPUT ARCHITECTURE REWORK COMPLETE IN CODE — AUTO VERIFY / MOBILE SMOKE PENDING**
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
-- Recovery rule: do not restore camera follow, dynamic Arena projection, snapshot-only runtime movement, or duplicate player/AI ownership state
 
-## Chat-completed joystick implementation
+## Why input architecture was reworked
+Player repeatedly confirmed that ally selection and joystick were non-responsive on iPhone Chrome/Safari despite successful deploys.
+The root architectural issue was that the game canvas had been visually scaled/positioned outside Phaser while input hit testing was handled through a separate manual DOM/touch path.
 
-### Shared live combat session
-Added `src/combat/battleSession.js`:
-- same AI, Ability, damage, targeting, cooldown, Character, and ControlHandoff modules as headless combat;
-- step-based live battle;
-- actual player movement changes CharacterState x/y;
-- player vector clamped to magnitude 1;
-- movement clamped to Arena x 0..10 / y -2..2;
-- selected actor AI suppressed while shared ControlHandoff reports player ownership;
-- 2.0s AI resume remains the existing ControlHandoff rule.
+That split ownership is retired.
 
-### Headless unification
-`simulateHeadless3v3` now wraps the same BattleSession.
-This prevents the browser runtime and deterministic tests from drifting into separate combat engines.
+## Canonical display/input architecture
+- logical game remains 960x540;
+- outer `#game` host follows `visualViewport` bounds only;
+- Phaser Scale Manager owns canvas display scaling with `FIT + CENTER_BOTH`;
+- Phaser Input Manager owns pointer/touch transforms;
+- ArenaScene consumes Phaser `pointer.x / pointer.y` in logical stage coordinates;
+- no document touch capture;
+- no manual client->stage mapping;
+- no CSS width/height override on canvas;
+- fixed camera remains unchanged.
 
-### Automated tests
-Added `tests/battleSession.test.js`:
-- immediate player ownership;
-- real player movement;
-- Arena bounds clamp;
-- dead-zone input does not refresh ownership;
-- full AI resumes after 2.0 seconds.
+## Chat-completed implementation
+- `src/main.js`: restored Phaser Scale Manager ownership and enabled 3 active pointers;
+- `index.html`: host follows visual viewport but canvas dimensions are Phaser-owned;
+- `src/runtime/arenaInput.js`: pure circle hit-test and joystick-vector helpers;
+- `tests/arenaInput.test.js`: helper tests;
+- `ArenaScene`: Phaser Input Manager handles pointerdown/move/up for ally selection and joystick;
+- existing live BattleSession / ControlHandoff remain unchanged;
+- joystick remains at the lower-left tuned position;
+- no skill buttons yet.
 
-A completed Actions run after BattleSession + tests + demo-session integration reported:
-- **53 / 53 tests PASS**
-- **0 fail**
-- Vite build PASS
-- Pages deploy PASS
+## Required automated verification
+- all tests PASS;
+- Vite build PASS;
+- Pages deploy PASS.
 
-### Runtime joystick
-`ArenaScene` now:
-- creates a live Demo BattleSession instead of playing precomputed snapshots;
-- renders lower-left base + knob;
-- maps native client pointer coordinates back to the fixed 960x540 logical stage;
-- moves whichever living ally is selected;
-- clears previous selected actor movement when switching;
-- keeps the accepted fixed camera and viewport architecture untouched;
-- keeps KO fixture via deterministic forced A2 KO in runtime.
+## Required mobile smoke
+Default URL:
+1. A2 starts selected.
+2. Tap A1/A2/A3: white selection ring changes.
+3. Drag joystick: knob follows finger.
+4. Selected ally moves.
+5. Release: manual movement stops.
+6. After ~2s AI resumes.
+7. Camera remains fixed.
+8. No viewport regression.
 
-## Latest player-smoke feedback
-Player confirmed the joystick renders but reported:
-- stick response too insensitive;
-- stick should sit closer to the lower-left edge;
-- runtime characters move too fast and the battle is too short to test character switching, release-stop behavior, and 2-second AI resume.
-
-Chat tuning applied:
-- joystick center moved from 105,435 -> 74,466 on the 960x540 stage;
-- visual radius 50, but full control magnitude now reached at input radius 30;
-- dead zone reduced to 0.03;
-- runtime player-smoke fixture separated from canonical headless fixture;
-- runtime move speed slowed (ally 1.4 / enemy 1.2);
-- runtime HP increased and attack pacing reduced to keep the test battle alive longer;
-- canonical deterministic headless stats remain unchanged.
-
-## Current gate
-Run targeted automated regression/build/deploy for this tuning, then real browser/mobile interaction smoke.
-
-Do not broaden into skill buttons yet.
-
-## Required interactive smoke
-Default:
-- fixed Arena/viewport remains stable;
-- lower-left joystick visible;
-- A2 starts selected;
-- joystick moves A2 in actual Arena position;
-- direction follows finger;
-- switching A1/A3 changes joystick-controlled actor;
-- camera never moves;
-- release stops manual movement;
-- after ~2.0s AI visibly resumes;
-- other actors continue AI;
-- no blocking page-origin error.
-
-KO:
-- A2 forced KO;
-- selection falls back to living ally;
-- camera remains fixed;
+KO URL:
+- fallback selection works;
 - joystick controls fallback ally.
 
-## If PASS
-Mark joystick slice **ENGINEERING PASS / PLAYER SMOKE PASS**.
-Next exact implementation: **skill controls (Heavy + Special + Awakening) using the same shared player override path**.
+## Gate
+Do not add Heavy / Special / Awakening until this input architecture passes mobile smoke.
