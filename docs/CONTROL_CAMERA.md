@@ -31,3 +31,11 @@ Selecting an ally:
 - no `startFollow`.
 - no runtime camera retarget.
 - no resize-driven Arena transform.
+
+
+## iPhone Safari viewport anchoring
+- The internal game surface remains immutable at 960x540.
+- Only the outer DOM host is positioned/scaled.
+- The host is centered against `window.visualViewport` (width, height, offsetLeft, offsetTop), not CSS layout viewport assumptions.
+- On direct load, pageshow, resize, and orientation change, the host may resync its outer box after Safari chrome settles.
+- This resync must never change Arena coordinates, actor layout, selection, or camera.
