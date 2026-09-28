@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { arenaToViewport } from './arenaProjection.js';
+import { arenaToStage, ARENA_STAGE, fitStageToViewport } from './arenaProjection.js';
 import { createDemoBattleFrames } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 
@@ -18,9 +18,29 @@ export class ArenaScene extends Phaser.Scene {
     this.cameras.main.stopFollow();
     this.cameras.main.setScroll(0, 0);
 
-    this.arenaBackground = this.add.rectangle(0, 0, 1, 1, 0x253648).setOrigin(0, 0);
-    this.centerLine = this.add.line(0, 0, 0, 0, 1, 0, 0x344a5f, 0.55).setOrigin(0, 0);
-    this.centerEllipse = this.add.ellipse(0, 0, 1, 1).setStrokeStyle(2, 0x344a5f, 0.55);
+    // All Arena-world presentation lives on one fixed logical 960x540 layer.
+    // Only this layer is uniformly scaled/centered to fit the real viewport.
+    this.arenaLayer = this.add.container(0, 0);
+
+    const arenaBackground = this.add.rectangle(
+      0, 0, ARENA_STAGE.width, ARENA_STAGE.height, 0x253648,
+    ).setOrigin(0, 0);
+
+    const centerLine = this.add.line(
+      0, 0,
+      ARENA_STAGE.width * 0.08, ARENA_STAGE.height / 2,
+      ARENA_STAGE.width * 0.92, ARENA_STAGE.height / 2,
+      0x344a5f, 0.55,
+    ).setOrigin(0, 0);
+
+    const centerEllipse = this.add.ellipse(
+      ARENA_STAGE.width / 2,
+      ARENA_STAGE.height / 2,
+      280,
+      170,
+    ).setStrokeStyle(2, 0x344a5f, 0.55);
+
+    this.arenaLayer.add([arenaBackground, centerLine, centerEllipse]);
 
     const first = this.frames[0];
     for (const actor of [...first.allies, ...first.enemies]) {
@@ -36,6 +56,7 @@ export class ArenaScene extends Phaser.Scene {
         marker.on('pointerdown', () => this.selectAlly(actor.instanceId, this.frames[this.frameIndex]));
       }
 
+      this.arenaLayer.add([marker, label]);
       this.actorViews.set(actor.instanceId, { marker, label, allied });
     }
 
@@ -54,6 +75,8 @@ export class ArenaScene extends Phaser.Scene {
       frameCount: this.frames.length,
       fixture: selectedKoFixture ? 'ko' : 'default',
       cameraMode: 'fixed',
+      stageWidth: ARENA_STAGE.width,
+      stageHeight: ARENA_STAGE.height,
       get viewportWidth() { return window.innerWidth; },
       get viewportHeight() { return window.innerHeight; },
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
@@ -63,31 +86,15 @@ export class ArenaScene extends Phaser.Scene {
   handleViewportResize(gameSize) {
     const width = Math.max(1, Math.round(gameSize.width));
     const height = Math.max(1, Math.round(gameSize.height));
+    const fit = fitStageToViewport({ width, height });
 
     this.cameras.main.setSize(width, height);
+    this.cameras.main.stopFollow();
     this.cameras.main.setScroll(0, 0);
-    this.arenaBackground.setSize(width, height);
 
-    this.centerLine.setTo(
-      width * 0.08,
-      height / 2,
-      width * 0.92,
-      height / 2,
-    );
-    this.centerEllipse
-      .setPosition(width / 2, height / 2)
-      .setSize(Math.min(width * 0.28, 280), Math.min(height * 0.34, 170));
-
-    if (this.frames?.[this.frameIndex]) {
-      this.applyFrame(this.frames[this.frameIndex]);
-    }
-  }
-
-  project(actor) {
-    return arenaToViewport(actor, {
-      width: this.scale.gameSize.width,
-      height: this.scale.gameSize.height,
-    });
+    this.arenaLayer
+      .setPosition(fit.offsetX, fit.offsetY)
+      .setScale(fit.scale);
   }
 
   selectAlly(id, frame) {
@@ -131,7 +138,7 @@ export class ArenaScene extends Phaser.Scene {
   applyFrame(frame) {
     for (const actor of [...frame.allies, ...frame.enemies]) {
       const view = this.actorViews.get(actor.instanceId);
-      const position = this.project(actor);
+      const position = arenaToStage(actor);
       view.marker.setPosition(position.x, position.y).setAlpha(actor.hp > 0 ? 1 : 0.35);
       view.label.setPosition(position.x, position.y - 42).setAlpha(actor.hp > 0 ? 1 : 0.5);
     }
