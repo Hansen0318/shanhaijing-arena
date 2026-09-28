@@ -61,3 +61,16 @@ On mobile landscape:
 8. Other actors continue AI while selected actor is manually controlled.
 9. No viewport/camera regression.
 10. KO fixture still falls back selection without moving camera.
+
+
+## Mobile feel tuning
+Player smoke tuning is allowed to change the runtime fixture without changing canonical combat balance.
+
+Current runtime smoke tuning:
+- joystick center moved closer to bottom-left;
+- visual base radius remains generous for touch acquisition;
+- full input magnitude is reached at a smaller input radius for faster response;
+- dead zone is small;
+- runtime fixture uses lower move speed and higher HP than the canonical deterministic headless fixture so manual switching and the 2-second AI resume can actually be observed.
+
+Do not copy these temporary smoke stats into production balance without a separate balance decision.
