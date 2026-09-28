@@ -60,3 +60,12 @@ After automated tests/build/deploy PASS, player smoke:
 5. confirm camera/viewport remain unchanged.
 
 After PASS, next isolated feel change can be joystick position only.
+
+
+## Zero-delay deployment correction
+The first zero-delay attempts did not reach Pages because an older AI unit test still asserted the retired 2-second boundary.
+Therefore player smoke performed during those failed runs was still exercising the previous successful deployment, not the intended immediate-handoff build.
+
+The stale AI test is now updated to the canonical behavior:
+- valid input instant => player override;
+- immediately after input stops => AI.
