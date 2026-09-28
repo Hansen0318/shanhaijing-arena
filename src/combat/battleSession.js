@@ -121,6 +121,10 @@ export class BattleSession {
   clearPlayerMovement(instanceId) {
     if (!this.playerMovement.has(instanceId)) return false;
     this.playerMovement.set(instanceId, { x: 0, y: 0 });
+
+    const actor = this.actorById(instanceId);
+    if (actor) actor.controlHandoff.releasePlayerControl();
+
     return true;
   }
 
