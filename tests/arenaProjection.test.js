@@ -1,19 +1,28 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { arenaToViewport, ARENA_LAYOUT } from '../src/runtime/arenaProjection.js';
+import { arenaToStage, ARENA_STAGE, fitStageToViewport } from '../src/runtime/arenaProjection.js';
 
-test('fixed-view arena layout keeps symmetric viewport padding', () => {
-  assert.equal(ARENA_LAYOUT.horizontalPaddingRatio, 0.12);
-  assert.equal(ARENA_LAYOUT.verticalPaddingRatio, 0.16);
+test('fixed Arena stage is 960x540', () => {
+  assert.equal(ARENA_STAGE.width, 960);
+  assert.equal(ARENA_STAGE.height, 540);
 });
 
-test('960x540 viewport maps the whole 0..10, -2..2 arena inside the screen', () => {
-  assert.deepEqual(arenaToViewport({ x: 0, y: -2 }), { x: 115.19999999999999, y: 86.4 });
-  assert.deepEqual(arenaToViewport({ x: 10, y: 2 }), { x: 844.8, y: 453.59999999999997 });
-  assert.deepEqual(arenaToViewport({ x: 5, y: 0 }), { x: 480, y: 270 });
+test('Arena coordinates map into stable logical stage positions', () => {
+  assert.deepEqual(arenaToStage({ x: 0, y: -2 }), { x: 120, y: 86 });
+  assert.deepEqual(arenaToStage({ x: 10, y: 2 }), { x: 840, y: 454 });
+  assert.deepEqual(arenaToStage({ x: 5, y: 0 }), { x: 480, y: 270 });
 });
 
-test('projection adapts to viewport size without changing camera', () => {
-  assert.deepEqual(arenaToViewport({ x: 5, y: 0 }, { width: 1170, height: 532 }), { x: 585, y: 266 });
-  assert.deepEqual(arenaToViewport({ x: 5, y: 0 }, { width: 390, height: 844 }), { x: 195, y: 422 });
+test('stage contain-fit preserves aspect and centers in wide landscape viewport', () => {
+  const fit = fitStageToViewport({ width: 1170, height: 532 });
+  assert.ok(Math.abs(fit.scale - (532 / 540)) < 1e-12);
+  assert.ok(Math.abs(fit.offsetX - ((1170 - 960 * fit.scale) / 2)) < 1e-12);
+  assert.ok(Math.abs(fit.offsetY) < 1e-12);
+});
+
+test('stage contain-fit also works in portrait without cropping', () => {
+  const fit = fitStageToViewport({ width: 390, height: 844 });
+  assert.ok(Math.abs(fit.scale - (390 / 960)) < 1e-12);
+  assert.ok(Math.abs(fit.offsetX) < 1e-12);
+  assert.ok(fit.offsetY > 0);
 });
