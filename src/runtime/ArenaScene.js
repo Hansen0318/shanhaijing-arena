@@ -60,6 +60,17 @@ export class ArenaScene extends Phaser.Scene {
         fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff',
       }).setOrigin(0.5);
 
+      if (allied) {
+        marker.setInteractive({ useHandCursor: true });
+        marker.on('pointerdown', () => {
+          const point = { x: marker.x, y: marker.y };
+          this.debugState.phaser = 'actor-down';
+          this.debugState.phaserPoint = point;
+          this.selectAlly(actor.instanceId, this.session.snapshot());
+          this.refreshInputDebugOverlay();
+        });
+      }
+
       this.actorViews.set(actor.instanceId, { marker, label, allied });
     }
 
@@ -123,8 +134,16 @@ export class ArenaScene extends Phaser.Scene {
   bindDiagnosticDomInput() {
     const canvas = this.game.canvas;
 
+    this.onDiagnosticTouchStart = (event) => {
+      const touch = event.changedTouches?.[0];
+      if (!touch) return;
+      this.debugState.dom = 'touchstart';
+      this.debugState.domPoint = { x: touch.clientX, y: touch.clientY };
+      this.refreshInputDebugOverlay();
+    };
+
     this.onDiagnosticPointerDown = (event) => {
-      this.debugState.dom = 'down';
+      this.debugState.dom = 'pointerdown';
       this.debugState.domPoint = { x: event.clientX, y: event.clientY };
       this.refreshInputDebugOverlay();
     };
@@ -140,12 +159,14 @@ export class ArenaScene extends Phaser.Scene {
       this.refreshInputDebugOverlay();
     };
 
+    canvas.addEventListener('touchstart', this.onDiagnosticTouchStart, { passive: true });
     canvas.addEventListener('pointerdown', this.onDiagnosticPointerDown);
     canvas.addEventListener('pointermove', this.onDiagnosticPointerMove);
     canvas.addEventListener('pointerup', this.onDiagnosticPointerUp);
     canvas.addEventListener('pointercancel', this.onDiagnosticPointerUp);
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      canvas.removeEventListener('touchstart', this.onDiagnosticTouchStart);
       canvas.removeEventListener('pointerdown', this.onDiagnosticPointerDown);
       canvas.removeEventListener('pointermove', this.onDiagnosticPointerMove);
       canvas.removeEventListener('pointerup', this.onDiagnosticPointerUp);
@@ -169,6 +190,21 @@ export class ArenaScene extends Phaser.Scene {
       0xc6f6ff,
       0.72,
     ).setDepth(21);
+
+    this.joystickBase.setInteractive(
+      new Phaser.Geom.Circle(JOYSTICK.radius, JOYSTICK.radius, JOYSTICK.acquireRadius),
+      Phaser.Geom.Circle.Contains,
+    );
+
+    this.joystickBase.on('pointerdown', (pointer) => {
+      if (!this.selectedId) return;
+      this.joystickPointerId = pointer.id;
+      const point = { x: pointer.x, y: pointer.y };
+      this.debugState.phaser = 'stick-down';
+      this.debugState.phaserPoint = point;
+      this.updateJoystickFromStagePoint(point);
+      this.refreshInputDebugOverlay();
+    });
   }
 
   pointerPoint(pointer) {
@@ -176,44 +212,30 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   bindPhaserInput() {
-    this.input.on('pointerdown', this.handlePointerDown, this);
+    this.input.setTopOnly(true);
+
+    this.inputDebugZone = this.add.zone(
+      ARENA_STAGE.width / 2,
+      ARENA_STAGE.height / 2,
+      ARENA_STAGE.width,
+      ARENA_STAGE.height,
+    ).setInteractive().setDepth(-1000);
+
+    this.inputDebugZone.on('pointerdown', (pointer) => {
+      this.debugState.phaser = 'zone-down';
+      this.debugState.phaserPoint = { x: pointer.x, y: pointer.y };
+      this.refreshInputDebugOverlay();
+    });
+
     this.input.on('pointermove', this.handlePointerMove, this);
     this.input.on('pointerup', this.handlePointerUp, this);
     this.input.on('pointerupoutside', this.handlePointerUp, this);
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.input.off('pointerdown', this.handlePointerDown, this);
       this.input.off('pointermove', this.handlePointerMove, this);
       this.input.off('pointerup', this.handlePointerUp, this);
       this.input.off('pointerupoutside', this.handlePointerUp, this);
     });
-  }
-
-  handlePointerDown(pointer) {
-    const point = this.pointerPoint(pointer);
-    this.debugState.phaser = 'down';
-    this.debugState.phaserPoint = point;
-    this.refreshInputDebugOverlay();
-    window.__arenaLastInput = { type: 'pointerdown', x: point.x, y: point.y };
-
-    if (
-      this.selectedId
-      && hitTestCircle(point, JOYSTICK, JOYSTICK.acquireRadius)
-    ) {
-      this.joystickPointerId = pointer.id;
-      this.updateJoystickFromStagePoint(point);
-      return;
-    }
-
-    const frame = this.session.snapshot();
-    for (const ally of frame.allies) {
-      if (ally.hp <= 0) continue;
-      const actorPoint = arenaToStage(ally);
-      if (hitTestCircle(point, actorPoint, 42)) {
-        this.selectAlly(ally.instanceId, frame);
-        return;
-      }
-    }
   }
 
   handlePointerMove(pointer) {
