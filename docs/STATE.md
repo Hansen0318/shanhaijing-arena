@@ -76,6 +76,11 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Color-only source commit `9b9fe641848a412e2b10e26493a73532ba4551bc`; Actions run `36436079695`: Test / Build / Pages Deploy success. Public Pages appearance observed in browser. **ENGINEERING PASS / PLAYER SMOKE PENDING** for player device proportion assessment.
 - No arena/actor/control/camera geometry or battle behavior changed in this slice.
 
+### Arena horizontal widening (2026-09-29)
+- Logical stage/canvas/DOM host changed from 960x540 to 1120x540; actor projection padding increased from 120 to 200 on both sides, preserving its 720px horizontal span. Ground/line track stage width; center ellipse stays 280x170 and sand colors remain.
+- Chat implementation checkpoint `4d13321a660ea25a4cedddb96eb7a7857b4827fa`; stale projection test expectations corrected only in `23c4e759551c24d149203c2574ee0109e5921046`. Actions `36500167030`: 61/61 tests, build, Pages deploy PASS.
+- Public browser smoke: wider centered field, unchanged height, complete ground and line, stable circle/actor logical sizes and fixed camera. A1/A2/A3 selection and pointer joystick drag/release movement observed without regression. **Engineering CI/browser pointer checks PASS; player visual proportion and real iPhone touch smoke PENDING.**
+
 ### Pending
 - Fixed fullscreen Arena / iPhone Safari viewport presentation: **ENGINEERING PASS / PLAYER SMOKE PASS**.
 - Movement joystick + shared player override: **known-working mobile baseline restored; player-confirmed movement works; AI resume delay now 0s / immediate**.
