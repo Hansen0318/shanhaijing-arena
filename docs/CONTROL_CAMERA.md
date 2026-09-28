@@ -3,15 +3,18 @@
 ## Canonical presentation
 - Mobile landscape is the canonical play orientation.
 - Arena logical stage is fixed at 960x540.
-- Phaser uses an immutable 960x540 game surface with no runtime Scale Manager resizing.
-- Browser CSS alone uniformly contains the 16:9 canvas in the visible screen.
-- The full 960x540 Arena must always remain visible.
-- The display may uniformly scale down to fit the browser viewport.
-- Do not crop, stretch, dynamically re-project, or resize Arena geometry based on transient mobile browser viewport measurements.
-- Portrait simply shows the same 16:9 stage scaled down to fit width; no layout reflow is allowed.
-- Extra screen area uses the same Arena background color.
-- Camera is fixed for the entire battle.
-- Selection never changes camera.
+- Phaser Scale Manager owns canvas scaling with `FIT + CENTER_BOTH`.
+- The outer DOM host may follow `visualViewport` so iOS browser chrome does not offset the visible game region.
+- The host never scales the canvas directly; Phaser owns the canvas display transform.
+- The full 960x540 Arena remains visible.
+- Do not crop, stretch, dynamically re-project, or move the camera because of selection.
+- Portrait shows the same 16:9 stage uniformly scaled down.
+
+## Input ownership
+- Phaser Input Manager owns pointer/touch coordinate transforms.
+- Do not attach document-level touch/pointer workarounds for normal combat controls.
+- Do not manually map CSS client coordinates back into Arena coordinates while Scale Manager is active.
+- Runtime controls use Phaser pointer coordinates in the same 960x540 logical space as Arena objects.
 
 ## Character selection
 Selecting an ally:
@@ -30,12 +33,4 @@ Selecting an ally:
 - camera scroll is 0,0.
 - no `startFollow`.
 - no runtime camera retarget.
-- no resize-driven Arena transform.
-
-
-## iPhone Safari viewport anchoring
-- The internal game surface remains immutable at 960x540.
-- Only the outer DOM host is positioned/scaled.
-- The host is centered against `window.visualViewport` (width, height, offsetLeft, offsetTop), not CSS layout viewport assumptions.
-- On direct load, pageshow, resize, and orientation change, the host may resync its outer box after Safari chrome settles.
-- This resync must never change Arena coordinates, actor layout, selection, or camera.
+- no resize-driven Arena geometry transform.
