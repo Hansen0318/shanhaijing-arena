@@ -16,6 +16,11 @@ export class ArenaScene extends Phaser.Scene {
 
     this.cameras.main.setBackgroundColor('#1a2734');
     this.cameras.main.setBounds(0, 0, ARENA_WORLD.width, ARENA_WORLD.height);
+    this.handleViewportResize(this.scale.gameSize);
+    this.scale.on('resize', this.handleViewportResize, this);
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.scale.off('resize', this.handleViewportResize, this);
+    });
 
     // The arena world itself fills the camera. There is no smaller framed battlefield
     // floating inside the viewport; future HUD/controls remain screen-space overlays.
@@ -61,8 +66,16 @@ export class ArenaScene extends Phaser.Scene {
       fixture: selectedKoFixture ? 'ko' : 'default',
       worldWidth: ARENA_WORLD.width,
       worldHeight: ARENA_WORLD.height,
+      get viewportWidth() { return window.innerWidth; },
+      get viewportHeight() { return window.innerHeight; },
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
     };
+  }
+
+  handleViewportResize(gameSize) {
+    const width = Math.max(1, Math.round(gameSize.width));
+    const height = Math.max(1, Math.round(gameSize.height));
+    this.cameras.main.setSize(width, height);
   }
 
   selectAlly(id, frame) {
