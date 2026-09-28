@@ -2,11 +2,11 @@
 
 ## Canonical presentation
 - Mobile landscape is the canonical play orientation.
-- Arena logical stage is fixed at 960x540.
+- Arena logical stage is fixed at 1120x540.
 - Phaser Scale Manager owns canvas scaling with `FIT + CENTER_BOTH`.
 - The outer DOM host may follow `visualViewport` so iOS browser chrome does not offset the visible game region.
 - The host never scales the canvas directly; Phaser owns the canvas display transform.
-- The full 960x540 Arena remains visible.
+- The full 1120x540 Arena remains visible.
 - Do not crop, stretch, dynamically re-project, or move the camera because of selection.
 - Portrait shows the same 16:9 stage uniformly scaled down.
 
@@ -14,7 +14,7 @@
 - Phaser Input Manager owns pointer/touch coordinate transforms.
 - Do not attach document-level touch/pointer workarounds for normal combat controls.
 - Do not manually map CSS client coordinates back into Arena coordinates while Scale Manager is active.
-- Runtime controls use Phaser pointer coordinates in the same 960x540 logical space as Arena objects.
+- Runtime controls use Phaser pointer coordinates in the same 1120x540 logical space as Arena objects.
 
 ## Character selection
 Selecting an ally:
