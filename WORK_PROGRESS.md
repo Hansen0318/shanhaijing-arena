@@ -9,7 +9,8 @@
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
 - Current slice: **movement joystick + shared player override input**
 - Current status: **PLAYER-CONFIRMED WORKING BASELINE RESTORED; RUNTIME PACING PASS; AI RESUME DELAY SET TO 0s / IMMEDIATE**
-- Latest visual-only slice: **Arena sand color A — ENGINEERING PASS / PLAYER SMOKE PENDING**; source commit `9b9fe641848a412e2b10e26493a73532ba4551bc`; [Pages run 36436079695](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36436079695): Test / Build / Deploy success; public preview visibly shows sand ground and dark markings. Player to assess field/actor/empty-space proportions on device; no geometry or controls changed.
+- Latest slice: **Arena 1120x540 horizontal widening — CI/build/Pages and desktop browser pointer smoke PASS; PLAYER VISUAL PROPORTION / REAL-DEVICE TOUCH SMOKE PENDING**. Source test-fix commit `23c4e759551c24d149203c2574ee0109e5921046`; [Pages run 36500167030](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36500167030): 61/61 Test, Build, Deploy success.
+- Next exact step: player checks widened proportion and touch selection/joystick on the public preview; do not adjust joystick or other gameplay in this slice.
 
 ## Protected mobile input baseline
 Player confirmed this path works on iPhone Chrome:
