@@ -9,9 +9,6 @@ export const ARENA_STAGE = Object.freeze({
   verticalPadding: 86,
 });
 
-// Stable logical-stage projection. Simulation coordinates are always mapped into
-// the same 960x540 Arena design space. The whole Arena layer is then uniformly
-// contained inside the real browser viewport.
 export function arenaToStage({ x, y }) {
   const left = ARENA_STAGE.horizontalPadding;
   const right = ARENA_STAGE.width - ARENA_STAGE.horizontalPadding;
@@ -24,14 +21,5 @@ export function arenaToStage({ x, y }) {
   return {
     x: left + xRatio * (right - left),
     y: top + yRatio * (bottom - top),
-  };
-}
-
-export function fitStageToViewport({ width, height }) {
-  const scale = Math.min(width / ARENA_STAGE.width, height / ARENA_STAGE.height);
-  return {
-    scale,
-    offsetX: (width - ARENA_STAGE.width * scale) / 2,
-    offsetY: (height - ARENA_STAGE.height * scale) / 2,
   };
 }
