@@ -30,14 +30,14 @@ export class ArenaScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, ARENA_STAGE.width, ARENA_STAGE.height);
 
     this.add.rectangle(
-      0, 0, ARENA_STAGE.width, ARENA_STAGE.height, 0x253648,
+      0, 0, ARENA_STAGE.width, ARENA_STAGE.height, 0x8E7B5A,
     ).setOrigin(0, 0);
 
     this.add.line(
       0, 0,
       ARENA_STAGE.width * 0.08, ARENA_STAGE.height / 2,
       ARENA_STAGE.width * 0.92, ARENA_STAGE.height / 2,
-      0x344a5f, 0.55,
+      0x5F513B, 0.55,
     ).setOrigin(0, 0);
 
     this.add.ellipse(
@@ -45,7 +45,7 @@ export class ArenaScene extends Phaser.Scene {
       ARENA_STAGE.height / 2,
       280,
       170,
-    ).setStrokeStyle(2, 0x344a5f, 0.55);
+    ).setStrokeStyle(2, 0x5F513B, 0.55);
 
     const first = this.session.snapshot();
     for (const actor of [...first.allies, ...first.enemies]) {
