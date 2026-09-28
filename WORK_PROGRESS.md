@@ -5,58 +5,80 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Previous status: **ENGINEERING PASS / PLAYER SMOKE PENDING** for first selection interaction
-- New player-smoke defect: the prototype battlefield was rendered as a small bordered rectangle inside the viewport, so camera retargeting looked like the whole map was sliding
-- Latest completed Chat-first fix: fullscreen arena-world presentation + updated projection + camera bounds contract
-- Recovery rule: do **not** recreate combat foundation, renderer bootstrap, Pages workflow, selection, or KO fixture
+- Current status: **FULLSCREEN ARENA CODE/BUILD/DEPLOY PASS — INTERACTIVE PLAYER/BROWSER SMOKE ONLY**
+- Latest fullscreen-arena branch SHA deployed by Pages workflow: `dcbefd47f136d3ffa4f482fcb96e0d0c4d6789a0`
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
-- Next exact step: verify the latest fullscreen-arena runtime change with targeted build + Pages/browser smoke; do not begin joystick until player-smoke defect is cleared
+- Recovery rule: do **not** recreate or rerun completed combat foundation, renderer bootstrap, Pages setup, fullscreen-arena code, projection tests, build, or deployment unless the interactive smoke finds a real defect
+- Next exact step: **interactive browser/player smoke only** for the fullscreen arena/camera presentation; do not begin joystick until that smoke passes
 - Canonical camera contract: `docs/CONTROL_CAMERA.md`
 
-## Current fullscreen-arena fix
-Chat changed only the bounded renderer/projection slice:
+## Fullscreen-arena player-smoke defect
+Player feedback correctly identified that the prior 760x320 bordered battlefield looked like a small map card sliding around when the camera retargeted.
+
+Chat corrected the presentation:
 - logical viewport remains 960x540;
-- Arena world is now 1280x720;
+- Arena world is 1280x720;
 - both are 16:9;
-- removed the small 760x320 bordered battlefield presentation;
-- arena background now fills the entire world;
-- Arena simulation coordinates map across the larger world;
-- camera remains soft-follow and clamped to world bounds;
-- future HUD/joystick/skills remain screen-space overlays and must not move with camera;
-- projection tests updated for the new world geometry.
+- removed the small bordered battlefield;
+- arena background fills the entire world;
+- Arena simulation coordinates project across the larger world;
+- camera remains soft-follow and is clamped to world bounds;
+- future controls/HUD are screen-space overlays over the battlefield.
 
-## Why
-Player smoke showed that the previous small framed battlefield made normal camera retargeting look like the entire map was drifting. The intended product presentation is one fullscreen battlefield with camera motion inside it.
+## Current automated / deployment evidence
+GitHub Actions `M0 Pages Preview` run #13 for SHA `dcbefd47f136d3ffa4f482fcb96e0d0c4d6789a0` completed successfully:
+- checkout/setup/install: PASS
+- tests: **49 / 49 PASS**
+- failures: **0**
+- Vite 8.3.1 production build: **PASS**
+- 18 modules transformed
+- Pages configure: PASS
+- Pages artifact upload: PASS
+- Pages deploy: PASS
+- published artifact: `github-pages`, generated from the exact feature-branch SHA above
 
-## Existing evidence retained
-- deterministic combat/headless evidence remains valid;
-- previous first-interaction Pages/browser smoke remains historical evidence but is invalidated for visual/camera presentation by this renderer change;
-- no combat rules were changed.
+No combat production module was changed by this fullscreen presentation fix, so historical combat/headless evidence remains valid.
 
-## Required targeted verification
-1. latest projection tests / relevant existing tests PASS;
-2. production build PASS;
-3. deploy latest branch to existing Pages preview;
-4. default browser smoke:
-   - fullscreen battlefield fills viewport;
-   - no small framed arena;
-   - six placeholders render;
-   - A1/A2/A3 selection still works;
-   - selected highlight still works;
-   - camera retarget reads as movement through battlefield;
-   - no outside-world blank area appears at camera bounds;
-   - enemy click remains no-op;
-   - no blocking runtime error;
-5. KO fixture:
-   - a2 fallback still works;
-   - camera retargets to fallback;
-   - no blank outside-world area appears.
+## What is already complete and must not be handed back to Work
+- combat foundation
+- Character / Ability / AI / headless simulation
+- Phaser/Vite setup
+- GitHub Pages setup and deployment
+- first ally selection interaction
+- selected-KO fixture
+- fullscreen arena world implementation
+- projection tests
+- latest test/build/deploy cycle
+
+## Only remaining gate
+A real interactive browser must visually exercise the deployed Phaser canvas.
+
+Default preview:
+- battlefield fills the visible landscape game viewport;
+- no small bordered arena card remains;
+- six placeholders render;
+- tap/click A1/A2/A3 and confirm selection highlight;
+- camera retarget reads as moving through one continuous battlefield;
+- camera bounds never expose outside-world blank space;
+- enemy click remains no-op;
+- replay continues;
+- no blocking page-origin runtime/console error.
+
+KO fixture:
+- A2 initially selected;
+- A2 KO causes nearest-living-ally fallback;
+- camera follows fallback;
+- no outside-world blank space appears;
+- no blocking page-origin runtime/console error.
 
 ## Gate
-Do not begin joystick until this focused visual/camera regression passes.
-
-If PASS:
-- mark fullscreen arena/camera player-smoke defect resolved;
-- keep `ENGINEERING PASS / PLAYER SMOKE PENDING` for player feel if needed;
+If interactive smoke PASS:
+- mark fullscreen arena/camera defect resolved;
+- preserve `ENGINEERING PASS / PLAYER SMOKE PASS` for this slice;
 - next exact step: `movement joystick + shared player override input`.
+
+If smoke finds a defect:
+- record the exact visual/runtime defect with screenshot/device context;
+- fix only the affected renderer/camera slice;
+- do not broaden scope.
