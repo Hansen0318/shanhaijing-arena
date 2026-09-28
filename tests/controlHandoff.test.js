@@ -24,3 +24,13 @@ test('each new valid input refreshes ownership only for that input instant', () 
   assert.equal(handoff.controlSource(2500), 'player');
   assert.equal(handoff.controlSource(2501), 'ai');
 });
+
+
+test('explicit release returns control to AI immediately', () => {
+  const handoff = new ControlHandoff();
+  handoff.registerPlayerInput(1000);
+  assert.equal(handoff.controlSource(1000), 'player');
+
+  handoff.releasePlayerControl();
+  assert.equal(handoff.controlSource(1000), 'ai');
+});
