@@ -5,45 +5,45 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Current status: **FIXED 960x540 FIT STAGE IMPLEMENTED — AUTO VERIFY / PLAYER SMOKE PENDING**
+- Current status: **IMMUTABLE 960x540 CSS-CONTAIN STAGE IMPLEMENTED — AUTO VERIFY / PLAYER SMOKE PENDING**
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
 
-## Latest player defect
-On iPhone Safari, switching portrait/landscape and refreshing could produce different offsets because the previous strategy depended on runtime viewport resize measurements. Both default and KO fixture showed the same presentation defect.
+## Final viewport strategy
+Player confirmed the desired behavior is the original simple model:
+- one fixed landscape 16:9 game surface;
+- landscape: scale the whole surface uniformly to fit;
+- portrait: shrink the same landscape surface and fit it inside the portrait screen;
+- never re-layout or re-project the battle based on orientation;
+- camera never moves on selection.
 
-## Final stabilization strategy
-- remove viewport-driven Arena transforms entirely;
-- fixed logical Arena: 960x540;
-- Phaser display: FIT + CENTER_BOTH;
-- full Arena always visible;
+## Implementation
+- Phaser logical surface remains exactly 960x540.
+- Phaser Scale Manager runtime scaling is disabled with `Phaser.Scale.NONE`.
+- Browser CSS alone centers and uniformly contains the canvas.
+- `#game` uses a fixed 16:9 aspect ratio and a width constrained by both viewport width and viewport height.
+- canvas fills that 16:9 host proportionally.
+- no runtime resize listener or Arena transform.
+- no combat/AI/Ability/KO changes.
+
+## Expected behavior
+Landscape:
+- whole 16:9 Arena visible and centered;
 - no crop;
-- no stretch;
-- no dynamic Arena re-projection after load;
-- no camera follow;
-- no selection-driven view movement;
-- same-color outer background hides device aspect-ratio remainder cleanly.
+- no camera movement;
+- selection changes highlight only.
 
-## Code impact
-- `src/main.js`: fixed 960x540 + FIT/CENTER_BOTH;
-- `ArenaScene`: no resize listener, no Arena container transform, fixed camera;
-- `arenaProjection`: stable Arena-stage mapping only;
-- projection tests simplified to deterministic stage coordinates;
-- no combat/AI/Ability/KO logic changed.
+Portrait:
+- exact same landscape Arena shrinks to fit width;
+- no rearrangement;
+- no offset caused by orientation-specific geometry;
+- blank space above/below is acceptable.
 
 ## Required verification
-Automated:
-- all tests PASS;
-- production build PASS;
-- Pages deploy PASS.
-
-Player/browser:
-- landscape load/reload repeatedly gives same centered composition;
-- portrait -> landscape -> reload remains stable;
-- six actors fit in one view;
-- no excessive zoom/crop;
-- selecting A1/A2/A3 changes only highlight;
-- default and KO fixture share identical fixed view behavior.
+- tests PASS;
+- build PASS;
+- Pages deploy PASS;
+- repeated portrait/landscape loads show the same composition, only uniformly scaled.
 
 ## Gate
-After PASS, proceed to `movement joystick + shared player override input`.
+After player smoke PASS, proceed to `movement joystick + shared player override input`.
