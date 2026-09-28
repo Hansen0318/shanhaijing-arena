@@ -74,13 +74,19 @@ test('zero/dead-zone movement does not refresh player ownership', () => {
   assert.equal(a2.controlHandoff.controlSource(session.elapsedSeconds * 1000), 'ai');
 });
 
-test('AI resumes on the next simulation step after player movement is released', () => {
+test('releasing player movement immediately returns ownership to AI', () => {
   const session = makeSession();
   const a2 = session.actorById('a2');
 
   session.setPlayerMovement('a2', { x: 0, y: 1 });
   session.step(0.25);
+  assert.equal(a2.controlHandoff.controlSource(session.elapsedSeconds * 1000), 'ai');
+
+  session.setPlayerMovement('a2', { x: 0, y: 1 });
+  assert.equal(a2.controlHandoff.controlSource(session.elapsedSeconds * 1000), 'player');
+
   session.clearPlayerMovement('a2');
+  assert.equal(a2.controlHandoff.controlSource(session.elapsedSeconds * 1000), 'ai');
 
   const heldX = a2.x;
   session.step(0.25);
