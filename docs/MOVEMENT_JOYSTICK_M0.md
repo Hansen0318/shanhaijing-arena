@@ -12,7 +12,7 @@ The joystick controls the currently selected living ally's actual combat positio
 - Phaser runtime also runs a live `BattleSession`, replacing precomputed snapshot replay as the active battle source.
 
 ## Joystick behavior
-- Position: lower-left screen-space area of the fixed 960x540 stage.
+- Position: lower-left screen-space area of the fixed 1120x540 stage.
 - The currently selected living ally is the movement target.
 - Valid stick displacement above the dead zone immediately calls the shared player-input handoff.
 - Vector magnitude is clamped to 1.
@@ -36,7 +36,7 @@ The joystick controls the currently selected living ally's actual combat positio
 
 ## Input mapping
 Current mobile baseline is the player-confirmed working path:
-- Phaser logical surface remains fixed at 960x540 with `Scale.NONE`;
+- Phaser logical surface remains fixed at 1120x540 with `Scale.NONE`;
 - outer DOM scales/positions the fixed canvas;
 - ally selection uses Phaser GameObject `setInteractive()`;
 - joystick uses Phaser GameObject input plus explicit canvas-rect coordinate mapping for movement;
