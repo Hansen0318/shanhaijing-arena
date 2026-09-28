@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { arenaToWorld, ARENA_WORLD } from './arenaProjection.js';
+import { arenaToViewport } from './arenaProjection.js';
 import { createDemoBattleFrames } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 
@@ -14,37 +14,20 @@ export class ArenaScene extends Phaser.Scene {
     this.actorViews = new Map();
     this.selectedId = 'a2';
 
-    this.cameras.main.setBackgroundColor('#1a2734');
-    this.cameras.main.setBounds(0, 0, ARENA_WORLD.width, ARENA_WORLD.height);
-    this.handleViewportResize(this.scale.gameSize);
-    this.scale.on('resize', this.handleViewportResize, this);
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scale.off('resize', this.handleViewportResize, this);
-    });
+    this.cameras.main.setBackgroundColor('#253648');
+    this.cameras.main.stopFollow();
+    this.cameras.main.setScroll(0, 0);
 
-    // The arena world itself fills the camera. There is no smaller framed battlefield
-    // floating inside the viewport; future HUD/controls remain screen-space overlays.
-    this.add.rectangle(
-      ARENA_WORLD.width / 2,
-      ARENA_WORLD.height / 2,
-      ARENA_WORLD.width,
-      ARENA_WORLD.height,
-      0x253648,
-    );
-
-    // Subtle world-space orientation guides only; they move naturally with the camera.
-    this.add.line(0, 0, 160, ARENA_WORLD.height / 2, ARENA_WORLD.width - 160, ARENA_WORLD.height / 2, 0x344a5f, 0.55)
-      .setOrigin(0, 0);
-    this.add.ellipse(ARENA_WORLD.width / 2, ARENA_WORLD.height / 2, 260, 150)
-      .setStrokeStyle(2, 0x344a5f, 0.55);
+    this.arenaBackground = this.add.rectangle(0, 0, 1, 1, 0x253648).setOrigin(0, 0);
+    this.centerLine = this.add.line(0, 0, 0, 0, 1, 0, 0x344a5f, 0.55).setOrigin(0, 0);
+    this.centerEllipse = this.add.ellipse(0, 0, 1, 1).setStrokeStyle(2, 0x344a5f, 0.55);
 
     const first = this.frames[0];
     for (const actor of [...first.allies, ...first.enemies]) {
-      const { x, y } = arenaToWorld(actor);
       const allied = actor.instanceId.startsWith('a');
-      const marker = this.add.circle(x, y, 24, allied ? 0x58c8dc : 0xee9475)
+      const marker = this.add.circle(0, 0, 24, allied ? 0x58c8dc : 0xee9475)
         .setStrokeStyle(3, allied ? 0xc6f6ff : 0xffd3bf);
-      const label = this.add.text(x, y - 42, actor.instanceId.toUpperCase(), {
+      const label = this.add.text(0, 0, actor.instanceId.toUpperCase(), {
         fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff',
       }).setOrigin(0.5);
 
@@ -56,6 +39,12 @@ export class ArenaScene extends Phaser.Scene {
       this.actorViews.set(actor.instanceId, { marker, label, allied });
     }
 
+    this.handleViewportResize(this.scale.gameSize);
+    this.scale.on('resize', this.handleViewportResize, this);
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.scale.off('resize', this.handleViewportResize, this);
+    });
+
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
@@ -64,8 +53,7 @@ export class ArenaScene extends Phaser.Scene {
       actorCount: this.actorViews.size,
       frameCount: this.frames.length,
       fixture: selectedKoFixture ? 'ko' : 'default',
-      worldWidth: ARENA_WORLD.width,
-      worldHeight: ARENA_WORLD.height,
+      cameraMode: 'fixed',
       get viewportWidth() { return window.innerWidth; },
       get viewportHeight() { return window.innerHeight; },
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
@@ -75,7 +63,31 @@ export class ArenaScene extends Phaser.Scene {
   handleViewportResize(gameSize) {
     const width = Math.max(1, Math.round(gameSize.width));
     const height = Math.max(1, Math.round(gameSize.height));
+
     this.cameras.main.setSize(width, height);
+    this.cameras.main.setScroll(0, 0);
+    this.arenaBackground.setSize(width, height);
+
+    this.centerLine.setTo(
+      width * 0.08,
+      height / 2,
+      width * 0.92,
+      height / 2,
+    );
+    this.centerEllipse
+      .setPosition(width / 2, height / 2)
+      .setSize(Math.min(width * 0.28, 280), Math.min(height * 0.34, 170));
+
+    if (this.frames?.[this.frameIndex]) {
+      this.applyFrame(this.frames[this.frameIndex]);
+    }
+  }
+
+  project(actor) {
+    return arenaToViewport(actor, {
+      width: this.scale.gameSize.width,
+      height: this.scale.gameSize.height,
+    });
   }
 
   selectAlly(id, frame) {
@@ -84,8 +96,6 @@ export class ArenaScene extends Phaser.Scene {
 
     this.selectedId = id;
     window.__arenaSceneSelectedId = id;
-    const view = this.actorViews.get(id);
-    this.cameras.main.startFollow(view.marker, true, 0.08, 0.08);
     this.refreshSelectionVisuals();
     return true;
   }
@@ -115,14 +125,13 @@ export class ArenaScene extends Phaser.Scene {
 
     this.selectedId = null;
     window.__arenaSceneSelectedId = null;
-    this.cameras.main.stopFollow();
     this.refreshSelectionVisuals();
   }
 
   applyFrame(frame) {
     for (const actor of [...frame.allies, ...frame.enemies]) {
       const view = this.actorViews.get(actor.instanceId);
-      const position = arenaToWorld(actor);
+      const position = this.project(actor);
       view.marker.setPosition(position.x, position.y).setAlpha(actor.hp > 0 ? 1 : 0.35);
       view.label.setPosition(position.x, position.y - 42).setAlpha(actor.hp > 0 ? 1 : 0.5);
     }
