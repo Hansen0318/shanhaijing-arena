@@ -1,4 +1,14 @@
-// One Arena-space to Phaser-world projection; viewport scaling stays in Phaser.
+export const ARENA_WORLD = Object.freeze({
+  width: 1280,
+  height: 720,
+});
+
+// Arena simulation coordinates stay framework-independent.
+// This projection places the 0..10 horizontal combat span inside a larger 16:9 world
+// so the camera can move without ever revealing space outside the arena.
 export function arenaToWorld({ x, y }) {
-  return { x: 260 + x * 59, y: 270 + y * 52.5 };
+  return {
+    x: 160 + x * 96,
+    y: 360 + y * 120,
+  };
 }
