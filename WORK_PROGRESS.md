@@ -5,50 +5,78 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Current status: **FIXED FULLSCREEN ARENA / IOS VIEWPORT PLAYER SMOKE PASS**
+- Fixed Arena / iPhone Safari viewport: **ENGINEERING PASS / PLAYER SMOKE PASS**
+- Current slice: **movement joystick + shared player override input**
+- Current status: **CODE + CORE TESTS COMPLETE; LATEST RUNTIME BUILD/DEPLOY + INTERACTIVE MOBILE SMOKE PENDING**
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
-- Recovery rule: do not restore selected-character camera follow, dynamic Arena reprojection, or resize-driven camera movement
-- Next exact implementation: **movement joystick + shared player override input**
+- Recovery rule: do not restore camera follow, dynamic Arena projection, snapshot-only runtime movement, or duplicate player/AI ownership state
 
-## Accepted presentation
-Player confirmed the latest iPhone Safari behavior is normal:
-- fixed 960x540 Arena game surface;
-- landscape is canonical;
-- portrait shows the same landscape stage scaled down;
-- direct landscape reload and portrait->landscape transition no longer produce the prior offset defect;
+## Chat-completed joystick implementation
+
+### Shared live combat session
+Added `src/combat/battleSession.js`:
+- same AI, Ability, damage, targeting, cooldown, Character, and ControlHandoff modules as headless combat;
+- step-based live battle;
+- actual player movement changes CharacterState x/y;
+- player vector clamped to magnitude 1;
+- movement clamped to Arena x 0..10 / y -2..2;
+- selected actor AI suppressed while shared ControlHandoff reports player ownership;
+- 2.0s AI resume remains the existing ControlHandoff rule.
+
+### Headless unification
+`simulateHeadless3v3` now wraps the same BattleSession.
+This prevents the browser runtime and deterministic tests from drifting into separate combat engines.
+
+### Automated tests
+Added `tests/battleSession.test.js`:
+- immediate player ownership;
+- real player movement;
+- Arena bounds clamp;
+- dead-zone input does not refresh ownership;
+- full AI resumes after 2.0 seconds.
+
+A completed Actions run after BattleSession + tests + demo-session integration reported:
+- **53 / 53 tests PASS**
+- **0 fail**
+- Vite build PASS
+- Pages deploy PASS
+
+### Runtime joystick
+`ArenaScene` now:
+- creates a live Demo BattleSession instead of playing precomputed snapshots;
+- renders lower-left base + knob;
+- maps native client pointer coordinates back to the fixed 960x540 logical stage;
+- moves whichever living ally is selected;
+- clears previous selected actor movement when switching;
+- keeps the accepted fixed camera and viewport architecture untouched;
+- keeps KO fixture via deterministic forced A2 KO in runtime.
+
+## Current gate
+The latest ArenaScene joystick commit still requires its final automated build/deploy result plus real browser/mobile interaction smoke.
+
+Do not broaden into skill buttons yet.
+
+## Required interactive smoke
+Default:
+- fixed Arena/viewport remains stable;
+- lower-left joystick visible;
+- A2 starts selected;
+- joystick moves A2 in actual Arena position;
+- direction follows finger;
+- switching A1/A3 changes joystick-controlled actor;
+- camera never moves;
+- release stops manual movement;
+- after ~2.0s AI visibly resumes;
+- other actors continue AI;
+- no blocking page-origin error.
+
+KO:
+- A2 forced KO;
+- selection falls back to living ally;
 - camera remains fixed;
-- A1/A2/A3 selection does not move the view;
-- default and KO fixture share the same fixed presentation.
+- joystick controls fallback ally.
 
-## Closed defect
-The mobile viewport/camera presentation defect is resolved for this slice.
-
-Root causes addressed across the final solution:
-- removed selected-character camera follow;
-- removed scrolling-world presentation;
-- removed resize-driven Arena reprojection;
-- fixed Phaser logical surface at 960x540;
-- Phaser Scale Manager runtime scaling disabled;
-- outer DOM host uniformly contains the fixed stage;
-- iPhone Safari host anchoring uses visualViewport to stabilize direct-landscape reload.
-
-## Next implementation slice
-**movement joystick + shared player override input**
-
-Requirements:
-- joystick controls the currently selected living ally;
-- valid joystick input immediately overrides AI movement intent for that ally;
-- selected ally remains selected;
-- after 2.0s without valid player combat input, full AI control resumes;
-- no AUTO/MANUAL UI;
-- camera remains fixed;
-- no joystick work may reintroduce viewport/camera coupling;
-- reuse existing control-handoff state/API rather than duplicate ownership logic;
-- start with movement only; skill buttons remain a later slice.
-
-## Verification scope for next slice
-- static/unit tests for handoff semantics;
-- targeted movement/selection regression;
-- browser/player smoke for joystick feel on mobile landscape;
-- full regression only if shared combat/input modules are broadly changed.
+## If PASS
+Mark joystick slice **ENGINEERING PASS / PLAYER SMOKE PASS**.
+Next exact implementation: **skill controls (Heavy + Special + Awakening) using the same shared player override path**.
