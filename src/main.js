@@ -6,9 +6,10 @@ new Phaser.Game({
   parent: 'game',
   width: 960,
   height: 540,
-  backgroundColor: '#17212b',
-  // Match the actual browser viewport instead of scaling a fixed 16:9 canvas.
-  // This avoids FIT letterboxing and ENVELOP over-zoom/cropping on mobile.
-  scale: { mode: Phaser.Scale.RESIZE },
+  backgroundColor: '#253648',
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
   scene: [ArenaScene],
 });
