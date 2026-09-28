@@ -1,4 +1,4 @@
-export const FULL_AI_RESUME_MS = 2000;
+export const FULL_AI_RESUME_MS = 1000;
 
 export class ControlHandoff {
   constructor({ resumeAfterMs = FULL_AI_RESUME_MS } = {}) {
