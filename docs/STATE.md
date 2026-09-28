@@ -15,7 +15,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Camera is fixed for the whole battle and does not follow selection.
 - The whole 3v3 Arena encounter is intended to remain readable in one fullscreen landscape view.
 - Player combat input immediately overrides AI for the selected character.
-- After 2.0s without valid input, full AI control resumes.
+- After 1.0s without valid input, full AI control resumes.
 - Selected character does not change when AI resumes.
 - No visible AUTO/MANUAL state.
 - Player controls: movement joystick + Heavy + Special + Awakening.
@@ -46,7 +46,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 2. Player can switch among three allies.
 3. Fixed fullscreen camera keeps the Arena readable while player switches selected ally.
 4. Manual input overrides AI instantly.
-5. Full AI resumes after 2.0s of no valid combat input.
+5. Full AI resumes after 1.0s of no valid combat input.
 6. Basic/Heavy/Special/Awakening all function under AI and player control as applicable.
 7. Soft targeting is understandable in play.
 8. Damage numbers, HP, KO, timer, victory/defeat are readable.
@@ -73,7 +73,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 
 ### Pending
 - Fixed fullscreen Arena / iPhone Safari viewport presentation: **ENGINEERING PASS / PLAYER SMOKE PASS**.
-- Movement joystick + shared player override: **input architecture reworked to Phaser Scale/Input Manager; automated/mobile smoke pending**.
+- Movement joystick + shared player override: **known-working mobile baseline restored; player-confirmed movement works; AI resume timeout now 1.0s**.
 - Skill controls: Heavy / Special / Awakening.
 - Minimum HUD/VFX readability.
 - Natural combat presentation / AI movement readability.
