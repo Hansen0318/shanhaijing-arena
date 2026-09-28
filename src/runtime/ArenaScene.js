@@ -5,7 +5,7 @@ import { nearestSurvivingAlly } from '../combat/targeting.js';
 
 const SIM_STEP_SECONDS = 0.05;
 const JOYSTICK = Object.freeze({
-  x: 74,
+  x: 56,
   y: 466,
   radius: 50,
   inputRadius: 30,
@@ -106,56 +106,100 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   bindCanvasPointerInput() {
-    const canvas = this.game.canvas;
+    const documentTarget = document;
 
-    this.onCanvasPointerDown = (event) => {
-      const point = this.clientToStage(event.clientX, event.clientY);
-
+    const handleStageDown = (point, pointerId) => {
       const joystickDistance = Math.hypot(point.x - JOYSTICK.x, point.y - JOYSTICK.y);
-      if (joystickDistance <= JOYSTICK.radius * 1.35 && this.selectedId) {
-        this.joystickPointerId = event.pointerId;
-        try { canvas.setPointerCapture(event.pointerId); } catch {}
+      if (joystickDistance <= JOYSTICK.radius * 1.45 && this.selectedId) {
+        this.joystickPointerId = pointerId;
         this.updateJoystickFromStagePoint(point);
-        event.preventDefault();
-        return;
+        return true;
       }
 
       const frame = this.session.snapshot();
       for (const ally of frame.allies) {
         if (ally.hp <= 0) continue;
         const actorPoint = arenaToStage(ally);
-        const hitRadius = 34;
+        const hitRadius = 42;
         if (Math.hypot(point.x - actorPoint.x, point.y - actorPoint.y) <= hitRadius) {
           this.selectAlly(ally.instanceId, frame);
+          return true;
+        }
+      }
+      return false;
+    };
+
+    this.onTouchStart = (event) => {
+      for (const touch of event.changedTouches) {
+        const point = this.clientToStage(touch.clientX, touch.clientY);
+        if (handleStageDown(point, touch.identifier)) {
           event.preventDefault();
-          return;
+          break;
         }
       }
     };
 
-    this.onCanvasPointerMove = (event) => {
+    this.onTouchMove = (event) => {
+      if (this.joystickPointerId === null) return;
+      for (const touch of event.changedTouches) {
+        if (touch.identifier !== this.joystickPointerId) continue;
+        this.updateJoystickFromStagePoint(this.clientToStage(touch.clientX, touch.clientY));
+        event.preventDefault();
+        break;
+      }
+    };
+
+    this.onTouchEnd = (event) => {
+      if (this.joystickPointerId === null) return;
+      for (const touch of event.changedTouches) {
+        if (touch.identifier !== this.joystickPointerId) continue;
+        this.releaseJoystick();
+        event.preventDefault();
+        break;
+      }
+    };
+
+    this.onDocumentPointerDown = (event) => {
+      if (event.pointerType === 'touch') return;
+      const handled = handleStageDown(
+        this.clientToStage(event.clientX, event.clientY),
+        event.pointerId,
+      );
+      if (handled) event.preventDefault();
+    };
+
+    this.onDocumentPointerMove = (event) => {
+      if (event.pointerType === 'touch') return;
       if (event.pointerId !== this.joystickPointerId) return;
       this.updateJoystickFromStagePoint(this.clientToStage(event.clientX, event.clientY));
       event.preventDefault();
     };
 
-    this.onCanvasPointerUp = (event) => {
+    this.onDocumentPointerUp = (event) => {
+      if (event.pointerType === 'touch') return;
       if (event.pointerId !== this.joystickPointerId) return;
       this.releaseJoystick();
-      try { canvas.releasePointerCapture(event.pointerId); } catch {}
       event.preventDefault();
     };
 
-    canvas.addEventListener('pointerdown', this.onCanvasPointerDown, { passive: false });
-    canvas.addEventListener('pointermove', this.onCanvasPointerMove, { passive: false });
-    canvas.addEventListener('pointerup', this.onCanvasPointerUp, { passive: false });
-    canvas.addEventListener('pointercancel', this.onCanvasPointerUp, { passive: false });
+    documentTarget.addEventListener('touchstart', this.onTouchStart, { capture: true, passive: false });
+    documentTarget.addEventListener('touchmove', this.onTouchMove, { capture: true, passive: false });
+    documentTarget.addEventListener('touchend', this.onTouchEnd, { capture: true, passive: false });
+    documentTarget.addEventListener('touchcancel', this.onTouchEnd, { capture: true, passive: false });
+    documentTarget.addEventListener('pointerdown', this.onDocumentPointerDown, { capture: true, passive: false });
+    documentTarget.addEventListener('pointermove', this.onDocumentPointerMove, { capture: true, passive: false });
+    documentTarget.addEventListener('pointerup', this.onDocumentPointerUp, { capture: true, passive: false });
+    documentTarget.addEventListener('pointercancel', this.onDocumentPointerUp, { capture: true, passive: false });
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      canvas.removeEventListener('pointerdown', this.onCanvasPointerDown);
-      canvas.removeEventListener('pointermove', this.onCanvasPointerMove);
-      canvas.removeEventListener('pointerup', this.onCanvasPointerUp);
-      canvas.removeEventListener('pointercancel', this.onCanvasPointerUp);
+      documentTarget.removeEventListener('touchstart', this.onTouchStart, true);
+      documentTarget.removeEventListener('touchmove', this.onTouchMove, true);
+      documentTarget.removeEventListener('touchend', this.onTouchEnd, true);
+      documentTarget.removeEventListener('touchcancel', this.onTouchEnd, true);
+      documentTarget.removeEventListener('pointerdown', this.onDocumentPointerDown, true);
+      documentTarget.removeEventListener('pointermove', this.onDocumentPointerMove, true);
+      documentTarget.removeEventListener('pointerup', this.onDocumentPointerUp, true);
+      documentTarget.removeEventListener('pointercancel', this.onDocumentPointerUp, true);
     });
   }
 
