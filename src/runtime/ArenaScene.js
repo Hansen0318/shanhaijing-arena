@@ -58,15 +58,11 @@ export class ArenaScene extends Phaser.Scene {
         fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff',
       }).setOrigin(0.5);
 
-      if (allied) {
-        marker.setInteractive({ useHandCursor: true });
-        marker.on('pointerdown', () => this.selectAlly(actor.instanceId, this.session.snapshot()));
-      }
-
       this.actorViews.set(actor.instanceId, { marker, label, allied });
     }
 
     this.createJoystick();
+    this.bindCanvasPointerInput();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
@@ -99,48 +95,71 @@ export class ArenaScene extends Phaser.Scene {
       0xc6f6ff,
       0.72,
     ).setDepth(21);
-
-    this.joystickBase.setInteractive(
-      new Phaser.Geom.Circle(JOYSTICK.radius, JOYSTICK.radius, JOYSTICK.radius),
-      Phaser.Geom.Circle.Contains,
-    );
-
-    this.joystickBase.on('pointerdown', (pointer) => {
-      if (!this.selectedId) return;
-      this.joystickPointerId = pointer.id;
-      this.updateJoystickFromPointer(pointer);
-    });
-
-    this.input.on('pointermove', (pointer) => {
-      if (pointer.id !== this.joystickPointerId) return;
-      this.updateJoystickFromPointer(pointer);
-    });
-
-    this.input.on('pointerup', (pointer) => {
-      if (pointer.id !== this.joystickPointerId) return;
-      this.releaseJoystick();
-    });
-
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.input.off('pointermove');
-      this.input.off('pointerup');
-    });
   }
 
-  pointerToStage(pointer) {
+  clientToStage(clientX, clientY) {
     const rect = this.game.canvas.getBoundingClientRect();
-    const event = pointer.event;
-    const clientX = Number.isFinite(event?.clientX) ? event.clientX : rect.left + pointer.x;
-    const clientY = Number.isFinite(event?.clientY) ? event.clientY : rect.top + pointer.y;
-
     return {
       x: (clientX - rect.left) * (ARENA_STAGE.width / rect.width),
       y: (clientY - rect.top) * (ARENA_STAGE.height / rect.height),
     };
   }
 
-  updateJoystickFromPointer(pointer) {
-    const point = this.pointerToStage(pointer);
+  bindCanvasPointerInput() {
+    const canvas = this.game.canvas;
+
+    this.onCanvasPointerDown = (event) => {
+      const point = this.clientToStage(event.clientX, event.clientY);
+
+      const joystickDistance = Math.hypot(point.x - JOYSTICK.x, point.y - JOYSTICK.y);
+      if (joystickDistance <= JOYSTICK.radius * 1.35 && this.selectedId) {
+        this.joystickPointerId = event.pointerId;
+        try { canvas.setPointerCapture(event.pointerId); } catch {}
+        this.updateJoystickFromStagePoint(point);
+        event.preventDefault();
+        return;
+      }
+
+      const frame = this.session.snapshot();
+      for (const ally of frame.allies) {
+        if (ally.hp <= 0) continue;
+        const actorPoint = arenaToStage(ally);
+        const hitRadius = 34;
+        if (Math.hypot(point.x - actorPoint.x, point.y - actorPoint.y) <= hitRadius) {
+          this.selectAlly(ally.instanceId, frame);
+          event.preventDefault();
+          return;
+        }
+      }
+    };
+
+    this.onCanvasPointerMove = (event) => {
+      if (event.pointerId !== this.joystickPointerId) return;
+      this.updateJoystickFromStagePoint(this.clientToStage(event.clientX, event.clientY));
+      event.preventDefault();
+    };
+
+    this.onCanvasPointerUp = (event) => {
+      if (event.pointerId !== this.joystickPointerId) return;
+      this.releaseJoystick();
+      try { canvas.releasePointerCapture(event.pointerId); } catch {}
+      event.preventDefault();
+    };
+
+    canvas.addEventListener('pointerdown', this.onCanvasPointerDown, { passive: false });
+    canvas.addEventListener('pointermove', this.onCanvasPointerMove, { passive: false });
+    canvas.addEventListener('pointerup', this.onCanvasPointerUp, { passive: false });
+    canvas.addEventListener('pointercancel', this.onCanvasPointerUp, { passive: false });
+
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      canvas.removeEventListener('pointerdown', this.onCanvasPointerDown);
+      canvas.removeEventListener('pointermove', this.onCanvasPointerMove);
+      canvas.removeEventListener('pointerup', this.onCanvasPointerUp);
+      canvas.removeEventListener('pointercancel', this.onCanvasPointerUp);
+    });
+  }
+
+  updateJoystickFromStagePoint(point) {
     const dx = point.x - JOYSTICK.x;
     const dy = point.y - JOYSTICK.y;
     const distance = Math.hypot(dx, dy);
