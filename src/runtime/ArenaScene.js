@@ -5,7 +5,7 @@ import { nearestSurvivingAlly } from '../combat/targeting.js';
 
 const SIM_STEP_SECONDS = 0.05;
 const JOYSTICK = Object.freeze({
-  x: 105,
+  x: 70,
   y: 435,
   radius: 54,
   knobRadius: 24,
