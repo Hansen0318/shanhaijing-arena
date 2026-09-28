@@ -1,14 +1,26 @@
-export const ARENA_WORLD = Object.freeze({
-  width: 1280,
-  height: 720,
+export const ARENA_LAYOUT = Object.freeze({
+  xMin: 0,
+  xMax: 10,
+  yMin: -2,
+  yMax: 2,
+  horizontalPaddingRatio: 0.12,
+  verticalPaddingRatio: 0.16,
 });
 
-// Arena simulation coordinates stay framework-independent.
-// This projection places the 0..10 horizontal combat span inside a larger 16:9 world
-// so the camera can move without ever revealing space outside the arena.
-export function arenaToWorld({ x, y }) {
+// Fixed-view Arena projection. Simulation coordinates are mapped directly into
+// the current visible viewport so the whole 3v3 battlefield remains on screen.
+// Selection never changes the camera.
+export function arenaToViewport({ x, y }, { width = 960, height = 540 } = {}) {
+  const left = width * ARENA_LAYOUT.horizontalPaddingRatio;
+  const right = width * (1 - ARENA_LAYOUT.horizontalPaddingRatio);
+  const top = height * ARENA_LAYOUT.verticalPaddingRatio;
+  const bottom = height * (1 - ARENA_LAYOUT.verticalPaddingRatio);
+
+  const xRatio = (x - ARENA_LAYOUT.xMin) / (ARENA_LAYOUT.xMax - ARENA_LAYOUT.xMin);
+  const yRatio = (y - ARENA_LAYOUT.yMin) / (ARENA_LAYOUT.yMax - ARENA_LAYOUT.yMin);
+
   return {
-    x: 160 + x * 96,
-    y: 360 + y * 120,
+    x: left + xRatio * (right - left),
+    y: top + yRatio * (bottom - top),
   };
 }
