@@ -5,12 +5,12 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Current status: **FULLSCREEN ARENA CODE/BUILD/DEPLOY PASS — INTERACTIVE PLAYER/BROWSER SMOKE ONLY**
+- Current status: **ENGINEERING PASS / PLAYER SMOKE PASS** for fullscreen Arena/camera slice; defect resolved
 - Latest fullscreen-arena branch SHA deployed by Pages workflow: `dcbefd47f136d3ffa4f482fcb96e0d0c4d6789a0`
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
 - Recovery rule: do **not** recreate or rerun completed combat foundation, renderer bootstrap, Pages setup, fullscreen-arena code, projection tests, build, or deployment unless the interactive smoke finds a real defect
-- Next exact step: **interactive browser/player smoke only** for the fullscreen arena/camera presentation; do not begin joystick until that smoke passes
+- Next exact step: **movement joystick + shared player override input**
 - Canonical camera contract: `docs/CONTROL_CAMERA.md`
 
 ## Fullscreen-arena player-smoke defect
@@ -51,34 +51,24 @@ No combat production module was changed by this fullscreen presentation fix, so 
 - projection tests
 - latest test/build/deploy cycle
 
-## Only remaining gate
-A real interactive browser must visually exercise the deployed Phaser canvas.
+## Fullscreen arena interactive browser smoke — PASS
+Executed against the deployed HTTPS URL above (runtime SHA `dcbefd47f136d3ffa4f482fcb96e0d0c4d6789a0`); no code change in this smoke slice.
 
-Default preview:
-- battlefield fills the visible landscape game viewport;
-- no small bordered arena card remains;
-- six placeholders render;
-- tap/click A1/A2/A3 and confirm selection highlight;
-- camera retarget reads as moving through one continuous battlefield;
-- camera bounds never expose outside-world blank space;
-- enemy click remains no-op;
-- replay continues;
-- no blocking page-origin runtime/console error.
+Default:
+- Battlefield background fills the entire landscape game canvas; the old 760x320 bordered card is absent.
+- Six actors render; all six are visible together as replay advances from the initial separated positions.
+- Clicking A1, A3, and A2 moves the white selection highlight accordingly. Camera soft-retargets within one continuous world rather than moving a framed mini-map.
+- Camera observations at initial left position, upper A1, lower A3, and subsequent central/rightward replay positions showed no outside-world blank space.
+- Enemy E2 click leaves A2 selected; replay advances; no blocking page-origin console/runtime error.
 
-KO fixture:
-- A2 initially selected;
-- A2 KO causes nearest-living-ally fallback;
-- camera follows fallback;
-- no outside-world blank space appears;
-- no blocking page-origin runtime/console error.
+`?fixture=ko`:
+- A2 initially selected; scripted A2 KO fades its marker and automatically selects living A1.
+- Camera follows A1; no outside-world blank space or blocking page-origin error.
 
-## Gate
-If interactive smoke PASS:
-- mark fullscreen arena/camera defect resolved;
-- preserve `ENGINEERING PASS / PLAYER SMOKE PASS` for this slice;
-- next exact step: `movement joystick + shared player override input`.
+A browser extension emitted its own metadata error from `chrome-extension://`; it did not block the game. The canvas can have letterboxing outside the 16:9 **game viewport** in a differently proportioned browser window; no blank area appeared **inside** the game canvas.
 
-If smoke finds a defect:
-- record the exact visual/runtime defect with screenshot/device context;
-- fix only the affected renderer/camera slice;
-- do not broaden scope.
+## Gate and next step
+- Fullscreen arena/camera defect: **RESOLVED**.
+- This slice: **ENGINEERING PASS / PLAYER SMOKE PASS**.
+- Exact next step: **movement joystick + shared player override input**.
+- Do not redo combat, build, deploy, or these browser checks unless a later change materially affects them.
