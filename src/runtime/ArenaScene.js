@@ -1,18 +1,28 @@
 import Phaser from 'phaser';
 import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
-import { createDemoBattleFrames } from './demoBattle.js';
+import { createDemoBattleSession } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
+
+const SIM_STEP_SECONDS = 0.05;
+const JOYSTICK = Object.freeze({
+  x: 105,
+  y: 435,
+  radius: 54,
+  knobRadius: 24,
+});
 
 export class ArenaScene extends Phaser.Scene {
   constructor() { super('Arena'); }
 
   create() {
-    const selectedKoFixture = new URLSearchParams(window.location.search).get('fixture') === 'ko';
-    this.frames = createDemoBattleFrames({ selectedKoFixture });
-    this.frameIndex = 0;
-    this.accumulator = 0;
+    this.selectedKoFixture = new URLSearchParams(window.location.search).get('fixture') === 'ko';
+    this.session = createDemoBattleSession();
+    this.accumulatorSeconds = 0;
     this.actorViews = new Map();
     this.selectedId = 'a2';
+    this.fixtureKoApplied = false;
+    this.joystickPointerId = null;
+    this.joystickVector = { x: 0, y: 0 };
 
     this.cameras.main.setBackgroundColor('#253648');
     this.cameras.main.stopFollow();
@@ -37,7 +47,7 @@ export class ArenaScene extends Phaser.Scene {
       170,
     ).setStrokeStyle(2, 0x344a5f, 0.55);
 
-    const first = this.frames[0];
+    const first = this.session.snapshot();
     for (const actor of [...first.allies, ...first.enemies]) {
       const allied = actor.instanceId.startsWith('a');
       const marker = this.add.circle(0, 0, 24, allied ? 0x58c8dc : 0xee9475)
@@ -48,30 +58,121 @@ export class ArenaScene extends Phaser.Scene {
 
       if (allied) {
         marker.setInteractive({ useHandCursor: true });
-        marker.on('pointerdown', () => this.selectAlly(actor.instanceId, this.frames[this.frameIndex]));
+        marker.on('pointerdown', () => this.selectAlly(actor.instanceId, this.session.snapshot()));
       }
 
       this.actorViews.set(actor.instanceId, { marker, label, allied });
     }
 
+    this.createJoystick();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
     window.__arenaSmoke = {
       sceneReady: true,
       actorCount: this.actorViews.size,
-      frameCount: this.frames.length,
-      fixture: selectedKoFixture ? 'ko' : 'default',
+      fixture: this.selectedKoFixture ? 'ko' : 'default',
+      runtimeMode: 'live',
       cameraMode: 'fixed',
       stageWidth: ARENA_STAGE.width,
       stageHeight: ARENA_STAGE.height,
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
+      get controlSource() { return window.__arenaSceneControlSource ?? 'ai'; },
     };
+  }
+
+  createJoystick() {
+    this.joystickBase = this.add.circle(
+      JOYSTICK.x,
+      JOYSTICK.y,
+      JOYSTICK.radius,
+      0x101820,
+      0.34,
+    ).setStrokeStyle(2, 0xc6f6ff, 0.5).setDepth(20);
+
+    this.joystickKnob = this.add.circle(
+      JOYSTICK.x,
+      JOYSTICK.y,
+      JOYSTICK.knobRadius,
+      0xc6f6ff,
+      0.72,
+    ).setDepth(21);
+
+    this.joystickBase.setInteractive(
+      new Phaser.Geom.Circle(JOYSTICK.radius, JOYSTICK.radius, JOYSTICK.radius),
+      Phaser.Geom.Circle.Contains,
+    );
+
+    this.joystickBase.on('pointerdown', (pointer) => {
+      if (!this.selectedId) return;
+      this.joystickPointerId = pointer.id;
+      this.updateJoystickFromPointer(pointer);
+    });
+
+    this.input.on('pointermove', (pointer) => {
+      if (pointer.id !== this.joystickPointerId) return;
+      this.updateJoystickFromPointer(pointer);
+    });
+
+    this.input.on('pointerup', (pointer) => {
+      if (pointer.id !== this.joystickPointerId) return;
+      this.releaseJoystick();
+    });
+
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.input.off('pointermove');
+      this.input.off('pointerup');
+    });
+  }
+
+  pointerToStage(pointer) {
+    const rect = this.game.canvas.getBoundingClientRect();
+    const event = pointer.event;
+    const clientX = Number.isFinite(event?.clientX) ? event.clientX : rect.left + pointer.x;
+    const clientY = Number.isFinite(event?.clientY) ? event.clientY : rect.top + pointer.y;
+
+    return {
+      x: (clientX - rect.left) * (ARENA_STAGE.width / rect.width),
+      y: (clientY - rect.top) * (ARENA_STAGE.height / rect.height),
+    };
+  }
+
+  updateJoystickFromPointer(pointer) {
+    const point = this.pointerToStage(pointer);
+    const dx = point.x - JOYSTICK.x;
+    const dy = point.y - JOYSTICK.y;
+    const distance = Math.hypot(dx, dy);
+    const magnitude = Math.min(1, distance / JOYSTICK.radius);
+
+    if (distance <= 0.001) {
+      this.joystickVector = { x: 0, y: 0 };
+      this.joystickKnob.setPosition(JOYSTICK.x, JOYSTICK.y);
+      return;
+    }
+
+    const nx = dx / distance;
+    const ny = dy / distance;
+    this.joystickVector = { x: nx * magnitude, y: ny * magnitude };
+    this.joystickKnob.setPosition(
+      JOYSTICK.x + nx * JOYSTICK.radius * magnitude,
+      JOYSTICK.y + ny * JOYSTICK.radius * magnitude,
+    );
+  }
+
+  releaseJoystick() {
+    if (this.selectedId) this.session.clearPlayerMovement(this.selectedId);
+    this.joystickPointerId = null;
+    this.joystickVector = { x: 0, y: 0 };
+    this.joystickKnob.setPosition(JOYSTICK.x, JOYSTICK.y);
   }
 
   selectAlly(id, frame) {
     const actor = frame.allies.find((ally) => ally.instanceId === id && ally.hp > 0);
     if (!actor) return false;
+
+    if (this.selectedId && this.selectedId !== id) {
+      this.session.clearPlayerMovement(this.selectedId);
+    }
 
     this.selectedId = id;
     window.__arenaSceneSelectedId = id;
@@ -102,6 +203,7 @@ export class ArenaScene extends Phaser.Scene {
       return;
     }
 
+    this.releaseJoystick();
     this.selectedId = null;
     window.__arenaSceneSelectedId = null;
     this.refreshSelectionVisuals();
@@ -116,14 +218,34 @@ export class ArenaScene extends Phaser.Scene {
     }
     this.ensureLivingSelection(frame);
     this.refreshSelectionVisuals();
+
+    const selected = this.selectedId ? this.session.actorById(this.selectedId) : null;
+    window.__arenaSceneControlSource = selected
+      ? selected.controlHandoff.controlSource(this.session.elapsedSeconds * 1000)
+      : 'none';
+  }
+
+  applyKoFixtureIfNeeded() {
+    if (!this.selectedKoFixture || this.fixtureKoApplied || this.session.elapsedSeconds < 1) return;
+    const a2 = this.session.actorById('a2');
+    if (a2 && a2.hp > 0) a2.damage(a2.maxHp);
+    this.fixtureKoApplied = true;
   }
 
   update(_time, deltaMs) {
-    if (this.frameIndex >= this.frames.length - 1) return;
-    this.accumulator += deltaMs;
-    while (this.accumulator >= 250 && this.frameIndex < this.frames.length - 1) {
-      this.accumulator -= 250;
-      this.applyFrame(this.frames[++this.frameIndex]);
+    this.accumulatorSeconds += Math.min(deltaMs / 1000, 0.25);
+
+    while (this.accumulatorSeconds >= SIM_STEP_SECONDS && this.session.result() === 'running') {
+      this.accumulatorSeconds -= SIM_STEP_SECONDS;
+
+      if (this.joystickPointerId !== null && this.selectedId) {
+        this.session.setPlayerMovement(this.selectedId, this.joystickVector);
+      }
+
+      this.session.step(SIM_STEP_SECONDS);
+      this.applyKoFixtureIfNeeded();
     }
+
+    this.applyFrame(this.session.snapshot());
   }
 }
