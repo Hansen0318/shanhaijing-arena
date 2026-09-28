@@ -5,10 +5,12 @@ import { nearestSurvivingAlly } from '../combat/targeting.js';
 
 const SIM_STEP_SECONDS = 0.05;
 const JOYSTICK = Object.freeze({
-  x: 105,
-  y: 435,
-  radius: 54,
-  knobRadius: 24,
+  x: 74,
+  y: 466,
+  radius: 50,
+  inputRadius: 30,
+  knobRadius: 22,
+  deadZone: 0.03,
 });
 
 export class ArenaScene extends Phaser.Scene {
@@ -142,9 +144,12 @@ export class ArenaScene extends Phaser.Scene {
     const dx = point.x - JOYSTICK.x;
     const dy = point.y - JOYSTICK.y;
     const distance = Math.hypot(dx, dy);
-    const magnitude = Math.min(1, distance / JOYSTICK.radius);
+    const rawMagnitude = Math.min(1, distance / JOYSTICK.inputRadius);
+    const magnitude = rawMagnitude <= JOYSTICK.deadZone
+      ? 0
+      : (rawMagnitude - JOYSTICK.deadZone) / (1 - JOYSTICK.deadZone);
 
-    if (distance <= 0.001) {
+    if (distance <= 0.001 || magnitude <= 0) {
       this.joystickVector = { x: 0, y: 0 };
       this.joystickKnob.setPosition(JOYSTICK.x, JOYSTICK.y);
       return;
