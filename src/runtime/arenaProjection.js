@@ -1,26 +1,37 @@
-export const ARENA_LAYOUT = Object.freeze({
+export const ARENA_STAGE = Object.freeze({
+  width: 960,
+  height: 540,
   xMin: 0,
   xMax: 10,
   yMin: -2,
   yMax: 2,
-  horizontalPaddingRatio: 0.12,
-  verticalPaddingRatio: 0.16,
+  horizontalPadding: 120,
+  verticalPadding: 86,
 });
 
-// Fixed-view Arena projection. Simulation coordinates are mapped directly into
-// the current visible viewport so the whole 3v3 battlefield remains on screen.
-// Selection never changes the camera.
-export function arenaToViewport({ x, y }, { width = 960, height = 540 } = {}) {
-  const left = width * ARENA_LAYOUT.horizontalPaddingRatio;
-  const right = width * (1 - ARENA_LAYOUT.horizontalPaddingRatio);
-  const top = height * ARENA_LAYOUT.verticalPaddingRatio;
-  const bottom = height * (1 - ARENA_LAYOUT.verticalPaddingRatio);
+// Stable logical-stage projection. Simulation coordinates are always mapped into
+// the same 960x540 Arena design space. The whole Arena layer is then uniformly
+// contained inside the real browser viewport.
+export function arenaToStage({ x, y }) {
+  const left = ARENA_STAGE.horizontalPadding;
+  const right = ARENA_STAGE.width - ARENA_STAGE.horizontalPadding;
+  const top = ARENA_STAGE.verticalPadding;
+  const bottom = ARENA_STAGE.height - ARENA_STAGE.verticalPadding;
 
-  const xRatio = (x - ARENA_LAYOUT.xMin) / (ARENA_LAYOUT.xMax - ARENA_LAYOUT.xMin);
-  const yRatio = (y - ARENA_LAYOUT.yMin) / (ARENA_LAYOUT.yMax - ARENA_LAYOUT.yMin);
+  const xRatio = (x - ARENA_STAGE.xMin) / (ARENA_STAGE.xMax - ARENA_STAGE.xMin);
+  const yRatio = (y - ARENA_STAGE.yMin) / (ARENA_STAGE.yMax - ARENA_STAGE.yMin);
 
   return {
     x: left + xRatio * (right - left),
     y: top + yRatio * (bottom - top),
+  };
+}
+
+export function fitStageToViewport({ width, height }) {
+  const scale = Math.min(width / ARENA_STAGE.width, height / ARENA_STAGE.height);
+  return {
+    scale,
+    offsetX: (width - ARENA_STAGE.width * scale) / 2,
+    offsetY: (height - ARENA_STAGE.height * scale) / 2,
   };
 }
