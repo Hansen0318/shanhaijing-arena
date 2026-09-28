@@ -5,44 +5,50 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Current status: **IOS SAFARI DIRECT-LANDSCAPE OFFSET FIXED IN DOM HOST — AUTO VERIFY / PLAYER SMOKE PENDING**
+- Current status: **FIXED FULLSCREEN ARENA / IOS VIEWPORT PLAYER SMOKE PASS**
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
+- Recovery rule: do not restore selected-character camera follow, dynamic Arena reprojection, or resize-driven camera movement
+- Next exact implementation: **movement joystick + shared player override input**
 
-## Reproduced player behavior
-- portrait load -> rotate to landscape: composition can be correct;
-- direct landscape reload: fixed 16:9 stage can be vertically offset/clipped;
-- both default and KO URLs show the same issue.
+## Accepted presentation
+Player confirmed the latest iPhone Safari behavior is normal:
+- fixed 960x540 Arena game surface;
+- landscape is canonical;
+- portrait shows the same landscape stage scaled down;
+- direct landscape reload and portrait->landscape transition no longer produce the prior offset defect;
+- camera remains fixed;
+- A1/A2/A3 selection does not move the view;
+- default and KO fixture share the same fixed presentation.
 
-This proves the internal Arena/camera is not the remaining problem. The discrepancy is between iPhone Safari's layout viewport used by CSS centering and its actual visible `visualViewport` during direct landscape load.
+## Closed defect
+The mobile viewport/camera presentation defect is resolved for this slice.
 
-## Fix
-Internal game remains unchanged:
-- Phaser surface: immutable 960x540;
-- Scale Manager: NONE;
-- camera: fixed;
-- no startFollow;
-- no runtime Arena reprojection.
+Root causes addressed across the final solution:
+- removed selected-character camera follow;
+- removed scrolling-world presentation;
+- removed resize-driven Arena reprojection;
+- fixed Phaser logical surface at 960x540;
+- Phaser Scale Manager runtime scaling disabled;
+- outer DOM host uniformly contains the fixed stage;
+- iPhone Safari host anchoring uses visualViewport to stabilize direct-landscape reload.
 
-Outer host only:
-- `#game` is positioned explicitly from `window.visualViewport.width/height/offsetLeft/offsetTop`;
-- one uniform contain scale is calculated from 960x540;
-- host is centered inside the actual visible browser viewport;
-- host resyncs on pageshow, resize, orientationchange and visualViewport resize/scroll;
-- short post-load resyncs handle Safari chrome settling after direct landscape refresh.
+## Next implementation slice
+**movement joystick + shared player override input**
 
-## Expected
-- direct landscape reload and portrait->landscape transition produce the same centered composition;
-- portrait shows the exact same 16:9 stage scaled down;
-- no crop, no camera movement, no actor rearrangement.
+Requirements:
+- joystick controls the currently selected living ally;
+- valid joystick input immediately overrides AI movement intent for that ally;
+- selected ally remains selected;
+- after 2.0s without valid player combat input, full AI control resumes;
+- no AUTO/MANUAL UI;
+- camera remains fixed;
+- no joystick work may reintroduce viewport/camera coupling;
+- reuse existing control-handoff state/API rather than duplicate ownership logic;
+- start with movement only; skill buttons remain a later slice.
 
-## Required verification
-- tests PASS;
-- build PASS;
-- Pages deploy PASS;
-- player repeats direct landscape reload several times;
-- player repeats portrait -> landscape -> reload;
-- composition remains identical apart from uniform scale.
-
-## Gate
-After PASS, proceed to `movement joystick + shared player override input`.
+## Verification scope for next slice
+- static/unit tests for handoff semantics;
+- targeted movement/selection regression;
+- browser/player smoke for joystick feel on mobile landscape;
+- full regression only if shared combat/input modules are broadly changed.
