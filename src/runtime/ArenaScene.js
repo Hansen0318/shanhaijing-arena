@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { arenaToStage, ARENA_STAGE, fitStageToViewport } from './arenaProjection.js';
+import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
 import { createDemoBattleFrames } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 
@@ -17,30 +17,25 @@ export class ArenaScene extends Phaser.Scene {
     this.cameras.main.setBackgroundColor('#253648');
     this.cameras.main.stopFollow();
     this.cameras.main.setScroll(0, 0);
+    this.cameras.main.setBounds(0, 0, ARENA_STAGE.width, ARENA_STAGE.height);
 
-    // All Arena-world presentation lives on one fixed logical 960x540 layer.
-    // Only this layer is uniformly scaled/centered to fit the real viewport.
-    this.arenaLayer = this.add.container(0, 0);
-
-    const arenaBackground = this.add.rectangle(
+    this.add.rectangle(
       0, 0, ARENA_STAGE.width, ARENA_STAGE.height, 0x253648,
     ).setOrigin(0, 0);
 
-    const centerLine = this.add.line(
+    this.add.line(
       0, 0,
       ARENA_STAGE.width * 0.08, ARENA_STAGE.height / 2,
       ARENA_STAGE.width * 0.92, ARENA_STAGE.height / 2,
       0x344a5f, 0.55,
     ).setOrigin(0, 0);
 
-    const centerEllipse = this.add.ellipse(
+    this.add.ellipse(
       ARENA_STAGE.width / 2,
       ARENA_STAGE.height / 2,
       280,
       170,
     ).setStrokeStyle(2, 0x344a5f, 0.55);
-
-    this.arenaLayer.add([arenaBackground, centerLine, centerEllipse]);
 
     const first = this.frames[0];
     for (const actor of [...first.allies, ...first.enemies]) {
@@ -56,15 +51,8 @@ export class ArenaScene extends Phaser.Scene {
         marker.on('pointerdown', () => this.selectAlly(actor.instanceId, this.frames[this.frameIndex]));
       }
 
-      this.arenaLayer.add([marker, label]);
       this.actorViews.set(actor.instanceId, { marker, label, allied });
     }
-
-    this.handleViewportResize(this.scale.gameSize);
-    this.scale.on('resize', this.handleViewportResize, this);
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scale.off('resize', this.handleViewportResize, this);
-    });
 
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
@@ -77,24 +65,8 @@ export class ArenaScene extends Phaser.Scene {
       cameraMode: 'fixed',
       stageWidth: ARENA_STAGE.width,
       stageHeight: ARENA_STAGE.height,
-      get viewportWidth() { return window.innerWidth; },
-      get viewportHeight() { return window.innerHeight; },
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
     };
-  }
-
-  handleViewportResize(gameSize) {
-    const width = Math.max(1, Math.round(gameSize.width));
-    const height = Math.max(1, Math.round(gameSize.height));
-    const fit = fitStageToViewport({ width, height });
-
-    this.cameras.main.setSize(width, height);
-    this.cameras.main.stopFollow();
-    this.cameras.main.setScroll(0, 0);
-
-    this.arenaLayer
-      .setPosition(fit.offsetX, fit.offsetY)
-      .setScale(fit.scale);
   }
 
   selectAlly(id, frame) {
