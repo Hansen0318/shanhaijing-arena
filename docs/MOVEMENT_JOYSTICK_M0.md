@@ -23,8 +23,8 @@ The joystick controls the currently selected living ally's actual combat positio
 
 ## AI handoff
 - While valid joystick input is active, the selected actor's AI intent is suppressed by `ControlHandoff`.
-- After joystick release, the actor remains under player ownership but idle until the existing 2.0 second timeout expires.
-- At 2.0 seconds without valid player input, full AI resumes automatically.
+- After joystick release, the actor remains under player ownership but idle until the existing 1.0 second timeout expires.
+- At 1.0 seconds without valid player input, full AI resumes automatically.
 - No AUTO/MANUAL label, icon, countdown, or toggle is shown.
 - Other actors continue AI normally.
 
@@ -35,9 +35,12 @@ The joystick controls the currently selected living ally's actual combat positio
 - If selected ally becomes KO, nearest-living-ally fallback still applies.
 
 ## Input mapping
-Phaser Scale Manager owns display scaling and Phaser Input Manager owns pointer/touch coordinate conversion.
-Runtime joystick and ally selection consume Phaser pointer coordinates directly in the fixed 960x540 logical stage.
-Do not reintroduce manual DOM client-coordinate conversion or document-level touch capture for normal controls.
+Current mobile baseline is the player-confirmed working path:
+- Phaser logical surface remains fixed at 960x540 with `Scale.NONE`;
+- outer DOM scales/positions the fixed canvas;
+- ally selection uses Phaser GameObject `setInteractive()`;
+- joystick uses Phaser GameObject input plus explicit canvas-rect coordinate mapping for movement;
+- do not replace this input/display path without a separate regression-safe migration.
 
 ## KO fixture
 `?fixture=ko` remains a deterministic smoke route.
@@ -47,7 +50,7 @@ It forces A2 KO during the live runtime so fallback selection can be checked wit
 - player input immediately owns movement;
 - dead-zone/zero input does not refresh ownership;
 - Arena bounds clamp;
-- AI resumes after 2 seconds without valid input;
+- AI resumes after 1 second without valid input;
 - existing headless deterministic simulation remains green.
 
 ## Player smoke
@@ -58,7 +61,7 @@ On mobile landscape:
 4. Camera never moves.
 5. Switch to A1/A3; joystick controls newly selected ally.
 6. Release joystick: character stops manual movement.
-7. After about 2 seconds, AI resumes moving/fighting.
+7. After about 1 second, AI resumes moving/fighting.
 8. Other actors continue AI while selected actor is manually controlled.
 9. No viewport/camera regression.
 10. KO fixture still falls back selection without moving camera.
@@ -72,14 +75,16 @@ Current runtime smoke tuning:
 - visual base radius remains generous for touch acquisition;
 - full input magnitude is reached at a smaller input radius for faster response;
 - dead zone is small;
-- runtime fixture uses lower move speed and higher HP than the canonical deterministic headless fixture so manual switching and the 2-second AI resume can actually be observed.
+- runtime fixture uses lower move speed and higher HP than the canonical deterministic headless fixture so manual switching and the 1-second AI resume can actually be observed.
 
 Do not copy these temporary smoke stats into production balance without a separate balance decision.
 
 
-## Input architecture correction
-Earlier CSS-only canvas scaling plus manual DOM/touch mapping was retired after mobile input proved unreliable.
-Canonical runtime path is now:
-`visualViewport host -> Phaser Scale Manager -> Phaser Input Manager -> Arena controls`.
+## Input architecture baseline
+The player-confirmed working baseline was restored after later input/scale experiments caused mobile controls to stop responding.
 
-This keeps display scale and hit testing under the same framework transform and is the required pattern for future skill buttons and multi-touch.
+Treat this baseline as protected:
+- do not switch Scale Manager mode;
+- do not replace GameObject input;
+- do not add document/canvas touch adapters;
+- change joystick feel incrementally, one variable at a time, with mobile smoke after each change.
