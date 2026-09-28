@@ -10,6 +10,10 @@ export class ControlHandoff {
     this.lastPlayerInputAt = nowMs;
   }
 
+  releasePlayerControl() {
+    this.lastPlayerInputAt = Number.NEGATIVE_INFINITY;
+  }
+
   isPlayerOverrideActive(nowMs) {
     return nowMs - this.lastPlayerInputAt <= this.resumeAfterMs;
   }
