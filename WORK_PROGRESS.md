@@ -11,21 +11,21 @@
 - Recovery rule: do **not** recreate deterministic core, Character, Ability, AI, headless simulation, renderer bootstrap, ally selection, Pages workflow, or KO fixture
 - Preview workflow: `.github/workflows/m0-pages-preview.yml`
 - KO smoke mode: `?fixture=ko`
-- Exact remaining external blocker: GitHub Pages site is not yet enabled for this repository; Actions cannot create it because the connected integration receives `Resource not accessible by integration`
-- Next exact step: enable GitHub Pages for this repository with **Source: GitHub Actions**, then rerun the existing Pages workflow and perform bounded browser smoke on default + KO fixture URLs
+- Latest safe checkpoint: `a4a757b05d80ec0887fa49ff6753d691e90c9a79` (workflow YAML repair; deployment still blocked)
+- Exact remaining external blocker: the `github-pages` environment permits deployments only from `main`; feature branch `feat/m0-combat-core-20260927` is rejected before the deploy job starts
+- Next exact step: in Settings -> Environments -> `github-pages`, add **only** `feat/m0-combat-core-20260927` as an allowed deployment branch, then rerun failed deploy job from run `36362372635` and perform bounded browser smoke on default + KO fixture URLs
 - Canonical state: `docs/STATE.md`
 
 ## Current status
-Chat has completed all repository-side work that can be done safely without an interactive GitHub settings/browser session.
-
-The Pages workflow itself executes install/test/build successfully. The latest observed Actions failure occurs only at Pages site creation:
-- Install: PASS
-- Test: PASS
-- Build: PASS
-- Configure Pages: FAIL because the repository Pages site does not exist and the GitHub integration cannot create it
-- GitHub error: `Resource not accessible by integration`
-
-This is an account/repository settings permission boundary, not an application build failure.
+The player enabled Pages with Source: GitHub Actions. A malformed indentation in the workflow upload step caused invalid runs with zero jobs; commit `a4a757b` repaired the YAML. The resulting workflow run [#7](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36362372635) built the site but its deploy job was rejected by the `github-pages` environment branch rule.
+- Install: PASS (run #7)
+- Test: PASS (run #7)
+- Build: PASS (run #7)
+- Configure Pages: PASS (run #7)
+- Upload Pages artifact: PASS (run #7)
+- Deploy: FAIL before steps; annotation: `Branch "feat/m0-combat-core-20260927" is not allowed to deploy to github-pages due to environment protection rules.`
+- Environment policy read-only API: selected branches, one rule for `main`; no rule yet for the active feature branch
+- Browser smoke: PENDING; no verified HTTPS preview URL
 
 ## Repository-side preview changes already complete
 - `vite.config.js`: base path `/shanhaijing-arena/`
@@ -35,11 +35,10 @@ This is an account/repository settings permission boundary, not an application b
 
 ## Remaining task that Chat cannot perform
 An interactive GitHub settings/browser capability must:
-1. open repository Settings -> Pages;
-2. set Build and deployment Source to **GitHub Actions** / otherwise enable the Pages site;
-3. rerun the existing M0 Pages Preview workflow if it does not trigger automatically;
-4. obtain the resulting HTTPS Pages URL;
-5. browser-smoke default URL and `?fixture=ko`.
+1. in repository Settings -> Environments -> `github-pages`, keep the existing `main` rule and add selected branch `feat/m0-combat-core-20260927`;
+2. rerun the failed deploy job from workflow run `36362372635`;
+3. confirm deployment PASS and obtain its HTTPS Pages URL;
+4. browser-smoke default URL and `?fixture=ko`.
 
 ## Browser smoke gate
 Default:
