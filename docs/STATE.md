@@ -12,8 +12,8 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Team size: 3v3.
 - Arena movement: free 360-degree movement inside bounded arena.
 - Character separation: simple collision/avoidance; no complex physics.
-- Selected ally is the camera focus.
-- Camera uses soft follow, not hard snap.
+- Camera is fixed for the whole battle and does not follow selection.
+- The whole 3v3 Arena encounter is intended to remain readable in one fullscreen landscape view.
 - Player combat input immediately overrides AI for the selected character.
 - After 2.0s without valid input, full AI control resumes.
 - Selected character does not change when AI resumes.
@@ -31,7 +31,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Character stat minimum: HP, ATK, DEF, Move Speed, Attack Speed.
 - Skill set: Basic, Heavy, Special, Awakening, Passive.
 - KO character cannot be selected or healed in v1.
-- If selected character is KO, camera/selection moves smoothly to the nearest surviving ally.
+- If selected character is KO, selection moves to the nearest surviving ally; camera remains fixed.
 - M0 runtime stack: Phaser 4.2.1 + Vite 8.3.1 + plain JavaScript/ESM.
 
 ## Not in prototype
@@ -44,7 +44,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 ## Prototype exit criteria
 1. 3v3 can resolve from start to victory/defeat without player input.
 2. Player can switch among three allies.
-3. Camera soft-follows selected ally.
+3. Fixed fullscreen camera keeps the Arena readable while player switches selected ally.
 4. Manual input overrides AI instantly.
 5. Full AI resumes after 2.0s of no valid combat input.
 6. Basic/Heavy/Special/Awakening all function under AI and player control as applicable.
@@ -79,3 +79,12 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Skill controls.
 - Minimum HUD/VFX readability.
 - Runtime/mobile and player smoke.
+
+
+## 2026-09-28 visual strategy update
+Product Owner replaced selected-character camera follow with a fixed fullscreen Arena view.
+- Landscape fullscreen is canonical.
+- Selection affects highlight/HUD only.
+- Camera never retargets on A1/A2/A3.
+- Viewport-relative projection keeps the whole canonical 3v3 arena visible.
+- Previous soft-follow / larger scrolling-world presentation is retired for M0.
