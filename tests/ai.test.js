@@ -36,13 +36,12 @@ test('KO actor stays idle', () => {
   assert.deepEqual(intent, { kind: 'idle', reason: 'ko', targetId: null });
 });
 
-test('player override suppresses AI immediately and exact 2s boundary resumes it', () => {
+test('player override suppresses AI for the active input instant and AI resumes immediately after', () => {
   const a = actor('a', 'allies');
   const e = actor('e', 'enemies', 1, 0);
   a.controlHandoff.registerPlayerInput(1000);
   assert.equal(decideAIIntent({ actor: a, enemies: [e], abilityDefinitions: definitions(), nowMs: 1000 }).reason, 'player_override');
-  assert.equal(decideAIIntent({ actor: a, enemies: [e], abilityDefinitions: definitions(), nowMs: 2999 }).reason, 'player_override');
-  assert.equal(decideAIIntent({ actor: a, enemies: [e], abilityDefinitions: definitions(), nowMs: 3000 }).kind, 'ability');
+  assert.equal(decideAIIntent({ actor: a, enemies: [e], abilityDefinitions: definitions(), nowMs: 1001 }).kind, 'ability');
 });
 
 test('living current target is retained', () => {
