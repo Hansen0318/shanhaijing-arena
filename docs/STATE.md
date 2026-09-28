@@ -71,6 +71,11 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - GitHub Actions on latest branch: **49 / 49 tests PASS**, production build PASS, Pages deploy PASS.
 - Fullscreen Arena interactive browser smoke on the deployed default and `?fixture=ko` URLs: PASS. Landscape canvas has a continuous world background without the former bordered card; six actors render as replay advances, A1/A2/A3 highlight and camera retarget work, top/bottom and observed left-to-right camera positions do not reveal outside-world blank space, enemy click is no-op, and A2 KO falls back to A1. No blocking page-origin runtime/console error. **Fullscreen arena/camera defect resolved; ENGINEERING PASS / PLAYER SMOKE PASS for this slice.**
 
+### Arena sand color evaluation (2026-09-28)
+- Arena rectangle fill `#8E7B5A`, center line and ellipse stroke `#5F513B`; dark outer camera background retained.
+- Color-only source commit `9b9fe641848a412e2b10e26493a73532ba4551bc`; Actions run `36436079695`: Test / Build / Pages Deploy success. Public Pages appearance observed in browser. **ENGINEERING PASS / PLAYER SMOKE PENDING** for player device proportion assessment.
+- No arena/actor/control/camera geometry or battle behavior changed in this slice.
+
 ### Pending
 - Fixed fullscreen Arena / iPhone Safari viewport presentation: **ENGINEERING PASS / PLAYER SMOKE PASS**.
 - Movement joystick + shared player override: **known-working mobile baseline restored; player-confirmed movement works; AI resume delay now 0s / immediate**.
