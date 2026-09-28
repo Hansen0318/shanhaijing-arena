@@ -76,6 +76,7 @@ export class ArenaScene extends Phaser.Scene {
       stageHeight: ARENA_STAGE.height,
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
       get controlSource() { return window.__arenaSceneControlSource ?? 'ai'; },
+      get lastInput() { return window.__arenaLastInput ?? null; },
     };
   }
 
@@ -130,8 +131,12 @@ export class ArenaScene extends Phaser.Scene {
     };
 
     this.onTouchStart = (event) => {
-      for (const touch of event.changedTouches) {
+      const touches = event.changedTouches;
+      for (let index = 0; index < touches.length; index += 1) {
+        const touch = touches.item ? touches.item(index) : touches[index];
+        if (!touch) continue;
         const point = this.clientToStage(touch.clientX, touch.clientY);
+        window.__arenaLastInput = { type: 'touchstart', x: point.x, y: point.y };
         if (handleStageDown(point, touch.identifier)) {
           event.preventDefault();
           break;
@@ -141,9 +146,13 @@ export class ArenaScene extends Phaser.Scene {
 
     this.onTouchMove = (event) => {
       if (this.joystickPointerId === null) return;
-      for (const touch of event.changedTouches) {
-        if (touch.identifier !== this.joystickPointerId) continue;
-        this.updateJoystickFromStagePoint(this.clientToStage(touch.clientX, touch.clientY));
+      const touches = event.changedTouches;
+      for (let index = 0; index < touches.length; index += 1) {
+        const touch = touches.item ? touches.item(index) : touches[index];
+        if (!touch || touch.identifier !== this.joystickPointerId) continue;
+        const point = this.clientToStage(touch.clientX, touch.clientY);
+        window.__arenaLastInput = { type: 'touchmove', x: point.x, y: point.y };
+        this.updateJoystickFromStagePoint(point);
         event.preventDefault();
         break;
       }
@@ -151,8 +160,11 @@ export class ArenaScene extends Phaser.Scene {
 
     this.onTouchEnd = (event) => {
       if (this.joystickPointerId === null) return;
-      for (const touch of event.changedTouches) {
-        if (touch.identifier !== this.joystickPointerId) continue;
+      const touches = event.changedTouches;
+      for (let index = 0; index < touches.length; index += 1) {
+        const touch = touches.item ? touches.item(index) : touches[index];
+        if (!touch || touch.identifier !== this.joystickPointerId) continue;
+        window.__arenaLastInput = { type: 'touchend' };
         this.releaseJoystick();
         event.preventDefault();
         break;
