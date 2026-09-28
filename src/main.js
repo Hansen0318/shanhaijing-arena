@@ -7,9 +7,8 @@ new Phaser.Game({
   width: 960,
   height: 540,
   backgroundColor: '#17212b',
-  // Landscape mobile is the canonical presentation. ENVELOP keeps the 16:9
-  // game canvas undistorted while covering the available viewport; excess
-  // content is cropped rather than leaving unused bars around the battlefield.
-  scale: { mode: Phaser.Scale.ENVELOP, autoCenter: Phaser.Scale.CENTER_BOTH },
+  // Match the actual browser viewport instead of scaling a fixed 16:9 canvas.
+  // This avoids FIT letterboxing and ENVELOP over-zoom/cropping on mobile.
+  scale: { mode: Phaser.Scale.RESIZE },
   scene: [ArenaScene],
 });
