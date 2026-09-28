@@ -68,14 +68,14 @@ test('zero/dead-zone movement does not refresh player ownership', () => {
   session.step(0.25);
   session.clearPlayerMovement('a2');
 
-  while (session.elapsedSeconds < 2) session.step(0.25);
+  while (session.elapsedSeconds < 1) session.step(0.25);
   assert.equal(a2.controlHandoff.controlSource(session.elapsedSeconds * 1000), 'ai');
 
   assert.equal(session.setPlayerMovement('a2', { x: 0.01, y: 0.01 }), false);
   assert.equal(a2.controlHandoff.controlSource(session.elapsedSeconds * 1000), 'ai');
 });
 
-test('AI resumes after 2 seconds without valid player input', () => {
+test('AI resumes after 1 second without valid player input', () => {
   const session = makeSession();
   const a2 = session.actorById('a2');
 
@@ -84,7 +84,7 @@ test('AI resumes after 2 seconds without valid player input', () => {
   session.clearPlayerMovement('a2');
 
   const heldX = a2.x;
-  while (session.elapsedSeconds < 2) session.step(0.25);
+  while (session.elapsedSeconds < 1) session.step(0.25);
   assert.equal(a2.x, heldX);
 
   session.step(0.25);
