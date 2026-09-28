@@ -8,7 +8,7 @@
       html, body {
         margin: 0;
         width: 100%;
-        min-height: 100%;
+        height: 100%;
         overflow: hidden;
         background: #253648;
       }
@@ -16,19 +16,16 @@
       body {
         position: fixed;
         inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         overscroll-behavior: none;
         touch-action: none;
       }
 
       #game {
-        width: min(100vw, calc(100dvh * 16 / 9));
-        aspect-ratio: 16 / 9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 960px;
+        height: 540px;
         overflow: hidden;
         background: #253648;
       }
@@ -36,15 +33,62 @@
       #game canvas {
         display: block;
         width: 100% !important;
-        height: auto !important;
-        max-width: 100%;
-        max-height: 100%;
-        aspect-ratio: 16 / 9;
+        height: 100% !important;
       }
     </style>
   </head>
   <body>
     <div id="game"></div>
+
+    <script>
+      (() => {
+        const STAGE_WIDTH = 960;
+        const STAGE_HEIGHT = 540;
+        const game = document.getElementById('game');
+
+        function syncGameHostToVisualViewport() {
+          const vv = window.visualViewport;
+          const viewportWidth = vv ? vv.width : window.innerWidth;
+          const viewportHeight = vv ? vv.height : window.innerHeight;
+          const offsetLeft = vv ? vv.offsetLeft : 0;
+          const offsetTop = vv ? vv.offsetTop : 0;
+
+          const scale = Math.min(
+            viewportWidth / STAGE_WIDTH,
+            viewportHeight / STAGE_HEIGHT,
+          );
+
+          const width = STAGE_WIDTH * scale;
+          const height = STAGE_HEIGHT * scale;
+          const left = offsetLeft + (viewportWidth - width) / 2;
+          const top = offsetTop + (viewportHeight - height) / 2;
+
+          game.style.width = `${width}px`;
+          game.style.height = `${height}px`;
+          game.style.left = `${left}px`;
+          game.style.top = `${top}px`;
+        }
+
+        function resyncAfterSafariSettles() {
+          syncGameHostToVisualViewport();
+          requestAnimationFrame(syncGameHostToVisualViewport);
+          setTimeout(syncGameHostToVisualViewport, 80);
+          setTimeout(syncGameHostToVisualViewport, 240);
+        }
+
+        window.addEventListener('pageshow', resyncAfterSafariSettles);
+        window.addEventListener('resize', resyncAfterSafariSettles);
+        window.addEventListener('orientationchange', resyncAfterSafariSettles);
+
+        if (window.visualViewport) {
+          window.visualViewport.addEventListener('resize', syncGameHostToVisualViewport);
+          window.visualViewport.addEventListener('scroll', syncGameHostToVisualViewport);
+        }
+
+        resyncAfterSafariSettles();
+      })();
+    </script>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
