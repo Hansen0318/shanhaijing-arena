@@ -5,40 +5,38 @@
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`
 - Active PR: **#1 — M0: combat core foundation**
-- Latest completed verified slice: deterministic M0 headless 3v3 simulation
-- Latest completed Chat-first interaction slice: allied selection/camera/KO fallback
-- Latest completed Chat-first preview unblock: Pages workflow, Pages base path, KO fixture, and workflow adjustment for pre-enabled Pages
-- Recovery rule: do **not** recreate deterministic core, Character, Ability, AI, headless simulation, renderer bootstrap, ally selection, Pages workflow, or KO fixture
-- Preview workflow: `.github/workflows/m0-pages-preview.yml`
-- KO smoke mode: `?fixture=ko`
-- Latest safe checkpoint: `a4a757b05d80ec0887fa49ff6753d691e90c9a79` (workflow YAML repair; deployment still blocked)
-- Exact remaining external blocker: the `github-pages` environment permits deployments only from `main`; feature branch `feat/m0-combat-core-20260927` is rejected before the deploy job starts
-- Next exact step: in Settings -> Environments -> `github-pages`, add **only** `feat/m0-combat-core-20260927` as an allowed deployment branch, then rerun failed deploy job from run `36362372635` and perform bounded browser smoke on default + KO fixture URLs
+- Status: **ENGINEERING PASS / PLAYER SMOKE PENDING** for first player interaction
+- Latest completed verified slice: Pages preview deployment and bounded default + KO browser smoke
+- Runtime code deployed from `a4a757b05d80ec0887fa49ff6753d691e90c9a79`; following documentation-only commits do not change runtime
+- Recovery rule: do **not** recreate deterministic core, Character, Ability, AI, headless simulation, renderer bootstrap, selection, Pages workflow, or KO fixture
+- Preview URL: https://hansen0318.github.io/shanhaijing-arena/
+- KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
+- Next exact step: **movement joystick + shared player override input** (new implementation slice); do not redo the browser smoke unless a later change affects it
 - Canonical state: `docs/STATE.md`
 
 ## Current status
-The player enabled Pages with Source: GitHub Actions. A malformed indentation in the workflow upload step caused invalid runs with zero jobs; commit `a4a757b` repaired the YAML. The resulting workflow run [#7](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36362372635) built the site but its deploy job was rejected by the `github-pages` environment branch rule.
-- Install: PASS (run #7)
-- Test: PASS (run #7)
-- Build: PASS (run #7)
-- Configure Pages: PASS (run #7)
-- Upload Pages artifact: PASS (run #7)
-- Deploy: FAIL before steps; annotation: `Branch "feat/m0-combat-core-20260927" is not allowed to deploy to github-pages due to environment protection rules.`
-- Environment policy read-only API: selected branches, one rule for `main`; no rule yet for the active feature branch
-- Browser smoke: PENDING; no verified HTTPS preview URL
+Pages Source is GitHub Actions. The `github-pages` environment has an explicit branch rule for `feat/m0-combat-core-20260927` alongside `main`. Workflow YAML indentation was repaired at `a4a757b`. [M0 Pages Preview run #7, retry 2](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36362372635) completed:
+- Install: PASS
+- Test: PASS
+- Build: PASS
+- Configure Pages and upload artifact: PASS
+- Deploy Pages: PASS; successful deployment URL is the preview URL above
+
+Bounded browser smoke on that HTTPS deployment:
+- Default: Phaser scene booted with six visible actor markers. Clicking A1, A3, A2 changed the white selection outline; camera moved toward each selected actor. Clicking an enemy left A2 selected. Replay advanced to its later layout. No blocking application console/runtime errors.
+- `?fixture=ko`: A2 initially had the selection outline; after its scripted KO, A2 became faded, selection moved to living A1 and camera retargeted. No blocking application console/runtime errors.
+- Browser extension emitted a metadata error from its own `chrome-extension://` script; no page-origin blocking error was observed.
+- Visual observation: actor labels and some markers overlap in later replay frames. This prototype readability note belongs to focused player smoke or a later visual pass; it did not prevent this interaction gate.
+- Player device/feel acceptance: PENDING.
 
 ## Repository-side preview changes already complete
 - `vite.config.js`: base path `/shanhaijing-arena/`
-- `.github/workflows/m0-pages-preview.yml`: test/build/upload/deploy workflow; no longer attempts privileged automatic Pages enablement
+- `.github/workflows/m0-pages-preview.yml`: test/build/upload/deploy workflow with corrected upload indentation
 - deterministic KO smoke fixture via `?fixture=ko`
 - first player interaction code already present
 
-## Remaining task that Chat cannot perform
-An interactive GitHub settings/browser capability must:
-1. in repository Settings -> Environments -> `github-pages`, keep the existing `main` rule and add selected branch `feat/m0-combat-core-20260927`;
-2. rerun the failed deploy job from workflow run `36362372635`;
-3. confirm deployment PASS and obtain its HTTPS Pages URL;
-4. browser-smoke default URL and `?fixture=ko`.
+## Player smoke
+Use the default preview URL on a landscape phone to check only six placeholders, A1/A2/A3 selection outline, camera comfort, enemy tap behavior and replay. Use the KO URL to check fallback feel. Report any issue with device/browser and a screenshot if useful.
 
 ## Browser smoke gate
 Default:
@@ -57,9 +55,4 @@ KO fixture:
 - camera follows fallback
 - no blocking runtime/console error
 
-Do **not** begin joystick before this gate passes.
-
-If PASS:
-- mark `ENGINEERING PASS / PLAYER SMOKE PENDING`
-- retain the HTTPS preview URL for player use
-- next exact step: `movement joystick + shared player override input`
+The bounded engineering gate passed. Next implementation is `movement joystick + shared player override input`; player acceptance remains separately pending.
