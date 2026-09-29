@@ -131,9 +131,19 @@ export function decideAIIntent({
         targetId: targetId(target),
         pursue: basic.definition.preferredRange === null
           ? legacyPursue(actor, target)
-          : false,
+          : distance(actor, target) > (basic.definition.preferredRange ?? AI_ENGAGE_DISTANCE),
       };
     }
+
+    return {
+      kind: 'move',
+      movement: 'approach',
+      reason: 'basic_fallback_approach',
+      category: 'basic',
+      definitionId: basic.definition.id,
+      targetId: targetId(target),
+      desiredRange: basic.definition.preferredRange ?? AI_ENGAGE_DISTANCE,
+    };
   }
 
   return {
