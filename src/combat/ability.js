@@ -19,7 +19,15 @@ export function createAbilityDefinition(input) {
   nonempty(input?.id, 'id');
   if (!ACTIVE_CATEGORIES.has(input?.category)) throw new TypeError('Unknown ability category');
   const cooldown = nonnegativeFinite(input.cooldown, 'cooldown');
-  const range = nonnegativeFinite(input.range, 'range');
+  const maxRange = nonnegativeFinite(input.maxRange ?? input.range, 'maxRange');
+  const minRange = input.minRange == null ? 0 : nonnegativeFinite(input.minRange, 'minRange');
+  const preferredRange = input.preferredRange == null
+    ? null
+    : nonnegativeFinite(input.preferredRange, 'preferredRange');
+  if (minRange > maxRange) throw new RangeError('minRange must not exceed maxRange');
+  if (preferredRange !== null && (preferredRange < minRange || preferredRange > maxRange)) {
+    throw new RangeError('preferredRange must be between minRange and maxRange');
+  }
   const targetingRule = nonempty(input.targetingRule, 'targetingRule');
   if (input.category === 'basic' && cooldown !== 0) {
     throw new RangeError('Basic ability cooldown must be 0');
@@ -29,7 +37,10 @@ export function createAbilityDefinition(input) {
     id: input.id,
     category: input.category,
     cooldown,
-    range,
+    range: maxRange,
+    minRange,
+    preferredRange,
+    maxRange,
     targetingRule,
     effect: Object.freeze({ ...(input.effect ?? {}) }),
     ai: Object.freeze({ ...(input.ai ?? {}) }),
