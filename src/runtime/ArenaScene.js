@@ -8,7 +8,10 @@ const JOYSTICK = Object.freeze({
   x: 70,
   y: 435,
   radius: 54,
+  inputRadius: 30,
   knobRadius: 24,
+  deadZone: 0.03,
+  acquireRadius: 76,
 });
 
 export class ArenaScene extends Phaser.Scene {
@@ -99,7 +102,7 @@ export class ArenaScene extends Phaser.Scene {
     ).setDepth(21);
 
     this.joystickBase.setInteractive(
-      new Phaser.Geom.Circle(JOYSTICK.radius, JOYSTICK.radius, JOYSTICK.radius),
+      new Phaser.Geom.Circle(JOYSTICK.radius, JOYSTICK.radius, JOYSTICK.acquireRadius),
       Phaser.Geom.Circle.Contains,
     );
 
@@ -128,8 +131,23 @@ export class ArenaScene extends Phaser.Scene {
   pointerToStage(pointer) {
     const rect = this.game.canvas.getBoundingClientRect();
     const event = pointer.event;
-    const clientX = Number.isFinite(event?.clientX) ? event.clientX : rect.left + pointer.x;
-    const clientY = Number.isFinite(event?.clientY) ? event.clientY : rect.top + pointer.y;
+
+    const touch =
+      event?.changedTouches?.[0] ??
+      event?.touches?.[0] ??
+      null;
+
+    const clientX = Number.isFinite(touch?.clientX)
+      ? touch.clientX
+      : Number.isFinite(event?.clientX)
+        ? event.clientX
+        : rect.left + pointer.x;
+
+    const clientY = Number.isFinite(touch?.clientY)
+      ? touch.clientY
+      : Number.isFinite(event?.clientY)
+        ? event.clientY
+        : rect.top + pointer.y;
 
     return {
       x: (clientX - rect.left) * (ARENA_STAGE.width / rect.width),
@@ -142,9 +160,12 @@ export class ArenaScene extends Phaser.Scene {
     const dx = point.x - JOYSTICK.x;
     const dy = point.y - JOYSTICK.y;
     const distance = Math.hypot(dx, dy);
-    const magnitude = Math.min(1, distance / JOYSTICK.radius);
+    const rawMagnitude = Math.min(1, distance / JOYSTICK.inputRadius);
+    const magnitude = rawMagnitude <= JOYSTICK.deadZone
+      ? 0
+      : (rawMagnitude - JOYSTICK.deadZone) / (1 - JOYSTICK.deadZone);
 
-    if (distance <= 0.001) {
+    if (distance <= 0.001 || magnitude <= 0) {
       this.joystickVector = { x: 0, y: 0 };
       this.joystickKnob.setPosition(JOYSTICK.x, JOYSTICK.y);
       return;
