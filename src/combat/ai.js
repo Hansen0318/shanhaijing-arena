@@ -71,6 +71,7 @@ export function decideAIIntent({
 
   return {
     kind: 'move',
+    reason: 'pursue_nearest',
     targetId: targetId(target),
     x: target.x,
     y: target.y,
