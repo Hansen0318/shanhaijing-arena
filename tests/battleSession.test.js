@@ -529,3 +529,24 @@ test('AI range profile can retreat away from a too-close opponent', () => {
   assert.ok(after > before);
   assert.equal(a2.abilityState.awakening.phase, 'ready');
 });
+
+
+test('all cooldown skills do not make AI idle; actor keeps closing for Basic', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  a2.x = 0;
+  a2.y = 0;
+  e2.x = 8;
+  e2.y = 0;
+
+  for (const category of ['heavy', 'special', 'awakening']) {
+    a2.abilityState[category].phase = 'cooldown';
+    a2.abilityState[category].cooldownRemaining = 5;
+  }
+
+  const before = a2.x;
+  session.step(0.25);
+  assert.ok(a2.x > before);
+});
