@@ -32,7 +32,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Initial advantage/disadvantage test value: +15% / -15% damage modifier.
 - Roles: Tank / Attacker / Support. Healer/Buffer/Controller are Support subtypes in v1.
 - Character stat minimum: HP, ATK, DEF, Move Speed, Attack Speed.
-- Skill set: Basic, Heavy, Special, Awakening, Passive.
+- Skill set: Basic, Heavy, Special, Awakening, Passive. Active slot names do not determine distance class; each skill may independently define min/preferred/max range for AI spacing.
 - KO character cannot be selected or healed in v1.
 - If selected character is KO, selection moves to the nearest surviving ally; camera remains fixed.
 - M0 runtime stack: Phaser 4.2.1 + Vite 8.3.1 + plain JavaScript/ESM.
