@@ -159,7 +159,7 @@ test('player ability cannot fire while cooling down', () => {
   assert.equal(e2.hp, hpAfterFirst);
 });
 
-test('player ability can fire immediately even when target is outside AI range', () => {
+test('player ability can air-cast immediately when target is outside hit range', () => {
   const session = makeSession();
   const a2 = session.actorById('a2');
   const e2 = session.actorById('e2');
@@ -169,7 +169,7 @@ test('player ability can fire immediately even when target is outside AI range',
   const hpBefore = e2.hp;
 
   assert.equal(session.usePlayerAbility('a2', 'heavy'), true);
-  assert.ok(e2.hp < hpBefore);
+  assert.equal(e2.hp, hpBefore);
   assert.equal(a2.abilityState.heavy.phase, 'cooldown');
 });
 
@@ -250,4 +250,15 @@ test('AI resumes full automatic ability use after player control is released', (
   session.clearPlayerMovement('a2');
   session.step(0.25);
   assert.equal(a2.abilityState.awakening.phase, 'cooldown');
+});
+
+
+test('manual targeted ability can air-cast with no living opponent', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+
+  for (const enemy of session.enemies) enemy.damage(enemy.maxHp);
+
+  assert.equal(session.usePlayerAbility('a2', 'special'), true);
+  assert.equal(a2.abilityState.special.phase, 'cooldown');
 });
