@@ -344,3 +344,16 @@ The demo fixture now deliberately exercises mixed ranges:
 - Special medium;
 - Awakening longer-range.
 These are prototype fixture values, not final character balance.
+
+
+## Basic fallback + prototype cooldowns
+Player clarified that Basic is the unlimited automatic fallback, not a cooldown button.
+
+Locked prototype behavior:
+- Basic has no cooldown button and remains automatic/unlimited, paced only by attack cadence;
+- if Heavy/Special/Awakening are all cooling down, AI must not idle;
+- AI continues approaching the nearest opponent using the Basic range profile and attacks once Basic is usable;
+- Heavy / Special / Awakening remain the three manual buttons in the current M0 prototype;
+- prototype cooldowns are now Heavy 5s, Special 10s, Awakening 15s.
+
+Awakening progression/unlock is not implemented in M0 yet; future progression may gate the slot without changing the combat API.
