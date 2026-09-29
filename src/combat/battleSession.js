@@ -7,8 +7,8 @@ import { resolveDirectDamage } from './combatResolver.js';
 const ACTIVE_CATEGORIES = ['basic', 'heavy', 'special', 'awakening'];
 
 export const DEFAULT_ARENA_BOUNDS = Object.freeze({
-  xMin: -1.1,
-  xMax: 11.1,
+  xMin: -2.3333333333,
+  xMax: 12.3333333333,
   yMin: -2,
   yMax: 2,
 });
