@@ -303,3 +303,16 @@ Player clarified that pursuit is not one-to-one:
 - each AI independently chooses its nearest living opponent and may share that target with teammates.
 
 Chat added direct BattleSession regressions for two enemies simultaneously pursuing one nearest ally and two allies simultaneously pursuing one nearest enemy. If these pass but device behavior differs, investigate runtime geometry/engage-distance presentation rather than adding target reservation logic.
+
+
+## Near-overlap engage distance correction
+Player screenshot confirmed that the previous M0 engage distance (0.75 simulation units) stopped pursuit while actor circles were merely adjacent.
+
+Updated rule:
+- AI_ENGAGE_DISTANCE reduced from 0.75 to 0.20 simulation units;
+- actors continue pursuing until their centers are visually very close / nearly overlapping;
+- ability ranges remain independent and do not stop pursuit;
+- multi-chaser targeting remains nonexclusive;
+- applies symmetrically to allied and enemy AI.
+
+Regression coverage now checks that the former ~edge-touch distance still pursues and only near-overlap distance permits stopping.
