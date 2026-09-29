@@ -1,5 +1,6 @@
 import { resolveBattleState, BATTLE_LIMIT_SECONDS } from './battleRules.js';
 import { decideAIIntent } from './ai.js';
+import { chooseSoftTarget } from './targeting.js';
 import { startAbility, finishAbility, tickAbilityCooldown } from './ability.js';
 import { canCharacterAct } from './character.js';
 import { resolveDirectDamage } from './combatResolver.js';
@@ -125,6 +126,49 @@ export class BattleSession {
     const actor = this.actorById(instanceId);
     if (actor) actor.controlHandoff.releasePlayerControl();
 
+    return true;
+  }
+
+  usePlayerAbility(instanceId, category) {
+    if (!['heavy', 'special', 'awakening'].includes(category)) return false;
+
+    const actor = this.actorById(instanceId);
+    if (!actor || !canCharacterAct(actor)) return false;
+
+    const actorDefinition = this.characterDefinitions[actor.definitionId];
+    if (!actorDefinition) throw new Error(`Missing character definition: ${actor.definitionId}`);
+
+    const definitionId = actorDefinition.abilities[category];
+    const definition = this.abilityDefinitions[definitionId];
+    const slot = actor.abilityState[category];
+    if (!definition || !slot) return false;
+
+    const opponents = actor.teamId === this.allies[0].teamId ? this.enemies : this.allies;
+    const currentTarget = actorById(opponents, this.targetIds.get(actor.instanceId));
+    const target = chooseSoftTarget(actor, opponents, currentTarget);
+    if (!target) return false;
+
+    if (!startAbility({ caster: actor, slot, definition, target, source: 'player' })) return false;
+
+    const defenderDefinition = this.characterDefinitions[target.definitionId];
+    if (!defenderDefinition) throw new Error(`Missing character definition: ${target.definitionId}`);
+
+    finishAbility({
+      caster: actor,
+      slot,
+      definition,
+      applyEffect: () => {
+        resolveDirectDamage({
+          attacker: actor,
+          defender: target,
+          attackerDefinition: actorDefinition,
+          defenderDefinition,
+          abilityDefinition: definition,
+        });
+      },
+    });
+
+    this.targetIds.set(actor.instanceId, target.instanceId);
     return true;
   }
 
