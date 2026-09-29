@@ -168,3 +168,82 @@ test('player ability fails cleanly when nearest target is out of range', () => {
   assert.equal(session.usePlayerAbility('a2', 'heavy'), false);
   assert.equal(a2.abilityState.heavy.phase, 'ready');
 });
+
+
+test('holding joystick ownership suppresses AI even with zero movement vector', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  a2.x = 4;
+  e2.x = 5;
+
+  assert.equal(session.holdPlayerControl('a2'), true);
+  session.step(0.25);
+
+  assert.equal(a2.abilityState.heavy.phase, 'ready');
+  assert.equal(a2.abilityState.special.phase, 'ready');
+  assert.equal(a2.abilityState.awakening.phase, 'ready');
+});
+
+test('cooldowns are independent per allied actor', () => {
+  const session = makeSession();
+  const a1 = session.actorById('a1');
+  const a2 = session.actorById('a2');
+  const e1 = session.actorById('e1');
+
+  a1.x = 4;
+  a2.x = 4;
+  e1.x = 5;
+
+  session.holdPlayerControl('a1');
+  session.holdPlayerControl('a2');
+
+  assert.equal(session.usePlayerAbility('a1', 'heavy'), true);
+  assert.equal(a1.abilityState.heavy.phase, 'cooldown');
+  assert.equal(a2.abilityState.heavy.phase, 'ready');
+});
+
+test('finished cooldown stays ready while player holds control until manually used', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  a2.x = 4;
+  e2.x = 5;
+
+  session.holdPlayerControl('a2');
+  assert.equal(session.usePlayerAbility('a2', 'heavy'), true);
+
+  for (let i = 0; i < 20; i += 1) {
+    session.holdPlayerControl('a2');
+    session.step(0.25);
+  }
+
+  assert.equal(a2.abilityState.heavy.phase, 'ready');
+  assert.equal(a2.abilityState.heavy.cooldownRemaining, 0);
+
+  session.holdPlayerControl('a2');
+  session.step(0.25);
+  assert.equal(a2.abilityState.heavy.phase, 'ready');
+
+  assert.equal(session.usePlayerAbility('a2', 'heavy'), true);
+  assert.equal(a2.abilityState.heavy.phase, 'cooldown');
+});
+
+test('AI resumes full automatic ability use after player control is released', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  a2.x = 4;
+  e2.x = 5;
+
+  session.holdPlayerControl('a2');
+  session.step(0.25);
+  assert.equal(a2.abilityState.awakening.phase, 'ready');
+
+  session.clearPlayerMovement('a2');
+  session.step(0.25);
+  assert.equal(a2.abilityState.awakening.phase, 'cooldown');
+});
