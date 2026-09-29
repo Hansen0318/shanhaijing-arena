@@ -194,3 +194,25 @@ test('AI range rule remains enforced when player cast bypass is not requested', 
     ignoreRange: true,
   }), true);
 });
+
+
+test('explicit player air-cast may start a targeted ability without a target', () => {
+  const caster = actor('a-air', 'allies');
+  const definition = heavy();
+  const slot = caster.abilityState.heavy;
+
+  assert.equal(startAbility({
+    caster,
+    slot,
+    definition,
+    target: null,
+    source: 'player',
+    ignoreRange: true,
+    allowNoTarget: true,
+  }), true);
+
+  assert.equal(slot.phase, 'executing');
+  assert.equal(slot.targetId, null);
+  assert.equal(finishAbility({ caster, slot, definition }), true);
+  assert.equal(slot.phase, 'cooldown');
+});
