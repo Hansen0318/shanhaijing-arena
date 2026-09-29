@@ -223,3 +223,23 @@ Canonical split:
 - pressing a manual skill registers player input for that instant; with zero-delay handoff, AI may resume next simulation step when joystick is not held.
 
 This is a control-rule difference, not a second combat implementation.
+
+
+## Air-cast + nearest-target + continuous runtime sandbox
+Player clarified the next control/testing contract:
+
+Manual skill cast:
+- after the 5-second countdown, a selected living ally may press Heavy/Special/Awakening immediately when the slot is ready;
+- manual cast does not require a target and may visibly cast into empty space;
+- if the nearest living target is inside the skill's real range, normal damage applies;
+- if the target is outside real hit range, the skill still casts and enters cooldown but deals no remote damage;
+- AI still requires range before auto-casting.
+
+AI targeting:
+- both allied and enemy AI now reevaluate the currently nearest living opponent on each decision;
+- moving one side closer to a different opponent can change the target;
+- this applies symmetrically to all six actors.
+
+Runtime test sandbox:
+- the public runtime fixture uses very high HP and a 24-hour maxSeconds value so the prototype does not stop during ordinary manual testing;
+- canonical deterministic/headless battle rules, including the formal 90-second limit and normal HP/balance fixture, remain unchanged.
