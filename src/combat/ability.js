@@ -47,18 +47,18 @@ export function isTargetInRange(caster, target, range) {
   return dx * dx + dy * dy <= range * range;
 }
 
-export function canStartAbility({ caster, slot, definition, target = null }) {
+export function canStartAbility({ caster, slot, definition, target = null, ignoreRange = false }) {
   if (!canCharacterAct(caster)) return false;
   if (!slot || slot.definitionId !== definition.id || slot.phase !== 'ready') return false;
 
   if (!abilityNeedsExternalTarget(definition)) return true;
   if (!target || isCharacterKO(target)) return false;
-  return isTargetInRange(caster, target, definition.range);
+  return ignoreRange || isTargetInRange(caster, target, definition.range);
 }
 
-export function startAbility({ caster, slot, definition, target = null, source = 'ai' }) {
+export function startAbility({ caster, slot, definition, target = null, source = 'ai', ignoreRange = false }) {
   if (source !== 'ai' && source !== 'player') throw new TypeError('source must be ai or player');
-  if (!canStartAbility({ caster, slot, definition, target })) return false;
+  if (!canStartAbility({ caster, slot, definition, target, ignoreRange })) return false;
 
   slot.phase = 'executing';
   slot.targetId = abilityNeedsExternalTarget(definition) ? (target.instanceId ?? target.id ?? null) : null;
