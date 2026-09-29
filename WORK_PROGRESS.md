@@ -293,3 +293,13 @@ Correction:
 - applies symmetrically to allied and enemy AI.
 
 Regression coverage includes being inside Basic range but outside engage distance, and an enemy following a manually controlled nearest ally.
+
+
+## Multi-chaser pursuit regression
+Player clarified that pursuit is not one-to-one:
+- one ally may be pursued by two or three enemy AI actors at the same time;
+- one enemy may be pursued by two or three allied AI actors at the same time;
+- there is no target reservation or exclusive pairing;
+- each AI independently chooses its nearest living opponent and may share that target with teammates.
+
+Chat added direct BattleSession regressions for two enemies simultaneously pursuing one nearest ally and two allies simultaneously pursuing one nearest enemy. If these pass but device behavior differs, investigate runtime geometry/engage-distance presentation rather than adding target reservation logic.
