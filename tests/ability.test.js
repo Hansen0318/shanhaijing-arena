@@ -147,3 +147,50 @@ test('AI and player requests use the same execution surface', () => {
     [playerCaster.abilityState.heavy.phase, playerCaster.abilityState.heavy.cooldownRemaining],
   );
 });
+
+
+test('AI range rule remains enforced when player cast bypass is not requested', () => {
+  const caster = createCharacterState(characterDefinition, {
+    instanceId: 'a-range',
+    teamId: 'allies',
+    x: 0,
+    y: 0,
+  });
+  const target = createCharacterState(characterDefinition, {
+    instanceId: 'e-range',
+    teamId: 'enemies',
+    x: 10,
+    y: 0,
+  });
+  const definition = createAbilityDefinition({
+    id: 'range-heavy',
+    category: 'heavy',
+    cooldown: 4,
+    range: 2,
+    targetingRule: 'enemy',
+    effect: { coefficient: 1 },
+  });
+  const slot = {
+    definitionId: 'range-heavy',
+    cooldownRemaining: 0,
+    phase: 'ready',
+    targetId: null,
+  };
+
+  assert.equal(startAbility({
+    caster,
+    slot,
+    definition,
+    target,
+    source: 'ai',
+  }), false);
+
+  assert.equal(startAbility({
+    caster,
+    slot,
+    definition,
+    target,
+    source: 'player',
+    ignoreRange: true,
+  }), true);
+});
