@@ -84,7 +84,9 @@ export function startAbility({
   })) return false;
 
   slot.phase = 'executing';
-  slot.targetId = abilityNeedsExternalTarget(definition) ? (target.instanceId ?? target.id ?? null) : null;
+  slot.targetId = abilityNeedsExternalTarget(definition)
+    ? (target?.instanceId ?? target?.id ?? null)
+    : null;
   slot.cooldownRemaining = 0;
   return true;
 }
