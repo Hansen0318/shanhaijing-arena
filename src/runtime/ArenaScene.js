@@ -16,6 +16,30 @@ const JOYSTICK = Object.freeze({
   acquireRadius: 76,
 });
 
+const SKILL_BUTTONS = Object.freeze({
+  heavy: Object.freeze({
+    x: ARENA_STAGE.width - 184,
+    y: 454,
+    radius: 42,
+    label: 'H',
+    color: 0xd9923b,
+  }),
+  special: Object.freeze({
+    x: ARENA_STAGE.width - 112,
+    y: 366,
+    radius: 42,
+    label: 'S',
+    color: 0x4e91d9,
+  }),
+  awakening: Object.freeze({
+    x: ARENA_STAGE.width - 66,
+    y: 452,
+    radius: 50,
+    label: 'A',
+    color: 0xc94a46,
+  }),
+});
+
 export class ArenaScene extends Phaser.Scene {
   constructor() { super('Arena'); }
 
@@ -77,6 +101,7 @@ export class ArenaScene extends Phaser.Scene {
     }
 
     this.createJoystick();
+    this.createSkillButtons();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
@@ -90,6 +115,7 @@ export class ArenaScene extends Phaser.Scene {
       stageHeight: ARENA_STAGE.height,
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
       get controlSource() { return window.__arenaSceneControlSource ?? 'ai'; },
+      skillButtons: ['heavy', 'special', 'awakening'],
     };
   }
 
@@ -135,6 +161,102 @@ export class ArenaScene extends Phaser.Scene {
       this.input.off('pointermove');
       this.input.off('pointerup');
     });
+  }
+
+
+  createSkillButtons() {
+    this.skillButtons = new Map();
+
+    for (const [category, config] of Object.entries(SKILL_BUTTONS)) {
+      const base = this.add.circle(
+        config.x,
+        config.y,
+        config.radius,
+        config.color,
+        0.92,
+      ).setStrokeStyle(3, 0xe9edf1, 0.9).setDepth(20);
+
+      base.setInteractive(
+        new Phaser.Geom.Circle(config.radius, config.radius, config.radius + 8),
+        Phaser.Geom.Circle.Contains,
+      );
+
+      const icon = this.add.text(config.x, config.y - 1, config.label, {
+        fontFamily: 'sans-serif',
+        fontSize: category === 'awakening' ? '30px' : '26px',
+        fontStyle: 'bold',
+        color: '#ffffff',
+      }).setOrigin(0.5).setDepth(22);
+
+      const cooldownText = this.add.text(config.x, config.y + 2, '', {
+        fontFamily: 'sans-serif',
+        fontSize: category === 'awakening' ? '26px' : '23px',
+        fontStyle: 'bold',
+        color: '#ffffff',
+        stroke: '#111111',
+        strokeThickness: 4,
+      }).setOrigin(0.5).setDepth(24);
+
+      const ring = this.add.graphics().setDepth(23);
+
+      base.on('pointerdown', () => {
+        if (!this.selectedId) return;
+        const used = this.session.usePlayerAbility(this.selectedId, category);
+        if (used) this.refreshSkillButtons();
+      });
+
+      this.skillButtons.set(category, {
+        base,
+        icon,
+        cooldownText,
+        ring,
+        config,
+      });
+    }
+
+    this.refreshSkillButtons();
+  }
+
+  refreshSkillButtons() {
+    if (!this.skillButtons) return;
+
+    const actor = this.selectedId ? this.session.actorById(this.selectedId) : null;
+    const usableActor = actor && actor.hp > 0;
+
+    for (const [category, view] of this.skillButtons) {
+      const slot = usableActor ? actor.abilityState[category] : null;
+      const definition = slot ? this.session.abilityDefinitions[slot.definitionId] : null;
+      const cooling = Boolean(slot && definition && slot.phase === 'cooldown' && slot.cooldownRemaining > 0);
+      const ready = Boolean(usableActor && slot && definition && slot.phase === 'ready');
+
+      view.base.setFillStyle(view.config.color, ready ? 0.92 : 0.34);
+      view.base.setStrokeStyle(3, ready ? 0xe9edf1 : 0x7d8389, ready ? 0.9 : 0.7);
+      view.icon.setAlpha(ready ? 1 : 0.28);
+      view.cooldownText.setText(cooling ? String(Math.max(1, Math.ceil(slot.cooldownRemaining))) : '');
+
+      view.ring.clear();
+      const ringRadius = view.config.radius + 6;
+
+      view.ring.lineStyle(5, 0x20262d, 0.68);
+      view.ring.beginPath();
+      view.ring.arc(view.config.x, view.config.y, ringRadius, 0, Math.PI * 2);
+      view.ring.strokePath();
+
+      if (cooling && definition.cooldown > 0) {
+        const ratio = Phaser.Math.Clamp(slot.cooldownRemaining / definition.cooldown, 0, 1);
+        const start = -Math.PI / 2;
+        const end = start + Math.PI * 2 * ratio;
+        view.ring.lineStyle(5, 0xf4f6f8, 0.95);
+        view.ring.beginPath();
+        view.ring.arc(view.config.x, view.config.y, ringRadius, start, end);
+        view.ring.strokePath();
+      } else if (ready) {
+        view.ring.lineStyle(5, 0xf4f6f8, 0.95);
+        view.ring.beginPath();
+        view.ring.arc(view.config.x, view.config.y, ringRadius, 0, Math.PI * 2);
+        view.ring.strokePath();
+      }
+    }
   }
 
   pointerToStage(pointer) {
@@ -248,6 +370,7 @@ export class ArenaScene extends Phaser.Scene {
     }
     this.ensureLivingSelection(frame);
     this.refreshSelectionVisuals();
+    this.refreshSkillButtons();
 
     const selected = this.selectedId ? this.session.actorById(this.selectedId) : null;
     window.__arenaSceneControlSource = selected
