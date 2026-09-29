@@ -1,5 +1,5 @@
 import { resolveBattleState, BATTLE_LIMIT_SECONDS } from './battleRules.js';
-import { decideAIIntent } from './ai.js';
+import { decideAIIntent, AI_ENGAGE_DISTANCE } from './ai.js';
 import { chooseSoftTarget } from './targeting.js';
 import {
   startAbility,
@@ -34,12 +34,13 @@ function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
-function moveToward(actor, target, speed, dt, bounds) {
+function moveToward(actor, target, speed, dt, bounds, stopDistance = AI_ENGAGE_DISTANCE) {
   const dx = target.x - actor.x;
   const dy = target.y - actor.y;
   const distance = Math.hypot(dx, dy);
-  if (distance === 0) return;
-  const step = Math.min(distance, speed * dt);
+  if (distance <= stopDistance) return;
+  const remaining = distance - stopDistance;
+  const step = Math.min(remaining, speed * dt);
   actor.x = clamp(actor.x + (dx / distance) * step, bounds.xMin, bounds.xMax);
   actor.y = clamp(actor.y + (dy / distance) * step, bounds.yMin, bounds.yMax);
 }
