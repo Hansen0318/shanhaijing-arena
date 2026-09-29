@@ -159,14 +159,18 @@ test('player ability cannot fire while cooling down', () => {
   assert.equal(e2.hp, hpAfterFirst);
 });
 
-test('player ability fails cleanly when nearest target is out of range', () => {
+test('player ability can fire immediately even when target is outside AI range', () => {
   const session = makeSession();
   const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
 
   a2.x = session.arenaBounds.xMin;
+  e2.x = session.arenaBounds.xMax;
+  const hpBefore = e2.hp;
 
-  assert.equal(session.usePlayerAbility('a2', 'heavy'), false);
-  assert.equal(a2.abilityState.heavy.phase, 'ready');
+  assert.equal(session.usePlayerAbility('a2', 'heavy'), true);
+  assert.ok(e2.hp < hpBefore);
+  assert.equal(a2.abilityState.heavy.phase, 'cooldown');
 });
 
 
