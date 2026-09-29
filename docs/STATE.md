@@ -20,9 +20,9 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - When joystick input is released, full AI control resumes immediately on the next simulation step.
 - Selected character does not change when AI resumes.
 - No visible AUTO/MANUAL state.
-- Player controls: movement joystick + Heavy + Special + Awakening.
+- Player controls: movement joystick + Heavy + Special + Awakening. Prototype cooldowns: Heavy 5s, Special 10s, Awakening 15s.
 - Manual Heavy/Special/Awakening can be triggered immediately after the pre-battle countdown when ready, including an air-cast with no in-range target; AI still obeys approach/range before auto-casting.
-- Basic attack is automatic; no Basic button.
+- Basic attack is automatic, unlimited, and has no cooldown button; when other active skills are cooling down, AI continues approaching for Basic instead of idling.
 - AI continuously reevaluates the nearest living opponent. Multiple AI actors may independently pursue the same opponent; there is no one-to-one target reservation. It keeps pursuing until a close engage distance (M0: 0.20 simulation units, visually near-overlapping centers), independent of ability ranges; Basic/Heavy/Special/Awakening may fire during pursuit, and manual control of one ally does not pause the other five AI actors.
 - Win: all enemy characters KO.
 - Lose: all allied characters KO.
