@@ -4,6 +4,7 @@ import { createDemoBattleSession } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 
 const SIM_STEP_SECONDS = 0.05;
+const PRE_BATTLE_SECONDS = 5;
 const ACTOR_VISUAL_RADIUS = 24;
 const ALLY_SELECT_RADIUS = 36;
 const JOYSTICK = Object.freeze({
@@ -18,21 +19,21 @@ const JOYSTICK = Object.freeze({
 
 const SKILL_BUTTONS = Object.freeze({
   heavy: Object.freeze({
-    x: ARENA_STAGE.width - 184,
+    x: ARENA_STAGE.width - 202,
     y: 454,
     radius: 42,
     label: 'H',
     color: 0xd9923b,
   }),
   special: Object.freeze({
-    x: ARENA_STAGE.width - 112,
-    y: 366,
+    x: ARENA_STAGE.width - 126,
+    y: 344,
     radius: 42,
     label: 'S',
     color: 0x4e91d9,
   }),
   awakening: Object.freeze({
-    x: ARENA_STAGE.width - 66,
+    x: ARENA_STAGE.width - 58,
     y: 452,
     radius: 50,
     label: 'A',
@@ -50,6 +51,8 @@ export class ArenaScene extends Phaser.Scene {
     this.actorViews = new Map();
     this.selectedId = 'a2';
     this.fixtureKoApplied = false;
+    this.preBattleRemaining = PRE_BATTLE_SECONDS;
+    this.battleStarted = false;
     this.joystickPointerId = null;
     this.joystickVector = { x: 0, y: 0 };
 
@@ -102,6 +105,7 @@ export class ArenaScene extends Phaser.Scene {
 
     this.createJoystick();
     this.createSkillButtons();
+    this.createPreBattleCountdown();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
@@ -116,6 +120,7 @@ export class ArenaScene extends Phaser.Scene {
       get selectedId() { return window.__arenaSceneSelectedId ?? null; },
       get controlSource() { return window.__arenaSceneControlSource ?? 'ai'; },
       skillButtons: ['heavy', 'special', 'awakening'],
+      get battleStarted() { return window.__arenaBattleStarted ?? false; },
     };
   }
 
@@ -142,8 +147,9 @@ export class ArenaScene extends Phaser.Scene {
     );
 
     this.joystickBase.on('pointerdown', (pointer) => {
-      if (!this.selectedId) return;
+      if (!this.battleStarted || !this.selectedId) return;
       this.joystickPointerId = pointer.id;
+      this.session.holdPlayerControl(this.selectedId);
       this.updateJoystickFromPointer(pointer);
     });
 
@@ -163,6 +169,42 @@ export class ArenaScene extends Phaser.Scene {
     });
   }
 
+
+
+  createPreBattleCountdown() {
+    this.countdownText = this.add.text(
+      ARENA_STAGE.width / 2,
+      ARENA_STAGE.height / 2 - 8,
+      String(PRE_BATTLE_SECONDS),
+      {
+        fontFamily: 'sans-serif',
+        fontSize: '76px',
+        fontStyle: 'bold',
+        color: '#ffffff',
+        stroke: '#20262d',
+        strokeThickness: 8,
+      },
+    ).setOrigin(0.5).setDepth(40);
+
+    window.__arenaBattleStarted = false;
+  }
+
+  updatePreBattleCountdown(deltaSeconds) {
+    if (this.battleStarted) return;
+
+    this.preBattleRemaining = Math.max(0, this.preBattleRemaining - deltaSeconds);
+
+    if (this.preBattleRemaining > 0) {
+      this.countdownText.setText(String(Math.ceil(this.preBattleRemaining)));
+      return;
+    }
+
+    this.battleStarted = true;
+    window.__arenaBattleStarted = true;
+    this.countdownText.setVisible(false);
+    this.accumulatorSeconds = 0;
+    this.refreshSkillButtons();
+  }
 
   createSkillButtons() {
     this.skillButtons = new Map();
@@ -200,7 +242,7 @@ export class ArenaScene extends Phaser.Scene {
       const ring = this.add.graphics().setDepth(23);
 
       base.on('pointerdown', () => {
-        if (!this.selectedId) return;
+        if (!this.battleStarted || !this.selectedId) return;
         const used = this.session.usePlayerAbility(this.selectedId, category);
         if (used) this.refreshSkillButtons();
       });
@@ -227,7 +269,7 @@ export class ArenaScene extends Phaser.Scene {
       const slot = usableActor ? actor.abilityState[category] : null;
       const definition = slot ? this.session.abilityDefinitions[slot.definitionId] : null;
       const cooling = Boolean(slot && definition && slot.phase === 'cooldown' && slot.cooldownRemaining > 0);
-      const ready = Boolean(usableActor && slot && definition && slot.phase === 'ready');
+      const ready = Boolean(this.battleStarted && usableActor && slot && definition && slot.phase === 'ready');
 
       view.base.setFillStyle(view.config.color, ready ? 0.92 : 0.34);
       view.base.setStrokeStyle(3, ready ? 0xe9edf1 : 0x7d8389, ready ? 0.9 : 0.7);
@@ -386,12 +428,21 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   update(_time, deltaMs) {
-    this.accumulatorSeconds += Math.min(deltaMs / 1000, 0.25);
+    const deltaSeconds = Math.min(deltaMs / 1000, 0.25);
+
+    if (!this.battleStarted) {
+      this.updatePreBattleCountdown(deltaSeconds);
+      this.applyFrame(this.session.snapshot());
+      return;
+    }
+
+    this.accumulatorSeconds += deltaSeconds;
 
     while (this.accumulatorSeconds >= SIM_STEP_SECONDS && this.session.result() === 'running') {
       this.accumulatorSeconds -= SIM_STEP_SECONDS;
 
       if (this.joystickPointerId !== null && this.selectedId) {
+        this.session.holdPlayerControl(this.selectedId);
         this.session.setPlayerMovement(this.selectedId, this.joystickVector);
       }
 
