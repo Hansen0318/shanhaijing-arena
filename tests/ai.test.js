@@ -180,7 +180,7 @@ test('ranged skill intent keeps pursuing until Basic range', () => {
   assert.equal(intent.pursue, true);
 });
 
-test('AI stops pursuit once nearest opponent is inside Basic range', () => {
+test('AI keeps pursuing inside Basic range until close engage distance', () => {
   const a = actor('a-stop', 'allies', 0, 0);
   const e = actor('e-stop', 'enemies', 1, 0);
 
@@ -193,5 +193,22 @@ test('AI stops pursuit once nearest opponent is inside Basic range', () => {
 
   assert.equal(intent.kind, 'ability');
   assert.equal(intent.targetId, 'e-stop');
+  assert.equal(intent.pursue, true);
+});
+
+
+test('AI stops pursuit only inside close engage distance', () => {
+  const a = actor('a-contact', 'allies', 0, 0);
+  const e = actor('e-contact', 'enemies', 0.5, 0);
+
+  const intent = decideAIIntent({
+    actor: a,
+    enemies: [e],
+    abilityDefinitions: definitions(),
+    nowMs: 0,
+  });
+
+  assert.equal(intent.kind, 'ability');
+  assert.equal(intent.targetId, 'e-contact');
   assert.equal(intent.pursue, false);
 });
