@@ -76,7 +76,7 @@ test('highest valid positive-priority non-Basic ability wins', () => {
   const a = actor('a', 'allies');
   const e = actor('e', 'enemies', 3, 0);
   const intent = decideAIIntent({ actor: a, enemies: [e], abilityDefinitions: definitions(), nowMs: 0 });
-  assert.deepEqual(intent, { kind: 'ability', category: 'awakening', definitionId: 'awakening', targetId: 'e' });
+  assert.deepEqual(intent, { kind: 'ability', category: 'awakening', definitionId: 'awakening', targetId: 'e', pursue: true });
 });
 
 test('equal priority uses Awakening then Special then Heavy tie order', () => {
@@ -160,4 +160,38 @@ test('AI immediately retargets and pursues a newly nearest moving opponent', () 
   });
   assert.equal(intent.kind, 'ability');
   assert.equal(intent.targetId, 'e2');
+});
+
+
+test('ranged skill intent keeps pursuing until Basic range', () => {
+  const a = actor('a-pursue', 'allies', 0, 0);
+  const e = actor('e-pursue', 'enemies', 5, 0);
+
+  const intent = decideAIIntent({
+    actor: a,
+    enemies: [e],
+    abilityDefinitions: definitions(),
+    nowMs: 0,
+  });
+
+  assert.equal(intent.kind, 'ability');
+  assert.equal(intent.category, 'awakening');
+  assert.equal(intent.targetId, 'e-pursue');
+  assert.equal(intent.pursue, true);
+});
+
+test('AI stops pursuit once nearest opponent is inside Basic range', () => {
+  const a = actor('a-stop', 'allies', 0, 0);
+  const e = actor('e-stop', 'enemies', 1, 0);
+
+  const intent = decideAIIntent({
+    actor: a,
+    enemies: [e],
+    abilityDefinitions: definitions(),
+    nowMs: 0,
+  });
+
+  assert.equal(intent.kind, 'ability');
+  assert.equal(intent.targetId, 'e-stop');
+  assert.equal(intent.pursue, false);
 });
