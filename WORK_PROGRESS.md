@@ -12,9 +12,9 @@
 - First pushed checkpoint: `9b242361738073416442729433bf12bb0b17b686` portrait selection and graybox HP/timer HUD; targeted HUD tests 3/3 and build PASS.
 - Current integrated graybox checkpoint: finite 90-second runtime, cast-event placeholder VFX, victory/defeat/draw overlay with Restart, countdown gate, Awakening unlockTier metadata. Full local regression **107/107 PASS**, Vite build PASS, `git diff --check` PASS. Public Pages deploy/runtime smoke and iPhone player acceptance remain pending; no player verification claim.
 - Next exact step: push integrated checkpoint, inspect Actions Test/Build/Pages result, then browser-smoke public default + KO fixture including portrait selection, manual air-cast feedback, HP/timer, result/restart, and page-origin errors. Do not replace final art.
-- Current status: **PLAYER-CONFIRMED WORKING BASELINE RESTORED; RUNTIME PACING PASS; AI RESUME DELAY SET TO 0s / IMMEDIATE**
-- Latest slice: **Arena 1120x540 horizontal widening — CI/build/Pages and desktop browser pointer smoke PASS; PLAYER VISUAL PROPORTION / REAL-DEVICE TOUCH SMOKE PENDING**. Source test-fix commit `23c4e759551c24d149203c2574ee0109e5921046`; [Pages run 36500167030](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36500167030): 61/61 Test, Build, Deploy success.
-- Next exact step: player checks widened proportion and touch selection/joystick on the public preview; do not adjust joystick or other gameplay in this slice.
+- Current status: **GRAYBOX PLAYABLE ENGINEERING PASS / IPHONE PLAYER SMOKE PENDING**. Protected mobile input baseline and 0-second AI takeover remain unchanged.
+- Latest graybox implementation checkpoint: `64ba9652b17654d49c6b31e0df9f6222cd807121`; Actions [run #212](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36585956592) Test, Build, Pages Deploy success. Local full regression 107/107 PASS and build PASS. Public Pages runtime smoke below.
+- Next exact step: player plays a complete round on iPhone landscape, checks portrait HP/touch targets, joystick + second-finger skill, VFX readability, KO fallback, result/Restart, and game feel. Keep formal art and micro-animation out until player accepts this graybox direction.
 
 ## Protected mobile input baseline
 Player confirmed this path works on iPhone Chrome:
@@ -369,3 +369,10 @@ Awakening progression/unlock is not implemented in M0 yet; future progression ma
 - Public runtime fixture now has finite 90-second rounds and moderate test HP, retaining the canonical headless fixture and 90-second HP% tie rule. Existing AI spacing, shared targeting, no-reservation pursuit, Basic fallback, joystick ownership, and protected 1120x540 input/viewport code remain in place.
 - Shared BattleSession cast events drive distinct lightweight local/ranged placeholder Basic, Heavy, Special, Awakening feedback, including a non-damaging out-of-range manual air-cast. Result text and clickable Restart are displayed after resolution.
 - Regression added for HP data, timer, finite/replayable runtime, cast events, VFX direction/range clamp including overlapping caster, countdown freeze, and future Awakening unlockTier metadata. Full local suite: 107/107 PASS; Vite build PASS. Public Pages and player device smoke still pending.
+
+## Public Pages engineering smoke — graybox (2026-09-29)
+- Source `64ba9652b17654d49c6b31e0df9f6222cd807121`, Actions run #212: Test, Build, Deploy Pages all PASS. Public URL: https://hansen0318.github.io/shanhaijing-arena/ .
+- Browser observed 5→1 countdown with six actors frozen; after battle starts, all six converge and automatically cast. Portrait A1/A2/A3 selection enlarges/highlights the card; clicking an actor marker did not steal selection. Upper enemy HP and all three ally HP bars/numbers decrease; timer counts down from 01:30.
+- At battle start, manual Special was pressed while enemies were far: selected cooldown displayed 10, enemy team HP stayed 720/720. Basic/Heavy/Special/Awakening placeholder effects were visible during battle. The default round reached VICTORY, and RESTART reset HP/timer and returned to 5 countdown without page reload.
+- `?fixture=ko`: A2 started selected, then displayed 0/260 and dimmed; selection automatically moved to A1. Clicking A2's KO portrait left A1 selected. Joystick pointer drag still moved the knob. No blocking page-origin console error; recorded console errors came only from the browser extension.
+- No real iPhone multitouch or player visual/game feel acceptance was performed. **ENGINEERING PASS / PLAYER SMOKE PENDING**. Do not claim real-device touch or visual readability PASS.
