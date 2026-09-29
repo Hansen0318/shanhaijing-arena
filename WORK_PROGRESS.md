@@ -7,7 +7,10 @@
 - Active PR: **#1 — M0: combat core foundation**
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
-- Current slice: **movement joystick + shared player override input**
+- Current slice: **complete playable graybox 3v3 prototype**
+- Latest remote at recovery: `e8a6b5af6e291428f0cab833ba78dc9af48e6cdf`; Actions #210 `36580543665` completed successfully (pre-existing Chat work). Working branch was fast-forwarded from stale local checkout without discarding changes.
+- Current checkpoint: portrait/HP/team HP/timer HUD implementation; targeted HUD tests 3/3 PASS and Vite build PASS locally. Remaining: finite runtime combat, skill/VFX event feedback, result/restart, full regression/deploy. This checkpoint is not player verified.
+- Next exact step: implement finite 90-second playable runtime and cast feedback, then result/restart loop; preserve protected input/viewport architecture.
 - Current status: **PLAYER-CONFIRMED WORKING BASELINE RESTORED; RUNTIME PACING PASS; AI RESUME DELAY SET TO 0s / IMMEDIATE**
 - Latest slice: **Arena 1120x540 horizontal widening — CI/build/Pages and desktop browser pointer smoke PASS; PLAYER VISUAL PROPORTION / REAL-DEVICE TOUCH SMOKE PENDING**. Source test-fix commit `23c4e759551c24d149203c2574ee0109e5921046`; [Pages run 36500167030](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36500167030): 61/61 Test, Build, Deploy success.
 - Next exact step: player checks widened proportion and touch selection/joystick on the public preview; do not adjust joystick or other gameplay in this slice.

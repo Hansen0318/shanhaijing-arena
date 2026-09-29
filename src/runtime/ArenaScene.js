@@ -2,11 +2,11 @@ import Phaser from 'phaser';
 import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
 import { createDemoBattleSession } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
+import { allyHud, enemyTeamHud, formatBattleTime } from './battleHud.js';
 
 const SIM_STEP_SECONDS = 0.05;
 const PRE_BATTLE_SECONDS = 5;
 const ACTOR_VISUAL_RADIUS = 24;
-const ALLY_SELECT_RADIUS = 36;
 const JOYSTICK = Object.freeze({
   x: 70,
   y: 435,
@@ -88,21 +88,10 @@ export class ArenaScene extends Phaser.Scene {
         fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff',
       }).setOrigin(0.5);
 
-      if (allied) {
-        marker.setInteractive(
-          new Phaser.Geom.Circle(
-            ACTOR_VISUAL_RADIUS,
-            ACTOR_VISUAL_RADIUS,
-            ALLY_SELECT_RADIUS,
-          ),
-          Phaser.Geom.Circle.Contains,
-        );
-        marker.on('pointerdown', () => this.selectAlly(actor.instanceId, this.session.snapshot()));
-      }
-
       this.actorViews.set(actor.instanceId, { marker, label, allied });
     }
 
+    this.createHud();
     this.createJoystick();
     this.createSkillButtons();
     this.createPreBattleCountdown();
@@ -122,6 +111,58 @@ export class ArenaScene extends Phaser.Scene {
       skillButtons: ['heavy', 'special', 'awakening'],
       get battleStarted() { return window.__arenaBattleStarted ?? false; },
     };
+  }
+
+  createHud() {
+    this.portraitViews = new Map();
+    for (const [index, id] of ['a1', 'a2', 'a3'].entries()) {
+      const card = this.add.container(72, 72 + index * 112).setDepth(30);
+      const backing = this.add.rectangle(0, 11, 86, 102, 0x172735, 0.88)
+        .setStrokeStyle(2, 0x8ca7ad);
+      const portrait = this.add.rectangle(0, 0, 68, 68, 0x58c8dc)
+        .setStrokeStyle(2, 0xc6f6ff);
+      const name = this.add.text(0, 0, id.toUpperCase(), {
+        fontFamily: 'sans-serif', fontSize: '23px', fontStyle: 'bold', color: '#ffffff',
+      }).setOrigin(0.5);
+      const barBack = this.add.rectangle(0, 45, 80, 22, 0x4a2020);
+      const barFill = this.add.rectangle(-40, 45, 80, 22, 0xc94749).setOrigin(0, 0.5);
+      const hpText = this.add.text(0, 45, '', {
+        fontFamily: 'sans-serif', fontSize: '12px', fontStyle: 'bold', color: '#ffffff',
+        stroke: '#2a1c20', strokeThickness: 2,
+      }).setOrigin(0.5);
+      card.add([backing, portrait, name, barBack, barFill, hpText]);
+      portrait.setInteractive();
+      portrait.on('pointerdown', () => this.selectAlly(id, this.session.snapshot()));
+      this.portraitViews.set(id, { card, backing, portrait, barFill, hpText });
+    }
+
+    this.enemyBarBack = this.add.rectangle(ARENA_STAGE.width / 2, 28, 318, 28, 0x43252a)
+      .setDepth(30).setStrokeStyle(2, 0xf2d5d0);
+    this.enemyBarFill = this.add.rectangle(ARENA_STAGE.width / 2 - 156, 28, 312, 24, 0xc94749)
+      .setOrigin(0, 0.5).setDepth(31);
+    this.enemyHpText = this.add.text(ARENA_STAGE.width / 2, 28, '', {
+      fontFamily: 'sans-serif', fontSize: '17px', fontStyle: 'bold', color: '#ffffff',
+      stroke: '#2a1c20', strokeThickness: 3,
+    }).setOrigin(0.5).setDepth(32);
+    this.timerText = this.add.text(ARENA_STAGE.width - 31, 28, '', {
+      fontFamily: 'sans-serif', fontSize: '24px', fontStyle: 'bold', color: '#ffffff',
+      stroke: '#20262d', strokeThickness: 3,
+    }).setOrigin(1, 0.5).setDepth(32);
+  }
+
+  refreshHud(frame) {
+    for (const card of allyHud(frame.allies, this.selectedId)) {
+      const view = this.portraitViews.get(card.id);
+      view.barFill.width = 80 * card.hpRatio;
+      view.hpText.setText(card.hpText);
+      view.card.setScale(card.selected ? 1.12 : 1);
+      view.backing.setStrokeStyle(card.selected ? 4 : 2, card.selected ? 0xffffff : 0x8ca7ad);
+      view.portrait.setAlpha(card.selectable ? 1 : 0.4);
+    }
+    const enemy = enemyTeamHud(frame.enemies);
+    this.enemyBarFill.width = 312 * enemy.hpRatio;
+    this.enemyHpText.setText(enemy.hpText);
+    this.timerText.setText(formatBattleTime(frame.elapsedSeconds, this.session.maxSeconds));
   }
 
   createJoystick() {
@@ -371,6 +412,7 @@ export class ArenaScene extends Phaser.Scene {
     this.selectedId = id;
     window.__arenaSceneSelectedId = id;
     this.refreshSelectionVisuals();
+    this.refreshHud(frame);
     return true;
   }
 
@@ -413,6 +455,7 @@ export class ArenaScene extends Phaser.Scene {
     this.ensureLivingSelection(frame);
     this.refreshSelectionVisuals();
     this.refreshSkillButtons();
+    this.refreshHud(frame);
 
     const selected = this.selectedId ? this.session.actorById(this.selectedId) : null;
     window.__arenaSceneControlSource = selected
