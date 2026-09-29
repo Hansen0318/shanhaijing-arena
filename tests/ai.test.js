@@ -229,3 +229,93 @@ test('AI still pursues at former edge-touch distance', () => {
   assert.equal(intent.targetId, 'e-edge');
   assert.equal(intent.pursue, true);
 });
+
+
+test('profiled ranged skill retreats when target is too close', () => {
+  const defs = definitions();
+  defs.awakening = createAbilityDefinition({
+    id: 'awakening',
+    category: 'awakening',
+    cooldown: 12,
+    range: 6,
+    minRange: 2,
+    preferredRange: 4,
+    maxRange: 6,
+    targetingRule: 'enemy',
+    effect: { coefficient: 1 },
+    ai: { priority: 40 },
+  });
+
+  const a = actor('ranged', 'allies', 0, 0);
+  const e = actor('near', 'enemies', 1, 0);
+  const intent = decideAIIntent({
+    actor: a,
+    enemies: [e],
+    abilityDefinitions: defs,
+    nowMs: 0,
+  });
+
+  assert.equal(intent.kind, 'move');
+  assert.equal(intent.movement, 'retreat');
+  assert.equal(intent.category, 'awakening');
+  assert.equal(intent.desiredRange, 4);
+});
+
+test('profiled ranged skill approaches when target is beyond max range', () => {
+  const defs = definitions();
+  defs.awakening = createAbilityDefinition({
+    id: 'awakening',
+    category: 'awakening',
+    cooldown: 12,
+    range: 6,
+    minRange: 2,
+    preferredRange: 4,
+    maxRange: 6,
+    targetingRule: 'enemy',
+    effect: { coefficient: 1 },
+    ai: { priority: 40 },
+  });
+
+  const a = actor('ranged', 'allies', 0, 0);
+  const e = actor('far', 'enemies', 8, 0);
+  const intent = decideAIIntent({
+    actor: a,
+    enemies: [e],
+    abilityDefinitions: defs,
+    nowMs: 0,
+  });
+
+  assert.equal(intent.kind, 'move');
+  assert.equal(intent.movement, 'approach');
+  assert.equal(intent.category, 'awakening');
+  assert.equal(intent.desiredRange, 4);
+});
+
+test('profiled ranged skill casts inside its valid spacing band', () => {
+  const defs = definitions();
+  defs.awakening = createAbilityDefinition({
+    id: 'awakening',
+    category: 'awakening',
+    cooldown: 12,
+    range: 6,
+    minRange: 2,
+    preferredRange: 4,
+    maxRange: 6,
+    targetingRule: 'enemy',
+    effect: { coefficient: 1 },
+    ai: { priority: 40 },
+  });
+
+  const a = actor('ranged', 'allies', 0, 0);
+  const e = actor('valid', 'enemies', 4, 0);
+  const intent = decideAIIntent({
+    actor: a,
+    enemies: [e],
+    abilityDefinitions: defs,
+    nowMs: 0,
+  });
+
+  assert.equal(intent.kind, 'ability');
+  assert.equal(intent.category, 'awakening');
+  assert.equal(intent.pursue, false);
+});
