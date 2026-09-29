@@ -19,6 +19,7 @@ export function createAbilityDefinition(input) {
   nonempty(input?.id, 'id');
   if (!ACTIVE_CATEGORIES.has(input?.category)) throw new TypeError('Unknown ability category');
   const cooldown = nonnegativeFinite(input.cooldown, 'cooldown');
+  if (input.range != null) nonnegativeFinite(input.range, 'range');
   const maxRange = nonnegativeFinite(input.maxRange ?? input.range, 'maxRange');
   const minRange = input.minRange == null ? 0 : nonnegativeFinite(input.minRange, 'minRange');
   const preferredRange = input.preferredRange == null
