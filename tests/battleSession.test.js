@@ -56,7 +56,7 @@ test('player movement is clamped to Arena bounds', () => {
     session.step(0.25);
   }
 
-  assert.ok(a2.x >= 0);
+  assert.ok(a2.x >= -1.1);
   assert.ok(a2.y >= -2);
 });
 
@@ -91,4 +91,40 @@ test('releasing player movement immediately returns ownership to AI', () => {
   const heldX = a2.x;
   session.step(0.25);
   assert.ok(a2.x > heldX);
+});
+
+
+test('expanded Arena bounds are shared by all six actors', () => {
+  const session = makeSession();
+  assert.deepEqual(session.arenaBounds, {
+    xMin: -1.1,
+    xMax: 11.1,
+    yMin: -2,
+    yMax: 2,
+  });
+
+  for (const actor of [...session.allies, ...session.enemies]) {
+    assert.ok(actor.x >= session.arenaBounds.xMin);
+    assert.ok(actor.x <= session.arenaBounds.xMax);
+    assert.ok(actor.y >= session.arenaBounds.yMin);
+    assert.ok(actor.y <= session.arenaBounds.yMax);
+  }
+});
+
+test('enemy AI movement uses the same expanded Arena bounds', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  a2.x = -1.1;
+  e2.x = 11.1;
+
+  for (let i = 0; i < 40; i += 1) {
+    session.step(0.25);
+  }
+
+  for (const actor of session.enemies) {
+    assert.ok(actor.x >= session.arenaBounds.xMin);
+    assert.ok(actor.x <= session.arenaBounds.xMax);
+  }
 });
