@@ -101,3 +101,18 @@ Player/runtime smoke is still required after deploy; visual proportion is not pr
 - Public browser smoke: stage visually wider with unchanged height, sand fill covers visible canvas, line spans the wider stage, center ellipse and actor markers preserve logical size, actor horizontal projection span remains 720 per code/test. No observed clipping, overflow, anomalous black borders, or camera shift. A1/A2/A3 selection highlight worked. Pointer drag on joystick moved selected A3 left; after release knob recentered and A3 moved right under AI. No browser pointer regression observed.
 - Cloud browser pointer drag does not prove real iPhone touch. Real-device touch alignment and visual proportion remain PLAYER SMOKE PENDING. Do not label either as player verified.
 - Exact next step: player opens https://hansen0318.github.io/shanhaijing-arena/ on device and checks widened field proportion and touch selection/joystick movement. No joystick position/sensitivity changes in this slice.
+
+
+## Arena movement-range widening after player smoke
+Player real-device smoke showed that the 1120x540 stage widened visually while the role projection/movement range still matched the old field.
+
+Correction:
+- shared simulation x bounds expand from 0..10 to -1.1..11.1;
+- runtime projection uses the same -1.1..11.1 range;
+- horizontal projection padding returns from 200 to 120, exposing the newly added left/right field as actual movement space;
+- original spawn coordinates x=0 and x=10 remain visually near the same locations as before widening;
+- all six actors share the same BattleSession arena bounds;
+- AI moveToward is explicitly clamped to the same arena bounds;
+- stage stays 1120x540; vertical bounds, joystick, input architecture, camera, combat stats, and zero-delay AI handoff are unchanged.
+
+Player real-device smoke is required after deploy to verify both allies and enemies can occupy the added horizontal space.
