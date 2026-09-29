@@ -18,6 +18,15 @@ function abilityDefinitionFor(actor, category, definitions) {
   return id ? definitions[id] ?? null : null;
 }
 
+function shouldKeepPursuing(actor, target, abilityDefinitions) {
+  const basicDefinition = abilityDefinitionFor(actor, 'basic', abilityDefinitions);
+  if (!basicDefinition) return true;
+
+  const dx = actor.x - target.x;
+  const dy = actor.y - target.y;
+  return dx * dx + dy * dy > basicDefinition.range * basicDefinition.range;
+}
+
 export function decideAIIntent({
   actor,
   enemies,
@@ -54,6 +63,7 @@ export function decideAIIntent({
         category: candidate.category,
         definitionId: candidate.definition.id,
         targetId: targetId(target),
+        pursue: shouldKeepPursuing(actor, target, abilityDefinitions),
       };
     }
   }
@@ -66,6 +76,7 @@ export function decideAIIntent({
       category: 'basic',
       definitionId: basicDefinition.id,
       targetId: targetId(target),
+      pursue: false,
     };
   }
 
