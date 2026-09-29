@@ -262,3 +262,61 @@ test('manual targeted ability can air-cast with no living opponent', () => {
   assert.equal(session.usePlayerAbility('a2', 'special'), true);
   assert.equal(a2.abilityState.special.phase, 'cooldown');
 });
+
+
+test('enemy AI keeps pursuing while one ally is under player control', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  // Move unrelated actors away so a2 is e2's nearest opponent.
+  session.actorById('a1').y = -2;
+  session.actorById('a3').y = 2;
+  e2.x = 8;
+  a2.x = 2;
+
+  session.holdPlayerControl('a2');
+  const before = e2.x;
+
+  for (let i = 0; i < 8; i += 1) {
+    session.holdPlayerControl('a2');
+    session.setPlayerMovement('a2', { x: -1, y: 0 });
+    session.step(0.25);
+  }
+
+  assert.ok(e2.x < before);
+});
+
+test('uncontrolled allied AI keeps pursuing enemies while selected ally is manual', () => {
+  const session = makeSession();
+  const a1 = session.actorById('a1');
+  const a2 = session.actorById('a2');
+
+  session.holdPlayerControl('a2');
+  const before = a1.x;
+
+  for (let i = 0; i < 4; i += 1) {
+    session.holdPlayerControl('a2');
+    session.step(0.25);
+  }
+
+  assert.ok(a1.x > before);
+});
+
+test('AI resumes pursuit as soon as its nearest target leaves attack range', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  a2.x = 5;
+  e2.x = 6;
+  session.step(0.25);
+
+  // Pull the target far away under player ownership.
+  a2.x = -1;
+  session.holdPlayerControl('a2');
+  const before = e2.x;
+  session.step(0.25);
+
+  assert.ok(e2.x < before);
+});
