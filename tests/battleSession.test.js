@@ -216,14 +216,14 @@ test('finished cooldown stays ready while player holds control until manually us
   assert.equal(session.usePlayerAbility('a2', 'heavy'), true);
 
   for (let i = 0; i < 20; i += 1) {
-    session.holdPlayerControl('a2');
+    for (const actor of session.actors) session.holdPlayerControl(actor.instanceId);
     session.step(0.25);
   }
 
   assert.equal(a2.abilityState.heavy.phase, 'ready');
   assert.equal(a2.abilityState.heavy.cooldownRemaining, 0);
 
-  session.holdPlayerControl('a2');
+  for (const actor of session.actors) session.holdPlayerControl(actor.instanceId);
   session.step(0.25);
   assert.equal(a2.abilityState.heavy.phase, 'ready');
 
