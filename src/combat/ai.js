@@ -3,6 +3,7 @@ import { canCharacterAct } from './character.js';
 import { canStartAbility } from './ability.js';
 
 const NON_BASIC_ORDER = ['awakening', 'special', 'heavy'];
+export const AI_ENGAGE_DISTANCE = 0.75;
 
 function priorityOf(definition) {
   const value = definition?.ai?.priority;
@@ -18,13 +19,10 @@ function abilityDefinitionFor(actor, category, definitions) {
   return id ? definitions[id] ?? null : null;
 }
 
-function shouldKeepPursuing(actor, target, abilityDefinitions) {
-  const basicDefinition = abilityDefinitionFor(actor, 'basic', abilityDefinitions);
-  if (!basicDefinition) return true;
-
+function shouldKeepPursuing(actor, target) {
   const dx = actor.x - target.x;
   const dy = actor.y - target.y;
-  return dx * dx + dy * dy > basicDefinition.range * basicDefinition.range;
+  return dx * dx + dy * dy > AI_ENGAGE_DISTANCE * AI_ENGAGE_DISTANCE;
 }
 
 export function decideAIIntent({
@@ -63,7 +61,7 @@ export function decideAIIntent({
         category: candidate.category,
         definitionId: candidate.definition.id,
         targetId: targetId(target),
-        pursue: shouldKeepPursuing(actor, target, abilityDefinitions),
+        pursue: shouldKeepPursuing(actor, target),
       };
     }
   }
@@ -76,7 +74,7 @@ export function decideAIIntent({
       category: 'basic',
       definitionId: basicDefinition.id,
       targetId: targetId(target),
-      pursue: false,
+      pursue: shouldKeepPursuing(actor, target),
     };
   }
 
