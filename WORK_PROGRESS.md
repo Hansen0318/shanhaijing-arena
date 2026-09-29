@@ -7,14 +7,15 @@
 - Active PR: **#1 — M0: combat core foundation**
 - Preview URL: https://hansen0318.github.io/shanhaijing-arena/
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
-- Current slice: **complete playable graybox 3v3 prototype**
+- Current slice: **bounded bilateral portrait HUD correction** after player graybox smoke.
 - Latest remote at recovery: `e8a6b5af6e291428f0cab833ba78dc9af48e6cdf`; Actions #210 `36580543665` completed successfully (pre-existing Chat work). Working branch was fast-forwarded from stale local checkout without discarding changes.
 - First pushed checkpoint: `9b242361738073416442729433bf12bb0b17b686` portrait selection and graybox HP/timer HUD; targeted HUD tests 3/3 and build PASS.
 - Current integrated graybox checkpoint: finite 90-second runtime, cast-event placeholder VFX, victory/defeat/draw overlay with Restart, countdown gate, Awakening unlockTier metadata. Full local regression **107/107 PASS**, Vite build PASS, `git diff --check` PASS. Public Pages deploy/runtime smoke and iPhone player acceptance remain pending; no player verification claim.
 - Next exact step: push integrated checkpoint, inspect Actions Test/Build/Pages result, then browser-smoke public default + KO fixture including portrait selection, manual air-cast feedback, HP/timer, result/restart, and page-origin errors. Do not replace final art.
 - Current status: **GRAYBOX PLAYABLE ENGINEERING PASS / IPHONE PLAYER SMOKE PENDING**. Protected mobile input baseline and 0-second AI takeover remain unchanged.
 - Latest graybox implementation checkpoint: `64ba9652b17654d49c6b31e0df9f6222cd807121`; Actions [run #212](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36585956592) Test, Build, Pages Deploy success. Local full regression 107/107 PASS and build PASS. Public Pages runtime smoke below.
-- Next exact step: player plays a complete round on iPhone landscape, checks portrait HP/touch targets, joystick + second-finger skill, VFX readability, KO fallback, result/Restart, and game feel. Keep formal art and micro-animation out until player accepts this graybox direction.
+- HUD correction checkpoint (2026-09-30): removed top enemy team-total HP; enemy E1/E2/E3 now have non-interactive right-side portrait/individual HP cards; timer is larger at top center. Both sides dim KO cards; existing ally KO selection guard/fallback remains. Card columns use compact mirrored placement above the joystick/skill zones. Only `ArenaScene` presentation and `battleHud` view data changed, plus HUD regression tests. Targeted 3/3 PASS; full local 107/107 PASS; Vite build PASS; Pages deploy and public browser smoke **PENDING**. No player visual acceptance claim.
+- Next exact step: push HUD checkpoint, confirm Actions Test/Build/Pages Deploy, then public browser smoke default and KO fixture for layout, HP/KO, selection, restart, and no page-origin errors. Keep iPhone player layout/touch smoke pending. Do not touch combat, input, art, or micro-animation.
 
 ## Protected mobile input baseline
 Player confirmed this path works on iPhone Chrome:

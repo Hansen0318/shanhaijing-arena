@@ -10,14 +10,18 @@ export function allyHud(allies, selectedId) {
     ...health(actor),
     selected: actor.instanceId === selectedId,
     selectable: actor.hp > 0,
+    alive: actor.hp > 0,
   }));
 }
 
-export function enemyTeamHud(enemies) {
-  return health({
-    hp: enemies.reduce((sum, actor) => sum + Math.max(0, actor.hp), 0),
-    maxHp: enemies.reduce((sum, actor) => sum + actor.maxHp, 0),
-  });
+export function enemyHud(enemies) {
+  return enemies.map((actor) => ({
+    id: actor.instanceId,
+    ...health(actor),
+    selected: false,
+    selectable: false,
+    alive: actor.hp > 0,
+  }));
 }
 
 export function formatBattleTime(elapsedSeconds, limitSeconds) {

@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
 import { createDemoBattleSession } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
-import { allyHud, enemyTeamHud, formatBattleTime } from './battleHud.js';
+import { allyHud, enemyHud, formatBattleTime } from './battleHud.js';
 import { castVisual } from './castVfx.js';
 import { PreBattleGate } from './preBattleGate.js';
 
@@ -179,53 +179,48 @@ export class ArenaScene extends Phaser.Scene {
 
   createHud() {
     this.portraitViews = new Map();
-    for (const [index, id] of ['a1', 'a2', 'a3'].entries()) {
-      const card = this.add.container(72, 72 + index * 112).setDepth(30);
-      const backing = this.add.rectangle(0, 11, 86, 102, 0x172735, 0.88)
-        .setStrokeStyle(2, 0x8ca7ad);
-      const portrait = this.add.rectangle(0, 0, 68, 68, 0x58c8dc)
-        .setStrokeStyle(2, 0xc6f6ff);
-      const name = this.add.text(0, 0, id.toUpperCase(), {
-        fontFamily: 'sans-serif', fontSize: '23px', fontStyle: 'bold', color: '#ffffff',
-      }).setOrigin(0.5);
-      const barBack = this.add.rectangle(0, 45, 80, 22, 0x4a2020);
-      const barFill = this.add.rectangle(-40, 45, 80, 22, 0xc94749).setOrigin(0, 0.5);
-      const hpText = this.add.text(0, 45, '', {
-        fontFamily: 'sans-serif', fontSize: '12px', fontStyle: 'bold', color: '#ffffff',
-        stroke: '#2a1c20', strokeThickness: 2,
-      }).setOrigin(0.5);
-      card.add([backing, portrait, name, barBack, barFill, hpText]);
-      portrait.setInteractive();
-      portrait.on('pointerdown', () => this.selectAlly(id, this.session.snapshot()));
-      this.portraitViews.set(id, { card, backing, portrait, barFill, hpText });
+    for (const [side, ids] of [['ally', ['a1', 'a2', 'a3']], ['enemy', ['e1', 'e2', 'e3']]]) {
+      for (const [index, id] of ids.entries()) {
+        const card = this.add.container(side === 'ally' ? 72 : ARENA_STAGE.width - 72,
+          32 + index * 101).setDepth(30);
+        const backing = this.add.rectangle(0, 14, 86, 82, 0x172735, 0.88)
+          .setStrokeStyle(2, 0x8ca7ad);
+        const portrait = this.add.rectangle(0, 0, 58, 58,
+          side === 'ally' ? 0x58c8dc : 0xee9475)
+          .setStrokeStyle(2, side === 'ally' ? 0xc6f6ff : 0xffd3bf);
+        const name = this.add.text(0, 0, id.toUpperCase(), {
+          fontFamily: 'sans-serif', fontSize: '22px', fontStyle: 'bold', color: '#ffffff',
+        }).setOrigin(0.5);
+        const barBack = this.add.rectangle(0, 43, 80, 18, 0x4a2020);
+        const barFill = this.add.rectangle(-40, 43, 80, 18, 0xc94749).setOrigin(0, 0.5);
+        const hpText = this.add.text(0, 43, '', {
+          fontFamily: 'sans-serif', fontSize: '13px', fontStyle: 'bold', color: '#ffffff',
+          stroke: '#2a1c20', strokeThickness: 2,
+        }).setOrigin(0.5);
+        card.add([backing, portrait, name, barBack, barFill, hpText]);
+        if (side === 'ally') {
+          portrait.setInteractive();
+          portrait.on('pointerdown', () => this.selectAlly(id, this.session.snapshot()));
+        }
+        this.portraitViews.set(id, { card, backing, portrait, barFill, hpText });
+      }
     }
 
-    this.enemyBarBack = this.add.rectangle(ARENA_STAGE.width / 2, 28, 318, 28, 0x43252a)
-      .setDepth(30).setStrokeStyle(2, 0xf2d5d0);
-    this.enemyBarFill = this.add.rectangle(ARENA_STAGE.width / 2 - 156, 28, 312, 24, 0xc94749)
-      .setOrigin(0, 0.5).setDepth(31);
-    this.enemyHpText = this.add.text(ARENA_STAGE.width / 2, 28, '', {
-      fontFamily: 'sans-serif', fontSize: '17px', fontStyle: 'bold', color: '#ffffff',
-      stroke: '#2a1c20', strokeThickness: 3,
+    this.timerText = this.add.text(ARENA_STAGE.width / 2, 35, '', {
+      fontFamily: 'sans-serif', fontSize: '38px', fontStyle: 'bold', color: '#ffffff',
+      stroke: '#20262d', strokeThickness: 4,
     }).setOrigin(0.5).setDepth(32);
-    this.timerText = this.add.text(ARENA_STAGE.width - 31, 28, '', {
-      fontFamily: 'sans-serif', fontSize: '24px', fontStyle: 'bold', color: '#ffffff',
-      stroke: '#20262d', strokeThickness: 3,
-    }).setOrigin(1, 0.5).setDepth(32);
   }
 
   refreshHud(frame) {
-    for (const card of allyHud(frame.allies, this.selectedId)) {
+    for (const card of [...allyHud(frame.allies, this.selectedId), ...enemyHud(frame.enemies)]) {
       const view = this.portraitViews.get(card.id);
       view.barFill.width = 80 * card.hpRatio;
       view.hpText.setText(card.hpText);
-      view.card.setScale(card.selected ? 1.12 : 1);
+      view.card.setScale(card.selected ? 1.1 : 1);
       view.backing.setStrokeStyle(card.selected ? 4 : 2, card.selected ? 0xffffff : 0x8ca7ad);
-      view.portrait.setAlpha(card.selectable ? 1 : 0.4);
+      view.card.setAlpha(card.alive ? 1 : 0.48);
     }
-    const enemy = enemyTeamHud(frame.enemies);
-    this.enemyBarFill.width = 312 * enemy.hpRatio;
-    this.enemyHpText.setText(enemy.hpText);
     this.timerText.setText(formatBattleTime(frame.elapsedSeconds, this.session.maxSeconds));
   }
 
