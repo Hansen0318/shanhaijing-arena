@@ -199,7 +199,7 @@ test('AI keeps pursuing inside Basic range until close engage distance', () => {
 
 test('AI stops pursuit only inside close engage distance', () => {
   const a = actor('a-contact', 'allies', 0, 0);
-  const e = actor('e-contact', 'enemies', 0.5, 0);
+  const e = actor('e-contact', 'enemies', 0.15, 0);
 
   const intent = decideAIIntent({
     actor: a,
@@ -211,4 +211,21 @@ test('AI stops pursuit only inside close engage distance', () => {
   assert.equal(intent.kind, 'ability');
   assert.equal(intent.targetId, 'e-contact');
   assert.equal(intent.pursue, false);
+});
+
+
+test('AI still pursues at former edge-touch distance', () => {
+  const a = actor('a-edge', 'allies', 0, 0);
+  const e = actor('e-edge', 'enemies', 0.6, 0);
+
+  const intent = decideAIIntent({
+    actor: a,
+    enemies: [e],
+    abilityDefinitions: definitions(),
+    nowMs: 0,
+  });
+
+  assert.equal(intent.kind, 'ability');
+  assert.equal(intent.targetId, 'e-edge');
+  assert.equal(intent.pursue, true);
 });
