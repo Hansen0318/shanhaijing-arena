@@ -316,3 +316,31 @@ Updated rule:
 - applies symmetrically to allied and enemy AI.
 
 Regression coverage now checks that the former ~edge-touch distance still pursues and only near-overlap distance permits stopping.
+
+
+## Skill-driven combat spacing foundation
+Basic / Heavy / Special / Awakening remain slot names only; they do not imply melee or ranged behavior.
+
+Ability definitions now support an optional range profile:
+- minRange: if a Ready skill's target is closer than this, AI retreats;
+- preferredRange: desired spacing used while approaching/retreating;
+- maxRange: maximum cast/hit range;
+- legacy range remains an alias of maxRange for compatibility;
+- legacy abilities without preferredRange retain the prior near-overlap pursuit behavior.
+
+AI planning:
+- evaluates the highest-priority Ready non-Basic skill first;
+- too close for that profiled skill => retreat toward preferredRange;
+- too far => approach toward preferredRange;
+- inside minRange..maxRange => cast;
+- after the skill enters cooldown, another Ready skill can drive spacing on following decisions;
+- Basic is evaluated as the fallback using its own independent profile.
+
+Manual player casts keep the existing air-cast behavior and are not blocked by AI spacing decisions.
+
+The demo fixture now deliberately exercises mixed ranges:
+- Basic close;
+- Heavy close;
+- Special medium;
+- Awakening longer-range.
+These are prototype fixture values, not final character balance.
