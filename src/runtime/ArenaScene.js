@@ -3,6 +3,8 @@ import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
 import { createDemoBattleSession } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 import { allyHud, enemyTeamHud, formatBattleTime } from './battleHud.js';
+import { castVisual } from './castVfx.js';
+import { PreBattleGate } from './preBattleGate.js';
 
 const SIM_STEP_SECONDS = 0.05;
 const PRE_BATTLE_SECONDS = 5;
@@ -52,6 +54,7 @@ export class ArenaScene extends Phaser.Scene {
     this.selectedId = 'a2';
     this.fixtureKoApplied = false;
     this.preBattleRemaining = PRE_BATTLE_SECONDS;
+    this.preBattleGate = new PreBattleGate(PRE_BATTLE_SECONDS);
     this.battleStarted = false;
     this.joystickPointerId = null;
     this.joystickVector = { x: 0, y: 0 };
@@ -95,6 +98,7 @@ export class ArenaScene extends Phaser.Scene {
     this.createJoystick();
     this.createSkillButtons();
     this.createPreBattleCountdown();
+    this.createResultView();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
 
@@ -111,6 +115,66 @@ export class ArenaScene extends Phaser.Scene {
       skillButtons: ['heavy', 'special', 'awakening'],
       get battleStarted() { return window.__arenaBattleStarted ?? false; },
     };
+  }
+
+  createResultView() {
+    this.resultLayer = this.add.container(0, 0).setDepth(50).setVisible(false);
+    const shade = this.add.rectangle(0, 0, ARENA_STAGE.width, ARENA_STAGE.height, 0x172735, 0.76)
+      .setOrigin(0, 0).setInteractive();
+    this.resultText = this.add.text(ARENA_STAGE.width / 2, 214, '', {
+      fontFamily: 'sans-serif', fontSize: '67px', fontStyle: 'bold', color: '#ffffff',
+      stroke: '#20262d', strokeThickness: 7,
+    }).setOrigin(0.5);
+    const replay = this.add.rectangle(ARENA_STAGE.width / 2, 338, 210, 70, 0x4e91d9)
+      .setStrokeStyle(3, 0xffffff).setInteractive();
+    const replayText = this.add.text(ARENA_STAGE.width / 2, 338, 'RESTART', {
+      fontFamily: 'sans-serif', fontSize: '25px', fontStyle: 'bold', color: '#ffffff',
+    }).setOrigin(0.5);
+    replay.on('pointerdown', () => this.scene.restart());
+    this.resultLayer.add([shade, this.resultText, replay, replayText]);
+  }
+
+  showResult(result) {
+    if (result === 'running' || this.resultLayer.visible) return;
+    this.releaseJoystick();
+    this.resultText.setText(result.toUpperCase());
+    this.resultLayer.setVisible(true);
+  }
+
+  renderCastEvents() {
+    for (const event of this.session.drainCastEvents()) {
+      const visual = castVisual(event, arenaToStage);
+      const effect = this.add.graphics().setPosition(visual.origin.x, visual.origin.y).setDepth(15);
+      const { x, y } = visual.direction;
+      if (event.category === 'basic') {
+        effect.lineStyle(5, 0xfff2b0, 0.95);
+        effect.lineBetween(x * 10 - y * 12, y * 10 + x * 12, x * 20 + y * 12, y * 20 - x * 12);
+      } else if (event.category === 'heavy') {
+        effect.fillStyle(0xffae4a, 0.27).fillCircle(0, 0, 43);
+        effect.lineStyle(6, 0xffd36c, 0.95).strokeCircle(0, 0, 43);
+        effect.lineBetween(x * 12 - y * 31, y * 12 + x * 31, x * 35 + y * 31, y * 35 - x * 31);
+      } else if (event.category === 'special') {
+        effect.lineStyle(6, 0x6adaff, 0.95).strokeCircle(0, 0, 25);
+        if (visual.ranged) {
+          effect.lineStyle(7, 0xa5ebff, 0.95).lineBetween(0, 0, x * visual.length, y * visual.length);
+          effect.fillStyle(0xe1f8ff).fillCircle(x * visual.length, y * visual.length, 10);
+        }
+      } else if (event.category === 'awakening') {
+        effect.fillStyle(0xffe894, 0.21).fillCircle(0, 0, 60);
+        effect.lineStyle(7, 0xffe894, 0.96).strokeCircle(0, 0, 60);
+        for (let i = 0; i < 8; i += 1) {
+          const angle = i * Math.PI / 4;
+          effect.lineBetween(Math.cos(angle) * 35, Math.sin(angle) * 35,
+            Math.cos(angle) * 72, Math.sin(angle) * 72);
+        }
+        if (visual.ranged) {
+          effect.lineStyle(9, 0xffe894, 0.8).lineBetween(0, 0, x * visual.length, y * visual.length);
+        }
+      }
+      this.tweens.add({ targets: effect, alpha: 0, scale: 1.16,
+        duration: event.category === 'awakening' ? 480 : 320,
+        onComplete: () => effect.destroy() });
+    }
   }
 
   createHud() {
@@ -231,20 +295,15 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   updatePreBattleCountdown(deltaSeconds) {
-    if (this.battleStarted) return;
-
-    this.preBattleRemaining = Math.max(0, this.preBattleRemaining - deltaSeconds);
-
-    if (this.preBattleRemaining > 0) {
-      this.countdownText.setText(String(Math.ceil(this.preBattleRemaining)));
-      return;
-    }
-
-    this.battleStarted = true;
-    window.__arenaBattleStarted = true;
-    this.countdownText.setVisible(false);
-    this.accumulatorSeconds = 0;
-    this.refreshSkillButtons();
+    this.preBattleGate.advance(deltaSeconds, () => {
+      this.battleStarted = true;
+      window.__arenaBattleStarted = true;
+      this.countdownText.setVisible(false);
+      this.accumulatorSeconds = 0;
+      this.refreshSkillButtons();
+    }, () => this.advanceBattle(deltaSeconds));
+    this.preBattleRemaining = this.preBattleGate.remaining;
+    if (!this.battleStarted) this.countdownText.setText(this.preBattleGate.display());
   }
 
   createSkillButtons() {
@@ -283,9 +342,12 @@ export class ArenaScene extends Phaser.Scene {
       const ring = this.add.graphics().setDepth(23);
 
       base.on('pointerdown', () => {
-        if (!this.battleStarted || !this.selectedId) return;
+        if (!this.battleStarted || !this.selectedId || this.session.result() !== 'running') return;
         const used = this.session.usePlayerAbility(this.selectedId, category);
-        if (used) this.refreshSkillButtons();
+        if (used) {
+          this.renderCastEvents();
+          this.applyFrame(this.session.snapshot());
+        }
       });
 
       this.skillButtons.set(category, {
@@ -456,6 +518,7 @@ export class ArenaScene extends Phaser.Scene {
     this.refreshSelectionVisuals();
     this.refreshSkillButtons();
     this.refreshHud(frame);
+    this.showResult(frame.result);
 
     const selected = this.selectedId ? this.session.actorById(this.selectedId) : null;
     window.__arenaSceneControlSource = selected
@@ -472,13 +535,14 @@ export class ArenaScene extends Phaser.Scene {
 
   update(_time, deltaMs) {
     const deltaSeconds = Math.min(deltaMs / 1000, 0.25);
-
-    if (!this.battleStarted) {
-      this.updatePreBattleCountdown(deltaSeconds);
+    const wasStarted = this.battleStarted;
+    this.updatePreBattleCountdown(deltaSeconds);
+    if (!wasStarted) {
       this.applyFrame(this.session.snapshot());
-      return;
     }
+  }
 
+  advanceBattle(deltaSeconds) {
     this.accumulatorSeconds += deltaSeconds;
 
     while (this.accumulatorSeconds >= SIM_STEP_SECONDS && this.session.result() === 'running') {
@@ -493,6 +557,7 @@ export class ArenaScene extends Phaser.Scene {
       this.applyKoFixtureIfNeeded();
     }
 
+    this.renderCastEvents();
     this.applyFrame(this.session.snapshot());
   }
 }

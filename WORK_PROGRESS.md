@@ -9,8 +9,9 @@
 - KO smoke URL: https://hansen0318.github.io/shanhaijing-arena/?fixture=ko
 - Current slice: **complete playable graybox 3v3 prototype**
 - Latest remote at recovery: `e8a6b5af6e291428f0cab833ba78dc9af48e6cdf`; Actions #210 `36580543665` completed successfully (pre-existing Chat work). Working branch was fast-forwarded from stale local checkout without discarding changes.
-- Current checkpoint: portrait/HP/team HP/timer HUD implementation; targeted HUD tests 3/3 PASS and Vite build PASS locally. Remaining: finite runtime combat, skill/VFX event feedback, result/restart, full regression/deploy. This checkpoint is not player verified.
-- Next exact step: implement finite 90-second playable runtime and cast feedback, then result/restart loop; preserve protected input/viewport architecture.
+- First pushed checkpoint: `9b242361738073416442729433bf12bb0b17b686` portrait selection and graybox HP/timer HUD; targeted HUD tests 3/3 and build PASS.
+- Current integrated graybox checkpoint: finite 90-second runtime, cast-event placeholder VFX, victory/defeat/draw overlay with Restart, countdown gate, Awakening unlockTier metadata. Full local regression **107/107 PASS**, Vite build PASS, `git diff --check` PASS. Public Pages deploy/runtime smoke and iPhone player acceptance remain pending; no player verification claim.
+- Next exact step: push integrated checkpoint, inspect Actions Test/Build/Pages result, then browser-smoke public default + KO fixture including portrait selection, manual air-cast feedback, HP/timer, result/restart, and page-origin errors. Do not replace final art.
 - Current status: **PLAYER-CONFIRMED WORKING BASELINE RESTORED; RUNTIME PACING PASS; AI RESUME DELAY SET TO 0s / IMMEDIATE**
 - Latest slice: **Arena 1120x540 horizontal widening — CI/build/Pages and desktop browser pointer smoke PASS; PLAYER VISUAL PROPORTION / REAL-DEVICE TOUCH SMOKE PENDING**. Source test-fix commit `23c4e759551c24d149203c2574ee0109e5921046`; [Pages run 36500167030](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36500167030): 61/61 Test, Build, Deploy success.
 - Next exact step: player checks widened proportion and touch selection/joystick on the public preview; do not adjust joystick or other gameplay in this slice.
@@ -360,3 +361,11 @@ Locked prototype behavior:
 - prototype cooldowns are now Heavy 5s, Special 10s, Awakening 15s.
 
 Awakening progression/unlock is not implemented in M0 yet; future progression may gate the slot without changing the combat API.
+
+
+## Playable graybox integration checkpoint (2026-09-29)
+- Portrait cards at upper left are the selection entry for A1/A2/A3; actor markers retain selected highlight but no longer receive selection clicks. Selected card scales 1.12 with white frame. KO cards are dim and cannot select a KO ally.
+- Each card has centered white current/max HP over a red bar; upper center shows sum of enemy HP, upper right countdown timer. Both bind directly to BattleSession snapshots.
+- Public runtime fixture now has finite 90-second rounds and moderate test HP, retaining the canonical headless fixture and 90-second HP% tie rule. Existing AI spacing, shared targeting, no-reservation pursuit, Basic fallback, joystick ownership, and protected 1120x540 input/viewport code remain in place.
+- Shared BattleSession cast events drive distinct lightweight local/ranged placeholder Basic, Heavy, Special, Awakening feedback, including a non-damaging out-of-range manual air-cast. Result text and clickable Restart are displayed after resolution.
+- Regression added for HP data, timer, finite/replayable runtime, cast events, VFX direction/range clamp including overlapping caster, countdown freeze, and future Awakening unlockTier metadata. Full local suite: 107/107 PASS; Vite build PASS. Public Pages and player device smoke still pending.

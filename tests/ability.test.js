@@ -41,6 +41,15 @@ test('ability definition is validated and immutable', () => {
   assert.throws(() => createAbilityDefinition({ ...definition, range: Infinity }));
 });
 
+test('Awakening definition keeps future progression unlock metadata without gating M0', () => {
+  const definition = createAbilityDefinition({
+    ...heavy(), id: 'awaken', category: 'awakening', unlockTier: 3,
+  });
+  assert.equal(definition.unlockTier, 3);
+  assert.equal(heavy().unlockTier, 0);
+  assert.throws(() => createAbilityDefinition({ ...heavy(), unlockTier: -1 }), RangeError);
+});
+
 test('valid request transitions ready to executing and stores target id', () => {
   const caster = actor('a1', 'allies');
   const target = actor('e1', 'enemies', 3, 0);

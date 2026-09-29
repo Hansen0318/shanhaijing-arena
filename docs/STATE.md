@@ -59,8 +59,8 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 ## Implementation status
 
 ### Graybox playable milestone in progress (2026-09-29)
-- Portrait-based ally selection and compact prototype HP/timer HUD are being integrated on the active feature branch. The old actor marker is no longer the selection input; selection highlight remains.
-- Runtime finite combat, distinct cast feedback, and result/restart remain pending until verified. Do not mark the playable milestone or player device smoke complete.
+- Portrait-based ally selection and compact prototype HP/timer HUD are integrated on the active feature branch. The old actor marker is no longer the selection input; selection highlight remains.
+- Finite 90-second runtime, distinct cast feedback, and result/restart are implemented. Full local regression 107/107 and Vite build PASS. Public Pages deploy/runtime smoke and real iPhone player acceptance are pending. Do not mark player verified.
 
 ### Completed on `feat/m0-combat-core-20260927`
 - Framework-independent deterministic combat core through headless 3v3.

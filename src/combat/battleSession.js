@@ -103,6 +103,24 @@ export class BattleSession {
     this.cadence = new Map(this.actors.map((actor) => [actor.instanceId, 0]));
     this.targetIds = new Map(this.actors.map((actor) => [actor.instanceId, null]));
     this.playerMovement = new Map(this.actors.map((actor) => [actor.instanceId, { x: 0, y: 0 }]));
+    this.castEvents = [];
+  }
+
+  drainCastEvents() {
+    return this.castEvents.splice(0);
+  }
+
+  recordCast(actor, target, category, source, definition, hit) {
+    this.castEvents.push({
+      actorId: actor.instanceId,
+      category,
+      source,
+      origin: { x: actor.x, y: actor.y },
+      target: target ? { x: target.x, y: target.y } : null,
+      hit,
+      minRange: definition.minRange,
+      maxRange: definition.maxRange,
+    });
   }
 
   actorById(id) {
@@ -213,6 +231,7 @@ export class BattleSession {
       });
 
       this.targetIds.set(actor.instanceId, target.instanceId);
+      this.recordCast(actor, target, category, 'player', definition, true);
       return true;
     }
 
@@ -221,6 +240,7 @@ export class BattleSession {
       slot,
       definition,
     });
+    this.recordCast(actor, target, category, 'player', definition, false);
     return true;
   }
 
@@ -337,6 +357,7 @@ export class BattleSession {
       if (applied && intent.category === 'basic') {
         this.cadence.set(actor.instanceId, 1 / actorDefinition.stats.attackSpeed);
       }
+      this.recordCast(actor, target, intent.category, 'ai', definition, applied);
     }
 
     this.elapsedSeconds = Math.min(this.maxSeconds, this.elapsedSeconds + deltaSeconds);

@@ -173,6 +173,30 @@ test('player ability can air-cast immediately when target is outside hit range',
   assert.equal(a2.abilityState.heavy.phase, 'cooldown');
 });
 
+test('manual air-cast emits visible cast intent without remote damage', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+  const hp = e2.hp;
+  assert.equal(session.usePlayerAbility('a2', 'special'), true);
+  assert.equal(e2.hp, hp);
+  assert.deepEqual(session.drainCastEvents(), [{
+    actorId: 'a2', category: 'special', source: 'player',
+    origin: { x: a2.x, y: a2.y }, target: { x: e2.x, y: e2.y }, hit: false,
+    minRange: 0, maxRange: 2.5,
+  }]);
+  assert.deepEqual(session.drainCastEvents(), []);
+});
+
+test('AI emits a cast event when it attacks through the shared pipeline', () => {
+  const session = makeSession();
+  session.actorById('a2').x = 4;
+  session.actorById('e2').x = 5;
+  session.step(0.25);
+  const events = session.drainCastEvents();
+  assert.ok(events.some((event) => event.source === 'ai' && event.actorId === 'a2' && event.hit));
+});
+
 
 test('holding joystick ownership suppresses AI even with zero movement vector', () => {
   const session = makeSession();
