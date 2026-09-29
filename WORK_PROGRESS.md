@@ -194,3 +194,19 @@ Input:
 Automated player-ability tests were added for real damage/cooldown, cooldown rejection, and out-of-range rejection.
 
 Remaining requirement after CI/deploy: real-device smoke for multitouch joystick+skill, button placement, cooldown readability, and correct selected-character binding.
+
+
+## Battle start / manual skill ownership correction
+Player clarified the intended control contract after first skill-button smoke:
+
+- every round has a 5-second pre-battle countdown;
+- during countdown, all six actors are frozen and no skill may be used;
+- after countdown, untouched actors run fully automatic AI;
+- touching/holding the selected ally's joystick establishes player ownership even if the stick vector is centered or inside the dead zone;
+- while joystick is held, that ally's AI cannot auto-cast Heavy/Special/Awakening;
+- skill cooldown reaching zero means READY only; while player ownership is held it must stay ready until the player presses it;
+- releasing the joystick ends player ownership immediately and AI resumes full automatic movement/ability use on the next simulation step;
+- each ally owns independent abilityState/cooldowns; switching A1/A2/A3 reads that ally's own slots;
+- Heavy/Special/Awakening layout spacing was widened to prevent cooldown-ring overlap.
+
+Chat added tests for joystick-hold AI suppression, independent ally cooldowns, ready-state persistence under manual control, and AI auto-cast resumption after release.
