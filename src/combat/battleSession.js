@@ -263,9 +263,12 @@ export class BattleSession {
       }
 
       if (intent.kind !== 'ability') continue;
+
+      if (intent.pursue && target && canCharacterAct(target)) {
+        moveToward(actor, target, actorDefinition.stats.moveSpeed, deltaSeconds, this.arenaBounds);
+      }
+
       if (intent.category === 'basic' && this.cadence.get(actor.instanceId) > 0) {
-        // The actor is already inside Basic range, so holding position here is intentional.
-        // If the nearest target leaves Basic range, decideAIIntent returns move on the next step.
         continue;
       }
 
