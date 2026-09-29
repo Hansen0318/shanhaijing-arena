@@ -116,3 +116,19 @@ Correction:
 - stage stays 1120x540; vertical bounds, joystick, input architecture, camera, combat stats, and zero-delay AI handoff are unchanged.
 
 Player real-device smoke is required after deploy to verify both allies and enemies can occupy the added horizontal space.
+
+
+## Arena full-width movement correction
+Player real-device smoke showed the previous expanded bounds still rendered movement extremes near the horizontal line limits rather than near the visible sand-field edges.
+
+Geometry correction:
+- stage remains 1120x540;
+- horizontal actor-safe screen margin becomes 32px on each side;
+- shared simulation x bounds expand to approximately -2.3333333333..12.3333333333;
+- mapping is chosen so the original spawn coordinates x=0 and x=10 remain at approximately screen x=200 and x=920;
+- new movement extremes render at approximately screen x=32 and x=1088, allowing the actor circles to approach the sand-field edges without clipping;
+- all six actors still share the same BattleSession arena bounds;
+- enemy AI and ally/player movement remain governed by the same shared bounds;
+- vertical range, joystick, input architecture, camera, combat logic, and zero-delay AI handoff are unchanged.
+
+Player smoke after deploy should drag an ally to both horizontal extremes and observe enemies following into the same expanded space.
