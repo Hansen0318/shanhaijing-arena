@@ -320,3 +320,28 @@ test('AI resumes pursuit as soon as its nearest target leaves attack range', () 
 
   assert.ok(e2.x < before);
 });
+
+
+test('AI can move toward nearest target on the same step it uses a ranged skill', () => {
+  const session = makeSession();
+  const a1 = session.actorById('a1');
+  const e1 = session.actorById('e1');
+
+  a1.x = 0;
+  a1.y = 0;
+  e1.x = 2.5;
+  e1.y = 0;
+
+  // Keep other actors away so e1 is unambiguously nearest.
+  session.actorById('e2').x = 10;
+  session.actorById('e3').x = 10;
+
+  const beforeX = a1.x;
+  const beforeHp = e1.hp;
+
+  session.step(0.25);
+
+  assert.ok(a1.x > beforeX);
+  assert.ok(e1.hp < beforeHp);
+  assert.equal(a1.abilityState.awakening.phase, 'cooldown');
+});
