@@ -10,5 +10,6 @@ new Phaser.Game({
   // Keep one immutable 1120x540 game surface.
   // Browser CSS alone scales this canvas proportionally to fit the screen.
   scale: { mode: Phaser.Scale.NONE },
+  input: { activePointers: 4 },
   scene: [ArenaScene],
 });
