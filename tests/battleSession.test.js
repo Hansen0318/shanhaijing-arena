@@ -128,3 +128,43 @@ test('enemy AI movement uses the same expanded Arena bounds', () => {
     assert.ok(actor.x <= session.arenaBounds.xMax);
   }
 });
+
+
+test('player Heavy uses shared ability pipeline and starts cooldown', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  a2.x = 4;
+  e2.x = 5;
+  const hpBefore = e2.hp;
+
+  assert.equal(session.usePlayerAbility('a2', 'heavy'), true);
+  assert.ok(e2.hp < hpBefore);
+  assert.equal(a2.abilityState.heavy.phase, 'cooldown');
+  assert.equal(a2.abilityState.heavy.cooldownRemaining, abilities.heavy.cooldown);
+});
+
+test('player ability cannot fire while cooling down', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  a2.x = 4;
+  e2.x = 5;
+
+  assert.equal(session.usePlayerAbility('a2', 'special'), true);
+  const hpAfterFirst = e2.hp;
+  assert.equal(session.usePlayerAbility('a2', 'special'), false);
+  assert.equal(e2.hp, hpAfterFirst);
+});
+
+test('player ability fails cleanly when nearest target is out of range', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+
+  a2.x = session.arenaBounds.xMin;
+
+  assert.equal(session.usePlayerAbility('a2', 'heavy'), false);
+  assert.equal(a2.abilityState.heavy.phase, 'ready');
+});
