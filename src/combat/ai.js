@@ -14,15 +14,56 @@ function targetId(target) {
   return target?.instanceId ?? target?.id ?? null;
 }
 
+function distance(actor, target) {
+  return Math.hypot(actor.x - target.x, actor.y - target.y);
+}
+
 function abilityDefinitionFor(actor, category, definitions) {
   const id = actor.abilityState?.[category]?.definitionId;
   return id ? definitions[id] ?? null : null;
 }
 
-function shouldKeepPursuing(actor, target) {
-  const dx = actor.x - target.x;
-  const dy = actor.y - target.y;
-  return dx * dx + dy * dy > AI_ENGAGE_DISTANCE * AI_ENGAGE_DISTANCE;
+function readyCandidate(actor, category, definitions) {
+  const definition = abilityDefinitionFor(actor, category, definitions);
+  const slot = actor.abilityState?.[category] ?? null;
+  if (!definition || !slot || slot.phase !== 'ready') return null;
+  return { category, definition, slot };
+}
+
+function spacingMove(candidate, actor, target) {
+  const { definition } = candidate;
+  if (definition.preferredRange === null) return null;
+
+  const d = distance(actor, target);
+  if (d < definition.minRange) {
+    return {
+      kind: 'move',
+      movement: 'retreat',
+      reason: 'skill_spacing_too_close',
+      category: candidate.category,
+      definitionId: definition.id,
+      targetId: targetId(target),
+      desiredRange: definition.preferredRange,
+    };
+  }
+
+  if (d > definition.maxRange) {
+    return {
+      kind: 'move',
+      movement: 'approach',
+      reason: 'skill_spacing_too_far',
+      category: candidate.category,
+      definitionId: definition.id,
+      targetId: targetId(target),
+      desiredRange: definition.preferredRange,
+    };
+  }
+
+  return null;
+}
+
+function legacyPursue(actor, target) {
+  return distance(actor, target) > AI_ENGAGE_DISTANCE;
 }
 
 export function decideAIIntent({
@@ -46,43 +87,60 @@ export function decideAIIntent({
   }
 
   const prioritized = NON_BASIC_ORDER
-    .map((category) => ({
-      category,
-      definition: abilityDefinitionFor(actor, category, abilityDefinitions),
-      slot: actor.abilityState?.[category] ?? null,
-    }))
-    .filter(({ definition }) => definition && priorityOf(definition) > 0)
+    .map((category) => readyCandidate(actor, category, abilityDefinitions))
+    .filter((candidate) => candidate && priorityOf(candidate.definition) > 0)
     .sort((a, b) => priorityOf(b.definition) - priorityOf(a.definition));
 
   for (const candidate of prioritized) {
-    if (canStartAbility({ caster: actor, slot: candidate.slot, definition: candidate.definition, target })) {
+    const spacing = spacingMove(candidate, actor, target);
+    if (spacing) return spacing;
+
+    if (canStartAbility({
+      caster: actor,
+      slot: candidate.slot,
+      definition: candidate.definition,
+      target,
+    })) {
       return {
         kind: 'ability',
         category: candidate.category,
         definitionId: candidate.definition.id,
         targetId: targetId(target),
-        pursue: shouldKeepPursuing(actor, target),
+        pursue: candidate.definition.preferredRange === null
+          ? legacyPursue(actor, target)
+          : false,
       };
     }
   }
 
-  const basicDefinition = abilityDefinitionFor(actor, 'basic', abilityDefinitions);
-  const basicSlot = actor.abilityState?.basic ?? null;
-  if (basicDefinition && canStartAbility({ caster: actor, slot: basicSlot, definition: basicDefinition, target })) {
-    return {
-      kind: 'ability',
-      category: 'basic',
-      definitionId: basicDefinition.id,
-      targetId: targetId(target),
-      pursue: shouldKeepPursuing(actor, target),
-    };
+  const basic = readyCandidate(actor, 'basic', abilityDefinitions);
+  if (basic) {
+    const spacing = spacingMove(basic, actor, target);
+    if (spacing) return spacing;
+
+    if (canStartAbility({
+      caster: actor,
+      slot: basic.slot,
+      definition: basic.definition,
+      target,
+    })) {
+      return {
+        kind: 'ability',
+        category: 'basic',
+        definitionId: basic.definition.id,
+        targetId: targetId(target),
+        pursue: basic.definition.preferredRange === null
+          ? legacyPursue(actor, target)
+          : false,
+      };
+    }
   }
 
   return {
     kind: 'move',
+    movement: 'approach',
     reason: 'pursue_nearest',
     targetId: targetId(target),
-    x: target.x,
-    y: target.y,
+    desiredRange: AI_ENGAGE_DISTANCE,
   };
 }
