@@ -23,7 +23,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Player controls: movement joystick + Heavy + Special + Awakening.
 - Manual Heavy/Special/Awakening can be triggered immediately after the pre-battle countdown when ready, including an air-cast with no in-range target; AI still obeys approach/range before auto-casting.
 - Basic attack is automatic; no Basic button.
-- AI continuously reevaluates the nearest living opponent for movement/attack targeting.
+- AI continuously reevaluates the nearest living opponent for movement/attack targeting and keeps pursuing while that opponent is outside usable attack range; manual control of one ally does not pause the other five AI actors.
 - Win: all enemy characters KO.
 - Lose: all allied characters KO.
 - Battle limit: 90 seconds.
