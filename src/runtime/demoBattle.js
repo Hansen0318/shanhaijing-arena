@@ -30,11 +30,12 @@ export const demoCharacterDefinitions = {
   enemy: character('enemy', 'speed', { maxHp: 100, atk: 18, def: 5, moveSpeed: 3.5, attackSpeed: 1.2 }),
 };
 
-// Runtime-only smoke fixture: slower and longer-lived so manual control,
-// character switching and 2-second AI handoff can be observed.
+// Runtime-only sandbox fixture: deliberately very high HP and a long time
+// limit so player movement, skill controls, targeting, and handoff can be
+// tested continuously without the public prototype ending quickly.
 export const runtimeCharacterDefinitions = {
-  ally: character('ally', 'power', { maxHp: 260, atk: 16, def: 6, moveSpeed: 1.4, attackSpeed: 1.0 }),
-  enemy: character('enemy', 'speed', { maxHp: 220, atk: 13, def: 5, moveSpeed: 1.2, attackSpeed: 0.9 }),
+  ally: character('ally', 'power', { maxHp: 1000000, atk: 16, def: 6, moveSpeed: 1.4, attackSpeed: 1.0 }),
+  enemy: character('enemy', 'speed', { maxHp: 1000000, atk: 13, def: 5, moveSpeed: 1.2, attackSpeed: 0.9 }),
 };
 
 function createTeams(definitions) {
@@ -54,6 +55,7 @@ export function createDemoBattleSession() {
     enemies,
     characterDefinitions: runtimeCharacterDefinitions,
     abilityDefinitions: demoAbilityDefinitions,
+    maxSeconds: 86400,
   });
 }
 
