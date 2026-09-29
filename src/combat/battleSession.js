@@ -155,7 +155,16 @@ export class BattleSession {
     const target = chooseSoftTarget(actor, opponents, currentTarget);
     if (!target) return false;
 
-    if (!startAbility({ caster: actor, slot, definition, target, source: 'player' })) return false;
+    actor.controlHandoff.registerPlayerInput(this.elapsedSeconds * 1000);
+
+    if (!startAbility({
+      caster: actor,
+      slot,
+      definition,
+      target,
+      source: 'player',
+      ignoreRange: true,
+    })) return false;
 
     const defenderDefinition = this.characterDefinitions[target.definitionId];
     if (!defenderDefinition) throw new Error(`Missing character definition: ${target.definitionId}`);
