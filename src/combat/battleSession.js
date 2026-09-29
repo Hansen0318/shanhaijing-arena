@@ -7,8 +7,8 @@ import { resolveDirectDamage } from './combatResolver.js';
 const ACTIVE_CATEGORIES = ['basic', 'heavy', 'special', 'awakening'];
 
 export const DEFAULT_ARENA_BOUNDS = Object.freeze({
-  xMin: 0,
-  xMax: 10,
+  xMin: -1.1,
+  xMax: 11.1,
   yMin: -2,
   yMax: 2,
 });
@@ -28,14 +28,14 @@ function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
-function moveToward(actor, target, speed, dt) {
+function moveToward(actor, target, speed, dt, bounds) {
   const dx = target.x - actor.x;
   const dy = target.y - actor.y;
   const distance = Math.hypot(dx, dy);
   if (distance === 0) return;
   const step = Math.min(distance, speed * dt);
-  actor.x += (dx / distance) * step;
-  actor.y += (dy / distance) * step;
+  actor.x = clamp(actor.x + (dx / distance) * step, bounds.xMin, bounds.xMax);
+  actor.y = clamp(actor.y + (dy / distance) * step, bounds.yMin, bounds.yMax);
 }
 
 function moveByVector(actor, vector, speed, dt, bounds) {
@@ -178,7 +178,7 @@ export class BattleSession {
       const target = actorById(opponents, intent.targetId);
 
       if (intent.kind === 'move' && target && canCharacterAct(target)) {
-        moveToward(actor, target, actorDefinition.stats.moveSpeed, deltaSeconds);
+        moveToward(actor, target, actorDefinition.stats.moveSpeed, deltaSeconds, this.arenaBounds);
         continue;
       }
 
