@@ -7,18 +7,26 @@ function distanceSquared(a, b) {
 }
 
 export function chooseSoftTarget(actor, enemies, currentTarget = null) {
-  if (currentTarget && !isKO(currentTarget)) return currentTarget;
-
   let best = null;
   let bestDistance = Number.POSITIVE_INFINITY;
+
   for (const enemy of enemies) {
     if (isKO(enemy)) continue;
+
     const d2 = distanceSquared(actor, enemy);
-    if (d2 < bestDistance) {
+    if (
+      d2 < bestDistance ||
+      (
+        d2 === bestDistance &&
+        currentTarget &&
+        enemy === currentTarget
+      )
+    ) {
       best = enemy;
       bestDistance = d2;
     }
   }
+
   return best;
 }
 
