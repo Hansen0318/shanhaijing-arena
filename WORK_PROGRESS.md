@@ -274,3 +274,22 @@ Correction:
 - Manual joystick ownership remains unchanged; releasing returns to this pursuit behavior immediately.
 
 This applies symmetrically to allied and enemy AI.
+
+
+## Close engage-distance correction
+Player smoke still showed AI failing to follow a nearby manually moved opponent.
+
+Exact root cause:
+- ranged skills had been changed to pursue while casting;
+- Basic ability intents still hard-coded pursue=false;
+- therefore entering Basic range (~1.8 simulation units) still stopped movement too early.
+
+Correction:
+- pursuit stop distance is now independent from all ability ranges;
+- M0 uses AI_ENGAGE_DISTANCE = 0.75;
+- outside 0.75, AI keeps moving toward the currently nearest living opponent even when Basic/Heavy/Special/Awakening are being used;
+- inside 0.75, AI may stop and attack;
+- moveToward now respects this stop distance instead of moving actor centers into each other;
+- applies symmetrically to allied and enemy AI.
+
+Regression coverage includes being inside Basic range but outside engage distance, and an enemy following a manually controlled nearest ally.
