@@ -210,3 +210,16 @@ Player clarified the intended control contract after first skill-button smoke:
 - Heavy/Special/Awakening layout spacing was widened to prevent cooldown-ring overlap.
 
 Chat added tests for joystick-hold AI suppression, independent ally cooldowns, ready-state persistence under manual control, and AI auto-cast resumption after release.
+
+
+## Manual skill immediate-cast rule
+Player smoke showed manual skill buttons were blocked at battle start because the shared ability start check required the target to already be inside the same range used by AI.
+
+Canonical split:
+- AI keeps the existing approach/range behavior and may only cast after entering ability range;
+- player manual Heavy/Special/Awakening may cast immediately after the 5-second battle countdown if the selected ally is alive, the slot is ready, and a living target exists;
+- manual cast uses the existing soft target selection but bypasses the AI range gate;
+- manual cast still uses the same damage/cooldown pipeline;
+- pressing a manual skill registers player input for that instant; with zero-delay handoff, AI may resume next simulation step when joystick is not held.
+
+This is a control-rule difference, not a second combat implementation.
