@@ -14,8 +14,10 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Character separation: simple collision/avoidance; no complex physics.
 - Camera is fixed for the whole battle and does not follow selection.
 - The whole 3v3 Arena encounter is intended to remain readable in one fullscreen landscape view.
+- Each round begins with a 5-second pre-battle countdown; actors and skills are inactive until it completes.
 - Player combat input immediately overrides AI for the selected character.
-- When valid player input stops, full AI control resumes immediately on the next simulation step.
+- Holding the selected ally's joystick keeps player ownership active even at zero/dead-zone movement, suppressing that ally's automatic skill use.
+- When joystick input is released, full AI control resumes immediately on the next simulation step.
 - Selected character does not change when AI resumes.
 - No visible AUTO/MANUAL state.
 - Player controls: movement joystick + Heavy + Special + Awakening.
