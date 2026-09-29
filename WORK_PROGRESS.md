@@ -243,3 +243,16 @@ AI targeting:
 Runtime test sandbox:
 - the public runtime fixture uses very high HP and a 24-hour maxSeconds value so the prototype does not stop during ordinary manual testing;
 - canonical deterministic/headless battle rules, including the formal 90-second limit and normal HP/balance fixture, remain unchanged.
+
+
+## Continuous nearest-opponent pursuit invariant
+Player clarified the intended AI movement contract:
+
+- all uncontrolled allies and all enemies continuously reevaluate the nearest living opponent;
+- manual control of one allied actor must not pause AI movement for the other five actors;
+- while the nearest opponent is outside usable attack range, AI must keep moving toward that opponent every simulation step;
+- AI may hold position only when the nearest opponent is already inside attack range and the actor is attacking / waiting for its next attack cadence;
+- if that opponent moves back outside range, pursuit resumes on the next decision;
+- if another opponent becomes nearer, target switches immediately.
+
+Regression tests now cover enemy pursuit while one ally is manually controlled, allied pursuit while another ally is manual, and resuming pursuit when a target leaves range.
