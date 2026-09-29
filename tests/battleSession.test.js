@@ -389,3 +389,71 @@ test('enemy follows a manually moving nearest ally until close engage distance',
   const afterDistance = Math.abs(e2.x - a2.x);
   assert.ok(afterDistance < beforeDistance);
 });
+
+
+test('multiple enemy AI actors can simultaneously pursue the same nearest ally', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e1 = session.actorById('e1');
+  const e2 = session.actorById('e2');
+
+  // Put a2 close to both enemies and move the other allies far away.
+  a2.x = 5;
+  a2.y = 0;
+  session.actorById('a1').x = -2;
+  session.actorById('a1').y = -2;
+  session.actorById('a3').x = -2;
+  session.actorById('a3').y = 2;
+
+  e1.x = 6.6;
+  e1.y = -0.4;
+  e2.x = 6.6;
+  e2.y = 0.4;
+
+  session.holdPlayerControl('a2');
+
+  const before1 = Math.hypot(e1.x - a2.x, e1.y - a2.y);
+  const before2 = Math.hypot(e2.x - a2.x, e2.y - a2.y);
+
+  session.step(0.25);
+
+  const after1 = Math.hypot(e1.x - a2.x, e1.y - a2.y);
+  const after2 = Math.hypot(e2.x - a2.x, e2.y - a2.y);
+
+  assert.ok(after1 < before1);
+  assert.ok(after2 < before2);
+  assert.equal(session.targetIds.get('e1'), 'a2');
+  assert.equal(session.targetIds.get('e2'), 'a2');
+});
+
+test('multiple allied AI actors can simultaneously pursue the same nearest enemy', () => {
+  const session = makeSession();
+  const a1 = session.actorById('a1');
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  e2.x = 5;
+  e2.y = 0;
+  session.actorById('e1').x = 12;
+  session.actorById('e1').y = -2;
+  session.actorById('e3').x = 12;
+  session.actorById('e3').y = 2;
+
+  a1.x = 3.4;
+  a1.y = -0.4;
+  a2.x = 3.4;
+  a2.y = 0.4;
+
+  const before1 = Math.hypot(a1.x - e2.x, a1.y - e2.y);
+  const before2 = Math.hypot(a2.x - e2.x, a2.y - e2.y);
+
+  session.step(0.25);
+
+  const after1 = Math.hypot(a1.x - e2.x, a1.y - e2.y);
+  const after2 = Math.hypot(a2.x - e2.x, a2.y - e2.y);
+
+  assert.ok(after1 < before1);
+  assert.ok(after2 < before2);
+  assert.equal(session.targetIds.get('a1'), 'e2');
+  assert.equal(session.targetIds.get('a2'), 'e2');
+});
