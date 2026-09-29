@@ -163,3 +163,34 @@ Minimal correction:
 - joystick, pointer mapping, camera, Arena geometry, AI handoff, and battle logic are unchanged.
 
 Player smoke should confirm A1/A2/A3 are easier to select without noticeable ambiguous selection when allies are close.
+
+
+## Player skill controls — Chat implementation
+Chat implemented the first real Heavy / Special / Awakening control slice.
+
+Combat:
+- BattleSession exposes usePlayerAbility(instanceId, category) for Heavy/Special/Awakening only;
+- player abilities use the existing startAbility -> resolveDirectDamage -> finishAbility pipeline;
+- targeting reuses existing soft-target behavior: retain living current target, otherwise nearest living enemy;
+- out-of-range, KO, invalid, or cooling abilities fail cleanly;
+- cooldown remains the canonical ability slot state, not a UI-only timer.
+
+Runtime UI:
+- three circular skill buttons sit near the bottom-right edge, visually balancing the left joystick;
+- Heavy and Special use 42px radius; Awakening uses 50px radius;
+- current placeholders are H / S / A; final art can replace labels later without changing layout;
+- ready state uses normal color;
+- cooldown/disabled state dims the button/icon;
+- remaining whole seconds render over the button;
+- outer radial ring renders the same cooldown state's remaining fraction and disappears/shrinks with the timer;
+- cooldown completion restores normal color/full ready ring;
+- button state always follows the currently selected living ally.
+
+Input:
+- Phaser Scale.NONE and current protected mobile input path remain unchanged;
+- activePointers is increased to 4 so joystick + skill presses can coexist for multitouch;
+- no touch adapter or pointer-coordinate architecture change.
+
+Automated player-ability tests were added for real damage/cooldown, cooldown rejection, and out-of-range rejection.
+
+Remaining requirement after CI/deploy: real-device smoke for multitouch joystick+skill, button placement, cooldown readability, and correct selected-character binding.
