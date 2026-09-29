@@ -479,3 +479,53 @@ test('AI continues pursuit until actor centers are nearly overlapping', () => {
 
   assert.ok(after < before);
 });
+
+
+test('AI range profile can retreat away from a too-close opponent', () => {
+  const profiledAbilities = {
+    ...abilities,
+    awakening: createAbilityDefinition({
+      id: 'awakening',
+      category: 'awakening',
+      cooldown: 12,
+      range: 3,
+      minRange: 1.5,
+      preferredRange: 2.4,
+      maxRange: 3,
+      targetingRule: 'enemy',
+      effect: { coefficient: 2 },
+      ai: { priority: 40 },
+    }),
+  };
+
+  const allies = [-1, 0, 1].map((y, i) => createCharacterState(definitions.ally, {
+    instanceId: `a${i + 1}`, teamId: 'allies', x: 0, y,
+  }));
+  const enemies = [-1, 0, 1].map((y, i) => createCharacterState(definitions.enemy, {
+    instanceId: `e${i + 1}`, teamId: 'enemies', x: 10, y,
+  }));
+  const session = createBattleSession({
+    allies,
+    enemies,
+    characterDefinitions: definitions,
+    abilityDefinitions: profiledAbilities,
+  });
+
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+  a2.x = 5;
+  a2.y = 0;
+  e2.x = 5.5;
+  e2.y = 0;
+
+  // Keep other actors from becoming the nearest target.
+  session.actorById('e1').x = 10;
+  session.actorById('e3').x = 10;
+
+  const before = Math.abs(e2.x - a2.x);
+  session.step(0.25);
+  const after = Math.abs(e2.x - a2.x);
+
+  assert.ok(after > before);
+  assert.equal(a2.abilityState.awakening.phase, 'ready');
+});
