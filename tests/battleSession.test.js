@@ -345,3 +345,47 @@ test('AI can move toward nearest target on the same step it uses a ranged skill'
   assert.ok(e1.hp < beforeHp);
   assert.equal(a1.abilityState.awakening.phase, 'cooldown');
 });
+
+
+test('AI continues closing distance even while Basic is available', () => {
+  const session = makeSession();
+  const a1 = session.actorById('a1');
+  const e1 = session.actorById('e1');
+
+  a1.x = 4;
+  a1.y = 0;
+  e1.x = 5.5;
+  e1.y = 0;
+
+  // 1.5 is inside Basic range (1.8) but outside close engage distance (0.75).
+  const beforeDistance = Math.abs(e1.x - a1.x);
+  session.step(0.25);
+  const afterDistance = Math.abs(e1.x - a1.x);
+
+  assert.ok(afterDistance < beforeDistance);
+});
+
+test('enemy follows a manually moving nearest ally until close engage distance', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  // Put a2 inside Basic range but still outside close engage distance.
+  a2.x = 5;
+  a2.y = 0;
+  e2.x = 6.4;
+  e2.y = 0;
+
+  // Move other allies farther from e2.
+  session.actorById('a1').x = -2;
+  session.actorById('a3').x = -2;
+
+  session.holdPlayerControl('a2');
+  const beforeDistance = Math.abs(e2.x - a2.x);
+
+  session.setPlayerMovement('a2', { x: -0.2, y: 0 });
+  session.step(0.25);
+
+  const afterDistance = Math.abs(e2.x - a2.x);
+  assert.ok(afterDistance < beforeDistance);
+});
