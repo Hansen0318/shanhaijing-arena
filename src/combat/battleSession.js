@@ -45,6 +45,21 @@ function moveToward(actor, target, speed, dt, bounds, stopDistance = AI_ENGAGE_D
   actor.y = clamp(actor.y + (dy / distance) * step, bounds.yMin, bounds.yMax);
 }
 
+function moveAway(actor, target, speed, dt, bounds, desiredDistance) {
+  const dx = actor.x - target.x;
+  const dy = actor.y - target.y;
+  const distance = Math.hypot(dx, dy);
+  if (distance >= desiredDistance) return;
+
+  const nx = distance > 0.0001 ? dx / distance : (actor.teamId === target.teamId ? 0 : 1);
+  const ny = distance > 0.0001 ? dy / distance : 0;
+  const remaining = desiredDistance - distance;
+  const step = Math.min(remaining, speed * dt);
+
+  actor.x = clamp(actor.x + nx * step, bounds.xMin, bounds.xMax);
+  actor.y = clamp(actor.y + ny * step, bounds.yMin, bounds.yMax);
+}
+
 function moveByVector(actor, vector, speed, dt, bounds) {
   const magnitude = Math.hypot(vector.x, vector.y);
   if (magnitude <= 0) return;
@@ -259,7 +274,25 @@ export class BattleSession {
       const target = actorById(opponents, intent.targetId);
 
       if (intent.kind === 'move' && target && canCharacterAct(target)) {
-        moveToward(actor, target, actorDefinition.stats.moveSpeed, deltaSeconds, this.arenaBounds);
+        if (intent.movement === 'retreat') {
+          moveAway(
+            actor,
+            target,
+            actorDefinition.stats.moveSpeed,
+            deltaSeconds,
+            this.arenaBounds,
+            intent.desiredRange,
+          );
+        } else {
+          moveToward(
+            actor,
+            target,
+            actorDefinition.stats.moveSpeed,
+            deltaSeconds,
+            this.arenaBounds,
+            intent.desiredRange ?? AI_ENGAGE_DISTANCE,
+          );
+        }
         continue;
       }
 
