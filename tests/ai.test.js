@@ -325,3 +325,27 @@ test('profiled ranged skill casts inside its valid spacing band', () => {
   assert.equal(intent.category, 'awakening');
   assert.equal(intent.pursue, false);
 });
+
+
+test('all non-Basic skills cooling falls back to approach for unlimited Basic', () => {
+  const defs = definitions();
+  const a = actor('fallback', 'allies', 0, 0);
+  const e = actor('target', 'enemies', 8, 0);
+
+  for (const category of ['heavy', 'special', 'awakening']) {
+    a.abilityState[category].phase = 'cooldown';
+    a.abilityState[category].cooldownRemaining = 5;
+  }
+
+  const intent = decideAIIntent({
+    actor: a,
+    enemies: [e],
+    abilityDefinitions: defs,
+    nowMs: 0,
+  });
+
+  assert.equal(intent.kind, 'move');
+  assert.equal(intent.category, 'basic');
+  assert.equal(intent.reason, 'basic_fallback_approach');
+  assert.equal(intent.targetId, 'target');
+});
