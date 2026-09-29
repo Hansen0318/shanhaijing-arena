@@ -1,7 +1,12 @@
 import { resolveBattleState, BATTLE_LIMIT_SECONDS } from './battleRules.js';
 import { decideAIIntent } from './ai.js';
 import { chooseSoftTarget } from './targeting.js';
-import { startAbility, finishAbility, tickAbilityCooldown } from './ability.js';
+import {
+  startAbility,
+  finishAbility,
+  tickAbilityCooldown,
+  isTargetInRange,
+} from './ability.js';
 import { canCharacterAct } from './character.js';
 import { resolveDirectDamage } from './combatResolver.js';
 
@@ -153,7 +158,6 @@ export class BattleSession {
     const opponents = actor.teamId === this.allies[0].teamId ? this.enemies : this.allies;
     const currentTarget = actorById(opponents, this.targetIds.get(actor.instanceId));
     const target = chooseSoftTarget(actor, opponents, currentTarget);
-    if (!target) return false;
 
     actor.controlHandoff.registerPlayerInput(this.elapsedSeconds * 1000);
 
@@ -164,27 +168,43 @@ export class BattleSession {
       target,
       source: 'player',
       ignoreRange: true,
+      allowNoTarget: true,
     })) return false;
 
-    const defenderDefinition = this.characterDefinitions[target.definitionId];
-    if (!defenderDefinition) throw new Error(`Missing character definition: ${target.definitionId}`);
+    const canHitTarget = Boolean(
+      target &&
+      canCharacterAct(target) &&
+      isTargetInRange(actor, target, definition.range),
+    );
+
+    if (canHitTarget) {
+      const defenderDefinition = this.characterDefinitions[target.definitionId];
+      if (!defenderDefinition) throw new Error(`Missing character definition: ${target.definitionId}`);
+
+      finishAbility({
+        caster: actor,
+        slot,
+        definition,
+        applyEffect: () => {
+          resolveDirectDamage({
+            attacker: actor,
+            defender: target,
+            attackerDefinition: actorDefinition,
+            defenderDefinition,
+            abilityDefinition: definition,
+          });
+        },
+      });
+
+      this.targetIds.set(actor.instanceId, target.instanceId);
+      return true;
+    }
 
     finishAbility({
       caster: actor,
       slot,
       definition,
-      applyEffect: () => {
-        resolveDirectDamage({
-          attacker: actor,
-          defender: target,
-          attackerDefinition: actorDefinition,
-          defenderDefinition,
-          abilityDefinition: definition,
-        });
-      },
     });
-
-    this.targetIds.set(actor.instanceId, target.instanceId);
     return true;
   }
 
