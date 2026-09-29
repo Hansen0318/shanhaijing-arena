@@ -151,3 +151,15 @@ Chat-side minimal correction keeps the protected input architecture:
 - AI handoff, camera, Arena bounds, battle logic, and viewport architecture unchanged.
 
 Real-device player smoke is required for direction fidelity and acquisition feel.
+
+
+## Ally tap-target tolerance
+Player real-device smoke reported ally selection sometimes requires a second, more precise tap.
+
+Minimal correction:
+- ally visual marker radius remains 24;
+- invisible ally selection hit radius increases to 36;
+- enemy interaction remains unchanged/no-op;
+- joystick, pointer mapping, camera, Arena geometry, AI handoff, and battle logic are unchanged.
+
+Player smoke should confirm A1/A2/A3 are easier to select without noticeable ambiguous selection when allies are close.
