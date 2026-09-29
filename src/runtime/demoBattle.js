@@ -22,17 +22,17 @@ export const demoAbilityDefinitions = {
     preferredRange: 0.20,
     maxRange: 1.8,
   }),
-  heavy: ability('heavy', 'heavy', 4, 2.2, 1.2, 20, {
+  heavy: ability('heavy', 'heavy', 5, 2.2, 1.2, 20, {
     minRange: 0,
     preferredRange: 0.45,
     maxRange: 2.2,
   }),
-  special: ability('special', 'special', 7, 2.5, 1.5, 30, {
+  special: ability('special', 'special', 10, 2.5, 1.5, 30, {
     minRange: 1.0,
     preferredRange: 1.8,
     maxRange: 2.5,
   }),
-  awakening: ability('awakening', 'awakening', 12, 3, 2, 40, {
+  awakening: ability('awakening', 'awakening', 15, 3, 2, 40, {
     minRange: 1.5,
     preferredRange: 2.4,
     maxRange: 3,
