@@ -113,6 +113,8 @@ test('move intent is returned when target is outside all usable ability ranges',
     kind: 'move',
     movement: 'approach',
     reason: 'basic_fallback_approach',
+    category: 'basic',
+    definitionId: 'basic',
     targetId: 'e',
     desiredRange: 0.20,
   });
