@@ -4,6 +4,8 @@ import { createDemoBattleSession } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 
 const SIM_STEP_SECONDS = 0.05;
+const ACTOR_VISUAL_RADIUS = 24;
+const ALLY_SELECT_RADIUS = 36;
 const JOYSTICK = Object.freeze({
   x: 70,
   y: 435,
@@ -53,14 +55,21 @@ export class ArenaScene extends Phaser.Scene {
     const first = this.session.snapshot();
     for (const actor of [...first.allies, ...first.enemies]) {
       const allied = actor.instanceId.startsWith('a');
-      const marker = this.add.circle(0, 0, 24, allied ? 0x58c8dc : 0xee9475)
+      const marker = this.add.circle(0, 0, ACTOR_VISUAL_RADIUS, allied ? 0x58c8dc : 0xee9475)
         .setStrokeStyle(3, allied ? 0xc6f6ff : 0xffd3bf);
       const label = this.add.text(0, 0, actor.instanceId.toUpperCase(), {
         fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff',
       }).setOrigin(0.5);
 
       if (allied) {
-        marker.setInteractive({ useHandCursor: true });
+        marker.setInteractive(
+          new Phaser.Geom.Circle(
+            ACTOR_VISUAL_RADIUS,
+            ACTOR_VISUAL_RADIUS,
+            ALLY_SELECT_RADIUS,
+          ),
+          Phaser.Geom.Circle.Contains,
+        );
         marker.on('pointerdown', () => this.selectAlly(actor.instanceId, this.session.snapshot()));
       }
 
