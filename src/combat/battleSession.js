@@ -119,6 +119,13 @@ export class BattleSession {
     return true;
   }
 
+  holdPlayerControl(instanceId) {
+    const actor = this.actorById(instanceId);
+    if (!actor || !canCharacterAct(actor)) return false;
+    actor.controlHandoff.registerPlayerInput(this.elapsedSeconds * 1000);
+    return true;
+  }
+
   clearPlayerMovement(instanceId) {
     if (!this.playerMovement.has(instanceId)) return false;
     this.playerMovement.set(instanceId, { x: 0, y: 0 });
