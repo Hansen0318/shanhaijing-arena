@@ -216,3 +216,34 @@ test('explicit player air-cast may start a targeted ability without a target', (
   assert.equal(finishAbility({ caster, slot, definition }), true);
   assert.equal(slot.phase, 'cooldown');
 });
+
+
+test('ability range profile validates and keeps range as maxRange alias', () => {
+  const definition = createAbilityDefinition({
+    id: 'profiled',
+    category: 'special',
+    cooldown: 6,
+    range: 3,
+    minRange: 1,
+    preferredRange: 2,
+    maxRange: 3,
+    targetingRule: 'enemy',
+    effect: { coefficient: 1 },
+  });
+
+  assert.equal(definition.minRange, 1);
+  assert.equal(definition.preferredRange, 2);
+  assert.equal(definition.maxRange, 3);
+  assert.equal(definition.range, 3);
+
+  assert.throws(() => createAbilityDefinition({
+    id: 'bad-profile',
+    category: 'special',
+    cooldown: 6,
+    range: 3,
+    minRange: 2.5,
+    preferredRange: 2,
+    maxRange: 3,
+    targetingRule: 'enemy',
+  }));
+});
