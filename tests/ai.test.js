@@ -109,7 +109,7 @@ test('move intent is returned when target is outside all usable ability ranges',
   const a = actor('a', 'allies');
   const e = actor('e', 'enemies', 20, 0);
   const intent = decideAIIntent({ actor: a, enemies: [e], abilityDefinitions: definitions(), nowMs: 0 });
-  assert.deepEqual(intent, { kind: 'move', targetId: 'e', x: 20, y: 0 });
+  assert.deepEqual(intent, { kind: 'move', reason: 'pursue_nearest', targetId: 'e', x: 20, y: 0 });
 });
 
 test('emitted AI ability intent executes through shared startAbility API', () => {
@@ -132,4 +132,32 @@ test('nonpositive AI priorities do not preempt Basic', () => {
   const a = actor('a', 'allies');
   const e = actor('e', 'enemies', 1, 0);
   assert.equal(decideAIIntent({ actor: a, enemies: [e], abilityDefinitions: defs, nowMs: 0 }).category, 'basic');
+});
+
+
+test('AI immediately retargets and pursues a newly nearest moving opponent', () => {
+  const a = actor('a', 'allies', 0, 0);
+  const e1 = actor('e1', 'enemies', 8, 0);
+  const e2 = actor('e2', 'enemies', 12, 0);
+
+  let intent = decideAIIntent({
+    actor: a,
+    enemies: [e1, e2],
+    currentTarget: e2,
+    abilityDefinitions: definitions(),
+    nowMs: 0,
+  });
+  assert.equal(intent.kind, 'move');
+  assert.equal(intent.targetId, 'e1');
+
+  e2.x = 5;
+  intent = decideAIIntent({
+    actor: a,
+    enemies: [e1, e2],
+    currentTarget: e1,
+    abilityDefinitions: definitions(),
+    nowMs: 1,
+  });
+  assert.equal(intent.kind, 'ability');
+  assert.equal(intent.targetId, 'e2');
 });
