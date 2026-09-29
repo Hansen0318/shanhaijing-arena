@@ -256,3 +256,21 @@ Player clarified the intended AI movement contract:
 - if another opponent becomes nearer, target switches immediately.
 
 Regression tests now cover enemy pursuit while one ally is manually controlled, allied pursuit while another ally is manual, and resuming pursuit when a target leaves range.
+
+
+## Pursuit while casting
+Player device smoke showed that nearest-target retargeting existed, but movement still appeared to stop too early.
+
+Root cause:
+- AI intent was exclusive: either move OR ability.
+- Entering a longer-range Heavy/Special/Awakening range produced an ability intent and suppressed movement even while still far from the opponent.
+
+Correction:
+- Basic attack range is now the pursuit stop distance for the M0 prototype.
+- If the nearest opponent is outside Basic range, AI keeps moving toward it every simulation step.
+- Heavy/Special/Awakening may be cast while that pursuit movement is happening.
+- Once the nearest opponent is inside Basic range, AI may hold position and attack.
+- If the nearest opponent changes, pursuit immediately follows the new nearest target.
+- Manual joystick ownership remains unchanged; releasing returns to this pursuit behavior immediately.
+
+This applies symmetrically to allied and enemy AI.
