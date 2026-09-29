@@ -44,12 +44,12 @@ test('player override suppresses AI for the active input instant and AI resumes 
   assert.equal(decideAIIntent({ actor: a, enemies: [e], abilityDefinitions: definitions(), nowMs: 1001 }).kind, 'ability');
 });
 
-test('living current target is retained', () => {
+test('AI switches to the currently nearest living target', () => {
   const a = actor('a', 'allies');
   const current = actor('current', 'enemies', 4, 0);
   const closer = actor('closer', 'enemies', 1, 0);
   const intent = decideAIIntent({ actor: a, enemies: [current, closer], currentTarget: current, abilityDefinitions: definitions(), nowMs: 0 });
-  assert.equal(intent.targetId, 'current');
+  assert.equal(intent.targetId, 'closer');
 });
 
 test('KO current target falls back to nearest living enemy', () => {
