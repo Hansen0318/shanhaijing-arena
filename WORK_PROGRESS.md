@@ -132,3 +132,22 @@ Geometry correction:
 - vertical range, joystick, input architecture, camera, combat logic, and zero-delay AI handoff are unchanged.
 
 Player smoke after deploy should drag an ally to both horizontal extremes and observe enemies following into the same expanded space.
+
+
+## Joystick feel / direction correction
+Player reported three real-device symptoms after Arena widening:
+- drag direction can disagree with the visible knob direction;
+- joystick may require a second tap to acquire reliably;
+- small drags feel insufficiently responsive.
+
+Chat-side minimal correction keeps the protected input architecture:
+- still Phaser GameObject setInteractive + scene pointermove/up;
+- no document/canvas touch adapter;
+- pointerToStage now reads TouchEvent changedTouches/touches client coordinates before falling back to mouse/pointer coordinates, avoiding double-scaling ambiguity on iPhone CSS-scaled canvas;
+- visual joystick radius remains 54;
+- acquisition radius increases to 76 without changing visual size;
+- full input magnitude is reached at 30 logical px with dead zone 0.03;
+- joystick center remains x=70, y=435 in this slice;
+- AI handoff, camera, Arena bounds, battle logic, and viewport architecture unchanged.
+
+Real-device player smoke is required for direction fidelity and acquisition feel.
