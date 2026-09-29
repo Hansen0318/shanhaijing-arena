@@ -7,16 +7,23 @@ test('fixed Arena stage is 1120x540', () => {
   assert.equal(ARENA_STAGE.height, 540);
 });
 
-test('expanded Arena coordinates use the wider visible field', () => {
-  assert.deepEqual(arenaToStage({ x: -1.1, y: -2 }), { x: 120, y: 86 });
-  assert.deepEqual(arenaToStage({ x: 11.1, y: 2 }), { x: 1000, y: 454 });
-  assert.deepEqual(arenaToStage({ x: 5, y: 0 }), { x: 560, y: 270 });
+test('expanded Arena coordinates reach the sand field edges with actor-safe margin', () => {
+  const left = arenaToStage({ x: ARENA_STAGE.xMin, y: -2 });
+  const right = arenaToStage({ x: ARENA_STAGE.xMax, y: 2 });
+  const center = arenaToStage({ x: 5, y: 0 });
+
+  assert.ok(Math.abs(left.x - 32) < 0.001);
+  assert.ok(Math.abs(right.x - 1088) < 0.001);
+  assert.ok(Math.abs(center.x - 560) < 0.001);
+  assert.equal(left.y, 86);
+  assert.equal(right.y, 454);
+  assert.equal(center.y, 270);
 });
 
-test('original spawn coordinates remain visually near their pre-widening positions', () => {
+test('original spawn coordinates preserve their previous screen positions', () => {
   const allySpawn = arenaToStage({ x: 0, y: 0 });
   const enemySpawn = arenaToStage({ x: 10, y: 0 });
 
-  assert.ok(Math.abs(allySpawn.x - 200) < 1);
-  assert.ok(Math.abs(enemySpawn.x - 920) < 1);
+  assert.ok(Math.abs(allySpawn.x - 200) < 0.001);
+  assert.ok(Math.abs(enemySpawn.x - 920) < 0.001);
 });
