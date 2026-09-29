@@ -3,18 +3,40 @@ import { createAbilityDefinition } from '../combat/ability.js';
 import { simulateHeadless3v3 } from '../combat/headlessSimulation.js';
 import { createBattleSession } from '../combat/battleSession.js';
 
-function ability(id, category, cooldown, range, coefficient, priority) {
+function ability(id, category, cooldown, range, coefficient, priority, spacing = null) {
   return createAbilityDefinition({
-    id, category, cooldown, range, targetingRule: 'enemy',
-    effect: { coefficient }, ai: { priority },
+    id,
+    category,
+    cooldown,
+    range,
+    ...(spacing ?? {}),
+    targetingRule: 'enemy',
+    effect: { coefficient },
+    ai: { priority },
   });
 }
 
 export const demoAbilityDefinitions = {
-  basic: ability('basic', 'basic', 0, 1.8, 0.8, 0),
-  heavy: ability('heavy', 'heavy', 4, 2.2, 1.2, 20),
-  special: ability('special', 'special', 7, 2.5, 1.5, 30),
-  awakening: ability('awakening', 'awakening', 12, 3, 2, 40),
+  basic: ability('basic', 'basic', 0, 1.8, 0.8, 0, {
+    minRange: 0,
+    preferredRange: 0.20,
+    maxRange: 1.8,
+  }),
+  heavy: ability('heavy', 'heavy', 4, 2.2, 1.2, 20, {
+    minRange: 0,
+    preferredRange: 0.45,
+    maxRange: 2.2,
+  }),
+  special: ability('special', 'special', 7, 2.5, 1.5, 30, {
+    minRange: 1.0,
+    preferredRange: 1.8,
+    maxRange: 2.5,
+  }),
+  awakening: ability('awakening', 'awakening', 12, 3, 2, 40, {
+    minRange: 1.5,
+    preferredRange: 2.4,
+    maxRange: 3,
+  }),
 };
 
 function character(id, type, stats) {
