@@ -150,13 +150,13 @@ test('AI and player requests use the same execution surface', () => {
 
 
 test('AI range rule remains enforced when player cast bypass is not requested', () => {
-  const caster = createCharacterState(characterDefinition, {
+  const caster = createCharacterState(characterDefinition(), {
     instanceId: 'a-range',
     teamId: 'allies',
     x: 0,
     y: 0,
   });
-  const target = createCharacterState(characterDefinition, {
+  const target = createCharacterState(characterDefinition(), {
     instanceId: 'e-range',
     teamId: 'enemies',
     x: 10,
