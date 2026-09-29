@@ -109,7 +109,13 @@ test('move intent is returned when target is outside all usable ability ranges',
   const a = actor('a', 'allies');
   const e = actor('e', 'enemies', 20, 0);
   const intent = decideAIIntent({ actor: a, enemies: [e], abilityDefinitions: definitions(), nowMs: 0 });
-  assert.deepEqual(intent, { kind: 'move', reason: 'pursue_nearest', targetId: 'e', x: 20, y: 0 });
+  assert.deepEqual(intent, {
+    kind: 'move',
+    movement: 'approach',
+    reason: 'pursue_nearest',
+    targetId: 'e',
+    desiredRange: 0.20,
+  });
 });
 
 test('emitted AI ability intent executes through shared startAbility API', () => {
