@@ -457,3 +457,25 @@ test('multiple allied AI actors can simultaneously pursue the same nearest enemy
   assert.equal(session.targetIds.get('a1'), 'e2');
   assert.equal(session.targetIds.get('a2'), 'e2');
 });
+
+
+test('AI continues pursuit until actor centers are nearly overlapping', () => {
+  const session = makeSession();
+  const a2 = session.actorById('a2');
+  const e2 = session.actorById('e2');
+
+  a2.x = 5;
+  a2.y = 0;
+  e2.x = 5.6;
+  e2.y = 0;
+
+  session.actorById('a1').x = -2;
+  session.actorById('a3').x = -2;
+
+  session.holdPlayerControl('a2');
+  const before = Math.abs(e2.x - a2.x);
+  session.step(0.25);
+  const after = Math.abs(e2.x - a2.x);
+
+  assert.ok(after < before);
+});
