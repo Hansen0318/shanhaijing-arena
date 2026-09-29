@@ -84,7 +84,7 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 ### Pending
 - Fixed fullscreen Arena / iPhone Safari viewport presentation: **ENGINEERING PASS / PLAYER SMOKE PASS**.
 - Movement joystick + shared player override: **known-working mobile baseline restored; player-confirmed movement works; AI resume delay now 0s / immediate**.
-- Skill controls: Heavy / Special / Awakening.
+- Skill controls: Heavy / Special / Awakening — **Chat implementation complete; CI/deploy + player mobile smoke pending**.
 - Minimum HUD/VFX readability.
 - Natural combat presentation / AI movement readability.
 - Runtime/mobile and player smoke for later slices.
