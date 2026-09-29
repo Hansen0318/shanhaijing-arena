@@ -3,7 +3,7 @@ import { canCharacterAct } from './character.js';
 import { canStartAbility } from './ability.js';
 
 const NON_BASIC_ORDER = ['awakening', 'special', 'heavy'];
-export const AI_ENGAGE_DISTANCE = 0.75;
+export const AI_ENGAGE_DISTANCE = 0.20;
 
 function priorityOf(definition) {
   const value = definition?.ai?.priority;
