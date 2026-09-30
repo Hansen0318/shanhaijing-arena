@@ -1,32 +1,20 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Milestone: **M2 TEAM SELECT ENGINEERING PASS / iPhone TEAM SELECT PLAYER SMOKE PENDING**; prior M0/M1 player-verified baseline protected.
-- Active branch / PR: `feat/m0-combat-core-20260927` / #1. Recovery baseline remote `f98f5562130f09ff33b378d3fe00e6358fdb40c0`; latest baseline Actions #230 success.
-- Execution spec/plan: `docs/M2_TEAM_SELECT_PLAN.md` (latest detailed user handoff authorizes all six checkpoints).
-- Checkpoint 1 PASS: five immutable prototype definitions with independent IDs/stats/portrait/passive metadata; separate ownership; three deterministic slots, max/duplicate/remove guards; allowed/forced/banned restrictions and safe saved-ID filtering.
-- Verification: `node --test tests/rosterTeam.test.js` 4/4 PASS; first red run showed missing roster modules.
-- Completed checkpoint code is preserved in this commit. Remote checkpoint SHA is the current branch commit containing this pointer; subsequent slices record predecessors.
-- Checkpoint 1 remote: `71a9c821bfd26ce09ca1f86a4a549d258d9f1cf4`.
-- Checkpoint 2 PASS: independent Team Select DOM renderer/styles; five cards, Type/Role, selected state, three slots, BACK/BATTLE callbacks and below-three disabled guard. Roster/UI targeted 6/6 PASS.
-- Checkpoint 2 remote: `d9b5d0af5c6ad63ac13b7ef75f195752f3d57c98`.
-- Checkpoint 3 PASS: guarded START → Team Select / BACK → same preview / exact-three BATTLE routing; Retry frozen team copy, re-entry preload in memory; ownership/restrictions revalidated at launch. Existing Campaign/exit tests now traverse Team Select. Targeted 32/32 PASS.
-- Checkpoint 3 remote: `5c5179947eaf9f788a335c2a5ceaa57fc1089da4`.
-- Checkpoint 4 PASS: factory requires three eligible owned catalog IDs, maps a1/a2/a3 to definitions and slot formations; enemies unchanged. Ally portrait/actor color and labels follow selected data without geometry changes. Battle/data/HUD tests 13/13 PASS; Retry uses selected definitions with fresh HP.
-- Checkpoint 4 remote: `78972a75bedb21fa3641db3cca8ac3c3e9f23801`.
-- Checkpoint 5 PASS: separate team.v1 adapter and runtime injection; only valid full teams saved at BATTLE; malformed/obsolete/unknown/duplicate IDs recover; denied storage has in-memory fallback; dev fixture isolates formal saves. Multiple forced characters retain each other when replacing optional saved IDs.
-- Verification: M2 targeted 22/22 PASS; complete regression 174/174 PASS; Vite production build PASS (existing large Phaser bundle warning).
-- Checkpoint 5 remote: `3f04d06183510e89d9de077078ec14ce2ddb9467`.
-- Checkpoint 6 code/checks: independent reviewer found no gameplay blocker; write-failure/readable-stale storage issue reproduced then fixed, stale handoff text removed. Actual CampaignView START/BACK/BATTLE integration covered by event test. Final M2 targeted 24/24, complete regression 176/176, Vite build and git diff --check PASS.
-- Checkpoint 6 source remote: `5cfa41224f27ce49ed61c48c462904a73ecbe654`.
-- Release: Actions #234 / 36735090478 for that exact source: Test, Build, Pages artifact and Deploy all success. Earlier #233 approval wait resolved; no environment/workflow security settings changed.
-- Public Pages smoke PASS for selection/battle/result/replay/navigation/persistence: Chapter 1 → 1-1 START → Team Select; P1/P3/P5 in slots; BATTLE shows A1/P1 280, A2/P3 240 front, A3/P5 250; countdown/AI/HP/cooldowns/KO; VICTORY; RETRY same full-HP team; confirmed Exit → 1-1 CLEAR and 1-2 unlocked; START preloads P1/P3/P5; remove slot 2 disables BATTLE, select P2 fills it; second Battle shows A2/P2 260 front; Exit/reload/START restores P1/P2/P5; Team Select BACK returns 1-1 Preview. No observed page-origin errors; Chrome-extension metadata errors excluded.
-- Orientation evidence: public landscape gate hidden and normal Campaign/Arena flow; automated portrait/landscape hide/pause/resume/viewport tests PASS. Cloud browser did not expose a viewport resize/rotation capability; actual public portrait rotation was not exercised. Real iPhone rotation/touch/readability remain player smoke.
-- Release evidence/files/recovery: `docs/M2_TEAM_SELECT_RELEASE.md`. Final closure commit changes docs only; runtime deploy source remains `5cfa412...` with reusable PASS evidence.
-- Public URL: https://hansen0318.github.io/shanhaijing-arena/ .
-- Next exact action: player iPhone landscape Team Select smoke (choose three, enter, Retry/Exit, restore/swap/BACK, rotate device). Do not start M3 until player accepts M2.
-- All implementation checkpoint code is pushed. Do not reimplement or rerun unchanged checks; stop before M3/art/recruit/rewards/fragments/tier/economy/audio.
-- Known limitations: prototype shared abilities/no balance/Passive metadata only; denied/quota storage prevents reload persistence; cloud browser portrait rotation was not performed; iPhone acceptance pending.
+- Milestone: **M2 TEAM SELECT PASS / PLAYER VERIFIED**; prior M0/M1 player-verified baseline remains protected.
+- Player acceptance (2026-10-01): real-device M2 Team Select test reported OK. M2 engineering source `5cfa41224f27ce49ed61c48c462904a73ecbe654`, Actions #234 PASS, and the existing M2 public smoke remain reusable evidence.
+- Active branch / PR: `feat/m0-combat-core-20260927` / #1 retained.
+- M2 implementation/release evidence: `docs/M2_TEAM_SELECT_RELEASE.md`. Do not reimplement M2 or repeat unchanged full verification.
+- **Authorized next slice before M3:** `docs/M2_POST_ACCEPTANCE_POLISH.md` — one bounded combat/presentation polish batch:
+  1. cooldown-aware AI spacing/reposition so actors do not collapse into permanent Basic-attack piles while a higher-priority skill is about to become ready;
+  2. floating damage numbers for successful damage events, short-lived and readable on mobile;
+  3. Team Select presentation upgraded to a VS-style composition with allied selected three and stage enemy three visible before battle;
+  4. Power / Speed / Blast type icon shown with ally/enemy identity where specified by the polish spec.
+- This polish is **not M3**. No shards, rewards, unlock economy, Tier system, formal art, animation production, audio, PvP, or TD gameplay rules.
+- Chat-first rule: Chat owns the locked behavior/UI specification, acceptance criteria, defect analysis, and GitHub state updates. Work owns only the executable multi-file implementation, targeted/impacted tests, build/deploy, and necessary runtime engineering smoke.
+- Protected baselines during polish: M2 roster ownership/immutable definition separation, A1/A2/A3 runtime slot semantics, slot-2 front formation, Campaign routing/persistence, fixed 1120x540 landscape Arena, current touch/input architecture, 0s player→AI handoff, existing battle result rules.
+- After polish engineering/deploy, player performs a short real-device feel/readability smoke. **Do not start M3 until this bounded polish is accepted or explicitly deferred.**
+- Exact next action: hand `docs/M2_POST_ACCEPTANCE_POLISH.md` to Work and continue from the existing active branch/checkpoint only.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**
