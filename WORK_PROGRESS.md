@@ -1,22 +1,21 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- M1 current task: Campaign skeleton; player confirms final iPhone M0 smoke PASS.
-- Recovery base: c35e278; existing branch/PR #1 retained.
-- M1 plan: docs/superpowers/plans/2026-09-30-m1-campaign.md
-- Checkpoint 1: campaign data + 36 SVG placeholders; targeted data tests 3/3 PASS.
-- Remote checkpoint 1: 5b7ea9a; local equivalent 9e2d3cf.
-- Checkpoint 2: pure progression/storage targeted 10/10 PASS.
-- Remote checkpoint 2: b558d3a.
-- Checkpoint 3: guarded controller + Chapter grid UI; targeted 13/13 PASS, not yet runtime connected.
-- Remote checkpoint 3: daf9083.
-- Checkpoint 4: Stage Select/large independent preview/START/BACK/lower cards implemented; controller tests cover selection/start guards. Visual runtime smoke waits for routing checkpoint.
-- Remote checkpoint 4: b5c4ce9.
-- Checkpoint 5: config → existing BattleSession routing and default Campaign mount; targeted 16/16 + Vite build PASS. Result navigation remains unfinished.
-- Remote checkpoint 5: 5a7e482.
-- Checkpoint 6: authoritative result → victory-only progression, Retry/Exit/Next preview and chapter transition integrated; targeted 24/24 + Vite build PASS.
-- Next exact step: full regression, review, browser runtime, Pages deploy/smoke.
-- M1 status: IN PROGRESS; no new Campaign PASS claimed.
+- Milestone: **M1 CAMPAIGN SKELETON ENGINEERING PASS**.
+- Acceptance: **iPhone CAMPAIGN PLAYER SMOKE PENDING**.
+- Player-confirmed M0: GREYBOX ENGINEERING PASS / iPhone FINAL PLAYER SMOKE PASS.
+- Active branch / PR: feat/m0-combat-core-20260927 / #1; retained as requested.
+- Tested/deployed source checkpoint: c850641618b9b54383f628131b384fb158f9d4c2.
+- Remote stable checkpoints: 5b7ea9a → b558d3a → daf9083 → b5c4ce9 → 5a7e482 → c850641.
+- Final documentation checkpoint: current HEAD (docs-only; source above unchanged).
+- Tests: Campaign 24/24, full regression/check 134/134 PASS; Vite build PASS; independent review clean.
+- Actions #223 / 36681489336 Test/Build/Pages Deploy PASS.
+- Public URL: https://hansen0318.github.io/shanhaijing-arena/
+- Public browser PASS: fresh locks/grid/preview/start, full Victory/Exit/unlock, reload persistence, replay, Next preview, Back, fixture isolation, ally selection/enemy no-op/joystick pointer drag.
+- Automated-only and limitations: docs/M1_CAMPAIGN_RELEASE.md.
+- No executable changes to shared combat/input/projection/portrait geometry. No new core or formal art.
+- Exact next action: player completes targeted iPhone Campaign smoke. Do not implement next milestone or redo checkpoints.
+- Recovery: current remote HEAD + this file + docs/STATE.md; all seven checkpoints committed remotely.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

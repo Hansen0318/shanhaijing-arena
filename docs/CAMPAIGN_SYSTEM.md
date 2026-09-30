@@ -1,27 +1,22 @@
-# Campaign System — Concept v1
+# Campaign System — M1 Skeleton
 
-> Not part of the Combat Prototype implementation.
+## Current implementation
+- Six data-driven placeholder chapters, five stages each, five chapter cards per row; Chapter 6 begins row two left.
+- Chapter cards: locked dark image + central lock, available normal image, cleared CLEAR and replayable.
+- Stage Select: in-game BACK, selected large image/title/START above five independent thumbnails. Thumbnail changes preview only.
+- Formal fresh progression: only Chapter 1 / 1-1. Victory unlocks next ordered stage; five victories clear the chapter and unlock next chapter / first stage. Defeat/Draw do not clear/unlock. Cleared content stays replayable.
+- Result: Victory NEXT STAGE / RETRY / EXIT; Defeat/Draw RETRY / EXIT. NEXT goes to preview, including next chapter first stage; final Campaign stage has no NEXT. EXIT returns to same chapter and Retry starts fresh same-stage BattleSession.
 
-## Chapter structure
-Each story chapter is planned as five stages:
-- 1: introduction;
-- 2: chapter mechanic;
-- 3: recruit-character encounter;
-- 4: escalation/team interaction;
-- 5: finale / boss / recruit battle.
+## Boundaries
+Data: src/campaign/data.js. Pure state: progression.js. Guarded navigation: controller.js. Replaceable versioned localStorage adapter: persistence.js. DOM view/style separate from Arena. battleFactory.js instantiates existing BattleSession from lineup/formation/duration with explicit stageId/chapterId.
+Current shared graybox template supports the protected 90-second battle limit only; other durations reject rather than silently disagree with combat core. No core, joystick, projection, HUD geometry, AI or ability refactor.
 
-Clearing stage 5 clears the chapter and unlocks the next chapter.
+## Persistence and fixture
+Save key: shanhaijing-arena.campaign.v1. Rebuild availability from known sequential wins, ignoring forged unlock arrays/foreign IDs/obsolete versions. Broken/denied storage recovers fresh/in-memory; persistence cannot survive reload if browser denies storage.
+Explicit ?campaignDev=unlock-all is engineering-only, absent from player UI, uses separate in-memory progress and never loads/saves formal progression. ?fixture=ko preserves standalone KO/Restart diagnostic.
 
-## Chapter selection UI
-- Unlocked chapter: full-color rectangular art card.
-- In progress: full-color + progress such as 3/5.
-- Completed: full-color + CLEAR.
-- Locked: dark/grey card with central lock.
+## Future concept, not implemented
+Each five-stage chapter may later introduce its mechanic, recruitment encounter, escalation, and finale/boss. Reward/finale/unlock/team/background fields reserve content space only. Formal stories, recruit battles, Boss systems, rewards/economy, fragments, tiers, art and animation remain out of M1.
 
-## Story
-- Short, battle-focused story presentation.
-- Opening story can be replayed separately.
-- Avoid forcing repeated story playback during farming/replay.
-
-## Early roster pacing concept
-Start with 3 characters; early chapter clears introduce additional recruitable characters so team choice evolves from 3/3 to 4/3, 5/3, etc.
+## Verification
+M1 regression 134/134, check/build and Actions #223 deployment PASS; public smoke completed fresh selection, Victory/Exit/unlock, replay, Next preview, Back, persistence and fixture isolation. Real iPhone Campaign acceptance remains pending.

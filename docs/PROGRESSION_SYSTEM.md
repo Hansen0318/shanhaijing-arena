@@ -1,6 +1,10 @@
 # Progression System — Concept v1
 
-> Not part of the Combat Prototype implementation.
+> Character progression below remains future concept. M1 implements Campaign victory/unlock history only.
+
+## M1 Campaign progression
+Separate unlocked/cleared chapter/stage arrays derive from sequential victories. Defeat and Draw do not unlock. Cleared stages remain replayable. Versioned persistence is isolated from combat and replaceable; see CAMPAIGN_SYSTEM.md.
+
 
 ## Character acquisition
 Primary concept:

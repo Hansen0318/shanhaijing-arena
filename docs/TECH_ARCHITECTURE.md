@@ -25,7 +25,7 @@ AI and player input feed intents into the same character/ability systems.
 Priority:
 1. active player input;
 2. short assist/continuity behavior as needed;
-3. full AI after 2.0 seconds without valid combat input.
+3. full AI immediately on the next simulation step after joystick release (current player-confirmed baseline).
 
 Do not implement duplicated "manual character" and "AI character" combat engines.
 
@@ -40,3 +40,6 @@ Prefer declarative character/ability definitions so player and enemy variants ca
 
 ## Prototype technology
 Exact framework/engine selection may be finalized by Work during preflight, but the architecture above is framework-independent. Mobile web delivery remains the target.
+
+## M1 Campaign integration
+Campaign data/progression/persistence/controller/DOM view are separate from the existing combat engine. Stage config feeds battleFactory → existing BattleSession, with stageId/chapterId attached at the routing boundary. ArenaScene receives navigation callbacks and delegates results; combat never accesses storage. Scene shutdown/restart retains existing input cleanup. The 1120x540 Phaser.Scale.NONE fixed-camera baseline is unchanged.

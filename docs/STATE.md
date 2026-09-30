@@ -1,10 +1,12 @@
 # Project State
 
 ## Milestone
-**M1 CAMPAIGN SKELETON — IN PROGRESS**
+**M1 CAMPAIGN SKELETON ENGINEERING PASS**
+
+**iPhone CAMPAIGN PLAYER SMOKE PENDING**
 
 ## Goal
-Prove that the core battle is readable, responsive, and enjoyable before investing in roster art, campaign, progression, or content.
+Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
 
 ## Locked v1 decisions
 - Platform: mobile web, landscape.
@@ -62,7 +64,17 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 9. Type advantage rules are verifiably correct.
 10. Stable mobile landscape smoke test passes.
 
-## Implementation status
+## Current M1 release (2026-09-30)
+- Source checkpoint: c850641618b9b54383f628131b384fb158f9d4c2 on the existing active branch/PR #1.
+- Node targeted Campaign 24/24; full regression and check 134/134; Vite build PASS. Independent code review found no blocking or minor finding.
+- Actions #223 / 36681489336: Test, Build, Pages Deploy success. Public URL https://hansen0318.github.io/shanhaijing-arena/ .
+- Public cloud browser: fresh Chapter 1 only, 5+1 grid, dim/central locks, unique thumbnails/large preview, START, frozen mirrored countdown, AI/HP/cooldown/VFX, Victory three actions, EXIT → 1-1 CLEAR / 1-2 available, reload persistence, cleared-stage replay, NEXT → 1-2 preview without starting, BACK → Chapter Select. Ally A3 selection/enemy no-op and joystick pointer drag observed. DEV Chapter 6 preview was accessible; returning to formal URL retained original save/locks. No page-origin blocking error; extension metadata errors are external.
+- Automated-only: Defeat/Draw navigation/non-unlock, Retry identity, 1-5 completion → Chapter 2 / 2-1, last-stage no NEXT, 1-3 runtime identity, malformed/obsolete/denied save handling. Current graybox supports 90-second duration only.
+- Real iPhone layout/readability/touch/multitouch acceptance remains pending. Source/shared combat/input/projection/portrait geometry remain unchanged.
+- Keep the requested active branch/PR for the player acceptance cycle; feature pipeline is the current public deployment. No claim of main merge.
+- STOP: no formal art, real Chapter 1 content, rewards/economy or next milestone. Next exact action is player iPhone Campaign smoke.
+
+## Historical M0 implementation status
 
 ### Bilateral portrait HUD correction (2026-09-30)
 - Player confirmed the 70x70 square portrait with a separate HP bar, selected scale, and KO dim on iPhone. This HUD slice is **PASS / PLAYER VERIFIED**.
