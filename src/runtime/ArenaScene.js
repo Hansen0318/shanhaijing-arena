@@ -3,6 +3,7 @@ import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
 import { createDemoBattleSession } from './demoBattle.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 import { allyHud, enemyHud, formatBattleTime } from './battleHud.js';
+import { portraitCardLayout } from './portraitCardLayout.js';
 import { castVisual } from './castVfx.js';
 import { PreBattleGate } from './preBattleGate.js';
 
@@ -181,19 +182,21 @@ export class ArenaScene extends Phaser.Scene {
     this.portraitViews = new Map();
     for (const [side, ids] of [['ally', ['a1', 'a2', 'a3']], ['enemy', ['e1', 'e2', 'e3']]]) {
       for (const [index, id] of ids.entries()) {
-        const card = this.add.container(side === 'ally' ? 72 : ARENA_STAGE.width - 72,
-          32 + index * 101).setDepth(30);
-        const backing = this.add.rectangle(0, 14, 86, 82, 0x172735, 0.88)
+        const layout = portraitCardLayout(side, index);
+        const card = this.add.container(layout.x, layout.y).setDepth(30);
+        const backing = this.add.rectangle(0, layout.backingY,
+          layout.backingWidth, layout.backingHeight, 0x172735, 0.88)
           .setStrokeStyle(2, 0x8ca7ad);
-        const portrait = this.add.rectangle(0, 0, 58, 58,
+        const portrait = this.add.rectangle(0, 0, layout.portraitSize, layout.portraitSize,
           side === 'ally' ? 0x58c8dc : 0xee9475)
           .setStrokeStyle(2, side === 'ally' ? 0xc6f6ff : 0xffd3bf);
         const name = this.add.text(0, 0, id.toUpperCase(), {
-          fontFamily: 'sans-serif', fontSize: '22px', fontStyle: 'bold', color: '#ffffff',
+          fontFamily: 'sans-serif', fontSize: '23px', fontStyle: 'bold', color: '#ffffff',
         }).setOrigin(0.5);
-        const barBack = this.add.rectangle(0, 43, 80, 18, 0x4a2020);
-        const barFill = this.add.rectangle(-40, 43, 80, 18, 0xc94749).setOrigin(0, 0.5);
-        const hpText = this.add.text(0, 43, '', {
+        const barBack = this.add.rectangle(0, layout.hpY, layout.hpWidth, layout.hpHeight, 0x4a2020);
+        const barFill = this.add.rectangle(-layout.hpWidth / 2, layout.hpY,
+          layout.hpWidth, layout.hpHeight, 0xc94749).setOrigin(0, 0.5);
+        const hpText = this.add.text(0, layout.hpY, '', {
           fontFamily: 'sans-serif', fontSize: '13px', fontStyle: 'bold', color: '#ffffff',
           stroke: '#2a1c20', strokeThickness: 2,
         }).setOrigin(0.5);
@@ -202,7 +205,7 @@ export class ArenaScene extends Phaser.Scene {
           portrait.setInteractive();
           portrait.on('pointerdown', () => this.selectAlly(id, this.session.snapshot()));
         }
-        this.portraitViews.set(id, { card, backing, portrait, barFill, hpText });
+        this.portraitViews.set(id, { card, backing, portrait, barFill, hpText, layout });
       }
     }
 
@@ -215,9 +218,9 @@ export class ArenaScene extends Phaser.Scene {
   refreshHud(frame) {
     for (const card of [...allyHud(frame.allies, this.selectedId), ...enemyHud(frame.enemies)]) {
       const view = this.portraitViews.get(card.id);
-      view.barFill.width = 80 * card.hpRatio;
+      view.barFill.width = view.layout.hpWidth * card.hpRatio;
       view.hpText.setText(card.hpText);
-      view.card.setScale(card.selected ? 1.1 : 1);
+      view.card.setScale(card.selected ? view.layout.selectedScale : 1);
       view.backing.setStrokeStyle(card.selected ? 4 : 2, card.selected ? 0xffffff : 0x8ca7ad);
       view.card.setAlpha(card.alive ? 1 : 0.48);
     }
