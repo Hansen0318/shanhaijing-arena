@@ -1,0 +1,24 @@
+.team-page { min-height:100%;display:flex;flex-direction:column;gap:12px; }
+.team-page .stage-header h1 { margin:0; }
+.team-stage { margin-left:auto;font-size:14px; }
+.team-slots { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px; }
+.team-slot { min-height:48px;border:2px dashed #718b9c;border-radius:8px;background:#243b4b;color:white;padding:8px;font:600 14px system-ui,sans-serif;touch-action:manipulation;cursor:pointer; }
+.team-slot.occupied { border-style:solid; }
+.roster-grid { display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;max-width:1000px;width:100%;align-self:center; }
+.roster-card { display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px;border:3px solid #627a8a;border-radius:10px;color:white;background:#2e4351;font:14px system-ui,sans-serif;touch-action:manipulation;cursor:pointer;min-width:0; }
+.roster-card.selected { border-color:#ffd689;background:#425546; }
+.roster-portrait { display:flex;align-items:center;justify-content:center;aspect-ratio:1;width:clamp(44px,10vw,95px);max-width:100%;border-radius:5px;font-size:clamp(20px,4vw,32px);font-weight:800; }
+.roster-card strong { font-size:16px; }
+.team-footer { display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto; }
+.team-footer .battle { width:min(260px,35%); }
+.team-status { margin:0;font-size:14px; }
+.campaign-button:disabled { opacity:.4;cursor:default; }
+.team-slot:focus-visible,.roster-card:focus-visible { outline:3px solid white;outline-offset:2px; }
+@media (max-height:420px) {
+ .team-page { gap:8px; }
+ .team-slots,.roster-grid { gap:8px; }
+ .team-slot { min-height:44px;font-size:12px;padding:5px; }
+ .roster-card { padding:6px;gap:3px;font-size:12px; }
+ .roster-portrait { width:clamp(44px,8vw,65px);font-size:25px; }
+ .team-footer { margin-top:0; }
+}

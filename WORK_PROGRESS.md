@@ -7,7 +7,9 @@
 - Checkpoint 1 PASS: five immutable prototype definitions with independent IDs/stats/portrait/passive metadata; separate ownership; three deterministic slots, max/duplicate/remove guards; allowed/forced/banned restrictions and safe saved-ID filtering.
 - Verification: `node --test tests/rosterTeam.test.js` 4/4 PASS; first red run showed missing roster modules.
 - Completed checkpoint code is preserved in this commit. Remote checkpoint SHA is the current branch commit containing this pointer; subsequent slices record predecessors.
-- Next exact action: checkpoint 2 Team Select DOM view/styles and UI interaction tests, then navigation, lineup, persistence, regression/deploy/public smoke.
+- Checkpoint 1 remote: `71a9c821bfd26ce09ca1f86a4a549d258d9f1cf4`.
+- Checkpoint 2 PASS: independent Team Select DOM renderer/styles; five cards, Type/Role, selected state, three slots, BACK/BATTLE callbacks and below-three disabled guard. Roster/UI targeted 6/6 PASS.
+- Next exact action: checkpoint 3 integrate Campaign START → Team Select → BACK/BATTLE navigation; then lineup, persistence and release.
 - Known limitations: not integrated into runtime yet; engineering milestone incomplete. No M3/art/economy/audio work.
 
 ## Historical M0 handoff
