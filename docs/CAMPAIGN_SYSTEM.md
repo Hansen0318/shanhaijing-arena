@@ -19,4 +19,4 @@ Explicit ?campaignDev=unlock-all is engineering-only, absent from player UI, use
 Each five-stage chapter may later introduce its mechanic, recruitment encounter, escalation, and finale/boss. Reward/finale/unlock/team/background fields reserve content space only. Formal stories, recruit battles, Boss systems, rewards/economy, fragments, tiers, art and animation remain out of M1.
 
 ## Verification
-M1 regression 134/134, check/build and Actions #223 deployment PASS; public smoke completed fresh selection, Victory/Exit/unlock, replay, Next preview, Back, persistence and fixture isolation. Real iPhone Campaign acceptance remains pending.
+M1 regression 134/134, check/build and Actions #223 deployment PASS; public smoke completed fresh selection, Victory/Exit/unlock, replay, Next preview, Back, persistence and fixture isolation. Subsequent bounded return/Pause/Exit/orientation/confirmation corrections also deployed successfully. Player later completed real iPhone smoke and accepted the current M1 Campaign/battle flow. M1 is PASS / PLAYER VERIFIED; see docs/STATE.md and WORK_PROGRESS.md for the current handoff.
