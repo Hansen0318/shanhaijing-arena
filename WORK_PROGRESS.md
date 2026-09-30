@@ -396,3 +396,8 @@ Awakening progression/unlock is not implemented in M0 yet; future progression ma
 - At battle start, manual Special was pressed while enemies were far: selected cooldown displayed 10, enemy team HP stayed 720/720. Basic/Heavy/Special/Awakening placeholder effects were visible during battle. The default round reached VICTORY, and RESTART reset HP/timer and returned to 5 countdown without page reload.
 - `?fixture=ko`: A2 started selected, then displayed 0/260 and dimmed; selection automatically moved to A1. Clicking A2's KO portrait left A1 selected. Joystick pointer drag still moved the knob. No blocking page-origin console error; recorded console errors came only from the browser extension.
 - No real iPhone multitouch or player visual/game feel acceptance was performed. **ENGINEERING PASS / PLAYER SMOKE PENDING**. Do not claim real-device touch or visual readability PASS.
+
+## M1 bounded correction — portrait gate / START / exit confirmation (2026-09-30)
+- Portrait visual viewport uses a full-page ROTATE DEVICE gate. Campaign and Arena are hidden/inert, and a live battle pauses countdown/simulation/cooldown/VFX. Landscape resumes the same route and round with viewport remeasurement; manual Pause and Exit confirmation remain independent interruption reasons.
+- Stage Preview CTA is START only. Battle X opens an EXIT BATTLE? overlay: CONTINUE restores the prior running or manually paused state; EXIT uses existing unfinished-exit route without a new completion write. Earlier CLEAR persists.
+- Protected 1120×540 stage, fixed camera, joystick/skills/HUD, formation, AI and save schema. Release/browser evidence belongs to this checkpoint; real iPhone acceptance remains pending.

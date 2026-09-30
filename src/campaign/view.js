@@ -38,7 +38,7 @@ export class CampaignView {
   const details=document.createElement('div');details.className='preview-details';
   const id=document.createElement('h2');id.textContent=stage.stageId;
   const title=document.createElement('p');title.textContent=stage.title;
-  const start=document.createElement('button');start.type='button';start.className='campaign-button start';start.textContent='START / 開始戰鬥';
+  const start=document.createElement('button');start.type='button';start.className='campaign-button start';start.textContent='START';
   start.disabled=stageStatus(this.controller.progress,stage.stageId)==='locked';
   start.onclick=()=>{const config=this.controller.startBattle();if(config) this.onStart?.(config);};
   details.append(id,title,start);preview.append(image,details);page.append(preview);

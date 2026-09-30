@@ -130,3 +130,8 @@ Complete the playable Chapter → Stage Preview → Battle → Result → Unlock
 - Unfinished Exit returns same chapter/stage preview without clearing/unlocking/saving; earlier progress is retained.
 - Local targeted 21/21, full 144/144, build PASS. Source 0d590cb936e109110dc79aa1b435144d4ef676fc; Actions 36692992427 Test/Build/Pages Deploy PASS. Public Pause freeze/Resume/input no-op, unfinished and paused Exit, BACK and three repeated navigation cycles PASS. Full evidence: docs/M1_RETURN_PAUSE_FIX.md. **ENGINEERING PASS / PLAYER SMOKE PENDING**.
 - No next milestone or formal art. Real iPhone return-layout/touch acceptance remains PLAYER SMOKE PENDING.
+
+## M1 bounded correction — portrait gate / START / exit confirmation (2026-09-30)
+- Portrait: full-page orientation gate, hidden/inert Campaign/Arena and paused battle; landscape reuses route and scene with viewport resync. No orientation-lock dependency or CSS rotation.
+- Stage CTA: START only. Running-battle X: confirmation freezes first; CONTINUE restores the prior running/manual Pause state, EXIT invokes the unchanged stage-select exit without fresh completion/unlock. Previously cleared stages retain CLEAR.
+- No change to logical Arena dimensions, camera, input/HUD, countdown, formation, AI, unlock rules or persistence schema. Release and browser evidence to follow in this checkpoint.

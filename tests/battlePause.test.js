@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 import { createDemoBattleSession } from '../src/runtime/demoBattle.js';
 import { PreBattleGate } from '../src/runtime/preBattleGate.js';
+import { BattleInterruption } from '../src/runtime/battleInterruption.js';
 // Only the GPU-bound Phaser base is substituted; simulation and scene methods are real.
 const source=readFileSync(new URL('../src/runtime/ArenaScene.js',import.meta.url),'utf8')
  .replace(/^import .*;\n/gm,'').replace('export class ArenaScene','class ArenaScene');
@@ -47,4 +48,16 @@ test('toggle Pause clears held player movement, freezes presentation clock and p
 test('paused portrait input cannot change selection',()=>{
  const s=round();s.paused=true;
  assert.equal(s.selectAlly('a1',s.session.snapshot()),false);assert.equal(s.selectedId,'a2');
+});
+test('orientation and Exit modal freeze real scene countdown, battle, cooldown and VFX clock',()=>{
+ const s=round(),b=new BattleInterruption();b.attach(s);
+ s.session.usePlayerAbility('a2','heavy');s.accumulatorSeconds=.02;
+ b.setPortrait(true);const frozen=s.session.snapshot();const slot=structuredClone(s.session.actorById('a2').abilityState);
+ for(let i=0;i<20;i++)s.update(0,100);
+ assert.deepEqual(s.session.snapshot(),frozen);assert.deepEqual(s.session.actorById('a2').abilityState,slot);
+ assert.equal(s.time.paused,true);assert.equal(s.tweens.scale,0);
+ b.setPortrait(false);b.openExit();for(let i=0;i<20;i++)s.update(0,100);
+ assert.deepEqual(s.session.snapshot(),frozen);assert.equal(s.time.paused,true);
+ b.continueExit();assert.equal(s.time.paused,false);assert.equal(s.tweens.scale,1);
+ s.update(0,100);assert.equal(s.session.elapsedSeconds,.1);
 });

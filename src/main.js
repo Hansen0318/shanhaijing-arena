@@ -6,23 +6,37 @@ import { CampaignView } from './campaign/view.js';
 import { browserPersistence } from './campaign/persistence.js';
 import { installViewportSync } from './runtime/viewportSync.js';
 import { createBattleControls } from './runtime/battleControls.js';
+import { createOrientationGate } from './runtime/orientationGate.js';
+import { BattleInterruption } from './runtime/battleInterruption.js';
+import { createExitDialog } from './runtime/exitDialog.js';
 import './campaign/style.css';
 
 const query=new URLSearchParams(window.location.search);
 const controller=new CampaignController({persistence:browserPersistence(),dev:query.get('campaignDev')==='unlock-all'});
 const root=document.getElementById('campaign'), host=document.getElementById('game');
 let game=null;
-const viewport=installViewportSync(window,host,root,()=>game?.scale.refresh());
+let viewport;
+const interruption=new BattleInterruption();
+const gate=createOrientationGate(window,document,root,host,document.getElementById('orientation-gate'),portrait=>{
+ interruption.setPortrait(portrait);
+ if(!portrait)viewport?.routeChanged();
+});
+viewport=installViewportSync(window,host,root,()=>{gate.sync();game?.scale.refresh();});
+const dialog=createExitDialog(document,{
+ onContinue:()=>{dialog.close();interruption.continueExit();},
+ onExit:()=>{dialog.close();if(controller.exitBattle())returnToPreview();},
+});
 const controls=createBattleControls(host,{
- onPause:()=>game?.scene.getScene('Arena')?.togglePause(),
- onExit:()=>{if(controller.exitBattle()) returnToPreview();},
+ onPause:()=>interruption.toggleManual(),
+ onExit:()=>{if(interruption.openExit())dialog.open();},
 });
 const view=new CampaignView(root,controller,{onStart:startBattle,onRender:()=>viewport.routeChanged()});
 function startBattle(stageConfig=null) {
+ interruption.detach();
  root.hidden=true;host.style.visibility='visible';
  // Scene creation owns availability: first Phaser boot is asynchronous.
  controls.hide();viewport.routeChanged();
- const data={stageConfig,onPlaybackChange:(paused,available)=>controls.update(paused,available,Boolean(stageConfig)),campaignActions:stageConfig ? {
+ const data={stageConfig,onSceneReady:scene=>interruption.attach(scene),onPlaybackChange:(paused,available)=>controls.update(paused,available,Boolean(stageConfig)),campaignActions:stageConfig ? {
   result:(id,outcome)=>controller.finishBattle(id,outcome),
   retry:()=>{const config=controller.retryBattle();if(config) startBattle(config);},
   exit:()=>{if(controller.exitBattle()) returnToPreview();},
@@ -41,7 +55,7 @@ function startBattle(stageConfig=null) {
  });
 }
 function returnToPreview() {
- game.scene.stop('Arena');controls.hide();host.style.visibility='hidden';view.render();
+ interruption.detach();dialog.close();game.scene.stop('Arena');controls.hide();host.style.visibility='hidden';view.render();
 }
 // Explicit legacy diagnostic preserves standalone KO/Restart behavior.
 if(query.get('fixture')==='ko') startBattle(); else view.render();

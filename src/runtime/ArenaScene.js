@@ -51,6 +51,7 @@ export class ArenaScene extends Phaser.Scene {
     this.stageConfig = data.stageConfig ?? null;
     this.campaignActions = data.campaignActions ?? null;
     this.onPlaybackChange = data.onPlaybackChange ?? (() => {});
+    this.onSceneReady = data.onSceneReady ?? (() => {});
   }
 
   create() {
@@ -111,6 +112,7 @@ export class ArenaScene extends Phaser.Scene {
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
     this.onPlaybackChange(false, true);
+    this.onSceneReady(this);
 
     window.__arenaSmoke = {
       stageId: this.session.stageId ?? null,

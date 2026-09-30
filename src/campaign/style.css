@@ -35,3 +35,18 @@
 .battle-controls button { box-sizing:border-box; flex:1; min-width:0; min-height:44px; height:clamp(44px,6vh,56px); padding:5px; border:2px solid #bccbd3; border-radius:7px; background:#233d4f; color:white; touch-action:manipulation; cursor:pointer; }
 .battle-controls svg { width:24px; height:24px; display:block; margin:auto; }
 .battle-controls button:focus-visible { outline:3px solid #fff; }
+
+.orientation-portrait #game,.orientation-portrait #campaign { visibility:hidden !important; }
+#orientation-gate { position:fixed;inset:0;z-index:300;background:#1c2b38;color:#f0f3f6;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:system-ui,sans-serif;padding:24px;box-sizing:border-box; }
+#orientation-gate[hidden] { display:none; }
+#orientation-gate svg { width:80px;height:80px;color:#8ec7d3; }
+#orientation-gate h1 { font-size:clamp(24px,7vw,42px);letter-spacing:.08em;margin:18px 0 4px; }
+#orientation-gate p { font-size:16px;margin:0; }
+.exit-overlay { position:fixed;inset:0;z-index:200;background:rgba(8,19,28,.82);display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;color:white;font-family:system-ui,sans-serif; }
+.exit-overlay[hidden] { display:none; }
+.exit-panel { background:#243b4b;border:2px solid #91a9b8;border-radius:12px;width:min(440px,92vw);padding:20px;text-align:center;box-sizing:border-box; }
+.exit-panel h2 { margin:0 0 8px;font-size:clamp(19px,4vw,28px); }
+.exit-panel p { margin:0 0 20px;font-size:clamp(13px,2.5vw,16px); }
+.exit-actions { display:flex;gap:12px;justify-content:center; }
+.exit-actions button { min-height:44px;flex:1;border:2px solid #91a9b8;background:#344e60;color:white;border-radius:7px;font:650 15px system-ui,sans-serif;touch-action:manipulation; }
+.exit-actions button:last-child { background:#6c3b3b;border-color:#e89c9c; }
