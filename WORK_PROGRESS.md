@@ -1,6 +1,14 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- M1 current task: Campaign skeleton; player confirms final iPhone M0 smoke PASS.
+- Recovery base: c35e278; existing branch/PR #1 retained.
+- M1 plan: docs/superpowers/plans/2026-09-30-m1-campaign.md
+- Checkpoint 1: campaign data + 36 SVG placeholders; targeted data tests 3/3 PASS.
+- Next exact step: checkpoint 2 progression/persistence.
+- M1 status: IN PROGRESS; no new Campaign PASS claimed.
+
+## Historical M0 handoff
 - Project: **Shanhaijing Arena**
 - Milestone: **M0 — Combat Prototype foundation**
 - Active feature branch: `feat/m0-combat-core-20260927`

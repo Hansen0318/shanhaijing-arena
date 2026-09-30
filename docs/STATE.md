@@ -1,7 +1,7 @@
 # Project State
 
 ## Milestone
-**Combat Prototype**
+**M1 CAMPAIGN SKELETON — IN PROGRESS**
 
 ## Goal
 Prove that the core battle is readable, responsive, and enjoyable before investing in roster art, campaign, progression, or content.
@@ -38,10 +38,15 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - If selected character is KO, selection moves to the nearest surviving ally; camera remains fixed.
 - M0 runtime stack: Phaser 4.2.1 + Vite 8.3.1 + plain JavaScript/ESM.
 
+## M1 authorization (2026-09-30)
+- Latest player confirmed GREYBOX ENGINEERING PASS and iPhone FINAL PLAYER SMOKE PASS.
+- M1 Campaign skeleton authorized; protect combat/input baseline. No formal art/economy.
+- Historical M0 pending statements below are superseded by this player confirmation.
+
 ## Not in prototype
 - Final character art.
 - Full animation production.
-- Chapter select / story / unlock economy / fragment farming / T3-T1 implementation.
+- Formal story / unlock economy / fragment farming / T3-T1 implementation.
 - Large roster.
 - PvP, guilds, equipment, gacha, ranking.
 
