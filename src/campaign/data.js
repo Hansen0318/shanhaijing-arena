@@ -11,7 +11,7 @@ export const campaign = Array.from({length:6}, (_, index) => {
       return {
         stageId, chapterId, stageNumber, title:`Encounter ${stageId}`, displayOrder:stageNumber,
         previewImage:`campaign/stage-${stageId}.svg`, battlefieldId:'graybox-sand',
-        allyConfig:{teamReference:'graybox-allies', lineup:['ally','ally','ally']},
+        allyConfig:{teamReference:'player-selected-team'},
         enemyLineup:['enemy','enemy','enemy'],
         allySpawnFormation:formation('ally'), enemySpawnFormation:formation('enemy'),
         battleDuration:90, stageType:'prototype',

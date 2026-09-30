@@ -19,7 +19,7 @@ test('each chapter owns five unique configs and independent placeholder images',
       assert.equal(findStage(stage.stageId), stage);
       ids.add(stage.stageId); images.add(stage.previewImage);
       assert.ok(existsSync(`public/${stage.previewImage}`));
-      for (const field of ['battlefieldId','allyConfig','enemyLineup','allySpawnFormation','enemySpawnFormation','battleDuration','stageType','finale','reward','unlockRequirement']) assert.ok(field in stage, field);
+      for (const field of ['battlefieldId','allyConfig','enemyLineup','allySpawnFormation','enemySpawnFormation','battleDuration','stageType','finale','reward','unlockRequirement','allowedRoster','forcedCharacters','bannedCharacters']) assert.ok(field in stage, field);
     }
   }
   assert.equal(ids.size,30); assert.equal(images.size,30);

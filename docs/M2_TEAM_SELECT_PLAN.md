@@ -11,7 +11,7 @@ Campaign START opens Team Select; BATTLE alone starts the encounter. Battle fact
 - [x] 1. Catalog, ownership, selection/eligibility model; roster/team tests.
 - [x] 2. Independent DOM Team Select view/styles; interaction tests.
 - [x] 3. Campaign navigation, START/BACK/BATTLE; navigation regression.
-- [ ] 4. Battle factory/selected lineup/HUD; formation/stats/enemy/Retry tests.
+- [x] 4. Battle factory/selected lineup/HUD; formation/stats/enemy/Retry tests.
 - [ ] 5. Versioned recent-team persistence, corruption/denied storage/ownership/restriction tests.
 - [ ] 6. Full regression, build, branch review, Pages deployment, requested public browser smoke.
 

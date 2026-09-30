@@ -11,7 +11,9 @@
 - Checkpoint 2 PASS: independent Team Select DOM renderer/styles; five cards, Type/Role, selected state, three slots, BACK/BATTLE callbacks and below-three disabled guard. Roster/UI targeted 6/6 PASS.
 - Checkpoint 2 remote: `d9b5d0af5c6ad63ac13b7ef75f195752f3d57c98`.
 - Checkpoint 3 PASS: guarded START → Team Select / BACK → same preview / exact-three BATTLE routing; Retry frozen team copy, re-entry preload in memory; ownership/restrictions revalidated at launch. Existing Campaign/exit tests now traverse Team Select. Targeted 32/32 PASS.
-- Next exact action: checkpoint 4 consume selected definitions in battle factory/HUD; checkpoint 3 is navigation-only and must not be deployed as M2 complete.
+- Checkpoint 3 remote: `5c5179947eaf9f788a335c2a5ceaa57fc1089da4`.
+- Checkpoint 4 PASS: factory requires three eligible owned catalog IDs, maps a1/a2/a3 to definitions and slot formations; enemies unchanged. Ally portrait/actor color and labels follow selected data without geometry changes. Battle/data/HUD tests 13/13 PASS; Retry uses selected definitions with fresh HP.
+- Next exact action: checkpoint 5 separate versioned recent-team persistence, invalid/corrupt/denied storage and future restrictions; then full regression/build/deploy/browser smoke.
 - Known limitations: not integrated into runtime yet; engineering milestone incomplete. No M3/art/economy/audio work.
 
 ## Historical M0 handoff

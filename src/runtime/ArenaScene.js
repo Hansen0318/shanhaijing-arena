@@ -5,6 +5,7 @@ import { createStageBattleSession } from '../campaign/battleFactory.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 import { allyHud, enemyHud, formatBattleTime } from './battleHud.js';
 import { portraitCardLayout } from './portraitCardLayout.js';
+import { battlePortrait } from '../roster/battlePresentation.js';
 import { castVisual } from './castVfx.js';
 import { PreBattleGate } from './preBattleGate.js';
 
@@ -95,10 +96,11 @@ export class ArenaScene extends Phaser.Scene {
     const first = this.session.snapshot();
     for (const actor of [...first.allies, ...first.enemies]) {
       const allied = actor.instanceId.startsWith('a');
-      const marker = this.add.circle(0, 0, ACTOR_VISUAL_RADIUS, allied ? 0x58c8dc : 0xee9475)
+      const identity=battlePortrait(this.session,actor.instanceId);
+      const marker = this.add.circle(0, 0, ACTOR_VISUAL_RADIUS, Phaser.Display.Color.HexStringToColor(identity.color).color)
         .setStrokeStyle(3, allied ? 0xc6f6ff : 0xffd3bf);
-      const label = this.add.text(0, 0, actor.instanceId.toUpperCase(), {
-        fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff',
+      const label = this.add.text(0, 0, identity.label, {
+        fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff', align:'center',
       }).setOrigin(0.5);
 
       this.actorViews.set(actor.instanceId, { marker, label, allied });
@@ -209,16 +211,17 @@ export class ArenaScene extends Phaser.Scene {
     for (const [side, ids] of [['ally', ['a1', 'a2', 'a3']], ['enemy', ['e1', 'e2', 'e3']]]) {
       for (const [index, id] of ids.entries()) {
         const layout = portraitCardLayout(side, index);
+        const identity=battlePortrait(this.session,id);
         const card = this.add.container(layout.x, layout.y).setDepth(30);
         const backing = this.add.rectangle(0, layout.backingY,
           layout.backingWidth, layout.backingHeight, 0x172735, 0.88)
           .setStrokeStyle(2, 0x8ca7ad);
         const portrait = this.add.rectangle(0, layout.backingY,
           layout.portraitSize, layout.portraitSize,
-          side === 'ally' ? 0x58c8dc : 0xee9475)
+          Phaser.Display.Color.HexStringToColor(identity.color).color)
           .setStrokeStyle(2, side === 'ally' ? 0xc6f6ff : 0xffd3bf);
-        const name = this.add.text(0, layout.backingY, id.toUpperCase(), {
-          fontFamily: 'sans-serif', fontSize: '23px', fontStyle: 'bold', color: '#ffffff',
+        const name = this.add.text(0, layout.backingY, identity.label, {
+          fontFamily: 'sans-serif', fontSize: identity.label.includes('\n')?'19px':'23px', fontStyle: 'bold', color: '#ffffff', align:'center',
         }).setOrigin(0.5);
         const barBack = this.add.rectangle(0, layout.hpY, layout.hpWidth, layout.hpHeight, 0x4a2020);
         const barFill = this.add.rectangle(-layout.hpWidth / 2, layout.hpY,
