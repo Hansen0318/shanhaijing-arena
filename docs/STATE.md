@@ -58,9 +58,9 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 
 ## Implementation status
 
-### Bilateral portrait HUD correction checkpoint (2026-09-30)
+### Bilateral portrait HUD correction (2026-09-30)
 - Player graybox feedback requested removal of the enemy team-total HP bar, a larger top-center 90-second timer, and mirrored individual enemy cards. The active feature branch now renders E1/E2/E3 as non-interactive orange placeholders with red individual HP bars and centered white HP text; living/KO state dims both teams' cards. Ally selection and selected-KO fallback use their existing logic.
-- Local HUD tests 3/3, full regression 107/107, and Vite build PASS. Pages deployment, public browser smoke, and iPhone player layout/touch assessment remain pending at this checkpoint. No combat, stage, fixed camera, joystick, skill, targeting, or AI changes.
+- Source `6e4f1e294c27f1165dd95a1885b3b4ff4d5d6d66`: local HUD tests 3/3, full regression 107/107, Vite build PASS; Actions #213 Test/Build/Pages Deploy success. Public browser smoke observed centered timer, symmetrical HP cards, ally selection, enemy-card no-op, per-actor HP updates, A2 KO dim/selection fallback, E3 KO dim, and Restart reset of all cards/HP/countdown. Skill cooldown and joystick pointer drag were observed; no blocking page-origin error. **ENGINEERING PASS / iPhone PLAYER SMOKE PENDING** for device layout, readability, and touch. No combat, stage, fixed camera, joystick, skill, targeting, or AI changes.
 
 ### Graybox playable milestone in progress (2026-09-29)
 - Portrait-based ally selection and compact prototype HP/timer HUD are integrated on the active feature branch. The old actor marker is no longer the selection input; selection highlight remains.
