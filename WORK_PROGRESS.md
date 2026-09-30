@@ -13,7 +13,9 @@
 - Checkpoint 4: Stage Select/large independent preview/START/BACK/lower cards implemented; controller tests cover selection/start guards. Visual runtime smoke waits for routing checkpoint.
 - Remote checkpoint 4: b5c4ce9.
 - Checkpoint 5: config → existing BattleSession routing and default Campaign mount; targeted 16/16 + Vite build PASS. Result navigation remains unfinished.
-- Next exact step: checkpoint 6 result/unlock integration.
+- Remote checkpoint 5: 5a7e482.
+- Checkpoint 6: authoritative result → victory-only progression, Retry/Exit/Next preview and chapter transition integrated; targeted 24/24 + Vite build PASS.
+- Next exact step: full regression, review, browser runtime, Pages deploy/smoke.
 - M1 status: IN PROGRESS; no new Campaign PASS claimed.
 
 ## Historical M0 handoff

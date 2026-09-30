@@ -1,5 +1,5 @@
-import { findChapter, findStage, orderedStages } from './data.js';
-import { initialProgress, devProgress, stageStatus, chapterStatus } from './progression.js';
+import { findChapter, findStage, orderedStages, nextStage } from './data.js';
+import { initialProgress, devProgress, stageStatus, chapterStatus, recordVictory } from './progression.js';
 export class CampaignController {
  constructor({persistence=null,dev=false}={}) {
   this.persistence=dev ? null : persistence;
@@ -21,6 +21,26 @@ export class CampaignController {
   const stage=findStage(this.selectedStageId);
   if(stage.chapterId!==this.chapterId) return null;
   this.screen='battle'; this.battleStageId=stage.stageId; this.outcome=null; return stage;
+ }
+ finishBattle(id,outcome) {
+  if(this.screen!=='battle' || id!==this.battleStageId || !['victory','defeat','draw'].includes(outcome)) return false;
+  this.screen='result';this.outcome=outcome;
+  if(outcome==='victory') {this.progress=recordVictory(this.progress,id);this.persistence?.save(this.progress);}
+  return true;
+ }
+ retryBattle() {
+  if(this.screen!=='result') return null;
+  this.screen='stages';this.selectedStageId=this.battleStageId;return this.startBattle();
+ }
+ exitBattle() {
+  if(this.screen!=='result') return false;
+  this.chapterId=findStage(this.battleStageId).chapterId;this.selectedStageId=this.battleStageId;this.screen='stages';return true;
+ }
+ nextPreview() {
+  if(this.screen!=='result' || this.outcome!=='victory') return false;
+  const next=nextStage(this.battleStageId);
+  if(!next || stageStatus(this.progress,next.stageId)==='locked') return false;
+  this.chapterId=next.chapterId;this.selectedStageId=next.stageId;this.screen='stages';return true;
  }
  back() {
   if(this.screen!=='stages') return false;

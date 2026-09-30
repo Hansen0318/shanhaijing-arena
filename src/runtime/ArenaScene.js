@@ -133,18 +133,30 @@ export class ArenaScene extends Phaser.Scene {
       fontFamily: 'sans-serif', fontSize: '67px', fontStyle: 'bold', color: '#ffffff',
       stroke: '#20262d', strokeThickness: 7,
     }).setOrigin(0.5);
-    const replay = this.add.rectangle(ARENA_STAGE.width / 2, 338, 210, 70, 0x4e91d9)
-      .setStrokeStyle(3, 0xffffff).setInteractive();
-    const replayText = this.add.text(ARENA_STAGE.width / 2, 338, 'RESTART', {
-      fontFamily: 'sans-serif', fontSize: '25px', fontStyle: 'bold', color: '#ffffff',
-    }).setOrigin(0.5);
-    replay.on('pointerdown', () => this.scene.restart());
-    this.resultLayer.add([shade, this.resultText, replay, replayText]);
+    this.resultLayer.add([shade,this.resultText]);
+    const actions=this.campaignActions ? [
+      ['NEXT STAGE',330,()=>this.campaignActions.next()],
+      ['RETRY',560,()=>this.campaignActions.retry()],
+      ['EXIT',790,()=>this.campaignActions.exit()],
+    ] : [['RESTART',ARENA_STAGE.width/2,()=>this.scene.restart()]];
+    this.resultButtons=new Map();
+    for(const [label,x,callback] of actions) {
+      const button=this.add.rectangle(x,338,210,70,0x4e91d9).setStrokeStyle(3,0xffffff).setInteractive();
+      const text=this.add.text(x,338,label,{fontFamily:'sans-serif',fontSize:'25px',fontStyle:'bold',color:'#ffffff'}).setOrigin(.5);
+      button.on('pointerdown',callback);this.resultLayer.add([button,text]);this.resultButtons.set(label,{button,text});
+    }
   }
 
   showResult(result) {
     if (result === 'running' || this.resultLayer.visible) return;
     this.releaseJoystick();
+    this.campaignActions?.result(this.session.stageId,result);
+    const next=this.resultButtons.get('NEXT STAGE');
+    if(next) {
+      const visible=result==='victory' && this.campaignActions.hasNext();
+      next.button.setVisible(visible);next.text.setVisible(visible);
+      if(!visible) next.button.disableInteractive();
+    }
     this.resultText.setText(result.toUpperCase());
     this.resultLayer.setVisible(true);
   }
