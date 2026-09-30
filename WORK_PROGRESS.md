@@ -1,19 +1,14 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Milestone: **M1 CAMPAIGN + BOUNDED CORRECTIONS PASS / PLAYER VERIFIED**.
-- Player acceptance: latest iPhone Campaign/battle smoke reported normal; M1 real-device acceptance is complete.
-- Active branch / PR: `feat/m0-combat-core-20260927` / PR #1 retained unless the next executor intentionally advances it.
-- Latest deployed M1 correction source: `bbc7549096f01512ea6e1097a79fb5f60d34b0f8`; Actions #225 PASS.
-- Canonical next roadmap: `docs/DEVELOPMENT_ROADMAP.md`.
-- Next authorized milestone: **M2 TEAM SELECT / ROSTER SKELETON**.
-- M2 flow: Stage Preview → START → Team Select → choose exactly 3 owned/available characters → BATTLE → existing Arena → Result.
-- M2 must keep A1/A2/A3 as battle slots rather than permanent character IDs, keep roster ownership separate from immutable character definitions, and preserve the verified Campaign/combat/input baseline.
-- Dependency rule: **finish M2 engineering + player smoke before M3**. M3 consumes M2 roster/ownership/team-selection contracts; M4 consumes M3 shard/reward contracts.
-- Planned progression after M2: **M3 Shard / Reward / Character Unlock Loop**, then **M4 Tier Upgrade / Collection Screen**.
-- Do not start formal art/audio/economy automatically. Audio is a later pass; keep clean event hooks where practical.
-- Recovery for any new Chat/Work: read AGENTS.md → docs/DEVELOPMENT_PLAYBOOK.md → docs/PROJECT_BOUNDARIES.md → this pointer → docs/STATE.md → docs/DEVELOPMENT_ROADMAP.md → relevant system specs → latest remote branch/PR/checkpoint.
-- Do not redo M0/M1 completed work. Continue from the first unfinished M2 item only after the user starts that milestone.
+- Milestone: **M2 TEAM SELECT / ROSTER SKELETON IN PROGRESS**; prior M0/M1 player-verified baseline protected.
+- Active branch / PR: `feat/m0-combat-core-20260927` / #1. Recovery baseline remote `f98f5562130f09ff33b378d3fe00e6358fdb40c0`; latest baseline Actions #230 success.
+- Execution spec/plan: `docs/M2_TEAM_SELECT_PLAN.md` (latest detailed user handoff authorizes all six checkpoints).
+- Checkpoint 1 PASS: five immutable prototype definitions with independent IDs/stats/portrait/passive metadata; separate ownership; three deterministic slots, max/duplicate/remove guards; allowed/forced/banned restrictions and safe saved-ID filtering.
+- Verification: `node --test tests/rosterTeam.test.js` 4/4 PASS; first red run showed missing roster modules.
+- Completed checkpoint code is preserved in this commit. Remote checkpoint SHA is the current branch commit containing this pointer; subsequent slices record predecessors.
+- Next exact action: checkpoint 2 Team Select DOM view/styles and UI interaction tests, then navigation, lineup, persistence, regression/deploy/public smoke.
+- Known limitations: not integrated into runtime yet; engineering milestone incomplete. No M3/art/economy/audio work.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

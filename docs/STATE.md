@@ -1,9 +1,13 @@
 # Project State
 
 ## Milestone
-**M1 CAMPAIGN + BOUNDED CORRECTIONS PASS / PLAYER VERIFIED**
+**M2 TEAM SELECT / ROSTER SKELETON IN PROGRESS**
 
 **NEXT AUTHORIZED MILESTONE: M2 TEAM SELECT / ROSTER SKELETON**
+
+## Current M2 checkpoint
+- Checkpoint 1 roster/team data model: targeted 4/4 PASS. UI/navigation/lineup/persistence/release still pending.
+- See `docs/M2_TEAM_SELECT_PLAN.md` and current `WORK_PROGRESS.md` pointer. M0/M1 remain player verified.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
