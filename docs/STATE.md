@@ -1,16 +1,19 @@
 # Project State
 
 ## Milestone
-**M2 CODE / TEST / BUILD VERIFIED — RELEASE BLOCKED**
+**M2 TEAM SELECT ENGINEERING PASS**
+
+**iPhone TEAM SELECT PLAYER SMOKE PENDING**
 
 **NEXT AUTHORIZED MILESTONE: M2 TEAM SELECT / ROSTER SKELETON**
 
 ## Current M2 checkpoint
 - Checkpoints 1–5 implemented: catalog/ownership/team model, landscape selection UI, navigation, selected battle lineup/identity, recent-team save. M2 targeted 24/24, full regression 176/176, Vite build and diff checks PASS.
 - Independent code review complete; minor write-only storage fallback defect reproduced and corrected.
-- Pages environment requires deployment approval. Actions #233 Test/Build PASS, deploy waiting; replacement correction run pending. Public page still M1; M2 public browser smoke not performed.
-- M2 TEAM SELECT ENGINEERING PASS is **not yet granted**. User approves latest Actions deployment, executor completes public smoke, then iPhone TEAM SELECT PLAYER SMOKE PENDING.
-- See `docs/M2_TEAM_SELECT_RELEASE.md`; do not start M3.
+- Deploy source `5cfa41224f27ce49ed61c48c462904a73ecbe654`, Actions #234 / 36735090478: Test/Build/Pages Deploy success; prior approval wait resolved without workflow/security changes.
+- Public browser selection/selected identities/HP/front slot/Victory/Retry/Exit/restore/swap/reload/BACK smoke PASS. Public landscape gate normal; portrait/landscape gate automated regression PASS. Cloud browser did not exercise actual portrait rotation (no viewport capability); iPhone rotation/touch/readability pending.
+- Next: player iPhone M2 acceptance only. No M3/art/economy/audio.
+- Full commit/files/verification evidence: `docs/M2_TEAM_SELECT_RELEASE.md`.
 - See `docs/M2_TEAM_SELECT_PLAN.md` and current `WORK_PROGRESS.md` pointer. M0/M1 remain player verified.
 
 ## Goal

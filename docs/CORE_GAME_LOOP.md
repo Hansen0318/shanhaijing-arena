@@ -15,4 +15,4 @@ Team select -> versus/setup -> countdown -> 3v3 battle -> victory/defeat -> rewa
 - Story is short and battle-focused; it should not repeatedly interrupt replay.
 
 ## Prototype note
-M0 battle is player confirmed. M1 implements Chapter Select → Stage Select/Preview → START → existing Arena → Result → Retry / Exit / Next Preview → persistent unlock. M2 implements START → Team Select → exactly 3 catalog characters → BATTLE → existing Arena. Retry preserves the lineup; Exit/Next return to Preview and START restores the recent valid team. Deployment/public smoke remain blocked on GitHub Pages approval. Rewards/economy remain future scope.
+M0 battle is player confirmed. M1 implements Chapter Select → Stage Select/Preview → START → existing Arena → Result → Retry / Exit / Next Preview → persistent unlock. M2 implements START → Team Select → exactly 3 catalog characters → BATTLE → existing Arena. Retry preserves the lineup; Exit/Next return to Preview and START restores the recent valid team. M2 engineering checks/deployment/public flow smoke passed; iPhone acceptance pending. Rewards/economy remain future scope.
