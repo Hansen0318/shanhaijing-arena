@@ -19,7 +19,14 @@ export class TeamSelection {
   const restored=Array.isArray(saved)?[...new Set(saved)].filter(id=>available.includes(id)).slice(0,TEAM_SIZE):[];
   // Keep valid saved order, making room for required characters before launch validation.
   for(const id of forced.filter(id=>available.includes(id))) {
-   if(!restored.includes(id)){if(restored.length===TEAM_SIZE)restored.pop();restored.push(id);}
+   if(!restored.includes(id)){
+    if(restored.length===TEAM_SIZE){
+     const optional=restored.findLastIndex(savedId=>!forced.includes(savedId));
+     if(optional===-1)continue;
+     restored.splice(optional,1);
+    }
+    restored.push(id);
+   }
   }
   restored.slice(0,TEAM_SIZE).forEach((id,i)=>{this.slots[i]=id;});
  }

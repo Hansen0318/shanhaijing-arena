@@ -6,7 +6,8 @@
 **NEXT AUTHORIZED MILESTONE: M2 TEAM SELECT / ROSTER SKELETON**
 
 ## Current M2 checkpoint
-- Checkpoint 1 roster/team data model: targeted 4/4 PASS. UI/navigation/lineup/persistence/release still pending.
+- Checkpoints 1–5 implemented: catalog/ownership/team model, landscape selection UI, navigation, selected battle lineup/identity, recent-team save. M2 targeted 22/22, full regression 174/174 and Vite build PASS.
+- Pages deployment/public smoke/release record still pending; iPhone M2 player smoke pending.
 - See `docs/M2_TEAM_SELECT_PLAN.md` and current `WORK_PROGRESS.md` pointer. M0/M1 remain player verified.
 
 ## Goal

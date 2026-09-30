@@ -4,6 +4,7 @@ import { nextStage } from './campaign/data.js';
 import { CampaignController } from './campaign/controller.js';
 import { CampaignView } from './campaign/view.js';
 import { browserPersistence } from './campaign/persistence.js';
+import { browserTeamPersistence } from './roster/persistence.js';
 import { installViewportSync } from './runtime/viewportSync.js';
 import { createBattleControls } from './runtime/battleControls.js';
 import { createOrientationGate } from './runtime/orientationGate.js';
@@ -13,7 +14,7 @@ import './campaign/style.css';
 import './roster/style.css';
 
 const query=new URLSearchParams(window.location.search);
-const controller=new CampaignController({persistence:browserPersistence(),dev:query.get('campaignDev')==='unlock-all'});
+const controller=new CampaignController({persistence:browserPersistence(),teamPersistence:browserTeamPersistence(),dev:query.get('campaignDev')==='unlock-all'});
 const root=document.getElementById('campaign'), host=document.getElementById('game');
 let game=null;
 let viewport;

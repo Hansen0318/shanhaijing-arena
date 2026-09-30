@@ -13,7 +13,10 @@
 - Checkpoint 3 PASS: guarded START → Team Select / BACK → same preview / exact-three BATTLE routing; Retry frozen team copy, re-entry preload in memory; ownership/restrictions revalidated at launch. Existing Campaign/exit tests now traverse Team Select. Targeted 32/32 PASS.
 - Checkpoint 3 remote: `5c5179947eaf9f788a335c2a5ceaa57fc1089da4`.
 - Checkpoint 4 PASS: factory requires three eligible owned catalog IDs, maps a1/a2/a3 to definitions and slot formations; enemies unchanged. Ally portrait/actor color and labels follow selected data without geometry changes. Battle/data/HUD tests 13/13 PASS; Retry uses selected definitions with fresh HP.
-- Next exact action: checkpoint 5 separate versioned recent-team persistence, invalid/corrupt/denied storage and future restrictions; then full regression/build/deploy/browser smoke.
+- Checkpoint 4 remote: `78972a75bedb21fa3641db3cca8ac3c3e9f23801`.
+- Checkpoint 5 PASS: separate team.v1 adapter and runtime injection; only valid full teams saved at BATTLE; malformed/obsolete/unknown/duplicate IDs recover; denied storage has in-memory fallback; dev fixture isolates formal saves. Multiple forced characters retain each other when replacing optional saved IDs.
+- Verification: M2 targeted 22/22 PASS; complete regression 174/174 PASS; Vite production build PASS (existing large Phaser bundle warning).
+- Next exact action: whole-diff review, Pages Actions/deploy, requested public browser smoke and checkpoint 6 release record. iPhone M2 smoke pending.
 - Known limitations: not integrated into runtime yet; engineering milestone incomplete. No M3/art/economy/audio work.
 
 ## Historical M0 handoff

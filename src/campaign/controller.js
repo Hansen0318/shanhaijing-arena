@@ -3,11 +3,12 @@ import { initialProgress, devProgress, stageStatus, chapterStatus, recordVictory
 import { prototypeOwnership } from '../roster/catalog.js';
 import { TeamSelection, isValidTeam } from '../roster/team.js';
 export class CampaignController {
- constructor({persistence=null,dev=false,ownership=prototypeOwnership()}={}) {
+ constructor({persistence=null,teamPersistence=null,dev=false,ownership=prototypeOwnership()}={}) {
   this.persistence=dev ? null : persistence;
   this.progress=dev ? devProgress() : persistence?.load() ?? initialProgress();
   this.screen='chapters'; this.chapterId=null; this.selectedStageId=null; this.battleStageId=null; this.outcome=null;
-  this.ownership=ownership;this.lastTeam=[];this.teamSelection=null;this.battleTeam=null;
+  this.teamPersistence=dev?null:teamPersistence;
+  this.ownership=ownership;this.lastTeam=this.teamPersistence?.load() ?? [];this.teamSelection=null;this.battleTeam=null;
  }
  openChapter(id) {
   if(!['chapters','stages'].includes(this.screen) || chapterStatus(this.progress,id)==='locked') return false;
@@ -32,6 +33,7 @@ export class CampaignController {
    || stageStatus(this.progress,stage.stageId)==='locked'
    || !isValidTeam(this.teamSelection?.slots,stage,this.ownership))return null;
   this.battleTeam=Object.freeze([...this.teamSelection.slots]);this.lastTeam=[...this.battleTeam];
+  this.teamPersistence?.save(this.lastTeam);
   this.screen='battle';this.battleStageId=stage.stageId;this.outcome=null;
   return {...stage,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership};
  }
