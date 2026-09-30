@@ -1,9 +1,9 @@
 # Project State
 
 ## Milestone
-**M1 CAMPAIGN + BOUNDED PORTRAIT/EXIT CORRECTION ENGINEERING PASS**
+**M1 CAMPAIGN + BOUNDED CORRECTIONS PASS / PLAYER VERIFIED**
 
-**iPhone CAMPAIGN PLAYER SMOKE PENDING**
+**NEXT AUTHORIZED MILESTONE: M2 TEAM SELECT / ROSTER SKELETON**
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
@@ -39,6 +39,15 @@ Complete the playable Chapter → Stage Preview → Battle → Result → Unlock
 - KO character cannot be selected or healed in v1.
 - If selected character is KO, selection moves to the nearest surviving ally; camera remains fixed.
 - M0 runtime stack: Phaser 4.2.1 + Vite 8.3.1 + plain JavaScript/ESM.
+
+## M1 player acceptance and next milestone (2026-09-30)
+- Player completed real iPhone smoke for the current Campaign/battle flow and reported the latest presentation/controls normal.
+- M1 Campaign + return/Pause/Exit + portrait gate/START/exit-confirmation corrections are therefore **PASS / PLAYER VERIFIED**.
+- Do not repeat M1 acceptance checks unless a later change can materially regress them.
+- Next planned milestone is **M2 Team Select / Roster Skeleton**: Stage Preview → START → Team Select → choose exactly 3 → Battle.
+- M2 must establish data-driven roster/ownership/team-slot contracts before M3 reward/shard unlock work.
+- Post-M1 sequencing is canonical in `docs/DEVELOPMENT_ROADMAP.md`: M2 Team Select → M3 Shard/Reward/Character Unlock → M4 Tier Upgrade/Collection.
+- Formal art and audio remain deferred; audio should attach later to clean gameplay/UI event hooks rather than drive current architecture.
 
 ## M1 authorization (2026-09-30)
 - Latest player confirmed GREYBOX ENGINEERING PASS and iPhone FINAL PLAYER SMOKE PASS.
