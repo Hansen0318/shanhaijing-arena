@@ -4,9 +4,9 @@ export function portraitCardLayout(side, index) {
   return {
     x: side === 'ally' ? 72 : ARENA_STAGE.width - 72,
     y: 56 + index * 92,
-    portraitSize: 68,
+    portraitSize: 84,
     backingY: 8,
-    backingWidth: 86,
+    backingWidth: 84,
     backingHeight: 84,
     hpY: 41,
     hpWidth: 80,

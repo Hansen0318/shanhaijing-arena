@@ -2,13 +2,15 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { portraitCardLayout } from '../src/runtime/portraitCardLayout.js';
 
-test('mirrored portrait cards restore the original square and clear the top and Special button', () => {
+test('mirrored portrait content fills its square backing without changing card placement', () => {
   const allies = [0, 1, 2].map((index) => portraitCardLayout('ally', index));
   const enemies = [0, 1, 2].map((index) => portraitCardLayout('enemy', index));
 
   for (let index = 0; index < 3; index += 1) {
-    assert.equal(allies[index].portraitSize, 68);
-    assert.equal(enemies[index].portraitSize, 68);
+    assert.equal(allies[index].portraitSize, allies[index].backingWidth);
+    assert.equal(enemies[index].portraitSize, enemies[index].backingWidth);
+    assert.equal(allies[index].backingWidth, allies[index].backingHeight);
+    assert.equal(allies[index].portraitSize, 84);
     assert.equal(allies[index].y, enemies[index].y);
     assert.equal(allies[index].x + enemies[index].x, 1120);
   }

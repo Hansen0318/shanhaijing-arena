@@ -187,10 +187,11 @@ export class ArenaScene extends Phaser.Scene {
         const backing = this.add.rectangle(0, layout.backingY,
           layout.backingWidth, layout.backingHeight, 0x172735, 0.88)
           .setStrokeStyle(2, 0x8ca7ad);
-        const portrait = this.add.rectangle(0, 0, layout.portraitSize, layout.portraitSize,
+        const portrait = this.add.rectangle(0, layout.backingY,
+          layout.portraitSize, layout.portraitSize,
           side === 'ally' ? 0x58c8dc : 0xee9475)
           .setStrokeStyle(2, side === 'ally' ? 0xc6f6ff : 0xffd3bf);
-        const name = this.add.text(0, 0, id.toUpperCase(), {
+        const name = this.add.text(0, layout.backingY, id.toUpperCase(), {
           fontFamily: 'sans-serif', fontSize: '23px', fontStyle: 'bold', color: '#ffffff',
         }).setOrigin(0.5);
         const barBack = this.add.rectangle(0, layout.hpY, layout.hpWidth, layout.hpHeight, 0x4a2020);
@@ -222,6 +223,8 @@ export class ArenaScene extends Phaser.Scene {
       view.hpText.setText(card.hpText);
       view.card.setScale(card.selected ? view.layout.selectedScale : 1);
       view.backing.setStrokeStyle(card.selected ? 4 : 2, card.selected ? 0xffffff : 0x8ca7ad);
+      view.portrait.setStrokeStyle(card.selected ? 4 : 2,
+        card.selected ? 0xffffff : card.id.startsWith('a') ? 0xc6f6ff : 0xffd3bf);
       view.card.setAlpha(card.alive ? 1 : 0.48);
     }
     this.timerText.setText(formatBattleTime(frame.elapsedSeconds, this.session.maxSeconds));
