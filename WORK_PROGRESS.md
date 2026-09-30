@@ -1,19 +1,17 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Milestone: **M1 feedback return/Pause/Exit ENGINEERING PASS / PLAYER SMOKE PENDING**.
-- Acceptance: iPhone Safari/Chrome landscape return alignment and touch still player-owned.
+- Milestone: **M1 portrait gate / START / Exit confirmation ENGINEERING PASS / PLAYER SMOKE PENDING**.
+- Acceptance: real iPhone portrait/landscape transitions, touch and layout still player-owned.
 - Active branch / PR: feat/m0-combat-core-20260927 / #1 retained. No merge or next milestone.
-- Tested/deployed source: **0d590cb936e109110dc79aa1b435144d4ef676fc**.
-- Final docs checkpoint: current HEAD, no source changes after deployed checkpoint.
-- Tests: targeted 21/21; full 144/144 (`npm test -- --test-isolation=none`); default npm test also passed before additional real-Phaser VFX regression. Vite build PASS. Independent review clean after two fixes.
-- Actions **36692992427**: Test, Build, Pages Deploy PASS.
+- Tested/deployed source: **bbc7549096f01512ea6e1097a79fb5f60d34b0f8**.
+- Tests: targeted 12/12; full 152/152; Vite build PASS. Final test/docs checkpoint follows the deployed source with no runtime change.
+- Actions **36703714585** (#225): build/test and Pages deploy PASS.
 - Public URL: https://hansen0318.github.io/shanhaijing-arena/
-- Public browser PASS: fresh Chapter 1/1-1 → START; top-right Pause/Resume/Exit; paused timer 01:27, positions/HP and CD 5/9/14 frozen across identical screenshots; paused portrait/joystick/skill input no-op; Resume advanced timer to 01:24 and CD 2/6/11 with AI movement; unfinished Exit → same preview, 1-2 locked; paused-countdown Exit; three repeated Battle/Exit/Preview/BACK/Chapter cycles with identical boundaries and zero scroll; reload remained uncleared/locked. No page-origin error observed (extension metadata errors excluded).
-- Scope: shared visualViewport sync on both surfaces + route settlement/scroll reset/Phaser refresh; BACK only; scene-local pause and safe unfinished Exit. Core/input/projection/portrait/formation unchanged.
-- Full evidence, modified files and limitations: docs/M1_RETURN_PAUSE_FIX.md.
+- Public browser PASS: Chapter 1/1-1 START only; X → confirmation freezes identical frames; CONTINUE resumes and retains manual Pause when set; EXIT returns same preview with 1-2 locked; repeated Battle/Exit/BACK/Chapter routes retain identical x0/y0/1363×936 bounds and zero scroll. Portrait transitions and previously-CLEAR replay are automated; real device smoke pending.
+- Scope: orientation gate/inert surfaces and independent interruption reasons; START only; English Exit confirmation. Previous return/Pause slice remains intact. Full release evidence: docs/M1_PORTRAIT_EXIT_CORRECTION.md.
 - Original M1 skeleton release evidence remains valid: source c850641, 134/134, Actions 36681489336, docs/M1_CAMPAIGN_RELEASE.md. Do not rebuild its checkpoints.
-- Exact next action: player tests landscape repeated returns, Pause/Resume and Exit on iPhone. Then STOP; no formal art or next milestone without new direction.
+- Exact next action: player tests portrait gate, landscape resume, Exit confirmation and repeated returns on iPhone. Then STOP; no formal art or next milestone without new direction.
 - Recovery: remote HEAD + this pointer + docs/STATE.md. Implementation and documentation are pushed.
 
 ## Historical M0 handoff

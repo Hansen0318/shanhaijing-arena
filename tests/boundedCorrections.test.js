@@ -37,6 +37,16 @@ test('portrait gate hides Arena/Campaign, blocks interaction and resumes the sam
  assert.equal(s.paused,false);s.update(.1);assert.equal(s.elapsed,before+.1);
  sync.destroy();
 });
+test('opening directly in portrait gates Campaign before START and a newly attached scene stays paused',()=>{
+ const e=viewport();e.vv.width=390;e.vv.height=844;
+ const interruption=new BattleInterruption();
+ const gate=createOrientationGate(e.win,e.doc,e.root,e.host,e.gate,value=>interruption.setPortrait(value));
+ const sync=installViewportSync(e.win,e.host,e.root,()=>gate.sync());
+ assert.equal(e.gate.hidden,false);assert.equal(e.root.inert,true);assert.equal(e.host.inert,true);
+ const s=scene();interruption.attach(s);assert.equal(s.paused,true);
+ e.vv.width=844;e.vv.height=390;e.win.dispatchEvent(new Event('orientationchange'));
+ assert.equal(s.paused,false);assert.equal(e.gate.hidden,true);sync.destroy();
+});
 test('repeated portrait and landscape restores exact viewport geometry without stale settlement drift',()=>{
  const e=viewport(),gate=createOrientationGate(e.win,e.doc,e.root,e.host,e.gate);
  const sync=installViewportSync(e.win,e.host,e.root,()=>gate.sync());

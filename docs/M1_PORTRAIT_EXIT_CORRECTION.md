@@ -1,0 +1,13 @@
+# M1 portrait / START / Exit confirmation correction
+
+**ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**
+
+- Active branch/PR: `feat/m0-combat-core-20260927` / #1. Tested/deployed source: `bbc7549096f01512ea6e1097a79fb5f60d34b0f8`.
+- Final targeted 12/12, full regression 152/152, Vite production build PASS. Deployed source Actions #225 / 36703714585 build/test and Pages deploy success (151/151 at source checkpoint; one additional test-only direct-portrait case verified in final checkpoint). Public URL: https://hansen0318.github.io/shanhaijing-arena/ .
+- Root causes: viewport synchronization scaled the 1120×540 Arena into a portrait strip; Stage Preview retained bilingual copy; battle X bypassed confirmation and exited directly. No changes to logical scene geometry or progression algorithm were necessary.
+- Portrait now overlays a full-screen gate and makes both game/route surfaces inert. The existing scene is paused (countdown, AI, movement, timer, cooldown, VFX), then resumed on landscape with viewport remeasurement and same route/round. Manual Pause, portrait and Exit confirmation are independent reasons to stop; CONTINUE never overrides an earlier manual Pause. No browser orientation lock dependency or CSS game rotation.
+- START is English-only. X opens a dialog with exact requested copy/buttons; EXIT uses unchanged `CampaignController.exitBattle()` and does not call result/save for a running battle. Previously saved CLEAR remains.
+- Public landscape cloud browser: START-only, BACK-only; X modal with English copy and Resume icon, identical frozen frames, CONTINUE restores normal Pause icon; from manually paused battle CONTINUE stays Resume/paused; EXIT returns Chapter 1 Stage Select with 1-2 locked. Repeated START/Exit/BACK/reenter retained x0/y0/1363×936 bounds and scroll 0. Fresh previously-CLEAR replay and portrait viewport could not be produced with the cloud browser controls; those conditions are covered by targeted tests, not claimed as public smoke.
+- Pending: real iPhone Safari/Chrome portrait gate and rotate-back transition during a live round, visual viewport/safe-area alignment, real touch and repeat return. Cloud desktop testing cannot substitute for real iPhone acceptance. Existing Phaser large-bundle warning remains nonblocking.
+
+Modified: `WORK_PROGRESS.md`, `docs/STATE.md`, `index.html`, `src/main.js`, `src/campaign/view.js`, `src/campaign/style.css`, `src/runtime/ArenaScene.js`, new `src/runtime/orientationGate.js`, `src/runtime/battleInterruption.js`, `src/runtime/exitDialog.js`, `tests/battlePause.test.js`, new `tests/boundedCorrections.test.js`.
