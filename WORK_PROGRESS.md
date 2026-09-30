@@ -5,7 +5,9 @@
 - Recovery base: c35e278; existing branch/PR #1 retained.
 - M1 plan: docs/superpowers/plans/2026-09-30-m1-campaign.md
 - Checkpoint 1: campaign data + 36 SVG placeholders; targeted data tests 3/3 PASS.
-- Next exact step: checkpoint 2 progression/persistence.
+- Remote checkpoint 1: 5b7ea9a; local equivalent 9e2d3cf.
+- Checkpoint 2: pure progression/storage targeted 10/10 PASS.
+- Next exact step: checkpoint 3 guarded controller / Chapter UI.
 - M1 status: IN PROGRESS; no new Campaign PASS claimed.
 
 ## Historical M0 handoff
