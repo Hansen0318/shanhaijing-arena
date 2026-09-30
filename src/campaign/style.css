@@ -1,0 +1,17 @@
+#campaign { position:fixed; inset:0; z-index:100; color:#f0f3f6; background:#1c2b38; font-family:system-ui,sans-serif; touch-action:pan-y; overflow:auto; }
+#campaign[hidden] { display:none; }
+.campaign-page { box-sizing:border-box; min-height:100%; padding:14px max(20px,env(safe-area-inset-right)) 14px max(20px,env(safe-area-inset-left)); }
+.campaign-page h1 { margin:0 0 16px; font-size:clamp(18px,3vw,28px); letter-spacing:2px; }
+.chapter-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+.campaign-card { padding:0; border:2px solid #617887; border-radius:8px; overflow:hidden; background:#2e4351; color:white; font:inherit; min-width:0; cursor:pointer; touch-action:manipulation; }
+.card-picture { position:relative; width:100%; aspect-ratio:640/300; overflow:hidden; }
+.card-picture img { display:block; width:100%;height:100%;object-fit:cover; }
+.locked .card-picture img { filter:brightness(.3) saturate(.35); }
+.locked { cursor:default; }
+.lock { position:absolute; width:26px; height:32px; left:50%;top:50%;transform:translate(-50%,-50%);color:white;filter:drop-shadow(0 2px 3px #000); }
+.lock svg { width:100%;height:100%; }
+.card-label { display:block; padding:7px 2px;font-size:clamp(12px,1.8vw,18px);font-weight:650; }
+.clear-badge { position:absolute;right:4px;bottom:4px;background:#174e3d;color:#beffd6;border-radius:3px;padding:2px 5px;font-size:12px;font-weight:750; }
+.campaign-card.selected { border-color:#ffd689; box-shadow:0 0 0 1px #ffd689; }
+.campaign-card:focus-visible,.campaign-button:focus-visible { outline:3px solid #fff;outline-offset:2px; }
+@media (max-height:420px) { .campaign-page {padding-top:10px;padding-bottom:10px;} .campaign-page h1 {margin-bottom:10px;} .chapter-grid {gap:10px;} }

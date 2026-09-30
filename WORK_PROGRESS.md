@@ -7,7 +7,9 @@
 - Checkpoint 1: campaign data + 36 SVG placeholders; targeted data tests 3/3 PASS.
 - Remote checkpoint 1: 5b7ea9a; local equivalent 9e2d3cf.
 - Checkpoint 2: pure progression/storage targeted 10/10 PASS.
-- Next exact step: checkpoint 3 guarded controller / Chapter UI.
+- Remote checkpoint 2: b558d3a.
+- Checkpoint 3: guarded controller + Chapter grid UI; targeted 13/13 PASS, not yet runtime connected.
+- Next exact step: checkpoint 4 stage preview UI.
 - M1 status: IN PROGRESS; no new Campaign PASS claimed.
 
 ## Historical M0 handoff
