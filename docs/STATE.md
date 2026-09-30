@@ -1,20 +1,18 @@
 # Project State
 
 ## Milestone
-**M2 TEAM SELECT ENGINEERING PASS**
+**M2 TEAM SELECT PASS / PLAYER VERIFIED**
 
-**iPhone TEAM SELECT PLAYER SMOKE PENDING**
+**AUTHORIZED PRE-M3 SLICE: M2 POST-ACCEPTANCE COMBAT / PRESENTATION POLISH**
 
-**NEXT AUTHORIZED MILESTONE: M2 TEAM SELECT / ROSTER SKELETON**
-
-## Current M2 checkpoint
-- Checkpoints 1–5 implemented: catalog/ownership/team model, landscape selection UI, navigation, selected battle lineup/identity, recent-team save. M2 targeted 24/24, full regression 176/176, Vite build and diff checks PASS.
-- Independent code review complete; minor write-only storage fallback defect reproduced and corrected.
-- Deploy source `5cfa41224f27ce49ed61c48c462904a73ecbe654`, Actions #234 / 36735090478: Test/Build/Pages Deploy success; prior approval wait resolved without workflow/security changes.
-- Public browser selection/selected identities/HP/front slot/Victory/Retry/Exit/restore/swap/reload/BACK smoke PASS. Public landscape gate normal; portrait/landscape gate automated regression PASS. Cloud browser did not exercise actual portrait rotation (no viewport capability); iPhone rotation/touch/readability pending.
-- Next: player iPhone M2 acceptance only. No M3/art/economy/audio.
-- Full commit/files/verification evidence: `docs/M2_TEAM_SELECT_RELEASE.md`.
-- See `docs/M2_TEAM_SELECT_PLAN.md` and current `WORK_PROGRESS.md` pointer. M0/M1 remain player verified.
+## Current state
+- M2 Team Select / Roster Skeleton engineering completed and deployed from `5cfa41224f27ce49ed61c48c462904a73ecbe654`; Actions #234 PASS.
+- Player reported real-device M2 test OK on 2026-10-01. M2 is therefore **PASS / PLAYER VERIFIED** for the accepted scope.
+- M0/M1 remain protected player-verified baselines.
+- Before M3, one bounded polish slice is authorized and specified in `docs/M2_POST_ACCEPTANCE_POLISH.md`.
+- The slice covers only: cooldown-aware AI spacing, floating damage numbers, VS-style Team Select enemy preview, and Power/Speed/Blast type icons.
+- It must not introduce shards/rewards/character unlock economy/Tiers/formal art/audio or tower-defense gameplay.
+- M3 remains blocked until this polish is either player accepted or explicitly deferred.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
