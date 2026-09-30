@@ -6,13 +6,13 @@ function normalize(value) {
  return [...new Set(value.characterIds)].filter(id=>typeof id==='string' && Object.hasOwn(rosterCatalog,id)).slice(0,3);
 }
 export function createTeamPersistence(storage) {
- let memory=[];
+ let memory=[],unsaved=false;
  return {
-  load(){try {if(storage)memory=normalize(JSON.parse(storage.getItem(TEAM_SAVE_KEY) ?? 'null'));}catch{}return [...memory];},
+  load(){try {if(storage && !unsaved)memory=normalize(JSON.parse(storage.getItem(TEAM_SAVE_KEY) ?? 'null'));}catch{}return [...memory];},
   save(ids){
    if(!isValidTeam(ids))return false;
-   memory=[...ids];
-   try {if(!storage)return false;storage.setItem(TEAM_SAVE_KEY,JSON.stringify({version:1,characterIds:memory}));return true;}catch{return false;}
+   memory=[...ids];unsaved=true;
+   try {if(!storage)return false;storage.setItem(TEAM_SAVE_KEY,JSON.stringify({version:1,characterIds:memory}));unsaved=false;return true;}catch{return false;}
   },
  };
 }

@@ -167,3 +167,8 @@ Character/Ability core is accepted when deterministic tests establish:
 - T2 -> T1: 10 additional character fragments.
 - T3 already has the full skill categories.
 - T2/T1 should add mechanics, synergy, or enhanced effects in addition to modest stat gains.
+
+## M2 prototype catalog / ownership
+`src/roster/catalog.js` defines immutable P1–P5 independently of battle slot IDs, using the existing lowercase Type/Role schema and four active ability references. Each definition has placeholder portrait metadata and explicit unimplemented Passive metadata; no Passive mechanic was added. HP varies (P1 280, P2 260, P3 240, P4 260, P5 250) to verify selected-data integration; other pacing stats match the established ally runtime. These are test values, not a balance pass.
+
+Ownership is separate `{characterIds: [...]}` player state. Prototype defaults own P1–P5; recruitment/unlock persistence is later scope. Stage fields `allowedRoster` (null means all owned), `forcedCharacters` and `bannedCharacters` are applied by team eligibility and revalidated at controller/factory launch boundaries. Conflicting restrictions fail closed.

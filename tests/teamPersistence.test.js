@@ -27,6 +27,12 @@ test('denied storage degrades to in-memory team and never prevents launch',()=>{
  const c=new CampaignController({teamPersistence:p});enter(c);assert.equal(c.teamSelection.canBattle,true);
  assert.deepEqual(c.startBattle().selectedTeam,['P1','P3','P5']);
 });
+test('failed write with readable stale storage retains latest valid team in memory',()=>{
+ const old=JSON.stringify({version:1,characterIds:['P1','P2','P3']});
+ const p=createTeamPersistence({getItem:()=>old,setItem(){throw Error('quota');}});
+ assert.deepEqual(p.load(),['P1','P2','P3']);p.save(['P1','P3','P5']);
+ assert.deepEqual(p.load(),['P1','P3','P5']);
+});
 test('BATTLE saves the valid team; partial edits and BACK do not overwrite it',()=>{
  const store=storage(),p=createTeamPersistence(store),c=new CampaignController({teamPersistence:p});enter(c);
  for(const id of ['P1','P3','P5'])c.teamSelection.toggle(id);c.startBattle();c.exitBattle();c.openTeamSelect();

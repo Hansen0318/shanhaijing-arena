@@ -1,7 +1,7 @@
 import { orderedChapters, findChapter, findStage, orderedStages } from './data.js';
 import { chapterStatus, stageStatus } from './progression.js';
 import { renderTeamSelect } from '../roster/view.js';
-const asset=path => `${import.meta.env.BASE_URL}${path}`;
+const asset=path => `${import.meta.env?.BASE_URL ?? '/'}${path}`;
 function card({image,label,status,selected=false,onClick}) {
  const button=document.createElement('button'); button.type='button'; button.className=`campaign-card ${status}${selected?' selected':''}`;
  button.disabled=status==='locked'; button.dataset.status=status; button.setAttribute('aria-label',`${label} ${status}`);

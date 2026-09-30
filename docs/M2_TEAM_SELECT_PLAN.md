@@ -19,3 +19,6 @@ Campaign START opens Team Select; BATTLE alone starts the encounter. Battle fact
 No combat core/input/formation/camera refactor, formal art/animation, economy/rewards/shards/tier/recruit/audio. Five prototypes default owned. Type/Role textual badges use existing lowercase schema with title-case presentation. Restriction conflicts disable BATTLE; unavailable forced characters cannot bypass ownership. Invalid storage and denied localStorage recover safely without saving partial teams.
 
 At completion record actual commits/files/test count/Actions/deploy/public smoke/limitations. Mark M2 TEAM SELECT ENGINEERING PASS only after every required check; iPhone TEAM SELECT PLAYER SMOKE PENDING. Stop for player acceptance.
+
+## Checkpoint 6 execution state
+Code complete and review done; final targeted 24/24, regression 176/176, build/diff PASS. GitHub Pages deploy is waiting for environment approval; public M2 browser smoke cannot begin before latest commit deploys. Checkbox 6 remains open deliberately; this is RELEASE BLOCKED, not the requested complete milestone PASS.

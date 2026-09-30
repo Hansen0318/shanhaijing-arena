@@ -1,13 +1,16 @@
 # Project State
 
 ## Milestone
-**M2 TEAM SELECT / ROSTER SKELETON IN PROGRESS**
+**M2 CODE / TEST / BUILD VERIFIED — RELEASE BLOCKED**
 
 **NEXT AUTHORIZED MILESTONE: M2 TEAM SELECT / ROSTER SKELETON**
 
 ## Current M2 checkpoint
-- Checkpoints 1–5 implemented: catalog/ownership/team model, landscape selection UI, navigation, selected battle lineup/identity, recent-team save. M2 targeted 22/22, full regression 174/174 and Vite build PASS.
-- Pages deployment/public smoke/release record still pending; iPhone M2 player smoke pending.
+- Checkpoints 1–5 implemented: catalog/ownership/team model, landscape selection UI, navigation, selected battle lineup/identity, recent-team save. M2 targeted 24/24, full regression 176/176, Vite build and diff checks PASS.
+- Independent code review complete; minor write-only storage fallback defect reproduced and corrected.
+- Pages environment requires deployment approval. Actions #233 Test/Build PASS, deploy waiting; replacement correction run pending. Public page still M1; M2 public browser smoke not performed.
+- M2 TEAM SELECT ENGINEERING PASS is **not yet granted**. User approves latest Actions deployment, executor completes public smoke, then iPhone TEAM SELECT PLAYER SMOKE PENDING.
+- See `docs/M2_TEAM_SELECT_RELEASE.md`; do not start M3.
 - See `docs/M2_TEAM_SELECT_PLAN.md` and current `WORK_PROGRESS.md` pointer. M0/M1 remain player verified.
 
 ## Goal

@@ -6,7 +6,7 @@
 Separate unlocked/cleared chapter/stage arrays derive from sequential victories. Defeat and Draw do not unlock. Cleared stages remain replayable. Versioned persistence is isolated from combat and replaceable; see CAMPAIGN_SYSTEM.md.
 
 ## M2 dependency — roster ownership foundation
-M2 must establish:
+M2 now implements (deployment/player acceptance pending):
 - data-driven roster / character catalog;
 - ownership state separate from immutable character definitions;
 - Team Select with exactly three characters;

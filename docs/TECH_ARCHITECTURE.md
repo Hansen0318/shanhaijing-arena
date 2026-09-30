@@ -43,3 +43,8 @@ Exact framework/engine selection may be finalized by Work during preflight, but 
 
 ## M1 Campaign integration
 Campaign data/progression/persistence/controller/DOM view are separate from the existing combat engine. Stage config feeds battleFactory → existing BattleSession, with stageId/chapterId attached at the routing boundary. ArenaScene receives navigation callbacks and delegates results; combat never accesses storage. Scene shutdown/restart retains existing input cleanup. The 1120x540 Phaser.Scale.NONE fixed-camera baseline is unchanged.
+
+## M2 roster/team boundary
+Catalog/ownership: `src/roster/catalog.js`. Eligibility and ordered 3-slot selection: `team.js`. DOM selection UI/style: `view.js`/`style.css`. Placeholder battle identity: `battlePresentation.js`. Versioned recent-team storage: `persistence.js` (`shanhaijing-arena.team.v1`); only valid complete teams save at BATTLE, independent of Campaign storage/combat. Missing/invalid/obsolete IDs are safely filtered; failed writes retain latest in-memory team, and reload cannot recover an unsaved write.
+
+CampaignController owns team route, last valid team and frozen per-battle IDs. Battle factory validates selected IDs/ownership/current stage restrictions and instantiates catalog definitions at the unchanged slot spawn formation. No combat core or input architecture changes. Explicit dev fixture never loads/writes formal team saves.

@@ -1,7 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Milestone: **M2 TEAM SELECT / ROSTER SKELETON IN PROGRESS**; prior M0/M1 player-verified baseline protected.
+- Milestone: **M2 CODE / TEST / BUILD VERIFIED — RELEASE BLOCKED**; prior M0/M1 player-verified baseline protected.
 - Active branch / PR: `feat/m0-combat-core-20260927` / #1. Recovery baseline remote `f98f5562130f09ff33b378d3fe00e6358fdb40c0`; latest baseline Actions #230 success.
 - Execution spec/plan: `docs/M2_TEAM_SELECT_PLAN.md` (latest detailed user handoff authorizes all six checkpoints).
 - Checkpoint 1 PASS: five immutable prototype definitions with independent IDs/stats/portrait/passive metadata; separate ownership; three deterministic slots, max/duplicate/remove guards; allowed/forced/banned restrictions and safe saved-ID filtering.
@@ -16,8 +16,13 @@
 - Checkpoint 4 remote: `78972a75bedb21fa3641db3cca8ac3c3e9f23801`.
 - Checkpoint 5 PASS: separate team.v1 adapter and runtime injection; only valid full teams saved at BATTLE; malformed/obsolete/unknown/duplicate IDs recover; denied storage has in-memory fallback; dev fixture isolates formal saves. Multiple forced characters retain each other when replacing optional saved IDs.
 - Verification: M2 targeted 22/22 PASS; complete regression 174/174 PASS; Vite production build PASS (existing large Phaser bundle warning).
-- Next exact action: whole-diff review, Pages Actions/deploy, requested public browser smoke and checkpoint 6 release record. iPhone M2 smoke pending.
-- Known limitations: not integrated into runtime yet; engineering milestone incomplete. No M3/art/economy/audio work.
+- Checkpoint 5 remote: `3f04d06183510e89d9de077078ec14ce2ddb9467`.
+- Checkpoint 6 code/checks: independent reviewer found no gameplay blocker; write-failure/readable-stale storage issue reproduced then fixed, stale handoff text removed. Actual CampaignView START/BACK/BATTLE integration covered by event test. Final M2 targeted 24/24, complete regression 176/176, Vite build and git diff --check PASS.
+- Deployment blocker: Actions #233 / 36734018803 Test/Build PASS; deploy waiting for github-pages environment approval. Pending-deployments API: current_user_can_approve=false. Public page inspection still showed the prior M1 build; no M2 public smoke claimed. Latest correction commit will trigger a replacement run; approve that latest run, not superseded #233.
+- Release evidence/files/recovery: `docs/M2_TEAM_SELECT_RELEASE.md`.
+- Next exact action: user approves latest github-pages deployment in GitHub Actions; verify matching latest commit deploy success, then run the explicitly requested public M2 browser smoke and record evidence. Only then mark M2 TEAM SELECT ENGINEERING PASS / iPhone TEAM SELECT PLAYER SMOKE PENDING.
+- Do not reimplement or rerun unchanged checks. All implementation checkpoint code is pushed; stop before M3/art/recruit/rewards/fragments/tier/economy/audio.
+- Known limitations: release acceptance incomplete because Pages approval and public browser smoke remain pending; real iPhone Team Select acceptance pending. Storage denied/quota means unsaved teams cannot survive page reload.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**
