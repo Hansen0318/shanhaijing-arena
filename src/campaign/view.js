@@ -1,5 +1,5 @@
-import { orderedChapters } from './data.js';
-import { chapterStatus } from './progression.js';
+import { orderedChapters, findChapter, findStage, orderedStages } from './data.js';
+import { chapterStatus, stageStatus } from './progression.js';
 const asset=path => `${import.meta.env.BASE_URL}${path}`;
 function card({image,label,status,selected=false,onClick}) {
  const button=document.createElement('button'); button.type='button'; button.className=`campaign-card ${status}${selected?' selected':''}`;
@@ -20,10 +20,31 @@ export class CampaignView {
  render() {
   this.root.replaceChildren(); this.root.hidden=false;
   const page=document.createElement('section'); page.className='campaign-page';
+  if(this.controller.screen==='stages') { this.renderStages(page); this.root.append(page); return; }
   const heading=document.createElement('h1'); heading.textContent='CHAPTER SELECT';page.append(heading);
   const grid=document.createElement('div');grid.className='chapter-grid';
   for(const chapter of orderedChapters()) grid.append(card({image:chapter.thumbnail,label:chapter.title,status:chapterStatus(this.controller.progress,chapter.chapterId),onClick:()=>{if(this.controller.openChapter(chapter.chapterId)) this.render();}}));
   page.append(grid);this.root.append(page);
+ }
+ renderStages(page) {
+  page.classList.add('stage-page');
+  const chapter=findChapter(this.controller.chapterId), stage=findStage(this.controller.selectedStageId);
+  const header=document.createElement('header'); header.className='stage-header';
+  const back=document.createElement('button');back.type='button';back.className='campaign-button back';back.textContent='← BACK / 返回';
+  back.onclick=()=>{if(this.controller.back()) this.render();};
+  const heading=document.createElement('h1');heading.textContent=chapter.title;header.append(back,heading);page.append(header);
+  const preview=document.createElement('div');preview.className='stage-preview';
+  const image=document.createElement('img');image.src=asset(stage.previewImage);image.alt=`Stage ${stage.stageId} preview`;image.dataset.stageId=stage.stageId;
+  const details=document.createElement('div');details.className='preview-details';
+  const id=document.createElement('h2');id.textContent=stage.stageId;
+  const title=document.createElement('p');title.textContent=stage.title;
+  const start=document.createElement('button');start.type='button';start.className='campaign-button start';start.textContent='START / 開始戰鬥';
+  start.disabled=stageStatus(this.controller.progress,stage.stageId)==='locked';
+  start.onclick=()=>{const config=this.controller.startBattle();if(config) this.onStart?.(config);};
+  details.append(id,title,start);preview.append(image,details);page.append(preview);
+  const cards=document.createElement('div');cards.className='stage-grid';cards.setAttribute('aria-label','Stages');
+  for(const item of orderedStages(chapter)) cards.append(card({image:item.previewImage,label:item.stageId,status:stageStatus(this.controller.progress,item.stageId),selected:item.stageId===stage.stageId,onClick:()=>{if(this.controller.selectStage(item.stageId)) this.render();}}));
+  page.append(cards);
  }
 }
 export { card, asset };

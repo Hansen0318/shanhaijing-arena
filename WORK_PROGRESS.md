@@ -9,7 +9,9 @@
 - Checkpoint 2: pure progression/storage targeted 10/10 PASS.
 - Remote checkpoint 2: b558d3a.
 - Checkpoint 3: guarded controller + Chapter grid UI; targeted 13/13 PASS, not yet runtime connected.
-- Next exact step: checkpoint 4 stage preview UI.
+- Remote checkpoint 3: daf9083.
+- Checkpoint 4: Stage Select/large independent preview/START/BACK/lower cards implemented; controller tests cover selection/start guards. Visual runtime smoke waits for routing checkpoint.
+- Next exact step: checkpoint 5 stage-config battle routing.
 - M1 status: IN PROGRESS; no new Campaign PASS claimed.
 
 ## Historical M0 handoff
