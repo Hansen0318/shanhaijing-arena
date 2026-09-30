@@ -1,5 +1,5 @@
 export class PreBattleGate {
-  constructor(seconds) {
+  constructor(seconds = 3) {
     this.remaining = seconds;
   }
 

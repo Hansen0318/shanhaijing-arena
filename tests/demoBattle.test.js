@@ -23,3 +23,21 @@ test('graybox skill slots use the requested independent prototype cooldowns', ()
   assert.equal(demoAbilityDefinitions.special.cooldown, 10);
   assert.equal(demoAbilityDefinitions.awakening.cooldown, 15);
 });
+
+test('runtime teams start in mirrored one-front-two-back triangles and restart there', () => {
+  const first = createDemoBattleSession();
+  const spawn = Object.fromEntries([...first.snapshot().allies, ...first.snapshot().enemies]
+    .map((actor) => [actor.instanceId, { x: actor.x, y: actor.y }]));
+  assert.deepEqual(spawn, {
+    a1: { x: 0, y: -1 }, a2: { x: 1.2, y: 0 }, a3: { x: 0, y: 1 },
+    e1: { x: 10, y: -1 }, e2: { x: 8.8, y: 0 }, e3: { x: 10, y: 1 },
+  });
+  first.step(0.25);
+  assert.notDeepEqual(first.snapshot().allies.map((actor) => actor.x), [0, 1.2, 0]);
+  const restarted = createDemoBattleSession();
+  const reset = Object.fromEntries([...restarted.snapshot().allies, ...restarted.snapshot().enemies]
+    .map((actor) => [actor.instanceId, { x: actor.x, y: actor.y }]));
+  assert.deepEqual(reset, spawn);
+  assert.equal(restarted.maxSeconds, 90);
+  assert.equal(restarted.snapshot().result, 'running');
+});

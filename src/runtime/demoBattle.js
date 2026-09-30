@@ -58,18 +58,18 @@ export const runtimeCharacterDefinitions = {
   enemy: character('enemy', 'speed', { maxHp: 240, atk: 13, def: 5, moveSpeed: 1.2, attackSpeed: 0.9 }),
 };
 
-function createTeams(definitions) {
+function createTeams(definitions, frontOffset = 0) {
   const allies = [-1, 0, 1].map((y, index) => createCharacterState(definitions.ally, {
-    instanceId: `a${index + 1}`, teamId: 'allies', x: 0, y,
+    instanceId: `a${index + 1}`, teamId: 'allies', x: index === 1 ? frontOffset : 0, y,
   }));
   const enemies = [-1, 0, 1].map((y, index) => createCharacterState(definitions.enemy, {
-    instanceId: `e${index + 1}`, teamId: 'enemies', x: 10, y,
+    instanceId: `e${index + 1}`, teamId: 'enemies', x: index === 1 ? 10 - frontOffset : 10, y,
   }));
   return { allies, enemies };
 }
 
 export function createDemoBattleSession() {
-  const { allies, enemies } = createTeams(runtimeCharacterDefinitions);
+  const { allies, enemies } = createTeams(runtimeCharacterDefinitions, 1.2);
   return createBattleSession({
     allies,
     enemies,

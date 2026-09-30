@@ -8,7 +8,6 @@ import { castVisual } from './castVfx.js';
 import { PreBattleGate } from './preBattleGate.js';
 
 const SIM_STEP_SECONDS = 0.05;
-const PRE_BATTLE_SECONDS = 5;
 const ACTOR_VISUAL_RADIUS = 24;
 const JOYSTICK = Object.freeze({
   x: 70,
@@ -54,8 +53,8 @@ export class ArenaScene extends Phaser.Scene {
     this.actorViews = new Map();
     this.selectedId = 'a2';
     this.fixtureKoApplied = false;
-    this.preBattleRemaining = PRE_BATTLE_SECONDS;
-    this.preBattleGate = new PreBattleGate(PRE_BATTLE_SECONDS);
+    this.preBattleGate = new PreBattleGate();
+    this.preBattleRemaining = this.preBattleGate.remaining;
     this.battleStarted = false;
     this.joystickPointerId = null;
     this.joystickVector = { x: 0, y: 0 };
@@ -281,7 +280,7 @@ export class ArenaScene extends Phaser.Scene {
     this.countdownText = this.add.text(
       ARENA_STAGE.width / 2,
       ARENA_STAGE.height / 2 - 8,
-      String(PRE_BATTLE_SECONDS),
+      this.preBattleGate.display(),
       {
         fontFamily: 'sans-serif',
         fontSize: '76px',

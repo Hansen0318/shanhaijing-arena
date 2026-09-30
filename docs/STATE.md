@@ -14,7 +14,8 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 - Character separation: simple collision/avoidance; no complex physics.
 - Camera is fixed for the whole battle and does not follow selection.
 - The whole 3v3 Arena encounter is intended to remain readable in one fullscreen landscape view.
-- Each round begins with a 5-second pre-battle countdown; actors and skills are inactive until it completes.
+- Each round begins with a 3-second pre-battle countdown; actors and skills are inactive until it completes.
+- Runtime spawn uses mirrored one-front-two-back triangles: A2/E2 lead; A1/A3 and E1/E3 form the upper/lower rear. Restart restores the same positions before the countdown. The canonical headless fixture stays independent.
 - Player combat input immediately overrides AI for the selected character.
 - Holding the selected ally's joystick keeps player ownership active even at zero/dead-zone movement, suppressing that ally's automatic skill use.
 - When joystick input is released, full AI control resumes immediately on the next simulation step.
@@ -59,6 +60,8 @@ Prove that the core battle is readable, responsive, and enjoyable before investi
 ## Implementation status
 
 ### Bilateral portrait HUD correction (2026-09-30)
+- Player confirmed the 70x70 square portrait with a separate HP bar, selected scale, and KO dim on iPhone. This HUD slice is **PASS / PLAYER VERIFIED**.
+- Final graybox closure checkpoint in progress: runtime countdown 3→2→1 and mirrored one-front-two-back spawn integrated. Targeted 8/8 PASS; full regression, Pages deployment, and public smoke pending. Existing combat, HUD, and input contracts remain protected.
 - Player graybox feedback requested removal of the enemy team-total HP bar, a larger top-center 90-second timer, and mirrored individual enemy cards. The active feature branch now renders E1/E2/E3 as non-interactive orange placeholders with red individual HP bars and centered white HP text; living/KO state dims both teams' cards. Ally selection and selected-KO fallback use their existing logic.
 - Source `6e4f1e294c27f1165dd95a1885b3b4ff4d5d6d66`: local HUD tests 3/3, full regression 107/107, Vite build PASS; Actions #213 Test/Build/Pages Deploy success. Public browser smoke observed centered timer, symmetrical HP cards, ally selection, enemy-card no-op, per-actor HP updates, A2 KO dim/selection fallback, E3 KO dim, and Restart reset of all cards/HP/countdown. Skill cooldown and joystick pointer drag were observed; no blocking page-origin error. **ENGINEERING PASS / iPhone PLAYER SMOKE PENDING** for device layout, readability, and touch. No combat, stage, fixed camera, joystick, skill, targeting, or AI changes.
 - Player iPhone correction: the prior HUD layout had reduced all portrait squares to 58x58 and positioned the first row at y32, visibly too small and close to the top edge. Source `36b7822185608c227f07ffc9ab47fde601d526be` restores 68x68 squares and lowers the bilateral rows while keeping the third enemy card clear of the Special button. Layout/HUD targeted tests 4/4, local Vite build, Actions #214 Test/Build/Pages Deploy PASS; public browser shows six larger cards, top gap, E3/Special separation, and selectable A1 highlight. **ENGINEERING PASS / iPhone PLAYER SMOKE PENDING** for real-device appearance. No gameplay or input changes.
