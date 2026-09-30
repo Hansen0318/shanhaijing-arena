@@ -1,29 +1,20 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Current authorized slice: M1 return-layout stabilization + BACK + Pause/Resume/unfinished Exit.
-- Source checkpoint: current implementation commit; existing feature branch/PR retained.
-- Local targeted 21/21; full 144/144 with `npm test -- --test-isolation=none`; default npm test 23 test files PASS before the additional real-Phaser VFX test. Vite build PASS.
-- Implementation done; Pages deployment/public smoke and final review pending. Do not redo M1 skeleton.
-- Layout: one visualViewport sync for Campaign and Arena, route settlement + scroll reset + Phaser bounds refresh.
-- Pause freezes scene simulation/countdown/tweens/clock and blocks gameplay input; unfinished Exit never calls result/save.
-- Exact next action for this slice: verify Pages deployment and public Pause/Resume/Exit/repeated returns; then document release and stop for iPhone smoke.
-
-- Milestone: **M1 CAMPAIGN SKELETON ENGINEERING PASS**.
-- Acceptance: **iPhone CAMPAIGN PLAYER SMOKE PENDING**.
-- Player-confirmed M0: GREYBOX ENGINEERING PASS / iPhone FINAL PLAYER SMOKE PASS.
-- Active branch / PR: feat/m0-combat-core-20260927 / #1; retained as requested.
-- Tested/deployed source checkpoint: c850641618b9b54383f628131b384fb158f9d4c2.
-- Remote stable checkpoints: 5b7ea9a → b558d3a → daf9083 → b5c4ce9 → 5a7e482 → c850641.
-- Final documentation checkpoint: current HEAD (docs-only; source above unchanged).
-- Tests: Campaign 24/24, full regression/check 134/134 PASS; Vite build PASS; independent review clean.
-- Actions #223 / 36681489336 Test/Build/Pages Deploy PASS.
+- Milestone: **M1 feedback return/Pause/Exit ENGINEERING PASS / PLAYER SMOKE PENDING**.
+- Acceptance: iPhone Safari/Chrome landscape return alignment and touch still player-owned.
+- Active branch / PR: feat/m0-combat-core-20260927 / #1 retained. No merge or next milestone.
+- Tested/deployed source: **0d590cb936e109110dc79aa1b435144d4ef676fc**.
+- Final docs checkpoint: current HEAD, no source changes after deployed checkpoint.
+- Tests: targeted 21/21; full 144/144 (`npm test -- --test-isolation=none`); default npm test also passed before additional real-Phaser VFX regression. Vite build PASS. Independent review clean after two fixes.
+- Actions **36692992427**: Test, Build, Pages Deploy PASS.
 - Public URL: https://hansen0318.github.io/shanhaijing-arena/
-- Public browser PASS: fresh locks/grid/preview/start, full Victory/Exit/unlock, reload persistence, replay, Next preview, Back, fixture isolation, ally selection/enemy no-op/joystick pointer drag.
-- Automated-only and limitations: docs/M1_CAMPAIGN_RELEASE.md.
-- No executable changes to shared combat/input/projection/portrait geometry. No new core or formal art.
-- Exact next action: player completes targeted iPhone Campaign smoke. Do not implement next milestone or redo checkpoints.
-- Recovery: current remote HEAD + this file + docs/STATE.md; all seven checkpoints committed remotely.
+- Public browser PASS: fresh Chapter 1/1-1 → START; top-right Pause/Resume/Exit; paused timer 01:27, positions/HP and CD 5/9/14 frozen across identical screenshots; paused portrait/joystick/skill input no-op; Resume advanced timer to 01:24 and CD 2/6/11 with AI movement; unfinished Exit → same preview, 1-2 locked; paused-countdown Exit; three repeated Battle/Exit/Preview/BACK/Chapter cycles with identical boundaries and zero scroll; reload remained uncleared/locked. No page-origin error observed (extension metadata errors excluded).
+- Scope: shared visualViewport sync on both surfaces + route settlement/scroll reset/Phaser refresh; BACK only; scene-local pause and safe unfinished Exit. Core/input/projection/portrait/formation unchanged.
+- Full evidence, modified files and limitations: docs/M1_RETURN_PAUSE_FIX.md.
+- Original M1 skeleton release evidence remains valid: source c850641, 134/134, Actions 36681489336, docs/M1_CAMPAIGN_RELEASE.md. Do not rebuild its checkpoints.
+- Exact next action: player tests landscape repeated returns, Pause/Resume and Exit on iPhone. Then STOP; no formal art or next milestone without new direction.
+- Recovery: remote HEAD + this pointer + docs/STATE.md. Implementation and documentation are pushed.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

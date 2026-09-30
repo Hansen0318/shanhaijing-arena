@@ -128,5 +128,5 @@ Complete the playable Chapter → Stage Preview → Battle → Result → Unlock
 - Shared visual viewport/layout synchronization; protected 1120x540 logical stage and input architecture retained.
 - Pause stops countdown/simulation/AI/timer/cooldown/VFX and gameplay input. Resume retains round state, releasing stale joystick hold.
 - Unfinished Exit returns same chapter/stage preview without clearing/unlocking/saving; earlier progress is retained.
-- Local targeted 21/21, full 144/144, build PASS. Deployment and public smoke pending at implementation checkpoint.
+- Local targeted 21/21, full 144/144, build PASS. Source 0d590cb936e109110dc79aa1b435144d4ef676fc; Actions 36692992427 Test/Build/Pages Deploy PASS. Public Pause freeze/Resume/input no-op, unfinished and paused Exit, BACK and three repeated navigation cycles PASS. Full evidence: docs/M1_RETURN_PAUSE_FIX.md. **ENGINEERING PASS / PLAYER SMOKE PENDING**.
 - No next milestone or formal art. Real iPhone return-layout/touch acceptance remains PLAYER SMOKE PENDING.
