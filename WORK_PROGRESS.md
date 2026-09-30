@@ -9,7 +9,9 @@
 - Completed checkpoint code is preserved in this commit. Remote checkpoint SHA is the current branch commit containing this pointer; subsequent slices record predecessors.
 - Checkpoint 1 remote: `71a9c821bfd26ce09ca1f86a4a549d258d9f1cf4`.
 - Checkpoint 2 PASS: independent Team Select DOM renderer/styles; five cards, Type/Role, selected state, three slots, BACK/BATTLE callbacks and below-three disabled guard. Roster/UI targeted 6/6 PASS.
-- Next exact action: checkpoint 3 integrate Campaign START → Team Select → BACK/BATTLE navigation; then lineup, persistence and release.
+- Checkpoint 2 remote: `d9b5d0af5c6ad63ac13b7ef75f195752f3d57c98`.
+- Checkpoint 3 PASS: guarded START → Team Select / BACK → same preview / exact-three BATTLE routing; Retry frozen team copy, re-entry preload in memory; ownership/restrictions revalidated at launch. Existing Campaign/exit tests now traverse Team Select. Targeted 32/32 PASS.
+- Next exact action: checkpoint 4 consume selected definitions in battle factory/HUD; checkpoint 3 is navigation-only and must not be deployed as M2 complete.
 - Known limitations: not integrated into runtime yet; engineering milestone incomplete. No M3/art/economy/audio work.
 
 ## Historical M0 handoff

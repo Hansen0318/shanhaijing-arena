@@ -10,6 +10,7 @@ import { createOrientationGate } from './runtime/orientationGate.js';
 import { BattleInterruption } from './runtime/battleInterruption.js';
 import { createExitDialog } from './runtime/exitDialog.js';
 import './campaign/style.css';
+import './roster/style.css';
 
 const query=new URLSearchParams(window.location.search);
 const controller=new CampaignController({persistence:browserPersistence(),dev:query.get('campaignDev')==='unlock-all'});

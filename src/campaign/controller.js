@@ -1,10 +1,13 @@
 import { findChapter, findStage, orderedStages, nextStage } from './data.js';
 import { initialProgress, devProgress, stageStatus, chapterStatus, recordVictory } from './progression.js';
+import { prototypeOwnership } from '../roster/catalog.js';
+import { TeamSelection, isValidTeam } from '../roster/team.js';
 export class CampaignController {
- constructor({persistence=null,dev=false}={}) {
+ constructor({persistence=null,dev=false,ownership=prototypeOwnership()}={}) {
   this.persistence=dev ? null : persistence;
   this.progress=dev ? devProgress() : persistence?.load() ?? initialProgress();
   this.screen='chapters'; this.chapterId=null; this.selectedStageId=null; this.battleStageId=null; this.outcome=null;
+  this.ownership=ownership;this.lastTeam=[];this.teamSelection=null;this.battleTeam=null;
  }
  openChapter(id) {
   if(!['chapters','stages'].includes(this.screen) || chapterStatus(this.progress,id)==='locked') return false;
@@ -16,11 +19,21 @@ export class CampaignController {
   if(this.screen!=='stages' || stage?.chapterId!==this.chapterId || stageStatus(this.progress,id)==='locked') return false;
   this.selectedStageId=id; return true;
  }
- startBattle() {
-  if(this.screen!=='stages' || stageStatus(this.progress,this.selectedStageId)==='locked') return null;
+ openTeamSelect() {
+  if(this.screen!=='stages' || stageStatus(this.progress,this.selectedStageId)==='locked') return false;
   const stage=findStage(this.selectedStageId);
-  if(stage.chapterId!==this.chapterId) return null;
-  this.screen='battle'; this.battleStageId=stage.stageId; this.outcome=null; return stage;
+  if(stage?.chapterId!==this.chapterId) return false;
+  this.teamSelection=new TeamSelection({stage,ownership:this.ownership,saved:this.lastTeam});
+  this.screen='team';return true;
+ }
+ startBattle() {
+  const stage=findStage(this.selectedStageId);
+  if(this.screen!=='team' || !stage || stage.chapterId!==this.chapterId
+   || stageStatus(this.progress,stage.stageId)==='locked'
+   || !isValidTeam(this.teamSelection?.slots,stage,this.ownership))return null;
+  this.battleTeam=Object.freeze([...this.teamSelection.slots]);this.lastTeam=[...this.battleTeam];
+  this.screen='battle';this.battleStageId=stage.stageId;this.outcome=null;
+  return {...stage,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership};
  }
  finishBattle(id,outcome) {
   if(this.screen!=='battle' || id!==this.battleStageId || !['victory','defeat','draw'].includes(outcome)) return false;
@@ -30,7 +43,10 @@ export class CampaignController {
  }
  retryBattle() {
   if(this.screen!=='result') return null;
-  this.screen='stages';this.selectedStageId=this.battleStageId;return this.startBattle();
+  const stage=findStage(this.battleStageId);
+  if(!isValidTeam(this.battleTeam,stage,this.ownership))return null;
+  this.screen='battle';this.outcome=null;
+  return {...stage,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership};
  }
  exitBattle() {
   if(!['battle','result'].includes(this.screen)) return false;
@@ -45,6 +61,7 @@ export class CampaignController {
   this.chapterId=next.chapterId;this.selectedStageId=next.stageId;this.screen='stages';return true;
  }
  back() {
+  if(this.screen==='team') {this.screen='stages';return true;}
   if(this.screen!=='stages') return false;
   this.screen='chapters'; return true;
  }

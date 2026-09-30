@@ -1,5 +1,6 @@
 import { orderedChapters, findChapter, findStage, orderedStages } from './data.js';
 import { chapterStatus, stageStatus } from './progression.js';
+import { renderTeamSelect } from '../roster/view.js';
 const asset=path => `${import.meta.env.BASE_URL}${path}`;
 function card({image,label,status,selected=false,onClick}) {
  const button=document.createElement('button'); button.type='button'; button.className=`campaign-card ${status}${selected?' selected':''}`;
@@ -20,6 +21,13 @@ export class CampaignView {
  render() {
   this.root.replaceChildren(); this.root.hidden=false;
   const page=document.createElement('section'); page.className='campaign-page';
+  if(this.controller.screen==='team') {
+   renderTeamSelect(page,this.controller.teamSelection,{stageId:this.controller.selectedStageId,
+    onBack:()=>{if(this.controller.back())this.render();},onChange:()=>this.render(),
+    onBattle:()=>{const config=this.controller.startBattle();if(config)this.onStart?.(config);},
+   });
+   this.root.append(page);this.onRender?.();return;
+  }
   if(this.controller.screen==='stages') { this.renderStages(page); this.root.append(page); this.onRender?.(); return; }
   const heading=document.createElement('h1'); heading.textContent='CHAPTER SELECT';page.append(heading);
   const grid=document.createElement('div');grid.className='chapter-grid';
@@ -40,7 +48,7 @@ export class CampaignView {
   const title=document.createElement('p');title.textContent=stage.title;
   const start=document.createElement('button');start.type='button';start.className='campaign-button start';start.textContent='START';
   start.disabled=stageStatus(this.controller.progress,stage.stageId)==='locked';
-  start.onclick=()=>{const config=this.controller.startBattle();if(config) this.onStart?.(config);};
+  start.onclick=()=>{if(this.controller.openTeamSelect())this.render();};
   details.append(id,title,start);preview.append(image,details);page.append(preview);
   const cards=document.createElement('div');cards.className='stage-grid';cards.setAttribute('aria-label','Stages');
   for(const item of orderedStages(chapter)) cards.append(card({image:item.previewImage,label:item.stageId,status:stageStatus(this.controller.progress,item.stageId),selected:item.stageId===stage.stageId,onClick:()=>{if(this.controller.selectStage(item.stageId)) this.render();}}));

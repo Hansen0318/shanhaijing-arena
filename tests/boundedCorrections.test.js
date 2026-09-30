@@ -68,12 +68,12 @@ test('orientation and exit modal compose with manual Pause and do not catch up s
 });
 test('exit before CLEAR never writes/unlocks; replay exit retains existing CLEAR',()=>{
  let writes=0;const persistence={load:()=>undefined,save:()=>{writes++;}};
- const c=new CampaignController({persistence});c.openChapter('chapter-1');c.startBattle();
+ const c=new CampaignController({persistence});c.openChapter('chapter-1');launch(c);
  const s=scene(),b=new BattleInterruption();b.attach(s);b.openExit();
  assert.equal(c.exitBattle(),true);b.detach();
  assert.equal(c.screen,'stages');assert.deepEqual(c.progress.unlockedStages,['1-1']);assert.equal(writes,0);
- c.startBattle();c.finishBattle('1-1','victory');c.exitBattle();const prior=structuredClone(c.progress);
- c.startBattle();b.attach(scene());b.openExit();c.exitBattle();b.detach();
+ launch(c);c.finishBattle('1-1','victory');c.exitBattle();const prior=structuredClone(c.progress);
+ launch(c);b.attach(scene());b.openExit();c.exitBattle();b.detach();
  assert.deepEqual(c.progress,prior);assert.equal(writes,1);
 });
 test('Stage Preview has START only and exit confirmation has exact copy and actions',()=>{
@@ -96,3 +96,11 @@ test('X confirmation blocks until CONTINUE or EXIT and exposes correct dialog co
  assert.equal(keep.focused,true);keep.onclick();assert.equal(modal.visible,false);assert.equal(continued,1);
  modal.open();leave.onclick();assert.equal(modal.visible,false);assert.equal(exited,1);
 });
+
+function launch(c) {
+ if(c.screen==='stages') {
+  c.openTeamSelect();
+  if(!c.teamSelection.canBattle)for(const id of ['P1','P2','P3'])if(!c.teamSelection.slots.includes(id))c.teamSelection.toggle(id);
+ }
+ return c.startBattle();
+}

@@ -15,6 +15,7 @@ export const campaign = Array.from({length:6}, (_, index) => {
         enemyLineup:['enemy','enemy','enemy'],
         allySpawnFormation:formation('ally'), enemySpawnFormation:formation('enemy'),
         battleDuration:90, stageType:'prototype',
+        allowedRoster:null,forcedCharacters:[],bannedCharacters:[],
         finale:{isFinal:stageNumber === 5, bossId:null}, reward:{items:[]},
         unlockRequirement:stageNumber === 1 ? {chapterId} : {clearedStageId:`${n}-${stageNumber-1}`},
       };
