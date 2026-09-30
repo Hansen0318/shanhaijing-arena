@@ -11,7 +11,9 @@
 - Checkpoint 3: guarded controller + Chapter grid UI; targeted 13/13 PASS, not yet runtime connected.
 - Remote checkpoint 3: daf9083.
 - Checkpoint 4: Stage Select/large independent preview/START/BACK/lower cards implemented; controller tests cover selection/start guards. Visual runtime smoke waits for routing checkpoint.
-- Next exact step: checkpoint 5 stage-config battle routing.
+- Remote checkpoint 4: b5c4ce9.
+- Checkpoint 5: config → existing BattleSession routing and default Campaign mount; targeted 16/16 + Vite build PASS. Result navigation remains unfinished.
+- Next exact step: checkpoint 6 result/unlock integration.
 - M1 status: IN PROGRESS; no new Campaign PASS claimed.
 
 ## Historical M0 handoff

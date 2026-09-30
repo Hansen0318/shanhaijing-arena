@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
 import { createDemoBattleSession } from './demoBattle.js';
+import { createStageBattleSession } from '../campaign/battleFactory.js';
 import { nearestSurvivingAlly } from '../combat/targeting.js';
 import { allyHud, enemyHud, formatBattleTime } from './battleHud.js';
 import { portraitCardLayout } from './portraitCardLayout.js';
@@ -46,9 +47,14 @@ const SKILL_BUTTONS = Object.freeze({
 export class ArenaScene extends Phaser.Scene {
   constructor() { super('Arena'); }
 
+  init(data = {}) {
+    this.stageConfig = data.stageConfig ?? null;
+    this.campaignActions = data.campaignActions ?? null;
+  }
+
   create() {
     this.selectedKoFixture = new URLSearchParams(window.location.search).get('fixture') === 'ko';
-    this.session = createDemoBattleSession();
+    this.session = this.stageConfig ? createStageBattleSession(this.stageConfig) : createDemoBattleSession();
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
     this.selectedId = 'a2';
@@ -103,6 +109,8 @@ export class ArenaScene extends Phaser.Scene {
     this.selectAlly(this.selectedId, first);
 
     window.__arenaSmoke = {
+      stageId: this.session.stageId ?? null,
+      chapterId: this.session.chapterId ?? null,
       sceneReady: true,
       actorCount: this.actorViews.size,
       fixture: this.selectedKoFixture ? 'ko' : 'default',
