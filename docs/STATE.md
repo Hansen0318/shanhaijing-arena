@@ -122,3 +122,11 @@ Complete the playable Chapter → Stage Preview → Battle → Result → Unlock
 - Minimum HUD/VFX readability.
 - Natural combat presentation / AI movement readability.
 - Runtime/mobile and player smoke for later slices.
+
+## M1 player feedback follow-up — 2026-09-30
+- Authorized scope: stabilize all route returns; BACK only; top-right Pause/Resume and Exit.
+- Shared visual viewport/layout synchronization; protected 1120x540 logical stage and input architecture retained.
+- Pause stops countdown/simulation/AI/timer/cooldown/VFX and gameplay input. Resume retains round state, releasing stale joystick hold.
+- Unfinished Exit returns same chapter/stage preview without clearing/unlocking/saving; earlier progress is retained.
+- Local targeted 21/21, full 144/144, build PASS. Deployment and public smoke pending at implementation checkpoint.
+- No next milestone or formal art. Real iPhone return-layout/touch acceptance remains PLAYER SMOKE PENDING.

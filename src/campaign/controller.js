@@ -33,8 +33,10 @@ export class CampaignController {
   this.screen='stages';this.selectedStageId=this.battleStageId;return this.startBattle();
  }
  exitBattle() {
-  if(this.screen!=='result') return false;
-  this.chapterId=findStage(this.battleStageId).chapterId;this.selectedStageId=this.battleStageId;this.screen='stages';return true;
+  if(!['battle','result'].includes(this.screen)) return false;
+  // Cancellation deliberately bypasses finishBattle/recordVictory/storage.
+  this.chapterId=findStage(this.battleStageId).chapterId;this.selectedStageId=this.battleStageId;
+  this.screen='stages';this.outcome=null;return true;
  }
  nextPreview() {
   if(this.screen!=='result' || this.outcome!=='victory') return false;

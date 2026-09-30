@@ -50,6 +50,7 @@ export class ArenaScene extends Phaser.Scene {
   init(data = {}) {
     this.stageConfig = data.stageConfig ?? null;
     this.campaignActions = data.campaignActions ?? null;
+    this.onPlaybackChange = data.onPlaybackChange ?? (() => {});
   }
 
   create() {
@@ -62,6 +63,8 @@ export class ArenaScene extends Phaser.Scene {
     this.preBattleGate = new PreBattleGate();
     this.preBattleRemaining = this.preBattleGate.remaining;
     this.battleStarted = false;
+    this.paused = false;
+    this.time.paused = false;
     this.joystickPointerId = null;
     this.joystickVector = { x: 0, y: 0 };
 
@@ -107,6 +110,7 @@ export class ArenaScene extends Phaser.Scene {
     this.createResultView();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first);
+    this.onPlaybackChange(false, true);
 
     window.__arenaSmoke = {
       stageId: this.session.stageId ?? null,
@@ -150,6 +154,7 @@ export class ArenaScene extends Phaser.Scene {
   showResult(result) {
     if (result === 'running' || this.resultLayer.visible) return;
     this.releaseJoystick();
+    this.onPlaybackChange(false, false);
     this.campaignActions?.result(this.session.stageId,result);
     const next=this.resultButtons.get('NEXT STAGE');
     if(next) {
@@ -272,14 +277,14 @@ export class ArenaScene extends Phaser.Scene {
     );
 
     this.joystickBase.on('pointerdown', (pointer) => {
-      if (!this.battleStarted || !this.selectedId) return;
+      if (this.paused || !this.battleStarted || !this.selectedId || this.session.result() !== 'running') return;
       this.joystickPointerId = pointer.id;
       this.session.holdPlayerControl(this.selectedId);
       this.updateJoystickFromPointer(pointer);
     });
 
     this.input.on('pointermove', (pointer) => {
-      if (pointer.id !== this.joystickPointerId) return;
+      if (this.paused || pointer.id !== this.joystickPointerId) return;
       this.updateJoystickFromPointer(pointer);
     });
 
@@ -362,7 +367,7 @@ export class ArenaScene extends Phaser.Scene {
       const ring = this.add.graphics().setDepth(23);
 
       base.on('pointerdown', () => {
-        if (!this.battleStarted || !this.selectedId || this.session.result() !== 'running') return;
+        if (this.paused || !this.battleStarted || !this.selectedId || this.session.result() !== 'running') return;
         const used = this.session.usePlayerAbility(this.selectedId, category);
         if (used) {
           this.renderCastEvents();
@@ -392,7 +397,7 @@ export class ArenaScene extends Phaser.Scene {
       const slot = usableActor ? actor.abilityState[category] : null;
       const definition = slot ? this.session.abilityDefinitions[slot.definitionId] : null;
       const cooling = Boolean(slot && definition && slot.phase === 'cooldown' && slot.cooldownRemaining > 0);
-      const ready = Boolean(this.battleStarted && usableActor && slot && definition && slot.phase === 'ready');
+      const ready = Boolean(!this.paused && this.battleStarted && usableActor && slot && definition && slot.phase === 'ready');
 
       view.base.setFillStyle(view.config.color, ready ? 0.92 : 0.34);
       view.base.setStrokeStyle(3, ready ? 0xe9edf1 : 0x7d8389, ready ? 0.9 : 0.7);
@@ -484,6 +489,7 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   selectAlly(id, frame) {
+    if (this.paused) return false;
     const actor = frame.allies.find((ally) => ally.instanceId === id && ally.hp > 0);
     if (!actor) return false;
 
@@ -554,6 +560,7 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   update(_time, deltaMs) {
+    if (this.paused) return;
     const deltaSeconds = Math.min(deltaMs / 1000, 0.25);
     const wasStarted = this.battleStarted;
     this.updatePreBattleCountdown(deltaSeconds);
@@ -563,6 +570,7 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   advanceBattle(deltaSeconds) {
+    if (this.paused) return;
     this.accumulatorSeconds += deltaSeconds;
 
     while (this.accumulatorSeconds >= SIM_STEP_SECONDS && this.session.result() === 'running') {
@@ -579,5 +587,24 @@ export class ArenaScene extends Phaser.Scene {
 
     this.renderCastEvents();
     this.applyFrame(this.session.snapshot());
+  }
+
+  togglePause() {
+    if (this.session.result() !== 'running') return this.paused;
+    this.paused = !this.paused;
+    if (this.paused) {
+      this.releaseJoystick();
+      this.resumeTweenScale = this.tweens.getGlobalTimeScale();
+      this.tweens.setGlobalTimeScale(0);
+    } else {
+      // Rebase Phaser's wall clock while progress is still frozen. Simply
+      // resumeAll() would add the paused interval to the next VFX update.
+      this.tweens.tick();
+      this.tweens.setGlobalTimeScale(this.resumeTweenScale);
+    }
+    this.time.paused = this.paused;
+    this.refreshSkillButtons();
+    this.onPlaybackChange?.(this.paused, true);
+    return this.paused;
   }
 }

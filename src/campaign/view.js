@@ -16,21 +16,21 @@ function card({image,label,status,selected=false,onClick}) {
  button.append(picture,text); button.addEventListener('click',onClick); return button;
 }
 export class CampaignView {
- constructor(root,controller,{onStart}={}) {this.root=root;this.controller=controller;this.onStart=onStart;}
+ constructor(root,controller,{onStart,onRender}={}) {this.root=root;this.controller=controller;this.onStart=onStart;this.onRender=onRender;}
  render() {
   this.root.replaceChildren(); this.root.hidden=false;
   const page=document.createElement('section'); page.className='campaign-page';
-  if(this.controller.screen==='stages') { this.renderStages(page); this.root.append(page); return; }
+  if(this.controller.screen==='stages') { this.renderStages(page); this.root.append(page); this.onRender?.(); return; }
   const heading=document.createElement('h1'); heading.textContent='CHAPTER SELECT';page.append(heading);
   const grid=document.createElement('div');grid.className='chapter-grid';
   for(const chapter of orderedChapters()) grid.append(card({image:chapter.thumbnail,label:chapter.title,status:chapterStatus(this.controller.progress,chapter.chapterId),onClick:()=>{if(this.controller.openChapter(chapter.chapterId)) this.render();}}));
-  page.append(grid);this.root.append(page);
+  page.append(grid);this.root.append(page);this.onRender?.();
  }
  renderStages(page) {
   page.classList.add('stage-page');
   const chapter=findChapter(this.controller.chapterId), stage=findStage(this.controller.selectedStageId);
   const header=document.createElement('header'); header.className='stage-header';
-  const back=document.createElement('button');back.type='button';back.className='campaign-button back';back.textContent='← BACK / 返回';
+  const back=document.createElement('button');back.type='button';back.className='campaign-button back';back.textContent='BACK';
   back.onclick=()=>{if(this.controller.back()) this.render();};
   const heading=document.createElement('h1');heading.textContent=chapter.title;header.append(back,heading);page.append(header);
   const preview=document.createElement('div');preview.className='stage-preview';

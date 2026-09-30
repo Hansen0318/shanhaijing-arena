@@ -1,6 +1,14 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- Current authorized slice: M1 return-layout stabilization + BACK + Pause/Resume/unfinished Exit.
+- Source checkpoint: current implementation commit; existing feature branch/PR retained.
+- Local targeted 21/21; full 144/144 with `npm test -- --test-isolation=none`; default npm test 23 test files PASS before the additional real-Phaser VFX test. Vite build PASS.
+- Implementation done; Pages deployment/public smoke and final review pending. Do not redo M1 skeleton.
+- Layout: one visualViewport sync for Campaign and Arena, route settlement + scroll reset + Phaser bounds refresh.
+- Pause freezes scene simulation/countdown/tweens/clock and blocks gameplay input; unfinished Exit never calls result/save.
+- Exact next action for this slice: verify Pages deployment and public Pause/Resume/Exit/repeated returns; then document release and stop for iPhone smoke.
+
 - Milestone: **M1 CAMPAIGN SKELETON ENGINEERING PASS**.
 - Acceptance: **iPhone CAMPAIGN PLAYER SMOKE PENDING**.
 - Player-confirmed M0: GREYBOX ENGINEERING PASS / iPhone FINAL PLAYER SMOKE PASS.

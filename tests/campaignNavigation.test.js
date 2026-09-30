@@ -49,7 +49,25 @@ test('chapter finale NEXT opens Chapter 2 / 2-1 preview and completed chapter re
 test('result cannot be forged for wrong stage/invalid outcome or outside a battle',()=>{
  const c=new CampaignController();assert.equal(c.finishBattle('1-1','victory'),false);c.openChapter('chapter-1');c.startBattle();
  assert.equal(c.finishBattle('1-5','victory'),false);assert.equal(c.finishBattle('1-1','running'),false);
- assert.equal(c.exitBattle(),false);assert.equal(c.retryBattle(),null);assert.equal(c.nextPreview(),false);
+ assert.equal(c.retryBattle(),null);assert.equal(c.nextPreview(),false);
+});
+test('unfinished Exit returns the same preview without writing or unlocking; late result is ignored',()=>{
+ let writes=0;
+ const c=new CampaignController({persistence:{load:()=>undefined,save:()=>writes++}});
+ c.openChapter('chapter-1');c.startBattle();
+ const before=structuredClone(c.progress);
+ assert.equal(c.exitBattle(),true);
+ assert.equal(c.screen,'stages');assert.equal(c.selectedStageId,'1-1');assert.equal(c.chapterId,'chapter-1');
+ assert.deepEqual(c.progress,before);assert.equal(writes,0);
+ assert.equal(c.finishBattle('1-1','victory'),false);
+ assert.equal(c.exitBattle(),false);
+});
+test('Exit from replay preserves earlier CLEAR and unlocks across reload',()=>{
+ let saved;
+ const c=new CampaignController({persistence:{load:()=>saved,save:p=>{saved=structuredClone(p);}}});
+ c.openChapter('chapter-1');c.startBattle();c.finishBattle('1-1','victory');c.exitBattle();
+ c.startBattle();const before=structuredClone(c.progress);assert.equal(c.exitBattle(),true);
+ assert.deepEqual(c.progress,before);assert.deepEqual(saved,before);
 });
 test('Victory persistence is saved once and controller reload restores unlock',()=>{
  let saved=null, writes=0; const persistence={load:()=>saved??undefined,save:p=>{saved=structuredClone(p);writes++;return true;}};
