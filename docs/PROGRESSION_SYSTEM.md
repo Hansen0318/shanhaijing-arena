@@ -6,7 +6,7 @@
 Separate unlocked/cleared chapter/stage arrays derive from sequential victories. Defeat and Draw do not unlock. Cleared stages remain replayable. Versioned persistence is isolated from combat and replaceable; see CAMPAIGN_SYSTEM.md.
 
 ## M2 dependency — roster ownership foundation
-M2 now implements (deployment/player acceptance pending):
+M2 is player verified and implements:
 - data-driven roster / character catalog;
 - ownership state separate from immutable character definitions;
 - Team Select with exactly three characters;
@@ -27,6 +27,19 @@ Rules:
 - Reward tables are data-driven per stage.
 - Stage 5 may be a harder finale with higher-value or chapter-exclusive character shards.
 - Exact named characters, drop rates, and balance remain later content decisions.
+
+### M3 locked prototype engineering fixture
+For implementation smoke only, not formal content:
+- initial normal ownership: P1/P2/P3;
+- P4/P5 start locked;
+- 1-1 P4×2 first-clear;
+- 1-2 P4×2 first-clear;
+- 1-3 P4×1 first-clear -> reaches 5 and unlocks P4;
+- 1-4 P5×1 repeatable;
+- 1-5 P5×3 first-clear;
+- replay 1-4 once after the first pass -> P5 reaches 5 and unlocks.
+
+Unlock threshold remains 5 shards. Shard count persists after unlock for later M4 use. First-clear rewards must be idempotent; repeatable rewards grant once per completed Victory.
 
 ## M4 planned Tier progression
 The current player-approved planning direction is incremental shard requirements:
