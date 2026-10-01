@@ -1,9 +1,9 @@
 # M3 — Shard / Reward / Character Unlock Loop
 
 ## Status
-**ENGINEERING PASS / PLAYER SMOKE PENDING**
+**REWARD-MODEL EXTENSION AUTHORIZED / IMPLEMENTATION CORRECTION PENDING**
 
-M2 combat-feedback, movement pacing and impact-text corrections are player accepted. M3 implementation and deployment are complete; player acceptance remains.
+M2 combat-feedback, movement pacing and impact-text corrections are player accepted. The initial M3 implementation/deployment passed engineering checks, but the player subsequently expanded the canonical reward-table requirement before player acceptance. M3 must now support independently configured multi-character first-clear and repeatable shard rewards per stage before player smoke resumes.
 
 This milestone establishes the minimum persistent acquisition loop required before M4 Tier / Collection work.
 
@@ -84,9 +84,11 @@ On unlock:
 
 ## 3. Reward definition
 
-Stage reward metadata must be data-driven.
+Stage reward metadata must be fully data-driven and must support **multiple character shard rewards in the same stage**.
 
-Minimum shard reward shape:
+A stage may expose 1–3 or more configured shard items as content requires. Different characters may have different quantities and different repeat policies.
+
+Canonical shape:
 
 ```
 reward: {
@@ -94,26 +96,55 @@ reward: {
     {
       type: 'characterShard',
       characterId: 'P4',
+      quantity: 3,
+      repeat: 'firstClear'
+    },
+    {
+      type: 'characterShard',
+      characterId: 'P2',
       quantity: 2,
-      repeat: 'firstClear' | 'repeatable'
+      repeat: 'firstClear'
+    },
+    {
+      type: 'characterShard',
+      characterId: 'P2',
+      quantity: 1,
+      repeat: 'repeatable'
     }
   ]
 }
 ```
 
+The example means:
+- first clear grants P4 ×3 and P2 ×2;
+- later replay victories grant only P2 ×1;
+- P4 does not drop again unless a separate repeatable P4 item is configured.
+
 Rules:
 - reward metadata belongs to stage config;
 - no hard-coded `if stageId === ...` reward logic in controller/view;
-- one stage may support multiple reward items later even if prototype uses one;
-- quantity must be positive integer;
-- unknown character reward IDs must fail validation or be safely excluded according to chosen data-validation boundary;
-- reward presentation reads the same stage reward definition used by grant logic.
+- multiple reward items for different characters are first-class, not a future-only extension;
+- the same character may have separate first-clear and repeatable entries with different quantities;
+- first-clear and repeatable reward sets are independently configurable;
+- quantities may differ by character;
+- rewards may target locked characters or already-owned roster characters;
+- owned-character shards must accumulate and persist exactly like locked-character shards;
+- quantity must be a positive integer;
+- unknown character reward IDs must fail validation or be safely excluded according to the chosen data-validation boundary;
+- reward presentation must read the same stage reward definition used by grant logic;
+- M3 remains deterministic/fixed-quantity: no random drop chance is introduced by this rule.
 
 ## 4. Prototype Chapter 1 engineering fixture
 
 Placeholder only; not formal content/balance.
 
-Use Chapter 1 to exercise both first-clear and repeatable paths:
+The existing single-item Chapter 1 fixture may remain as a regression fixture, but the M3 architecture/tests must additionally exercise a multi-item stage where:
+- first clear grants at least two different character shard items with different quantities;
+- replay grants only a configured subset of those characters;
+- replay quantity may be lower than the first-clear quantity;
+- at least one reward can target an already-owned character.
+
+Use the existing Chapter 1 fixture to continue exercising the original unlock path:
 
 - 1-1: P4 shard ×2, firstClear
 - 1-2: P4 shard ×2, firstClear
@@ -153,6 +184,12 @@ For a cleared first-clear-only stage:
 For repeatable reward:
 - keep normal obtainable presentation on replay.
 
+For stages with multiple shard items:
+- show every configured character shard item that can be earned;
+- distinguish first-clear-only items from replayable items;
+- after first clear, first-clear-only rows become CLAIMED while repeatable rows remain obtainable;
+- do not collapse several character rewards into one ambiguous generic reward label.
+
 Do not introduce formal reward art.
 
 ## 6. Victory grant timing
@@ -171,7 +208,9 @@ Do not grant on:
 Granting must be idempotent for first-clear rewards.
 
 For repeatable rewards:
-- each completed replay Victory grants the configured quantity exactly once for that battle completion.
+- each completed replay Victory grants every configured repeatable item exactly once for that battle completion;
+- first-clear-only items and repeatable items in the same stage are evaluated independently;
+- replay may therefore grant only a subset of the characters rewarded on first clear.
 
 Campaign stage unlock and reward grant may happen in the same victory transaction/flow, but reward persistence remains logically separate from combat state.
 
@@ -180,8 +219,9 @@ Campaign stage unlock and reward grant may happen in the same victory transactio
 Victory Result should expose what was earned in that completed battle.
 
 Minimum:
-- `P4 Shard +2`
-- updated count, e.g. `2 / 5`
+- one row per actually granted shard item, e.g. `P4 Shard +3`, `P2 Shard +2`;
+- updated count for each granted character, e.g. `3 / 5`;
+- on replay, show only items actually granted in that replay transaction.
 
 If threshold is reached during that victory:
 - clearly show an unlock message, e.g. `P4 UNLOCKED`;
@@ -305,7 +345,14 @@ At minimum verify:
 17. stale team with locked character sanitizes safely;
 18. existing Campaign stage unlock rules remain Victory-only;
 19. exact-three Team Select / filters / battle mapping stay clean;
-20. targeted + impacted regression + build + Pages deploy pass.
+20. one stage can grant at least two different character shard items on first clear;
+21. those items can have different quantities;
+22. replay can grant only a configured subset of the first-clear characters;
+23. the same character can have a smaller repeatable quantity than its first-clear quantity;
+24. multi-item rewards can include an already-owned character and persist its shards;
+25. Stage Preview correctly distinguishes CLAIMED first-clear rows from still-obtainable repeatable rows on the same stage;
+26. Result renders all and only items granted in that completion;
+27. targeted + impacted regression + build + Pages deploy pass.
 
 ## 14. Player smoke
 
@@ -341,3 +388,25 @@ Stop after M3 player-ready deployment. Do not begin M4 automatically.
 6. With original pre-M3 save:verify existing CLEAR survives and firstClear is CLAIMED; stale locked P4/P5 team entries safely disappear. Do not expect retroactive shards.
 
 After player-ready M3 deployment STOP. Await player smoke; no M4 authorization implied.
+
+
+## 16. Player decision — flexible multi-character stage rewards (2026-10-01)
+
+This decision supersedes any assumption that a stage normally has only one shard reward.
+
+Content designers may define per stage:
+- multiple character shard rewards, commonly 2–3 characters;
+- different shard quantities per character;
+- separate first-clear and repeatable reward sets;
+- a first-clear-only character that does not drop on replay;
+- another character that continues to drop on replay;
+- lower replay quantities than first-clear quantities;
+- rewards for characters already owned in the roster.
+
+Example:
+- first clear: Character A ×3 + Character B ×2;
+- replay: Character B ×1 or ×2 only.
+
+Stage 5 / chapter finale is expected to be the hardest stage and may be configured with higher-value shards, shards for stronger characters, or shards for strong already-owned roster characters. This is a content/configuration rule, not a hard-coded `stageNumber === 5` reward algorithm.
+
+Exact characters and quantities remain stage-design data. M3 does not introduce random drop rates; fixed configured quantities remain authoritative until a later explicit decision.
