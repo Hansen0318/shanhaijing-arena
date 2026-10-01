@@ -1,6 +1,9 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- Safe preflight checkpoint: 5b32c8e47aae630a63f1ca132f4e86fe83616eec. Domain + acquisition persistence now complete: RED 13 + 9 expected missing behavior failures; GREEN targeted/impacted 37/37. Dedicated acquisition.v1 key, universal inventory, retained unlock shards, durable receipts, pre-M3 CLAIMED initialization, denied-storage in-memory fallback. No Campaign/team save rewrite.
+- Remaining: metadata/controller/UI integration, release checks/review/deploy. Next: RED Campaign reward integration tests.
+
 - M3 implementation IN PROGRESS; direct Work authorized. Recovery baseline b40a3fd58a1dee16c580ac2d4b10177cf60f509b, branch feat/m0-combat-core-20260927 / PR #1. Remote latest confirmed unchanged; Actions #275 / 36868292806 success.
 - Spec/docs recovery complete; execution plan docs/M3_IMPLEMENTATION_PLAN.md. No product code changed yet. Next: RED acquisition/persistence contracts then pure model; preserve M0/M1/M2; STOP before M4.
 
