@@ -7,6 +7,8 @@
 
 **M2 LAYOUT / FILTER / RESTART CORRECTION: PASS / PLAYER VERIFIED**
 
+**M2 CRITICAL / DAMAGE-NUMBER POLISH: AUTHORIZED / IMPLEMENTATION PENDING**
+
 ## Current state
 - Bounded correction completed on original `feat/m0-combat-core-20260927` / PR#1. No replacement branch, merge or M3.
 - Final deployed code `3e1063bb61455438a9cf5e707cbd05a1e2114410`; Actions #249 / 36818638073 CI204/204, Build/Pages Deploy success. Local targeted11/11, impacted130/130, build/diff PASS. Independent whole-diff review has no remaining findings.
@@ -19,6 +21,7 @@
 
 - Prototype pacing correction is deployed from `125341ff177a539c6fee584f1bf09d1a871e3355`: shared placeholder Heavy/Special/Awakening cooldowns are 3/5/10s. Previous deployment was blocked only by a stale `demoBattle` regression expecting 5/10/15; that test was updated. Actions #253 / 36856525782 completed Test 204/204, Build, and Pages Deploy successfully.
 - Player confirmed the public build now shows/uses the 3/5/10 prototype cooldown pacing. This closes the bounded cooldown follow-up.
+- Before M3, player authorized one final bounded combat-feedback slice in `docs/M2_CRITICAL_DAMAGE_POLISH.md`: data-driven per-ability critical hit chance/multiplier with deterministic resolution, and stronger category-aware/CRITICAL floating damage presentation. M3 remains blocked until this slice is accepted or explicitly deferred.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
