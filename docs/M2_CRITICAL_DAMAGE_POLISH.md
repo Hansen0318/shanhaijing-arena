@@ -149,7 +149,7 @@ Stop after this slice. Do not begin M3 automatically.
 Execution follows the authorized four checkpoints on the existing branch/PR; no new approval or alternate implementation.
 - [x] 1. `ability.js`: validate immutable optional crit fields (defaults false/0/1); `seededRandom.js`: uint32 seed → isolated reproducible [0,1) rolls. RED7/7 → GREEN21/21 with ability regression; diff PASS.
 - [x] 2. `combatResolver.js`: shared structured damage result with legacy numeric wrapper; `battleSession.js`: session-owned RNG + boolean event flag. Runtime prototype data enables crit; headless fixture remains no-crit. New critical tests11/11, combined core impacted88/88 PASS; checkpoint1 remote `9c696717deedeb733824934b2b129066af17d680`.
-- [ ] 3. `damageNumbers.js`: category emphasis, critical label/pop, owned tween/text cleanup using existing presentation clock. RED→GREEN presentation/lifecycle tests, commit + push.
+- [x] 3. `damageNumbers.js`: category emphasis, critical label/pop, owned tween/text cleanup using existing presentation clock. RED5 failures → GREEN26/26 presentation/lifecycle; checkpoint2 remote `ea7bf1db2e09fead0cfa2f3a547a602efa20b6b1`.
 - [ ] 4. Targeted + impacted regression, `npm run check`, build/diff review, fresh whole-diff reviewer, Pages deploy + minimum changed-surface public smoke, final recovery docs.
 
 Interface review: task1 definition fields + RNG feed task2; task2 `{amount,critical}` damage events feed task3; all use one shared resolver. No conflicting interfaces.

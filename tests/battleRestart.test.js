@@ -42,10 +42,11 @@ function arena(){const source=readFileSync(new URL('../src/runtime/ArenaScene.js
 test('Restart runs fresh Arena create: all HP/CD/targets/AI/timer/countdown/formation/transients reset and damage cleans up',()=>{
  const e=launch(),s=arena(),b=new BattleInterruption();s.init({stageConfig:e.config,onSceneReady:scene=>b.attach(scene)});s.create();const old=s.session,oldNumbers=s.damageNumbers,first=old.snapshot();
  old.allies[0].damage(50);old.allies[1].damage(999);old.allies[0].abilityState.special.cooldownRemaining=8;old.allies[0].abilityState.special.phase='cooldown';old.allies[0].targetId='e1';old.targetIds.set('a1','e1');old.aiPreparation.set('a1',{category:'special',targetId:'e1'});old.playerMovement.set('a1',{x:1,y:0});old.castEvents.push({});old.damageEvents.push({});old.elapsedSeconds=23;s.selectedId='a3';s.preBattleGate.advance(3,()=>{},()=>{});s.battleStarted=true;
- oldNumbers.render([{targetId:'e1',amount:10,position:{x:2,y:0}}]);const text=[...oldNumbers.active.keys()][0];assert.equal(text.destroyed,false);
+ const firstRoll=old.random();old.random();old.random();
+ oldNumbers.render([{targetId:'e1',amount:10,category:'basic',critical:false,position:{x:2,y:0}},{targetId:'e2',amount:20,category:'heavy',critical:true,position:{x:3,y:0}}]);const texts=[...oldNumbers.active.keys()],text=texts[0];assert.equal(texts.length,3);assert.equal(text.destroyed,false);assert.equal(oldNumbers.pops.size,1);
  b.toggleManual();b.openExit();assert.equal(s.paused,true);
  b.detach();s.events.emit('shutdown');s.init({stageConfig:e.c.restartBattle(),onSceneReady:scene=>b.attach(scene)});s.create();
- assert.notEqual(s.session,old);assert.notEqual(s.damageNumbers,oldNumbers);assert.equal(text.destroyed,true);assert.equal(oldNumbers.active.size,0);assert.equal(oldNumbers.offsets.size,0);
+ assert.notEqual(s.session,old);assert.equal(s.session.random(),firstRoll);assert.notEqual(s.damageNumbers,oldNumbers);assert.ok(texts.every(t=>t.destroyed));assert.equal(oldNumbers.active.size,0);assert.equal(oldNumbers.pops.size,0);assert.equal(oldNumbers.offsets.size,0);
  assert.deepEqual(s.session.snapshot(),first);assert.equal(s.selectedId,'a2');assert.equal(s.preBattleGate.remaining,3);assert.equal(s.preBattleGate.display(),'3');assert.equal(s.battleStarted,false);assert.equal(s.paused,false);assert.equal(s.time.paused,false);
  assert.equal(s.session.aiPreparation.size,6);for(const value of s.session.aiPreparation.values())assert.deepEqual(value,{});
  for(const actor of s.session.actors){assert.equal(actor.targetId,null);for(const slot of Object.values(actor.abilityState)){assert.equal(slot.cooldownRemaining,0);assert.equal(slot.phase,'ready');assert.equal(slot.targetId,null);}}

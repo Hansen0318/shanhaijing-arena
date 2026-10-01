@@ -54,15 +54,17 @@ test('Resume preserves an active VFX tween across a 400ms pause and advances onl
   }
 });
 
-test('floating damage tween freezes with Pause/orientation clock and cleans up',async()=>{
+test('normal and critical number/label/pop freeze with Pause/orientation clock and clean up',async()=>{
  const {DamageNumbers}=await import('../src/runtime/damageNumbers.js');
  let now=1000;const originalNow=Date.now;Date.now=()=>now;
  try {
   const scene=new ArenaScene();scene.session={result:()=> 'running'};scene.paused=false;scene.time={paused:false};scene.releaseJoystick=()=>{};scene.refreshSkillButtons=()=>{};
-  scene.tweens=new TweenManager({sys:{events:new EventEmitter()}});scene.tweens.start();let label;
-  scene.add={text(x,y,text){label={x,y,alpha:1,text,destroyed:false,setOrigin(){return this;},setDepth(){return this;},destroy(){this.destroyed=true;}};return label;}};
-  const numbers=new DamageNumbers(scene,p=>p);numbers.render([{targetId:'e1',amount:10,position:{x:100,y:100}}]);
-  for(let i=0;i<3;i++){now+=16;scene.tweens.update();}const frozen={y:label.y,alpha:label.alpha};scene.togglePause();now+=1200;scene.tweens.update();assert.deepEqual({y:label.y,alpha:label.alpha},frozen);assert.equal(label.destroyed,false);
-  scene.togglePause();now+=16;scene.tweens.update();assert.ok(label.y<frozen.y);assert.equal(label.destroyed,false);numbers.destroy();assert.equal(label.destroyed,true);assert.equal(numbers.active.size,0);
+  scene.tweens=new TweenManager({sys:{events:new EventEmitter()}});scene.tweens.start();const texts=[];
+  scene.add={text(x,y,text){const label={x,y,alpha:1,scaleX:1,scaleY:1,text,destroyed:false,setOrigin(){return this;},setDepth(){return this;},destroy(){this.destroyed=true;}};texts.push(label);return label;}};
+  const numbers=new DamageNumbers(scene,p=>p);numbers.render([{targetId:'e1',amount:10,category:'basic',critical:false,position:{x:100,y:100}},{targetId:'e2',amount:25,category:'heavy',critical:true,position:{x:150,y:100}}]);
+  assert.equal(texts.length,3);
+  const states=()=>texts.map(t=>({y:t.y,alpha:t.alpha,scaleX:t.scaleX,scaleY:t.scaleY}));
+  for(let i=0;i<3;i++){now+=16;scene.tweens.update();}const frozen=states();scene.togglePause();now+=1200;scene.tweens.update();assert.deepEqual(states(),frozen);assert.ok(texts.every(t=>!t.destroyed));
+  scene.togglePause();now+=16;scene.tweens.update();assert.ok(texts.every((t,i)=>t.y<frozen[i].y));assert.ok(texts.every(t=>!t.destroyed));numbers.destroy();assert.ok(texts.every(t=>t.destroyed));assert.equal(numbers.active.size,0);assert.equal(numbers.pops.size,0);
  }finally{Date.now=originalNow;}
 });
