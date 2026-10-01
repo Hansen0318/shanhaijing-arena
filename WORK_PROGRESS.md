@@ -408,3 +408,9 @@ Awakening progression/unlock is not implemented in M0 yet; future progression ma
 - Real resolved-damage events and 1s outlined floating numbers integrated; air/invalid/KO hits excluded, rapid hits offset, same tween pause clock, shutdown cleanup.
 - Damage + Pause/tween targeted tests 13/13 PASS; earlier BattleSession impacted tests PASS.
 - Remaining: VS/type and integration/deploy. Exact next action: shared encounter definition lookup and VS view.
+
+## Polish VS/type checkpoint (2026-10-01)
+- Damage checkpoint remote: `30c6419e61c6de8594515af418b611fa49f8e54c`.
+- VS ally/enemy placeholders; preview and battle share immutable encounter definition lookup. Power/Speed/Blast replaceable marks derive from definition type. Battle HUD geometry unchanged.
+- Roster/team/VS impacted tests 26/26 PASS.
+- Remaining: whole-diff review, targeted/impacted checks, build/deploy and minimum public runtime smoke. Exact next action: inspect integrated diff and verify impacted surfaces.
