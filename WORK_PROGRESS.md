@@ -17,6 +17,7 @@
 - Exact next step: deploy/verify only the bounded prototype cooldown pacing change, then player can quickly observe more skill cycles. Do not start M3 automatically.
 
 - Prototype cooldown deployment correction: source had already changed Heavy/Special/Awakening to 3/5/10, but Actions #252 failed 203/204 because `tests/demoBattle.test.js` still asserted 5/10/15, so Build/Pages Deploy were skipped and the public site stayed on the prior 5/10/15 bundle. Stale regression expectations were corrected in `125341ff177a539c6fee584f1bf09d1a871e3355`. Actions #253 / 36856525782: Test 204/204 PASS, Build PASS, Pages Deploy PASS. This is now the deployed prototype cooldown source.
+- Player confirmed the deployed 3/5/10 prototype cooldowns are visible/working on the public build. Preserve these only as test pacing values, not formal balance.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**
