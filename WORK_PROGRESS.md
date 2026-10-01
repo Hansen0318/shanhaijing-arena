@@ -14,7 +14,9 @@
 - Player acceptance: real-device smoke reported OK for the layout/filter/Restart correction. Preserve this verified UI/flow baseline unless a later change can materially affect it.
 - Prototype combat pacing follow-up authorized: shared placeholder Heavy/Special/Awakening cooldowns are reduced from 5/10/15s to 3/5/10s for faster testing only. This is not a formal balance decision; future characters keep per-ability cooldown definitions.
 - Existing Phaser bundle advisory unchanged; 5 prototypes contain fewer than3 of each Type, so same-type3 remains covered by future-catalog fixtures without expanding the prototype catalog.
-- Exact next step: deploy/verify only the bounded prototype cooldown pacing change, then player can quickly observe more skill cycles. Do not start M3 automatically.
+- Prototype 3/5/10 cooldown pacing is deployed and player verified.
+- **Authorized next bounded slice before M3:** `docs/M2_CRITICAL_DAMAGE_POLISH.md` — per-ability deterministic critical-hit data/resolution plus stronger normal/critical floating damage presentation. No M3 yet.
+- Exact next step: Work implements only the critical/damage-number polish spec with deterministic tests, impacted regression, build/deploy, then player performs the short feedback smoke.
 
 - Prototype cooldown deployment correction: source had already changed Heavy/Special/Awakening to 3/5/10, but Actions #252 failed 203/204 because `tests/demoBattle.test.js` still asserted 5/10/15, so Build/Pages Deploy were skipped and the public site stayed on the prior 5/10/15 bundle. Stale regression expectations were corrected in `125341ff177a539c6fee584f1bf09d1a871e3355`. Actions #253 / 36856525782: Test 204/204 PASS, Build PASS, Pages Deploy PASS. This is now the deployed prototype cooldown source.
 - Player confirmed the deployed 3/5/10 prototype cooldowns are visible/working on the public build. Preserve these only as test pacing values, not formal balance.
