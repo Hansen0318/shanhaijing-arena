@@ -1,11 +1,11 @@
-// Presentation only. All drift/fade/pop tweens use the existing scene pause clock.
+// Presentation only. Flash/pop then fade in place on the existing scene pause clock.
 const CATEGORY_STYLES = Object.freeze({
-  basic: { size:24, duration:900 },
-  heavy: { size:28, duration:1000 },
-  special: { size:32, duration:1050 },
-  awakening: { size:36, duration:1100 },
+  basic: { size:32, duration:720 },
+  heavy: { size:36, duration:760 },
+  special: { size:40, duration:800 },
+  awakening: { size:44, duration:840 },
 });
-const FALLBACK_STYLE = { size:28, duration:1000 };
+const FALLBACK_STYLE = { size:36, duration:760 };
 
 export class DamageNumbers {
   constructor(scene, project) {
@@ -16,13 +16,13 @@ export class DamageNumbers {
     this.offsets = new Map();
   }
 
-  floatText(x, y, value, size, duration, critical, pop = false) {
+  floatText(x, y, value, size, duration, critical) {
     const text = this.scene.add.text(x, y, value, {
       fontFamily:'sans-serif', fontSize:`${size}px`, fontStyle:'bold',
       color:critical ? '#ffd16a' : '#fff6cd',
       stroke:critical ? '#3a1808' : '#18212b', strokeThickness:critical ? 7 : 5,
     }).setOrigin(.5).setDepth(25);
-    const tween = this.scene.tweens.add({ targets:text, y:y-32, alpha:0, duration,
+    const tween = this.scene.tweens.add({ targets:text, alpha:0, delay:120, duration,
       onComplete:() => {
         this.pops.get(text)?.remove();
         this.pops.delete(text);
@@ -31,10 +31,11 @@ export class DamageNumbers {
       },
     });
     this.active.set(text, tween);
-    if (pop) {
+    {
       text.scaleX = text.scaleY = 1;
       this.pops.set(text, this.scene.tweens.add({ targets:text,
-        scaleX:1.16, scaleY:1.16, duration:100, yoyo:true, ease:'Quad.Out',
+        scaleX:critical ? 1.16 : 1.08, scaleY:critical ? 1.16 : 1.08,
+        duration:80, yoyo:true, ease:'Quad.Out',
         onComplete:() => this.pops.delete(text),
       }));
     }
@@ -53,8 +54,12 @@ export class DamageNumbers {
         ? CATEGORY_STYLES[event.category] : FALLBACK_STYLE;
       const critical = event.critical === true;
       const size = critical ? Math.round(style.size*1.25) : style.size;
-      this.floatText(x, y, String(Math.round(event.amount)), size, style.duration, critical, critical);
-      if (critical) this.floatText(x, y-size*.7-12, 'CRIT!', 16, style.duration, true);
+      const duration = style.duration + (critical ? 80 : 0);
+      this.floatText(x, y, String(Math.round(event.amount)), size, duration, critical);
+      if (critical) {
+        const labelSize = size + 6;
+        this.floatText(x, y-(size+labelSize)/2-6, 'CRITICAL!', labelSize, duration, true);
+      }
     }
   }
 

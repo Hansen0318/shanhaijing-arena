@@ -1,6 +1,9 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- Current bounded correction: **M2 impact-text / prototype movement pacing — LOCAL VERIFIED, DEPLOY PENDING**. Recovery remote `7428d34661df2b453b83d9f777519e830380b682`, PR#1 original branch, Actions#263 success. No crit/RNG/resolver reimplementation.
+- Implemented: normal32/36/40/44px; critical1.25× and CRITICAL! another6px larger; all text80ms yoyo pop,120ms hold then in-place fade (840–1040ms total), no x/y tween. P1–P5 moveSpeed1.8, actual runtime enemy1.6; headless4/3.5 untouched.
+- Tests RED6 expected failures → targeted17/17, impacted98/98 PASS. One stale Restart assertion expected only1 pop; now3 (normal + critical number + label), corrected without lifecycle change. Remaining build/diff/Pages; exact next: build then push verified source/deploy and record release. No M3.
 - Milestone: **M2 CRITICAL / DAMAGE-NUMBER POLISH — ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**. M0/M1/M2/layout/filter/Restart/3-5-10 pacing remain PLAYER VERIFIED.
 - Branch `feat/m0-combat-core-20260927`, PR#1 open; no alternate branch/main merge. Canonical `docs/M2_CRITICAL_DAMAGE_POLISH.md`. Final deployed source `80054aea902a3bc48a726509ca3f70aa9897b397`.
 - Checkpoints:1 `9c696717deedeb733824934b2b129066af17d680`;2 `ea7bf1db2e09fead0cfa2f3a547a602efa20b6b1`;3 `238cd00bb459f95cf84415aba8be5318e28a79dc`;4/finalsource above. Closure following this source is docs/evidence only [skip ci].

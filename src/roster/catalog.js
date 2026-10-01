@@ -11,7 +11,7 @@ const prototypes = [
 export const rosterCatalog = Object.freeze(Object.fromEntries(prototypes.map(([id,type,role,maxHp,color])=>[
  id,Object.freeze({
   ...createCharacterDefinition({id,name:id,type,role,
-   stats:{maxHp,atk:16,def:6,moveSpeed:1.4,attackSpeed:1},
+   stats:{maxHp,atk:16,def:6,moveSpeed:1.8,attackSpeed:1},
    abilities:{basic:'basic',heavy:'heavy',special:'special',awakening:'awakening',passives:[]},
   }),
   portrait:Object.freeze({label:id,color}),
@@ -19,4 +19,3 @@ export const rosterCatalog = Object.freeze(Object.fromEntries(prototypes.map(([i
  }),
 ])));
 export const prototypeOwnership = () => ({characterIds:Object.keys(rosterCatalog)});
-

@@ -65,6 +65,6 @@ test('normal and critical number/label/pop freeze with Pause/orientation clock a
   assert.equal(texts.length,3);
   const states=()=>texts.map(t=>({y:t.y,alpha:t.alpha,scaleX:t.scaleX,scaleY:t.scaleY}));
   for(let i=0;i<3;i++){now+=16;scene.tweens.update();}const frozen=states();scene.togglePause();now+=1200;scene.tweens.update();assert.deepEqual(states(),frozen);assert.ok(texts.every(t=>!t.destroyed));
-  scene.togglePause();now+=16;scene.tweens.update();assert.ok(texts.every((t,i)=>t.y<frozen[i].y));assert.ok(texts.every(t=>!t.destroyed));numbers.destroy();assert.ok(texts.every(t=>t.destroyed));assert.equal(numbers.active.size,0);assert.equal(numbers.pops.size,0);
+  scene.togglePause();for(let i=0;i<12;i++){now+=16;scene.tweens.update();}assert.ok(texts.every((t,i)=>t.y===frozen[i].y));assert.ok(texts.every((t,i)=>t.alpha<frozen[i].alpha));assert.ok(texts.every(t=>!t.destroyed));numbers.destroy();assert.ok(texts.every(t=>t.destroyed));assert.equal(numbers.active.size,0);assert.equal(numbers.pops.size,0);
  }finally{Date.now=originalNow;}
 });

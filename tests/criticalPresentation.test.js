@@ -6,9 +6,12 @@ const event=(category='basic',critical=false)=>({targetId:'e2',amount:17.08,posi
 test('normal category emphasis grows Basic Heavy Special Awakening with short lifetime',()=>{
  const f=surface(),v=new DamageNumbers(f.scene,p=>p);v.render(['basic','heavy','special','awakening'].map(k=>event(k)));
  const sizes=f.texts.map(t=>parseInt(t.style.fontSize));assert.ok(sizes.every((n,i)=>i===0||n>sizes[i-1]));
+ assert.deepEqual(sizes,[32,36,40,44]);
  assert.deepEqual(f.texts.map(t=>t.text),['17','17','17','17']);
- assert.ok(f.tweens.every(t=>t.duration>=900&&t.duration<=1200));assert.ok(f.tweens[0].duration<f.tweens[3].duration);
- assert.ok(f.tweens.every(t=>t.alpha===0&&t.y<t.targets.y));
+ const fades=f.tweens.filter(t=>t.alpha===0);
+ assert.ok(fades.every(t=>t.duration+t.delay>=800&&t.duration+t.delay<=1100));
+ assert.ok(f.tweens.every(t=>!Object.hasOwn(t,'x')&&!Object.hasOwn(t,'y')));
+ assert.ok(f.texts.every(text=>f.tweens.some(t=>t.targets===text&&t.scaleX>1&&t.yoyo)));
 });
 test('critical has larger warm outlined number, CRIT label, and brief scale pop',()=>{
  for(const category of ['basic','heavy','special','awakening']){
@@ -16,7 +19,10 @@ test('critical has larger warm outlined number, CRIT label, and brief scale pop'
   assert.equal(f.texts.length,3);const [normal,crit,label]=f.texts;
   assert.equal(crit.text,normal.text);assert.ok(parseInt(crit.style.fontSize)>parseInt(normal.style.fontSize));
   assert.notEqual(crit.style.color,normal.style.color);assert.ok(crit.style.strokeThickness>normal.style.strokeThickness);
-  assert.equal(label.text,'CRIT!');assert.ok(label.y<crit.y);
+  assert.equal(label.text,'CRITICAL!');assert.ok(label.y<crit.y);
+  assert.ok(parseInt(label.style.fontSize)>parseInt(crit.style.fontSize));
+  assert.ok(f.tweens.every(t=>!Object.hasOwn(t,'x')&&!Object.hasOwn(t,'y')));
+  assert.ok(f.tweens.filter(t=>t.alpha===0).every(t=>t.duration+t.delay<=1100));
   assert.ok(f.tweens.some(t=>t.targets===crit&&t.scaleX>1&&t.scaleY>1&&t.yoyo===true&&t.duration<=150));
  }
 });

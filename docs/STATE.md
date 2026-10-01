@@ -1,6 +1,8 @@
 # Project State
 
 ## Milestone
+**M2 PLAYER PRESENTATION / PACING CORRECTION: LOCAL VERIFIED / DEPLOY PENDING**
+Normal damage enlarged, CRITICAL! larger than crit number, no text translation, flash/pop + in-place fade; P1–P5 moveSpeed1.8/runtime enemy1.6. Targeted17/17, impacted98/98 PASS; build/deploy pending. All existing crit/RNG/formula/cooldown/headless rules preserved. No M3.
 **M0 / M1 / M2 PASS / PLAYER VERIFIED**
 
 **M2 POST-ACCEPTANCE POLISH: ENGINEERING PASS / PLAYER SMOKE PENDING**

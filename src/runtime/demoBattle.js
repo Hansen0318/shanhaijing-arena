@@ -63,7 +63,7 @@ export const demoCharacterDefinitions = {
 // Finite graybox encounter; the canonical headless fixture below is unchanged.
 export const runtimeCharacterDefinitions = {
   ally: character('ally', 'power', { maxHp: 260, atk: 16, def: 6, moveSpeed: 1.4, attackSpeed: 1.0 }),
-  enemy: character('enemy', 'speed', { maxHp: 240, atk: 13, def: 5, moveSpeed: 1.2, attackSpeed: 0.9 }),
+  enemy: character('enemy', 'speed', { maxHp: 240, atk: 13, def: 5, moveSpeed: 1.6, attackSpeed: 0.9 }),
 };
 
 function createTeams(definitions, frontOffset = 0) {

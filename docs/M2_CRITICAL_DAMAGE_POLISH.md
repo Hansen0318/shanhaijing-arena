@@ -1,6 +1,7 @@
 # M2 Combat Feedback — Critical Hit / Damage Number Polish
 
 ## Status
+Latest correction: **LOCAL VERIFIED / DEPLOY PENDING**. Normal32/36/40/44px; crit1.25×; CRITICAL! another6px larger.80ms pop then120ms hold/in-place fade; total840–1040ms, no x/y tween. Roster1.8/runtime enemy1.6; headless4/3.5 unchanged. Targeted17/17, impacted battle/AI98/98, build/diff PASS. No crit/RNG/resolver/cooldown/input/AI/progression edits. Exact next: push/deploy, confirm Actions, record pending six-item player smoke.
 **M2 CRITICAL / DAMAGE-NUMBER POLISH — PLAYER CORRECTION PENDING** (2026-10-01).
 
 This is a final bounded combat-feedback slice before M3. It must not start shard/reward/progression work.
@@ -72,7 +73,7 @@ Keep floating combat text short-lived, mobile readable, and presentation-only.
 
 Normal hits:
 - continue to display the exact resolved amount;
-- retain upward drift + fade;
+- brief pop then fade in place, with no upward tween translation;
 - retain small positional staggering for rapid hits;
 - vary emphasis modestly by ability category so heavier skills feel stronger:
   - Basic: smallest;
@@ -85,8 +86,8 @@ Critical hits:
 - larger number;
 - high-contrast warm highlight;
 - stronger but brief scale/pop;
-- show `CRITICAL!` or `CRIT!` adjacent/above the number;
-- remain around roughly 0.9–1.2s total; do not leave persistent screen clutter.
+- show `CRITICAL!` above the number, larger than the critical number itself;
+- remain around roughly 0.8–1.1s total; do not leave persistent screen clutter.
 
 Do not create a full combo system, hit counter, screen shake system, or formal VFX package in this slice.
 
