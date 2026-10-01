@@ -1,17 +1,14 @@
 # Project State
 
 ## Milestone
-**M3 — MULTI-CHARACTER REWARD MODEL CORRECTION: AUTHORIZED / IMPLEMENTATION PENDING**
+**M3 MULTI-CHARACTER REWARD MODEL CORRECTION — RELEASE CHECKS IN PROGRESS**
 
 ## Current state
-- Active work line `feat/m0-combat-core-20260927` / PR #1 open; no main merge. Safe implementation/deployed SHA `dd3a4d1a5472c720a6f75c55f7980ada7cfacde3`; newer HEAD is documentation-only closure. Recovery: WORK_PROGRESS.md CURRENT HANDOFF POINTER.
-- M0/M1/M2 remain PLAYER VERIFIED. Latest accepted normal impact sizes40/45/50/55px; critical1.12×; CRITICAL! critical+12px; fixed pop/fade, no upward drift. H/S/A3/5/10; P1–P5speed1.8/runtime enemy1.6. Combat, RNG, AI, input, fixed camera, roster layout, Pause/orientation/countdown and protected presentation remain unchanged; only Result acquisition presentation/callback integration added.
-- M3 complete: ALL catalog characters retain shards, normal ownershipP1/P2/P3, P4/P5 unlock at5 with no consumption/reset; data-driven reward items; valid-Victory-only idempotent firstClear/repeatable transactions; dedicated versioned acquisition save; safe migration/normalization/in-memory denied-storage behavior; authoritative Preview/Result and current Team Select ownership with original slots/filter/exact-three rules.
-- Canonical Chapter1 engineering fixture:1-1P4×2firstClear,1-2P4×2firstClear,1-3P4×1firstClear,1-4P5×1repeatable,1-5P5×3firstClear. Other chapters no-shard placeholders; not formal balance.
-- Final verification: impacted106/106; reviewer36/36; final presentation5/5; local full267/267; CI267/267; Vite build/whole-diff PASS. Layout review finding fixed RED→GREEN. No outstanding engineering failure. [Actions#279](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36873107391) Test/Build/Pages success. Public `index-DXT92jQP.js` equals local/CI; Preview CLAIMED/FIRST CLEAR and normal roster/stale team sanitation observed. No page-origin errors observed. Evidence: docs/verification/M3_ENGINEERING.md.
-- Migration ruling: preserve pre-M3 CLEAR and team keys; already-cleared firstClear rewards initialize CLAIMED, no retroactive shards. This prevents earning those missed P4 rewards on the original save. Use a separate fresh/private browser save for full P4 unlock fixture smoke; never auto-wipe original data. Denied writes work in memory only and cannot survive reload; prototype receipt history grows. Existing Phaser bundle advisory unchanged.
-- New player decision before acceptance: a stage may grant 2–3 character shard types with different quantities; first clear and replay reward sets may differ; replay may grant only a subset and at lower fixed quantities; owned-character shards are valid rewards; Stage 5 may be configured for stronger/high-value shards. This is data-driven, not hard-coded by stage number.
-- Exact next action: implement this bounded M3 reward-model extension against the existing safe M3 baseline, verify/deploy, then resume M3 player smoke. STOP before M4; do not claim PLAYER VERIFIED until actual acceptance.
+- Active branch `feat/m0-combat-core-20260927` / PR #1 open; no main merge. Recovery base `c9cc6253a28a9448193d553e9342ba190206273d`. Current handoff: WORK_PROGRESS.md.
+- User confirmed previous M3 PLAYER VERIFIED. Preserve universal shard inventory, persistence/migration, ownership at5 with retained shards, completion UUID/idempotency, Team Select, Campaign and accepted M0/M1/M2 baseline (40/45/50/55px impact sizes, H/S/A3/5/10, roster speed1.8/enemy1.6).
+- Correction implemented: firstClear and repeatable are independent alternative sets. First victory chooses firstClear if valid items exist; repeatable-only stages grant from their initial victory. Replays choose repeatable only. No random drops or stage-number logic.
+- Preview and Result use existing multi-row/authoritative-grant presentation without layout edits. Chapter 1 single-item fixture unchanged; synthetic multi-character fixture covers owned P2 shards, replay subset and different quantities.
+- RED12/15 then targeted33/33 GREEN. Remaining impacted checks/review/build/Actions/Pages/source verification. No correction PLAYER VERIFIED claim; STOP before M4.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

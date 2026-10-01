@@ -1,9 +1,9 @@
 # M3 — Shard / Reward / Character Unlock Loop
 
 ## Status
-**REWARD-MODEL EXTENSION AUTHORIZED / IMPLEMENTATION CORRECTION PENDING**
+**MULTI-CHARACTER REWARD CORRECTION IMPLEMENTED / RELEASE CHECKS IN PROGRESS**
 
-M2 combat-feedback, movement pacing and impact-text corrections are player accepted. The initial M3 implementation/deployment passed engineering checks, but the player subsequently expanded the canonical reward-table requirement before player acceptance. M3 must now support independently configured multi-character first-clear and repeatable shard rewards per stage before player smoke resumes.
+The player confirmed the initial M3 real-device smoke OK. That acquisition/persistence/unlock/Team Select baseline is protected. The bounded multi-character reward correction is implemented; engineering release checks and its new player acceptance remain pending.
 
 This milestone establishes the minimum persistent acquisition loop required before M4 Tier / Collection work.
 
@@ -126,6 +126,8 @@ Rules:
 - multiple reward items for different characters are first-class, not a future-only extension;
 - the same character may have separate first-clear and repeatable entries with different quantities;
 - first-clear and repeatable reward sets are independently configurable;
+- on an unclaimed stage, use the valid first-clear set if configured, without adding repeatable items; otherwise use the repeatable set (repeatable-only stages reward the initial win too);
+- after claim, use only the repeatable set; selection follows catalog/quantity sanitization;
 - quantities may differ by character;
 - rewards may target locked characters or already-owned roster characters;
 - owned-character shards must accumulate and persist exactly like locked-character shards;

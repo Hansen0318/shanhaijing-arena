@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {readFileSync} from 'node:fs';
 import * as presentation from '../src/acquisition/presentation.js';
+import { completeAcquisition,initialAcquisition } from '../src/acquisition/model.js';
+import { findStage } from '../src/campaign/data.js';
 import { CampaignController } from '../src/campaign/controller.js';
 import { CampaignView } from '../src/campaign/view.js';
 function element(tag){const el={tag,children:[],dataset:{},style:{},disabled:false,className:'',append(...x){this.children.push(...x);},replaceChildren(...x){this.children=x;},setAttribute(k,v){this[k]=v;},addEventListener(k,v){this[`on${k}`]=v;}};el.classList={add:x=>el.className+=' '+x};return el;}
@@ -44,4 +46,25 @@ test('measured multiline reward text fits above the Result action band',()=>{
  s.campaignActions={result:()=>({grantedItems:ids.map(characterId=>({type:'characterShard',characterId,quantity:2,repeat:'repeatable'})),shardCounts:Object.fromEntries(ids.map(id=>[id,5])),unlockedCharacterIds:['P4','P5']}),hasNext:()=>true};
  s.createResultView();s.rewardText.height=120; // Renderer measurement crosses y303 action band without fitting.
  s.showResult('victory');assert.ok(s.rewardText.y+s.rewardText.height*(s.rewardText.scaleY??1)<=294);
+});
+
+const multi={items:[{type:'characterShard',characterId:'P4',quantity:3,repeat:'firstClear'},{type:'characterShard',characterId:'P2',quantity:2,repeat:'firstClear'},{type:'characterShard',characterId:'P2',quantity:1,repeat:'repeatable'}]};
+test('actual Preview keeps all three character-specific rows before and after multi-item clear',()=>{
+ const prev=globalThis.document,stage=findStage('1-1'),original=stage.reward;
+ globalThis.document={createElement:element};stage.reward=multi;
+ try {
+  const c=new CampaignController(),root=element('main'),view=new CampaignView(root,c);c.openChapter('chapter-1');view.render();
+  const rows=()=>walk(root).filter(n=>n.className.split(' ').includes('stage-reward')).map(n=>n.children.map(x=>x.textContent));
+  assert.deepEqual(rows(),[['P4 Shard ×3','FIRST CLEAR'],['P2 Shard ×2','FIRST CLEAR'],['P2 Shard ×1','REPEATABLE']]);
+  c.openTeamSelect();for(const id of ['P1','P2','P3'])c.teamSelection.toggle(id);c.startBattle();c.finishBattle('1-1','victory');c.exitBattle();view.render();
+  assert.deepEqual(rows(),[['P4 Shard ×3','CLAIMED'],['P2 Shard ×2','CLAIMED'],['P2 Shard ×1','REPEATABLE']]);
+ }finally{stage.reward=original;globalThis.document=prev;}
+});
+test('actual Result renders two first-clear grants and only one replay grant from authoritative transactions',()=>{
+ const first=completeAcquisition(initialAcquisition(),{stageId:'synthetic',completionId:'first',outcome:'victory',reward:multi});
+ const replay=completeAcquisition(first.state,{stageId:'synthetic',completionId:'replay',outcome:'victory',reward:multi});
+ const s=scene();s.session={stageId:'synthetic'};
+ for(const [tx,expected] of [[first,['P4 Shard +3   3 / 5','P2 Shard +2   2 / 5']],[replay,['P2 Shard +1   3 / 5']]]){
+  s.campaignActions={result:()=>tx,hasNext:()=>true};s.createResultView();s.showResult('victory');assert.equal(s.rewardText.text,expected.join('\n'));
+ }
 });

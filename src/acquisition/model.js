@@ -32,8 +32,11 @@ export function completeAcquisition(raw,{stageId,completionId,outcome,reward}={}
  if(outcome!=='victory' || typeof stageId!=='string' || !stageId || typeof completionId!=='string' || !completionId
   || state.completedBattleIds.includes(completionId))return result;
  const wasClaimed=state.claimedStageIds.includes(stageId),before=new Set(state.ownedCharacterIds);
- for(const item of normalizeReward(reward)) {
-  if(item.repeat==='firstClear' && wasClaimed)continue;
+ const items=normalizeReward(reward);
+ // Select one reward set. Repeatable-only stages still reward their initial win.
+ const repeat=!wasClaimed && items.some(item=>item.repeat==='firstClear')?'firstClear':'repeatable';
+ for(const item of items) {
+  if(item.repeat!==repeat)continue;
   const count=state.shardsByCharacterId[item.characterId]+item.quantity;
   // Never save an imprecise integer if a malformed/extreme fixture overflows.
   if(!Number.isSafeInteger(count))continue;

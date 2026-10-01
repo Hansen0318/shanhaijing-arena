@@ -50,3 +50,21 @@ test('synthetic owned P1 reward integrates through valid Victory and persists wi
 test('Team Select rerender preserves empty slot positions and selected slot order',()=>{
  const c=new CampaignController();launch(c,'1-1');c.finishBattle('1-1','defeat');c.exitBattle();c.openTeamSelect();c.teamSelection.remove(0);const before=[...c.teamSelection.slots];c.refreshTeamOwnership();assert.deepEqual(c.teamSelection.slots,before);assert.deepEqual(before,[null,'P2','P3']);
 });
+
+test('multi-item Victory, subset replay, duplicate receipts, owned persistence and unlock refresh integrate',()=>{
+ const stage=findStage('1-1'),original=stage.reward,s=storage();
+ const first=[{type:'characterShard',characterId:'P4',quantity:3,repeat:'firstClear'},{type:'characterShard',characterId:'P2',quantity:2,repeat:'firstClear'}];
+ const replay={type:'characterShard',characterId:'P2',quantity:1,repeat:'repeatable'};
+ stage.reward={items:[...first,replay]};
+ try {
+  const c=new CampaignController(options(s));c.acquisition.shardsByCharacterId.P4=2;
+  const config=launch(c,'1-1');assert.equal(c.finishBattle('1-1','victory',config.battleCompletionId),true);
+  assert.deepEqual(c.rewardResult.grantedItems,first);assert.deepEqual(c.rewardResult.unlockedCharacterIds,['P4']);
+  assert.equal(c.finishBattle('1-1','victory',config.battleCompletionId),false);
+  let reload=new CampaignController(options(s));assert.equal(reload.acquisition.shardsByCharacterId.P2,2);assert.equal(reload.acquisition.shardsByCharacterId.P4,5);
+  reload.openChapter('chapter-1');reload.openTeamSelect();assert.ok(reload.teamSelection.available.includes('P4'));reload.back();
+  assert.deepEqual(win(reload,'1-1').grantedItems,[replay]);assert.equal(reload.acquisition.shardsByCharacterId.P4,5);assert.equal(reload.acquisition.shardsByCharacterId.P2,3);
+  assert.equal(reload.finishBattle('1-1','victory',config.battleCompletionId),false);
+  reload=new CampaignController(options(s));assert.equal(reload.acquisition.shardsByCharacterId.P2,3);assert.equal(reload.acquisition.shardsByCharacterId.P4,5);assert.ok(reload.ownership.characterIds.includes('P2'));
+ }finally{stage.reward=original;}
+});
