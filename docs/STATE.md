@@ -4,6 +4,8 @@
 **M3 MULTI-CHARACTER REWARD CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
+- Player smoke after the multi-reward correction found two follow-ups before acceptance: (1) the public Chapter 1 fixture is still single-item, so it cannot visibly demonstrate first-clear multi-character rewards plus subset repeatable rewards; authorize a bounded live engineering fixture for this smoke; (2) iPhone Safari can show a large arena-aspect dark rectangle over Campaign after refresh/route restoration, consistent with stale #game host visibility. Campaign routes must explicitly hide the arena host.
+- For clean retesting, do not wipe player storage automatically. Add/use an explicit dev-only reset path or a fresh/private-session workflow covering Campaign progression, acquisition/shards, and saved team.
 - Active branch `feat/m0-combat-core-20260927` / PR #1 open; no main merge. Safe implementation/deployed checkpoint `a26de3f88f5e9e8d2c439593ea50308cd1fe39b6`; newer closure is docs-only. Current handoff: WORK_PROGRESS.md.
 - User confirmed previous M3 PLAYER VERIFIED. Preserve universal shard inventory, persistence/migration, ownership at5 with retained shards, completion UUID/idempotency, Team Select, Campaign and accepted M0/M1/M2 baseline (40/45/50/55px impact sizes, H/S/A3/5/10, roster speed1.8/enemy1.6).
 - Correction implemented: firstClear and repeatable are independent alternative sets. First victory chooses firstClear if valid items exist; repeatable-only stages grant from their initial victory. Replays choose repeatable only. No random drops or stage-number logic.
