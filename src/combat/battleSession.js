@@ -104,6 +104,7 @@ export class BattleSession {
     this.targetIds = new Map(this.actors.map((actor) => [actor.instanceId, null]));
     this.playerMovement = new Map(this.actors.map((actor) => [actor.instanceId, { x: 0, y: 0 }]));
     this.castEvents = [];
+    this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 
   drainCastEvents() {
@@ -258,6 +259,7 @@ export class BattleSession {
     const nowMs = this.elapsedSeconds * 1000;
     const intents = this.actors.map((actor) => {
       if (!canCharacterAct(actor)) {
+        this.aiPreparation.set(actor.instanceId, {});
         return { actor, intent: { kind: 'idle', reason: 'ko', targetId: null } };
       }
       const opponents = actor.teamId === this.allies[0].teamId ? this.enemies : this.allies;
@@ -268,6 +270,7 @@ export class BattleSession {
         currentTarget,
         abilityDefinitions: this.abilityDefinitions,
         nowMs,
+        preparationState: this.aiPreparation.get(actor.instanceId),
       });
       this.targetIds.set(actor.instanceId, intent.targetId ?? null);
       return { actor, intent };

@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- Active polish checkpoint (2026-10-01): AI checkpoint: cooldown preparation integrated with 1.5s tunable window, skill/target commitment and range hysteresis. Targeted AI/Ability/BattleSession tests 67/67 PASS. Remaining: damage numbers, VS/type, integration/deploy. Exact next action: implement real resolved-damage presentation events.
 - Milestone: **M2 TEAM SELECT PASS / PLAYER VERIFIED**; prior M0/M1 player-verified baseline remains protected.
 - Player acceptance (2026-10-01): real-device M2 Team Select test reported OK. M2 engineering source `5cfa41224f27ce49ed61c48c462904a73ecbe654`, Actions #234 PASS, and the existing M2 public smoke remain reusable evidence.
 - Active branch / PR: `feat/m0-combat-core-20260927` / #1 retained.

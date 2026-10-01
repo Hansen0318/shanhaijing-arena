@@ -66,25 +66,81 @@ function legacyPursue(actor, target) {
   return distance(actor, target) > AI_ENGAGE_DISTANCE;
 }
 
+// Tunable policy, not a character/role rule. State belongs to BattleSession.
+export const AI_PREPARATION = Object.freeze({ windowSeconds: 1.5, enterTolerance: 0.25, settleTolerance: 0.06 });
+function clearPreparation(state) {
+  if (state) Object.assign(state, { category: null, targetId: null, movement: null });
+}
+function preparedIntent(actor, target, definitions, state, tuning) {
+  if (!state) return null;
+  let candidate = state.category ? {
+    category: state.category, definition: abilityDefinitionFor(actor, state.category, definitions),
+    slot: actor.abilityState[state.category],
+  } : null;
+  const usable = c => c?.definition?.preferredRange !== null && c?.definition
+    && c.definition.targetingRule === 'enemy' && priorityOf(c.definition) > 0
+    && (c.slot?.phase === 'ready' || (c.slot?.phase === 'cooldown'
+      && c.slot.cooldownRemaining <= tuning.windowSeconds));
+  if (state.targetId !== targetId(target) || !usable(candidate)) {
+    clearPreparation(state);
+    candidate = NON_BASIC_ORDER.map(category => ({ category,
+      definition: abilityDefinitionFor(actor, category, definitions), slot: actor.abilityState[category] }))
+      .filter(c => usable(c) && c.slot.phase === 'cooldown')
+      .sort((a,b) => priorityOf(b.definition)-priorityOf(a.definition))[0];
+    if (!candidate) return null;
+    Object.assign(state, { category: candidate.category, targetId: targetId(target) });
+  }
+  const { definition, slot, category } = candidate;
+  const d = distance(actor,target), preferred = definition.preferredRange;
+  if (slot.phase === 'ready' && d >= definition.minRange && d <= definition.maxRange
+      && canStartAbility({caster:actor,slot,definition,target})) {
+    clearPreparation(state);
+    return {kind:'ability',category,definitionId:definition.id,targetId:targetId(target),pursue:false};
+  }
+  // A wider enter band and narrower settle band prevent direction toggling at the edge.
+  if (state.movement === 'retreat' && d >= preferred-tuning.settleTolerance) state.movement = null;
+  if (state.movement === 'approach' && d <= preferred+tuning.settleTolerance) state.movement = null;
+  if (!state.movement) {
+    if (d < preferred-tuning.enterTolerance) state.movement = 'retreat';
+    else if (d > preferred+tuning.enterTolerance) state.movement = 'approach';
+  }
+  if (state.movement) return {kind:'move',movement:state.movement,reason:'cooldown_preparation',
+    category,definitionId:definition.id,targetId:targetId(target),desiredRange:preferred};
+  // Basic remains automatic at preparation range, without dragging the actor inward.
+  const basic=readyCandidate(actor,'basic',definitions);
+  if (basic && canStartAbility({caster:actor,slot:basic.slot,definition:basic.definition,target}))
+    return {kind:'ability',category:'basic',definitionId:basic.definition.id,targetId:targetId(target),pursue:false};
+  return {kind:'idle',reason:'preparation_hold',targetId:targetId(target)};
+}
+
 export function decideAIIntent({
   actor,
   enemies,
   currentTarget = null,
   abilityDefinitions,
   nowMs,
+  preparationState = null,
+  preparationTuning = AI_PREPARATION,
 }) {
   if (!canCharacterAct(actor)) {
+    clearPreparation(preparationState);
     return { kind: 'idle', reason: 'ko', targetId: null };
   }
 
   if (actor.controlHandoff.controlSource(nowMs) === 'player') {
+    clearPreparation(preparationState);
     return { kind: 'idle', reason: 'player_override', targetId: targetId(currentTarget) };
   }
 
-  const target = chooseSoftTarget(actor, enemies, currentTarget);
+  const committedTarget = enemies.find(enemy => targetId(enemy) === preparationState?.targetId && canCharacterAct(enemy));
+  const target = committedTarget ?? chooseSoftTarget(actor, enemies, currentTarget);
   if (!target) {
+    clearPreparation(preparationState);
     return { kind: 'idle', reason: 'no_target', targetId: null };
   }
+
+  const preparation = preparedIntent(actor,target,abilityDefinitions,preparationState,preparationTuning);
+  if (preparation) return preparation;
 
   const prioritized = NON_BASIC_ORDER
     .map((category) => readyCandidate(actor, category, abilityDefinitions))

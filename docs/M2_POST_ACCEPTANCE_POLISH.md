@@ -1,6 +1,8 @@
 # M2 Post-Acceptance Combat / Presentation Polish
 
 ## Status
+AI checkpoint: cooldown preparation integrated with 1.5s tunable window, skill/target commitment and range hysteresis. Targeted AI/Ability/BattleSession tests 67/67 PASS. Remaining: damage numbers, VS/type, integration/deploy. Exact next action: implement real resolved-damage presentation events.
+
 Authorized after player acceptance of M2 Team Select on 2026-10-01.
 
 This is one bounded pre-M3 polish batch. It is not M3 and must preserve the player-verified M0/M1/M2 architecture.

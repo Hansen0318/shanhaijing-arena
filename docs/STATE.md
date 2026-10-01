@@ -6,6 +6,7 @@
 **AUTHORIZED PRE-M3 SLICE: M2 POST-ACCEPTANCE COMBAT / PRESENTATION POLISH**
 
 ## Current state
+- Bounded polish IN PROGRESS: AI checkpoint: cooldown preparation integrated with 1.5s tunable window, skill/target commitment and range hysteresis. Targeted AI/Ability/BattleSession tests 67/67 PASS. Remaining: damage numbers, VS/type, integration/deploy. Exact next action: implement real resolved-damage presentation events.
 - M2 Team Select / Roster Skeleton engineering completed and deployed from `5cfa41224f27ce49ed61c48c462904a73ecbe654`; Actions #234 PASS.
 - Player reported real-device M2 test OK on 2026-10-01. M2 is therefore **PASS / PLAYER VERIFIED** for the accepted scope.
 - M0/M1 remain protected player-verified baselines.
