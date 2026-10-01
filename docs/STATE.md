@@ -7,7 +7,7 @@
 
 **M2 LAYOUT / FILTER / RESTART CORRECTION: PASS / PLAYER VERIFIED**
 
-**M2 CRITICAL / DAMAGE-NUMBER POLISH: ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**
+**M2 CRITICAL / DAMAGE-NUMBER POLISH: PLAYER CORRECTION PENDING**
 Final source `80054aea902a3bc48a726509ca3f70aa9897b397`, original branch/PR#1 open. Actions#260 /36861577213 Test227/227, Build/Pages Deploy success. Local targeted31/31, impacted168/168, full check227/227, build/diff PASS; fresh independent review no findings (30/30 + probes).
 Per-ability immutable crit + fresh seeded session RNG, one shared AI/player resolver and exact final critical events; runtime-only prototype visibility settings preserve canonical headless fixture and 3/5/10 cooldowns. Category floating text and warm CRIT! label/pop use existing tween clock and scene cleanup. Public bundle `index-CTo9sRxy.js` matches CI/local; selected team/start, Pause/Resume and Restart rendered without page-origin errors. Cloud clock slow; live crit readability is player-owned, not claimed. Full release/checkpoint/limitations evidence in `docs/M2_CRITICAL_DAMAGE_POLISH.md`.
 Next: four-point iPhone feedback smoke only; no M3 until acceptance/authorization. Remaining limitations: prototype balance, integer display rounding/overkill, intentionally repeated default seed, existing large bundle advisory.
@@ -31,6 +31,7 @@ Integration local checks: targeted31/31, impacted168/168, full check227/227, bui
 
 - Prototype pacing correction is deployed from `125341ff177a539c6fee584f1bf09d1a871e3355`: shared placeholder Heavy/Special/Awakening cooldowns are 3/5/10s. Previous deployment was blocked only by a stale `demoBattle` regression expecting 5/10/15; that test was updated. Actions #253 / 36856525782 completed Test 204/204, Build, and Pages Deploy successfully.
 - Player confirmed the public build now shows/uses the 3/5/10 prototype cooldown pacing. This closes the bounded cooldown follow-up.
+- Player correction after real-device smoke: enlarge damage text; critical number larger than normal; `CRITICAL!` larger than the critical number; remove upward drift and use brief pop/flash + in-place fade. Also increase prototype moveSpeed while preserving per-character stat ownership: P1–P5 1.4→1.8, runtime placeholder enemy 1.2→1.6. No M3 until this correction is accepted.
 - Before M3, player authorized one final bounded combat-feedback slice in `docs/M2_CRITICAL_DAMAGE_POLISH.md`: data-driven per-ability critical hit chance/multiplier with deterministic resolution, and stronger category-aware/CRITICAL floating damage presentation. M3 remains blocked until this slice is accepted or explicitly deferred.
 
 ## Goal
