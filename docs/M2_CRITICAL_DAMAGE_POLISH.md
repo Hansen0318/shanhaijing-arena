@@ -1,7 +1,7 @@
 # M2 Combat Feedback — Critical Hit / Damage Number Polish
 
 ## Status
-**M2 CRITICAL / DAMAGE-NUMBER POLISH — ENGINEERING PASS / iPhone PLAYER SMOKE PENDING** (2026-10-01).
+**M2 CRITICAL / DAMAGE-NUMBER POLISH — PLAYER CORRECTION PENDING** (2026-10-01).
 
 This is a final bounded combat-feedback slice before M3. It must not start shard/reward/progression work.
 
@@ -169,3 +169,64 @@ Current: all four checkpoints complete. Active branch `feat/m0-combat-core-20260
 - Known limitations: prototype values only; display rounds integer while combat/events keep exact final amount including overkill; fresh sessions intentionally repeat the default crit sequence; injected RNG reset is caller-owned (runtime factories use fresh seeded RNG). No formal art/VFX/audio/global crit stats or progression.
 - Next exact action: player checks normal numbers short-lived/not obstructive; Heavy/Special stronger than Basic; occasional larger warm CRIT! distinguishable; Pause/Restart no stuck/old texts. STOP until player reports acceptance. Do not start M3.
 - Public evidence: `docs/verification/m2-critical-public-damage.jpg` (normal floating numbers frozen at01:25), `docs/verification/m2-critical-public-reset.jpg` (same team full HP/countdown, prior numbers absent).
+
+
+## Player correction — text presentation and prototype movement pacing
+
+Player tested the deployed critical/damage-number slice and requested one bounded readability/feel correction before acceptance.
+
+### A. Damage-number presentation
+Replace the current upward-drift/evaporation feel.
+
+Required:
+- increase normal damage-number size from the current prototype treatment;
+- critical damage number must be larger than the corresponding normal hit;
+- the `CRITICAL!` label must be larger than the critical damage number itself;
+- on spawn, use a brief flash/pop emphasis;
+- after that, hold essentially at the impact position and fade out;
+- do **not** translate upward during lifetime;
+- keep rapid-hit positional staggering so simultaneous hits remain separable;
+- keep total lifetime short and mobile-readable;
+- preserve Pause/orientation freeze and Restart/shutdown cleanup.
+
+Intent:
+- impact should feel like a quick flash at the hit point;
+- avoid the current rising/evaporating text motion.
+
+### B. Character movement-speed contract
+`moveSpeed` is character-definition data and remains per-character.
+
+Future formal characters may have different movement speeds.
+
+For the current prototype only, increase test pacing:
+- owned prototype roster P1–P5: `moveSpeed 1.4 -> 1.8`;
+- runtime placeholder enemy: `moveSpeed 1.2 -> 1.6`.
+
+These are test pacing values only, not formal balance.
+Do not change the canonical deterministic headless fixture unless a test explicitly depends on runtime fixture values.
+
+### C. Protected
+Do not change:
+- crit probability/multipliers;
+- 3/5/10 skill cooldowns;
+- AI spacing rules;
+- attack speed;
+- arena bounds;
+- joystick/input;
+- combat formulas;
+- M3 progression.
+
+### D. Verification
+- targeted damage-number presentation tests;
+- runtime/roster movement-speed contract tests;
+- impacted battle/AI/input regression only as needed;
+- build + Pages deploy;
+- update GitHub handoff evidence.
+
+Player smoke after deploy:
+1. normal damage number visibly larger;
+2. critical number larger than normal;
+3. `CRITICAL!` visibly larger than the critical number;
+4. text flashes/pops and fades in place, with no upward drift;
+5. movement feels faster for both sides;
+6. Pause/Restart leaves no stuck text.
