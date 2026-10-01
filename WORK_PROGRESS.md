@@ -1,6 +1,9 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- M3 implementation IN PROGRESS; direct Work authorized. Recovery baseline b40a3fd58a1dee16c580ac2d4b10177cf60f509b, branch feat/m0-combat-core-20260927 / PR #1. Remote latest confirmed unchanged; Actions #275 / 36868292806 success.
+- Spec/docs recovery complete; execution plan docs/M3_IMPLEMENTATION_PLAN.md. No product code changed yet. Next: RED acquisition/persistence contracts then pure model; preserve M0/M1/M2; STOP before M4.
+
 - **M2 impact-text / prototype movement pacing — PASS / PLAYER VERIFIED**. Player accepted the final larger 40/45/50/55px impact-text tuning, in-place fade/CRITICAL hierarchy, and current faster prototype movement. Actions#269 / 36866538530 completed successfully. Original `feat/m0-combat-core-20260927` / PR#1 remains active.
 - Final implementation/deployed source `9ad74e6f9b93a85451f9cf09552243530274f35a`; Actions#265 /36865286592 Test, Build, Pages Deploy success. Public bundle `index-CI9O6wHr.js` matches local build; Chapter Select renders after reload. Closure following source is documentation only [skip ci].
 - Changed only damageNumbers presentation + roster/runtime enemy speed data and their tests. Normal32/36/40/44px; critical1.25×, CRITICAL! another6px larger;80ms yoyo pop then in-place fade,840–1040ms total, no x/y tween. P1–P5 moveSpeed1.8, runtime enemy1.6, headless4/3.5 unchanged. Crit/RNG/resolver/cooldown/attackSpeed/AI/input/Campaign/Restart untouched.
