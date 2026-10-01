@@ -5,7 +5,7 @@
 
 **M2 POST-ACCEPTANCE POLISH: ENGINEERING PASS / PLAYER SMOKE PENDING**
 
-**M2 LAYOUT / FILTER / RESTART CORRECTION: ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**
+**M2 LAYOUT / FILTER / RESTART CORRECTION: PASS / PLAYER VERIFIED**
 
 ## Current state
 - Bounded correction completed on original `feat/m0-combat-core-20260927` / PR#1. No replacement branch, merge or M3.
@@ -13,8 +13,9 @@
 - Team Select: fixed viewport rows, bottom safe area, clean actual-enemy matchup, compact64×64 bench; ALL/Power/Speed/Blast filters only change visible candidates. No Type quota; ownership/eligibility/unique/exact3/save/slot order unchanged. Type marks only bench/tabs; battle HUD unchanged.
 - X menu: CONTINUE / RESTART / EXIT. Restart/Retry share validated fresh config and existing scene lifecycle; same stage/team, fresh HP/CD/targets/AI/events/timer/countdown/formation, shutdown damage cleanup; no completion/progression writes. New round clears manual/menu interruptions and preserves orientation authority.
 - Public final source: render/filter/preservedP1/P3/P5/BATTLE; Restart full same-team Arena/fresh3/defaultA2; CONTINUE preserves manual Pause; EXIT correct Preview/no unlock; no page-origin errors. Cloud viewport actual no-scroll confirmed; mobile dimensions have static CSS budget evidence only.
-- Real iPhone no-scroll/readability/touch/Restart/orientation acceptance remains player-owned. Available landscape height below320px unverified. Canonical evidence/checkpoints/limits in `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md` and CURRENT HANDOFF POINTER.
-- Exact next action: short four-item player smoke in canonical spec. Stop before M3/M4/formal art/animation/audio/economy.
+- Player completed the real-device changed-scope smoke and reported the layout/filter/Restart correction OK. Preserve this baseline.
+- Prototype-only pacing change authorized next: Heavy/Special/Awakening shared placeholder cooldowns become 3/5/10s instead of 5/10/15s to speed testing. This does not define formal character balance; cooldown remains per Ability Definition and future characters may differ.
+- Stop before M3/M4/formal art/animation/audio/economy unless explicitly authorized.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
@@ -34,7 +35,7 @@ Complete the playable Chapter → Stage Preview → Battle → Result → Unlock
 - When joystick input is released, full AI control resumes immediately on the next simulation step.
 - Selected character does not change when AI resumes.
 - No visible AUTO/MANUAL state.
-- Player controls: movement joystick + Heavy + Special + Awakening. Prototype cooldowns: Heavy 5s, Special 10s, Awakening 15s.
+- Player controls: movement joystick + Heavy + Special + Awakening. Prototype cooldowns for the current shared placeholder abilities: Heavy 3s, Special 5s, Awakening 10s. These are test pacing values only; future character abilities may define different cooldowns.
 - Manual Heavy/Special/Awakening can be triggered immediately after the pre-battle countdown when ready, including an air-cast with no in-range target; AI still obeys approach/range before auto-casting.
 - Basic attack is automatic, unlimited, and has no cooldown button; when other active skills are cooling down, AI continues approaching for Basic instead of idling.
 - AI continuously reevaluates the nearest living opponent. Multiple AI actors may independently pursue the same opponent; there is no one-to-one target reservation. It keeps pursuing until a close engage distance (M0: 0.20 simulation units, visually near-overlapping centers), independent of ability ranges; Basic/Heavy/Special/Awakening may fire during pursuit, and manual control of one ally does not pause the other five AI actors.
