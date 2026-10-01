@@ -1,7 +1,7 @@
 # M3 — Shard / Reward / Character Unlock Loop
 
 ## Status
-**M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — RELEASE CHECKS IN PROGRESS**
+**M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 The player confirmed the initial M3 real-device smoke OK. That acquisition/persistence/unlock/Team Select baseline is protected. The bounded multi-character reward correction is implemented; engineering release checks passed and only its new player acceptance remains pending.
 
@@ -315,14 +315,14 @@ At minimum verify:
 1. normal Campaign initial ownership is P1/P2/P3 only;
 2. dev mode can still expose all prototypes if retained;
 3. Stage Preview reads reward metadata and displays quantity + firstClear/repeatable state, including rewards for already-owned characters;
-4. 1-1 Victory grants P4 +2 exactly once;
+4. 1-1 first Victory grants P4+3 and ownedP2+2 exactly once;
 5. replaying cleared 1-1 does not grant first-clear reward again;
-6. 1-2 first clear yields P4 total4;
-7. 1-3 first clear yields P4 total5 and unlocks P4;
+6. 1-2 first clear grants P4+2/P1+2, yields P4total5 and unlocks;
+7. 1-3 first clear grants P5+2/P3+2; replay grants onlyP3+1;
 8. P4 appears/selects in Team Select immediately after unlock;
 9. 1-4 Victory grants P5 +1 every successful replay;
 10. 1-5 first clear grants P5 +3 once;
-11. subsequent 1-4 replay can reach5 and unlock P5;
+11. initial1-3→1-5 gives P5totals2→4→7/unlock;1-4 and1-5 replay keep increasing inventory;
 12. Defeat/Draw/unfinished Exit/Restart do not grant;
 13. duplicate finish callback cannot double-grant;
 14. shard + ownership persistence survives reload, including shard counts for already-owned characters;
@@ -340,20 +340,15 @@ At minimum verify:
 26. Result renders all and only items granted in that completion;
 27. targeted + impacted regression + build + Pages deploy pass.
 
-## 14. Player smoke
+## 14. Current player smoke
 
-Player-owned smoke after engineering PASS:
+1. Explicitly open the ordinary deployed URL with `?resetProgress=1` once when a clean test is desired. This deletes the three game saves, opens freshChapter1 and removes the parameter. Normal URL/reload never resets progress.
+2. 1-1 Preview showsP4×3 FIRST CLEAR, P2×2 FIRST CLEAR, P2×1 REPEATABLE. First Victory ResultP4+3/P2+2; replay onlyP2+1. Cleared Preview keeps twoCLAIMED rows plusREPEATABLE.
+3. Check each1-2→1-5 has its configured replay row, as §4; first wins unlockP4after1-2 andP5after1-5. Each replay grants only its configured item, once. OwnedP1/P2/P3 shards persist too.
+4. Reload: progress survives, Campaign/Stage/Team have no stale game rectangle. Battle/Result still render Arena. Check Safari toolbar/rotation/route return and multi-row readability/buttons. Automated no-grant/duplicate/owned-save coverage is authoritative; do not repeat unrelated combat smoke.
+5. Optional explicit reset again returns zero shards/initialP1/P2/P3/emptyteam; an ordinary reload after subsequent play preserves the new save.
 
-1. fresh/cleared-state appropriate Chapter 1 Stage Preview shows shard reward and FIRST CLEAR / REPEATABLE clearly;
-2. win 1-1 and see P4 +2 / 2 of 5;
-3. replay 1-1 and confirm no duplicate first-clear reward;
-4. progress to P4 5/5 and see P4 UNLOCKED;
-5. enter Team Select and verify P4 appears and can be selected;
-6. verify repeatable P5 reward can increase again on replay;
-7. reload page and confirm shards/ownership persist;
-8. Defeat/Exit check only if convenient; automated coverage is authoritative for no-grant paths.
-
-Stop after M3 player-ready deployment. Do not begin M4 automatically.
+STOP before M4; this follow-up is not PLAYER VERIFIED until the player confirms.
 
 ## 15. Implementation / migration decisions (2026-10-01)
 
@@ -428,4 +423,4 @@ Campaign/Stage/Team routes explicitly show #campaign and hide #game. Battle/Resu
 
 Explicit testing reset: `?resetProgress=1` consumes the parameter via history.replaceState before removing only Campaign/acquisition/team save keys; then opens fresh Chapter1. Normal URL never removes saves. Reload cannot reuse the consumed trigger. If storage removal is denied, this explicit reset uses fresh in-memory persistence only; history failure prevents the destructive action. No localStorage.clear().
 
-Implementation coherent; targeted16/16 and impacted124/124 PASS before app integration tests were added. Remaining independent review, expanded impacted check including actual app route/reset, build/Actions/Pages and final evidence. STOP before M4.
+Engineering PASS: targeted16/16, impacted126/126, independent review39/39/no findings; build/diff PASS. Actions#289 /36881481144 CI288/288, Build/Pages success. Safe deployed source1f5ef823d18d424dc4ffe97f16a0f08ab48fbeab. Public index-fgF_0oLa.js matches local/CI; cleared1-1 shows CLAIMED+REPEATABLE and reload hidesgame. See docs/verification/M3_UNIVERSAL_FARMING.md. Current player smoke in §14; physicalSafari acceptance pending. STOP before M4.

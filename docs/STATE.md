@@ -1,14 +1,15 @@
 # Project State
 
 ## Milestone
-**M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — RELEASE CHECKS IN PROGRESS**
+**M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- Active branch feat/m0-combat-core-20260927 / PR#1 open; no main merge. Recoverybase31c8344174cd5f08647864a94bdbf455881eb0f3. WORK_PROGRESS.md current pointer authoritative.
+- Active branch feat/m0-combat-core-20260927 / PR#1 open; no main merge. Safe implementation/deployedcheckpoint1f5ef823d18d424dc4ffe97f16a0f08ab48fbeab; laterdocs-onlyclosure. WORK_PROGRESS.md current pointer authoritative.
 - All Chapter1 stages now configure two firstClear items and one repeatable subset. Exact fixture in canonicalM3§4. P4unlocksafter1-2at5, P5after1-5at7; owned shard inventory retained. Chapters2–6placeholder config uses same engine; future synthetic coverage three first/two replay items.
 - Campaign route owner hides game on startup/render/pageshow/viewport restoration; battle shows game, geometry1120×540 unchanged. Explicit one-shot?resetProgress=1 clears only three game saves and opens freshChapter1, removes trigger before clearing; normalURLnever wipes.
 - Prior acceptedM0/M1/M2/M3 baseline protected. Reward model/acquisition/persistence/TeamSelect unchanged; product edits bounded to liveconfig, bootstraproute/reset, hiddenhostCSS.
-- Targeted16/16; impacted124/124 before final app integration additions. Remaining review/final impacted/build/Actions/Pages/publicsource/docs. STOP before M4; current follow-up player acceptance pending.
+- Targeted16/16; impacted126/126; independentreview39/39/no findings; build/diffPASS. Actions#289 /36881481144 CI288/288, Build/Pages success. Public/local/CIindex-fgF_0oLa.js matches; clearedPreviewCLAIMED+REPEATABLE and reloadhiddenhost observed. Evidence docs/verification/M3_UNIVERSAL_FARMING.md.
+- Next exactaction: currentM3§14player smoke using explicitone-shotreset for freshfixture, allfivefarmable,reload/persist,Safari rectangle andreadabilitycheck. STOP before M4; physicalSafari/currentfollow-up acceptance pending.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history
