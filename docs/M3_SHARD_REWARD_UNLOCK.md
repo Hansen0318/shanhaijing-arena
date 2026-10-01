@@ -1,9 +1,9 @@
 # M3 — Shard / Reward / Character Unlock Loop
 
 ## Status
-**MULTI-CHARACTER REWARD CORRECTION IMPLEMENTED / RELEASE CHECKS IN PROGRESS**
+**M3 MULTI-CHARACTER REWARD CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
-The player confirmed the initial M3 real-device smoke OK. That acquisition/persistence/unlock/Team Select baseline is protected. The bounded multi-character reward correction is implemented; engineering release checks and its new player acceptance remain pending.
+The player confirmed the initial M3 real-device smoke OK. That acquisition/persistence/unlock/Team Select baseline is protected. The bounded multi-character reward correction is implemented; engineering release checks passed and only its new player acceptance remains pending.
 
 This milestone establishes the minimum persistent acquisition loop required before M4 Tier / Collection work.
 
@@ -379,9 +379,9 @@ Stop after M3 player-ready deployment. Do not begin M4 automatically.
 - Acquisition receipts + inventory save in one write before the independent Campaign write. Denied/quota storage preserves in-memory state for current session; no reload durability can be claimed for failed writes. Dev unlock-all skips all normal saves. Prototype completion receipt history is retained without pruning.
 - Result rendering reads controller rewardResult only. Multiple granted items aggregate by character; measured text height scales into space above action buttons. No DOM-based unlock inference. Team ownership refresh updates eligibility without compacting empty slots.
 - Actual engineering evidence: baseline15/15; domain/persistence37/37; model/controller31/31; impacted106/106; independent reviewer36/36; final presentation5/5; full267/267; build/diff PASS. Review found a multi-item Result height issue, reproduced RED and fixed GREEN. No protected combat/source changes beyond Result presentation/callback integration.
-- Final deployed safe SHA dd3a4d1a5472c720a6f75c55f7980ada7cfacde3; Actions#279 /36873107391 Test267/267, Build and Pages Deploy success. Public index-DXT92jQP.js matches local/CI. Final-source Preview CLAIMED/FIRST CLEAR and roster/stale team sanitation observed. Closure in WORK_PROGRESS.md / docs/STATE.md; engineering evidence docs/verification/M3_ENGINEERING.md. Status remains PLAYER SMOKE PENDING.
+- Final deployed safe SHA dd3a4d1a5472c720a6f75c55f7980ada7cfacde3; Actions#279 /36873107391 Test267/267, Build and Pages Deploy success. Public index-DXT92jQP.js matches local/CI. Final-source Preview CLAIMED/FIRST CLEAR and roster/stale team sanitation observed. Closure in WORK_PROGRESS.md / docs/STATE.md; engineering evidence docs/verification/M3_ENGINEERING.md. This is historical initial-M3 evidence; the player subsequently confirmed that baseline smoke OK. Current correction evidence is in §17.
 
-### Exact player smoke (fresh independent save)
+### Historical initial-M3 player smoke (now accepted; do not require replay)
 1. Normal roster contains P1/P2/P3.1-1 Preview:P4 Shard×2 + FIRST CLEAR.
 2. Win1-1:P4+2,2/5. Replay1-1:no reward row; Preview:CLAIMED.
 3. Win1-2:P4total4; win1-3:P4total5 and P4 UNLOCKED. Next Team Select:P4 selectable; filters/order/exact-three remain normal.
@@ -412,3 +412,12 @@ Example:
 Stage 5 / chapter finale is expected to be the hardest stage and may be configured with higher-value shards, shards for stronger characters, or shards for strong already-owned roster characters. This is a content/configuration rule, not a hard-coded `stageNumber === 5` reward algorithm.
 
 Exact characters and quantities remain stage-design data. M3 does not introduce random drop rates; fixed configured quantities remain authoritative until a later explicit decision.
+
+
+## 17. Multi-character reward correction release (2026-10-01)
+- ENGINEERING PASS / PLAYER SMOKE PENDING. Existing branch / PR#1 retained; safe deployed source a26de3f88f5e9e8d2c439593ea50308cd1fe39b6. Prior M3 smoke is explicitly player accepted.
+- First-clear and replay sets select alternatively after normalization. Repeatable-only stages grant the initial win too. Owned shards, receipts, unlock/persistence/migration/Team Select and Chapter1 fixture are unchanged.
+- Targeted33/33; impacted100/100; independent review33/33/no findings; build/diff PASS. Actions#284 /36877458362 automatically ran CI272/272 and deployed Pages. Public index-BmyZkd3-.js equals local/CI; original save CLEAR/CLAIMED survives.
+- Synthetic P4×3/P2×2 firstClear, P2×1 repeatable covers actual Preview three rows/CLAIMED, Scene Result two/one grants, owned persistence/reload, duplicate protection and unlock refresh. No live multi-item stage content was added.
+- Exact next player smoke: original save/CLAIMED intact, Preview/Result/buttons readable; optional convenient1-4 repeatable Victory increments once and survives reload. Do not repeat the accepted full unlock path. Future authorized multi-item content device check should show all three Preview rows, first two CLAIMED after clear, first ResultP4+3/P2+2 and replayP2+1. Engineering synthetic coverage already establishes that contract.
+- Full evidence/coverage mapping: docs/verification/M3_MULTI_REWARD_CORRECTION.md. STOP; no M4 or formal content authorization.

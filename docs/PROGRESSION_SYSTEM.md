@@ -1,6 +1,6 @@
 # Progression System — Current Planning
 
-> Campaign progression is implemented in M1. M3 character acquisition/shards are implemented pending player smoke; Tier upgrades remain future scope; the canonical sequencing is in `docs/DEVELOPMENT_ROADMAP.md`.
+> Campaign progression is implemented in M1. The initial M3 acquisition/shards loop is player verified; the multi-character reward correction is engineering PASS pending its player smoke; Tier upgrades remain future scope; the canonical sequencing is in `docs/DEVELOPMENT_ROADMAP.md`.
 
 ## M1 Campaign progression
 Separate unlocked/cleared chapter/stage arrays derive from sequential victories. Defeat and Draw do not unlock. Cleared stages remain replayable. Versioned persistence is isolated from combat and replaceable; see CAMPAIGN_SYSTEM.md.
@@ -14,7 +14,7 @@ M2 is player verified and implements:
 
 M3 must not bypass these contracts.
 
-## M3 implemented character acquisition / shards (player smoke pending)
+## M3 character acquisition / shards (baseline player verified; reward correction smoke pending)
 
 Shard inventory is universal across the roster:
 - locked characters accumulate shards toward unlock;
@@ -33,7 +33,7 @@ Rules:
 - Defeat / Draw / unfinished Exit do not grant clear-based unlock rewards.
 - Reward tables are data-driven per stage.
 - A stage may grant multiple character shard items with different quantities.
-- First-clear and repeatable reward sets are independently configurable.
+- First-clear and repeatable reward sets are independently configurable. On the first Victory choose the valid firstClear set if present, otherwise repeatable; on replay choose repeatable only.
 - Example: first clear may grant Character A ×3 + Character B ×2, while replay grants only Character B ×1/×2.
 - Rewards may target already-owned roster characters; those shards remain persistent for future M4 use.
 - Stage 5 may be a harder finale with higher-value shards, stronger-character shards, or shards for strong already-owned characters.
@@ -52,7 +52,7 @@ For implementation smoke only, not formal content:
 - 1-5 P5×3 first-clear;
 - replay 1-4 once after the first pass -> P5 reaches 5 and unlocks.
 
-Unlock threshold remains 5 shards. Shard count persists after unlock for later M4 use. First-clear rewards must be idempotent; repeatable rewards grant once per completed Victory.
+Unlock threshold remains 5 shards. Shard count persists after unlock for later M4 use. First-clear rewards must be idempotent; repeatable rewards grant once per eligible completed Victory (every replay, and initial Victory when no valid first-clear set exists).
 
 ## M4 planned Tier progression
 The current player-approved planning direction is incremental shard requirements:

@@ -1,6 +1,6 @@
 # M3 engineering closure — 2026-10-01
 
-Status: ENGINEERING PASS / PLAYER SMOKE PENDING. Branch feat/m0-combat-core-20260927 / PR #1 open; no main merge. Deployed source dd3a4d1a5472c720a6f75c55f7980ada7cfacde3; docs-only closure follows it.
+Historical initial M3 release: PASS / PLAYER VERIFIED (player confirmed before the bounded multi-character correction). Current correction evidence: [M3_MULTI_REWARD_CORRECTION.md](M3_MULTI_REWARD_CORRECTION.md). Branch feat/m0-combat-core-20260927 / PR #1 open; no main merge. Deployed source dd3a4d1a5472c720a6f75c55f7980ada7cfacde3; docs-only closure follows it.
 
 ## Actual verification
 - Recovery source b40a3fd / Actions#275; baseline tests15/15.

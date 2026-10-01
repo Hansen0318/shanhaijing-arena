@@ -1,14 +1,15 @@
 # Project State
 
 ## Milestone
-**M3 MULTI-CHARACTER REWARD MODEL CORRECTION — RELEASE CHECKS IN PROGRESS**
+**M3 MULTI-CHARACTER REWARD CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- Active branch `feat/m0-combat-core-20260927` / PR #1 open; no main merge. Recovery base `c9cc6253a28a9448193d553e9342ba190206273d`. Current handoff: WORK_PROGRESS.md.
+- Active branch `feat/m0-combat-core-20260927` / PR #1 open; no main merge. Safe implementation/deployed checkpoint `a26de3f88f5e9e8d2c439593ea50308cd1fe39b6`; newer closure is docs-only. Current handoff: WORK_PROGRESS.md.
 - User confirmed previous M3 PLAYER VERIFIED. Preserve universal shard inventory, persistence/migration, ownership at5 with retained shards, completion UUID/idempotency, Team Select, Campaign and accepted M0/M1/M2 baseline (40/45/50/55px impact sizes, H/S/A3/5/10, roster speed1.8/enemy1.6).
 - Correction implemented: firstClear and repeatable are independent alternative sets. First victory chooses firstClear if valid items exist; repeatable-only stages grant from their initial victory. Replays choose repeatable only. No random drops or stage-number logic.
 - Preview and Result use existing multi-row/authoritative-grant presentation without layout edits. Chapter 1 single-item fixture unchanged; synthetic multi-character fixture covers owned P2 shards, replay subset and different quantities.
-- RED12/15 then targeted33/33 GREEN. Remaining impacted checks/review/build/Actions/Pages/source verification. No correction PLAYER VERIFIED claim; STOP before M4.
+- Actual verification: RED12/15 then targeted33/33 GREEN; impacted100/100; independent review33/33, no findings; build/diff PASS. Actions#284 /36877458362 CI272/272, Build/Pages success. Public JS index-BmyZkd3-.js matches local/CI; existing CLEAR/CLAIMED and FIRST CLEAR visible, no page-origin errors observed. Evidence: docs/verification/M3_MULTI_REWARD_CORRECTION.md.
+- Next exact action: short device smoke (save/CLAIMED intact, Preview/Result readability/buttons, optional repeatable Victory/reload). Live Chapter1 fixture unchanged; multi-row configuration exercised in synthetic DOM/Scene/controller tests. Prior full M3 player smoke remains accepted. STOP before M4; correction acceptance pending.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history
