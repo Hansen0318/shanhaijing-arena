@@ -1,8 +1,9 @@
 # M2 Combat Feedback — Critical Hit / Damage Number Polish
 
 ## Status
-Latest correction: **LOCAL VERIFIED / DEPLOY PENDING**. Normal32/36/40/44px; crit1.25×; CRITICAL! another6px larger.80ms pop then120ms hold/in-place fade; total840–1040ms, no x/y tween. Roster1.8/runtime enemy1.6; headless4/3.5 unchanged. Targeted17/17, impacted battle/AI98/98, build/diff PASS. No crit/RNG/resolver/cooldown/input/AI/progression edits. Exact next: push/deploy, confirm Actions, record pending six-item player smoke.
-**M2 CRITICAL / DAMAGE-NUMBER POLISH — PLAYER CORRECTION PENDING** (2026-10-01).
+Latest correction: **ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**. Normal32/36/40/44px; crit1.25×; CRITICAL! another6px larger.80ms yoyo pop, fade begins120ms after spawn; total840–1040ms, no x/y tween. Roster1.8/runtime enemy1.6; headless4/3.5 unchanged. Targeted17/17, impacted battle/AI98/98, check230/230, build/diff PASS. No crit/RNG/resolver/cooldown/input/AI/progression edits.
+Final implementation/deployed source `9ad74e6f9b93a85451f9cf09552243530274f35a`; [Actions#265 /36865286592](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36865286592) Test/Build/Pages Deploy success. Public `index-CI9O6wHr.js` matches local build; Chapter Select renders after reload. No unnecessary historical Campaign browser replay. Bounded whole-diff review confirms only3 production files (damageNumbers, roster catalog, runtime enemy data) changed; shared protected systems untouched. No known engineering failures; existing build advisory unchanged.
+Recovery baseline `7428d34661df2b453b83d9f777519e830380b682`, Actions#263 success. Tests RED6 contract failures before implementation; stale Restart pop count1→3 corrected for all three text objects. Latest closure after deployed source is docs only [skip ci]. Prototype pacing/readability are not formal balance or device acceptance. Exact next: six-point player smoke at end of this document; STOP before M3.
 
 This is a final bounded combat-feedback slice before M3. It must not start shard/reward/progression work.
 

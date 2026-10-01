@@ -1,8 +1,10 @@
 # Project State
 
 ## Milestone
-**M2 PLAYER PRESENTATION / PACING CORRECTION: LOCAL VERIFIED / DEPLOY PENDING**
-Normal damage enlarged, CRITICAL! larger than crit number, no text translation, flash/pop + in-place fade; P1–P5 moveSpeed1.8/runtime enemy1.6. Targeted17/17, impacted98/98 PASS; build/deploy pending. All existing crit/RNG/formula/cooldown/headless rules preserved. No M3.
+**M2 PLAYER PRESENTATION / PACING CORRECTION: ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**
+Deployed source `9ad74e6f9b93a85451f9cf09552243530274f35a`, original branch/PR#1. Actions#265 /36865286592 Test/Build/Pages Deploy success. Targeted17/17, impacted battle/AI98/98, check230/230, build/diff PASS. Public `index-CI9O6wHr.js` matches local build; initial page renders after reload.
+Normal32/36/40/44px; crit1.25×; CRITICAL! another6px larger;80ms pop + fixed-position fade total840–1040ms. P1–P5 moveSpeed1.8/runtime enemy1.6, headless4/3.5 unchanged. Crit/RNG/formula/cooldown/attackSpeed/AI/input/Campaign/Restart preserved.
+Next: six-item player smoke in canonical critical spec (size hierarchy, no upward motion, faster movement, Pause/Restart cleanup). No known engineering failures; readability/formal balance remain player-owned. STOP before M3.
 **M0 / M1 / M2 PASS / PLAYER VERIFIED**
 
 **M2 POST-ACCEPTANCE POLISH: ENGINEERING PASS / PLAYER SMOKE PENDING**

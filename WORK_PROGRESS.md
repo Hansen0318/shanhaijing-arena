@@ -1,6 +1,13 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M2 impact-text / prototype movement pacing — ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**. Original `feat/m0-combat-core-20260927` / PR#1 open, no alternate branch/main merge/M3.
+- Final implementation/deployed source `9ad74e6f9b93a85451f9cf09552243530274f35a`; Actions#265 /36865286592 Test, Build, Pages Deploy success. Public bundle `index-CI9O6wHr.js` matches local build; Chapter Select renders after reload. Closure following source is documentation only [skip ci].
+- Changed only damageNumbers presentation + roster/runtime enemy speed data and their tests. Normal32/36/40/44px; critical1.25×, CRITICAL! another6px larger;80ms yoyo pop then in-place fade,840–1040ms total, no x/y tween. P1–P5 moveSpeed1.8, runtime enemy1.6, headless4/3.5 unchanged. Crit/RNG/resolver/cooldown/attackSpeed/AI/input/Campaign/Restart untouched.
+- Actual checks: targeted17/17, impacted battle/AI98/98, check230/230, build and bounded whole-diff review/check PASS. RED6 expected contract failures; stale Restart pop count1→3 updated to cover normal + critical number + label. No known engineering failures. Existing Phaser bundle/npm proxy advisories remain. No unnecessary Campaign browser replay.
+- Next exact step / STOP: player checks larger normal number; critical>normal; CRITICAL!>critical number; fixed-position pop/fade; faster movement both sides; Pause/Restart no residual text. Formal balance/device readability remain player-owned; no M3.
+
+## Previous release / correction checkpoints
 - Current bounded correction: **M2 impact-text / prototype movement pacing — LOCAL VERIFIED, DEPLOY PENDING**. Recovery remote `7428d34661df2b453b83d9f777519e830380b682`, PR#1 original branch, Actions#263 success. No crit/RNG/resolver reimplementation.
 - Implemented: normal32/36/40/44px; critical1.25× and CRITICAL! another6px larger; all text80ms yoyo pop,120ms hold then in-place fade (840–1040ms total), no x/y tween. P1–P5 moveSpeed1.8, actual runtime enemy1.6; headless4/3.5 untouched.
 - Tests RED6 expected failures → targeted17/17, impacted98/98 PASS. One stale Restart assertion expected only1 pop; now3 (normal + critical number + label), corrected without lifecycle change. Remaining build/diff/Pages; exact next: build then push verified source/deploy and record release. No M3.
