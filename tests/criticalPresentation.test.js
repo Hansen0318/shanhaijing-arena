@@ -6,7 +6,7 @@ const event=(category='basic',critical=false)=>({targetId:'e2',amount:17.08,posi
 test('normal category emphasis grows Basic Heavy Special Awakening with short lifetime',()=>{
  const f=surface(),v=new DamageNumbers(f.scene,p=>p);v.render(['basic','heavy','special','awakening'].map(k=>event(k)));
  const sizes=f.texts.map(t=>parseInt(t.style.fontSize));assert.ok(sizes.every((n,i)=>i===0||n>sizes[i-1]));
- assert.deepEqual(sizes,[32,36,40,44]);
+ assert.deepEqual(sizes,[40,45,50,55]);
  assert.deepEqual(f.texts.map(t=>t.text),['17','17','17','17']);
  const fades=f.tweens.filter(t=>t.alpha===0);
  assert.ok(fades.every(t=>t.duration+t.delay>=800&&t.duration+t.delay<=1100));
