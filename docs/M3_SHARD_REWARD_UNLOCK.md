@@ -45,6 +45,8 @@ Ownership contract:
 
 ## 2. Shard inventory
 
+Shard inventory applies to **every catalog character**, whether currently owned or locked.
+
 Add persistent shard inventory outside combat state.
 
 Minimum logical shape:
@@ -64,13 +66,21 @@ Requirements:
 - denied storage degrades safely to in-memory behavior;
 - shards are not battle actor state and are never stored on A1/A2/A3.
 
+Rules for owned vs locked characters:
+- locked character shards accumulate toward unlock;
+- owned character shards also continue accumulating and persist;
+- M3 does not spend owned-character shards;
+- those post-ownership shard counts are reserved for M4 Tier/progression;
+- receiving shards for an already-owned character must never be discarded merely because ownership is already true.
+
 Unlock threshold for M3:
-- 5 shards unlock the character.
+- 5 shards unlock a locked character.
 
 On unlock:
 - character is added to ownership;
 - shard count remains recorded; do not silently delete/reset it;
-- M4 will later decide how post-unlock shards are spent for Tier progression.
+- later rewards for that now-owned character continue increasing its shard count;
+- M4 will later decide how owned-character shards are spent for Tier progression.
 
 ## 3. Reward definition
 
@@ -278,7 +288,7 @@ At minimum verify:
 
 1. normal Campaign initial ownership is P1/P2/P3 only;
 2. dev mode can still expose all prototypes if retained;
-3. Stage Preview reads reward metadata and displays quantity + firstClear/repeatable state;
+3. Stage Preview reads reward metadata and displays quantity + firstClear/repeatable state, including rewards for already-owned characters;
 4. 1-1 Victory grants P4 +2 exactly once;
 5. replaying cleared 1-1 does not grant first-clear reward again;
 6. 1-2 first clear yields P4 total4;
@@ -289,7 +299,7 @@ At minimum verify:
 11. subsequent 1-4 replay can reach5 and unlock P5;
 12. Defeat/Draw/unfinished Exit/Restart do not grant;
 13. duplicate finish callback cannot double-grant;
-14. shard + ownership persistence survives reload;
+14. shard + ownership persistence survives reload, including shard counts for already-owned characters;
 15. malformed/obsolete/denied storage recovers safely;
 16. pre-M3 campaign save migrates without losing clear progress;
 17. stale team with locked character sanitizes safely;
