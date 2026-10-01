@@ -33,7 +33,7 @@ test('declared viewport row budget keeps header, matchup, bench and BATTLE withi
  const rule=css.match(/\.team-page \{([^}]+)\}/)[1],props=Object.fromEntries(rule.split(';').filter(x=>x.includes(':')).map(x=>x.trim().split(':')));
  const rows=props['grid-template-rows'].match(/^(\d+)px minmax\((\d+)px,1fr\) (\d+)px (\d+)px$/).slice(1).map(Number),gap=parseFloat(props.gap),top=parseFloat(props['padding-top']);
  const bottomMin=parseFloat(props['padding-bottom'].match(/max\((\d+)px/)[1]);
- for(const [w,h,bottomInset] of [[667,320,0],[740,360,21],[844,390,21],[932,430,21]]) {
+ for(const [w,h,bottomInset] of [[667,320,0],[844,320,21],[740,360,21],[844,390,21],[932,430,21]]) {
   const fixed=rows[0]+rows[2]+rows[3]+gap*3+top+Math.max(bottomMin,bottomInset),upper=h-fixed;
   assert.ok(upper>=rows[1],`${w}×${h}: all four rows must fit`);
   assert.ok(rows[0]>=44 && rows[3]>=44,'BACK and BATTLE retain touch-height budget');

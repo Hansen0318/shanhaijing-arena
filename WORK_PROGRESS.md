@@ -16,6 +16,7 @@
 - Checkpoint 3 remote: `290d5f48974dad7896f3649b68ffea4c91eec307`, Actions #247 success.
 - Integration verification: targeted 11/11; impacted 130/130; build/diff PASS. Independent review no Critical/Important; minor forced-title overflow risk fixed with short slot title + accessible REQUIRED/absolute mark and regression. Safe-area bottom padding retained.
 - Geometry: actual CSS row-budget contract for 667×320 / 740×360 / 844×390 / 932×430 PASS; this is static budget evidence, not actual phone/browser geometry. Cloud local-file fixture blocked by URL policy and no resize capability; public normalviewport root no-scroll and BATTLE visible.
+- Short-viewport follow-up: 844×320 +21px bottom inset reproduced a row-budget failure. Compact bench now64×64; smaller portraits preserve44px touch targets, matchup min82px. Corrected contract PASS.
 - Remaining: final integration Actions/Pages and minimum public filter/Restart/error smoke, then durable closure.
 - Exact next step: verify final source Actions/Pages, exercise public filter/BATTLE/Restart, update closure docs. Stop before M3.
 
