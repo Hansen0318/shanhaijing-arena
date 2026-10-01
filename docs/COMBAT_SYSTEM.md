@@ -52,3 +52,6 @@ Prototype minimum:
 - KO state.
 - Victory/defeat.
 Final polish may later add hit stop, camera shake, stronger VFX, audio, status callouts.
+
+## Bounded damage presentation
+BattleSession publishes a separate drainDamageEvents queue only from actual resolved damage application shared by AI/player. Amount remains the resolver value (including overkill), display rounds to nearest integer without changing math. Scene-owned floating text uses the existing Phaser tween clock for Pause/orientation freeze and is cleaned on shutdown. Misses, air casts and no-damage actions create no number.

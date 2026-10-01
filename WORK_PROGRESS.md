@@ -1,21 +1,17 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Active polish checkpoint (2026-10-01): AI checkpoint: cooldown preparation integrated with 1.5s tunable window, skill/target commitment and range hysteresis. Targeted AI/Ability/BattleSession tests 67/67 PASS. Remaining: damage numbers, VS/type, integration/deploy. Exact next action: implement real resolved-damage presentation events.
-- Milestone: **M2 TEAM SELECT PASS / PLAYER VERIFIED**; prior M0/M1 player-verified baseline remains protected.
-- Player acceptance (2026-10-01): real-device M2 Team Select test reported OK. M2 engineering source `5cfa41224f27ce49ed61c48c462904a73ecbe654`, Actions #234 PASS, and the existing M2 public smoke remain reusable evidence.
-- Active branch / PR: `feat/m0-combat-core-20260927` / #1 retained.
-- M2 implementation/release evidence: `docs/M2_TEAM_SELECT_RELEASE.md`. Do not reimplement M2 or repeat unchanged full verification.
-- **Authorized next slice before M3:** `docs/M2_POST_ACCEPTANCE_POLISH.md` — one bounded combat/presentation polish batch:
-  1. cooldown-aware AI spacing/reposition so actors do not collapse into permanent Basic-attack piles while a higher-priority skill is about to become ready;
-  2. floating damage numbers for successful damage events, short-lived and readable on mobile;
-  3. Team Select presentation upgraded to a VS-style composition with allied selected three and stage enemy three visible before battle;
-  4. Power / Speed / Blast type icon shown with ally/enemy identity where specified by the polish spec.
-- This polish is **not M3**. No shards, rewards, unlock economy, Tier system, formal art, animation production, audio, PvP, or TD gameplay rules.
-- Chat-first rule: Chat owns the locked behavior/UI specification, acceptance criteria, defect analysis, and GitHub state updates. Work owns only the executable multi-file implementation, targeted/impacted tests, build/deploy, and necessary runtime engineering smoke.
-- Protected baselines during polish: M2 roster ownership/immutable definition separation, A1/A2/A3 runtime slot semantics, slot-2 front formation, Campaign routing/persistence, fixed 1120x540 landscape Arena, current touch/input architecture, 0s player→AI handoff, existing battle result rules.
-- After polish engineering/deploy, player performs a short real-device feel/readability smoke. **Do not start M3 until this bounded polish is accepted or explicitly deferred.**
-- Exact next action: hand `docs/M2_POST_ACCEPTANCE_POLISH.md` to Work and continue from the existing active branch/checkpoint only.
+- Milestone: **M2 POST-ACCEPTANCE POLISH — ENGINEERING VERIFIED / DEPLOY VERIFICATION PENDING**.
+- M0/M1/M2 are **PASS / PLAYER VERIFIED**; do not repeat or reimplement them.
+- Active branch / PR: `feat/m0-combat-core-20260927` / #1. Baseline remote HEAD `fcf5c4d969c8c43e3014b4f5459d7aef1dcad808`; latest pushed coherent checkpoint `d869fac7048fafc6815103aae9b0fac7f3b97dba` (VS/type), Actions #240 success.
+- Canonical spec: `docs/M2_POST_ACCEPTANCE_POLISH.md`.
+- Completed: configurable cooldown preparation, skill/target commitment and hysteresis; resolved-damage events and paused/cleaned floating numbers; VS selected allies vs actual stage enemy definitions; immutable-type marks (Team Select only).
+- Review correction: beginning a new preparation cannot preempt an already-ready prioritized skill; slot accessible labels retain character/type or EMPTY.
+- Actual checks: final targeted 18/18, impacted regression 149/149, Vite build, whole-diff check PASS. Independent review important issue reproduced and corrected. Pages workflow runs its configured full suite automatically; no unrelated manual historical smoke requested.
+- Checkpoints: AI `e83dd34b738b7dcd7561e872e9e88da32d284b56`; damage `30c6419e61c6de8594515af418b611fa49f8e54c`; VS/type `d869fac7048fafc6815103aae9b0fac7f3b97dba`.
+- Protected: ownership/save, runtime slots/slot2 front, Campaign results/unlocks, 1120x540 / Scale.NONE, input/manual override/0s handoff, Pause/orientation, 90s outcome/type rules.
+- Remaining: push integration correction, verify exact deployed source/Actions, minimum public runtime smoke, close docs. No M3 or formal production art/animation/audio/economy.
+- Exact next action: deploy verified integration checkpoint and smoke only changed matchup/damage/AI runtime; real iPhone feel/readability belongs to player.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

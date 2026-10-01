@@ -6,14 +6,10 @@
 **AUTHORIZED PRE-M3 SLICE: M2 POST-ACCEPTANCE COMBAT / PRESENTATION POLISH**
 
 ## Current state
-- Bounded polish IN PROGRESS: AI checkpoint: cooldown preparation integrated with 1.5s tunable window, skill/target commitment and range hysteresis. Targeted AI/Ability/BattleSession tests 67/67 PASS. Remaining: damage numbers, VS/type, integration/deploy. Exact next action: implement real resolved-damage presentation events.
-- M2 Team Select / Roster Skeleton engineering completed and deployed from `5cfa41224f27ce49ed61c48c462904a73ecbe654`; Actions #234 PASS.
-- Player reported real-device M2 test OK on 2026-10-01. M2 is therefore **PASS / PLAYER VERIFIED** for the accepted scope.
-- M0/M1 remain protected player-verified baselines.
-- Before M3, one bounded polish slice is authorized and specified in `docs/M2_POST_ACCEPTANCE_POLISH.md`.
-- The slice covers only: cooldown-aware AI spacing, floating damage numbers, VS-style Team Select enemy preview, and Power/Speed/Blast type icons.
-- It must not introduce shards/rewards/character unlock economy/Tiers/formal art/audio or tower-defense gameplay.
-- M3 remains blocked until this polish is either player accepted or explicitly deferred.
+- M0/M1/M2 are PASS / PLAYER VERIFIED. M2 accepted source `5cfa41224f27ce49ed61c48c462904a73ecbe654`, Actions #234; later spec baseline `fcf5c4d`.
+- Authorized bounded polish implemented: cooldown preparation with skill/target commitment and hysteresis; resolved-damage numbers on shared pause clock; VS allies vs actual enemy definitions; type marks in Team Select only.
+- Integration verified: targeted 18/18, impacted 149/149, build/diff PASS. Ready-skill priority review issue fixed. Latest safe pushed VS checkpoint `d869fac7048fafc6815103aae9b0fac7f3b97dba`; integration deploy/smoke pending.
+- Continue original feature branch / PR #1. No replacement implementation or M3. Next: deploy integration correction and minimum public changed-surface runtime smoke; then player iPhone feel/readability acceptance.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.

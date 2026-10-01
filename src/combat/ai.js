@@ -83,6 +83,11 @@ function preparedIntent(actor, target, definitions, state, tuning) {
       && c.slot.cooldownRemaining <= tuning.windowSeconds));
   if (state.targetId !== targetId(target) || !usable(candidate)) {
     clearPreparation(state);
+    // Preserve existing ready-skill priority before beginning a new commitment.
+    if (NON_BASIC_ORDER.some(category => {
+      const ready = readyCandidate(actor, category, definitions);
+      return ready && priorityOf(ready.definition) > 0;
+    })) return null;
     candidate = NON_BASIC_ORDER.map(category => ({ category,
       definition: abilityDefinitionFor(actor, category, definitions), slot: actor.abilityState[category] }))
       .filter(c => usable(c) && c.slot.phase === 'cooldown')

@@ -23,3 +23,6 @@ M1 regression 134/134, check/build and Actions #223 deployment PASS; public smok
 
 ## M2 Team Select integration
 Stage Preview START now opens Team Select. BACK returns to the same selected Preview. BATTLE is enabled for exactly 3 unique owned eligible characters; selected IDs feed battleFactory at the existing formation. A1/A2/A3 remain runtime slots, with slot 2 front. Retry preserves the frozen battle team; Exit and Next retain existing Campaign behavior. Character/team save is independent of Campaign save. See `docs/M2_TEAM_SELECT_RELEASE.md` for completed deployment/public flow smoke and pending iPhone acceptance.
+
+## Post-acceptance matchup polish
+Team Select displays selected ally slots vs the actual stage enemy lineup. Both enemy preview and battle factory use encounterDefinitions/stageEnemyDefinitions; no independent hard-coded preview. Type marks derive from immutable definition type and do not change the counter triangle. Team ownership/eligibility/persistence/navigation remain unchanged. M2 has since been player accepted; polish-specific iPhone readability/feel remains pending.

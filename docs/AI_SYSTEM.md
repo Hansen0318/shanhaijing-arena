@@ -81,3 +81,6 @@ Deterministic tests must establish:
 10. Basic is fallback when valid;
 11. movement intent is emitted when no ability can currently reach the chosen target;
 12. equivalent AI ability intent is executable through the existing shared `startAbility()` API.
+
+## M2 accepted-baseline polish
+BattleSession owns per-actor tactical preparation state. A tunable 1.5s window considers positive-priority enemy-targeted skills with declared preferredRange; newly beginning preparation never preempts ready prioritized abilities. Skill/target commitment and 0.25 enter / 0.06 settle tolerances stabilize repositioning. Settled actors may still Basic in range without pursuing inward. Prepared ready/valid skill feeds the existing startAbility pipeline. KO/manual override/invalid target clear preparation; current accepted manual-release handoff is 0s (historical 2s text above is superseded). No character/role IDs determine range.

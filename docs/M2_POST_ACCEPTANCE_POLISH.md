@@ -1,11 +1,16 @@
 # M2 Post-Acceptance Combat / Presentation Polish
 
 ## Status
-AI checkpoint: cooldown preparation integrated with 1.5s tunable window, skill/target commitment and range hysteresis. Targeted AI/Ability/BattleSession tests 67/67 PASS. Remaining: damage numbers, VS/type, integration/deploy. Exact next action: implement real resolved-damage presentation events.
-
-Authorized after player acceptance of M2 Team Select on 2026-10-01.
-
-This is one bounded pre-M3 polish batch. It is not M3 and must preserve the player-verified M0/M1/M2 architecture.
+**ENGINEERING VERIFIED / DEPLOY VERIFICATION PENDING** (2026-10-01).
+M0/M1/M2 remain player verified. Original branch / PR #1 retained; no M3 scope.
+- AI checkpoint: `e83dd34b738b7dcd7561e872e9e88da32d284b56`.
+- Damage checkpoint: `30c6419e61c6de8594515af418b611fa49f8e54c`.
+- VS/type checkpoint: `d869fac7048fafc6815103aae9b0fac7f3b97dba`.
+- Final targeted 18/18; impacted 149/149; build and diff PASS. Ready-skill precedence review issue reproduced/fixed, accessible slot identity restored.
+- Policy: 1.5s preparation window, 0.25 enter / 0.06 settle tolerances; committed skill/target until execution or invalidation. Ready skills retain existing priority before a new preparation. Close-range Heavy only aims for its own 0.45 preferred range; no role/character hard-code.
+- Damage: exact resolver amount event, rounded integer text, 1s upward fade, five stagger offsets, existing tween pause/orientation clock, scene shutdown cleanup.
+- VS: shared immutable encounter lookup used by preview and factory; type marks are presentation-only, Team Select only. Battle HUD unchanged.
+- Remaining: integration push, exact-source Pages verification, minimal public runtime smoke, final recovery closure. Real iPhone feel/readability is pending player smoke.
 
 ## Goal
 Improve battle readability, spacing, impact, and pre-battle information without changing progression/economy scope.
