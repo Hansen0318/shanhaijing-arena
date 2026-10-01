@@ -1,11 +1,11 @@
 // Presentation only. Flash/pop then fade in place on the existing scene pause clock.
 const CATEGORY_STYLES = Object.freeze({
-  basic: { size:32, duration:720 },
-  heavy: { size:36, duration:760 },
-  special: { size:40, duration:800 },
-  awakening: { size:44, duration:840 },
+  basic: { size:40, duration:720 },
+  heavy: { size:45, duration:760 },
+  special: { size:50, duration:800 },
+  awakening: { size:55, duration:840 },
 });
-const FALLBACK_STYLE = { size:36, duration:760 };
+const FALLBACK_STYLE = { size:45, duration:760 };
 
 export class DamageNumbers {
   constructor(scene, project) {
@@ -53,11 +53,11 @@ export class DamageNumbers {
       const style = Object.hasOwn(CATEGORY_STYLES, event.category)
         ? CATEGORY_STYLES[event.category] : FALLBACK_STYLE;
       const critical = event.critical === true;
-      const size = critical ? Math.round(style.size*1.25) : style.size;
+      const size = critical ? Math.round(style.size*1.12) : style.size;
       const duration = style.duration + (critical ? 80 : 0);
       this.floatText(x, y, String(Math.round(event.amount)), size, duration, critical);
       if (critical) {
-        const labelSize = size + 6;
+        const labelSize = size + 12;
         this.floatText(x, y-(size+labelSize)/2-6, 'CRITICAL!', labelSize, duration, true);
       }
     }
