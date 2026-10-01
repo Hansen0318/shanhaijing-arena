@@ -15,6 +15,13 @@ M2 is player verified and implements:
 M3 must not bypass these contracts.
 
 ## M3 planned character acquisition / shards
+
+Shard inventory is universal across the roster:
+- locked characters accumulate shards toward unlock;
+- already-owned characters can also receive and retain their own shards;
+- M3 does not spend owned-character shards;
+- M4 will consume/use those persisted counts for Tier progression.
+
 Planned loop:
 Stage Preview shows configured shard rewards
 → Victory grants configured shards
