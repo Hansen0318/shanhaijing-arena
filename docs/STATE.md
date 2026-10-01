@@ -1,19 +1,15 @@
 # Project State
 
 ## Milestone
-**M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M3 PREVIEW PRESENTATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- **M3 PREVIEW PRESENTATION CORRECTION — RELEASE CHECKS IN PROGRESS**. Branch feat/m0-combat-core-20260927 / PR#1 retained. Recoverybase0636172132c2719f68d5a154039a1f34e30aac7e. Preview labels FIRST CLEAR/CLAIMED/REPEATABLE removed; available/repeatable rows normal contrast, claimed non-repeatable muted+50%opacity. Existing reward/acquisition/persistence/config/TeamSelect/combat unchanged.
-- Actual checks: RED presentation5/7 then GREEN28/28 (rewardPresentation, universalRewards, campaignNavigation, teamFlowView); build/diff PASS. Local JSindex-BLZigtQP.js /CSSindex-CtA1vGg1.css. Next exactaction: Actions/Pages deployment/source verification then targeted player readability smoke. No full local suite or unrelated historical smoke.
-- Design record only: future Team Select idle/micro-animation retains name below character (docs/CHARACTER_SYSTEM.md); no current Team Select changes, no M4. Previous farming release evidence below remains historical.
-
-- Active branch feat/m0-combat-core-20260927 / PR#1 open; no main merge. Safe implementation/deployedcheckpoint1f5ef823d18d424dc4ffe97f16a0f08ab48fbeab; laterdocs-onlyclosure. WORK_PROGRESS.md current pointer authoritative.
-- All Chapter1 stages now configure two firstClear items and one repeatable subset. Exact fixture in canonicalM3§4. P4unlocksafter1-2at5, P5after1-5at7; owned shard inventory retained. Chapters2–6placeholder config uses same engine; future synthetic coverage three first/two replay items.
-- Campaign route owner hides game on startup/render/pageshow/viewport restoration; battle shows game, geometry1120×540 unchanged. Explicit one-shot?resetProgress=1 clears only three game saves and opens freshChapter1, removes trigger before clearing; normalURLnever wipes.
-- Prior acceptedM0/M1/M2/M3 baseline protected. Reward model/acquisition/persistence/TeamSelect unchanged; product edits bounded to liveconfig, bootstraproute/reset, hiddenhostCSS.
-- Targeted16/16; impacted126/126; independentreview39/39/no findings; build/diffPASS. Actions#289 /36881481144 CI288/288, Build/Pages success. Public/local/CIindex-fgF_0oLa.js matches; clearedPreviewCLAIMED+REPEATABLE and reloadhiddenhost observed. Evidence docs/verification/M3_UNIVERSAL_FARMING.md.
-- Next exactaction: currentM3§14player smoke using explicitone-shotreset for freshfixture, allfivefarmable,reload/persist,Safari rectangle andreadabilitycheck. STOP before M4; physicalSafari/currentfollow-up acceptance pending.
+- Branch feat/m0-combat-core-20260927 / PR#1 open; safe deployed source2d25cdeb8fb07fbf3e1078b67bff9c66d123bddc; newer closure docs-only. WORK_PROGRESS current pointer authoritative.
+- Preview shows character/quantity without FIRST CLEAR/CLAIMED/REPEATABLE labels. Available/repeatable normal contrast; only claimed non-repeatable rows muted+50%opacity. Transaction/model/persistence/liveconfig/TeamSelect unchanged.
+- RED5/7→related28/28 GREEN, build/diff/bounded reviewPASS. Actions#290 /36942296853 CI288/288, Build/Pages success; public/local/CIindex-BLZigtQP.js /index-CtA1vGg1.css match. FreshPreview three plain rows observed; claimed distinction covered by DOMtests, real-device smoke pending. Evidence docs/verification/M3_PREVIEW_CONTRAST.md.
+- Current universalChapter1multi/farming fixture, route ownership and explicitone-shotreset preserved. No repeat of prior acquisition/unlock/reload/combat implementation or acceptance claims.
+- Future idle/micro-animation character names remain belowcharacters: designrecordonly in CHARACTER_SYSTEM; no currentTeamSelectcodechange.
+- Exact nextaction: Preview-only devicecheck for labelabsence, dimclaimedfirstrows/brightrepeatable andreadability. STOP beforeM4; do not claimPLAYER VERIFIED.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

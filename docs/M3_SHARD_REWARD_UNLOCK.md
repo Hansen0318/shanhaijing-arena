@@ -1,7 +1,7 @@
 # M3 — Shard / Reward / Character Unlock Loop
 
 ## Status
-**M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M3 PREVIEW PRESENTATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 The player confirmed the initial M3 real-device smoke OK. That acquisition/persistence/unlock/Team Select baseline is protected. The bounded multi-character reward correction is implemented; engineering release checks passed and only its new player acceptance remains pending.
 
@@ -410,6 +410,6 @@ Engineering PASS: targeted16/16, impacted126/126, independent review39/39/no fin
 
 
 ## 20. Preview label removal (2026-10-02)
-Presentation-only correction implemented in campaign/view.js and campaign/style.css; transaction/model/persistence/grant logic and live fixture unchanged. Removed policy spans/CSS; already-claimed rows use muted color plus50%opacity. Actual DOM tests cover all labels absent and cleared first rows dimmed while repeatable stays bright. RED5/7 then GREEN targeted/impacted28/28; build/diff passed. Deployment evidence follows in WORK_PROGRESS.md.
+Presentation-only correction implemented in campaign/view.js and campaign/style.css; transaction/model/persistence/grant logic and live fixture unchanged. Removed policy spans/CSS; already-claimed rows use muted color plus50%opacity. Actual DOM tests cover all labels absent and cleared first rows dimmed while repeatable stays bright. RED5/7 then GREEN targeted/impacted28/28; build/diff passed. Safe deployed source2d25cdeb8fb07fbf3e1078b67bff9c66d123bddc; Actions#290 /36942296853 CI288/288, Build/Pages success. Public/local/CI bundles match. Evidence docs/verification/M3_PREVIEW_CONTRAST.md. Only short Preview contrast/readability smoke remains for this slice.
 
 Future Team Select formal idle/micro-animation presentation keeps the character name below the character. This is a design decision only; no Team Select or animation code changed, no M4 started.
