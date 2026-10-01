@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- Integration safe remote: 2c0b9e3953ecac0e899ccbfbdc72b4226257a003. Release first full run 265/266: sole stale criticalDamage Restart fixture assumed P5 initially owned. Explicit prototypeOwnership fixture correction GREEN targeted19/19 then full266/266. Build PASS (index-CYcU_UMN.js); existing Phaser bundle advisory only. Independent review pending; final deployment not yet claimed.
+
 - Domain/persistence safe remote: a0e83010cfc1ea8f42658e70b4fe014b749c6ec8. UI/controller integration now coherent: canonical Chapter 1 rewards; current normal ownership; per-round UUID rejects stale callbacks; authoritative Result; Preview policies/CLAIMED; ownership refresh preserves empty slots/order.
 - RED integration 9 tests + presentation 4 tests; slot-order regression reproduced then fixed. GREEN impacted 106/106. Historical M2 tests now explicitly inject unlock-all ownership fixtures; no normal Campaign bypass. Test harness filter lookup corrected to data-filter (nested icon labels).
 - Remaining release review/build/CI/deploy/public source confirmation. Next: checkpoint integration remotely BEFORE long release verification.

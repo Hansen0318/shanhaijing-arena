@@ -44,7 +44,7 @@ test('BATTLE saves the valid team; partial edits and BACK do not overwrite it',(
 test('saved team is sanitized against new stage bans/ownership and cannot start illegally',()=>{
  const store=storage(),p=createTeamPersistence(store);p.save(['P1','P3','P5']);const stage=findStage('1-1'),old=stage.bannedCharacters;
  stage.bannedCharacters=['P3'];
- try {const c=new CampaignController({ownership:prototypeOwnership(),teamPersistence:p,ownership:{characterIds:['P1','P3','P5']}});enter(c);
+ try {const c=new CampaignController({teamPersistence:p,ownership:{characterIds:['P1','P3','P5']}});enter(c);
   assert.deepEqual(c.teamSelection.slots,['P1','P5',null]);assert.equal(c.startBattle(),null);
  }finally{stage.bannedCharacters=old;}
 });

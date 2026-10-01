@@ -1,3 +1,4 @@
+import { prototypeOwnership } from '../src/roster/catalog.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as resolver from '../src/combat/combatResolver.js';
@@ -94,7 +95,7 @@ test('same battle seed and inputs reproduce actual hit/crit sequence',()=>{
   assert.deepEqual(first,run(123));assert.notDeepEqual(first,run(124));
 });
 test('fresh Restart/retry factory resets RNG, events, HP and time with same stage/team',()=>{
-  const controller=new CampaignController({teamPersistence:{load:()=>['P1','P3','P5'],save(){}}});controller.openChapter('chapter-1');controller.openTeamSelect();
+  const controller=new CampaignController({ownership:prototypeOwnership(),teamPersistence:{load:()=>['P1','P3','P5'],save(){}}});controller.openChapter('chapter-1');controller.openTeamSelect();
   const config=controller.startBattle();
   const first=createStageBattleSession(config);const run=s=>{const events=[];for(let i=0;i<80;i++){s.step(.1);events.push(...s.drainDamageEvents());}return events;};
   const sequence=run(first);const fresh=createStageBattleSession(config);
