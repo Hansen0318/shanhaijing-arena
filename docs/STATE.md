@@ -154,3 +154,9 @@ Complete the playable Chapter → Stage Preview → Battle → Result → Unlock
 - Portrait: full-page orientation gate, hidden/inert Campaign/Arena and paused battle; landscape reuses route and scene with viewport resync. No orientation-lock dependency or CSS rotation.
 - Stage CTA: START only. Running-battle X: confirmation freezes first; CONTINUE restores the prior running/manual Pause state, EXIT invokes the unchanged stage-select exit without fresh completion/unlock. Previously cleared stages retain CLEAR.
 - No change to logical Arena dimensions, camera, input/HUD, countdown, formation, AI, unlock rules or persistence schema. Release and browser evidence to follow in this checkpoint.
+
+## Polish damage checkpoint (2026-10-01)
+- AI checkpoint remote: `e83dd34b738b7dcd7561e872e9e88da32d284b56`.
+- Real resolved-damage events and 1s outlined floating numbers integrated; air/invalid/KO hits excluded, rapid hits offset, same tween pause clock, shutdown cleanup.
+- Damage + Pause/tween targeted tests 13/13 PASS; earlier BattleSession impacted tests PASS.
+- Remaining: VS/type and integration/deploy. Exact next action: shared encounter definition lookup and VS view.

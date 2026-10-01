@@ -7,6 +7,7 @@ import { allyHud, enemyHud, formatBattleTime } from './battleHud.js';
 import { portraitCardLayout } from './portraitCardLayout.js';
 import { battlePortrait } from '../roster/battlePresentation.js';
 import { castVisual } from './castVfx.js';
+import { DamageNumbers } from './damageNumbers.js';
 import { PreBattleGate } from './preBattleGate.js';
 
 const SIM_STEP_SECONDS = 0.05;
@@ -60,6 +61,8 @@ export class ArenaScene extends Phaser.Scene {
     this.session = this.stageConfig ? createStageBattleSession(this.stageConfig) : createDemoBattleSession();
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
+    this.damageNumbers = new DamageNumbers(this,arenaToStage);
+    this.events.once('shutdown',()=>this.damageNumbers.destroy());
     this.selectedId = 'a2';
     this.fixtureKoApplied = false;
     this.preBattleGate = new PreBattleGate();
@@ -171,6 +174,7 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   renderCastEvents() {
+    this.damageNumbers?.render(this.session.drainDamageEvents());
     for (const event of this.session.drainCastEvents()) {
       const visual = castVisual(event, arenaToStage);
       const effect = this.add.graphics().setPosition(visual.origin.x, visual.origin.y).setDepth(15);

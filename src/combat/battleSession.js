@@ -104,7 +104,23 @@ export class BattleSession {
     this.targetIds = new Map(this.actors.map((actor) => [actor.instanceId, null]));
     this.playerMovement = new Map(this.actors.map((actor) => [actor.instanceId, { x: 0, y: 0 }]));
     this.castEvents = [];
+    this.damageEvents = [];
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
+  }
+
+  drainDamageEvents() {
+    return this.damageEvents.splice(0);
+  }
+
+  applyResolvedDamage(actor, target, actorDefinition, defenderDefinition, definition, category, source) {
+    if (!canCharacterAct(target) || !(definition.effect?.coefficient > 0)) return 0;
+    const amount = resolveDirectDamage({ attacker:actor, defender:target,
+      attackerDefinition:actorDefinition, defenderDefinition, abilityDefinition:definition });
+    if (Number.isFinite(amount) && amount > 0) this.damageEvents.push({
+      actorId:actor.instanceId, targetId:target.instanceId, category, source, amount,
+      position:{x:target.x,y:target.y},
+    });
+    return amount;
   }
 
   drainCastEvents() {
@@ -221,13 +237,7 @@ export class BattleSession {
         slot,
         definition,
         applyEffect: () => {
-          resolveDirectDamage({
-            attacker: actor,
-            defender: target,
-            attackerDefinition: actorDefinition,
-            defenderDefinition,
-            abilityDefinition: definition,
-          });
+          this.applyResolvedDamage(actor,target,actorDefinition,defenderDefinition,definition,category,'player');
         },
       });
 
@@ -343,14 +353,7 @@ export class BattleSession {
           slot,
           definition,
           applyEffect: () => {
-            resolveDirectDamage({
-              attacker: actor,
-              defender: target,
-              attackerDefinition: actorDefinition,
-              defenderDefinition,
-              abilityDefinition: definition,
-            });
-            applied = true;
+            applied = this.applyResolvedDamage(actor,target,actorDefinition,defenderDefinition,definition,intent.category,'ai') > 0;
           },
         });
       } else {

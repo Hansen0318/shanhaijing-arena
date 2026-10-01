@@ -402,3 +402,9 @@ Awakening progression/unlock is not implemented in M0 yet; future progression ma
 - Portrait visual viewport uses a full-page ROTATE DEVICE gate. Campaign and Arena are hidden/inert, and a live battle pauses countdown/simulation/cooldown/VFX. Landscape resumes the same route and round with viewport remeasurement; manual Pause and Exit confirmation remain independent interruption reasons.
 - Stage Preview CTA is START only. Battle X opens an EXIT BATTLE? overlay: CONTINUE restores the prior running or manually paused state; EXIT uses existing unfinished-exit route without a new completion write. Earlier CLEAR persists.
 - Protected 1120×540 stage, fixed camera, joystick/skills/HUD, formation, AI and save schema. Release/browser evidence belongs to this checkpoint; real iPhone acceptance remains pending.
+
+## Polish damage checkpoint (2026-10-01)
+- AI checkpoint remote: `e83dd34b738b7dcd7561e872e9e88da32d284b56`.
+- Real resolved-damage events and 1s outlined floating numbers integrated; air/invalid/KO hits excluded, rapid hits offset, same tween pause clock, shutdown cleanup.
+- Damage + Pause/tween targeted tests 13/13 PASS; earlier BattleSession impacted tests PASS.
+- Remaining: VS/type and integration/deploy. Exact next action: shared encounter definition lookup and VS view.

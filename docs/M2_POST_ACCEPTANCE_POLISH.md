@@ -137,3 +137,9 @@ Keep it short:
 4. Confirm joystick/skill controls, Retry/Exit, and orientation behavior still feel normal.
 
 Stop after this slice. Do not start M3 automatically.
+
+## Polish damage checkpoint (2026-10-01)
+- AI checkpoint remote: `e83dd34b738b7dcd7561e872e9e88da32d284b56`.
+- Real resolved-damage events and 1s outlined floating numbers integrated; air/invalid/KO hits excluded, rapid hits offset, same tween pause clock, shutdown cleanup.
+- Damage + Pause/tween targeted tests 13/13 PASS; earlier BattleSession impacted tests PASS.
+- Remaining: VS/type and integration/deploy. Exact next action: shared encounter definition lookup and VS view.

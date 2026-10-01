@@ -53,3 +53,16 @@ test('Resume preserves an active VFX tween across a 400ms pause and advances onl
     Date.now = originalNow;
   }
 });
+
+test('floating damage tween freezes with Pause/orientation clock and cleans up',async()=>{
+ const {DamageNumbers}=await import('../src/runtime/damageNumbers.js');
+ let now=1000;const originalNow=Date.now;Date.now=()=>now;
+ try {
+  const scene=new ArenaScene();scene.session={result:()=> 'running'};scene.paused=false;scene.time={paused:false};scene.releaseJoystick=()=>{};scene.refreshSkillButtons=()=>{};
+  scene.tweens=new TweenManager({sys:{events:new EventEmitter()}});scene.tweens.start();let label;
+  scene.add={text(x,y,text){label={x,y,alpha:1,text,destroyed:false,setOrigin(){return this;},setDepth(){return this;},destroy(){this.destroyed=true;}};return label;}};
+  const numbers=new DamageNumbers(scene,p=>p);numbers.render([{targetId:'e1',amount:10,position:{x:100,y:100}}]);
+  for(let i=0;i<3;i++){now+=16;scene.tweens.update();}const frozen={y:label.y,alpha:label.alpha};scene.togglePause();now+=1200;scene.tweens.update();assert.deepEqual({y:label.y,alpha:label.alpha},frozen);assert.equal(label.destroyed,false);
+  scene.togglePause();now+=16;scene.tweens.update();assert.ok(label.y<frozen.y);assert.equal(label.destroyed,false);numbers.destroy();assert.equal(label.destroyed,true);assert.equal(numbers.active.size,0);
+ }finally{Date.now=originalNow;}
+});
