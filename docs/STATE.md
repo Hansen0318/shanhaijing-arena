@@ -5,12 +5,15 @@
 
 **M2 POST-ACCEPTANCE POLISH: ENGINEERING PASS / PLAYER SMOKE PENDING**
 
+**AUTHORIZED BOUNDED CORRECTION: TEAM SELECT SINGLE-SCREEN / ROSTER FILTER / BATTLE RESTART**
+
 ## Current state
-- M0/M1/M2 are PASS / PLAYER VERIFIED. M2 accepted source `5cfa41224f27ce49ed61c48c462904a73ecbe654`, Actions #234; later spec baseline `fcf5c4d`.
-- Authorized bounded polish implemented: cooldown preparation with skill/target commitment and hysteresis; resolved-damage numbers on shared pause clock; VS allies vs actual enemy definitions; type marks in Team Select only.
-- Integration source `78ce86231b5f4ef11c9c5ee00112f0c9835ecf56`; targeted 18/18, impacted 149/149, build/diff PASS. Independent whole-diff review corrected ready-skill precedence and found no remaining important issues. Actions #241 / 36795737466 full CI tests 193/193, Build/Pages Deploy success. Public bundle matches local build.
-- Public engineering smoke: VS/type, selected lineup and slot2 front, countdown completion, real hits/numbers, Pause freeze/Resume, Exit confirmation, same Preview/recent team restore. No page-origin error observed. Cloud animation observation was slow; actual real-time skill-cycle feel/phone readability/rotation remain player-owned.
-- Continue original feature branch / PR #1; no merge/replacement/M3. Next exact action: short iPhone polish acceptance checklist in canonical spec.
+- M0/M1/M2 remain player verified.
+- First post-acceptance polish deployed and engineering-verified: cooldown-aware AI spacing, floating damage numbers, VS matchup preview, Team Select type marks.
+- Player real-device feedback now authorizes a separate bounded correction documented in `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md`.
+- Correction requirements: no-scroll single-screen Team Select; smaller square roster bench; Power/Speed/Blast filter tabs as display-only filters; remove type marks from upper matchup; preserve future upper standing/idle presentation space without implementing formal art/animation; battle X menu adds RESTART between CONTINUE and EXIT.
+- Free team composition across Types remains locked; no one-per-Type rule.
+- Continue original feature branch / PR #1. M3 remains blocked until this correction is implemented and player-tested or explicitly deferred.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
