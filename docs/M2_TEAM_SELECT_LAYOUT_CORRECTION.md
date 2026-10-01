@@ -1,5 +1,29 @@
 # M2 Team Select Layout / Roster Filter / Battle Restart Correction
 
+## Release closure — 2026-10-01
+**ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**.
+- Final source: `3e1063bb61455438a9cf5e707cbd05a1e2114410`.
+- Actions [#249](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36818638073): CI204/204, Build, Pages artifact and Deploy success.
+- Local targeted11/11, impacted130/130, build/diff PASS. Whole-diff independent review no remaining findings.
+- Integration checkpoint: `85e9df78389c7f98260cfc9b99e72cd60f7d0a16`; safe-area follow-up is final source above. Earlier three checkpoints below remain recoverable.
+- Public URL: https://hansen0318.github.io/shanhaijing-arena/ ; final bundle `index-Dp67u527.js` matches local build.
+- Public final-source engineering smoke: VS/bench/tabs rendered; P1/P3/P5 retained across filters; BATTLE below3disabled/exact3enabled; actual bench64×64, upper type marks0; root no scroll and BATTLE visible in1363×936 cloud viewport. Restart stayed in Arena with same team/full HP/01:30/fresh3/defaultA2; CONTINUE preserved manual Pause; EXIT returned1-1 Preview/1-2stilllocked. No page-origin runtime error; extension metadata errors excluded.
+- Mobile geometry evidence is deterministic CSS row-budget testing, including844×320 with21px bottom inset; no real iPhone emulation claim. Cloud local-file probe blocked by URL policy and no resize API. Real device is player-owned.
+- Evidence screenshot: [public cloud view](verification/m2-layout-correction-public.jpg).
+
+## Player smoke — only changed scope
+1. iPhone landscape: BACK/title/matchup/bench/status/BATTLE all visible without scroll; readable and safe-area comfortable.
+2. Power/Speed/Blast/ALL: tabs and64px cards easy to tap; selected team/order retained while filtering/removing/replacing.
+3. Battle X→RESTART: same stage/team, full HP,90s,3→2→1 and slot2front; no route detour.
+4. Manual Pause→X→CONTINUE stays paused; Resume and portrait/landscape return behave correctly.
+Stop after acceptance; do not begin M3 without authorization.
+
+## Known limits
+- Five unchanged prototypes have only2Power/2Speed/1Blast; three-same-type acceptance is exercised with immutable future catalog fixtures, not new characters.
+- Under320px available landscape height is unverified. Real phone layout/touch/feel pending.
+- Static probe generator is present but was not executed in the restricted cloud browser; no hidden scroll/clipping workaround added.
+- Existing Phaser >500kB bundle advisory retained. No formal art/animation/audio, combat balancing, new ownership or economy.
+
 ## Checkpoint evidence
 - Checkpoint 1: viewport-row layout and clean upper matchup implemented. View/flow/encounter targeted 6/6, diff PASS; runtime geometry still pending.
 - Checkpoint 1 remote: `d3cbf1707ed1c385522d9037be0755a5a9a36bf3`.
@@ -10,10 +34,10 @@
 - Integration: targeted 11/11, impacted 130/130, build/diff PASS; independent review no Critical/Important. Forced slot title stays short, REQUIRED has accessible label + absolute asterisk; row-budget regression and safe-area bottom padding added.
 - Short-viewport follow-up: 844×320 plus21px bottom inset initially failed the row budget; reduced bench76→64px and portrait40→34px, preserving >=44px touch targets. Regression now covers that reduced visual viewport.
 - Layout evidence: declared actual CSS budget fits 667×320, 740×360, 844×390, 932×430; this is explicitly not real-device/browser geometry. Cloud browser cannot open local file fixtures per URL policy and exposes no viewport resize. Public normalviewport Team Select root had scrollHeight=clientHeight and BATTLE visible. Real iPhone remains player-owned.
-- Next: final integration Actions/deploy and minimum public filter/Restart/error smoke; no M3.
+- Next: player-only four-item smoke above; engineering closure complete. No M3.
 
 ## Status
-Authorized from player real-device feedback after the first M2 post-acceptance polish deployment.
+Implemented and deployed from player real-device feedback after the first M2 post-acceptance polish deployment; engineering PASS, targeted iPhone acceptance pending.
 
 This is a bounded UI / flow correction before M3. It does not reopen M0/M1/M2 core work and must preserve the current AI-spacing, floating-damage, roster, campaign, input, and persistence baselines.
 

@@ -1,5 +1,8 @@
 # M2 Post-Acceptance Combat / Presentation Polish
 
+## Subsequent correction
+The original polish evidence below is preserved. `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md` now supersedes upper-matchup type-mark placement: marks appear only in compact bench/filter tabs; clean upper preview and X-menu Restart are separately engineering-verified. AI/damage code remains unchanged.
+
 ## Status
 **ENGINEERING PASS / PLAYER SMOKE PENDING** (2026-10-01).
 M0/M1/M2 remain player verified. Original branch / PR #1 retained; no M3 scope.

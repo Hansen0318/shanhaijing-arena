@@ -1,21 +1,20 @@
 # Project State
 
 ## Milestone
-**M2 TEAM SELECT PASS / PLAYER VERIFIED**
+**M0 / M1 / M2 PASS / PLAYER VERIFIED**
 
 **M2 POST-ACCEPTANCE POLISH: ENGINEERING PASS / PLAYER SMOKE PENDING**
 
-**M2 LAYOUT / FILTER / RESTART CORRECTION — IN PROGRESS**
+**M2 LAYOUT / FILTER / RESTART CORRECTION: ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**
 
 ## Current state
-- M0/M1/M2 remain player verified.
-- First post-acceptance polish deployed and engineering-verified: cooldown-aware AI spacing, floating damage numbers, VS matchup preview, Team Select type marks.
-- Player real-device feedback now authorizes a separate bounded correction documented in `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md`.
-- Correction requirements: no-scroll single-screen Team Select; smaller square roster bench; Power/Speed/Blast filter tabs as display-only filters; remove type marks from upper matchup; preserve future upper standing/idle presentation space without implementing formal art/animation; battle X menu adds RESTART between CONTINUE and EXIT.
-- Free team composition across Types remains locked; no one-per-Type rule.
-- Continue original feature branch / PR #1. M3 remains blocked until this correction is implemented and player-tested or explicitly deferred.
-
-- Checkpoint 1 implemented viewport rows / clean matchup, targeted 6/6 and diff PASS. Compact filters complete (targeted roster/view/persistence 21/21); Restart implemented and targeted 5/5 PASS; integration targeted 11/11, impacted130/130, build/diff PASS; final deploy/public smoke pending. See CURRENT HANDOFF POINTER.
+- Bounded correction completed on original `feat/m0-combat-core-20260927` / PR#1. No replacement branch, merge or M3.
+- Final deployed code `3e1063bb61455438a9cf5e707cbd05a1e2114410`; Actions #249 / 36818638073 CI204/204, Build/Pages Deploy success. Local targeted11/11, impacted130/130, build/diff PASS. Independent whole-diff review has no remaining findings.
+- Team Select: fixed viewport rows, bottom safe area, clean actual-enemy matchup, compact64×64 bench; ALL/Power/Speed/Blast filters only change visible candidates. No Type quota; ownership/eligibility/unique/exact3/save/slot order unchanged. Type marks only bench/tabs; battle HUD unchanged.
+- X menu: CONTINUE / RESTART / EXIT. Restart/Retry share validated fresh config and existing scene lifecycle; same stage/team, fresh HP/CD/targets/AI/events/timer/countdown/formation, shutdown damage cleanup; no completion/progression writes. New round clears manual/menu interruptions and preserves orientation authority.
+- Public final source: render/filter/preservedP1/P3/P5/BATTLE; Restart full same-team Arena/fresh3/defaultA2; CONTINUE preserves manual Pause; EXIT correct Preview/no unlock; no page-origin errors. Cloud viewport actual no-scroll confirmed; mobile dimensions have static CSS budget evidence only.
+- Real iPhone no-scroll/readability/touch/Restart/orientation acceptance remains player-owned. Available landscape height below320px unverified. Canonical evidence/checkpoints/limits in `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md` and CURRENT HANDOFF POINTER.
+- Exact next action: short four-item player smoke in canonical spec. Stop before M3/M4/formal art/animation/audio/economy.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.

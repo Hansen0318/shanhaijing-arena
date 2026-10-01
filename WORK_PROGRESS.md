@@ -1,24 +1,18 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Milestone: **M2 LAYOUT / FILTER / RESTART CORRECTION — IN PROGRESS**.
-- Active branch / PR: `feat/m0-combat-core-20260927` / #1. Recovery baseline remote `d13252799e933f66b425035ddcc03335387b6d86`, Actions #244 success; remote main inspected `16f73932a0399979ba79b92f93f5ce1c1d1909b9`.
-- Canonical spec: `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md`. No replacement branch/merge/M3.
-- Protected: M0/M1/M2 player verified; prior polish source `78ce862` engineering PASS. Do not repeat AI/damage implementation.
-- Checkpoint 1 remote: `d3cbf1707ed1c385522d9037be0755a5a9a36bf3`.
-- Completed checkpoint 1: Team Select uses four viewport rows; simplified upper six identities without type marks; reduced card/gap/padding heights, no overflow clipping or scrolling workaround.
-- Actual checks: targeted view/layout/encounter/flow 6/6; diff check PASS. Mobile geometry runtime evidence pending integration.
-- Completed checkpoint 2: compact square bench; ALL/Power/Speed/Blast view-owned display filters. Filter changes preserve slots/order, save and eligibility. Same-type future catalog fixtures retain free composition.
-- Actual checkpoint 2 checks: roster/filter/view/persistence targeted 21/21 PASS; four-viewport browser geometry probe generated from actual view/CSS, runtime geometry pending (cloud browser blocks local file URLs).
-- Checkpoint 2 remote: `84c0b438604e6fbdbdb4cf5172278b97b02169df`.
-- Completed checkpoint 3: X menu CONTINUE/RESTART/EXIT; Restart and result Retry share freshBattleConfig and existing scene/factory lifecycle. No combat/input changes.
-- Actual Restart targeted: 5/5 plus directly impacted pause/orientation/retry/lineup tests (previous combined 27/27 before final app-wiring case). Fresh Arena create resets runtime state; shutdown clears damage text; manual Pause clears on new round while orientation remains authoritative.
-- Checkpoint 3 remote: `290d5f48974dad7896f3649b68ffea4c91eec307`, Actions #247 success.
-- Integration verification: targeted 11/11; impacted 130/130; build/diff PASS. Independent review no Critical/Important; minor forced-title overflow risk fixed with short slot title + accessible REQUIRED/absolute mark and regression. Safe-area bottom padding retained.
-- Geometry: actual CSS row-budget contract for 667×320 / 740×360 / 844×390 / 932×430 PASS; this is static budget evidence, not actual phone/browser geometry. Cloud local-file fixture blocked by URL policy and no resize capability; public normalviewport root no-scroll and BATTLE visible.
-- Short-viewport follow-up: 844×320 +21px bottom inset reproduced a row-budget failure. Compact bench now64×64; smaller portraits preserve44px touch targets, matchup min82px. Corrected contract PASS.
-- Remaining: final integration Actions/Pages and minimum public filter/Restart/error smoke, then durable closure.
-- Exact next step: verify final source Actions/Pages, exercise public filter/BATTLE/Restart, update closure docs. Stop before M3.
+- Milestone: **M2 TEAM SELECT LAYOUT / ROSTER FILTER / BATTLE RESTART CORRECTION — ENGINEERING PASS / iPhone PLAYER SMOKE PENDING** (2026-10-01).
+- M0/M1/M2 remain **PASS / PLAYER VERIFIED**. Prior polish AI/damage implementation retained; no M3/M4.
+- Active branch / PR: `feat/m0-combat-core-20260927` / #1; no replacement branch or main merge. Recovery baseline `d13252799e933f66b425035ddcc03335387b6d86`, main inspected `16f73932a0399979ba79b92f93f5ce1c1d1909b9`.
+- Canonical spec: `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md`.
+- Deployed final source: `3e1063bb61455438a9cf5e707cbd05a1e2114410`; Actions #249 / 36818638073, CI204/204, Build, Pages Deploy success. Public bundle `index-Dp67u527.js` matched local final build. Later closure commit is docs/evidence only [skip ci].
+- Checkpoints: layout `d3cbf1707ed1c385522d9037be0755a5a9a36bf3`; bench/filter `84c0b438604e6fbdbdb4cf5172278b97b02169df`; Restart `290d5f48974dad7896f3649b68ffea4c91eec307`; integration `85e9df78389c7f98260cfc9b99e72cd60f7d0a16`; safe-area follow-up/final source `3e1063bb61455438a9cf5e707cbd05a1e2114410`.
+- Completed: viewport rows with safe-area bottom; compact64×64 bench and ALL/Power/Speed/Blast display-only filters; clean actual-enemy matchup without upper type marks; shared Restart/Retry fresh scene pipeline. No ownership/catalog/combat/input/AI/damage refactor.
+- Actual local verification: targeted11/11, impacted130/130, build and whole-diff check PASS. Independent review no remaining Critical/Important/Minor. Forced long label compacted; reduced viewport844×320+21px bottom inset reproduced then passed CSS budget regression.
+- Public final-source smoke: Team Select/filter rendered; P1/P3/P5 preserved across Blast/Speed/ALL; exact3 BATTLE; bench64×64, upper type marks0; root scrollHeight=clientHeight936 and BATTLE visible in1363×936 cloud viewport. BATTLE and X/RESTART returned same lineup/full HP/01:30/fresh3/defaultA2. CONTINUE retained manual Pause; EXIT returned1-1 Preview with1-2locked. No page-origin errors (extension metadata messages excluded).
+- Geometry limit: mobile dimensions are covered by static CSS row-budget contracts (667×320,844×320+21pxbottom,740×360,844×390,932×430), not real-device/browser emulation. Cloud local-file probe blocked by browser URL policy; no resize capability. `scripts/team-layout-probe.mjs` remains reproducible for a normal browser. Screenshot `docs/verification/m2-layout-correction-public.jpg` is cloud desktop evidence only.
+- Remaining: player-owned iPhone no-scroll/readability/touch/tab/Restart/orientation comfort. Below320px available landscape height not validated. Existing Phaser bundle advisory unchanged; 5 prototypes contain fewer than3 of each Type, so same-type3 is tested using future catalog fixtures without expanding the catalog.
+- Exact next step: player checks one-screen Team Select+BATTLE; tabs preserve team/order and are easy to tap; X Restart resets same stage/team with3→2→1; Pause→X→CONTINUE and rotation behave correctly. Stop. Do not start M3.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

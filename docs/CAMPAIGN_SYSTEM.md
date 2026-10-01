@@ -26,3 +26,6 @@ Stage Preview START now opens Team Select. BACK returns to the same selected Pre
 
 ## Post-acceptance matchup polish
 Team Select displays selected ally slots vs the actual stage enemy lineup. Both enemy preview and battle factory use encounterDefinitions/stageEnemyDefinitions; no independent hard-coded preview. Type marks derive from immutable definition type and do not change the counter triangle. Team ownership/eligibility/persistence/navigation remain unchanged. M2 has since been player accepted; polish-specific iPhone readability/feel remains pending.
+
+## M2 bounded layout/filter/Restart correction
+Team Select keeps four viewport rows and compact bench. Type filter state belongs to CampaignView; it does not change TeamSelection, eligibility or save. Upper matchup remains actual encounter data with no type marks; marks remain in bench/tabs. Running X-menu Restart and result Retry share controller freshBattleConfig validation and the existing Arena scene shutdown/create pipeline. Restart writes no progression or team save; new scene resets manual/menu reasons while orientation gating remains authoritative. See `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md` for engineering evidence and player acceptance pending.
