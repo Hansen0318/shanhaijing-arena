@@ -1,7 +1,7 @@
 # M2 Post-Acceptance Combat / Presentation Polish
 
 ## Status
-**ENGINEERING VERIFIED / DEPLOY VERIFICATION PENDING** (2026-10-01).
+**ENGINEERING PASS / PLAYER SMOKE PENDING** (2026-10-01).
 M0/M1/M2 remain player verified. Original branch / PR #1 retained; no M3 scope.
 - AI checkpoint: `e83dd34b738b7dcd7561e872e9e88da32d284b56`.
 - Damage checkpoint: `30c6419e61c6de8594515af418b611fa49f8e54c`.
@@ -10,7 +10,12 @@ M0/M1/M2 remain player verified. Original branch / PR #1 retained; no M3 scope.
 - Policy: 1.5s preparation window, 0.25 enter / 0.06 settle tolerances; committed skill/target until execution or invalidation. Ready skills retain existing priority before a new preparation. Close-range Heavy only aims for its own 0.45 preferred range; no role/character hard-code.
 - Damage: exact resolver amount event, rounded integer text, 1s upward fade, five stagger offsets, existing tween pause/orientation clock, scene shutdown cleanup.
 - VS: shared immutable encounter lookup used by preview and factory; type marks are presentation-only, Team Select only. Battle HUD unchanged.
-- Remaining: integration push, exact-source Pages verification, minimal public runtime smoke, final recovery closure. Real iPhone feel/readability is pending player smoke.
+- Integration source: `78ce86231b5f4ef11c9c5ee00112f0c9835ecf56`.
+- Actions #241: https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36795737466 — configured full CI test 193/193, Build, artifact, Pages Deploy success. Public bundle `index-DQcxw5UR.js` matched verified local build.
+- Public changed-surface smoke: Chapter1/1-1 → VS Team Select, below3 disabled/exact3 enabled, P1/P3/P5 types and actual enemy preview, BATTLE correct slots/HP/front slot, countdown completion, real hits/floating numbers, Pause freeze/Resume, Exit confirmation/same Preview, recent team restore. No page-origin runtime error observed (browser extension metadata errors excluded).
+- Scope of runtime evidence: cloud frame observation was slow; first hits/fade/Pause were observable, but no full real-time unattended multi-cycle/game-feel/actual iPhone rotation claim. AI commitment/range/shared execution and real Phaser tween lifetime/resume are covered by automated tests. Player confirms feel/readability on real iPhone.
+- Known limits: simple prototype marks/portraits; simultaneous opening hits can be visually dense; 1s staggered values are first-pass tuning. No crowd physics, role balance, formal VFX or HUD icon changes. Existing Phaser bundle-size advisory unchanged.
+- Recovery next action: player-only four-item checklist below. Stop; do not start M3.
 
 ## Goal
 Improve battle readability, spacing, impact, and pre-battle information without changing progression/economy scope.

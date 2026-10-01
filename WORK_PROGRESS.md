@@ -1,7 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Milestone: **M2 POST-ACCEPTANCE POLISH — ENGINEERING VERIFIED / DEPLOY VERIFICATION PENDING**.
+- Milestone: **M2 POST-ACCEPTANCE POLISH — ENGINEERING PASS / PLAYER SMOKE PENDING**.
 - M0/M1/M2 are **PASS / PLAYER VERIFIED**; do not repeat or reimplement them.
 - Active branch / PR: `feat/m0-combat-core-20260927` / #1. Baseline remote HEAD `fcf5c4d969c8c43e3014b4f5459d7aef1dcad808`; latest pushed coherent checkpoint `d869fac7048fafc6815103aae9b0fac7f3b97dba` (VS/type), Actions #240 success.
 - Canonical spec: `docs/M2_POST_ACCEPTANCE_POLISH.md`.
@@ -10,8 +10,10 @@
 - Actual checks: final targeted 18/18, impacted regression 149/149, Vite build, whole-diff check PASS. Independent review important issue reproduced and corrected. Pages workflow runs its configured full suite automatically; no unrelated manual historical smoke requested.
 - Checkpoints: AI `e83dd34b738b7dcd7561e872e9e88da32d284b56`; damage `30c6419e61c6de8594515af418b611fa49f8e54c`; VS/type `d869fac7048fafc6815103aae9b0fac7f3b97dba`.
 - Protected: ownership/save, runtime slots/slot2 front, Campaign results/unlocks, 1120x540 / Scale.NONE, input/manual override/0s handoff, Pause/orientation, 90s outcome/type rules.
-- Remaining: push integration correction, verify exact deployed source/Actions, minimum public runtime smoke, close docs. No M3 or formal production art/animation/audio/economy.
-- Exact next action: deploy verified integration checkpoint and smoke only changed matchup/damage/AI runtime; real iPhone feel/readability belongs to player.
+- Deployed source: `78ce86231b5f4ef11c9c5ee00112f0c9835ecf56`; Actions #241 / 36795737466 Test (193/193), Build, Pages Deploy success. Public bundle `index-DQcxw5UR.js` matches local build.
+- Public smoke completed changed matchup, exact P1/P3/P5 lineup/front slot, first real hits/floating numbers, Pause freeze/Resume, Exit confirmation, same Preview and recent-team restore. No page-origin runtime error observed. Cloud observation clock was slow; no full real-time long-skill-cycle feel claim.
+- Remaining: player-only iPhone changed-scope smoke. No M3 or formal production art/animation/audio/economy.
+- Exact next action: player checks VS/type readability; AI spacing across several skill cycles; hit-number clarity; controls/Pause/rotation/Retry/Exit. Stop until accepted.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

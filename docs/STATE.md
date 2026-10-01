@@ -3,13 +3,14 @@
 ## Milestone
 **M2 TEAM SELECT PASS / PLAYER VERIFIED**
 
-**AUTHORIZED PRE-M3 SLICE: M2 POST-ACCEPTANCE COMBAT / PRESENTATION POLISH**
+**M2 POST-ACCEPTANCE POLISH: ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
 - M0/M1/M2 are PASS / PLAYER VERIFIED. M2 accepted source `5cfa41224f27ce49ed61c48c462904a73ecbe654`, Actions #234; later spec baseline `fcf5c4d`.
 - Authorized bounded polish implemented: cooldown preparation with skill/target commitment and hysteresis; resolved-damage numbers on shared pause clock; VS allies vs actual enemy definitions; type marks in Team Select only.
-- Integration verified: targeted 18/18, impacted 149/149, build/diff PASS. Ready-skill priority review issue fixed. Latest safe pushed VS checkpoint `d869fac7048fafc6815103aae9b0fac7f3b97dba`; integration deploy/smoke pending.
-- Continue original feature branch / PR #1. No replacement implementation or M3. Next: deploy integration correction and minimum public changed-surface runtime smoke; then player iPhone feel/readability acceptance.
+- Integration source `78ce86231b5f4ef11c9c5ee00112f0c9835ecf56`; targeted 18/18, impacted 149/149, build/diff PASS. Independent whole-diff review corrected ready-skill precedence and found no remaining important issues. Actions #241 / 36795737466 full CI tests 193/193, Build/Pages Deploy success. Public bundle matches local build.
+- Public engineering smoke: VS/type, selected lineup and slot2 front, countdown completion, real hits/numbers, Pause freeze/Resume, Exit confirmation, same Preview/recent team restore. No page-origin error observed. Cloud animation observation was slow; actual real-time skill-cycle feel/phone readability/rotation remain player-owned.
+- Continue original feature branch / PR #1; no merge/replacement/M3. Next exact action: short iPhone polish acceptance checklist in canonical spec.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
