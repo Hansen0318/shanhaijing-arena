@@ -19,9 +19,9 @@ test('public graybox battle is a finite, replayable 90-second encounter', () => 
 
 test('graybox skill slots use the requested independent prototype cooldowns', () => {
   assert.equal(demoAbilityDefinitions.basic.cooldown, 0);
-  assert.equal(demoAbilityDefinitions.heavy.cooldown, 5);
-  assert.equal(demoAbilityDefinitions.special.cooldown, 10);
-  assert.equal(demoAbilityDefinitions.awakening.cooldown, 15);
+  assert.equal(demoAbilityDefinitions.heavy.cooldown, 3);
+  assert.equal(demoAbilityDefinitions.special.cooldown, 5);
+  assert.equal(demoAbilityDefinitions.awakening.cooldown, 10);
 });
 
 test('runtime teams start in mirrored one-front-two-back triangles and restart there', () => {
