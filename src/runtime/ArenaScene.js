@@ -1,3 +1,4 @@
+import { resultRewardLines } from '../acquisition/presentation.js';
 import Phaser from 'phaser';
 import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
 import { createDemoBattleSession } from './demoBattle.js';
@@ -144,7 +145,11 @@ export class ArenaScene extends Phaser.Scene {
       fontFamily: 'sans-serif', fontSize: '67px', fontStyle: 'bold', color: '#ffffff',
       stroke: '#20262d', strokeThickness: 7,
     }).setOrigin(0.5);
-    this.resultLayer.add([shade,this.resultText]);
+    this.rewardText = this.add.text(ARENA_STAGE.width / 2, 238, '', {
+      fontFamily:'sans-serif',fontSize:'30px',fontStyle:'bold',color:'#ffe0a0',
+      align:'center',wordWrap:{width:940},
+    }).setOrigin(.5,0).setVisible(false);
+    this.resultLayer.add([shade,this.resultText,this.rewardText]);
     const actions=this.campaignActions ? [
       ['NEXT STAGE',330,()=>this.campaignActions.next()],
       ['RETRY',560,()=>this.campaignActions.retry()],
@@ -162,7 +167,13 @@ export class ArenaScene extends Phaser.Scene {
     if (result === 'running' || this.resultLayer.visible) return;
     this.releaseJoystick();
     this.onPlaybackChange(false, false);
-    this.campaignActions?.result(this.session.stageId,result);
+    const transaction=this.campaignActions?.result(this.session.stageId,result);
+    const rewardLines=result==='victory'?resultRewardLines(transaction):[];
+    this.rewardText.setText(rewardLines.join('\n')).setVisible(rewardLines.length>0);
+    if(rewardLines.length) {
+      this.resultText.setY(155);
+      this.rewardText.setY(rewardLines.length>1?198:250).setFontSize(rewardLines.length>3?20:28);
+    }
     const next=this.resultButtons.get('NEXT STAGE');
     if(next) {
       const visible=result==='victory' && this.campaignActions.hasNext();

@@ -1,3 +1,4 @@
+import { prototypeOwnership } from '../src/roster/catalog.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { CampaignController } from '../src/campaign/controller.js';
@@ -16,14 +17,14 @@ test('START opens Team Select, BACK retains same preview, BATTLE requires 3 and 
  config.selectedTeam[0]='P2';assert.deepEqual(c.battleTeam,['P1','P3','P5']);
 });
 for(const outcome of ['victory','defeat','draw'])test(`${outcome} Retry preserves team; Exit and reentry preload it`,()=>{
- const c=new CampaignController();c.openChapter('chapter-1');c.openTeamSelect();pick(c);c.startBattle();
+ const c=new CampaignController({ownership:prototypeOwnership()});c.openChapter('chapter-1');c.openTeamSelect();pick(c);c.startBattle();
  c.finishBattle('1-1',outcome);assert.deepEqual(c.retryBattle().selectedTeam,['P1','P3','P5']);
  c.finishBattle('1-1',outcome);c.exitBattle();assert.equal(c.selectedStageId,'1-1');
  c.openTeamSelect();assert.deepEqual(c.teamSelection.slots,['P1','P3','P5']);
  c.teamSelection.toggle('P3');c.teamSelection.toggle('P2');assert.deepEqual(c.startBattle().selectedTeam,['P1','P2','P5']);
 });
 test('Next Stage opens preview then START preloads recent team; illegal stale team never launches',()=>{
- const c=new CampaignController();c.openChapter('chapter-1');c.openTeamSelect();pick(c);c.startBattle();c.finishBattle('1-1','victory');
+ const c=new CampaignController({ownership:prototypeOwnership()});c.openChapter('chapter-1');c.openTeamSelect();pick(c);c.startBattle();c.finishBattle('1-1','victory');
  c.nextPreview();assert.equal(c.screen,'stages');assert.equal(c.selectedStageId,'1-2');
  const stage=findStage('1-2'),before=stage.bannedCharacters;stage.bannedCharacters=['P3'];
  try {

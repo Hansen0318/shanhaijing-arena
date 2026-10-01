@@ -1,6 +1,10 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- Domain/persistence safe remote: a0e83010cfc1ea8f42658e70b4fe014b749c6ec8. UI/controller integration now coherent: canonical Chapter 1 rewards; current normal ownership; per-round UUID rejects stale callbacks; authoritative Result; Preview policies/CLAIMED; ownership refresh preserves empty slots/order.
+- RED integration 9 tests + presentation 4 tests; slot-order regression reproduced then fixed. GREEN impacted 106/106. Historical M2 tests now explicitly inject unlock-all ownership fixtures; no normal Campaign bypass. Test harness filter lookup corrected to data-filter (nested icon labels).
+- Remaining release review/build/CI/deploy/public source confirmation. Next: checkpoint integration remotely BEFORE long release verification.
+
 - Safe preflight checkpoint: 5b32c8e47aae630a63f1ca132f4e86fe83616eec. Domain + acquisition persistence now complete: RED 13 + 9 expected missing behavior failures; GREEN targeted/impacted 37/37. Dedicated acquisition.v1 key, universal inventory, retained unlock shards, durable receipts, pre-M3 CLAIMED initialization, denied-storage in-memory fallback. No Campaign/team save rewrite.
 - Remaining: metadata/controller/UI integration, release checks/review/deploy. Next: RED Campaign reward integration tests.
 

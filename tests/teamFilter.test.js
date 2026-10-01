@@ -1,3 +1,4 @@
+import { prototypeOwnership } from '../src/roster/catalog.js';
 import test from 'node:test';
 import vm from 'node:vm';
 import {readFileSync} from 'node:fs';
@@ -11,7 +12,7 @@ const walk=n=>[n,...n.children.flatMap(walk)];
 test('type tabs filter candidates only, preserving slot order, valid saved team and selection across rerenders',()=>{
  const old=globalThis.document;globalThis.document={createElement:element};
  try {
-  let saves=0;const c=new CampaignController({teamPersistence:{load:()=>['P1','P3','P5'],save:()=>saves++}});
+  let saves=0;const c=new CampaignController({ownership:prototypeOwnership(),teamPersistence:{load:()=>['P1','P3','P5'],save:()=>saves++}});
   c.openChapter('chapter-1');c.openTeamSelect();const root=element('main'),view=new CampaignView(root,c);view.render();
   const nodes=()=>walk(root),cards=()=>nodes().filter(n=>n.dataset.characterId),tab=t=>nodes().find(n=>n.dataset.filter===t);
   const original=[...c.teamSelection.slots];

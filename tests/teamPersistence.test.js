@@ -1,3 +1,4 @@
+import { prototypeOwnership } from '../src/roster/catalog.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createTeamPersistence, TEAM_SAVE_KEY } from '../src/roster/persistence.js';
@@ -24,7 +25,7 @@ test('unknown/prototype-property ids ignored and malformed/obsolete saves recove
 test('denied storage degrades to in-memory team and never prevents launch',()=>{
  const p=createTeamPersistence({getItem(){throw Error('denied');},setItem(){throw Error('quota');}});
  assert.deepEqual(p.load(),[]);assert.equal(p.save(['P1','P3','P5']),false);assert.deepEqual(p.load(),['P1','P3','P5']);
- const c=new CampaignController({teamPersistence:p});enter(c);assert.equal(c.teamSelection.canBattle,true);
+ const c=new CampaignController({ownership:prototypeOwnership(),teamPersistence:p});enter(c);assert.equal(c.teamSelection.canBattle,true);
  assert.deepEqual(c.startBattle().selectedTeam,['P1','P3','P5']);
 });
 test('failed write with readable stale storage retains latest valid team in memory',()=>{
@@ -34,16 +35,16 @@ test('failed write with readable stale storage retains latest valid team in memo
  assert.deepEqual(p.load(),['P1','P3','P5']);
 });
 test('BATTLE saves the valid team; partial edits and BACK do not overwrite it',()=>{
- const store=storage(),p=createTeamPersistence(store),c=new CampaignController({teamPersistence:p});enter(c);
+ const store=storage(),p=createTeamPersistence(store),c=new CampaignController({ownership:prototypeOwnership(),teamPersistence:p});enter(c);
  for(const id of ['P1','P3','P5'])c.teamSelection.toggle(id);c.startBattle();c.exitBattle();c.openTeamSelect();
  c.teamSelection.remove(1);c.back();
- const reload=new CampaignController({teamPersistence:createTeamPersistence(store)});enter(reload);
+ const reload=new CampaignController({ownership:prototypeOwnership(),teamPersistence:createTeamPersistence(store)});enter(reload);
  assert.deepEqual(reload.teamSelection.slots,['P1','P3','P5']);
 });
 test('saved team is sanitized against new stage bans/ownership and cannot start illegally',()=>{
  const store=storage(),p=createTeamPersistence(store);p.save(['P1','P3','P5']);const stage=findStage('1-1'),old=stage.bannedCharacters;
  stage.bannedCharacters=['P3'];
- try {const c=new CampaignController({teamPersistence:p,ownership:{characterIds:['P1','P3','P5']}});enter(c);
+ try {const c=new CampaignController({ownership:prototypeOwnership(),teamPersistence:p,ownership:{characterIds:['P1','P3','P5']}});enter(c);
   assert.deepEqual(c.teamSelection.slots,['P1','P5',null]);assert.equal(c.startBattle(),null);
  }finally{stage.bannedCharacters=old;}
 });

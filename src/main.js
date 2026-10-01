@@ -1,3 +1,4 @@
+import { browserAcquisitionPersistence } from './acquisition/persistence.js';
 import Phaser from 'phaser';
 import { ArenaScene } from './runtime/ArenaScene.js';
 import { nextStage } from './campaign/data.js';
@@ -14,7 +15,7 @@ import './campaign/style.css';
 import './roster/style.css';
 
 const query=new URLSearchParams(window.location.search);
-const controller=new CampaignController({persistence:browserPersistence(),teamPersistence:browserTeamPersistence(),dev:query.get('campaignDev')==='unlock-all'});
+const controller=new CampaignController({persistence:browserPersistence(),teamPersistence:browserTeamPersistence(),acquisitionPersistence:browserAcquisitionPersistence(),dev:query.get('campaignDev')==='unlock-all'});
 const root=document.getElementById('campaign'), host=document.getElementById('game');
 let game=null;
 let viewport;
@@ -40,7 +41,7 @@ function startBattle(stageConfig=null) {
  // Scene creation owns availability: first Phaser boot is asynchronous.
  controls.hide();viewport.routeChanged();
  const data={stageConfig,onSceneReady:scene=>interruption.attach(scene),onPlaybackChange:(paused,available)=>controls.update(paused,available,Boolean(stageConfig)),campaignActions:stageConfig ? {
-  result:(id,outcome)=>controller.finishBattle(id,outcome),
+  result:(id,outcome)=>controller.finishBattle(id,outcome,stageConfig.battleCompletionId)?controller.rewardResult:null,
   retry:()=>{const config=controller.retryBattle();if(config) startBattle(config);},
   exit:()=>{if(controller.exitBattle()) returnToPreview();},
   next:()=>{if(controller.nextPreview()) returnToPreview();},

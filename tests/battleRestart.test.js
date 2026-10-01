@@ -1,3 +1,4 @@
+import { prototypeOwnership } from '../src/roster/catalog.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {CampaignController} from '../src/campaign/controller.js';
@@ -12,7 +13,7 @@ import {arenaToStage} from '../src/runtime/arenaProjection.js';
 import {EventEmitter} from 'node:events';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
-function launch(){let writes=0,teamWrites=0;const c=new CampaignController({persistence:{load:()=>undefined,save:()=>writes++},teamPersistence:{load:()=>['P1','P3','P5'],save:()=>teamWrites++}});c.openChapter('chapter-1');c.openTeamSelect();const config=c.startBattle();return {c,config,writes:()=>writes,teamWrites:()=>teamWrites};}
+function launch(){let writes=0,teamWrites=0;const c=new CampaignController({ownership:prototypeOwnership(),persistence:{load:()=>undefined,save:()=>writes++},teamPersistence:{load:()=>['P1','P3','P5'],save:()=>teamWrites++}});c.openChapter('chapter-1');c.openTeamSelect();const config=c.startBattle();return {c,config,writes:()=>writes,teamWrites:()=>teamWrites};}
 const el=tag=>({tag,children:[],append(...items){this.children.push(...items);},setAttribute(k,v){this[k]=v;},focus(){}});
 test('X menu orders CONTINUE / RESTART / EXIT and dispatches their independent handlers',()=>{
  const doc={createElement:el,body:el('body')};let action='';const dialog=createExitDialog(doc,{onContinue:()=>action='continue',onRestart:()=>action='restart',onExit:()=>action='exit'});
@@ -64,12 +65,12 @@ test('CONTINUE keeps same state/prior manual Pause; fresh Restart clears old men
 });
 test('actual app Restart callback closes X and schedules Arena with the same config, without routing away',()=>{
  const source=readFileSync(new URL('../src/main.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
- const controller=new CampaignController({teamPersistence:{load:()=>['P1','P3','P5'],save(){}}});controller.openChapter('chapter-1');controller.openTeamSelect();
+ const controller=new CampaignController({ownership:prototypeOwnership(),teamPersistence:{load:()=>['P1','P3','P5'],save(){}}});controller.openChapter('chapter-1');controller.openTeamSelect();
  const root={hidden:false},host={style:{}},doc={getElementById:id=>id==='campaign'?root:host};let viewOptions,menu,closed=0,starts=[];
  class Game {constructor(config){this.scale={refresh(){}};this.scene={start:(key,data)=>starts.push({key,data}),add(){},stop(){throw Error('Restart must not exit');}};this.boot=()=>config.callbacks.postBoot(this);}}
- const context={Phaser:{Game,Scale:{NONE:0},AUTO:0},ArenaScene:class{},nextStage:()=>null,CampaignController:class{constructor(){return controller;}},CampaignView:class{constructor(r,c,options){viewOptions=options;}render(){}},browserPersistence:()=>null,browserTeamPersistence:()=>null,installViewportSync:()=>({routeChanged(){}}),BattleInterruption,createOrientationGate:()=>({sync(){}}),createBattleControls:()=>({hide(){},update(){}}),createExitDialog:(d,options)=>{menu=options;return {close(){closed++;},open(){}};},document:doc,window:{location:{search:''}},URLSearchParams};
+ const context={Phaser:{Game,Scale:{NONE:0},AUTO:0},ArenaScene:class{},nextStage:()=>null,CampaignController:class{constructor(){return controller;}},CampaignView:class{constructor(r,c,options){viewOptions=options;}render(){}},browserPersistence:()=>null,browserTeamPersistence:()=>null,browserAcquisitionPersistence:()=>null,installViewportSync:()=>({routeChanged(){}}),BattleInterruption,createOrientationGate:()=>({sync(){}}),createBattleControls:()=>({hide(){},update(){}}),createExitDialog:(d,options)=>{menu=options;return {close(){closed++;},open(){}};},document:doc,window:{location:{search:''}},URLSearchParams};
  vm.runInNewContext(source+'\nglobalThis.getGame=()=>game;',context);
  viewOptions.onStart(controller.startBattle());context.getGame().boot();assert.equal(starts.length,1);
  const first=starts[0].data.stageConfig;menu.onRestart();assert.equal(starts.length,2);assert.equal(starts[1].key,'Arena');assert.equal(closed,1);
- assert.deepEqual(starts[1].data.stageConfig,first);assert.equal(controller.screen,'battle');assert.equal(root.hidden,true);assert.equal(host.style.visibility,'visible');
+ assert.notEqual(starts[1].data.stageConfig.battleCompletionId,first.battleCompletionId);assert.deepEqual({...starts[1].data.stageConfig,battleCompletionId:null},{...first,battleCompletionId:null});assert.equal(controller.screen,'battle');assert.equal(root.hidden,true);assert.equal(host.style.visibility,'visible');
 });

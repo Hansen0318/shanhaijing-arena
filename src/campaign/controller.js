@@ -1,14 +1,35 @@
 import { findChapter, findStage, orderedStages, nextStage } from './data.js';
 import { initialProgress, devProgress, stageStatus, chapterStatus, recordVictory } from './progression.js';
+import { initialAcquisition,completeAcquisition } from '../acquisition/model.js';
 import { prototypeOwnership } from '../roster/catalog.js';
 import { TeamSelection, isValidTeam } from '../roster/team.js';
 export class CampaignController {
- constructor({persistence=null,teamPersistence=null,dev=false,ownership=prototypeOwnership()}={}) {
+ constructor({persistence=null,teamPersistence=null,acquisitionPersistence=null,dev=false,ownership=null}={}) {
   this.persistence=dev ? null : persistence;
   this.progress=dev ? devProgress() : persistence?.load() ?? initialProgress();
   this.screen='chapters'; this.chapterId=null; this.selectedStageId=null; this.battleStageId=null; this.outcome=null;
   this.teamPersistence=dev?null:teamPersistence;
-  this.ownership=ownership;this.lastTeam=this.teamPersistence?.load() ?? [];this.teamSelection=null;this.battleTeam=null;
+  this.dev=dev;this.fixtureOwnership=ownership;
+  this.acquisitionPersistence=dev?null:acquisitionPersistence;
+  this.acquisition=this.acquisitionPersistence?.load(this.progress) ?? initialAcquisition(this.progress.clearedStages);
+  this.rewardResult=null;this.battleCompletionId=null;
+  this.lastTeam=this.teamPersistence?.load() ?? [];this.teamSelection=null;this.battleTeam=null;
+ }
+ get ownership() {
+  return this.fixtureOwnership ?? (this.dev?prototypeOwnership():{characterIds:[...this.acquisition.ownedCharacterIds]});
+ }
+ refreshTeamOwnership() {
+  if(!this.teamSelection)return;
+  this.teamSelection.ownership=this.ownership;
+  const available=new Set(this.teamSelection.available),seen=new Set();
+  // Refresh eligibility in place: removing a card must never move another slot.
+  this.teamSelection.slots=this.teamSelection.slots.map(id=>{
+   if(!available.has(id) || seen.has(id))return null;
+   seen.add(id);return id;
+  });
+ }
+ beginCompletion() {
+  this.battleCompletionId=globalThis.crypto.randomUUID();this.rewardResult=null;
  }
  openChapter(id) {
   if(!['chapters','stages'].includes(this.screen) || chapterStatus(this.progress,id)==='locked') return false;
@@ -34,13 +55,20 @@ export class CampaignController {
    || !isValidTeam(this.teamSelection?.slots,stage,this.ownership))return null;
   this.battleTeam=Object.freeze([...this.teamSelection.slots]);this.lastTeam=[...this.battleTeam];
   this.teamPersistence?.save(this.lastTeam);
-  this.screen='battle';this.battleStageId=stage.stageId;this.outcome=null;
-  return {...stage,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership};
+  this.screen='battle';this.battleStageId=stage.stageId;this.outcome=null;this.beginCompletion();
+  return {...stage,battleCompletionId:this.battleCompletionId,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership};
  }
- finishBattle(id,outcome) {
-  if(this.screen!=='battle' || id!==this.battleStageId || !['victory','defeat','draw'].includes(outcome)) return false;
+ finishBattle(id,outcome,completionId=this.battleCompletionId) {
+  if(this.screen!=='battle' || completionId!==this.battleCompletionId || id!==this.battleStageId || !['victory','defeat','draw'].includes(outcome)) return false;
   this.screen='result';this.outcome=outcome;
-  if(outcome==='victory') {this.progress=recordVictory(this.progress,id);this.persistence?.save(this.progress);}
+  const transaction=completeAcquisition(this.acquisition,{stageId:id,completionId,outcome,reward:findStage(id).reward});
+  this.rewardResult={grantedItems:transaction.grantedItems,unlockedCharacterIds:transaction.unlockedCharacterIds,shardCounts:transaction.shardCounts};
+  if(outcome==='victory') {
+   this.acquisition=transaction.state;
+   // Persist receipts + inventory together before the independent Campaign clear write.
+   this.acquisitionPersistence?.save(this.acquisition);
+   this.progress=recordVictory(this.progress,id);this.persistence?.save(this.progress);
+  }
   return true;
  }
  retryBattle() {
@@ -54,14 +82,14 @@ export class CampaignController {
  freshBattleConfig() {
   const stage=findStage(this.battleStageId);
   if(!isValidTeam(this.battleTeam,stage,this.ownership))return null;
-  this.screen='battle';this.outcome=null;
-  return {...stage,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership};
+  this.screen='battle';this.outcome=null;this.beginCompletion();
+  return {...stage,battleCompletionId:this.battleCompletionId,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership};
  }
  exitBattle() {
   if(!['battle','result'].includes(this.screen)) return false;
   // Cancellation deliberately bypasses finishBattle/recordVictory/storage.
   this.chapterId=findStage(this.battleStageId).chapterId;this.selectedStageId=this.battleStageId;
-  this.screen='stages';this.outcome=null;return true;
+  this.screen='stages';this.outcome=null;this.rewardResult=null;return true;
  }
  nextPreview() {
   if(this.screen!=='result' || this.outcome!=='victory') return false;

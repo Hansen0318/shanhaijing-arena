@@ -1,3 +1,4 @@
+import { stageRewardRows } from '../acquisition/presentation.js';
 import { orderedChapters, findChapter, findStage, orderedStages } from './data.js';
 import { chapterStatus, stageStatus } from './progression.js';
 import { renderTeamSelect } from '../roster/view.js';
@@ -22,6 +23,7 @@ export class CampaignView {
   this.root.replaceChildren(); this.root.hidden=false;
   const page=document.createElement('section'); page.className='campaign-page';
   if(this.controller.screen==='team') {
+   this.controller.refreshTeamOwnership();
    if(this.filterTeam!==this.controller.teamSelection){this.filterTeam=this.controller.teamSelection;this.teamFilter='all';}
    renderTeamSelect(page,this.controller.teamSelection,{stageId:this.controller.selectedStageId,filter:this.teamFilter,onFilter:type=>{this.teamFilter=type;this.render();},
     onBack:()=>{if(this.controller.back())this.render();},onChange:()=>this.render(),
@@ -50,7 +52,14 @@ export class CampaignView {
   const start=document.createElement('button');start.type='button';start.className='campaign-button start';start.textContent='START';
   start.disabled=stageStatus(this.controller.progress,stage.stageId)==='locked';
   start.onclick=()=>{if(this.controller.openTeamSelect())this.render();};
-  details.append(id,title,start);preview.append(image,details);page.append(preview);
+  const rewards=document.createElement('div');rewards.className='stage-rewards';
+  for(const item of stageRewardRows(stage,this.controller.acquisition)) {
+   const row=document.createElement('div');row.className=`stage-reward${item.status==='CLAIMED'?' claimed':''}`;
+   const label=document.createElement('span');label.textContent=item.label;
+   const status=document.createElement('span');status.className='reward-policy';status.textContent=item.status;
+   row.append(label,status);rewards.append(row);
+  }
+  details.append(id,title,rewards,start);preview.append(image,details);page.append(preview);
   const cards=document.createElement('div');cards.className='stage-grid';cards.setAttribute('aria-label','Stages');
   for(const item of orderedStages(chapter)) cards.append(card({image:item.previewImage,label:item.stageId,status:stageStatus(this.controller.progress,item.stageId),selected:item.stageId===stage.stageId,onClick:()=>{if(this.controller.selectStage(item.stageId)) this.render();}}));
   page.append(cards);
