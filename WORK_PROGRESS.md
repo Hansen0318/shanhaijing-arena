@@ -1,7 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Milestone: **M2 TEAM SELECT LAYOUT / ROSTER FILTER / BATTLE RESTART CORRECTION — ENGINEERING PASS / iPhone PLAYER SMOKE PENDING** (2026-10-01).
+- Milestone: **M2 TEAM SELECT LAYOUT / ROSTER FILTER / BATTLE RESTART CORRECTION — PASS / PLAYER VERIFIED** (2026-10-01).
 - M0/M1/M2 remain **PASS / PLAYER VERIFIED**. Prior polish AI/damage implementation retained; no M3/M4.
 - Active branch / PR: `feat/m0-combat-core-20260927` / #1; no replacement branch or main merge. Recovery baseline `d13252799e933f66b425035ddcc03335387b6d86`, main inspected `16f73932a0399979ba79b92f93f5ce1c1d1909b9`.
 - Canonical spec: `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md`.
@@ -11,8 +11,10 @@
 - Actual local verification: targeted11/11, impacted130/130, build and whole-diff check PASS. Independent review no remaining Critical/Important/Minor. Forced long label compacted; reduced viewport844×320+21px bottom inset reproduced then passed CSS budget regression.
 - Public final-source smoke: Team Select/filter rendered; P1/P3/P5 preserved across Blast/Speed/ALL; exact3 BATTLE; bench64×64, upper type marks0; root scrollHeight=clientHeight936 and BATTLE visible in1363×936 cloud viewport. BATTLE and X/RESTART returned same lineup/full HP/01:30/fresh3/defaultA2. CONTINUE retained manual Pause; EXIT returned1-1 Preview with1-2locked. No page-origin errors (extension metadata messages excluded).
 - Geometry limit: mobile dimensions are covered by static CSS row-budget contracts (667×320,844×320+21pxbottom,740×360,844×390,932×430), not real-device/browser emulation. Cloud local-file probe blocked by browser URL policy; no resize capability. `scripts/team-layout-probe.mjs` remains reproducible for a normal browser. Screenshot `docs/verification/m2-layout-correction-public.jpg` is cloud desktop evidence only.
-- Remaining: player-owned iPhone no-scroll/readability/touch/tab/Restart/orientation comfort. Below320px available landscape height not validated. Existing Phaser bundle advisory unchanged; 5 prototypes contain fewer than3 of each Type, so same-type3 is tested using future catalog fixtures without expanding the catalog.
-- Exact next step: player checks one-screen Team Select+BATTLE; tabs preserve team/order and are easy to tap; X Restart resets same stage/team with3→2→1; Pause→X→CONTINUE and rotation behave correctly. Stop. Do not start M3.
+- Player acceptance: real-device smoke reported OK for the layout/filter/Restart correction. Preserve this verified UI/flow baseline unless a later change can materially affect it.
+- Prototype combat pacing follow-up authorized: shared placeholder Heavy/Special/Awakening cooldowns are reduced from 5/10/15s to 3/5/10s for faster testing only. This is not a formal balance decision; future characters keep per-ability cooldown definitions.
+- Existing Phaser bundle advisory unchanged; 5 prototypes contain fewer than3 of each Type, so same-type3 remains covered by future-catalog fixtures without expanding the prototype catalog.
+- Exact next step: deploy/verify only the bounded prototype cooldown pacing change, then player can quickly observe more skill cycles. Do not start M3 automatically.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**
