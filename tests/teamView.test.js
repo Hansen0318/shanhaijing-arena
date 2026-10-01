@@ -17,8 +17,8 @@ test('Team Select displays five cards and three slots; BATTLE reflects exact sel
  assert.equal(nodes().filter(n=>n.dataset.slot).length,3);
  card('P1').onclick();card('P3').onclick();assert.equal(battle().disabled,true);card('P5').onclick();
  assert.deepEqual(team.slots,['P1','P3','P5']);assert.equal(battle().disabled,false);
- assert.equal(card('P3')['aria-pressed'],'true');assert.ok(walk(card('P3')).some(n=>n.textContent==='Type: Blast'));
- assert.ok(walk(card('P3')).some(n=>n.textContent==='Role: Support'));
+ assert.equal(card('P3')['aria-pressed'],'true');assert.ok(walk(card('P3')).some(n=>n.className==='type-mark' && n.dataset.type==='blast'));
+ assert.ok(walk(card('P3')).some(n=>n.textContent==='P3'));
  battle().onclick();assert.equal(launches,1);
  nodes().find(n=>n.dataset.slot==='2').onclick();assert.equal(team.canBattle,false);assert.equal(battle().disabled,true);
  battle().onclick();assert.equal(launches,1);

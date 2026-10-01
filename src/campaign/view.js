@@ -22,7 +22,8 @@ export class CampaignView {
   this.root.replaceChildren(); this.root.hidden=false;
   const page=document.createElement('section'); page.className='campaign-page';
   if(this.controller.screen==='team') {
-   renderTeamSelect(page,this.controller.teamSelection,{stageId:this.controller.selectedStageId,
+   if(this.filterTeam!==this.controller.teamSelection){this.filterTeam=this.controller.teamSelection;this.teamFilter='all';}
+   renderTeamSelect(page,this.controller.teamSelection,{stageId:this.controller.selectedStageId,filter:this.teamFilter,onFilter:type=>{this.teamFilter=type;this.render();},
     onBack:()=>{if(this.controller.back())this.render();},onChange:()=>this.render(),
     onBattle:()=>{const config=this.controller.startBattle();if(config)this.onStart?.(config);},
    });

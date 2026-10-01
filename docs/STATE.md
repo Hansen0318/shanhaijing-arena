@@ -15,7 +15,7 @@
 - Free team composition across Types remains locked; no one-per-Type rule.
 - Continue original feature branch / PR #1. M3 remains blocked until this correction is implemented and player-tested or explicitly deferred.
 
-- Checkpoint 1 implemented viewport rows / clean matchup, targeted 6/6 and diff PASS. Geometry release check, compact filters and Restart pending. See CURRENT HANDOFF POINTER.
+- Checkpoint 1 implemented viewport rows / clean matchup, targeted 6/6 and diff PASS. Compact filters complete (targeted roster/view/persistence 21/21); Restart and release checks pending. See CURRENT HANDOFF POINTER.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.

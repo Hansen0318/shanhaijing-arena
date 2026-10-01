@@ -5,10 +5,13 @@
 - Active branch / PR: `feat/m0-combat-core-20260927` / #1. Recovery baseline remote `d13252799e933f66b425035ddcc03335387b6d86`, Actions #244 success; remote main inspected `16f73932a0399979ba79b92f93f5ce1c1d1909b9`.
 - Canonical spec: `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md`. No replacement branch/merge/M3.
 - Protected: M0/M1/M2 player verified; prior polish source `78ce862` engineering PASS. Do not repeat AI/damage implementation.
+- Checkpoint 1 remote: `d3cbf1707ed1c385522d9037be0755a5a9a36bf3`.
 - Completed checkpoint 1: Team Select uses four viewport rows; simplified upper six identities without type marks; reduced card/gap/padding heights, no overflow clipping or scrolling workaround.
 - Actual checks: targeted view/layout/encounter/flow 6/6; diff check PASS. Mobile geometry runtime evidence pending integration.
-- Remaining: compact bench + display-only filters; shared fresh battle Restart; impacted checks/build/deploy/public smoke.
-- Exact next step: implement compact bench and view-owned type filter; selected team/save/eligibility untouched.
+- Completed checkpoint 2: compact square bench; ALL/Power/Speed/Blast view-owned display filters. Filter changes preserve slots/order, save and eligibility. Same-type future catalog fixtures retain free composition.
+- Actual checkpoint 2 checks: roster/filter/view/persistence targeted 21/21 PASS; four-viewport browser geometry probe generated from actual view/CSS, runtime geometry pending (cloud browser blocks local file URLs).
+- Remaining: shared fresh battle Restart; impacted checks/build/deploy/public smoke.
+- Exact next step: add RESTART via the existing fresh stage BattleSession/scene pipeline; preserve manual Pause/orientation composition.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

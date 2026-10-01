@@ -2,7 +2,7 @@ import { rosterCatalog } from './catalog.js';
 import { typeMark } from './typeIcons.js';
 import { stageEnemyDefinitions } from '../campaign/encounterDefinitions.js';
 const titleCase=text=>text[0].toUpperCase()+text.slice(1);
-export function renderTeamSelect(page,team,{document:doc=globalThis.document,stageId,onChange,onBattle,onBack}={}) {
+export function renderTeamSelect(page,team,{document:doc=globalThis.document,stageId,onChange,onBattle,onBack,filter='all',onFilter}={}) {
  const node=(tag,text,className)=>{const el=doc.createElement(tag);if(text!=null)el.textContent=text;if(className)el.className=className;return el;};
  const button=(text,handler,className='campaign-button')=>{const el=node('button',text,className);el.type='button';el.onclick=handler;return el;};
  const identity=(character,showType=true)=>{
@@ -36,19 +36,31 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   card.append(portrait(character),identity(character,false));enemyCards.append(card);
  }
  enemies.append(enemyCards);matchup.append(allies,node('strong','VS','matchup-vs'),enemies);
+ const bench=node('section',null,'roster-bench'),tabs=node('div',null,'roster-filters');
+ tabs.setAttribute('aria-label','Roster type filters');
+ for(const type of ['all','power','speed','blast']) {
+  const tab=button(null,()=>onFilter?.(type),'roster-filter');tab.dataset.filter=type;
+  tab.setAttribute('aria-pressed',String(filter===type));tab.setAttribute('aria-label',type==='all'?'All':titleCase(type));
+  if(type==='all')tab.append(node('span','ALL'));else {
+   const mark=typeMark({type}),icon=node('span',mark.symbol,'type-mark');icon.style.color=mark.color;icon.setAttribute('aria-hidden','true');
+   tab.append(icon,node('span',mark.label));
+  }
+  tabs.append(tab);
+ }
  const roster=node('div',null,'roster-grid');roster.setAttribute('aria-label','Available roster');
  for(const id of team.available) {
   const character=rosterCatalog[id],selected=team.slots.includes(id);
+  if(filter!=='all' && character.type!==filter)continue;
   const card=button(null,()=>{if(team.toggle(id))onChange?.();},`roster-card${selected?' selected':''}`);
   card.dataset.characterId=id;card.setAttribute('aria-label',`${character.name}, ${titleCase(character.type)}, ${titleCase(character.role)}`);
   card.setAttribute('aria-pressed',String(selected));
   const portrait=node('span',character.portrait.label,'roster-portrait');portrait.style.backgroundColor=character.portrait.color;
-  const name=identity(character),type=node('span',`Type: ${titleCase(character.type)}`),role=node('span',`Role: ${titleCase(character.role)}`);
-  card.append(portrait,name,type,role);roster.append(card);
+  card.append(portrait,identity(character));roster.append(card);
  }
+ bench.append(tabs,roster);
  const footer=node('footer',null,'team-footer');
  const battle=button('BATTLE',()=>{if(team.canBattle)onBattle?.();},'campaign-button start battle');battle.disabled=!team.canBattle;
  const count=team.slots.filter(Boolean).length;
  const status=node('p',team.canBattle?'3 / 3 READY':`${count} / 3 — Select a valid team of 3`,'team-status');status.setAttribute('aria-live','polite');
- footer.append(status,battle);page.append(header,matchup,roster,footer);
+ footer.append(status,battle);page.append(header,matchup,bench,footer);
 }

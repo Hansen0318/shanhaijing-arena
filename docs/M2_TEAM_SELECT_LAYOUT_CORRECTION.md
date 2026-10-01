@@ -2,7 +2,9 @@
 
 ## Checkpoint evidence
 - Checkpoint 1: viewport-row layout and clean upper matchup implemented. View/flow/encounter targeted 6/6, diff PASS; runtime geometry still pending.
-- Next: compact bench + display filter, then shared Restart; no M3.
+- Checkpoint 1 remote: `d3cbf1707ed1c385522d9037be0755a5a9a36bf3`.
+- Checkpoint 2: 72px square-style compact bench and ALL/Power/Speed/Blast filters; view state only. Selection, saves and restrictions untouched; no Type quotas. Roster/filter/view/persistence 21/21 PASS. Generated reproducible `scripts/team-layout-probe.mjs` for 667×320 / 740×360 / 844×390 / 932×430 actual CSS geometry; browser local-file policy blocks executing it here, so do not claim runtime geometry PASS yet.
+- Next: shared Restart, release checks and permitted public smoke; no M3.
 
 ## Status
 Authorized from player real-device feedback after the first M2 post-acceptance polish deployment.
