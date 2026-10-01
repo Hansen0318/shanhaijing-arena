@@ -1,19 +1,16 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Milestone: **M2 POST-ACCEPTANCE POLISH — ENGINEERING PASS / PLAYER SMOKE PENDING**.
-- M0/M1/M2 are **PASS / PLAYER VERIFIED**; do not repeat or reimplement them.
-- Active branch / PR: `feat/m0-combat-core-20260927` / #1. Baseline remote HEAD `fcf5c4d969c8c43e3014b4f5459d7aef1dcad808`; latest pushed coherent checkpoint `d869fac7048fafc6815103aae9b0fac7f3b97dba` (VS/type), Actions #240 success.
-- Canonical spec: `docs/M2_POST_ACCEPTANCE_POLISH.md`.
-- Completed: configurable cooldown preparation, skill/target commitment and hysteresis; resolved-damage events and paused/cleaned floating numbers; VS selected allies vs actual stage enemy definitions; immutable-type marks (Team Select only).
-- Review correction: beginning a new preparation cannot preempt an already-ready prioritized skill; slot accessible labels retain character/type or EMPTY.
-- Actual checks: final targeted 18/18, impacted regression 149/149, Vite build, whole-diff check PASS. Independent review important issue reproduced and corrected. Pages workflow runs its configured full suite automatically; no unrelated manual historical smoke requested.
-- Checkpoints: AI `e83dd34b738b7dcd7561e872e9e88da32d284b56`; damage `30c6419e61c6de8594515af418b611fa49f8e54c`; VS/type `d869fac7048fafc6815103aae9b0fac7f3b97dba`.
-- Protected: ownership/save, runtime slots/slot2 front, Campaign results/unlocks, 1120x540 / Scale.NONE, input/manual override/0s handoff, Pause/orientation, 90s outcome/type rules.
-- Deployed source: `78ce86231b5f4ef11c9c5ee00112f0c9835ecf56`; Actions #241 / 36795737466 Test (193/193), Build, Pages Deploy success. Public bundle `index-DQcxw5UR.js` matches local build.
-- Public smoke completed changed matchup, exact P1/P3/P5 lineup/front slot, first real hits/floating numbers, Pause freeze/Resume, Exit confirmation, same Preview and recent-team restore. No page-origin runtime error observed. Cloud observation clock was slow; no full real-time long-skill-cycle feel claim.
-- Remaining: player-only iPhone changed-scope smoke. No M3 or formal production art/animation/audio/economy.
-- Exact next action: player checks VS/type readability; AI spacing across several skill cycles; hit-number clarity; controls/Pause/rotation/Retry/Exit. Stop until accepted.
+- Milestone: **M2 TEAM SELECT LAYOUT / ROSTER FILTER / BATTLE RESTART CORRECTION — AUTHORIZED / IMPLEMENTATION PENDING**.
+- M0/M1/M2 remain **PASS / PLAYER VERIFIED**. The first M2 post-acceptance polish remains **ENGINEERING PASS / PLAYER SMOKE PENDING**; do not reimplement its AI-spacing or floating-damage work.
+- Active branch / PR: `feat/m0-combat-core-20260927` / #1.
+- Canonical correction spec: `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md`.
+- Player real-device feedback: current Team Select is too tall and requires scrolling to reach BATTLE. New bounded correction is: single-screen Team Select; compact square roster bench; type filter tabs (Power/Speed/Blast, display-only); no type icons on upper ally/enemy matchup cards; future upper standing/idle presentation reserved but no formal art/animation now; battle X menu becomes CONTINUE / RESTART / EXIT.
+- Team composition remains free across Types; three same-Type characters are valid if otherwise eligible/unique/owned.
+- RESTART must restart the same stage with the same selected team, full/reset runtime state, fresh countdown and original formation, without returning to Team Select/Preview or writing completion.
+- Protected: ownership/save contracts, A1/A2/A3 runtime slots and slot2 front, encounter identity, Campaign routing/persistence, 1120x540 / Scale.NONE / input architecture, 0s AI handoff, existing cooldown-aware AI spacing, floating damage numbers, Pause/orientation, 90s result rules.
+- Forbidden: M3/M4, formal art/idle animation/audio, battle-HUD type-icon redesign, economy/PvP/gacha, TD gameplay rules.
+- Exact next action: Work recovers current HEAD and implements only `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md` with pushed checkpoints and risk-based verification. Stop before M3.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**
