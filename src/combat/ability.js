@@ -20,6 +20,12 @@ export function createAbilityDefinition(input) {
   if (!ACTIVE_CATEGORIES.has(input?.category)) throw new TypeError('Unknown ability category');
   const cooldown = nonnegativeFinite(input.cooldown, 'cooldown');
   const unlockTier = nonnegativeFinite(input.unlockTier ?? 0, 'unlockTier');
+  const canCrit = input.canCrit === undefined ? false : input.canCrit;
+  if (typeof canCrit !== 'boolean') throw new TypeError('canCrit must be boolean');
+  const critChance = input.critChance === undefined ? 0 : nonnegativeFinite(input.critChance, 'critChance');
+  if (critChance > 1) throw new RangeError('critChance must be between 0 and 1');
+  const critMultiplier = input.critMultiplier === undefined ? 1 : nonnegativeFinite(input.critMultiplier, 'critMultiplier');
+  if (critMultiplier === 0) throw new RangeError('critMultiplier must be positive');
   if (input.range != null) nonnegativeFinite(input.range, 'range');
   const maxRange = nonnegativeFinite(input.maxRange ?? input.range, 'maxRange');
   const minRange = input.minRange == null ? 0 : nonnegativeFinite(input.minRange, 'minRange');
@@ -40,6 +46,9 @@ export function createAbilityDefinition(input) {
     category: input.category,
     cooldown,
     unlockTier,
+    canCrit,
+    critChance,
+    critMultiplier,
     range: maxRange,
     minRange,
     preferredRange,

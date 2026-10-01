@@ -144,3 +144,15 @@ After engineering PASS, player only needs to observe:
 4. Pause/Restart once to confirm floating text does not remain stuck.
 
 Stop after this slice. Do not begin M3 automatically.
+
+## Implementation plan / recovery ledger
+Execution follows the authorized four checkpoints on the existing branch/PR; no new approval or alternate implementation.
+- [x] 1. `ability.js`: validate immutable optional crit fields (defaults false/0/1); `seededRandom.js`: uint32 seed → isolated reproducible [0,1) rolls. RED7/7 → GREEN21/21 with ability regression; diff PASS.
+- [ ] 2. `combatResolver.js`: shared structured damage result with legacy numeric wrapper; `battleSession.js`: session-owned RNG + boolean event flag. Runtime prototype data enables crit; headless fixture remains no-crit. RED→GREEN formula/AI/player/event/seed/Restart tests, commit + push.
+- [ ] 3. `damageNumbers.js`: category emphasis, critical label/pop, owned tween/text cleanup using existing presentation clock. RED→GREEN presentation/lifecycle tests, commit + push.
+- [ ] 4. Targeted + impacted regression, `npm run check`, build/diff review, fresh whole-diff reviewer, Pages deploy + minimum changed-surface public smoke, final recovery docs.
+
+Interface review: task1 definition fields + RNG feed task2; task2 `{amount,critical}` damage events feed task3; all use one shared resolver. No conflicting interfaces.
+Review focus: overkill amount vs HP clamp; miss/no-damage roll consumption; different ability settings in the same category; critical label/tween cleanup during interruptions; fresh Restart seed with same team/stage.
+Ruling: preserve canonical overkill event amount (final resolver value, not remaining-HP delta) and integer display rounding; no existing damage rule changes. Fresh sessions use the same documented default seed unless explicitly configured. No-crit canonical headless fixture remains independent of runtime visibility tuning.
+Current: checkpoint1 complete; resolver/event tests next. Active branch `feat/m0-combat-core-20260927`, PR#1. Default seed `0x5348414e`; generator Mulberry32. No global/time random state.

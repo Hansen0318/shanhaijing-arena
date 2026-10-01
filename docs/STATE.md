@@ -7,7 +7,8 @@
 
 **M2 LAYOUT / FILTER / RESTART CORRECTION: PASS / PLAYER VERIFIED**
 
-**M2 CRITICAL / DAMAGE-NUMBER POLISH: AUTHORIZED / IMPLEMENTATION PENDING**
+**M2 CRITICAL / DAMAGE-NUMBER POLISH: IN PROGRESS**
+Checkpoint1: immutable ability crit defaults false/0/1 + validated per-ability settings; seeded independent RNG helper. Targeted21/21 PASS after RED7/7. Resolver/events/presentation/deploy pending; no M3.
 
 ## Current state
 - Bounded correction completed on original `feat/m0-combat-core-20260927` / PR#1. No replacement branch, merge or M3.

@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- Current work: **M2 CRITICAL / DAMAGE-NUMBER POLISH — IN PROGRESS**, existing branch/PR#1. Recovery HEAD `07416754954be1f337f929bfb0f133cbf96fb033`, Actions#256 success. Prior M0/M1/M2/layout/filter/Restart and 3/5/10 pacing are player verified; do not redo.
+- Checkpoint1: immutable optional crit fields + isolated uint32 seeded RNG. Definition tests RED7/7 (missing contract), GREEN targeted21/21 with existing ability tests; diff check PASS. Remaining resolver/events, presentation, integrated checks/deploy. Exact next step: shared resolver with injected session RNG; no M3.
 - Milestone: **M2 TEAM SELECT LAYOUT / ROSTER FILTER / BATTLE RESTART CORRECTION — PASS / PLAYER VERIFIED** (2026-10-01).
 - M0/M1/M2 remain **PASS / PLAYER VERIFIED**. Prior polish AI/damage implementation retained; no M3/M4.
 - Active branch / PR: `feat/m0-combat-core-20260927` / #1; no replacement branch or main merge. Recovery baseline `d13252799e933f66b425035ddcc03335387b6d86`, main inspected `16f73932a0399979ba79b92f93f5ce1c1d1909b9`.
