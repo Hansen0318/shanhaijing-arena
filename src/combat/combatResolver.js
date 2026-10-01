@@ -8,19 +8,35 @@ function positiveFinite(value, label) {
   return value;
 }
 
-export function resolveDirectDamage({
+export function resolveDamage({
   attacker,
   defender,
   attackerDefinition,
   defenderDefinition,
   abilityDefinition,
+  rng,
 }) {
   const coefficient = positiveFinite(abilityDefinition?.effect?.coefficient, 'ability coefficient');
   const multiplier = getTypeMultiplier(attackerDefinition.type, defenderDefinition.type);
-  const amount = Math.max(
+  const baseAmount = Math.max(
     1,
     attackerDefinition.stats.atk * coefficient * multiplier - defenderDefinition.stats.def,
   );
+  let critical = false;
+  if (abilityDefinition.canCrit === true && abilityDefinition.critChance > 0) {
+    if (typeof rng !== 'function') throw new TypeError('Crit-capable damage requires an injected rng');
+    const roll = rng();
+    if (!Number.isFinite(roll) || roll < 0 || roll >= 1) {
+      throw new RangeError('random roll must be in [0,1)');
+    }
+    critical = roll < abilityDefinition.critChance;
+  }
+  const amount = baseAmount * (critical ? abilityDefinition.critMultiplier : 1);
   applyDamage(defender, amount);
-  return amount;
+  return { amount, critical };
+}
+
+// Existing headless callers keep the numeric contract; both paths use one resolver.
+export function resolveDirectDamage(options) {
+  return resolveDamage(options).amount;
 }

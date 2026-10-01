@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- Latest critical checkpoint1 remote: `9c696717deedeb733824934b2b129066af17d680`. Checkpoint2 now implements one shared structured resolver + legacy numeric wrapper, session-owned seeded RNG and boolean critical damage events; runtime prototype crit data separated from unchanged no-crit headless fixture. Targeted/core impacted88/88 PASS, diff PASS. Test setup error (empty default team) corrected with explicit valid saved-team fixture; no product failure remaining. Next: category/CRIT text and tween cleanup tests, then release verification/deploy.
 - Current work: **M2 CRITICAL / DAMAGE-NUMBER POLISH — IN PROGRESS**, existing branch/PR#1. Recovery HEAD `07416754954be1f337f929bfb0f133cbf96fb033`, Actions#256 success. Prior M0/M1/M2/layout/filter/Restart and 3/5/10 pacing are player verified; do not redo.
 - Checkpoint1: immutable optional crit fields + isolated uint32 seeded RNG. Definition tests RED7/7 (missing contract), GREEN targeted21/21 with existing ability tests; diff check PASS. Remaining resolver/events, presentation, integrated checks/deploy. Exact next step: shared resolver with injected session RNG; no M3.
 - Milestone: **M2 TEAM SELECT LAYOUT / ROSTER FILTER / BATTLE RESTART CORRECTION — PASS / PLAYER VERIFIED** (2026-10-01).

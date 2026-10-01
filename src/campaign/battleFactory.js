@@ -1,10 +1,10 @@
 import { createCharacterState } from '../combat/character.js';
 import { createBattleSession } from '../combat/battleSession.js';
-import { demoAbilityDefinitions } from '../runtime/demoBattle.js';
+import { runtimeAbilityDefinitions } from '../runtime/demoBattle.js';
 import { encounterDefinitions, stageEnemyDefinitions } from './encounterDefinitions.js';
 import { prototypeOwnership } from '../roster/catalog.js';
 import { isValidTeam } from '../roster/team.js';
-export function createStageBattleSession(config) {
+export function createStageBattleSession(config, { seed = config?.battleSeed, rng } = {}) {
  if(!config?.stageId || !config.chapterId) throw new TypeError('Stage identity required');
  // The protected M0 core resolves at 90s. Other encounter durations are future scope.
  if(config.battleDuration!==90) throw new RangeError('Graybox template requires the protected 90-second limit');
@@ -18,7 +18,7 @@ export function createStageBattleSession(config) {
  const session=createBattleSession({
   allies:team(config.selectedTeam,config.allySpawnFormation,'a','allies'),
   enemies:team(stageEnemyDefinitions(config).map(definition=>definition.id),config.enemySpawnFormation,'e','enemies'),
-  characterDefinitions:definitions,abilityDefinitions:demoAbilityDefinitions,maxSeconds:config.battleDuration,
+  characterDefinitions:definitions,abilityDefinitions:runtimeAbilityDefinitions,maxSeconds:config.battleDuration,seed,rng,
  });
  session.stageId=config.stageId;session.chapterId=config.chapterId;session.battlefieldId=config.battlefieldId;
  return session;

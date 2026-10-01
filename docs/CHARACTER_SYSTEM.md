@@ -1,5 +1,8 @@
 # Character System v1
 
+### Optional ability critical metadata (M2 bounded polish)
+Critical settings belong to immutable Ability Definition, not Character stats, Type, Role, Tier or cooldown: `canCrit:boolean` (default false), `critChance:number` in [0,1] (default0), `critMultiplier:number` positive finite (default1). Different abilities, including same-category abilities, may differ. False capability or zero chance never crits. No equipment/global crit stat or crit resistance is introduced. Shared deterministic session resolution is specified in COMBAT_SYSTEM.md.
+
 ## Character identity
 Characters are anthropomorphic Shanhaijing creatures.
 - Human-readable combat silhouette.

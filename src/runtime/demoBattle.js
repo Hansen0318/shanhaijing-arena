@@ -39,6 +39,14 @@ export const demoAbilityDefinitions = {
   }),
 };
 
+// Runtime visibility tuning is ability data, independent of the no-crit headless fixture.
+export const runtimeAbilityDefinitions = Object.freeze({
+  basic: createAbilityDefinition({ ...demoAbilityDefinitions.basic, canCrit:true, critChance:.10, critMultiplier:1.50 }),
+  heavy: createAbilityDefinition({ ...demoAbilityDefinitions.heavy, canCrit:true, critChance:.20, critMultiplier:1.75 }),
+  special: createAbilityDefinition({ ...demoAbilityDefinitions.special, canCrit:true, critChance:.15, critMultiplier:1.75 }),
+  awakening: createAbilityDefinition({ ...demoAbilityDefinitions.awakening, canCrit:false, critChance:0, critMultiplier:1 }),
+});
+
 function character(id, type, stats) {
   return createCharacterDefinition({
     id, name: id, type, role: 'attacker', stats,
@@ -68,13 +76,15 @@ function createTeams(definitions, frontOffset = 0) {
   return { allies, enemies };
 }
 
-export function createDemoBattleSession() {
+export function createDemoBattleSession({ seed, rng } = {}) {
   const { allies, enemies } = createTeams(runtimeCharacterDefinitions, 1.2);
   return createBattleSession({
     allies,
     enemies,
     characterDefinitions: runtimeCharacterDefinitions,
-    abilityDefinitions: demoAbilityDefinitions,
+    abilityDefinitions: runtimeAbilityDefinitions,
+    seed,
+    rng,
     maxSeconds: 90,
   });
 }

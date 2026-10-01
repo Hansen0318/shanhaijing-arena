@@ -9,6 +9,7 @@
 
 **M2 CRITICAL / DAMAGE-NUMBER POLISH: IN PROGRESS**
 Checkpoint1: immutable ability crit defaults false/0/1 + validated per-ability settings; seeded independent RNG helper. Targeted21/21 PASS after RED7/7. Resolver/events/presentation/deploy pending; no M3.
+Checkpoint2: shared resolver returns exact final `{amount,critical}` after type/DEF/minimum then crit; AI/player use session RNG, runtime Basic/Heavy/Special visibility values enabled, Awakening disabled. Legacy numeric/headless path retained. Core impacted88/88 PASS; presentation/release pending.
 
 ## Current state
 - Bounded correction completed on original `feat/m0-combat-core-20260927` / PR#1. No replacement branch, merge or M3.

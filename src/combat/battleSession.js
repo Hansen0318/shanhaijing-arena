@@ -8,7 +8,8 @@ import {
   isTargetInRange,
 } from './ability.js';
 import { canCharacterAct } from './character.js';
-import { resolveDirectDamage } from './combatResolver.js';
+import { resolveDamage } from './combatResolver.js';
+import { createSeededRandom, DEFAULT_BATTLE_SEED } from './seededRandom.js';
 
 const ACTIVE_CATEGORIES = ['basic', 'heavy', 'special', 'awakening'];
 
@@ -86,11 +87,17 @@ export class BattleSession {
     abilityDefinitions,
     maxSeconds = BATTLE_LIMIT_SECONDS,
     arenaBounds = DEFAULT_ARENA_BOUNDS,
+    seed = DEFAULT_BATTLE_SEED,
+    rng,
   }) {
     if (allies.length !== 3 || enemies.length !== 3) {
       throw new RangeError('M0 battle session requires exactly 3 allies and 3 enemies');
     }
     positiveFinite(maxSeconds, 'maxSeconds');
+    const seededRandom = createSeededRandom(seed);
+    if (rng !== undefined && typeof rng !== 'function') throw new TypeError('rng must be a function');
+    this.seed = seed;
+    this.random = rng ?? seededRandom;
 
     this.allies = allies;
     this.enemies = enemies;
@@ -114,10 +121,10 @@ export class BattleSession {
 
   applyResolvedDamage(actor, target, actorDefinition, defenderDefinition, definition, category, source) {
     if (!canCharacterAct(target) || !(definition.effect?.coefficient > 0)) return 0;
-    const amount = resolveDirectDamage({ attacker:actor, defender:target,
-      attackerDefinition:actorDefinition, defenderDefinition, abilityDefinition:definition });
+    const { amount, critical } = resolveDamage({ attacker:actor, defender:target,
+      attackerDefinition:actorDefinition, defenderDefinition, abilityDefinition:definition, rng:this.random });
     if (Number.isFinite(amount) && amount > 0) this.damageEvents.push({
-      actorId:actor.instanceId, targetId:target.instanceId, category, source, amount,
+      actorId:actor.instanceId, targetId:target.instanceId, category, source, amount, critical,
       position:{x:target.x,y:target.y},
     });
     return amount;
