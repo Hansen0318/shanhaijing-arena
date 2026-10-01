@@ -6,7 +6,10 @@
 - Checkpoint 2: 72px square-style compact bench and ALL/Power/Speed/Blast filters; view state only. Selection, saves and restrictions untouched; no Type quotas. Roster/filter/view/persistence 21/21 PASS. Generated reproducible `scripts/team-layout-probe.mjs` for 667×320 / 740×360 / 844×390 / 932×430 actual CSS geometry; browser local-file policy blocks executing it here, so do not claim runtime geometry PASS yet.
 - Checkpoint 2 remote: `84c0b438604e6fbdbdb4cf5172278b97b02169df`.
 - Checkpoint 3: X menu adds RESTART. Controller restart/retry share fresh config validation; main reuses startBattle/scene create/shutdown. Targeted Restart 5/5 PASS, prior directly impacted set 27/27. Same stage/team, full HP/CD, fresh targets/AI/events/countdown/formation, damage cleanup; CONTINUE preserves prior Pause, new round clears manual/menu reasons and retains orientation gate. No progress/save writes.
-- Next: integration review/checks/build/deploy/public smoke; no M3.
+- Checkpoint 3 remote: `290d5f48974dad7896f3649b68ffea4c91eec307`, Actions #247 success.
+- Integration: targeted 11/11, impacted 130/130, build/diff PASS; independent review no Critical/Important. Forced slot title stays short, REQUIRED has accessible label + absolute asterisk; row-budget regression and safe-area bottom padding added.
+- Layout evidence: declared actual CSS budget fits 667×320, 740×360, 844×390, 932×430; this is explicitly not real-device/browser geometry. Cloud browser cannot open local file fixtures per URL policy and exposes no viewport resize. Public normalviewport Team Select root had scrollHeight=clientHeight and BATTLE visible. Real iPhone remains player-owned.
+- Next: final integration Actions/deploy and minimum public filter/Restart/error smoke; no M3.
 
 ## Status
 Authorized from player real-device feedback after the first M2 post-acceptance polish deployment.

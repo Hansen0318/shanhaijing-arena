@@ -13,8 +13,11 @@
 - Checkpoint 2 remote: `84c0b438604e6fbdbdb4cf5172278b97b02169df`.
 - Completed checkpoint 3: X menu CONTINUE/RESTART/EXIT; Restart and result Retry share freshBattleConfig and existing scene/factory lifecycle. No combat/input changes.
 - Actual Restart targeted: 5/5 plus directly impacted pause/orientation/retry/lineup tests (previous combined 27/27 before final app-wiring case). Fresh Arena create resets runtime state; shutdown clears damage text; manual Pause clears on new round while orientation remains authoritative.
-- Remaining: whole-diff review, impacted checks/build/deploy/public smoke.
-- Exact next step: review integration and run impacted regression/build; push before public smoke.
+- Checkpoint 3 remote: `290d5f48974dad7896f3649b68ffea4c91eec307`, Actions #247 success.
+- Integration verification: targeted 11/11; impacted 130/130; build/diff PASS. Independent review no Critical/Important; minor forced-title overflow risk fixed with short slot title + accessible REQUIRED/absolute mark and regression. Safe-area bottom padding retained.
+- Geometry: actual CSS row-budget contract for 667×320 / 740×360 / 844×390 / 932×430 PASS; this is static budget evidence, not actual phone/browser geometry. Cloud local-file fixture blocked by URL policy and no resize capability; public normalviewport root no-scroll and BATTLE visible.
+- Remaining: final integration Actions/Pages and minimum public filter/Restart/error smoke, then durable closure.
+- Exact next step: verify final source Actions/Pages, exercise public filter/BATTLE/Restart, update closure docs. Stop before M3.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

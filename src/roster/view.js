@@ -20,8 +20,9 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
  const slots=node('div',null,'team-slots');slots.setAttribute('aria-label','Battle slots');
  for(const [index,id] of team.slots.entries()) {
   const required=(team.stage.forcedCharacters ?? []).includes(id);
-  const slot=button(`SLOT ${index+1}${index===1?' · FRONT':''}${required?' · REQUIRED':''}`,()=>{if(team.remove(index))onChange?.();},'team-slot');
-  slot.dataset.slot=String(index+1);slot.setAttribute('aria-label',`${slot.textContent} — ${id?`${rosterCatalog[id].name}, ${titleCase(rosterCatalog[id].type)}`:'EMPTY'}`);
+  const slot=button(`SLOT ${index+1}${index===1?' · FRONT':''}`,()=>{if(team.remove(index))onChange?.();},'team-slot');
+  slot.dataset.slot=String(index+1);slot.setAttribute('aria-label',`${slot.textContent}${required?' · REQUIRED':''} — ${id?`${rosterCatalog[id].name}, ${titleCase(rosterCatalog[id].type)}`:'EMPTY'}`);
+  if(required){const badge=node('span','*','required-slot-mark');badge.setAttribute('aria-hidden','true');slot.append(badge);}
   if(id){const character=rosterCatalog[id];slot.style.borderColor=character.portrait.color;slot.className+=' occupied';slot.dataset.type=character.type;slot.append(portrait(character),identity(character,false));}
   else slot.append(node('span','EMPTY','empty-slot'));
   slots.append(slot);

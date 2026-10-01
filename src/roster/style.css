@@ -1,5 +1,5 @@
 /* Four visible rows within the visual viewport; no clipping/scroll workaround. */
-.team-page { height:100%;min-height:0;display:grid;grid-template-rows:44px minmax(80px,1fr) 124px 44px;gap:4px;padding-top:4px;padding-bottom:4px; }
+.team-page { height:100%;min-height:0;display:grid;grid-template-rows:44px minmax(80px,1fr) 124px 44px;gap:4px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom)); }
 .team-page .stage-header { gap:12px; }
 .team-page .stage-header h1 { margin:0;font-size:clamp(18px,3vw,26px); }
 .team-stage { margin-left:auto;font-size:13px;white-space:nowrap; }
@@ -10,7 +10,7 @@
 .matchup-vs { font-size:24px;align-self:center;text-align:center;color:#ffd689; }
 .team-slots,.enemy-slots { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;flex:1;min-height:0; }
 .team-slot,.enemy-slot { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:2px solid #718b9c;border-radius:7px;background:#243b4b;color:white;padding:4px;font:600 10px system-ui,sans-serif;box-sizing:border-box;min-width:0;min-height:44px; }
-.team-slot { border-style:dashed;touch-action:manipulation;cursor:pointer; }
+.team-slot { position:relative;border-style:dashed;touch-action:manipulation;cursor:pointer; }
 .team-slot.occupied { border-style:solid; }
 .enemy-slot { border-color:#ae725d;background:#3e3331; }
 /* This portrait region can later host standing art; no animation in this slice. */
@@ -34,3 +34,5 @@
 .roster-filter { display:flex;align-items:center;justify-content:center;gap:4px;min-height:44px;min-width:52px;padding:4px 12px;border:2px solid #627a8a;border-radius:7px;background:#243b4b;color:white;font:600 13px system-ui,sans-serif;touch-action:manipulation;cursor:pointer; }
 .roster-filter[aria-pressed="true"] { border-color:#ffd689;background:#425546; }
 .roster-filter:focus-visible { outline:3px solid white;outline-offset:1px; }
+
+.required-slot-mark { position:absolute;right:3px;bottom:2px;color:#ffd689;font-size:16px;line-height:1; }

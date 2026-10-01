@@ -28,6 +28,6 @@ test('restricted Team Select exposes only eligible cards and labels forced selec
  const team=new TeamSelection({stage:{allowedRoster:['P1','P2','P4'],forcedCharacters:['P4']}});
  const page=element('section');renderTeamSelect(page,team,{document:{createElement:element},stageId:'1-3'});
  assert.deepEqual(walk(page).filter(n=>n.dataset.characterId).map(n=>n.dataset.characterId),['P1','P2','P4']);
- const forced=walk(page).find(n=>n.dataset.slot==='1');assert.ok(forced.textContent.includes('REQUIRED'));
+ const forced=walk(page).find(n=>n.dataset.slot==='1');assert.ok(forced['aria-label'].includes('REQUIRED'));
  forced.onclick();assert.equal(team.slots[0],'P4');
 });
