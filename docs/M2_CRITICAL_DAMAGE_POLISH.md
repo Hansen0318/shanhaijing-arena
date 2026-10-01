@@ -1,7 +1,7 @@
 # M2 Combat Feedback — Critical Hit / Damage Number Polish
 
 ## Status
-Authorized by player after M2 player verification and prototype cooldown pacing closure.
+**M2 CRITICAL / DAMAGE-NUMBER POLISH — ENGINEERING PASS / iPhone PLAYER SMOKE PENDING** (2026-10-01).
 
 This is a final bounded combat-feedback slice before M3. It must not start shard/reward/progression work.
 
@@ -150,10 +150,22 @@ Execution follows the authorized four checkpoints on the existing branch/PR; no 
 - [x] 1. `ability.js`: validate immutable optional crit fields (defaults false/0/1); `seededRandom.js`: uint32 seed → isolated reproducible [0,1) rolls. RED7/7 → GREEN21/21 with ability regression; diff PASS.
 - [x] 2. `combatResolver.js`: shared structured damage result with legacy numeric wrapper; `battleSession.js`: session-owned RNG + boolean event flag. Runtime prototype data enables crit; headless fixture remains no-crit. New critical tests11/11, combined core impacted88/88 PASS; checkpoint1 remote `9c696717deedeb733824934b2b129066af17d680`.
 - [x] 3. `damageNumbers.js`: category emphasis, critical label/pop, owned tween/text cleanup using existing presentation clock. RED5 failures → GREEN26/26 presentation/lifecycle; checkpoint2 remote `ea7bf1db2e09fead0cfa2f3a547a602efa20b6b1`.
-- [ ] 4. Targeted + impacted regression, `npm run check`, build/diff review, fresh whole-diff reviewer, Pages deploy + minimum changed-surface public smoke, final recovery docs.
+- [x] 4. Targeted31/31 + impacted168/168, `npm run check`227/227, build/diff PASS, fresh whole-diff reviewer (30/30 independently, no findings), Pages deploy#260 PASS + minimum changed-surface public smoke. Final recovery docs recorded below.
 
 Interface review: task1 definition fields + RNG feed task2; task2 `{amount,critical}` damage events feed task3; all use one shared resolver. No conflicting interfaces.
 Review focus: overkill amount vs HP clamp; miss/no-damage roll consumption; different ability settings in the same category; critical label/tween cleanup during interruptions; fresh Restart seed with same team/stage.
 Ruling: preserve canonical overkill event amount (final resolver value, not remaining-HP delta) and integer display rounding; no existing damage rule changes. Fresh sessions use the same documented default seed unless explicitly configured. No-crit canonical headless fixture remains independent of runtime visibility tuning.
-Current: checkpoint1 complete; resolver/event tests next. Active branch `feat/m0-combat-core-20260927`, PR#1. Default seed `0x5348414e`; generator Mulberry32. No global/time random state.
-Integration: checkpoints1 `9c696717deedeb733824934b2b129066af17d680`,2 `ea7bf1db2e09fead0cfa2f3a547a602efa20b6b1`,3 `238cd00bb459f95cf84415aba8be5318e28a79dc`. Targeted31/31; impacted168/168; full check227/227; build/diff PASS. Independent review + final Pages/public engineering smoke still pending. Known limitations: prototype visibility tuning only; integer display rounding and overkill unchanged; default seed intentionally repeats on fresh rounds; real iPhone readability/player smoke pending.
+Current: all four checkpoints complete. Active branch `feat/m0-combat-core-20260927`, PR#1 (open, not merged). Default seed `0x5348414e`; generator Mulberry32. No global/time random state.
+
+## Final release evidence
+- Recovery baseline `07416754954be1f337f929bfb0f133cbf96fb033`; no reimplementation of accepted M0/M1/M2/layout/filter/Restart/pacing.
+- Checkpoint1 `9c696717deedeb733824934b2b129066af17d680`; checkpoint2 `ea7bf1db2e09fead0cfa2f3a547a602efa20b6b1`; checkpoint3 `238cd00bb459f95cf84415aba8be5318e28a79dc`; checkpoint4 / final deployed source `80054aea902a3bc48a726509ca3f70aa9897b397`.
+- Local final targeted31/31: criticalDefinition, criticalDamage, criticalPresentation, damageEvents, damageNumbers, battleTweenPause. Impacted168/168: ability/AI/preparation/session/headless/character/type/target/control/battle rules/runtime/pause/Restart/countdown/Campaign/team/input/VFX surfaces. Full `npm run check`227/227. No failures/skips.
+- Vite production build PASS; public JS `index-CTo9sRxy.js` equals local + CI bundle. Whole-diff whitespace + source review PASS. Existing large-Phaser bundle and environment npm proxy advisories remain non-blocking; no dependency changes.
+- Actions [#260 / 36861577213](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36861577213): CI Test227/227, Build, Configure/Upload Pages and Deploy Pages all success. Earlier checkpoint Actions#257/#258/#259 also success.
+- Public URL https://hansen0318.github.io/shanhaijing-arena/ . Actual changed-surface engineering smoke: Chapter1 → 1-1 Preview → Team Select P1/P3/P5 → BATTLE, selected portraits and full HP, countdown; Pause/Resume state changes; X → RESTART closes menu and creates fresh same-team Arena. Page-origin runtime errors none; repeated Chrome-extension metadata errors are external.
+- Public cloud smoke additionally observed real resolved floating numbers and HP/CD changes at01:26/01:25; Pause retained the same text positions/opacity/timer across observations. Restart from this damaged/KO paused round returns full HP,01:30/countdown and clears old numbers. Critical-specific styling/pop and pause/cleanup are established by deterministic tests with real Phaser TweenManager; no live crit/iPhone readability claim or full historical replay. Cloud clock initially progressed slowly. Screenshot proof is deployed normal-damage/Pause and fresh Arena evidence only.
+- Independent fresh reviewer: no Critical/Important/Minor findings; independently30/30 relevant tests, additional differing same-category Heavy settings and overkill probes PASS. Declined-to-judge items ruled as player-owned real-device readability, separate completed deploy evidence, and out-of-scope formal balance/M3. No deferred source issues.
+- Known limitations: prototype values only; display rounds integer while combat/events keep exact final amount including overkill; fresh sessions intentionally repeat the default crit sequence; injected RNG reset is caller-owned (runtime factories use fresh seeded RNG). No formal art/VFX/audio/global crit stats or progression.
+- Next exact action: player checks normal numbers short-lived/not obstructive; Heavy/Special stronger than Basic; occasional larger warm CRIT! distinguishable; Pause/Restart no stuck/old texts. STOP until player reports acceptance. Do not start M3.
+- Public evidence: `docs/verification/m2-critical-public-damage.jpg` (normal floating numbers frozen at01:25), `docs/verification/m2-critical-public-reset.jpg` (same team full HP/countdown, prior numbers absent).

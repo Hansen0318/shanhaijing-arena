@@ -7,7 +7,13 @@
 
 **M2 LAYOUT / FILTER / RESTART CORRECTION: PASS / PLAYER VERIFIED**
 
-**M2 CRITICAL / DAMAGE-NUMBER POLISH: IN PROGRESS**
+**M2 CRITICAL / DAMAGE-NUMBER POLISH: ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**
+Final source `80054aea902a3bc48a726509ca3f70aa9897b397`, original branch/PR#1 open. Actions#260 /36861577213 Test227/227, Build/Pages Deploy success. Local targeted31/31, impacted168/168, full check227/227, build/diff PASS; fresh independent review no findings (30/30 + probes).
+Per-ability immutable crit + fresh seeded session RNG, one shared AI/player resolver and exact final critical events; runtime-only prototype visibility settings preserve canonical headless fixture and 3/5/10 cooldowns. Category floating text and warm CRIT! label/pop use existing tween clock and scene cleanup. Public bundle `index-CTo9sRxy.js` matches CI/local; selected team/start, Pause/Resume and Restart rendered without page-origin errors. Cloud clock slow; live crit readability is player-owned, not claimed. Full release/checkpoint/limitations evidence in `docs/M2_CRITICAL_DAMAGE_POLISH.md`.
+Next: four-point iPhone feedback smoke only; no M3 until acceptance/authorization. Remaining limitations: prototype balance, integer display rounding/overkill, intentionally repeated default seed, existing large bundle advisory.
+Public smoke also observed real damage numbers/HP/cooldowns, stable paused text/timer, and Restart cleanup from a damaged/KO paused round. No claim of live critical readability; this remains part of the short player smoke.
+
+### Historical implementation checkpoints (superseded by final release above)
 Checkpoint1: immutable ability crit defaults false/0/1 + validated per-ability settings; seeded independent RNG helper. Targeted21/21 PASS after RED7/7. Resolver/events/presentation/deploy pending; no M3.
 Checkpoint2: shared resolver returns exact final `{amount,critical}` after type/DEF/minimum then crit; AI/player use session RNG, runtime Basic/Heavy/Special visibility values enabled, Awakening disabled. Legacy numeric/headless path retained. Core impacted88/88 PASS; presentation/release pending.
 Checkpoint3: category-aware floating text and warm larger CRIT! label/scale-pop integrated. Real Phaser tween pause clock tested with normal+crit+label/pop; cleanup owned by existing shutdown. Presentation/lifecycle26/26 PASS; final release checks/deploy pending.
