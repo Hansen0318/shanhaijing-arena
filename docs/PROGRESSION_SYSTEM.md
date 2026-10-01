@@ -32,8 +32,14 @@ Stage Preview shows configured shard rewards
 Rules:
 - Defeat / Draw / unfinished Exit do not grant clear-based unlock rewards.
 - Reward tables are data-driven per stage.
-- Stage 5 may be a harder finale with higher-value or chapter-exclusive character shards.
-- Exact named characters, drop rates, and balance remain later content decisions.
+- A stage may grant multiple character shard items with different quantities.
+- First-clear and repeatable reward sets are independently configurable.
+- Example: first clear may grant Character A ×3 + Character B ×2, while replay grants only Character B ×1/×2.
+- Rewards may target already-owned roster characters; those shards remain persistent for future M4 use.
+- Stage 5 may be a harder finale with higher-value shards, stronger-character shards, or shards for strong already-owned characters.
+- Stage-5 value is content configuration, not a hard-coded stage-number reward rule.
+- Exact named characters and quantities remain later content decisions.
+- M3 currently uses fixed configured quantities; random drop rates are not implied.
 
 ### M3 locked prototype engineering fixture
 For implementation smoke only, not formal content:
