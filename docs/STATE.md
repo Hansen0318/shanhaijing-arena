@@ -1,10 +1,10 @@
 # Project State
 
 ## Milestone
-**M2 PLAYER PRESENTATION / PACING CORRECTION: ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**
+**M2 PLAYER PRESENTATION / PACING CORRECTION: PASS / PLAYER VERIFIED**
 Deployed source `9ad74e6f9b93a85451f9cf09552243530274f35a`, original branch/PR#1. Actions#265 /36865286592 Test/Build/Pages Deploy success. Targeted17/17, impacted battle/AI98/98, check230/230, build/diff PASS. Public `index-CI9O6wHr.js` matches local build; initial page renders after reload.
 Normal32/36/40/44px; crit1.25×; CRITICAL! another6px larger;80ms pop + fixed-position fade total840–1040ms. P1–P5 moveSpeed1.8/runtime enemy1.6, headless4/3.5 unchanged. Crit/RNG/formula/cooldown/attackSpeed/AI/input/Campaign/Restart preserved.
-Next: six-item player smoke in canonical critical spec (size hierarchy, no upward motion, faster movement, Pause/Restart cleanup). No known engineering failures; readability/formal balance remain player-owned. STOP before M3.
+Player accepted the final impact-text sizing/behavior and current movement pacing. Actions#269 / 36866538530 succeeded. This correction is closed. **M3 SHARD / REWARD / CHARACTER UNLOCK LOOP: AUTHORIZED / IMPLEMENTATION PENDING.** Canonical spec: `docs/M3_SHARD_REWARD_UNLOCK.md`. Stop before M4.
 Second player size correction: normal damage text increased again to 40/45/50/55px, critical remains slightly larger (1.12×), and `CRITICAL!` remains larger than the critical number (+12px). Presentation-only; combat logic unchanged.
 **M0 / M1 / M2 PASS / PLAYER VERIFIED**
 
