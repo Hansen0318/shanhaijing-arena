@@ -173,6 +173,8 @@ export class ArenaScene extends Phaser.Scene {
     if(rewardLines.length) {
       this.resultText.setY(155);
       this.rewardText.setY(rewardLines.length>1?198:250).setFontSize(rewardLines.length>3?20:28);
+      // Phaser measures wrapped lines; reserve the action band even for multi-item data.
+      this.rewardText.setScale(Math.min(1,(294-this.rewardText.y)/Math.max(1,this.rewardText.height)));
     }
     const next=this.resultButtons.get('NEXT STAGE');
     if(next) {

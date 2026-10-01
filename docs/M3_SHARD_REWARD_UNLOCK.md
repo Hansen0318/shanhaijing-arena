@@ -1,9 +1,9 @@
 # M3 — Shard / Reward / Character Unlock Loop
 
 ## Status
-**AUTHORIZED / CHAT SPEC COMPLETE / IMPLEMENTATION PENDING**
+**LOCAL ENGINEERING PASS / FINAL DEPLOY PENDING / PLAYER SMOKE PENDING**
 
-M2 combat-feedback, movement pacing and impact-text corrections are player accepted. M3 may now begin.
+M2 combat-feedback, movement pacing and impact-text corrections are player accepted. M3 implementation is complete; final-source deployment confirmation and player acceptance remain.
 
 This milestone establishes the minimum persistent acquisition loop required before M4 Tier / Collection work.
 
@@ -321,3 +321,23 @@ Player-owned smoke after engineering PASS:
 8. Defeat/Exit check only if convenient; automated coverage is authoritative for no-grant paths.
 
 Stop after M3 player-ready deployment. Do not begin M4 automatically.
+
+## 15. Implementation / migration decisions (2026-10-01)
+
+- Pure state/transactions: src/acquisition/model.js. Dedicated save: src/acquisition/persistence.js, key shanhaijing-arena.acquisition.v1, schema version1. Presentation: src/acquisition/presentation.js. Controller owns a fresh completion UUID per start/Restart/Retry and binds it through main's scene callback; stale callbacks cannot settle a later round.
+- State contains shards for EVERY catalog ID, derived ownership, claimed stage receipts and completed Victory UUID receipts. Items normalize against own catalog properties and positive safe integers. Unlock requires5 and preserves the full inventory. Owned synthetic P1 rewards are separately tested without changing Chapter1 fixture.
+- Pre-M3 save migration preserves Campaign clear/team keys; existing clears initialize claimedStageIds with no retroactive grants. This deliberately makes already-cleared firstClear rewards unavailable for earning missed P4 shards. Full engineering fixture player smoke needs an independent fresh browser save. Never clear the original user's storage automatically.
+- Acquisition receipts + inventory save in one write before the independent Campaign write. Denied/quota storage preserves in-memory state for current session; no reload durability can be claimed for failed writes. Dev unlock-all skips all normal saves. Prototype completion receipt history is retained without pruning.
+- Result rendering reads controller rewardResult only. Multiple granted items aggregate by character; measured text height scales into space above action buttons. No DOM-based unlock inference. Team ownership refresh updates eligibility without compacting empty slots.
+- Actual engineering evidence: baseline15/15; domain/persistence37/37; model/controller31/31; impacted106/106; independent reviewer36/36; final presentation5/5; full267/267; build/diff PASS. Review found a multi-item Result height issue, reproduced RED and fixed GREEN. No protected combat/source changes beyond Result presentation/callback integration.
+- Deployment evidence and final safe SHA will be recorded in WORK_PROGRESS.md and docs/STATE.md after final Actions/public confirmation. Status remains PLAYER SMOKE PENDING.
+
+### Exact player smoke (fresh independent save)
+1. Normal roster contains P1/P2/P3.1-1 Preview:P4 Shard×2 + FIRST CLEAR.
+2. Win1-1:P4+2,2/5. Replay1-1:no reward row; Preview:CLAIMED.
+3. Win1-2:P4total4; win1-3:P4total5 and P4 UNLOCKED. Next Team Select:P4 selectable; filters/order/exact-three remain normal.
+4. Win1-4:P5total1; win1-5:P5total4; replay1-4:P5total5 and P5 UNLOCKED. Another1-4 Victory continues6; replay1-5 grants nothing.
+5. Reload and open Team Select:P4/P5 remain available. Further repeatable Result reports retained inventory. Readability/no-scroll/feel are player-owned; automated no-grant coverage is authoritative for Defeat/Draw/Exit/Restart/Retry.
+6. With original pre-M3 save:verify existing CLEAR survives and firstClear is CLAIMED; stale locked P4/P5 team entries safely disappear. Do not expect retroactive shards.
+
+After player-ready M3 deployment STOP. Await player smoke; no M4 authorization implied.

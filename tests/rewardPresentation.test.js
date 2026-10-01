@@ -31,9 +31,17 @@ test('actual Stage Preview renders firstClear/CLAIMED and repeatable quantities;
  }finally{globalThis.document=prev;}
 });
 function scene(){const source=readFileSync(new URL('../src/runtime/ArenaScene.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replace('export class ArenaScene','class ArenaScene');const Arena=vm.runInNewContext(source+'\nArenaScene',{Phaser:{Scene:class{}},ARENA_STAGE:{width:1120,height:540},resultRewardLines:presentation.resultRewardLines});const s=new Arena();
- const visual=()=>{const v={visible:true,text:'',style:{},setDepth(){return this;},setVisible(b){this.visible=b;return this;},setOrigin(){return this;},setInteractive(){return this;},setStrokeStyle(){return this;},setText(t){this.text=t;return this;},setY(y){this.y=y;return this;},setFontSize(n){this.style.fontSize=n;return this;},add(){return this;},on(){return this;},disableInteractive(){}};return v;};s.add={container:visual,rectangle:visual,text:(x,y,text,style)=>Object.assign(visual(),{x,y,text,style})};s.releaseJoystick=()=>{};s.onPlaybackChange=()=>{};return s;}
+ const visual=()=>{const v={visible:true,text:'',style:{},setDepth(){return this;},setVisible(b){this.visible=b;return this;},setOrigin(){return this;},setInteractive(){return this;},setStrokeStyle(){return this;},setText(t){this.text=t;return this;},setY(y){this.y=y;return this;},setFontSize(n){this.style.fontSize=n;return this;},setScale(n){this.scaleY=n;return this;},add(){return this;},on(){return this;},disableInteractive(){}};return v;};s.add={container:visual,rectangle:visual,text:(x,y,text,style)=>Object.assign(visual(),{x,y,text,style})};s.releaseJoystick=()=>{};s.onPlaybackChange=()=>{};return s;}
 test('actual Arena result consumes transaction once; empty defeat/draw never show fake reward; fresh result clears',()=>{
  assert.equal(typeof presentation.resultRewardLines,'function');
  const s=scene();let calls=0;const tx={grantedItems:[reward.items[1]],shardCounts:{P4:5},unlockedCharacterIds:['P4']};s.session={stageId:'1-3'};s.campaignActions={result:()=>{calls++;return tx;},hasNext:()=>true};s.createResultView();s.showResult('victory');assert.equal(calls,1);assert.match(s.rewardText.text,/P4 Shard \+1/);assert.match(s.rewardText.text,/P4 UNLOCKED/);s.showResult('victory');assert.equal(calls,1);
  for(const outcome of ['defeat','draw']){s.campaignActions.result=()=>({grantedItems:[],unlockedCharacterIds:[],shardCounts:{P4:5}});s.createResultView();s.showResult(outcome);assert.equal(s.rewardText.visible,false);assert.equal(s.rewardText.text,'');}
+});
+
+test('measured multiline reward text fits above the Result action band',()=>{
+ const s=scene();s.session={stageId:'synthetic'};
+ const ids=['P1','P2','P3','P4','P5'];
+ s.campaignActions={result:()=>({grantedItems:ids.map(characterId=>({type:'characterShard',characterId,quantity:2,repeat:'repeatable'})),shardCounts:Object.fromEntries(ids.map(id=>[id,5])),unlockedCharacterIds:['P4','P5']}),hasNext:()=>true};
+ s.createResultView();s.rewardText.height=120; // Renderer measurement crosses y303 action band without fitting.
+ s.showResult('victory');assert.ok(s.rewardText.y+s.rewardText.height*(s.rewardText.scaleY??1)<=294);
 });

@@ -1,6 +1,6 @@
 # Progression System — Current Planning
 
-> Campaign progression is implemented in M1. Character acquisition, shards, and Tier upgrades are planned future milestones; the canonical sequencing is in `docs/DEVELOPMENT_ROADMAP.md`.
+> Campaign progression is implemented in M1. M3 character acquisition/shards are implemented pending player smoke; Tier upgrades remain future scope; the canonical sequencing is in `docs/DEVELOPMENT_ROADMAP.md`.
 
 ## M1 Campaign progression
 Separate unlocked/cleared chapter/stage arrays derive from sequential victories. Defeat and Draw do not unlock. Cleared stages remain replayable. Versioned persistence is isolated from combat and replaceable; see CAMPAIGN_SYSTEM.md.
@@ -14,7 +14,7 @@ M2 is player verified and implements:
 
 M3 must not bypass these contracts.
 
-## M3 planned character acquisition / shards
+## M3 implemented character acquisition / shards (player smoke pending)
 
 Shard inventory is universal across the roster:
 - locked characters accumulate shards toward unlock;
@@ -22,7 +22,7 @@ Shard inventory is universal across the roster:
 - M3 does not spend owned-character shards;
 - M4 will consume/use those persisted counts for Tier progression.
 
-Planned loop:
+Implemented loop:
 Stage Preview shows configured shard rewards
 → Victory grants configured shards
 → shard inventory persists outside combat

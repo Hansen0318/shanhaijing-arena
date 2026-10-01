@@ -1,6 +1,19 @@
 # Project State
 
 ## Milestone
+**M3 — SHARD / REWARD / CHARACTER UNLOCK LOOP: LOCAL ENGINEERING PASS / FINAL DEPLOY PENDING / PLAYER SMOKE PENDING**
+
+## Current state
+- Active work line: `feat/m0-combat-core-20260927` / PR #1 open. Latest safe remote8d850d02c72c16c1fa8cbfbdc19939c72bf15e9f; final Result fit source push/deploy pending. No main merge. Recovery entry: WORK_PROGRESS.md CURRENT HANDOFF POINTER.
+- M0/M1/M2 are PLAYER VERIFIED. Protected latest impact sizes Basic/Heavy/Special/Awakening40/45/50/55px; critical1.12×; CRITICAL! critical+12px; fixed pop/fade without upward drift. H/S/A3/5/10; roster speed1.8/runtime enemy1.6. Core/combat/input/camera/Pause/orientation/countdown unchanged by M3.
+- M3 implemented: universal shards for every roster ID, normal ownershipP1/P2/P3, lockedP4/P5 threshold5 with no shard spending/reset; firstClear/repeatable grants exactly once per valid Victory completion; dedicated versioned acquisition save outside combat; pre-M3 normalization; authoritative Preview/Result; next roster render refreshes ownership and preserves slots/order/filter behavior.
+- Canonical Chapter1 engineering rewards:1-1P4×2firstClear,1-2P4×2firstClear,1-3P4×1firstClear,1-4P5×1repeatable,1-5P5×3firstClear. Other chapters remain no-shard placeholders. This is not formal balance.
+- Engineering evidence: impacted106/106, final full267/267, final Result5/5, independent review36/36, Vite build/diff PASS. Final bundle index-DXT92jQP.js. Actions#278 /36872285951 passed earlier integration source; final fit deployment pending.
+- Migration: existing Campaign clears/team data preserved. Legacy firstClear stages initialize CLAIMED without retroactive shards; P4's already-cleared rewards cannot be earned again, so full unlock smoke needs separate fresh browser/site save. Denied storage works in memory for current session; failed writes cannot survive reload. No silent wipe. Receipt history grows with completions in prototype.
+- Exact next action: final source deploy confirmation then player-only M3 smoke. Do not begin M4, shard spending, Collection/Tier, formal assets/audio or TD gameplay.
+
+## Historical M2 release evidence (superseded by current state above)
+### M2 history
 **M2 PLAYER PRESENTATION / PACING CORRECTION: PASS / PLAYER VERIFIED**
 Deployed source `9ad74e6f9b93a85451f9cf09552243530274f35a`, original branch/PR#1. Actions#265 /36865286592 Test/Build/Pages Deploy success. Targeted17/17, impacted battle/AI98/98, check230/230, build/diff PASS. Public `index-CI9O6wHr.js` matches local build; initial page renders after reload.
 Normal32/36/40/44px; crit1.25×; CRITICAL! another6px larger;80ms pop + fixed-position fade total840–1040ms. P1–P5 moveSpeed1.8/runtime enemy1.6, headless4/3.5 unchanged. Crit/RNG/formula/cooldown/attackSpeed/AI/input/Campaign/Restart preserved.
@@ -24,7 +37,7 @@ Checkpoint2: shared resolver returns exact final `{amount,critical}` after type/
 Checkpoint3: category-aware floating text and warm larger CRIT! label/scale-pop integrated. Real Phaser tween pause clock tested with normal+crit+label/pop; cleanup owned by existing shutdown. Presentation/lifecycle26/26 PASS; final release checks/deploy pending.
 Integration local checks: targeted31/31, impacted168/168, full check227/227, build and whole-diff whitespace PASS. Build bundle `index-CTo9sRxy.js`. Final independent review/Actions deploy/public smoke pending; engineering acceptance not yet claimed.
 
-## Current state
+### M2 historical state
 - Bounded correction completed on original `feat/m0-combat-core-20260927` / PR#1. No replacement branch, merge or M3.
 - Final deployed code `3e1063bb61455438a9cf5e707cbd05a1e2114410`; Actions #249 / 36818638073 CI204/204, Build/Pages Deploy success. Local targeted11/11, impacted130/130, build/diff PASS. Independent whole-diff review has no remaining findings.
 - Team Select: fixed viewport rows, bottom safe area, clean actual-enemy matchup, compact64×64 bench; ALL/Power/Speed/Blast filters only change visible candidates. No Type quota; ownership/eligibility/unique/exact3/save/slot order unchanged. Type marks only bench/tabs; battle HUD unchanged.

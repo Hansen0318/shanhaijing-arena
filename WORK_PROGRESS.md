@@ -1,6 +1,18 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M3 LOCAL ENGINEERING PASS / FINAL DEPLOY PENDING / PLAYER SMOKE PENDING**. Active branch `feat/m0-combat-core-20260927`, PR #1 stays open; no alternate branch/main merge. Canonical spec `docs/M3_SHARD_REWARD_UNLOCK.md`.
+- Latest safe remote `8d850d02c72c16c1fa8cbfbdc19939c72bf15e9f`, Actions #278 / 36872285951 success. Final measured-height Result correction locally verified, remote deployment pending.
+- Complete: universal catalog-keyed shard inventory, P1/P2/P3 initial ownership, retained P4/P5 unlock shards, normalized reward array, idempotent firstClear/repeatable transactions and per-round UUID, dedicated acquisition.v1 persistence/migration, canonical Chapter 1 fixture, Preview FIRST CLEAR/REPEATABLE/CLAIMED, authoritative Result rewards/unlock, current roster ownership and slot-preserving sanitation.
+- Checks actually run: baseline15/15; domain/persistence37/37 incl old save contracts; M3 model/controller31/31; integration impacted106/106; independent reviewer36/36; final Result layout5/5; final full267/267; Vite build PASS (`index-DXT92jQP.js`); diff check PASS. RED13 domain +9 persistence +9 integration +4 presentation; slot-order and measured-height findings each RED→GREEN.
+- Review: no core Critical/Important. Layout finding promoted for valid multi-item inputs and fixed using measured Phaser text height. No outstanding review findings. Historical M2 full-roster fixtures explicitly inject prototypeOwnership; actual normal Campaign owns only P1/P2/P3.
+- Checkpoints: preflight5b32c8e; domaina0e8301; integration2c0b9e3; regression fixture8d850d0. #277 failed only stale criticalDamage P5 fixture; #278 fixed Test/Build/Pages success.
+- Migration ruling: pre-M3 clears seed CLAIMED with zero retroactive shards; Campaign/team save keys preserved. Existing cleared P4 firstClear stages cannot supply those missed shards. Use a separate fresh browser save for complete P4 fixture smoke; do not wipe original saves. Denied storage retains current-session memory only and cannot promise reload durability. Completion receipts grow with victories in this prototype.
+- Public checks on #278: old1-1 CLEAR remains CLAIMED,1-2 P4×2 FIRST CLEAR; normal benchP1/P2/P3 only; old P1/P3/P5 team sanitizes to P1/P3/empty; source CYcU_UMN matched #278. Final-source confirmation remains pending.
+- Exact next action: push verified final Result correction, confirm final Actions Test267/267/Build/Pages and public DXT92jQP source, then closure docs. STOP before M4. Never claim PLAYER VERIFIED.
+
+## M3 implementation history (superseded checkpoint notes)
+### Earlier checkpoints
 - Integration safe remote: 2c0b9e3953ecac0e899ccbfbdc72b4226257a003. Release first full run 265/266: sole stale criticalDamage Restart fixture assumed P5 initially owned. Explicit prototypeOwnership fixture correction GREEN targeted19/19 then full266/266. Build PASS (index-CYcU_UMN.js); existing Phaser bundle advisory only. Independent review pending; final deployment not yet claimed.
 
 - Domain/persistence safe remote: a0e83010cfc1ea8f42658e70b4fe014b749c6ec8. UI/controller integration now coherent: canonical Chapter 1 rewards; current normal ownership; per-round UUID rejects stale callbacks; authoritative Result; Preview policies/CLAIMED; ownership refresh preserves empty slots/order.
