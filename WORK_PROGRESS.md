@@ -10,8 +10,11 @@
 - Actual checks: targeted view/layout/encounter/flow 6/6; diff check PASS. Mobile geometry runtime evidence pending integration.
 - Completed checkpoint 2: compact square bench; ALL/Power/Speed/Blast view-owned display filters. Filter changes preserve slots/order, save and eligibility. Same-type future catalog fixtures retain free composition.
 - Actual checkpoint 2 checks: roster/filter/view/persistence targeted 21/21 PASS; four-viewport browser geometry probe generated from actual view/CSS, runtime geometry pending (cloud browser blocks local file URLs).
-- Remaining: shared fresh battle Restart; impacted checks/build/deploy/public smoke.
-- Exact next step: add RESTART via the existing fresh stage BattleSession/scene pipeline; preserve manual Pause/orientation composition.
+- Checkpoint 2 remote: `84c0b438604e6fbdbdb4cf5172278b97b02169df`.
+- Completed checkpoint 3: X menu CONTINUE/RESTART/EXIT; Restart and result Retry share freshBattleConfig and existing scene/factory lifecycle. No combat/input changes.
+- Actual Restart targeted: 5/5 plus directly impacted pause/orientation/retry/lineup tests (previous combined 27/27 before final app-wiring case). Fresh Arena create resets runtime state; shutdown clears damage text; manual Pause clears on new round while orientation remains authoritative.
+- Remaining: whole-diff review, impacted checks/build/deploy/public smoke.
+- Exact next step: review integration and run impacted regression/build; push before public smoke.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

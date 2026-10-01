@@ -26,6 +26,7 @@ const gate=createOrientationGate(window,document,root,host,document.getElementBy
 viewport=installViewportSync(window,host,root,()=>{gate.sync();game?.scale.refresh();});
 const dialog=createExitDialog(document,{
  onContinue:()=>{dialog.close();interruption.continueExit();},
+ onRestart:()=>{const config=controller.restartBattle();if(config){dialog.close();startBattle(config);}},
  onExit:()=>{dialog.close();if(controller.exitBattle())returnToPreview();},
 });
 const controls=createBattleControls(host,{

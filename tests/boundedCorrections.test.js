@@ -92,7 +92,7 @@ test('X confirmation blocks until CONTINUE or EXIT and exposes correct dialog co
  const panel=doc.body.child.children[0];assert.equal(panel.role,'dialog');assert.equal(panel['aria-modal'],'true');
  assert.equal(panel.children[0].textContent,'EXIT BATTLE?');
  assert.equal(panel.children[1].textContent,'Progress from this battle will not be saved.');
- const [keep,leave]=panel.children[2].children;
+ const [keep,restart,leave]=panel.children[2].children;
  assert.equal(keep.focused,true);keep.onclick();assert.equal(modal.visible,false);assert.equal(continued,1);
  modal.open();leave.onclick();assert.equal(modal.visible,false);assert.equal(exited,1);
 });

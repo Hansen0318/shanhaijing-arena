@@ -45,6 +45,13 @@ export class CampaignController {
  }
  retryBattle() {
   if(this.screen!=='result') return null;
+  return this.freshBattleConfig();
+ }
+ restartBattle() {
+  if(this.screen!=='battle') return null;
+  return this.freshBattleConfig();
+ }
+ freshBattleConfig() {
   const stage=findStage(this.battleStageId);
   if(!isValidTeam(this.battleTeam,stage,this.ownership))return null;
   this.screen='battle';this.outcome=null;
