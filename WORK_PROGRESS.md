@@ -7,6 +7,8 @@
 - Actual checks: targeted17/17, impacted battle/AI98/98, check230/230, build and bounded whole-diff review/check PASS. RED6 expected contract failures; stale Restart pop count1→3 updated to cover normal + critical number + label. No known engineering failures. Existing Phaser bundle/npm proxy advisories remain. No unnecessary Campaign browser replay.
 - Next exact step / STOP: player checks larger normal number; critical>normal; CRITICAL!>critical number; fixed-position pop/fade; faster movement both sides; Pause/Restart no residual text. Formal balance/device readability remain player-owned; no M3.
 
+- Second player size correction: normal damage text was still too small on iPhone. Authorized direct presentation-only tuning: normal Basic/Heavy/Special/Awakening sizes 40/45/50/55px (approximately the previous critical-number scale); critical number remains slightly larger at 1.12×; `CRITICAL!` remains largest at critical+12px. No combat/RNG/movement/cooldown changes. Deploy and re-smoke only this visual size delta.
+
 ## Previous release / correction checkpoints
 - Current bounded correction: **M2 impact-text / prototype movement pacing — LOCAL VERIFIED, DEPLOY PENDING**. Recovery remote `7428d34661df2b453b83d9f777519e830380b682`, PR#1 original branch, Actions#263 success. No crit/RNG/resolver reimplementation.
 - Implemented: normal32/36/40/44px; critical1.25× and CRITICAL! another6px larger; all text80ms yoyo pop,120ms hold then in-place fade (840–1040ms total), no x/y tween. P1–P5 moveSpeed1.8, actual runtime enemy1.6; headless4/3.5 untouched.
