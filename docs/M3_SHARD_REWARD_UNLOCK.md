@@ -421,3 +421,17 @@ Exact characters and quantities remain stage-design data. M3 does not introduce 
 - Synthetic P4×3/P2×2 firstClear, P2×1 repeatable covers actual Preview three rows/CLAIMED, Scene Result two/one grants, owned persistence/reload, duplicate protection and unlock refresh. No live multi-item stage content was added.
 - Exact next player smoke: original save/CLAIMED intact, Preview/Result/buttons readable; optional convenient1-4 repeatable Victory increments once and survives reload. Do not repeat the accepted full unlock path. Future authorized multi-item content device check should show all three Preview rows, first two CLAIMED after clear, first ResultP4+3/P2+2 and replayP2+1. Engineering synthetic coverage already establishes that contract.
 - Full evidence/coverage mapping: docs/verification/M3_MULTI_REWARD_CORRECTION.md. STOP; no M4 or formal content authorization.
+
+## 18. Player clarification — repeatable reward is a stage-wide content contract (2026-10-01)
+
+The earlier smoke correction must not be interpreted as fixing only Stage 1-1.
+
+All Campaign stages use the same reward schema and must be able to define both:
+- first-clear shard rewards; and
+- repeatable shard rewards after the stage is cleared.
+
+A stage may define different characters and quantities for those two sets. First-clear may include 2–3 character shard types; replay may grant only a subset and/or lower quantities. Exact characters and quantities are stage content data.
+
+For the current live Chapter 1 engineering fixture, every Stage 1-1 through 1-5 must expose a valid repeatable shard reward so the player can verify that no cleared stage becomes a dead reward stage merely because its first-clear rows are CLAIMED. This is an engineering/content fixture, not final balance.
+
+Do not implement this with stage-ID conditionals. Chapter 2+ must inherit the same data-driven capability automatically when their reward tables are authored.
