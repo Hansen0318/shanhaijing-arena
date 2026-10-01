@@ -1,5 +1,9 @@
 # M2 Team Select Layout / Roster Filter / Battle Restart Correction
 
+## Checkpoint evidence
+- Checkpoint 1: viewport-row layout and clean upper matchup implemented. View/flow/encounter targeted 6/6, diff PASS; runtime geometry still pending.
+- Next: compact bench + display filter, then shared Restart; no M3.
+
 ## Status
 Authorized from player real-device feedback after the first M2 post-acceptance polish deployment.
 

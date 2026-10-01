@@ -5,11 +5,11 @@ const titleCase=text=>text[0].toUpperCase()+text.slice(1);
 export function renderTeamSelect(page,team,{document:doc=globalThis.document,stageId,onChange,onBattle,onBack}={}) {
  const node=(tag,text,className)=>{const el=doc.createElement(tag);if(text!=null)el.textContent=text;if(className)el.className=className;return el;};
  const button=(text,handler,className='campaign-button')=>{const el=node('button',text,className);el.type='button';el.onclick=handler;return el;};
- const identity=(character)=>{
+ const identity=(character,showType=true)=>{
   const mark=typeMark(character),label=node('strong',null,'matchup-identity');
   const icon=node('span',mark.symbol,'type-mark');icon.style.color=mark.color;
   icon.setAttribute('aria-label',`Type: ${mark.label}`);icon.dataset.type=character.type;
-  label.append(icon,node('span',character.name));return label;
+  if(showType)label.append(icon);label.append(node('span',character.name));return label;
  };
  const portrait=character=>{const p=node('span',character.portrait?.label??character.name,'matchup-portrait');p.style.backgroundColor=character.portrait?.color??'#c9764c';return p;};
  page.className+=' team-page';
@@ -22,7 +22,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   const required=(team.stage.forcedCharacters ?? []).includes(id);
   const slot=button(`SLOT ${index+1}${index===1?' · FRONT':''}${required?' · REQUIRED':''}`,()=>{if(team.remove(index))onChange?.();},'team-slot');
   slot.dataset.slot=String(index+1);slot.setAttribute('aria-label',`${slot.textContent} — ${id?`${rosterCatalog[id].name}, ${titleCase(rosterCatalog[id].type)}`:'EMPTY'}`);
-  if(id){const character=rosterCatalog[id];slot.style.borderColor=character.portrait.color;slot.className+=' occupied';slot.dataset.type=character.type;slot.append(portrait(character),identity(character));}
+  if(id){const character=rosterCatalog[id];slot.style.borderColor=character.portrait.color;slot.className+=' occupied';slot.dataset.type=character.type;slot.append(portrait(character),identity(character,false));}
   else slot.append(node('span','EMPTY','empty-slot'));
   slots.append(slot);
  }
@@ -33,7 +33,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
  for(const [index,character] of enemyDefinitions.entries()) {
   const card=node('div',`E${index+1}${index===1?' · FRONT':''}`,'enemy-slot');
   card.dataset.enemyId=character.id;card.dataset.type=character.type;
-  card.append(portrait(character),identity(character));enemyCards.append(card);
+  card.append(portrait(character),identity(character,false));enemyCards.append(card);
  }
  enemies.append(enemyCards);matchup.append(allies,node('strong','VS','matchup-vs'),enemies);
  const roster=node('div',null,'roster-grid');roster.setAttribute('aria-label','Available roster');

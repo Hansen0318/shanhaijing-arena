@@ -1,16 +1,14 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- Milestone: **M2 TEAM SELECT LAYOUT / ROSTER FILTER / BATTLE RESTART CORRECTION — AUTHORIZED / IMPLEMENTATION PENDING**.
-- M0/M1/M2 remain **PASS / PLAYER VERIFIED**. The first M2 post-acceptance polish remains **ENGINEERING PASS / PLAYER SMOKE PENDING**; do not reimplement its AI-spacing or floating-damage work.
-- Active branch / PR: `feat/m0-combat-core-20260927` / #1.
-- Canonical correction spec: `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md`.
-- Player real-device feedback: current Team Select is too tall and requires scrolling to reach BATTLE. New bounded correction is: single-screen Team Select; compact square roster bench; type filter tabs (Power/Speed/Blast, display-only); no type icons on upper ally/enemy matchup cards; future upper standing/idle presentation reserved but no formal art/animation now; battle X menu becomes CONTINUE / RESTART / EXIT.
-- Team composition remains free across Types; three same-Type characters are valid if otherwise eligible/unique/owned.
-- RESTART must restart the same stage with the same selected team, full/reset runtime state, fresh countdown and original formation, without returning to Team Select/Preview or writing completion.
-- Protected: ownership/save contracts, A1/A2/A3 runtime slots and slot2 front, encounter identity, Campaign routing/persistence, 1120x540 / Scale.NONE / input architecture, 0s AI handoff, existing cooldown-aware AI spacing, floating damage numbers, Pause/orientation, 90s result rules.
-- Forbidden: M3/M4, formal art/idle animation/audio, battle-HUD type-icon redesign, economy/PvP/gacha, TD gameplay rules.
-- Exact next action: Work recovers current HEAD and implements only `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md` with pushed checkpoints and risk-based verification. Stop before M3.
+- Milestone: **M2 LAYOUT / FILTER / RESTART CORRECTION — IN PROGRESS**.
+- Active branch / PR: `feat/m0-combat-core-20260927` / #1. Recovery baseline remote `d13252799e933f66b425035ddcc03335387b6d86`, Actions #244 success; remote main inspected `16f73932a0399979ba79b92f93f5ce1c1d1909b9`.
+- Canonical spec: `docs/M2_TEAM_SELECT_LAYOUT_CORRECTION.md`. No replacement branch/merge/M3.
+- Protected: M0/M1/M2 player verified; prior polish source `78ce862` engineering PASS. Do not repeat AI/damage implementation.
+- Completed checkpoint 1: Team Select uses four viewport rows; simplified upper six identities without type marks; reduced card/gap/padding heights, no overflow clipping or scrolling workaround.
+- Actual checks: targeted view/layout/encounter/flow 6/6; diff check PASS. Mobile geometry runtime evidence pending integration.
+- Remaining: compact bench + display-only filters; shared fresh battle Restart; impacted checks/build/deploy/public smoke.
+- Exact next step: implement compact bench and view-owned type filter; selected team/save/eligibility untouched.
 
 ## Historical M0 handoff
 - Project: **Shanhaijing Arena**

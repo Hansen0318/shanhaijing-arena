@@ -5,7 +5,7 @@
 
 **M2 POST-ACCEPTANCE POLISH: ENGINEERING PASS / PLAYER SMOKE PENDING**
 
-**AUTHORIZED BOUNDED CORRECTION: TEAM SELECT SINGLE-SCREEN / ROSTER FILTER / BATTLE RESTART**
+**M2 LAYOUT / FILTER / RESTART CORRECTION — IN PROGRESS**
 
 ## Current state
 - M0/M1/M2 remain player verified.
@@ -14,6 +14,8 @@
 - Correction requirements: no-scroll single-screen Team Select; smaller square roster bench; Power/Speed/Blast filter tabs as display-only filters; remove type marks from upper matchup; preserve future upper standing/idle presentation space without implementing formal art/animation; battle X menu adds RESTART between CONTINUE and EXIT.
 - Free team composition across Types remains locked; no one-per-Type rule.
 - Continue original feature branch / PR #1. M3 remains blocked until this correction is implemented and player-tested or explicitly deferred.
+
+- Checkpoint 1 implemented viewport rows / clean matchup, targeted 6/6 and diff PASS. Geometry release check, compact filters and Restart pending. See CURRENT HANDOFF POINTER.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
