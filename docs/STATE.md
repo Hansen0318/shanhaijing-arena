@@ -1,16 +1,16 @@
 # Project State
 
 ## Milestone
-**M3 — SHARD / REWARD / CHARACTER UNLOCK LOOP: LOCAL ENGINEERING PASS / FINAL DEPLOY PENDING / PLAYER SMOKE PENDING**
+**M3 — SHARD / REWARD / CHARACTER UNLOCK LOOP: ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- Active work line: `feat/m0-combat-core-20260927` / PR #1 open. Latest safe remote8d850d02c72c16c1fa8cbfbdc19939c72bf15e9f; final Result fit source push/deploy pending. No main merge. Recovery entry: WORK_PROGRESS.md CURRENT HANDOFF POINTER.
-- M0/M1/M2 are PLAYER VERIFIED. Protected latest impact sizes Basic/Heavy/Special/Awakening40/45/50/55px; critical1.12×; CRITICAL! critical+12px; fixed pop/fade without upward drift. H/S/A3/5/10; roster speed1.8/runtime enemy1.6. Core/combat/input/camera/Pause/orientation/countdown unchanged by M3.
-- M3 implemented: universal shards for every roster ID, normal ownershipP1/P2/P3, lockedP4/P5 threshold5 with no shard spending/reset; firstClear/repeatable grants exactly once per valid Victory completion; dedicated versioned acquisition save outside combat; pre-M3 normalization; authoritative Preview/Result; next roster render refreshes ownership and preserves slots/order/filter behavior.
-- Canonical Chapter1 engineering rewards:1-1P4×2firstClear,1-2P4×2firstClear,1-3P4×1firstClear,1-4P5×1repeatable,1-5P5×3firstClear. Other chapters remain no-shard placeholders. This is not formal balance.
-- Engineering evidence: impacted106/106, final full267/267, final Result5/5, independent review36/36, Vite build/diff PASS. Final bundle index-DXT92jQP.js. Actions#278 /36872285951 passed earlier integration source; final fit deployment pending.
-- Migration: existing Campaign clears/team data preserved. Legacy firstClear stages initialize CLAIMED without retroactive shards; P4's already-cleared rewards cannot be earned again, so full unlock smoke needs separate fresh browser/site save. Denied storage works in memory for current session; failed writes cannot survive reload. No silent wipe. Receipt history grows with completions in prototype.
-- Exact next action: final source deploy confirmation then player-only M3 smoke. Do not begin M4, shard spending, Collection/Tier, formal assets/audio or TD gameplay.
+- Active work line `feat/m0-combat-core-20260927` / PR #1 open; no main merge. Safe implementation/deployed SHA `dd3a4d1a5472c720a6f75c55f7980ada7cfacde3`; newer HEAD is documentation-only closure. Recovery: WORK_PROGRESS.md CURRENT HANDOFF POINTER.
+- M0/M1/M2 remain PLAYER VERIFIED. Latest accepted normal impact sizes40/45/50/55px; critical1.12×; CRITICAL! critical+12px; fixed pop/fade, no upward drift. H/S/A3/5/10; P1–P5speed1.8/runtime enemy1.6. Combat, RNG, AI, input, fixed camera, roster layout, Pause/orientation/countdown and protected presentation remain unchanged; only Result acquisition presentation/callback integration added.
+- M3 complete: ALL catalog characters retain shards, normal ownershipP1/P2/P3, P4/P5 unlock at5 with no consumption/reset; data-driven reward items; valid-Victory-only idempotent firstClear/repeatable transactions; dedicated versioned acquisition save; safe migration/normalization/in-memory denied-storage behavior; authoritative Preview/Result and current Team Select ownership with original slots/filter/exact-three rules.
+- Canonical Chapter1 engineering fixture:1-1P4×2firstClear,1-2P4×2firstClear,1-3P4×1firstClear,1-4P5×1repeatable,1-5P5×3firstClear. Other chapters no-shard placeholders; not formal balance.
+- Final verification: impacted106/106; reviewer36/36; final presentation5/5; local full267/267; CI267/267; Vite build/whole-diff PASS. Layout review finding fixed RED→GREEN. No outstanding engineering failure. [Actions#279](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36873107391) Test/Build/Pages success. Public `index-DXT92jQP.js` equals local/CI; Preview CLAIMED/FIRST CLEAR and normal roster/stale team sanitation observed. No page-origin errors observed. Evidence: docs/verification/M3_ENGINEERING.md.
+- Migration ruling: preserve pre-M3 CLEAR and team keys; already-cleared firstClear rewards initialize CLAIMED, no retroactive shards. This prevents earning those missed P4 rewards on the original save. Use a separate fresh/private browser save for full P4 unlock fixture smoke; never auto-wipe original data. Denied writes work in memory only and cannot survive reload; prototype receipt history grows. Existing Phaser bundle advisory unchanged.
+- Exact next action: player-only M3 smoke per canonical §15 (P4/P5 rewards/unlock/roster/reload/mobile readability). STOP before M4; do not claim PLAYER VERIFIED until actual acceptance.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

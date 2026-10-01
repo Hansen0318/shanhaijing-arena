@@ -1,9 +1,9 @@
 # M3 — Shard / Reward / Character Unlock Loop
 
 ## Status
-**LOCAL ENGINEERING PASS / FINAL DEPLOY PENDING / PLAYER SMOKE PENDING**
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
 
-M2 combat-feedback, movement pacing and impact-text corrections are player accepted. M3 implementation is complete; final-source deployment confirmation and player acceptance remain.
+M2 combat-feedback, movement pacing and impact-text corrections are player accepted. M3 implementation and deployment are complete; player acceptance remains.
 
 This milestone establishes the minimum persistent acquisition loop required before M4 Tier / Collection work.
 
@@ -330,7 +330,7 @@ Stop after M3 player-ready deployment. Do not begin M4 automatically.
 - Acquisition receipts + inventory save in one write before the independent Campaign write. Denied/quota storage preserves in-memory state for current session; no reload durability can be claimed for failed writes. Dev unlock-all skips all normal saves. Prototype completion receipt history is retained without pruning.
 - Result rendering reads controller rewardResult only. Multiple granted items aggregate by character; measured text height scales into space above action buttons. No DOM-based unlock inference. Team ownership refresh updates eligibility without compacting empty slots.
 - Actual engineering evidence: baseline15/15; domain/persistence37/37; model/controller31/31; impacted106/106; independent reviewer36/36; final presentation5/5; full267/267; build/diff PASS. Review found a multi-item Result height issue, reproduced RED and fixed GREEN. No protected combat/source changes beyond Result presentation/callback integration.
-- Deployment evidence and final safe SHA will be recorded in WORK_PROGRESS.md and docs/STATE.md after final Actions/public confirmation. Status remains PLAYER SMOKE PENDING.
+- Final deployed safe SHA dd3a4d1a5472c720a6f75c55f7980ada7cfacde3; Actions#279 /36873107391 Test267/267, Build and Pages Deploy success. Public index-DXT92jQP.js matches local/CI. Final-source Preview CLAIMED/FIRST CLEAR and roster/stale team sanitation observed. Closure in WORK_PROGRESS.md / docs/STATE.md; engineering evidence docs/verification/M3_ENGINEERING.md. Status remains PLAYER SMOKE PENDING.
 
 ### Exact player smoke (fresh independent save)
 1. Normal roster contains P1/P2/P3.1-1 Preview:P4 Shard×2 + FIRST CLEAR.

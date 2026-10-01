@@ -54,6 +54,8 @@ Acceptance gate before M3:
 
 ## M3 — Shard / Reward / Character Unlock Loop
 
+Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Canonical implementation/acceptance: `M3_SHARD_REWARD_UNLOCK.md`. M4 remains unauthorized.
+
 Goal: give Campaign stages meaningful visible rewards and connect victories to roster growth.
 
 Stage Preview must be able to show:
