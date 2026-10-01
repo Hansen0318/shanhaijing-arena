@@ -1,11 +1,11 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- **M2 impact-text / prototype movement pacing — ENGINEERING PASS / iPhone PLAYER SMOKE PENDING**. Original `feat/m0-combat-core-20260927` / PR#1 open, no alternate branch/main merge/M3.
+- **M2 impact-text / prototype movement pacing — PASS / PLAYER VERIFIED**. Player accepted the final larger 40/45/50/55px impact-text tuning, in-place fade/CRITICAL hierarchy, and current faster prototype movement. Actions#269 / 36866538530 completed successfully. Original `feat/m0-combat-core-20260927` / PR#1 remains active.
 - Final implementation/deployed source `9ad74e6f9b93a85451f9cf09552243530274f35a`; Actions#265 /36865286592 Test, Build, Pages Deploy success. Public bundle `index-CI9O6wHr.js` matches local build; Chapter Select renders after reload. Closure following source is documentation only [skip ci].
 - Changed only damageNumbers presentation + roster/runtime enemy speed data and their tests. Normal32/36/40/44px; critical1.25×, CRITICAL! another6px larger;80ms yoyo pop then in-place fade,840–1040ms total, no x/y tween. P1–P5 moveSpeed1.8, runtime enemy1.6, headless4/3.5 unchanged. Crit/RNG/resolver/cooldown/attackSpeed/AI/input/Campaign/Restart untouched.
 - Actual checks: targeted17/17, impacted battle/AI98/98, check230/230, build and bounded whole-diff review/check PASS. RED6 expected contract failures; stale Restart pop count1→3 updated to cover normal + critical number + label. No known engineering failures. Existing Phaser bundle/npm proxy advisories remain. No unnecessary Campaign browser replay.
-- Next exact step / STOP: player checks larger normal number; critical>normal; CRITICAL!>critical number; fixed-position pop/fade; faster movement both sides; Pause/Restart no residual text. Formal balance/device readability remain player-owned; no M3.
+- Player acceptance closes the M2 combat-feedback/pacing correction. **M3 — Shard / Reward / Character Unlock Loop is now authorized for implementation planning.** Canonical spec: `docs/M3_SHARD_REWARD_UNLOCK.md`. Exact next step: Work implements M3 only after reading that spec; stop before M4.
 
 - Second player size correction: normal damage text was still too small on iPhone. Authorized direct presentation-only tuning: normal Basic/Heavy/Special/Awakening sizes 40/45/50/55px (approximately the previous critical-number scale); critical number remains slightly larger at 1.12×; `CRITICAL!` remains largest at critical+12px. No combat/RNG/movement/cooldown changes. Deploy and re-smoke only this visual size delta.
 
