@@ -152,31 +152,14 @@ Every Chapter1 stage remains farmable after CLAIMED. First-clear run unlocksP4 a
 
 ## 5. Stage Preview reward presentation
 
-Current Stage Preview must visibly explain configured rewards before START.
+Presentation-only player correction (2026-10-02): reward rows show character identity and quantity only, e.g. `P4 Shard ×3`. Do not display FIRST CLEAR, CLAIMED or REPEATABLE labels.
 
-Minimum presentation:
-- reward section near stage details;
-- character placeholder identity / portrait token;
-- text such as `P4 Shard ×2`;
-- clear label:
-  - `FIRST CLEAR`
-  - or `REPEATABLE`
+- Currently obtainable items keep normal high-contrast color.
+- Already-claimed non-repeatable items remain visible but clearly dimmed (current implementation uses muted color plus50%opacity).
+- Repeatable items remain normal/high-contrast after clear.
+- Render every configured item separately; do not collapse multi-character rewards.
 
-For a cleared first-clear-only stage:
-- keep the reward visible for historical clarity;
-- visually mark it already claimed / `CLAIMED`;
-- do not imply it will drop again.
-
-For repeatable reward:
-- keep normal obtainable presentation on replay.
-
-For stages with multiple shard items:
-- show every configured character shard item that can be earned;
-- distinguish first-clear-only items from replayable items;
-- after first clear, first-clear-only rows become CLAIMED while repeatable rows remain obtainable;
-- do not collapse several character rewards into one ambiguous generic reward label.
-
-Do not introduce formal reward art.
+Internal repeat/status metadata and transaction semantics remain unchanged. Preview consumes the existing authoritative status solely to select visual styling. This decision supersedes older visible-label/checklist wording in this document and historical verification records. No formal reward art.
 
 ## 6. Victory grant timing
 
@@ -424,3 +407,9 @@ Campaign/Stage/Team routes explicitly show #campaign and hide #game. Battle/Resu
 Explicit testing reset: `?resetProgress=1` consumes the parameter via history.replaceState before removing only Campaign/acquisition/team save keys; then opens fresh Chapter1. Normal URL never removes saves. Reload cannot reuse the consumed trigger. If storage removal is denied, this explicit reset uses fresh in-memory persistence only; history failure prevents the destructive action. No localStorage.clear().
 
 Engineering PASS: targeted16/16, impacted126/126, independent review39/39/no findings; build/diff PASS. Actions#289 /36881481144 CI288/288, Build/Pages success. Safe deployed source1f5ef823d18d424dc4ffe97f16a0f08ab48fbeab. Public index-fgF_0oLa.js matches local/CI; cleared1-1 shows CLAIMED+REPEATABLE and reload hidesgame. See docs/verification/M3_UNIVERSAL_FARMING.md. Current player smoke in §14; physicalSafari acceptance pending. STOP before M4.
+
+
+## 20. Preview label removal (2026-10-02)
+Presentation-only correction implemented in campaign/view.js and campaign/style.css; transaction/model/persistence/grant logic and live fixture unchanged. Removed policy spans/CSS; already-claimed rows use muted color plus50%opacity. Actual DOM tests cover all labels absent and cleared first rows dimmed while repeatable stays bright. RED5/7 then GREEN targeted/impacted28/28; build/diff passed. Deployment evidence follows in WORK_PROGRESS.md.
+
+Future Team Select formal idle/micro-animation presentation keeps the character name below the character. This is a design decision only; no Team Select or animation code changed, no M4 started.

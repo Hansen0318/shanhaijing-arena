@@ -4,6 +4,10 @@
 **M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
+- **M3 PREVIEW PRESENTATION CORRECTION — RELEASE CHECKS IN PROGRESS**. Branch feat/m0-combat-core-20260927 / PR#1 retained. Recoverybase0636172132c2719f68d5a154039a1f34e30aac7e. Preview labels FIRST CLEAR/CLAIMED/REPEATABLE removed; available/repeatable rows normal contrast, claimed non-repeatable muted+50%opacity. Existing reward/acquisition/persistence/config/TeamSelect/combat unchanged.
+- Actual checks: RED presentation5/7 then GREEN28/28 (rewardPresentation, universalRewards, campaignNavigation, teamFlowView); build/diff PASS. Local JSindex-BLZigtQP.js /CSSindex-CtA1vGg1.css. Next exactaction: Actions/Pages deployment/source verification then targeted player readability smoke. No full local suite or unrelated historical smoke.
+- Design record only: future Team Select idle/micro-animation retains name below character (docs/CHARACTER_SYSTEM.md); no current Team Select changes, no M4. Previous farming release evidence below remains historical.
+
 - Active branch feat/m0-combat-core-20260927 / PR#1 open; no main merge. Safe implementation/deployedcheckpoint1f5ef823d18d424dc4ffe97f16a0f08ab48fbeab; laterdocs-onlyclosure. WORK_PROGRESS.md current pointer authoritative.
 - All Chapter1 stages now configure two firstClear items and one repeatable subset. Exact fixture in canonicalM3§4. P4unlocksafter1-2at5, P5after1-5at7; owned shard inventory retained. Chapters2–6placeholder config uses same engine; future synthetic coverage three first/two replay items.
 - Campaign route owner hides game on startup/render/pageshow/viewport restoration; battle shows game, geometry1120×540 unchanged. Explicit one-shot?resetProgress=1 clears only three game saves and opens freshChapter1, removes trigger before clearing; normalURLnever wipes.

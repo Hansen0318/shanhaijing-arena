@@ -25,8 +25,8 @@ test('actual Stage Preview renders firstClear/CLAIMED and repeatable quantities;
  const prev=globalThis.document;globalThis.document={createElement:element};
  try {
   const c=new CampaignController(),root=element('main'),view=new CampaignView(root,c);c.openChapter('chapter-1');view.render();
-  assert.ok(walk(root).some(n=>n.textContent==='P4 Shard ×3'));assert.ok(walk(root).some(n=>n.textContent==='FIRST CLEAR'));
-  c.openTeamSelect();for(const id of ['P1','P2','P3'])c.teamSelection.toggle(id);c.startBattle();c.finishBattle('1-1','victory');c.exitBattle();view.render();assert.ok(walk(root).some(n=>n.textContent==='CLAIMED'));
+  assert.ok(walk(root).some(n=>n.textContent==='P4 Shard ×3'));assert.equal(walk(root).some(n=>['FIRST CLEAR','CLAIMED','REPEATABLE'].includes(n.textContent)),false);
+  c.openTeamSelect();for(const id of ['P1','P2','P3'])c.teamSelection.toggle(id);c.startBattle();c.finishBattle('1-1','victory');c.exitBattle();view.render();assert.equal(walk(root).filter(n=>n.className.split(' ').includes('claimed')).length,2);
   c.openTeamSelect();view.render();assert.deepEqual(walk(root).filter(n=>n.dataset.characterId).map(n=>n.dataset.characterId),['P1','P2','P3']);
   c.acquisition.shardsByCharacterId.P4=5;c.acquisition.ownedCharacterIds.push('P4');view.render();assert.ok(walk(root).some(n=>n.dataset.characterId==='P4'));
   walk(root).find(n=>n.dataset.filter==='power').onclick();assert.deepEqual(walk(root).filter(n=>n.dataset.characterId).map(n=>n.dataset.characterId),['P1','P4']);
@@ -54,10 +54,10 @@ test('actual Preview keeps all three character-specific rows before and after mu
  globalThis.document={createElement:element};stage.reward=multi;
  try {
   const c=new CampaignController(),root=element('main'),view=new CampaignView(root,c);c.openChapter('chapter-1');view.render();
-  const rows=()=>walk(root).filter(n=>n.className.split(' ').includes('stage-reward')).map(n=>n.children.map(x=>x.textContent));
-  assert.deepEqual(rows(),[['P4 Shard ×3','FIRST CLEAR'],['P2 Shard ×2','FIRST CLEAR'],['P2 Shard ×1','REPEATABLE']]);
+  const rows=()=>walk(root).filter(n=>n.className.split(' ').includes('stage-reward')).map(n=>({labels:n.children.map(x=>x.textContent),dimmed:n.className.split(' ').includes('claimed')}));
+  assert.deepEqual(rows(),[{labels:['P4 Shard ×3'],dimmed:false},{labels:['P2 Shard ×2'],dimmed:false},{labels:['P2 Shard ×1'],dimmed:false}]);
   c.openTeamSelect();for(const id of ['P1','P2','P3'])c.teamSelection.toggle(id);c.startBattle();c.finishBattle('1-1','victory');c.exitBattle();view.render();
-  assert.deepEqual(rows(),[['P4 Shard ×3','CLAIMED'],['P2 Shard ×2','CLAIMED'],['P2 Shard ×1','REPEATABLE']]);
+  assert.deepEqual(rows(),[{labels:['P4 Shard ×3'],dimmed:true},{labels:['P2 Shard ×2'],dimmed:true},{labels:['P2 Shard ×1'],dimmed:false}]);
  }finally{stage.reward=original;globalThis.document=prev;}
 });
 test('actual Result renders two first-clear grants and only one replay grant from authoritative transactions',()=>{

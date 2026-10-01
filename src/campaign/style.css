@@ -56,9 +56,7 @@
 .stage-rewards { display:grid; gap:4px; margin:6px 0 10px; }
 .stage-rewards:empty { display:none; }
 .stage-reward { display:flex; flex-wrap:wrap; align-items:center; gap:2px 8px; font-size:clamp(13px,1.8vw,18px); font-weight:650; color:#ffe0a0; }
-.reward-policy { font-size:clamp(10px,1.2vw,12px); letter-spacing:.04em; color:#a9e4ce; }
-.stage-reward.claimed { color:#bac4cc; }
-.stage-reward.claimed .reward-policy { color:#bac4cc; }
+.stage-reward.claimed { color:#bac4cc; opacity:.5; }
 @media (max-height:420px) {
  .stage-rewards { margin:3px 0 6px; gap:2px; }
  .preview-details h2 { font-size:24px; }

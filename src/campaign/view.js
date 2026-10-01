@@ -56,8 +56,7 @@ export class CampaignView {
   for(const item of stageRewardRows(stage,this.controller.acquisition)) {
    const row=document.createElement('div');row.className=`stage-reward${item.status==='CLAIMED'?' claimed':''}`;
    const label=document.createElement('span');label.textContent=item.label;
-   const status=document.createElement('span');status.className='reward-policy';status.textContent=item.status;
-   row.append(label,status);rewards.append(row);
+   row.append(label);rewards.append(row);
   }
   details.append(id,title,rewards,start);preview.append(image,details);page.append(preview);
   const cards=document.createElement('div');cards.className='stage-grid';cards.setAttribute('aria-label','Stages');

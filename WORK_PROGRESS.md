@@ -1,6 +1,10 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M3 PREVIEW PRESENTATION CORRECTION — RELEASE CHECKS IN PROGRESS**. Branch feat/m0-combat-core-20260927 / PR#1 retained. Recoverybase0636172132c2719f68d5a154039a1f34e30aac7e. Preview labels FIRST CLEAR/CLAIMED/REPEATABLE removed; available/repeatable rows normal contrast, claimed non-repeatable muted+50%opacity. Existing reward/acquisition/persistence/config/TeamSelect/combat unchanged.
+- Actual checks: RED presentation5/7 then GREEN28/28 (rewardPresentation, universalRewards, campaignNavigation, teamFlowView); build/diff PASS. Local JSindex-BLZigtQP.js /CSSindex-CtA1vGg1.css. Next exactaction: Actions/Pages deployment/source verification then targeted player readability smoke. No full local suite or unrelated historical smoke.
+- Design record only: future Team Select idle/micro-animation retains name below character (docs/CHARACTER_SYSTEM.md); no current Team Select changes, no M4. Previous farming release evidence below remains historical.
+
 - **M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING**. Branch feat/m0-combat-core-20260927 / PR#1 open, no main merge. Safe implementation/deployed checkpoint1f5ef823d18d424dc4ffe97f16a0f08ab48fbeab; later closure docs-only. Recovery base31c8344174cd5f08647864a94bdbf455881eb0f3. Prior originalM3 player accepted; latest follow-up not accepted yet.
 - Current Chapter1 live config:1-1firstP4×3/P2×2,replayP2×1;1-2firstP4×2/P1×2,replayP1×1;1-3firstP5×2/P3×2,replayP3×1;1-4firstP5×2/P2×2,replayP5×1;1-5firstP5×3/P1×2,replayP5×2. P4 unlocksafter1-2at5; P5after1-5at7. All five cleared stages remain farmable. Canonical docs updated; former single-item fixture superseded.
 - Reward engine/presentation/persistence untouched. All stages share reward.items; syntheticChapter2three first/two replay items verifies future data-only content. Owned shards/duplicate UUID/unlock5/migration/Team Select/protectedcombat unchanged.
