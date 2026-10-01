@@ -1,9 +1,12 @@
 // M1 placeholders only. UI and unlock order consume this model, never chapter numbers.
 // Canonical Chapter 1 engineering fixture. Other chapters intentionally have no shards.
 const chapterOneRewards=[
- ['P4',2,'firstClear'],['P4',2,'firstClear'],['P4',1,'firstClear'],
- ['P5',1,'repeatable'],['P5',3,'firstClear'],
-].map(([characterId,quantity,repeat])=>({type:'characterShard',characterId,quantity,repeat}));
+ [['P4',3,'firstClear'],['P2',2,'firstClear'],['P2',1,'repeatable']],
+ [['P4',2,'firstClear'],['P1',2,'firstClear'],['P1',1,'repeatable']],
+ [['P5',2,'firstClear'],['P3',2,'firstClear'],['P3',1,'repeatable']],
+ [['P5',2,'firstClear'],['P2',2,'firstClear'],['P5',1,'repeatable']],
+ [['P5',3,'firstClear'],['P1',2,'firstClear'],['P5',2,'repeatable']],
+].map(rows=>rows.map(([characterId,quantity,repeat])=>({type:'characterShard',characterId,quantity,repeat})));
 const formation = side => [-1, 0, 1].map((y,i) => ({x: side === 'ally' ? (i === 1 ? 1.2 : 0) : (i === 1 ? 8.8 : 10), y}));
 export const campaign = Array.from({length:6}, (_, index) => {
   const n = index + 1, chapterId = `chapter-${n}`;
@@ -21,7 +24,7 @@ export const campaign = Array.from({length:6}, (_, index) => {
         allySpawnFormation:formation('ally'), enemySpawnFormation:formation('enemy'),
         battleDuration:90, stageType:'prototype',
         allowedRoster:null,forcedCharacters:[],bannedCharacters:[],
-        finale:{isFinal:stageNumber === 5, bossId:null}, reward:{items:n===1?[{...chapterOneRewards[s]}]:[]},
+        finale:{isFinal:stageNumber === 5, bossId:null}, reward:{items:n===1?chapterOneRewards[s].map(item=>({...item})):[]},
         unlockRequirement:stageNumber === 1 ? {chapterId} : {clearedStageId:`${n}-${stageNumber-1}`},
       };
     }),

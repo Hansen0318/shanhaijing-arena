@@ -1,3 +1,5 @@
+import { createRouteVisibility } from '../src/runtime/routeVisibility.js';
+import { consumeProgressReset } from '../src/campaign/devReset.js';
 import { prototypeOwnership } from '../src/roster/catalog.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -66,9 +68,9 @@ test('CONTINUE keeps same state/prior manual Pause; fresh Restart clears old men
 test('actual app Restart callback closes X and schedules Arena with the same config, without routing away',()=>{
  const source=readFileSync(new URL('../src/main.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
  const controller=new CampaignController({ownership:prototypeOwnership(),teamPersistence:{load:()=>['P1','P3','P5'],save(){}}});controller.openChapter('chapter-1');controller.openTeamSelect();
- const root={hidden:false},host={style:{}},doc={getElementById:id=>id==='campaign'?root:host};let viewOptions,menu,closed=0,starts=[];
+ const root={hidden:false,style:{}},host={style:{}},doc={getElementById:id=>id==='campaign'?root:host};let viewOptions,menu,closed=0,starts=[];
  class Game {constructor(config){this.scale={refresh(){}};this.scene={start:(key,data)=>starts.push({key,data}),add(){},stop(){throw Error('Restart must not exit');}};this.boot=()=>config.callbacks.postBoot(this);}}
- const context={Phaser:{Game,Scale:{NONE:0},AUTO:0},ArenaScene:class{},nextStage:()=>null,CampaignController:class{constructor(){return controller;}},CampaignView:class{constructor(r,c,options){viewOptions=options;}render(){}},browserPersistence:()=>null,browserTeamPersistence:()=>null,browserAcquisitionPersistence:()=>null,installViewportSync:()=>({routeChanged(){}}),BattleInterruption,createOrientationGate:()=>({sync(){}}),createBattleControls:()=>({hide(){},update(){}}),createExitDialog:(d,options)=>{menu=options;return {close(){closed++;},open(){}};},document:doc,window:{location:{search:''}},URLSearchParams};
+ const context={createRouteVisibility,consumeProgressReset,URL,Phaser:{Game,Scale:{NONE:0},AUTO:0},ArenaScene:class{},nextStage:()=>null,CampaignController:class{constructor(){return controller;}},CampaignView:class{constructor(r,c,options){viewOptions=options;}render(){}},browserPersistence:()=>null,browserTeamPersistence:()=>null,browserAcquisitionPersistence:()=>null,installViewportSync:()=>({routeChanged(){}}),BattleInterruption,createOrientationGate:()=>({sync(){}}),createBattleControls:()=>({hide(){},update(){}}),createExitDialog:(d,options)=>{menu=options;return {close(){closed++;},open(){}};},document:doc,window:{location:{search:'',href:'https://example.test/arena/'}},URLSearchParams};
  vm.runInNewContext(source+'\nglobalThis.getGame=()=>game;',context);
  viewOptions.onStart(controller.startBattle());context.getGame().boot();assert.equal(starts.length,1);
  const first=starts[0].data.stageConfig;menu.onRestart();assert.equal(starts.length,2);assert.equal(starts[1].key,'Arena');assert.equal(closed,1);

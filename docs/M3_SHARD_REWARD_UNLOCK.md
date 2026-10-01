@@ -1,7 +1,7 @@
 # M3 — Shard / Reward / Character Unlock Loop
 
 ## Status
-**M3 MULTI-CHARACTER REWARD CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — RELEASE CHECKS IN PROGRESS**
 
 The player confirmed the initial M3 real-device smoke OK. That acquisition/persistence/unlock/Team Select baseline is protected. The bounded multi-character reward correction is implemented; engineering release checks passed and only its new player acceptance remains pending.
 
@@ -136,35 +136,19 @@ Rules:
 - reward presentation must read the same stage reward definition used by grant logic;
 - M3 remains deterministic/fixed-quantity: no random drop chance is introduced by this rule.
 
-## 4. Prototype Chapter 1 engineering fixture
+## 4. Current live Chapter 1 engineering fixture
 
-Placeholder only; not formal content/balance.
+Player-visible engineering content only, not formal balance. Supersedes the original single-item fixture.
 
-The existing single-item Chapter 1 fixture may remain as a regression fixture, but the M3 architecture/tests must additionally exercise a multi-item stage where:
-- first clear grants at least two different character shard items with different quantities;
-- replay grants only a configured subset of those characters;
-- replay quantity may be lower than the first-clear quantity;
-- at least one reward can target an already-owned character.
+| Stage | FIRST CLEAR | REPEATABLE |
+|---|---|---|
+|1-1|P4×3 + P2×2|P2×1|
+|1-2|P4×2 + P1×2|P1×1|
+|1-3|P5×2 + P3×2|P3×1|
+|1-4|P5×2 + P2×2|P5×1|
+|1-5|P5×3 + P1×2|P5×2|
 
-Use the existing Chapter 1 fixture to continue exercising the original unlock path:
-
-- 1-1: P4 shard ×2, firstClear
-- 1-2: P4 shard ×2, firstClear
-- 1-3: P4 shard ×1, firstClear
-  - after normal first-clear progression through 1-1→1-3, P4 reaches 5 and unlocks
-- 1-4: P5 shard ×1, repeatable
-- 1-5: P5 shard ×3, firstClear
-  - first pass through 1-4/1-5 yields 4 total P5 shards
-  - one replay victory on 1-4 yields the fifth shard and unlocks P5
-
-Chapters 2–6 may remain placeholder/no-shard unless an engineering test needs reward metadata.
-
-This fixture exists to test:
-- multi-stage accumulation;
-- first-clear non-duplication;
-- repeatable farming;
-- unlock at exact threshold;
-- newly owned roster availability.
+Every Chapter1 stage remains farmable after CLAIMED. First-clear run unlocksP4 after1-2 (3+2=5); P5 after1-5 (2+2+3=7). Shards are retained. OwnedP1/P2/P3 receive inventory too. Chapter2–6 remain empty reward placeholders using identical reward.items schema; synthetic Chapter2 covers three firstClear/two repeatable items without engine changes. Future content is config-only; never special-case stage IDs/numbers.
 
 ## 5. Stage Preview reward presentation
 
@@ -435,3 +419,13 @@ A stage may define different characters and quantities for those two sets. First
 For the current live Chapter 1 engineering fixture, every Stage 1-1 through 1-5 must expose a valid repeatable shard reward so the player can verify that no cleared stage becomes a dead reward stage merely because its first-clear rows are CLAIMED. This is an engineering/content fixture, not final balance.
 
 Do not implement this with stage-ID conditionals. Chapter 2+ must inherit the same data-driven capability automatically when their reward tables are authored.
+
+
+## 19. Universal farming / route / reset follow-up
+The current live fixture in §4 supersedes old fixture quantities and old acceptance-path totals in historical sections. Previous release evidence remains historical, not this follow-up's PASS claim.
+
+Campaign/Stage/Team routes explicitly show #campaign and hide #game. Battle/Result explicitly show #game and hide #campaign. A route owner reasserts hidden/visibility on render and every viewport sync (pageshow, resize, visualViewport scroll/resize), after Phaser refresh; hidden game CSS uses display:none. Arena geometry1120×540 unchanged.
+
+Explicit testing reset: `?resetProgress=1` consumes the parameter via history.replaceState before removing only Campaign/acquisition/team save keys; then opens fresh Chapter1. Normal URL never removes saves. Reload cannot reuse the consumed trigger. If storage removal is denied, this explicit reset uses fresh in-memory persistence only; history failure prevents the destructive action. No localStorage.clear().
+
+Implementation coherent; targeted16/16 and impacted124/124 PASS before app integration tests were added. Remaining independent review, expanded impacted check including actual app route/reset, build/Actions/Pages and final evidence. STOP before M4.

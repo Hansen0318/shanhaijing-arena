@@ -1,17 +1,14 @@
 # Project State
 
 ## Milestone
-**M3 MULTI-CHARACTER REWARD CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M3 UNIVERSAL REWARD / FARMING FOLLOW-UP — RELEASE CHECKS IN PROGRESS**
 
 ## Current state
-- Player smoke after the multi-reward correction found two follow-ups before acceptance: (1) the public Chapter 1 fixture is still single-item, so it cannot visibly demonstrate first-clear multi-character rewards plus subset repeatable rewards; authorize a bounded live engineering fixture for this smoke; (2) iPhone Safari can show a large arena-aspect dark rectangle over Campaign after refresh/route restoration, consistent with stale #game host visibility. Campaign routes must explicitly hide the arena host.
-- For clean retesting, do not wipe player storage automatically. Add/use an explicit dev-only reset path or a fresh/private-session workflow covering Campaign progression, acquisition/shards, and saved team.
-- Active branch `feat/m0-combat-core-20260927` / PR #1 open; no main merge. Safe implementation/deployed checkpoint `a26de3f88f5e9e8d2c439593ea50308cd1fe39b6`; newer closure is docs-only. Current handoff: WORK_PROGRESS.md.
-- User confirmed previous M3 PLAYER VERIFIED. Preserve universal shard inventory, persistence/migration, ownership at5 with retained shards, completion UUID/idempotency, Team Select, Campaign and accepted M0/M1/M2 baseline (40/45/50/55px impact sizes, H/S/A3/5/10, roster speed1.8/enemy1.6).
-- Correction implemented: firstClear and repeatable are independent alternative sets. First victory chooses firstClear if valid items exist; repeatable-only stages grant from their initial victory. Replays choose repeatable only. No random drops or stage-number logic.
-- Preview and Result use existing multi-row/authoritative-grant presentation without layout edits. Chapter 1 single-item fixture unchanged; synthetic multi-character fixture covers owned P2 shards, replay subset and different quantities.
-- Actual verification: RED12/15 then targeted33/33 GREEN; impacted100/100; independent review33/33, no findings; build/diff PASS. Actions#284 /36877458362 CI272/272, Build/Pages success. Public JS index-BmyZkd3-.js matches local/CI; existing CLEAR/CLAIMED and FIRST CLEAR visible, no page-origin errors observed. Evidence: docs/verification/M3_MULTI_REWARD_CORRECTION.md.
-- Next exact action: short device smoke (save/CLAIMED intact, Preview/Result readability/buttons, optional repeatable Victory/reload). Live Chapter1 fixture unchanged; multi-row configuration exercised in synthetic DOM/Scene/controller tests. Prior full M3 player smoke remains accepted. STOP before M4; correction acceptance pending.
+- Active branch feat/m0-combat-core-20260927 / PR#1 open; no main merge. Recoverybase31c8344174cd5f08647864a94bdbf455881eb0f3. WORK_PROGRESS.md current pointer authoritative.
+- All Chapter1 stages now configure two firstClear items and one repeatable subset. Exact fixture in canonicalM3§4. P4unlocksafter1-2at5, P5after1-5at7; owned shard inventory retained. Chapters2–6placeholder config uses same engine; future synthetic coverage three first/two replay items.
+- Campaign route owner hides game on startup/render/pageshow/viewport restoration; battle shows game, geometry1120×540 unchanged. Explicit one-shot?resetProgress=1 clears only three game saves and opens freshChapter1, removes trigger before clearing; normalURLnever wipes.
+- Prior acceptedM0/M1/M2/M3 baseline protected. Reward model/acquisition/persistence/TeamSelect unchanged; product edits bounded to liveconfig, bootstraproute/reset, hiddenhostCSS.
+- Targeted16/16; impacted124/124 before final app integration additions. Remaining review/final impacted/build/Actions/Pages/publicsource/docs. STOP before M4; current follow-up player acceptance pending.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

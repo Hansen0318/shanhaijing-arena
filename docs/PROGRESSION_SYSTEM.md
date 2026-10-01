@@ -41,18 +41,18 @@ Rules:
 - Exact named characters and quantities remain later content decisions.
 - M3 currently uses fixed configured quantities; random drop rates are not implied.
 
-### M3 locked prototype engineering fixture
-For implementation smoke only, not formal content:
-- initial normal ownership: P1/P2/P3;
-- P4/P5 start locked;
-- 1-1 P4×2 first-clear;
-- 1-2 P4×2 first-clear;
-- 1-3 P4×1 first-clear -> reaches 5 and unlocks P4;
-- 1-4 P5×1 repeatable;
-- 1-5 P5×3 first-clear;
-- replay 1-4 once after the first pass -> P5 reaches 5 and unlocks.
+### Current M3 live engineering fixture (not formal balance)
+Initial ownershipP1/P2/P3; P4/P5 locked. All Chapter1 stages have firstClear and repeatable sets:
 
-Unlock threshold remains 5 shards. Shard count persists after unlock for later M4 use. First-clear rewards must be idempotent; repeatable rewards grant once per eligible completed Victory (every replay, and initial Victory when no valid first-clear set exists).
+| Stage | FIRST CLEAR | REPEATABLE |
+|---|---|---|
+|1-1|P4×3 + P2×2|P2×1|
+|1-2|P4×2 + P1×2|P1×1|
+|1-3|P5×2 + P3×2|P3×1|
+|1-4|P5×2 + P2×2|P5×1|
+|1-5|P5×3 + P1×2|P5×2|
+
+P4 unlocks after1-2 at5; P5 after1-5 at7. All inventory retained. First Victory selects firstClear if present; replay selects repeatable. Chapters2–6 can remain empty placeholders; future reward.items configuration uses the same engine. Preview marks only firstClear rows CLAIMED. Explicit `?resetProgress=1` is a consumed, one-shot testing reset; ordinary visits preserve saves.
 
 ## M4 planned Tier progression
 The current player-approved planning direction is incremental shard requirements:

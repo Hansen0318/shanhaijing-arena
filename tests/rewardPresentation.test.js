@@ -25,7 +25,7 @@ test('actual Stage Preview renders firstClear/CLAIMED and repeatable quantities;
  const prev=globalThis.document;globalThis.document={createElement:element};
  try {
   const c=new CampaignController(),root=element('main'),view=new CampaignView(root,c);c.openChapter('chapter-1');view.render();
-  assert.ok(walk(root).some(n=>n.textContent==='P4 Shard ×2'));assert.ok(walk(root).some(n=>n.textContent==='FIRST CLEAR'));
+  assert.ok(walk(root).some(n=>n.textContent==='P4 Shard ×3'));assert.ok(walk(root).some(n=>n.textContent==='FIRST CLEAR'));
   c.openTeamSelect();for(const id of ['P1','P2','P3'])c.teamSelection.toggle(id);c.startBattle();c.finishBattle('1-1','victory');c.exitBattle();view.render();assert.ok(walk(root).some(n=>n.textContent==='CLAIMED'));
   c.openTeamSelect();view.render();assert.deepEqual(walk(root).filter(n=>n.dataset.characterId).map(n=>n.dataset.characterId),['P1','P2','P3']);
   c.acquisition.shardsByCharacterId.P4=5;c.acquisition.ownedCharacterIds.push('P4');view.render();assert.ok(walk(root).some(n=>n.dataset.characterId==='P4'));
