@@ -18,6 +18,7 @@
 - Stop before M3/M4/formal art/animation/audio/economy unless explicitly authorized.
 
 - Prototype pacing correction is deployed from `125341ff177a539c6fee584f1bf09d1a871e3355`: shared placeholder Heavy/Special/Awakening cooldowns are 3/5/10s. Previous deployment was blocked only by a stale `demoBattle` regression expecting 5/10/15; that test was updated. Actions #253 / 36856525782 completed Test 204/204, Build, and Pages Deploy successfully.
+- Player confirmed the public build now shows/uses the 3/5/10 prototype cooldown pacing. This closes the bounded cooldown follow-up.
 
 ## Goal
 Complete the playable Chapter → Stage Preview → Battle → Result → Unlock/Replay skeleton around the player-confirmed graybox battle.
