@@ -72,7 +72,10 @@ export const AI_PREPARATION = Object.freeze({ windowSeconds: 1.5, enterTolerance
 function clearPreparation(state) {
   if (state) Object.assign(state, { category: null, targetId: null, movement: null });
 }
-function preparedIntent(actor, target, definitions, state, tuning) {
+function meetsOpportunity(actor,target,definition,enemies) {
+  return definition.effect.areaRadius==null || resolveEffectTargets(actor,target,definition,{allies:[],enemies}).length >= (definition.ai.minTargets??1);
+}
+function preparedIntent(actor, target, definitions, state, tuning, enemies) {
   if (!state) return null;
   let candidate = state.category ? {
     category: state.category, definition: abilityDefinitionFor(actor, state.category, definitions),
@@ -80,6 +83,7 @@ function preparedIntent(actor, target, definitions, state, tuning) {
   } : null;
   const usable = c => c?.definition?.preferredRange !== null && c?.definition
     && c.definition.targetingRule === 'enemy' && priorityOf(c.definition) > 0
+    && meetsOpportunity(actor,target,c.definition,enemies)
     && (c.slot?.phase === 'ready' || (c.slot?.phase === 'cooldown'
       && c.slot.cooldownRemaining <= tuning.windowSeconds));
   if (state.targetId !== targetId(target) || !usable(candidate)) {
@@ -162,7 +166,7 @@ export function decideAIIntent({
     return { kind: 'idle', reason: 'no_target', targetId: null };
   }
 
-  const preparation = preparedIntent(actor,target,abilityDefinitions,preparationState,preparationTuning);
+  const preparation = preparedIntent(actor,target,abilityDefinitions,preparationState,preparationTuning,enemies);
   if (preparation) return preparation;
 
   const prioritized = NON_BASIC_ORDER
@@ -171,7 +175,7 @@ export function decideAIIntent({
     .sort((a, b) => priorityOf(b.definition) - priorityOf(a.definition));
 
   for (const candidate of prioritized) {
-    if(candidate.definition.effect.areaRadius!=null && resolveEffectTargets(actor,target,candidate.definition,{allies,enemies}).length<(candidate.definition.ai.minTargets??1))continue;
+    if(!meetsOpportunity(actor,target,candidate.definition,enemies))continue;
     const spacing = spacingMove(candidate, actor, target);
     if (spacing) return spacing;
 

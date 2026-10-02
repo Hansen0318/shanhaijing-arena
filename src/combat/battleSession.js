@@ -294,7 +294,8 @@ export class BattleSession {
         nowMs,
         preparationState: this.aiPreparation.get(actor.instanceId),
       });
-      this.targetIds.set(actor.instanceId, intent.targetId ?? null);
+      const intendedTarget=this.actorById(intent.targetId);
+      if(!intendedTarget||intendedTarget.teamId!==actor.teamId)this.targetIds.set(actor.instanceId, intent.targetId ?? null);
       return { actor, intent };
     });
 
