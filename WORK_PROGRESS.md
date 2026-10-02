@@ -1,6 +1,13 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M5B FOLLOW-UP OVERLAY / PERFORMANCE — RELEASE VERIFICATION PENDING.** Bounded lifecycle correction: non-battle host detached, renderer asleep; no hidden-canvas viewport refresh. Cold battle runtime lazy-loads; loading menu inert, failed/stale entry safe. No progression/combat/Chapter data changes.
+- Active branch feat/m0-combat-core-20260927 / PR#1 retained; no main merge. Targeted29/29, impacted136/136, full419/419, build/diff PASS; independent review findings resolved, no remaining blockers.
+- Initial JS1,458,758→67,234 bytes (95.39% reduction). Battle1,393,903-byte chunk deferred to first battle. SVG36 total17,454 bytes/max495; no oversized images. Physical phone load timing and exact blue compositor artifact remain player smoke; desktop did not reproduce it.
+- Type advantage ALREADY exists in typeMultiplier/combatResolver (+15%/-15%, Power>Speed>Blast>Power); not modified. INFO unimplemented. Full evidence/checklist: docs/verification/M5B_OVERLAY_PERFORMANCE.md.
+- STOP after release verification. No type/INFO/art/animation/AI or broader features.
+
+## Previous Result correction handoff (historical)
 - **M5B RESULT SHARD PROGRESS CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING.** Universal Result now uses transaction.state + characterProgress().progressLabel, shared with Collection: locked/T0 available/5; T1/10; T2/15; T3MAX. Exact acquisition5 shows post-spend0/5 + UNLOCKED. No character/stage/reward-mode special cases.
 - Active branch feat/m0-combat-core-20260927 / PR#1 retained. Final tested/deployed source7555c0b4de3485cce0cb5f271f1fb456c8b92392; subsequent closure docs-only. Only production edits presentation.js/controller.js; lifetime shardCounts/earned/spent, accounting/Tier cost/reward quantities/combat/Chapter1–6/Collection unchanged.
 - RED2/10→GREEN targeted17/17; impacted126/126; full407/407; build/diff PASS; independent read-only55/55, no Critical/Important/Minor findings. All Tier denominators/MAX, surplus, unlock, multi-character, repeat farming, Collection agreement and protected contracts covered.

@@ -459,3 +459,6 @@ This is a bounded M5B player-smoke correction. Do not alter reward quantities, T
 ### Result progression correction release
 M5B RESULT SHARD PROGRESS CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING.
 Result receives transaction.state and reuses characterProgress().progressLabel from the same source as Collection. No earned/spent/accounting, Tier cost, reward quantities, combat or Chapter data changes. Source7555c0b4de3485cce0cb5f271f1fb456c8b92392; targeted17/17, impacted126/126, full407/407, build/diff PASS, independent55/55/no findings. Actions#356/37020221225 Test/Build/Pages success and public/local/CI JSindex-Db98qSff.js match. Exact evidence and focused player checklist: docs/verification/M5B_FORMAL_CONTENT_INTEGRATION.md. STOP; no M5C/AI/art.
+
+### Overlay/performance follow-up
+Bounded route lifecycle + lazy runtime loading correction; no M5B content/progression/combat changes. Release verification pending. See docs/verification/M5B_OVERLAY_PERFORMANCE.md for exact findings, payload evidence and focused smoke. Type advantage already exists in runtime; INFO remains unimplemented.
