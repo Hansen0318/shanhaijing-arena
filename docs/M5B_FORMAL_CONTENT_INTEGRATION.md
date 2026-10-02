@@ -1,7 +1,7 @@
 # M5B — Formal Chapter 1 Data Integration
 
 ## Status
-**IMPLEMENTATION READY**
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 M5A content is PLAYER APPROVED. This milestone integrates the approved Chapter1 content into the existing data-driven systems and adds only the minimum reusable combat primitives required by the five approved T0 kits.
 
@@ -396,3 +396,6 @@ STOP before:
 - 南山奔襲3 hits / 狂鬥4 hits at.12s intervals; total coefficient2.20/2.30. DEF/type/crit resolve per hit as existing damage rules; total damage is not a single-hit post-DEF equivalent.
 - Basic crit10%×1.5; Heavy20%×1.75; damaging Special15%×1.75; Awakening/heal/mitigation no crit. No Type/Role/Tier inference.
 - Passives have named metadata and honest descriptions. M5A did not specify numerical conditional T0 passive modifiers: no additional invented passive/status engine or advanced Tier effect. Base stats/ranges/mobility express current passive identity; conditional bonuses remain spec.
+
+## Release record
+Final sourcea692e2357639c99a36aab196026ec9d358c02575, original feature branch/PR#1. Actions352/37015761111 Test397/397, Build and Pages success. Public/local/CI assets match; names/details/Chapter1/reward preview/startup HUD observed. Independent review clean. Exact evidence, cloud observation limits, balance observations and player checklist: `docs/verification/M5B_FORMAL_CONTENT_INTEGRATION.md`. STOP pending player smoke.

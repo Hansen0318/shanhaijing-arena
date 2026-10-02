@@ -1,7 +1,7 @@
 # M5B formal Chapter1 data integration verification
 
 ## Status
-Final source verified locally; final Actions / public release confirmation pending.
+**ENGINEERING PASS / PLAYER SMOKE PENDING.** Final tested/deployed source `a692e2357639c99a36aab196026ec9d358c02575`; original branch/PR retained, no main merge. Later closure is documentation-only.
 Player acceptance remains pending. No final art/animation/VFX/audio, advanced Tier mechanics, tactical variation or Chapter2 formal content.
 
 ## Recovery / checkpoints
@@ -42,4 +42,12 @@ Multi-hit total coefficient is2.20/2.30, split3/4 hits. Existing DEF/type resolv
 STOP after engineering release and this player handoff.
 
 ## Public label follow-up
-Actions351/37015324723 at838c1bdaba238a0ea713b8f5c85a6f10c88d59d7 CI397/397, Build and Deploy PASS. Public JSindex-BU900RvY.js/CSSindex-082fIvTy.css matched; Collection/赤鱬 Detail and formal 1-1 enemy/team preview observed. Reward Preview still showed P IDs; generic presentation now resolves catalog names for Preview/Result/unlock prose. No transaction/receipt/save ID or quantity change. RED6/7→GREEN7/7; impacted34/34; independent34/34/no findings; final full397/397/build PASS, JSindex-DJGeqONb.js. Final deployment pending.
+Actions351/37015324723 at838c1bdaba238a0ea713b8f5c85a6f10c88d59d7 CI397/397, Build and Deploy PASS. Public JSindex-BU900RvY.js/CSSindex-082fIvTy.css matched; Collection/赤鱬 Detail and formal 1-1 enemy/team preview observed. Reward Preview still showed P IDs; generic presentation now resolves catalog names for Preview/Result/unlock prose. No transaction/receipt/save ID or quantity change. RED6/7→GREEN7/7; impacted34/34; independent34/34/no findings; final full397/397/build PASS, JSindex-DJGeqONb.js. Final deployment confirmed below.
+
+## Final release evidence
+- Actions#352 [37015761111](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37015761111), sourcea692e2357639c99a36aab196026ec9d358c02575: CI397/397 zero failures, Build and Pages Deploy SUCCESS. Buildjob110866095038/deployjob110866226090. CI log confirms JSindex-DJGeqONb.js/CSSindex-082fIvTy.css, matching local build and public DOM asset URLs.
+- Public normal URL reload, Landing and both modes, all five Collection formal names, 赤鱬 full data/detail/skill copy and disabled insufficient UPGRADE, formal Chapter1 theme/stage, 1-1九尾狐×3/鹿蜀×2/replay鹿蜀×1, TeamSelect allies/enemy狌狌/鹿蜀/赤鱬 and initial battle HUD observed. No reset/save injection performed. Browser extension metadata errors are external; no page-origin warning/error captured.
+- Public cloud battle startup shows correct HP245/320/235 vs285/245/235, named placeholder portraits, frozen3 countdown and Pause/Resume UI. Sustained cloud countdown/animation progression was not established (still observed3 after Resume); supported visibility capability unavailable. Do not claim a live full-round smoke. Actual-clock/scene Pause tests and headless terminal battles passed; physical countdown, touch, visual feel and live kit readability remain targeted player smoke.
+- Deterministic normal initial team P1/P2/P3 auto terminal probe:1-1defeat26s (205damage/14heal),1-2victory34.2s (181/6),1-3defeat27.35s (190/11),1-4defeat20.8s (159/5),1-5defeat27.3s (163/7); mitigation observed all5. These are fixed-seed engine observations, not player acceptance/final balance; no stat or lineup tuning was performed.
+- Independent label follow-up34/34 clean. No Critical/Important/Minor findings remain. Named unspecified passive modifiers remain deferred; no invented numerical bonuses.
+- Player checklist additionally confirms countdown actually enters battle on iPhone. STOP at this handoff; do not expand scope.

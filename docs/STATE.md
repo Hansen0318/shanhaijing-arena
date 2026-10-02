@@ -1,9 +1,19 @@
 # Project State
 
 ## Milestone
-**M5B FORMAL CONTENT DATA INTEGRATION — IN PROGRESS**
+**M5B FORMAL CONTENT DATA INTEGRATION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
+- M5A PLAYER APPROVED; formal Chapter1 data and required shared T0 active effects integrated. P1–P5 stable save identities preserved.
+- Formal names/stats/Type/Role, unique skill IDs and immutable range/cooldown metadata; generic heal/lowest-HP ally/team heal/AoE/temporary mitigation/short cast movement/timed multi-hit. Same AI/player execution API.
+- Exact first/repeat Chapter1 rewards and five lineups, spawn slots retained. Collection/Team/HUD/Preview/Result/unlock prose resolve the catalog. Placeholder art remains.
+- Canonical T0/Tier5/10/15/T3MAX, earned/spent/ownership/team/progression/receipts and reset/route behavior preserved. No persistence/schema change. Chapter2–6 content and Landing view/style unchanged.
+- Final deployed source `a692e2357639c99a36aab196026ec9d358c02575`, original feature branch/PR#1; no main merge. Full397/397, build/diff PASS; independent review/follow-ups clean. Actions#352 /37015761111 Test/Build/Pages success.
+- Public/local/CI JSindex-DJGeqONb.js/CSSindex-082fIvTy.css match. Public identity/detail/reward/startup HUD verified; sustained cloud countdown progression not established, physical gameplay smoke remains pending.
+- Named conditional passive bonuses remain metadata/spec because approved seeds do not define numeric modifiers. Advanced Tier mechanics/control/persistent zones/tactical variation not activated. Fixed heal25%/16%, mitigation25%/4s and all range/movement/crit seeds are documented in M5B spec.
+- Exact next: targeted player smoke in `docs/verification/M5B_FORMAL_CONTENT_INTEGRATION.md`; normal URL, no reset; confirm old data, countdown→battle and new kit feedback. STOP before art/animation/VFX/audio/advanced Tier/full tactical AI/Chapter2 formal content.
+
+## Historical M4C state (accepted; superseded by current M5B scope)
 - M5A Chapter1 content is PLAYER APPROVED. Formal identities, skills, T0 stats/cooldowns, stage lineups/rewards and Tier mechanic direction are locked as the first playtest content baseline.
 - M5B is now authorized: integrate formal data into the existing roster/campaign/Collection and add only reusable T0 combat primitives needed by the approved kits. Formal art/animation/VFX remain M5C.
 - Player accepted M4C Landing smoke. Main menu visual/navigation baseline is now PLAYER VERIFIED.
