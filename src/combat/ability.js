@@ -43,6 +43,8 @@ export function createAbilityDefinition(input) {
 
   return Object.freeze({
     id: input.id,
+    name: input.name ?? input.id,
+    description: input.description ?? null,
     category: input.category,
     cooldown,
     unlockTier,

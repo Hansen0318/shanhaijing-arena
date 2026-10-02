@@ -385,3 +385,14 @@ STOP before:
 - advanced Tier mechanics;
 - full AI tactical variation;
 - Chapter2 formal content.
+
+## Locked first-playtest implementation seeds
+- Stable ability IDs: P1.basic/heavy/special/awakening/passive through P5.*; character/save IDs unchanged.
+- 回瀾 25% maxHP, 潤澤 16% per living ally. AI thresholds: single ≤65%, team at least two living allies ≤80%.
+- 守群 T0 self-only mitigation25% for4s; nearby ally extension remains T1 spec. Recast refreshes one status, does not stack.
+- 鎮岳 caster-centered radius2.2; 九焰散華 target-centered radius1.6, AI prefers ≥2 targets (manual supports one).
+- Range tuples (min/preferred/max) in shared arena units are explicitly frozen in src/roster/abilities.js. Ally healing reach20 covers the complete arena.
+- Engage distance1.6/1.8, stop.65; 迴蹄 diagonal offset.65; bounds clamp. Ability-owned movement only.
+- 南山奔襲3 hits / 狂鬥4 hits at.12s intervals; total coefficient2.20/2.30. DEF/type/crit resolve per hit as existing damage rules; total damage is not a single-hit post-DEF equivalent.
+- Basic crit10%×1.5; Heavy20%×1.75; damaging Special15%×1.75; Awakening/heal/mitigation no crit. No Type/Role/Tier inference.
+- Passives have named metadata and honest descriptions. M5A did not specify numerical conditional T0 passive modifiers: no additional invented passive/status engine or advanced Tier effect. Base stats/ranges/mobility express current passive identity; conditional bonuses remain spec.

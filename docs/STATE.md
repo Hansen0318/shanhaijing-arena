@@ -1,7 +1,7 @@
 # Project State
 
 ## Milestone
-**M5B FORMAL CONTENT DATA INTEGRATION — IMPLEMENTATION READY**
+**M5B FORMAL CONTENT DATA INTEGRATION — IN PROGRESS**
 
 ## Current state
 - M5A Chapter1 content is PLAYER APPROVED. Formal identities, skills, T0 stats/cooldowns, stage lineups/rewards and Tier mechanic direction are locked as the first playtest content baseline.

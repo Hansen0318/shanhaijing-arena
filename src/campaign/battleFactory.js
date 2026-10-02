@@ -1,5 +1,6 @@
 import { createCharacterState } from '../combat/character.js';
 import { createBattleSession } from '../combat/battleSession.js';
+import { formalAbilityDefinitions } from '../roster/abilities.js';
 import { runtimeAbilityDefinitions } from '../runtime/demoBattle.js';
 import { encounterDefinitions, stageEnemyDefinitions } from './encounterDefinitions.js';
 import { prototypeOwnership } from '../roster/catalog.js';
@@ -18,7 +19,7 @@ export function createStageBattleSession(config, { seed = config?.battleSeed, rn
  const session=createBattleSession({
   allies:team(config.selectedTeam,config.allySpawnFormation,'a','allies'),
   enemies:team(stageEnemyDefinitions(config).map(definition=>definition.id),config.enemySpawnFormation,'e','enemies'),
-  characterDefinitions:definitions,abilityDefinitions:runtimeAbilityDefinitions,maxSeconds:config.battleDuration,seed,rng,
+  characterDefinitions:definitions,abilityDefinitions:{...runtimeAbilityDefinitions,...formalAbilityDefinitions},maxSeconds:config.battleDuration,seed,rng,
  });
  session.stageId=config.stageId;session.chapterId=config.chapterId;session.battlefieldId=config.battlefieldId;
  return session;
