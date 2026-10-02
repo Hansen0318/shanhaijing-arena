@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M4B T0 BASE TIER CORRECTION — PASS / PLAYER VERIFIED.** Player completed the deployed smoke and confirmed the T0→T1→T2→T3 progression behavior is OK. Canonical: owned/newly obtained=T0; costs5/10/15; T3MAX; available-shard accounting/migration/upgrade UI accepted. Preserve as baseline.
+- **NEXT MILESTONE: M4C MAIN MENU / LANDING VISUAL POLISH.** Minimal Landing navigation already exists and is accepted structurally: BATTLE and COLLECTION are sibling entries. M4C should polish only the landing/menu presentation and transitions without changing Campaign/Collection/Tier/combat logic. Formal character/battle content still remains after M4C.
 - **FUTURE AI TACTICAL VARIATION DESIGN RECORDED:** current deterministic center-collision behavior remains a regression-friendly prototype baseline. Formal AI should add shared-engine, character-profile-driven engage/reposition/kite/retreat/support states, target scoring, short-lived lateral/diagonal movement objectives and seeded variation. Healer/support retreat/recover/re-engage behavior is explicitly planned. Canonical notes in `docs/AI_SYSTEM.md`; not part of the current M4B correction unless separately authorized.
 - **M4B T0 BASE TIER CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING.** Latest canonical baseT0; T0→T1cost5,T1→T2cost10,T2→T3cost15,T3MAX. No player acceptance claim.
 - Active branch `feat/m0-combat-core-20260927` / PR#1 retained. Recoverybase `e511df93e3d1e0d608244cb4133cf7297ab8559d`; domain checkpoint `76b7c0a4fa065ca4dff165d523ddc7aaa338ca13`; UI/final deployed source `7bb3802a72392ed175e08ffd170a09305a5b3fc9`. Later closure is docs-only; remote latest authoritative.
