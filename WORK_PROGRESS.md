@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **T0 BASE TIER CORRECTION (2026-10-02):** player changed Tier semantics before acceptance. Every newly owned character is T0. T0->T1 costs5 available shards; T1->T2 costs10; T2->T3 costs15; T3 max. This supersedes deployed T1-base /5/10 model. Preserve acquisition spend separately: shards used to obtain a character cannot also fund T0->T1. Canonical `docs/M4B_TIER_UPGRADE.md` updated; bounded correction required before acceptance.
 - **M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING.** M3 accepted baseline preserved; no new PLAYER VERIFIED claim.
 - Branch `feat/m0-combat-core-20260927` / PR #1 open. Deployed safe source `af56523791fc59eaecaa7657e82197bb4f003ec9`; recoverybase `c3db01dab1963da3018357281bab51e0794e18f6`. Later closure docs-only; remote latest authoritative.
 - CheckpointA `348b1ac` all30Chapter1–6 reward tables; Chapter1 unchanged, laterChapters first3+2/replay subset1 engineering data. CheckpointB `c7e26a0` ledger/persistence; checkpointC `c755d8b` UI; reviewfix `7aaf384` rejects structured Tier values. Final source groups Tier controls before Abilities/dims disabled button.
