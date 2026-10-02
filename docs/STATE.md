@@ -4,6 +4,7 @@
 **M4A COLLECTION / ROSTER HUB — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
+- M4A player smoke found presentation/navigation corrections before acceptance: compact Collection cards to approximately Team Select bench-card scale; reduce Character Detail typography and support longer lore/ability copy; move Chapter Select and Collection under a minimal parent Landing with sibling BATTLE/COLLECTION entries. Formal landing art/animation remains later M4C polish.
 - M3 is PLAYER ACCEPTED and protected. M4A engineering/release complete; real-device Collection smoke pending.
 - Branch `feat/m0-combat-core-20260927` / PR #1 open. Safe deployed source `ae7063c10c90ab43c8c6f6c5c9d88ed3be693ec6`; later closure is docs-only. WORK_PROGRESS current pointer is authoritative recovery handoff.
 - Independent read-only all-catalog Collection, temporary Chapter Select entry, Type filters, authoritative ownership/retained shards, dim locked portraits, single-tap character detail and optional ability/lore metadata. Filter/scroll retained with connected DOM restoration. Static portrait names underneath; safe-area padding. No save writes or changes to Team Select/acquisition/combat.
