@@ -134,17 +134,14 @@ Do not use stars as a second uncontrolled progression system before its meaning 
 
 ## M4C — Main Menu / Landing Visual Polish
 
-The minimal parent navigation shell is now established during M4A so Chapter Select and Collection are sibling modes from the start.
+**ENGINEERING PASS / PLAYER SMOKE PENDING.** Static prototype full-screen mountain/sun hero, title treatment and clean primary/secondary buttons are deployed. No formal artwork, animation, additional destinations or audio in this slice.
 
-M4C is reserved for presentation expansion:
-- formal full-screen hero/promotional artwork;
-- animated or micro-animated background;
-- richer transition/presentation treatment;
-- optional future destinations such as Settings/Event/About.
-
-The underlying navigation contract remains:
+Fixed hierarchy:
 - BATTLE -> Chapter Select
 - COLLECTION -> Collection
+- Both top-level BACK paths -> Landing
+
+Navigation/progression/combat unchanged. Release evidence and player checklist: `docs/verification/M4C_MAIN_MENU_LANDING.md`. Await player acceptance and STOP; formal content and AI work require separate authorization.
 
 ## Formal content after progression skeletons
 

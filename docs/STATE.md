@@ -1,20 +1,18 @@
 # Project State
 
 ## Milestone
-**M4C MAIN MENU / LANDING VISUAL POLISH — IMPLEMENTATION CHECKPOINT / RELEASE CHECKS PENDING**
+**M4C MAIN MENU / LANDING VISUAL POLISH — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- M4C static Landing hero/title/primary-secondary entry hierarchy implemented. NewLandingRED0/4→GREEN4/4; related23/23, build/diffPASS. Current recovery detail in WORK_PROGRESS; impacted/review/deploy/public evidence pending. No optional motion or route transitions; protected state/navigation unchanged.
-- Player accepted M4B T0 progression smoke. T0 base, 5/10/15 Tier costs, shard spending/migration and Collection upgrade flow are now PLAYER VERIFIED.
-- Next bounded milestone is M4C: polish the already-existing Landing parent screen only. BATTLE→Chapter Select and COLLECTION→Collection hierarchy remains fixed. Do not change progression/combat/navigation semantics.
-- Canonical owned baseT0 implemented. T0→T1cost5,T1→T2cost10,T2→T3cost15 available shards; T3MAX, no combat bonuses.
-- Schema3 migration keeps existing acquisition key/lifetime earned/receipts/spent. v1/v2 old owned Tier resetsT0; valid recorded/implied v2 consumed spending remains consumed (no refund/free promotion). BaselineP1/2/3 recruit exempt; M3 shard-unlocked IDs recruitment5 once. No reload double-charge; malformed/denied persistence safe. Campaign/team unchanged.
-- Collection/Detail authoritative T0/Tier/fraction/MAX, immediate UPGRADE save/refresh, expectedTier/requestID/500ms gesture guard preserved. Main Landing, compact layout, filters, routevisibility, savedlineup unchanged.
-- Universal Chapter1–6 all30stage reward tables and firstClear/repeatable engine remain unchanged; M3 accepted baseline protected. No combat/input/stat/cooldown/AI changes.
-- Active branch `feat/m0-combat-core-20260927` / PR#1; domain checkpoint `76b7c0a`, deployed source `7bb3802a72392ed175e08ffd170a09305a5b3fc9`, recoverybase `e511df9`. Latest closure docs-only; WORK_PROGRESS pointer authoritative.
-- Correction18/18, domain55/55, final relevant95/95, impacted180/180, combat93/93, build/diff PASS. Independent review50/50/no findings. Domain-checkpoint CI failed two old Tier assertions, no deploy; corrected final Actions#324 /37006321807 CI349/349, Build/Pages success.
-- Public/local/CI `index-B5Rq6VE2.js` / unchangedCSS `index-CXWSf6fJ.css` match. Public Landing→Collection baseT0/Detail nextT1requires5/disabledUPGRADE/#gamehidden verified. Enabled actions/migration covered executable tests, not claimed real-device acceptance.
-- Exact next action: short player migration/T0upgrade/fraction/reload smoke in `docs/verification/M4B_T0_CORRECTION.md`, then STOP. No PLAYER VERIFIED claim; no Tier combat bonuses/Level/stars/rarity/shop/gacha/formal animation.
+- Static full-screen mountain/sun Landing, title treatment, gold primary BATTLE and outlined secondary COLLECTION. Existing navigation hierarchy and route owner retained; no motion/transition or new modes.
+- Product changes limited to Landing markup in `src/campaign/view.js` and Landing-scoped CSS in `src/campaign/style.css`. No combat, progression, accounting, content, controller or persistence edits.
+- Active branch `feat/m0-combat-core-20260927` / PR#1; safe deployed source `0a17954f6766ff79c68e825e942e6fb6a995bb06`. WORK_PROGRESS CURRENT HANDOFF POINTER is the recovery entry.
+- Targeted27/27, impacted188/188, build/diff PASS; independent review24/24/no important findings. Actions#332 /37009391394 CI357/357, build + Pages success.
+- Public/local/CI bundles `index-nO1VZ07x.js` / `index-082fIvTy.css` match. Public Landing→both modes→BACK and reload verified; #game hidden and no horizontal overflow at cloud1363×936.
+- Safe-area padding, short-height CSS and48–52px minimum touch targets implemented. Four viewport restoration contract cases cover568×320/667×300/844×390/932×430 and save preservation; physical iPhone readability/Safari chrome acceptance pending.
+- M4B T0 **PASS / PLAYER VERIFIED**: baseT0; Tier costs5/10/15; T3MAX. Lifetime earned, recruitment/spent accounting/migration, receipts, saved team remain protected. M3 universal Chapter1–6 firstClear/repeatable rewards unchanged.
+- Exact next action: short player Landing smoke in `docs/verification/M4C_MAIN_MENU_LANDING.md`, then STOP. No formal content/art/animation, AI tactics or additional progression.
+- Known limitation: static placeholder presentation and existing bundle-size advisory. No engineering blocker.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history
