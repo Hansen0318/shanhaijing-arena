@@ -1,12 +1,12 @@
 import { collectionEntries,characterDetail } from './model.js';
 import { typeMark } from '../roster/typeIcons.js';
 export class CollectionView {
- constructor(controller,{document=globalThis.document,onBack}={}) {
-  this.controller=controller;this.document=document;this.onBack=onBack;this.filter='all';this.scrollTop=0;
+ constructor(controller,{document=globalThis.document,onBack,catalog,abilityCatalog}={}) {
+  this.controller=controller;this.document=document;this.onBack=onBack;this.catalog=catalog;this.abilityCatalog=abilityCatalog;this.filter='all';this.scrollTop=0;
  }
  node(tag,className,text) {const n=this.document.createElement(tag);n.className=className;if(text!==undefined)n.textContent=text;return n;}
  button(text,action) {const n=this.node('button','collection-button',text);n.type='button';n.onclick=action;return n;}
- entries(){return collectionEntries(this.controller.acquisition,{filter:this.filter,ownership:this.controller.ownership});}
+ entries(){return collectionEntries(this.controller.acquisition,{filter:this.filter,catalog:this.catalog,ownership:this.controller.ownership});}
  rememberPosition(){if(this.grid && this.grid.isConnected!==false)this.scrollTop=this.grid.scrollTop;}
  mount(page) {
   this.rememberPosition();
@@ -35,7 +35,7 @@ export class CollectionView {
  }
  openDetail(id,trigger) {
   const entry=this.entries().find(e=>e.definition.id===id);if(!entry)return;
-  const {definition,owned,shardLabel}=entry,detail=characterDetail(definition),mark=typeMark(definition);
+  const {definition,owned,shardLabel}=entry,detail=characterDetail(definition,this.abilityCatalog),mark=typeMark(definition);
   const scroll=this.grid.scrollTop;this.browser.inert=true;
   const dialog=this.node('section',`collection-detail${owned?'':' is-locked'}`);dialog.setAttribute('role','dialog');dialog.setAttribute('aria-modal','true');dialog.setAttribute('aria-labelledby','collection-detail-name');
   const close=()=>{dialog.remove();this.browser.inert=false;this.grid.scrollTop=scroll;trigger.focus();};

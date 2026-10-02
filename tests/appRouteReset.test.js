@@ -27,7 +27,12 @@ test('actual app reset boots fresh Chapter1 and ordinary reload retains subseque
 });
 test('actual app Campaign/Battle/Exit route authority survives Phaser refresh and pageshow',()=>{
  const e=boot();assert.equal(e.host.hidden,true);assert.equal(e.root.hidden,false);
- e.controller.openChapter('chapter-1');e.controller.openTeamSelect();for(const id of ['P1','P2','P3'])e.controller.teamSelection.toggle(id);e.options.onStart(e.controller.startBattle());e.getGame().boot();assert.equal(e.host.hidden,false);assert.equal(e.root.hidden,true);
+ e.controller.openBattleMenu();e.controller.openChapter('chapter-1');e.controller.openTeamSelect();for(const id of ['P1','P2','P3'])e.controller.teamSelection.toggle(id);e.options.onStart(e.controller.startBattle());e.getGame().boot();assert.equal(e.host.hidden,false);assert.equal(e.root.hidden,true);
  e.controller.exitBattle();e.options.onRender();assert.equal(e.host.hidden,true);assert.equal(e.root.hidden,false);
  for(const [target,type] of [[e.win,'pageshow'],[e.win.visualViewport,'resize'],[e.win.visualViewport,'scroll']]){e.host.hidden=false;target.dispatchEvent(new Event(type));assert.equal(e.host.hidden,true);assert.equal(e.host.style.visibility,'hidden');assert.equal(e.root.hidden,false);}
+});
+
+test('actual app boots Landing and both sibling routes remain hidden-arena through restoration without save writes',()=>{
+ const e=boot(),before=[...e.map];assert.equal(e.controller.screen,'landing');
+ for(const route of ['chapters','collection']){assert.equal(route==='chapters'?e.controller.openBattleMenu():e.controller.openCollection(),true);e.options.onRender();assert.equal(e.controller.screen,route);for(const [target,type] of [[e.win,'pageshow'],[e.win.visualViewport,'resize'],[e.win.visualViewport,'scroll']]){e.host.hidden=false;target.dispatchEvent(new Event(type));assert.equal(e.host.hidden,true);assert.equal(e.root.hidden,false);}e.controller.back();e.options.onRender();assert.equal(e.controller.screen,'landing');}assert.deepEqual([...e.map],before);
 });

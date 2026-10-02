@@ -24,6 +24,15 @@ export class CampaignView {
   this.collectionView?.rememberPosition();
   this.root.replaceChildren(); this.root.hidden=false;
   const page=document.createElement('section'); page.className='campaign-page';
+  if(this.controller.screen==='landing') {
+   page.classList.add('landing-page');
+   const title=document.createElement('h1');title.textContent='SHANHAIJING ARENA';
+   const entries=document.createElement('nav');entries.className='landing-entries';entries.setAttribute('aria-label','Game modes');
+   for(const [label,open] of [['BATTLE',()=>this.controller.openBattleMenu()],['COLLECTION',()=>this.controller.openCollection()]]) {
+    const button=document.createElement('button');button.type='button';button.className='campaign-button';button.textContent=label;button.onclick=()=>{if(open())this.render();};entries.append(button);
+   }
+   page.append(title,entries);this.root.append(page);this.onRender?.();return;
+  }
   if(this.controller.screen==='collection') {
    this.collectionView ??= new CollectionView(this.controller,{onBack:()=>{if(this.controller.back())this.render();}});
    this.root.append(page);this.collectionView.mount(page);this.onRender?.();return;
@@ -40,7 +49,7 @@ export class CampaignView {
   if(this.controller.screen==='stages') { this.renderStages(page); this.root.append(page); this.onRender?.(); return; }
   const heading=document.createElement('h1'); heading.textContent='CHAPTER SELECT';
   const header=document.createElement('header');header.className='stage-header';
-  const collection=document.createElement('button');collection.type='button';collection.className='campaign-button';collection.textContent='COLLECTION';collection.onclick=()=>{if(this.controller.openCollection())this.render();};header.append(heading,collection);page.append(header);
+  const back=document.createElement('button');back.type='button';back.className='campaign-button';back.textContent='BACK';back.dataset.action='chapters-back';back.onclick=()=>{if(this.controller.back())this.render();};header.append(back,heading);page.append(header);
   const grid=document.createElement('div');grid.className='chapter-grid';
   for(const chapter of orderedChapters()) grid.append(card({image:chapter.thumbnail,label:chapter.title,status:chapterStatus(this.controller.progress,chapter.chapterId),onClick:()=>{if(this.controller.openChapter(chapter.chapterId)) this.render();}}));
   page.append(grid);this.root.append(page);this.onRender?.();

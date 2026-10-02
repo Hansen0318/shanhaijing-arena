@@ -31,9 +31,17 @@ export class CampaignController {
  beginCompletion() {
   this.battleCompletionId=globalThis.crypto.randomUUID();this.rewardResult=null;
  }
+ openLanding() {
+  if(!['chapters','collection'].includes(this.screen))return false;
+  this.screen='landing';return true;
+ }
+ openBattleMenu() {
+  if(this.screen!=='landing')return false;
+  this.screen='chapters';return true;
+ }
  openCollection() {
-  if(!['chapters','stages'].includes(this.screen))return false;
-  this.collectionReturnScreen=this.screen;this.screen='collection';return true;
+  if(this.screen!=='landing')return false;
+  this.screen='collection';return true;
  }
  openChapter(id) {
   if(!['chapters','stages'].includes(this.screen) || chapterStatus(this.progress,id)==='locked') return false;
@@ -102,7 +110,7 @@ export class CampaignController {
   this.chapterId=next.chapterId;this.selectedStageId=next.stageId;this.screen='stages';return true;
  }
  back() {
-  if(this.screen==='collection'){this.screen=this.collectionReturnScreen;return true;}
+  if(['collection','chapters'].includes(this.screen))return this.openLanding();
   if(this.screen==='team') {this.screen='stages';return true;}
   if(this.screen!=='stages') return false;
   this.screen='chapters'; return true;

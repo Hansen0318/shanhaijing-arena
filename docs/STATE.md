@@ -1,16 +1,14 @@
 # Project State
 
 ## Milestone
-**M4A COLLECTION / ROSTER HUB — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M4A COLLECTION / NAVIGATION CORRECTION — RELEASE CHECKS IN PROGRESS**
 
 ## Current state
-- M4A player smoke found presentation/navigation corrections before acceptance: compact Collection cards to approximately Team Select bench-card scale; reduce Character Detail typography and support longer lore/ability copy; move Chapter Select and Collection under a minimal parent Landing with sibling BATTLE/COLLECTION entries. Formal landing art/animation remains later M4C polish.
-- M3 is PLAYER ACCEPTED and protected. M4A engineering/release complete; real-device Collection smoke pending.
-- Branch `feat/m0-combat-core-20260927` / PR #1 open. Safe deployed source `ae7063c10c90ab43c8c6f6c5c9d88ed3be693ec6`; later closure is docs-only. WORK_PROGRESS current pointer is authoritative recovery handoff.
-- Independent read-only all-catalog Collection, temporary Chapter Select entry, Type filters, authoritative ownership/retained shards, dim locked portraits, single-tap character detail and optional ability/lore metadata. Filter/scroll retained with connected DOM restoration. Static portrait names underneath; safe-area padding. No save writes or changes to Team Select/acquisition/combat.
-- Targeted14/14, impacted133/133, bounded scroll/route32/32; build/diff and follow-up review PASS. Actions#299 /36946318660 configured CI302/302 and Build/Pages success. Public source matches local/CI `index-nX02OjS0.js` / `index-CHIlF0_H.css`.
-- Bounded public Collection/Power/P4 detail/back/filter/route-hidden-game/no-horizontal-overflow confirmed. Current definitions lack optional lore/descriptions; omitted safely. Mobile readability, safe-area/touch and overflowing-grid scroll remain player smoke, not PLAYER VERIFIED.
-- Exact next action: player follows `docs/verification/M4A_COLLECTION.md` short Collection checklist on existing save. STOP; no M4B/M4C/Tier/spending/formal animation.
+- Player first M4A smoke requested compact cards/detail and parallel modes. Implemented minimal static Landing BATTLE/COLLECTION; sibling back paths; no nested Collection entry. No formal landing art/animation or M4B.
+- Branch `feat/m0-combat-core-20260927` / PR #1; recovery base `f9ffd844b8fa116b1c9d3e82439ce42dd0899bbc`. WORK_PROGRESS current pointer records safe checkpoint.
+- Compact84px cards/44px portrait;13px detail body/96px portrait; scroll body independent from fixed BACK. Existing acquisition/shards/team untouched.
+- RED13/20 → targeted20/20, impacted137/137; build/diff PASS. Review/Actions/Pages/public verification remain.
+- Next exact action: finish review and release verification, then final docs and short player smoke. M3 PLAYER ACCEPTED; STOP at M4A correction.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

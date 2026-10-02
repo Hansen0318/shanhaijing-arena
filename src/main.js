@@ -23,7 +23,8 @@ const query=new URLSearchParams(window.location.search);
 const controller=new CampaignController({persistence:memoryOnly?createPersistence(null):browserPersistence(),teamPersistence:memoryOnly?createTeamPersistence(null):browserTeamPersistence(),acquisitionPersistence:memoryOnly?createAcquisitionPersistence(null):browserAcquisitionPersistence(),dev:query.get('campaignDev')==='unlock-all'});
 const root=document.getElementById('campaign'), host=document.getElementById('game');
 const routes=createRouteVisibility(root,host);
-if(reset.requested)controller.openChapter('chapter-1');
+controller.openLanding();
+if(reset.requested){controller.openBattleMenu();controller.openChapter('chapter-1');}
 let game=null;
 let viewport;
 const interruption=new BattleInterruption();
