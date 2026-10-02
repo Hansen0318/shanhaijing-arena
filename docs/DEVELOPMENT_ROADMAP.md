@@ -120,7 +120,7 @@ Canonical Tier model after player correction:
 - T2 -> T3: 15 available shards;
 - T3: current maximum.
 
-Recruitment and Tier upgrade must consume/account for shards separately so the same 5 shards cannot both recruit and immediately pay for T1 -> T2. Preserve historical earned totals with explicit spent/consumed accounting and carry excess forward.
+Recruitment and Tier upgrade must consume/account for shards separately so the same 5 shards cannot both recruit and immediately pay for T0 -> T1. Preserve historical earned totals with explicit spent/consumed accounting and carry excess forward.
 
 Collection cards should show available / next requirement rather than a bare shard count; Character Detail owns the enabled/disabled upgrade action.
 

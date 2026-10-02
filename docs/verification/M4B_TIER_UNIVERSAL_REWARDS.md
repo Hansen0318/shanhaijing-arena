@@ -1,5 +1,7 @@
 # M4B Tier Upgrade / Universal Reward Follow-up
 
+> Historical T1-base /5/10 release evidence. Superseded before player acceptance by `M4B_T0_CORRECTION.md` (T0 base, costs5/10/15, schema3 migration). Universal Chapter reward content below remains unchanged; use the newer document for current Tier smoke.
+
 **ENGINEERING PASS / PLAYER SMOKE PENDING** — 2026-10-02.
 Branch `feat/m0-combat-core-20260927`, PR #1 open. Recovery base `c3db01dab1963da3018357281bab51e0794e18f6`; safe deployed source `af56523791fc59eaecaa7657e82197bb4f003ec9`. Closure commits are docs-only.
 

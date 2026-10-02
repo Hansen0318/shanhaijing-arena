@@ -152,39 +152,39 @@ At minimum:
 13. T2 -> T3 consumes15;
 14. T3 is MAX and cannot upgrade;
 15. excess shards remain after upgrade;
-14. repeatable Campaign rewards increase available numerator;
-15. owned/locked/Tier/shard state survives reload;
-16. Collection and Character Detail show the same authoritative state;
-17. upgrade does not modify saved team lineup;
-18. duplicate click/transaction cannot double-spend;
-19. malformed/denied persistence safe;
-20. targeted + impacted regression + build/deploy pass.
+16. repeatable Campaign rewards increase available numerator;
+17. owned/locked/Tier/shard state survives reload;
+18. Collection and Character Detail show the same authoritative state;
+19. upgrade does not modify saved team lineup;
+20. duplicate click/transaction cannot double-spend;
+21. malformed/denied persistence safe;
+22. targeted + impacted regression + build/deploy pass.
 
 ## 10. Stop
 
 After engineering PASS/deploy:
-- player smoke Collection fraction display and one T1->T2 upgrade;
+- player smoke Collection fraction display and one T0->T1 upgrade;
 - stop;
 - do not invent Tier combat bonuses, Level, stars, rarity, shop or formal animation without separate authorization.
 
-## 11. Implemented accounting / migration (2026-10-02)
+## 11. T0 correction accounting / migration (2026-10-02)
 
-Acquisition schema2 uses existing `shanhaijing-arena.acquisition.v1` key. `shardsByCharacterId` remains lifetime earned; `spentShardsByCharacterId`, `tierByCharacterId`, `completedUpgradeIds` added. Available=earned-spent. Legacy owned P1/P2/P3 are baseline grants and pay no fabricated recruitment fee; other shard-unlocked owned IDs defaultT1 and record recruit5 once. Normalize derives a cumulative spending floor rather than repeatedly subtracting; v1 load writes v2 once, denied writes retain session state. Campaign/team/battle receipts preserved. Only canonical Tier strings accepted; structured/malformed values fall back safely.
+Acquisition schema3 keeps the existing `shanhaijing-arena.acquisition.v1` key. Lifetime `shardsByCharacterId` is never reduced. Available = earned - `spentShardsByCharacterId`; the spent ledger combines acquisition and Tier consumption.
 
-UPGRADE is the consistent label. Request ID + expectedTier enforce idempotency; detail adds500ms per-character gesture guard. Success persists and refreshes card/detail immediately. T3MAX has no upgrade action. No combat bonuses.
+Migration is deterministic:
+- v1/v2 owned characters all become T0; old prototype Tier labels cannot reliably map to new costs.
+- baseline P1/P2/P3 acquisition cost0; shard-unlocked owned IDs acquisition cost5 once.
+- v2 valid recorded spending remains consumed. When a valid old Tier implies spending (oldT2=5, oldT3=15 plus acquisition), its cumulative floor is also retained if lifetime earned supports it. No refund or free promotion.
+- lifetime earned, battle/upgrade receipts and claimed-stage IDs remain intact; Campaign/team keys are untouched.
+- normalization derives cumulative floors, never charges on every reload. Loading v1/v2 attempts one schema3 write; denied storage retains normalized/updated session memory.
+- schema3 owned defaultsT0; higher canonical Tier is retained only with sufficient recorded spending (T1 cumulative5,T2 cumulative15,T3 cumulative30 plus acquisition). Malformed/unfunded Tier falls backT0; spent clamps to nonnegative earned bounds.
 
-## 12. Release evidence / next action
+UPGRADE remains the consistent label. ExpectedTier + requestID + existing500ms per-character gesture guard prevent double spending/skipping. Success saves and refreshes card/detail immediately. T3MAX retains excess internally but has no upgrade action. No combat bonuses.
 
-Safe source `af56523791fc59eaecaa7657e82197bb4f003ec9`, branch `feat/m0-combat-core-20260927` / PR #1. CheckpointsA/B/C recorded in `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`. Final relevant76/76, impacted161/161, combat93/93, build/diff/review PASS; Actions#316 /36968180269 CI330/330, Build/Pages success and public source match. Next player short farming/fraction/upgrade/reload smoke per verification document, then STOP. No PLAYER VERIFIED claim.
+## 12. Prior release (historical; superseded)
 
+Source `af56523791fc59eaecaa7657e82197bb4f003ec9` implemented the now-superseded T1-base /5/10 prototype. Its evidence remains in `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`. Universal Chapter1–6 rewards remain unchanged.
 
-## 13. Tier correction release target (2026-10-02)
+## 13. T0 correction release evidence / next action
 
-The currently deployed T1-base model is superseded before player acceptance.
-
-Required migration:
-- owned T1 from the just-deployed prototype becomes T0 unless there is explicit evidence of a player-performed upgrade that must be preserved;
-- because this change happened during player smoke rather than a finalized release, prefer a deterministic migration that preserves earned/spent accounting and does not grant free Tier advancement;
-- baseline-owned characters remain T0;
-- M3 shard-unlocked characters remain owned at T0 with their acquisition spend preserved;
-- no character should become T1 merely because it is owned.
+Implementation source `7bb3802a72392ed175e08ffd170a09305a5b3fc9`; domain checkpoint `76b7c0a4fa065ca4dff165d523ddc7aaa338ca13`, active branch `feat/m0-combat-core-20260927` / PR#1. Correction RED0/18→GREEN18/18; domain55/55, final relevant95/95, impacted180/180, combat93/93, build/diff PASS. Independent focused review50/50, no findings. Actions#324 /37006321807 CI349/349, Build/Pages success; public/local/CI JS `index-B5Rq6VE2.js` and CSS `index-CXWSf6fJ.css` match. Public T0 card/detail nextT1/5/disabled action confirmed. Full evidence and player checklist: `docs/verification/M4B_T0_CORRECTION.md`. No PLAYER VERIFIED claim; STOP pending player smoke.

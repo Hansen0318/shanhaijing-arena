@@ -142,4 +142,4 @@ Do not implement full economy, shop, gacha, formal reward balance, or audio duri
 
 ## M4B implementation state
 
-ENGINEERING PASS / PLAYER SMOKE PENDING. Acquisition schema2 retains earned+reward receipts and adds spent/Tier/upgrade receipts in the existing key. BaselineP1/P2/P3 recruit cost0; pre-M4B shard-unlocked owned IDs recruit5 once. See `docs/M4B_TIER_UPGRADE.md` and `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`. All30 current Chapter stages now have reward content. No Tier combat bonuses are implemented.
+ENGINEERING PASS / PLAYER SMOKE PENDING. Acquisition schema3 migrates v1/v2 owned characters to T0, preserving recorded/implied old consumed spend without refunds or free promotions; it retains earned+reward receipts and adds spent/Tier/upgrade receipts in the existing key. BaselineP1/P2/P3 recruit cost0; pre-M4B shard-unlocked owned IDs recruit5 once. T0→T1cost5,T1→T2cost10,T2→T3cost15,T3MAX. See `docs/M4B_TIER_UPGRADE.md` and `docs/verification/M4B_T0_CORRECTION.md`. All30 current Chapter stages now have reward content. No Tier combat bonuses are implemented.

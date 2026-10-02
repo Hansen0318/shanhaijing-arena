@@ -72,7 +72,7 @@ Locked:
 
 Example conceptual cards:
 
-Owned T1:
+Owned T0:
 [portrait]
 Xingtian
 Power

@@ -1,16 +1,17 @@
 # Project State
 
 ## Milestone
-**M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M4B T0 BASE TIER CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- Player changed Tier baseline to T0 before M4B acceptance: all owned/newly obtained characters start T0; T0->T1 requires5 available shards, T1->T2 requires10, T2->T3 requires15, T3 max. Existing deployed T1-base implementation needs bounded migration/UI/domain correction. Acquisition shard cost remains separate and cannot double-fund Tier upgrade.
-- All30 current Chapter1–6 stages have generic firstClear/repeatable multi-character rewards; Chapter1 fixture unchanged. Later tables deterministic engineering content, future Chapter uses data/schema only.
-- Canonical TierT1→T2→T3MAX implemented; recruit5, upgrade5then10. Earned lifetime unchanged; explicitspent ledger, available=earned-spent. Legacy baselineP1/P2/P3 recruitment exempt; shard-unlocked owned characters recruitment5 recorded once. v2 schema migrated in existing acquisition key; Campaign/team/receipts preserved, malformed/denied persistence safe.
-- Collection Tier+fraction/MAX, DetailUPGRADE eligibility, immediate save/card/detail refresh. Stable request-ID/expectedTier and500ms gesture guard prevent rapid double-spend/skip. No Tier combat bonus/stat/ability/input changes, no Level/stars/rarity/shop/art/animation.
-- Branch `feat/m0-combat-core-20260927` / PR #1 open; safe deployed source `af56523791fc59eaecaa7657e82197bb4f003ec9`; recoverybase `c3db01dab1963da3018357281bab51e0794e18f6`. Later closure docs-only; WORK_PROGRESS pointer authoritative.
-- Final relevant76/76, impacted161/161, combat93/93, build/diff/review PASS. Actions#316 /36968180269 CI330/330, Build/Pages success. Public/local/CI `index-DKY9AbKF.js` / `index-CXWSf6fJ.css` match; public disabledTier UI and Chapter2/6Preview verified. Executable normal Campaign farming→upgrade→reload/lineup integration passes.
-- Exact next action: player checklist `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`. Device readability/touch and actual enabled-upgrade smoke pending. STOP before further mechanics; never claim PLAYER VERIFIED without confirmation.
+- Canonical owned baseT0 implemented. T0→T1cost5,T1→T2cost10,T2→T3cost15 available shards; T3MAX, no combat bonuses.
+- Schema3 migration keeps existing acquisition key/lifetime earned/receipts/spent. v1/v2 old owned Tier resetsT0; valid recorded/implied v2 consumed spending remains consumed (no refund/free promotion). BaselineP1/2/3 recruit exempt; M3 shard-unlocked IDs recruitment5 once. No reload double-charge; malformed/denied persistence safe. Campaign/team unchanged.
+- Collection/Detail authoritative T0/Tier/fraction/MAX, immediate UPGRADE save/refresh, expectedTier/requestID/500ms gesture guard preserved. Main Landing, compact layout, filters, routevisibility, savedlineup unchanged.
+- Universal Chapter1–6 all30stage reward tables and firstClear/repeatable engine remain unchanged; M3 accepted baseline protected. No combat/input/stat/cooldown/AI changes.
+- Active branch `feat/m0-combat-core-20260927` / PR#1; domain checkpoint `76b7c0a`, deployed source `7bb3802a72392ed175e08ffd170a09305a5b3fc9`, recoverybase `e511df9`. Latest closure docs-only; WORK_PROGRESS pointer authoritative.
+- Correction18/18, domain55/55, final relevant95/95, impacted180/180, combat93/93, build/diff PASS. Independent review50/50/no findings. Domain-checkpoint CI failed two old Tier assertions, no deploy; corrected final Actions#324 /37006321807 CI349/349, Build/Pages success.
+- Public/local/CI `index-B5Rq6VE2.js` / unchangedCSS `index-CXWSf6fJ.css` match. Public Landing→Collection baseT0/Detail nextT1requires5/disabledUPGRADE/#gamehidden verified. Enabled actions/migration covered executable tests, not claimed real-device acceptance.
+- Exact next action: short player migration/T0upgrade/fraction/reload smoke in `docs/verification/M4B_T0_CORRECTION.md`, then STOP. No PLAYER VERIFIED claim; no Tier combat bonuses/Level/stars/rarity/shop/gacha/formal animation.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history
