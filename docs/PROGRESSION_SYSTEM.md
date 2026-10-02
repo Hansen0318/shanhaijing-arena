@@ -68,14 +68,37 @@ IMPORTANT:
 - Tier, character level/star count, and rarity are separate concepts unless the player later unifies them.
 
 ## Collection / roster detail concept
-Planned M4 presentation:
-- left side: selectable character list/cards;
-- right side: selected character details;
-- current shard count;
+
+M4 is now intentionally split so visibility comes before upgrade actions.
+
+### M4A — Collection / Roster Hub
+Dedicated full-page roster screen:
+- larger square character cards than Team Select;
+- ALL / Power / Speed / Blast filters can reuse the current roster taxonomy;
+- show owned and locked characters together;
+- owned card = normal presentation;
+- locked card = dimmed presentation but still identifiable;
+- every card shows current shard inventory;
+- locked characters show shard progress toward unlock;
+- show current Tier when Tier labels are formally confirmed;
+- tapping a card opens a read-only Character Detail view.
+
+Character Detail planning:
+- character name;
+- Type / Role;
+- current ownership state;
+- current shard inventory / next requirement;
 - current Tier;
-- next shard requirement;
-- upgrade state/action;
-- square portrait/card border color distinguishes Tier.
+- ability summary;
+- future Level information only after Level is separately defined;
+- concise Shanhaijing lore/introduction.
+
+This screen reads the same M3 acquisition state used by Campaign/Team Select. No duplicate inventory or ownership state.
+
+### M4B — Tier Upgrade / Character Growth
+After M4A is stable, add shard spending, Tier transition, next requirement and upgrade action/state.
+
+Square portrait/card border color may distinguish Tier.
 
 A future star row may appear under battle/roster portrait HP to communicate a separately defined level/grade system. Do not implement stars as an undefined duplicate progression system.
 
