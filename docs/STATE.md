@@ -1,9 +1,12 @@
 # Project State
 
 ## Milestone
-**M3 PREVIEW PRESENTATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M4A COLLECTION / ROSTER HUB — CHAT SPEC COMPLETE / IMPLEMENTATION READY**
 
 ## Current state
+- Player accepted the latest M3 Preview presentation correction. M3 reward/shard/unlock/farming flow is now the protected baseline.
+- Next bounded milestone: M4A Collection/Roster Hub, canonical `docs/M4A_COLLECTION_ROSTER_HUB.md`. It is read-only progression visibility: all characters, owned/locked contrast, shard inventory/progress, Type filters and Character Detail. No Tier spending/upgrade transaction yet.
+- Planned sequence: M4A Collection -> M4B Tier Upgrade/Character Growth -> M4C Main Menu/Landing. Landing direction is a full-screen hero with BATTLE and ROSTER/COLLECTION entries; formal animation is later polish.
 - Branch feat/m0-combat-core-20260927 / PR#1 open; safe deployed source2d25cdeb8fb07fbf3e1078b67bff9c66d123bddc; newer closure docs-only. WORK_PROGRESS current pointer authoritative.
 - Preview shows character/quantity without FIRST CLEAR/CLAIMED/REPEATABLE labels. Available/repeatable normal contrast; only claimed non-repeatable rows muted+50%opacity. Transaction/model/persistence/liveconfig/TeamSelect unchanged.
 - RED5/7→related28/28 GREEN, build/diff/bounded reviewPASS. Actions#290 /36942296853 CI288/288, Build/Pages success; public/local/CIindex-BLZigtQP.js /index-CtA1vGg1.css match. FreshPreview three plain rows observed; claimed distinction covered by DOMtests, real-device smoke pending. Evidence docs/verification/M3_PREVIEW_CONTRAST.md.
