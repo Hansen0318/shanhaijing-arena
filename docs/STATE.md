@@ -4,6 +4,7 @@
 **M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
+- Player changed Tier baseline to T0 before M4B acceptance: all owned/newly obtained characters start T0; T0->T1 requires5 available shards, T1->T2 requires10, T2->T3 requires15, T3 max. Existing deployed T1-base implementation needs bounded migration/UI/domain correction. Acquisition shard cost remains separate and cannot double-fund Tier upgrade.
 - All30 current Chapter1–6 stages have generic firstClear/repeatable multi-character rewards; Chapter1 fixture unchanged. Later tables deterministic engineering content, future Chapter uses data/schema only.
 - Canonical TierT1→T2→T3MAX implemented; recruit5, upgrade5then10. Earned lifetime unchanged; explicitspent ledger, available=earned-spent. Legacy baselineP1/P2/P3 recruitment exempt; shard-unlocked owned characters recruitment5 recorded once. v2 schema migrated in existing acquisition key; Campaign/team/receipts preserved, malformed/denied persistence safe.
 - Collection Tier+fraction/MAX, DetailUPGRADE eligibility, immediate save/card/detail refresh. Stable request-ID/expectedTier and500ms gesture guard prevent rapid double-spend/skip. No Tier combat bonus/stat/ability/input changes, no Level/stars/rarity/shop/art/animation.
