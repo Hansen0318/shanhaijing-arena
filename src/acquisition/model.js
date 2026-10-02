@@ -20,7 +20,7 @@ export function normalizeAcquisition(raw,clearedStageIds=[]) {
   let tier=owned.has(id)?'T1':null;
   const savedTier=source.version===ACQUISITION_VERSION?source.tierByCharacterId?.[id]:null;
   const upgrades={T1:0,T2:5,T3:15};
-  if(owned.has(id) && Object.hasOwn(upgrades,savedTier) && earned>=recruit+upgrades[savedTier])tier=savedTier;
+  if(owned.has(id) && typeof savedTier==='string' && Object.hasOwn(upgrades,savedTier) && earned>=recruit+upgrades[savedTier])tier=savedTier;
   const savedSpent=source.version===ACQUISITION_VERSION?source.spentShardsByCharacterId?.[id]:0;
   const validSpent=Number.isSafeInteger(savedSpent)&&savedSpent>=0?Math.min(earned,savedSpent):0;
   tierByCharacterId[id]=tier;spentShardsByCharacterId[id]=owned.has(id)?Math.max(recruit+upgrades[tier],validSpent):0;
