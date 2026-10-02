@@ -58,14 +58,13 @@ P4 unlocks after1-2 at5; P5 after1-5 at7. First Victory selects firstClear if pr
 
 Player clarification 2026-10-02: Chapters2–6 must no longer appear reward-empty in the player-visible engineering build. Every existing Chapter1–6 stage must expose the same data-driven firstClear/repeatable shard mechanism, using placeholder engineering reward tables until formal chapter content is authored. Future chapters inherit the same schema automatically. Exact character/quantity balance remains replaceable content data, never chapter-specific controller/view logic. Preview marks only firstClear rows CLAIMED. Explicit `?resetProgress=1` is a consumed, one-shot testing reset; ordinary visits preserve saves.
 
-## M4 Tier progression — player clarified 2026-10-02
-
-The earlier provisional 5 / 10 / 15 progression is superseded.
+## M4 Tier progression — player corrected 2026-10-02
 
 Canonical direction:
-- locked -> recruit/unlock at 5 shards -> character enters roster at T1;
-- T1 -> T2 requires 5 available character shards;
-- T2 -> T3 requires 10 available character shards;
+- every newly obtained/owned character starts at T0;
+- T0 -> T1 requires 5 available character shards;
+- T1 -> T2 requires 10 available character shards;
+- T2 -> T3 requires 15 available character shards;
 - T3 is the current maximum tier unless later expanded.
 
 Important accounting rule:
@@ -75,12 +74,14 @@ Important accounting rule:
 - excess shards carry forward after an upgrade.
 
 Collection presentation:
-- locked character: available/recruit requirement, e.g. 4/5;
-- owned T1 character: available/T2 requirement, e.g. 4/5, 5/5, 10/5;
-- owned T2 character: available/T3 requirement, e.g. 7/10;
+- owned T0: e.g. 4/5, 5/5, 10/5;
+- owned T1: e.g. 7/10;
+- owned T2: e.g. 12/15;
 - upgrade button is enabled only when available >= requirement;
 - pressing upgrade consumes exactly the requirement and preserves excess;
 - T3 has no further upgrade action.
+
+Acquisition and Tier are separate: if obtaining a character consumed shards, that acquisition cost remains spent and cannot also fund T0->T1.
 
 Tier, character Level/star count, and rarity remain separate concepts unless explicitly unified later.
 
