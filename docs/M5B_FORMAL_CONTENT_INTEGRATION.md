@@ -399,3 +399,58 @@ STOP before:
 
 ## Release record
 Final sourcea692e2357639c99a36aab196026ec9d358c02575, original feature branch/PR#1. Actions352/37015761111 Test397/397, Build and Pages success. Public/local/CI assets match; names/details/Chapter1/reward preview/startup HUD observed. Independent review clean. Exact evidence, cloud observation limits, balance observations and player checklist: `docs/verification/M5B_FORMAL_CONTENT_INTEGRATION.md`. STOP pending player smoke.
+
+
+## 21. Player correction — reward result shard semantics (2026-10-02)
+
+Player smoke found a real presentation-contract bug in the post-battle reward overlay.
+
+Observed example:
+- Result showed `狌狌 Shard +1   9 / 5`;
+- Collection showed 狌狌 T0 with `4 / 5`.
+
+Root cause:
+- Result presentation uses lifetime earned `shardCounts[id]` and hard-codes `UNLOCK_THRESHOLD=5`;
+- Collection correctly uses authoritative progression via `characterProgress()`: `available = earned - spent`, with the requirement based on current ownership/Tier.
+
+The Result overlay is wrong. The Collection semantics are canonical.
+
+### Universal player-facing invariant
+
+Any player-facing shard **progress** display must use the same authoritative progression semantics:
+- locked/unowned: available / 5 toward acquisition;
+- owned T0: available / 5 toward T1;
+- owned T1: available / 10 toward T2;
+- owned T2: available / 15 toward T3;
+- T3: MAX.
+
+Lifetime earned shards may remain stored internally for accounting/audit, but must never be presented as current progression unless explicitly labeled as lifetime-earned statistics in a future screen.
+
+### Result overlay
+
+After a reward transaction, each reward line must display **post-transaction progression** for that character.
+
+Examples:
+- existing T0 with earned9/spent5 -> available4: reward line ends in `4 / 5`, not `9 / 5`;
+- T1 with available8 after reward: show `8 / 10`;
+- T2 with available14 after reward: show `14 / 15`;
+- T3: show `MAX`;
+- if the reward newly unlocks a character, acquisition spend is accounted first; show the resulting owned T0 progress (for exact5 acquisition this is `0 / 5`) plus the UNLOCKED indication.
+
+Do not special-case 狌狌, Chapter1, a stage ID, or Result-only arithmetic. Use the same progression helper/model as Collection or one shared presentation projection derived from it.
+
+### Required regression coverage
+
+At minimum:
+1. locked 4/5 +1 unlock -> post-result T0 0/5 + UNLOCKED;
+2. owned T0 earned9/spent5 -> result4/5;
+3. T0 reward can show surplus e.g.7/5;
+4. T1 result denominator10;
+5. T2 result denominator15;
+6. T3 result MAX;
+7. multiple reward characters each use their own Tier/spent state;
+8. repeatable rewards update available numerator;
+9. Result and Collection show identical post-transaction progression for same character;
+10. lifetime earned/spent persistence and unlock/upgrade transactions remain unchanged.
+
+This is a bounded M5B player-smoke correction. Do not alter reward quantities, Tier costs, acquisition accounting, Chapter data, combat, or art.
