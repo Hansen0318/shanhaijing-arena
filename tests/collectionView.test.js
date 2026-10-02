@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { CampaignController } from '../src/campaign/controller.js';
 import { CollectionView } from '../src/collection/view.js';
 import { CampaignView } from '../src/campaign/view.js';
-function element(tag){return {tag,children:[],dataset:{},style:{},className:'',scrollTop:0,attributes:{},classList:{add(){}},append(...items){this.children.push(...items);},replaceChildren(...items){this.children=items;},setAttribute(k,v){this.attributes[k]=v;},addEventListener(k,fn){this['on'+k]=fn;},focus(){},remove(){this.removed=true;}};}
+function element(tag){return {tag,isConnected:true,children:[],dataset:{},style:{},className:'',scrollTop:0,attributes:{},classList:{add(){}},append(...items){this.children.push(...items);},replaceChildren(...items){for(const old of this.children)for(const n of walk(old)){n.isConnected=false;n.scrollTop=0;}this.children=items;},setAttribute(k,v){this.attributes[k]=v;},addEventListener(k,fn){this['on'+k]=fn;},focus(){},remove(){this.removed=true;}};}
 const walk=n=>[n,...n.children.flatMap(walk)];
 const by=(root,p)=>walk(root).find(p);
 function fixture(){const controller=new CampaignController(),root=element('section');const view=new CollectionView(controller,{document:{createElement:element},onBack:()=>controller.back()});view.mount(root);return {controller,root,view};}
@@ -30,5 +30,6 @@ test('Collection back/reopen keeps inspection filter, refreshes authoritative st
  const dev=new CampaignController({dev:true}),page=element('section');new CollectionView(dev,{document:{createElement:element}}).mount(page);assert.equal(cards(page).every(n=>n.dataset.owned==='true'),true);
 });
 test('Chapter Select entry opens Collection and back uses same route ownership render callback',()=>{
- const old=globalThis.document;globalThis.document={createElement:element};try{const controller=new CampaignController(),root=element('main');let renders=0;const v=new CampaignView(root,controller,{onRender:()=>renders++});v.render();by(root,n=>n.textContent==='COLLECTION').onclick();assert.equal(controller.screen,'collection');assert.equal(cards(root).length,5);by(root,n=>n.dataset.action==='collection-back').onclick();assert.equal(controller.screen,'chapters');assert.equal(renders,3);}finally{globalThis.document=old;}
+ const old=globalThis.document;globalThis.document={createElement:element};try{const controller=new CampaignController(),root=element('main');let renders=0;const v=new CampaignView(root,controller,{onRender:()=>renders++});v.render();by(root,n=>n.textContent==='COLLECTION').onclick();assert.equal(controller.screen,'collection');assert.equal(cards(root).length,5);by(root,n=>n.dataset.action==='collection-back').onclick();assert.equal(controller.screen,'chapters');assert.equal(renders,3);
+ by(root,n=>n.textContent==='COLLECTION').onclick();const grid=by(root,n=>n.className==='collection-grid');grid.scrollTop=63;by(root,n=>n.dataset.action==='collection-back').onclick();assert.equal(grid.isConnected,false);by(root,n=>n.textContent==='COLLECTION').onclick();assert.equal(by(root,n=>n.className==='collection-grid').scrollTop,63);}finally{globalThis.document=old;}
 });

@@ -21,11 +21,12 @@ function card({image,label,status,selected=false,onClick}) {
 export class CampaignView {
  constructor(root,controller,{onStart,onRender}={}) {this.root=root;this.controller=controller;this.onStart=onStart;this.onRender=onRender;}
  render() {
+  this.collectionView?.rememberPosition();
   this.root.replaceChildren(); this.root.hidden=false;
   const page=document.createElement('section'); page.className='campaign-page';
   if(this.controller.screen==='collection') {
    this.collectionView ??= new CollectionView(this.controller,{onBack:()=>{if(this.controller.back())this.render();}});
-   this.collectionView.mount(page);this.root.append(page);this.onRender?.();return;
+   this.root.append(page);this.collectionView.mount(page);this.onRender?.();return;
   }
   if(this.controller.screen==='team') {
    this.controller.refreshTeamOwnership();

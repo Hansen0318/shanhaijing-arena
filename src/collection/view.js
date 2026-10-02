@@ -7,8 +7,9 @@ export class CollectionView {
  node(tag,className,text) {const n=this.document.createElement(tag);n.className=className;if(text!==undefined)n.textContent=text;return n;}
  button(text,action) {const n=this.node('button','collection-button',text);n.type='button';n.onclick=action;return n;}
  entries(){return collectionEntries(this.controller.acquisition,{filter:this.filter,ownership:this.controller.ownership});}
+ rememberPosition(){if(this.grid && this.grid.isConnected!==false)this.scrollTop=this.grid.scrollTop;}
  mount(page) {
-  if(this.grid)this.scrollTop=this.grid.scrollTop;
+  this.rememberPosition();
   this.page=page;page.replaceChildren();page.className='campaign-page collection-page';
   this.browser=this.node('div','collection-browser');
   const header=this.node('header','collection-header'),back=this.button('BACK',()=>{this.scrollTop=this.grid.scrollTop;this.onBack?.();});back.dataset.action='collection-back';
