@@ -113,10 +113,11 @@ M4A must consume the existing M3 acquisition/ownership state. It must not create
 
 Goal: add the actual progression action after M4A makes current state visible.
 
-Canonical shard costs after player clarification:
-- locked -> recruit/unlock at 5 shards -> T1;
-- T1 -> T2: 5 available shards;
-- T2 -> T3: 10 available shards;
+Canonical Tier model after player correction:
+- newly obtained character starts at T0;
+- T0 -> T1: 5 available shards;
+- T1 -> T2: 10 available shards;
+- T2 -> T3: 15 available shards;
 - T3: current maximum.
 
 Recruitment and Tier upgrade must consume/account for shards separately so the same 5 shards cannot both recruit and immediately pay for T1 -> T2. Preserve historical earned totals with explicit spent/consumed accounting and carry excess forward.
