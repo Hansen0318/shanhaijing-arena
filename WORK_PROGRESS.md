@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M4A PLAYER SMOKE CORRECTION REQUIRED (2026-10-02).** First deployed M4A is not accepted yet: Collection cards are too large for a future large roster; Character Detail typography is too large for lore/story/ability text; and COLLECTION must not live inside Chapter Select. Correct architecture now: minimal top-level Landing with sibling BATTLE -> Chapter Select and COLLECTION -> Collection. Formal landing artwork/animation remains later M4C visual polish.
 - **M4A COLLECTION / ROSTER HUB — ENGINEERING PASS / PLAYER SMOKE PENDING.** M3 PLAYER ACCEPTED and protected.
 - Active branch `feat/m0-combat-core-20260927` / PR #1 open. Safe deployed source `ae7063c10c90ab43c8c6f6c5c9d88ed3be693ec6`; latest remote closure commit contains this pointer (docs-only). Recovery base `225a0610b779612b64b052c1df643bf8d69bf6c3`.
 - Implemented: temporary Chapter Select COLLECTION entry; independent all-catalog grid; authoritative ownership/shard projection; owned/locked contrast/progress; ALL/Power/Speed/Blast; single-tap read-only detail; optional metadata omission; filter/position restoration; safe areas. No M3/combat/Team Select product changes, save writes or second progression store.
