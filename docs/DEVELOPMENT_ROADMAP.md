@@ -10,8 +10,10 @@ Current order:
 
 1. **M2 — Team Select / Roster Skeleton**
 2. **M3 — Shard / Reward / Character Unlock Loop**
-3. **M4 — Tier Upgrade / Collection Screen**
-4. Formal Chapter 1 content / character art / battle art passes
+3. **M4A — Collection / Roster Hub (read-only progression view)**
+4. **M4B — Tier Upgrade / Character Growth**
+5. **M4C — Main Menu / Landing Hub**
+6. Formal Chapter 1 content / character art / battle art passes
 5. Audio pass after core flow and visual timing are stable
 
 M3 depends on M2 roster ownership/team-selection contracts.  
@@ -86,14 +88,29 @@ Important:
 - cleared stages stay replayable for shard farming when their reward definition allows it;
 - do not implement full economy/shop/gacha in M3.
 
-## M4 — Tier Upgrade / Collection Screen
+## M4A — Collection / Roster Hub
 
-Goal: expose owned characters, shard inventory, and character growth.
+Goal: give the player a dedicated roster/collection view for inspecting all characters and current acquisition state before adding upgrade actions.
 
-Collection / Roster Detail layout concept:
-- left side: selectable character list/cards;
-- right side: selected character detail;
-- show current shard count, current Tier, next requirement, and upgrade action/state.
+Collection requirements:
+- full-page roster/collection screen, separate from battle Team Select;
+- larger character cards than Team Select because the purpose is inspection, not rapid lineup selection;
+- filters/tabs may reuse the existing ALL / Power / Speed / Blast model;
+- show both owned and locked characters;
+- owned characters use normal presentation;
+- locked/unowned characters remain visible but are clearly dimmed;
+- every card shows character identity, current Tier label when defined, and current shard inventory;
+- locked characters still show current shard progress toward unlock;
+- clicking/tapping a character card opens a read-only Character Detail view/modal;
+- Character Detail may show name, Type/Role, shard count/progress, current Tier, abilities, future Level data when defined, and a concise Shanhaijing lore/introduction;
+- formal character art/idle animation is not required for M4A; placeholder portraits remain acceptable;
+- do not duplicate Team Select semantics. Team Select remains for choosing exactly three combatants; Collection is for inspection/progression visibility.
+
+M4A must consume the existing M3 acquisition/ownership state. It must not create a second shard inventory or alternate ownership model.
+
+## M4B — Tier Upgrade / Character Growth
+
+Goal: add the actual progression action after M4A makes current state visible.
 
 Planned incremental shard costs:
 - unlock / first usable tier: **5 shards**;
@@ -111,6 +128,20 @@ Visual identity:
 - Tier, star/level, and rarity must remain separate concepts unless explicitly unified later.
 
 Do not use stars as a second uncontrolled progression system before its meaning is defined.
+
+## M4C — Main Menu / Landing Hub
+
+Goal: add a top-level entry screen once Battle and Collection destinations both exist.
+
+Planned information architecture:
+- app/site opens to a full-screen landing/main-menu presentation;
+- primary entry: BATTLE -> existing Chapter Select flow;
+- secondary entry: ROSTER / COLLECTION -> M4A Collection screen;
+- additional destinations such as Settings/Event/About remain future scope;
+- initial implementation should prefer a static full-screen hero/background with clear buttons;
+- formal animated promotional background/micro-animation is a later presentation pass, not required to establish navigation architecture.
+
+This does not replace the Campaign flow. It becomes the parent navigation layer above Campaign and Collection.
 
 ## Formal content after progression skeletons
 
