@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M5A FORMAL CONTENT — CHARACTER DIRECTION APPROVED / DETAIL DRAFT READY.** Player approved continuing with initial 鹿蜀/猼訑/赤鱬 and unlock 九尾狐/狌狌 direction. `docs/M5A_CHAPTER1_CONTENT_DRAFT.md` now contains named Basic/Heavy/Special/Awakening/Passive identities, range/AI-profile intent, formal 1-1..1-5 lineups, and a concrete firstClear/repeatable reward draft. Await player approval before M5B runtime integration.
 - **M4C MAIN MENU / LANDING VISUAL POLISH — PASS / PLAYER VERIFIED.** Player completed the deployed Landing smoke and reported it OK. Preserve BATTLE/COLLECTION sibling navigation and current route behavior as baseline.
 - **NEXT PHASE: M5A FORMAL CONTENT DEFINITION — CHAT-FIRST.** Before more Work implementation, define Chapter1 formal content: real character identities, Type/Role, ability concepts/ranges/AI tendencies, stage enemy lineups, firstClear/repeatable rewards, finale identity, and required art/animation asset slots. Do not replace placeholders or invent balance until this content sheet is approved.
 - **M4C MAIN MENU / LANDING VISUAL POLISH — ENGINEERING PASS / PLAYER SMOKE PENDING.**
