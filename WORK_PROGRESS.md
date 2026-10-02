@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M5B Checkpoint B complete.** Checkpoint A remote5a08a6f08ade3b59fe1aba173c644d244e3d056a. Shared BattleSession.executeAbility now owns player/AI effects; heal/ally/team/AoE helpers and simulation-clock mitigation added. Targeted primitive+ability+session+damage/crit63/63 PASS. Next Checkpoint C: short movement, timed multi-hit, healer/AoE AI and generic presentation. No final release claim.
 - **M5B IN PROGRESS — Checkpoint A complete.** Exact remote recovery fbe4645cd04dcd12b12028232bf75df8ac9f1ece; original feature branch/PR#1 retained. Formal P1–P5 catalog/stats/unique ability metadata/cooldowns/ranges added; save IDs/keys/schema untouched. Targeted catalog+ability+acquisition/team persistence+Tier correction60/60 PASS. No final release claim; old placeholder fixture expectations need updating during integration. Next: generic effects and shared execution tests (Checkpoint B).
 - **M5A FORMAL CHAPTER1 CONTENT — PASS / CONTENT APPROVED.** Player authorized the complete Chapter1 content sheet in `docs/M5A_CHAPTER1_CONTENT_DRAFT.md`: 鹿蜀/猼訑/赤鱬 initial, 九尾狐/狌狌 unlocks, skill identities, T0 stat/cooldown baselines, 1-1..1-5 lineups/rewards, Tier mechanic direction, and shared-combat primitive boundaries.
 - **NEXT: M5B FORMAL CONTENT DATA INTEGRATION — IMPLEMENTATION READY.** Integrate approved identities/data into the existing catalog/stages/Collection and add only the minimum reusable combat primitives required for T0 kits. Do not start formal art/animation/VFX or AI tactical variation yet.

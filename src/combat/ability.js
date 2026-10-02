@@ -1,7 +1,7 @@
 import { canCharacterAct, isCharacterKO } from './character.js';
 
 const ACTIVE_CATEGORIES = new Set(['basic', 'heavy', 'special', 'awakening']);
-const NO_EXTERNAL_TARGET_RULES = new Set(['self', 'none']);
+const NO_EXTERNAL_TARGET_RULES = new Set(['self', 'none', 'team_ally']);
 
 function nonempty(value, label) {
   if (typeof value !== 'string' || !value.trim()) throw new TypeError(`${label} must be a nonempty string`);
@@ -86,6 +86,8 @@ export function canStartAbility({
   if (!abilityNeedsExternalTarget(definition)) return true;
   if (!target) return allowNoTarget;
   if (isCharacterKO(target)) return false;
+  if (definition.targetingRule === 'lowest_hp_ally' && caster.teamId !== target.teamId) return false;
+  if (definition.targetingRule === 'enemy' && caster.teamId === target.teamId) return false;
   return ignoreRange || isTargetInRange(caster, target, definition.range);
 }
 

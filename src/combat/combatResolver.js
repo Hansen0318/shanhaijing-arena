@@ -15,6 +15,7 @@ export function resolveDamage({
   defenderDefinition,
   abilityDefinition,
   rng,
+  damageMultiplier = 1,
 }) {
   const coefficient = positiveFinite(abilityDefinition?.effect?.coefficient, 'ability coefficient');
   const multiplier = getTypeMultiplier(attackerDefinition.type, defenderDefinition.type);
@@ -31,7 +32,8 @@ export function resolveDamage({
     }
     critical = roll < abilityDefinition.critChance;
   }
-  const amount = baseAmount * (critical ? abilityDefinition.critMultiplier : 1);
+  if (!Number.isFinite(damageMultiplier) || damageMultiplier < 0 || damageMultiplier > 1) throw new RangeError("Invalid damage multiplier");
+  const amount = baseAmount * (critical ? abilityDefinition.critMultiplier : 1) * damageMultiplier;
   applyDamage(defender, amount);
   return { amount, critical };
 }

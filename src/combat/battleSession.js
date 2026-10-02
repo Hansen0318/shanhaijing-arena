@@ -7,6 +7,8 @@ import {
   tickAbilityCooldown,
   isTargetInRange,
 } from './ability.js';
+import { BattleStatuses } from './statuses.js';
+import { resolveAbilityTarget, resolveEffectTargets } from './effectTargeting.js';
 import { canCharacterAct } from './character.js';
 import { resolveDamage } from './combatResolver.js';
 import { createSeededRandom, DEFAULT_BATTLE_SEED } from './seededRandom.js';
@@ -112,8 +114,12 @@ export class BattleSession {
     this.playerMovement = new Map(this.actors.map((actor) => [actor.instanceId, { x: 0, y: 0 }]));
     this.castEvents = [];
     this.damageEvents = [];
+    this.healEvents = [];
+    this.statuses = new BattleStatuses();
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
+
+  drainHealEvents() { return this.healEvents.splice(0); }
 
   drainDamageEvents() {
     return this.damageEvents.splice(0);
@@ -122,7 +128,7 @@ export class BattleSession {
   applyResolvedDamage(actor, target, actorDefinition, defenderDefinition, definition, category, source) {
     if (!canCharacterAct(target) || !(definition.effect?.coefficient > 0)) return 0;
     const { amount, critical } = resolveDamage({ attacker:actor, defender:target,
-      attackerDefinition:actorDefinition, defenderDefinition, abilityDefinition:definition, rng:this.random });
+      attackerDefinition:actorDefinition, defenderDefinition, abilityDefinition:definition, rng:this.random, damageMultiplier:this.statuses.damageMultiplier(target.instanceId,this.elapsedSeconds) });
     if (Number.isFinite(amount) && amount > 0) this.damageEvents.push({
       actorId:actor.instanceId, targetId:target.instanceId, category, source, amount, critical,
       position:{x:target.x,y:target.y},
@@ -213,52 +219,44 @@ export class BattleSession {
     const slot = actor.abilityState[category];
     if (!definition || !slot) return false;
 
-    const opponents = actor.teamId === this.allies[0].teamId ? this.enemies : this.allies;
-    const currentTarget = actorById(opponents, this.targetIds.get(actor.instanceId));
-    const target = chooseSoftTarget(actor, opponents, currentTarget);
-
     actor.controlHandoff.registerPlayerInput(this.elapsedSeconds * 1000);
+    return this.executeAbility(actor, category, 'player');
+  }
 
-    if (!startAbility({
-      caster: actor,
-      slot,
-      definition,
-      target,
-      source: 'player',
-      ignoreRange: true,
-      allowNoTarget: true,
-    })) return false;
+  teamContext(actor) {
+    const friendly=actor.teamId===this.allies[0].teamId;
+    const allies=friendly?this.allies:this.enemies, enemies=friendly?this.enemies:this.allies;
+    const current=actorById(enemies,this.targetIds.get(actor.instanceId));
+    return {allies,enemies,enemyTarget:chooseSoftTarget(actor,enemies,current)};
+  }
 
-    const canHitTarget = Boolean(
-      target &&
-      canCharacterAct(target) &&
-      isTargetInRange(actor, target, definition.range),
-    );
-
-    if (canHitTarget) {
-      const defenderDefinition = this.characterDefinitions[target.definitionId];
-      if (!defenderDefinition) throw new Error(`Missing character definition: ${target.definitionId}`);
-
-      finishAbility({
-        caster: actor,
-        slot,
-        definition,
-        applyEffect: () => {
-          this.applyResolvedDamage(actor,target,actorDefinition,defenderDefinition,definition,category,'player');
-        },
-      });
-
-      this.targetIds.set(actor.instanceId, target.instanceId);
-      this.recordCast(actor, target, category, 'player', definition, true);
-      return true;
-    }
-
-    finishAbility({
-      caster: actor,
-      slot,
-      definition,
-    });
-    this.recordCast(actor, target, category, 'player', definition, false);
+  // Both controllers execute effects here. Manual air casting retains its existing contract.
+  executeAbility(actor,category,source,requestedTarget=null) {
+    const actorDefinition=this.characterDefinitions[actor.definitionId];
+    const definition=this.abilityDefinitions[actorDefinition.abilities[category]],slot=actor.abilityState[category];
+    if(!definition||!slot)return false;
+    const context=this.teamContext(actor);
+    const target=resolveAbilityTarget(actor,definition,{...context,enemyTarget:requestedTarget??context.enemyTarget});
+    if(!startAbility({caster:actor,slot,definition,target,source,ignoreRange:source==='player',allowNoTarget:source==='player'}))return false;
+    const canHit=target&&canCharacterAct(target)&&isTargetInRange(actor,target,definition.range);
+    let applied=false;
+    finishAbility({caster:actor,slot,definition,applyEffect:()=>{
+      if(!canHit)return;
+      for(const victim of resolveEffectTargets(actor,target,definition,context)) {
+        if(definition.effect.kind==='heal') {
+          const before=victim.hp;victim.heal(victim.maxHp*definition.effect.maxHpFraction);
+          const amount=victim.hp-before;
+          if(amount>0){this.healEvents.push({actorId:actor.instanceId,targetId:victim.instanceId,category,source,amount,critical:false,position:{x:victim.x,y:victim.y}});applied=true;}
+        } else if(definition.effect.kind==='mitigation') {
+          this.statuses.applyMitigation(victim.instanceId,definition.effect.reduction,definition.effect.duration,this.elapsedSeconds);applied=true;
+        } else if(definition.effect.coefficient>0) {
+          applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.characterDefinitions[victim.definitionId],definition,category,source)>0||applied;
+        }
+      }
+    }});
+    if(target?.teamId!==actor.teamId&&target)this.targetIds.set(actor.instanceId,target.instanceId);
+    if(applied&&category==='basic')this.cadence.set(actor.instanceId,1/actorDefinition.stats.attackSpeed);
+    this.recordCast(actor,target,category,source,definition,applied);
     return true;
   }
 
@@ -311,7 +309,7 @@ export class BattleSession {
       }
 
       const opponents = actor.teamId === this.allies[0].teamId ? this.enemies : this.allies;
-      const target = actorById(opponents, intent.targetId);
+      const target = this.actorById(intent.targetId);
 
       if (intent.kind === 'move' && target && canCharacterAct(target)) {
         if (intent.movement === 'retreat') {
@@ -346,34 +344,11 @@ export class BattleSession {
         continue;
       }
 
-      const definition = this.abilityDefinitions[intent.definitionId];
-      const slot = actor.abilityState[intent.category];
-      if (!definition || !slot) continue;
-      if (!startAbility({ caster: actor, slot, definition, target, source: 'ai' })) continue;
-
-      let applied = false;
-      if (target && canCharacterAct(target) && Number.isFinite(definition.effect?.coefficient)) {
-        const defenderDefinition = this.characterDefinitions[target.definitionId];
-        if (!defenderDefinition) throw new Error(`Missing character definition: ${target.definitionId}`);
-        finishAbility({
-          caster: actor,
-          slot,
-          definition,
-          applyEffect: () => {
-            applied = this.applyResolvedDamage(actor,target,actorDefinition,defenderDefinition,definition,intent.category,'ai') > 0;
-          },
-        });
-      } else {
-        finishAbility({ caster: actor, slot, definition });
-      }
-
-      if (applied && intent.category === 'basic') {
-        this.cadence.set(actor.instanceId, 1 / actorDefinition.stats.attackSpeed);
-      }
-      this.recordCast(actor, target, intent.category, 'ai', definition, applied);
+      this.executeAbility(actor,intent.category,'ai',target);
     }
 
     this.elapsedSeconds = Math.min(this.maxSeconds, this.elapsedSeconds + deltaSeconds);
+    this.statuses.expire(this.elapsedSeconds);
     return this.snapshot();
   }
 }
