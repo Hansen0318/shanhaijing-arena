@@ -1,13 +1,15 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — INTEGRATION COMPLETE, RELEASE CHECKS PENDING. Branch `feat/m0-combat-core-20260927` / PR #1; recovery base `c3db01dab1963da3018357281bab51e0794e18f6`; latest safe checkpoint is commit containing this pointer.
-- All30 current Chapter1–6 stages have data-driven firstClear and repeatable shard sets. Chapter1 unchanged; Chapters2–6 deterministic rotating P1–P5 engineering content (first3+2, replay subset1). No reward engine/controller/view edits.
-- PartA RED3/8 → related GREEN29/29, including all30 Preview/clear/replay configs and future syntheticChapter7. Previous emptyChapter2 assertion superseded by required content.
-- CheckpointB domain/persistence complete: acquisition schema v2 in existing v1 storage key; legacy earned/receipts retained; P1/P2/P3 recruit exempt; shard-unlocked owned characters spend5 once. Pure expected-Tier/request-ID transaction, available=earned-spent. Tier RED0/12 → related51/51 PASS.
-- CheckpointC Collection/detail complete: available fractions/Tier/MAX, eligibility-gated UPGRADE, immediate save/refresh and500ms gesture guard. UI RED13/19→related74/74; impacted159/159; build/diff PASS.
-- Next exact action: review, Actions/Pages/source verification and final evidence/player checklist. TierT1→T2 costs5;T2→T3 costs10;T3MAX. Preserve earned, account recruitment once (baselineP1/P2/P3 exempt).
-- No Tier combat bonuses/Level/stars/rarity/shop/formal animation. M3 and existing M4A navigation/layout protected.
+- **M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING.** M3 accepted baseline preserved; no new PLAYER VERIFIED claim.
+- Branch `feat/m0-combat-core-20260927` / PR #1 open. Deployed safe source `af56523791fc59eaecaa7657e82197bb4f003ec9`; recoverybase `c3db01dab1963da3018357281bab51e0794e18f6`. Later closure docs-only; remote latest authoritative.
+- CheckpointA `348b1ac` all30Chapter1–6 reward tables; Chapter1 unchanged, laterChapters first3+2/replay subset1 engineering data. CheckpointB `c7e26a0` ledger/persistence; checkpointC `c755d8b` UI; reviewfix `7aaf384` rejects structured Tier values. Final source groups Tier controls before Abilities/dims disabled button.
+- Acquisition schema2 in existing v1 key: earned remains lifetime; spent/Tier/upgrade receipts added. available=earned-spent. Legacy baselineP1/2/3 recruit exempt; other shard-unlocked owned IDs recruit cost5 once. T1→T2cost5,T2→T3cost10,T3MAX. Migration preserves Campaign/team/battle receipts; denied write session-memory fallback.
+- Card/detail Tier+fractions/MAX and eligibility UPGRADE, expectedTier/request-ID idempotency,500ms per-character gesture guard. Immediate save/refresh; no combat bonus/stats/ability/AI/input changes; no duplicate progression store.
+- Actual checks: PartA29/29; domain51/51; initialUI74/74; final relevant76/76; impacted161/161; combat93/93; build/diff/review PASS. Malformed Tier RED12/13 fixed; independent review13/13, no remaining Important/Critical defects.
+- [Actions #316 /36968180269](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36968180269): configured CI330/330, Build/Pages success. Public/local/CI JS `index-DKY9AbKF.js` / CSS `index-CXWSf6fJ.css` match. Public normalTier/fractions/disabledUPGRADE and isolated2-1/6-5rewardPreview/#game hidden confirmed; enabled upgrades covered executable integration, no unrelated combat browser replay.
+- Exact next action: short player smoke `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`: laterChapter reward/replay, baseline usable shards vs one-time recruited cost, T1eligible UPGRADE→T2 consume5/card+detail refresh, rapid-tap no skip, optional T2→T3consume10/MAX, reload/lineup intact. Normal URL no reset needed. Physical readability/touch pending.
+- **STOP.** No Tier combat bonuses/Level/stars/rarity/shop/gacha/formal animation. Wait for player acceptance.
 
 ## Previous universal farming checkpoint (historical)
 - **M3 PREVIEW PRESENTATION CORRECTION — RELEASE CHECKS IN PROGRESS**. Branch feat/m0-combat-core-20260927 / PR#1 retained. Recoverybase0636172132c2719f68d5a154039a1f34e30aac7e. Preview labels FIRST CLEAR/CLAIMED/REPEATABLE removed; available/repeatable rows normal contrast, claimed non-repeatable muted+50%opacity. Existing reward/acquisition/persistence/config/TeamSelect/combat unchanged.

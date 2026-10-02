@@ -1,20 +1,15 @@
 # Project State
 
 ## Milestone
-**M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — IMPLEMENTATION IN PROGRESS**
+**M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- PartA complete: all30 stages Chapter1–6 configured firstClear/repeatable; Chapter1 unchanged; related29/29 PASS. PartB domain/persistence now complete: v2 acquisition ledger, explicit spent/Tier/upgrade receipts; related51/51 PASS. Collection/detail now integrated: related74/74, impacted159/159, build/diff PASS. Next review/Actions/Pages and final docs. Recoverybase `c3db01dab1963da3018357281bab51e0794e18f6`; WORK_PROGRESS latest pointer authoritative.
-
-- Universal chapter reward gap identified by player: Chapter2–6 currently have empty reward content even though the engine is generic. Player-visible engineering build must populate reward tables for all Chapters1–6 with the same firstClear/repeatable schema; future chapters use the same data contract.
-- M4B progression is now defined: recruit to T1 at5 shards; T1->T2 costs5 available; T2->T3 costs10; T3 max. Collection shows fractions against next requirement, and Character Detail provides the upgrade action. Recruitment and upgrade may not double-use the same shards; preserve lifetime earned totals with explicit spent accounting/migration. Canonical `docs/M4B_TIER_UPGRADE.md`.
-- First M4A player smoke requested smaller cards/detail and sibling navigation; bounded correction now deployed, awaiting new player smoke. M3 PLAYER ACCEPTED remains protected.
-- Branch `feat/m0-combat-core-20260927` / PR #1 open; deployed safe checkpoint `5ec1c345ad6cd14cbec7777a9c89ce434329db03`; recovery base `f9ffd844b8fa116b1c9d3e82439ce42dd0899bbc`. Later closure docs-only; WORK_PROGRESS pointer authoritative.
-- Normal boot/reload opens minimal static Landing BATTLE/COLLECTION. Chapter Select and Collection are siblings and both BACK to Landing. Explicit reset retains fresh Chapter1 behavior; no save wipes during ordinary navigation.
-- Compact84px cards/44px square portraits retain progression info and locked contrast. Detail13px body/96px portrait, long-content vertical scroll under fixed BACK; optional missing metadata omitted. Definitions/acquisition/team/combat unchanged.
-- Targeted20/20, impacted137/137, build/diff/review PASS. Actions#304 /36947859653 configured CI306/306 and Build/Pages success. Local/CI/public `index-B9K7rpSX.js` / `index-ntQrNjSJ.css` match. Bounded public sibling routes, reload, compact dimensions/detail/filter/back/#game hidden/no horizontal overflow confirmed.
-- Synthetic60-character/long-copy DOM+CSS contracts pass; actual iPhone readability/touch/scroll/safe areas remain pending. No PLAYER VERIFIED claim.
-- Exact next action: short player checklist `docs/verification/M4A_COLLECTION.md`. STOP; no M4B/Tier/spending/formal Landing art/animation.
+- All30 current Chapter1–6 stages have generic firstClear/repeatable multi-character rewards; Chapter1 fixture unchanged. Later tables deterministic engineering content, future Chapter uses data/schema only.
+- Canonical TierT1→T2→T3MAX implemented; recruit5, upgrade5then10. Earned lifetime unchanged; explicitspent ledger, available=earned-spent. Legacy baselineP1/P2/P3 recruitment exempt; shard-unlocked owned characters recruitment5 recorded once. v2 schema migrated in existing acquisition key; Campaign/team/receipts preserved, malformed/denied persistence safe.
+- Collection Tier+fraction/MAX, DetailUPGRADE eligibility, immediate save/card/detail refresh. Stable request-ID/expectedTier and500ms gesture guard prevent rapid double-spend/skip. No Tier combat bonus/stat/ability/input changes, no Level/stars/rarity/shop/art/animation.
+- Branch `feat/m0-combat-core-20260927` / PR #1 open; safe deployed source `af56523791fc59eaecaa7657e82197bb4f003ec9`; recoverybase `c3db01dab1963da3018357281bab51e0794e18f6`. Later closure docs-only; WORK_PROGRESS pointer authoritative.
+- Final relevant76/76, impacted161/161, combat93/93, build/diff/review PASS. Actions#316 /36968180269 CI330/330, Build/Pages success. Public/local/CI `index-DKY9AbKF.js` / `index-CXWSf6fJ.css` match; public disabledTier UI and Chapter2/6Preview verified. Executable normal Campaign farming→upgrade→reload/lineup integration passes.
+- Exact next action: player checklist `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`. Device readability/touch and actual enabled-upgrade smoke pending. STOP before further mechanics; never claim PLAYER VERIFIED without confirmation.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

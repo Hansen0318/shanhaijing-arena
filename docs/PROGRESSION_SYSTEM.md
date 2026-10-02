@@ -1,6 +1,6 @@
 # Progression System — Current Planning
 
-> Campaign progression is implemented in M1. M3 acquisition/shards, universal multi-character farming and Preview presentation are player accepted; M4A Collection is engineering PASS pending player smoke; Tier upgrades remain future M4B scope; the canonical sequencing is in `docs/DEVELOPMENT_ROADMAP.md`.
+> Campaign progression is implemented in M1. M3 acquisition/shards, universal multi-character farming and Preview presentation are player accepted; M4A Collection is engineering PASS pending player smoke; M4B Tier accounting/upgrade is engineering PASS pending player smoke; the canonical sequencing is in `docs/DEVELOPMENT_ROADMAP.md`.
 
 ## M1 Campaign progression
 Separate unlocked/cleared chapter/stage arrays derive from sequential victories. Defeat and Draw do not unlock. Cleared stages remain replayable. Versioned persistence is isolated from combat and replaceable; see CAMPAIGN_SYSTEM.md.
@@ -20,7 +20,7 @@ Shard inventory is universal across the roster:
 - locked characters accumulate shards toward unlock;
 - already-owned characters can also receive and retain their own shards;
 - M3 does not spend owned-character shards;
-- M4A reads those retained counts without spending; future M4B will define Tier progression.
+- M4A reads those retained counts without spending; M4B now adds separate spent/Tier accounting while preserving lifetime earned.
 
 Implemented loop:
 Stage Preview shows configured shard rewards
@@ -90,15 +90,15 @@ M4 is now intentionally split so visibility comes before upgrade actions.
 
 ### M4A — Collection / Roster Hub
 Dedicated full-page roster screen:
-- larger square character cards than Team Select;
+- compact84px cards with44px square portraits, approximately Team Select bench scale;
 - ALL / Power / Speed / Blast filters can reuse the current roster taxonomy;
 - show owned and locked characters together;
 - owned card = normal presentation;
 - locked card = dimmed presentation but still identifiable;
-- every card shows current shard inventory;
+- every card shows available/next requirement and Tier (T3MAX), with lifetime earned preserved internally;
 - locked characters show shard progress toward unlock;
 - show current Tier when Tier labels are formally confirmed;
-- tapping a card opens a read-only Character Detail view.
+- tapping a card opens Character Detail; M4B adds the eligibility-gated UPGRADE action.
 
 Character Detail planning:
 - character name;
@@ -138,3 +138,7 @@ They remain separate systems.
 
 ## Out of current scope
 Do not implement full economy, shop, gacha, formal reward balance, or audio during M2.
+
+## M4B implementation state
+
+ENGINEERING PASS / PLAYER SMOKE PENDING. Acquisition schema2 retains earned+reward receipts and adds spent/Tier/upgrade receipts in the existing key. BaselineP1/P2/P3 recruit cost0; pre-M4B shard-unlocked owned IDs recruit5 once. See `docs/M4B_TIER_UPGRADE.md` and `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`. All30 current Chapter stages now have reward content. No Tier combat bonuses are implemented.

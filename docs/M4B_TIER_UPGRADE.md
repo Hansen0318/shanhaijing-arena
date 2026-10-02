@@ -1,7 +1,7 @@
 # M4B — Tier Upgrade / Character Growth
 
 ## Status
-**CHAT SPEC COMPLETE / IMPLEMENTATION READY**
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 M4A Collection/Navigation is deployed pending final player acceptance. This spec defines the next progression slice and also records the shard-accounting correction required before Tier upgrades are safe.
 
@@ -158,3 +158,13 @@ After engineering PASS/deploy:
 - player smoke Collection fraction display and one T1->T2 upgrade;
 - stop;
 - do not invent Tier combat bonuses, Level, stars, rarity, shop or formal animation without separate authorization.
+
+## 11. Implemented accounting / migration (2026-10-02)
+
+Acquisition schema2 uses existing `shanhaijing-arena.acquisition.v1` key. `shardsByCharacterId` remains lifetime earned; `spentShardsByCharacterId`, `tierByCharacterId`, `completedUpgradeIds` added. Available=earned-spent. Legacy owned P1/P2/P3 are baseline grants and pay no fabricated recruitment fee; other shard-unlocked owned IDs defaultT1 and record recruit5 once. Normalize derives a cumulative spending floor rather than repeatedly subtracting; v1 load writes v2 once, denied writes retain session state. Campaign/team/battle receipts preserved. Only canonical Tier strings accepted; structured/malformed values fall back safely.
+
+UPGRADE is the consistent label. Request ID + expectedTier enforce idempotency; detail adds500ms per-character gesture guard. Success persists and refreshes card/detail immediately. T3MAX has no upgrade action. No combat bonuses.
+
+## 12. Release evidence / next action
+
+Safe source `af56523791fc59eaecaa7657e82197bb4f003ec9`, branch `feat/m0-combat-core-20260927` / PR #1. CheckpointsA/B/C recorded in `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`. Final relevant76/76, impacted161/161, combat93/93, build/diff/review PASS; Actions#316 /36968180269 CI330/330, Build/Pages success and public source match. Next player short farming/fraction/upgrade/reload smoke per verification document, then STOP. No PLAYER VERIFIED claim.

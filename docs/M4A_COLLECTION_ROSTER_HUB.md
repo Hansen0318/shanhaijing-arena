@@ -305,3 +305,7 @@ Use progression fraction semantics:
 The numerator may exceed the requirement until the player explicitly upgrades. Excess carries forward after spending.
 
 Character Detail will host the upgrade/synthesis action in M4B. M4A must not invent a second shard inventory.
+
+## M4B integration note (2026-10-02)
+
+The implemented M4A layout/navigation is preserved. M4B now extends Character Detail with UPGRADE, replaces bare earned counts with available/next requirement, and adds authoritative Tier/MAX. Earlier read-only/Tier-exclusion wording describes M4A's original boundary; current upgrade/accounting behavior is canonical in `docs/M4B_TIER_UPGRADE.md`. No animation/layout reimplementation.

@@ -426,3 +426,9 @@ Hard rule:
 - do not use chapter-number/stage-number branches in acquisition/controller/view logic.
 
 The prior state where Chapters2–6 had `reward.items: []` was only a placeholder-content shortcut and is no longer acceptable for the player-visible engineering build. Add placeholder engineering reward tables for current Chapters2–6 until formal content design replaces them.
+
+## Universal Chapter content completion / M4B compatibility (2026-10-02)
+
+All30 Chapter1–6 stages now contain firstClear and repeatable rewards through the same schema. Chapter1 unchanged; Chapters2–6 engineering tables use two first-clear characters with quantities3/2 and repeat subset1. Replace content data for future formal design without reward-engine changes.
+
+M4B preserves M3 `shardsByCharacterId` as lifetime earned and reward receipts; it adds separate spent/Tier accounting. Collection now displays available, so historical earned5 that recruited a character showsT1available0/5. M3 grant result remains actual granted items and lifetime inventory; no reward semantic change. Full evidence `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`.
