@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M5B PLAYER CORRECTION — RESULT SHARD PROGRESS:** player smoke found Result overlay shows lifetime earned/5 (example 狌狌 +1 -> 9/5) while Collection correctly shows authoritative available/next requirement (4/5). Root cause confirmed in `src/acquisition/presentation.js`: `resultRewardLines()` uses `transaction.shardCounts[id] / UNLOCK_THRESHOLD`; Collection uses `characterProgress()`. Canonical fix is universal: all player-facing progression uses post-transaction available and Tier-specific next requirement (locked/T0=5,T1=10,T2=15,T3=MAX). No character/stage special cases; reward/accounting data stays unchanged. Bounded correction + regression/deploy required before M5B acceptance.
 - **M5B FORMAL CONTENT DATA INTEGRATION — ENGINEERING PASS / PLAYER SMOKE PENDING.** M5A content approved; M0–M4 remain accepted baselines.
 - Active branch `feat/m0-combat-core-20260927` / PR#1 retained. Final tested/deployed source `a692e2357639c99a36aab196026ec9d358c02575`; subsequent closure docs-only. Recover remote latest before new work. Existing feature-branch Pages release retained; no main merge.
 - P1鹿蜀/P2猼訑/P3赤鱬/P4九尾狐/P5狌狌; formal stats/unique skill IDs/cooldowns/ranges, five T0 active kits, generic heal/ally/team/AoE/mitigation/cast movement/timed hits; threshold/AoE/range AI only. Catalog-powered Collection/Team/HUD/reward names, exact Chapter1 lineups/rewards.
