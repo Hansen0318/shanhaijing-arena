@@ -1,6 +1,6 @@
 # M5B overlay / performance follow-up
 
-Status: RELEASE VERIFICATION PENDING; physical PLAYER SMOKE PENDING.
+Status: M5B FOLLOW-UP OVERLAY / PERFORMANCE PASS — ENGINEERING PASS / PLAYER SMOKE PENDING.
 
 ## Recovery and scope
 Canonical remote7357d234513eb8984c0aff2b8f305de79e88cea8, feat/m0-combat-core-20260927 / PR1. Previous deployed source7555c0b4de3485cce0cb5f271f1fb456c8b92392 / Actions356. Ordinary reload intentionally starts Landing; Chapter/Stage are not URL or saved routes. No reward/accounting/Tier/combat/Chapter content/view CSS changes.
@@ -32,7 +32,9 @@ Full npm test419/419, zero failures; npm run build PASS; git diff --check PASS. 
 Independent read-only review found pending menu interaction race and pre-start sleep ordering gap; both resolved. Re-review: no remaining blocking findings,28/28 suites pass (new stale boot ordering test added afterward; full419 includes it).
 
 ## Release evidence
-Pending push, Actions, Pages and public bundle verification.
+Final tested/deployed sourcedc6ddc418f04e3a65126f6cb425218ad0793ca6d; subsequent closure docs-only. [Actions#357 /37025457468](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37025457468) SUCCESS: CI419/419 zero failures, Build110898825524 and Pages Deploy110899002199 success. CI/local/public entry index-DfDphhuN.js, CSSindex-082fIvTy.css match; CI battleRuntime-CT8Z1Rjm.js artifact present. Public HTML has no battle modulepreload.
+Public normal URL https://hansen0318.github.io/shanhaijing-arena/ reload→Landing, Collection/BACK, Chapter/Stage confirmed game host absent, zero canvases. Six chapter images and six unique stage SVGs complete/natural640x300. Cold Team→Battle loaded real Phaser canvas/HUD/controls; EXIT dialog→EXIT returned Stage, host/canvas absent and dialog hidden; BACK→Chapter→Landing then reload works. No reset/save injection/reward transaction/full replay. Saved team writes only through existing normal START path. Extension metadata errors appeared, no observed page-origin loading error. Sustained cloud countdown progression not established (observed3), as in prior M5B; no gameplay-completion claim.
+Desktop Landing screenshot clean before/after; physical iPhone artifact resolution and seconds remain player-owned. Automated orientation/viewport contracts passed, not physical Safari acceptance.
 
 ## Boundary and focused next smoke
 Formal type advantage ALREADY exists: typeMultiplier.js + combatResolver.js, Power>Speed>Blast>Power,1.15/0.85. Not added/changed here. INFO remains unimplemented.

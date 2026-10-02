@@ -74,3 +74,6 @@ Player smoke after deployment: use normal URL without reset; win one relevant re
 - Public browser normal https://hansen0318.github.io/shanhaijing-arena/ loaded Landing and `/shanhaijing-arena/assets/index-Db98qSff.js` with stylesheet `/shanhaijing-arena/assets/index-082fIvTy.css`; local build and CI artifact manifest match. This verifies deployed correction source. No injected save/reset/full battle smoke; exact Result rendering is covered by real ArenaScene contract tests. Focused player Result/Collection smoke remains pending.
 - Independent read-only review55/55 no Critical/Important/Minor findings. Local full407/407, targeted17/17, impacted126/126, build/diff PASS. Existing bundle-size advisory unchanged.
 - STOP at bounded M5B Result correction; no M5C/AI/art.
+
+## Bounded overlay/performance follow-up
+M5B FOLLOW-UP OVERLAY / PERFORMANCE PASS — ENGINEERING PASS / PLAYER SMOKE PENDING. Sourcedc6ddc418f04e3a65126f6cb425218ad0793ca6d; Actions#357/37025457468, full419/419/build/Pages/public source verification PASS. No content/progression/combat changes. Findings, payload measurements, review fixes and exact phone checklist: docs/verification/M5B_OVERLAY_PERFORMANCE.md. STOP.

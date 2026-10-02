@@ -1,10 +1,10 @@
 # Project State
 
 ## Milestone
-**M5B FOLLOW-UP OVERLAY / PERFORMANCE — RELEASE VERIFICATION PENDING**
+**M5B FOLLOW-UP OVERLAY / PERFORMANCE PASS — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- Bounded overlay/runtime-loading slice implemented; targeted29/29, impacted136/136, full419/419, build/diff PASS and independent review clear after fixes. Non-battle host detached/loop asleep; viewport refresh only visible battle; cold runtime lazy loaded with inert pending menu/error recovery. Entry JS67,234 bytes vs1,458,758 before; unchanged small SVGs/styles. See docs/verification/M5B_OVERLAY_PERFORMANCE.md. Public release verification pending; exact phone blue block remains player smoke. Existing type advantage runtime present; INFO absent; neither changed.
+- Bounded overlay/runtime-loading slice implemented; targeted29/29, impacted136/136, full419/419, build/diff PASS and independent review clear after fixes. Non-battle host detached/loop asleep; viewport refresh only visible battle; cold runtime lazy loaded with inert pending menu/error recovery. Entry JS67,234 bytes vs1,458,758 before; unchanged small SVGs/styles. See docs/verification/M5B_OVERLAY_PERFORMANCE.md. Sourcedc6ddc418f04e3a65126f6cb425218ad0793ca6d; Actions#357/37025457468 CI419/419, Build/Pages SUCCESS; public entry/CSS fingerprints match. Public non-battle host/canvas absent, images complete; cold battle/EXIT/BACK/reload observed. Exact phone blue block remains player smoke. Existing type advantage runtime present; INFO absent; neither changed.
 - Bounded Result correction implemented: controller.rewardResult carries transaction.state; Result and Collection both consume characterProgress().progressLabel. All tiers, newly acquired characters, surplus, multi-item rewards and future-chapter farming use post-transaction available progress. Accounting/Tier/reward/Chapter/combat sources unchanged. Targeted17/17, impacted126/126, full407/407 and build/diff PASS; independent review55/55 with no findings; Actions#356/37020221225 Test/Build/Pages SUCCESS. Final correction source7555c0b4de3485cce0cb5f271f1fb456c8b92392; public/local/CI JSindex-Db98qSff.js and unchanged CSSindex-082fIvTy.css match.
 - M5A PLAYER APPROVED; formal Chapter1 data and required shared T0 active effects integrated. P1–P5 stable save identities preserved.
 - Formal names/stats/Type/Role, unique skill IDs and immutable range/cooldown metadata; generic heal/lowest-HP ally/team heal/AoE/temporary mitigation/short cast movement/timed multi-hit. Same AI/player execution API.
