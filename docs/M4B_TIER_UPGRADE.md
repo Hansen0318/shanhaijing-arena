@@ -7,21 +7,25 @@ M4A Collection/Navigation is deployed pending final player acceptance. This spec
 
 ## 1. Canonical progression
 
+Player correction 2026-10-02 supersedes the previous Tier numbering/cost model.
+
 Current Tier order:
-- T1 = first owned/usable Tier
-- T2 = second Tier
+- T0 = base Tier for every newly obtained/owned character
+- T1 = first upgrade
+- T2 = second upgrade
 - T3 = current maximum Tier
 
-Costs:
-- locked -> recruit/unlock at 5 shards -> T1
-- T1 -> T2 costs 5 available shards
-- T2 -> T3 costs 10 available shards
+Upgrade costs use available character shards:
+- T0 -> T1 costs 5
+- T1 -> T2 costs 10
+- T2 -> T3 costs 15
+- T3 = MAX
 
-The earlier provisional 5 / 10 / 15 plan is superseded.
+Character acquisition and Tier progression are separate concerns. A character becomes owned at T0. If acquisition itself consumes shards, those acquisition shards must not also count as available Tier-upgrade shards.
 
-## 2. No double use of recruitment shards
+## 2. No double use of acquisition shards
 
-The same shards cannot both recruit a character and immediately pay for the next Tier.
+The same shards cannot both obtain/unlock a character and immediately pay for a Tier upgrade.
 
 Existing M3 stores lifetime earned shard counts and historically retained those counts after unlock. Preserve that historical data.
 
@@ -30,10 +34,12 @@ Introduce explicit progression spending/accounting, for example:
 - spentShardsByCharacterId = cumulative consumed amount
 - available = earned - spent
 
-Recruitment must account for 5 consumed shards when a locked character becomes T1.
+If the current acquisition contract unlocks a locked character by consuming 5 shards, that cost must be accounted once when the character becomes owned at T0.
 
-For pre-M4B saves where a character is already owned because M3 unlocked it:
-- migration must infer/record the recruitment cost exactly once;
+For pre-correction saves:
+- every already-owned character migrates to T0 unless a later authoritative Tier save exists;
+- characters previously unlocked through the M3 5-shard acquisition path must account that acquisition cost exactly once;
+- baseline-owned characters that did not require shard acquisition must not receive a fabricated acquisition charge;
 - do not alter lifetime earned count;
 - do not double-charge on future reloads.
 
@@ -44,10 +50,10 @@ Exact storage shape may differ, but the invariant is mandatory.
 Do not show a bare shard total such as "Shards 4".
 
 Show available / next requirement:
-- locked: 4 / 5
-- T1: 4 / 5
-- T1 with surplus: 10 / 5
-- T2: 7 / 10
+- owned T0: 4 / 5
+- owned T0 with surplus: 10 / 5
+- owned T1: 7 / 10
+- owned T2: 12 / 15
 - T3: MAX presentation; no enabled upgrade action
 
 The numerator may exceed the requirement until the player chooses to upgrade.
@@ -58,10 +64,10 @@ After upgrade:
 - update fraction to the next Tier requirement.
 
 Example:
-- T1 has 10 / 5
-- upgrade to T2
+- T0 has 10 / 5
+- upgrade to T1
 - spend 5
-- T2 shows 5 / 10
+- T1 shows 5 / 10
 
 ## 4. Character Detail upgrade action
 
@@ -77,7 +83,7 @@ Show:
 Button state:
 - enabled iff character is owned, not max Tier, and available >= requirement;
 - disabled when insufficient;
-- no action for locked character except current recruit progress;
+- locked/unowned character has no Tier-upgrade action;
 - T3 shows MAX / no upgrade action.
 
 On successful upgrade:
@@ -116,7 +122,7 @@ Requirements:
 - existing ownership preserved;
 - recruitment cost accounted exactly once for already-owned characters;
 - Tier defaults:
-  - owned characters -> T1 unless a later authoritative save says otherwise;
+  - owned characters -> T0 unless a later authoritative save says otherwise;
   - locked characters -> no owned Tier;
 - malformed data sanitizes safely;
 - denied storage degrades safely to current-session behavior;
@@ -131,19 +137,21 @@ M4B must not depend on Chapter1-specific reward logic.
 ## 9. Engineering acceptance
 
 At minimum:
-1. locked character at 4/5 remains locked;
-2. reaching 5 recruits to T1;
-3. recruitment accounts for 5 shards exactly once;
-4. pre-M4B already-owned character migration accounts recruitment exactly once;
-5. T1 4/5 upgrade disabled;
-6. T1 5/5 upgrade enabled;
-7. T1 10/5 upgrade enabled;
-8. T1 10/5 -> T2 consumes5 -> displays5/10;
-9. T2 9/10 disabled;
-10. T2 10/10 enabled;
-11. T2 -> T3 consumes10;
-12. T3 is MAX and cannot upgrade;
-13. excess shards remain after upgrade;
+1. newly owned character starts at T0;
+2. baseline-owned pre-correction characters migrate to T0;
+3. shard-unlocked owned characters migrate to T0 and acquisition cost is accounted exactly once;
+4. T0 4/5 upgrade disabled;
+5. T0 5/5 upgrade enabled;
+6. T0 10/5 upgrade enabled;
+7. T0 10/5 -> T1 consumes5 -> displays5/10;
+8. T1 9/10 disabled;
+9. T1 10/10 enabled;
+10. T1 -> T2 consumes10;
+11. T2 14/15 disabled;
+12. T2 15/15 enabled;
+13. T2 -> T3 consumes15;
+14. T3 is MAX and cannot upgrade;
+15. excess shards remain after upgrade;
 14. repeatable Campaign rewards increase available numerator;
 15. owned/locked/Tier/shard state survives reload;
 16. Collection and Character Detail show the same authoritative state;
@@ -168,3 +176,15 @@ UPGRADE is the consistent label. Request ID + expectedTier enforce idempotency; 
 ## 12. Release evidence / next action
 
 Safe source `af56523791fc59eaecaa7657e82197bb4f003ec9`, branch `feat/m0-combat-core-20260927` / PR #1. CheckpointsA/B/C recorded in `docs/verification/M4B_TIER_UNIVERSAL_REWARDS.md`. Final relevant76/76, impacted161/161, combat93/93, build/diff/review PASS; Actions#316 /36968180269 CI330/330, Build/Pages success and public source match. Next player short farming/fraction/upgrade/reload smoke per verification document, then STOP. No PLAYER VERIFIED claim.
+
+
+## 13. Tier correction release target (2026-10-02)
+
+The currently deployed T1-base model is superseded before player acceptance.
+
+Required migration:
+- owned T1 from the just-deployed prototype becomes T0 unless there is explicit evidence of a player-performed upgrade that must be preserved;
+- because this change happened during player smoke rather than a finalized release, prefer a deterministic migration that preserves earned/spent accounting and does not grant free Tier advancement;
+- baseline-owned characters remain T0;
+- M3 shard-unlocked characters remain owned at T0 with their acquisition spend preserved;
+- no character should become T1 merely because it is owned.
