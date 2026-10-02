@@ -63,7 +63,27 @@
  .preview-details p { margin:3px 0 4px; font-size:14px; }
 }
 
-.landing-page {height:100%;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;background:#1c2b38;padding-top:max(14px,env(safe-area-inset-top));padding-bottom:max(14px,env(safe-area-inset-bottom));}
-.landing-page h1 {text-align:center;margin:0;font-size:clamp(20px,4vw,32px);}
-.landing-entries {display:flex;flex-wrap:wrap;justify-content:center;gap:16px;max-width:100%;}
-.landing-entries .campaign-button {min-width:144px;min-height:52px;}
+.landing-page {position:relative;isolation:isolate;height:100%;min-height:0;display:grid;grid-template-rows:1fr auto;gap:12px;overflow:hidden;background:#101e27;padding:calc(20px + env(safe-area-inset-top)) calc(28px + env(safe-area-inset-right)) calc(16px + env(safe-area-inset-bottom)) calc(28px + env(safe-area-inset-left));}
+.landing-page .landing-backdrop {position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at 72% 22%,#74634444,transparent 52%),linear-gradient(135deg,#132c35,#182c31 52%,#101e27);}
+.landing-page .landing-sun {position:absolute;width:clamp(140px,25vw,320px);aspect-ratio:1;right:9%;top:-12%;border-radius:50%;border:1px solid #d3b87955;background:#b29a6520;box-shadow:0 0 0 18px #c5a86c08,0 0 0 19px #c5a86c20;}
+.landing-page .landing-ridge {position:absolute;inset:35% -2% -1%;clip-path:polygon(0 70%,12% 48%,24% 65%,42% 7%,55% 44%,68% 25%,82% 54%,93% 30%,100% 44%,100% 100%,0 100%);background:#31504c66;}
+.landing-page .landing-ridge.near {inset:56% -2% -1%;clip-path:polygon(0 36%,17% 54%,30% 19%,43% 52%,59% 38%,73% 72%,87% 40%,100% 62%,100% 100%,0 100%);background:#102229;}
+.landing-page .landing-content {width:100%;max-width:1000px;min-width:0;min-height:0;margin:auto;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(180px,.8fr);align-items:center;gap:clamp(24px,6vw,80px);}
+.landing-page .landing-identity {min-width:0;border-left:2px solid #ceb27b;padding-left:clamp(14px,2.2vw,26px);}
+.landing-page .landing-eyebrow {color:#d5bd8f;font-size:clamp(9px,1.25vw,12px);font-weight:600;letter-spacing:.14em;line-height:1.5;margin:0 0 12px;}
+.landing-page h1 {max-width:560px;text-align:left;margin:0;color:#fff2da;font:650 clamp(28px,5.2vw,60px)/1.04 Georgia,serif;letter-spacing:.035em;overflow-wrap:normal;}
+.landing-page .landing-subtitle {margin:16px 0 0;color:#b7c8c5;font-size:clamp(10px,1.6vw,14px);letter-spacing:.18em;line-height:1.5;}
+.landing-page .landing-entries {display:grid;gap:12px;min-width:0;width:100%;max-width:310px;justify-self:end;}
+.landing-page .campaign-button {box-sizing:border-box;min-width:0;width:100%;min-height:52px;padding:14px 18px;font-size:clamp(15px,2vw,19px);letter-spacing:.12em;border-radius:4px;touch-action:manipulation;}
+.landing-page .landing-primary {color:#17272b;background:#ebce94;border-color:#f7deb0;box-shadow:0 5px 20px #0003;}
+.landing-page .landing-secondary {color:#e6e8df;background:#182c31dd;border-color:#82968b;}
+.landing-page .campaign-button:active {filter:brightness(.88);}
+.landing-page .campaign-button:focus-visible {outline:3px solid #fff;outline-offset:4px;}
+.landing-page .landing-footer {color:#93aaa2;font-size:10px;letter-spacing:.22em;text-align:center;}
+@media (max-height:320px) {
+ .landing-page {padding-top:calc(12px + env(safe-area-inset-top));padding-bottom:calc(10px + env(safe-area-inset-bottom));gap:8px;}
+ .landing-page h1 {font-size:clamp(26px,4.5vw,42px);}
+ .landing-page .landing-eyebrow {margin-bottom:8px;}
+ .landing-page .landing-subtitle {margin-top:10px;}
+ .landing-page .campaign-button {padding:10px 14px;min-height:48px;}
+}

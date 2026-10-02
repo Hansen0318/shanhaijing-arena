@@ -1,9 +1,10 @@
 # Project State
 
 ## Milestone
-**M4C MAIN MENU / LANDING VISUAL POLISH — READY FOR IMPLEMENTATION**
+**M4C MAIN MENU / LANDING VISUAL POLISH — IMPLEMENTATION CHECKPOINT / RELEASE CHECKS PENDING**
 
 ## Current state
+- M4C static Landing hero/title/primary-secondary entry hierarchy implemented. NewLandingRED0/4→GREEN4/4; related23/23, build/diffPASS. Current recovery detail in WORK_PROGRESS; impacted/review/deploy/public evidence pending. No optional motion or route transitions; protected state/navigation unchanged.
 - Player accepted M4B T0 progression smoke. T0 base, 5/10/15 Tier costs, shard spending/migration and Collection upgrade flow are now PLAYER VERIFIED.
 - Next bounded milestone is M4C: polish the already-existing Landing parent screen only. BATTLE→Chapter Select and COLLECTION→Collection hierarchy remains fixed. Do not change progression/combat/navigation semantics.
 - Canonical owned baseT0 implemented. T0→T1cost5,T1→T2cost10,T2→T3cost15 available shards; T3MAX, no combat bonuses.

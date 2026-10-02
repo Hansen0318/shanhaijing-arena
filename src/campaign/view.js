@@ -26,12 +26,19 @@ export class CampaignView {
   const page=document.createElement('section'); page.className='campaign-page';
   if(this.controller.screen==='landing') {
    page.classList.add('landing-page');
+   const backdrop=document.createElement('div');backdrop.className='landing-backdrop';backdrop.setAttribute('aria-hidden','true');
+   for(const layer of ['sun','ridge distant','ridge near']){const shape=document.createElement('span');shape.className=`landing-${layer}`;backdrop.append(shape);}
+   const content=document.createElement('div');content.className='landing-content';
+   const identity=document.createElement('header');identity.className='landing-identity';
+   const eyebrow=document.createElement('p');eyebrow.className='landing-eyebrow';eyebrow.textContent='CLASSIC OF MOUNTAINS AND SEAS';
    const title=document.createElement('h1');title.textContent='SHANHAIJING ARENA';
+   const subtitle=document.createElement('p');subtitle.className='landing-subtitle';subtitle.textContent='MYTHS ENTER THE ARENA';identity.append(eyebrow,title,subtitle);
    const entries=document.createElement('nav');entries.className='landing-entries';entries.setAttribute('aria-label','Game modes');
    for(const [label,open] of [['BATTLE',()=>this.controller.openBattleMenu()],['COLLECTION',()=>this.controller.openCollection()]]) {
-    const button=document.createElement('button');button.type='button';button.className='campaign-button';button.textContent=label;button.onclick=()=>{if(open())this.render();};entries.append(button);
+    const button=document.createElement('button');button.type='button';button.className=`campaign-button landing-${label==='BATTLE'?'primary':'secondary'}`;button.textContent=label;button.onclick=()=>{if(open())this.render();};entries.append(button);
    }
-   page.append(title,entries);this.root.append(page);this.onRender?.();return;
+   const footer=document.createElement('small');footer.className='landing-footer';footer.textContent='山海經 · ARENA';
+   content.append(identity,entries);page.append(backdrop,content,footer);this.root.append(page);this.onRender?.();return;
   }
   if(this.controller.screen==='collection') {
    this.collectionView ??= new CollectionView(this.controller,{onBack:()=>{if(this.controller.back())this.render();}});
