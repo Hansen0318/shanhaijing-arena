@@ -84,3 +84,111 @@ Deterministic tests must establish:
 
 ## M2 accepted-baseline polish
 BattleSession owns per-actor tactical preparation state. A tunable 1.5s window considers positive-priority enemy-targeted skills with declared preferredRange; newly beginning preparation never preempts ready prioritized abilities. Skill/target commitment and 0.25 enter / 0.06 settle tolerances stabilize repositioning. Settled actors may still Basic in range without pursuing inward. Prepared ready/valid skill feeds the existing startAbility pipeline. KO/manual override/invalid target clear preparation; current accepted manual-release handoff is 0s (historical 2s text above is superseded). No character/role IDs determine range.
+
+
+## Future tactical variation / anti-scripted behavior
+
+Player feedback: the deterministic M0/M2 prototype often produces nearly identical center-field collisions and similar timeout timing. This is acceptable as a regression-friendly engineering baseline, but formal characters should not all behave like the same straight-line bot.
+
+Future AI should remain one shared engine with **data-driven tactical profiles**, not one bespoke AI implementation per character.
+
+### Tactical state layer
+
+A living AI actor may evaluate a small set of states:
+- engage;
+- reposition;
+- pressure/chase;
+- kite;
+- retreat;
+- recover/support;
+- regroup.
+
+State changes are conditional and should be reevaluated on the existing tactical interval rather than every render frame.
+
+Examples:
+- melee attacker: close aggressively, but may approach with lateral/diagonal offset rather than the exact center line;
+- ranged attacker: seek preferred range, kite when threatened, sidestep while preparing a skill;
+- tank: bias toward threats near vulnerable allies and hold front-space;
+- support/healer: maintain rear distance; if HP or threat crosses a threshold, retreat toward safer space, heal/recover, then re-engage;
+- burst caster: reposition toward a geometry that can satisfy its high-value skill before casting.
+
+### Movement variation
+
+Do not make movement random every frame.
+
+When an actor selects a movement objective, derive a short-lived tactical destination:
+- target-relative forward/back distance;
+- lateral offset;
+- diagonal approach angle;
+- safe-space or ally-relative offset for retreat/support.
+
+Hold that destination for a bounded decision window, then reevaluate. This avoids jitter while preventing all six actors from converging on the same center line.
+
+### Controlled variability
+
+Use **seeded tactical variation** for reproducibility:
+- different battle seed/session may choose different legal approach offsets or equivalent target scores;
+- the same seed + same state remains reproducible for tests;
+- randomness only selects among tactically valid alternatives and never bypasses cooldown/range/targeting rules.
+
+Suitable low-amplitude variation:
+- lateral approach side;
+- preferred offset within a character's allowed positioning band;
+- tie-breaking between similarly scored targets;
+- short regroup/reposition timing.
+
+Do not randomize:
+- whether an invalid skill can cast;
+- damage formula;
+- cooldown completion;
+- ownership/control arbitration;
+- KO rules.
+
+### Target scoring
+
+Nearest enemy remains the M0 fallback, but future profiles may score valid targets using:
+- distance;
+- target HP%;
+- threat;
+- Type advantage;
+- whether target is attacking a vulnerable ally;
+- skill-specific opportunity;
+- healer/support priority rules.
+
+This should remain declarative/profile-driven and resolve to the same shared targeting/ability execution contracts.
+
+### Retreat / heal example
+
+A support/healer profile may declare:
+- selfRetreatHpThreshold;
+- allyHealHpThreshold;
+- preferredSupportRange;
+- dangerRadius;
+- reengageHpThreshold.
+
+Possible behavior:
+1. HP falls below retreat threshold or nearby threat is too high;
+2. choose a safer point away from enemies / nearer allied rear space;
+3. if healing ability is valid, cast through the normal Ability API;
+4. once recovered above re-engage threshold, return to support/engage state.
+
+Retreat is therefore tactical repositioning, not leaving the arena.
+
+### Character data ownership
+
+Formal Character/AI profile may eventually define:
+- aggression;
+- preferredRange band;
+- lateralVariation;
+- kite tendency;
+- retreat threshold;
+- re-engage threshold;
+- target-scoring weights;
+- ally-protection/heal thresholds;
+- skill preparation bias.
+
+The shared AI engine interprets these values. Character definitions do not contain executable AI code.
+
+### Engineering constraint
+
+Keep the current deterministic straight-forward behavior as a protected test fixture where useful. Add tactical variation as a later bounded AI-polish milestone with seeded tests so richer behavior does not destroy reproducibility.
