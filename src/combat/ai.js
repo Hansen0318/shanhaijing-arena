@@ -1,3 +1,4 @@
+import { resolveAbilityTarget, resolveEffectTargets } from './effectTargeting.js';
 import { chooseSoftTarget } from './targeting.js';
 import { canCharacterAct } from './character.js';
 import { canStartAbility } from './ability.js';
@@ -121,6 +122,7 @@ function preparedIntent(actor, target, definitions, state, tuning) {
 export function decideAIIntent({
   actor,
   enemies,
+  allies = [actor],
   currentTarget = null,
   abilityDefinitions,
   nowMs,
@@ -137,6 +139,22 @@ export function decideAIIntent({
     return { kind: 'idle', reason: 'player_override', targetId: targetId(currentTarget) };
   }
 
+  // Support conditions use ally context without replacing retained enemy targeting.
+  const support=NON_BASIC_ORDER.map(category=>readyCandidate(actor,category,abilityDefinitions))
+    .filter(c=>c && priorityOf(c.definition)>0 && ['lowest_hp_ally','team_ally','self'].includes(c.definition.targetingRule))
+    .sort((a,b)=>priorityOf(b.definition)-priorityOf(a.definition));
+  for(const c of support) {
+    const context={allies,enemies,enemyTarget:null};
+    const target=resolveAbilityTarget(actor,c.definition,context);
+    const targets=resolveEffectTargets(actor,target,c.definition,context);
+    if(c.definition.effect.kind==='heal' && targets.filter(a=>a.hp/a.maxHp<=c.definition.ai.hpThreshold).length<(c.definition.ai.minTargets??1))continue;
+    if(c.definition.effect.kind==='mitigation' && !enemies.some(e=>canCharacterAct(e)&&distance(actor,e)<=c.definition.range))continue;
+    if(canStartAbility({caster:actor,slot:c.slot,definition:c.definition,target})) {
+      clearPreparation(preparationState);
+      return {kind:'ability',category:c.category,definitionId:c.definition.id,targetId:targetId(target),pursue:false};
+    }
+  }
+
   const committedTarget = enemies.find(enemy => targetId(enemy) === preparationState?.targetId && canCharacterAct(enemy));
   const target = committedTarget ?? chooseSoftTarget(actor, enemies, currentTarget);
   if (!target) {
@@ -149,10 +167,11 @@ export function decideAIIntent({
 
   const prioritized = NON_BASIC_ORDER
     .map((category) => readyCandidate(actor, category, abilityDefinitions))
-    .filter((candidate) => candidate && priorityOf(candidate.definition) > 0)
+    .filter((candidate) => candidate && priorityOf(candidate.definition) > 0 && candidate.definition.targetingRule==='enemy')
     .sort((a, b) => priorityOf(b.definition) - priorityOf(a.definition));
 
   for (const candidate of prioritized) {
+    if(candidate.definition.effect.areaRadius!=null && resolveEffectTargets(actor,target,candidate.definition,{allies,enemies}).length<(candidate.definition.ai.minTargets??1))continue;
     const spacing = spacingMove(candidate, actor, target);
     if (spacing) return spacing;
 

@@ -61,3 +61,14 @@ test('orientation and Exit modal freeze real scene countdown, battle, cooldown a
  b.continueExit();assert.equal(s.time.paused,false);assert.equal(s.tweens.scale,1);
  s.update(0,100);assert.equal(s.session.elapsedSeconds,.1);
 });
+test('formal mitigation expiry and pending multi-hit freeze in actual paused scene; fresh Retry clears both',async()=>{
+ const {createStageBattleSession}=await import('../src/campaign/battleFactory.js');const {findStage}=await import('../src/campaign/data.js');
+ const config={...findStage('1-1'),selectedTeam:['P1','P2','P3'],enemyLineup:['P1','P2','P3']};
+ const fresh=()=>createStageBattleSession(config,{rng:()=>.99});const s=round();s.session=fresh();
+ s.session.enemies.forEach(a=>{a.x=1;a.y=0;});s.session.allies.forEach(a=>{a.x=0;a.y=0;});
+ s.session.usePlayerAbility('a2','special');s.session.usePlayerAbility('a1','awakening');
+ const remaining=s.session.pendingHits.length;s.paused=true;
+ for(let i=0;i<40;i++)s.update(0,250);
+ assert.equal(s.session.elapsedSeconds,0);assert.equal(s.session.statuses.damageMultiplier('a2',0),.75);assert.equal(s.session.pendingHits.length,remaining);
+ s.session=fresh();assert.equal(s.session.pendingHits.length,0);assert.equal(s.session.statuses.mitigation.size,0);
+});

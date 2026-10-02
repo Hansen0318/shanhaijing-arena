@@ -16,10 +16,10 @@ export class DamageNumbers {
     this.offsets = new Map();
   }
 
-  floatText(x, y, value, size, duration, critical) {
+  floatText(x, y, value, size, duration, critical, healing=false) {
     const text = this.scene.add.text(x, y, value, {
       fontFamily:'sans-serif', fontSize:`${size}px`, fontStyle:'bold',
-      color:critical ? '#ffd16a' : '#fff6cd',
+      color:healing ? '#89f0a8' : critical ? '#ffd16a' : '#fff6cd',
       stroke:critical ? '#3a1808' : '#18212b', strokeThickness:critical ? 7 : 5,
     }).setOrigin(.5).setDepth(25);
     const tween = this.scene.tweens.add({ targets:text, alpha:0, delay:120, duration,
@@ -41,7 +41,9 @@ export class DamageNumbers {
     }
   }
 
-  render(events) {
+  renderHeal(events) { this.render(events,true); }
+
+  render(events,healing=false) {
     for (const event of events) {
       if (!Number.isFinite(event.amount) || event.amount <= 0 || !event.position
         || !Number.isFinite(event.position.x) || !Number.isFinite(event.position.y)) continue;
@@ -52,10 +54,10 @@ export class DamageNumbers {
       const y = point.y - 33 - (index%3)*10;
       const style = Object.hasOwn(CATEGORY_STYLES, event.category)
         ? CATEGORY_STYLES[event.category] : FALLBACK_STYLE;
-      const critical = event.critical === true;
+      const critical = !healing && event.critical === true;
       const size = critical ? Math.round(style.size*1.12) : style.size;
       const duration = style.duration + (critical ? 80 : 0);
-      this.floatText(x, y, String(Math.round(event.amount)), size, duration, critical);
+      this.floatText(x, y, `${healing?'+':''}${Math.round(event.amount)}`, size, duration, critical, healing);
       if (critical) {
         const labelSize = size + 12;
         this.floatText(x, y-(size+labelSize)/2-6, 'CRITICAL!', labelSize, duration, true);

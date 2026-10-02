@@ -7,6 +7,7 @@ import {
   tickAbilityCooldown,
   isTargetInRange,
 } from './ability.js';
+import { applyAbilityMovement } from './abilityMovement.js';
 import { BattleStatuses } from './statuses.js';
 import { resolveAbilityTarget, resolveEffectTargets } from './effectTargeting.js';
 import { canCharacterAct } from './character.js';
@@ -115,6 +116,7 @@ export class BattleSession {
     this.castEvents = [];
     this.damageEvents = [];
     this.healEvents = [];
+    this.pendingHits = [];
     this.statuses = new BattleStatuses();
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
@@ -242,6 +244,7 @@ export class BattleSession {
     let applied=false;
     finishAbility({caster:actor,slot,definition,applyEffect:()=>{
       if(!canHit)return;
+      applyAbilityMovement(actor,target,definition.effect.movement,this.arenaBounds);
       for(const victim of resolveEffectTargets(actor,target,definition,context)) {
         if(definition.effect.kind==='heal') {
           const before=victim.hp;victim.heal(victim.maxHp*definition.effect.maxHpFraction);
@@ -250,7 +253,10 @@ export class BattleSession {
         } else if(definition.effect.kind==='mitigation') {
           this.statuses.applyMitigation(victim.instanceId,definition.effect.reduction,definition.effect.duration,this.elapsedSeconds);applied=true;
         } else if(definition.effect.coefficient>0) {
-          applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.characterDefinitions[victim.definitionId],definition,category,source)>0||applied;
+          const hits=definition.effect.hits ?? 1;
+          const hitDefinition=hits===1?definition:{...definition,effect:{...definition.effect,coefficient:definition.effect.coefficient/hits}};
+          applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.characterDefinitions[victim.definitionId],hitDefinition,category,source)>0||applied;
+          for(let hit=1;hit<hits;hit++)this.pendingHits.push({actorId:actor.instanceId,targetId:victim.instanceId,definition:hitDefinition,category,source,due:this.elapsedSeconds+hit*definition.effect.hitInterval});
         }
       }
     }});
@@ -262,7 +268,7 @@ export class BattleSession {
 
   step(deltaSeconds) {
     positiveFinite(deltaSeconds, 'deltaSeconds');
-    if (this.result() !== 'running') return this.snapshot();
+    if (this.result() !== 'running') { this.pendingHits=[]; return this.snapshot(); }
 
     for (const actor of this.actors) {
       for (const category of ACTIVE_CATEGORIES) {
@@ -282,6 +288,7 @@ export class BattleSession {
       const intent = decideAIIntent({
         actor,
         enemies: opponents,
+        allies: this.teamContext(actor).allies,
         currentTarget,
         abilityDefinitions: this.abilityDefinitions,
         nowMs,
@@ -349,6 +356,14 @@ export class BattleSession {
 
     this.elapsedSeconds = Math.min(this.maxSeconds, this.elapsedSeconds + deltaSeconds);
     this.statuses.expire(this.elapsedSeconds);
+    const remaining=[];
+    for(const hit of this.pendingHits) {
+      const actor=this.actorById(hit.actorId),target=this.actorById(hit.targetId);
+      if(!actor||!target||!canCharacterAct(actor)||!canCharacterAct(target))continue;
+      if(hit.due>this.elapsedSeconds+1e-9){remaining.push(hit);continue;}
+      if(isTargetInRange(actor,target,hit.definition.range))this.applyResolvedDamage(actor,target,this.characterDefinitions[actor.definitionId],this.characterDefinitions[target.definitionId],hit.definition,hit.category,hit.source);
+    }
+    this.pendingHits=this.result()==='running'?remaining:[];
     return this.snapshot();
   }
 }

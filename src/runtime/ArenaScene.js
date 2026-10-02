@@ -188,6 +188,7 @@ export class ArenaScene extends Phaser.Scene {
 
   renderCastEvents() {
     this.damageNumbers?.render(this.session.drainDamageEvents());
+    this.damageNumbers?.renderHeal(this.session.drainHealEvents());
     for (const event of this.session.drainCastEvents()) {
       const visual = castVisual(event, arenaToStage);
       const effect = this.add.graphics().setPosition(visual.origin.x, visual.origin.y).setDepth(15);
@@ -560,6 +561,9 @@ export class ArenaScene extends Phaser.Scene {
       const view = this.actorViews.get(actor.instanceId);
       const position = arenaToStage(actor);
       view.marker.setPosition(position.x, position.y).setAlpha(actor.hp > 0 ? 1 : 0.35);
+      const identity=battlePortrait(this.session,actor.instanceId);
+      const guarded=this.session.statuses.damageMultiplier(actor.instanceId,this.session.elapsedSeconds)<1;
+      view.label.setText?.(`${identity.label}${guarded&&actor.hp>0?' ◈':''}`);
       view.label.setPosition(position.x, position.y - 42).setAlpha(actor.hp > 0 ? 1 : 0.5);
     }
     this.ensureLivingSelection(frame);
