@@ -6,7 +6,7 @@ export function collectionEntries(acquisition,{filter='all',catalog=rosterCatalo
  return Object.values(catalog).filter(d=>filter==='all'||d.type===filter).map(definition=>{
   const shards=acquisition.shardsByCharacterId[definition.id] ?? 0, isOwned=owned.has(definition.id);
   const progress=characterProgress(acquisition,definition.id);
-  return {...progress,definition,owned:isOwned,shards,tier:isOwned?(progress.tier ?? 'T1'):null,shardLabel:progress.progressLabel};
+  return {...progress,definition,owned:isOwned,shards,tier:isOwned?(progress.tier ?? 'T0'):null,shardLabel:progress.progressLabel};
  });
 }
 const title=value=>value.charAt(0).toUpperCase()+value.slice(1);
