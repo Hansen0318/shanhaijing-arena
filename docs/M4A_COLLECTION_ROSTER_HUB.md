@@ -58,7 +58,7 @@ Each character card should expose:
 - character display name;
 - Type indicator;
 - owned vs locked visual state;
-- current shard count;
+- shard progress as available / next requirement rather than a bare count;
 - unlock progress if locked;
 - Tier display only when authoritative Tier state exists; do not invent Tier progress before M4B data is defined.
 
@@ -72,17 +72,17 @@ Locked:
 
 Example conceptual cards:
 
-Owned:
+Owned T1:
 [portrait]
 Xingtian
 Power
-Shards 8
+4 / 5
 
 Locked:
 [dim portrait]
 Character Name
 Speed
-3 / 5 shards
+3 / 5
 
 Do not hide locked characters from the collection unless future content explicitly marks them secret.
 
@@ -163,10 +163,12 @@ Future optional filters such as Owned/Locked can be added later; they are not re
 M4A is the canonical player-facing place to inspect accumulated shard inventory.
 
 For every catalog character:
-- show current persisted shard count;
-- owned characters continue to show shards after unlock;
-- locked characters show progress toward the M3 unlock threshold (currently 5);
-- M4A does not spend shards.
+- show shard progress as available / next requirement, not a bare "Shards N" label;
+- locked character uses recruit threshold 5;
+- T1 uses next requirement 5;
+- T2 uses next requirement 10;
+- T3 has no next upgrade requirement;
+- exact spending/action belongs to M4B, but M4A presentation must be compatible with this progression model.
 
 This closes the information gap created by repeatable Campaign farming.
 
@@ -289,3 +291,17 @@ This is a bounded M4A presentation/navigation correction. Do not start Tier spen
 ## 17. Correction release evidence (2026-10-02)
 
 Safe deployed source `5ec1c345ad6cd14cbec7777a9c89ce434329db03`, active branch `feat/m0-combat-core-20260927` / PR #1. Minimal static sibling Landing now implemented;84px cards/44px portraits;13px detail body/96px portrait and fixed BACK with scroll body. No M3/acquisition/team/combat changes. Targeted20/20, impacted137/137, build/diff/review PASS; Actions#304 /36947859653 configured CI306/306, Build/Pages success. Public dimensions/source/routes verified. Full evidence and exact pending player smoke: `docs/verification/M4A_COLLECTION.md`. STOP before M4B/Tier/formal landing art/animation.
+
+
+## 17. Player correction — shard fraction presentation (2026-10-02)
+
+Collection cards must not present a standalone shard number such as `Shards 4`.
+
+Use progression fraction semantics:
+- locked: `4 / 5` toward recruit/unlock;
+- owned T1: `4 / 5`, `5 / 5`, or `10 / 5` toward T2;
+- owned T2: e.g. `7 / 10` toward T3.
+
+The numerator may exceed the requirement until the player explicitly upgrades. Excess carries forward after spending.
+
+Character Detail will host the upgrade/synthesis action in M4B. M4A must not invent a second shard inventory.
