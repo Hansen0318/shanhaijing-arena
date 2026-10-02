@@ -1,9 +1,11 @@
 # Project State
 
 ## Milestone
-**M4B T0 BASE TIER CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M4C MAIN MENU / LANDING VISUAL POLISH — READY FOR IMPLEMENTATION**
 
 ## Current state
+- Player accepted M4B T0 progression smoke. T0 base, 5/10/15 Tier costs, shard spending/migration and Collection upgrade flow are now PLAYER VERIFIED.
+- Next bounded milestone is M4C: polish the already-existing Landing parent screen only. BATTLE→Chapter Select and COLLECTION→Collection hierarchy remains fixed. Do not change progression/combat/navigation semantics.
 - Canonical owned baseT0 implemented. T0→T1cost5,T1→T2cost10,T2→T3cost15 available shards; T3MAX, no combat bonuses.
 - Schema3 migration keeps existing acquisition key/lifetime earned/receipts/spent. v1/v2 old owned Tier resetsT0; valid recorded/implied v2 consumed spending remains consumed (no refund/free promotion). BaselineP1/2/3 recruit exempt; M3 shard-unlocked IDs recruitment5 once. No reload double-charge; malformed/denied persistence safe. Campaign/team unchanged.
 - Collection/Detail authoritative T0/Tier/fraction/MAX, immediate UPGRADE save/refresh, expectedTier/requestID/500ms gesture guard preserved. Main Landing, compact layout, filters, routevisibility, savedlineup unchanged.
