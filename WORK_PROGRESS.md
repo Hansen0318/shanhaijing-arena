@@ -1,12 +1,16 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- **M4A COLLECTION / NAVIGATION CORRECTION — RELEASE CHECKS IN PROGRESS.** Player's first M4A smoke requested compact cards, compact detail and sibling Landing modes; M3 remains PLAYER ACCEPTED.
-- Branch `feat/m0-combat-core-20260927` / PR #1. Recovery base `f9ffd844b8fa116b1c9d3e82439ce42dd0899bbc`; latest safe checkpoint is the remote commit containing this pointer.
-- Implemented: normal app boot Landing with BATTLE/COLLECTION; Chapter Select/Collection BACK to Landing; no nested Collection entry. CampaignController's standalone constructor remains its Campaign entry (chapters); app explicitly opens Landing. Explicit reset retains its fresh Chapter1 path.
-- Collection grid84px/card portrait44px; progression labels retained; detail13px body/96px portrait with scroll body and fixed header. Optional catalog/ability source injection enables bounded many-card/long-description fixtures; production defaults stay authoritative.
-- Targeted RED13/20→GREEN20/20. Impacted137/137, build/diff PASS. UI doesn't write saves or change M3/Team Select/combat. Public source/build/Actions/review pending.
-- Next exact action: review checkpoint, resolve findings, await Actions/Pages and public source/route verification, then sync final evidence/player checklist. STOP before M4B/Tier/formal landing art/animation.
+- **M4A COLLECTION / NAVIGATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING.** First M4A was not player accepted; this bounded correction is deployed. M3 remains PLAYER ACCEPTED and protected.
+- Active branch `feat/m0-combat-core-20260927` / PR #1 open. Safe deployed implementation `5ec1c345ad6cd14cbec7777a9c89ce434329db03`; recovery base `f9ffd844b8fa116b1c9d3e82439ce42dd0899bbc`. Latest closure commit is documentation only; use remote latest.
+- Normal app opens minimal static Landing with BATTLE→Chapter Select and COLLECTION→Collection siblings. Both top-level BACK paths return Landing; no Collection entry inside Chapter Select. Controller standalone Campaign entry remains chapters; app explicitly opens Landing. Existing explicit reset still opens fresh Chapter1.
+- Collection fixed84px cards/44px square portrait, readable name/Type/shards/progress/status and retained locked contrast. Detail13px body/96px portrait, independent vertical body scroll, fixed BACK. Existing authoritative catalog/acquisition/team remain untouched; filters/detail browsing make no save writes.
+- Actual targeted RED13/20→GREEN20/20; impacted137/137; build/diff PASS. Added60-character and long lore/ability description fixtures; review independently20/20, no Important/Critical defects.
+- [Actions #304 /36947859653](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36947859653): configured CI306/306, Build job110653922030 and Pages job110654009361 success. Public/local/CI JS `index-B9K7rpSX.js` and CSS `index-ntQrNjSJ.css` match.
+- Public actual measurements84/44px cards/portraits,13px detail body/96px portrait; no horizontal overflow. Landing boot/reload, Battle/Collection sibling entry/back, no nested entry, Power filter/detail/close/filter preservation, #game hidden checked. pageshow/visualViewport/battle visibility and save retention covered by executable app integration tests. No unrelated combat browser replay.
+- Limits: current definitions lack lore/descriptions and omit optional sections; synthetic long content/many-card DOM+CSS contracts pass, but real iPhone touch/readability/overflow comfort remain player smoke.
+- Exact next action: normal URL Landing→BATTLE→Chapter Select→BACK; Landing→COLLECTION, inspect compact cards/all filters/shards/owned-locked readability; single-tap detail→BACK retains filter/position; Collection BACK→Landing; reload preserves progress/team/shards. Check supported iPhone landscape safe areas/no horizontal overflow. Evidence `docs/verification/M4A_COLLECTION.md`.
+- **STOP.** Wait for player acceptance. No M4B/Tier/spending/formal Landing art/animation.
 
 ## Previous universal farming checkpoint (historical)
 - **M3 PREVIEW PRESENTATION CORRECTION — RELEASE CHECKS IN PROGRESS**. Branch feat/m0-combat-core-20260927 / PR#1 retained. Recoverybase0636172132c2719f68d5a154039a1f34e30aac7e. Preview labels FIRST CLEAR/CLAIMED/REPEATABLE removed; available/repeatable rows normal contrast, claimed non-repeatable muted+50%opacity. Existing reward/acquisition/persistence/config/TeamSelect/combat unchanged.

@@ -1,3 +1,41 @@
+# M4A Collection / Navigation Correction verification
+
+**ENGINEERING PASS / PLAYER SMOKE PENDING** (2026-10-02).
+Active branch `feat/m0-combat-core-20260927` / PR #1. Safe deployed source `5ec1c345ad6cd14cbec7777a9c89ce434329db03`; recovery base `f9ffd844b8fa116b1c9d3e82439ce42dd0899bbc`. Later closure commit is docs-only.
+
+## Correction scope
+
+- Normal app boot/reload opens a static Landing with BATTLE and COLLECTION. Chapter Select/Collection are siblings; both top-level BACK paths return Landing. Chapter Select no longer contains COLLECTION. Existing explicit dev reset still lands fresh Chapter1. CampaignController standalone entry stays chapters for existing isolated Campaign contracts; main explicitly enters Landing.
+- Collection cards fixed84px wide, portrait44px square (Team Select bench64px card/34px portrait). No viewport stretching. Grid naturally wraps and scrolls vertically, avoids horizontal overflow, and retains name/Type/ownership/shards/progress. Locked portraits remain dim/identifiable; progression labels stay readable.
+- Detail body13px/line-height1.45, headings14px, character title18px, portrait96px. Independent vertical scroll body leaves BACK in nonshrinking header. Optional absent lore/descriptions omitted. Catalog/ability source options allow synthetic fixtures without changing production authoritative defaults.
+- No acquisition/model/persistence/team/combat edits, second progression state, spending/Tier/upgrade action, formal art/animation or elaborate Landing features.
+
+## Executed evidence
+
+1. Targeted `node --test tests/collection*.test.js tests/appRouteReset.test.js`: RED13/20, then GREEN **20/20**. The existing app battle test now explicitly enters BATTLE before Chapter Select, following new navigation.
+2. Impacted `node --test tests/collection*.test.js tests/campaign*.test.js tests/acquisition*.test.js tests/rewardPresentation.test.js tests/universalRewards.test.js tests/team*.test.js tests/rosterTeam.test.js tests/routeOwnership.test.js tests/appRouteReset.test.js tests/progressReset.test.js tests/viewportSync.test.js`: **137/137 PASS**, zero failures. Covers M3 transactions/replay/idempotency/unlock/persistence/reset, Campaign progression, Team Select, route owner/viewport lifecycle.
+3. New fixtures render60 catalog characters, each filter subset, long configured lore and ability descriptions; assert BACK outside scroll body and no acquisition mutation. Layout contracts constrain compact widths/portrait/body typography, vertical scroll and horizontal overflow. These are DOM/CSS contract tests, not an iPhone overflow acceptance claim.
+4. `npm run build` / `git diff --check` PASS. Configured [Actions #304 /36947859653](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36947859653) full CI **306/306 PASS**, zero failures; Build job110653922030 and Pages deploy110654009361 success. No extra local full-suite or unrelated combat browser smoke.
+5. Code reviewer independently targeted20/20 and reported no Important/Critical issues for navigation/boot/reset, compact layout, long-body structure and state preservation.
+6. Public/local/CI source match JS `index-B9K7rpSX.js`, CSS `index-ntQrNjSJ.css`. Public normal URL opened Landing; BATTLE→Chapter Select with zero COLLECTION buttons→BACK Landing; COLLECTION→all five cards; actual card84px/portrait44px; Power→single-tap P4 detail with13px body/96px portrait/scroll-auto/nonshrinking header; close retains Power; Collection BACK Landing; reload Landing. Grid/detail no observed horizontal overflow and #game hidden across these UI routes.
+7. Executable actual-main integration verifies Landing boot, both sibling routes, pageshow/visualViewport resize/scroll hiding stale arena, battle visible/exit hidden, ordinary URL save retention and explicit reset behavior. Existing reload/progression projection contracts pass.
+
+## Pending player smoke / exact next action
+
+Use the normal deployed URL with existing save; no reset required:
+1. Landing BATTLE→Chapter Select→BACK Landing. Confirm no Collection entry nested inside Chapter Select.
+2. Landing COLLECTION: compact cards readable, more roster capacity; ALL/Power/Speed/Blast correct; owned bright/locked portraits dim; name/Type/shards/progress retained.
+3. Single tap an owned and locked card: compact detail correct, enough information space, BACK always accessible; close restores filter/reasonable position. Collection BACK returns Landing.
+4. On supported iPhone landscape, check touch targets/safe areas/no horizontal overflow; reload and inspect unchanged shards/ownership/saved team.
+
+Current catalog has only five characters and no lore/descriptions; actual long-copy/many-row touch comfort cannot be claimed from the public content. Synthetic contracts establish rendering/layout structure; device presentation remains pending. Existing Phaser bundle-size warning persists, build succeeds.
+
+**STOP.** Wait for M4A correction acceptance. No M4B/Tier/spending/formal Landing art/animation.
+
+---
+
+## Historical first M4A release (not player accepted; superseded)
+
 # M4A Collection / Roster Hub verification
 
 Status: **ENGINEERING PASS / PLAYER SMOKE PENDING** (2026-10-02).

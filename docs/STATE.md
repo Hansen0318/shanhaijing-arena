@@ -1,14 +1,16 @@
 # Project State
 
 ## Milestone
-**M4A COLLECTION / NAVIGATION CORRECTION — RELEASE CHECKS IN PROGRESS**
+**M4A COLLECTION / NAVIGATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- Player first M4A smoke requested compact cards/detail and parallel modes. Implemented minimal static Landing BATTLE/COLLECTION; sibling back paths; no nested Collection entry. No formal landing art/animation or M4B.
-- Branch `feat/m0-combat-core-20260927` / PR #1; recovery base `f9ffd844b8fa116b1c9d3e82439ce42dd0899bbc`. WORK_PROGRESS current pointer records safe checkpoint.
-- Compact84px cards/44px portrait;13px detail body/96px portrait; scroll body independent from fixed BACK. Existing acquisition/shards/team untouched.
-- RED13/20 → targeted20/20, impacted137/137; build/diff PASS. Review/Actions/Pages/public verification remain.
-- Next exact action: finish review and release verification, then final docs and short player smoke. M3 PLAYER ACCEPTED; STOP at M4A correction.
+- First M4A player smoke requested smaller cards/detail and sibling navigation; bounded correction now deployed, awaiting new player smoke. M3 PLAYER ACCEPTED remains protected.
+- Branch `feat/m0-combat-core-20260927` / PR #1 open; deployed safe checkpoint `5ec1c345ad6cd14cbec7777a9c89ce434329db03`; recovery base `f9ffd844b8fa116b1c9d3e82439ce42dd0899bbc`. Later closure docs-only; WORK_PROGRESS pointer authoritative.
+- Normal boot/reload opens minimal static Landing BATTLE/COLLECTION. Chapter Select and Collection are siblings and both BACK to Landing. Explicit reset retains fresh Chapter1 behavior; no save wipes during ordinary navigation.
+- Compact84px cards/44px square portraits retain progression info and locked contrast. Detail13px body/96px portrait, long-content vertical scroll under fixed BACK; optional missing metadata omitted. Definitions/acquisition/team/combat unchanged.
+- Targeted20/20, impacted137/137, build/diff/review PASS. Actions#304 /36947859653 configured CI306/306 and Build/Pages success. Local/CI/public `index-B9K7rpSX.js` / `index-ntQrNjSJ.css` match. Bounded public sibling routes, reload, compact dimensions/detail/filter/back/#game hidden/no horizontal overflow confirmed.
+- Synthetic60-character/long-copy DOM+CSS contracts pass; actual iPhone readability/touch/scroll/safe areas remain pending. No PLAYER VERIFIED claim.
+- Exact next action: short player checklist `docs/verification/M4A_COLLECTION.md`. STOP; no M4B/Tier/spending/formal Landing art/animation.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

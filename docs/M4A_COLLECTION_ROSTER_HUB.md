@@ -1,7 +1,7 @@
 # M4A — Collection / Roster Hub
 
 ## Status
-**ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M4A COLLECTION / NAVIGATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 M3 reward/shard/unlock and Preview presentation are player accepted. M4A is the next bounded milestone. It adds a dedicated read-only Collection/Roster surface that exposes the progression state already created by M3. It must not start Tier spending/upgrade mechanics; those belong to M4B.
 
@@ -267,7 +267,7 @@ After engineering PASS/deploy:
 - stop;
 - do not begin M4B until player accepts M4A and Tier naming/order is explicitly confirmed.
 
-## 15. Release evidence (2026-10-02)
+## 15. First-release evidence (historical; superseded by correction below)
 
 Implemented on active branch `feat/m0-combat-core-20260927` / PR #1. Safe deployed source `ae7063c10c90ab43c8c6f6c5c9d88ed3be693ec6`. Targeted14/14, impacted133/133, build/diff/review PASS; Actions#299 /36946318660 CI302/302, Build/Pages success. Public source assets match. Verification and exact pending player checklist: `docs/verification/M4A_COLLECTION.md`.
 
@@ -285,3 +285,7 @@ Required corrections:
 4. Implement only a minimal static landing shell now with BATTLE and COLLECTION. Formal promotional animation/art remains later M4C polish.
 
 This is a bounded M4A presentation/navigation correction. Do not start Tier spending, Level, formal animation or M4B mechanics.
+
+## 17. Correction release evidence (2026-10-02)
+
+Safe deployed source `5ec1c345ad6cd14cbec7777a9c89ce434329db03`, active branch `feat/m0-combat-core-20260927` / PR #1. Minimal static sibling Landing now implemented;84px cards/44px portraits;13px detail body/96px portrait and fixed BACK with scroll body. No M3/acquisition/team/combat changes. Targeted20/20, impacted137/137, build/diff/review PASS; Actions#304 /36947859653 configured CI306/306, Build/Pages success. Public dimensions/source/routes verified. Full evidence and exact pending player smoke: `docs/verification/M4A_COLLECTION.md`. STOP before M4B/Tier/formal landing art/animation.
