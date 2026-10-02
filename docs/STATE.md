@@ -1,9 +1,11 @@
 # Project State
 
 ## Milestone
-**M4C MAIN MENU / LANDING VISUAL POLISH — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M5A FORMAL CONTENT DEFINITION — CHAT-FIRST / DESIGN PENDING**
 
 ## Current state
+- Player accepted M4C Landing smoke. Main menu visual/navigation baseline is now PLAYER VERIFIED.
+- Next phase is M5A formal content definition. This is intentionally chat-first: lock Chapter1 character/stage/reward/ability/AI-profile content before Work replaces placeholder data or adds formal assets.
 - Static full-screen mountain/sun Landing, title treatment, gold primary BATTLE and outlined secondary COLLECTION. Existing navigation hierarchy and route owner retained; no motion/transition or new modes.
 - Product changes limited to Landing markup in `src/campaign/view.js` and Landing-scoped CSS in `src/campaign/style.css`. No combat, progression, accounting, content, controller or persistence edits.
 - Active branch `feat/m0-combat-core-20260927` / PR#1; safe deployed source `0a17954f6766ff79c68e825e942e6fb6a995bb06`. WORK_PROGRESS CURRENT HANDOFF POINTER is the recovery entry.
