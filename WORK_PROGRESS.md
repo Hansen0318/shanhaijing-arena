@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M5A STAT / COOLDOWN / TIER MECHANIC DRAFT READY.** Chapter1 content draft now includes distinct T0 HP/ATK/DEF/move/attack-speed baselines, per-character H/S/A cooldown directions, relative coefficient/heal targets, and T1/T2/T3 mechanic identities for all five approved characters. It also records shared combat primitives M5B may need (heal/ally-target/AoE/mitigation/control/status) and forbids one-off character engines. Await player content approval before Work integration.
 - **M5A FORMAL CONTENT — CHARACTER DIRECTION APPROVED / DETAIL DRAFT READY.** Player approved continuing with initial 鹿蜀/猼訑/赤鱬 and unlock 九尾狐/狌狌 direction. `docs/M5A_CHAPTER1_CONTENT_DRAFT.md` now contains named Basic/Heavy/Special/Awakening/Passive identities, range/AI-profile intent, formal 1-1..1-5 lineups, and a concrete firstClear/repeatable reward draft. Await player approval before M5B runtime integration.
 - **M4C MAIN MENU / LANDING VISUAL POLISH — PASS / PLAYER VERIFIED.** Player completed the deployed Landing smoke and reported it OK. Preserve BATTLE/COLLECTION sibling navigation and current route behavior as baseline.
 - **NEXT PHASE: M5A FORMAL CONTENT DEFINITION — CHAT-FIRST.** Before more Work implementation, define Chapter1 formal content: real character identities, Type/Role, ability concepts/ranges/AI tendencies, stage enemy lineups, firstClear/repeatable rewards, finale identity, and required art/animation asset slots. Do not replace placeholders or invent balance until this content sheet is approved.
