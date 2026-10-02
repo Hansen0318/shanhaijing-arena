@@ -20,12 +20,12 @@ test('all Chapter1 stages configure first-clear multi items and a replay subset;
 test('Chapter1 unlock path retains shards, owned inventory, replay farming and reload ownership',()=>{
  const s=storage(),c=new CampaignController(options(s));
  let r=win(c,'1-1');assert.equal(r.shardCounts.P4,3);assert.equal(r.grantedItems.length,2);assert.equal(c.finishBattle('1-1','victory'),false);
- r=win(c,'1-1');assert.equal(r.shardCounts.P4,3);assert.equal(r.shardCounts.P2,3);assert.equal(r.grantedItems[0].characterId,'P2');
+ r=win(c,'1-1');assert.equal(r.shardCounts.P4,3);assert.equal(r.shardCounts.P1,3);assert.equal(r.grantedItems[0].characterId,'P1');
  r=win(c,'1-2');assert.equal(r.shardCounts.P4,5);assert.deepEqual(r.unlockedCharacterIds,['P4']);
  c.exitBattle();c.openTeamSelect();assert.ok(c.teamSelection.available.includes('P4'));c.teamSelection.remove(0);assert.equal(c.teamSelection.toggle('P4'),true);assert.equal(c.teamSelection.canBattle,true);c.back();
  assert.equal(win(c,'1-3').shardCounts.P5,2);assert.equal(win(c,'1-4').shardCounts.P5,4);r=win(c,'1-5');assert.equal(r.shardCounts.P5,7);assert.deepEqual(r.unlockedCharacterIds,['P5']);
  assert.equal(win(c,'1-5').shardCounts.P5,9);assert.equal(win(c,'1-4').shardCounts.P5,10);
- const reload=new CampaignController(options(s));assert.deepEqual(reload.ownership.characterIds,['P1','P2','P3','P4','P5']);assert.equal(reload.acquisition.shardsByCharacterId.P4,5);assert.equal(reload.acquisition.shardsByCharacterId.P5,10);assert.equal(reload.acquisition.shardsByCharacterId.P2,5);assert.equal(reload.progress.clearedStages.length,5);
+ const reload=new CampaignController(options(s));assert.deepEqual(reload.ownership.characterIds,['P1','P2','P3','P4','P5']);assert.equal(reload.acquisition.shardsByCharacterId.P4,5);assert.equal(reload.acquisition.shardsByCharacterId.P5,10);assert.equal(reload.acquisition.shardsByCharacterId.P1,5);assert.equal(reload.progress.clearedStages.length,5);
 });
 for(const outcome of ['defeat','draw'])test(`${outcome} result, Retry start, and unfinished Exit never grant`,()=>{
  const c=new CampaignController();launch(c,'1-1');const before=structuredClone(c.acquisition);c.finishBattle('1-1',outcome);assert.deepEqual(c.rewardResult.grantedItems,[]);assert.deepEqual(c.acquisition,before);assert.deepEqual(c.progress.clearedStages,[]);

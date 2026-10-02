@@ -1,11 +1,11 @@
-// M1 placeholders only. UI and unlock order consume this model, never chapter numbers.
+// Chapter1 formal T0 data; Chapter2–6 remain engineering placeholders.
 // Replaceable deterministic engineering content. Every stage uses the same reward schema.
 const chapterOneRewards=[
- [['P4',3,'firstClear'],['P2',2,'firstClear'],['P2',1,'repeatable']],
- [['P4',2,'firstClear'],['P1',2,'firstClear'],['P1',1,'repeatable']],
+ [['P4',3,'firstClear'],['P1',2,'firstClear'],['P1',1,'repeatable']],
+ [['P4',2,'firstClear'],['P2',2,'firstClear'],['P2',1,'repeatable']],
  [['P5',2,'firstClear'],['P3',2,'firstClear'],['P3',1,'repeatable']],
- [['P5',2,'firstClear'],['P2',2,'firstClear'],['P5',1,'repeatable']],
- [['P5',3,'firstClear'],['P1',2,'firstClear'],['P5',2,'repeatable']],
+ [['P5',2,'firstClear'],['P1',2,'firstClear'],['P5',1,'repeatable']],
+ [['P5',3,'firstClear'],['P2',2,'firstClear'],['P5',2,'repeatable']],
 ].map(rows=>rows.map(([characterId,quantity,repeat])=>({type:'characterShard',characterId,quantity,repeat})));
 const engineeringRewards=(primary,secondary)=>primary.map((id,i)=>[
  {type:'characterShard',characterId:id,quantity:3,repeat:'firstClear'},
@@ -20,20 +20,22 @@ const chapterRewardTables=[
  engineeringRewards(['P4','P2','P5','P3','P1'],['P2','P5','P3','P1','P4']),
  engineeringRewards(['P5','P3','P1','P4','P2'],['P3','P1','P4','P2','P5']),
 ];
+const chapterOneLineups=[['P5','P1','P3'],['P1','P1','P2'],['P4','P2','P3'],['P5','P5','P1'],['P4','P5','P2']];
+const chapterOneTitles=['山麓試煉','溪谷伏擊','青丘之影','群獸爭道','南山鎮關'];
 const formation = side => [-1, 0, 1].map((y,i) => ({x: side === 'ally' ? (i === 1 ? 1.2 : 0) : (i === 1 ? 8.8 : 10), y}));
 export const campaign = Array.from({length:6}, (_, index) => {
   const n = index + 1, chapterId = `chapter-${n}`;
   return {
-    chapterId, chapterNumber:n, title:`Chapter ${n}`, displayOrder:n,
+    chapterId, chapterNumber:n, title:n===1?'南山初境':`Chapter ${n}`, displayOrder:n,
     thumbnail:`campaign/chapter-${n}.svg`,
     unlockRequirement:n === 1 ? null : { clearedChapterId:`chapter-${n-1}` },
     stages:Array.from({length:5}, (_, s) => {
       const stageNumber = s + 1, stageId = `${n}-${stageNumber}`;
       return {
-        stageId, chapterId, stageNumber, title:`Encounter ${stageId}`, displayOrder:stageNumber,
+        stageId, chapterId, stageNumber, title:n===1?chapterOneTitles[s]:`Encounter ${stageId}`, displayOrder:stageNumber,
         previewImage:`campaign/stage-${stageId}.svg`, battlefieldId:'graybox-sand',
         allyConfig:{teamReference:'player-selected-team'},
-        enemyLineup:['enemy','enemy','enemy'],
+        enemyLineup:n===1?[...chapterOneLineups[s]]:['enemy','enemy','enemy'],
         allySpawnFormation:formation('ally'), enemySpawnFormation:formation('enemy'),
         battleDuration:90, stageType:'prototype',
         allowedRoster:null,forcedCharacters:[],bannedCharacters:[],

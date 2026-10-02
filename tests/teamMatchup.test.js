@@ -14,7 +14,7 @@ test('VS enemy identities and immutable types match actual stage battle; ally re
  const nodes=render(),preview=nodes.filter(n=>n.dataset.enemyId),battle=createStageBattleSession({...stage,selectedTeam:team.slots});
  assert.equal(preview.length,3);assert.deepEqual(preview.map(n=>n.dataset.enemyId),battle.enemies.map(a=>a.definitionId));
  assert.deepEqual(preview.map(n=>n.dataset.type),battle.enemies.map(a=>battle.characterDefinitions[a.definitionId].type));
- assert.ok(nodes.find(n=>n.dataset.slot==='1')['aria-label'].includes('P1'));assert.ok(nodes.find(n=>n.dataset.slot==='1')['aria-label'].includes('Power'));assert.ok(nodes.some(n=>n.textContent==='VS'));assert.equal(nodes.filter(n=>n.dataset.slot).length,3);
+ assert.ok(nodes.find(n=>n.dataset.slot==='1')['aria-label'].includes('鹿蜀'));assert.ok(nodes.find(n=>n.dataset.slot==='1')['aria-label'].includes('Speed'));assert.ok(nodes.some(n=>n.textContent==='VS'));assert.equal(nodes.filter(n=>n.dataset.slot).length,3);
  team.remove(1);team.toggle('P2');const changed=render();assert.deepEqual(changed.filter(n=>n.dataset.enemyId).map(n=>n.dataset.enemyId),preview.map(n=>n.dataset.enemyId));
- assert.equal(changed.find(n=>n.dataset.slot==='2').dataset.type,'speed');
+ assert.equal(changed.find(n=>n.dataset.slot==='2').dataset.type,'power');
 });

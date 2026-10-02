@@ -14,10 +14,10 @@ test('selected definitions become A1/A2/A3 with their HP/stats; slot 2 remains f
    const actor=s.allies[i];assert.equal(actor.instanceId,`a${i+1}`);assert.equal(actor.definitionId,ids[i]);
    assert.equal(actor.hp,rosterCatalog[ids[i]].stats.maxHp);assert.equal(s.characterDefinitions[ids[i]],rosterCatalog[ids[i]]);
    assert.equal(actor.x,i===1?1.2:0);assert.equal(actor.y,i-1);
-   assert.deepEqual(battlePortrait(s,actor.instanceId),{label:`A${i+1}\n${ids[i]}`,color:rosterCatalog[ids[i]].portrait.color});
+   assert.deepEqual(battlePortrait(s,actor.instanceId),{label:`A${i+1}\n${rosterCatalog[ids[i]].name}`,color:rosterCatalog[ids[i]].portrait.color});
   }
-  assert.deepEqual(s.snapshot().enemies,createDemoBattleSession().snapshot().enemies);
-  assert.deepEqual(battlePortrait(s,'e1'),{label:'E1',color:'#ee9475'});
+  assert.deepEqual(s.enemies.map(a=>a.definitionId),['P5','P1','P3']);
+  assert.deepEqual(battlePortrait(s,'e1'),{label:'E1\n狌狌',color:rosterCatalog.P5.portrait.color});
   s.allies[0].damage(50);assert.equal(createStageBattleSession(config).allies[0].hp,rosterCatalog[ids[0]].stats.maxHp);
  }
 });
@@ -26,7 +26,7 @@ test('factory rejects missing/duplicate/unowned/banned teams and keeps enemy con
  for(const selectedTeam of [undefined,[],['P1','P1','P2'],['P1','P2','missing']])assert.throws(()=>createStageBattleSession({...config,selectedTeam}));
  assert.throws(()=>createStageBattleSession({...config,selectedTeam:['P1','P3','P5'],bannedCharacters:['P3']}));
  assert.throws(()=>createStageBattleSession({...config,selectedTeam:['P1','P3','P5'],rosterOwnership:{characterIds:['P1']}}));
- assert.deepEqual(config.enemyLineup,['enemy','enemy','enemy']);
+ assert.deepEqual(config.enemyLineup,['P5','P1','P3']);
  assert.throws(()=>createStageBattleSession({...config,selectedTeam:['P1','P3','P5'],enemyLineup:['missing','enemy','enemy']}));
 });
 test('selected prototype team completes through unchanged combat resolver',()=>{

@@ -4,7 +4,7 @@ import { CampaignController } from '../src/campaign/controller.js';
 import { findStage } from '../src/campaign/data.js';
 import { stageRewardRows,resultRewardLines } from '../src/acquisition/presentation.js';
 import { createAcquisitionPersistence } from '../src/acquisition/persistence.js';
-const tuples=[[['P4',3],['P2',2],['P2',1]],[['P4',2],['P1',2],['P1',1]],[['P5',2],['P3',2],['P3',1]],[['P5',2],['P2',2],['P5',1]],[['P5',3],['P1',2],['P5',2]]];
+const tuples=[[['P4',3],['P1',2],['P1',1]],[['P4',2],['P2',2],['P2',1]],[['P5',2],['P3',2],['P3',1]],[['P5',2],['P1',2],['P5',1]],[['P5',3],['P2',2],['P5',2]]];
 const items=i=>tuples[i].map(([characterId,quantity],n)=>({type:'characterShard',characterId,quantity,repeat:n===2?'repeatable':'firstClear'}));
 function launch(c,id){if(c.screen==='result')c.exitBattle();if(c.screen==='chapters')c.openChapter(findStage(id).chapterId);c.selectStage(id);c.openTeamSelect();for(const x of ['P1','P2','P3'])if(!c.teamSelection.slots.includes(x))c.teamSelection.toggle(x);const config=c.startBattle();assert.ok(config);return config;}
 for(let i=0;i<5;i++)test(`live1-${i+1} firstClear and replay use config; cleared Preview stays farmable`,()=>{

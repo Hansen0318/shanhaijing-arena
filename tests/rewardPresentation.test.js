@@ -29,7 +29,7 @@ test('actual Stage Preview renders firstClear/CLAIMED and repeatable quantities;
   c.openTeamSelect();for(const id of ['P1','P2','P3'])c.teamSelection.toggle(id);c.startBattle();c.finishBattle('1-1','victory');c.exitBattle();view.render();assert.equal(walk(root).filter(n=>n.className.split(' ').includes('claimed')).length,2);
   c.openTeamSelect();view.render();assert.deepEqual(walk(root).filter(n=>n.dataset.characterId).map(n=>n.dataset.characterId),['P1','P2','P3']);
   c.acquisition.shardsByCharacterId.P4=5;c.acquisition.ownedCharacterIds.push('P4');view.render();assert.ok(walk(root).some(n=>n.dataset.characterId==='P4'));
-  walk(root).find(n=>n.dataset.filter==='power').onclick();assert.deepEqual(walk(root).filter(n=>n.dataset.characterId).map(n=>n.dataset.characterId),['P1','P4']);
+  walk(root).find(n=>n.dataset.filter==='power').onclick();assert.deepEqual(walk(root).filter(n=>n.dataset.characterId).map(n=>n.dataset.characterId),['P2']);
  }finally{globalThis.document=prev;}
 });
 function scene(){const source=readFileSync(new URL('../src/runtime/ArenaScene.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replace('export class ArenaScene','class ArenaScene');const Arena=vm.runInNewContext(source+'\nArenaScene',{Phaser:{Scene:class{}},ARENA_STAGE:{width:1120,height:540},resultRewardLines:presentation.resultRewardLines});const s=new Arena();

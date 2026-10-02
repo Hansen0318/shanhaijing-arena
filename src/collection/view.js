@@ -58,6 +58,8 @@ export class CollectionView {
     upgrade.dataset.action='upgrade';upgrade.disabled=!canUpgrade;info.append(upgrade);
    }
   }
+  if(detail.combatSummary)info.append(this.node('p','collection-summary',detail.combatSummary));
+  if(detail.stats)info.append(this.node('p','collection-stats',`HP ${detail.stats.maxHp} · ATK ${detail.stats.atk} · DEF ${detail.stats.def} · Move ${detail.stats.moveSpeed} · Attack ${detail.stats.attackSpeed}`));
   info.append(this.node('h3','','Abilities'));
   for(const ability of detail.abilities){info.append(this.node('p','collection-ability',`${ability.name} · ${ability.category}`));if(ability.description)info.append(this.node('p','',ability.description));}
   if(detail.lore)info.append(this.node('h3','','Lore'),this.node('p','',detail.lore));

@@ -16,12 +16,12 @@ test('type tabs filter candidates only, preserving slot order, valid saved team 
   c.openChapter('chapter-1');c.openTeamSelect();const root=element('main'),view=new CampaignView(root,c);view.render();
   const nodes=()=>walk(root),cards=()=>nodes().filter(n=>n.dataset.characterId),tab=t=>nodes().find(n=>n.dataset.filter===t);
   const original=[...c.teamSelection.slots];
-  for(const [type,ids] of [['power',['P1','P4']],['speed',['P2','P5']],['blast',['P3']],['all',['P1','P2','P3','P4','P5']]]) {
+  for(const [type,ids] of [['power',['P2','P5']],['speed',['P1']],['blast',['P3','P4']],['all',['P1','P2','P3','P4','P5']]]) {
    tab(type).onclick();assert.deepEqual(cards().map(n=>n.dataset.characterId),ids);
    assert.equal(tab(type)['aria-pressed'],'true');assert.deepEqual(c.teamSelection.slots,original);assert.deepEqual(c.lastTeam,original);assert.equal(saves,0);
    assert.equal(nodes().find(n=>n.textContent==='BATTLE').disabled,false);
   }
-  tab('speed').onclick();cards().find(n=>n.dataset.characterId==='P5').onclick();assert.deepEqual(cards().map(n=>n.dataset.characterId),['P2','P5']);
+  tab('power').onclick();cards().find(n=>n.dataset.characterId==='P5').onclick();assert.deepEqual(cards().map(n=>n.dataset.characterId),['P2','P5']);
   assert.deepEqual(c.teamSelection.slots,['P1','P3',null]);assert.equal(nodes().find(n=>n.textContent==='BATTLE').disabled,true);
   cards().find(n=>n.dataset.characterId==='P2').onclick();assert.deepEqual(c.teamSelection.slots,['P1','P3','P2']);assert.equal(c.teamSelection.canBattle,true);
   tab('power').onclick();assert.deepEqual(c.teamSelection.slots,['P1','P3','P2']);
