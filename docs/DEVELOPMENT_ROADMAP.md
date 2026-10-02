@@ -18,6 +18,7 @@ Current order:
 
 M3 depends on M2 roster ownership/team-selection contracts.  
 M4 depends on M3 shard inventory/unlock/reward contracts.
+All Campaign chapters/stages share one reward schema; later chapters are content data, not separate progression mechanisms.
 
 ## M2 — Team Select / Roster Skeleton
 
@@ -112,14 +113,15 @@ M4A must consume the existing M3 acquisition/ownership state. It must not create
 
 Goal: add the actual progression action after M4A makes current state visible.
 
-Planned incremental shard costs:
-- unlock / first usable tier: **5 shards**;
-- next tier: **10 additional shards**;
-- final tier: **15 additional shards**.
+Canonical shard costs after player clarification:
+- locked -> recruit/unlock at 5 shards -> T1;
+- T1 -> T2: 5 available shards;
+- T2 -> T3: 10 available shards;
+- T3: current maximum.
 
-This means total earned shards across the full path are 5 + 10 + 15 = 30 unless the product owner later changes the rule.
+Recruitment and Tier upgrade must consume/account for shards separately so the same 5 shards cannot both recruit and immediately pay for T1 -> T2. Preserve historical earned totals with explicit spent/consumed accounting and carry excess forward.
 
-Tier naming must stay internally consistent when implemented. The exact T1/T2/T3 starting label is a product decision to confirm before coding; do not silently invert earlier terminology.
+Collection cards should show available / next requirement rather than a bare shard count; Character Detail owns the enabled/disabled upgrade action.
 
 Visual identity:
 - square roster portrait/card;
