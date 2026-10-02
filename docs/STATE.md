@@ -1,10 +1,10 @@
 # Project State
 
 ## Milestone
-**M5B FORMAL CONTENT DATA INTEGRATION — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M5B RESULT SHARD PROGRESS CORRECTION — IMPLEMENTED / RELEASE VERIFICATION PENDING**
 
 ## Current state
-- M5B player smoke found one bounded presentation bug: battle Result reward lines currently show lifetime earned shards against hard-coded 5, while Collection correctly shows available shards against the current next requirement. Result must use the same post-transaction `characterProgress` semantics universally (locked/T0 5, T1 10, T2 15, T3 MAX). Accounting/reward transactions themselves are not to be changed.
+- Bounded Result correction implemented: controller.rewardResult carries transaction.state; Result and Collection both consume characterProgress().progressLabel. All tiers, newly acquired characters, surplus, multi-item rewards and future-chapter farming use post-transaction available progress. Accounting/Tier/reward/Chapter/combat sources unchanged. Targeted17/17, impacted126/126, full407/407 and build/diff PASS; independent review55/55 with no findings; release verification pending.
 - M5A PLAYER APPROVED; formal Chapter1 data and required shared T0 active effects integrated. P1–P5 stable save identities preserved.
 - Formal names/stats/Type/Role, unique skill IDs and immutable range/cooldown metadata; generic heal/lowest-HP ally/team heal/AoE/temporary mitigation/short cast movement/timed multi-hit. Same AI/player execution API.
 - Exact first/repeat Chapter1 rewards and five lineups, spawn slots retained. Collection/Team/HUD/Preview/Result/unlock prose resolve the catalog. Placeholder art remains.

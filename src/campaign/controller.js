@@ -81,7 +81,7 @@ export class CampaignController {
   if(this.screen!=='battle' || completionId!==this.battleCompletionId || id!==this.battleStageId || !['victory','defeat','draw'].includes(outcome)) return false;
   this.screen='result';this.outcome=outcome;
   const transaction=completeAcquisition(this.acquisition,{stageId:id,completionId,outcome,reward:findStage(id).reward});
-  this.rewardResult={grantedItems:transaction.grantedItems,unlockedCharacterIds:transaction.unlockedCharacterIds,shardCounts:transaction.shardCounts};
+  this.rewardResult={state:transaction.state,grantedItems:transaction.grantedItems,unlockedCharacterIds:transaction.unlockedCharacterIds,shardCounts:transaction.shardCounts};
   if(outcome==='victory') {
    this.acquisition=transaction.state;
    // Persist receipts + inventory together before the independent Campaign clear write.

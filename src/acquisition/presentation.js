@@ -1,6 +1,7 @@
 import { rosterCatalog } from '../roster/catalog.js';
 const characterName=id=>rosterCatalog[id]?.name ?? id;
-import { normalizeReward,UNLOCK_THRESHOLD } from './model.js';
+import { normalizeReward } from './model.js';
+import { characterProgress } from './tier.js';
 export function stageRewardRows(stage,acquisition) {
  const claimed=acquisition?.claimedStageIds?.includes(stage.stageId);
  return normalizeReward(stage.reward).map(item=>({...item,label:`${characterName(item.characterId)} Shard ×${item.quantity}`,
@@ -10,5 +11,5 @@ export function resultRewardLines(transaction) {
  if(!transaction?.grantedItems?.length)return [];
  const totals=new Map();
  for(const item of normalizeReward({items:transaction.grantedItems}))totals.set(item.characterId,(totals.get(item.characterId)??0)+item.quantity);
- return [...totals].map(([id,quantity])=>`${characterName(id)} Shard +${quantity}   ${transaction.shardCounts[id]} / ${UNLOCK_THRESHOLD}${transaction.unlockedCharacterIds.includes(id)?`   ${characterName(id)} UNLOCKED`:''}`);
+ return [...totals].map(([id,quantity])=>`${characterName(id)} Shard +${quantity}   ${characterProgress(transaction.state,id).progressLabel}${transaction.unlockedCharacterIds.includes(id)?`   ${characterName(id)} UNLOCKED`:''}`);
 }

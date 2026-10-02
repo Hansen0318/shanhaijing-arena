@@ -51,3 +51,18 @@ Actions351/37015324723 at838c1bdaba238a0ea713b8f5c85a6f10c88d59d7 CI397/397, Bui
 - Deterministic normal initial team P1/P2/P3 auto terminal probe:1-1defeat26s (205damage/14heal),1-2victory34.2s (181/6),1-3defeat27.35s (190/11),1-4defeat20.8s (159/5),1-5defeat27.3s (163/7); mitigation observed all5. These are fixed-seed engine observations, not player acceptance/final balance; no stat or lineup tuning was performed.
 - Independent label follow-up34/34 clean. No Critical/Important/Minor findings remain. Named unspecified passive modifiers remain deferred; no invented numerical bonuses.
 - Player checklist additionally confirms countdown actually enters battle on iPhone. STOP at this handoff; do not expand scope.
+
+
+## M5B Result shard progress correction — 2026-10-02
+
+Status: IMPLEMENTED / RELEASE VERIFICATION PENDING.
+
+Recovery: remote7f3a19eb75a4cadc82e76215f657e9f3d0f4ec10, active feature branch/PR#1; latest recovery Actions37018951170 successful. Player reported 狌狌 reward+1 displaying9/5 while Collection4/5.
+
+Root cause: Result formatter read transaction.shardCounts (lifetime earned) and constantUNLOCK_THRESHOLD. Controller dropped transaction.state. Fix: pass the authoritative post-transaction state unchanged and call the same characterProgress().progressLabel as Collection. No duplicate progression math; universal across characters, chapters and first/repeat rewards. grantedItems quantities/aggregation and explicit unlockedCharacterIds remain authoritative. Existing shardCounts remains lifetime accounting data.
+
+Evidence: new10-case test RED2/10 (eight expected failures) → GREEN10/10; targeted Result+actual overlay17/17; impacted acquisition/persistence/Tier/Campaign/universal reward/Collection/formal Chapter126/126; full407/407; build/diff PASS. Added fixtures verify locked4+1→T00/5+UNLOCKED, T0 earned9/spent5→4/5, surplus7/5, T18/10,T214/15,T3MAX, locked3/5, independent multi-character progress/duplicate grant aggregation, repeat gains, unchanged earned/spent and upgrade cost, real Chapter2 controller/transactions/persistence and historical result snapshot. Updated actual Arena Result fixtures to include post-state and assert newly unlocked0/5.
+
+Only production edits: src/acquisition/presentation.js and src/campaign/controller.js. Acquisition/model/Tier/persistence, Campaign data, combat, Collection and UI layout unchanged. Chapter1 exact reward and Chapter2–6 schema/content regressions PASS. Independent read-only review55/55, no Critical/Important/Minor findings; release verification follows below.
+
+Player smoke after deployment: use normal URL without reset; win one relevant replay and compare the same character Result progression with Collection. Check new unlock0/5+UNLOCKED or current Tier denominator if naturally available; no need to replay all chapters or manufacture Tier states. STOP before M5C/AI/art.

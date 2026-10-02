@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {readFileSync} from 'node:fs';
 import * as presentation from '../src/acquisition/presentation.js';
-import { completeAcquisition,initialAcquisition } from '../src/acquisition/model.js';
+import { completeAcquisition,initialAcquisition,normalizeAcquisition } from '../src/acquisition/model.js';
 import { findStage } from '../src/campaign/data.js';
 import { CampaignController } from '../src/campaign/controller.js';
 import { CampaignView } from '../src/campaign/view.js';
@@ -18,8 +18,8 @@ test('stage reward rows share normalized definition; CLAIMED changes only firstC
 test('result uses only actual authoritative grants and explicit unlock IDs, aggregates multi-items by character',()=>{
  assert.equal(typeof presentation.resultRewardLines,'function');
  assert.deepEqual(presentation.resultRewardLines(null),[]);assert.deepEqual(presentation.resultRewardLines({grantedItems:[],shardCounts:{P4:5},unlockedCharacterIds:['P4']}),[]);
- const lines=presentation.resultRewardLines({grantedItems:[...reward.items,{...reward.items[1],quantity:2}],shardCounts:{P1:2,P4:5},unlockedCharacterIds:['P4']});
- assert.deepEqual(lines,['鹿蜀 Shard +2   2 / 5','九尾狐 Shard +3   5 / 5   九尾狐 UNLOCKED']);
+ const lines=presentation.resultRewardLines({state:normalizeAcquisition({version:3,shardsByCharacterId:{P1:2,P4:5}}),grantedItems:[...reward.items,{...reward.items[1],quantity:2}],shardCounts:{P1:2,P4:5},unlockedCharacterIds:['P4']});
+ assert.deepEqual(lines,['鹿蜀 Shard +2   2 / 5','九尾狐 Shard +3   0 / 5   九尾狐 UNLOCKED']);
 });
 test('actual Stage Preview renders firstClear/CLAIMED and repeatable quantities; ownership refresh filters bench',()=>{
  const prev=globalThis.document;globalThis.document={createElement:element};
@@ -36,14 +36,14 @@ function scene(){const source=readFileSync(new URL('../src/runtime/ArenaScene.js
  const visual=()=>{const v={visible:true,text:'',style:{},setDepth(){return this;},setVisible(b){this.visible=b;return this;},setOrigin(){return this;},setInteractive(){return this;},setStrokeStyle(){return this;},setText(t){this.text=t;return this;},setY(y){this.y=y;return this;},setFontSize(n){this.style.fontSize=n;return this;},setScale(n){this.scaleY=n;return this;},add(){return this;},on(){return this;},disableInteractive(){}};return v;};s.add={container:visual,rectangle:visual,text:(x,y,text,style)=>Object.assign(visual(),{x,y,text,style})};s.releaseJoystick=()=>{};s.onPlaybackChange=()=>{};return s;}
 test('actual Arena result consumes transaction once; empty defeat/draw never show fake reward; fresh result clears',()=>{
  assert.equal(typeof presentation.resultRewardLines,'function');
- const s=scene();let calls=0;const tx={grantedItems:[reward.items[1]],shardCounts:{P4:5},unlockedCharacterIds:['P4']};s.session={stageId:'1-3'};s.campaignActions={result:()=>{calls++;return tx;},hasNext:()=>true};s.createResultView();s.showResult('victory');assert.equal(calls,1);assert.match(s.rewardText.text,/九尾狐 Shard \+1/);assert.match(s.rewardText.text,/九尾狐 UNLOCKED/);s.showResult('victory');assert.equal(calls,1);
+ const s=scene();let calls=0;const tx={state:normalizeAcquisition({version:3,shardsByCharacterId:{P4:5}}),grantedItems:[reward.items[1]],shardCounts:{P4:5},unlockedCharacterIds:['P4']};s.session={stageId:'1-3'};s.campaignActions={result:()=>{calls++;return tx;},hasNext:()=>true};s.createResultView();s.showResult('victory');assert.equal(calls,1);assert.match(s.rewardText.text,/九尾狐 Shard \+1/);assert.equal(s.rewardText.text,'九尾狐 Shard +1   0 / 5   九尾狐 UNLOCKED');s.showResult('victory');assert.equal(calls,1);
  for(const outcome of ['defeat','draw']){s.campaignActions.result=()=>({grantedItems:[],unlockedCharacterIds:[],shardCounts:{P4:5}});s.createResultView();s.showResult(outcome);assert.equal(s.rewardText.visible,false);assert.equal(s.rewardText.text,'');}
 });
 
 test('measured multiline reward text fits above the Result action band',()=>{
  const s=scene();s.session={stageId:'synthetic'};
  const ids=['P1','P2','P3','P4','P5'];
- s.campaignActions={result:()=>({grantedItems:ids.map(characterId=>({type:'characterShard',characterId,quantity:2,repeat:'repeatable'})),shardCounts:Object.fromEntries(ids.map(id=>[id,5])),unlockedCharacterIds:['P4','P5']}),hasNext:()=>true};
+ s.campaignActions={result:()=>({state:normalizeAcquisition({version:3,shardsByCharacterId:Object.fromEntries(ids.map(id=>[id,5]))}),grantedItems:ids.map(characterId=>({type:'characterShard',characterId,quantity:2,repeat:'repeatable'})),shardCounts:Object.fromEntries(ids.map(id=>[id,5])),unlockedCharacterIds:['P4','P5']}),hasNext:()=>true};
  s.createResultView();s.rewardText.height=120; // Renderer measurement crosses y303 action band without fitting.
  s.showResult('victory');assert.ok(s.rewardText.y+s.rewardText.height*(s.rewardText.scaleY??1)<=294);
 });
