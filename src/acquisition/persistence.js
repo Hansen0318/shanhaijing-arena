@@ -1,4 +1,4 @@
-import { initialAcquisition,normalizeAcquisition } from './model.js';
+import { ACQUISITION_VERSION,initialAcquisition,normalizeAcquisition } from './model.js';
 export const ACQUISITION_SAVE_KEY='shanhaijing-arena.acquisition.v1';
 export function createAcquisitionPersistence(storage) {
  let memory=initialAcquisition(),unsaved=false;
@@ -8,7 +8,7 @@ export function createAcquisitionPersistence(storage) {
     let raw=null;try {raw=JSON.parse(storage?.getItem(ACQUISITION_SAVE_KEY)??'null');}catch{}
     memory=normalizeAcquisition(raw,progress?.clearedStages);
     // Upgrade the existing key atomically; never touch Campaign/team saves.
-    if(raw?.version===1) {
+    if([1,2].includes(raw?.version) && raw.version<ACQUISITION_VERSION) {
      unsaved=true;
      try {if(storage){storage.setItem(ACQUISITION_SAVE_KEY,JSON.stringify(memory));unsaved=false;}}catch{}
     }

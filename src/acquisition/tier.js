@@ -1,6 +1,6 @@
 import {normalizeAcquisition,UNLOCK_THRESHOLD} from './model.js';
 import {rosterCatalog} from '../roster/catalog.js';
-const next={T1:{tier:'T2',cost:5},T2:{tier:'T3',cost:10}};
+const next={T0:{tier:'T1',cost:5},T1:{tier:'T2',cost:10},T2:{tier:'T3',cost:15}};
 export function characterProgress(raw,id) {
  const state=normalizeAcquisition(raw),owned=state.ownedCharacterIds.includes(id),tier=state.tierByCharacterId[id] ?? null;
  const earned=state.shardsByCharacterId[id] ?? 0,spent=state.spentShardsByCharacterId[id] ?? 0,available=earned-spent;

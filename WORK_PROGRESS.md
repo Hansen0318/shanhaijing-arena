@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M4B T0 CORRECTION IN PROGRESS:** recovered remote `e511df93e3d1e0d608244cb4133cf7297ab8559d`, active branch/PR#1 unchanged. Schema3 domain/persistence implemented: owned baseT0, costs5/10/15, v1/v2 migration retains lifetime earned/recorded spent/receipts, v2 Tier resetsT0 with valid implied legacy spend retained. Baseline recruit exempt, others recruit5 once. New correction tests RED0/18→GREEN18/18; domain/acquisition55/55, diff PASS. This checkpoint is not release PASS; next update Collection fallback and UI/Campaign tests, then impacted/build/review/deploy/docs.
 - **T0 BASE TIER CORRECTION (2026-10-02):** player changed Tier semantics before acceptance. Every newly owned character is T0. T0->T1 costs5 available shards; T1->T2 costs10; T2->T3 costs15; T3 max. This supersedes deployed T1-base /5/10 model. Preserve acquisition spend separately: shards used to obtain a character cannot also fund T0->T1. Canonical `docs/M4B_TIER_UPGRADE.md` updated; bounded correction required before acceptance.
 - **M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — ENGINEERING PASS / PLAYER SMOKE PENDING.** M3 accepted baseline preserved; no new PLAYER VERIFIED claim.
 - Branch `feat/m0-combat-core-20260927` / PR #1 open. Deployed safe source `af56523791fc59eaecaa7657e82197bb4f003ec9`; recoverybase `c3db01dab1963da3018357281bab51e0794e18f6`. Later closure docs-only; remote latest authoritative.
