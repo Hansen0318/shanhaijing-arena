@@ -1,13 +1,14 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- M4A COLLECTION / ROSTER HUB — IMPLEMENTATION IN PROGRESS. M3 PLAYER ACCEPTED; protect all prior acquisition/reward/combat/UI behavior.
-- Active branch `feat/m0-combat-core-20260927`, PR #1. Recovery base `225a0610b779612b64b052c1df643bf8d69bf6c3`; latest remote checkpoint is the commit containing this pointer.
-- Completed: pure read-only catalog/acquisition projection, optional data-driven ability/lore detail summary, bounded Collection navigation with previous Campaign route restoration.
-- Targeted RED 0/9 then GREEN 9/9 (collectionModel / collectionNavigation). No persistence writes or team mutations.
-- Next exact action: review findings, Actions/Pages deploy and public source confirmation.
-- UI integration complete: targeted 14/14, impacted 133/133, build/diff PASS. Chapter Select temporary entry; scalable grid, locked contrast, read-only single-tap detail, filter/scroll restoration. No M3 or Team Select product logic changes.
-- No Tier/M4B/M4C/formal animation. Player mobile smoke remains pending for M4A.
+- **M4A COLLECTION / ROSTER HUB — ENGINEERING PASS / PLAYER SMOKE PENDING.** M3 PLAYER ACCEPTED and protected.
+- Active branch `feat/m0-combat-core-20260927` / PR #1 open. Safe deployed source `ae7063c10c90ab43c8c6f6c5c9d88ed3be693ec6`; latest remote closure commit contains this pointer (docs-only). Recovery base `225a0610b779612b64b052c1df643bf8d69bf6c3`.
+- Implemented: temporary Chapter Select COLLECTION entry; independent all-catalog grid; authoritative ownership/shard projection; owned/locked contrast/progress; ALL/Power/Speed/Blast; single-tap read-only detail; optional metadata omission; filter/position restoration; safe areas. No M3/combat/Team Select product changes, save writes or second progression store.
+- Safe model checkpoint `77d88c1`; UI checkpoint `8fafdb7`; connected-scroll correction `25a5f48`; final safe-area source above. RED model/navigation0/9 → GREEN9/9; view missing-export RED → combined targeted14/14; impacted133/133; bounded scroll/route32/32; build/diff PASS. Review issue fixed, follow-up no Important/Critical defects.
+- [Actions #299 /36946318660](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36946318660): CI302/302, Build/Pages success. Local/CI/public JS `index-nX02OjS0.js` / CSS `index-CHIlF0_H.css` match. Public entry/allcards/Power/locked detail/back/filter/#game hidden/no horizontal overflow checked. No repeated unrelated combat browser smoke.
+- Limits: static placeholder art, current definitions have no lore/ability descriptions so optional fields omitted. Device readability/safe-area/touch and overflowing-grid scroll acceptance pending. Nonzero real-browser overflow scroll not claimed; detach/reattach ordering covered by contract tests.
+- Exact next action: player smoke normal URL Chapter Select→COLLECTION→BACK; all four filters, owned/locked contrast and saved shard counts, single-tap owned/locked detail and close/filter/position, landscape safe areas/no horizontal overflow, reload persistence and unchanged saved team. Full evidence/checklist `docs/verification/M4A_COLLECTION.md`.
+- **STOP at M4A.** Wait for player acceptance; do not begin M4B/M4C/Tier/spending/formal animation. Never claim PLAYER VERIFIED before confirmation.
 
 ## Previous universal farming checkpoint (historical)
 - **M3 PREVIEW PRESENTATION CORRECTION — RELEASE CHECKS IN PROGRESS**. Branch feat/m0-combat-core-20260927 / PR#1 retained. Recoverybase0636172132c2719f68d5a154039a1f34e30aac7e. Preview labels FIRST CLEAR/CLAIMED/REPEATABLE removed; available/repeatable rows normal contrast, claimed non-repeatable muted+50%opacity. Existing reward/acquisition/persistence/config/TeamSelect/combat unchanged.

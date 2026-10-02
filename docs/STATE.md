@@ -1,14 +1,15 @@
 # Project State
 
 ## Milestone
-**M4A COLLECTION / ROSTER HUB — IMPLEMENTATION IN PROGRESS**
+**M4A COLLECTION / ROSTER HUB — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- M3 is PLAYER ACCEPTED and protected. Active branch `feat/m0-combat-core-20260927` / PR #1, recovery base `225a0610b779612b64b052c1df643bf8d69bf6c3`.
-- M4A read-only projection/navigation implemented; targeted RED 0/9 then GREEN 9/9. Grid/detail/entry implemented; release verification remains.
-- UI integration targeted 14/14, impacted 133/133, build/diff PASS. Release review/deployment pending.
-- Canonical `docs/M4A_COLLECTION_ROSTER_HUB.md`. Temporary Chapter Select entry, scalable vertical grid, single-tap read-only detail; authoritative catalog/acquisition only.
-- Exact next action: review, Actions/Pages and public source verification. No M4B/M4C/Tier/spending/formal animation.
+- M3 is PLAYER ACCEPTED and protected. M4A engineering/release complete; real-device Collection smoke pending.
+- Branch `feat/m0-combat-core-20260927` / PR #1 open. Safe deployed source `ae7063c10c90ab43c8c6f6c5c9d88ed3be693ec6`; later closure is docs-only. WORK_PROGRESS current pointer is authoritative recovery handoff.
+- Independent read-only all-catalog Collection, temporary Chapter Select entry, Type filters, authoritative ownership/retained shards, dim locked portraits, single-tap character detail and optional ability/lore metadata. Filter/scroll retained with connected DOM restoration. Static portrait names underneath; safe-area padding. No save writes or changes to Team Select/acquisition/combat.
+- Targeted14/14, impacted133/133, bounded scroll/route32/32; build/diff and follow-up review PASS. Actions#299 /36946318660 configured CI302/302 and Build/Pages success. Public source matches local/CI `index-nX02OjS0.js` / `index-CHIlF0_H.css`.
+- Bounded public Collection/Power/P4 detail/back/filter/route-hidden-game/no-horizontal-overflow confirmed. Current definitions lack optional lore/descriptions; omitted safely. Mobile readability, safe-area/touch and overflowing-grid scroll remain player smoke, not PLAYER VERIFIED.
+- Exact next action: player follows `docs/verification/M4A_COLLECTION.md` short Collection checklist on existing save. STOP; no M4B/M4C/Tier/spending/formal animation.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

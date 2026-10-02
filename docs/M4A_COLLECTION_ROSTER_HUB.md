@@ -1,7 +1,7 @@
 # M4A — Collection / Roster Hub
 
 ## Status
-**CHAT SPEC COMPLETE / IMPLEMENTATION AUTHORIZATION READY**
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 M3 reward/shard/unlock and Preview presentation are player accepted. M4A is the next bounded milestone. It adds a dedicated read-only Collection/Roster surface that exposes the progression state already created by M3. It must not start Tier spending/upgrade mechanics; those belong to M4B.
 
@@ -94,7 +94,7 @@ Minimum information:
 - ownership state;
 - shard inventory;
 - if locked: unlock threshold/progress;
-- ability names/categories and concise descriptions based on current character definitions;
+- ability names/categories; concise descriptions when current definitions provide them;
 - short Shanhaijing introduction/lore field when available.
 
 Future-capable fields:
@@ -252,3 +252,9 @@ After engineering PASS/deploy:
 - player performs short device smoke on Collection grid, filters, locked/owned contrast, shard visibility and Character Detail;
 - stop;
 - do not begin M4B until player accepts M4A and Tier naming/order is explicitly confirmed.
+
+## 15. Release evidence (2026-10-02)
+
+Implemented on active branch `feat/m0-combat-core-20260927` / PR #1. Safe deployed source `ae7063c10c90ab43c8c6f6c5c9d88ed3be693ec6`. Targeted14/14, impacted133/133, build/diff/review PASS; Actions#299 /36946318660 CI302/302, Build/Pages success. Public source assets match. Verification and exact pending player checklist: `docs/verification/M4A_COLLECTION.md`.
+
+Current definitions have no lore or ability description metadata; omission is intentional under the conditional requirement. Placeholder cards remain static, names underneath. No Tier/spending/upgrade/Main Menu/animation. M3 is unchanged. Wait for M4A player smoke and STOP.
