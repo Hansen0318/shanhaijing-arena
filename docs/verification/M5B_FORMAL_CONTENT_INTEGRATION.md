@@ -18,11 +18,11 @@ Original branch feat/m0-combat-core-20260927 / PR#1; preflight fbe4645cd04dcd12b
 - formalChapter9: all exact Chapter1 lineups/rewards/spawn slots; cumulative5 fox/finale bruiser unlock and repeat-only rewards; catalog detail/HUD identities; complete schema3 acquisition receipts/spent/Tier/team/stage reload invariants; fixed golden Chapter2–6 data and Landing hashes.
 - Added real ArenaScene Pause test freezes formal mitigation and pending hits; fresh session resets both. Existing Restart/Retry/Pause/controller/cadence/critical/damage tests retained.
 - Generic green+heal number and cleanup tested; ◈ placeholder on living mitigated actor label. Uses existing scene tween/Pause clock.
-- Full npm test397/397 zero failures covers targeted, impacted and complete combat regression; build PASS. CSS index-082fIvTy.css unchanged, final local JS index-BU900RvY.js. Existing Phaser bundle-size advisory remains nonblocking.
+- Full npm test397/397 zero failures covers targeted, impacted and complete combat regression; build PASS. CSS index-082fIvTy.css unchanged, final local JS index-DJGeqONb.js. Existing Phaser bundle-size advisory remains nonblocking.
 - No acquisition/Campaign/team persistence, Tier accounting, Landing view/style, route/reset or Chapter2–6 content code changes.
 
 ## Independent review
-Read-only independent reviewer inspected whole diff and ran112/112 targeted tests; no Critical/Important findings. Minor: prepared AoE opportunity check bypass. Reproduced with RED two focused AI tests; shared opportunity predicate and enemy-target preservation correction GREEN48/48. Final whole suite397/397. Follow-up review pending.
+Read-only independent reviewer inspected whole diff and ran112/112 targeted tests; no Critical/Important findings. Minor: prepared AoE opportunity check bypass. Reproduced with RED two focused AI tests; shared opportunity predicate and enemy-target preservation correction GREEN48/48. Final whole suite397/397. Follow-up independent75/75 PASS, no remaining findings.
 
 ## CI issue addressed
 A–C CI failures were interim stale prototype fixture expectations, corrected atD. Actions350 /37014810174 failed one final golden-baseline test because actions/checkout shallow clone lacked historical commitfbe4645; Build/Deploy skipped. Replaced test-time git history reads with checked-in Chapter2–6 golden data and Landing SHA256 hashes; no CI pipeline/checkout change. Local golden9/9 PASS. No failed source released.
@@ -40,3 +40,6 @@ Multi-hit total coefficient is2.20/2.30, split3/4 hits. Existing DEF/type resolv
 5. Chapter1 Preview: exact formal first/repeat rewards; existing claimed firstClear stays unavailable and replay remains farmable. No need to reset/replay historical M0–M4 smoke.
 
 STOP after engineering release and this player handoff.
+
+## Public label follow-up
+Actions351/37015324723 at838c1bdaba238a0ea713b8f5c85a6f10c88d59d7 CI397/397, Build and Deploy PASS. Public JSindex-BU900RvY.js/CSSindex-082fIvTy.css matched; Collection/赤鱬 Detail and formal 1-1 enemy/team preview observed. Reward Preview still showed P IDs; generic presentation now resolves catalog names for Preview/Result/unlock prose. No transaction/receipt/save ID or quantity change. RED6/7→GREEN7/7; impacted34/34; independent34/34/no findings; final full397/397/build PASS, JSindex-DJGeqONb.js. Final deployment pending.
