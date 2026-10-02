@@ -1,7 +1,7 @@
 # M5A — Chapter 1 Formal Content Draft
 
 ## Status
-**CHARACTER DIRECTION APPROVED / SKILL + REWARD DETAIL DRAFT**
+**CONTENT APPROVED / READY FOR M5B INTEGRATION**
 
 This is a chat-first content sheet. It does not authorize runtime replacement, balance tuning, formal art production, or AI implementation.
 
@@ -635,3 +635,26 @@ The current proposal is now sufficiently detailed for a player decision on:
 - Tier mechanic identities.
 
 If accepted, mark M5A **CONTENT APPROVED** and prepare a bounded M5B Work handoff. M5B should not attempt final art/animation at the same time as combat-data integration.
+
+
+## M5A approval record (2026-10-02)
+
+Player authorized continuing with the complete Chapter1 content package.
+
+Approved for M5B integration:
+- Chapter1 working theme: 南山初境;
+- initial owned roster: 鹿蜀 / 猼訑 / 赤鱬;
+- unlock roster: 九尾狐 / 狌狌;
+- Type / Role assignments;
+- Basic / Heavy / Special / Awakening / Passive identity direction;
+- T0 relative stat baseline;
+- character-specific cooldown direction;
+- 1-1 through 1-5 enemy lineup direction;
+- firstClear / repeatable reward table;
+- T1 / T2 / T3 mechanic identity direction;
+- Character Detail short-copy direction;
+- shared-engine requirement for healing / ally targeting / AoE / mitigation / control / status primitives.
+
+Balance values remain playtest baselines and may be tuned after player combat smoke.
+
+M5A is closed. M5B may integrate formal content data and only the minimum reusable combat primitives required by the approved T0 kits.
