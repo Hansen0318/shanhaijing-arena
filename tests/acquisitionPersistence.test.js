@@ -11,7 +11,7 @@ test('owned P1 and newly unlocked P4 shards and receipts survive a new persisten
  assert.equal(typeof persistence.createAcquisitionPersistence,'function');
  const storage=store(),p=persistence.createAcquisitionPersistence(storage),s=earn(earn(p.load()),'P4',5);
  assert.equal(p.save(s),true);assert.deepEqual(persistence.createAcquisitionPersistence(storage).load(),s);
- const parsed=JSON.parse(storage.getItem(persistence.ACQUISITION_SAVE_KEY));assert.equal(parsed.version,1);
+ const parsed=JSON.parse(storage.getItem(persistence.ACQUISITION_SAVE_KEY));assert.equal(parsed.version,2);
 });
 test('missing acquisition migrates pre-M3 clears without touching Campaign or team saves',()=>{
  assert.equal(typeof persistence.createAcquisitionPersistence,'function');

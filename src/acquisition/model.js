@@ -1,5 +1,5 @@
 import { rosterCatalog } from '../roster/catalog.js';
-export const ACQUISITION_VERSION=1;
+export const ACQUISITION_VERSION=2;
 export const UNLOCK_THRESHOLD=5;
 const catalogIds=()=>Object.keys(rosterCatalog);
 const known=id=>typeof id==='string' && Object.hasOwn(rosterCatalog,id);
@@ -8,15 +8,27 @@ export function initialAcquisition(clearedStageIds=[]) {
  return normalizeAcquisition({version:ACQUISITION_VERSION},clearedStageIds);
 }
 export function normalizeAcquisition(raw,clearedStageIds=[]) {
- const source=raw?.version===ACQUISITION_VERSION?raw:{};
+ const source=[1,ACQUISITION_VERSION].includes(raw?.version)?raw:{};
  const shardsByCharacterId=Object.fromEntries(catalogIds().map(id=>{
   const count=source.shardsByCharacterId?.[id];
   return [id,Number.isSafeInteger(count) && count>=0?count:0];
  }));
- return {version:ACQUISITION_VERSION,shardsByCharacterId,
-  ownedCharacterIds:catalogIds().filter(id=>['P1','P2','P3'].includes(id) || shardsByCharacterId[id]>=UNLOCK_THRESHOLD),
+ const ownedCharacterIds=catalogIds().filter(id=>['P1','P2','P3'].includes(id) || shardsByCharacterId[id]>=UNLOCK_THRESHOLD);
+ const owned=new Set(ownedCharacterIds),tierByCharacterId={},spentShardsByCharacterId={};
+ for(const id of catalogIds()) {
+  const earned=shardsByCharacterId[id],recruit=owned.has(id)&&!['P1','P2','P3'].includes(id)?UNLOCK_THRESHOLD:0;
+  let tier=owned.has(id)?'T1':null;
+  const savedTier=source.version===ACQUISITION_VERSION?source.tierByCharacterId?.[id]:null;
+  const upgrades={T1:0,T2:5,T3:15};
+  if(owned.has(id) && Object.hasOwn(upgrades,savedTier) && earned>=recruit+upgrades[savedTier])tier=savedTier;
+  const savedSpent=source.version===ACQUISITION_VERSION?source.spentShardsByCharacterId?.[id]:0;
+  const validSpent=Number.isSafeInteger(savedSpent)&&savedSpent>=0?Math.min(earned,savedSpent):0;
+  tierByCharacterId[id]=tier;spentShardsByCharacterId[id]=owned.has(id)?Math.max(recruit+upgrades[tier],validSpent):0;
+ }
+ return {version:ACQUISITION_VERSION,shardsByCharacterId,ownedCharacterIds,tierByCharacterId,spentShardsByCharacterId,
   claimedStageIds:identifiers([...identifiers(source.claimedStageIds),...identifiers(clearedStageIds)]),
   completedBattleIds:identifiers(source.completedBattleIds),
+  completedUpgradeIds:source.version===ACQUISITION_VERSION?identifiers(source.completedUpgradeIds):[],
  };
 }
 export function normalizeReward(reward) {

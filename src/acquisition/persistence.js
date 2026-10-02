@@ -7,6 +7,11 @@ export function createAcquisitionPersistence(storage) {
    if(!unsaved) {
     let raw=null;try {raw=JSON.parse(storage?.getItem(ACQUISITION_SAVE_KEY)??'null');}catch{}
     memory=normalizeAcquisition(raw,progress?.clearedStages);
+    // Upgrade the existing key atomically; never touch Campaign/team saves.
+    if(raw?.version===1) {
+     unsaved=true;
+     try {if(storage){storage.setItem(ACQUISITION_SAVE_KEY,JSON.stringify(memory));unsaved=false;}}catch{}
+    }
    }
    return structuredClone(memory);
   },
