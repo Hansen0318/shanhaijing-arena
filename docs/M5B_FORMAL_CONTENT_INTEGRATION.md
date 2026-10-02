@@ -454,3 +454,8 @@ At minimum:
 10. lifetime earned/spent persistence and unlock/upgrade transactions remain unchanged.
 
 This is a bounded M5B player-smoke correction. Do not alter reward quantities, Tier costs, acquisition accounting, Chapter data, combat, or art.
+
+
+### Result progression correction release
+M5B RESULT SHARD PROGRESS CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING.
+Result receives transaction.state and reuses characterProgress().progressLabel from the same source as Collection. No earned/spent/accounting, Tier cost, reward quantities, combat or Chapter data changes. Source7555c0b4de3485cce0cb5f271f1fb456c8b92392; targeted17/17, impacted126/126, full407/407, build/diff PASS, independent55/55/no findings. Actions#356/37020221225 Test/Build/Pages success and public/local/CI JSindex-Db98qSff.js match. Exact evidence and focused player checklist: docs/verification/M5B_FORMAL_CONTENT_INTEGRATION.md. STOP; no M5C/AI/art.

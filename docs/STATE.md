@@ -1,10 +1,10 @@
 # Project State
 
 ## Milestone
-**M5B RESULT SHARD PROGRESS CORRECTION — IMPLEMENTED / RELEASE VERIFICATION PENDING**
+**M5B RESULT SHARD PROGRESS CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- Bounded Result correction implemented: controller.rewardResult carries transaction.state; Result and Collection both consume characterProgress().progressLabel. All tiers, newly acquired characters, surplus, multi-item rewards and future-chapter farming use post-transaction available progress. Accounting/Tier/reward/Chapter/combat sources unchanged. Targeted17/17, impacted126/126, full407/407 and build/diff PASS; independent review55/55 with no findings; release verification pending.
+- Bounded Result correction implemented: controller.rewardResult carries transaction.state; Result and Collection both consume characterProgress().progressLabel. All tiers, newly acquired characters, surplus, multi-item rewards and future-chapter farming use post-transaction available progress. Accounting/Tier/reward/Chapter/combat sources unchanged. Targeted17/17, impacted126/126, full407/407 and build/diff PASS; independent review55/55 with no findings; Actions#356/37020221225 Test/Build/Pages SUCCESS. Final correction source7555c0b4de3485cce0cb5f271f1fb456c8b92392; public/local/CI JSindex-Db98qSff.js and unchanged CSSindex-082fIvTy.css match.
 - M5A PLAYER APPROVED; formal Chapter1 data and required shared T0 active effects integrated. P1–P5 stable save identities preserved.
 - Formal names/stats/Type/Role, unique skill IDs and immutable range/cooldown metadata; generic heal/lowest-HP ally/team heal/AoE/temporary mitigation/short cast movement/timed multi-hit. Same AI/player execution API.
 - Exact first/repeat Chapter1 rewards and five lineups, spawn slots retained. Collection/Team/HUD/Preview/Result/unlock prose resolve the catalog. Placeholder art remains.
@@ -12,7 +12,7 @@
 - Final deployed source `a692e2357639c99a36aab196026ec9d358c02575`, original feature branch/PR#1; no main merge. Full397/397, build/diff PASS; independent review/follow-ups clean. Actions#352 /37015761111 Test/Build/Pages success.
 - Public/local/CI JSindex-DJGeqONb.js/CSSindex-082fIvTy.css match. Public identity/detail/reward/startup HUD verified; sustained cloud countdown progression not established, physical gameplay smoke remains pending.
 - Named conditional passive bonuses remain metadata/spec because approved seeds do not define numeric modifiers. Advanced Tier mechanics/control/persistent zones/tactical variation not activated. Fixed heal25%/16%, mitigation25%/4s and all range/movement/crit seeds are documented in M5B spec.
-- Exact next: targeted player smoke in `docs/verification/M5B_FORMAL_CONTENT_INTEGRATION.md`; normal URL, no reset; confirm old data, countdown→battle and new kit feedback. STOP before art/animation/VFX/audio/advanced Tier/full tactical AI/Chapter2 formal content.
+- Exact next for this correction: one relevant victory/replay, Result vs Collection progression agreement and current Tier denominator/MAX or natural acquisition0/5+UNLOCKED; no reset or broad replay. Original kit/device acceptance remains player-owned. See `docs/verification/M5B_FORMAL_CONTENT_INTEGRATION.md`. STOP before art/animation/VFX/audio/advanced Tier/full tactical AI/Chapter2 formal content.
 
 ## Historical M4C state (accepted; superseded by current M5B scope)
 - M5A Chapter1 content is PLAYER APPROVED. Formal identities, skills, T0 stats/cooldowns, stage lineups/rewards and Tier mechanic direction are locked as the first playtest content baseline.

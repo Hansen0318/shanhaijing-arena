@@ -55,7 +55,7 @@ Actions351/37015324723 at838c1bdaba238a0ea713b8f5c85a6f10c88d59d7 CI397/397, Bui
 
 ## M5B Result shard progress correction — 2026-10-02
 
-Status: IMPLEMENTED / RELEASE VERIFICATION PENDING.
+Status: M5B RESULT SHARD PROGRESS CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING.
 
 Recovery: remote7f3a19eb75a4cadc82e76215f657e9f3d0f4ec10, active feature branch/PR#1; latest recovery Actions37018951170 successful. Player reported 狌狌 reward+1 displaying9/5 while Collection4/5.
 
@@ -66,3 +66,11 @@ Evidence: new10-case test RED2/10 (eight expected failures) → GREEN10/10; targ
 Only production edits: src/acquisition/presentation.js and src/campaign/controller.js. Acquisition/model/Tier/persistence, Campaign data, combat, Collection and UI layout unchanged. Chapter1 exact reward and Chapter2–6 schema/content regressions PASS. Independent read-only review55/55, no Critical/Important/Minor findings; release verification follows below.
 
 Player smoke after deployment: use normal URL without reset; win one relevant replay and compare the same character Result progression with Collection. Check new unlock0/5+UNLOCKED or current Tier denominator if naturally available; no need to replay all chapters or manufacture Tier states. STOP before M5C/AI/art.
+
+
+### Correction release evidence
+- Tested/deployed source7555c0b4de3485cce0cb5f271f1fb456c8b92392; subsequent closure commits change documents only.
+- [Actions#356 /37020221225](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37020221225) completed SUCCESS. Test407/407 zero failures; build110881098046/deploy110881223571 success. Decoded build log independently confirms407/407 and matching bundle.
+- Public browser normal https://hansen0318.github.io/shanhaijing-arena/ loaded Landing and `/shanhaijing-arena/assets/index-Db98qSff.js` with stylesheet `/shanhaijing-arena/assets/index-082fIvTy.css`; local build and CI artifact manifest match. This verifies deployed correction source. No injected save/reset/full battle smoke; exact Result rendering is covered by real ArenaScene contract tests. Focused player Result/Collection smoke remains pending.
+- Independent read-only review55/55 no Critical/Important/Minor findings. Local full407/407, targeted17/17, impacted126/126, build/diff PASS. Existing bundle-size advisory unchanged.
+- STOP at bounded M5B Result correction; no M5C/AI/art.
