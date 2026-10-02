@@ -41,8 +41,10 @@ Rules:
 - Exact named characters and quantities remain later content decisions.
 - M3 currently uses fixed configured quantities; random drop rates are not implied.
 
-### Current M3 live engineering fixture (not formal balance)
-Initial ownershipP1/P2/P3; P4/P5 locked. All Chapter1 stages have firstClear and repeatable sets:
+### Current Campaign reward contract
+The reward engine is universal across every chapter/stage. No chapter may require a different reward mechanism.
+
+Current Chapter1 engineering fixture:
 
 | Stage | FIRST CLEAR | REPEATABLE |
 |---|---|---|
@@ -52,20 +54,35 @@ Initial ownershipP1/P2/P3; P4/P5 locked. All Chapter1 stages have firstClear and
 |1-4|P5×2 + P2×2|P5×1|
 |1-5|P5×3 + P1×2|P5×2|
 
-P4 unlocks after1-2 at5; P5 after1-5 at7. All inventory retained. First Victory selects firstClear if present; replay selects repeatable. Chapters2–6 can remain empty placeholders; future reward.items configuration uses the same engine. Preview marks only firstClear rows CLAIMED. Explicit `?resetProgress=1` is a consumed, one-shot testing reset; ordinary visits preserve saves.
+P4 unlocks after1-2 at5; P5 after1-5 at7. First Victory selects firstClear if present; replay selects repeatable.
 
-## M4 planned Tier progression
-The current player-approved planning direction is incremental shard requirements:
-- unlock / first usable tier: 5 shards;
-- next tier: 10 additional shards;
-- final tier: 15 additional shards.
+Player clarification 2026-10-02: Chapters2–6 must no longer appear reward-empty in the player-visible engineering build. Every existing Chapter1–6 stage must expose the same data-driven firstClear/repeatable shard mechanism, using placeholder engineering reward tables until formal chapter content is authored. Future chapters inherit the same schema automatically. Exact character/quantity balance remains replaceable content data, never chapter-specific controller/view logic. Preview marks only firstClear rows CLAIMED. Explicit `?resetProgress=1` is a consumed, one-shot testing reset; ordinary visits preserve saves.
 
-Total across the full planned path is 30 shards if unchanged.
+## M4 Tier progression — player clarified 2026-10-02
 
-IMPORTANT:
-- Earlier repository notes used the opposite naming direction (T3 -> T2 -> T1). That older convention is superseded as an implementation assumption.
-- Before M4 coding begins, confirm the final labels/order of T1/T2/T3 with the player and record it explicitly. Do not infer or silently invert Tier naming.
-- Tier, character level/star count, and rarity are separate concepts unless the player later unifies them.
+The earlier provisional 5 / 10 / 15 progression is superseded.
+
+Canonical direction:
+- locked -> recruit/unlock at 5 shards -> character enters roster at T1;
+- T1 -> T2 requires 5 available character shards;
+- T2 -> T3 requires 10 available character shards;
+- T3 is the current maximum tier unless later expanded.
+
+Important accounting rule:
+- recruitment/unlock cost and Tier-upgrade cost must not double-use the same shards;
+- preserve M3 historical earned-shard data by introducing explicit spent/consumed progression accounting rather than silently rewriting old earned totals;
+- available shards = earned shards - already-consumed recruitment/upgrade cost;
+- excess shards carry forward after an upgrade.
+
+Collection presentation:
+- locked character: available/recruit requirement, e.g. 4/5;
+- owned T1 character: available/T2 requirement, e.g. 4/5, 5/5, 10/5;
+- owned T2 character: available/T3 requirement, e.g. 7/10;
+- upgrade button is enabled only when available >= requirement;
+- pressing upgrade consumes exactly the requirement and preserves excess;
+- T3 has no further upgrade action.
+
+Tier, character Level/star count, and rarity remain separate concepts unless explicitly unified later.
 
 ## Collection / roster detail concept
 
