@@ -13,8 +13,10 @@ Current order:
 3. **M4A — Collection / Roster Hub (read-only progression view)**
 4. **M4B — Tier Upgrade / Character Growth**
 5. **M4C — Main Menu / Landing Visual Polish**
-6. Formal Chapter 1 content / character art / battle art passes
-5. Audio pass after core flow and visual timing are stable
+6. **M5A — Formal Chapter 1 Content Definition**
+7. **M5B — Formal Character / Stage Data Integration**
+8. **M5C — Art / Animation / VFX Integration**
+9. Audio pass after core flow and visual timing are stable
 
 M3 depends on M2 roster ownership/team-selection contracts.  
 M4 depends on M3 shard inventory/unlock/reward contracts.
@@ -179,3 +181,33 @@ Where practical, preserve clean event hooks such as battleStart, skillCast, hit,
 - Character definition data is immutable; ownership/tier/shards are player progression state.
 - Placeholder content must be replaceable without rewriting navigation or combat.
 - Each milestone stops after engineering/deploy evidence and player smoke; do not automatically start the next milestone.
+
+
+## M5A — Formal Chapter 1 Content Definition
+
+Status: **CHAT-FIRST / DESIGN PENDING**.
+
+Goal: replace engineering placeholders with an approved formal Chapter1 content sheet before Work changes runtime data.
+
+Define:
+- real character identities and display names;
+- Type / Role;
+- base combat identity;
+- Basic / Heavy / Special / Awakening / Passive concepts;
+- per-ability range/targeting intent;
+- future AI-profile tendencies such as engage/ranged/kite/support/retreat thresholds;
+- Chapter1 five stage enemy lineups;
+- firstClear / repeatable shard reward tables;
+- Chapter1 finale/boss/recruit identity;
+- short Shanhaijing lore copy;
+- required portrait/sprite/idle/VFX asset slots.
+
+Do not tune final numeric balance yet. Use relative intent and bounded prototype values until player approves the content sheet.
+
+## M5B — Formal Character / Stage Data Integration
+
+After M5A approval, Work maps the approved content into the existing data-driven catalog, stage configs, rewards, Collection detail and battle definitions. Preserve existing engine contracts; no bespoke per-character combat engine.
+
+## M5C — Art / Animation / VFX Integration
+
+After formal data is stable, replace placeholders with approved visual assets, idle/micro-animation and skill VFX in bounded slices. AI tactical variation may be introduced alongside formal character profiles when needed, but must remain shared-engine/profile-driven.
