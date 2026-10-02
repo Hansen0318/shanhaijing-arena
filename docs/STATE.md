@@ -1,9 +1,11 @@
 # Project State
 
 ## Milestone
-**M5A FORMAL CONTENT DEFINITION — CHAT-FIRST / DESIGN PENDING**
+**M5B FORMAL CONTENT DATA INTEGRATION — IMPLEMENTATION READY**
 
 ## Current state
+- M5A Chapter1 content is PLAYER APPROVED. Formal identities, skills, T0 stats/cooldowns, stage lineups/rewards and Tier mechanic direction are locked as the first playtest content baseline.
+- M5B is now authorized: integrate formal data into the existing roster/campaign/Collection and add only reusable T0 combat primitives needed by the approved kits. Formal art/animation/VFX remain M5C.
 - Player accepted M4C Landing smoke. Main menu visual/navigation baseline is now PLAYER VERIFIED.
 - Next phase is M5A formal content definition. This is intentionally chat-first: lock Chapter1 character/stage/reward/ability/AI-profile content before Work replaces placeholder data or adds formal assets.
 - Static full-screen mountain/sun Landing, title treatment, gold primary BATTLE and outlined secondary COLLECTION. Existing navigation hierarchy and route owner retained; no motion/transition or new modes.
