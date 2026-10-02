@@ -468,3 +468,170 @@ Before M5B Work integration, player should confirm:
 4. short Collection copy tone.
 
 After approval, M5A should be marked CONTENT APPROVED and M5B may replace P1–P5 placeholders with formal identities/data while preserving the existing engine.
+
+
+## Prototype-ready T0 stat draft
+
+These values are intended as the first formal **playtest baseline**, not final balance. They deliberately stay near the already-stable graybox scale so M5B can distinguish characters without destabilizing the combat engine.
+
+| Character | HP | ATK | DEF | Move Speed | Attack Speed |
+|---|---:|---:|---:|---:|---:|
+| 鹿蜀 | 245 | 18 | 5 | 2.05 | 1.15 |
+| 猼訑 | 320 | 14 | 9 | 1.45 | 0.85 |
+| 赤鱬 | 235 | 13 | 5 | 1.60 | 0.95 |
+| 九尾狐 | 230 | 19 | 4 | 1.70 | 1.05 |
+| 狌狌 | 285 | 17 | 7 | 1.85 | 1.00 |
+
+Relative intent:
+- 鹿蜀: fastest Chapter1 character; fragile but responsive.
+- 猼訑: highest HP/DEF; slowest movement and attack cadence.
+- 赤鱬: low direct damage; value comes from healing/support.
+- 九尾狐: highest ATK but lowest durability.
+- 狌狌: bruiser profile between Tank durability and pure Attacker damage.
+
+Do not infer rarity or power ranking from these base stats.
+
+## Ability timing / targeting draft
+
+Cooldowns are character data, not global category constants. Basic remains automatic/no button cooldown.
+
+### 鹿蜀
+- Basic 踏角: close, single enemy.
+- Heavy 逐風衝: cooldown 3s; close-mid engage; single enemy.
+- Special 迴蹄: cooldown 6s; reposition + single enemy.
+- Awakening 南山奔襲: cooldown 12s; close-mid path/multi-hit.
+- Preferred AI spacing: close to close-mid.
+
+### 猼訑
+- Basic 角擊: close, single enemy.
+- Heavy 震嶺: cooldown 4s; close; single enemy + future control hook.
+- Special 守群: cooldown 8s; self/near ally protection.
+- Awakening 鎮岳: cooldown 14s; close-area disruption.
+- Preferred AI spacing: frontline close.
+
+### 赤鱬
+- Basic 水矢: mid, single enemy.
+- Heavy 湧浪: cooldown 4s; mid, single enemy.
+- Special 回瀾: cooldown 7s; lowest-HP living ally/self according to threshold.
+- Awakening 潤澤: cooldown 14s; team/area healing.
+- Preferred AI spacing: rear-mid.
+
+### 九尾狐
+- Basic 靈火: mid-long, single enemy.
+- Heavy 狐焰: cooldown 3.5s; mid-long, single enemy.
+- Special 九焰散華: cooldown 7s; mid-long area.
+- Awakening 青丘幻火: cooldown 13s; long-range high burst.
+- Preferred AI spacing: mid-long.
+
+### 狌狌
+- Basic 裂爪: close, single enemy.
+- Heavy 撼地: cooldown 3s; close impact.
+- Special 追獵: cooldown 6s; close-mid chase/engage.
+- Awakening 狂鬥: cooldown 12s; close sustained sequence.
+- Preferred AI spacing: close.
+
+Exact ranges and coefficients should be tuned in M5B against one shared arena scale; do not copy placeholder ranges blindly.
+
+## Effect / coefficient draft
+
+This is a relative tuning sheet for the first formal playtest. The exact resolver representation may differ.
+
+Damage coefficient direction:
+- normal Basic target: ~1.0x ATK baseline.
+- Heavy: ~1.35–1.55x depending on utility.
+- Special damage: ~1.25–1.65x depending on AoE/mobility.
+- Awakening: total resolved output ~2.0–2.6x spread across hits/targets where applicable.
+
+Character-specific starting targets:
+- 鹿蜀 Heavy: ~1.40x; Special ~1.30x plus reposition; Awakening ~2.20x total multi-hit.
+- 猼訑 Heavy: ~1.30x because control value; Special is defensive not damage-first; Awakening ~1.70x area plus disruption.
+- 赤鱬 Heavy: ~1.25x; Special heal ~22–28% of target maxHP or equivalent bounded formula; Awakening team heal ~14–18% maxHP per living ally.
+- 九尾狐 Heavy: ~1.50x; Special ~1.35x per valid target with AoE cap/shape; Awakening ~2.50x focused burst.
+- 狌狌 Heavy: ~1.45x; Special ~1.30x plus chase; Awakening ~2.30x total sustained hits.
+
+These are playtest seeds, not final values.
+
+## Tier mechanic identity draft
+
+Hard rule:
+- T0 already has the full Basic / Heavy / Special / Awakening / Passive identity.
+- T1/T2/T3 improve mechanics, reliability or synergy; they should not exist only as flat stat inflation.
+- Existing Tier shard costs remain T0→T1=5, T1→T2=10, T2→T3=15.
+
+The following are design targets. M5B does **not** need to implement every advanced status/control mechanic at once if the shared combat engine lacks the required hook.
+
+### 鹿蜀
+- T0: full base kit.
+- T1 — **疾踏**: 逐風衝 gains slightly better engage reach / approach reliability.
+- T2 — **回身**: 迴蹄 grants a short mobility/avoidance window after the reposition strike.
+- T3 — **逐影**: 南山奔襲 gains an enhanced final hit when the target was reached from a changed angle/position.
+
+Design purpose: Tier progression deepens mobility/skirmishing rather than just adding ATK.
+
+### 猼訑
+- T0: full base kit.
+- T1 — **護群**: 守群 can protect the most threatened nearby ally in addition to self.
+- T2 — **震退**: 震嶺 gains a short control/stagger/space-making effect.
+- T3 — **鎮守**: 鎮岳 leaves a brief team-protection window after the area disruption.
+
+Design purpose: higher Tier increasingly makes 猼訑 a protector, not a damage sponge only.
+
+### 赤鱬
+- T0: full base kit.
+- T1 — **回流**: 回瀾 becomes more reliable when self or ally is under the configured low-HP threshold.
+- T2 — **游息**: maintaining rear/support range improves healing efficiency or self-sustain.
+- T3 — **澤被**: 潤澤 gains a secondary support benefit such as brief mitigation/cleanse once that shared status system exists.
+
+Design purpose: Tier improves support intelligence and team sustain.
+
+### 九尾狐
+- T0: full base kit.
+- T1 — **狐火增幅**: 九焰散華 improves area coverage/secondary hit reliability.
+- T2 — **惑心追獵**: passive pressure against isolated or low-HP targets becomes a stronger tactical modifier.
+- T3 — **青丘餘焰**: 青丘幻火 leaves a short-lived residual fox-fire zone or secondary burst once persistent-area effects exist.
+
+Design purpose: Tier expands ranged pressure and target exploitation.
+
+### 狌狌
+- T0: full base kit.
+- T1 — **追勢**: 追獵 grants a short post-engage pressure/movement benefit.
+- T2 — **撼勢**: 撼地 gains a brief control/stagger component.
+- T3 — **狂鬥不退**: 狂鬥 gains temporary damage resistance or anti-interruption during the sequence.
+
+Design purpose: Tier increases commitment and sustained melee pressure.
+
+## M5B implementation boundary discovered from M5A
+
+Current graybox combat already supports:
+- direct damage;
+- per-ability cooldown/range;
+- critical metadata;
+- shared player/AI ability execution;
+- movement/spacing.
+
+Formal Chapter1 introduces mechanics that may require new shared primitives:
+- healing target resolution;
+- ally-targeted ability execution;
+- temporary mitigation/shield;
+- AoE target selection;
+- control/stagger/knockback;
+- persistent area effect;
+- short buffs/debuffs/status durations.
+
+Do not implement these as one-off code inside 鹿蜀/猼訑/赤鱬/九尾狐/狌狌.
+
+M5B should first integrate only the minimum reusable primitives needed for the approved T0 kits, then map character data onto them. Advanced Tier-only effects may be deferred to a dedicated shared-status slice if necessary.
+
+## Formal content approval gate
+
+The current proposal is now sufficiently detailed for a player decision on:
+- five character identities;
+- Type/Role;
+- skill names and broad effects;
+- T0 relative stats;
+- character-specific cooldown direction;
+- Chapter1 stage lineups;
+- Chapter1 rewards;
+- Tier mechanic identities.
+
+If accepted, mark M5A **CONTENT APPROVED** and prepare a bounded M5B Work handoff. M5B should not attempt final art/animation at the same time as combat-data integration.
