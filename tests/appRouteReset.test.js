@@ -36,3 +36,9 @@ test('actual app boots Landing and both sibling routes remain hidden-arena throu
  const e=boot(),before=[...e.map];assert.equal(e.controller.screen,'landing');
  for(const route of ['chapters','collection']){assert.equal(route==='chapters'?e.controller.openBattleMenu():e.controller.openCollection(),true);e.options.onRender();assert.equal(e.controller.screen,route);for(const [target,type] of [[e.win,'pageshow'],[e.win.visualViewport,'resize'],[e.win.visualViewport,'scroll']]){e.host.hidden=false;target.dispatchEvent(new Event(type));assert.equal(e.host.hidden,true);assert.equal(e.root.hidden,false);}e.controller.back();e.options.onRender();assert.equal(e.controller.screen,'landing');}assert.deepEqual([...e.map],before);
 });
+
+for(const [width,height] of [[568,320],[667,300],[844,390],[932,430]])test(`Landing restoration at ${width}x${height} keeps viewport owner and saves intact`,()=>{
+ const e=boot(),before=[...e.map];Object.assign(e.win.visualViewport,{width,height,offsetLeft:3,offsetTop:7});
+ for(const [target,type] of [[e.win,'pageshow'],[e.win,'orientationchange'],[e.win,'resize'],[e.win.visualViewport,'resize'],[e.win.visualViewport,'scroll']]){e.host.hidden=false;target.dispatchEvent(new Event(type));assert.equal(e.controller.screen,'landing');assert.equal(e.root.style.width,`${width}px`);assert.equal(e.root.style.height,`${height}px`);assert.equal(e.root.style.left,'3px');assert.equal(e.root.style.top,'7px');assert.equal(e.host.hidden,true);assert.equal(e.host.style.visibility,'hidden');assert.equal(e.root.hidden,false);}
+ assert.deepEqual([...e.map],before);
+});
