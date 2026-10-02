@@ -4,6 +4,8 @@
 **M4A COLLECTION / NAVIGATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
+- Universal chapter reward gap identified by player: Chapter2–6 currently have empty reward content even though the engine is generic. Player-visible engineering build must populate reward tables for all Chapters1–6 with the same firstClear/repeatable schema; future chapters use the same data contract.
+- M4B progression is now defined: recruit to T1 at5 shards; T1->T2 costs5 available; T2->T3 costs10; T3 max. Collection shows fractions against next requirement, and Character Detail provides the upgrade action. Recruitment and upgrade may not double-use the same shards; preserve lifetime earned totals with explicit spent accounting/migration. Canonical `docs/M4B_TIER_UPGRADE.md`.
 - First M4A player smoke requested smaller cards/detail and sibling navigation; bounded correction now deployed, awaiting new player smoke. M3 PLAYER ACCEPTED remains protected.
 - Branch `feat/m0-combat-core-20260927` / PR #1 open; deployed safe checkpoint `5ec1c345ad6cd14cbec7777a9c89ce434329db03`; recovery base `f9ffd844b8fa116b1c9d3e82439ce42dd0899bbc`. Later closure docs-only; WORK_PROGRESS pointer authoritative.
 - Normal boot/reload opens minimal static Landing BATTLE/COLLECTION. Chapter Select and Collection are siblings and both BACK to Landing. Explicit reset retains fresh Chapter1 behavior; no save wipes during ordinary navigation.
