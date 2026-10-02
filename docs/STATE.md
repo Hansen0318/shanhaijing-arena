@@ -1,9 +1,11 @@
 # Project State
 
 ## Milestone
-**M4A COLLECTION / NAVIGATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — IMPLEMENTATION IN PROGRESS**
 
 ## Current state
+- PartA complete: all30 stages Chapter1–6 configured firstClear/repeatable; Chapter1 unchanged; related29/29 PASS. Next PartB Tier model/persistence. Recoverybase `c3db01dab1963da3018357281bab51e0794e18f6`; WORK_PROGRESS latest pointer authoritative.
+
 - Universal chapter reward gap identified by player: Chapter2–6 currently have empty reward content even though the engine is generic. Player-visible engineering build must populate reward tables for all Chapters1–6 with the same firstClear/repeatable schema; future chapters use the same data contract.
 - M4B progression is now defined: recruit to T1 at5 shards; T1->T2 costs5 available; T2->T3 costs10; T3 max. Collection shows fractions against next requirement, and Character Detail provides the upgrade action. Recruitment and upgrade may not double-use the same shards; preserve lifetime earned totals with explicit spent accounting/migration. Canonical `docs/M4B_TIER_UPGRADE.md`.
 - First M4A player smoke requested smaller cards/detail and sibling navigation; bounded correction now deployed, awaiting new player smoke. M3 PLAYER ACCEPTED remains protected.

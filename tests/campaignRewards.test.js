@@ -15,7 +15,7 @@ test('normal ownership and stale team sanitation protect locked P4/P5 and exact-
 });
 test('all Chapter1 stages configure first-clear multi items and a replay subset; later placeholders share schema',()=>{
  for(let i=1;i<=5;i++){const items=findStage(`1-${i}`).reward.items;assert.equal(items.filter(x=>x.repeat==='firstClear').length,2);assert.equal(items.filter(x=>x.repeat==='repeatable').length,1);}
- assert.deepEqual(findStage('2-1').reward.items,[]);
+ assert.equal(findStage('2-1').reward.items.length,3);
 });
 test('Chapter1 unlock path retains shards, owned inventory, replay farming and reload ownership',()=>{
  const s=storage(),c=new CampaignController(options(s));
