@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M4C MAIN MENU / LANDING VISUAL POLISH — PASS / PLAYER VERIFIED.** Player completed the deployed Landing smoke and reported it OK. Preserve BATTLE/COLLECTION sibling navigation and current route behavior as baseline.
+- **NEXT PHASE: M5A FORMAL CONTENT DEFINITION — CHAT-FIRST.** Before more Work implementation, define Chapter1 formal content: real character identities, Type/Role, ability concepts/ranges/AI tendencies, stage enemy lineups, firstClear/repeatable rewards, finale identity, and required art/animation asset slots. Do not replace placeholders or invent balance until this content sheet is approved.
 - **M4C MAIN MENU / LANDING VISUAL POLISH — ENGINEERING PASS / PLAYER SMOKE PENDING.**
 - Active branch `feat/m0-combat-core-20260927` / PR#1 retained; no main merge. Recovery base `23c311120c97bdc9853954d9be831c02c9a8bd30`; first implementation checkpoint `c91ac3ed3d2814fb0d8f65122c973223fab5e3db`; final safe tested/deployed source `0a17954f6766ff79c68e825e942e6fb6a995bb06`. Later closure is documentation-only; recover remote latest.
 - Existing Landing view + scoped CSS now have a full-screen static mountain/sun background, title identity, gold primary BATTLE and outlined secondary COLLECTION. Same sibling routes and BACK behavior. No motion, transition, timer, new asset or progression/controller/combat change.
