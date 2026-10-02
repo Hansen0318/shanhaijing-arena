@@ -1,6 +1,9 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **PLAYER CORRECTION / NEXT WORK:** Chapter2–6 currently expose no player-visible shard rewards because `src/campaign/data.js` still gives rewards only when `n===1`; this placeholder shortcut is no longer acceptable. Universal reward schema must be populated for all current Chapters1–6 (engineering content, replaceable later) and all future chapters through data, never controller/view chapter conditionals.
+- **M4B TIER RULE NOW LOCKED:** locked->T1 recruit at5; T1->T2 costs5 available shards; T2->T3 costs10; T3 max. This supersedes the old provisional5/10/15 plan. Collection shows available/next requirement (e.g.4/5,10/5,7/10), not bare `Shards N`. Character Detail owns enabled/disabled upgrade action.
+- **Accounting hard rule:** recruitment shards cannot also pay for T1->T2. Preserve M3 lifetime earned totals and add explicit spent/consumed accounting; migrate already-owned pre-M4B characters by accounting recruitment cost exactly once. Canonical spec `docs/M4B_TIER_UPGRADE.md`.
 - **M4A COLLECTION / NAVIGATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING.** First M4A was not player accepted; this bounded correction is deployed. M3 remains PLAYER ACCEPTED and protected.
 - Active branch `feat/m0-combat-core-20260927` / PR #1 open. Safe deployed implementation `5ec1c345ad6cd14cbec7777a9c89ce434329db03`; recovery base `f9ffd844b8fa116b1c9d3e82439ce42dd0899bbc`. Latest closure commit is documentation only; use remote latest.
 - Normal app opens minimal static Landing with BATTLE→Chapter Select and COLLECTION→Collection siblings. Both top-level BACK paths return Landing; no Collection entry inside Chapter Select. Controller standalone Campaign entry remains chapters; app explicitly opens Landing. Existing explicit reset still opens fresh Chapter1.
