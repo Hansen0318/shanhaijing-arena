@@ -164,9 +164,9 @@ M4A is the canonical player-facing place to inspect accumulated shard inventory.
 
 For every catalog character:
 - show shard progress as available / next requirement, not a bare "Shards N" label;
-- locked character uses recruit threshold 5;
-- T1 uses next requirement 5;
-- T2 uses next requirement 10;
+- owned T0 uses next requirement 5;
+- owned T1 uses next requirement 10;
+- owned T2 uses next requirement 15;
 - T3 has no next upgrade requirement;
 - exact spending/action belongs to M4B, but M4A presentation must be compatible with this progression model.
 
@@ -298,9 +298,10 @@ Safe deployed source `5ec1c345ad6cd14cbec7777a9c89ce434329db03`, active branch `
 Collection cards must not present a standalone shard number such as `Shards 4`.
 
 Use progression fraction semantics:
-- locked: `4 / 5` toward recruit/unlock;
-- owned T1: `4 / 5`, `5 / 5`, or `10 / 5` toward T2;
-- owned T2: e.g. `7 / 10` toward T3.
+- owned T0: `4 / 5`, `5 / 5`, or `10 / 5` toward T1;
+- owned T1: e.g. `7 / 10` toward T2;
+- owned T2: e.g. `12 / 15` toward T3;
+- T3: MAX.
 
 The numerator may exceed the requirement until the player explicitly upgrades. Excess carries forward after spending.
 
