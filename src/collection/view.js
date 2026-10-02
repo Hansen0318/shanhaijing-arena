@@ -41,7 +41,7 @@ export class CollectionView {
   const close=()=>{dialog.remove();this.browser.inert=false;this.grid.scrollTop=scroll;trigger.focus();};
   const header=this.node('header','collection-header'),back=this.button('BACK',close);back.dataset.action='close-detail';header.append(back,this.node('h2','','CHARACTER DETAIL'));dialog.append(header);
   const content=this.node('div','collection-detail-content'),identity=this.node('div','collection-identity');const name=this.node('h2','collection-name',detail.name);name.id='collection-detail-name';identity.append(this.portrait(definition,true),name);
-  const info=this.node('div','collection-info');info.append(this.node('p','',mark.label),this.node('p','',`Role: ${detail.role}`),this.node('p','collection-status',owned?'OWNED':'LOCKED'),this.node('p','collection-shards',shardLabel),this.node('h3','','Abilities'));
+  const info=this.node('div','collection-info');info.append(this.node('p','',mark.label),this.node('p','',`Role: ${detail.role}`),this.node('p','collection-status',owned?'OWNED':'LOCKED'),this.node('p','collection-shards',shardLabel));
   if(owned) {
    info.append(this.node('p','collection-tier',tier));
    if(nextTier) {
@@ -58,6 +58,7 @@ export class CollectionView {
     upgrade.dataset.action='upgrade';upgrade.disabled=!canUpgrade;info.append(upgrade);
    }
   }
+  info.append(this.node('h3','','Abilities'));
   for(const ability of detail.abilities){info.append(this.node('p','collection-ability',`${ability.name} · ${ability.category}`));if(ability.description)info.append(this.node('p','',ability.description));}
   if(detail.lore)info.append(this.node('h3','','Lore'),this.node('p','',detail.lore));
   content.append(identity,info);dialog.append(content);dialog.addEventListener('keydown',event=>{if(event.key==='Escape')close();});this.page.append(dialog);back.focus();

@@ -25,3 +25,5 @@
 .collection-info h3 {font-size:14px;margin:12px 0 6px;}
 .collection-ability {font-weight:bold;}
 @media(max-height:350px){.collection-page,.collection-detail{padding-top:max(8px,env(safe-area-inset-top));padding-bottom:max(8px,env(safe-area-inset-bottom));}.collection-filters{margin:6px 0;}.collection-detail-content{grid-template-columns:minmax(80px,96px) minmax(0,1fr);}}
+
+.collection-button:disabled {opacity:.45;cursor:default;}
