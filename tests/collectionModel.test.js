@@ -8,7 +8,7 @@ import { createAcquisitionPersistence } from '../src/acquisition/persistence.js'
 test('all catalog definitions, initial ownership and universal shard inventory are read-only projections',()=>{
  const s=initialAcquisition();s.shardsByCharacterId.P1=8;s.shardsByCharacterId.P4=3;const before=structuredClone(s);
  const rows=collection.collectionEntries(s);assert.deepEqual(rows.map(r=>r.definition.id),Object.keys(rosterCatalog));assert.equal(rows[0].definition,rosterCatalog.P1);
- assert.deepEqual(rows.filter(r=>r.owned).map(r=>r.definition.id),['P1','P2','P3']);assert.equal(rows[0].shardLabel,'Shards 8');assert.equal(rows[3].shardLabel,'3 / 5 shards');assert.equal(rows[4].owned,false);assert.deepEqual(s,before);
+ assert.deepEqual(rows.filter(r=>r.owned).map(r=>r.definition.id),['P1','P2','P3']);assert.equal(rows[0].shardLabel,'8 / 5');assert.equal(rows[3].shardLabel,'3 / 5');assert.equal(rows[4].owned,false);assert.deepEqual(s,before);
 });
 for(const [filter,expected] of [['all',['P1','P2','P3','P4','P5']],['power',['P1','P4']],['speed',['P2','P5']],['blast',['P3']]])test(`${filter} filter changes only visible definitions`,()=>{
  const s=initialAcquisition(),before=structuredClone(s);assert.deepEqual(collection.collectionEntries(s,{filter}).map(r=>r.definition.id),expected);assert.deepEqual(s,before);
@@ -17,7 +17,7 @@ test('unlock and owned shards are retained and reload displays the same authorit
  const s=initialAcquisition();s.shardsByCharacterId.P4=3;
  const tx=completeAcquisition(s,{stageId:'synthetic',completionId:'win',outcome:'victory',reward:{items:[{type:'characterShard',characterId:'P4',quantity:4,repeat:'repeatable'},{type:'characterShard',characterId:'P1',quantity:2,repeat:'repeatable'}]}});
  const map=new Map(),storage={setItem:(k,v)=>map.set(k,v),getItem:k=>map.get(k)??null};createAcquisitionPersistence(storage).save(tx.state);
- const rows=collection.collectionEntries(createAcquisitionPersistence(storage).load());assert.equal(rows[3].owned,true);assert.equal(rows[3].shardLabel,'Shards 7');assert.equal(rows[0].shardLabel,'Shards 2');
+ const rows=collection.collectionEntries(createAcquisitionPersistence(storage).load());assert.equal(rows[3].owned,true);assert.equal(rows[3].shardLabel,'2 / 5');assert.equal(rows[0].shardLabel,'2 / 5');
 });
 test('detail uses ability references/category and optional data-driven descriptions/lore without fabricated progression',()=>{
  const def={...rosterCatalog.P1,name:'Example',lore:'Optional introduction',abilities:{...rosterCatalog.P1.abilities,passives:['passive-example']}};

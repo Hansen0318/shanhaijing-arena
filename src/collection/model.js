@@ -1,11 +1,12 @@
 import { rosterCatalog } from '../roster/catalog.js';
-import { UNLOCK_THRESHOLD } from '../acquisition/model.js';
+import { characterProgress } from '../acquisition/tier.js';
 import { runtimeAbilityDefinitions } from '../runtime/demoBattle.js';
 export function collectionEntries(acquisition,{filter='all',catalog=rosterCatalog,ownership=null}={}) {
  const owned=new Set(ownership?.characterIds ?? acquisition.ownedCharacterIds);
  return Object.values(catalog).filter(d=>filter==='all'||d.type===filter).map(definition=>{
   const shards=acquisition.shardsByCharacterId[definition.id] ?? 0, isOwned=owned.has(definition.id);
-  return {definition,owned:isOwned,shards,shardLabel:isOwned?`Shards ${shards}`:`${shards} / ${UNLOCK_THRESHOLD} shards`};
+  const progress=characterProgress(acquisition,definition.id);
+  return {...progress,definition,owned:isOwned,shards,tier:isOwned?(progress.tier ?? 'T1'):null,shardLabel:progress.progressLabel};
  });
 }
 const title=value=>value.charAt(0).toUpperCase()+value.slice(1);

@@ -1,3 +1,4 @@
+import { upgradeTier } from '../acquisition/tier.js';
 import { findChapter, findStage, orderedStages, nextStage } from './data.js';
 import { initialProgress, devProgress, stageStatus, chapterStatus, recordVictory } from './progression.js';
 import { initialAcquisition,completeAcquisition } from '../acquisition/model.js';
@@ -30,6 +31,12 @@ export class CampaignController {
  }
  beginCompletion() {
   this.battleCompletionId=globalThis.crypto.randomUUID();this.rewardResult=null;
+ }
+ upgradeCharacter(characterId,expectedTier,requestId) {
+  if(this.screen!=='collection')return {upgraded:false};
+  const transaction=upgradeTier(this.acquisition,{characterId,expectedTier,requestId});
+  if(transaction.upgraded){this.acquisition=transaction.state;this.acquisitionPersistence?.save(this.acquisition);}
+  return transaction;
  }
  openLanding() {
   if(!['chapters','collection'].includes(this.screen))return false;

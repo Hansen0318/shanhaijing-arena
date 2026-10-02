@@ -1,11 +1,12 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — DOMAIN/PERSISTENCE COMPLETE, UI PENDING. Branch `feat/m0-combat-core-20260927` / PR #1; recovery base `c3db01dab1963da3018357281bab51e0794e18f6`; latest safe checkpoint is commit containing this pointer.
+- M4B TIER UPGRADE / UNIVERSAL REWARD FOLLOW-UP — INTEGRATION COMPLETE, RELEASE CHECKS PENDING. Branch `feat/m0-combat-core-20260927` / PR #1; recovery base `c3db01dab1963da3018357281bab51e0794e18f6`; latest safe checkpoint is commit containing this pointer.
 - All30 current Chapter1–6 stages have data-driven firstClear and repeatable shard sets. Chapter1 unchanged; Chapters2–6 deterministic rotating P1–P5 engineering content (first3+2, replay subset1). No reward engine/controller/view edits.
 - PartA RED3/8 → related GREEN29/29, including all30 Preview/clear/replay configs and future syntheticChapter7. Previous emptyChapter2 assertion superseded by required content.
 - CheckpointB domain/persistence complete: acquisition schema v2 in existing v1 storage key; legacy earned/receipts retained; P1/P2/P3 recruit exempt; shard-unlocked owned characters spend5 once. Pure expected-Tier/request-ID transaction, available=earned-spent. Tier RED0/12 → related51/51 PASS.
-- Next exact action: RED Collection/detail upgrade integration then checkpoint C. TierT1→T2 costs5;T2→T3 costs10;T3MAX. Preserve earned, account recruitment once (baselineP1/P2/P3 exempt).
+- CheckpointC Collection/detail complete: available fractions/Tier/MAX, eligibility-gated UPGRADE, immediate save/refresh and500ms gesture guard. UI RED13/19→related74/74; impacted159/159; build/diff PASS.
+- Next exact action: review, Actions/Pages/source verification and final evidence/player checklist. TierT1→T2 costs5;T2→T3 costs10;T3MAX. Preserve earned, account recruitment once (baselineP1/P2/P3 exempt).
 - No Tier combat bonuses/Level/stars/rarity/shop/formal animation. M3 and existing M4A navigation/layout protected.
 
 ## Previous universal farming checkpoint (historical)
