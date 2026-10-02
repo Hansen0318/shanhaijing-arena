@@ -1,7 +1,7 @@
 # M4B — Tier Upgrade / Character Growth
 
 ## Status
-**ENGINEERING PASS / PLAYER SMOKE PENDING**
+**PASS / PLAYER VERIFIED**
 
 M4A Collection/Navigation is deployed pending final player acceptance. This spec defines the next progression slice and also records the shard-accounting correction required before Tier upgrades are safe.
 
@@ -188,3 +188,20 @@ Source `af56523791fc59eaecaa7657e82197bb4f003ec9` implemented the now-superseded
 ## 13. T0 correction release evidence / next action
 
 Implementation source `7bb3802a72392ed175e08ffd170a09305a5b3fc9`; domain checkpoint `76b7c0a4fa065ca4dff165d523ddc7aaa338ca13`, active branch `feat/m0-combat-core-20260927` / PR#1. Correction RED0/18→GREEN18/18; domain55/55, final relevant95/95, impacted180/180, combat93/93, build/diff PASS. Independent focused review50/50, no findings. Actions#324 /37006321807 CI349/349, Build/Pages success; public/local/CI JS `index-B5Rq6VE2.js` and CSS `index-CXWSf6fJ.css` match. Public T0 card/detail nextT1/5/disabled action confirmed. Full evidence and player checklist: `docs/verification/M4B_T0_CORRECTION.md`. No PLAYER VERIFIED claim; STOP pending player smoke.
+
+
+## 14. Player acceptance (2026-10-02)
+
+Player completed real-device smoke of the deployed T0-base Tier correction and reported the progression behavior OK.
+
+Accepted baseline:
+- newly owned characters are T0;
+- T0→T1 costs5 available shards;
+- T1→T2 costs10;
+- T2→T3 costs15;
+- T3MAX;
+- excess shards persist;
+- Collection/Detail fractions and upgrade eligibility are accepted;
+- migration/accounting behavior is accepted for continued development.
+
+M4B is closed. Preserve this baseline unless a later explicit progression change supersedes it.
