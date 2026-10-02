@@ -1,7 +1,7 @@
 # M4C — Main Menu / Landing Visual Polish
 
 ## Status
-**ENGINEERING PASS / PLAYER SMOKE PENDING**
+**PASS / PLAYER VERIFIED**
 
 M4B T0 Tier progression is PLAYER VERIFIED. The minimal Landing navigation shell already exists and its information architecture is fixed:
 
@@ -163,3 +163,17 @@ Static CSS mountain/sun hero and title treatment; gold primary BATTLE, outlined 
 Safe deployed source: `0a17954f6766ff79c68e825e942e6fb6a995bb06`, branch `feat/m0-combat-core-20260927`, PR#1. Targeted27/27, impacted188/188, build PASS, independent review24/24/no important findings. Actions#332 CI357/357 and Pages deploy SUCCESS. Public source hashes and both navigation/return paths verified.
 
 Detailed evidence and exact physical-device checklist: [M4C verification](verification/M4C_MAIN_MENU_LANDING.md). Physical iPhone safe-area/readability/toolbar acceptance remains pending. M4B T0 player acceptance remains protected. STOP after this release.
+
+
+## 13. Player acceptance (2026-10-02)
+
+Player completed the deployed real-device Landing visual/navigation smoke and reported the result OK.
+
+Accepted baseline:
+- normal launch -> Landing;
+- BATTLE and COLLECTION remain sibling entries;
+- top-level BACK returns to Landing;
+- current static visual hierarchy/readability accepted;
+- route visibility and existing progression state remain protected.
+
+M4C is closed. The next phase is formal content definition, not additional Landing rework.
