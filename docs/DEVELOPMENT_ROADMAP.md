@@ -12,7 +12,7 @@ Current order:
 2. **M3 — Shard / Reward / Character Unlock Loop**
 3. **M4A — Collection / Roster Hub (read-only progression view)**
 4. **M4B — Tier Upgrade / Character Growth**
-5. **M4C — Main Menu / Landing Hub**
+5. **M4C — Main Menu / Landing Visual Polish**
 6. Formal Chapter 1 content / character art / battle art passes
 5. Audio pass after core flow and visual timing are stable
 
@@ -129,19 +129,19 @@ Visual identity:
 
 Do not use stars as a second uncontrolled progression system before its meaning is defined.
 
-## M4C — Main Menu / Landing Hub
+## M4C — Main Menu / Landing Visual Polish
 
-Goal: add a top-level entry screen once Battle and Collection destinations both exist.
+The minimal parent navigation shell is now established during M4A so Chapter Select and Collection are sibling modes from the start.
 
-Planned information architecture:
-- app/site opens to a full-screen landing/main-menu presentation;
-- primary entry: BATTLE -> existing Chapter Select flow;
-- secondary entry: ROSTER / COLLECTION -> M4A Collection screen;
-- additional destinations such as Settings/Event/About remain future scope;
-- initial implementation should prefer a static full-screen hero/background with clear buttons;
-- formal animated promotional background/micro-animation is a later presentation pass, not required to establish navigation architecture.
+M4C is reserved for presentation expansion:
+- formal full-screen hero/promotional artwork;
+- animated or micro-animated background;
+- richer transition/presentation treatment;
+- optional future destinations such as Settings/Event/About.
 
-This does not replace the Campaign flow. It becomes the parent navigation layer above Campaign and Collection.
+The underlying navigation contract remains:
+- BATTLE -> Chapter Select
+- COLLECTION -> Collection
 
 ## Formal content after progression skeletons
 
