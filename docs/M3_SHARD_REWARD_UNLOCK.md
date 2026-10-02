@@ -413,3 +413,16 @@ Engineering PASS: targeted16/16, impacted126/126, independent review39/39/no fin
 Presentation-only correction implemented in campaign/view.js and campaign/style.css; transaction/model/persistence/grant logic and live fixture unchanged. Removed policy spans/CSS; already-claimed rows use muted color plus50%opacity. Actual DOM tests cover all labels absent and cleared first rows dimmed while repeatable stays bright. RED5/7 then GREEN targeted/impacted28/28; build/diff passed. Safe deployed source2d25cdeb8fb07fbf3e1078b67bff9c66d123bddc; Actions#290 /36942296853 CI288/288, Build/Pages success. Public/local/CI bundles match. Evidence docs/verification/M3_PREVIEW_CONTRAST.md. Only short Preview contrast/readability smoke remains for this slice.
 
 Future Team Select formal idle/micro-animation presentation keeps the character name below the character. This is a design decision only; no Team Select or animation code changed, no M4 started.
+
+
+## 21. Universal chapter reward content correction (2026-10-02)
+
+The reward **mechanism** is not Chapter1-specific.
+
+Hard rule:
+- Chapter1, Chapter2, Chapter3, Chapter4, Chapter5, Chapter6, and future chapters all use the same stage.reward.items schema;
+- every player-visible engineering chapter/stage should expose configured firstClear and repeatable shard rewards so the player can verify the same farming loop everywhere;
+- exact characters and quantities are replaceable chapter content;
+- do not use chapter-number/stage-number branches in acquisition/controller/view logic.
+
+The prior state where Chapters2–6 had `reward.items: []` was only a placeholder-content shortcut and is no longer acceptable for the player-visible engineering build. Add placeholder engineering reward tables for current Chapters2–6 until formal content design replaces them.
