@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **FUTURE AI TACTICAL VARIATION DESIGN RECORDED:** current deterministic center-collision behavior remains a regression-friendly prototype baseline. Formal AI should add shared-engine, character-profile-driven engage/reposition/kite/retreat/support states, target scoring, short-lived lateral/diagonal movement objectives and seeded variation. Healer/support retreat/recover/re-engage behavior is explicitly planned. Canonical notes in `docs/AI_SYSTEM.md`; not part of the current M4B correction unless separately authorized.
 - **M4B T0 BASE TIER CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING.** Latest canonical baseT0; T0→T1cost5,T1→T2cost10,T2→T3cost15,T3MAX. No player acceptance claim.
 - Active branch `feat/m0-combat-core-20260927` / PR#1 retained. Recoverybase `e511df93e3d1e0d608244cb4133cf7297ab8559d`; domain checkpoint `76b7c0a4fa065ca4dff165d523ddc7aaa338ca13`; UI/final deployed source `7bb3802a72392ed175e08ffd170a09305a5b3fc9`. Later closure is docs-only; remote latest authoritative.
 - Acquisition schema3 in existing v1 key. v1/v2 owned→T0; lifetime earned and existing valid spent/receipts preserved. v2 valid old Tier implied cumulative cost also retained if funded. No refund/free promotion. BaselineP1/2/3 recruitment0; shard-unlocked IDs recruitment5 once. Normalization floors prevent reload charge; v3 advanced Tier needs recorded consumed costs. Denied write session-memory fallback, Campaign/team untouched.
