@@ -164,12 +164,16 @@ Character/Ability core is accepted when deterministic tests establish:
 10. the same execution API can be called by AI or player intent without duplicated combat logic;
 11. existing type, battle-resolution, targeting, and 2-second handoff tests remain green if the new model touches their contracts.
 
-## Future progression concept
-- Recruit character at T3.
-- T3 -> T2: 5 character fragments.
-- T2 -> T1: 10 additional character fragments.
-- T3 already has the full skill categories.
-- T2/T1 should add mechanics, synergy, or enhanced effects in addition to modest stat gains.
+## Canonical progression concept
+- Newly owned characters begin at T0.
+- T0 -> T1: 5 available character fragments.
+- T1 -> T2: 10 available character fragments.
+- T2 -> T3: 15 available character fragments.
+- T3 is the current maximum.
+- T0 already has the full Basic / Heavy / Special / Awakening / Passive identity.
+- Higher Tiers should add mechanics, reliability, synergy, or enhanced effects rather than existing only as flat stat gains.
+- Acquisition shard cost, when applicable, is separate from Tier-upgrade spending and cannot be double-used.
+- Canonical persistence/accounting rules live in docs/M4B_TIER_UPGRADE.md.
 
 ## M2 prototype catalog / ownership
 `src/roster/catalog.js` defines immutable P1–P5 independently of battle slot IDs, using the existing lowercase Type/Role schema and four active ability references. Each definition has placeholder portrait metadata and explicit unimplemented Passive metadata; no Passive mechanic was added. HP varies (P1 280, P2 260, P3 240, P4 260, P5 250) to verify selected-data integration; other pacing stats match the established ally runtime. These are test values, not a balance pass.
