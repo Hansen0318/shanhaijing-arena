@@ -23,15 +23,20 @@ Collection/Roster Hub = inspect ownership/progression/character information.
 
 ## 2. Navigation / hierarchy
 
-M4A itself may initially be entered from a simple temporary navigation control so the feature can be built and verified without prematurely implementing the formal landing page.
+Player clarification (2026-10-02): Chapter Select and Collection are sibling modes and must not appear as buttons inside each other.
 
-Planned final hierarchy after M4C:
+Add the minimal parent navigation shell now:
 
 Main Menu / Landing
 - BATTLE -> Chapter Select -> Stage Preview -> Team Select -> Battle -> Result
-- ROSTER / COLLECTION -> Collection -> Character Detail
+- COLLECTION -> Collection -> Character Detail
 
-M4C will later formalize the full-screen landing page and primary buttons. M4A must not hard-code navigation in a way that prevents that parent layer.
+For this milestone, the landing shell may be simple/static: full-screen background/placeholder plus two clear buttons. Formal promotional art, animation and polish remain later scope.
+
+Collection BACK returns to the landing shell, not Chapter Select.
+Chapter Select BACK/top-level exit returns to the landing shell when applicable.
+
+Do not place a COLLECTION button inside Chapter Select as the final navigation model.
 
 ## 3. Collection layout
 
@@ -42,7 +47,8 @@ Use a full-page Collection screen rather than the compact Team Select bench.
 Requirements:
 - page title: COLLECTION or ROSTER (final label can be chosen during presentation pass);
 - filters/tabs: ALL / Power / Speed / Blast;
-- larger square character cards than Team Select;
+- compact square character cards, approximately the same visual scale as the Team Select bench cards or only modestly larger;
+- prioritize density so a large roster remains practical on mobile landscape;
 - grid can display many characters across pages/scrolling as catalog grows;
 - card selection is inspection-only and does not alter battle team selection;
 - preserve no accidental coupling to A1/A2/A3 runtime slots.
@@ -87,7 +93,7 @@ Tap a character card once to open Character Detail.
 M4A detail is read-only.
 
 Minimum information:
-- larger portrait / placeholder;
+- medium portrait / placeholder;
 - display name;
 - Type;
 - Role;
@@ -96,6 +102,14 @@ Minimum information:
 - if locked: unlock threshold/progress;
 - ability names/categories; concise descriptions when current definitions provide them;
 - short Shanhaijing introduction/lore field when available.
+
+Detail typography must be compact enough for future real content. Do not use oversized prototype text. Reserve readable space for:
+- a short character introduction;
+- Shanhaijing lore/story paragraph;
+- ability descriptions;
+- future progression fields.
+
+The detail body may use vertical scrolling if content exceeds the landscape viewport.
 
 Future-capable fields:
 - Tier;
@@ -182,15 +196,15 @@ M4A first implementation does not require formal animation.
 
 ## 10. Main Menu / Landing boundary
 
-Player-approved direction:
-- eventual app entry is a full-screen promotional/hero presentation;
+A minimal Main Menu / Landing shell is now required in M4A correction because it defines the proper top-level information architecture:
+- app/site opens to a full-screen parent screen;
 - clear BATTLE button;
-- clear ROSTER / COLLECTION button;
-- future Settings/Event/About can attach later;
-- initial landing implementation should be static/low-cost;
-- animated promotional background is later presentation polish.
+- clear COLLECTION button;
+- BATTLE opens Chapter Select;
+- COLLECTION opens Collection;
+- the two modes are siblings, not nested inside one another.
 
-This is M4C, not required to make M4A functional.
+The minimal shell should remain static/low-cost. Formal promotional art, animated hero/background, extra destinations and presentation polish remain later M4C scope.
 
 ## 11. Protected baseline
 
@@ -249,7 +263,7 @@ At minimum:
 ## 14. Stop condition
 
 After engineering PASS/deploy:
-- player performs short device smoke on Collection grid, filters, locked/owned contrast, shard visibility and Character Detail;
+- player performs short device smoke on the top-level landing shell, Battle/Collection sibling navigation, compact Collection grid, filters, locked/owned contrast, shard visibility and Character Detail readability;
 - stop;
 - do not begin M4B until player accepts M4A and Tier naming/order is explicitly confirmed.
 
@@ -258,3 +272,16 @@ After engineering PASS/deploy:
 Implemented on active branch `feat/m0-combat-core-20260927` / PR #1. Safe deployed source `ae7063c10c90ab43c8c6f6c5c9d88ed3be693ec6`. Targeted14/14, impacted133/133, build/diff/review PASS; Actions#299 /36946318660 CI302/302, Build/Pages success. Public source assets match. Verification and exact pending player checklist: `docs/verification/M4A_COLLECTION.md`.
 
 Current definitions have no lore or ability description metadata; omission is intentional under the conditional requirement. Placeholder cards remain static, names underneath. No Tier/spending/upgrade/Main Menu/animation. M3 is unchanged. Wait for M4A player smoke and STOP.
+
+
+## 16. Player correction — density, detail typography, and top-level navigation (2026-10-02)
+
+The first deployed M4A presentation is not yet player accepted.
+
+Required corrections:
+1. Collection character cards are too large. Reduce them to approximately Team Select bench-card scale (or only modestly larger) so many characters fit naturally in landscape.
+2. Character Detail typography is too large. Use compact UI/body text and reserve room for future lore/story and ability descriptions; allow vertical body scroll when needed.
+3. Chapter Select and Collection must live on separate sibling pages under a parent landing screen. Remove the final-navigation assumption that COLLECTION is a button inside Chapter Select.
+4. Implement only a minimal static landing shell now with BATTLE and COLLECTION. Formal promotional animation/art remains later M4C polish.
+
+This is a bounded M4A presentation/navigation correction. Do not start Tier spending, Level, formal animation or M4B mechanics.
