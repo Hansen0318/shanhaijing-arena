@@ -1,18 +1,13 @@
 # Project State
 
 ## Milestone
-**M4A COLLECTION / ROSTER HUB — CHAT SPEC COMPLETE / IMPLEMENTATION READY**
+**M4A COLLECTION / ROSTER HUB — IMPLEMENTATION IN PROGRESS**
 
 ## Current state
-- Player accepted the latest M3 Preview presentation correction. M3 reward/shard/unlock/farming flow is now the protected baseline.
-- Next bounded milestone: M4A Collection/Roster Hub, canonical `docs/M4A_COLLECTION_ROSTER_HUB.md`. It is read-only progression visibility: all characters, owned/locked contrast, shard inventory/progress, Type filters and Character Detail. No Tier spending/upgrade transaction yet.
-- Planned sequence: M4A Collection -> M4B Tier Upgrade/Character Growth -> M4C Main Menu/Landing. Landing direction is a full-screen hero with BATTLE and ROSTER/COLLECTION entries; formal animation is later polish.
-- Branch feat/m0-combat-core-20260927 / PR#1 open; safe deployed source2d25cdeb8fb07fbf3e1078b67bff9c66d123bddc; newer closure docs-only. WORK_PROGRESS current pointer authoritative.
-- Preview shows character/quantity without FIRST CLEAR/CLAIMED/REPEATABLE labels. Available/repeatable normal contrast; only claimed non-repeatable rows muted+50%opacity. Transaction/model/persistence/liveconfig/TeamSelect unchanged.
-- RED5/7→related28/28 GREEN, build/diff/bounded reviewPASS. Actions#290 /36942296853 CI288/288, Build/Pages success; public/local/CIindex-BLZigtQP.js /index-CtA1vGg1.css match. FreshPreview three plain rows observed; claimed distinction covered by DOMtests, real-device smoke pending. Evidence docs/verification/M3_PREVIEW_CONTRAST.md.
-- Current universalChapter1multi/farming fixture, route ownership and explicitone-shotreset preserved. No repeat of prior acquisition/unlock/reload/combat implementation or acceptance claims.
-- Future idle/micro-animation character names remain belowcharacters: designrecordonly in CHARACTER_SYSTEM; no currentTeamSelectcodechange.
-- Exact nextaction: Preview-only devicecheck for labelabsence, dimclaimedfirstrows/brightrepeatable andreadability. STOP beforeM4; do not claimPLAYER VERIFIED.
+- M3 is PLAYER ACCEPTED and protected. Active branch `feat/m0-combat-core-20260927` / PR #1, recovery base `225a0610b779612b64b052c1df643bf8d69bf6c3`.
+- M4A read-only projection/navigation implemented; targeted RED 0/9 then GREEN 9/9. Grid/detail/entry and release verification remain.
+- Canonical `docs/M4A_COLLECTION_ROSTER_HUB.md`. Temporary Chapter Select entry, scalable vertical grid, single-tap read-only detail; authoritative catalog/acquisition only.
+- Exact next action: Collection view DOM tests and implementation. No M4B/M4C/Tier/spending/formal animation.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

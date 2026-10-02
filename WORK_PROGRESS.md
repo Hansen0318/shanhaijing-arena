@@ -1,15 +1,12 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- **M3 current player feedback: PASS.** Latest Preview presentation smoke accepted by player: policy labels removed; dim claimed first-clear rows vs bright obtainable rows is accepted. M3 is closed for product flow; preserve it as baseline.
-- **NEXT: M4A COLLECTION / ROSTER HUB — CHAT SPEC COMPLETE / IMPLEMENTATION READY.** Canonical spec: `docs/M4A_COLLECTION_ROSTER_HUB.md`. Purpose: dedicated read-only Collection screen showing all catalog characters, owned/locked contrast, authoritative M3 shard counts, Type filters, and one-tap Character Detail with identity/Type/Role/ability summary/optional Shanhaijing lore. No shard spending/Tier transaction yet.
-- Roadmap now intentionally splits M4: M4A Collection visibility -> M4B Tier Upgrade/Growth -> M4C Main Menu/Landing Hub. Final landing direction: full-screen hero with BATTLE and ROSTER/COLLECTION entries; formal animated hero later. Do not begin M4B/M4C inside M4A.
-- **M3 PREVIEW PRESENTATION CORRECTION — ENGINEERING PASS / PLAYER SMOKE PENDING**. Active branch feat/m0-combat-core-20260927 / PR#1 open. Safe implementation/deployed source2d25cdeb8fb07fbf3e1078b67bff9c66d123bddc; later closure docs-only. Recoverybase0636172132c2719f68d5a154039a1f34e30aac7e.
-- Changed only Campaign Preview view/styles: remove FIRST CLEAR/CLAIMED/REPEATABLE spans; keep each character/quantity. Normal available/repeatable rows color#ffe0a0/opacity1; claimed non-repeatable color#bac4cc/opacity.5. Model/grant/firstClear/repeatable semantics/save/config/TeamSelect/combat unchanged.
-- Actual verification: RED presentation5/7, GREEN related28/28 (rewardPresentation/universalRewards/campaignNavigation/teamFlowView); build/diff and bounded product diff review PASS. Configured CI full288/288; [Actions#290 /36942296853](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/36942296853) Build/Pages success, jobs110636375075/110636469702. Public/local/CI JSindex-BLZigtQP.js /CSSindex-CtA1vGg1.css match. Public fresh1-1 shows allthreequantityrows, no labels, normalcolor/opacity1. Claimed/repeatable styling covered by actualDOMcontract tests; no full battle/device smoke replayed.
-- Design record only: future Team Select formal idle/micro-animation retains character name underneath (docs/CHARACTER_SYSTEM.md). No current Team Select/animation implementation.
-- Exact next action: player short Preview smoke on an already-cleared stage: no policy labels, claimed first-clear rows clearly dim, repeatable row bright; unclaimed rows bright and mobile readable. Do not reset/retest the accepted reward engine for this visual correction. Previous universal farming/reload acceptance remains as previously recorded, not newly asserted. STOP before M4. No PLAYER VERIFIED claim.
-- Evidence docs/verification/M3_PREVIEW_CONTRAST.md. Prior universal fixture, route reset and safe save behavior remain unchanged; current canonicalM3§5 supersedes visible-label wording in old checks.
+- M4A COLLECTION / ROSTER HUB — IMPLEMENTATION IN PROGRESS. M3 PLAYER ACCEPTED; protect all prior acquisition/reward/combat/UI behavior.
+- Active branch `feat/m0-combat-core-20260927`, PR #1. Recovery base `225a0610b779612b64b052c1df643bf8d69bf6c3`; latest remote checkpoint is the commit containing this pointer.
+- Completed: pure read-only catalog/acquisition projection, optional data-driven ability/lore detail summary, bounded Collection navigation with previous Campaign route restoration.
+- Targeted RED 0/9 then GREEN 9/9 (collectionModel / collectionNavigation). No persistence writes or team mutations.
+- Next exact action: implement separate Collection grid/detail view and Chapter Select entry with DOM tests, then impacted checks/build/review/deploy.
+- No Tier/M4B/M4C/formal animation. Player mobile smoke remains pending for M4A.
 
 ## Previous universal farming checkpoint (historical)
 - **M3 PREVIEW PRESENTATION CORRECTION — RELEASE CHECKS IN PROGRESS**. Branch feat/m0-combat-core-20260927 / PR#1 retained. Recoverybase0636172132c2719f68d5a154039a1f34e30aac7e. Preview labels FIRST CLEAR/CLAIMED/REPEATABLE removed; available/repeatable rows normal contrast, claimed non-repeatable muted+50%opacity. Existing reward/acquisition/persistence/config/TeamSelect/combat unchanged.

@@ -31,6 +31,10 @@ export class CampaignController {
  beginCompletion() {
   this.battleCompletionId=globalThis.crypto.randomUUID();this.rewardResult=null;
  }
+ openCollection() {
+  if(!['chapters','stages'].includes(this.screen))return false;
+  this.collectionReturnScreen=this.screen;this.screen='collection';return true;
+ }
  openChapter(id) {
   if(!['chapters','stages'].includes(this.screen) || chapterStatus(this.progress,id)==='locked') return false;
   this.chapterId=id; this.selectedStageId=orderedStages(findChapter(id)).find(s=>stageStatus(this.progress,s.stageId)!=='locked').stageId;
@@ -98,6 +102,7 @@ export class CampaignController {
   this.chapterId=next.chapterId;this.selectedStageId=next.stageId;this.screen='stages';return true;
  }
  back() {
+  if(this.screen==='collection'){this.screen=this.collectionReturnScreen;return true;}
   if(this.screen==='team') {this.screen='stages';return true;}
   if(this.screen!=='stages') return false;
   this.screen='chapters'; return true;
