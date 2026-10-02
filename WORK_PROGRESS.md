@@ -5,7 +5,8 @@
 - Active branch `feat/m0-combat-core-20260927`, PR #1. Recovery base `225a0610b779612b64b052c1df643bf8d69bf6c3`; latest remote checkpoint is the commit containing this pointer.
 - Completed: pure read-only catalog/acquisition projection, optional data-driven ability/lore detail summary, bounded Collection navigation with previous Campaign route restoration.
 - Targeted RED 0/9 then GREEN 9/9 (collectionModel / collectionNavigation). No persistence writes or team mutations.
-- Next exact action: implement separate Collection grid/detail view and Chapter Select entry with DOM tests, then impacted checks/build/review/deploy.
+- Next exact action: review findings, Actions/Pages deploy and public source confirmation.
+- UI integration complete: targeted 14/14, impacted 133/133, build/diff PASS. Chapter Select temporary entry; scalable grid, locked contrast, read-only single-tap detail, filter/scroll restoration. No M3 or Team Select product logic changes.
 - No Tier/M4B/M4C/formal animation. Player mobile smoke remains pending for M4A.
 
 ## Previous universal farming checkpoint (historical)

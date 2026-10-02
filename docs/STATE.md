@@ -5,9 +5,10 @@
 
 ## Current state
 - M3 is PLAYER ACCEPTED and protected. Active branch `feat/m0-combat-core-20260927` / PR #1, recovery base `225a0610b779612b64b052c1df643bf8d69bf6c3`.
-- M4A read-only projection/navigation implemented; targeted RED 0/9 then GREEN 9/9. Grid/detail/entry and release verification remain.
+- M4A read-only projection/navigation implemented; targeted RED 0/9 then GREEN 9/9. Grid/detail/entry implemented; release verification remains.
+- UI integration targeted 14/14, impacted 133/133, build/diff PASS. Release review/deployment pending.
 - Canonical `docs/M4A_COLLECTION_ROSTER_HUB.md`. Temporary Chapter Select entry, scalable vertical grid, single-tap read-only detail; authoritative catalog/acquisition only.
-- Exact next action: Collection view DOM tests and implementation. No M4B/M4C/Tier/spending/formal animation.
+- Exact next action: review, Actions/Pages and public source verification. No M4B/M4C/Tier/spending/formal animation.
 
 ## Historical M2 release evidence (superseded by current state above)
 ### M2 history

@@ -1,3 +1,4 @@
+import { CollectionView } from '../collection/view.js';
 import { stageRewardRows } from '../acquisition/presentation.js';
 import { orderedChapters, findChapter, findStage, orderedStages } from './data.js';
 import { chapterStatus, stageStatus } from './progression.js';
@@ -22,6 +23,10 @@ export class CampaignView {
  render() {
   this.root.replaceChildren(); this.root.hidden=false;
   const page=document.createElement('section'); page.className='campaign-page';
+  if(this.controller.screen==='collection') {
+   this.collectionView ??= new CollectionView(this.controller,{onBack:()=>{if(this.controller.back())this.render();}});
+   this.collectionView.mount(page);this.root.append(page);this.onRender?.();return;
+  }
   if(this.controller.screen==='team') {
    this.controller.refreshTeamOwnership();
    if(this.filterTeam!==this.controller.teamSelection){this.filterTeam=this.controller.teamSelection;this.teamFilter='all';}
@@ -32,7 +37,9 @@ export class CampaignView {
    this.root.append(page);this.onRender?.();return;
   }
   if(this.controller.screen==='stages') { this.renderStages(page); this.root.append(page); this.onRender?.(); return; }
-  const heading=document.createElement('h1'); heading.textContent='CHAPTER SELECT';page.append(heading);
+  const heading=document.createElement('h1'); heading.textContent='CHAPTER SELECT';
+  const header=document.createElement('header');header.className='stage-header';
+  const collection=document.createElement('button');collection.type='button';collection.className='campaign-button';collection.textContent='COLLECTION';collection.onclick=()=>{if(this.controller.openCollection())this.render();};header.append(heading,collection);page.append(header);
   const grid=document.createElement('div');grid.className='chapter-grid';
   for(const chapter of orderedChapters()) grid.append(card({image:chapter.thumbnail,label:chapter.title,status:chapterStatus(this.controller.progress,chapter.chapterId),onClick:()=>{if(this.controller.openChapter(chapter.chapterId)) this.render();}}));
   page.append(grid);this.root.append(page);this.onRender?.();
