@@ -12,7 +12,7 @@ export class PersistentAreas{
  }
  tick(now,actors,apply){
   for(const area of this.records.values()){
-   if(now>=area.expiryTime){this.remove(area.id);continue;}
+   if(now+1e-9>=area.expiryTime){this.remove(area.id);continue;}
    const due=this.nextTicks.get(area.id);if(now+1e-9<due)continue;
    this.evaluations++;
    for(const target of livingUnique(actors))if((area.spec.eligibility==='all'||(target.teamId===area.sourceTeamId)===(area.spec.eligibility==='ally'))&&containsDanger(target,area.geometry))apply(area,target);

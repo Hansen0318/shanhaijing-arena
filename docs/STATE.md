@@ -1,9 +1,10 @@
 # Project State
 
 ## Milestone
-**M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — IN PROGRESS**
+**M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
 
 ## Current state
+- M6C A–E engineering implemented; targeted119/119, impacted369/369, full512/512/build/diff PASS. Independent findings fixed RED→GREEN; no unresolved blocker. Actions/Pages/public verification next; then one focused Tier A/B Lab smoke. No accounting/reward/Chapter changes. Evidence: verification/M6C_TIER_COMBAT_EFFECTS.md.
 - M6C A complete, targeted21/21; read-only Tier snapshots/effect schema. B status/control/conditions integrated,152/152 PASS. C bounded area/protection integrated,143/143 PASS; copied geometry includes x/y only. D formal Tier data/Lab A/B complete; targeted108/108/full501/501 PASS. E review/build/deploy pending. Plan: M6C_IMPLEMENTATION_PLAN.md.
 - M6B is PLAYER VERIFIED. Current placeholder telegraph geometry is accepted for now and may be visually/timing-tuned later without changing the shared threat/dodge contract.
 - M6C is authorized: connect existing Tier state to combat through generic shared primitives and data-driven tier effect definitions; no accounting-cost changes and no per-character engine branches.

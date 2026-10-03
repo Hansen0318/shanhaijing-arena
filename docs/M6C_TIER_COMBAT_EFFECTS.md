@@ -1,7 +1,7 @@
 # M6C — Tier Combat Effects / Shared Status Primitives
 
 ## Status
-**IMPLEMENTATION READY**
+**IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
 
 M6B tactical AI is PLAYER VERIFIED. M6C makes the already-existing T0→T3 progression meaningful in combat without changing shard costs or progression accounting.
 
@@ -331,10 +331,14 @@ No flat HP/ATK growth. All positive damage/heal gains additive, capped15%; incom
 |---|---|---|---|
 | 鹿蜀 | Heavy max/engage reach×1.10; engage displacement×1.10 | Successful Special: movement×1.10 for0.8s; dodgeable-hit avoidance0.25s | Awakening final hit×1.12 only after qualifying reposition against same target within4s; movement≥0.35 or angle≥0.2rad |
 | 猼訑 | Special additionally protects most threatened living ally within2.4:15% mitigation4s; base self25%/4s unchanged | Heavy successful hit stagger0.35s | Successful Awakening protects living team within2.4:10% mitigation3s |
-| 赤鱬 | Special heal×1.10 if recipientHP≤35% | Any heal×1.05 if nearest living enemy distance2–4.2; combine cap15% | Successful Awakening team mitigation8%/2s within20 |
+| 赤鱬 | Special heal×1.10 if recipientHP≤35% | Any heal×1.05 if nearest living enemy distance2–4.2; combine cap15% | Valid Awakening (including full-HP allies) team mitigation8%/2s within20 |
 | 九尾狐 | Special max/area/warning radius×1.10 (radius1.6→1.76) | Any damage×1.08 if recipientHP≤35% OR no other living enemy within1.4 | Awakening hit leaves fixed circle radius0.9/duration3s; periodic0.5s, coefficient0.12, five pulses before exclusive expiry; noncrit, normal Type/DEF/mitigation |
 | 狌狌 | Successful Special movement×1.12 for1.2s | Heavy successful hit stagger0.30s | Valid Awakening cast mitigation12% and steadfast0.6s; steadfast rejects new stagger |
 
 Mobility/avoidance buffs require successful valid cast; no free air-cast buffs. Short stagger blocks new actions and ordinary AI/player movement; existing noninterruptible casts/multi-hit sequences continue. No cleanse or generic dodge button added.
 Persistent zone source KO cancels its remaining pulses; target KO excluded; residual pulses cannot recursively spawn zones. Status labels MOB/EVA/STG/RES and guard◈ are generic placeholders; Lab-only compact Tier labels. Circle area placeholder reads same frozen geometry/clock as damage, no timer/tween.
 Lab adds TIER COMPARISON / STATUS / CONTROL TEST / PERSISTENT AREA TEST. Ally/Enemy Tier overridesT0–T3, T0 ally baseline toggle; same roster/enemies/seed41. Normal Campaign reads authoritative current Tier with detached snapshot; no battle writeback. D targeted108/108/full501/501 PASS. E review/build/release pending.
+
+## E verification and review fixes
+Targeted119/119, impacted369/369, full512/512, build/diff PASS. Independent review0 Critical/1 Important schema gap/1 angle finding. All RED→GREEN resolved: finite bounded condition window, supported trigger/kind combinations, valid status recipients, actual wrapped bearing angle instead of0. Root integration tests also verify actual Arena shutdown clears retained old-session records, full-HP secondary support (no phantom heal), natural production area preset, and1e-9s logical-clock tolerance at exclusive expiry (five pulses, never six). Existing noninterruptible casts remain noninterruptible; no new stun/cancel mechanic introduced.
+Entry76,859 bytes vs accepted M6B68,623 (pure Tier/schema/UI metadata); battle1,431,411 deferred. Static menu graph excludes BattleSession/tactics/Phaser/Arena. Build advisory on deferred Phaser size remains existing baseline. Actions/Pages/public verification pending; one physical focused smoke after release.

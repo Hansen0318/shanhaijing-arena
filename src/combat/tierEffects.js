@@ -8,10 +8,13 @@ const conditions=new Set(['low_hp','rear_range','target_pressure','changed_angle
 export function createTierEffect(input){
  if(!input||typeof input.id!=='string'||!input.id||!kinds.has(input.kind))throw new TypeError('Invalid Tier effect');
  const e=structuredClone(input);e.trigger??=['range','approach','damage','heal'].includes(e.kind)?'modify':'post_cast';
+ if(['range','approach','damage','heal'].includes(e.kind)?e.trigger!=='modify':e.trigger==='modify')throw new TypeError('Unsupported effect trigger');
+ if(e.kind==='status'&&e.recipient!=null&&!['self','target'].includes(e.recipient))throw new TypeError('Invalid status recipient');
+ if(e.lastHit!=null&&typeof e.lastHit!=='boolean')throw new TypeError('Invalid last-hit predicate');
  if(!['modify','cast','hit','post_cast'].includes(e.trigger))throw new TypeError('Invalid effect trigger');
  if(e.category!=null&&!['basic','heavy','special','awakening'].includes(e.category))throw new TypeError('Invalid effect category');
  if(['range','approach','damage','heal'].includes(e.kind)&&(!Number.isFinite(e.magnitude)||e.magnitude<1||e.magnitude>1.15))throw new RangeError('Modifier must be 1–1.15');
- if(e.condition){const c=e.condition;if(!conditions.has(c.kind))throw new TypeError('Invalid condition');for(const key of ['threshold','radius','min','max','minDistance','minAngle'])if(c[key]!=null&&(!Number.isFinite(c[key])||c[key]<0))throw new RangeError('Invalid condition data');if(c.threshold!=null&&c.threshold>1)throw new RangeError('HP threshold exceeds1');}
+ if(e.condition){const c=e.condition;if(!conditions.has(c.kind))throw new TypeError('Invalid condition');for(const key of ['threshold','radius','min','max','minDistance','minAngle','within'])if(c[key]!=null&&(!Number.isFinite(c[key])||c[key]<0))throw new RangeError('Invalid condition data');if(c.within!=null&&(c.within<=0||c.within>30))throw new RangeError('Invalid condition window');if(c.min!=null&&c.max!=null&&c.min>c.max)throw new RangeError('Invalid condition band');if(['range','approach'].includes(e.kind))throw new TypeError('Static projection cannot have condition');if(c.threshold!=null&&c.threshold>1)throw new RangeError('HP threshold exceeds1');}
  if(['status','protect'].includes(e.kind))validateStatus(e.status);
  if(e.kind==='protect'&&(!Number.isFinite(e.radius)||e.radius<=0||!['threatened','team'].includes(e.recipient)))throw new RangeError('Invalid protection');
  if(e.kind==='area')validateArea(e.area);

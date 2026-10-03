@@ -65,6 +65,7 @@ export class ArenaScene extends Phaser.Scene {
   create() {
     this.selectedKoFixture = !this.labConfig && new URLSearchParams(window.location.search).get('fixture') === 'ko';
     this.session = this.labConfig ? createLabBattleSession(this.labConfig) : this.stageConfig ? createStageBattleSession(this.stageConfig) : createDemoBattleSession();
+    const battleSession=this.session;this.events.once('shutdown',()=>battleSession.clearTransientCombat());
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
     this.damageNumbers = new DamageNumbers(this,arenaToStage);

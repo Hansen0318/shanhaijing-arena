@@ -54,3 +54,10 @@ test('actual Arena pause freezes threat clock; restart/retry clears warnings and
  assert.equal(warning.length,1);s.togglePause();s.update(0,1000);assert.equal(old.elapsedSeconds,0);assert.deepEqual(old.threats.active(0),warning);
  s.events.emit('shutdown');s.init({labConfig:c});s.create();assert.notEqual(s.telegraphs,presenter);assert.equal(s.session.threats.active(0).length,0);assert.equal(s.session.delayedImpacts.size,0);assert.equal(s.paused,false);
 });
+test('actual Arena pause and shutdown clear Tier statuses/areas before fresh Retry',()=>{
+ const c=createLabConfig({scenarioId:'persistent-area',allyTier:'T3',skipCountdown:true}),s=arena();s.init({labConfig:c});s.create();const old=s.session;
+ old.statuses.apply({sourceId:'a1',targetId:'a1',type:'movement',magnitude:1.1,duration:.5},0);
+ old.areas.create({sourceId:'a2',sourceTeamId:'allies',center:{x:5,y:0},spec:{radius:1,duration:3,interval:.5,eligibility:'enemy',behavior:'periodic',coefficient:.1}},0);
+ s.togglePause();s.update(0,3000);assert.equal(old.elapsedSeconds,0);assert.equal(old.statuses.records.size,1);assert.equal(old.areas.records.size,1);
+ s.events.emit('shutdown');assert.equal(old.statuses.records.size,0);assert.equal(old.areas.records.size,0);s.init({labConfig:c});s.create();assert.equal(s.session.statuses.records.size,0);assert.equal(s.session.areas.records.size,0);assert.equal(s.session.tierProjections.get('a1').tier,'T3');
+});

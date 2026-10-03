@@ -16,7 +16,7 @@ export const LAB_SCENARIOS=freeze([
  {id:'ranged-kite',title:'RANGED KITE',description:'九尾狐 slot2 begins inside melee danger distance; observe backstep/kite then cast from the preferred band.',allyTeam:['P2','P4','P3'],enemyTeam:['P5','P1','P2'],allySpawnFormation:nearAllies,enemySpawnFormation:[{x:4.9,y:0},{x:6,y:-1},{x:6,y:1}]},
  {id:'tier-comparison',title:'TIER COMPARISON',description:'Same teams and seed41. Select ally Tier, then toggle T0 ally baseline for A/B; enemy Tier stays fixed.',allyTeam:['P1','P2','P3'],enemyTeam:['P5','P4','P2'],allySpawnFormation:nearAllies,enemySpawnFormation:nearEnemies,allyHpRatios:[.55,.55,.3]},
  {id:'status-control',title:'STATUS / CONTROL TEST',description:'猼訑 and 狌狌 at T2+ add short shared stagger. Compare T0 baseline; mitigation and mobility indicators are generic.',allyTeam:['P2','P5','P1'],enemyTeam:['P5','P2','P1'],allySpawnFormation:nearAllies,enemySpawnFormation:nearEnemies,selectedSlot:0},
- {id:'persistent-area',title:'PERSISTENT AREA TEST',description:'Select ally T3. 九尾狐 Awakening hit leaves a3-second fixed residual area; moving out avoids later pulses.',allyTeam:['P1','P4','P3'],enemyTeam:['P2','P2','P5'],allySpawnFormation:nearAllies,enemySpawnFormation:nearEnemies},
+ {id:'persistent-area',title:'PERSISTENT AREA TEST',description:'Select ally T3. 九尾狐 Awakening hit leaves a3-second fixed residual area; moving out avoids later pulses.',allyTeam:['P2','P4','P3'],enemyTeam:['P4','P4','P2'],allySpawnFormation:[{x:3,y:-.8},{x:4,y:0},{x:2,y:1}],enemySpawnFormation:[{x:7.2,y:-.6},{x:7.2,y:.6},{x:8,y:0}]},
 ]);
 export const labScenario=id=>LAB_SCENARIOS.find(s=>s.id===id);
 export function createLabConfig(input={}){

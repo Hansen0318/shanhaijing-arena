@@ -24,7 +24,7 @@ export const formalTierEffects=freezeEffectData({
  ],[
   {id:'chiru.rear-heal',name:'游息',kind:'heal',magnitude:1.05,condition:{kind:'rear_range',min:2,max:4.2}},
  ],[
-  protection('chiru.support','澤被','awakening','team',.08,2,20),
+  {...protection('chiru.support','澤被','awakening','team',.08,2,20),trigger:'cast'},
  ]),
  P4:tiers([
   {id:'fox.coverage',name:'狐火增幅',kind:'range',category:'special',magnitude:1.1},

@@ -137,6 +137,8 @@ export class BattleSession {
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 
+  clearTransientCombat(){this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();}
+
   drainHealEvents() { return this.healEvents.splice(0); }
 
   drainDamageEvents() {
@@ -276,7 +278,7 @@ export class BattleSession {
 
   applyAbilityEffects(actor,target,definition,category,source,context,geometry=null) {
     const actorDefinition=this.characterDefinitions[actor.definitionId];let applied=false;
-    if(!geometry){const before={x:actor.x,y:actor.y};applyAbilityMovement(actor,target,definition.effect.movement,this.arenaBounds);if(definition.effect.movement?.kind==='reposition')this.mobilityEvidence.set(actor.instanceId,{targetId:target.instanceId,at:this.elapsedSeconds,distance:Math.hypot(actor.x-before.x,actor.y-before.y),angle:0});}
+    if(!geometry){const before={x:actor.x,y:actor.y};applyAbilityMovement(actor,target,definition.effect.movement,this.arenaBounds);if(definition.effect.movement?.kind==='reposition'){const from=Math.atan2(before.y-target.y,before.x-target.x),to=Math.atan2(actor.y-target.y,actor.x-target.x);this.mobilityEvidence.set(actor.instanceId,{targetId:target.instanceId,at:this.elapsedSeconds,distance:Math.hypot(actor.x-before.x,actor.y-before.y),angle:Math.abs(Math.atan2(Math.sin(to-from),Math.cos(to-from)))});}}
     const victims=geometry?(definition.effect.areaRadius!=null?context.enemies.filter(v=>canCharacterAct(v)&&containsDanger(v,geometry)):[target].filter(v=>v&&canCharacterAct(v)&&containsDanger(v,geometry))):resolveEffectTargets(actor,target,definition,context);
     for(const victim of victims) {
       if(definition.effect.kind==='heal'){
@@ -296,7 +298,7 @@ export class BattleSession {
 
   step(deltaSeconds) {
     positiveFinite(deltaSeconds, 'deltaSeconds');
-    if (this.result() !== 'running') { this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear(); return this.snapshot(); }
+    if (this.result() !== 'running') { this.clearTransientCombat(); return this.snapshot(); }
     for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.delayedImpacts.delete(id);this.threats.remove(id);}
 
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
@@ -434,7 +436,7 @@ export class BattleSession {
     }
     this.pendingHits=this.result()==='running'?remaining:[];
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
-    if(this.result()!=='running'){this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();}
+    if(this.result()!=='running')this.clearTransientCombat();
     return this.snapshot();
   }
 }

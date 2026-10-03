@@ -17,9 +17,9 @@ export class BattleStatuses {
   this.records.set(record.id,record);this.refreshMitigation(now);return record;
  }
  applyMitigation(actorId,reduction,duration,now){return this.apply({sourceId:actorId,targetId:actorId,type:'mitigation',magnitude:reduction,duration,key:'base-mitigation'},now);}
- forActor(id,now){return [...this.records.values()].filter(s=>s.targetId===id&&now>=s.startTime&&now<s.expiryTime);}
- refreshMitigation(now){this.mitigation.clear();for(const s of this.records.values())if(s.type==='mitigation'&&now<s.expiryTime){const old=this.mitigation.get(s.targetId);if(!old||s.magnitude>old.reduction)this.mitigation.set(s.targetId,{reduction:s.magnitude,expiresAt:s.expiryTime});}}
- expire(now){for(const [id,s] of this.records)if(now>=s.expiryTime)this.records.delete(id);this.refreshMitigation(now);}
+ forActor(id,now){return [...this.records.values()].filter(s=>s.targetId===id&&now>=s.startTime&&now+1e-9<s.expiryTime);}
+ refreshMitigation(now){this.mitigation.clear();for(const s of this.records.values())if(s.type==='mitigation'&&now+1e-9<s.expiryTime){const old=this.mitigation.get(s.targetId);if(!old||s.magnitude>old.reduction)this.mitigation.set(s.targetId,{reduction:s.magnitude,expiresAt:s.expiryTime});}}
+ expire(now){for(const [id,s] of this.records)if(now+1e-9>=s.expiryTime)this.records.delete(id);this.refreshMitigation(now);}
  cleanupKO(ids){for(const [id,s] of this.records)if(ids.has(s.sourceId)||ids.has(s.targetId))this.records.delete(id);this.refreshMitigation(0);}
  clear(){this.records.clear();this.mitigation.clear();}
  damageMultiplier(id,now){return 1-Math.max(0,...this.forActor(id,now).filter(s=>['mitigation','incoming'].includes(s.type)).map(s=>s.magnitude));}
