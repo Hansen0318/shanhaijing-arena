@@ -1,7 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- **M6A DEVELOPER BATTLE LAB — IN PROGRESS / CHECKPOINT B.** Dev-only config schema and capability-free controller implemented. Six immutable data presets, duplicates allowed only Lab, HP100/50/25, Type advantage/disadvantage/same cases, in-memory retry/back; formal data referenced by stable IDs.
+- **M6A DEVELOPER BATTLE LAB — IN PROGRESS / CHECKPOINT C.** Dev-only config schema and capability-free controller implemented. Six immutable data presets, duplicates allowed only Lab, HP100/50/25, Type advantage/disadvantage/same cases, in-memory retry/back; formal data referenced by stable IDs.
 - Active feat/m0-combat-core-20260927 / PR1. Recovery65e159913cf731e546774b2d38adf75e5a7b75dd; INFO and overlay/performance PLAYER VERIFIED. Protected progression/combat/type sources unchanged.
 - A targeted5/5 PASS after RED. B dev-only entry/menu complete; targeted32/32 PASS. Runtime adapter/options pending. Checkpoint is recoverability, not release PASS.
 - Next: B dev entry/UI, C real-session direct adapter, D scene options/result actions, E regression/review/deploy. Continue internally without player approval pauses. Spec docs/M6A_DEVELOPER_BATTLE_LAB.md. STOP before M6B/art/animation/audio.

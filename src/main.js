@@ -76,7 +76,12 @@ async function startBattle(stageConfig=null) {
  routes.setBattle(true);
  // Scene creation owns availability: first Phaser boot is asynchronous.
  controls.hide();viewport.routeChanged();
- const data={stageConfig,onSceneReady:scene=>interruption.attach(scene),onPlaybackChange:(paused,available)=>controls.update(paused,available,Boolean(stageConfig)),campaignActions:stageConfig ? {
+ const labConfig=labRequested?stageConfig:null;
+ const data={stageConfig:labRequested?null:stageConfig,labConfig,labActions:labConfig?{
+  result:outcome=>controller.finishBattle(outcome),
+  retry:()=>{const config=controller.retryBattle();if(config)startBattle(config);},
+  back:()=>{if(controller.exitBattle())returnToPreview();},
+ }:null,onSceneReady:scene=>interruption.attach(scene),onPlaybackChange:(paused,available)=>controls.update(paused,available,Boolean(stageConfig)),campaignActions:!labRequested && stageConfig ? {
   result:(id,outcome)=>controller.finishBattle(id,outcome,stageConfig.battleCompletionId)?controller.rewardResult:null,
   retry:()=>{const config=controller.retryBattle();if(config) startBattle(config);},
   exit:()=>{if(controller.exitBattle()) returnToPreview();},

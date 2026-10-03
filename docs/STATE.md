@@ -1,7 +1,7 @@
 # Project State
 
 ## Milestone
-**M6A DEVELOPER BATTLE LAB — CHECKPOINT B / IN PROGRESS**
+**M6A DEVELOPER BATTLE LAB — CHECKPOINT C / IN PROGRESS**
 
 ## Current state
 - M6A A config/isolation controller complete, targeted5/5 PASS; dev entry/menu complete; B targeted32/32 PASS. Runtime hook pending. No storage capability in Lab controller; details docs/M6A_DEVELOPER_BATTLE_LAB.md. Next B→C→D→E automatically, no M6B.

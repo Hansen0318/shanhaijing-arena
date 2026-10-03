@@ -21,7 +21,7 @@ function boot(search='',{runtimeLoad}={}){
  root.children=[];root.prepend=n=>root.children.unshift(n);
  const doc={documentElement:{classList:{toggle(){}}},createElement:()=>({setAttribute(k,v){this[k]=v;}}),getElementById:id=>id==='campaign'?root:id==='orientation-gate'?gateNode:host};
  let controller,options,activeGame;
- class Game{constructor(config){activeGame=this;this.refreshes=0;this.loop={running:true,sleep(){this.running=false;},wake(){this.running=true;}};this.scale={refresh:()=>{this.refreshes++;host.hidden=false;host.style.visibility='visible';}};this.scene={start(){},stop(){},add(){}};this.boot=()=>config.callbacks.postBoot(this);}}
+ class Game{constructor(config){activeGame=this;this.refreshes=0;this.loop={running:true,sleep(){this.running=false;},wake(){this.running=true;}};this.scale={refresh:()=>{this.refreshes++;host.hidden=false;host.style.visibility='visible';}};this.scene={start:(key,data)=>{this.startedData=data;},stop(){},add(){}};this.boot=()=>config.callbacks.postBoot(this);}}
  const runtime={createArenaGame:({data,isCurrent,onBoot})=>new Game({callbacks:{postBoot:instance=>{if(isCurrent())instance.scene.start('Arena',data);onBoot(instance);}}})};
  const context={BattleLabController:class extends BattleLabController{constructor(){super();controller=this;}},BattleLabView:class{constructor(r,c,o){options=o;}render(){options.onRender();}},createBattleRuntimeLoader:()=>runtimeLoad??(()=>Promise.resolve(runtime)),consumeProgressReset,createRouteVisibility,createAcquisitionPersistence,createPersistence,createTeamPersistence,installViewportSync,BattleInterruption,URL,URLSearchParams,window:win,document:doc,CampaignController:class{constructor(opts){controller=new CampaignController(opts);return controller;}},CampaignView:class{constructor(r,c,o){options=o;}render(){options.onRender();}},browserPersistence:()=>createPersistence(win.localStorage),browserTeamPersistence:()=>createTeamPersistence(win.localStorage),browserAcquisitionPersistence:()=>createAcquisitionPersistence(win.localStorage),createOrientationGate,createBattleControls:()=>({hide(){},update(){}}),createExitDialog:()=>({close(){},open(){}}),Phaser:{Game,AUTO:0,Scale:{NONE:0}},ArenaScene:class{},nextStage:()=>null};
  const source=readFileSync(new URL('../src/main.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');vm.runInNewContext(source,context);
@@ -87,4 +87,15 @@ for(const [width,height] of [[568,320],[667,300],[844,390],[932,430]])test(`Land
 
 test('battleLab=1 bypasses all formal reset/persistence/migration and menu never boots game',()=>{
  const e=boot('?battleLab=1&resetProgress=1&campaignDev=unlock-all&fixture=ko');assert.equal(e.controller.screen,'lab');assert.equal(e.getGame(),undefined);assert.deepEqual([...e.map],[[SAVE_KEY,'old'],[TEAM_SAVE_KEY,'old'],[ACQUISITION_SAVE_KEY,'old'],['other','safe']]);assert.ok(e.win.location.search.includes('resetProgress=1'));assert.equal(e.controller.persistence,undefined);assert.equal(e.host.parentNode,null);
+});
+
+test('actual Lab direct launch/result/retry/back keeps every storage byte unchanged',async()=>{
+ const e=boot('?battleLab=1'),before=[...e.map];e.controller.setScenario('heal');
+ const config=e.controller.startBattle();await e.options.onStart(config);const g=e.getGame();g.boot();
+ const data=g.startedData;assert.equal(data.labConfig,config);assert.equal(data.stageConfig,null);assert.equal(data.campaignActions,null);
+ data.labActions.result('victory');assert.equal(e.controller.screen,'result');data.labActions.retry();
+ assert.equal(g.startedData.labConfig,config);assert.equal(e.controller.screen,'battle');
+ g.startedData.labActions.back();assert.equal(e.controller.screen,'lab');assert.equal(e.host.parentNode,null);
+ for(const event of ['pageshow','resize','orientationchange'])e.win.dispatchEvent(new Event(event));
+ assert.deepEqual([...e.map],before);assert.equal(e.host.parentNode,null);assert.equal(g.loop.running,false);
 });
