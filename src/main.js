@@ -15,6 +15,7 @@ import { createExitDialog } from './runtime/exitDialog.js';
 import './campaign/style.css';
 import './roster/style.css';
 import './collection/style.css';
+import './info/style.css';
 
 const reset=consumeProgressReset(window);
 const memoryOnly=reset.requested && !reset.cleared;

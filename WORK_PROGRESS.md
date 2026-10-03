@@ -1,6 +1,12 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **INFO HUB IMPLEMENTATION — RELEASE VERIFICATION PENDING.** Landing sibling INFO opens exactly GAME GUIDE / WORLD / TYPE MATCHUP. Subpage BACK→Hub; Hub BACK→Landing. Read-only content model and scoped view/CSS; live controls/world premise, ◆/✦/➤ icon-only triangle and exact live multipliers, three placeholder media slots.
+- Active feat/m0-combat-core-20260927 / PR1 retained. Canonical recovery abe131de3ca45e783524510fed8ad6534a68357f; previous overlay/lazy loading PASS / PLAYER VERIFIED. No combat/type/accounting/Tier/team/Chapter changes; no animation/art/audio/AI.
+- RED missing INFO contracts→GREEN targeted40/40, impacted152/152, full431/431; build/diff PASS. Independent review: no blockers; three Minor copy/language/focus items resolved and tests pass. Entry71,960 bytes (previous67,234; +4,726); deferred battle chunk1,393,903 bytes unchanged in size; no battle preload. Source fingerprints index-BdiMi8Tk.js / index-CCHQa3nv.css / battleRuntime-DhqO-uAr.js.
+- Exact next: finish independent review, push/Actions/Pages and public changed-surface verification; then focused player landscape/short-height readability smoke. Evidence: docs/verification/INFO_HUB.md. STOP after release; do not start future features.
+
+## Previous INFO-ready / accepted overlay handoff (historical)
 - **M5B OVERLAY / PERFORMANCE — PASS / PLAYER VERIFIED.** Player completed phone smoke after the lifecycle/lazy-load correction and continued development. Treat the detached non-battle host + deferred battle runtime as accepted baseline. Preserve the 67KB-class entry bundle/lazy battle loading behavior.
 - **NEXT: INFO HUB IMPLEMENTATION — READY.** Landing adds sibling INFO entry. INFO Hub contains GAME GUIDE / WORLD / TYPE MATCHUP only. Type Matchup uses icon-only triangle (Power top, Blast bottom-left, Speed bottom-right) with arrows Power>Speed>Blast>Power; text and live multipliers x1.15/x0.85/x1.00 below. Media slots reserved for future images/micro-animation. Do not implement AI dodge here.
 - **INFO HUB / TYPE MATCHUP SPEC RECORDED:** future Landing sibling INFO -> GAME GUIDE / WORLD / TYPE MATCHUP. Type page uses icon-only triangle (Power top, Blast bottom-left, Speed bottom-right) with arrows Power>Speed>Blast>Power; explanatory text below keeps live x1.15/x0.85/x1.00 values. Each page reserves future illustration/micro-animation space. Canonical spec: `docs/INFO_HUB.md`. Not implemented yet.

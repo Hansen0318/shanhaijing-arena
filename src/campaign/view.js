@@ -1,3 +1,4 @@
+import {renderInfo} from '../info/view.js';
 import { CollectionView } from '../collection/view.js';
 import { stageRewardRows } from '../acquisition/presentation.js';
 import { orderedChapters, findChapter, findStage, orderedStages } from './data.js';
@@ -34,11 +35,15 @@ export class CampaignView {
    const title=document.createElement('h1');title.textContent='SHANHAIJING ARENA';
    const subtitle=document.createElement('p');subtitle.className='landing-subtitle';subtitle.textContent='MYTHS ENTER THE ARENA';identity.append(eyebrow,title,subtitle);
    const entries=document.createElement('nav');entries.className='landing-entries';entries.setAttribute('aria-label','Game modes');
-   for(const [label,open] of [['BATTLE',()=>this.controller.openBattleMenu()],['COLLECTION',()=>this.controller.openCollection()]]) {
-    const button=document.createElement('button');button.type='button';button.className=`campaign-button landing-${label==='BATTLE'?'primary':'secondary'}`;button.textContent=label;button.onclick=()=>{if(open())this.render();};entries.append(button);
+   for(const [label,open] of [['BATTLE',()=>this.controller.openBattleMenu()],['COLLECTION',()=>this.controller.openCollection()],['INFO',()=>this.controller.openInfo()]]) {
+    const button=document.createElement('button');button.type='button';button.className=`campaign-button landing-${label==='BATTLE'?'primary':'secondary'}`;button.textContent=label;button.onclick=()=>{if(open())this.render();};entries.append(button);if(label==='INFO')this.landingInfoButton=button;
    }
    const footer=document.createElement('small');footer.className='landing-footer';footer.textContent='山海經 · ARENA';
    content.append(identity,entries);page.append(backdrop,content,footer);this.root.append(page);this.onRender?.();return;
+  }
+  if(['info','info-page'].includes(this.controller.screen)){
+   const heading=renderInfo(page,{pageId:this.controller.infoPageId,onBack:()=>{const toLanding=this.controller.screen==='info';if(this.controller.back()){this.render();if(toLanding)this.landingInfoButton.focus();}},onOpen:id=>{if(this.controller.openInfoPage(id))this.render();}});
+   this.root.append(page);heading.focus();this.onRender?.();return;
   }
   if(this.controller.screen==='collection') {
    this.collectionView ??= new CollectionView(this.controller,{onBack:()=>{if(this.controller.back())this.render();}});

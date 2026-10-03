@@ -1,7 +1,7 @@
 # INFO Hub / Game Guide
 
 ## Status
-**IMPLEMENTATION READY**
+**IMPLEMENTED / RELEASE VERIFICATION PENDING**
 
 This spec records the player-approved information architecture and visual direction for a future INFO entry on the Landing page. It is intentionally separate from the current M5B overlay/performance correction.
 
@@ -187,3 +187,6 @@ Do not implement:
 - micro-animation production;
 - audio;
 - extra INFO sections beyond the initial three.
+
+## Engineering traceability
+Read-only src/info/data.js + view.js + scoped style.css; Campaign route adapter; main imports only INFO CSS. Targeted40/40, impacted152/152, full431/431, build/diff PASS. Release evidence: verification/INFO_HUB.md. No motion dependency introduced.

@@ -1,3 +1,4 @@
+import {infoPage} from '../info/data.js';
 import { upgradeTier } from '../acquisition/tier.js';
 import { findChapter, findStage, orderedStages, nextStage } from './data.js';
 import { initialProgress, devProgress, stageStatus, chapterStatus, recordVictory } from './progression.js';
@@ -8,6 +9,7 @@ export class CampaignController {
  constructor({persistence=null,teamPersistence=null,acquisitionPersistence=null,dev=false,ownership=null}={}) {
   this.persistence=dev ? null : persistence;
   this.progress=dev ? devProgress() : persistence?.load() ?? initialProgress();
+  this.infoPageId=null;
   this.screen='chapters'; this.chapterId=null; this.selectedStageId=null; this.battleStageId=null; this.outcome=null;
   this.teamPersistence=dev?null:teamPersistence;
   this.dev=dev;this.fixtureOwnership=ownership;
@@ -39,7 +41,7 @@ export class CampaignController {
   return transaction;
  }
  openLanding() {
-  if(!['chapters','collection'].includes(this.screen))return false;
+  if(!['chapters','collection','info'].includes(this.screen))return false;
   this.screen='landing';return true;
  }
  openBattleMenu() {
@@ -49,6 +51,14 @@ export class CampaignController {
  openCollection() {
   if(this.screen!=='landing')return false;
   this.screen='collection';return true;
+ }
+ openInfo() {
+  if(this.screen!=='landing')return false;
+  this.infoPageId=null;this.screen='info';return true;
+ }
+ openInfoPage(id) {
+  if(this.screen!=='info' || !infoPage(id))return false;
+  this.infoPageId=id;this.screen='info-page';return true;
  }
  openChapter(id) {
   if(!['chapters','stages'].includes(this.screen) || chapterStatus(this.progress,id)==='locked') return false;
@@ -117,7 +127,8 @@ export class CampaignController {
   this.chapterId=next.chapterId;this.selectedStageId=next.stageId;this.screen='stages';return true;
  }
  back() {
-  if(['collection','chapters'].includes(this.screen))return this.openLanding();
+  if(this.screen==='info-page'){this.infoPageId=null;this.screen='info';return true;}
+  if(['collection','chapters','info'].includes(this.screen))return this.openLanding();
   if(this.screen==='team') {this.screen='stages';return true;}
   if(this.screen!=='stages') return false;
   this.screen='chapters'; return true;

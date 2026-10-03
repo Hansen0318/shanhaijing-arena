@@ -64,10 +64,11 @@ test('route render invalidates a pending runtime entry and prevents late canvas 
  const pending=e.options.onStart(e.controller.startBattle());e.controller.exitBattle();e.options.onRender();resolve({createArenaGame(){throw Error('stale boot');}});await pending;
  assert.equal(e.host.parentNode,null);assert.equal(e.root.hidden,false);assert.equal(e.controller.screen,'stages');
 });
-for(const screen of ['landing','chapters','stages','collection'])test(`${screen} orientation/viewport/reload contract leaves no battle layers in DOM`,()=>{
- const e=boot();if(screen==='chapters'||screen==='stages'){e.controller.openBattleMenu();if(screen==='stages')e.controller.openChapter('chapter-1');}else if(screen==='collection')e.controller.openCollection();e.options.onRender();
+for(const screen of ['landing','chapters','stages','collection','info','guide','world','types'])test(`${screen} orientation/viewport/reload contract leaves no battle layers in DOM`,()=>{
+ const e=boot();if(screen==='chapters'||screen==='stages'){e.controller.openBattleMenu();if(screen==='stages')e.controller.openChapter('chapter-1');}else if(screen==='collection')e.controller.openCollection();else if(['info','guide','world','types'].includes(screen)){e.controller.openInfo();if(screen!=='info')e.controller.openInfoPage(screen);}e.options.onRender();
+ assert.equal(e.getGame(),undefined);
  for(const [width,height] of [[390,844],[844,390]]){Object.assign(e.win.visualViewport,{width,height});e.win.dispatchEvent(new Event('orientationchange'));assert.equal(e.gateNode.hidden,width>height);assert.equal(e.host.parentNode,null);assert.equal(e.host.hidden,true);assert.equal(e.root.hidden,false);assert.equal(e.root.inert,height>width);}
- e.win.dispatchEvent(new Event('pageshow'));assert.equal(e.controller.screen,screen);assert.equal(e.host.parentNode,null);
+ e.win.dispatchEvent(new Event('pageshow'));assert.equal(e.controller.screen,['guide','world','types'].includes(screen)?'info-page':screen);assert.equal(e.host.parentNode,null);
  // Routes are not URL/save state: ordinary reload intentionally starts Landing.
  const reload=boot();assert.equal(reload.controller.screen,'landing');assert.equal(reload.host.parentNode,null);
 });
