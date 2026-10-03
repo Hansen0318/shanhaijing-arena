@@ -192,3 +192,70 @@ The shared AI engine interprets these values. Character definitions do not conta
 ### Engineering constraint
 
 Keep the current deterministic straight-forward behavior as a protected test fixture where useful. Add tactical variation as a later bounded AI-polish milestone with seeded tests so richer behavior does not destroy reproducibility.
+
+
+## Future telegraph / dodge behavior
+
+Player design direction: future AI may react to visible enemy attacks and attempt limited evasive movement. This is a **future tactical-AI feature**, not part of the current deterministic baseline.
+
+### Principle
+
+AI should not perfectly dodge every attack. Evasion is only considered for attacks that provide a meaningful reaction window.
+
+Candidate attacks:
+- visible projectiles with travel time;
+- telegraphed Heavy / Special / Awakening attacks;
+- ground-targeted AoE with a warning area;
+- high-threat committed attacks where lateral movement can realistically avoid impact.
+
+Normally excluded:
+- ordinary Basic attacks;
+- instant/no-warning hits;
+- already-connected melee strikes;
+- effects explicitly marked unavoidable.
+
+### Declarative ability metadata
+
+Future Ability Definitions may expose data such as:
+- `dodgeable`
+- `telegraphMs`
+- projectile travel or impact timing
+- area / danger geometry
+- interruptibility / commitment rules
+
+AI reads these values through the shared tactical system. Do not add character-ID-specific dodge code.
+
+### AI reaction
+
+When a dodgeable threat is detected, an AI actor may:
+- sidestep;
+- backstep;
+- take a short diagonal safe-space movement;
+- ignore the threat if its current action has higher commitment or if no valid safe point exists.
+
+The actor should choose a short-lived tactical destination and hold it long enough to avoid jitter.
+
+### Role/profile tendency
+
+Future profile parameters may influence dodge tendency/reaction:
+- Speed / mobile skirmisher: higher evasion tendency;
+- ranged/support: medium-high tendency when threatened;
+- bruiser: medium/low;
+- tank/front guard: lower tendency and may deliberately absorb pressure.
+
+Type must not hard-code dodge chance; character tactical profile remains authoritative.
+
+### Player control
+
+The current joystick already lets a manually controlled player attempt to evade telegraphed attacks through normal movement. Do not add a dedicated dodge/dash button unless a later design explicitly introduces one.
+
+### Determinism
+
+AI evasion should remain reproducible:
+- threat detection deterministic;
+- safe-position scoring deterministic;
+- if variability is used, select among tactically valid options with the session's seeded variation system.
+
+### Implementation boundary
+
+Do not implement this together with INFO, art, or ordinary content data. It belongs to a later bounded tactical-AI milestone after formal attacks have readable telegraphs and movement/impact timing worth reacting to.
