@@ -296,3 +296,22 @@ Rules:
 - player manual movement remains the current natural dodge path;
 - do not add a dedicated dodge button unless separately approved.
 
+
+
+## M6C — Tier Combat Effects / Shared Status Primitives
+
+Status: **IMPLEMENTATION READY**. Canonical spec: `docs/M6C_TIER_COMBAT_EFFECTS.md`.
+
+After M6B acceptance, connect the existing T0→T3 progression to combat through reusable, data-driven shared primitives.
+
+Scope includes:
+- read-only Tier projection into battle;
+- generic status/modifier lifecycle;
+- mitigation/movement/avoidance/control;
+- ally protection;
+- conditional low-HP / isolated-target modifiers;
+- persistent area effects;
+- approved Chapter1 T1/T2/T3 mechanic mappings;
+- Battle Lab Tier comparison presets.
+
+Current five characters are validation content only. Future characters must reuse the same primitives through data; no character-ID branches.
