@@ -37,22 +37,39 @@ Do not integrate one file at a time.
 
 Preferred batch sequence:
 
-### Batch 1 — Character identity pack
+### Batch 1 — Character identity + idle motion pack
 Across all five characters:
 - portraitSquare
 - collectionArt
-- battleIdle/static battle sprite
+- battleIdle base battle sprite
+- battleIdle micro-animation source/frames or layered motion-ready source
 
 Purpose:
 - establish formal likeness;
 - confirm scale/origin/silhouette;
-- replace the most visible placeholders first.
+- replace the most visible placeholders first;
+- establish the battlefield idle-motion language before hit/KO/cast states.
 
-### Batch 2 — Battle state pack
+Idle micro-animation should remain lightweight and loopable. Good examples:
+- subtle breathing/body rise-fall;
+- small tail/ear/feather/hair/ornament motion;
+- restrained garment/appendage sway;
+- tiny posture shift.
+
+Avoid large displacement that changes gameplay readability or looks like locomotion.
+
+### Batch 2 — Battle state / reaction pack
 Across all five:
 - battleHit
 - battleKo
-- optional short battleCast motion/static state
+- battleCast short action state
+
+Preferred treatment:
+- hit = short recoil / flinch;
+- KO = clear non-combat state;
+- cast = short anticipation / action pose that returns cleanly to idle.
+
+Use the existing lightweight animation descriptor system; do not introduce skeletal rigs.
 
 ### Batch 3 — Skill VFX pack
 Across all five:
@@ -111,6 +128,27 @@ Battle sprites should:
 - avoid large off-center empty regions;
 - maintain silhouette at ~48px runtime base fit;
 - tolerate scale adjustment without losing key traits.
+
+## 6A. Idle micro-animation contract
+
+Battlefield idle motion is part of formal M5C-B presentation.
+
+Required properties:
+- loopable;
+- low amplitude;
+- does not move the actor's gameplay position;
+- does not alter hitbox/range/telegraph geometry;
+- uses battle clock / existing animation playback;
+- Pause-safe;
+- cleanly stops on hit/KO/cast transitions;
+- resumes idle after short transient states;
+- has a static fallback.
+
+Preferred implementation:
+- short sprite sequence / flipbook; or
+- a layered motion-ready asset if the existing descriptor can express it without new engine architecture.
+
+Do not start a bone/skeletal animation subsystem.
 
 ## 7. Portrait / Collection distinction
 
@@ -182,6 +220,6 @@ Do not start:
 
 ## 12. Immediate next action
 
-Prepare **Batch 1 — Character identity pack** for the five Chapter1 characters.
+Prepare **Batch 1 — Character identity + idle motion pack** for the five Chapter1 characters.
 
 No Work implementation is required until that batch exists and is approved.
