@@ -4,6 +4,7 @@
 **M6C-B TIER POWER CURVE REBALANCE — IMPLEMENTATION READY**
 
 ## Current state
+- M6C-B A complete: canonical curve/profile contracts, targeted10/10 PASS. B runtime integration next; original feature/PR1 retained.
 - Player accepted M5C-A pipeline behavior after device visual inspection; formal assets remain deferred to M5C-B.
 - M6C-B is authorized before formal art: make Tier power materially more noticeable through a generic `TierScalingProfile`. Canonical scaling now covers HP, damage/heal, bounded tempo, attack range, AoE, mobility distance, buff/debuff duration and defense-effect strength, with role-specific data weights. Do not use compounding ×2→×3→×4 across all stats.
 - M5C-A A–E implemented; targeted56/56, impacted375/375/full542/542/build/diff PASS; independent5 Important fixed RED→GREEN/no unresolved findings. Asset guard37 files/17,703 bytes, entry81,218 bytes (+4,359 pure menu data), deferred battle runtime. Actions/Pages/public verification complete. Authoring ASSET_PIPELINE.md; evidence verification/M5C_A_ASSET_PIPELINE.md.
@@ -246,5 +247,3 @@ Complete the playable Chapter → Stage Preview → Battle → Result → Unlock
 - VS ally/enemy placeholders; preview and battle share immutable encounter definition lookup. Power/Speed/Blast replaceable marks derive from definition type. Battle HUD geometry unchanged.
 - Roster/team/VS impacted tests 26/26 PASS.
 - Remaining: whole-diff review, targeted/impacted checks, build/deploy and minimum public runtime smoke. Exact next action: inspect integrated diff and verify impacted surfaces.
-
-

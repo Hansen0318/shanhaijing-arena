@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M6C-B IN PROGRESS / A COMPLETE.** Recoveryee3a7397, active feature/PR1. Immutable canonical T0-relative curve/fifteen weight schema/stat projection. RED missing module→GREEN10/10 targeted. Next B HP/output/tempo; plan docs/M6C_B_IMPLEMENTATION_PLAN.md. No save/accounting/reward/asset changes.
+
 - **M5C-A ASSET PIPELINE — PLAYER VISUAL SMOKE ACCEPTED FOR PIPELINE BEHAVIOR.** Player observed the dev visual labels/placeholders and accepted current pipeline behavior; formal art is still deferred. Preserve asset pipeline baseline.
 - **M6C-B TIER POWER CURVE REBALANCE — IMPLEMENTATION READY.** Player wants Tier growth to feel substantially stronger across a reusable parameter pool. Canonical curve now includes HP, damage/heal, move/attack speed, cooldown, scalable windup, attack range, AoE radius, dash/reposition distance, buff/debuff duration and shield/mitigation strength. A generic `TierScalingProfile` controls per-character weighting; current five characters are validation only, future characters use the same contract. Preserve M6C mechanics and all progression costs/accounting. Canonical: `docs/M6C_B_TIER_POWER_CURVE.md`.
 - **M5C-A ASSET PIPELINE — ENGINEERING PASS / PLAYER SMOKE PENDING.** Generic manifest/resolver/menu fallback, encounter-only lazy cache, animation/VFX descriptor playback and Arena/Lab adapter complete. No final art integrated; M0–M6C accepted gameplay/AI/Tier/progression preserved.
@@ -588,5 +590,3 @@ Awakening progression/unlock is not implemented in M0 yet; future progression ma
 - VS ally/enemy placeholders; preview and battle share immutable encounter definition lookup. Power/Speed/Blast replaceable marks derive from definition type. Battle HUD geometry unchanged.
 - Roster/team/VS impacted tests 26/26 PASS.
 - Remaining: whole-diff review, targeted/impacted checks, build/deploy and minimum public runtime smoke. Exact next action: inspect integrated diff and verify impacted surfaces.
-
-
