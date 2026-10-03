@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **INFO HUB IMPLEMENTATION — PASS / PLAYER VERIFIED.** Player completed device smoke and accepted Landing INFO, GAME GUIDE / WORLD / TYPE MATCHUP, icon-triangle presentation and navigation. Preserve as baseline.
 - **INFO HUB IMPLEMENTATION — ENGINEERING PASS / PLAYER SMOKE PENDING.** Landing sibling INFO opens exactly GAME GUIDE / WORLD / TYPE MATCHUP. Subpage BACK→Hub; Hub BACK→Landing. Read-only content model and scoped view/CSS; live controls/world premise, ◆/✦/➤ icon-only triangle and exact live multipliers, three placeholder media slots.
 - Active feat/m0-combat-core-20260927 / PR1 retained. Canonical recovery abe131de3ca45e783524510fed8ad6534a68357f; previous overlay/lazy loading PASS / PLAYER VERIFIED. No combat/type/accounting/Tier/team/Chapter changes; no animation/art/audio/AI.
 - RED missing INFO contracts→GREEN targeted40/40, impacted152/152, full431/431; build/diff PASS. Independent review: no blockers; three Minor copy/language/focus items resolved and tests pass. Entry71,960 bytes (previous67,234; +4,726); deferred battle chunk1,393,903 bytes unchanged in size; no battle preload. Source fingerprints index-BdiMi8Tk.js / index-CCHQa3nv.css / battleRuntime-DhqO-uAr.js.
