@@ -29,3 +29,5 @@ One short normal-save-preserving run: open Lab, choose teams, HEAL/TYPE, skip co
 Checkpoint B: dev entry/menu targeted32/32 PASS; normal Landing remains default, Lab bypasses all formal persistence/reset initialization. Runtime adapter pending.
 
 Checkpoint C: direct launch carries only labConfig/labActions; campaignActions null. Exact formal roster/ability objects feed shared BattleSession. Targeted29/29 PASS; complete app result/retry/back storage map identical. Scene option hooks pending D.
+
+Checkpoint D: shared Arena supports local skip countdown, AI-only removes manual inputs, normal manual remains shared, reward-free Lab RETRY/BACK result. Targeted39/39; preliminary full446/446; build PASS. Final independent review/deploy/verification pending E.

@@ -1,3 +1,4 @@
+import {createLabBattleSession} from '../dev/battleLab/battleFactory.js';
 import { resultRewardLines } from '../acquisition/presentation.js';
 import Phaser from 'phaser';
 import { arenaToStage, ARENA_STAGE } from './arenaProjection.js';
@@ -51,24 +52,27 @@ export class ArenaScene extends Phaser.Scene {
   constructor() { super('Arena'); }
 
   init(data = {}) {
-    this.stageConfig = data.stageConfig ?? null;
-    this.campaignActions = data.campaignActions ?? null;
+    this.labConfig = data.labConfig ?? null;
+    this.labActions = this.labConfig ? data.labActions ?? null : null;
+    this.stageConfig = this.labConfig ? null : data.stageConfig ?? null;
+    this.manualControlEnabled = !this.labConfig || this.labConfig.options.controlMode === 'manual';
+    this.campaignActions = this.labConfig ? null : data.campaignActions ?? null;
     this.onPlaybackChange = data.onPlaybackChange ?? (() => {});
     this.onSceneReady = data.onSceneReady ?? (() => {});
   }
 
   create() {
-    this.selectedKoFixture = new URLSearchParams(window.location.search).get('fixture') === 'ko';
-    this.session = this.stageConfig ? createStageBattleSession(this.stageConfig) : createDemoBattleSession();
+    this.selectedKoFixture = !this.labConfig && new URLSearchParams(window.location.search).get('fixture') === 'ko';
+    this.session = this.labConfig ? createLabBattleSession(this.labConfig) : this.stageConfig ? createStageBattleSession(this.stageConfig) : createDemoBattleSession();
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
     this.damageNumbers = new DamageNumbers(this,arenaToStage);
     this.events.once('shutdown',()=>this.damageNumbers.destroy());
-    this.selectedId = 'a2';
+    this.selectedId = this.labConfig?.selectedAllyId ?? 'a2';
     this.fixtureKoApplied = false;
-    this.preBattleGate = new PreBattleGate();
+    this.preBattleGate = new PreBattleGate(this.labConfig?.options.skipCountdown ? 0 : undefined);
     this.preBattleRemaining = this.preBattleGate.remaining;
-    this.battleStarted = false;
+    this.battleStarted = Boolean(this.labConfig?.options.skipCountdown);
     this.paused = false;
     this.time.paused = false;
     this.joystickPointerId = null;
@@ -111,12 +115,13 @@ export class ArenaScene extends Phaser.Scene {
     }
 
     this.createHud();
-    this.createJoystick();
-    this.createSkillButtons();
+    this.skillButtons = null;
+    this.joystickKnob = null;
+    if (this.manualControlEnabled) { this.createJoystick(); this.createSkillButtons(); }
     this.createPreBattleCountdown();
     this.createResultView();
     this.applyFrame(first);
-    this.selectAlly(this.selectedId, first);
+    this.selectAlly(this.selectedId, first, true);
     this.onPlaybackChange(false, true);
     this.onSceneReady(this);
 
@@ -150,7 +155,10 @@ export class ArenaScene extends Phaser.Scene {
       align:'center',wordWrap:{width:940},
     }).setOrigin(.5,0).setVisible(false);
     this.resultLayer.add([shade,this.resultText,this.rewardText]);
-    const actions=this.campaignActions ? [
+    const actions=this.labActions ? [
+      ['RETRY',420,()=>this.labActions.retry()],
+      ['BACK TO LAB',700,()=>this.labActions.back()],
+    ] : this.campaignActions ? [
       ['NEXT STAGE',330,()=>this.campaignActions.next()],
       ['RETRY',560,()=>this.campaignActions.retry()],
       ['EXIT',790,()=>this.campaignActions.exit()],
@@ -167,8 +175,9 @@ export class ArenaScene extends Phaser.Scene {
     if (result === 'running' || this.resultLayer.visible) return;
     this.releaseJoystick();
     this.onPlaybackChange(false, false);
+    if (this.labActions) this.labActions.result(result);
     const transaction=this.campaignActions?.result(this.session.stageId,result);
-    const rewardLines=result==='victory'?resultRewardLines(transaction):[];
+    const rewardLines=!this.labConfig && result==='victory'?resultRewardLines(transaction):[];
     this.rewardText.setText(rewardLines.join('\n')).setVisible(rewardLines.length>0);
     if(rewardLines.length) {
       this.resultText.setY(155);
@@ -249,7 +258,7 @@ export class ArenaScene extends Phaser.Scene {
           stroke: '#2a1c20', strokeThickness: 2,
         }).setOrigin(0.5);
         card.add([backing, portrait, name, barBack, barFill, hpText]);
-        if (side === 'ally') {
+        if (side === 'ally' && this.manualControlEnabled) {
           portrait.setInteractive();
           portrait.on('pointerdown', () => this.selectAlly(id, this.session.snapshot()));
         }
@@ -339,7 +348,8 @@ export class ArenaScene extends Phaser.Scene {
       },
     ).setOrigin(0.5).setDepth(40);
 
-    window.__arenaBattleStarted = false;
+    window.__arenaBattleStarted = this.battleStarted;
+    this.countdownText.setVisible(!this.battleStarted);
   }
 
   updatePreBattleCountdown(deltaSeconds) {
@@ -491,7 +501,7 @@ export class ArenaScene extends Phaser.Scene {
 
     if (distance <= 0.001 || magnitude <= 0) {
       this.joystickVector = { x: 0, y: 0 };
-      this.joystickKnob.setPosition(JOYSTICK.x, JOYSTICK.y);
+      this.joystickKnob?.setPosition(JOYSTICK.x, JOYSTICK.y);
       return;
     }
 
@@ -508,10 +518,11 @@ export class ArenaScene extends Phaser.Scene {
     if (this.selectedId) this.session.clearPlayerMovement(this.selectedId);
     this.joystickPointerId = null;
     this.joystickVector = { x: 0, y: 0 };
-    this.joystickKnob.setPosition(JOYSTICK.x, JOYSTICK.y);
+    this.joystickKnob?.setPosition(JOYSTICK.x, JOYSTICK.y);
   }
 
-  selectAlly(id, frame) {
+  selectAlly(id, frame, automatic = false) {
+    if (this.manualControlEnabled === false && !automatic) return false;
     if (this.paused) return false;
     const actor = frame.allies.find((ally) => ally.instanceId === id && ally.hp > 0);
     if (!actor) return false;
@@ -546,7 +557,7 @@ export class ArenaScene extends Phaser.Scene {
       : frame.allies.find((ally) => ally.hp > 0) ?? null;
 
     if (fallback) {
-      this.selectAlly(fallback.instanceId, frame);
+      this.selectAlly(fallback.instanceId, frame, true);
       return;
     }
 
