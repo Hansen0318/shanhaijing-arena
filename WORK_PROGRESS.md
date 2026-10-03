@@ -1,6 +1,12 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M6A DEVELOPER BATTLE LAB — IN PROGRESS / CHECKPOINT A.** Dev-only config schema and capability-free controller implemented. Six immutable data presets, duplicates allowed only Lab, HP100/50/25, Type advantage/disadvantage/same cases, in-memory retry/back; formal data referenced by stable IDs.
+- Active feat/m0-combat-core-20260927 / PR1. Recovery65e159913cf731e546774b2d38adf75e5a7b75dd; INFO and overlay/performance PLAYER VERIFIED. Protected progression/combat/type sources unchanged.
+- A targeted5/5 PASS after RED. No Lab UI/runtime integration yet. Checkpoint is recoverability, not release PASS.
+- Next: B dev entry/UI, C real-session direct adapter, D scene options/result actions, E regression/review/deploy. Continue internally without player approval pauses. Spec docs/M6A_DEVELOPER_BATTLE_LAB.md. STOP before M6B/art/animation/audio.
+
+## Previous acceleration / accepted INFO handoff (historical)
 - **DEVELOPMENT ACCELERATION RULES — PLAYER APPROVED.** Future Chat/Work should prefer coherent batch milestones with internal checkpoints, continue automatically between checkpoints when no player decision is needed, rely on automated regression for accepted systems, and reserve player smoke for subjective/cross-system completion. Canonical: `docs/DEVELOPMENT_ACCELERATION.md`.
 - **NEXT APPROVED SEQUENCE:** M6A Developer Battle Lab → M6B Combat Tactical AI / Telegraph / Dodge Batch. M6A is dev-only and must never write Campaign clear, shards, unlocks, Tier, saved team, or progression receipts. M6B groups telegraphs, threat detection, dodge, healer retreat, ranged spacing/kite and profile-driven tactics into one larger milestone.
 - **INFO HUB IMPLEMENTATION — PASS / PLAYER VERIFIED.** Player completed device smoke and accepted Landing INFO, GAME GUIDE / WORLD / TYPE MATCHUP, icon-triangle presentation and navigation. Preserve as baseline.
