@@ -1,9 +1,10 @@
 # Project State
 
 ## Milestone
-**M5C ART / ANIMATION / VFX INTEGRATION — CHAT SPEC / IMPLEMENTATION PLANNING**
+**M5C-A ASSET PIPELINE — IMPLEMENTATION READY**
 
 ## Current state
+- M5C canonical visual workflow is defined in `docs/M5C_ART_ANIMATION_VFX.md`: build reusable manifest/fallback/lazy-load/VFX-animation descriptors first, then integrate approved art in coherent batches rather than one file at a time.
 - M6C Tier combat effects are PLAYER VERIFIED. Current mechanic strengths/timings are accepted as a playtest baseline and may be tuned later; preserve generic shared primitives and existing Tier costs/accounting.
 - Gameplay/progression foundation through M6C is accepted. Next phase is M5C visual integration planning: reusable asset contracts/pipeline first, then batch character/environment/VFX integration.
 - M6C Release source be46c92e59139a92bcff89cecbd95accf553d4a6; Actions #391 / 37099650309 completed SUCCESS (build111136525373, deploy111136573373). Public entry index-CP8sRNpJ.js matches build; normal Landing has BATTLE/COLLECTION/INFO, no Lab/canvas/modulepreload. Dev menu has13 presets/Tier selectors; real Arena allyT3/enemyT1 and T0 baseline labels, residual-area ring, Pause/Restart/Exit→Lab verified; settings retained, canvas detached. Cloud1363×936 no horizontal overflow. Physical phone feel/readability remains player smoke.
