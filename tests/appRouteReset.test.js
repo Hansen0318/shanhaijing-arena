@@ -1,3 +1,4 @@
+import {BattleLabController} from '../src/dev/battleLab/controller.js';
 import { createOrientationGate } from '../src/runtime/orientationGate.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -22,7 +23,7 @@ function boot(search='',{runtimeLoad}={}){
  let controller,options,activeGame;
  class Game{constructor(config){activeGame=this;this.refreshes=0;this.loop={running:true,sleep(){this.running=false;},wake(){this.running=true;}};this.scale={refresh:()=>{this.refreshes++;host.hidden=false;host.style.visibility='visible';}};this.scene={start(){},stop(){},add(){}};this.boot=()=>config.callbacks.postBoot(this);}}
  const runtime={createArenaGame:({data,isCurrent,onBoot})=>new Game({callbacks:{postBoot:instance=>{if(isCurrent())instance.scene.start('Arena',data);onBoot(instance);}}})};
- const context={createBattleRuntimeLoader:()=>runtimeLoad??(()=>Promise.resolve(runtime)),consumeProgressReset,createRouteVisibility,createAcquisitionPersistence,createPersistence,createTeamPersistence,installViewportSync,BattleInterruption,URL,URLSearchParams,window:win,document:doc,CampaignController:class{constructor(opts){controller=new CampaignController(opts);return controller;}},CampaignView:class{constructor(r,c,o){options=o;}render(){options.onRender();}},browserPersistence:()=>createPersistence(win.localStorage),browserTeamPersistence:()=>createTeamPersistence(win.localStorage),browserAcquisitionPersistence:()=>createAcquisitionPersistence(win.localStorage),createOrientationGate,createBattleControls:()=>({hide(){},update(){}}),createExitDialog:()=>({close(){},open(){}}),Phaser:{Game,AUTO:0,Scale:{NONE:0}},ArenaScene:class{},nextStage:()=>null};
+ const context={BattleLabController:class extends BattleLabController{constructor(){super();controller=this;}},BattleLabView:class{constructor(r,c,o){options=o;}render(){options.onRender();}},createBattleRuntimeLoader:()=>runtimeLoad??(()=>Promise.resolve(runtime)),consumeProgressReset,createRouteVisibility,createAcquisitionPersistence,createPersistence,createTeamPersistence,installViewportSync,BattleInterruption,URL,URLSearchParams,window:win,document:doc,CampaignController:class{constructor(opts){controller=new CampaignController(opts);return controller;}},CampaignView:class{constructor(r,c,o){options=o;}render(){options.onRender();}},browserPersistence:()=>createPersistence(win.localStorage),browserTeamPersistence:()=>createTeamPersistence(win.localStorage),browserAcquisitionPersistence:()=>createAcquisitionPersistence(win.localStorage),createOrientationGate,createBattleControls:()=>({hide(){},update(){}}),createExitDialog:()=>({close(){},open(){}}),Phaser:{Game,AUTO:0,Scale:{NONE:0}},ArenaScene:class{},nextStage:()=>null};
  const source=readFileSync(new URL('../src/main.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');vm.runInNewContext(source,context);
  return {map,win,root,host,gateNode,controller,options,getGame:()=>activeGame};
 }
@@ -82,4 +83,8 @@ for(const [width,height] of [[568,320],[667,300],[844,390],[932,430]])test(`Land
  const e=boot(),before=[...e.map];Object.assign(e.win.visualViewport,{width,height,offsetLeft:3,offsetTop:7});
  for(const [target,type] of [[e.win,'pageshow'],[e.win,'orientationchange'],[e.win,'resize'],[e.win.visualViewport,'resize'],[e.win.visualViewport,'scroll']]){e.host.hidden=false;target.dispatchEvent(new Event(type));assert.equal(e.controller.screen,'landing');assert.equal(e.root.style.width,`${width}px`);assert.equal(e.root.style.height,`${height}px`);assert.equal(e.root.style.left,'3px');assert.equal(e.root.style.top,'7px');assert.equal(e.host.hidden,true);assert.equal(e.host.style.visibility,'hidden');assert.equal(e.root.hidden,false);}
  assert.deepEqual([...e.map],before);
+});
+
+test('battleLab=1 bypasses all formal reset/persistence/migration and menu never boots game',()=>{
+ const e=boot('?battleLab=1&resetProgress=1&campaignDev=unlock-all&fixture=ko');assert.equal(e.controller.screen,'lab');assert.equal(e.getGame(),undefined);assert.deepEqual([...e.map],[[SAVE_KEY,'old'],[TEAM_SAVE_KEY,'old'],[ACQUISITION_SAVE_KEY,'old'],['other','safe']]);assert.ok(e.win.location.search.includes('resetProgress=1'));assert.equal(e.controller.persistence,undefined);assert.equal(e.host.parentNode,null);
 });

@@ -25,3 +25,5 @@ Recovery/main inspected; existing feat/m0-combat-core-20260927/PR1 branch Pages 
 
 ## Final smoke
 One short normal-save-preserving run: open Lab, choose teams, HEAL/TYPE, skip countdown, retry/back, then normal URL save unchanged. Physical readability/touch remains player-owned. No full Campaign replay.
+
+Checkpoint B: dev entry/menu targeted32/32 PASS; normal Landing remains default, Lab bypasses all formal persistence/reset initialization. Runtime adapter pending.

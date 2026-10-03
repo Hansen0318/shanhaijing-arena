@@ -1,0 +1,18 @@
+.campaign-page.lab-page { box-sizing:border-box; height:100%; min-height:0; display:flex; flex-direction:column; gap:10px; overflow:hidden; padding:max(10px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left)); }
+.lab-header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px; flex-shrink:0; }
+.lab-page .lab-header h1 { margin:0; }
+.lab-header small,.lab-note { color:#b4c4cf; }
+.lab-body { min-height:0; overflow-y:auto; overscroll-behavior:contain; min-width:0; }
+.lab-field { display:flex; flex-direction:column; gap:4px; min-width:0; font-size:13px; }
+.lab-field select { box-sizing:border-box; width:100%; min-width:0; min-height:44px; padding:8px; font:inherit; color:#f0f3f6; background:#243b4b; border:1px solid #91a9b8; border-radius:6px; }
+.lab-description { margin:8px 0; font-size:13px; overflow-wrap:anywhere; }
+.lab-teams { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.lab-team { min-width:0; margin:0; padding:10px; border:1px solid #617887; border-radius:8px; }
+.lab-slots { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+.lab-options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin:12px 0; }
+.lab-toggle { min-height:44px; display:flex; align-items:center; gap:8px; font-size:14px; }
+.lab-toggle input { width:22px; height:22px; }
+.lab-page>.battle { align-self:end; min-width:130px; min-height:44px; flex-shrink:0; background:#276956; }
+.lab-note { display:block; font-size:12px; line-height:1.4; }
+@media (max-height:420px) { .lab-page .lab-header h1 {font-size:18px;} .lab-team {padding:6px;} .lab-options {margin:8px 0;} }
+@media (max-width:700px) { .lab-teams {grid-template-columns:minmax(0,1fr); gap:8px;} .lab-options {grid-template-columns:repeat(2,minmax(0,1fr));} }

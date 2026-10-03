@@ -1,3 +1,6 @@
+import {BattleLabController} from './dev/battleLab/controller.js';
+import {BattleLabView} from './dev/battleLab/view.js';
+import './dev/battleLab/style.css';
 import { consumeProgressReset } from './campaign/devReset.js';
 import { createRouteVisibility } from './runtime/routeVisibility.js';
 import { browserAcquisitionPersistence,createAcquisitionPersistence } from './acquisition/persistence.js';
@@ -17,13 +20,14 @@ import './roster/style.css';
 import './collection/style.css';
 import './info/style.css';
 
-const reset=consumeProgressReset(window);
-const memoryOnly=reset.requested && !reset.cleared;
 const query=new URLSearchParams(window.location.search);
-const controller=new CampaignController({persistence:memoryOnly?createPersistence(null):browserPersistence(),teamPersistence:memoryOnly?createTeamPersistence(null):browserTeamPersistence(),acquisitionPersistence:memoryOnly?createAcquisitionPersistence(null):browserAcquisitionPersistence(),dev:query.get('campaignDev')==='unlock-all'});
+const labRequested=query.get('battleLab')==='1';
+const reset=labRequested?{requested:false,cleared:false}:consumeProgressReset(window);
+const memoryOnly=reset.requested && !reset.cleared;
+const controller=labRequested?new BattleLabController():new CampaignController({persistence:memoryOnly?createPersistence(null):browserPersistence(),teamPersistence:memoryOnly?createTeamPersistence(null):browserTeamPersistence(),acquisitionPersistence:memoryOnly?createAcquisitionPersistence(null):browserAcquisitionPersistence(),dev:query.get('campaignDev')==='unlock-all'});
 const root=document.getElementById('campaign'), host=document.getElementById('game');
 const routes=createRouteVisibility(root,host);
-controller.openLanding();
+if(!labRequested)controller.openLanding();
 if(reset.requested){controller.openBattleMenu();controller.openChapter('chapter-1');}
 let game=null;
 let entryRequest=0;
@@ -46,7 +50,8 @@ const controls=createBattleControls(host,{
  onPause:()=>interruption.toggleManual(),
  onExit:()=>{if(interruption.openExit())dialog.open();},
 });
-const view=new CampaignView(root,controller,{onStart:startBattle,onRender:()=>{entryRequest++;releaseLoadingContent();root.setAttribute('aria-busy','false');dialog.close();controls.hide();game?.loop.sleep();routes.setBattle(false);viewport.routeChanged();}});
+const View=labRequested?BattleLabView:CampaignView;
+const view=new View(root,controller,{onStart:startBattle,onRender:()=>{entryRequest++;releaseLoadingContent();root.setAttribute('aria-busy','false');dialog.close();controls.hide();game?.loop.sleep();routes.setBattle(false);viewport.routeChanged();}});
 async function startBattle(stageConfig=null) {
  const request=++entryRequest;
  root.setAttribute('aria-busy','true');
@@ -85,4 +90,4 @@ function returnToPreview() {
  interruption.detach();dialog.close();game.scene.stop('Arena');controls.hide();view.render();
 }
 // Explicit legacy diagnostic preserves standalone KO/Restart behavior.
-if(query.get('fixture')==='ko') startBattle(); else view.render();
+if(!labRequested&&query.get('fixture')==='ko') startBattle(); else view.render();
