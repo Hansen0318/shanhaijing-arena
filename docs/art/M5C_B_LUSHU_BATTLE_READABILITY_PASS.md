@@ -347,3 +347,132 @@ Apply one final **battle-detail cleanup pass** to the design language:
 - preserve the current successful white-head / long-leg / single-tail silhouette.
 
 After that cleanup, 鹿蜀 can move to battleIdle source authoring / runtime-size validation without another fundamental redesign.
+
+
+## 20. Final battle-detail cleanup lock
+
+Status:
+**CLEANUP DIRECTION LOCKED — READY FOR BATTLEIDLE AUTHORING / RUNTIME VALIDATION**
+
+This section converts the conditional pass into a concrete cleanup contract for the next battle asset.
+
+### 20.1 Mandatory removals / reductions
+
+Remove or reduce before final battleIdle authoring:
+- weapon-end tassel as a trailing element;
+- extra red waist cloth beyond one compact short panel;
+- secondary long teal/black/red hip strips;
+- small hanging charms at waist/weapon;
+- fine guard engraving;
+- layered belt hardware;
+- thin individual mane strands;
+- fine tail fur strands;
+- narrow secondary tiger stripes;
+- tiny cyan accents that disappear at runtime size.
+
+These elements may remain in collection/portrait art but are not required in battle art.
+
+### 20.2 Mandatory retained shapes
+
+The final battleIdle source must preserve:
+1. one white head mass;
+2. one compact rear-swept horn/antler pair;
+3. one tall lean humanoid torso/leg structure;
+4. one separated vermilion tail mass;
+5. 2–3 broad charcoal tiger-marking groups;
+6. one short curved blade;
+7. one slim forearm guard;
+8. one slim shin/hoof guard language.
+
+No additional element may compete with the tail as a major trailing silhouette.
+
+### 20.3 Hair / mane lock
+
+Battle mane should resolve into approximately three major masses:
+- crown / upper-back mass;
+- one side/rear directional mass;
+- one lower rear mass if needed.
+
+Do not render a field of separate locks.
+
+The mane must remain visually lighter and smaller than the red tail.
+
+### 20.4 Waist / garment lock
+
+Battle garment language:
+- fitted torso wrap;
+- one compact waist wrap/panel;
+- no skirt-like stack of multiple hanging panels;
+- no long ribbons;
+- no rear cloth mass overlapping the tail.
+
+Garment motion is secondary to tail motion.
+
+### 20.5 Weapon lock
+
+Battle weapon direction:
+- single short curved skirmisher blade;
+- simple guard silhouette;
+- simple handle;
+- no trailing tassel;
+- no detailed engraving;
+- no second blade in the default battleIdle.
+
+The blade supports role readability but does not carry creature identity.
+
+### 20.6 Marking lock
+
+Use only 2–3 broad tiger-marking groups:
+- shoulder/upper arm;
+- side torso;
+- outer thigh.
+
+Optional lower-leg mark only if the sprite remains clean at runtime size.
+
+Do not restore dense striping during polish.
+
+### 20.7 Color-block lock
+
+Battle color hierarchy:
+1. white head;
+2. vermilion tail;
+3. warm tawny body;
+4. charcoal markings/garment;
+5. dark weapon/guards;
+6. optional tiny muted accent.
+
+Avoid introducing additional high-contrast accent colors.
+
+### 20.8 Negative-space lock
+
+In the default battleIdle:
+- blade must not overlap the torso center;
+- front arm should not fully merge with chest;
+- front and rear legs must remain separable;
+- tail must remain separated from rear leg/waist;
+- horns must remain distinguishable from mane;
+- no cloth/ornament may fill the waist-to-tail gap.
+
+### 20.9 Runtime validation target
+
+The final battleIdle must be checked at the current intended runtime fit, approximately 48px base fit.
+
+PASS requires:
+- white head identifiable as a discrete mass;
+- one red tail clearly identifiable;
+- at least two broad tiger-marking groups visible;
+- weapon visible but not dominant;
+- leg gap visible;
+- no major silhouette collision;
+- no dependency on micro-linework for recognition.
+
+If any one of these fails, simplify the source asset before integration.
+
+### 20.10 Authoring handoff state
+
+鹿蜀 no longer needs a fundamental visual redesign.
+
+The next authoring step is:
+**produce one battleIdle source using this locked cleanup contract, then validate the result at runtime scale before creating the rest of the battle-state set.**
+
+Do not proceed to Hit / KO / Cast production until battleIdle passes the runtime-size gate.
