@@ -1,3 +1,4 @@
+import {defaultCharacterAssets} from '../assets/manifest.js';
 import {formalTierEffects} from './tierEffects.js';
 import {formalAIProfiles} from './aiProfiles.js';
 import { createCharacterDefinition } from '../combat/character.js';
@@ -10,7 +11,7 @@ const characters=[
 ];
 export const rosterCatalog=Object.freeze(Object.fromEntries(characters.map(([id,name,type,role,maxHp,atk,def,moveSpeed,attackSpeed,color,combatSummary,lore,profile])=>[id,Object.freeze({
  ...createCharacterDefinition({id,name,type,role,stats:{maxHp,atk,def,moveSpeed,attackSpeed},abilities:{basic:`${id}.basic`,heavy:`${id}.heavy`,special:`${id}.special`,awakening:`${id}.awakening`,passives:[`${id}.passive`]}}),
- tierEffects:formalTierEffects[id],portrait:Object.freeze({label:name,color}),combatSummary,lore,aiProfile:formalAIProfiles[profile],
+ assets:defaultCharacterAssets,tierEffects:formalTierEffects[id],portrait:Object.freeze({label:name,color}),combatSummary,lore,aiProfile:formalAIProfiles[profile],
  passiveMetadata:Object.freeze({definitionId:`${id}.passive`,implemented:false}),
 })])));
 export const prototypeOwnership=()=>({characterIds:Object.keys(rosterCatalog)});

@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- M5C-A IN PROGRESS / A complete: validated immutable manifest, standard nine slots, central existing previews and placeholders; future-character data refs. Targeted14/14 PASS. B resolver/cache next. Active feature/PR1, no gameplay/economy changes.
 - **M5C-A ASSET PIPELINE — IMPLEMENTATION READY.** Build one generic manifest/fallback/lazy-loading/animation/VFX descriptor pipeline using existing placeholders; do not integrate final art one file at a time. Canonical: `docs/M5C_ART_ANIMATION_VFX.md`. M5C-B later consumes approved asset batches.
 - **M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — PASS / PLAYER VERIFIED.** Player accepted current T0–T3 mechanic differentiation as the working balance baseline. Exact Tier magnitudes/timings/coverage may be tuned later without changing shard costs/accounting or the shared generic status/effect architecture.
 - **NEXT: M5C ART / ANIMATION / VFX INTEGRATION — CHAT SPEC / IMPLEMENTATION PLANNING.** Define reusable asset contracts and batching so portraits, battle sprites, idle/hit/KO states and skill VFX can be integrated without one-image-at-a-time Work loops. Preserve all accepted combat/progression systems.
