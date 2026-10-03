@@ -412,7 +412,7 @@ export class ArenaScene extends Phaser.Scene {
 
     for (const [category, view] of this.skillButtons) {
       const slot = usableActor ? actor.abilityState[category] : null;
-      const definition = slot ? this.session.abilityDefinitions[slot.definitionId] : null;
+      const definition = slot ? (this.session.actorAbilityDefinitions.get(actor.instanceId)[slot.definitionId]) : null;
       const cooling = Boolean(slot && definition && slot.phase === 'cooldown' && slot.cooldownRemaining > 0);
       const ready = Boolean(!this.paused && this.battleStarted && usableActor && slot && definition && slot.phase === 'ready');
 

@@ -22,9 +22,9 @@ Review focus: same character on opposite sides at different Tier; heal double sc
 - [x] Resolve global geometry then existing mechanic gains. Shared statuses opt-in duration/strength; control max.5s, avoidance max.4s, steadfast max1s, mitigation max.5. AoE max6, support range max20, skill displacement max4 arena units. Persistent duration/interval unchanged; magnitude scale applied once at pulse.
 - [x] GREEN targeted/impacted, ledger, commit/push.
 ## D — profiles/Lab
-- [ ] RED tests/tierPowerProfiles.test.js five immutable validation profiles, future full default, same-team/enemy/seed/scenario comparison and Lab-only summaries.
-- [ ] Add src/roster/tierScalingProfiles.js data and catalog references; Lab-only table from pure projection, refresh on team/Tier/baseline changes. No runtime preload or formal HUD change.
-- [ ] GREEN targeted/impacted, ledger, commit/push.
+- [x] RED tests/tierPowerProfiles.test.js five immutable validation profiles, future full default, same-team/enemy/seed/scenario comparison and Lab-only summaries.
+- [x] Add src/roster/tierScalingProfiles.js data and catalog references; Lab-only table from pure projection, refresh on team/Tier/baseline changes. No runtime preload or formal HUD change.
+- [x] GREEN targeted/impacted, ledger, commit/push.
 ## E — release
 - [ ] Targeted, impacted/full relevant suite, deterministic/performance fixtures, build and bundle check, independent review/fixes.
 - [ ] Release push, exact Actions/Pages/source/public Lab+normal URL verify; close progress/state/spec/verification evidence.
@@ -37,3 +37,5 @@ Ruling: latest explicit user checkpoint C includes range/AoE/status; use that sp
 B: complete, targeted56/56; impacted134/134. Existing Tier-kit fixture uses matched enemy Tier to preserve surviving targets, heal expected target T0HP×3.2. Joystick test refreshes active input at each step, preserving 0s release rule.
 
 C: complete, targeted17/17/impacted165/165. Shared M6B tactics untouched; profile preferred bands and target scoring consume projected geometry. Existing generic status/area engine unchanged except metadata validation. Residual coefficient remains T0; power scale at resolver only, interval/count/duration unchanged.
+
+D complete: targeted47/47/full564/564. Supplemental shared-HUD ring defect proved RED angle4.52 instead2π, fixed to actor-resolved definition then GREEN. No visual asset pipeline files changed.

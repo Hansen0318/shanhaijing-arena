@@ -1,4 +1,5 @@
 import { ControlHandoff } from './controlHandoff.js';
+import {createTierScalingProfile} from './tierScaling.js';
 
 const TYPES = new Set(['power', 'speed', 'blast']);
 const ROLES = new Set(['tank', 'attacker', 'support']);
@@ -29,6 +30,7 @@ export function createCharacterDefinition(input) {
 
   return Object.freeze({
     id: input.id, name: input.name, type: input.type, role: input.role,
+    ...(input.tierScalingProfile?{tierScalingProfile:createTierScalingProfile(input.tierScalingProfile)}:{}),
     stats: Object.freeze({
       maxHp: finite(stats.maxHp, 'maxHp', true),
       atk: finite(stats.atk, 'atk'), def: finite(stats.def, 'def'),

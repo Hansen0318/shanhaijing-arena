@@ -1,7 +1,7 @@
 # M6C-B — Tier Power Curve Rebalance
 
 ## Status
-**IMPLEMENTATION READY**
+**IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
 
 Player feedback after M6C smoke: current Tier mechanic differences are structurally correct but overall power growth is not visually/strategically noticeable enough. Tier should feel materially stronger, while avoiding runaway values that would invalidate AI, telegraph timing, player control, or encounter readability.
 
@@ -356,3 +356,37 @@ STOP before:
 - Chapter2 formal content;
 - new economy/progression;
 - Level/Star/Rarity.
+
+## M6C-B exact implementation seeds
+
+All scale factors use `1 + (canonical - 1) × weight` once from immutable T0. Unspecified/future profile weights default1. Control duration uses the buff-duration canonical curve; support range uses attack-range curve; persistent magnitude uses damage curve. Current role weights:
+
+| Weight | Mobile skirmisher | Front guard | Rear healer | Ranged burst | Aggressive bruiser |
+|---|---:|---:|---:|---:|---:|
+| hpScaleWeight | 1 | 1 | 1 | 1 | 1 |
+| damageScaleWeight | 1 | 0.85 | 0.65 | 1 | 1 |
+| healingScaleWeight | 0.35 | 0.3 | 1 | 0.3 | 0.3 |
+| moveSpeedScaleWeight | 1 | 0.35 | 0.75 | 0.65 | 0.85 |
+| attackSpeedScaleWeight | 1 | 0.55 | 0.6 | 0.8 | 1 |
+| cooldownScaleWeight | 1 | 0.7 | 1 | 1 | 0.85 |
+| windupScaleWeight | 1 | 0.5 | 0.7 | 1 | 0.6 |
+| attackRangeScaleWeight | 1 | 0.65 | 0.8 | 1 | 1 |
+| aoeScaleWeight | 1 | 0.65 | 0.6 | 1 | 0.6 |
+| mobilityDistanceScaleWeight | 1 | 0.4 | 0.7 | 0.55 | 1 |
+| buffDurationScaleWeight | 1 | 1 | 1 | 0.65 | 0.8 |
+| defenseEffectScaleWeight | 0.5 | 1 | 1 | 0.5 | 0.8 |
+| controlDurationScaleWeight | 1 | 1 | 0.5 | 0.4 | 1 |
+| supportRangeScaleWeight | 0.5 | 1 | 1 | 0.5 | 0.5 |
+| persistentMagnitudeScaleWeight | 0.5 | 0.5 | 0.75 | 1 | 0.75 |
+
+Bounds: H/S/A cooldown≥0.75s, Basic interval≥0.25s (one Basic per step); opt-in windup≥300ms and dodgeable total window≥350ms. Projectile travel and AI reaction frequency untouched. Global DEF/ATK base data unchanged; outgoing power applies through resolver before Type/DEF and crit. Existing mechanics/status outgoing bonus stays bounded1.15. Incoming mitigation retains strongest policy.
+
+Opt-in status duration: general≤30s, control≤0.5s, avoidance≤0.4s, steadfast≤1s; mitigation strength≤0.5. AoE/persistent radius≤6 arena units; support/protection range≤20; ability displacement≤4 and existing arena clamping. No joystick-sensitivity change. Formal heavy warnings may hit their documented floor; actual impact uses the same threat clock.
+
+Formal abilities declare `tierScaling` booleans for AoE/lane width, movement, base mitigation, windup. Attack-range growth defaults on, can opt out. Status definitions opt into duration/strength; M6C controls/avoidance/support use the same generic schema. Persistent area opts into radius only; coefficient0.12, interval0.5s, duration3s and exclusive expiry five pulses remain unchanged. Residual power applies once through persistentMagnitude at pulse resolution.
+
+Healing seed: target T0/base maxHP × original heal fraction × caster healing scale × existing conditional mechanic. Target scaled maxHP is only the clamp; target HP scale must not multiply healing output a second time. Full-health support still applies its legal secondary status without fake healing. Same-ID actor tiers are independent. Lab HP25/50/100% applies to scaled maxHP through preserved ratio at battle setup. No mid-battle Tier mutations.
+
+Lab RESOLVED STATS is a collapsed developer-only six-actor summary; pure projection, no Phaser import/preload. Team/Tier/baseline changes refresh summary. Selected character cooldown HUD uses resolved actor duration; formal HUD has no new stat panels.
+
+Targeted47/47 and full564/564 PASS at D. Independent review/release follows.

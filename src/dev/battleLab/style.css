@@ -14,5 +14,9 @@
 .lab-toggle input { width:22px; height:22px; }
 .lab-page>.battle { align-self:end; min-width:130px; min-height:44px; flex-shrink:0; background:#276956; }
 .lab-note { display:block; font-size:12px; line-height:1.4; }
+.lab-stats { margin:8px 0; min-width:0; font-size:12px; }
+.lab-stats summary { cursor:pointer; min-height:44px; display:flex; align-items:center; color:#d2e5ee; }
+.lab-stat-card { border-top:1px solid #617887; padding:6px 0; overflow-wrap:anywhere; }
+.lab-stat-card p { margin:4px 0; line-height:1.4; }
 @media (max-height:420px) { .lab-page .lab-header h1 {font-size:18px;} .lab-team {padding:6px;} .lab-options {margin:8px 0;} }
 @media (max-width:700px) { .lab-teams {grid-template-columns:minmax(0,1fr); gap:8px;} .lab-options {grid-template-columns:repeat(2,minmax(0,1fr));} }
