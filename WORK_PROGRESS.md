@@ -1,7 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- **M6C-B IN PROGRESS / B COMPLETE.** A remote f825dc00. Per-actor HP/stat projection retains ratios and independent duplicate identities; damage/heal exactly once, DEF base, cooldown/windup floors and scaled cadence/movement. B targeted56/56, impacted134/134 PASS after intentional high-Tier fixture updates (matching enemy Tier prevents premature KO). Next C geometry/status; no accounting/assets changes.
+- **M6C-B IN PROGRESS / C COMPLETE.** A f825dc00, B c6714f61 pushed. Geometry/AI preferred bands/scoring use resolved per-actor abilities; threat radius equals scaled impact AoE. Opt-in movement/status/protection/area geometry, magnitude-only residuals and caps implemented. Targeted17/17, impacted165/165 PASS. Existing M6C assertions updated only for approved extra scaling; T0 unchanged. Next D validation profiles + Lab summaries.
 
 - **M5C-A ASSET PIPELINE — PLAYER VISUAL SMOKE ACCEPTED FOR PIPELINE BEHAVIOR.** Player observed the dev visual labels/placeholders and accepted current pipeline behavior; formal art is still deferred. Preserve asset pipeline baseline.
 - **M6C-B TIER POWER CURVE REBALANCE — IMPLEMENTATION READY.** Player wants Tier growth to feel substantially stronger across a reusable parameter pool. Canonical curve now includes HP, damage/heal, move/attack speed, cooldown, scalable windup, attack range, AoE radius, dash/reposition distance, buff/debuff duration and shield/mitigation strength. A generic `TierScalingProfile` controls per-character weighting; current five characters are validation only, future characters use the same contract. Preserve M6C mechanics and all progression costs/accounting. Canonical: `docs/M6C_B_TIER_POWER_CURVE.md`.

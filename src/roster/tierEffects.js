@@ -1,7 +1,7 @@
 import {createTierEffect,freezeEffectData} from '../combat/tierEffects.js';
 const tiers=(T1,T2,T3)=>freezeEffectData(Object.fromEntries(Object.entries({T1,T2,T3}).map(([t,e])=>[t,e.map(createTierEffect)])));
-const status=(id,name,category,type,magnitude,duration,extra={})=>({id,name,kind:'status',category,status:{type,magnitude,duration,...(extra.data?{data:extra.data}:{})},...extra});
-const protection=(id,name,category,recipient,magnitude,duration,radius)=>({id,name,kind:'protect',category,recipient,radius,status:{type:'mitigation',magnitude,duration}});
+const status=(id,name,category,type,magnitude,duration,extra={})=>({id,name,kind:'status',category,status:{type,magnitude,duration,tierScaling:{duration:true,strength:['mitigation','incoming'].includes(type)},...(extra.data?{data:extra.data}:{})},...extra});
+const protection=(id,name,category,recipient,magnitude,duration,radius)=>({id,name,kind:'protect',category,recipient,radius,status:{type:'mitigation',magnitude,duration,tierScaling:{duration:true,strength:true}}});
 export const formalTierEffects=freezeEffectData({
  P1:tiers([
   {id:'lushu.reach',name:'疾踏',kind:'range',category:'heavy',magnitude:1.1},
@@ -31,7 +31,7 @@ export const formalTierEffects=freezeEffectData({
  ],[
   {id:'fox.pressure',name:'惑心追獵',kind:'damage',magnitude:1.08,condition:{kind:'target_pressure',threshold:.35,radius:1.4}},
  ],[
-  {id:'fox.residual',name:'青丘餘焰',kind:'area',category:'awakening',trigger:'hit',area:{radius:.9,duration:3,interval:.5,eligibility:'enemy',behavior:'periodic',coefficient:.12}},
+  {id:'fox.residual',name:'青丘餘焰',kind:'area',category:'awakening',trigger:'hit',area:{tierScaling:{aoe:true},radius:.9,duration:3,interval:.5,eligibility:'enemy',behavior:'periodic',coefficient:.12}},
  ]),
  P5:tiers([
   status('xingxing.pressure','追勢','special','movement',1.12,1.2),

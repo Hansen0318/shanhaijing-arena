@@ -1,6 +1,6 @@
 import {validateArea} from './areaSchema.js';
 import {validateStatus} from './statusSchema.js';
-import {resolveTierScaling,resolveTierStats,TIER_SAFETY} from './tierScaling.js';
+import {resolveTierScaling,resolveTierStats,TIER_SAFETY,scaleTierStatus} from './tierScaling.js';
 // Pure immutable combat data. Never imports progression, storage or the battle runtime.
 export const COMBAT_TIERS=Object.freeze(['T0','T1','T2','T3']);
 export function freezeEffectData(value){if(value&&typeof value==='object'){Object.values(value).forEach(freezeEffectData);Object.freeze(value);}return value;}
@@ -23,27 +23,43 @@ export function createTierEffect(input){
 }
 export function resolveTierProjection(definition,tier='T0'){
  if(!COMBAT_TIERS.includes(tier))throw new TypeError('Invalid combat Tier');
- const effects=COMBAT_TIERS.slice(1,COMBAT_TIERS.indexOf(tier)+1).flatMap(t=>definition.tierEffects?.[t]??[]).map(createTierEffect);
  const scales=resolveTierScaling(tier,definition.tierScalingProfile);
+ const effects=COMBAT_TIERS.slice(1,COMBAT_TIERS.indexOf(tier)+1).flatMap(t=>definition.tierEffects?.[t]??[]).map(createTierEffect).map(base=>{
+  const e={...base};
+  if(e.status)e.status=scaleTierStatus(e.status,scales);
+  if(e.kind==='protect')e.radius=Math.min(TIER_SAFETY.supportRange,e.radius*scales.supportRange);
+  if(e.area){e.area={...e.area};if(e.area.tierScaling?.aoe)e.area.radius=Math.min(TIER_SAFETY.aoeRadius,e.area.radius*scales.aoe);if(e.area.status)e.area.status=scaleTierStatus(e.area.status,scales);}
+  return freezeEffectData(e);
+ });
  const stats=resolveTierStats(definition,scales);
- return Object.freeze({characterId:definition.id,tier,definition,scales,stats,effects:Object.freeze(effects)});
+ const aiProfile=definition.aiProfile?Object.freeze({...definition.aiProfile,preferredRangeMin:definition.aiProfile.preferredRangeMin*scales.attackRange,preferredRangeMax:definition.aiProfile.preferredRangeMax*scales.attackRange}):null;
+ return Object.freeze({characterId:definition.id,tier,definition,scales,stats,aiProfile,effects:Object.freeze(effects)});
 }
 export function resolveTierAbilities(projection,definitions){
- const table={...definitions};
+ const table={...definitions},s=projection.scales;
  for(const category of ['basic','heavy','special','awakening']){
   const id=projection.definition.abilities[category],base=definitions[id];if(!base)continue;
   const effects=projection.effects.filter(e=>(!e.category||e.category===category)&&['range','approach'].includes(e.kind));if(!effects.length&&projection.tier==='T0')continue;
   const gain=kind=>1+Math.min(.15,effects.filter(e=>e.kind===kind).reduce((n,e)=>n+e.magnitude-1,0));
-  const rangeGain=gain('range'),approachGain=gain('approach');
-  const effect={...base.effect};if(effect.areaRadius!=null)effect.areaRadius*=rangeGain;
-  if(effect.movement)effect.movement=Object.freeze({...effect.movement,distance:effect.movement.distance*approachGain});
-  let telegraph=base.telegraph?{...base.telegraph,dangerRadius:base.telegraph.dangerRadius*rangeGain}:null;
-  if(telegraph&&base.tierScaling?.windup===true&&projection.tier!=='T0'){
-   telegraph.telegraphMs=Math.max(TIER_SAFETY.windupMs,telegraph.telegraphMs*projection.scales.windup,
+  const mechanicRange=gain('range'),approachGain=gain('approach');
+  const support=base.targetingRule!=='enemy',rangeGain=(base.tierScaling?.attackRange===false?1:support?s.supportRange:s.attackRange)*mechanicRange;
+  const range=Math.min(support?TIER_SAFETY.supportRange:Infinity,base.range*rangeGain);
+  const aoeGain=base.tierScaling?.aoe?s.aoe:1;
+  const effect={...base.effect};
+  if(effect.areaRadius!=null)effect.areaRadius=Math.min(TIER_SAFETY.aoeRadius,effect.areaRadius*aoeGain*mechanicRange);
+  if(effect.movement)effect.movement=Object.freeze({...effect.movement,distance:Math.min(TIER_SAFETY.mobilityDistance,effect.movement.distance*(base.tierScaling?.mobility?s.mobilityDistance:1)*approachGain)});
+  if(base.tierScaling?.status&&effect.kind==='mitigation'){
+   const status=scaleTierStatus({type:'mitigation',duration:effect.duration,magnitude:effect.reduction,tierScaling:{duration:true,strength:true}},s);
+   effect.duration=status.duration;effect.reduction=status.magnitude;
+  }
+  let telegraph=base.telegraph?{...base.telegraph,dangerRadius:effect.areaRadius??Math.min(TIER_SAFETY.aoeRadius,base.telegraph.dangerRadius*aoeGain*mechanicRange)}:null;
+  if(telegraph&&base.tierScaling?.windup===true){
+   telegraph.telegraphMs=Math.max(TIER_SAFETY.windupMs,telegraph.telegraphMs*s.windup,
     telegraph.dodgeable?TIER_SAFETY.dodgeWindowMs-telegraph.projectileTravelMs:0);
   }
-  table[id]=Object.freeze({...base,cooldown:category==='basic'?0:Math.max(TIER_SAFETY.cooldown,base.cooldown*projection.scales.cooldown),range:base.range*rangeGain,maxRange:base.maxRange*rangeGain,
-   telegraph:telegraph?Object.freeze(telegraph):null,effect:Object.freeze(effect)});
+  table[id]=freezeEffectData({...base,cooldown:category==='basic'?0:Math.max(TIER_SAFETY.cooldown,base.cooldown*s.cooldown),range,maxRange:range,
+   minRange:Math.min(range,base.minRange*rangeGain),preferredRange:base.preferredRange==null?null:Math.min(range,base.preferredRange*rangeGain),
+   telegraph,effect});
  }
  return Object.freeze(table);
 }

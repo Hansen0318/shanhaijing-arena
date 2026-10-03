@@ -31,7 +31,7 @@ for(let i=0;i<5;i++) {
   if(i===2&&j===3){targetingRule='team_ally';Object.assign(effect,{kind:'heal',maxHpFraction:.16});ai.hpThreshold=.8;ai.minTargets=2;}
   if(i===3&&j===2){effect.areaRadius=1.6;effect.areaCenter='target';ai.minTargets=2;}
   const crit=j===0?[true,.1,1.5]:j===1?[true,.2,1.75]:j===2&&effect.coefficient>0?[true,.15,1.75]:[false,0,1];
-  entries.push([id,createAbilityDefinition({id,name:names[i][j],description:descriptions[i][j],category,telegraph:telegraphs[id]?{dodgeable:true,dangerShape:'circle',commitment:'locked',interruptible:false,...telegraphs[id]}:null,cooldown:cooldowns[i][j],minRange,preferredRange,maxRange,targetingRule,effect,ai,canCrit:crit[0],critChance:crit[1],critMultiplier:crit[2]})]);
+  entries.push([id,createAbilityDefinition({id,name:names[i][j],description:descriptions[i][j],category,tierScaling:{aoe:effect.areaRadius!=null||telegraphs[id]?.dangerShape==='lane',mobility:effect.movement!=null,status:effect.kind==='mitigation',windup:telegraphs[id]!=null},telegraph:telegraphs[id]?{dodgeable:true,dangerShape:'circle',commitment:'locked',interruptible:false,...telegraphs[id]}:null,cooldown:cooldowns[i][j],minRange,preferredRange,maxRange,targetingRule,effect,ai,canCrit:crit[0],critChance:crit[1],critMultiplier:crit[2]})]);
  }
  const id=`${characterId}.passive`;entries.push([id,Object.freeze({id,name:names[i][4],category:'passive',description:descriptions[i][4],effect:Object.freeze({}),implemented:false})]);
 }

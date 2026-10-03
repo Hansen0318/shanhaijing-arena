@@ -126,7 +126,7 @@ export class BattleSession {
     this.tierProjections=new Map(this.actors.map(a=>[a.instanceId,resolveTierProjection(characterDefinitions[a.definitionId],tierByActorId[a.instanceId]??'T0')]));
     this.actorCharacterDefinitions=new Map(this.actors.map(a=>{
       const p=this.tierProjections.get(a.instanceId);a.initializeCombatMaxHp(p.stats.maxHp);
-      return [a.instanceId,Object.freeze({...p.definition,stats:p.stats})];
+      return [a.instanceId,Object.freeze({...p.definition,stats:p.stats,...(p.aiProfile?{aiProfile:p.aiProfile}:{})})];
     }));
     this.actorAbilityDefinitions=new Map(this.actors.map(a=>[a.instanceId,resolveTierAbilities(this.tierProjections.get(a.instanceId),abilityDefinitions)]));
     this.elapsedSeconds = 0;
@@ -332,7 +332,7 @@ export class BattleSession {
       const controlled=actor.controlHandoff.controlSource(nowMs)==='player';
       if(controlled){for(const k of Object.keys(state))delete state[k];}
       const evaluate=profile&&!controlled&&nowMs>=(state.nextAt??0);
-      if(evaluate){state.scoredTargetId=scoreTacticalTarget({actor,enemies:opponents,allies:this.teamContext(actor).allies,profile,characterDefinitions:this.characterDefinitions,abilityDefinitions:this.abilityDefinitions,targetIds:this.targetIds})?.instanceId;}
+      if(evaluate){state.scoredTargetId=scoreTacticalTarget({actor,enemies:opponents,allies:this.teamContext(actor).allies,profile,characterDefinitions:this.characterDefinitions,abilityDefinitions:this.actorAbilityDefinitions.get(actor.instanceId),targetIds:this.targetIds})?.instanceId;}
       const currentTarget = actorById(opponents,profile?state.scoredTargetId:this.targetIds.get(actor.instanceId));
       let intent = decideAIIntent({
         actor,

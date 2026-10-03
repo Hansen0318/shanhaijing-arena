@@ -23,3 +23,19 @@ export function resolveTierStats(definition,scales){
  const s=definition.stats;
  return Object.freeze({...s,maxHp:s.maxHp*scales.hp,moveSpeed:s.moveSpeed*scales.moveSpeed,attackSpeed:s.attackSpeed*scales.attackSpeed});
 }
+export function createScalingOptIn(input,keys){
+ if(input==null)return null;
+ if(typeof input!=='object'||Array.isArray(input))throw new TypeError('Invalid scaling opt-in');
+ for(const [k,v] of Object.entries(input))if(!keys.includes(k)||typeof v!=='boolean')throw new TypeError('Scaling opt-in requires known booleans');
+ return Object.freeze({...input});
+}
+export function scaleTierStatus(input,scales){
+ const opt=createScalingOptIn(input.tierScaling,['duration','strength']);
+ let duration=input.duration,magnitude=input.magnitude;
+ if(opt?.duration){
+  const bounded={control:TIER_SAFETY.controlDuration,avoidance:TIER_SAFETY.avoidanceDuration,steadfast:TIER_SAFETY.steadfastDuration};
+  duration=Math.min(bounded[input.type]??30,duration*(Object.hasOwn(bounded,input.type)?scales.controlDuration:scales.buffDuration));
+ }
+ if(opt?.strength&&['mitigation','incoming'].includes(input.type))magnitude=Math.min(TIER_SAFETY.mitigation,magnitude*scales.defenseEffect);
+ return Object.freeze({...input,duration,magnitude});
+}
