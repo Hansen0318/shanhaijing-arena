@@ -48,6 +48,9 @@ Head:
 - short elegant horn/antler elements may support the horn-strike identity;
 - ears swept slightly back/outward to reinforce speed;
 - avoid a plain human head that loses the creature identity.
+- use a species-derived mythic anthropomorphic face: clearly horse/deer-derived skull and muzzle structure, stylized enough for expressive eyes/brows/mouth and character acting;
+- do not use a reusable normal-human face with only deer ears/horns added;
+- do not push all the way to a fully naturalistic deer/horse head if that reduces readable expression or makes the design feel like an animal head mounted on a humanoid body.
 
 Body markings:
 - dark tiger-like stripes on a warm tawny/amber base;
