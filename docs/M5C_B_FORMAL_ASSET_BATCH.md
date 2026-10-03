@@ -148,6 +148,67 @@ Future characters should:
 
 Any newly introduced archetype becomes part of the shared roster toolset for later characters.
 
+## 3C. Concept-detail vs battle-detail hard rule
+
+Formal character identity art and runtime battle art are different production tiers.
+
+### Concept / portrait / collection tier
+May retain:
+- richer costume construction;
+- secondary materials;
+- ornamental hardware;
+- more facial/hair/fur detail;
+- additional surface markings;
+- presentation-focused composition.
+
+These assets define identity and presentation. They are **not** the source-of-truth detail density for runtime battle sprites.
+
+### Battle tier
+Battle sprites must be authored as simplified mobile assets, not as direct downscales of concept sheets.
+
+At intended runtime fit (approximately 48px base fit for the current Arena baseline), the character must still read through:
+1. body silhouette;
+2. species/head silhouette;
+3. major appendage(s);
+4. primary color blocks;
+5. 1–3 broad identity markings;
+6. compact primary equipment / role cue.
+
+Fine detail is subordinate.
+
+### Reusable battle detail budget
+Default battle-art rules for every current and future playable character:
+- use few large color regions instead of many small material patches;
+- use broad markings instead of dense realistic texture;
+- keep hair/fur/feathers in a small number of major masses;
+- minimize tiny belts, charms, buckles, seams, filigree and jewelry;
+- minimize thin trailing ribbons/straps unless one is identity-critical;
+- keep equipment compact enough that limbs/head/appendages remain separable;
+- preserve clear negative space between limbs, tail/wings, body and weapon where possible;
+- avoid stacking multiple similar motion accents behind the character;
+- avoid line density that disappears or aliases at mobile scale.
+
+### Identity priority hierarchy
+Every character spec must define a short ordered list of battle identity cues. Example structure:
+- Tier 1: species/head/body silhouette;
+- Tier 2: major appendage or unique body feature;
+- Tier 3: dominant color block / broad marking;
+- Tier 4: role/equipment cue;
+- Tier 5: decorative detail.
+
+When simplification is required, remove Tier 5 before Tier 4, Tier 4 before Tier 3, and never sacrifice Tier 1–2 merely to preserve decoration.
+
+### Readability failure conditions
+A battle asset fails the gate if, at runtime scale:
+- the character becomes an undifferentiated visual blob;
+- head / torso / weapon / tail / wings merge into one mass;
+- identity depends on details that vanish when downscaled;
+- two roster characters become distinguishable only by color;
+- equipment overwhelms the creature silhouette;
+- decorative motion competes with damage text, telegraphs or other battle UI.
+
+If any failure appears, simplify the battle asset before Work integration. Do not solve the problem by enlarging every character or changing gameplay geometry.
+
 ## 4. Asset style constraints
 
 - mobile-first readability;
