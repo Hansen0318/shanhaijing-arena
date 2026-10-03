@@ -1,7 +1,7 @@
 # M6B — Combat Tactical AI / Telegraph / Dodge Batch
 
 ## Status
-**ENGINEERING PASS / PLAYER SMOKE PENDING**
+**PASS / PLAYER VERIFIED**
 
 M6A Developer Battle Lab is PLAYER VERIFIED and is the primary player-smoke harness for this milestone.
 
@@ -412,3 +412,8 @@ Pure runtime/demoDefinitions.js separates existing prototype metadata from simul
 ## Release verification
 Release source `38cbac78b9aa6aaabcfa7de87c6202e13b984341`; [Actions #379 / 37096413415](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37096413415) Test/Build/Pages SUCCESS (build111127158627, deploy111127221878). Public Landing index--RrIFyks.js matches build, no modulepreload/host/canvas; normal URL Lab absent. Dev menu has10 presets; TELEGRAPH TEST START uses real Arena; capsule warnings visible; Pause, Restart, Exit→Lab verified, configuration retained and host/canvas removed. Cloud1363×936 no menu horizontal overflow. Physical iPhone feel/readability remains player smoke; automated storage snapshot contracts cover isolation.
 Evidence: `verification/M6B_COMBAT_TACTICAL_AI.md`. One focused smoke only; STOP.
+
+
+## Player acceptance (2026-10-03)
+
+Player accepted the current M6B tactical behavior and placeholder telegraph presentation as the working baseline. Telegraph size/style/timing may be tuned later if readability or visual issues emerge; such tuning must preserve the shared threat geometry, dodge eligibility, pause/restart cleanup, and player/AI parity contracts.
