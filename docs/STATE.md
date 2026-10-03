@@ -4,6 +4,7 @@
 **M5C-B FORMAL ASSET INTEGRATION — CHAT ASSET AUTHORING / BATCH PREPARATION**
 
 ## Current state
+- Art-direction correction: all normal playable roster characters default to humanoid/anthropomorphic combat bodies for shared animation/ability production. Creature traits remain mandatory; clothing/props/weapons may be invented to communicate Type/Role/mechanics. The prior quadruped 鹿蜀 concept is rejected and its spec has been corrected before production approval.
 - M5C-B Batch1 character authoring has begun with 鹿蜀. Canonical concept/portrait/collection/battleIdle/idle-motion direction is in `docs/art/M5C_B_LUSHU_VISUAL_SPEC.md`; player concept approval is the next visual gate before locking production assets.
 - M5C-B is now the current milestone. Batch1 is the five-character identity + idle-motion pack: portraitSquare + collectionArt + battleIdle + lightweight battlefield idle micro-animation. Chat/player author and approve the coherent batch first; Work integration starts only after approved files exist. Canonical: `docs/M5C_B_FORMAL_ASSET_BATCH.md`.
 - M6C-B player device smoke accepted. Tier power curve / TierScalingProfile is now a working balance baseline; later numeric tuning remains allowed without architectural rewrite.
