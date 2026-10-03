@@ -23,3 +23,11 @@ test('ready override remains session-local and never mutates formal cooldowns',(
  for(const a of s.actors)for(const k of ['heavy','special','awakening'])assert.equal(a.abilityState[k].cooldownRemaining,0);
  assert.equal(JSON.stringify(formalAbilityDefinitions),before);assert.equal(s.allies[0].hp/s.allies[0].maxHp,.5);
 });
+test('HEAL/LOW HP presets exercise real ally and team heal immediately',()=>{
+ const heal=createLabBattleSession(createLabConfig({scenarioId:'heal'}));assert.ok(heal.usePlayerAbility('a3','special'));assert.deepEqual(heal.drainHealEvents().map(e=>e.targetId),['a1']);
+ const low=createLabBattleSession(createLabConfig({scenarioId:'low-hp'}));assert.ok(low.usePlayerAbility('a3','awakening'));assert.deepEqual(low.drainHealEvents().map(e=>e.targetId),['a1','a2','a3']);
+});
+test('AOE and MITIGATION presets exercise formal effects without position adjustments',()=>{
+ const aoe=createLabBattleSession(createLabConfig({scenarioId:'aoe'}));assert.ok(aoe.usePlayerAbility('a2','special'));assert.deepEqual(aoe.drainDamageEvents().map(e=>e.targetId),['e1','e2','e3']);
+ const tank=createLabBattleSession(createLabConfig({scenarioId:'mitigation'}));assert.ok(tank.usePlayerAbility('a2','special'));assert.equal(tank.statuses.damageMultiplier('a2',0),.75);
+});

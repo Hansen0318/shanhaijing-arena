@@ -1,10 +1,10 @@
 # Project State
 
 ## Milestone
-**M6A DEVELOPER BATTLE LAB — CHECKPOINT D / IN PROGRESS**
+**M6A DEVELOPER BATTLE LAB — IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
 
 ## Current state
-- M6A A config/isolation controller complete, targeted5/5 PASS; dev entry/menu complete; B targeted32/32 PASS. Runtime hook pending. No storage capability in Lab controller; details docs/M6A_DEVELOPER_BATTLE_LAB.md. Next B→C→D→E automatically, no M6B.
+- M6A six data-driven presets/dev menu/direct shared runtime/options/retry/back complete. Strict persistence-free entry/controller/result; normal Campaign untouched. Targeted41/41, impacted205/205, full448/448, build/diff PASS; independent39/39, no actionable findings. Actions/Pages/public verification pending. See docs/verification/M6A_DEVELOPER_BATTLE_LAB.md. No M6B.
 - Player approved a faster development workflow: coherent batch milestones, Work-owned internal checkpoints, narrower manual smoke, automated regression for protected baselines, and reusable/data-driven systems. Canonical: `docs/DEVELOPMENT_ACCELERATION.md`.
 - Next implementation milestone is M6A Developer Battle Lab, followed by M6B Combat Tactical AI / Telegraph / Dodge Batch.
 - INFO Hub device smoke is PLAYER VERIFIED. Landing INFO, three subpages, icon-only type triangle, read-only navigation, and deferred battle loading are accepted baseline.
