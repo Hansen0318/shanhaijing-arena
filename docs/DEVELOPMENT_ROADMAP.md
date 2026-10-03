@@ -274,7 +274,9 @@ Hard isolation:
 
 ## M6B — Combat Tactical AI / Telegraph / Dodge Batch
 
-After M6A is accepted, implement one coherent tactical-combat milestone rather than many micro-slices.
+Status: **IMPLEMENTATION READY**. Canonical spec: `docs/M6B_COMBAT_TACTICAL_AI.md`.
+
+Implement one coherent tactical-combat milestone rather than many micro-slices.
 
 Scope:
 - telegraph / dodgeable ability metadata;
