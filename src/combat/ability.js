@@ -1,3 +1,4 @@
+import {createTelegraph} from './threats.js';
 import { canCharacterAct, isCharacterKO } from './character.js';
 
 const ACTIVE_CATEGORIES = new Set(['basic', 'heavy', 'special', 'awakening']);
@@ -56,6 +57,7 @@ export function createAbilityDefinition(input) {
     preferredRange,
     maxRange,
     targetingRule,
+    telegraph: createTelegraph(input.telegraph),
     effect: Object.freeze({ ...(input.effect ?? {}) }),
     ai: Object.freeze({ ...(input.ai ?? {}) }),
   });

@@ -1,6 +1,10 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IN PROGRESS / A COMPLETE.** Recovered remotee36abeb9; M6A PLAYER VERIFIED. Immutable profile validator, declarative telegraph validator and clock-owned locked-geometry threat ledger added; targeted29/29 PASS after RED. No gameplay integration yet.
+- Active feat/m0-combat-core-20260927 / PR1 / original Pages delivery retained. Implementation plan docs/superpowers/plans/2026-10-03-m6b.md. Continue B movement→C integration/profiles→D renderer/Lab→E review/release automatically. No progression/accounting/Tier/art/audio/Chapter2 changes.
+
+## Previous M6A accepted handoff (historical)
 - **M6A DEVELOPER BATTLE LAB — PASS / PLAYER VERIFIED.** Player accepted the dev-only lab flow and authorized continuation. Preserve isolated `?battleLab=1`, formal shared runtime, six presets, quick options, retry/back, and zero progression/save mutation as baseline.
 - **NEXT: M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IMPLEMENTATION READY.** One coherent batch: declarative telegraphs/dodgeable metadata, shared threat detection, safe-position scoring, sidestep/backstep/diagonal evasion, healer retreat/recover/re-engage, ranged spacing/kite, bruiser/tank differentiation, and formal Chapter1 AI profiles. Use M6A Lab for focused smoke. No character-ID AI branches.
 - **M6A DEVELOPER BATTLE LAB — ENGINEERING PASS / PLAYER SMOKE PENDING.** Explicit ?battleLab=1 menu, six immutable presets, formal roster duplicate slots, HP100/50/25, Type three cases, skip countdown, ready override, AI-only/manual. Shared formal BattleSession/Arena; reward-free RETRY/BACK TO LAB.
@@ -553,3 +557,4 @@ Awakening progression/unlock is not implemented in M0 yet; future progression ma
 - VS ally/enemy placeholders; preview and battle share immutable encounter definition lookup. Power/Speed/Blast replaceable marks derive from definition type. Battle HUD geometry unchanged.
 - Roster/team/VS impacted tests 26/26 PASS.
 - Remaining: whole-diff review, targeted/impacted checks, build/deploy and minimum public runtime smoke. Exact next action: inspect integrated diff and verify impacted surfaces.
+
