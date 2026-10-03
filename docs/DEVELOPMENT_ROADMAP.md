@@ -18,7 +18,7 @@ Current order:
 8. **INFO Hub** — complete
 9. **M6A — Developer Battle Lab** — complete
 10. **M6B — Combat Tactical AI / Telegraph / Dodge Batch** — complete
-11. **M6C — Tier Combat Effects / Shared Status Primitives** — current / implementation ready
+11. **M6C — Tier Combat Effects / Shared Status Primitives** — engineering pass / player smoke pending
 12. **M5C — Art / Animation / VFX Integration** — deferred until gameplay systems above are stable
 13. Audio pass after core flow and visual timing are stable
 
@@ -304,7 +304,7 @@ Rules:
 
 ## M6C — Tier Combat Effects / Shared Status Primitives
 
-Status: **IMPLEMENTATION READY**. Canonical spec: `docs/M6C_TIER_COMBAT_EFFECTS.md`.
+Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. A–E complete,512/512 tests/build/review/Actions/Pages/public verified. Canonical spec: `docs/M6C_TIER_COMBAT_EFFECTS.md`.
 
 After M6B acceptance, connect the existing T0→T3 progression to combat through reusable, data-driven shared primitives.
 
@@ -319,3 +319,4 @@ Scope includes:
 - Battle Lab Tier comparison presets.
 
 Current five characters are validation content only. Future characters must reuse the same primitives through data; no character-ID branches.
+

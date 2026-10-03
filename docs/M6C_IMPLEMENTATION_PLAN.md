@@ -11,25 +11,27 @@ Constraints: no economy/schema/reward/Chapter data edits; T0 exact baseline; Typ
 Review focus: invalid Tier/effect data rejects; no air-cast free buffs; hit effects skip avoided/KO targets; status refresh/stack cannot cause runaway; queued multi-hit/control/area lifecycle and retry use fresh state.
 
 ## A — projection/schema
-- [ ] RED tests effect validation/deep immutability/cumulative T0–T3 and detached Campaign Tier snapshot.
-- [ ] Implement combat/tierEffects.js createTierEffect/resolveTierProjection/resolveTierAbilities; definitions may own tierEffects, no catalog/ID branches.
-- [ ] CampaignController battleTierSnapshot via authoritative characterProgress(); Stage factory passes actor instance snapshots; enemies T0 unless config declares snapshot.
-- [ ] Targeted tests, docs, commit/push.
+- [x] RED tests effect validation/deep immutability/cumulative T0–T3 and detached Campaign Tier snapshot.
+- [x] Implement combat/tierEffects.js createTierEffect/resolveTierProjection/resolveTierAbilities; definitions may own tierEffects, no catalog/ID branches.
+- [x] CampaignController battleTierSnapshot via authoritative characterProgress(); Stage factory passes actor instance snapshots; enemies T0 unless config declares snapshot.
+- [x] Targeted tests, docs, commit/push.
 ## B — statuses and resolution
-- [ ] RED clock-owned status replace/strongest/bounded stack, mitigation/movement/outgoing/incoming/avoidance/control/anti-control, condition checks and generic post-cast hooks.
-- [ ] Extend BattleStatuses with records/source/target/type/start/expiry/tags; retain baseline mitigation API/map.
-- [ ] Shared TierEffectRuntime resolves low HP/rear band/angle/isolated/weakened, damage/heal modifiers (positive gains additive capped15%), normal movement/control and queued hits.
-- [ ] Targeted tests, docs, commit/push.
+- [x] RED clock-owned status replace/strongest/bounded stack, mitigation/movement/outgoing/incoming/avoidance/control/anti-control, condition checks and generic post-cast hooks.
+- [x] Extend BattleStatuses with records/source/target/type/start/expiry/tags; retain baseline mitigation API/map.
+- [x] Shared TierEffectRuntime resolves low HP/rear band/angle/isolated/weakened, damage/heal modifiers (positive gains additive capped15%), normal movement/control and queued hits.
+- [x] Targeted tests, docs, commit/push.
 ## C — area/protection
-- [ ] RED fixed-geometry bounded periodic/impact areas, per-tick unique team eligibility, KO/terminal cleanup, threatened-nearby-ally deterministic tie.
-- [ ] combat/persistentAreas.js max12 areas,200ms minimum tick; TierEffectRuntime protect/area hooks through shared damage/status APIs. Max64 statuses.
-- [ ] Targeted tests, docs, commit/push.
+- [x] RED fixed-geometry bounded periodic/impact areas, per-tick unique team eligibility, KO/terminal cleanup, threatened-nearby-ally deterministic tie.
+- [x] combat/persistentAreas.js max12 areas,200ms minimum tick; TierEffectRuntime protect/area hooks through shared damage/status APIs. Max64 statuses.
+- [x] Targeted tests, docs, commit/push.
 ## D — formal data/Lab
-- [ ] RED five cumulative mappings plus persistent-free Tier selectors/same seed/presets.
-- [ ] roster/tierEffects.js formal definitions, Lab ally/enemy Tier T0–T3/seed41 and T0 comparison option,3 presets, compact labels. Generic area/status indicator renderer; no final assets.
-- [ ] Exact seeds in canonical doc; targeted tests, commit/push.
+- [x] RED five cumulative mappings plus persistent-free Tier selectors/same seed/presets.
+- [x] roster/tierEffects.js formal definitions, Lab ally/enemy Tier T0–T3/seed41 and T0 comparison option,3 presets, compact labels. Generic area/status indicator renderer; no final assets.
+- [x] Exact seeds in canonical doc; targeted tests, commit/push.
 ## E — release
-- [ ] targeted, impacted and full relevant tests; build/diff.
-- [ ] deterministic natural simulations/bounded collection performance; independent read-only review and fixes.
-- [ ] push coherent release, Actions/Pages/public fingerprints/normal vs dev verification.
-- [ ] update handoff/STATE/spec/evidence; one focused T0 vs selected Tier player smoke, STOP.
+- [x] targeted, impacted and full relevant tests; build/diff.
+- [x] deterministic natural simulations/bounded collection performance; independent read-only review and fixes.
+- [x] push coherent release, Actions/Pages/public fingerprints/normal vs dev verification.
+- [x] update handoff/STATE/spec/evidence; one focused T0 vs selected Tier player smoke, STOP.
+
+Engineering A–E complete. Player smoke is pending and is not represented as engineering verification. Release be46c92e59139a92bcff89cecbd95accf553d4a6 / Actions #391 SUCCESS; details in verification/M6C_TIER_COMBAT_EFFECTS.md.

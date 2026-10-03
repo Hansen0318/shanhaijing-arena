@@ -1,11 +1,12 @@
 # Project State
 
 ## Milestone
-**M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
+**M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- M6C A–E engineering implemented; targeted119/119, impacted369/369, full512/512/build/diff PASS. Independent findings fixed RED→GREEN; no unresolved blocker. Actions/Pages/public verification next; then one focused Tier A/B Lab smoke. No accounting/reward/Chapter changes. Evidence: verification/M6C_TIER_COMBAT_EFFECTS.md.
-- M6C A complete, targeted21/21; read-only Tier snapshots/effect schema. B status/control/conditions integrated,152/152 PASS. C bounded area/protection integrated,143/143 PASS; copied geometry includes x/y only. D formal Tier data/Lab A/B complete; targeted108/108/full501/501 PASS. E review/build/deploy pending. Plan: M6C_IMPLEMENTATION_PLAN.md.
+- M6C Release source be46c92e59139a92bcff89cecbd95accf553d4a6; Actions #391 / 37099650309 completed SUCCESS (build111136525373, deploy111136573373). Public entry index-CP8sRNpJ.js matches build; normal Landing has BATTLE/COLLECTION/INFO, no Lab/canvas/modulepreload. Dev menu has13 presets/Tier selectors; real Arena allyT3/enemyT1 and T0 baseline labels, residual-area ring, Pause/Restart/Exit→Lab verified; settings retained, canvas detached. Cloud1363×936 no horizontal overflow. Physical phone feel/readability remains player smoke.
+- M6C A–E engineering implemented; targeted119/119, impacted369/369, full512/512/build/diff PASS. Independent findings fixed RED→GREEN; no unresolved blocker. Actions/Pages/public verification complete; one focused Tier A/B Lab smoke remains. No accounting/reward/Chapter changes. Evidence: verification/M6C_TIER_COMBAT_EFFECTS.md.
+- M6C A complete, targeted21/21; read-only Tier snapshots/effect schema. B status/control/conditions integrated,152/152 PASS. C bounded area/protection integrated,143/143 PASS; copied geometry includes x/y only. D formal Tier data/Lab A/B complete; targeted108/108/full501/501 PASS. E complete: review/build/deploy/public verified. Plan: M6C_IMPLEMENTATION_PLAN.md.
 - M6B is PLAYER VERIFIED. Current placeholder telegraph geometry is accepted for now and may be visually/timing-tuned later without changing the shared threat/dodge contract.
 - M6C is authorized: connect existing Tier state to combat through generic shared primitives and data-driven tier effect definitions; no accounting-cost changes and no per-character engine branches.
 - M6B E targeted50/50, impacted308/308, full475/475, build/diff PASS; independent4 Important findings fixed RED→GREEN; no unresolved blockers. Deployment/public verification complete. See docs/verification/M6B_COMBAT_TACTICAL_AI.md.

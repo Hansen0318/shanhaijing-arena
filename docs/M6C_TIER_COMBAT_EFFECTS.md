@@ -1,7 +1,7 @@
 # M6C — Tier Combat Effects / Shared Status Primitives
 
 ## Status
-**IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 M6B tactical AI is PLAYER VERIFIED. M6C makes the already-existing T0→T3 progression meaningful in combat without changing shard costs or progression accounting.
 
@@ -320,7 +320,7 @@ STOP before:
 
 
 ## Implementation contract seeds
-A/B: cumulative Tiers; detached Campaign Tier snapshots; immutable per-actor resolved range/approach tables. Generic statuses cap64, stack cap3, lifetime max30s, refresh replaces same source/key/target. Mitigation/incoming choose strongest; outgoing and healing gains additive capped15%; movement gains capped15%. Avoidance may require dodgeable metadata; control blocks AI/player movement and new ability execution, not ownership; steadfast prevents newly applied control. KO removes statuses on source or target; terminal clears records. All use simulation seconds; no persistence or timers. B targeted152/152 PASS. C–E pending.
+A/B: cumulative Tiers; detached Campaign Tier snapshots; immutable per-actor resolved range/approach tables. Generic statuses cap64, stack cap3, lifetime max30s, refresh replaces same source/key/target. Mitigation/incoming choose strongest; outgoing and healing gains additive capped15%; movement gains capped15%. Avoidance may require dodgeable metadata; control blocks AI/player movement and new ability execution, not ownership; steadfast prevents newly applied control. KO removes statuses on source or target; terminal clears records. All use simulation seconds; no persistence or timers. B targeted152/152 PASS. C–E complete; see final evidence below.
 
 C area contract: max12 active records, circle geometry copied/frozen at creation, duration≤10s, interval≥200ms; periodic one due pulse per step (missed intervals skipped), expiry exclusive. Each pulse living unique actors in identity order with ally/enemy/all eligibility. KO source removes zone; terminal/new session clear. Residual noncrit damage uses shared Type/DEF/mitigation resolver and cannot recursively trigger area hooks. Generic threatened-nearby ally scores authoritative retained enemy targets/incoming threat/proximity/HP%, tie by instance ID.
 
@@ -337,8 +337,12 @@ No flat HP/ATK growth. All positive damage/heal gains additive, capped15%; incom
 
 Mobility/avoidance buffs require successful valid cast; no free air-cast buffs. Short stagger blocks new actions and ordinary AI/player movement; existing noninterruptible casts/multi-hit sequences continue. No cleanse or generic dodge button added.
 Persistent zone source KO cancels its remaining pulses; target KO excluded; residual pulses cannot recursively spawn zones. Status labels MOB/EVA/STG/RES and guard◈ are generic placeholders; Lab-only compact Tier labels. Circle area placeholder reads same frozen geometry/clock as damage, no timer/tween.
-Lab adds TIER COMPARISON / STATUS / CONTROL TEST / PERSISTENT AREA TEST. Ally/Enemy Tier overridesT0–T3, T0 ally baseline toggle; same roster/enemies/seed41. Normal Campaign reads authoritative current Tier with detached snapshot; no battle writeback. D targeted108/108/full501/501 PASS. E review/build/release pending.
+Lab adds TIER COMPARISON / STATUS / CONTROL TEST / PERSISTENT AREA TEST. Ally/Enemy Tier overridesT0–T3, T0 ally baseline toggle; same roster/enemies/seed41. Normal Campaign reads authoritative current Tier with detached snapshot; no battle writeback. D targeted108/108/full501/501 PASS. E review/build/release complete.
 
 ## E verification and review fixes
 Targeted119/119, impacted369/369, full512/512, build/diff PASS. Independent review0 Critical/1 Important schema gap/1 angle finding. All RED→GREEN resolved: finite bounded condition window, supported trigger/kind combinations, valid status recipients, actual wrapped bearing angle instead of0. Root integration tests also verify actual Arena shutdown clears retained old-session records, full-HP secondary support (no phantom heal), natural production area preset, and1e-9s logical-clock tolerance at exclusive expiry (five pulses, never six). Existing noninterruptible casts remain noninterruptible; no new stun/cancel mechanic introduced.
-Entry76,859 bytes vs accepted M6B68,623 (pure Tier/schema/UI metadata); battle1,431,411 deferred. Static menu graph excludes BattleSession/tactics/Phaser/Arena. Build advisory on deferred Phaser size remains existing baseline. Actions/Pages/public verification pending; one physical focused smoke after release.
+Entry76,859 bytes vs accepted M6B68,623 (pure Tier/schema/UI metadata); battle1,431,411 deferred. Static menu graph excludes BattleSession/tactics/Phaser/Arena. Build advisory on deferred Phaser size remains existing baseline. Actions/Pages/public verification complete; one physical focused smoke remains.
+
+## Released engineering evidence
+Release source be46c92e59139a92bcff89cecbd95accf553d4a6; Actions #391 / 37099650309 completed SUCCESS (build111136525373, deploy111136573373). Public entry index-CP8sRNpJ.js matches build; normal Landing has BATTLE/COLLECTION/INFO, no Lab/canvas/modulepreload. Dev menu has13 presets/Tier selectors; real Arena allyT3/enemyT1 and T0 baseline labels, residual-area ring, Pause/Restart/Exit→Lab verified; settings retained, canvas detached. Cloud1363×936 no horizontal overflow. Physical phone feel/readability remains player smoke.
+Canonical detailed evidence: `docs/verification/M6C_TIER_COMBAT_EFFECTS.md`. No unresolved review findings. Only focused player Tier comparison remains; STOP.

@@ -1,6 +1,6 @@
 # M6C Tier Combat Effects verification
 
-**IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Scope and contracts
 Cumulative T1–T3 immutable definition effects, T0 no advanced modifiers. Campaign uses authoritative characterProgress().tier and detached frozen config; enemies defaultT0 unless encounter config explicitly supplies enemy Tier. Battle Lab side-wide override + T0 ally baseline retains teams/enemy Tier/seed41, zero persistence capability. Five content definitions validate reusable range/approach/damage/heal/status/protection/area primitives, no character-ID engine branches.
@@ -11,7 +11,7 @@ Generic status records source/target/type/magnitude/data/start/expiry/policy/tag
 Actual Arena Pause freezes clock/status/area; shutdown destroys presenter and clears retained session statuses/areas/threats/queued effects; Retry gets fresh session/config/Tier. Terminal clears transients. No realtime timer or storage import in effect runtime. Generic area ring and status MOB/EVA/STG/RES/◈ placeholders, Lab-only Tier labels; no final assets.
 
 ## TDD and regression
-A21/21, B152/152, C143/143 after captured-live-control freeze regression RED→GREEN, D108/108/full501/501. Final targeted119/119, impacted369/369, full512/512, build/diff PASS. Test commands recorded in M6C_IMPLEMENTATION_PLAN.md and source tests tierCombatProjection/tierStatus/tierArea/tierFormalKits/tierPresentation/tierCombatRegression/battleLabRuntime.
+A21/21, B152/152, C143/143 after captured-live-control freeze regression RED→GREEN, D108/108/full501/501. Final targeted119/119, impacted369/369, full512/512, build/diff PASS. Test commands recorded below; source tests tierCombatProjection/tierStatus/tierArea/tierFormalKits/tierPresentation/tierCombatRegression/battleLabRuntime.
 Independent read-only review24/24 targeted,0 Critical,1 Important invalid schema fields/combinations and1 angle issue. Both fixed RED→GREEN; angle regraded functional because generic declared alternative must work. Root additional RED→GREEN fixes: explicit shutdown cleanup, full-HP secondary support without fabricated healing, natural production area fixture, fractional area/status expiry. No unresolved findings or deferred feature work.
 Exact conservative seeds in canonical spec; no multiplicative runaway/flat stat growth/cleanse/dodge button. Full-HP T3 team heal grants secondary mitigation on valid cast even if healing clamps to0. Lethal Awakening can leave residual zone at captured hit position; KO targets never receive area pulses/statuses.
 
@@ -27,7 +27,17 @@ Same teams/seed41/Tier/timing: all3 new presets ×4 Tier settings replay identic
 Persistent-area dev fixture uses formal caster opponents/formation so natural production AI actually leaves zones; no actor-stat lock or Campaign change. Final entry76,859 (M6B68,623; +8,236 pure Tier/schema/menu metadata), CSS19,133 unchanged, battle1,431,411 deferred. Source fingerprints index-CP8sRNpJ.js / index-CuxsJ6uc.css / battleRuntime-Q-JjQqz9.js. Static menu graph guard confirms no eager battle imports. No dependency changes.
 
 ## Delivery
-Recovery5733a2463f2f8f568b85244731508eac0fb1b6e9; long-lived feature/PR1 and Pages flow retained per AGENTS13A; main untouched. A f6f24591d79febe66919f4e49bf65a45de6e4ece; B bf808779496f1f2920017e78416fa63dd986cba4; C35245514183bc59e7fc3a94f1440fff2441ac5bc; D8b694c52ef98058d3eb06c62ace031b474c3fa99. Intermediate checkpoints skip CI; coherent E release triggers actual CI/Pages. Actions/public verification pending.
+Recovery5733a2463f2f8f568b85244731508eac0fb1b6e9; long-lived feature/PR1 and Pages flow retained per AGENTS13A; main untouched. A f6f24591d79febe66919f4e49bf65a45de6e4ece; B bf808779496f1f2920017e78416fa63dd986cba4; C35245514183bc59e7fc3a94f1440fff2441ac5bc; D8b694c52ef98058d3eb06c62ace031b474c3fa99. Intermediate checkpoints skip CI; coherent E release triggers actual CI/Pages. Release source be46c92e59139a92bcff89cecbd95accf553d4a6; Actions #391 / 37099650309 completed SUCCESS (build111136525373, deploy111136573373). Public entry index-CP8sRNpJ.js matches build; normal Landing has BATTLE/COLLECTION/INFO, no Lab/canvas/modulepreload. Dev menu has13 presets/Tier selectors; real Arena allyT3/enemyT1 and T0 baseline labels, residual-area ring, Pause/Restart/Exit→Lab verified; settings retained, canvas detached. Cloud1363×936 no horizontal overflow. Physical phone feel/readability remains player smoke.
 
 ## One focused player smoke
 Dev Battle Lab: same teams/enemy Tier/seed41, select allyT1/T2/T3 then toggle T0 ally baseline. Compare mobile reach/avoidance/conditional final hit; guard protection/stagger; rear low-HP heal and mitigation; fox coverage/conditional pressure/residual area; bruiser movement/control/commitment. Use STATUS / CONTROL TEST and PERSISTENT AREA TEST atT2/T3. Check Pause/Retry/Back and normal save unchanged once. Physical iPhone readability/feel/balance remains player-owned; no broad Campaign replay/reset. STOP before art/animation/final VFX/audio/Chapter2/economy/Level/Star/Rarity.
+
+## Final verification commands
+```sh
+node --test tests/tier*.test.js tests/battleLab*.test.js tests/battleRestart.test.js tests/tactical*.test.js tests/lazyBattleRuntime.test.js
+node --test tests/tier*.test.js tests/battle*.test.js tests/tactical*.test.js tests/ai*.test.js tests/ability*.test.js tests/formal*.test.js tests/campaign*.test.js tests/*Rewards.test.js tests/rewardPresentation.test.js tests/collection*.test.js tests/acquisition*.test.js tests/typeMultiplier.test.js tests/appRouteReset.test.js tests/lazyBattleRuntime.test.js
+npm test
+npm run build
+git diff --check
+```
+Public normal/dev entry verified at https://hansen0318.github.io/shanhaijing-arena/ and https://hansen0318.github.io/shanhaijing-arena/?battleLab=1. Public UI verification did not invoke rewards/upgrades/reset; automated normal progression snapshot tests establish zero Lab writes. Cloud rendering checks are not physical iPhone acceptance. Documentation closure uses skip CI; deployed tested source remains the release above.
