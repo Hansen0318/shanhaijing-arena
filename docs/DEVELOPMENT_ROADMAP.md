@@ -320,3 +320,10 @@ Scope includes:
 
 Current five characters are validation content only. Future characters must reuse the same primitives through data; no character-ID branches.
 
+
+
+## M6C-B — Tier Power Curve Rebalance
+
+Status: **IMPLEMENTATION READY**. Canonical spec: `docs/M6C_B_TIER_POWER_CURVE.md`.
+
+Player feedback: M6C mechanic differentiation is correct but the raw Tier power jump is too subtle. Add a generic cumulative power curve for HP, damage/healing and bounded combat-tempo stats while preserving M6C identity mechanics, progression costs/accounting, AI, telegraph geometry and M5C-A asset pipeline.
