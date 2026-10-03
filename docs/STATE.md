@@ -1,9 +1,10 @@
 # Project State
 
 ## Milestone
-**M6C-B TIER POWER CURVE REBALANCE — PASS / PLAYER VERIFIED**
+**M5C-B FORMAL ASSET INTEGRATION — CHAT ASSET AUTHORING / BATCH PREPARATION**
 
 ## Current state
+- M5C-B is now the current milestone. Batch1 is the five-character identity pack: portraitSquare + collectionArt + battleIdle/static. Chat/player author and approve the coherent batch first; Work integration starts only after approved files exist. Canonical: `docs/M5C_B_FORMAL_ASSET_BATCH.md`.
 - M6C-B player device smoke accepted. Tier power curve / TierScalingProfile is now a working balance baseline; later numeric tuning remains allowed without architectural rewrite.
 - Release source 0b34bfdd41edc88b7528a64d0db63b6f2fbbcd28; Actions #409 /37113178973 Test/Build/Pages SUCCESS (build111174878460/deploy111174926343). Public index-BID405J0.js matches; Lab stats/baseline/real Arena/Pause/Restart/Exit→Lab and normal no-Lab/no-canvas/deferred entry verified. Next: one focused T0–T3 player comparison only; STOP.
 - M6C-B A–E engineering checks complete: targeted28/28, impacted221/221, full570/570, build/diff PASS; independent review three findings fixed RED→GREEN. Twelve same-seed fixtures reproducible, bounded statuses/areas/threats. Actions/Pages/public verification complete; original feature/PR1 retained. Canonical evidence verification/M6C_B_TIER_POWER_CURVE.md.
