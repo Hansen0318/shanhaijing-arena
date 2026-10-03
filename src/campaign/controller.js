@@ -1,5 +1,5 @@
 import {infoPage} from '../info/data.js';
-import { upgradeTier } from '../acquisition/tier.js';
+import { characterProgress, upgradeTier } from '../acquisition/tier.js';
 import { findChapter, findStage, orderedStages, nextStage } from './data.js';
 import { initialProgress, devProgress, stageStatus, chapterStatus, recordVictory } from './progression.js';
 import { initialAcquisition,completeAcquisition } from '../acquisition/model.js';
@@ -85,8 +85,9 @@ export class CampaignController {
   this.battleTeam=Object.freeze([...this.teamSelection.slots]);this.lastTeam=[...this.battleTeam];
   this.teamPersistence?.save(this.lastTeam);
   this.screen='battle';this.battleStageId=stage.stageId;this.outcome=null;this.beginCompletion();
-  return {...stage,battleCompletionId:this.battleCompletionId,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership};
+  return {...stage,battleCompletionId:this.battleCompletionId,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership,tierByCharacterId:this.combatTierSnapshot()};
  }
+ combatTierSnapshot(){return Object.freeze(Object.fromEntries(this.battleTeam.map(id=>[id,characterProgress(this.acquisition,id).tier??'T0'])));}
  finishBattle(id,outcome,completionId=this.battleCompletionId) {
   if(this.screen!=='battle' || completionId!==this.battleCompletionId || id!==this.battleStageId || !['victory','defeat','draw'].includes(outcome)) return false;
   this.screen='result';this.outcome=outcome;
@@ -112,7 +113,7 @@ export class CampaignController {
   const stage=findStage(this.battleStageId);
   if(!isValidTeam(this.battleTeam,stage,this.ownership))return null;
   this.screen='battle';this.outcome=null;this.beginCompletion();
-  return {...stage,battleCompletionId:this.battleCompletionId,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership};
+  return {...stage,battleCompletionId:this.battleCompletionId,selectedTeam:[...this.battleTeam],rosterOwnership:this.ownership,tierByCharacterId:this.combatTierSnapshot()};
  }
  exitBattle() {
   if(!['battle','result'].includes(this.screen)) return false;

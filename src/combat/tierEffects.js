@@ -1,0 +1,33 @@
+// Pure immutable combat data. Never imports progression, storage or the battle runtime.
+export const COMBAT_TIERS=Object.freeze(['T0','T1','T2','T3']);
+export function freezeEffectData(value){if(value&&typeof value==='object'){Object.values(value).forEach(freezeEffectData);Object.freeze(value);}return value;}
+const kinds=new Set(['range','approach','damage','heal','status','protect','area']);
+const conditions=new Set(['low_hp','rear_range','target_pressure','changed_angle']);
+export function createTierEffect(input){
+ if(!input||typeof input.id!=='string'||!input.id||!kinds.has(input.kind))throw new TypeError('Invalid Tier effect');
+ const e=structuredClone(input);e.trigger??=['range','approach','damage','heal'].includes(e.kind)?'modify':'post_cast';
+ if(!['modify','cast','hit','post_cast'].includes(e.trigger))throw new TypeError('Invalid effect trigger');
+ if(e.category!=null&&!['basic','heavy','special','awakening'].includes(e.category))throw new TypeError('Invalid effect category');
+ if(['range','approach','damage','heal'].includes(e.kind)&&(!Number.isFinite(e.magnitude)||e.magnitude<1||e.magnitude>1.15))throw new RangeError('Modifier must be 1–1.15');
+ if(e.condition){const c=e.condition;if(!conditions.has(c.kind))throw new TypeError('Invalid condition');for(const key of ['threshold','radius','min','max','minDistance','minAngle'])if(c[key]!=null&&(!Number.isFinite(c[key])||c[key]<0))throw new RangeError('Invalid condition data');if(c.threshold!=null&&c.threshold>1)throw new RangeError('HP threshold exceeds1');}
+ return freezeEffectData(e);
+}
+export function resolveTierProjection(definition,tier='T0'){
+ if(!COMBAT_TIERS.includes(tier))throw new TypeError('Invalid combat Tier');
+ const effects=COMBAT_TIERS.slice(1,COMBAT_TIERS.indexOf(tier)+1).flatMap(t=>definition.tierEffects?.[t]??[]).map(createTierEffect);
+ return Object.freeze({characterId:definition.id,tier,definition,effects:Object.freeze(effects)});
+}
+export function resolveTierAbilities(projection,definitions){
+ const table={...definitions};
+ for(const category of ['basic','heavy','special','awakening']){
+  const id=projection.definition.abilities[category],base=definitions[id];if(!base)continue;
+  const effects=projection.effects.filter(e=>(!e.category||e.category===category)&&['range','approach'].includes(e.kind));if(!effects.length)continue;
+  const gain=kind=>1+Math.min(.15,effects.filter(e=>e.kind===kind).reduce((n,e)=>n+e.magnitude-1,0));
+  const rangeGain=gain('range'),approachGain=gain('approach');
+  const effect={...base.effect};if(effect.areaRadius!=null)effect.areaRadius*=rangeGain;
+  if(effect.movement)effect.movement=Object.freeze({...effect.movement,distance:effect.movement.distance*approachGain});
+  table[id]=Object.freeze({...base,range:base.range*rangeGain,maxRange:base.maxRange*rangeGain,
+   telegraph:base.telegraph?Object.freeze({...base.telegraph,dangerRadius:base.telegraph.dangerRadius*rangeGain}):null,effect:Object.freeze(effect)});
+ }
+ return Object.freeze(table);
+}

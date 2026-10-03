@@ -1,9 +1,10 @@
 # Project State
 
 ## Milestone
-**M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — IMPLEMENTATION READY**
+**M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — IN PROGRESS**
 
 ## Current state
+- M6C A complete, targeted21/21; read-only Tier snapshots/effect schema. B–E pending. Plan: M6C_IMPLEMENTATION_PLAN.md.
 - M6B is PLAYER VERIFIED. Current placeholder telegraph geometry is accepted for now and may be visually/timing-tuned later without changing the shared threat/dodge contract.
 - M6C is authorized: connect existing Tier state to combat through generic shared primitives and data-driven tier effect definitions; no accounting-cost changes and no per-character engine branches.
 - M6B E targeted50/50, impacted308/308, full475/475, build/diff PASS; independent4 Important findings fixed RED→GREEN; no unresolved blockers. Deployment/public verification complete. See docs/verification/M6B_COMBAT_TACTICAL_AI.md.
@@ -236,4 +237,5 @@ Complete the playable Chapter → Stage Preview → Battle → Result → Unlock
 - VS ally/enemy placeholders; preview and battle share immutable encounter definition lookup. Power/Speed/Blast replaceable marks derive from definition type. Battle HUD geometry unchanged.
 - Roster/team/VS impacted tests 26/26 PASS.
 - Remaining: whole-diff review, targeted/impacted checks, build/deploy and minimum public runtime smoke. Exact next action: inspect integrated diff and verify impacted surfaces.
+
 

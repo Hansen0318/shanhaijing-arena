@@ -1,3 +1,4 @@
+import {resolveTierProjection,resolveTierAbilities} from './tierEffects.js';
 import {ThreatLedger,containsDanger} from './threats.js';
 import {decideTacticalIntent,TACTICAL_INTERVAL_MS} from './tactics.js';
 import {scoreTacticalTarget} from './tacticalTargeting.js';
@@ -96,6 +97,7 @@ export class BattleSession {
     seed = DEFAULT_BATTLE_SEED,
     rng,
     tacticalEnabled = false,
+    tierByActorId = {},
   }) {
     if (allies.length !== 3 || enemies.length !== 3) {
       throw new RangeError('M0 battle session requires exactly 3 allies and 3 enemies');
@@ -118,6 +120,8 @@ export class BattleSession {
     this.maxSeconds = maxSeconds;
     this.arenaBounds = { ...arenaBounds };
     this.actors = [...allies, ...enemies];
+    this.tierProjections=new Map(this.actors.map(a=>[a.instanceId,resolveTierProjection(characterDefinitions[a.definitionId],tierByActorId[a.instanceId]??'T0')]));
+    this.actorAbilityDefinitions=new Map(this.actors.map(a=>[a.instanceId,resolveTierAbilities(this.tierProjections.get(a.instanceId),abilityDefinitions)]));
     this.elapsedSeconds = 0;
     this.cadence = new Map(this.actors.map((actor) => [actor.instanceId, 0]));
     this.targetIds = new Map(this.actors.map((actor) => [actor.instanceId, null]));
@@ -244,7 +248,7 @@ export class BattleSession {
   // Both controllers execute effects here. Manual air casting retains its existing contract.
   executeAbility(actor,category,source,requestedTarget=null) {
     const actorDefinition=this.characterDefinitions[actor.definitionId];
-    const definition=this.abilityDefinitions[actorDefinition.abilities[category]],slot=actor.abilityState[category];
+    const definition=this.actorAbilityDefinitions.get(actor.instanceId)[actorDefinition.abilities[category]],slot=actor.abilityState[category];
     if(!definition||!slot)return false;
     const context=this.teamContext(actor);
     const target=resolveAbilityTarget(actor,definition,{...context,enemyTarget:requestedTarget??context.enemyTarget});
@@ -313,7 +317,7 @@ export class BattleSession {
         enemies: opponents,
         allies: this.teamContext(actor).allies,
         currentTarget,
-        abilityDefinitions: this.abilityDefinitions,
+        abilityDefinitions: this.actorAbilityDefinitions.get(actor.instanceId),
         nowMs,
         preparationState: this.aiPreparation.get(actor.instanceId),
         profile,

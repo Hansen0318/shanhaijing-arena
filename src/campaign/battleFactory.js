@@ -20,6 +20,7 @@ export function createStageBattleSession(config, { seed = config?.battleSeed, rn
   allies:team(config.selectedTeam,config.allySpawnFormation,'a','allies'),
   enemies:team(stageEnemyDefinitions(config).map(definition=>definition.id),config.enemySpawnFormation,'e','enemies'),
   characterDefinitions:definitions,abilityDefinitions:{...runtimeAbilityDefinitions,...formalAbilityDefinitions},maxSeconds:config.battleDuration,seed,rng,tacticalEnabled,
+  tierByActorId:Object.fromEntries([...config.selectedTeam.map((id,i)=>[`a${i+1}`,config.tierByCharacterId?.[id]??'T0']),...config.enemyLineup.map((id,i)=>[`e${i+1}`,config.enemyTierByCharacterId?.[id]??'T0'])]),
  });
  session.stageId=config.stageId;session.chapterId=config.chapterId;session.battlefieldId=config.battlefieldId;
  return session;
