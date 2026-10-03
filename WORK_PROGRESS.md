@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M6C-B TIER POWER CURVE REBALANCE — PASS / PLAYER VERIFIED.** Player accepted the current Tier power-curve feel on device. Current global curve / TierScalingProfile is the working balance baseline and may be tuned later without changing progression costs/accounting or shared architecture.
 - **M6C-B TIER POWER CURVE REBALANCE — ENGINEERING PASS / PLAYER SMOKE PENDING.** A–E complete. A f825dc00 / B c6714f61 / C fbfa160b / D fae09e0f; final source 0b34bfdd41edc88b7528a64d0db63b6f2fbbcd28. Targeted28/28, impacted221/221, full570/570/build/diff PASS. Independent review three findings reproduced RED→GREEN, none unresolved. Twelve paired deterministic fixtures terminate3.80–28.65s, max13 statuses/1 area/6 threats.
 - Actions #409 /37113178973 Test/Build/Pages SUCCESS (build111174878460/deploy111174926343). Public index-BID405J0.js matches tested build. Normal Landing BATTLE/COLLECTION/INFO, no Lab/canvas/modulepreload; dev summary T3 stats/T0 baseline preserves enemy Tier. Real Arena scaled HP/Tier/heal/warning presentation, Pause/Restart/Exit→Lab verified; config retained and canvas detached. Cloud1363×936 no overflow.
 - Entry87,939 bytes (+6,721 vs accepted M5C-A); CSS19,407 (+274), battle1,444,469 deferred (+729); asset guard37 files/17,703 unchanged, no dependency. No acquisition/reward/cost/AI architecture/asset pipeline changes. Generic curve/weights/exact seeds in docs/M6C_B_TIER_POWER_CURVE.md; plan M6C_B_IMPLEMENTATION_PLAN.md; evidence verification/M6C_B_TIER_POWER_CURVE.md.
