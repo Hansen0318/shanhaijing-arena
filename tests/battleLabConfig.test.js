@@ -6,7 +6,7 @@ import {rosterCatalog} from '../src/roster/catalog.js';
 import {isValidTeam} from '../src/roster/team.js';
 import {getTypeMultiplier} from '../src/combat/typeMultiplier.js';
 test('six data-driven presets contain only formal roster references and immutable local setup',()=>{
- assert.deepEqual(LAB_SCENARIOS.map(x=>x.title),['NORMAL','LOW HP','HEAL TEST','AOE TEST','TYPE ADVANTAGE','MITIGATION TEST','DODGE TEST','TELEGRAPH TEST','HEALER RETREAT','RANGED KITE']);
+ assert.deepEqual(LAB_SCENARIOS.map(x=>x.title),['NORMAL','LOW HP','HEAL TEST','AOE TEST','TYPE ADVANTAGE','MITIGATION TEST','DODGE TEST','TELEGRAPH TEST','HEALER RETREAT','RANGED KITE','TIER COMPARISON','STATUS / CONTROL TEST','PERSISTENT AREA TEST']);
  for(const preset of LAB_SCENARIOS){const c=createLabConfig({scenarioId:preset.id});assert.equal(c.kind,'battle-lab');assert.ok(Object.isFrozen(c));assert.ok(Object.isFrozen(c.allyTeam));assert.equal(c.battleDuration,90);for(const id of [...c.allyTeam,...c.enemyTeam])assert.ok(rosterCatalog[id]);assert.equal(c.reward,undefined);assert.equal(c.chapterId,undefined);}
 });
 test('Lab duplicate slots are independent and normal team uniqueness remains protected',()=>{

@@ -323,3 +323,18 @@ STOP before:
 A/B: cumulative Tiers; detached Campaign Tier snapshots; immutable per-actor resolved range/approach tables. Generic statuses cap64, stack cap3, lifetime max30s, refresh replaces same source/key/target. Mitigation/incoming choose strongest; outgoing and healing gains additive capped15%; movement gains capped15%. Avoidance may require dodgeable metadata; control blocks AI/player movement and new ability execution, not ownership; steadfast prevents newly applied control. KO removes statuses on source or target; terminal clears records. All use simulation seconds; no persistence or timers. B targeted152/152 PASS. C–E pending.
 
 C area contract: max12 active records, circle geometry copied/frozen at creation, duration≤10s, interval≥200ms; periodic one due pulse per step (missed intervals skipped), expiry exclusive. Each pulse living unique actors in identity order with ally/enemy/all eligibility. KO source removes zone; terminal/new session clear. Residual noncrit damage uses shared Type/DEF/mitigation resolver and cannot recursively trigger area hooks. Generic threatened-nearby ally scores authoritative retained enemy targets/incoming threat/proximity/HP%, tie by instance ID.
+
+## Formal conservative seeds (first playtest, cumulative)
+No flat HP/ATK growth. All positive damage/heal gains additive, capped15%; incoming reductions use strongest instead of multiplying.
+
+| Character | T1 | T2 | T3 |
+|---|---|---|---|
+| 鹿蜀 | Heavy max/engage reach×1.10; engage displacement×1.10 | Successful Special: movement×1.10 for0.8s; dodgeable-hit avoidance0.25s | Awakening final hit×1.12 only after qualifying reposition against same target within4s; movement≥0.35 or angle≥0.2rad |
+| 猼訑 | Special additionally protects most threatened living ally within2.4:15% mitigation4s; base self25%/4s unchanged | Heavy successful hit stagger0.35s | Successful Awakening protects living team within2.4:10% mitigation3s |
+| 赤鱬 | Special heal×1.10 if recipientHP≤35% | Any heal×1.05 if nearest living enemy distance2–4.2; combine cap15% | Successful Awakening team mitigation8%/2s within20 |
+| 九尾狐 | Special max/area/warning radius×1.10 (radius1.6→1.76) | Any damage×1.08 if recipientHP≤35% OR no other living enemy within1.4 | Awakening hit leaves fixed circle radius0.9/duration3s; periodic0.5s, coefficient0.12, five pulses before exclusive expiry; noncrit, normal Type/DEF/mitigation |
+| 狌狌 | Successful Special movement×1.12 for1.2s | Heavy successful hit stagger0.30s | Valid Awakening cast mitigation12% and steadfast0.6s; steadfast rejects new stagger |
+
+Mobility/avoidance buffs require successful valid cast; no free air-cast buffs. Short stagger blocks new actions and ordinary AI/player movement; existing noninterruptible casts/multi-hit sequences continue. No cleanse or generic dodge button added.
+Persistent zone source KO cancels its remaining pulses; target KO excluded; residual pulses cannot recursively spawn zones. Status labels MOB/EVA/STG/RES and guard◈ are generic placeholders; Lab-only compact Tier labels. Circle area placeholder reads same frozen geometry/clock as damage, no timer/tween.
+Lab adds TIER COMPARISON / STATUS / CONTROL TEST / PERSISTENT AREA TEST. Ally/Enemy Tier overridesT0–T3, T0 ally baseline toggle; same roster/enemies/seed41. Normal Campaign reads authoritative current Tier with detached snapshot; no battle writeback. D targeted108/108/full501/501 PASS. E review/build/release pending.

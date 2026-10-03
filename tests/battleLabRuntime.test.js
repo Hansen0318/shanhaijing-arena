@@ -1,4 +1,4 @@
-import {TelegraphPresenter} from '../src/runtime/telegraphs.js';
+import {TelegraphPresenter,statusMarks} from '../src/runtime/telegraphs.js';
 import { createRouteVisibility } from '../src/runtime/routeVisibility.js';
 import { consumeProgressReset } from '../src/campaign/devReset.js';
 import { prototypeOwnership } from '../src/roster/catalog.js';
@@ -19,7 +19,7 @@ import vm from 'node:vm';
 import {createLabBattleSession} from '../src/dev/battleLab/battleFactory.js';
 import {createLabConfig} from '../src/dev/battleLab/config.js';
 function arena(){const source=readFileSync(new URL('../src/runtime/ArenaScene.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replace('export class ArenaScene','class ArenaScene');const visual=()=>{const p=new Proxy({alpha:1,destroyed:false,destroy(){this.destroyed=true;}},{get(o,k){return k in o?o[k]:()=>p;}});return p;};const win={location:{search:''}};
- const Arena=vm.runInNewContext(source+'\nArenaScene',{Phaser:{Scene:class{},Display:{Color:{HexStringToColor:()=>({color:0})}}},ARENA_STAGE:{width:1120,height:540},window:win,URLSearchParams,createLabBattleSession,createStageBattleSession,createDemoBattleSession,battlePortrait,PreBattleGate,DamageNumbers,TelegraphPresenter,arenaToStage});
+ const Arena=vm.runInNewContext(source+'\nArenaScene',{Phaser:{Scene:class{},Display:{Color:{HexStringToColor:()=>({color:0})}}},ARENA_STAGE:{width:1120,height:540},window:win,URLSearchParams,createLabBattleSession,createStageBattleSession,createDemoBattleSession,battlePortrait,PreBattleGate,DamageNumbers,TelegraphPresenter,statusMarks,arenaToStage});
  const s=new Arena();s.events=new EventEmitter();s.time={paused:false};s.cameras={main:visual()};s.add={graphics:visual,rectangle:visual,line:visual,ellipse:visual,circle:visual,text:visual};
  s.tweens={add:()=>({remove(){this.removed=true;}}),getGlobalTimeScale:()=>1,setGlobalTimeScale(){},tick(){}};
  for(const method of ['createHud','createJoystick','createSkillButtons','createPreBattleCountdown','createResultView','applyFrame','refreshHud','refreshSkillButtons','releaseJoystick'])s[method]=()=>{};

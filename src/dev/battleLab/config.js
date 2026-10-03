@@ -1,3 +1,4 @@
+import {COMBAT_TIERS} from '../../combat/tierEffects.js';
 import {rosterCatalog} from '../../roster/catalog.js';
 function freeze(value){if(value&&typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value;}
 const allyFormation=[{x:0,y:-1.1},{x:1.2,y:0},{x:0,y:1.1}],enemyFormation=[{x:10,y:-1.1},{x:8.8,y:0},{x:10,y:1.1}];
@@ -13,6 +14,9 @@ export const LAB_SCENARIOS=freeze([
  {id:'telegraph',title:'TELEGRAPH TEST',description:'九尾狐 slot2 casts a locked warning area. Use normal joystick to leave the same enemy telegraphs.',allyTeam:['P1','P4','P3'],enemyTeam:['P4','P2','P2'],allySpawnFormation:nearAllies,enemySpawnFormation:nearEnemies},
  {id:'healer-retreat',title:'HEALER RETREAT',description:'赤鱬 slot3 starts at25% HP near pressure. Observe retreat, shared heal, recovery and regroup.',allyTeam:['P1','P2','P3'],enemyTeam:['P5','P1','P2'],allyHpRatios:[.6,.7,.25],selectedSlot:2,allySpawnFormation:[{x:4,y:-1},{x:4.3,y:1},{x:3,y:0}],enemySpawnFormation:[{x:4.1,y:0},{x:5.8,y:-1},{x:6,y:1}]},
  {id:'ranged-kite',title:'RANGED KITE',description:'九尾狐 slot2 begins inside melee danger distance; observe backstep/kite then cast from the preferred band.',allyTeam:['P2','P4','P3'],enemyTeam:['P5','P1','P2'],allySpawnFormation:nearAllies,enemySpawnFormation:[{x:4.9,y:0},{x:6,y:-1},{x:6,y:1}]},
+ {id:'tier-comparison',title:'TIER COMPARISON',description:'Same teams and seed41. Select ally Tier, then toggle T0 ally baseline for A/B; enemy Tier stays fixed.',allyTeam:['P1','P2','P3'],enemyTeam:['P5','P4','P2'],allySpawnFormation:nearAllies,enemySpawnFormation:nearEnemies,allyHpRatios:[.55,.55,.3]},
+ {id:'status-control',title:'STATUS / CONTROL TEST',description:'猼訑 and 狌狌 at T2+ add short shared stagger. Compare T0 baseline; mitigation and mobility indicators are generic.',allyTeam:['P2','P5','P1'],enemyTeam:['P5','P2','P1'],allySpawnFormation:nearAllies,enemySpawnFormation:nearEnemies,selectedSlot:0},
+ {id:'persistent-area',title:'PERSISTENT AREA TEST',description:'Select ally T3. 九尾狐 Awakening hit leaves a3-second fixed residual area; moving out avoids later pulses.',allyTeam:['P1','P4','P3'],enemyTeam:['P2','P2','P5'],allySpawnFormation:nearAllies,enemySpawnFormation:nearEnemies},
 ]);
 export const labScenario=id=>LAB_SCENARIOS.find(s=>s.id===id);
 export function createLabConfig(input={}){
@@ -22,7 +26,9 @@ export function createLabConfig(input={}){
  for(const team of [allyTeam,enemyTeam])if(team.length!==3||team.some(id=>!Object.hasOwn(rosterCatalog,id)))throw new TypeError('Lab requires three formal roster slots per side');
  const hpRatio=input.hpRatio??null;if(hpRatio!==null&&![1,.5,.25].includes(hpRatio))throw new RangeError('Lab HP ratio must be 100%, 50% or 25%');
  const controlMode=input.controlMode??'manual';if(!['manual','ai'].includes(controlMode))throw new TypeError('Invalid Lab control mode');
- return freeze({kind:'battle-lab',stageId:'dev-battle-lab',scenarioId:scenario.id,typeCase,battleDuration:90,
+ const selectedTier=input.allyTier??'T0',enemyTier=input.enemyTier??'T0';if(!COMBAT_TIERS.includes(selectedTier)||!COMBAT_TIERS.includes(enemyTier))throw new TypeError('Invalid Lab Tier');
+ const allyTier=input.t0Baseline===true?'T0':selectedTier;
+ return freeze({battleSeed:41,allyTier,enemyTier,kind:'battle-lab',stageId:'dev-battle-lab',scenarioId:scenario.id,typeCase,battleDuration:90,
   allyTeam,enemyTeam,allyHpRatios:hpRatio===null?[...(scenario.allyHpRatios??[1,1,1])]:[hpRatio,hpRatio,hpRatio],enemyHpRatios:[1,1,1],
   allySpawnFormation:structuredClone(scenario.allySpawnFormation??allyFormation),enemySpawnFormation:structuredClone(scenario.enemySpawnFormation??enemyFormation),
   selectedAllyId:`a${(scenario.selectedSlot??1)+1}`,options:{skipCountdown:input.skipCountdown===true,allSkillsReady:input.allSkillsReady===true,controlMode},

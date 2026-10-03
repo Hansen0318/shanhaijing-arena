@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {persistentAreaProjection} from '../src/runtime/telegraphs.js';import {statusMarks} from '../src/runtime/statusPresentation.js';
+test('area placeholder projection uses fixed geometry and battle-clock lifetime',()=>{const area={sourceTeamId:'allies',geometry:{shape:'circle',center:{x:4,y:1},origin:{x:4,y:1},radius:.9},startTime:1,expiryTime:4};const project=a=>({x:a.x*50,y:a.y*20});const a=persistentAreaProjection(area,2,project);assert.equal(a.progress,1/3);assert(Math.abs(a.radiusX-45)<1e-9);assert(Math.abs(a.radiusY-18)<1e-9);assert.deepEqual(persistentAreaProjection(area,2,project),a);});
+test('generic status labels are compact/deduplicated and no roster-specific branches',()=>{assert.equal(statusMarks([{type:'movement'},{type:'movement'},{type:'control'},{type:'avoidance'}]),'MOB · EVA · STG');assert.equal(statusMarks([]),'');});

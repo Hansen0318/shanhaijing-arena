@@ -1,4 +1,4 @@
-import {TelegraphPresenter} from './telegraphs.js';
+import {TelegraphPresenter,statusMarks} from './telegraphs.js';
 import {createLabBattleSession} from '../dev/battleLab/battleFactory.js';
 import { resultRewardLines } from '../acquisition/presentation.js';
 import Phaser from 'phaser';
@@ -571,14 +571,16 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   applyFrame(frame) {
-    this.telegraphs.render(this.session.threats.active(this.session.elapsedSeconds*1000),this.session.elapsedSeconds*1000);
+    this.telegraphs.render(this.session.threats.active(this.session.elapsedSeconds*1000),this.session.elapsedSeconds*1000,[...this.session.areas.records.values()]);
     for (const actor of [...frame.allies, ...frame.enemies]) {
       const view = this.actorViews.get(actor.instanceId);
       const position = arenaToStage(actor);
       view.marker.setPosition(position.x, position.y).setAlpha(actor.hp > 0 ? 1 : 0.35);
       const identity=battlePortrait(this.session,actor.instanceId);
       const guarded=this.session.statuses.damageMultiplier(actor.instanceId,this.session.elapsedSeconds)<1;
-      view.label.setText?.(`${identity.label}${guarded&&actor.hp>0?' ◈':''}`);
+      const marks=actor.hp>0?statusMarks(this.session.statuses.forActor(actor.instanceId,this.session.elapsedSeconds)):'';
+      const tier=this.labConfig?` ${this.session.tierProjections.get(actor.instanceId).tier}`:'';
+      view.label.setText?.(`${identity.label}${tier}${guarded&&actor.hp>0?' ◈':''}${marks?'\n'+marks:''}`);
       view.label.setPosition(position.x, position.y - 42).setAlpha(actor.hp > 0 ? 1 : 0.5);
     }
     this.ensureLivingSelection(frame);
