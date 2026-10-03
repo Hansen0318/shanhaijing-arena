@@ -327,3 +327,10 @@ Current five characters are validation content only. Future characters must reus
 Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Actions/Pages/public verified; one focused fixed-seed T0–T3 comparison remains. Canonical spec: `docs/M6C_B_TIER_POWER_CURVE.md`.
 
 Player feedback: M6C mechanic differentiation is correct but the raw Tier power jump is too subtle. Add a generic cumulative `TierScalingProfile` covering HP, damage/healing, bounded combat-tempo stats, attack range, AoE, mobility distance, buff/debuff duration and defensive-effect strength. Per-character weights reinforce role identity while the engine remains future-character-safe. Preserve M6C identity mechanics, progression costs/accounting, AI, telegraph authority and M5C-A asset pipeline.
+
+
+## M5C-B — Formal Asset Batch Integration
+
+Status: **CHAT ASSET AUTHORING / BATCH PREPARATION**. Canonical spec: `docs/M5C_B_FORMAL_ASSET_BATCH.md`.
+
+M5C-A pipeline and M6C-B balance are accepted. Prepare complete approved visual batches before Work integration. First batch: all five Chapter1 characters' portraitSquare, collectionArt and battleIdle/static assets.
