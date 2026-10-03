@@ -1,15 +1,17 @@
+import {bindMenuImage} from '../assets/menuImage.js';
+import {resolvePreview,assetUrl} from '../assets/resolver.js';
 import {renderInfo} from '../info/view.js';
 import { CollectionView } from '../collection/view.js';
 import { stageRewardRows } from '../acquisition/presentation.js';
 import { orderedChapters, findChapter, findStage, orderedStages } from './data.js';
 import { chapterStatus, stageStatus } from './progression.js';
 import { renderTeamSelect } from '../roster/view.js';
-const asset=path => `${import.meta.env?.BASE_URL ?? '/'}${path}`;
+const asset=path=>assetUrl(resolvePreview(path));
 function card({image,label,status,selected=false,onClick}) {
  const button=document.createElement('button'); button.type='button'; button.className=`campaign-card ${status}${selected?' selected':''}`;
  button.disabled=status==='locked'; button.dataset.status=status; button.setAttribute('aria-label',`${label} ${status}`);
  const picture=document.createElement('div'); picture.className='card-picture';
- const img=document.createElement('img'); img.src=asset(image); img.alt=label; picture.append(img);
+ const img=document.createElement('img'); bindMenuImage(img,resolvePreview(image)); img.alt=label; picture.append(img);
  if(status==='locked') {
   const lock=document.createElement('span'); lock.className='lock'; lock.setAttribute('aria-hidden','true');
   lock.innerHTML='<svg viewBox="0 0 40 48"><path d="M10 20v-7a10 10 0 0 1 20 0v7" fill="none" stroke="currentColor" stroke-width="5"/><rect x="3" y="19" width="34" height="27" rx="4" fill="currentColor"/><circle cx="20" cy="31" r="3" fill="#243543"/><path d="M20 32v6" stroke="#243543" stroke-width="3"/></svg>';
@@ -74,7 +76,7 @@ export class CampaignView {
   back.onclick=()=>{if(this.controller.back()) this.render();};
   const heading=document.createElement('h1');heading.textContent=chapter.title;header.append(back,heading);page.append(header);
   const preview=document.createElement('div');preview.className='stage-preview';
-  const image=document.createElement('img');image.src=asset(stage.previewImage);image.alt=`Stage ${stage.stageId} preview`;image.dataset.stageId=stage.stageId;
+  const image=document.createElement('img');bindMenuImage(image,resolvePreview(stage.previewImage));image.alt=`Stage ${stage.stageId} preview`;image.dataset.stageId=stage.stageId;
   const details=document.createElement('div');details.className='preview-details';
   const id=document.createElement('h2');id.textContent=stage.stageId;
   const title=document.createElement('p');title.textContent=stage.title;

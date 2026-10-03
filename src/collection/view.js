@@ -1,3 +1,4 @@
+import {decoratePortrait} from '../assets/menuImage.js';
 import { collectionEntries,characterDetail } from './model.js';
 import { typeMark } from '../roster/typeIcons.js';
 export class CollectionView {
@@ -22,7 +23,7 @@ export class CollectionView {
   this.grid=this.node('div','collection-grid');this.grid.setAttribute('aria-label','Character collection');this.browser.append(filters,this.grid);page.append(this.browser);this.renderGrid();
  }
  portrait(definition,large=false) {
-  const n=this.node('div',`collection-portrait${large?' large':''}`,definition.portrait?.label ?? definition.name);n.style.backgroundColor=definition.portrait?.color ?? '#445565';n.setAttribute('aria-hidden','true');return n;
+  const n=this.node('div',`collection-portrait${large?' large':''}`,definition.portrait?.label ?? definition.name);n.style.backgroundColor=definition.portrait?.color ?? '#445565';n.setAttribute('aria-hidden','true');return decoratePortrait(n,definition,{document:this.document,slot:large?'collectionArt':'portraitSquare'});
  }
  renderGrid() {
   this.grid.replaceChildren();for(const button of this.filters)button.setAttribute('aria-pressed',String(button.dataset.filter===this.filter));

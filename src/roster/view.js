@@ -1,3 +1,4 @@
+import {decoratePortrait} from '../assets/menuImage.js';
 import { rosterCatalog } from './catalog.js';
 import { typeMark } from './typeIcons.js';
 import { stageEnemyDefinitions } from '../campaign/encounterDefinitions.js';
@@ -11,7 +12,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   icon.setAttribute('aria-label',`Type: ${mark.label}`);icon.dataset.type=character.type;
   if(showType)label.append(icon);label.append(node('span',character.name));return label;
  };
- const portrait=character=>{const p=node('span',character.portrait?.label??character.name,'matchup-portrait');p.style.backgroundColor=character.portrait?.color??'#c9764c';return p;};
+ const portrait=character=>{const p=node('span',character.portrait?.label??character.name,'matchup-portrait');p.style.backgroundColor=character.portrait?.color??'#c9764c';return decoratePortrait(p,character,{document:doc});};
  page.className+=' team-page';
  const header=node('header',null,'stage-header');
  header.append(button('BACK',()=>onBack?.(),'campaign-button back'),node('h1','SELECT TEAM'),node('span',`Stage ${stageId}`,'team-stage'));
@@ -56,7 +57,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   card.dataset.characterId=id;card.setAttribute('aria-label',`${character.name}, ${titleCase(character.type)}, ${titleCase(character.role)}`);
   card.setAttribute('aria-pressed',String(selected));
   const portrait=node('span',character.portrait.label,'roster-portrait');portrait.style.backgroundColor=character.portrait.color;
-  card.append(portrait,identity(character));roster.append(card);
+  decoratePortrait(portrait,character,{document:doc});card.append(portrait,identity(character));roster.append(card);
  }
  bench.append(tabs,roster);
  const footer=node('footer',null,'team-footer');
