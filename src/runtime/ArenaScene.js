@@ -1,3 +1,4 @@
+import {TelegraphPresenter} from './telegraphs.js';
 import {createLabBattleSession} from '../dev/battleLab/battleFactory.js';
 import { resultRewardLines } from '../acquisition/presentation.js';
 import Phaser from 'phaser';
@@ -67,6 +68,8 @@ export class ArenaScene extends Phaser.Scene {
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
     this.damageNumbers = new DamageNumbers(this,arenaToStage);
+    this.telegraphs = new TelegraphPresenter(this,arenaToStage);
+    this.events.once('shutdown',()=>this.telegraphs.destroy());
     this.events.once('shutdown',()=>this.damageNumbers.destroy());
     this.selectedId = this.labConfig?.selectedAllyId ?? 'a2';
     this.fixtureKoApplied = false;
@@ -568,6 +571,7 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   applyFrame(frame) {
+    this.telegraphs.render(this.session.threats.active(this.session.elapsedSeconds*1000),this.session.elapsedSeconds*1000);
     for (const actor of [...frame.allies, ...frame.enemies]) {
       const view = this.actorViews.get(actor.instanceId);
       const position = arenaToStage(actor);

@@ -1,3 +1,4 @@
+import {TelegraphPresenter} from '../src/runtime/telegraphs.js';
 import { createRouteVisibility } from '../src/runtime/routeVisibility.js';
 import { consumeProgressReset } from '../src/campaign/devReset.js';
 import { prototypeOwnership } from '../src/roster/catalog.js';
@@ -18,8 +19,8 @@ import vm from 'node:vm';
 import {createLabBattleSession} from '../src/dev/battleLab/battleFactory.js';
 import {createLabConfig} from '../src/dev/battleLab/config.js';
 function arena(){const source=readFileSync(new URL('../src/runtime/ArenaScene.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replace('export class ArenaScene','class ArenaScene');const visual=()=>{const p=new Proxy({alpha:1,destroyed:false,destroy(){this.destroyed=true;}},{get(o,k){return k in o?o[k]:()=>p;}});return p;};const win={location:{search:''}};
- const Arena=vm.runInNewContext(source+'\nArenaScene',{Phaser:{Scene:class{},Display:{Color:{HexStringToColor:()=>({color:0})}}},ARENA_STAGE:{width:1120,height:540},window:win,URLSearchParams,createLabBattleSession,createStageBattleSession,createDemoBattleSession,battlePortrait,PreBattleGate,DamageNumbers,arenaToStage});
- const s=new Arena();s.events=new EventEmitter();s.time={paused:false};s.cameras={main:visual()};s.add={rectangle:visual,line:visual,ellipse:visual,circle:visual,text:visual};
+ const Arena=vm.runInNewContext(source+'\nArenaScene',{Phaser:{Scene:class{},Display:{Color:{HexStringToColor:()=>({color:0})}}},ARENA_STAGE:{width:1120,height:540},window:win,URLSearchParams,createLabBattleSession,createStageBattleSession,createDemoBattleSession,battlePortrait,PreBattleGate,DamageNumbers,TelegraphPresenter,arenaToStage});
+ const s=new Arena();s.events=new EventEmitter();s.time={paused:false};s.cameras={main:visual()};s.add={graphics:visual,rectangle:visual,line:visual,ellipse:visual,circle:visual,text:visual};
  s.tweens={add:()=>({remove(){this.removed=true;}}),getGlobalTimeScale:()=>1,setGlobalTimeScale(){},tick(){}};
  for(const method of ['createHud','createJoystick','createSkillButtons','createPreBattleCountdown','createResultView','applyFrame','refreshHud','refreshSkillButtons','releaseJoystick'])s[method]=()=>{};
  return s;
@@ -46,4 +47,10 @@ test('Lab result owns only retry/back, rejects campaign callbacks and grants no 
  Object.getPrototypeOf(s).createResultView.call(s);assert.deepEqual([...s.resultButtons.keys()],['RETRY','BACK TO LAB']);
  s.showResult('victory');assert.equal(result,'victory');assert.equal(s.rewardText.visible,false);assert.equal(s.campaignActions,null);
  s.resultButtons.get('RETRY').button.action();s.resultButtons.get('BACK TO LAB').button.action();assert.equal(retry,1);assert.equal(back,1);
+});
+test('actual Arena pause freezes threat clock; restart/retry clears warnings and impact jobs',()=>{
+ const c=createLabConfig({scenarioId:'aoe',skipCountdown:true}),s=arena();s.init({labConfig:c});s.create();
+ s.session.usePlayerAbility('a2','special');const old=s.session,warning=old.threats.active(0),presenter=s.telegraphs;
+ assert.equal(warning.length,1);s.togglePause();s.update(0,1000);assert.equal(old.elapsedSeconds,0);assert.deepEqual(old.threats.active(0),warning);
+ s.events.emit('shutdown');s.init({labConfig:c});s.create();assert.notEqual(s.telegraphs,presenter);assert.equal(s.session.threats.active(0).length,0);assert.equal(s.session.delayedImpacts.size,0);assert.equal(s.paused,false);
 });

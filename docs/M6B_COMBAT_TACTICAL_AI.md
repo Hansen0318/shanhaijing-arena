@@ -1,7 +1,7 @@
 # M6B — Combat Tactical AI / Telegraph / Dodge Batch
 
 ## Status
-**IN PROGRESS / CHECKPOINT C COMPLETE**
+**IN PROGRESS / CHECKPOINT D COMPLETE**
 
 M6A Developer Battle Lab is PLAYER VERIFIED and is the primary player-smoke harness for this milestone.
 
@@ -401,3 +401,5 @@ Tactical interval250ms, held destination700ms, 5 safe candidates, max step1.2 un
 Selected formal telegraphs only: 猼訑 Heavy650ms/radius.7, Awakening900ms/radius2.2; 赤鱬 Heavy350+350ms/lane.45; 九尾狐 Heavy450+200ms/lane.45, Special900ms/radius1.6, Awakening650+250ms/radius.7. Commitment locked; Basic/heals/mitigation/instant engage/multi-hit remain immediate. Damage/cooldowns/crit/range untouched. Fixed geometry is captured when a valid cast begins, cooldown starts at the same cast time; eligible effect is resolved at impact through shared damage resolver. Caster KO cancels delayed effects; air casts consume cooldown normally but produce no damaging threat. Movement out of geometry can avoid AI/player attacks alike.
 
 Stage/Lab factory defaults tacticalEnabled true; low-level BattleSession defaults false for protected legacy fixtures. Existing M5B formalKits tests explicitly opt out only to pin original immediate damage/multi-hit contracts. New tacticalSession tests exercise production factories with actual delayed impacts/manual/AI equality. No save/progression/controller logic touched. C targeted73/73/full463/463 PASS. D renderer/Lab scenarios and E release pending.
+
+D targeted39/39/build/diff PASS. Placeholder warnings use projected locked circle/lane geometry, battle-clock fill/progress, no independent tween/timer; shutdown destroys one graphics layer. Lab adds DODGE TEST/TELEGRAPH TEST/HEALER RETREAT/RANGED KITE with formal data only. Actual Arena Pause/retry lifecycle test covers clock freeze and clean threat/jobs/presenter. E release pending.
