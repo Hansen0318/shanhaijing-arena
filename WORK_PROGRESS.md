@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — PASS / PLAYER VERIFIED.** Player accepted current T0–T3 mechanic differentiation as the working balance baseline. Exact Tier magnitudes/timings/coverage may be tuned later without changing shard costs/accounting or the shared generic status/effect architecture.
+- **NEXT: M5C ART / ANIMATION / VFX INTEGRATION — CHAT SPEC / IMPLEMENTATION PLANNING.** Define reusable asset contracts and batching so portraits, battle sprites, idle/hit/KO states and skill VFX can be integrated without one-image-at-a-time Work loops. Preserve all accepted combat/progression systems.
 - **M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — ENGINEERING PASS / PLAYER SMOKE PENDING.** Cumulative read-only Tier projection, generic statuses/control/conditions/protection/persistent areas, five formal kits and Lab Tier A/B complete. No economy/reward/schema/Chapter changes; M6B remains PLAYER VERIFIED.
 - Recovery remote5733a246; original feat/m0-combat-core-20260927 / PR1 retained per AGENTS13A. A f6f24591, B bf808779, C35245514 (geometry-copy fix), D8b694c52 pushed. E final targeted119/119, impacted369/369, full512/512, build/diff PASS. Actions/Pages/public verification complete.
 - Independent read-only review:0 Critical,1 Important schema gap,1 angle finding; all addressed RED→GREEN. Angle regraded as generic functional gap and fixed; no unresolved findings. Root integration tests also fixed shutdown cleanup, full-HP secondary support, naturally useful Lab area fixture and fractional expiry (no sixth pulse).
