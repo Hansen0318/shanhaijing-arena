@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M5C-A ASSET PIPELINE — PLAYER VISUAL SMOKE ACCEPTED FOR PIPELINE BEHAVIOR.** Player observed the dev visual labels/placeholders and accepted current pipeline behavior; formal art is still deferred. Preserve asset pipeline baseline.
+- **M6C-B TIER POWER CURVE REBALANCE — IMPLEMENTATION READY.** Player wants Tier growth to feel substantially stronger. Use one global future-character-safe curve rather than compounding every stat ×2–×4: HP 1.00/1.50/2.25/3.75; damage-heal 1.00/1.45/2.05/3.20; bounded move/attack speed, cooldown and scalable windup improvements. Preserve M6C mechanics and all progression costs/accounting. Canonical: `docs/M6C_B_TIER_POWER_CURVE.md`.
 - **M5C-A ASSET PIPELINE — ENGINEERING PASS / PLAYER SMOKE PENDING.** Generic manifest/resolver/menu fallback, encounter-only lazy cache, animation/VFX descriptor playback and Arena/Lab adapter complete. No final art integrated; M0–M6C accepted gameplay/AI/Tier/progression preserved.
 - Active feat/m0-combat-core-20260927 / PR1 per AGENTS13A, main untouched. Recovery015618fa; A700f72b6/B0de99b3f/Cdcb1d6cf/Df646c545 safe pushes complete. E targeted56/56, impacted375/375, full542/542/build/diff PASS.
 - Independent review0 Critical/5 Important; all RED→GREEN fixed. Late graphics→image replacement, decoded fallback chain, ability-only load plan, target attachment/KO, reference guard coverage. No unresolved findings/deferred minors.
