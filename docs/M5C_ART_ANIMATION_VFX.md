@@ -254,3 +254,8 @@ Player verified the current dev visual-inspection presentation on device and acc
 ## M5C-B activation
 
 M6C-B balance is now player verified, so formal visual integration may proceed. Follow `M5C_B_FORMAL_ASSET_BATCH.md`: Batch1 first prepares all five Chapter1 portraitSquare, collectionArt and battleIdle/static assets, then Work integrates the approved batch through the existing M5C-A pipeline.
+
+
+## M5C-B idle-motion clarification
+
+M5C-B Batch1 now explicitly includes battlefield idle micro-animation for all five Chapter1 characters in addition to portraitSquare, collectionArt and battleIdle. Idle motion must be lightweight, loopable, Pause-safe, position-neutral, compatible with static fallback and implemented through the existing M5C-A animation descriptor path. Hit/KO/cast remain the following battle-state batch.
