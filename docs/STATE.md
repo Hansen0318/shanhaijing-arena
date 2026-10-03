@@ -4,6 +4,7 @@
 **M5C-B FORMAL ASSET INTEGRATION — CHAT ASSET AUTHORING / BATCH PREPARATION**
 
 ## Current state
+- Written humanoid concept specs now exist for all five Chapter1 characters. No production art is locked. Current task is player review of character-direction consistency before generating or integrating any further assets.
 - 鹿蜀 first humanoid concept is under visual review only; no production asset is approved yet. Continue alternate concept exploration before asset lock or Work integration.
 - Art-direction correction: all normal playable roster characters default to humanoid/anthropomorphic combat bodies for shared animation/ability production. Creature traits remain mandatory; clothing/props/weapons may be invented to communicate Type/Role/mechanics. The prior quadruped 鹿蜀 concept is rejected and its spec has been corrected before production approval.
 - M5C-B Batch1 character authoring has begun with 鹿蜀. Canonical concept/portrait/collection/battleIdle/idle-motion direction is in `docs/art/M5C_B_LUSHU_VISUAL_SPEC.md`; player concept approval is the next visual gate before locking production assets.
