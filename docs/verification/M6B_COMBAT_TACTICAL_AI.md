@@ -1,5 +1,7 @@
 # M6B tactical combat verification
 
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
+
 ## Scope and contracts
 Formal data-driven profiles (mobile skirmisher/front guard/rear healer/ranged burst/aggressive bruiser) feed common intent-only tactics and weighted living-target scoring; no character-ID branches in shared AI. Stage/Lab factories activate production tactics; low-level headless legacy mode remains explicit. Abilities use the existing shared start/finish/effect/damage APIs, with selected fixed-geometry delayed impacts. AI/player can avoid the same geometry through ordinary movement. Original Type1.15/.85/1.00, T0 stats/cooldowns/ranges/coefficients/crit metadata and timing of cooldown start remain unchanged.
 
@@ -26,7 +28,7 @@ All terminate naturally; states include evade/kite/retreat/recover/support/regro
 Pre-split candidate entry93,281 bytes accidentally included existing preview→demoBattle→BattleSession graph; RED static-import guard confirmed. Pure demoDefinitions preserves exact original values/exports and removes simulation import from menu. Final entry68,623 vs accepted M6A79,192 (13.35% smaller); deferred battle1,422,246. index--RrIFyks.js / index-CuxsJ6uc.css / battleRuntime-Dk0-SWXZ.js. No Phaser or battle core in static menu graph. No dependency additions.
 
 ## Delivery
-Recovery remotee36abeb922f122b64859f84a0212d64510f55605; main16f73932 unchanged; original feat/m0-combat-core-20260927 / PR1 retained. A a8e3d3d0debf2f2437b4959ef39abce03aa96e3c; B2106b152c035839d953e774a9cc20d64d17bdbe9; Cce76e9855966d1c28c07ed60f17726a9e746d445; Dca9160c501afe2c0d7d0b0409b31c4f0502111f1. Intermediate recoverable checkpoints skip CI; coherent release runs real CI/Pages. Deployment/public verification pending.
+Recovery remotee36abeb922f122b64859f84a0212d64510f55605; main16f73932 unchanged; original feat/m0-combat-core-20260927 / PR1 retained. A a8e3d3d0debf2f2437b4959ef39abce03aa96e3c; B2106b152c035839d953e774a9cc20d64d17bdbe9; Cce76e9855966d1c28c07ed60f17726a9e746d445; Dca9160c501afe2c0d7d0b0409b31c4f0502111f1. Intermediate recoverable checkpoints skip CI; coherent release runs real CI/Pages. Release source `38cbac78b9aa6aaabcfa7de87c6202e13b984341`; [Actions #379 / 37096413415](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37096413415) Test/Build/Pages SUCCESS (build111127158627, deploy111127221878). Public Landing index--RrIFyks.js matches build, no modulepreload/host/canvas; normal URL Lab absent. Dev menu has10 presets; TELEGRAPH TEST START uses real Arena; capsule warnings visible; Pause, Restart, Exit→Lab verified, configuration retained and host/canvas removed. Cloud1363×936 no menu horizontal overflow. Physical iPhone feel/readability remains player smoke; automated storage snapshot contracts cover isolation.
 
 ## One focused player smoke
 Lab AI ONLY+Skip countdown: DODGE TEST/TELEGRAPH TEST, HEALER RETREAT, RANGED KITE. Observe skirmisher changing angle/occasional evade, guard holding front, healer retreat/heal/return, caster spacing and bruiser chase. Manual mode joystick can leave warning area; Pause/Retry/Back clean. Confirm normal save unchanged once; no broad Campaign replay/reset needed. Device feel/readability/balance acceptance remains player-owned. STOP before final art/animation/VFX/audio/Tier mechanics/Chapter2.

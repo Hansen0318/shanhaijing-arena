@@ -1,7 +1,7 @@
 # M6B — Combat Tactical AI / Telegraph / Dodge Batch
 
 ## Status
-**IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 M6A Developer Battle Lab is PLAYER VERIFIED and is the primary player-smoke harness for this milestone.
 
@@ -400,11 +400,15 @@ Tactical interval250ms, held destination700ms, 5 safe candidates, max step1.2 un
 
 Selected formal telegraphs only: 猼訑 Heavy650ms/radius.7, Awakening900ms/radius2.2; 赤鱬 Heavy350+350ms/lane.45; 九尾狐 Heavy450+200ms/lane.45, Special900ms/radius1.6, Awakening650+250ms/radius.7. Commitment locked; Basic/heals/mitigation/instant engage/multi-hit remain immediate. Damage/cooldowns/crit/range untouched. Fixed geometry is captured when a valid cast begins, cooldown starts at the same cast time; eligible effect is resolved at impact through shared damage resolver. Caster KO cancels delayed effects; air casts consume cooldown normally but produce no damaging threat. Movement out of geometry can avoid AI/player attacks alike.
 
-Stage/Lab factory defaults tacticalEnabled true; low-level BattleSession defaults false for protected legacy fixtures. Existing M5B formalKits tests explicitly opt out only to pin original immediate damage/multi-hit contracts. New tacticalSession tests exercise production factories with actual delayed impacts/manual/AI equality. No save/progression/controller logic touched. C targeted73/73/full463/463 PASS. D renderer/Lab scenarios and E release pending.
+Stage/Lab factory defaults tacticalEnabled true; low-level BattleSession defaults false for protected legacy fixtures. Existing M5B formalKits tests explicitly opt out only to pin original immediate damage/multi-hit contracts. New tacticalSession tests exercise production factories with actual delayed impacts/manual/AI equality. No save/progression/controller logic touched. C targeted73/73/full463/463 PASS. D renderer/Lab scenarios and E release complete.
 
-D targeted39/39/build/diff PASS. Placeholder warnings use projected locked circle/lane geometry, battle-clock fill/progress, no independent tween/timer; shutdown destroys one graphics layer. Lab adds DODGE TEST/TELEGRAPH TEST/HEALER RETREAT/RANGED KITE with formal data only. Actual Arena Pause/retry lifecycle test covers clock freeze and clean threat/jobs/presenter. E release pending.
+D targeted39/39/build/diff PASS. Placeholder warnings use projected locked circle/lane geometry, battle-clock fill/progress, no independent tween/timer; shutdown destroys one graphics layer. Lab adds DODGE TEST/TELEGRAPH TEST/HEALER RETREAT/RANGED KITE with formal data only. Actual Arena Pause/retry lifecycle test covers clock freeze and clean threat/jobs/presenter. E release verified.
 
 ## Release review resolutions
 Independent review found0 Critical and4 Important. Four RED→GREEN regressions resolve capsule endpoint rendering, .08-unit safe-position clearance beyond .05 movement stop, urgent eligible threat checks before retaining ordinary destinations, and shared target/area dodge eligibility. Existing evade destination remains held when still reachable/safe. New production tests cover support heal during retreat, ranged-only kite and natural termination of four Lab presets. Original graybox winner fixture explicitly opts out of tactical mode; new behavior can change matchup outcomes without changing stats/damage/accounting.
 
-Pure runtime/demoDefinitions.js separates existing prototype metadata from simulation imports; old demoBattle exports remain compatible and data values identical. Normal Landing/preview static graph excludes BattleSession/tactics/Arena/Phaser. Entry68,623 bytes vs accepted M6A79,192; battle1,422,246 bytes deferred. E targeted50/50, impacted308/308, full475/475/build/diff PASS; deployment pending.
+Pure runtime/demoDefinitions.js separates existing prototype metadata from simulation imports; old demoBattle exports remain compatible and data values identical. Normal Landing/preview static graph excludes BattleSession/tactics/Arena/Phaser. Entry68,623 bytes vs accepted M6A79,192; battle1,422,246 bytes deferred. E targeted50/50, impacted308/308, full475/475/build/diff PASS; delivery verified.
+
+## Release verification
+Release source `38cbac78b9aa6aaabcfa7de87c6202e13b984341`; [Actions #379 / 37096413415](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37096413415) Test/Build/Pages SUCCESS (build111127158627, deploy111127221878). Public Landing index--RrIFyks.js matches build, no modulepreload/host/canvas; normal URL Lab absent. Dev menu has10 presets; TELEGRAPH TEST START uses real Arena; capsule warnings visible; Pause, Restart, Exit→Lab verified, configuration retained and host/canvas removed. Cloud1363×936 no menu horizontal overflow. Physical iPhone feel/readability remains player smoke; automated storage snapshot contracts cover isolation.
+Evidence: `verification/M6B_COMBAT_TACTICAL_AI.md`. One focused smoke only; STOP.

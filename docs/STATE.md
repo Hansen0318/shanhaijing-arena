@@ -1,16 +1,17 @@
 # Project State
 
 ## Milestone
-**M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
+**M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- M6B E targeted50/50, impacted308/308, full475/475, build/diff PASS; independent4 Important findings fixed RED→GREEN; no unresolved blockers. Deployment/public verification pending. See docs/verification/M6B_COMBAT_TACTICAL_AI.md.
-- M6B A contracts targeted29/29 PASS; gameplay integration pending B–E; recoverye36abeb9, no formal accounting mutations.
+- M6B E targeted50/50, impacted308/308, full475/475, build/diff PASS; independent4 Important findings fixed RED→GREEN; no unresolved blockers. Deployment/public verification complete. See docs/verification/M6B_COMBAT_TACTICAL_AI.md.
+- Release source `38cbac78b9aa6aaabcfa7de87c6202e13b984341`; [Actions #379 / 37096413415](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37096413415) Test/Build/Pages SUCCESS (build111127158627, deploy111127221878). Public Landing index--RrIFyks.js matches build, no modulepreload/host/canvas; normal URL Lab absent. Dev menu has10 presets; TELEGRAPH TEST START uses real Arena; capsule warnings visible; Pause, Restart, Exit→Lab verified, configuration retained and host/canvas removed. Cloud1363×936 no menu horizontal overflow. Physical iPhone feel/readability remains player smoke; automated storage snapshot contracts cover isolation.
+- M6B A–E complete. Next: one focused Lab smoke, then STOP; no new features. Recoverye36abeb9, no formal accounting mutations.
 - M6A Developer Battle Lab is PLAYER VERIFIED. Its isolation contract and dev-only workflow are now protected baseline.
 - M6B is authorized as one coherent batch milestone. It may add shared/profile-driven tactical AI and telegraph/dodge reaction, but must not add bespoke character-ID behavior or alter progression/accounting.
-- M6A six data-driven presets/dev menu/direct shared runtime/options/retry/back complete. Strict persistence-free entry/controller/result; normal Campaign untouched. Targeted41/41, impacted205/205, full448/448, build/diff PASS; independent39/39, no actionable findings. Actions#373/37092896323 Test/Build/Pages SUCCESS; source1b6975da853dd4a8cff900b617a620322d5401f6; public normal/dev entry/fingerprints/host detachment/live heal/type AI-only verified. See docs/verification/M6A_DEVELOPER_BATTLE_LAB.md. No M6B.
+- M6A six data-driven presets/dev menu/direct shared runtime/options/retry/back complete. Strict persistence-free entry/controller/result; normal Campaign untouched. Targeted41/41, impacted205/205, full448/448, build/diff PASS; independent39/39, no actionable findings. Actions#373/37092896323 Test/Build/Pages SUCCESS; source1b6975da853dd4a8cff900b617a620322d5401f6; public normal/dev entry/fingerprints/host detachment/live heal/type AI-only verified. See docs/verification/M6A_DEVELOPER_BATTLE_LAB.md (historical accepted evidence).
 - Player approved a faster development workflow: coherent batch milestones, Work-owned internal checkpoints, narrower manual smoke, automated regression for protected baselines, and reusable/data-driven systems. Canonical: `docs/DEVELOPMENT_ACCELERATION.md`.
-- Next implementation milestone is M6A Developer Battle Lab, followed by M6B Combat Tactical AI / Telegraph / Dodge Batch.
+- Historical approved sequence M6A→M6B is implemented; current next action is M6B focused player smoke.
 - INFO Hub device smoke is PLAYER VERIFIED. Landing INFO, three subpages, icon-only type triangle, read-only navigation, and deferred battle loading are accepted baseline.
 - INFO Hub implemented: sibling INFO and exactly three read-only subpages; icon-only triangle/media placeholders, live-only copy, fixed BACK with scrolling body. Targeted40/40, impacted152/152, full431/431, build/diff PASS; review Minor items resolved. Source39561844877136940fcb09a3270d1bd35327f511; Actions#365/37088162820 CI431/431, Build/Pages SUCCESS; public JS/CSS fingerprints match and three-page/back/focus/no-canvas routes verified. Entry71,960 bytes; battle graph remains deferred. No combat/type/progression/team mutations or motion. See docs/verification/INFO_HUB.md.
 - Player accepted the M5B overlay/performance follow-up after device smoke. Non-battle battle-host detachment and lazy battle runtime are now protected baseline behavior.

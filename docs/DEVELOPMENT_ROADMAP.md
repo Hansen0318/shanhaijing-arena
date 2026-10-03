@@ -274,7 +274,7 @@ Hard isolation:
 
 ## M6B — Combat Tactical AI / Telegraph / Dodge Batch
 
-Status: **IMPLEMENTATION READY**. Canonical spec: `docs/M6B_COMBAT_TACTICAL_AI.md`.
+Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Canonical spec: `docs/M6B_COMBAT_TACTICAL_AI.md`; evidence: `docs/verification/M6B_COMBAT_TACTICAL_AI.md`. A–E complete, Actions/Pages/public entry verified; next is one focused Lab smoke.
 
 Implement one coherent tactical-combat milestone rather than many micro-slices.
 
@@ -295,3 +295,4 @@ Rules:
 - AI must not dodge perfectly;
 - player manual movement remains the current natural dodge path;
 - do not add a dedicated dodge button unless separately approved.
+
