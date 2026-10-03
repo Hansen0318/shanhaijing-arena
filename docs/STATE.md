@@ -1,9 +1,11 @@
 # Project State
 
 ## Milestone
-**M6A DEVELOPER BATTLE LAB — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IMPLEMENTATION READY**
 
 ## Current state
+- M6A Developer Battle Lab is PLAYER VERIFIED. Its isolation contract and dev-only workflow are now protected baseline.
+- M6B is authorized as one coherent batch milestone. It may add shared/profile-driven tactical AI and telegraph/dodge reaction, but must not add bespoke character-ID behavior or alter progression/accounting.
 - M6A six data-driven presets/dev menu/direct shared runtime/options/retry/back complete. Strict persistence-free entry/controller/result; normal Campaign untouched. Targeted41/41, impacted205/205, full448/448, build/diff PASS; independent39/39, no actionable findings. Actions#373/37092896323 Test/Build/Pages SUCCESS; source1b6975da853dd4a8cff900b617a620322d5401f6; public normal/dev entry/fingerprints/host detachment/live heal/type AI-only verified. See docs/verification/M6A_DEVELOPER_BATTLE_LAB.md. No M6B.
 - Player approved a faster development workflow: coherent batch milestones, Work-owned internal checkpoints, narrower manual smoke, automated regression for protected baselines, and reusable/data-driven systems. Canonical: `docs/DEVELOPMENT_ACCELERATION.md`.
 - Next implementation milestone is M6A Developer Battle Lab, followed by M6B Combat Tactical AI / Telegraph / Dodge Batch.
