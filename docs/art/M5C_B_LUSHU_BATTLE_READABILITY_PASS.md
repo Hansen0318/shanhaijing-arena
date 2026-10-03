@@ -281,3 +281,69 @@ After player review of this design pass, the next optional Chat-owned visual ste
 **generate one simplified battle-readable 鹿蜀 concept sheet / battleIdle exploration based on this spec.**
 
 Do not treat that image as production-approved until it passes the runtime readability review.
+
+
+## 19. Simplified concept-sheet visual review
+
+Status:
+**CONDITIONAL PASS — BATTLE READABILITY DIRECTION ACCEPTABLE / PRODUCTION ASSET NOT YET APPROVED**
+
+The newly generated simplified battle concept is materially better aligned with the global battle-readability hard rule than the richer Concept B sheet.
+
+### What passes
+- white head remains clearly separated from the torso at small scale;
+- tall lean leg-driven silhouette is preserved;
+- the single vermilion tail remains the dominant rear mass;
+- weapon remains compact and visible;
+- front/rear legs retain useful negative space;
+- body does not drift into 猼訑 / 狌狌 Power mass;
+- the simplified small-size previews remain recognizable across idle / run / attack / hit / skill / KO poses.
+
+### Remaining corrections before battle-asset lock
+
+1. **Reduce competing red trailing elements further**
+   - waist cloth/tassels should be shorter and fewer;
+   - weapon tassel should be removed or reduced to a tiny non-trailing accent;
+   - the red tail must remain the only major rear motion axis.
+
+2. **Simplify mane / hair one more step**
+   - target roughly 3 major rear/side masses rather than many separated locks;
+   - no thin hair strand should be required for identity.
+
+3. **Keep tiger markings grouped**
+   - preserve only 2–3 broad groups in battle art;
+   - avoid adding extra thin stripes during final cleanup.
+
+4. **Horn silhouette**
+   - current compact vertical/rear-swept horn read is acceptable;
+   - do not add additional branching or fine horn ridges in battle assets.
+
+5. **Weapon**
+   - current short curved blade footprint is acceptable;
+   - simplify guard/handle ornament in final battle art;
+   - remove decorative elements that create a second motion trail.
+
+6. **Face**
+   - current face remains somewhat animal-derived, which is acceptable;
+   - final head pass should preserve the mythic species structure while keeping eye/brow/mouth acting readable;
+   - do not move back toward a normal human face.
+
+### Runtime-readability judgment
+
+The ~48px reference is readable enough to continue development because:
+- head, tail, weapon and legs remain separable;
+- identity survives removal of micro-detail;
+- silhouette still reads as Speed / Attacker;
+- the character is not relying on tiny costume ornaments.
+
+However this is not yet the final battle asset because the current concept sheet still contains more presentation detail than the runtime sprite should carry.
+
+### Next action
+
+Apply one final **battle-detail cleanup pass** to the design language:
+- fewer red cloth/tassel elements;
+- fewer hair masses;
+- simpler weapon guard;
+- preserve the current successful white-head / long-leg / single-tail silhouette.
+
+After that cleanup, 鹿蜀 can move to battleIdle source authoring / runtime-size validation without another fundamental redesign.
