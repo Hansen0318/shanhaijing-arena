@@ -1,7 +1,7 @@
 # M5C-B Batch1 Visual Spec — 鹿蜀
 
 ## Status
-**CONCEPT DIRECTION — PLAYER REVIEW PENDING**
+**CONCEPT DIRECTION — CORRECTION REQUIRED / PLAYER REVIEW PENDING**
 
 This is the first formal character-visual specification for M5C-B Batch1. It defines the canonical art direction for 鹿蜀 before final asset integration.
 
@@ -35,18 +35,19 @@ Do not make 鹿蜀 bulky, armored, or tank-like.
 ## 3. Body design
 
 Overall silhouette:
-- lean horse/deer-like quadruped body;
-- long athletic legs;
-- narrow waist/torso;
-- compact shoulders rather than heavy chest;
-- slightly elevated neck/head posture;
-- tail long enough to read at 48px battle scale.
+- humanoid / anthropomorphic biped combat body;
+- lean athletic proportions rather than bulky mass;
+- digitigrade or hoof-influenced lower-leg treatment is allowed if it remains compatible with the shared humanoid animation vocabulary;
+- long, mobile silhouette with clear shoulders / torso / arms / legs;
+- tail long enough to read at 48px battle scale;
+- creature traits must not turn the default body back into a literal quadruped.
 
 Head:
 - predominantly white;
-- deer/horse hybrid facial structure;
-- short elegant horn/antler elements may be used to support the game's horn-strike identity, but must not overpower the white-head silhouette;
-- ears swept slightly back/outward to reinforce speed.
+- deer/horse-inspired mythic facial structure on the humanoid character;
+- short elegant horn/antler elements may support the horn-strike identity;
+- ears swept slightly back/outward to reinforce speed;
+- avoid a plain human head that loses the creature identity.
 
 Body markings:
 - dark tiger-like stripes on a warm tawny/amber base;
@@ -77,22 +78,34 @@ Avoid:
 
 ## 5. Anthropomorphism level
 
-Use a mythic creature-first design.
+Use a **humanoid mythic-creature design**.
 
-鹿蜀 should not become a human in costume.
+鹿蜀 should have a clearly humanoid combat silhouette for shared animation/ability production, while retaining unmistakable creature traits.
 
 Allowed:
-- subtle harness;
-- light decorative bands;
-- small talisman/ornament;
-- stylized foreleg/hoof action poses.
+- humanoid arms/hands or clawed/hoof-inspired hands that can hold equipment;
+- light armor, harness, belts, talismans, scarves, mobility gear;
+- invented weapon/prop language that reinforces Speed / Attacker mechanics;
+- asymmetrical accessories if they mirror safely or have explicit facing handling.
 
 Avoid:
-- human face;
-- human hands;
-- full samurai armor;
-- long robe that hides the legs;
-- humanoid biped stance as the default.
+- literal quadruped default body;
+- generic human with only decorative ears;
+- heavy tank armor that contradicts Speed identity;
+- long garments that hide leg motion.
+
+## 5A. Gameplay-equipment direction
+
+Equipment is allowed and should support the Speed / Attacker identity rather than merely copy the source text.
+
+Possible directions, not locked:
+- light paired blades / horn-shaped short weapons;
+- forearm/hoof guards designed for rush impact;
+- streamlined sash/scarf or talisman strips that make movement readable;
+- compact mobility-focused armor pieces;
+- small cyan Speed-type accents.
+
+Do not lock a specific weapon until player visual approval. The key rule is that equipment supports the character's mechanics and shared humanoid animation pipeline without hiding the white head, tiger markings or red tail.
 
 ## 6. portraitSquare
 
@@ -117,11 +130,11 @@ Target:
 - 768–1024px major dimension.
 
 Pose:
-- dynamic three-quarter running / pivoting stance;
-- one front hoof lifted;
-- body curved slightly as if changing direction;
+- dynamic three-quarter humanoid pivot / dash-ready stance;
+- one leg loaded, the other transitioning as if changing direction;
+- torso counter-rotated for agility;
 - red tail sweeping opposite the body turn;
-- show enough flank to display tiger pattern.
+- enough torso/limb surface remains visible to show tiger markings.
 
 Do not depict a full attack impact yet; this is identity art.
 
@@ -138,12 +151,13 @@ Target source:
 - runtime base fit approximately 48px.
 
 Default pose:
-- side/three-quarter battle stance;
-- front legs slightly staggered;
+- side/three-quarter humanoid battle stance;
+- feet/hoof-feet staggered;
 - center of mass forward;
+- arms positioned for a fast melee/engage identity;
 - head held ready;
 - tail separated from body silhouette;
-- legs readable as four distinct supports where possible.
+- legs clearly readable for shared locomotion/hit/KO animation.
 
 Facing:
 - authored so it can be mirrored safely for opposing sides;
@@ -161,10 +175,11 @@ Preferred first pass:
 - 4 frames;
 - approximately 4–6 fps;
 - total loop about 0.8–1.2s;
-- subtle chest/neck breathing;
+- subtle chest/shoulder breathing;
 - ears make a small reactive tilt;
 - red tail sways 1–2 small steps;
-- weight shifts slightly between forelegs.
+- tiny hand/weapon/ornament secondary motion if present;
+- weight shifts slightly between the two legs without looking like locomotion.
 
 Hard rule:
 - actor gameplay position does not move;
