@@ -1,7 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import { createStageBattleSession } from '../src/campaign/battleFactory.js';import { findStage } from '../src/campaign/data.js';
 import { decideAIIntent } from '../src/combat/ai.js';
-const make=(team=['P1','P2','P3'])=>createStageBattleSession({...findStage('1-1'),selectedTeam:team,enemyLineup:['P1','P2','P3']},{rng:()=>.99});
+// Legacy M5B immediate-impact fixture pins coefficients/kit primitives; M6B tests cover production timing/tactics.
+const make=(team=['P1','P2','P3'])=>createStageBattleSession({...findStage('1-1'),selectedTeam:team,enemyLineup:['P1','P2','P3']},{rng:()=>.99,tacticalEnabled:false});
 function nearby(s){s.allies.forEach((a,i)=>{a.x=0;a.y=i*.1;});s.enemies.forEach((a,i)=>{a.x=1;a.y=i*.1;});}
 function hold(s){s.actors.forEach(a=>s.holdPlayerControl(a.instanceId));}
 function intent(s,id){const actor=s.actorById(id),c=s.teamContext(actor);return decideAIIntent({actor,enemies:c.enemies,allies:c.allies,abilityDefinitions:s.abilityDefinitions,nowMs:s.elapsedSeconds*1000});}

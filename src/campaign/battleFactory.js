@@ -5,7 +5,7 @@ import { runtimeAbilityDefinitions } from '../runtime/demoBattle.js';
 import { encounterDefinitions, stageEnemyDefinitions } from './encounterDefinitions.js';
 import { prototypeOwnership } from '../roster/catalog.js';
 import { isValidTeam } from '../roster/team.js';
-export function createStageBattleSession(config, { seed = config?.battleSeed, rng } = {}) {
+export function createStageBattleSession(config, { seed = config?.battleSeed, rng, tacticalEnabled = true } = {}) {
  if(!config?.stageId || !config.chapterId) throw new TypeError('Stage identity required');
  // The protected M0 core resolves at 90s. Other encounter durations are future scope.
  if(config.battleDuration!==90) throw new RangeError('Graybox template requires the protected 90-second limit');
@@ -19,7 +19,7 @@ export function createStageBattleSession(config, { seed = config?.battleSeed, rn
  const session=createBattleSession({
   allies:team(config.selectedTeam,config.allySpawnFormation,'a','allies'),
   enemies:team(stageEnemyDefinitions(config).map(definition=>definition.id),config.enemySpawnFormation,'e','enemies'),
-  characterDefinitions:definitions,abilityDefinitions:{...runtimeAbilityDefinitions,...formalAbilityDefinitions},maxSeconds:config.battleDuration,seed,rng,
+  characterDefinitions:definitions,abilityDefinitions:{...runtimeAbilityDefinitions,...formalAbilityDefinitions},maxSeconds:config.battleDuration,seed,rng,tacticalEnabled,
  });
  session.stageId=config.stageId;session.chapterId=config.chapterId;session.battlefieldId=config.battlefieldId;
  return session;

@@ -1,3 +1,4 @@
+import {formalAIProfiles} from './aiProfiles.js';
 import { createCharacterDefinition } from '../combat/character.js';
 const characters=[
  ['P1','鹿蜀','speed','attacker',245,18,5,2.05,1.15,'#477b9e','快速近戰切入與移位攻擊。','南山異獸，以迅捷與靈動著稱；戰場上善於快速切入與改變攻擊角度。','mobile_skirmisher'],
@@ -8,7 +9,7 @@ const characters=[
 ];
 export const rosterCatalog=Object.freeze(Object.fromEntries(characters.map(([id,name,type,role,maxHp,atk,def,moveSpeed,attackSpeed,color,combatSummary,lore,profile])=>[id,Object.freeze({
  ...createCharacterDefinition({id,name,type,role,stats:{maxHp,atk,def,moveSpeed,attackSpeed},abilities:{basic:`${id}.basic`,heavy:`${id}.heavy`,special:`${id}.special`,awakening:`${id}.awakening`,passives:[`${id}.passive`]}}),
- portrait:Object.freeze({label:name,color}),combatSummary,lore,aiProfile:Object.freeze({tag:profile}),
+ portrait:Object.freeze({label:name,color}),combatSummary,lore,aiProfile:formalAIProfiles[profile],
  passiveMetadata:Object.freeze({definitionId:`${id}.passive`,implemented:false}),
 })])));
 export const prototypeOwnership=()=>({characterIds:Object.keys(rosterCatalog)});

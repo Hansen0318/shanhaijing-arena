@@ -23,7 +23,7 @@ export function decideTacticalIntent(c) {
  if(actor.hp<=0||c.playerControlled){for(const k of Object.keys(s))delete s[k];return {kind:'idle',reason:actor.hp<=0?'ko':'player_override',targetId:target?.instanceId??null};}
  if(!target)return b;
  const wrap=(phase,destination=null)=>({...b,kind:destination?'move':b.kind,pursue:false,targetId:target.instanceId,tacticalState:phase,...(destination?{movement:'destination',destination}:{} )});
- if(s.until>n&&s.targetId===target.instanceId&&s.destination)return wrap(s.phase,s.destination);
+ if(s.until>n&&s.targetId===target.instanceId&&s.destination)return b.kind==='ability'&&c.supportAbility?{...b,pursue:false,tacticalState:s.phase,destination:s.destination}:wrap(s.phase,s.destination);
  let phase='engage',destination=null;
  const dist=d(actor,target),nearest=Math.min(...c.enemies.filter(e=>e.hp>0).map(e=>d(actor,e)),Infinity),hp=actor.hp/actor.maxHp;
  const incoming=c.threats.filter(t=>t.sourceTeamId!==actor.teamId&&t.dodgeable&&containsDanger(actor,t.geometry)).sort((a,b)=>a.impactAtMs-b.impactAtMs||b.severity-a.severity||a.id.localeCompare(b.id));

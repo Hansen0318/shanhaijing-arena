@@ -1,7 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- **M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IN PROGRESS / B COMPLETE.** Recovered remotee36abeb9; M6A PLAYER VERIFIED. Immutable profile validator, declarative telegraph validator and clock-owned locked-geometry threat ledger added; targeted29/29 PASS after RED. B finite5-candidate movement/tactical intent engine targeted9/9 PASS; held700ms objectives, reaction gates, bounded2800ms retreat/cooloff; gameplay integration next C.
+- **M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IN PROGRESS / C COMPLETE.** Recovered remotee36abeb9; M6A PLAYER VERIFIED. Immutable profile validator, declarative telegraph validator and clock-owned locked-geometry threat ledger added; targeted29/29 PASS after RED. B finite5-candidate movement/tactical intent engine targeted9/9 PASS; held700ms objectives, reaction gates, bounded2800ms retreat/cooloff; C formal profiles/scoring/shared delayed impacts integrated; targeted73/73 and full463/463 PASS. Production Stage/Lab factories enable tactics; low-level legacy fixture opt-out only pins M5B immediate coefficient tests. Next D readable renderer/four presets.
 - Active feat/m0-combat-core-20260927 / PR1 / original Pages delivery retained. Implementation plan docs/superpowers/plans/2026-10-03-m6b.md. Continue B movement→C integration/profiles→D renderer/Lab→E review/release automatically. No progression/accounting/Tier/art/audio/Chapter2 changes.
 
 ## Previous M6A accepted handoff (historical)

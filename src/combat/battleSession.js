@@ -1,3 +1,6 @@
+import {ThreatLedger,containsDanger} from './threats.js';
+import {decideTacticalIntent,TACTICAL_INTERVAL_MS} from './tactics.js';
+import {scoreTacticalTarget} from './tacticalTargeting.js';
 import { resolveBattleState, BATTLE_LIMIT_SECONDS } from './battleRules.js';
 import { decideAIIntent, AI_ENGAGE_DISTANCE } from './ai.js';
 import { chooseSoftTarget } from './targeting.js';
@@ -92,6 +95,7 @@ export class BattleSession {
     arenaBounds = DEFAULT_ARENA_BOUNDS,
     seed = DEFAULT_BATTLE_SEED,
     rng,
+    tacticalEnabled = false,
   }) {
     if (allies.length !== 3 || enemies.length !== 3) {
       throw new RangeError('M0 battle session requires exactly 3 allies and 3 enemies');
@@ -99,6 +103,11 @@ export class BattleSession {
     positiveFinite(maxSeconds, 'maxSeconds');
     const seededRandom = createSeededRandom(seed);
     if (rng !== undefined && typeof rng !== 'function') throw new TypeError('rng must be a function');
+    this.tacticalEnabled=tacticalEnabled;
+    this.tacticalRandom=createSeededRandom((Number(seed)^0x6a09e667)>>>0);
+    this.threats=new ThreatLedger();this.delayedImpacts=new Map();
+    this.tacticalStates=new Map([...allies,...enemies].map(a=>[a.instanceId,{}]));
+    this.tacticalEvaluations=0;
     this.seed = seed;
     this.random = rng ?? seededRandom;
 
@@ -242,33 +251,41 @@ export class BattleSession {
     if(!startAbility({caster:actor,slot,definition,target,source,ignoreRange:source==='player',allowNoTarget:source==='player'}))return false;
     const canHit=target&&canCharacterAct(target)&&isTargetInRange(actor,target,definition.range);
     let applied=false;
+    const delay=this.tacticalEnabled&&definition.telegraph&&definition.effect.coefficient>0&&canHit
+      ?this.threats.create(actor,target,definition,this.elapsedSeconds*1000):null;
     finishAbility({caster:actor,slot,definition,applyEffect:()=>{
-      if(!canHit)return;
-      applyAbilityMovement(actor,target,definition.effect.movement,this.arenaBounds);
-      for(const victim of resolveEffectTargets(actor,target,definition,context)) {
-        if(definition.effect.kind==='heal') {
-          const before=victim.hp;victim.heal(victim.maxHp*definition.effect.maxHpFraction);
-          const amount=victim.hp-before;
-          if(amount>0){this.healEvents.push({actorId:actor.instanceId,targetId:victim.instanceId,category,source,amount,critical:false,position:{x:victim.x,y:victim.y}});applied=true;}
-        } else if(definition.effect.kind==='mitigation') {
-          this.statuses.applyMitigation(victim.instanceId,definition.effect.reduction,definition.effect.duration,this.elapsedSeconds);applied=true;
-        } else if(definition.effect.coefficient>0) {
-          const hits=definition.effect.hits ?? 1;
-          const hitDefinition=hits===1?definition:{...definition,effect:{...definition.effect,coefficient:definition.effect.coefficient/hits}};
-          applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.characterDefinitions[victim.definitionId],hitDefinition,category,source)>0||applied;
-          for(let hit=1;hit<hits;hit++)this.pendingHits.push({actorId:actor.instanceId,targetId:victim.instanceId,definition:hitDefinition,category,source,due:this.elapsedSeconds+hit*definition.effect.hitInterval});
-        }
-      }
+      if(delay)this.delayedImpacts.set(delay.id,{actorId:actor.instanceId,targetId:target.instanceId,definition,category,source,threat:delay});
+      else if(canHit)applied=this.applyAbilityEffects(actor,target,definition,category,source,context);
     }});
     if(target?.teamId!==actor.teamId&&target)this.targetIds.set(actor.instanceId,target.instanceId);
     if(applied&&category==='basic')this.cadence.set(actor.instanceId,1/actorDefinition.stats.attackSpeed);
-    this.recordCast(actor,target,category,source,definition,applied);
+    if(!delay)this.recordCast(actor,target,category,source,definition,applied);
     return true;
+  }
+
+  applyAbilityEffects(actor,target,definition,category,source,context,geometry=null) {
+    const actorDefinition=this.characterDefinitions[actor.definitionId];let applied=false;
+    if(!geometry)applyAbilityMovement(actor,target,definition.effect.movement,this.arenaBounds);
+    const victims=geometry?(definition.effect.areaRadius!=null?context.enemies.filter(v=>canCharacterAct(v)&&containsDanger(v,geometry)):[target].filter(v=>v&&canCharacterAct(v)&&containsDanger(v,geometry))):resolveEffectTargets(actor,target,definition,context);
+    for(const victim of victims) {
+      if(definition.effect.kind==='heal'){
+        const before=victim.hp;victim.heal(victim.maxHp*definition.effect.maxHpFraction);const amount=victim.hp-before;
+        if(amount>0){this.healEvents.push({actorId:actor.instanceId,targetId:victim.instanceId,category,source,amount,critical:false,position:{x:victim.x,y:victim.y}});applied=true;}
+      }else if(definition.effect.kind==='mitigation'){
+        this.statuses.applyMitigation(victim.instanceId,definition.effect.reduction,definition.effect.duration,this.elapsedSeconds);applied=true;
+      }else if(definition.effect.coefficient>0){
+        const hits=definition.effect.hits??1,hitDefinition=hits===1?definition:{...definition,effect:{...definition.effect,coefficient:definition.effect.coefficient/hits}};
+        applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.characterDefinitions[victim.definitionId],hitDefinition,category,source)>0||applied;
+        for(let hit=1;hit<hits;hit++)this.pendingHits.push({actorId:actor.instanceId,targetId:victim.instanceId,definition:hitDefinition,category,source,due:this.elapsedSeconds+hit*definition.effect.hitInterval});
+      }
+    }
+    return applied;
   }
 
   step(deltaSeconds) {
     positiveFinite(deltaSeconds, 'deltaSeconds');
-    if (this.result() !== 'running') { this.pendingHits=[]; return this.snapshot(); }
+    if (this.result() !== 'running') { this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear(); return this.snapshot(); }
+    for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.delayedImpacts.delete(id);this.threats.remove(id);}
 
     for (const actor of this.actors) {
       for (const category of ACTIVE_CATEGORIES) {
@@ -280,12 +297,18 @@ export class BattleSession {
     const nowMs = this.elapsedSeconds * 1000;
     const intents = this.actors.map((actor) => {
       if (!canCharacterAct(actor)) {
-        this.aiPreparation.set(actor.instanceId, {});
+        this.aiPreparation.set(actor.instanceId, {});this.tacticalStates.set(actor.instanceId,{});
         return { actor, intent: { kind: 'idle', reason: 'ko', targetId: null } };
       }
       const opponents = actor.teamId === this.allies[0].teamId ? this.enemies : this.allies;
-      const currentTarget = actorById(opponents, this.targetIds.get(actor.instanceId));
-      const intent = decideAIIntent({
+      const state=this.tacticalStates.get(actor.instanceId),actorDefinition=this.characterDefinitions[actor.definitionId];
+      const profile=this.tacticalEnabled?actorDefinition.aiProfile:null;
+      const controlled=actor.controlHandoff.controlSource(nowMs)==='player';
+      if(controlled){for(const k of Object.keys(state))delete state[k];}
+      const evaluate=profile&&!controlled&&nowMs>=(state.nextAt??0);
+      if(evaluate){state.scoredTargetId=scoreTacticalTarget({actor,enemies:opponents,allies:this.teamContext(actor).allies,profile,characterDefinitions:this.characterDefinitions,abilityDefinitions:this.abilityDefinitions,targetIds:this.targetIds})?.instanceId;}
+      const currentTarget = actorById(opponents,profile?state.scoredTargetId:this.targetIds.get(actor.instanceId));
+      let intent = decideAIIntent({
         actor,
         enemies: opponents,
         allies: this.teamContext(actor).allies,
@@ -293,7 +316,22 @@ export class BattleSession {
         abilityDefinitions: this.abilityDefinitions,
         nowMs,
         preparationState: this.aiPreparation.get(actor.instanceId),
+        profile,
       });
+      if(profile&&!controlled){
+        const context=this.teamContext(actor),target=currentTarget??context.enemyTarget;
+        const supportAbility=intent.kind==='ability'&&this.abilityDefinitions[intent.definitionId]?.targetingRule!=='enemy';
+        const committed=this.threats.active(nowMs).some(t=>t.sourceId===actor.instanceId&&t.commitment==='locked');
+        if(evaluate){
+          this.tacticalEvaluations++;state.nextAt=nowMs+TACTICAL_INTERVAL_MS;
+          state.intent=decideTacticalIntent({actor,enemies:opponents,allies:context.allies,target,profile,state,nowMs,bounds:this.arenaBounds,speed:actorDefinition.stats.moveSpeed,threats:this.threats.active(nowMs),random:this.tacticalRandom,baseIntent:intent,supportAbility,committed});
+        }
+        if(committed)intent={kind:'idle',targetId:target?.instanceId,reason:'cast_commitment'};
+        else if(supportAbility)intent={...intent,pursue:false,...(state.destination?{destination:state.destination}:{} )};
+        else if(state.destination&&state.until>nowMs&&target?.hp>0)intent={kind:'move',movement:'destination',destination:state.destination,targetId:target.instanceId,tacticalState:state.phase};
+        else if(state.intent?.reason==='preferred_band_hold'&&intent.kind==='move')intent=state.intent;
+        else intent={...intent,pursue:false,tacticalState:state.phase};
+      }
       const intendedTarget=this.actorById(intent.targetId);
       if(!intendedTarget||intendedTarget.teamId!==actor.teamId)this.targetIds.set(actor.instanceId, intent.targetId ?? null);
       return { actor, intent };
@@ -319,6 +357,9 @@ export class BattleSession {
       const opponents = actor.teamId === this.allies[0].teamId ? this.enemies : this.allies;
       const target = this.actorById(intent.targetId);
 
+      if (intent.destination)moveToward(actor,intent.destination,actorDefinition.stats.moveSpeed,deltaSeconds,this.arenaBounds,.05);
+      if(this.tacticalEnabled&&['move','idle'].includes(intent.kind)&&this.cadence.get(actor.instanceId)<=0)this.executeAbility(actor,'basic','ai',target);
+      if(intent.kind==='move'&&intent.destination)continue;
       if (intent.kind === 'move' && target && canCharacterAct(target)) {
         if (intent.movement === 'retreat') {
           moveAway(
@@ -357,6 +398,13 @@ export class BattleSession {
 
     this.elapsedSeconds = Math.min(this.maxSeconds, this.elapsedSeconds + deltaSeconds);
     this.statuses.expire(this.elapsedSeconds);
+    for(const threat of this.threats.takeDue(this.elapsedSeconds*1000)){
+      const hit=this.delayedImpacts.get(threat.id);this.delayedImpacts.delete(threat.id);if(!hit)continue;
+      const actor=this.actorById(hit.actorId),target=this.actorById(hit.targetId);
+      if(!actor||!canCharacterAct(actor))continue;
+      const applied=this.applyAbilityEffects(actor,target,hit.definition,hit.category,hit.source,this.teamContext(actor),threat.geometry);
+      this.recordCast(actor,{...threat.geometry.center},hit.category,hit.source,hit.definition,applied);
+    }
     const remaining=[];
     for(const hit of this.pendingHits) {
       const actor=this.actorById(hit.actorId),target=this.actorById(hit.targetId);
@@ -365,6 +413,7 @@ export class BattleSession {
       if(isTargetInRange(actor,target,hit.definition.range))this.applyResolvedDamage(actor,target,this.characterDefinitions[actor.definitionId],this.characterDefinitions[target.definitionId],hit.definition,hit.category,hit.source);
     }
     this.pendingHits=this.result()==='running'?remaining:[];
+    if(this.result()!=='running'){this.threats.clear();this.delayedImpacts.clear();}
     return this.snapshot();
   }
 }

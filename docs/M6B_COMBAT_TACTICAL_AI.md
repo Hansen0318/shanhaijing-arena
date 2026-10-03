@@ -1,7 +1,7 @@
 # M6B — Combat Tactical AI / Telegraph / Dodge Batch
 
 ## Status
-**IMPLEMENTATION READY**
+**IN PROGRESS / CHECKPOINT C COMPLETE**
 
 M6A Developer Battle Lab is PLAYER VERIFIED and is the primary player-smoke harness for this milestone.
 
@@ -393,3 +393,11 @@ STOP before:
 - advanced Tier combat mechanics;
 - Chapter2 formal content;
 - new progression systems.
+
+
+## Implementation seeds and boundaries (M6B)
+Tactical interval250ms, held destination700ms, 5 safe candidates, max step1.2 units, profile range enter+0.25/kite enter-0.15/exit+0.35. Retreat threshold .32/reengage .62, max recovery2800ms then regroup/cooloff2000ms; repeated bounded retreats allowed when danger persists. Profile numerical data lives src/roster/aiProfiles.js; no character-ID branches in shared engine. Dedicated tactical seeded stream preserves crit RNG independence.
+
+Selected formal telegraphs only: 猼訑 Heavy650ms/radius.7, Awakening900ms/radius2.2; 赤鱬 Heavy350+350ms/lane.45; 九尾狐 Heavy450+200ms/lane.45, Special900ms/radius1.6, Awakening650+250ms/radius.7. Commitment locked; Basic/heals/mitigation/instant engage/multi-hit remain immediate. Damage/cooldowns/crit/range untouched. Fixed geometry is captured when a valid cast begins, cooldown starts at the same cast time; eligible effect is resolved at impact through shared damage resolver. Caster KO cancels delayed effects; air casts consume cooldown normally but produce no damaging threat. Movement out of geometry can avoid AI/player attacks alike.
+
+Stage/Lab factory defaults tacticalEnabled true; low-level BattleSession defaults false for protected legacy fixtures. Existing M5B formalKits tests explicitly opt out only to pin original immediate damage/multi-hit contracts. New tacticalSession tests exercise production factories with actual delayed impacts/manual/AI equality. No save/progression/controller logic touched. C targeted73/73/full463/463 PASS. D renderer/Lab scenarios and E release pending.

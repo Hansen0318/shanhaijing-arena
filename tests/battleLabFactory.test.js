@@ -28,6 +28,6 @@ test('HEAL/LOW HP presets exercise real ally and team heal immediately',()=>{
  const low=createLabBattleSession(createLabConfig({scenarioId:'low-hp'}));assert.ok(low.usePlayerAbility('a3','awakening'));assert.deepEqual(low.drainHealEvents().map(e=>e.targetId),['a1','a2','a3']);
 });
 test('AOE and MITIGATION presets exercise formal effects without position adjustments',()=>{
- const aoe=createLabBattleSession(createLabConfig({scenarioId:'aoe'}));assert.ok(aoe.usePlayerAbility('a2','special'));assert.deepEqual(aoe.drainDamageEvents().map(e=>e.targetId),['e1','e2','e3']);
+ const aoe=createLabBattleSession(createLabConfig({scenarioId:'aoe'}));assert.ok(aoe.usePlayerAbility('a2','special'));assert.equal(aoe.drainDamageEvents().length,0);aoe.actors.forEach(a=>aoe.holdPlayerControl(a.instanceId));aoe.step(.9);assert.deepEqual(aoe.drainDamageEvents().map(e=>e.targetId),['e1','e2','e3']);
  const tank=createLabBattleSession(createLabConfig({scenarioId:'mitigation'}));assert.ok(tank.usePlayerAbility('a2','special'));assert.equal(tank.statuses.damageMultiplier('a2',0),.75);
 });

@@ -1,7 +1,7 @@
 # Project State
 
 ## Milestone
-**M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IN PROGRESS / B COMPLETE**
+**M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IN PROGRESS / C COMPLETE**
 
 ## Current state
 - M6B A contracts targeted29/29 PASS; gameplay integration pending B–E; recoverye36abeb9, no formal accounting mutations.
