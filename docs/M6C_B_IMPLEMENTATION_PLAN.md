@@ -27,7 +27,7 @@ Review focus: same character on opposite sides at different Tier; heal double sc
 - [x] GREEN targeted/impacted, ledger, commit/push.
 ## E — release
 - [x] Targeted, impacted/full relevant suite, deterministic/performance fixtures, build and bundle check, independent review/fixes.
-- [ ] Release push, exact Actions/Pages/source/public Lab+normal URL verify; close progress/state/spec/verification evidence.
+- [x] Release push, exact Actions/Pages/source/public Lab+normal URL verify; close progress/state/spec/verification evidence.
 - [ ] Player focused T0/T1/T2/T3 comparison then STOP. No final art/audio/Chapter2/new progression.
 
 Pre-flight A→B/C/D: scales object has fifteen named multiplier fields, profile validation is pure. B/C share resolveTierAbilities(projection,definitions), apply exactly once from immutable base; no character-ID branches. D consumes projection without Phaser. Existing Tier mechanics retained cumulatively.
@@ -40,4 +40,4 @@ C: complete, targeted17/17/impacted165/165. Shared M6B tactics untouched; profil
 
 D complete: targeted47/47/full564/564. Supplemental shared-HUD ring defect proved RED angle4.52 instead2π, fixed to actor-resolved definition then GREEN. No visual asset pipeline files changed.
 
-E engineering complete: targeted28/28, impacted221/221, full570/570/build/diff PASS; three independent findings reproduced RED→GREEN. Range opt-out feeds AI; delayed Basic cadence starts at cast; growth caps preserve base geometry. Twelve deterministic fixtures bounded. Release verification remains before closure.
+E engineering complete: targeted28/28, impacted221/221, full570/570/build/diff PASS; three independent findings reproduced RED→GREEN. Range opt-out feeds AI; delayed Basic cadence starts at cast; growth caps preserve base geometry. Twelve deterministic fixtures bounded. Release Actions/Pages/public verified; closure complete. Player comparison remains pending.

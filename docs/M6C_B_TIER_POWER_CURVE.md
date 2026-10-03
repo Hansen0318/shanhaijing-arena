@@ -1,7 +1,7 @@
 # M6C-B — Tier Power Curve Rebalance
 
 ## Status
-**IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 Player feedback after M6C smoke: current Tier mechanic differences are structurally correct but overall power growth is not visually/strategically noticeable enough. Tier should feel materially stronger, while avoiding runaway values that would invalidate AI, telegraph timing, player control, or encounter readability.
 
@@ -397,3 +397,5 @@ Targeted28/28, impacted221/221, full570/570 and build/diff PASS. Review: zero Cr
 Geometry caps bound added Tier growth: `max(base, min(cap, base × gain))`. A legal existing T0 geometry above the growth cap is never shrunk on Tier upgrade; explicit opt-outs and weight0 remain exact identity. AI preferred bands respect Basic range opt-out. Delayed Basic starts its scaled cadence on valid cast and permits at most one pending Basic per actor; no burst queue or cooldown mutation by AI.
 
 Twelve paired deterministic fixtures (three scenarios × four ally tiers, enemyT1) terminate3.80–28.65s, max13 statuses/1 area/6 threats. No hardware FPS claim: bounded250ms tactics and existing bounded collections remain authoritative. Entry87,939 bytes vs accepted M5C-A81,218 (+6,721); CSS19,407 vs19,133 (+274); deferred battle1,444,469 vs1,443,740 (+729). Asset guard37 files/17,703 bytes unchanged; no dependencies. Detailed release evidence: `verification/M6C_B_TIER_POWER_CURVE.md`.
+
+Release verified: source 0b34bfdd41edc88b7528a64d0db63b6f2fbbcd28, Actions #409 /37113178973 Test/Build/Pages SUCCESS; public entry index-BID405J0.js matches. Lab Tier summary/T0 baseline/real Arena/Pause/Restart/Exit and normal no-Lab/deferred entry verified. Full evidence `verification/M6C_B_TIER_POWER_CURVE.md`. Remaining: one focused same-team/seed T0–T3 player comparison; STOP.

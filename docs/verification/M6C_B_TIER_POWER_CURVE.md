@@ -1,6 +1,6 @@
 # M6C-B Tier Power Curve — verification
 
-Status: engineering checks PASS; Actions/Pages/public verification in progress.
+Status: **M6C-B TIER POWER CURVE REBALANCE — ENGINEERING PASS / PLAYER SMOKE PENDING**.
 
 ## Scope and source
 Recovery ee3a73973d3bf47006d1bb18a4e7fccc28744f31. Active feat/m0-combat-core-20260927 / PR1 retained per AGENTS13A; no main merge. Checkpoints A f825dc0089234b8db9371c5eee15ae227595c86b, B c6714f61c33ca4adb7403369404de150a581ded1, C fbfa160b1d1745f9ba9a04c1b7c4399c7bf1fb84, D fae09e0f15ba81d2c5b4e2e09f9a6016ddad935f.
@@ -42,3 +42,12 @@ Entry87,939 bytes vs M5C-A81,218 (+6,721 pure projection/profile/menu data). CSS
 
 ## Rulings and remaining acceptance
 Heals use target T0 HP once, scaled HP only for clamp. Geometry caps limit growth without shrinking legal base or opted-out values. Cooldown≥.75s, Basic interval≥.25s; opted-in windup≥300ms/dodge window≥350ms; control≤.5s/avoidance≤.4s/steadfast≤1s/mitigation≤.5. Exact profile weights in canonical spec. Phone readability and feel remain one focused player smoke. STOP before final art/audio/Chapter2/new progression.
+
+## Release / public verification — 2026-10-03
+Tested/deployed source `0b34bfdd41edc88b7528a64d0db63b6f2fbbcd28`. [Actions #409 / 37113178973](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37113178973) completed SUCCESS; build111174878460 and Pages deploy111174926343 SUCCESS. Docs-only closure follows with skip-ci; deployed gameplay remains this exact source.
+
+Public normal URL https://hansen0318.github.io/shanhaijing-arena/ shows BATTLE/COLLECTION/INFO and no Lab/canvas/modulepreload. DOM script index-BID405J0.js matches local build; graph retains deferred battleRuntime-B4jsg_rp.js. Public dev URL https://hansen0318.github.io/shanhaijing-arena/?battleLab=1 loads isolated Lab. TIER COMPARISON with allyT3/enemyT1 gives allyHP918.75/1200/881.25 and role-specific output/tempo/range/buff multipliers. T0 ally baseline restores245/320/235 with enemyT1 stats unchanged. Lab menu zero canvas/modulepreload, cloud1363×936 no horizontal overflow.
+
+START lazy-loads real Arena; scaled HP labels round to919/1200/882, Tier labelsT3/T1 and placeholder warning/heal presentation visible. Pause, Restart and Exit→Lab verified. Scenario/tiers/seed41/Skip countdown retained; canvas absent on return. This is engineering startup/route verification, not sustained phone timing/FPS or final balance/readability acceptance. Automated paired session and persistence regressions establish clock, retry cleanup and save isolation.
+
+Final status: **M6C-B TIER POWER CURVE REBALANCE — ENGINEERING PASS / PLAYER SMOKE PENDING**. One focused player smoke: same teams/enemy/seed/scenario, compareT0/T1/T2/T3 HP, damage/heal, move/attack speed, skill frequency, range/AoE/mobility, buff/mitigation and warning readability. No accounting/cost/reward changes. STOP before art/audio/Chapter2/new progression.

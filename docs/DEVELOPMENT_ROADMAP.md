@@ -324,6 +324,6 @@ Current five characters are validation content only. Future characters must reus
 
 ## M6C-B — Tier Power Curve Rebalance
 
-Status: **IMPLEMENTATION READY**. Canonical spec: `docs/M6C_B_TIER_POWER_CURVE.md`.
+Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Actions/Pages/public verified; one focused fixed-seed T0–T3 comparison remains. Canonical spec: `docs/M6C_B_TIER_POWER_CURVE.md`.
 
 Player feedback: M6C mechanic differentiation is correct but the raw Tier power jump is too subtle. Add a generic cumulative `TierScalingProfile` covering HP, damage/healing, bounded combat-tempo stats, attack range, AoE, mobility distance, buff/debuff duration and defensive-effect strength. Per-character weights reinforce role identity while the engine remains future-character-safe. Preserve M6C identity mechanics, progression costs/accounting, AI, telegraph authority and M5C-A asset pipeline.
