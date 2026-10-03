@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — PASS / PLAYER VERIFIED.** Player accepted current tactical behavior/telegraph readability as a working baseline and explicitly allows future tuning of warning size/style/timing if problems appear. Preserve shared/profile-driven AI and generic telegraph/threat architecture.
+- **NEXT: M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — IMPLEMENTATION READY.** Make existing T0→T3 progression affect combat through reusable data-driven modifiers/status/control/area primitives. Current five characters are validation content only; architecture must support future characters without ID-specific branches.
 - **M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — ENGINEERING PASS / PLAYER SMOKE PENDING.** Profiles/scoring, bounded intent states, clock-owned telegraph threats/delayed shared impacts, circle/capsule warnings, four tactical Lab presets complete. M6A remains PLAYER VERIFIED; no accounting/progression/Chapter data changes.
 - Active feat/m0-combat-core-20260927 / PR1 / original Pages flow. Recoverye36abeb9; checkpoints A a8e3d3d0, B2106b152, Cce76e985, Dca9160c5 tested/committed/pushed; E release verified.
 - E targeted50/50, impacted308/308, full475/475, build/diff PASS. Independent review found4 Important,0 Critical; all4 RED→GREEN fixed: lane endpoint caps, stop clearance, urgent threat before held ordinary destination, target/area eligibility. Added held-evade regression. No unresolved review findings.
