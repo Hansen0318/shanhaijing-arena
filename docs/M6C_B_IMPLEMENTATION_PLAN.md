@@ -13,10 +13,10 @@ Review focus: same character on opposite sides at different Tier; heal double sc
 - [x] Implement src/combat/tierScaling.js createTierScalingProfile(input), resolveTierScaling(tier,profile), resolveTierStats(definition,scales). Default weights1; zero weight=identity; unknown weights rejected.
 - [x] GREEN targeted, progress/state ledger, commit/push.
 ## B — HP/output/tempo
-- [ ] RED tests/tierPowerRuntime.test.js independent actor Tier HP ratios, DEF base, damage/heal one scale, cooldown/windup floors, Basic cadence and movement.
-- [ ] Add initialization-only combat maxHP projection to CharacterState; per-actor definition map/method in BattleSession, preserve base catalog for presentation. Resolver damage uses base ATK/coefficient→Tier→mechanic→Type/DEF→crit→incoming status. Heal uses recipient base HP→caster healing→mechanic→clamp.
-- [ ] Resolve H/S/A cooldown floor.75s, Basic cadence floor.25s, opt-in windup floor300ms and total dodgeable350ms. Projectile travel unchanged. Existing definitions immutable.
-- [ ] GREEN targeted/impacted, ledger, commit/push.
+- [x] RED tests/tierPowerRuntime.test.js independent actor Tier HP ratios, DEF base, damage/heal one scale, cooldown/windup floors, Basic cadence and movement.
+- [x] Add initialization-only combat maxHP projection to CharacterState; per-actor definition map/method in BattleSession, preserve base catalog for presentation. Resolver damage uses base ATK/coefficient→Tier→mechanic→Type/DEF→crit→incoming status. Heal uses recipient base HP→caster healing→mechanic→clamp.
+- [x] Resolve H/S/A cooldown floor.75s, Basic cadence floor.25s, opt-in windup floor300ms and total dodgeable350ms. Projectile travel unchanged. Existing definitions immutable.
+- [x] GREEN targeted/impacted, ledger, commit/push.
 ## C — geometry/status
 - [ ] RED tests/tierPowerGeometry.test.js exact range/min/preferred, AoE/mobility/status opt-in/caps, warnings/AI bands, persistent magnitude-only and existing M6C mechanic compatibility.
 - [ ] Resolve global geometry then existing mechanic gains. Shared statuses opt-in duration/strength; control max.5s, avoidance max.4s, steadfast max1s, mitigation max.5. AoE max6, support range max20, skill displacement max4 arena units. Persistent duration/interval unchanged; magnitude scale applied once at pulse.
@@ -33,3 +33,5 @@ Review focus: same character on opposite sides at different Tier; heal double sc
 Pre-flight A→B/C/D: scales object has fifteen named multiplier fields, profile validation is pure. B/C share resolveTierAbilities(projection,definitions), apply exactly once from immutable base; no character-ID branches. D consumes projection without Phaser. Existing Tier mechanics retained cumulatively.
 
 Ruling: latest explicit user checkpoint C includes range/AoE/status; use that split over older doc C title. Health-ratio init is at session setup only. Heals scale target T0 maxHP (not scaled maxHP) to avoid double growth. Safety seeds listed above are bounded first-playtest choices; phone readability/balance remains player-owned.
+
+B: complete, targeted56/56; impacted134/134. Existing Tier-kit fixture uses matched enemy Tier to preserve surviving targets, heal expected target T0HP×3.2. Joystick test refreshes active input at each step, preserving 0s release rule.

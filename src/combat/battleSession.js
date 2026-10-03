@@ -1,6 +1,7 @@
 import {PersistentAreas} from './persistentAreas.js';
 import {TierEffectRuntime} from './tierEffectRuntime.js';
 import {resolveTierProjection,resolveTierAbilities} from './tierEffects.js';
+import {TIER_SAFETY} from './tierScaling.js';
 import {ThreatLedger,containsDanger} from './threats.js';
 import {decideTacticalIntent,TACTICAL_INTERVAL_MS} from './tactics.js';
 import {scoreTacticalTarget} from './tacticalTargeting.js';
@@ -123,6 +124,10 @@ export class BattleSession {
     this.arenaBounds = { ...arenaBounds };
     this.actors = [...allies, ...enemies];
     this.tierProjections=new Map(this.actors.map(a=>[a.instanceId,resolveTierProjection(characterDefinitions[a.definitionId],tierByActorId[a.instanceId]??'T0')]));
+    this.actorCharacterDefinitions=new Map(this.actors.map(a=>{
+      const p=this.tierProjections.get(a.instanceId);a.initializeCombatMaxHp(p.stats.maxHp);
+      return [a.instanceId,Object.freeze({...p.definition,stats:p.stats})];
+    }));
     this.actorAbilityDefinitions=new Map(this.actors.map(a=>[a.instanceId,resolveTierAbilities(this.tierProjections.get(a.instanceId),abilityDefinitions)]));
     this.elapsedSeconds = 0;
     this.cadence = new Map(this.actors.map((actor) => [actor.instanceId, 0]));
@@ -141,6 +146,8 @@ export class BattleSession {
 
   drainHealEvents() { return this.healEvents.splice(0); }
 
+  definitionForActor(actor){return this.actorCharacterDefinitions.get(actor.instanceId);}
+
   drainDamageEvents() {
     return this.damageEvents.splice(0);
   }
@@ -150,7 +157,9 @@ export class BattleSession {
     if(this.statuses.avoids(target.instanceId,this.elapsedSeconds,definition.telegraph?.dodgeable===true))return 0;
     const outgoing=Math.min(1.15,this.statuses.outgoingMultiplier(actor.instanceId,this.elapsedSeconds)+this.effects.multiplier('damage',actor,target,category,hitContext)-1);
     const { amount, critical } = resolveDamage({ attacker:actor, defender:target,
-      attackerDefinition:actorDefinition, defenderDefinition, abilityDefinition:definition, rng:this.random, outgoingMultiplier:outgoing, damageMultiplier:this.statuses.damageMultiplier(target.instanceId,this.elapsedSeconds) });
+      attackerDefinition:actorDefinition, defenderDefinition, abilityDefinition:definition, rng:this.random, outgoingMultiplier:outgoing,
+      powerMultiplier:this.tierProjections.get(actor.instanceId).scales[hitContext.residual?'persistentMagnitude':'damage'],
+      damageMultiplier:this.statuses.damageMultiplier(target.instanceId,this.elapsedSeconds) });
     if (Number.isFinite(amount) && amount > 0) this.damageEvents.push({
       actorId:actor.instanceId, targetId:target.instanceId, category, source, amount, critical,
       position:{x:target.x,y:target.y},
@@ -235,7 +244,7 @@ export class BattleSession {
     const actor = this.actorById(instanceId);
     if (!actor || !canCharacterAct(actor)) return false;
 
-    const actorDefinition = this.characterDefinitions[actor.definitionId];
+    const actorDefinition = this.definitionForActor(actor);
     if (!actorDefinition) throw new Error(`Missing character definition: ${actor.definitionId}`);
 
     const definitionId = actorDefinition.abilities[category];
@@ -256,7 +265,7 @@ export class BattleSession {
 
   // Both controllers execute effects here. Manual air casting retains its existing contract.
   executeAbility(actor,category,source,requestedTarget=null) {
-    const actorDefinition=this.characterDefinitions[actor.definitionId];
+    const actorDefinition=this.definitionForActor(actor);
     const definition=this.actorAbilityDefinitions.get(actor.instanceId)[actorDefinition.abilities[category]],slot=actor.abilityState[category];
     if(!definition||!slot||this.statuses.controlled(actor.instanceId,this.elapsedSeconds))return false;
     const context=this.teamContext(actor);
@@ -272,24 +281,25 @@ export class BattleSession {
       else if(canHit)applied=this.applyAbilityEffects(actor,target,definition,category,source,context);
     }});
     if(target?.teamId!==actor.teamId&&target)this.targetIds.set(actor.instanceId,target.instanceId);
-    if(applied&&category==='basic')this.cadence.set(actor.instanceId,1/actorDefinition.stats.attackSpeed);
+    if(applied&&category==='basic')this.cadence.set(actor.instanceId,Math.max(TIER_SAFETY.basicInterval,1/actorDefinition.stats.attackSpeed));
     if(!delay)this.recordCast(actor,target,category,source,definition,applied);
     return true;
   }
 
   applyAbilityEffects(actor,target,definition,category,source,context,geometry=null) {
-    const actorDefinition=this.characterDefinitions[actor.definitionId];let applied=false;
+    const actorDefinition=this.definitionForActor(actor);let applied=false;
     if(!geometry){const before={x:actor.x,y:actor.y};applyAbilityMovement(actor,target,definition.effect.movement,this.arenaBounds);if(definition.effect.movement?.kind==='reposition'){const from=Math.atan2(before.y-target.y,before.x-target.x),to=Math.atan2(actor.y-target.y,actor.x-target.x);this.mobilityEvidence.set(actor.instanceId,{targetId:target.instanceId,at:this.elapsedSeconds,distance:Math.hypot(actor.x-before.x,actor.y-before.y),angle:Math.abs(Math.atan2(Math.sin(to-from),Math.cos(to-from)))});}}
     const victims=geometry?(definition.effect.areaRadius!=null?context.enemies.filter(v=>canCharacterAct(v)&&containsDanger(v,geometry)):[target].filter(v=>v&&canCharacterAct(v)&&containsDanger(v,geometry))):resolveEffectTargets(actor,target,definition,context);
     for(const victim of victims) {
       if(definition.effect.kind==='heal'){
-        const before=victim.hp;victim.heal(victim.maxHp*definition.effect.maxHpFraction*this.effects.multiplier('heal',actor,victim,category));const amount=victim.hp-before;
+        const before=victim.hp;const baseHp=this.characterDefinitions[victim.definitionId].stats.maxHp;
+        victim.heal(baseHp*definition.effect.maxHpFraction*this.tierProjections.get(actor.instanceId).scales.healing*this.effects.multiplier('heal',actor,victim,category));const amount=victim.hp-before;
         if(amount>0){this.healEvents.push({actorId:actor.instanceId,targetId:victim.instanceId,category,source,amount,critical:false,position:{x:victim.x,y:victim.y}});applied=true;}
       }else if(definition.effect.kind==='mitigation'){
         this.statuses.applyMitigation(victim.instanceId,definition.effect.reduction,definition.effect.duration,this.elapsedSeconds);applied=true;
       }else if(definition.effect.coefficient>0){
         const hits=definition.effect.hits??1,hitDefinition=hits===1?definition:{...definition,effect:{...definition.effect,coefficient:definition.effect.coefficient/hits}};
-        applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.characterDefinitions[victim.definitionId],hitDefinition,category,source,{hitIndex:0,totalHits:hits})>0||applied;
+        applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.definitionForActor(victim),hitDefinition,category,source,{hitIndex:0,totalHits:hits})>0||applied;
         for(let hit=1;hit<hits;hit++)this.pendingHits.push({actorId:actor.instanceId,targetId:victim.instanceId,definition:hitDefinition,category,source,hitIndex:hit,totalHits:hits,due:this.elapsedSeconds+hit*definition.effect.hitInterval});
       }
     }
@@ -317,7 +327,7 @@ export class BattleSession {
         return { actor, intent: { kind: 'idle', reason: 'ko', targetId: null } };
       }
       const opponents = actor.teamId === this.allies[0].teamId ? this.enemies : this.allies;
-      const state=this.tacticalStates.get(actor.instanceId),actorDefinition=this.characterDefinitions[actor.definitionId];
+      const state=this.tacticalStates.get(actor.instanceId),actorDefinition=this.definitionForActor(actor);
       const profile=this.tacticalEnabled?actorDefinition.aiProfile:null;
       const controlled=actor.controlHandoff.controlSource(nowMs)==='player';
       if(controlled){for(const k of Object.keys(state))delete state[k];}
@@ -356,7 +366,7 @@ export class BattleSession {
     for (const { actor, intent } of intents) {
       if (!canCharacterAct(actor)||this.statuses.controlled(actor.instanceId,this.elapsedSeconds)) continue;
 
-      const actorDefinition = this.characterDefinitions[actor.definitionId];
+      const actorDefinition = this.definitionForActor(actor);
       if (!actorDefinition) throw new Error(`Missing character definition: ${actor.definitionId}`);
 
       const moveSpeed=actorDefinition.stats.moveSpeed*this.statuses.movementMultiplier(actor.instanceId,this.elapsedSeconds);
@@ -425,7 +435,7 @@ export class BattleSession {
     this.areas.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
     this.areas.tick(this.elapsedSeconds,this.actors,(area,victim)=>{
       const actor=this.actorById(area.sourceId);if(!actor||!canCharacterAct(actor))return;
-      if(area.spec.coefficient){const definition={...area.definition,canCrit:false,critChance:0,telegraph:null,effect:{coefficient:area.spec.coefficient}};this.applyResolvedDamage(actor,victim,this.characterDefinitions[actor.definitionId],this.characterDefinitions[victim.definitionId],definition,area.category,area.source,{residual:true});}
+      if(area.spec.coefficient){const definition={...area.definition,canCrit:false,critChance:0,telegraph:null,effect:{coefficient:area.spec.coefficient}};this.applyResolvedDamage(actor,victim,this.definitionForActor(actor),this.definitionForActor(victim),definition,area.category,area.source,{residual:true});}
       if(area.spec.status)this.statuses.apply({...area.spec.status,sourceId:actor.instanceId,targetId:victim.instanceId,areaId:area.id,key:area.id},this.elapsedSeconds);
     });
     const remaining=[];
@@ -433,7 +443,7 @@ export class BattleSession {
       const actor=this.actorById(hit.actorId),target=this.actorById(hit.targetId);
       if(!actor||!target||!canCharacterAct(actor)||!canCharacterAct(target))continue;
       if(hit.due>this.elapsedSeconds+1e-9){remaining.push(hit);continue;}
-      if(isTargetInRange(actor,target,hit.definition.range))this.applyResolvedDamage(actor,target,this.characterDefinitions[actor.definitionId],this.characterDefinitions[target.definitionId],hit.definition,hit.category,hit.source,{hitIndex:hit.hitIndex,totalHits:hit.totalHits});
+      if(isTargetInRange(actor,target,hit.definition.range))this.applyResolvedDamage(actor,target,this.definitionForActor(actor),this.definitionForActor(target),hit.definition,hit.category,hit.source,{hitIndex:hit.hitIndex,totalHits:hit.totalHits});
     }
     this.pendingHits=this.result()==='running'?remaining:[];
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));

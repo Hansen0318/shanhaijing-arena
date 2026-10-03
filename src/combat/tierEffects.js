@@ -1,5 +1,6 @@
 import {validateArea} from './areaSchema.js';
 import {validateStatus} from './statusSchema.js';
+import {resolveTierScaling,resolveTierStats,TIER_SAFETY} from './tierScaling.js';
 // Pure immutable combat data. Never imports progression, storage or the battle runtime.
 export const COMBAT_TIERS=Object.freeze(['T0','T1','T2','T3']);
 export function freezeEffectData(value){if(value&&typeof value==='object'){Object.values(value).forEach(freezeEffectData);Object.freeze(value);}return value;}
@@ -23,19 +24,26 @@ export function createTierEffect(input){
 export function resolveTierProjection(definition,tier='T0'){
  if(!COMBAT_TIERS.includes(tier))throw new TypeError('Invalid combat Tier');
  const effects=COMBAT_TIERS.slice(1,COMBAT_TIERS.indexOf(tier)+1).flatMap(t=>definition.tierEffects?.[t]??[]).map(createTierEffect);
- return Object.freeze({characterId:definition.id,tier,definition,effects:Object.freeze(effects)});
+ const scales=resolveTierScaling(tier,definition.tierScalingProfile);
+ const stats=resolveTierStats(definition,scales);
+ return Object.freeze({characterId:definition.id,tier,definition,scales,stats,effects:Object.freeze(effects)});
 }
 export function resolveTierAbilities(projection,definitions){
  const table={...definitions};
  for(const category of ['basic','heavy','special','awakening']){
   const id=projection.definition.abilities[category],base=definitions[id];if(!base)continue;
-  const effects=projection.effects.filter(e=>(!e.category||e.category===category)&&['range','approach'].includes(e.kind));if(!effects.length)continue;
+  const effects=projection.effects.filter(e=>(!e.category||e.category===category)&&['range','approach'].includes(e.kind));if(!effects.length&&projection.tier==='T0')continue;
   const gain=kind=>1+Math.min(.15,effects.filter(e=>e.kind===kind).reduce((n,e)=>n+e.magnitude-1,0));
   const rangeGain=gain('range'),approachGain=gain('approach');
   const effect={...base.effect};if(effect.areaRadius!=null)effect.areaRadius*=rangeGain;
   if(effect.movement)effect.movement=Object.freeze({...effect.movement,distance:effect.movement.distance*approachGain});
-  table[id]=Object.freeze({...base,range:base.range*rangeGain,maxRange:base.maxRange*rangeGain,
-   telegraph:base.telegraph?Object.freeze({...base.telegraph,dangerRadius:base.telegraph.dangerRadius*rangeGain}):null,effect:Object.freeze(effect)});
+  let telegraph=base.telegraph?{...base.telegraph,dangerRadius:base.telegraph.dangerRadius*rangeGain}:null;
+  if(telegraph&&base.tierScaling?.windup===true&&projection.tier!=='T0'){
+   telegraph.telegraphMs=Math.max(TIER_SAFETY.windupMs,telegraph.telegraphMs*projection.scales.windup,
+    telegraph.dodgeable?TIER_SAFETY.dodgeWindowMs-telegraph.projectileTravelMs:0);
+  }
+  table[id]=Object.freeze({...base,cooldown:category==='basic'?0:Math.max(TIER_SAFETY.cooldown,base.cooldown*projection.scales.cooldown),range:base.range*rangeGain,maxRange:base.maxRange*rangeGain,
+   telegraph:telegraph?Object.freeze(telegraph):null,effect:Object.freeze(effect)});
  }
  return Object.freeze(table);
 }

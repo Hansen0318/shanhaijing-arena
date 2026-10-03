@@ -17,12 +17,15 @@ export function resolveDamage({
   rng,
   damageMultiplier = 1,
   outgoingMultiplier = 1,
+  powerMultiplier = 1,
 }) {
   const coefficient = positiveFinite(abilityDefinition?.effect?.coefficient, 'ability coefficient');
   const multiplier = getTypeMultiplier(attackerDefinition.type, defenderDefinition.type);
+  if(!Number.isFinite(powerMultiplier)||powerMultiplier<1||powerMultiplier>3.2+1e-9)throw new RangeError('Invalid Tier power multiplier');
+  if(!Number.isFinite(outgoingMultiplier)||outgoingMultiplier<1||outgoingMultiplier>1.15+1e-9)throw new RangeError('Invalid outgoing multiplier');
   const baseAmount = Math.max(
     1,
-    attackerDefinition.stats.atk * coefficient * multiplier - defenderDefinition.stats.def,
+    attackerDefinition.stats.atk * coefficient * powerMultiplier * outgoingMultiplier * multiplier - defenderDefinition.stats.def,
   );
   let critical = false;
   if (abilityDefinition.canCrit === true && abilityDefinition.critChance > 0) {
@@ -34,8 +37,7 @@ export function resolveDamage({
     critical = roll < abilityDefinition.critChance;
   }
   if (!Number.isFinite(damageMultiplier) || damageMultiplier < 0 || damageMultiplier > 1) throw new RangeError("Invalid damage multiplier");
-  if(!Number.isFinite(outgoingMultiplier)||outgoingMultiplier<1||outgoingMultiplier>1.15+1e-9)throw new RangeError('Invalid outgoing multiplier');
-  const amount = baseAmount * (critical ? abilityDefinition.critMultiplier : 1) * damageMultiplier * outgoingMultiplier;
+  const amount = baseAmount * (critical ? abilityDefinition.critMultiplier : 1) * damageMultiplier;
   applyDamage(defender, amount);
   return { amount, critical };
 }

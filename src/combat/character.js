@@ -67,6 +67,13 @@ class CharacterState {
   get hp() { return this.#hp; }
   get maxHp() { return this.#maxHp; }
 
+  initializeCombatMaxHp(maxHp) {
+    finite(maxHp, 'combat maxHp', true);
+    const ratio=this.#hp/this.#maxHp;
+    this.#maxHp=maxHp;
+    this.#hp=maxHp*ratio;
+  }
+
   damage(amount) {
     finite(amount, 'damage');
     this.#hp = Math.max(0, this.#hp - amount);
