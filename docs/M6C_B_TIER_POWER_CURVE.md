@@ -21,12 +21,12 @@ Do not use the player's originally proposed compounding ×2→×3→×4 across e
 
 First playtest baseline:
 
-| Tier | Max HP | Damage / Healing Power | Move Speed | Attack Speed | Cooldown Duration | Cast/Telegraph Windup |
-|---|---:|---:|---:|---:|---:|---:|
-| T0 | ×1.00 | ×1.00 | ×1.00 | ×1.00 | ×1.00 | ×1.00 |
-| T1 | ×1.50 | ×1.45 | ×1.08 | ×1.10 | ×0.92 | ×0.95 |
-| T2 | ×2.25 | ×2.05 | ×1.16 | ×1.22 | ×0.84 | ×0.90 |
-| T3 | ×3.75 | ×3.20 | ×1.28 | ×1.40 | ×0.72 | ×0.82 |
+| Tier | Max HP | Damage / Healing Power | Move Speed | Attack Speed | Cooldown Duration | Cast/Telegraph Windup | Attack Range | AoE Radius | Dash / Move Skill Distance | Buff / Debuff Duration | Shield / Mitigation Strength |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| T0 | ×1.00 | ×1.00 | ×1.00 | ×1.00 | ×1.00 | ×1.00 | ×1.00 | ×1.00 | ×1.00 | ×1.00 | ×1.00 |
+| T1 | ×1.50 | ×1.45 | ×1.08 | ×1.10 | ×0.92 | ×0.95 | ×1.05 | ×1.04 | ×1.06 | ×1.08 | ×1.10 |
+| T2 | ×2.25 | ×2.05 | ×1.16 | ×1.22 | ×0.84 | ×0.90 | ×1.10 | ×1.08 | ×1.12 | ×1.15 | ×1.20 |
+| T3 | ×3.75 | ×3.20 | ×1.28 | ×1.40 | ×0.72 | ×0.82 | ×1.18 | ×1.15 | ×1.20 | ×1.25 | ×1.35 |
 
 These multipliers are cumulative from T0, not multiplicative from the previous Tier.
 
@@ -37,25 +37,82 @@ Examples:
 
 ## 3. Scope of scaling
 
-Global Tier scaling applies generically to:
+Global Tier scaling may apply generically to:
 - max HP;
 - direct damage coefficients after base/T0 calculation;
 - healing output;
 - move speed;
 - attack speed;
 - ability cooldown duration;
-- cast/telegraph windup timing where the ability exposes a scalable windup field.
+- cast/telegraph windup timing where the ability exposes a scalable windup field;
+- attack / ability range;
+- AoE radius / lane width / cone radius where declared scalable;
+- dash / engage / reposition distance;
+- buff / debuff duration;
+- shield / protection / mitigation strength.
 
-Do not scale:
+These parameters form a reusable **TierScalingProfile**. The global table defines the canonical maximum/default curve, while a character/ability may opt specific fields in or weight them through data. The engine must remain generic and future-character-safe.
+
+Do not scale globally:
 - arena dimensions;
-- hitbox size;
-- type multiplier;
+- core collision hitbox size;
+- Type multiplier;
 - crit chance unless separately defined;
 - crit multiplier unless separately defined;
 - AI decision frequency;
 - joystick sensitivity;
-- dodge reaction logic;
+- dodge reaction logic itself;
 - reward/shard economy.
+
+Attack range / AoE / movement-skill distance are presentation-and-gameplay geometry, so their resolved geometry and telegraph geometry must remain synchronized.
+
+## 3A. TierScalingProfile
+
+Every character resolves Tier growth through data, not character-ID logic.
+
+Recommended profile fields:
+- hpScaleWeight
+- damageScaleWeight
+- healingScaleWeight
+- moveSpeedScaleWeight
+- attackSpeedScaleWeight
+- cooldownScaleWeight
+- windupScaleWeight
+- attackRangeScaleWeight
+- aoeScaleWeight
+- mobilityDistanceScaleWeight
+- buffDurationScaleWeight
+- defenseEffectScaleWeight
+- controlDurationScaleWeight
+- supportRangeScaleWeight
+- persistentMagnitudeScaleWeight
+
+Weight semantics:
+- 0 = this character/ability does not use that global Tier growth axis;
+- 1 = use the full canonical Tier multiplier;
+- values between 0 and 1 = interpolate between ×1.00 and the canonical Tier multiplier;
+- values above 1 are not allowed in the first M6C-B pass unless separately approved.
+
+This lets Tier reinforce role identity:
+- 鹿蜀: higher mobility/attack-speed/range/avoidance weighting;
+- 猼訑: higher HP/protection/control/support-range weighting;
+- 赤鱬: higher healing/support-range/buff-duration weighting;
+- 九尾狐: higher damage/range/AoE/persistent-effect weighting;
+- 狌狌: higher HP/damage/attack-speed/chase/control weighting.
+
+Current five characters are only validation profiles. Future characters use the same fields.
+
+## 3B. Parameters that must stay bounded
+
+Some parameters can grow, but not at the same magnitude as HP/damage:
+- control/stagger duration;
+- avoidance/evasion window;
+- AI reaction timing;
+- support radius;
+- telegraph shortening;
+- movement speed.
+
+These must use conservative caps so Tier does not produce permanent control, unreadable attacks, or uncontrollable movement.
 
 ## 4. Existing character-specific Tier mechanics
 
@@ -115,7 +172,35 @@ Protect:
 
 Recommended engine minimum cooldown: 0.75s unless an existing stricter contract already exists.
 
-## 9. Cast / telegraph timing
+## 9. Attack range / AoE / mobility geometry
+
+Global canonical curve:
+- Attack Range: T0 1.00 / T1 1.05 / T2 1.10 / T3 1.18
+- AoE Radius: T0 1.00 / T1 1.04 / T2 1.08 / T3 1.15
+- Dash / Move Skill Distance: T0 1.00 / T1 1.06 / T2 1.12 / T3 1.20
+
+Requirements:
+- AI uses resolved attack/preferred range, not T0 range;
+- kite / engage / reposition logic uses the same resolved geometry;
+- telegraph visual geometry must match actual damage/control geometry;
+- lane/cone/radius expansion must respect arena bounds;
+- melee identity must remain melee and ranged identity must remain readable.
+
+## 10. Buff / debuff / protection duration and strength
+
+Global canonical curve:
+- Buff / Debuff Duration: T0 1.00 / T1 1.08 / T2 1.15 / T3 1.25
+- Shield / Mitigation Strength: T0 1.00 / T1 1.10 / T2 1.20 / T3 1.35
+
+Apply only when an effect definition opts into scaling.
+
+Do not scale an effect past its safety cap. Examples:
+- mitigation cannot exceed engine cap;
+- control cannot become effectively permanent;
+- avoidance windows remain short;
+- stagger durations use their own conservative cap.
+
+## 11. Cast / telegraph timing
 
 Tier may shorten scalable windup modestly, but:
 - telegraph and actual impact timing must remain synchronized;
@@ -124,7 +209,7 @@ Tier may shorten scalable windup modestly, but:
 
 If a skill's windup is marked non-scalable, leave it unchanged.
 
-## 10. Persistent / periodic effects
+## 12. Persistent / periodic effects
 
 For periodic/persistent damage/healing:
 - scale magnitude via Damage/Healing Power multiplier;
@@ -134,7 +219,7 @@ For periodic/persistent damage/healing:
 
 This prevents multiplicative explosion.
 
-## 11. Defensive scaling
+## 13. Defensive scaling
 
 This milestone does not globally multiply DEF.
 
@@ -146,7 +231,7 @@ Existing defensive character identity and M6C mitigation mechanics remain.
 
 A future separate balance pass may revisit DEF if data shows a need.
 
-## 12. Future-character rule
+## 14. Future-character rule
 
 Global Tier curve is engine/data-level and applies to every future character automatically.
 
@@ -159,7 +244,7 @@ Do not add per-character base-stat multipliers unless explicitly approved for a 
 
 No character-ID branches.
 
-## 13. Battle Lab
+## 15. Battle Lab
 
 Extend Tier comparison so player can quickly compare same:
 - roster;
@@ -177,7 +262,7 @@ Display compact resolved stats in Lab only if practical:
 
 Do not clutter normal player battle HUD.
 
-## 14. Acceptance
+## 16. Acceptance
 
 Player should clearly feel:
 - T1 stronger than T0;
@@ -189,7 +274,7 @@ Player should clearly feel:
 - telegraphs remain reactable;
 - character-specific Tier mechanics are still noticeable.
 
-## 15. Engineering acceptance
+## 17. Engineering acceptance
 
 At minimum test:
 1. T0 stats exactly preserve accepted base values.
@@ -206,18 +291,26 @@ At minimum test:
 12. no crit formula change.
 13. no DEF global scaling.
 14. persistent effects scale magnitude only.
-15. Lab HP percentage preserved against scaled maxHP.
-16. same seed/Tier comparison deterministic.
-17. no character-ID branches.
-18. existing M6C mechanic effects still active.
-19. Campaign uses saved Tier.
-20. Lab Tier override remains persistence-free.
-21. reward/shard/Tier costs unchanged.
-22. M6B dodge/telegraph geometry unchanged.
-23. M5C-A asset pipeline unchanged.
-24. full relevant tests/build pass.
+15. attack range scaling exact and generic.
+16. AoE scaling exact and generic.
+17. mobility-distance scaling exact and generic.
+18. buff/debuff duration scaling exact and bounded.
+19. shield/mitigation strength scaling exact and capped.
+20. resolved range feeds AI spacing/kite/engage.
+21. telegraph geometry matches resolved attack geometry.
+22. TierScalingProfile weights interpolate generically.
+23. Lab HP percentage preserved against scaled maxHP.
+24. same seed/Tier comparison deterministic.
+25. no character-ID branches.
+26. existing M6C mechanic effects still active.
+27. Campaign uses saved Tier.
+28. Lab Tier override remains persistence-free.
+29. reward/shard/Tier costs unchanged.
+30. M6B dodge/telegraph authority preserved.
+31. M5C-A asset pipeline unchanged.
+32. full relevant tests/build pass.
 
-## 16. Internal checkpoints
+## 18. Internal checkpoints
 
 ### A — global Tier curve contract
 - generic multipliers;
@@ -252,7 +345,7 @@ At minimum test:
 
 Continue automatically between checkpoints unless a true player decision is required.
 
-## 17. Stop
+## 19. Stop
 
 Final status:
 **M6C-B TIER POWER CURVE REBALANCE — ENGINEERING PASS / PLAYER SMOKE PENDING**
