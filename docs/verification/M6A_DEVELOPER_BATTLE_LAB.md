@@ -18,11 +18,17 @@ HP override100/50/25 applies to all allies. Manual uses existing selection/joyst
 - Independent read-only review39/39 PASS, no actionable Major/Minor findings. Physical device touch/layout remains player-owned.
 - Protected source diff: no combat core, catalog/abilities, type resolver, Chapter data, persistence, acquisition/Tier accounting or reward quantity edits.
 - Build entry79,192 bytes vs accepted INFO71,960 (+7,232); battle chunk1,395,576 bytes remains deferred. Entry index-vwLZrBLX.js / CSSindex-CuxsJ6uc.css / battleRuntime-BZPy0e2X.js. No battle module preload; menu creates no runtime game.
-- Mobile CSS uses minmax(0,1fr), min-width0, native44px controls, four safe-area insets, body vertical scroll and separate fixed START row. Public runtime measurement pending below.
+- Mobile CSS uses minmax(0,1fr), min-width0, native44px controls, four safe-area insets, body vertical scroll and separate fixed START row. Public1363×936 Lab viewport had no horizontal overflow; all ten selects measured44px height. Phone short-height/touch/safe-area visual smoke remains player-owned.
 
 ## Delivery
 A f1db5b78dd4b226108689e3a4f4f90bb989a4058; B9db76a687ed0f88b5e984752b895d1e5a355476a; C10da79092a1103cb5fdc511bcec75e7340c3cc74; D0e3e85e4a32a833cd35ceadaaae312336dd73918. Each tested/committed/pushed; interim skip-CI checkpoints protect accepted deployed build until coherent release. Original branch/PR1 delivery retained, no main merge.
-Actions/Pages/public source verification pending. Final status must wait for delivery evidence.
+Final deployed source `1b6975da853dd4a8cff900b617a620322d5401f6`. [Actions#373](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37092896323) completed SUCCESS: Test/Build job111116800181 and Pages deploy111116861094 success. Public loaded script index-vwLZrBLX.js and stylesheet index-CuxsJ6uc.css match local build; no modulepreload.
+
+Public normal URL https://hansen0318.github.io/shanhaijing-arena/ shows only BATTLE/COLLECTION/INFO; no Lab entry, host absent, zero canvases after reload. Public dev URL https://hansen0318.github.io/shanhaijing-arena/?battleLab=1 opens six presets/ten selects/two toggles with no host/canvas. HEAL TEST + skip/ready launches actual Arena with injured slot1 and selected healer; manual Special visibly heals62→123 with +61 and cooldown7. Shared RESTART launches again with same heal configuration (AI can heal immediately); EXIT returns Lab retaining settings and detaches host/canvas. TYPE ADVANTAGE disadvantage case assigns Power/Speed/Blast versus Blast/Power/Speed; AI-only launches without joystick/H/S/A. Dev reload returns NORMAL menu detached; normal reload remains Landing without Lab. No reset, formal rewards or Tier upgrade performed during browser verification.
+
+Post-result RETRY/BACK rendering and full storage preservation are executable tests; public browser verified running RESTART/EXIT, not a complete 90-second match or physical touch acceptance. Lab developer choices are deliberately transient across reload.
+
+**M6A DEVELOPER BATTLE LAB — ENGINEERING PASS / PLAYER SMOKE PENDING.**
 
 ## One player smoke
 Open dev URL, configure teams, HEAL TEST, TYPE ADVANTAGE, Skip countdown, Retry, Back; return normal URL and confirm save unchanged. No reset needed. STOP before M6B.

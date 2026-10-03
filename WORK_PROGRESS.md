@@ -1,11 +1,12 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
-- **M6A DEVELOPER BATTLE LAB — IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS.** Explicit ?battleLab=1 menu, six immutable presets, formal roster duplicate slots, HP100/50/25, Type three cases, skip countdown, ready override, AI-only/manual. Shared formal BattleSession/Arena; reward-free RETRY/BACK TO LAB.
+- **M6A DEVELOPER BATTLE LAB — ENGINEERING PASS / PLAYER SMOKE PENDING.** Explicit ?battleLab=1 menu, six immutable presets, formal roster duplicate slots, HP100/50/25, Type three cases, skip countdown, ready override, AI-only/manual. Shared formal BattleSession/Arena; reward-free RETRY/BACK TO LAB.
 - Strict isolation: dev entry bypasses Campaign/reset/persistence/migration; Lab controller has no save capability and adapter has null campaignActions. Automated app result/retry/back storage snapshot identical. Normal URL remains Landing; battle runtime deferred until START.
 - Active feat/m0-combat-core-20260927 / PR1. Recovery65e159913cf731e546774b2d38adf75e5a7b75dd. A f1db5b78; B9db76a68; C10da7909; D0e3e85e4 pushed independently with targeted5/32/29/39 PASS. Intermediate checkpoints skip CI; E release runs CI/Pages.
 - E targeted41/41, impacted205/205, full448/448, build/diff PASS. Independent review39/39, no actionable Major/Minor findings. Entry79,192 bytes (accepted INFO71,960; +7,232); deferred battle1,395,576 bytes; no Phaser/preload in Lab menu. Physical touch/device acceptance remains pending.
-- Next: Actions/Pages, public normal/dev entry + source verify, closure evidence. docs/M6A_DEVELOPER_BATTLE_LAB.md and docs/verification/M6A_DEVELOPER_BATTLE_LAB.md. STOP before M6B/art/animation/audio.
+- Release source1b6975da853dd4a8cff900b617a620322d5401f6; Actions#373/37092896323 Test/Build/Pages SUCCESS (build111116800181, deploy111116861094). Public entry/CSS fingerprints match local; normal Lab absent, dev menu no host/canvas/preload, live heal/type AI-only/exit/reload verified.
+- Exact next: one short player smoke: dev URL→teams→HEAL TEST→TYPE ADVANTAGE→Skip countdown→Retry→Back→normal save unchanged. docs/M6A_DEVELOPER_BATTLE_LAB.md and docs/verification/M6A_DEVELOPER_BATTLE_LAB.md. STOP before M6B/art/animation/audio.
 
 ## Previous acceleration / accepted INFO handoff (historical)
 - **DEVELOPMENT ACCELERATION RULES — PLAYER APPROVED.** Future Chat/Work should prefer coherent batch milestones with internal checkpoints, continue automatically between checkpoints when no player decision is needed, rely on automated regression for accepted systems, and reserve player smoke for subjective/cross-system completion. Canonical: `docs/DEVELOPMENT_ACCELERATION.md`.

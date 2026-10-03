@@ -248,7 +248,7 @@ Future work should prefer coherent batch milestones with internal checkpoints an
 
 ## M6A — Developer Battle Lab
 
-Status: **IMPLEMENTATION READY**.
+Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Evidence: `docs/verification/M6A_DEVELOPER_BATTLE_LAB.md`.
 
 Goal:
 - create a dev-only isolated combat test harness to reduce repeated setup time for future character, ability, AI, Type, healing, AoE and Tier-behavior testing.

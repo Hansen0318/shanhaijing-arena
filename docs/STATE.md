@@ -1,10 +1,10 @@
 # Project State
 
 ## Milestone
-**M6A DEVELOPER BATTLE LAB — IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
+**M6A DEVELOPER BATTLE LAB — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- M6A six data-driven presets/dev menu/direct shared runtime/options/retry/back complete. Strict persistence-free entry/controller/result; normal Campaign untouched. Targeted41/41, impacted205/205, full448/448, build/diff PASS; independent39/39, no actionable findings. Actions/Pages/public verification pending. See docs/verification/M6A_DEVELOPER_BATTLE_LAB.md. No M6B.
+- M6A six data-driven presets/dev menu/direct shared runtime/options/retry/back complete. Strict persistence-free entry/controller/result; normal Campaign untouched. Targeted41/41, impacted205/205, full448/448, build/diff PASS; independent39/39, no actionable findings. Actions#373/37092896323 Test/Build/Pages SUCCESS; source1b6975da853dd4a8cff900b617a620322d5401f6; public normal/dev entry/fingerprints/host detachment/live heal/type AI-only verified. See docs/verification/M6A_DEVELOPER_BATTLE_LAB.md. No M6B.
 - Player approved a faster development workflow: coherent batch milestones, Work-owned internal checkpoints, narrower manual smoke, automated regression for protected baselines, and reusable/data-driven systems. Canonical: `docs/DEVELOPMENT_ACCELERATION.md`.
 - Next implementation milestone is M6A Developer Battle Lab, followed by M6B Combat Tactical AI / Telegraph / Dodge Batch.
 - INFO Hub device smoke is PLAYER VERIFIED. Landing INFO, three subpages, icon-only type triangle, read-only navigation, and deferred battle loading are accepted baseline.
@@ -22,7 +22,7 @@
 - Named conditional passive bonuses remain metadata/spec because approved seeds do not define numeric modifiers. Advanced Tier mechanics/control/persistent zones/tactical variation not activated. Fixed heal25%/16%, mitigation25%/4s and all range/movement/crit seeds are documented in M5B spec.
 - Previous Result correction next: one relevant victory/replay, Result vs Collection progression agreement and current Tier denominator/MAX or natural acquisition0/5+UNLOCKED; no reset or broad replay. Original kit/device acceptance remains player-owned. See `docs/verification/M5B_FORMAL_CONTENT_INTEGRATION.md`. STOP before art/animation/VFX/audio/advanced Tier/full tactical AI/Chapter2 formal content.
 
-- Exact next: focused INFO player landscape/short-height/rotation/readability smoke, no reset or battle replay. docs/verification/INFO_HUB.md. STOP before AI/type/combat/art/animation/audio.
+- Exact next: one M6A player smoke: open ?battleLab=1, teams, HEAL TEST, TYPE ADVANTAGE, Skip countdown, Retry, Back and normal save unchanged. STOP before M6B/art/animation/audio.
 
 ## Historical M4C state (accepted; superseded by current M5B scope)
 - M5A Chapter1 content is PLAYER APPROVED. Formal identities, skills, T0 stats/cooldowns, stage lineups/rewards and Tier mechanic direction are locked as the first playtest content baseline.

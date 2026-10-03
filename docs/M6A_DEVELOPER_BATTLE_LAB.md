@@ -1,6 +1,6 @@
 # M6A Developer Battle Lab
 
-Status: IN PROGRESS / CHECKPOINT A. User approved a coherent A–E batch; checkpoints continue automatically.
+Status: ENGINEERING PASS / PLAYER SMOKE PENDING. A–E coherent batch complete; delivery evidence in docs/verification/M6A_DEVELOPER_BATTLE_LAB.md.
 
 ## Entry / hard isolation
 Explicit query battleLab=1. Lab wins over resetProgress/campaignDev/fixture; bypass reset, formal CampaignController and ALL browser persistence initialization (including acquisition migration writes). Dedicated in-memory BattleLabController without formal ledger/storage capability. No normal Landing entry. Normal URL retains current routes/lazy runtime.
@@ -31,3 +31,5 @@ Checkpoint B: dev entry/menu targeted32/32 PASS; normal Landing remains default,
 Checkpoint C: direct launch carries only labConfig/labActions; campaignActions null. Exact formal roster/ability objects feed shared BattleSession. Targeted29/29 PASS; complete app result/retry/back storage map identical. Scene option hooks pending D.
 
 Checkpoint D: shared Arena supports local skip countdown, AI-only removes manual inputs, normal manual remains shared, reward-free Lab RETRY/BACK result. Targeted39/39; preliminary full446/446; build PASS. Final independent review/deploy/verification pending E.
+
+Checkpoint E complete: targeted41/41, impacted205/205, full448/448, build/diff PASS; independent39/39 no actionable findings; Actions#373 Test/Build/Pages success; public normal/dev/source verification complete. STOP before M6B.
