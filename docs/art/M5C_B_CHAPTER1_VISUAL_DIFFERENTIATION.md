@@ -19,6 +19,8 @@ Shared structure does **not** mean shared silhouette.
 
 Each character must be distinguishable from body shape + major appendage + equipment language alone, before color is considered.
 
+Head/face differentiation is also structural. A humanoid body does not imply a shared human face base. Each character should use species-derived mythic facial morphology; repeated species families must vary skull/muzzle/eye/ear/horn/jaw structures so identity does not depend on costume or recoloring.
+
 ## 2. Five-character silhouette signatures
 
 | Character | Body silhouette | Major identity shape | Equipment language | Combat posture |
