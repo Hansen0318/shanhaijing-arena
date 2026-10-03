@@ -1,10 +1,10 @@
 # Project State
 
 ## Milestone
-**M6C-B TIER POWER CURVE REBALANCE — IMPLEMENTATION READY**
+**M6C-B TIER POWER CURVE REBALANCE — RELEASE VERIFICATION IN PROGRESS**
 
 ## Current state
-- M6C-B B complete: A10/10, B targeted56/56 and impacted134/134 PASS. Per-actor HP/output/tempo resolves from base once, clamps protect cadence/timing. C geometry/status complete, targeted17/17 and impacted165/165 PASS. D profiles/Lab summaries complete, targeted47/47/full564/564 PASS. E review/release next; original feature/PR1 retained.
+- M6C-B A–E engineering checks complete: targeted28/28, impacted221/221, full570/570, build/diff PASS; independent review three findings fixed RED→GREEN. Twelve same-seed fixtures reproducible, bounded statuses/areas/threats. Actions/Pages/public verification next; original feature/PR1 retained. Canonical evidence verification/M6C_B_TIER_POWER_CURVE.md.
 - Player accepted M5C-A pipeline behavior after device visual inspection; formal assets remain deferred to M5C-B.
 - M6C-B is authorized before formal art: make Tier power materially more noticeable through a generic `TierScalingProfile`. Canonical scaling now covers HP, damage/heal, bounded tempo, attack range, AoE, mobility distance, buff/debuff duration and defense-effect strength, with role-specific data weights. Do not use compounding ×2→×3→×4 across all stats.
 - M5C-A A–E implemented; targeted56/56, impacted375/375/full542/542/build/diff PASS; independent5 Important fixed RED→GREEN/no unresolved findings. Asset guard37 files/17,703 bytes, entry81,218 bytes (+4,359 pure menu data), deferred battle runtime. Actions/Pages/public verification complete. Authoring ASSET_PIPELINE.md; evidence verification/M5C_A_ASSET_PIPELINE.md.

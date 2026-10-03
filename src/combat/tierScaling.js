@@ -23,6 +23,8 @@ export function resolveTierStats(definition,scales){
  const s=definition.stats;
  return Object.freeze({...s,maxHp:s.maxHp*scales.hp,moveSpeed:s.moveSpeed*scales.moveSpeed,attackSpeed:s.attackSpeed*scales.attackSpeed});
 }
+// Caps limit added Tier growth; a legal T0 value/opt-out never shrinks on upgrade.
+export function capTierGrowth(base,gain,cap){return Math.max(base,Math.min(cap,base*gain));}
 export function createScalingOptIn(input,keys){
  if(input==null)return null;
  if(typeof input!=='object'||Array.isArray(input))throw new TypeError('Invalid scaling opt-in');

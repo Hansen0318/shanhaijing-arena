@@ -123,7 +123,7 @@ export class BattleSession {
     this.maxSeconds = maxSeconds;
     this.arenaBounds = { ...arenaBounds };
     this.actors = [...allies, ...enemies];
-    this.tierProjections=new Map(this.actors.map(a=>[a.instanceId,resolveTierProjection(characterDefinitions[a.definitionId],tierByActorId[a.instanceId]??'T0')]));
+    this.tierProjections=new Map(this.actors.map(a=>[a.instanceId,resolveTierProjection(characterDefinitions[a.definitionId],tierByActorId[a.instanceId]??'T0',abilityDefinitions)]));
     this.actorCharacterDefinitions=new Map(this.actors.map(a=>{
       const p=this.tierProjections.get(a.instanceId);a.initializeCombatMaxHp(p.stats.maxHp);
       return [a.instanceId,Object.freeze({...p.definition,stats:p.stats,...(p.aiProfile?{aiProfile:p.aiProfile}:{})})];
@@ -268,10 +268,12 @@ export class BattleSession {
     const actorDefinition=this.definitionForActor(actor);
     const definition=this.actorAbilityDefinitions.get(actor.instanceId)[actorDefinition.abilities[category]],slot=actor.abilityState[category];
     if(!definition||!slot||this.statuses.controlled(actor.instanceId,this.elapsedSeconds))return false;
+    if(category==='basic'&&(this.cadence.get(actor.instanceId)>0||[...this.delayedImpacts.values()].some(hit=>hit.actorId===actor.instanceId&&hit.category==='basic')))return false;
     const context=this.teamContext(actor);
     const target=resolveAbilityTarget(actor,definition,{...context,enemyTarget:requestedTarget??context.enemyTarget});
     if(!startAbility({caster:actor,slot,definition,target,source,ignoreRange:source==='player',allowNoTarget:source==='player'}))return false;
     const canHit=target&&canCharacterAct(target)&&isTargetInRange(actor,target,definition.range);
+    if(canHit&&category==='basic')this.cadence.set(actor.instanceId,Math.max(TIER_SAFETY.basicInterval,1/actorDefinition.stats.attackSpeed));
     if(canHit)this.effects.trigger('cast',actor,target,category);
     let applied=false;
     const delay=this.tacticalEnabled&&definition.telegraph&&definition.effect.coefficient>0&&canHit
@@ -281,7 +283,6 @@ export class BattleSession {
       else if(canHit)applied=this.applyAbilityEffects(actor,target,definition,category,source,context);
     }});
     if(target?.teamId!==actor.teamId&&target)this.targetIds.set(actor.instanceId,target.instanceId);
-    if(applied&&category==='basic')this.cadence.set(actor.instanceId,Math.max(TIER_SAFETY.basicInterval,1/actorDefinition.stats.attackSpeed));
     if(!delay)this.recordCast(actor,target,category,source,definition,applied);
     return true;
   }

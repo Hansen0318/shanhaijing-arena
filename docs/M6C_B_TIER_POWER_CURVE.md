@@ -390,3 +390,10 @@ Healing seed: target T0/base maxHP × original heal fraction × caster healing s
 Lab RESOLVED STATS is a collapsed developer-only six-actor summary; pure projection, no Phaser import/preload. Team/Tier/baseline changes refresh summary. Selected character cooldown HUD uses resolved actor duration; formal HUD has no new stat panels.
 
 Targeted47/47 and full564/564 PASS at D. Independent review/release follows.
+
+## Final engineering verification
+Targeted28/28, impacted221/221, full570/570 and build/diff PASS. Review: zero Critical, two Important and one Minor; the geometry opt-out Minor was regraded Important because it violates weight0/opt-out gameplay contracts. All three reproduced RED→GREEN and fixed; no unresolved findings.
+
+Geometry caps bound added Tier growth: `max(base, min(cap, base × gain))`. A legal existing T0 geometry above the growth cap is never shrunk on Tier upgrade; explicit opt-outs and weight0 remain exact identity. AI preferred bands respect Basic range opt-out. Delayed Basic starts its scaled cadence on valid cast and permits at most one pending Basic per actor; no burst queue or cooldown mutation by AI.
+
+Twelve paired deterministic fixtures (three scenarios × four ally tiers, enemyT1) terminate3.80–28.65s, max13 statuses/1 area/6 threats. No hardware FPS claim: bounded250ms tactics and existing bounded collections remain authoritative. Entry87,939 bytes vs accepted M5C-A81,218 (+6,721); CSS19,407 vs19,133 (+274); deferred battle1,444,469 vs1,443,740 (+729). Asset guard37 files/17,703 bytes unchanged; no dependencies. Detailed release evidence: `verification/M6C_B_TIER_POWER_CURVE.md`.
