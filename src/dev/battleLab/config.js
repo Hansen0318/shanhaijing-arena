@@ -1,3 +1,4 @@
+import {INSPECTION_SLOTS} from '../../assets/inspectionSlots.js';
 import {COMBAT_TIERS} from '../../combat/tierEffects.js';
 import {rosterCatalog} from '../../roster/catalog.js';
 function freeze(value){if(value&&typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value;}
@@ -28,9 +29,10 @@ export function createLabConfig(input={}){
  const controlMode=input.controlMode??'manual';if(!['manual','ai'].includes(controlMode))throw new TypeError('Invalid Lab control mode');
  const selectedTier=input.allyTier??'T0',enemyTier=input.enemyTier??'T0';if(!COMBAT_TIERS.includes(selectedTier)||!COMBAT_TIERS.includes(enemyTier))throw new TypeError('Invalid Lab Tier');
  const allyTier=input.t0Baseline===true?'T0':selectedTier;
+ const visualSlot=input.visualSlot??'none';if(!INSPECTION_SLOTS.includes(visualSlot))throw new TypeError('Invalid visual slot');
  return freeze({battleSeed:41,allyTier,enemyTier,kind:'battle-lab',stageId:'dev-battle-lab',scenarioId:scenario.id,typeCase,battleDuration:90,
   allyTeam,enemyTeam,allyHpRatios:hpRatio===null?[...(scenario.allyHpRatios??[1,1,1])]:[hpRatio,hpRatio,hpRatio],enemyHpRatios:[1,1,1],
   allySpawnFormation:structuredClone(scenario.allySpawnFormation??allyFormation),enemySpawnFormation:structuredClone(scenario.enemySpawnFormation??enemyFormation),
-  selectedAllyId:`a${(scenario.selectedSlot??1)+1}`,options:{skipCountdown:input.skipCountdown===true,allSkillsReady:input.allSkillsReady===true,controlMode},
+  selectedAllyId:`a${(scenario.selectedSlot??1)+1}`,options:{visualSlot,skipCountdown:input.skipCountdown===true,allSkillsReady:input.allSkillsReady===true,controlMode},
  });
 }

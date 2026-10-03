@@ -1,3 +1,4 @@
+import {AssetPresenter} from './assetPresenter.js';
 import {TelegraphPresenter,statusMarks} from './telegraphs.js';
 import {createLabBattleSession} from '../dev/battleLab/battleFactory.js';
 import { resultRewardLines } from '../acquisition/presentation.js';
@@ -9,7 +10,6 @@ import { nearestSurvivingAlly } from '../combat/targeting.js';
 import { allyHud, enemyHud, formatBattleTime } from './battleHud.js';
 import { portraitCardLayout } from './portraitCardLayout.js';
 import { battlePortrait } from '../roster/battlePresentation.js';
-import { castVisual } from './castVfx.js';
 import { DamageNumbers } from './damageNumbers.js';
 import { PreBattleGate } from './preBattleGate.js';
 
@@ -69,6 +69,11 @@ export class ArenaScene extends Phaser.Scene {
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
     this.damageNumbers = new DamageNumbers(this,arenaToStage);
+    this.visualAssets=new AssetPresenter(this,{project:arenaToStage,reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});
+    this.events.once('shutdown',()=>this.visualAssets.destroy());
+    const encounterActors=[...this.session.allies,...this.session.enemies];
+    const encounterDefinitions=[...new Set(encounterActors.map(a=>this.session.characterDefinitions[a.definitionId]))];
+    this.visualAssets.prepare(encounterDefinitions,this.stageConfig??{});
     this.telegraphs = new TelegraphPresenter(this,arenaToStage);
     this.events.once('shutdown',()=>this.telegraphs.destroy());
     this.events.once('shutdown',()=>this.damageNumbers.destroy());
@@ -128,6 +133,7 @@ export class ArenaScene extends Phaser.Scene {
     this.selectAlly(this.selectedId, first, true);
     this.onPlaybackChange(false, true);
     this.onSceneReady(this);
+    if(this.labConfig?.options.visualSlot&&this.labConfig.options.visualSlot!=='none'){const actor=this.session.actorById(this.selectedId);this.visualAssets.inspect(actor.instanceId,this.session.characterDefinitions[actor.definitionId],this.labConfig.options.visualSlot,0);}
 
     window.__arenaSmoke = {
       stageId: this.session.stageId ?? null,
@@ -200,40 +206,14 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   renderCastEvents() {
-    this.damageNumbers?.render(this.session.drainDamageEvents());
+    const damage=this.session.drainDamageEvents();
+    this.damageNumbers?.render(damage);
     this.damageNumbers?.renderHeal(this.session.drainHealEvents());
-    for (const event of this.session.drainCastEvents()) {
-      const visual = castVisual(event, arenaToStage);
-      const effect = this.add.graphics().setPosition(visual.origin.x, visual.origin.y).setDepth(15);
-      const { x, y } = visual.direction;
-      if (event.category === 'basic') {
-        effect.lineStyle(5, 0xfff2b0, 0.95);
-        effect.lineBetween(x * 10 - y * 12, y * 10 + x * 12, x * 20 + y * 12, y * 20 - x * 12);
-      } else if (event.category === 'heavy') {
-        effect.fillStyle(0xffae4a, 0.27).fillCircle(0, 0, 43);
-        effect.lineStyle(6, 0xffd36c, 0.95).strokeCircle(0, 0, 43);
-        effect.lineBetween(x * 12 - y * 31, y * 12 + x * 31, x * 35 + y * 31, y * 35 - x * 31);
-      } else if (event.category === 'special') {
-        effect.lineStyle(6, 0x6adaff, 0.95).strokeCircle(0, 0, 25);
-        if (visual.ranged) {
-          effect.lineStyle(7, 0xa5ebff, 0.95).lineBetween(0, 0, x * visual.length, y * visual.length);
-          effect.fillStyle(0xe1f8ff).fillCircle(x * visual.length, y * visual.length, 10);
-        }
-      } else if (event.category === 'awakening') {
-        effect.fillStyle(0xffe894, 0.21).fillCircle(0, 0, 60);
-        effect.lineStyle(7, 0xffe894, 0.96).strokeCircle(0, 0, 60);
-        for (let i = 0; i < 8; i += 1) {
-          const angle = i * Math.PI / 4;
-          effect.lineBetween(Math.cos(angle) * 35, Math.sin(angle) * 35,
-            Math.cos(angle) * 72, Math.sin(angle) * 72);
-        }
-        if (visual.ranged) {
-          effect.lineStyle(9, 0xffe894, 0.8).lineBetween(0, 0, x * visual.length, y * visual.length);
-        }
-      }
-      this.tweens.add({ targets: effect, alpha: 0, scale: 1.16,
-        duration: event.category === 'awakening' ? 480 : 320,
-        onComplete: () => effect.destroy() });
+    for(const event of damage){const actor=this.session.actorById(event.targetId);this.visualAssets.hit(event,this.session.characterDefinitions[actor.definitionId],this.session.elapsedSeconds);}
+    for(const event of this.session.drainCastEvents()){
+      const actor=this.session.actorById(event.actorId),character=this.session.characterDefinitions[actor.definitionId];
+      const ability=this.session.abilityDefinitions[character.abilities[event.category]];
+      this.visualAssets.cast(event,character,this.session.elapsedSeconds,ability);
     }
   }
 
@@ -572,6 +552,9 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   applyFrame(frame) {
+    this.visualAssets.render(frame,this.session.elapsedSeconds,this.session.characterDefinitions);
+    this.visualAssets.renderOverlays(frame,this.session.characterDefinitions,this.session.statuses,this.session.elapsedSeconds);
+    this.visualAssets.renderHud(this.portraitViews,this.session.characterDefinitions,this.session);
     this.telegraphs.render(this.session.threats.active(this.session.elapsedSeconds*1000),this.session.elapsedSeconds*1000,[...this.session.areas.records.values()]);
     for (const actor of [...frame.allies, ...frame.enemies]) {
       const view = this.actorViews.get(actor.instanceId);

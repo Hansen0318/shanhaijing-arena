@@ -1,3 +1,4 @@
+import {INSPECTION_SLOTS} from '../../assets/inspectionSlots.js';
 import {COMBAT_TIERS} from '../../combat/tierEffects.js';
 import {rosterCatalog} from '../../roster/catalog.js';
 import {LAB_SCENARIOS,labScenario} from './config.js';
@@ -16,6 +17,7 @@ export class BattleLabView{
   }body.append(teams);
   const options=node('div','lab-options');
   for(const [key,title] of [['allyTier','Ally Tier'],['enemyTier','Enemy Tier']])options.append(choice(title,d[key],COMBAT_TIERS.map(t=>[t,t]),value=>c.setOption(key,value)));
+  options.append(choice('Visual inspection',d.visualSlot,INSPECTION_SLOTS.map(s=>[s,s==='none'?'OFF':s]),value=>c.setOption('visualSlot',value)));
   options.append(choice('Initial ally HP',d.hpRatio===null?'preset':String(d.hpRatio),[['preset','PRESET'],['1','100%'],['0.5','50%'],['0.25','25%']],value=>c.setOption('hpRatio',value==='preset'?null:Number(value))));
   options.append(choice('Control mode',d.controlMode,[['manual','MANUAL ENABLED'],['ai','AI ONLY']],value=>c.setOption('controlMode',value)));
   const typeCase=choice('Type case',d.typeCase,[['advantage','ADVANTAGE ×1.15'],['disadvantage','DISADVANTAGE ×0.85'],['same','SAME TYPE ×1.00']],value=>{c.setOption('typeCase',value);this.render();});typeCase.children[1].disabled=!labScenario(d.scenarioId).typeCases;options.append(typeCase);
