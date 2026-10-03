@@ -364,3 +364,97 @@ Concept B becomes approved only after explicit player acceptance of:
 
 Until then:
 **EXPLORATION ONLY — DO NOT PRODUCE FINAL BATCH1 ASSETS.**
+
+
+## 20. Current concept-sheet review against global hard rules
+
+Status:
+**CONCEPT REFERENCE USABLE / BATTLE VERSION REQUIRES SIMPLIFICATION / PLAYER APPROVAL STILL PENDING**
+
+The current Concept B sheet is useful as an identity and presentation reference. It should not be treated as a direct battle-sprite source.
+
+### What is working
+- clear white species-derived mythic head;
+- readable deer/horse lineage;
+- tall lean humanoid proportions;
+- long-leg Speed read;
+- single vermilion tail is a strong identity axis;
+- warm tawny body + broad dark markings separate 鹿蜀 from 九尾狐;
+- asymmetric light-melee posture remains distinct from 猼訑 and 狌狌.
+
+### Face review
+The current head is still somewhat close to a polished fantasy deer head.
+
+Keep:
+- white head;
+- deer/horse-derived skull;
+- compact horns;
+- amber focused eyes.
+
+For the next refinement, increase anthropomorphic acting slightly by:
+- shortening / simplifying the muzzle a little;
+- making brow / eye-socket expression clearer;
+- strengthening cheek / jaw character structure;
+- preserving clear mouth shapes for hit / cast / KO expressions.
+
+Do not revert to a normal human face with animal ears.
+
+### Battle-detail review
+Current concept-sheet detail density is too high for direct ~48px battle use.
+
+Concept-only or heavily simplified in battle:
+- multiple loose hair strands;
+- multiple hanging cloth strips / tassels;
+- small waist hardware;
+- layered armor trim;
+- fine weapon ornament;
+- small cyan charms;
+- detailed tail hair flow;
+- dense small material transitions.
+
+Battle version should retain:
+1. white mythic head;
+2. tall lean long-legged silhouette;
+3. one large separated red tail;
+4. warm tawny body;
+5. 2–3 broad tiger-marking groups;
+6. compact rear-swept horns;
+7. one simple short curved blade;
+8. slim forearm / shin guards.
+
+### Tail / trailing-element correction
+The single red tail must remain the dominant rear motion shape.
+
+For battle:
+- reduce or remove red cloth panels that compete with the tail;
+- avoid long black/red/teal strips behind the hips;
+- keep only minimal garment motion;
+- tail should read as one clean large shape rather than several hair-like strands.
+
+### Equipment correction
+Current concept equipment is acceptable for identity exploration but should be simplified for runtime.
+
+For battle:
+- reduce blade guard decoration;
+- simplify forearm/shin guards to one or two large shapes;
+- remove tiny buckles / engraved borders;
+- keep weapon length compact;
+- do not let equipment widen the silhouette toward Power.
+
+### Decision
+Do not discard the current concept sheet.
+
+Use it as:
+- identity reference;
+- face-direction reference;
+- collection-art direction;
+- costume/equipment source material.
+
+Do not use it directly as:
+- final battleIdle;
+- battleHit;
+- battleKo;
+- battleCast.
+
+Next Chat-owned visual step:
+**prepare a simplified battle-readable 鹿蜀 design pass derived from this concept, while keeping the current concept sheet as the richer presentation reference.**
