@@ -217,7 +217,12 @@ For non-trivial changes identify:
 
 ## 15. Art / asset rules
 - Mobile readability over fine detail.
-- Characters are anthropomorphic Shanhaijing creatures: human-readable combat silhouettes with preserved creature-defining traits.
+- **Default playable-character body plan is humanoid / anthropomorphic**, not a literal quadruped or natural-animal body. This is a production hard rule so locomotion, hit/KO/cast states, shared animation hooks, equipment handling, mirroring, and future character integration remain consistent.
+- Preserve each Shanhaijing creature's defining identity through creature traits layered onto the humanoid silhouette: head/face treatment, horns/antlers, ears, tails, wings, fur/feather/scale patterns, skin coloration, markings, claws/hooves, appendages, or other canonical traits.
+- Clothing, armor, props, tools and weapons are **not restricted to the classical text**. They may be invented to communicate gameplay identity, Type, Role and ability language, as long as the creature remains recognizable.
+- Visual gameplay language should reinforce mechanics where useful. Examples are non-exclusive: Blast characters may use explosive/energy-projecting devices or volatile motifs; Speed characters may use light gear, streamlined weapons or mobility-focused accessories; Power characters may use heavier weapons/gauntlets/armor or mass/impact motifs; flying characters may use wings, aerial gear or light silhouettes. Do not force every character into the same prop template.
+- Prefer a shared humanoid animation vocabulary across the roster: idle, locomotion, hit, KO, cast/attack anticipation and recovery should be reusable in structure even when the creature-specific motion differs.
+- Do not let decorative equipment obscure the creature-defining traits or the mobile combat silhouette.
 - Prototype assets may be placeholders.
 - Do not produce final roster art before the combat prototype passes.
 - Approved production art must not be regenerated/restyled merely because a new session begins.
