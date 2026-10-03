@@ -1,7 +1,7 @@
 # INFO Hub / Game Guide
 
 ## Status
-**CHAT SPEC / IMPLEMENTATION DEFERRED**
+**IMPLEMENTATION READY**
 
 This spec records the player-approved information architecture and visual direction for a future INFO entry on the Landing page. It is intentionally separate from the current M5B overlay/performance correction.
 
@@ -134,3 +134,56 @@ Do not add:
 - final art production
 
 Only document mechanics that are actually implemented or explicitly label future concepts.
+
+
+## Implementation acceptance
+
+The first implementation should satisfy:
+
+1. Landing shows BATTLE / COLLECTION / INFO as sibling entries.
+2. INFO opens a hub page, not a long single document.
+3. Hub contains exactly GAME GUIDE / WORLD / TYPE MATCHUP.
+4. Each subpage has BACK to INFO Hub; INFO Hub BACK returns Landing.
+5. INFO navigation does not mutate Campaign, acquisition, Tier, team, or battle state.
+6. Type Matchup uses an icon-only triangle in the main visual:
+   - Power icon top;
+   - Blast icon bottom-left;
+   - Speed icon bottom-right;
+   - directional arrows Power -> Speed -> Blast -> Power.
+7. The triangle itself contains no text labels.
+8. Below the triangle, exact text explains:
+   - Power beats Speed;
+   - Speed beats Blast;
+   - Blast beats Power;
+   - advantage x1.15;
+   - disadvantage x0.85;
+   - same Type x1.00.
+9. GAME GUIDE explains only currently live mechanics.
+10. WORLD explains the current game premise without inventing a deep canonical story that has not been approved.
+11. Every subpage reserves a media/illustration region for future static art or micro-animation.
+12. Placeholder media may be used; do not generate fake final art.
+13. Pages remain readable on supported iPhone landscape sizes and respect safe areas.
+14. No horizontal overflow.
+15. reduced-motion/no-motion remains fully usable.
+16. non-battle route visibility keeps the battle host detached/asleep.
+17. INFO must not eagerly import or preload the deferred battle runtime.
+18. targeted + impacted tests/build/deploy pass.
+
+## Implementation boundary
+
+Allowed:
+- new INFO route/state;
+- INFO hub and three subviews;
+- reusable Type icon triangle component;
+- placeholder media blocks;
+- scoped CSS;
+- data-driven content model for INFO copy.
+
+Do not implement:
+- AI dodge/telegraph reaction;
+- new combat mechanics;
+- changed type multipliers;
+- final illustrations;
+- micro-animation production;
+- audio;
+- extra INFO sections beyond the initial three.
