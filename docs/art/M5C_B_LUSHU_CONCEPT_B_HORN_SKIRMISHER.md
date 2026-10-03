@@ -84,8 +84,8 @@ Avoid:
 Concept B's defining equipment idea is **rush-oriented guard equipment**, not a conventional shield.
 
 Preferred components:
-- compact forearm guards;
-- hoof/shin impact guards;
+- slim compact forearm guards that do not widen the arm silhouette into a Power/bruiser read;
+- narrow hoof/shin impact guards that preserve the long-leg silhouette;
 - optional small horn-shaped short blade or side weapon;
 - compact waist attachment for mobility tools/talismans.
 
@@ -99,17 +99,19 @@ The guards should look like movement equipment, not Tank armor.
 ## 6. Primary weapon direction
 
 Preferred first exploration:
-**single short horn-blade + rush guards**
+**single short curved skirmisher blade + rush guards**
 
 Why:
 - keeps one hand visually freer than paired blades;
 - avoids generic dual-dagger assassin read;
-- links weapon geometry to the creature's horn identity;
 - reduces silhouette clutter;
-- supports asymmetric attacking poses.
+- supports asymmetric attacking poses;
+- avoids making both the head horns and handheld weapon repeat the same horn motif too literally.
+
+The weapon may echo the character's streamlined geometry, but should not look like a detached copy of the head horn.
 
 Alternative allowed for later comparison:
-- paired compact horn-blades.
+- paired compact light blades with restrained horn-inspired curvature.
 
 Not locked until player approval.
 
@@ -290,6 +292,34 @@ This image should communicate mobility, not depict a finished attack animation.
 - smaller forearms;
 - longer leg line;
 - weapon/guard precision rather than fist-heavy impact.
+
+
+## 17A. Final pre-image collision review
+
+Result:
+**PASS FOR NEXT CONCEPT IMAGE EXPLORATION — NOT PRODUCTION APPROVED**
+
+The direction is sufficiently distinct from the other four Chapter1 characters if the following controls are respected:
+
+1. Head horns remain the primary horn identity. Handheld weapons may echo streamlined curvature but must not duplicate the horns literally.
+2. Rush guards remain narrow and mobility-oriented. They must not create broad forearm mass comparable to 狌狌 or a defensive plate comparable to 猼訑.
+3. The silhouette priority remains legs > single tail > compact head horns > compact weapon. Equipment must not reverse that order.
+4. No long scarf, split ribbons or additional red trailing elements are permitted; the single red tail owns the rear motion axis.
+5. The torso stays relatively clean so at least one large tiger marking remains visible in collection and battle representations.
+6. At black-silhouette scale, equipment may disappear before the creature identity does. If the design only reads as 鹿蜀 because of the weapon, it fails.
+
+Remaining visual risk:
+- too much deer-antler branching makes the head wider and less aerodynamic;
+- too much forearm/shin armor shifts the read toward Power;
+- too many decorative straps or talismans create motion clutter next to the red tail;
+- an overly human face weakens creature identity.
+
+Therefore the first image exploration should intentionally use:
+- compact rear-swept horns;
+- one short curved skirmisher blade;
+- very slim rush guards;
+- minimal trailing accessories;
+- visible white head + tiger marking + single vermilion tail.
 
 ## 18. Player decision points
 
