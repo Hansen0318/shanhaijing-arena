@@ -91,6 +91,27 @@ Existing M6B/M6C geometry remains authoritative.
 - stage preview art;
 - optional chapter illustration polish.
 
+## 3A. Playable-character body-plan hard rule
+
+All normal playable roster characters use a **humanoid / anthropomorphic combat body plan** by default.
+
+Purpose:
+- one consistent animation vocabulary;
+- simpler shared idle / locomotion / hit / KO / cast production;
+- predictable equipment/weapon attachment;
+- easier mirroring and battle-sprite framing;
+- future-character scalability.
+
+Creature identity is preserved through head/face, horns, ears, tails, wings, fur/feather/scale patterns, markings, claws/hooves and other defining traits.
+
+Clothing, armor, props, tools and weapons may be newly designed for gameplay readability and are not limited to the classical text. Type / Role / ability identity may influence those choices. Examples are illustrative, not mandatory templates:
+- Blast: explosive/energy-projecting tools, volatile motifs, ranged devices;
+- Speed: streamlined/light gear, mobility-oriented weapons/accessories;
+- Power: heavier weapons, gauntlets, armor, impact-oriented props;
+- flying: wings or aerial/light equipment language.
+
+A literal animal/quadruped playable body is an exception and requires explicit player approval.
+
 ## 4. Asset style constraints
 
 - mobile-first readability;
