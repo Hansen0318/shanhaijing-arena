@@ -1,9 +1,11 @@
 # Project State
 
 ## Milestone
-**M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — IMPLEMENTATION READY**
 
 ## Current state
+- M6B is PLAYER VERIFIED. Current placeholder telegraph geometry is accepted for now and may be visually/timing-tuned later without changing the shared threat/dodge contract.
+- M6C is authorized: connect existing Tier state to combat through generic shared primitives and data-driven tier effect definitions; no accounting-cost changes and no per-character engine branches.
 - M6B E targeted50/50, impacted308/308, full475/475, build/diff PASS; independent4 Important findings fixed RED→GREEN; no unresolved blockers. Deployment/public verification complete. See docs/verification/M6B_COMBAT_TACTICAL_AI.md.
 - Release source `38cbac78b9aa6aaabcfa7de87c6202e13b984341`; [Actions #379 / 37096413415](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37096413415) Test/Build/Pages SUCCESS (build111127158627, deploy111127221878). Public Landing index--RrIFyks.js matches build, no modulepreload/host/canvas; normal URL Lab absent. Dev menu has10 presets; TELEGRAPH TEST START uses real Arena; capsule warnings visible; Pause, Restart, Exit→Lab verified, configuration retained and host/canvas removed. Cloud1363×936 no menu horizontal overflow. Physical iPhone feel/readability remains player smoke; automated storage snapshot contracts cover isolation.
 - M6B A–E complete. Next: one focused Lab smoke, then STOP; no new features. Recoverye36abeb9, no formal accounting mutations.
