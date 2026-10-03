@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **CHAPTER1 VISUAL DIFFERENTIATION REVIEW COMPLETE.** Five written humanoid directions were cross-checked for silhouette/Type/Role collision. Key separations are now explicit: 猼訑 guard mass vs 狌狌 forward bruiser; 赤鱬 restorative aquatic caster vs 九尾狐 offensive nine-tail burst; 鹿蜀 earthy tiger-marked mobility silhouette vs 九尾狐 ivory multi-tail caster. Canonical matrix: `docs/art/M5C_B_CHAPTER1_VISUAL_DIFFERENTIATION.md`. No production art locked.
 - **FOUR REMAINING CHAPTER1 HUMANOID VISUAL SPECS DRAFTED.** 猼訑 / 赤鱬 / 九尾狐 / 狌狌 now each have non-image concept specs under `docs/art/`. These define humanoid body plan, creature traits, role/type equipment language, portrait/collection/battleIdle and idle-motion direction. No images or production assets are approved; player can compare written directions before any further generation.
 - **鹿蜀 alternate humanoid exploration B/C in progress.** Player has not locked the first humanoid sheets; continue comparing distinct humanoid interpretations while preserving white head, tiger markings, red tail, Speed/Attacker role language and shared-animation body plan. No asset is production-approved yet.
 - **鹿蜀 visual exploration remains UNLOCKED.** First humanoid concept sheet is only an exploration sample; player has not approved likeness, equipment or final visual language yet. Continue comparing alternative humanoid directions before locking Batch1 assets or handing anything to Work.
