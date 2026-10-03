@@ -188,6 +188,13 @@ For M0, the eventual complete prototype release must have evidence for:
 - stable landscape runtime for the integrated combat surface.
 This does **not** mean every intermediate edit must rerun all of them.
 
+## 13A. Current branch / merge policy
+- The current project is intentionally continuing on the recorded long-lived feature branch / PR while milestone work remains in progress.
+- Recover and continue the branch/PR named in the CURRENT HANDOFF POINTER.
+- Do **not** merge to `main` merely because a new Work session starts.
+- Merge to `main` only when the current handoff explicitly authorizes it or the player approves milestone consolidation/release.
+- Feature-branch Pages/public verification may continue when that is the recorded release path.
+
 ## 13. Default delivery flow
 Unless the user explicitly requests feature-branch-only / no-merge / no-deploy:
 1. implement on a safe feature branch;
