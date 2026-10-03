@@ -213,9 +213,11 @@ After M5A approval, Work maps the approved content into the existing data-driven
 After formal data is stable, replace placeholders with approved visual assets, idle/micro-animation and skill VFX in bounded slices. AI tactical variation may be introduced alongside formal character profiles when needed, but must remain shared-engine/profile-driven.
 
 
-## Future INFO Hub
+## INFO Hub
 
-A future Landing sibling destination is approved:
+Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Evidence: `verification/INFO_HUB.md`.
+
+Landing sibling destinations:
 - BATTLE
 - COLLECTION
 - INFO

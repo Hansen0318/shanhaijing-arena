@@ -1,6 +1,6 @@
 # INFO Hub verification
 
-Status: RELEASE VERIFICATION PENDING / PLAYER SMOKE PENDING.
+Status: INFO HUB IMPLEMENTATION — ENGINEERING PASS / PLAYER SMOKE PENDING.
 
 ## Canonical recovery and scope
 Remote abe131de3ca45e783524510fed8ad6534a68357f on feat/m0-combat-core-20260927 / PR1; main16f73932a0399979ba79b92f93f5ce1c1d1909b9 inspected. Latest Actions37083335426 success. Prior overlay/performance player acceptance recovered from canonical handoff. Existing feature-branch Pages delivery retained; no delivery infrastructure change.
@@ -22,7 +22,9 @@ Same Vite build: entry71,960 bytes vs accepted67,234 (+4,726 bytes); battle chun
 Fingerprints: index-BdiMi8Tk.js, index-CCHQa3nv.css, battleRuntime-DhqO-uAr.js. CSS17,389 bytes.
 
 ## Independent review / release
-Independent read-only review12/12: no Critical/Important; Minor recruitment copy/language/focus addressed with RED→GREEN assertions. Re-review confirmed fixes; remaining Minor hub→Landing focus was also fixed and tested. Pending push/Actions/Pages/public verification.
+Independent read-only review12/12: no Critical/Important; Minor recruitment copy/language/focus addressed with RED→GREEN assertions. Re-review confirmed fixes; remaining Minor hub→Landing focus was also fixed and tested. Final tested/deployed source39561844877136940fcb09a3270d1bd35327f511; subsequent closure documentation-only. [Actions#365 /37088162820](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37088162820) SUCCESS: CI431/431 zero failures; Build111102623655 and Pages111102788768 success. Public/local/CI index-BdiMi8Tk.js / index-CCHQa3nv.css match; CI deferred battleRuntime-DhqO-uAr.js artifact present. Public HTML has no modulepreload.
+Public normal URL https://hansen0318.github.io/shanhaijing-arena/: Landing shows3 entries; Hub exactly3 pages, all subpages and BACK paths observed. Headings receive focus; Hub BACK restores focus to Landing INFO. Reload from Type subpage returns Landing. Collection/Chapter sibling navigation remains usable. INFO host absent, zero canvases throughout; no reset/save injection/battle/reward/upgrade performed. Observed page-origin error list empty.
+Cloud1363×936: root scrollWidth=clientWidth1363; Guide/Type body scrollWidth=clientWidth1323; BACK82.3×46px atx20/y12. Type screenshot inspected: icons-only triangle correctly directed, readable explanation below; no blue canvas. CSS/automated viewport contracts cover short landscape restoration; physical safe-area/short-height/readability acceptance remains pending (cloud tool has no viewport emulation control).
 
 ## Focused player smoke
 Normal https://hansen0318.github.io/shanhaijing-arena/ without reset. Landing INFO→each of3pages→BACK→Hub→BACK→Landing. On iPhone landscape/short-height: BACK accessible while scrolling, no horizontal overflow, readable icon-only triangle/arrows/explanation, placeholders and text contained. Rotate portrait/landscape and reload; no blue canvas. Existing Collection and Campaign remain available. No battle replay/reward/upgrade required.

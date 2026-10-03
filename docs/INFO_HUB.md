@@ -1,7 +1,7 @@
 # INFO Hub / Game Guide
 
 ## Status
-**IMPLEMENTED / RELEASE VERIFICATION PENDING**
+**ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 This spec records the player-approved information architecture and visual direction for a future INFO entry on the Landing page. It is intentionally separate from the current M5B overlay/performance correction.
 
@@ -190,3 +190,5 @@ Do not implement:
 
 ## Engineering traceability
 Read-only src/info/data.js + view.js + scoped style.css; Campaign route adapter; main imports only INFO CSS. Targeted40/40, impacted152/152, full431/431, build/diff PASS. Release evidence: verification/INFO_HUB.md. No motion dependency introduced.
+
+Release source39561844877136940fcb09a3270d1bd35327f511; Actions#365/37088162820 Test431/431/Build/Pages SUCCESS; public source and routes verified. Three Minor review copy/language/focus findings resolved. Player landscape/short-height acceptance pending; STOP.
