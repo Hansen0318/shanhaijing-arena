@@ -63,7 +63,7 @@ Acceptance gate before M3:
 
 ## M3 — Shard / Reward / Character Unlock Loop
 
-Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Canonical implementation/acceptance: `M3_SHARD_REWARD_UNLOCK.md`. M4 remains unauthorized.
+Status: **COMPLETE / superseded by accepted M4+ progression work**. Canonical implementation/acceptance: `M3_SHARD_REWARD_UNLOCK.md`.
 
 Goal: give Campaign stages meaningful visible rewards and connect victories to roster growth.
 
@@ -140,14 +140,14 @@ Do not use stars as a second uncontrolled progression system before its meaning 
 
 ## M4C — Main Menu / Landing Visual Polish
 
-**ENGINEERING PASS / PLAYER SMOKE PENDING.** Static prototype full-screen mountain/sun hero, title treatment and clean primary/secondary buttons are deployed. No formal artwork, animation, additional destinations or audio in this slice.
+**PASS / PLAYER VERIFIED.** Static prototype full-screen mountain/sun hero, title treatment and clean primary/secondary buttons are the accepted Landing baseline. Later INFO adds a third sibling entry without replacing this baseline.
 
 Fixed hierarchy:
 - BATTLE -> Chapter Select
 - COLLECTION -> Collection
 - Both top-level BACK paths -> Landing
 
-Navigation/progression/combat unchanged. Release evidence and player checklist: `docs/verification/M4C_MAIN_MENU_LANDING.md`. Await player acceptance and STOP; formal content and AI work require separate authorization.
+Navigation/progression/combat remained unchanged in M4C. Release evidence: `docs/verification/M4C_MAIN_MENU_LANDING.md`. Player acceptance is complete; later milestones supersede its historical STOP.
 
 ## Formal content after progression skeletons
 
@@ -189,7 +189,7 @@ Where practical, preserve clean event hooks such as battleStart, skillCast, hit,
 
 ## M5A — Formal Chapter 1 Content Definition
 
-Status: **CHAT-FIRST / DESIGN PENDING**.
+Status: **CONTENT APPROVED / COMPLETE**.
 
 Goal: replace engineering placeholders with an approved formal Chapter1 content sheet before Work changes runtime data.
 
