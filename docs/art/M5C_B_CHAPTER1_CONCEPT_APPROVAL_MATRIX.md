@@ -25,6 +25,9 @@ All normal playable Chapter1 characters:
 - must pass silhouette / role / equipment collision review before production lock;
 - must remain readable at mobile battle scale;
 - must not be converted back to literal quadrupeds unless the player explicitly approves an exception.
+- use species-derived mythic anthropomorphic faces rather than a shared human facial template;
+- remain expressive enough for character acting while preserving source-species skull/muzzle/eye/ear/jaw identity;
+- when multiple characters share a species family, differentiate facial morphology structurally, not merely by color, hair, horns or costume.
 
 Current reusable animation archetypes are starter families, not a closed taxonomy.
 
@@ -130,6 +133,8 @@ Before Batch1 production art is locked, compare all five together in one review 
 6. 鹿蜀 vs 九尾狐 tail/color language remains distinct;
 7. all five still fit shared/reusable animation production;
 8. no character-specific one-off animation architecture has been introduced.
+9. no two same-family characters depend on the same human-face base with only accessory/color swaps;
+10. each same-family character has at least two structural head/face differentiators visible without costume.
 
 ## Production lock rule
 
