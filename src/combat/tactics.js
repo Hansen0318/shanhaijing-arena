@@ -15,7 +15,7 @@ export function safePosition({actor,target,enemies,allies,profile,bounds,geometr
   return (geometry&&containsDanger(p,geometry)?-1000:0)+near*3-Math.abs(d(p,target)-preferred)*.4+spacing*.4+(previous?Math.max(0,1-d(p,previous))*.3:0);
  };
  const current=score(actor);return directions.map(([x,y],index)=>({p:point({x:actor.x+x*step,y:actor.y+y*step},bounds),index})).filter(c=>d(c.p,actor)>.05)
- .map(c=>({...c,score:score(c.p)})).filter(c=>c.score>current+.05&&(!geometry||!containsDanger(c.p,geometry)))
+ .map(c=>({...c,score:score(c.p)})).filter(c=>c.score>current+.05&&(!geometry||!containsDanger(c.p,{...geometry,radius:geometry.radius+.08})))
  .sort((a,b)=>b.score-a.score||a.index-b.index)[0]?.p??null;
 }
 export function decideTacticalIntent(c) {
@@ -23,20 +23,22 @@ export function decideTacticalIntent(c) {
  if(actor.hp<=0||c.playerControlled){for(const k of Object.keys(s))delete s[k];return {kind:'idle',reason:actor.hp<=0?'ko':'player_override',targetId:target?.instanceId??null};}
  if(!target)return b;
  const wrap=(phase,destination=null)=>({...b,kind:destination?'move':b.kind,pursue:false,targetId:target.instanceId,tacticalState:phase,...(destination?{movement:'destination',destination}:{} )});
- if(s.until>n&&s.targetId===target.instanceId&&s.destination)return b.kind==='ability'&&c.supportAbility?{...b,pursue:false,tacticalState:s.phase,destination:s.destination}:wrap(s.phase,s.destination);
  let phase='engage',destination=null;
  const dist=d(actor,target),nearest=Math.min(...c.enemies.filter(e=>e.hp>0).map(e=>d(actor,e)),Infinity),hp=actor.hp/actor.maxHp;
- const incoming=c.threats.filter(t=>t.sourceTeamId!==actor.teamId&&t.dodgeable&&containsDanger(actor,t.geometry)).sort((a,b)=>a.impactAtMs-b.impactAtMs||b.severity-a.severity||a.id.localeCompare(b.id));
+ const incoming=c.threats.filter(t=>t.sourceTeamId!==actor.teamId&&(t.area||t.targetId===actor.instanceId)&&t.dodgeable&&containsDanger(actor,t.geometry)).sort((a,b)=>a.impactAtMs-b.impactAtMs||b.severity-a.severity||a.id.localeCompare(b.id));
  for(const t of incoming){
   if(c.committed||c.speed<=0||n<t.createdAtMs+p.evadeReactionMs||t.impactAtMs-n<p.evadeReactionMs)continue;
   s.considered??={};if(!Object.hasOwn(s.considered,t.id))s.considered[t.id]=c.random()<p.evadeTendency;
   if(!s.considered[t.id])continue;
+  if(s.phase==='evade'&&s.until>n&&s.destination&&d(actor,s.destination)<=c.speed*(t.impactAtMs-n)/1000+.05&&!containsDanger(s.destination,{...t.geometry,radius:t.geometry.radius+.08})){destination=s.destination;phase='evade';break;}
   const step=Math.min(1.2,c.speed*(t.impactAtMs-n)/1000);
   destination=safePosition({...c,geometry:t.geometry,step,previous:s.destination});if(destination){phase='evade';break;}
  }
  // Drop old threat roll decisions; no unbounded accumulation in long fights.
  if(s.considered){const ids=new Set(c.threats.map(t=>t.id));for(const id of Object.keys(s.considered))if(!ids.has(id))delete s.considered[id];}
  if(!destination){
+  // Urgent threats are checked first; regular objectives remain held to prevent jitter.
+  if(s.until>n&&s.targetId===target.instanceId&&s.destination)return b.kind==='ability'&&c.supportAbility?{...b,pursue:false,tacticalState:s.phase,destination:s.destination}:wrap(s.phase,s.destination);
   const recovering=['retreat','recover/support'].includes(s.phase);
   if(recovering&&(hp>=p.reengageHpThreshold||n-s.retreatAt>=2800)){
    phase='regroup';s.retreatBlockedUntil=n+2000;s.retreatAt=null;

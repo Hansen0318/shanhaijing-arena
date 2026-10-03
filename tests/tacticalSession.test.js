@@ -36,3 +36,14 @@ test('seeded tactics and simulation repeat while new sessions clear transient th
  const a=make(),b=make();for(let i=0;i<120;i++){a.step(.05);b.step(.05);}assert.deepEqual(a.snapshot(),b.snapshot());assert.deepEqual([...a.tacticalStates],[...b.tacticalStates]);assert.equal(make().threats.active(0).length,0);
  assert.ok(a.tacticalEvaluations<=a.actors.length*25+6);
 });
+test('formal healer heals while retreating and ranged/backstep avoids tank/bruiser inheritance',()=>{
+ const h=make('healer-retreat');h.step(.05);assert.ok(h.drainHealEvents().some(e=>e.actorId==='a3'));assert.ok(['retreat','recover/support','regroup'].includes(h.tacticalStates.get('a3').phase));
+ const r=make('ranged-kite');r.step(.05);assert.equal(r.tacticalStates.get('a2').phase,'kite');assert.notEqual(r.tacticalStates.get('a1').phase,'kite');assert.notEqual(r.tacticalStates.get('e1').phase,'kite');
+});
+test('four Lab scenarios naturally exercise tactics within bounded work and complete without perpetual retreat',()=>{
+ for(const id of ['dodge','telegraph','healer-retreat','ranged-kite']){
+  const s=createLabBattleSession(createLabConfig({scenarioId:id}),{seed:41}),states=new Set();let steps=0;
+  while(s.result()==='running'&&s.elapsedSeconds<60){s.step(.05);steps++;for(const state of s.tacticalStates.values())if(state.phase)states.add(state.phase);}
+  assert.ok(s.tacticalEvaluations<=steps*6/5+12);assert.ok(states.has(id==='dodge'?'evade':id==='healer-retreat'?'regroup':id==='ranged-kite'?'kite':'evade'));assert.notEqual(s.result(),'running');
+ }
+});

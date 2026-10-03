@@ -20,7 +20,8 @@ test('routing consumes lineup, formation, duration and returns fresh sessions fo
  assert.throws(()=>createStageBattleSession({...config,enemyLineup:['missing','enemy','enemy']}));
 });
 test('stage battle completes Victory under unchanged graybox rules',()=>{
- const session=createStageBattleSession(findStage('1-1'));
+ // Protected legacy graybox outcome; production tactics are separately tested for deterministic termination.
+ const session=createStageBattleSession(findStage('1-1'),{tacticalEnabled:false});
  for(let i=0;i<1801 && session.result()==='running';i++) session.step(.05);
  assert.equal(session.result(),'victory');
 });

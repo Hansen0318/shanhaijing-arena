@@ -20,6 +20,8 @@ export class TelegraphPresenter {
     const corners=[[a,1],[b,1],[b,-1],[a,-1]].map(([v,side])=>this.project({x:v.x-dy/len*r*side,y:v.y+dx/len*r*side}));
     g.fillStyle(color,.12+.12*p.progress).lineStyle(3,color,1).beginPath().moveTo(corners[0].x,corners[0].y);
     for(const v of corners.slice(1))g.lineTo(v.x,v.y);g.closePath().fillPath().strokePath();
+    // Shared lane hit geometry is a capsule, including both endpoint discs.
+    for(const end of [p.origin,p.center]){g.fillStyle(color,.12+.12*p.progress).fillEllipse(end.x,end.y,p.radiusX*2,p.radiusY*2);g.lineStyle(3,color,1).strokeEllipse(end.x,end.y,p.radiusX*2,p.radiusY*2);}
     g.lineStyle(2,0xffffff,.8).lineBetween(p.origin.x,p.origin.y,p.center.x,p.center.y);
    }
   }

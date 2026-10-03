@@ -1,9 +1,10 @@
 # Project State
 
 ## Milestone
-**M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IN PROGRESS / D COMPLETE**
+**M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
 
 ## Current state
+- M6B E targeted50/50, impacted308/308, full475/475, build/diff PASS; independent4 Important findings fixed RED→GREEN; no unresolved blockers. Deployment/public verification pending. See docs/verification/M6B_COMBAT_TACTICAL_AI.md.
 - M6B A contracts targeted29/29 PASS; gameplay integration pending B–E; recoverye36abeb9, no formal accounting mutations.
 - M6A Developer Battle Lab is PLAYER VERIFIED. Its isolation contract and dev-only workflow are now protected baseline.
 - M6B is authorized as one coherent batch milestone. It may add shared/profile-driven tactical AI and telegraph/dodge reaction, but must not add bespoke character-ID behavior or alter progression/accounting.

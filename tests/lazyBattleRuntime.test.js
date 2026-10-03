@@ -22,3 +22,8 @@ test('stale Phaser boot sleeps after Phaser starts the loop following postBoot',
  vm.runInNewContext(source+'\ncreateArenaGame({data:{},isCurrent:()=>false,onBoot(){}});',context);
  assert.equal(instance.loop.running,true);await Promise.resolve();assert.equal(instance.loop.running,false);
 });
+test('Landing/preview static dependency graph contains no battle session, tactical engine or Phaser',async()=>{
+ const {readFileSync}=await import('node:fs');const {resolve,dirname}=await import('node:path');const visited=new Set();
+ function walk(file){if(visited.has(file))return;visited.add(file);const source=readFileSync(file,'utf8');for(const match of source.matchAll(/^import(?:\s+[\s\S]*?\sfrom)?\s*['"]([^'"]+)['"];/gm)){const ref=match[1];if(ref.startsWith('.')&&ref.endsWith('.js'))walk(resolve(dirname(file),ref));}}
+ walk(resolve('src/main.js'));assert.ok(![...visited].some(f=>/battleSession\.js|tactics\.js|ArenaScene\.js|demoBattle\.js/.test(f)));
+});

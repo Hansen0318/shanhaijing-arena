@@ -18,7 +18,7 @@ export class ThreatLedger {
   const t=definition.telegraph;if(!t||!target)return null;
   const origin=Object.freeze({x:actor.x,y:actor.y});const point=definition.effect.areaCenter==='caster'?actor:target;
   const geometry=Object.freeze({shape:t.dangerShape,origin,center:Object.freeze({x:point.x,y:point.y}),radius:t.dangerRadius});
-  const record=Object.freeze({id:`threat-${++this.sequence}`,sourceId:actor.instanceId,sourceTeamId:actor.teamId,targetId:target.instanceId,createdAtMs:nowMs,impactAtMs:nowMs+t.telegraphMs+t.projectileTravelMs,geometry,category:definition.category,severity:definition.category==='awakening'?3:definition.category==='special'?2:1,dodgeable:t.dodgeable,commitment:t.commitment,interruptible:t.interruptible});
+  const record=Object.freeze({id:`threat-${++this.sequence}`,sourceId:actor.instanceId,sourceTeamId:actor.teamId,targetId:target.instanceId,area:definition.effect.areaRadius!=null,createdAtMs:nowMs,impactAtMs:nowMs+t.telegraphMs+t.projectileTravelMs,geometry,category:definition.category,severity:definition.category==='awakening'?3:definition.category==='special'?2:1,dodgeable:t.dodgeable,commitment:t.commitment,interruptible:t.interruptible});
   this.records.set(record.id,record);return record;
  }
  active(nowMs){return [...this.records.values()].filter(t=>t.impactAtMs>=nowMs).sort((a,b)=>a.impactAtMs-b.impactAtMs||a.id.localeCompare(b.id));}

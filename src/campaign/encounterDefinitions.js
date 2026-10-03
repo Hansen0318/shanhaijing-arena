@@ -1,4 +1,4 @@
-import { runtimeCharacterDefinitions } from '../runtime/demoBattle.js';
+import { runtimeCharacterDefinitions } from '../runtime/demoDefinitions.js';
 import { rosterCatalog } from '../roster/catalog.js';
 // Single immutable lookup shared by encounter preview and battle instantiation.
 export const encounterDefinitions=Object.freeze({...runtimeCharacterDefinitions,...rosterCatalog});

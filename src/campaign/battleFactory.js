@@ -1,7 +1,7 @@
 import { createCharacterState } from '../combat/character.js';
 import { createBattleSession } from '../combat/battleSession.js';
 import { formalAbilityDefinitions } from '../roster/abilities.js';
-import { runtimeAbilityDefinitions } from '../runtime/demoBattle.js';
+import { runtimeAbilityDefinitions } from '../runtime/demoDefinitions.js';
 import { encounterDefinitions, stageEnemyDefinitions } from './encounterDefinitions.js';
 import { prototypeOwnership } from '../roster/catalog.js';
 import { isValidTeam } from '../roster/team.js';

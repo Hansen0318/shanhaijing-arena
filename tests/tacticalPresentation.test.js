@@ -16,3 +16,8 @@ test('four tactical Lab presets use formal data, useful initial conditions and i
  const h=createLabBattleSession(createLabConfig({scenarioId:'healer-retreat'}));assert.ok(h.allies[2].hp/h.allies[2].maxHp<.32);
  const r=createLabBattleSession(createLabConfig({scenarioId:'ranged-kite'}));assert.ok(Math.hypot(r.allies[1].x-r.enemies[0].x,r.allies[1].y-r.enemies[0].y)<2.4);
 });
+test('projectile lane paints both projected endpoint caps used by shared hit geometry',()=>{
+ const ellipses=[];const g=new Proxy({},{get:(o,k)=>k==='fillEllipse'?(...args)=>{ellipses.push(args);return g;}:()=>g});const p=new TelegraphPresenter({add:{graphics:()=>g}},arenaToStage);
+ const lane={...threat,geometry:{...threat.geometry,shape:'lane',radius:.45}};p.render([lane],300);
+ assert.equal(ellipses.length,2);assert.deepEqual(ellipses.map(e=>e.slice(0,2)),[arenaToStage(lane.geometry.origin),arenaToStage(lane.geometry.center)].map(p=>[p.x,p.y]));
+});
