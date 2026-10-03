@@ -4,6 +4,7 @@
 **M5C-B FORMAL ASSET INTEGRATION — CHAT ASSET AUTHORING / BATCH PREPARATION**
 
 ## Current state
+- Chapter1 concept approval control sheet now exists at `docs/art/M5C_B_CHAPTER1_CONCEPT_APPROVAL_MATRIX.md`. It separates locked creature/body-plan/Type/Role/silhouette constraints from optional equipment/clothing/face exploration, records cross-character collision controls, and keeps all five concepts unapproved until explicit player acceptance.
 - Five-character silhouette/role collision review is complete in `docs/art/M5C_B_CHAPTER1_VISUAL_DIFFERENTIATION.md`. Written directions are distinct enough for further concept work, but no production art is locked. Generic 'continue' should advance specs/review, not automatically generate another image.
 - Written humanoid concept specs now exist for all five Chapter1 characters. No production art is locked. Current task is player review of character-direction consistency before generating or integrating any further assets.
 - 鹿蜀 first humanoid concept is under visual review only; no production asset is approved yet. Continue alternate concept exploration before asset lock or Work integration.
