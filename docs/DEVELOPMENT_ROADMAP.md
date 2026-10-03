@@ -8,15 +8,19 @@ Do not start a later milestone by bypassing the data/contracts required by the e
 
 Current order:
 
-1. **M2 — Team Select / Roster Skeleton**
-2. **M3 — Shard / Reward / Character Unlock Loop**
-3. **M4A — Collection / Roster Hub (read-only progression view)**
-4. **M4B — Tier Upgrade / Character Growth**
-5. **M4C — Main Menu / Landing Visual Polish**
-6. **M5A — Formal Chapter 1 Content Definition**
-7. **M5B — Formal Character / Stage Data Integration**
-8. **M5C — Art / Animation / VFX Integration**
-9. Audio pass after core flow and visual timing are stable
+1. **M2 — Team Select / Roster Skeleton** — complete
+2. **M3 — Shard / Reward / Character Unlock Loop** — complete
+3. **M4A — Collection / Roster Hub** — complete
+4. **M4B — Tier Upgrade / Character Growth** — complete
+5. **M4C — Main Menu / Landing Visual Polish** — complete
+6. **M5A — Formal Chapter 1 Content Definition** — complete
+7. **M5B — Formal Character / Stage Data Integration** — complete
+8. **INFO Hub** — complete
+9. **M6A — Developer Battle Lab** — complete
+10. **M6B — Combat Tactical AI / Telegraph / Dodge Batch** — complete
+11. **M6C — Tier Combat Effects / Shared Status Primitives** — current / implementation ready
+12. **M5C — Art / Animation / VFX Integration** — deferred until gameplay systems above are stable
+13. Audio pass after core flow and visual timing are stable
 
 M3 depends on M2 roster ownership/team-selection contracts.  
 M4 depends on M3 shard inventory/unlock/reward contracts.
@@ -215,7 +219,7 @@ After formal data is stable, replace placeholders with approved visual assets, i
 
 ## INFO Hub
 
-Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Evidence: `verification/INFO_HUB.md`.
+Status: **PASS / PLAYER VERIFIED**. Evidence: `verification/INFO_HUB.md`.
 
 Landing sibling destinations:
 - BATTLE
@@ -248,7 +252,7 @@ Future work should prefer coherent batch milestones with internal checkpoints an
 
 ## M6A — Developer Battle Lab
 
-Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Evidence: `docs/verification/M6A_DEVELOPER_BATTLE_LAB.md`.
+Status: **PASS / PLAYER VERIFIED**. Evidence: `docs/verification/M6A_DEVELOPER_BATTLE_LAB.md`.
 
 Goal:
 - create a dev-only isolated combat test harness to reduce repeated setup time for future character, ability, AI, Type, healing, AoE and Tier-behavior testing.
@@ -274,7 +278,7 @@ Hard isolation:
 
 ## M6B — Combat Tactical AI / Telegraph / Dodge Batch
 
-Status: **ENGINEERING PASS / PLAYER SMOKE PENDING**. Canonical spec: `docs/M6B_COMBAT_TACTICAL_AI.md`; evidence: `docs/verification/M6B_COMBAT_TACTICAL_AI.md`. A–E complete, Actions/Pages/public entry verified; next is one focused Lab smoke.
+Status: **PASS / PLAYER VERIFIED**. Canonical spec: `docs/M6B_COMBAT_TACTICAL_AI.md`; evidence: `docs/verification/M6B_COMBAT_TACTICAL_AI.md`. A–E complete and player accepted the current tactical/telegraph baseline.
 
 Implement one coherent tactical-combat milestone rather than many micro-slices.
 
