@@ -19,6 +19,8 @@ Shared structure does **not** mean shared silhouette.
 
 Each character must be distinguishable from body shape + major appendage + equipment language alone, before color is considered.
 
+Battle differentiation must survive simplification. Concept-sheet micro-detail does not count as a valid differentiator if it disappears at mobile runtime scale. For battle assets, compare large silhouette, species/head shape, appendage count/shape, posture, broad markings and compact equipment only.
+
 Head/face differentiation is also structural. A humanoid body does not imply a shared human face base. Each character should use species-derived mythic facial morphology; repeated species families must vary skull/muzzle/eye/ear/horn/jaw structures so identity does not depend on costume or recoloring.
 
 ## 2. Five-character silhouette signatures
