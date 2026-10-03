@@ -26,6 +26,9 @@ Direction:
 - predominantly white head and upper neck;
 - horse/deer-derived elongated facial plane, but shortened enough to remain expressive in a humanoid game character;
 - eyes alert and focused rather than feral;
+- face target is **mythic anthropomorphic**, not a fully naturalistic deer head and not a human face with deer add-ons;
+- shorten and stylize the muzzle enough to support clear brow/eye/mouth expression while keeping horse/deer-derived bone structure;
+- eye socket, cheek and jaw design should carry character identity even if horns, hair and costume are hidden;
 - ears swept slightly outward/backward;
 - compact horn/antler treatment integrated into the head silhouette.
 
@@ -325,10 +328,11 @@ Therefore the first image exploration should intentionally use:
 
 Before Concept B can be approved, player still decides:
 
-1. face balance:
-   - more horse;
-   - more deer;
-   - more abstract mythic beast.
+1. face balance inside the species-derived mythic range:
+   - more horse-derived;
+   - more deer-derived;
+   - more abstract mythic-beast;
+   - all options must preserve expressive anthropomorphic eye/brow/mouth acting and must not revert to either a normal human face or a fully naturalistic animal head.
 
 2. horn treatment:
    - short paired swept horns;
