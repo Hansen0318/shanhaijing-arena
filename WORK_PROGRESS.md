@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **INFO HUB / TYPE MATCHUP SPEC RECORDED:** future Landing sibling INFO -> GAME GUIDE / WORLD / TYPE MATCHUP. Type page uses icon-only triangle (Power top, Blast bottom-left, Speed bottom-right) with arrows Power>Speed>Blast>Power; explanatory text below keeps live x1.15/x0.85/x1.00 values. Each page reserves future illustration/micro-animation space. Canonical spec: `docs/INFO_HUB.md`. Not implemented yet.
+- **FUTURE AI DODGE / TELEGRAPH DESIGN RECORDED:** AI may later react only to dodgeable telegraphed projectiles/AoE/high-threat attacks using sidestep/backstep/diagonal safe positions, never perfect evasion. Player manual movement already enables natural dodging. Shared declarative ability metadata/profile-driven logic required; no character-ID branches. Canonical: `docs/AI_SYSTEM.md`. Deferred from current slice.
 - **M5B FOLLOW-UP OVERLAY / PERFORMANCE PASS — ENGINEERING PASS / PLAYER SMOKE PENDING.** Bounded lifecycle correction: non-battle host detached, renderer asleep; no hidden-canvas viewport refresh. Cold battle runtime lazy-loads; loading menu inert, failed/stale entry safe. No progression/combat/Chapter data changes.
 - Active branch feat/m0-combat-core-20260927 / PR#1 retained; no main merge. Targeted29/29, impacted136/136, full419/419, build/diff PASS; independent review findings resolved, no remaining blockers.
 - Initial JS1,458,758→67,234 bytes (95.39% reduction). Battle1,393,903-byte chunk deferred to first battle. SVG36 total17,454 bytes/max495; no oversized images. Physical phone load timing and exact blue compositor artifact remain player smoke; desktop did not reproduce it.
