@@ -7,7 +7,7 @@ export class PersistentAreas{
  create({sourceId,sourceTeamId,center,spec,definition=null,category='awakening',source='ai'},now){
   validateArea(spec);if(!sourceId||!sourceTeamId||!Number.isFinite(center?.x)||!Number.isFinite(center?.y)||!Number.isFinite(now)||now<0)throw new TypeError('Invalid area identity/geometry');
   if(this.records.size>=12)this.remove(this.records.keys().next().value);
-  const record=freezeEffectData({id:`area-${++this.sequence}`,sourceId,sourceTeamId,geometry:{shape:'circle',center:{...center},origin:{...center},radius:spec.radius},spec:structuredClone(spec),definition,category,source,startTime:now,expiryTime:now+spec.duration});
+  const record=freezeEffectData({id:`area-${++this.sequence}`,sourceId,sourceTeamId,geometry:{shape:'circle',center:{x:center.x,y:center.y},origin:{x:center.x,y:center.y},radius:spec.radius},spec:structuredClone(spec),definition,category,source,startTime:now,expiryTime:now+spec.duration});
   this.records.set(record.id,record);this.nextTicks.set(record.id,now+(spec.behavior==='impact'?0:spec.interval));return record;
  }
  tick(now,actors,apply){
