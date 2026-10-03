@@ -1,6 +1,14 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M5C-A ASSET PIPELINE — IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS.** Generic manifest/resolver/menu fallback, encounter-only lazy cache, animation/VFX descriptor playback and Arena/Lab adapter complete. No final art integrated; M0–M6C accepted gameplay/AI/Tier/progression preserved.
+- Active feat/m0-combat-core-20260927 / PR1 per AGENTS13A, main untouched. Recovery015618fa; A700f72b6/B0de99b3f/Cdcb1d6cf/Df646c545 safe pushes complete. E targeted56/56, impacted375/375, full542/542/build/diff PASS.
+- Independent review0 Critical/5 Important; all RED→GREEN fixed. Late graphics→image replacement, decoded fallback chain, ability-only load plan, target attachment/KO, reference guard coverage. No unresolved findings/deferred minors.
+- Actual asset guard37 files/17,703 bytes; cache64 entries/16MiB decoded RGBA/2 parallel loads; scene textures64/16MiB, VFX64/10s. Entry81,218 bytes vs M6C76,859 (+4,359); CSS19,133 unchanged, battle1,443,740 deferred. No deps; normal menu graph excludes heavy pipeline/Phaser.
+- Canonical docs/M5C_ART_ANIMATION_VFX.md; authoring docs/ASSET_PIPELINE.md; plan docs/M5C_A_IMPLEMENTATION_PLAN.md; evidence docs/verification/M5C_A_ASSET_PIPELINE.md. Lab Visual inspection is cosmetic/session-only, formal save untouched.
+- Next: release push→Actions/Pages/public normal/dev/source verification→closure, then one focused player visual smoke. STOP before M5C-B final art/VFX/audio/Chapter2/new economy.
+
+## Previous M6C accepted handoff (historical)
 - M5C-A IN PROGRESS / A complete: validated immutable manifest, standard nine slots, central existing previews and placeholders; future-character data refs. Targeted14/14 PASS. B resolver/cache/menu integration complete; targeted/impacted98/98 PASS. Cache requested-only/concurrent decode sharing, missing/failed metadata-safe fallback and bounded residency. C immutable animation/VFX descriptors and battle-clock playback complete; targeted13/13 PASS. D shared Arena/Lab presentation integration complete: encounter-only assets, optional state/HUD/stage/status/skill overlays, cast descriptor playback, dev Visual inspection and scene-owned cleanup. Targeted52/52/full532/532 PASS. E guard/review/release next. Active feature/PR1, no gameplay/economy changes.
 - **M5C-A ASSET PIPELINE — IMPLEMENTATION READY.** Build one generic manifest/fallback/lazy-loading/animation/VFX descriptor pipeline using existing placeholders; do not integrate final art one file at a time. Canonical: `docs/M5C_ART_ANIMATION_VFX.md`. M5C-B later consumes approved asset batches.
 - **M6C TIER COMBAT EFFECTS / SHARED STATUS PRIMITIVES — PASS / PLAYER VERIFIED.** Player accepted current T0–T3 mechanic differentiation as the working balance baseline. Exact Tier magnitudes/timings/coverage may be tuned later without changing shard costs/accounting or the shared generic status/effect architecture.

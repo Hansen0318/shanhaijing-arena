@@ -1,7 +1,7 @@
 # M5C — Art / Animation / VFX Integration
 
 ## Status
-**CHAT SPEC / PIPELINE IMPLEMENTATION READY**
+**M5C-A IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
 
 Gameplay/progression through M6C is PLAYER VERIFIED. M5C now focuses on visual integration without changing accepted combat, progression, AI, Tier, reward, or save semantics.
 
@@ -239,3 +239,6 @@ Do not start:
 - star/rarity/level systems;
 - complex skeletal animation pipeline;
 unless separately approved.
+
+## M5C-A engineering implementation
+Central manifest and all9 standard slots, safe menu/battle fallback, encounter-only decode cache, generic animation/VFX playback and Arena/Lab adapter are implemented. Exact authoring contract and budgets: `ASSET_PIPELINE.md`. Targeted56/56, impacted375/375, full542/542/build/diff PASS; independent5 Important resolved RED→GREEN. Exact deployment/public evidence: `verification/M5C_A_ASSET_PIPELINE.md`. No production character/art batch/audio/Chapter2 or gameplay change; M5C-B is separately authorized future work.

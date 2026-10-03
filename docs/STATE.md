@@ -1,9 +1,10 @@
 # Project State
 
 ## Milestone
-**M5C-A ASSET PIPELINE — IMPLEMENTATION READY**
+**M5C-A ASSET PIPELINE — IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
 
 ## Current state
+- M5C-A A–E implemented; targeted56/56, impacted375/375/full542/542/build/diff PASS; independent5 Important fixed RED→GREEN/no unresolved findings. Asset guard37 files/17,703 bytes, entry81,218 bytes (+4,359 pure menu data), deferred battle runtime. Actions/Pages/public verification next. Authoring ASSET_PIPELINE.md; evidence verification/M5C_A_ASSET_PIPELINE.md.
 - M5C-A IN PROGRESS / A complete: validated immutable manifest, standard nine slots, central existing previews and placeholders; future-character data refs. Targeted14/14 PASS. B resolver/cache/menu integration complete; targeted/impacted98/98 PASS. Cache requested-only/concurrent decode sharing, missing/failed metadata-safe fallback and bounded residency. C immutable animation/VFX descriptors and battle-clock playback complete; targeted13/13 PASS. D shared Arena/Lab presentation integration complete: encounter-only assets, optional state/HUD/stage/status/skill overlays, cast descriptor playback, dev Visual inspection and scene-owned cleanup. Targeted52/52/full532/532 PASS. E guard/review/release next. Active feature/PR1, no gameplay/economy changes.
 - M5C canonical visual workflow is defined in `docs/M5C_ART_ANIMATION_VFX.md`: build reusable manifest/fallback/lazy-load/VFX-animation descriptors first, then integrate approved art in coherent batches rather than one file at a time.
 - M6C Tier combat effects are PLAYER VERIFIED. Current mechanic strengths/timings are accepted as a playtest baseline and may be tuned later; preserve generic shared primitives and existing Tier costs/accounting.

@@ -182,7 +182,7 @@ test('manual air-cast emits visible cast intent without remote damage', () => {
   assert.equal(e2.hp, hp);
   assert.deepEqual(session.drainCastEvents(), [{
     actorId: 'a2', category: 'special', source: 'player',
-    origin: { x: a2.x, y: a2.y }, target: { x: e2.x, y: e2.y }, hit: false,
+    origin: { x: a2.x, y: a2.y }, target: { x: e2.x, y: e2.y }, targetId:e2.instanceId, hit: false,
     minRange: 0, maxRange: 2.5,
   }]);
   assert.deepEqual(session.drainCastEvents(), []);

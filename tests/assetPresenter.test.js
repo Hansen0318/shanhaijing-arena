@@ -24,3 +24,22 @@ test('unknown/failed image slots leave real combat running and retained session 
  const defs=Object.fromEntries(Object.entries(session.characterDefinitions).map(([id,d])=>[id,{...d,assets:{...d.assets,battleIdle:'does-not-exist'}}]));await p.prepare([...session.allies,...session.enemies].map(a=>defs[a.definitionId]));
  let steps=0;while(session.result()==='running'&&steps++<1800){session.step(.05);p.render(session.snapshot(),session.elapsedSeconds,defs);}assert.notEqual(session.result(),'running');p.destroy();
 });
+function faithfulScene(){
+ const s=scene(),created=[];const common=kind=>{const v={kind,destroyed:false,x:0,y:0,destroy(){this.destroyed=true;},setPosition(x,y){this.x=x;this.y=y;return this;}};for(const k of ['setDepth','setAlpha','setScale','setVisible','setRotation','setOrigin','setDisplaySize'])v[k]=()=>v;created.push(v);return v;};
+ s.add.graphics=()=>{const v=common('graphics');for(const k of ['clear','lineStyle','lineBetween','strokeCircle','fillStyle','fillCircle'])v[k]=()=>v;return v;};s.add.image=()=>{const v=common('image');v.setTexture=()=>v;return v;};s.created=created;return s;
+}
+test('late flipbook texture replaces Graphics fallback with an image safely',async()=>{
+ let resolve;const cache=createAssetCache({transport:()=>new Promise(r=>resolve=r)}),s=faithfulScene(),p=new api.AssetPresenter(s,{cache}),session=createLabBattleSession(createLabConfig()),character=session.characterDefinitions[session.allies[0].definitionId];
+ const pending=p.loadKeys(['placeholder.actor-strip']);const ability={presentation:{vfx:{form:'flipbook',assetKey:'placeholder.actor-strip',duration:1,animation:{source:'placeholder.actor-strip',frames:[{x:0,y:0,width:32,height:32}],fps:2}}}};
+ p.cast({actorId:'a1',category:'heavy',origin:{x:0,y:0},target:{x:1,y:0}},character,0,ability);p.render(session.snapshot(),0,session.characterDefinitions);const graphics=s.created.find(v=>v.kind==='graphics');
+ resolve({image:{width:64,height:32},bytes:200});await pending;p.render(session.snapshot(),.1,session.characterDefinitions);assert.equal(graphics.destroyed,true);assert.ok(s.created.some(v=>v.kind==='image'));p.destroy();
+});
+test('encounter ability-only VFX/animation assets are planned, no unrelated ability load',async()=>{
+ const loaded=[],p=new api.AssetPresenter(scene(),{cache:{async load(key){loaded.push(key);return {type:'procedural'};}}}),session=createLabBattleSession(createLabConfig()),character=session.characterDefinitions[session.allies[0].definitionId];
+ await p.prepare([character],{}, {[character.abilities.heavy]:{presentation:{vfx:{form:'sprite',assetKey:'placeholder.actor-strip',animation:{source:'placeholder.actor-strip',fps:2}}}},unrelated:{presentation:{vfx:{assetKey:'unrelated.art'}}}});assert.ok(loaded.includes('placeholder.actor-strip'));assert.ok(!loaded.includes('unrelated.art'));
+});
+test('target-attached VFX follows target and cleans when target KO',()=>{
+ const session=createLabBattleSession(createLabConfig()),s=faithfulScene(),p=new api.AssetPresenter(s),character=session.characterDefinitions[session.allies[0].definitionId],frame=session.snapshot();
+ p.cast({actorId:'a1',targetId:'e1',category:'heavy',origin:{x:0,y:0},target:{x:10,y:-1}},character,0,{presentation:{vfx:{form:'ring',attach:'target',duration:1}}});frame.enemies[0].x=9;p.render(frame,.1,session.characterDefinitions);assert.equal([...p.displays.values()][0].x,9);
+ frame.enemies[0].hp=0;p.render(frame,.2,session.characterDefinitions);assert.equal(p.playback.active.size,0);assert.equal(p.displays.size,0);p.destroy();
+});

@@ -3,28 +3,30 @@ import {encounterAssetKeys,resolveCharacterAsset} from '../assets/resolver.js';
 import {characterAnimation,characterVfx,grayboxAnimation} from '../assets/battleDescriptors.js';
 import {VisualPlayback,animationFrame} from '../assets/playback.js';
 import {animationDescriptor,vfxDescriptor} from '../assets/descriptors.js';
+import {ASSET_LIMITS} from '../assets/schema.js';
 let nextPresenter=0;
 // This adapter has no ability execution, mutable actor or persistence capability.
 export class AssetPresenter{
  constructor(scene,{cache=battleAssetCache,project=p=>p,reducedMotion=false}={}){
-  this.scene=scene;this.cache=cache;this.project=project;this.reducedMotion=reducedMotion;this.prefix=`visual.${++nextPresenter}.`;this.closed=false;
-  this.textures=new Map();this.displays=new Map();this.actorSprites=new Map();this.overlaySprites=new Map();this.hudSprites=new Map();this.states=new Map();this.playback=new VisualPlayback();
+  this.scene=scene;this.cache=cache;this.project=project;this.reducedMotion=reducedMotion;this.prefix=`visual.${++nextPresenter}.`;this.closed=false;this.textureBytes=0;
+  this.textures=new Map();this.displays=new Map();this.displayKinds=new Map();this.actorSprites=new Map();this.overlaySprites=new Map();this.hudSprites=new Map();this.states=new Map();this.playback=new VisualPlayback();
  }
  async loadKeys(keys){return Promise.all([...new Set(keys)].map(async key=>{
   const asset=await this.cache.load(key);if(this.closed||!asset.image||this.textures.has(key))return;
-  const textureKey=this.prefix+key;try{this.scene.textures?.addImage(textureKey,asset.image);this.textures.set(key,{key:textureKey,asset});}catch{this.scene.textures?.remove(textureKey);}
+  const residentBytes=asset.width*asset.height*4;if(this.textures.size>=64||this.textureBytes+residentBytes>ASSET_LIMITS.cacheBytes)return;
+  const textureKey=this.prefix+key;try{this.scene.textures?.addImage(textureKey,asset.image);this.textures.set(key,{key:textureKey,asset});this.textureBytes+=residentBytes;}catch{this.scene.textures?.remove(textureKey);}
  }));}
- prepare(definitions,stage={}){
+ prepare(definitions,stage={},abilities={}){
   this.stageAssetKey=stage.battleAssetKey??null;
   const keys=encounterAssetKeys(definitions,stage);
-  for(const d of definitions){for(const state of ['battleIdle','battleHit','battleKo','battleCast'])keys.push(characterAnimation(d,state).source);for(const cat of ['basic','heavy','special','awakening']){const v=characterVfx(d,cat);keys.push(v.assetKey);if(v.animation)keys.push(v.animation.source);}}
+  for(const d of definitions){for(const state of ['battleIdle','battleHit','battleKo','battleCast'])keys.push(characterAnimation(d,state).source);for(const cat of ['basic','heavy','special','awakening']){const v=characterVfx(d,cat,abilities[d.abilities?.[cat]]);keys.push(v.assetKey);if(v.animation)keys.push(v.animation.source);}}
   return this.loadKeys(keys);
  }
  setState(ownerId,descriptor,now,state){this.states.set(ownerId,{descriptor,start:now,state});}
  cast(event,character,now,ability=null){
   if(this.closed)return;const descriptor=characterVfx(character,event.category,ability);
   const target=event.target??event.origin,dx=target.x-event.origin.x,dy=target.y-event.origin.y,len=Math.hypot(dx,dy)||1;
-  this.playback.play(event.actorId,descriptor,event.origin,now,{target,direction:{x:dx/len,y:dy/len}});
+  this.playback.play(event.actorId,descriptor,event.origin,now,{targetId:event.targetId??null,target,direction:{x:dx/len,y:dy/len}});
   const overlay=character?.assets?.skillOverlays?.[event.category];if(overlay)try{this.playback.play(event.actorId,vfxDescriptor({form:'sprite',assetKey:overlay,duration:descriptor.duration}),event.origin,now,{target});}catch{/* optional invalid art falls back to existing cast */}
   if(character?.animationDescriptors?.battleCast)this.setState(event.actorId,characterAnimation(character,'battleCast'),now,'battleCast');
  }
@@ -36,7 +38,7 @@ export class AssetPresenter{
  }
  imageFor(ownerId,descriptor,elapsed,map=this.actorSprites){
   const texture=this.textures.get(descriptor.source);if(!texture)return null;
-  const projection=animationFrame(descriptor,elapsed,this.reducedMotion),region=projection.region;const frame=region?`${region.x}.${region.y}.${region.width}.${region.height}`:undefined;
+  const projection=animationFrame(descriptor,elapsed,this.reducedMotion),region=texture.asset.key===descriptor.source?projection.region:null;const frame=region?`${region.x}.${region.y}.${region.width}.${region.height}`:undefined;
   if(region){const t=this.scene.textures?.get(texture.key);if(!t?.has?.(frame))t?.add(frame,0,region.x,region.y,region.width,region.height);}
   let sprite=map.get(ownerId);if(!sprite){sprite=this.scene.add.image(0,0,texture.key,frame);map.set(ownerId,sprite);}else sprite.setTexture(texture.key,frame);
   sprite.setOrigin(...descriptor.origin).setScale(descriptor.scale).setVisible(true);return sprite;
@@ -61,21 +63,22 @@ export class AssetPresenter{
    this.actorSprites.get(id)?.setVisible(false);const image=this.imageFor(id,state.descriptor,now-state.start);if(image){const pos=positions.get(id),asset=this.textures.get(state.descriptor.source).asset,region=animationFrame(state.descriptor,now-state.start).region,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(48*state.descriptor.scale*w/Math.max(w,h),48*state.descriptor.scale*h/Math.max(w,h)).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
   }
   const records=this.playback.update(now,alive),ids=new Set(records.map(r=>r.id));
-  for(const [id,display] of this.displays)if(!ids.has(id)){display.destroy();this.displays.delete(id);}
+  for(const [id,display] of this.displays)if(!ids.has(id)){display.destroy();this.displays.delete(id);this.displayKinds.delete(id);}
   for(const r of records){
    const d=r.descriptor,elapsed=now-r.start,progress=this.reducedMotion?0:Math.min(1,elapsed/d.duration),source=positions.get(r.ownerId)??this.project(r.position),target=r.targetId?positions.get(r.targetId):r.target?this.project(r.target):source;
    const anchor=d.attach==='target'?target:d.attach==='fixed'?this.project(r.position):source;
    let display=this.displays.get(r.id);const texture=this.textures.get(d.animation?.source??d.assetKey);
-   if(!display){display=texture?this.scene.add.image(0,0,texture.key):this.scene.add.graphics();this.displays.set(r.id,display);}
+   const kind=texture?'image':'graphics';if(display&&this.displayKinds.get(r.id)!==kind){display.destroy();this.displays.delete(r.id);display=null;}
+   if(!display){display=texture?this.scene.add.image(0,0,texture.key):this.scene.add.graphics();this.displays.set(r.id,display);this.displayKinds.set(r.id,kind);}
    display.setPosition(anchor.x,anchor.y).setDepth(d.layer).setAlpha(1-progress).setScale(d.scale);
    const angle=d.rotation==='facing'?Math.atan2(target.y-source.y,target.x-source.x):0;
-   if(texture){display.setRotation(angle).setOrigin(...d.origin);if(d.animation){const proxy=new Map([[r.id,display]]);this.imageFor(r.id,d.animation,elapsed,proxy);}if(d.form==='projectile')display.setPosition(source.x+(target.x-source.x)*progress,source.y+(target.y-source.y)*progress);}
+   if(texture){display.setRotation(angle).setOrigin(...d.origin);if(d.animation){const proxy=new Map([[r.id,display]]);this.imageFor(r.id,d.animation,elapsed,proxy);}const region=d.animation&&texture.asset.key===d.animation.source?animationFrame(d.animation,elapsed,this.reducedMotion).region:null,w=region?.width??texture.asset.width,h=region?.height??texture.asset.height;display.setDisplaySize(80*d.scale*w/Math.max(w,h),80*d.scale*h/Math.max(w,h));if(d.form==='projectile')display.setPosition(source.x+(target.x-source.x)*progress,source.y+(target.y-source.y)*progress);}
    else {display.clear();const color=0xffe894;display.lineStyle(4,color,.95);
-    if(['trail','projectile'].includes(d.form)){display.lineBetween(0,0,target.x-source.x,target.y-source.y);if(d.form==='projectile')display.fillStyle(0x6adaff,.9).fillCircle((target.x-source.x)*progress,(target.y-source.y)*progress,8);}
+    if(['trail','projectile'].includes(d.form)){display.lineBetween(source.x-anchor.x,source.y-anchor.y,target.x-anchor.x,target.y-anchor.y);if(d.form==='projectile')display.fillStyle(0x6adaff,.9).fillCircle(source.x-anchor.x+(target.x-source.x)*progress,source.y-anchor.y+(target.y-source.y)*progress,8);}
     else if(['ring','persistent-area'].includes(d.form))display.strokeCircle(0,0,43);
     else {display.strokeCircle(0,0,26);for(let i=0;i<8;i++){const a=i*Math.PI/4+angle;display.lineBetween(Math.cos(a)*20,Math.sin(a)*20,Math.cos(a)*48,Math.sin(a)*48);}}
    }
   }
  }
- destroy(){if(this.closed)return;this.closed=true;this.stageDisplay?.destroy();for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}for(const {key} of this.textures.values())this.scene.textures?.remove(key);this.textures.clear();this.states.clear();this.playback.clear();}
+ destroy(){if(this.closed)return;this.closed=true;this.stageDisplay?.destroy();for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}for(const {key} of this.textures.values())this.scene.textures?.remove(key);this.textures.clear();this.textureBytes=0;this.displayKinds.clear();this.states.clear();this.playback.clear();}
 }

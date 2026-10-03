@@ -170,6 +170,7 @@ export class BattleSession {
       source,
       origin: { x: actor.x, y: actor.y },
       target: target ? { x: target.x, y: target.y } : null,
+      targetId: target?.instanceId ?? null,
       hit,
       minRange: definition.minRange,
       maxRange: definition.maxRange,
