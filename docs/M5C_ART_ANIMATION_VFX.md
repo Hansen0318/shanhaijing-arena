@@ -1,7 +1,7 @@
 # M5C — Art / Animation / VFX Integration
 
 ## Status
-**M5C-A PLAYER VISUAL SMOKE ACCEPTED / M5C-B DEFERRED FOR M6C-B BALANCE PASS**
+**M5C-A PLAYER VERIFIED / M5C-B BATCH PREPARATION ACTIVE**
 
 Gameplay/progression through M6C is PLAYER VERIFIED. M5C now focuses on visual integration without changing accepted combat, progression, AI, Tier, reward, or save semantics.
 
@@ -249,3 +249,8 @@ Release source d3ed2bf0bad01e0a4d055fb4b89f49362c868ef8; Actions #399 / 37107284
 ## M5C-A player visual smoke
 
 Player verified the current dev visual-inspection presentation on device and accepted the pipeline behavior. The labels/placeholders are dev-only. Formal asset integration remains deferred until the newly authorized M6C-B Tier Power Curve Rebalance is accepted, so battle pacing is stabilized before production art/VFX timing is tuned.
+
+
+## M5C-B activation
+
+M6C-B balance is now player verified, so formal visual integration may proceed. Follow `M5C_B_FORMAL_ASSET_BATCH.md`: Batch1 first prepares all five Chapter1 portraitSquare, collectionArt and battleIdle/static assets, then Work integrates the approved batch through the existing M5C-A pipeline.
