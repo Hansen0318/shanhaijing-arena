@@ -1,9 +1,10 @@
 # Project State
 
 ## Milestone
-**INFO HUB IMPLEMENTATION — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**POST-INFO NEXT PHASE PLANNING — PLAYER VERIFIED BASELINE**
 
 ## Current state
+- INFO Hub device smoke is PLAYER VERIFIED. Landing INFO, three subpages, icon-only type triangle, read-only navigation, and deferred battle loading are accepted baseline.
 - INFO Hub implemented: sibling INFO and exactly three read-only subpages; icon-only triangle/media placeholders, live-only copy, fixed BACK with scrolling body. Targeted40/40, impacted152/152, full431/431, build/diff PASS; review Minor items resolved. Source39561844877136940fcb09a3270d1bd35327f511; Actions#365/37088162820 CI431/431, Build/Pages SUCCESS; public JS/CSS fingerprints match and three-page/back/focus/no-canvas routes verified. Entry71,960 bytes; battle graph remains deferred. No combat/type/progression/team mutations or motion. See docs/verification/INFO_HUB.md.
 - Player accepted the M5B overlay/performance follow-up after device smoke. Non-battle battle-host detachment and lazy battle runtime are now protected baseline behavior.
 - INFO Hub implemented from `docs/INFO_HUB.md`: Landing sibling INFO, GAME GUIDE / WORLD / TYPE MATCHUP, icon-only type triangle, future media slots. No combat balance or AI-dodge implementation in this slice.
