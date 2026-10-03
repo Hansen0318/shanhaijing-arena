@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **FOUR REMAINING CHAPTER1 HUMANOID VISUAL SPECS DRAFTED.** 猼訑 / 赤鱬 / 九尾狐 / 狌狌 now each have non-image concept specs under `docs/art/`. These define humanoid body plan, creature traits, role/type equipment language, portrait/collection/battleIdle and idle-motion direction. No images or production assets are approved; player can compare written directions before any further generation.
 - **鹿蜀 alternate humanoid exploration B/C in progress.** Player has not locked the first humanoid sheets; continue comparing distinct humanoid interpretations while preserving white head, tiger markings, red tail, Speed/Attacker role language and shared-animation body plan. No asset is production-approved yet.
 - **鹿蜀 visual exploration remains UNLOCKED.** First humanoid concept sheet is only an exploration sample; player has not approved likeness, equipment or final visual language yet. Continue comparing alternative humanoid directions before locking Batch1 assets or handing anything to Work.
 - **ART HARD-RULE CORRECTION RECORDED.** Player caught a visual-spec drift: playable characters must default to humanoid/anthropomorphic bodies for shared animation/ability production, with creature traits preserved and gameplay-driven clothing/props/weapons allowed. AGENTS §15 and M5C-B spec now make this explicit. The previous quadruped 鹿蜀 concept is rejected; `docs/art/M5C_B_LUSHU_VISUAL_SPEC.md` is corrected before any production asset lock.
