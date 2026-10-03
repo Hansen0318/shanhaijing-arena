@@ -238,3 +238,58 @@ INFO should be implemented as a bounded UI/documentation slice, separate from co
 After formal attack telegraphs exist, AI may gain limited threat reaction and evasive repositioning for explicitly dodgeable attacks. This belongs to the shared tactical-AI/profile system, not bespoke character logic. See `docs/AI_SYSTEM.md`.
 
 Do not start this merely because INFO describes combat. Player manual movement remains the current way to evade attacks.
+
+
+## Development acceleration policy
+
+Canonical workflow: `docs/DEVELOPMENT_ACCELERATION.md`.
+
+Future work should prefer coherent batch milestones with internal checkpoints and automated regression rather than player-visible micro-slices for every small change.
+
+## M6A — Developer Battle Lab
+
+Status: **IMPLEMENTATION READY**.
+
+Goal:
+- create a dev-only isolated combat test harness to reduce repeated setup time for future character, ability, AI, Type, healing, AoE and Tier-behavior testing.
+
+Required capabilities may include:
+- ally lineup selection;
+- enemy lineup selection;
+- scenario presets;
+- optional HP overrides;
+- all-skills-ready mode;
+- countdown skip;
+- AI-only vs manual-control mode;
+- direct launch into battle.
+
+Hard isolation:
+- no Campaign clear writes;
+- no shard/reward writes;
+- no unlock writes;
+- no Tier writes;
+- no saved-team mutation;
+- no normal progression receipts;
+- not visible in normal player navigation.
+
+## M6B — Combat Tactical AI / Telegraph / Dodge Batch
+
+After M6A is accepted, implement one coherent tactical-combat milestone rather than many micro-slices.
+
+Scope:
+- telegraph / dodgeable ability metadata;
+- threat detection;
+- safe-position scoring;
+- sidestep / backstep / diagonal evasive reposition;
+- healer retreat / recover / re-engage;
+- ranged spacing / kite behavior;
+- bruiser / tank tactical differentiation;
+- Chapter1 character tactical profiles.
+
+Rules:
+- shared/profile-driven engine;
+- no character-ID-specific tactical branches;
+- deterministic/seeded where variation exists;
+- AI must not dodge perfectly;
+- player manual movement remains the current natural dodge path;
+- do not add a dedicated dodge button unless separately approved.
