@@ -211,3 +211,28 @@ After M5A approval, Work maps the approved content into the existing data-driven
 ## M5C — Art / Animation / VFX Integration
 
 After formal data is stable, replace placeholders with approved visual assets, idle/micro-animation and skill VFX in bounded slices. AI tactical variation may be introduced alongside formal character profiles when needed, but must remain shared-engine/profile-driven.
+
+
+## Future INFO Hub
+
+A future Landing sibling destination is approved:
+- BATTLE
+- COLLECTION
+- INFO
+
+INFO initial pages:
+- GAME GUIDE
+- WORLD
+- TYPE MATCHUP
+
+Canonical content/visual specification: `docs/INFO_HUB.md`.
+
+The Type Matchup page uses an icon-only triangular diagram for the three Types with text/multipliers below. Current live combat relation remains Power > Speed > Blast > Power, advantage x1.15, disadvantage x0.85, same x1.00.
+
+INFO should be implemented as a bounded UI/documentation slice, separate from combat balance and AI work.
+
+## Future Tactical AI — Dodge / Telegraph Reaction
+
+After formal attack telegraphs exist, AI may gain limited threat reaction and evasive repositioning for explicitly dodgeable attacks. This belongs to the shared tactical-AI/profile system, not bespoke character logic. See `docs/AI_SYSTEM.md`.
+
+Do not start this merely because INFO describes combat. Player manual movement remains the current way to evade attacks.
