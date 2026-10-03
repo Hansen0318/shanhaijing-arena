@@ -1,7 +1,7 @@
 # M6C — Tier Combat Effects / Shared Status Primitives
 
 ## Status
-**ENGINEERING PASS / PLAYER SMOKE PENDING**
+**PASS / PLAYER VERIFIED**
 
 M6B tactical AI is PLAYER VERIFIED. M6C makes the already-existing T0→T3 progression meaningful in combat without changing shard costs or progression accounting.
 
@@ -346,3 +346,8 @@ Entry76,859 bytes vs accepted M6B68,623 (pure Tier/schema/UI metadata); battle1,
 ## Released engineering evidence
 Release source be46c92e59139a92bcff89cecbd95accf553d4a6; Actions #391 / 37099650309 completed SUCCESS (build111136525373, deploy111136573373). Public entry index-CP8sRNpJ.js matches build; normal Landing has BATTLE/COLLECTION/INFO, no Lab/canvas/modulepreload. Dev menu has13 presets/Tier selectors; real Arena allyT3/enemyT1 and T0 baseline labels, residual-area ring, Pause/Restart/Exit→Lab verified; settings retained, canvas detached. Cloud1363×936 no horizontal overflow. Physical phone feel/readability remains player smoke.
 Canonical detailed evidence: `docs/verification/M6C_TIER_COMBAT_EFFECTS.md`. No unresolved review findings. Only focused player Tier comparison remains; STOP.
+
+
+## Player acceptance (2026-10-03)
+
+Player completed the focused Tier comparison smoke and accepted the current T0–T3 mechanic differentiation as the working balance baseline. Exact effect magnitudes, durations, radii and conditional thresholds remain tunable in later balance passes; future tuning must preserve the generic data-driven effect/status architecture and must not alter canonical shard costs/accounting unless separately approved.
