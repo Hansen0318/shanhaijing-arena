@@ -4,6 +4,7 @@
 **M5C-B FORMAL ASSET INTEGRATION — CHAT ASSET AUTHORING / BATCH PREPARATION**
 
 ## Current state
+- M5C-B Batch1 character authoring has begun with 鹿蜀. Canonical concept/portrait/collection/battleIdle/idle-motion direction is in `docs/art/M5C_B_LUSHU_VISUAL_SPEC.md`; player concept approval is the next visual gate before locking production assets.
 - M5C-B is now the current milestone. Batch1 is the five-character identity + idle-motion pack: portraitSquare + collectionArt + battleIdle + lightweight battlefield idle micro-animation. Chat/player author and approve the coherent batch first; Work integration starts only after approved files exist. Canonical: `docs/M5C_B_FORMAL_ASSET_BATCH.md`.
 - M6C-B player device smoke accepted. Tier power curve / TierScalingProfile is now a working balance baseline; later numeric tuning remains allowed without architectural rewrite.
 - Release source 0b34bfdd41edc88b7528a64d0db63b6f2fbbcd28; Actions #409 /37113178973 Test/Build/Pages SUCCESS (build111174878460/deploy111174926343). Public index-BID405J0.js matches; Lab stats/baseline/real Arena/Pause/Restart/Exit→Lab and normal no-Lab/no-canvas/deferred entry verified. Next: one focused T0–T3 player comparison only; STOP.
