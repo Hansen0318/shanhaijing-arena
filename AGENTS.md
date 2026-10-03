@@ -127,7 +127,7 @@ Avoid unrelated refactors during feature work.
 - `docs/PROJECT_BOUNDARIES.md` is mandatory and defines the contamination firewall.
 - Keep systems modular: Character, Controller, Ability, Targeting, Movement, Status, Camera, Team, Battle.
 - Player input overrides AI immediately.
-- After 2.0 seconds without valid combat input, full AI control resumes for the selected character.
+- When valid manual combat input is released, full AI control resumes immediately (0s), per the accepted M0/M2 baseline.
 - Selected character, camera target, and skill HUD remain unchanged during that handoff.
 - No AUTO/MANUAL indicator is shown.
 - Basic attack is automatic and has no dedicated player button in v1.
@@ -182,7 +182,7 @@ Rules:
 
 For M0, the eventual complete prototype release must have evidence for:
 - 3v3 battle completion without player input;
-- manual override and 2s AI-resume;
+- manual override and immediate 0s AI-resume;
 - KO/team switching/victory-defeat;
 - type-counter correctness;
 - stable landscape runtime for the integrated combat surface.
