@@ -27,8 +27,8 @@ Review focus: fallback cycles/unknown keys, failed image decode, stale scene com
 ## E — release
 - [x] asset file/dimension build guard, impacted/full architecture regression, bundle comparison, independent review/fixes, build.
 - [x] push release, Actions/Pages/public source/menu/Lab/start/retry/exit verify, close progress/state/spec/evidence.
-- [x] one focused player visual smoke then STOP; no final art/audio/Chapter2/gameplay changes.
+- [ ] Player: one focused visual smoke then STOP; no final art/audio/Chapter2/gameplay changes.
 
 Limits: image4MiB, dimension2048/pixels4194304, cache64 entries/16MiB, active VFX64, descriptor frames≤128, duration≤10s (idle loop bounded by owner). Cache preserves decode across Retry; scene-owned textures/displays removed on shutdown. Procedural placeholders require no network. Two-frame graybox strip validates optional animation; not final character art.
 
-E engineering tests/review/build complete; release/public verification and final handoff pending. Root review fix ledger: all5 Important reproduced and fixed RED→GREEN; memory budget strengthened to decoded RGBA16MiB with2 parallel loads, no extra deps. No deferred minors.
+E engineering tests/review/build/release/public verification and final handoff complete; player smoke pending. Root review fix ledger: all5 Important reproduced and fixed RED→GREEN; memory budget strengthened to decoded RGBA16MiB with2 parallel loads, no extra deps. No deferred minors.

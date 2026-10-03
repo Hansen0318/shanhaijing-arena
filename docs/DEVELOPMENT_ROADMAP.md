@@ -18,8 +18,8 @@ Current order:
 8. **INFO Hub** — complete
 9. **M6A — Developer Battle Lab** — complete
 10. **M6B — Combat Tactical AI / Telegraph / Dodge Batch** — complete
-11. **M6C — Tier Combat Effects / Shared Status Primitives** — engineering pass / player smoke pending
-12. **M5C — Art / Animation / VFX Integration** — current / planning
+11. **M6C — Tier Combat Effects / Shared Status Primitives** — complete / player verified
+12. **M5C — Art / Animation / VFX Integration** — M5C-A Asset Pipeline engineering pass / player smoke pending; production art integration separately authorized
 13. Audio pass after core flow and visual timing are stable
 
 M3 depends on M2 roster ownership/team-selection contracts.  

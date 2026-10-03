@@ -1,6 +1,6 @@
 # M5C-A Asset Pipeline verification
 
-IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS
+ENGINEERING PASS / PLAYER SMOKE PENDING
 
 Recovery remote015618fa; M6C PLAYER VERIFIED. Original feat/m0-combat-core-20260927 / PR1 retained per AGENTS13A; main untouched. A700f72b6, B0de99b3f, Cdcb1d6cf, Df646c545 safe checkpoints pushed after tests. Native coherent A–E batch; one independent read-only reviewer.
 
@@ -22,7 +22,16 @@ git diff --check
 ```
 
 ## Bundle / release
-Accepted M6C entry76,859 bytes; new entry81,218 bytes (+4,359 pure manifest/resolver/menu metadata), CSS19,133 unchanged. Phaser/battle presenter/image cache/descriptors remain in deferred battle chunk (1,443,740 bytes); no menu preload/animation/VFX request. Existing deferred >500KB advisory remains. Exact hashes/Actions/Pages/public checks pending coherent release. CPU/headless engineering evidence does not imply phone rendering/FPS acceptance.
+Accepted M6C entry76,859 bytes; new entry81,218 bytes (+4,359 pure manifest/resolver/menu metadata), CSS19,133 unchanged. Phaser/battle presenter/image cache/descriptors remain in deferred battle chunk (1,443,740 bytes); no menu preload/animation/VFX request. Existing deferred >500KB advisory remains. Exact release/public evidence follows. CPU/headless engineering evidence does not imply phone rendering/FPS acceptance.
 
 ## One focused player smoke
 Normal Landing/Collection/preview retain placeholders and navigation. Lab Visual inspection battleIdle, skip countdown→START; inspect placeholder strip and shared cast VFX, Pause/Restart/Retry/Exit→Lab. Confirm no stale image/overlay and normal save unchanged. Missing formal art is expected. STOP before formal art/VFX production/audio/Chapter2/new economy.
+
+## Published verification
+Release source d3ed2bf0bad01e0a4d055fb4b89f49362c868ef8; Actions #399 / 37107284909 SUCCESS (build111158185887, Pages deploy111158232597). Public entry index-iHgeqczB.js matches tested build; CSS index-CuxsJ6uc.css, deferred battleRuntime-KzZEk5yG.js. Public normal Landing has BATTLE/COLLECTION/INFO, no Lab/canvas/modulepreload. Collection and Chapter/Stage preview navigation verified; six preview images complete640×300, zero canvas. Dev Visual inspection battleIdle shows two-frame graybox in real Arena; Pause/Restart/Exit→Lab verified, inspection/countdown settings retained, canvas removed. Cloud1363×936 has no horizontal overflow. Physical phone visual acceptance remains player smoke.
+
+[Actions run](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37107284909)
+
+Public Lab: https://hansen0318.github.io/shanhaijing-arena/?battleLab=1
+Normal URL: https://hansen0318.github.io/shanhaijing-arena/
+Observed console error entries were browser-extension metadata messages, not app errors. Retry decode reuse/cleanup is covered by automated runtime tests; live Restart/Exit were observed. No normal battle/reward/upgrade/reset was performed during public verification. Player physical-device smoke remains pending.

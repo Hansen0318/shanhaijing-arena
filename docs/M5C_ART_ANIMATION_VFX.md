@@ -1,7 +1,7 @@
 # M5C — Art / Animation / VFX Integration
 
 ## Status
-**M5C-A IMPLEMENTED / RELEASE VERIFICATION IN PROGRESS**
+**M5C-A ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 Gameplay/progression through M6C is PLAYER VERIFIED. M5C now focuses on visual integration without changing accepted combat, progression, AI, Tier, reward, or save semantics.
 
@@ -242,3 +242,5 @@ unless separately approved.
 
 ## M5C-A engineering implementation
 Central manifest and all9 standard slots, safe menu/battle fallback, encounter-only decode cache, generic animation/VFX playback and Arena/Lab adapter are implemented. Exact authoring contract and budgets: `ASSET_PIPELINE.md`. Targeted56/56, impacted375/375, full542/542/build/diff PASS; independent5 Important resolved RED→GREEN. Exact deployment/public evidence: `verification/M5C_A_ASSET_PIPELINE.md`. No production character/art batch/audio/Chapter2 or gameplay change; M5C-B is separately authorized future work.
+
+Release source d3ed2bf0bad01e0a4d055fb4b89f49362c868ef8; Actions #399 / 37107284909 SUCCESS (build111158185887, Pages deploy111158232597). Public entry index-iHgeqczB.js matches tested build; CSS index-CuxsJ6uc.css, deferred battleRuntime-KzZEk5yG.js. Public normal Landing has BATTLE/COLLECTION/INFO, no Lab/canvas/modulepreload. Collection and Chapter/Stage preview navigation verified; six preview images complete640×300, zero canvas. Dev Visual inspection battleIdle shows two-frame graybox in real Arena; Pause/Restart/Exit→Lab verified, inspection/countdown settings retained, canvas removed. Cloud1363×936 has no horizontal overflow. Physical phone visual acceptance remains player smoke.
