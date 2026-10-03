@@ -1,3 +1,4 @@
+import {PersistentAreas} from './persistentAreas.js';
 import {TierEffectRuntime} from './tierEffectRuntime.js';
 import {resolveTierProjection,resolveTierAbilities} from './tierEffects.js';
 import {ThreatLedger,containsDanger} from './threats.js';
@@ -132,7 +133,7 @@ export class BattleSession {
     this.healEvents = [];
     this.pendingHits = [];
     this.statuses = new BattleStatuses();
-    this.mobilityEvidence=new Map();this.effects=new TierEffectRuntime(this);
+    this.areas=new PersistentAreas();this.mobilityEvidence=new Map();this.effects=new TierEffectRuntime(this);
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 
@@ -152,7 +153,7 @@ export class BattleSession {
       actorId:actor.instanceId, targetId:target.instanceId, category, source, amount, critical,
       position:{x:target.x,y:target.y},
     });
-    if(amount>0)this.effects.trigger('hit',actor,target,category);
+    if(amount>0&&!hitContext.residual)this.effects.trigger('hit',actor,target,category,{definition,source});
     return amount;
   }
 
@@ -289,13 +290,13 @@ export class BattleSession {
         for(let hit=1;hit<hits;hit++)this.pendingHits.push({actorId:actor.instanceId,targetId:victim.instanceId,definition:hitDefinition,category,source,hitIndex:hit,totalHits:hits,due:this.elapsedSeconds+hit*definition.effect.hitInterval});
       }
     }
-    if(applied)this.effects.trigger('post_cast',actor,target,category);
+    if(applied)this.effects.trigger('post_cast',actor,target,category,{definition,source});
     return applied;
   }
 
   step(deltaSeconds) {
     positiveFinite(deltaSeconds, 'deltaSeconds');
-    if (this.result() !== 'running') { this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.mobilityEvidence.clear(); return this.snapshot(); }
+    if (this.result() !== 'running') { this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear(); return this.snapshot(); }
     for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.delayedImpacts.delete(id);this.threats.remove(id);}
 
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
@@ -418,6 +419,12 @@ export class BattleSession {
       const applied=this.applyAbilityEffects(actor,target,hit.definition,hit.category,hit.source,this.teamContext(actor),threat.geometry);
       this.recordCast(actor,{...threat.geometry.center},hit.category,hit.source,hit.definition,applied);
     }
+    this.areas.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
+    this.areas.tick(this.elapsedSeconds,this.actors,(area,victim)=>{
+      const actor=this.actorById(area.sourceId);if(!actor||!canCharacterAct(actor))return;
+      if(area.spec.coefficient){const definition={...area.definition,canCrit:false,critChance:0,telegraph:null,effect:{coefficient:area.spec.coefficient}};this.applyResolvedDamage(actor,victim,this.characterDefinitions[actor.definitionId],this.characterDefinitions[victim.definitionId],definition,area.category,area.source,{residual:true});}
+      if(area.spec.status)this.statuses.apply({...area.spec.status,sourceId:actor.instanceId,targetId:victim.instanceId,areaId:area.id,key:area.id},this.elapsedSeconds);
+    });
     const remaining=[];
     for(const hit of this.pendingHits) {
       const actor=this.actorById(hit.actorId),target=this.actorById(hit.targetId);
@@ -427,7 +434,7 @@ export class BattleSession {
     }
     this.pendingHits=this.result()==='running'?remaining:[];
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
-    if(this.result()!=='running'){this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.mobilityEvidence.clear();}
+    if(this.result()!=='running'){this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();}
     return this.snapshot();
   }
 }

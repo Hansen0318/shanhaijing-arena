@@ -24,3 +24,9 @@ export function resolveEffectTargets(actor,target,definition,{allies,enemies}) {
  }
  return target&&canCharacterAct(target)?[target]:[];
 }
+// Generic protection opportunity. Uses authoritative incoming targets/geometry, never roster identity.
+export function mostThreatenedAlly(actor,allies,enemies,radius,targetIds=new Map(),threats=[]){
+ const candidates=areaTargets(actor,allies.filter(a=>a.teamId===actor.teamId&&a.instanceId!==actor.instanceId),radius);
+ const score=a=>enemies.filter(canCharacterAct).reduce((n,e)=>n+(targetIds.get(e.instanceId)===a.instanceId?4:0)+(isTargetInRange(e,a,1.5)?1:0),0)+(1-a.hp/a.maxHp)*2+threats.filter(t=>t.sourceTeamId!==a.teamId&&(t.targetId===a.instanceId||t.area&&isTargetInRange(t.geometry.center,a,t.geometry.radius))).length*3;
+ return candidates.sort((a,b)=>score(b)-score(a)||compareId(a,b))[0]??null;
+}

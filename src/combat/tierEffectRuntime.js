@@ -1,3 +1,4 @@
+import {mostThreatenedAlly,areaTargets} from './effectTargeting.js';
 import {canCharacterAct} from './character.js';
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export function matchesTierCondition(condition,session,actor,target){
@@ -16,8 +17,10 @@ export class TierEffectRuntime {
   const effects=this.effects(actor,category,'modify').filter(e=>e.kind===kind&&(!e.lastHit||hitIndex===totalHits-1)&&matchesTierCondition(e.condition,this.session,actor,target));
   return 1+Math.min(.15,effects.reduce((n,e)=>n+e.magnitude-1,0));
  }
- trigger(trigger,actor,target,category){
+ trigger(trigger,actor,target,category,{definition=null,source='ai'}={}){
   for(const e of this.effects(actor,category,trigger))if(matchesTierCondition(e.condition,this.session,actor,target)){
+   if(e.kind==='protect'){const context=this.session.teamContext(actor);const recipients=e.recipient==='team'?areaTargets(actor,context.allies,e.radius):[mostThreatenedAlly(actor,context.allies,context.enemies,e.radius,this.session.targetIds,this.session.threats.active(this.session.elapsedSeconds*1000))].filter(Boolean);for(const victim of recipients)this.session.statuses.apply({...e.status,sourceId:actor.instanceId,targetId:victim.instanceId,key:e.id},this.session.elapsedSeconds);}
+   if(e.kind==='area'&&target)this.session.areas.create({sourceId:actor.instanceId,sourceTeamId:actor.teamId,center:target,spec:e.area,definition,category,source},this.session.elapsedSeconds);
    if(e.kind==='status'){const victim=e.recipient==='target'?target:actor;if(victim&&canCharacterAct(victim))this.session.statuses.apply({...e.status,sourceId:actor.instanceId,targetId:victim.instanceId,key:e.id},this.session.elapsedSeconds);}
   }
  }
