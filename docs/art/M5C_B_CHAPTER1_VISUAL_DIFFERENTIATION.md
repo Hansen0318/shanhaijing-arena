@@ -193,3 +193,58 @@ Recommended next order:
 5. Work integrates the complete approved batch.
 
 No additional image generation should happen merely from a generic "continue" unless the current next task explicitly requires an image.
+
+
+## 10. Future character onboarding rule
+
+The current four animation structure families are **starter reusable archetypes**, not a closed taxonomy.
+
+Future characters must not be forced awkwardly into Agile / Guard / Ranged Caster / Bruiser if their mechanics require another structure.
+
+For every new playable character, Chat first classifies:
+
+1. humanoid body-plan compatibility;
+2. creature-defining traits;
+3. Type;
+4. Role;
+5. locomotion style;
+6. attack delivery style;
+7. equipment / prop language;
+8. idle secondary-motion needs;
+9. hit / KO / cast motion needs;
+10. whether an existing animation archetype can be reused safely.
+
+Decision order:
+- reuse an existing archetype when it fits naturally;
+- compose from existing motion modules where possible;
+- add a **new reusable archetype** only when the new mechanic/body-motion pattern is genuinely distinct;
+- never add a one-character-only animation architecture if a shared reusable structure can be defined.
+
+Examples of future reusable archetypes that may be added when needed:
+- aerial / winged humanoid;
+- heavy artillery / stationary caster;
+- summoner / controller;
+- dual-form / stance-switch;
+- teleport / blink assassin;
+- mounted or companion-linked humanoid.
+
+A new archetype must be documented once and then become available to later characters.
+
+## 11. Future visual-production flow
+
+For each future playable character:
+
+1. read hard rules and current visual archetype catalog;
+2. extract canonical Shanhaijing creature traits;
+3. define Type / Role / combat identity;
+4. select or extend a reusable animation archetype;
+5. define equipment/weapon/prop language from mechanics;
+6. run silhouette-collision check against existing roster;
+7. define portraitSquare / collectionArt / battleIdle / idle micro-animation;
+8. player approves concept direction;
+9. produce the full coherent asset batch;
+10. Work integrates through the existing M5C-A asset pipeline;
+11. targeted player smoke checks scale/readability/animation feel;
+12. record the accepted character and any new reusable archetype in GitHub.
+
+This flow is the default for Chapter2+ and any later roster expansion.
