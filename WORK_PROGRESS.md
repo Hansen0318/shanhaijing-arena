@@ -1,6 +1,8 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **M6A DEVELOPER BATTLE LAB — PASS / PLAYER VERIFIED.** Player accepted the dev-only lab flow and authorized continuation. Preserve isolated `?battleLab=1`, formal shared runtime, six presets, quick options, retry/back, and zero progression/save mutation as baseline.
+- **NEXT: M6B COMBAT TACTICAL AI / TELEGRAPH / DODGE BATCH — IMPLEMENTATION READY.** One coherent batch: declarative telegraphs/dodgeable metadata, shared threat detection, safe-position scoring, sidestep/backstep/diagonal evasion, healer retreat/recover/re-engage, ranged spacing/kite, bruiser/tank differentiation, and formal Chapter1 AI profiles. Use M6A Lab for focused smoke. No character-ID AI branches.
 - **M6A DEVELOPER BATTLE LAB — ENGINEERING PASS / PLAYER SMOKE PENDING.** Explicit ?battleLab=1 menu, six immutable presets, formal roster duplicate slots, HP100/50/25, Type three cases, skip countdown, ready override, AI-only/manual. Shared formal BattleSession/Arena; reward-free RETRY/BACK TO LAB.
 - Strict isolation: dev entry bypasses Campaign/reset/persistence/migration; Lab controller has no save capability and adapter has null campaignActions. Automated app result/retry/back storage snapshot identical. Normal URL remains Landing; battle runtime deferred until START.
 - Active feat/m0-combat-core-20260927 / PR1. Recovery65e159913cf731e546774b2d38adf75e5a7b75dd. A f1db5b78; B9db76a68; C10da7909; D0e3e85e4 pushed independently with targeted5/32/29/39 PASS. Intermediate checkpoints skip CI; E release runs CI/Pages.
