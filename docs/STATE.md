@@ -4,6 +4,7 @@
 **M5C-B FORMAL ASSET INTEGRATION — CHAT ASSET AUTHORING / BATCH PREPARATION**
 
 ## Current state
+- Five-character silhouette/role collision review is complete in `docs/art/M5C_B_CHAPTER1_VISUAL_DIFFERENTIATION.md`. Written directions are distinct enough for further concept work, but no production art is locked. Generic 'continue' should advance specs/review, not automatically generate another image.
 - Written humanoid concept specs now exist for all five Chapter1 characters. No production art is locked. Current task is player review of character-direction consistency before generating or integrating any further assets.
 - 鹿蜀 first humanoid concept is under visual review only; no production asset is approved yet. Continue alternate concept exploration before asset lock or Work integration.
 - Art-direction correction: all normal playable roster characters default to humanoid/anthropomorphic combat bodies for shared animation/ability production. Creature traits remain mandatory; clothing/props/weapons may be invented to communicate Type/Role/mechanics. The prior quadruped 鹿蜀 concept is rejected and its spec has been corrected before production approval.
