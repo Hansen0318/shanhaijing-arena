@@ -112,6 +112,30 @@ Clothing, armor, props, tools and weapons may be newly designed for gameplay rea
 
 A literal animal/quadruped playable body is an exception and requires explicit player approval.
 
+### 3A.1 Head / face morphology hard rule
+
+Humanoid body-plan consistency does **not** require human-face consistency.
+
+Default playable characters should use a **species-derived mythic anthropomorphic face**:
+- start from the source creature's species/family morphology;
+- preserve recognizable skull / muzzle / eye / ear / jaw / horn / tusk / scale / feather structures;
+- stylize those structures enough to support expression, portrait acting and battle-state readability;
+- do not default to a normal human face with only decorative ears/horns.
+
+For repeated species families such as snake, bovine, boar, deer/horse, bird or fox/canine characters, each character also needs a **creature-specific morphology layer**. Differentiate them through combinations of:
+- skull width/length;
+- muzzle length/shape;
+- brow and eye placement;
+- ear geometry;
+- horn/antler topology;
+- jaw/tusk/fang structure;
+- scale/fur/feather facial distribution;
+- markings, crests, gills or other special organs.
+
+The target is neither a fully realistic animal head nor a reusable human-face template. It is a readable mythic creature face with enough anthropomorphic expression for idle / hit / KO / cast / portrait states.
+
+**Production separation:** shared humanoid body/animation architecture is one rule; diverse species-derived head/face morphology is another. Do not solve animation reuse by homogenizing faces.
+
 ## 3B. Future character extensibility
 
 The current Chapter1 animation archetypes are reusable starting points, not mandatory permanent categories.
