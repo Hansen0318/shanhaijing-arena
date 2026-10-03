@@ -1,3 +1,4 @@
+import {validateStatus} from './statusSchema.js';
 // Pure immutable combat data. Never imports progression, storage or the battle runtime.
 export const COMBAT_TIERS=Object.freeze(['T0','T1','T2','T3']);
 export function freezeEffectData(value){if(value&&typeof value==='object'){Object.values(value).forEach(freezeEffectData);Object.freeze(value);}return value;}
@@ -10,6 +11,7 @@ export function createTierEffect(input){
  if(e.category!=null&&!['basic','heavy','special','awakening'].includes(e.category))throw new TypeError('Invalid effect category');
  if(['range','approach','damage','heal'].includes(e.kind)&&(!Number.isFinite(e.magnitude)||e.magnitude<1||e.magnitude>1.15))throw new RangeError('Modifier must be 1–1.15');
  if(e.condition){const c=e.condition;if(!conditions.has(c.kind))throw new TypeError('Invalid condition');for(const key of ['threshold','radius','min','max','minDistance','minAngle'])if(c[key]!=null&&(!Number.isFinite(c[key])||c[key]<0))throw new RangeError('Invalid condition data');if(c.threshold!=null&&c.threshold>1)throw new RangeError('HP threshold exceeds1');}
+ if(e.kind==='status')validateStatus(e.status);
  return freezeEffectData(e);
 }
 export function resolveTierProjection(definition,tier='T0'){

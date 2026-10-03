@@ -317,3 +317,7 @@ STOP before:
 - Chapter2 formal content;
 - new economy/progression systems;
 - level/star/rarity systems.
+
+
+## Implementation contract seeds
+A/B: cumulative Tiers; detached Campaign Tier snapshots; immutable per-actor resolved range/approach tables. Generic statuses cap64, stack cap3, lifetime max30s, refresh replaces same source/key/target. Mitigation/incoming choose strongest; outgoing and healing gains additive capped15%; movement gains capped15%. Avoidance may require dodgeable metadata; control blocks AI/player movement and new ability execution, not ownership; steadfast prevents newly applied control. KO removes statuses on source or target; terminal clears records. All use simulation seconds; no persistence or timers. B targeted152/152 PASS. C–E pending.
