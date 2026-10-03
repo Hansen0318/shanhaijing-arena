@@ -112,6 +112,18 @@ Clothing, armor, props, tools and weapons may be newly designed for gameplay rea
 
 A literal animal/quadruped playable body is an exception and requires explicit player approval.
 
+## 3B. Future character extensibility
+
+The current Chapter1 animation archetypes are reusable starting points, not mandatory permanent categories.
+
+Future characters should:
+- reuse an existing humanoid animation structure when it fits;
+- compose from shared motion modules when practical;
+- introduce a new reusable archetype only when their locomotion / ability delivery / body-motion pattern is genuinely different;
+- never receive a bespoke one-off animation architecture solely because they are a new character.
+
+Any newly introduced archetype becomes part of the shared roster toolset for later characters.
+
 ## 4. Asset style constraints
 
 - mobile-first readability;
