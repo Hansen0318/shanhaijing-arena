@@ -28,6 +28,9 @@ All normal playable Chapter1 characters:
 - use species-derived mythic anthropomorphic faces rather than a shared human facial template;
 - remain expressive enough for character acting while preserving source-species skull/muzzle/eye/ear/jaw identity;
 - when multiple characters share a species family, differentiate facial morphology structurally, not merely by color, hair, horns or costume.
+- treat concept/collection detail and battle detail as separate tiers; battle assets must be simplified intentionally rather than downscaled directly;
+- define an ordered battle identity hierarchy for each character and preserve the highest-priority silhouette/species cues before decorative detail;
+- pass a small-runtime readability gate before final battleIdle / battle state assets are approved.
 
 Current reusable animation archetypes are starter families, not a closed taxonomy.
 
@@ -135,6 +138,9 @@ Before Batch1 production art is locked, compare all five together in one review 
 8. no character-specific one-off animation architecture has been introduced.
 9. no two same-family characters depend on the same human-face base with only accessory/color swaps;
 10. each same-family character has at least two structural head/face differentiators visible without costume.
+11. each character's battle version remains readable at intended mobile scale without relying on fine lines or micro-accessories;
+12. head/body/major appendage/weapon do not collapse into one visual mass;
+13. battle identity survives after removing concept-only decorative detail.
 
 ## Production lock rule
 
