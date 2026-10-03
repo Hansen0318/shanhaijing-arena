@@ -146,6 +146,31 @@ Background:
 - low-detail;
 - should not compete with silhouette.
 
+## 7A. Battle readability simplification
+
+鹿蜀 concept / collection art may retain richer costume and equipment detail, but the battle version must use a reduced detail language.
+
+Battle identity priority:
+1. white mythic horse/deer-derived head;
+2. tall lean long-legged humanoid silhouette;
+3. one separated vermilion-red tail;
+4. warm tawny body with 2–3 broad charcoal tiger-marking groups;
+5. compact rear-swept horn/antler silhouette;
+6. one compact light melee weapon / slim rush-guard cue;
+7. decorative costume detail.
+
+Battle version should simplify or remove first:
+- loose hair strands beyond a few major masses;
+- extra hanging straps / talismans / tassels;
+- small buckles and layered waist hardware;
+- fine armor seams / engraved trim;
+- detailed tail hair texture;
+- tiny cyan accents;
+- excess garment panels;
+- dense tiger striping.
+
+At mobile scale, head, torso, legs, weapon and single tail must remain visually separable. If they merge into one mass, simplify further before asset lock.
+
 ## 8. battleIdle base sprite
 
 Target source:
