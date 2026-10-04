@@ -76,10 +76,20 @@ test('exit before CLEAR never writes/unlocks; replay exit retains existing CLEAR
  launch(c);b.attach(scene());b.openExit();c.exitBattle();b.detach();
  assert.deepEqual(c.progress,prior);assert.equal(writes,1);
 });
-test('Stage Preview has START only and exit confirmation has exact copy and actions',()=>{
+test('Stage Preview keeps image text-free, places chapter/stage labels above rewards, and anchors START lower-right',()=>{
  const view=readFileSync(new URL('../src/campaign/view.js',import.meta.url),'utf8');
+ const css=readFileSync(new URL('../src/campaign/style.css',import.meta.url),'utf8');
  const dialog=readFileSync(new URL('../src/runtime/exitDialog.js',import.meta.url),'utf8');
+ assert.match(view,/visual\.append\(image\)/);
+ assert.doesNotMatch(view,/stage-title-overlay/);
+ assert.match(view,/preview-chapter-title/);
+ assert.match(view,/preview-stage-title/);
+ assert.match(view,/details\.append\(chapterTitle,stageTitle,rewards\)/);
+ assert.match(view,/page\.append\(preview,start\)/);
  assert.match(view,/start\.textContent='START'/);assert.doesNotMatch(view,/開始戰鬥/);
+ assert.match(css,/\.stage-page>\.start\{position:absolute;right:max\(20px,env\(safe-area-inset-right\)\);bottom:max\(12px,env\(safe-area-inset-bottom\)\)/);
+ assert.match(css,/\.preview-chapter-title\{[^}]*font:750/);
+ assert.match(css,/\.preview-stage-title\{[^}]*font:700/);
  for(const text of ['EXIT BATTLE?','Progress from this battle will not be saved.','CONTINUE','EXIT'])assert.ok(dialog.includes(text));
 });
 test('X confirmation blocks until CONTINUE or EXIT and exposes correct dialog controls',()=>{
