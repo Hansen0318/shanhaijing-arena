@@ -39,26 +39,47 @@ Do not integrate one file at a time.
 
 Preferred batch sequence:
 
-### Batch 1 — Character identity + idle motion pack
-Across all five characters:
-- portraitSquare
-- collectionArt
-- battleIdle base battle sprite
-- battleIdle micro-animation source/frames or layered motion-ready source
+### Batch 1A — Character identity + static runtime gate
+Across each character:
+- concept direction approved first;
+- Battle Simplification pass derived from that approved concept;
+- `portraitSquare`;
+- `collectionArt`;
+- **static** `battleIdle` base battle sprite.
 
 Purpose:
-- establish formal likeness;
-- confirm scale/origin/silhouette;
-- replace the most visible placeholders first;
-- establish the battlefield idle-motion language before hit/KO/cast states.
+- establish formal likeness and cross-surface consistency;
+- prove silhouette / color-value separation / equipment readability;
+- validate actual Team / Collection / HUD / Arena scale and mirroring;
+- retire the matching placeholders through shared asset-driven logic;
+- catch over-detail before animation multiplies rework.
 
-Idle micro-animation should remain lightweight and loopable. Good examples:
-- subtle breathing/body rise-fall;
-- small tail/ear/feather/hair/ornament motion;
-- restrained garment/appendage sway;
-- tiny posture shift.
+**Static Runtime Readability Gate is mandatory before idle animation.**
+At real game presentation size verify:
+- identity is readable while completely still;
+- head/body/weapon/major appendages remain separated;
+- value/color contrast remains strong enough at mobile size;
+- line density and ornament do not collapse into noise;
+- ally/enemy mirroring and accepted shared scale remain correct;
+- no outer-layout regression or placeholder residue is introduced.
 
-Avoid large displacement that changes gameplay readability or looks like locomotion.
+If the static asset fails, revise the art first. Do not use animation/VFX or character enlargement to compensate.
+
+### Batch 1B — Idle micro-animation
+Only after that character's Batch 1A static runtime gate passes:
+- author the lightweight `battleIdle` micro-animation frames / motion-ready source;
+- preserve the accepted static design, anchor/origin, scale, silhouette and major color blocks;
+- animation may add breathing, tiny weight transfer, and restrained appendage/fur/ear/tail follow-through;
+- animation must not redesign the character or become necessary for identity recognition.
+
+Idle animation should remain lightweight, loopable, Pause-safe and position-neutral.
+
+After all five Chapter1 characters complete 1A + 1B, perform one roster-wide comparison for:
+- silhouette separation;
+- color/value separation;
+- rendering-language consistency;
+- role readability;
+- animation-archetype consistency.
 
 ### Batch 2 — Battle state / reaction pack
 Across all five:
