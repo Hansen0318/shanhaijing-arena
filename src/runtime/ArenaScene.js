@@ -114,13 +114,14 @@ export class ArenaScene extends Phaser.Scene {
     for (const actor of [...first.allies, ...first.enemies]) {
       const allied = actor.instanceId.startsWith('a');
       const identity=battlePortrait(this.session,actor.instanceId);
-      const marker = this.add.circle(0, 0, ACTOR_VISUAL_RADIUS, Phaser.Display.Color.HexStringToColor(identity.color).color)
+      const markerColor=Phaser.Display.Color.HexStringToColor(identity.color).color;
+      const marker = this.add.circle(0, 0, ACTOR_VISUAL_RADIUS, markerColor)
         .setStrokeStyle(3, allied ? 0xc6f6ff : 0xffd3bf);
       const label = this.add.text(0, 0, identity.label, {
         fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff', align:'center',
       }).setOrigin(0.5);
 
-      this.actorViews.set(actor.instanceId, { marker, label, allied });
+      this.actorViews.set(actor.instanceId, { marker, label, allied, markerColor });
     }
 
     this.createHud();
@@ -559,14 +560,15 @@ export class ArenaScene extends Phaser.Scene {
     for (const actor of [...frame.allies, ...frame.enemies]) {
       const view = this.actorViews.get(actor.instanceId);
       const position = arenaToStage(actor);
-      view.marker.setPosition(position.x, position.y).setAlpha(actor.hp > 0 ? 1 : 0.35);
+      const art=this.visualAssets.actorSprites?.get(actor.instanceId),hasFormalArt=Boolean(art?.visible);
+      // Placeholder body marker retires when formal sprite exists; keep only its ring/stroke for selection/team feedback.
+      view.marker.setPosition(position.x, position.y).setFillStyle(view.markerColor,hasFormalArt?0:1).setAlpha(actor.hp > 0 ? 1 : 0.35);
       const identity=battlePortrait(this.session,actor.instanceId);
       const guarded=this.session.statuses.damageMultiplier(actor.instanceId,this.session.elapsedSeconds)<1;
       const marks=actor.hp>0?statusMarks(this.session.statuses.forActor(actor.instanceId,this.session.elapsedSeconds)):'';
       const tier=this.labConfig?` ${this.session.tierProjections.get(actor.instanceId).tier}`:'';
       view.label.setText?.(`${identity.label}${tier}${guarded&&actor.hp>0?' ◈':''}${marks?'\n'+marks:''}`);
       // Keep identity text above the actual visual footprint; HUD/gameplay unchanged.
-      const art=this.visualAssets.actorSprites?.get(actor.instanceId);
       const nameOffset=Math.max(42,(art?.displayHeight??0)*(art?.originY??.5)+16);
       view.label.setPosition(position.x, position.y - nameOffset).setAlpha(actor.hp > 0 ? 1 : 0.5);
     }
