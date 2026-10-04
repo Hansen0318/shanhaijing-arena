@@ -220,6 +220,32 @@ If any failure appears, simplify the battle asset before Work integration. Do no
 - no need for four separate sprite sets for T0–T3;
 - decorative VFX must not hide damage numbers, critical text, telegraphs, joystick or skill buttons.
 
+## 4A. Master vs runtime asset optimization
+
+Formal source/master art and shipped runtime art are distinct artifacts.
+
+Rules for every current and future character:
+- keep an approved high-resolution source/master when useful for editing or regeneration;
+- create a separate runtime derivative matched to the actual game footprint;
+- do not ship oversized generated source PNGs merely because they pass the 2048px / 4MiB authoring ceiling;
+- prefer lossless PNG optimization for transparent sprite assets unless a later pipeline decision explicitly adopts another verified format;
+- preserve accepted silhouette/readability at target battle scale;
+- preserve common frame canvas/origin for sprite-sheet animation loops;
+- do not independently trim equal-frame animation cells if doing so can introduce positional drift;
+- measure both encoded transfer size and decoded RGBA memory impact;
+- retain M5C-A lazy/on-demand loading and bounded cache behavior so roster growth does not imply loading every character asset at startup.
+
+For a new animation asset, the integration handoff should record:
+1. master/source dimensions;
+2. frame layout/count;
+3. optimized runtime dimensions;
+4. encoded runtime file size;
+5. decoded texture estimate;
+6. fixed anchor/origin contract;
+7. the smallest runtime/player smoke needed for the changed asset.
+
+Optimization must happen before production lock, not as an emergency pass after the roster becomes large.
+
 ## 5. Authoring dimensions
 
 Use M5C-A pipeline limits as hard ceilings:
