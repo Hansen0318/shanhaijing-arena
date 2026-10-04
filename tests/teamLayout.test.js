@@ -36,10 +36,10 @@ test('declared row budget reserves lower BACK space while fitting flexible upper
  for(const [w,h,bottomInset] of [[667,320,0],[844,320,21],[740,356,21],[740,360,21],[844,390,21],[932,430,21]]) {
   const index=h<=356?2:h<=420?1:0,rule=rules[index],props=Object.fromEntries(rule.split(';').filter(x=>x.includes(':')).map(x=>x.trim().split(':'))),row=rows[index];
   const gap=parseFloat(props.gap),top=parseFloat(props['padding-top']),bottomMin=Number(props['padding-bottom'].match(/max\((\d+)px/)[1]),safeReserve=0;
-  // Shared non-landing rule has higher specificity and reserves at least 66px / inset+54px.
-  const bottom=Math.max(66,bottomInset+54,bottomMin,bottomInset+safeReserve);
+  // Team overrides the shared BACK reserve; controls sit beside the roster.
+  const bottom=Math.max(bottomMin,bottomInset+safeReserve);
   const upper=h-row[0]-row[2]-gap*2-top-bottom;
-  assert.ok(upper>0,`${w}×${h}: three rows plus shared BACK reserve fit`);
+  assert.ok(upper>0,`${w}×${h}: three rows fit beside bottom controls`);
   assert.match(rule,/overflow:hidden/);
  }
  assert.match(css,/\.roster-portrait \{[^}]*aspect-ratio:1/);
@@ -59,4 +59,13 @@ test('overlapping full-body slot boxes fit the available row without creating ro
   const overhang=Math.max(0,overlap-padding)*teamWidth*(1-2*padding);
   assert.ok(overhang<20,'visible outer edge stays inside the page padding');
  }
+});
+
+test('Team bottom padding wins the shared BACK reserve so roster shares the controls bottom band',()=>{
+ const css=readFileSync(new URL('../src/roster/style.css',import.meta.url),'utf8');
+ const selectors=[...css.matchAll(/([^{}]+)\{[^{}]*grid-template-rows:[^{}]*padding-bottom:[^{}]*\}/g)].map(m=>m[1].trim());
+ assert.equal(selectors.length,3);
+ // The shared .campaign-page:not(.landing-page) has two class components.
+ // Roster CSS is imported later, so equal or greater specificity wins at each height.
+ for(const selector of selectors)assert.ok((selector.match(/\.[\w-]+/g)??[]).length>=2,`${selector} must beat the shared 66px BACK reserve`);
 });

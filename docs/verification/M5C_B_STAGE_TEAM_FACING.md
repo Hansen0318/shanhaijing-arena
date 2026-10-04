@@ -12,3 +12,10 @@ Stale expectations updated for three flow rows, intentional slot overlap and app
 
 ## Pending
 Existing Actions / Pages deployment, public fingerprints and actual Stage/Team render inspection. Do not claim player verified. No new art/animation/gameplay scope.
+
+## Runtime defect and bounded correction
+Actions #550 /37198636741 Test/Build/Pages SUCCESS for `2cc78902527109702342098ce93a61d36f144fa5`. Public Stage at1363×936 shows overlay top-left and separate unobscured rewards/START; page clientHeight=scrollHeight=936.
+
+Team runtime showed computed padding-bottom66px: roster bottom870, BACK/BATTLE bottom924 (54px separation). Shared `.campaign-page:not(.landing-page)` specificity beat `.team-page`. Corrected only the three Team selectors to `.campaign-page.team-page`, imported after campaign CSS, retaining original Chat dimensions and media rules. Added cascade regression (RED before fix / GREEN after); row budgets now use effective intended Team padding.
+
+Targeted71/71 PASS, including six Collection/menu checks; asset guard40files148075bytes, build/diff PASS. New JS index-CAIw_s5b.js, CSS index-DapD6M69.css, battleRuntime-Dxl519vC.js. Correction deployment/public Team verification pending.
