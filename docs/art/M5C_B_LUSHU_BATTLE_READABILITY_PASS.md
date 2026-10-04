@@ -625,3 +625,22 @@ If player device smoke confirms these choices improve readability and navigation
 - then promote the successful pattern into reusable future-character hard rules.
 
 Until then, keep these decisions scoped to the current 鹿蜀 correction.
+
+
+## 25. Placeholder-to-formal replacement correction — Chat implementation
+
+Status:
+**IMPLEMENTED IN SOURCE / EXECUTABLE VALIDATION PENDING**
+
+Current provisional replacement contract is now implemented for 鹿蜀:
+
+- placeholder names may identify characters before art exists;
+- when the relevant formal image slot resolves successfully, compact-card name placeholders retire instead of remaining beside the image;
+- Team Select selected lineup uses full-body identity art as the primary visual, with a much larger 3v3 presentation, slight overlap permitted, and a dominant central VS;
+- lower roster/collection cards remain secondary and use enlarged head/bust imagery;
+- in battle, a formal actor sprite replaces the solid placeholder body marker; the marker may remain only as an outline ring/stroke for selection/team feedback;
+- characters without formal art continue to use their existing placeholder representation.
+
+Implementation is deliberately conditional on asset availability so the graybox-first development workflow still works for undeveloped characters.
+
+Do not promote this to a project-wide hard rule until player device smoke confirms the result.
