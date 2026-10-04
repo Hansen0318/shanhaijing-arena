@@ -50,6 +50,7 @@ Before substantial work:
 9. continue from the first unfinished item only.
 
 Do not ask the player to restate prior decisions unless canonical repo documents are genuinely missing or contradictory.
+If `docs/STATE.md` names an accepted/player-verified baseline document, that baseline is a mandatory relevant spec for recovery and supersedes older historical handoff entries for the same presentation/scope. Do not regress to an earlier provisional version merely because it appears later in a long history section.
 
 ## 4. Recovery: never redo completed work
 After interruption or when starting a new Work:
