@@ -258,3 +258,7 @@ After player approves the character direction, preserve the identity across port
 ## Latest Team Preview / Detail correction direction — 2026-10-04
 Latest explicit player instruction supersedes the previous upper selected-slot portrait interpretation: Team Select upper3v3 uses complete static identity figures and a prominent central VS; lower roster and Collection small cards use enlarged head/bust. Reuse existing approved F1 identity/portrait files; no new production art. Other characters keep their current placeholders. Battle keeps72×96 display/fixed origin/four-frame idle. Hit/cast/KO missing-art transitions keep an existing static idle frame visible at the current projected position.
 Character Detail/Info remains a static larger identity image now. Future breathing animation and a species/myth-specific Shanhaijing scene background are recorded directions, not work in this slice. Future upper-lineup micro-animation is also deferred. Acceptance remains PLAYER SMOKE PENDING; Chat owns post-acceptance review.
+
+## Current production status — 2026-10-04
+
+**PLAYER VERIFIED for current portrait / identity / battleIdle presentation.** Do not regenerate or redesign accepted 鹿蜀 portraitSquare, collectionArt/identity, or 4-frame battleIdle when a new session starts. Formal Hit / KO / Cast art is still not authored and requires a separate bounded slice. Shared UI/presentation rules are canonical in `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md`.
