@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
 import {createLabConfig} from '../src/dev/battleLab/config.js';import {createLabBattleSession} from '../src/dev/battleLab/battleFactory.js';import {createAssetCache} from '../src/runtime/assetCache.js';
 const api=await import('../src/runtime/assetPresenter.js').catch(()=>({}));
 function scene(){const objects=[];const textures=new Map();const make=()=>{const v=new Proxy({destroyed:false,destroy(){this.destroyed=true;}},{get:(o,k)=>k in o?o[k]:()=>v});objects.push(v);return v;};return {objects,add:{graphics:make,image:make},textures:{exists:k=>textures.has(k),addImage(k){textures.set(k,{add(){}});return textures.get(k);},remove:k=>textures.delete(k),get:k=>textures.get(k)},keys:textures};}
@@ -42,4 +42,12 @@ test('target-attached VFX follows target and cleans when target KO',()=>{
  const session=createLabBattleSession(createLabConfig()),s=faithfulScene(),p=new api.AssetPresenter(s),character=session.characterDefinitions[session.allies[0].definitionId],frame=session.snapshot();
  p.cast({actorId:'a1',targetId:'e1',category:'heavy',origin:{x:0,y:0},target:{x:10,y:-1}},character,0,{presentation:{vfx:{form:'ring',attach:'target',duration:1}}});frame.enemies[0].x=9;p.render(frame,.1,session.characterDefinitions);assert.equal([...p.displays.values()][0].x,9);
  frame.enemies[0].hp=0;p.render(frame,.2,session.characterDefinitions);assert.equal(p.playback.active.size,0);assert.equal(p.displays.size,0);p.destroy();
+});
+
+test('battle HUD portraits use shared side-based mirroring, not character-specific logic',()=>{
+ const source=readFileSync(new URL('../src/runtime/assetPresenter.js',import.meta.url),'utf8');
+ const arena=readFileSync(new URL('../src/runtime/ArenaScene.js',import.meta.url),'utf8');
+ assert.match(arena,/portraitViews\.set\(id, \{ card, backing, portrait, barFill, hpText, layout, side \}\)/);
+ assert.match(source,/setFlipX\(view\.side==='enemy'\)/);
+ assert.doesNotMatch(source,/definitionId.*setFlipX/);
 });
