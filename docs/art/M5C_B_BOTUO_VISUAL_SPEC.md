@@ -300,3 +300,47 @@ Create/review **one 猼訑 humanoid concept image** using the recommended shield
 Do not generate production portraitSquare / collectionArt / battleIdle yet.
 Do not start another character.
 Do not start Hit / KO / Cast or VFX.
+
+
+## 18. Concept A review — 2026-10-04
+
+Status: **DIRECTIONALLY USEFUL / NOT APPROVED**
+
+Strengths:
+- broad planted Power/Tank silhouette reads correctly;
+- mythic sheep/goat head and large curved horns are immediately identifiable;
+- front-guard/protector role is clear;
+- shoulder-fur mantle supports the heavy upper-body read;
+- shield/bracer-led equipment direction separates the character from 狌狌.
+
+Required correction before player approval:
+- reduce overall ornament density substantially;
+- simplify armor into fewer large masses;
+- reduce tassels, cords, plaques, tiny gold details and layered garment pieces;
+- simplify horn surface detail;
+- reduce red accents so they do not compete with 鹿蜀/九尾狐 identity language;
+- replace the highly ornamental beast/lion-face shield sculpture with a simpler broad protective bracer/guard silhouette;
+- ensure the forward guard does not obscure too much torso/arm readability;
+- keep the face more mythic sheep/goat than heroic fantasy-warrior;
+- concept rendering must stay within the roster-wide simplified 2D cel-shaded language.
+
+The small 4-frame figures shown in Concept A are **visual mockups only**, not authored/integrated battleIdle frames and not production assets.
+
+### Concept B target
+Preserve:
+- large curved horns;
+- broad shoulders and planted stance;
+- white/cream goat face;
+- dark shoulder-fur mantle;
+- one clear forward guard surface;
+- stone / dark brown / iron / muted-gold palette.
+
+Simplify:
+- one main torso armor mass;
+- one main waist cloth mass;
+- one main bracer/guard mass;
+- minimal secondary hand protection;
+- very few decorative accents;
+- clean negative space around head, arms and legs.
+
+Concept B should read correctly from silhouette and 4–6 major color masses before any small details are visible.
