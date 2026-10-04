@@ -15,6 +15,7 @@
 /* Static identity slot, separate from compact portraits; animation remains deferred. */
 .lineup-figure { display:grid;place-items:end center;flex:1;min-height:0;min-width:0;width:100%;font-size:clamp(12px,2vw,22px);color:#b2daeb;overflow:visible; }
 .enemy-slot .lineup-figure { color:#ffc1aa; }
+.lineup-figure img{width:100% !important;height:100% !important;object-fit:contain !important;transform:none;transform-origin:50% 100%;}
 .enemy-slot .lineup-figure img { transform:scaleX(-1); }
 .matchup-identity { display:flex;align-items:center;justify-content:center;gap:3px;min-width:0;font-size:12px; }
 .type-mark { font-size:17px;line-height:1;flex-shrink:0; }
@@ -50,7 +51,6 @@
  .roster-bench{grid-template-rows:28px 80px;}
  .roster-grid{width:calc(100% - 250px);max-width:calc(100% - 250px);}
  .team-slot,.enemy-slot{flex-basis:48%;margin-inline:-8%;}
- .lineup-figure img{transform:scale(1.62);}
 }
 
 /* Fit the 132px lineup even with Safari's bottom inset on a 320px viewport. */
@@ -60,5 +60,4 @@
  .roster-grid{width:calc(100% - 230px);max-width:calc(100% - 230px);}
  .roster-card{grid-template-rows:52px 20px;height:76px;}
  .team-footer .battle {min-height:36px;height:36px;}
- .lineup-figure img{transform:scale(1.68);}
 }
