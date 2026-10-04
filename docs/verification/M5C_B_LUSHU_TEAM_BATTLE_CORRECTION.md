@@ -1,6 +1,6 @@
 # M5C-B — 鹿蜀 Team Preview / battle correction
 
-Status: implementation/checks complete; safe checkpoint / deployment pending.
+Status: ENGINEERING PASS / PLAYER SMOKE PENDING.
 Baseline32beb119e5e0af2c2af9301223f6e0485e608af8, feat/m0-combat-core-20260927 /PR#1 OPEN; baseline Actions37178297499 SUCCESS. No main merge.
 
 ## Latest direction / implementation
@@ -26,8 +26,15 @@ Battle cache impact unchanged: idle+portrait256KiB/two entries. Upper Team stati
 - Build/asset guard40files148,075bytes/diff PASS. Existing chunk advisory remains. No full local suite; unchanged Pages workflow runs standard CI policy.
 - Whole diff review: menu/presenter/HUD/CSS and tests only; no combat/AI/numbers/Tier costs/accounting/rewards/progression/save schemas/spawn geometry changes. Baseline BACK/facing/Idle integrations reused.
 
-## Release closure pending
-Save checkpoint; verify Actions/Pages/public fingerprint and changed Team/Collection/Detail/HUD surfaces. Then ENGINEERING PASS / PLAYER SMOKE PENDING. Do not claim device/player verification.
+## Release closure — 2026-10-04
+- Exact source81225bd4246a4a069d2e3932ed7f787f575afb59; treebddbd4cd15bb0227fc5b6e1312354f5cf9bcdfb6; original feature branch/PR#1, no main merge.
+- Actions37180242361 SUCCESS, build/deploy jobs SUCCESS; existing CI Test/Build/Pages policy unchanged. Local checks stayed targeted.
+- Public https://hansen0318.github.io/shanhaijing-arena/ has index-Dt9Ugafq.js /index-B8U1ulZy.css. Public entry SHA256f313c94c3f5a2780fcc2a3ac73a63ee87e9dd2dd88456c139e70f43152941a84 matches local. Deferred battleRuntime-DH_haGrv.js SHA25693dafe734298de1298784d7bc5d0e1affaf33de0f983cb5d04b97a838cdc189c also matches local. Normal Landing unchanged.
+- Public cloud1363×936: both鹿蜀 full identity previews load144×192 static source, complete horns/feet/tail/equipment visible, enemy mirrored toward VS; large centralVS, no horizontal overflow(root client/scroll width1363). Bench128×128 portrait, parsed gradient and whiteT0 border visible. Other four identities stay procedural placeholders intentionally; no other art production. Real-device fit remains player smoke.
+- Collection enlarged head/gradient/T0 border visible; Detail144×192 image complete, content client/scroll width1331(no overflow). Detail BACK focus returns鹿蜀 card with root/grid0; Team BACK returns Stage, Stage→Chapter→Landing works. Nonzero remembered grid and delayed visualViewport contracts covered automatically.
+- Public Lab selecteda2鹿蜀 +battleHit inspection, Skip countdown: missing formal Hit still displays full鹿蜀 at current anchor; side HUD portraits/HP remain and names absent on both teams. Initial full-body scale/facing/HUD separation visible. Pause/Resume controls work; Exit→Lab releases all canvas/game hosts(0/no host), then normal Landing restored.
+- Cloud simulation clock stayed01:30; this observation proves initial/inspection visibility, not sustained motion or physical iPhone gameplay. Actual damage-event simulation test proves no visibility drop throughout its bounded real combat run; device disappearance/readability/mirror/idle/Safari acceptance remains pending.
+- WORK_PROGRESS/STATE and future Detail directions updated. Stop for13-item player smoke, no acceptance/global promotion claim.
 
 ## Player smoke / STOP
 Only13 requested items: upper full-body3v3; bigVS; complete ally/enemy鹿蜀; any overlap acceptable; enlarged lower head; dark-top/light-bottom gradient; distinct Tier borders; Detail full identity; side-card names absent; no battle disappearing; readable battle body; movement mirror; BACK/root/internal-scroll correct. No Detail animation/scenic background smoke. Stop for player and Chat post-acceptance review before promoting future-character hard rules; no other states/characters/VFX/audio/Chapter2/gameplay work.
