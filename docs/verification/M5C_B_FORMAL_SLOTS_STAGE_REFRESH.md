@@ -11,3 +11,6 @@ Build: index-DM75iJjG.js /index-BFUQEjl4.css /battleRuntime-BdWZaRMP.js.
 
 ## Pending
 Pages workflow, public fingerprints, actual Stage/Team/refresh render and BACK/outer-scroll inspection. No player acceptance claimed.
+
+## Actions-identified stale impacted test
+Checkpoint21ddc88f7f63eacf037901432f4a9cee0b538b21 /Actions #562 /37201099425 failed solely on `tests/lushuTeamBattleCorrection.test.js` calling removed `img.onload()`. Local targeted reproduction6/7; changed only expectation to initial hidden formal fallback plus optional load handler and retained actual-error reveal check. Combined impacted71/71 PASS, diff check PASS; production/build unchanged. Includes same Tier/gradient/lower name-Type and Collection conditional replacement checks.
