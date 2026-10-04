@@ -693,3 +693,32 @@ The upper selected 3v3 preview should occupy much more of the available landscap
 Space is reclaimed by shrinking the Type filters and reducing/right-aligning the BATTLE button.
 
 This remains a provisional 鹿蜀 presentation decision until device smoke passes.
+
+## 27. Third runtime/presentation correction — source implemented
+
+Status:
+**IMPLEMENTED IN SOURCE / EXECUTABLE + PLAYER VALIDATION PENDING**
+
+### 27.1 Lower roster portrait framing
+The lower Team Select roster card remains an information card and must retain portrait + character name + Type.
+
+The formal 鹿蜀 portrait must not crop off the head or horns. The current source replaces the previous aggressive cover/1.28 crop with centered contain framing at approximately 0.98 scale.
+
+### 27.2 Formal actor debug-label retirement
+When a visible formal battle sprite is present, the old floating graybox/debug identity label (A/E instance identifier plus name/status text) is hidden.
+
+Placeholder-only actors may continue to use the debug identity label until their formal art exists.
+
+HUD portraits/HP, damage numbers, explicit telegraphs and skill UI are unaffected.
+
+### 27.3 Battle sprite visual scale
+The player requested formal battle actors be 1.5× larger than the previous accepted engineering presentation.
+
+For 鹿蜀 this changes the visual target from approximately 72×96 to approximately 108×144 while preserving:
+- actor gameplay x/y;
+- hitbox;
+- attack/ability range;
+- AI spacing and movement logic;
+- targeting and telegraph geometry.
+
+This is a presentation-only scale correction and remains provisional until device smoke.
