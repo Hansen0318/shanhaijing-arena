@@ -561,8 +561,8 @@ export class ArenaScene extends Phaser.Scene {
       const view = this.actorViews.get(actor.instanceId);
       const position = arenaToStage(actor);
       const art=this.visualAssets.actorSprites?.get(actor.instanceId),hasFormalArt=Boolean(art?.visible);
-      // Placeholder body marker retires when formal sprite exists; keep only its ring/stroke for selection/team feedback.
-      view.marker.setPosition(position.x, position.y).setFillStyle(view.markerColor,hasFormalArt?0:1).setAlpha(actor.hp > 0 ? 1 : 0.35);
+      // Formal art fully replaces the graybox body marker. Selection/target/skill feedback belongs to dedicated UI/telegraph systems.
+      view.marker.setPosition(position.x, position.y).setVisible(!hasFormalArt).setFillStyle(view.markerColor,1).setAlpha(actor.hp > 0 ? 1 : 0.35);
       const identity=battlePortrait(this.session,actor.instanceId);
       const guarded=this.session.statuses.damageMultiplier(actor.instanceId,this.session.elapsedSeconds)<1;
       const marks=actor.hp>0?statusMarks(this.session.statuses.forActor(actor.instanceId,this.session.elapsedSeconds)):'';
