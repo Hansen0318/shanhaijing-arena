@@ -78,6 +78,17 @@ This file records the **current accepted result**, not the chronological discuss
 - This rule is side-based and applies to every current and future character.
 - It is separate from in-arena dynamic facing.
 
+## 2A. Roster visual-style baseline
+
+Future characters must remain visually compatible with the accepted current roster direction:
+- simplified 2D cel shading;
+- strong large-shape readability;
+- controlled outlines/line density;
+- flat/stepped value separation;
+- no photorealistic, 3D-rendered, painterly, watercolor, or sketch-only one-off character style.
+
+Portrait/Collection may carry more detail than battle art, but both must clearly belong to the same roster art system.
+
 ## 3. Formal asset / placeholder rule
 
 Placeholder retirement is **asset-driven and roster-wide**.
