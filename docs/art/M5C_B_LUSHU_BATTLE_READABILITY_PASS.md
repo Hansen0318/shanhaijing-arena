@@ -581,3 +581,47 @@ Protected:
 - combat/AI/progression/Tier/shard/reward rules.
 
 Do not proceed to Hit / KO / Cast until these four runtime issues pass player smoke.
+
+
+## 24. Provisional presentation correction targets
+
+Status:
+**PLAYER-DIRECTED CORRECTION TARGETS — NOT YET GLOBAL HARD RULE**
+
+Use these targets for the current 鹿蜀 correction slice, then validate on device before promoting them into project-wide production rules.
+
+### Small-card presentation
+For Team Select / Collection grid / compact roster cards:
+- prefer head / face / bust-oriented presentation;
+- prioritize species face, horns, ears and upper-body identity;
+- do not force a full-body figure into a small card if it becomes unreadable.
+
+### Character Detail / Info presentation
+For larger character-detail surfaces:
+- use a larger 3/4 or full-body identity image;
+- allow the player to read the character's complete silhouette, body plan, tail and equipment;
+- this surface is the correct place for richer presentation art than battle or small cards.
+
+### Battle scale correction
+Current ~36×48 stage fit is too small on iPhone.
+
+First correction target:
+- approximately 2.0–2.2× the current visual size;
+- roughly 64×86 to 72×96 equivalent visible fit is a reasonable first smoke target;
+- do not change hitbox, ability range, AI spacing, movement speed, collision or telegraph geometry;
+- adjust only presentation scale/fit.
+
+Do not jump directly to a ~4× scale unless later device evidence requires it.
+
+### Static-first validation
+For the correction smoke:
+- static frame presentation may be used first to validate scale, facing, card/detail bindings and viewport behavior;
+- once those pass, restore/verify the accepted 4-frame idle loop;
+- this is a validation sequence, not removal of the accepted idle animation.
+
+### Promotion gate
+If player device smoke confirms these choices improve readability and navigation:
+- perform a post-acceptance review;
+- then promote the successful pattern into reusable future-character hard rules.
+
+Until then, keep these decisions scoped to the current 鹿蜀 correction.
