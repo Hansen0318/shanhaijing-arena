@@ -142,6 +142,26 @@ Accepted Idle:
 
 Runtime/source optimization rules remain governed by `docs/M5C_B_FORMAL_ASSET_BATCH.md` and `docs/ASSET_PIPELINE.md`.
 
+## 5A. Character-art production gate
+
+The current roster-wide production sequence is:
+
+**Concept approval → Battle Simplification → Static Asset Pack → Static Runtime Readability PASS → Idle Micro-animation → roster/batch comparison → Hit/KO/Cast → Skill VFX**
+
+Static Asset Pack means:
+- `portraitSquare`
+- `collectionArt`
+- static `battleIdle`
+
+Rules:
+- do not author idle micro-animation before the static runtime gate passes;
+- static identity must remain readable without motion/VFX;
+- if battle art is unclear, simplify detail and strengthen silhouette/value/color contrast first;
+- do not use per-character enlargement as the default fix for weak readability;
+- later animation/VFX must preserve the accepted static identity rather than redesign it.
+
+This supersedes older notes that bundled static battle art and idle micro-animation into one production step.
+
 ## 6. Development method that must continue
 
 - Chat-first is mandatory: Chat completes every safe bounded repo edit, spec update, static review and root-cause narrowing it can do before Work.
