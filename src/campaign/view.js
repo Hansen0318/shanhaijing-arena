@@ -76,10 +76,10 @@ export class CampaignView {
   back.onclick=()=>{if(this.controller.back()) this.render();};
   const heading=document.createElement('h1');heading.textContent=chapter.title;header.append(back,heading);page.append(header);
   const preview=document.createElement('div');preview.className='stage-preview';
+  const visual=document.createElement('div');visual.className='stage-visual';
   const image=document.createElement('img');bindMenuImage(image,resolvePreview(stage.previewImage));image.alt=`Stage ${stage.stageId} preview`;image.dataset.stageId=stage.stageId;
+  const overlay=document.createElement('div');overlay.className='stage-title-overlay';overlay.textContent=`${stage.stageId} ${stage.title}`;visual.append(image,overlay);
   const details=document.createElement('div');details.className='preview-details';
-  const id=document.createElement('h2');id.textContent=stage.stageId;
-  const title=document.createElement('p');title.textContent=stage.title;
   const start=document.createElement('button');start.type='button';start.className='campaign-button start';start.textContent='START';
   start.disabled=stageStatus(this.controller.progress,stage.stageId)==='locked';
   start.onclick=()=>{if(this.controller.openTeamSelect())this.render();};
@@ -89,7 +89,7 @@ export class CampaignView {
    const label=document.createElement('span');label.textContent=item.label;
    row.append(label);rewards.append(row);
   }
-  details.append(id,title,rewards,start);preview.append(image,details);page.append(preview);
+  details.append(rewards,start);preview.append(visual,details);page.append(preview);
   const cards=document.createElement('div');cards.className='stage-grid';cards.setAttribute('aria-label','Stages');
   for(const item of orderedStages(chapter)) cards.append(card({image:item.previewImage,label:item.stageId,status:stageStatus(this.controller.progress,item.stageId),selected:item.stageId===stage.stageId,onClick:()=>{if(this.controller.selectStage(item.stageId)) this.render();}}));
   page.append(cards);
