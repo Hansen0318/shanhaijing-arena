@@ -331,6 +331,6 @@ Player feedback: M6C mechanic differentiation is correct but the raw Tier power 
 
 ## M5C-B — Formal Asset Batch Integration
 
-Status: **CHAT ASSET AUTHORING / BATCH PREPARATION**. Canonical spec: `docs/M5C_B_FORMAL_ASSET_BATCH.md`.
+Status: **IN PROGRESS — shared presentation baseline PASS / PLAYER VERIFIED; 鹿蜀 portrait/identity/battleIdle accepted; remaining Chapter1 formal art pending.** Canonical specs: `docs/M5C_B_FORMAL_ASSET_BATCH.md` and `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md`.
 
 M5C-A pipeline and M6C-B balance are accepted. Prepare complete approved visual batches before Work integration. First batch: all five Chapter1 characters' portraitSquare, collectionArt and battleIdle/static assets.
