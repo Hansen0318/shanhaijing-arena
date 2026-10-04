@@ -28,7 +28,8 @@ test('real Campaign view START renders Team Select, BACK keeps stage, BATTLE sup
 test('Stage id/name appear only in the preview overlay while rewards and START stay in the details column',()=>{
  const old=globalThis.document;globalThis.document={createElement:element};
  try{const root=element('main'),c=new CampaignController({dev:true}),view=new CampaignView(root,c);c.openChapter('chapter-1');c.selectStage('1-1');view.render();
- const overlay=walk(root).find(n=>n.className==='stage-title-overlay');assert.equal(overlay.textContent,'1-1 山麓試煉');
+ const overlay=walk(root).find(n=>n.className==='stage-title-overlay');assert.deepEqual(overlay.children.map(n=>[n.tag,n.textContent]),[['strong','南山初境'],['span','1-1 山麓試煉']]);
+ assert.equal(walk(root).some(n=>n.tag==='h1'),false);
  const details=walk(root).find(n=>n.className==='preview-details');assert.equal(walk(details).some(n=>n.tag==='h2'||n.textContent==='山麓試煉'),false);
  assert.ok(walk(details).some(n=>n.textContent==='START'));assert.ok(walk(details).some(n=>n.className==='stage-rewards'));
  }finally{globalThis.document=old;}

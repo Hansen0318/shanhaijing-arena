@@ -6,14 +6,14 @@ import { renderTeamSelect } from '../src/roster/view.js';
 import { findStage } from '../src/campaign/data.js';
 const element=tag=>({tag,children:[],dataset:{},style:{},className:'',append(...nodes){this.children.push(...nodes);},setAttribute(k,v){this[k]=v;}});
 const walk=n=>[n,...n.children.flatMap(walk)];
-test('upper matchup retains all six slot identities but no type marks or detailed metadata',()=>{
+test('upper matchup retires formal slot captions and retains all six accessible identities',()=>{
  const page=element('section'),team=new TeamSelection({stage:findStage('1-1'),saved:['P1','P3','P5']});
  renderTeamSelect(page,team,{document:{createElement:element},stageId:'1-1'});
  const upper=walk(page).find(n=>n.className==='team-matchup');
  const nodes=walk(upper);
  assert.equal(nodes.filter(n=>n.className==='type-mark').length,0);
- assert.deepEqual(nodes.filter(n=>n.dataset.slot).map(n=>walk(n).find(c=>c.className==='slot-caption').textContent),['SLOT 1','SLOT 2 · FRONT','SLOT 3']);
- assert.deepEqual(nodes.filter(n=>n.dataset.enemyId).map(n=>walk(n).find(c=>c.className==='slot-caption').textContent),['E1','E2 · FRONT','E3']);
+ assert.deepEqual(nodes.filter(n=>n.dataset.slot).map(n=>walk(n).find(c=>c.className==='slot-caption')?.textContent),[undefined,'SLOT 2 · FRONT','SLOT 3']);
+ assert.deepEqual(nodes.filter(n=>n.dataset.enemyId).map(n=>walk(n).find(c=>c.className==='slot-caption')?.textContent),['E1',undefined,'E3']);
  assert.equal(nodes.filter(n=>n.className==='lineup-figure').length,6);
  assert.equal(nodes.filter(n=>n.className==='matchup-identity').length,4);
  assert.ok(walk(page).some(n=>n.textContent==='BATTLE'));
@@ -68,4 +68,11 @@ test('Team bottom padding wins the shared BACK reserve so roster shares the cont
  // The shared .campaign-page:not(.landing-page) has two class components.
  // Roster CSS is imported later, so equal or greater specificity wins at each height.
  for(const selector of selectors)assert.ok((selector.match(/\.[\w-]+/g)??[]).length>=2,`${selector} must beat the shared 66px BACK reserve`);
+});
+
+test('formal allies/enemies share unscaled full-body fit at every supported height; enemy mirror is preserved',()=>{
+ const css=readFileSync(new URL('../src/roster/style.css',import.meta.url),'utf8');
+ assert.match(css,/\.lineup-figure img\{[^}]*width:100% !important;[^}]*height:100% !important;[^}]*object-fit:contain !important;[^}]*transform:none/);
+ assert.match(css,/\.enemy-slot \.lineup-figure img \{ transform:scaleX\(-1\); \}/);
+ assert.equal(/transform:scale\(1\.[0-9]+\)/.test(css),false,'no short-height ally-only enlargement');
 });

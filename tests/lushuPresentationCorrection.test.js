@@ -19,7 +19,8 @@ test('approved static portrait/full identity resolve through shared slots, retai
   const png=readFileSync('public/'+a.path);assert.equal(png[25],6);
   const host=element('span');host.textContent='鹿蜀';decoratePortrait(host,rosterCatalog.P1,{document:doc,slot});
   const image=host.children.find(n=>n.tag==='img');assert.ok(image);assert.ok(image.src.endsWith(a.path));assert.equal(host.style.display,'grid');
-  image.onload();assert.equal(host.children.find(n=>n.tag==='span').hidden,true);
+  // Formal loading starts without a temporary text flash.
+  assert.equal(host.children.find(n=>n.tag==='span').hidden,true);image.onload?.();assert.equal(host.children.find(n=>n.tag==='span').hidden,true);
   image.onerror();assert.equal(image.hidden,true);assert.equal(host.children.find(n=>n.tag==='span').hidden,false);
  }
  assert.equal(resolveCharacterAsset(rosterCatalog.P2,'portraitSquare').type,'procedural');
