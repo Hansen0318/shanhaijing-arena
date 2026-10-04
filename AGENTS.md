@@ -249,6 +249,7 @@ Before creating a Work task, Chat should state internally/record in the handoff:
 6. where Work must checkpoint if interrupted.
 
 A Work task must not contain broad phrases such as "fully test everything" or "recheck the whole game" unless the actual change impact justifies that scope.
+A Work handoff must also be concise and execution-focused. Do not repeat long background already recoverable from GitHub, do not provide both a long and short version, and do not ask the player whether they want a shorter prompt. Give one compact, precise prompt containing only the unresolved Work-owned delta, exact constraints, minimum checks, and stop condition.
 
 ## 17. Interruption protection / recoverability
 For any substantial Work task:
