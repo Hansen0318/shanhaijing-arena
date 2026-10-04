@@ -16,8 +16,8 @@ test('formal cast/hit/KO rendering is presentation-only and bounded; clear destr
  p.destroy();assert.ok(s.objects.every(o=>o.destroyed));assert.equal(p.states.size,0);
 });
 test('Lab inspection uses shared presenter without combat mutation',async()=>{
- assert.equal(typeof api.AssetPresenter,'function');const session=createLabBattleSession(createLabConfig()),p=new api.AssetPresenter(scene(),{cache:createAssetCache({transport:async()=>({image:{width:64,height:32},bytes:200})})});
- const frame=session.snapshot(),before=JSON.stringify(frame);await p.inspect(frame.allies[0].instanceId,session.characterDefinitions[frame.allies[0].definitionId],'battleIdle',0);p.render(frame,.6,session.characterDefinitions);assert.equal(JSON.stringify(session.snapshot()),before);assert.equal(p.states.get('a1').descriptor.source,'placeholder.actor-strip');p.destroy();
+ assert.equal(typeof api.AssetPresenter,'function');const session=createLabBattleSession(createLabConfig()),p=new api.AssetPresenter(scene(),{cache:createAssetCache({transport:async record=>({image:{width:record.width,height:record.height},bytes:200})})});
+ const frame=session.snapshot(),before=JSON.stringify(frame);await p.inspect(frame.allies[0].instanceId,session.characterDefinitions[session.actorById(frame.allies[0].instanceId).definitionId],'battleIdle',0);p.render(frame,.6,session.characterDefinitions);assert.equal(JSON.stringify(session.snapshot()),before);assert.equal(p.states.get('a1').descriptor.source,session.characterDefinitions[session.actorById(frame.allies[0].instanceId).definitionId].animationDescriptors?.battleIdle?.source??'placeholder.actor-strip');p.destroy();
 });
 test('unknown/failed image slots leave real combat running and retained session unchanged',async()=>{
  const session=createLabBattleSession(createLabConfig({scenarioId:'heal'})),p=new api.AssetPresenter(scene(),{cache:createAssetCache({transport:async()=>{throw Error('missing');}})});

@@ -34,7 +34,7 @@ export class AssetPresenter{
  async inspect(ownerId,character,slot,now){
   if(slot==='none'||this.closed)return;
   if(slot.endsWith('Vfx'))this.playback.play(ownerId,characterVfx(character,slot.slice(0,-3)),{x:0,y:0},now);
-  else {const descriptor=slot==='battleIdle'?grayboxAnimation:animationDescriptor({source:resolveCharacterAsset(character,slot).key,duration:1});await this.loadKeys([descriptor.source]);if(!this.closed)this.setState(ownerId,descriptor,now,'inspection');}
+  else {const descriptor=slot==='battleIdle'?(character?.animationDescriptors?.battleIdle?characterAnimation(character,'battleIdle'):grayboxAnimation):animationDescriptor({source:resolveCharacterAsset(character,slot).key,duration:1});await this.loadKeys([descriptor.source]);if(!this.closed)this.setState(ownerId,descriptor,now,'inspection');}
  }
  imageFor(ownerId,descriptor,elapsed,map=this.actorSprites){
   const texture=this.textures.get(descriptor.source);if(!texture)return null;
