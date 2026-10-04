@@ -17,6 +17,8 @@ test('upper matchup retains all six slot identities but no type marks or detaile
  assert.equal(nodes.filter(n=>n.className==='lineup-figure').length,6);
  assert.equal(nodes.filter(n=>n.className==='matchup-identity').length,4);
  assert.ok(walk(page).some(n=>n.textContent==='BATTLE'));
+ assert.equal(walk(page).some(n=>n.className==='team-status'),false);
+ assert.ok(walk(page).find(n=>n.textContent==='BACK').className.includes('screen-back'));
 });
 test('forced front slot keeps short formation identity and accessible REQUIRED metadata without a taller title',()=>{
  const page=element('section'),team=new TeamSelection({stage:{...findStage('1-1'),forcedCharacters:['P3']},saved:['P1','P3','P5']});
@@ -26,21 +28,24 @@ test('forced front slot keeps short formation identity and accessible REQUIRED m
  slot.onclick();assert.deepEqual(team.slots,['P1','P3','P5']);
 });
 
-test('declared viewport row budget keeps header, matchup, bench and BATTLE within target landscape heights',()=>{
- // Deterministic CSS budget contract, not a browser or real-device geometry claim.
- // It catches adding fixed row height/gaps/padding that would push BATTLE below the viewport.
+test('declared row budget reserves lower BACK space while fitting flexible upper lineup and information cards',()=>{
  const css=readFileSync(new URL('../src/roster/style.css',import.meta.url),'utf8');
  const rules=[...css.matchAll(/\.team-page \{([^}]+)\}/g)].map(m=>m[1]);
- const rows=rules.map(r=>r.match(/grid-template-rows:(\d+)px minmax\((\d+)px,1fr\) (\d+)px (\d+)px/).slice(1).map(Number));
- assert.equal(rows[0][1],150);assert.equal(rows[1][1],132);
+ const rows=rules.map(r=>r.match(/grid-template-rows:(\d+)px minmax\((\d+)(?:px)?,1fr\) (\d+)px (\d+)px/).slice(1).map(Number));
+ assert.ok(rows.every(row=>row[1]===0),'upper preview flexes with the viewport instead of forcing outer scroll');
  for(const [w,h,bottomInset] of [[667,320,0],[844,320,21],[740,356,21],[740,360,21],[844,390,21],[932,430,21]]) {
-  const index=h<=356&&rules.length>2?2:h<=420?1:0,rule=rules[index],props=Object.fromEntries(rule.split(';').filter(x=>x.includes(':')).map(x=>x.trim().split(':'))),selectedRows=rows[index];
-  const gap=parseFloat(props.gap),top=parseFloat(props['padding-top']),bottomMin=parseFloat(props['padding-bottom'].match(/max\((\d+)px/)[1]);
-  const fixed=selectedRows[0]+selectedRows[2]+selectedRows[3]+gap*3+top+Math.max(bottomMin,bottomInset),upper=h-fixed;
-  assert.ok(upper>=selectedRows[1],`${w}×${h}: all four rows must fit without reducing the accepted upper minimum`);
-  assert.ok(selectedRows[0]>=44&&selectedRows[3]>=36,'BACK and compact BATTLE retain their control budget');
-  assert.ok(fixed+upper<=h);
+  const index=h<=356?2:h<=420?1:0,rule=rules[index],props=Object.fromEntries(rule.split(';').filter(x=>x.includes(':')).map(x=>x.trim().split(':'))),row=rows[index];
+  const gap=parseFloat(props.gap),top=parseFloat(props['padding-top']),bottomMin=Number(props['padding-bottom'].match(/max\((\d+)px/)[1]),safeReserve=Number(props['padding-bottom'].match(/bottom\) \+ (\d+)px/)[1]);
+  // Shared non-landing rule has higher specificity and reserves at least 66px / inset+54px.
+  const bottom=Math.max(66,bottomInset+54,bottomMin,bottomInset+safeReserve);
+  const upper=h-row[0]-row[2]-row[3]-gap*3-top-bottom;
+  assert.ok(upper>0,`${w}×${h}: all four rows plus BACK reserve fit`);
+  assert.ok(row[3]>=36);assert.match(rule,/overflow:hidden/);
  }
+ assert.match(css,/\.roster-portrait \{[^}]*aspect-ratio:1/);
+ assert.match(css,/object-fit:contain !important;transform:scale\(\.98\);transform-origin:50% 50%/);
+ assert.match(css,/\.team-footer \{[^}]*justify-content:flex-end/);
+ assert.match(css,/\.team-footer \.battle \{[^}]*width:auto;min-width:112px/);
 });
 
 test('overlapping full-body slot boxes stay within each team container instead of creating root horizontal scroll',()=>{
