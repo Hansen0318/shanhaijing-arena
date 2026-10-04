@@ -1,6 +1,9 @@
 # M5C-B — 鹿蜀 battleIdle integration
 
-Status: implementation checkpoint; local engineering PASS, deployment/runtime inspection pending.
+Status: ENGINEERING PASS / PLAYER SMOKE PENDING.
+Deployed engineering source: c213e81a6364381554d0bb8e51451378bd25f46a.
+Actions #488 /37174412653: Test/Build/Pages SUCCESS.
+https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37174412653
 Branch: feat/m0-combat-core-20260927; PR #1; baseline 9adf43d72e4b7a9b50cbe9c42ca8d890da5e0293.
 
 ## Source and optimization
@@ -34,8 +37,19 @@ Hit/KO/Cast stay procedural placeholders; Hit finishes after existing0.4s and re
 - Diff review: only presentation manifest/catalog/Arena adapter/inspection, assets/tests/docs changed. Combat stats/abilities/movement/AI/type/Tier/cooldown/reward/shards/progression/persistence untouched.
 - Existing deferred battle chunk size advisory remains; no dependency/build policy changes.
 
-## Remaining before release closure
-Push checkpoint, verify Actions build/Pages and public fingerprints, perform focused runtime asset/anchor/pause/cleanup inspection; then status ENGINEERING PASS / PLAYER SMOKE PENDING.
+## Public release verification
+- c213e81a6364381554d0bb8e51451378bd25f46a is remotely saved through the authenticated GitHub connector. Local CLI push lacked credentials; connector-created tree d09243644ccf900b60dd4e1e387b5355007d1f3d equals the locally tested tree byte-for-byte. Local checkout reconciled with remote source; no merge to main.
+- Actions #488 /37174412653 completed success: Test, Build, upload artifact, Pages deploy. The unchanged existing CI workflow runs its full suite automatically; no additional broad local regression was run/requested.
+- Public index references index-BgnJQgyS.js /index-DVqbb2lt.css, matching local tested build. Deferred battleRuntime-BhDrcu1H.js retained.
+- Public runtime PNG SHA256 feba4deb9d169e4ffd5dd85104444ec641834e9cc4cde15735a928ce2f53ed40 matches local PNG exactly.
+- Cloud public Battle Lab shows formal 鹿蜀 in both allied and enemy slots, fixed ground origin, preserved HUD/placeholder circles; no authored idle glow/aura/trail. Existing placeholder selection/actor circles remain as required by no-HUD-redesign scope.
+- Pause→Resume button state changes observed; EXIT→Lab removes canvas and #game host. Visual inspection setting persists safely.
+- Cloud countdown remained3 during observations; sustained browser motion/Resume clock progression is NOT asserted. Engineering frame traversal/unchanged coordinates/frozen-clock/resume/Hit/KO/texture cleanup are verified by real presenter and actual Arena tests. Physical iPhone temporal/readability acceptance remains player-owned.
+- Console errors observed were chrome-extension metadata messages, with no page-origin blocking error.
+- Source PNG has antialiased near-transparent edge pixels; source is preserved unchanged as instructed. No image redesign or extra motion was added.
+
+## Next exact step
+Player performs only the eight checks below on iPhone. Stop. No additional production art or gameplay scope.
 
 ## Player smoke / stop
 At iPhone landscape check only: size/readability; visible vertical breathing; tail follows body vertically; no sideways wag; feet fixed; no glow/aura/trail; natural idle rather than attack wind-up; no noticeable battle-load slowdown. Stop at idle. Chat post-acceptance review owns deciding reusable future-character hard rule after actual player PASS.

@@ -1,10 +1,10 @@
 # Project State
 
 ## Milestone
-**M5C-B FORMAL ASSET INTEGRATION — CHAT ASSET AUTHORING / BATCH PREPARATION**
+**M5C-B 鹿蜀 BATTLE IDLE — ENGINEERING PASS / PLAYER SMOKE PENDING**
 
 ## Current state
-- **M5C-B 鹿蜀 IDLE IMPLEMENTATION CHECKPOINT.** Canonical PNG archived unchanged; runtime192×64 /4×48×64 /22,010bytes /49,152 decodedbytes, fixed origin[.5,691/724], fps2.5 /1.6s loop /36×48 stage fit. Existing pipeline reused; presentation snapshot identity and authored Lab inspection corrected. Local targeted/impacted44/44, guard/build/diff PASS; deployment/runtime inspection pending. Original branch/PR#1; no merge. Next: push checkpoint, Actions/Pages/fingerprint and focused runtime inspection, then player-only8-item smoke. Evidence: `docs/verification/M5C_B_LUSHU_IDLE.md`.
+- **M5C-B 鹿蜀 IDLE — ENGINEERING PASS / PLAYER SMOKE PENDING.** Source `c213e81a6364381554d0bb8e51451378bd25f46a`, original `feat/m0-combat-core-20260927` /PR#1; no main merge. Runtime192×64 /4×48×64 /22,010bytes /49,152 decodedbytes /fps2.5 /1.6s /fixed origin[.5,691/724] /36×48 stage fit. Targeted/impacted44/44, guard/build/diff PASS; Actions#488 /37174412653 Test/Build/Pages SUCCESS; public JS/CSS and PNG fingerprints match. Public formal allied/enemy 鹿蜀, Pause/Resume controls and Exit→Lab host cleanup observed. Cloud countdown stayed3; sustained cloud motion is not claimed, four-frame/frozen-clock/resume contracts tested automatically. Next exact action: player iPhone8-item idle/readability/load smoke, then STOP for Chat post-acceptance review. Evidence: `docs/verification/M5C_B_LUSHU_IDLE.md`.
 - Global asset-performance rule now separates high-resolution master/source art from optimized runtime derivatives. All character animation assets must be resized/optimized for actual display footprint, preserve common frame geometry/origin, and remain within M5C-A lazy-load/cache/decoded-memory guards before production lock.
 - 鹿蜀 is now ready for the smallest executable integration slice: optimize and integrate only the accepted 4-frame idle loop through M5C-A, then stop for targeted player motion/readability smoke. Hit / KO / Cast remain blocked until Idle passes in runtime.
 - 鹿蜀 accepted 4-frame idle source is technically validated: RGBA PNG 2172×724, four equal 543×724 horizontal cells, stable ground baseline and readable ~48px breathing differences. Next gate is a minimal idle-only runtime integration/player smoke through M5C-A before any Hit / KO / Cast production.
