@@ -502,3 +502,45 @@ Next step:
 - prepare/validate the accepted 4-frame PNG source for runtime use;
 - confirm frame consistency, transparent background, anchor stability and approximately 48px readability;
 - only after that should Work integrate the idle loop through the existing M5C-A animation pipeline.
+
+
+## 22. 4-frame PNG technical validation
+
+Status:
+**SOURCE CANDIDATE TECHNICALLY VALIDATED — READY FOR RUNTIME INTEGRATION SMOKE**
+
+Validated source:
+- format: PNG / RGBA;
+- canvas: 2172 × 724;
+- exactly four equal horizontal slots;
+- frame width: 543 px each;
+- frame height: 724 px;
+- alpha channel present with transparent background;
+- no embedded glow / aura requirement in the accepted motion contract.
+
+Frame slicing:
+- F1: x 0–542;
+- F2: x 543–1085;
+- F3: x 1086–1628;
+- F4: x 1629–2171.
+
+Observed opaque bounds:
+- F1 local bbox: x 50–462, y 36–690;
+- F2 local bbox: x 54–486, y 21–689;
+- F3 local bbox: x 57–474, y 67–690;
+- F4 local bbox: x 48–462, y 36–689.
+
+Technical interpretation:
+- ground / foot baseline is effectively stable at y≈690–691 across all four frames;
+- vertical silhouette change is large enough to survive downscaling and visibly communicates the accepted inhale / exhale cycle;
+- equal 543×724 frame slicing is deterministic;
+- 48px preview remains readable as four distinct breathing states;
+- no frame requires a separate canvas size or per-frame crop.
+
+Recommended runtime contract:
+- use the four equal cells from the single sprite sheet;
+- keep one fixed origin / anchor for all frames;
+- do not trim individual frames independently at runtime, because that could reintroduce anchor drift;
+- first integration should test only the idle loop before authoring or wiring Hit / KO / Cast.
+
+This validation is technical source acceptance, not final in-game player acceptance. The next gate is a focused runtime smoke through the existing M5C-A animation pipeline.
