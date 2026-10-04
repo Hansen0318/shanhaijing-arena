@@ -76,8 +76,10 @@ export class CampaignView {
   const preview=document.createElement('div');preview.className='stage-preview';
   const visual=document.createElement('div');visual.className='stage-visual';
   const image=document.createElement('img');bindMenuImage(image,resolvePreview(stage.previewImage));image.alt=`Stage ${stage.stageId} preview`;image.dataset.stageId=stage.stageId;
-  const overlay=document.createElement('div');overlay.className='stage-title-overlay';overlay.append(Object.assign(document.createElement('strong'),{textContent:chapter.title}),Object.assign(document.createElement('span'),{textContent:`${stage.stageId} ${stage.title}`}));visual.append(image,overlay);
+  visual.append(image);
   const details=document.createElement('div');details.className='preview-details';
+  const chapterTitle=document.createElement('strong');chapterTitle.className='preview-chapter-title';chapterTitle.textContent=chapter.title;
+  const stageTitle=document.createElement('span');stageTitle.className='preview-stage-title';stageTitle.textContent=`${stage.stageId} ${stage.title}`;
   const start=document.createElement('button');start.type='button';start.className='campaign-button start';start.textContent='START';
   start.disabled=stageStatus(this.controller.progress,stage.stageId)==='locked';
   start.onclick=()=>{if(this.controller.openTeamSelect())this.render();};
@@ -87,7 +89,7 @@ export class CampaignView {
    const label=document.createElement('span');label.textContent=item.label;
    row.append(label);rewards.append(row);
   }
-  details.append(rewards,start);preview.append(visual,details);page.append(preview);
+  details.append(chapterTitle,stageTitle,rewards);preview.append(visual,details);page.append(preview,start);
   const cards=document.createElement('div');cards.className='stage-grid';cards.setAttribute('aria-label','Stages');
   for(const item of orderedStages(chapter)) cards.append(card({image:item.previewImage,label:item.stageId,status:stageStatus(this.controller.progress,item.stageId),selected:item.stageId===stage.stageId,onClick:()=>{if(this.controller.selectStage(item.stageId)) this.render();}}));
   page.append(cards);
