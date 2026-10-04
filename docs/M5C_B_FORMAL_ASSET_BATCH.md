@@ -1,4 +1,6 @@
-# M5C-B — Formal Asset Batch Integration
+# M5C-B
+> **Accepted presentation baseline:** `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md` (PASS / PLAYER VERIFIED 2026-10-04). Future character asset integration must preserve that shared presentation/placeholder behavior.
+ — Formal Asset Batch Integration
 
 ## Status
 **CHAT ASSET AUTHORING / BATCH PREPARATION**
