@@ -15,7 +15,7 @@ export class CollectionView {
   this.rememberPosition();
   this.page=page;page.replaceChildren();page.className='campaign-page collection-page';
   this.browser=this.node('div','collection-browser');
-  const header=this.node('header','collection-header'),back=this.button('BACK',()=>{this.scrollTop=this.grid.scrollTop;this.onBack?.();});back.dataset.action='collection-back';
+  const header=this.node('header','collection-header'),back=this.button('BACK',()=>{this.scrollTop=this.grid.scrollTop;this.onBack?.();});back.classList.add('screen-back');back.dataset.action='collection-back';
   header.append(back,this.node('h1','','COLLECTION'));this.browser.append(header);
   const filters=this.node('nav','collection-filters');filters.setAttribute('aria-label','Character Types');
   this.filters=[];
@@ -42,7 +42,7 @@ export class CollectionView {
   const scroll=this.grid.scrollTop;this.scrollTop=scroll;this.browser.inert=true;
   const dialog=this.node('section',`collection-detail${owned?'':' is-locked'}`);dialog.setAttribute('role','dialog');dialog.setAttribute('aria-modal','true');dialog.setAttribute('aria-labelledby','collection-detail-name');
   const close=()=>{dialog.remove();this.browser.inert=false;trigger.focus({preventScroll:true});this.grid.scrollTop=scroll;this.scrollTop=scroll;this.onViewportChange?.();};
-  const header=this.node('header','collection-header'),back=this.button('BACK',close);back.dataset.action='close-detail';header.append(back,this.node('h2','','CHARACTER DETAIL'));dialog.append(header);
+  const header=this.node('header','collection-header'),back=this.button('BACK',close);back.classList.add('screen-back');back.dataset.action='close-detail';header.append(back,this.node('h2','','CHARACTER DETAIL'));dialog.append(header);
   const content=this.node('div','collection-detail-content'),identity=this.node('div','collection-identity');const name=this.node('h2','collection-name',detail.name);name.id='collection-detail-name';identity.append(this.portrait(definition,true),name);
   const info=this.node('div','collection-info');info.append(this.node('p','',mark.label),this.node('p','',`Role: ${detail.role}`),this.node('p','collection-status',owned?'OWNED':'LOCKED'),this.node('p','collection-shards',shardLabel));
   if(owned) {
