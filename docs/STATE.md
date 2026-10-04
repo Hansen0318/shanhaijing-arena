@@ -4,6 +4,7 @@
 **M5C-B PRESENTATION BASELINE — PASS / PLAYER VERIFIED**
 
 ## Current state
+- **AUTHORITY RULE:** The entries immediately below this heading plus `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md` describe the current accepted result. Older `ENGINEERING PASS / PLAYER SMOKE PENDING`, provisional, overlay-era, or earlier layout entries retained later in this file are historical evidence only and are **not current requirements**.
 - **PLAYER VERIFIED 2026-10-04.** The latest Stage Select / Team Select / Battle presentation correction is accepted on device. Canonical baseline: `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md`. This accepts the reusable presentation method and current 鹿蜀 integration; it does **not** complete all M5C-B character art. Current next work must recover from that baseline and open a new bounded visual slice rather than revisiting accepted corrections.
 - Stage details / lower-right START / side-relative HUD mirror executable checkpoint: impacted78/78, guard/build/diff PASS; only tests/docs beyond Chat223ca5b. Deployment/public runtime verification pending. See `docs/verification/M5C_B_STAGE_DETAILS_HUD_MIRROR.md`.
 - Latest Stage Select presentation is implemented in source pending executable/device validation: preview image is text-free; right details stack is chapter title + stage id/name + unchanged-size reward rows; START is lower-right opposite lower-left BACK. Shared stage data makes the layout universal across current/future stages.
