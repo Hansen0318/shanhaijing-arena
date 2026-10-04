@@ -1,6 +1,6 @@
 # M5C-B — 鹿蜀 presentation / scale / facing / viewport correction
 
-Status: local engineering PASS; safe checkpoint / deployment verification pending.
+Status: ENGINEERING PASS / PLAYER SMOKE PENDING.
 Baseline: d92b194084baa9ec61cdb23a47f58e11c2606ad5, original feat/m0-combat-core-20260927 / PR#1. Baseline Actions37177421392 SUCCESS. No main merge.
 
 ## Scope / provisional decisions
@@ -38,8 +38,13 @@ Detail open/close is same-route: CollectionView→CampaignView.onViewportChange�
 - Initial Team DOM test failures reflected newly used replaceChildren unavailable in their minimal boundary. Shared adapter uses ordinary textContent+append, then all impacted Team tests pass; no wider gameplay coupling. Old asset-size/geometry expectations updated to approved correction sizes.
 - Diff review: presentation/asset data, shared image/facing/navigation adapters, CSS and tests only; combat stats/abilities/AI/types/Tier/shards/rewards/progression/save schemas unchanged. Master SHA unchanged. Full local regression not run; existing unchanged Pages workflow may run its standard suite.
 
-## Pending release closure
-Save remote checkpoint; verify Actions/Pages/public fingerprints, menu image surfaces and focused battle/exit cleanup. Status after completion: ENGINEERING PASS / PLAYER SMOKE PENDING.
+## Release closure — 2026-10-04
+- Safe source checkpoint: f70d000756a96e9c6be41c3a4342d75e5bf25680, tree539e10f3e7605a48e082219b4c422aa731de4e22, original feature branch / PR#1. No main merge.
+- Actions37177955359 SUCCESS: standard workflow Test/Build/Pages artifact and Deploy Pages all success. Local verification remained targeted; CI ran its existing standard policy unchanged.
+- Public https://hansen0318.github.io/shanhaijing-arena/ verified: index-B8O6ruyy.js /index-CRRPzIng.css match local build; public idle SHA256 ca123eb6eb15c1f32fab2c9d732d40d7db279ed2e4332a1043172d3fb0bef327 equals checked-in derivative. Deferred battleRuntime-BJf5LqV-.js remains separate.
+- Cloud browser after deployment reload: Collection portrait natural128×128, Detail identity144×192; complete silhouette/tail/equipment visible. Team enemy/bench/selected ally bind static bust. Detail BACK restores focus to鹿蜀 card. Team BACK returns Stage with campaign root top/left0. Nonzero remembered scroll and delayed viewport restoration covered by targeted tests.
+- Battle Lab with Skip countdown shows both teams at enlarged scale, allied right/enemy left, labels above sprites; no initial HUD/joystick/skill overlap. Pause→Resume→Pause controls work; Exit returns Lab with zero canvases and no game host. Cloud scene clock remained at initial time, so sustained breathing/moving-device-facing and iPhone Safari layout are not claimed from cloud screenshots: automated four-frame/clock/pause/movement contracts PASS, physical eight-item smoke remains pending.
+- WORK_PROGRESS / STATE updated to ENGINEERING PASS / PLAYER SMOKE PENDING. Practices remain provisional until player PASS and Chat post-acceptance review.
 
 ## Player smoke / stop
 1. Team Select 鹿蜀 head/bust on small cards.
