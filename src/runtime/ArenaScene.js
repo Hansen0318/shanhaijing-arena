@@ -244,7 +244,7 @@ export class ArenaScene extends Phaser.Scene {
           portrait.setInteractive();
           portrait.on('pointerdown', () => this.selectAlly(id, this.session.snapshot()));
         }
-        this.portraitViews.set(id, { card, backing, portrait, barFill, hpText, layout });
+        this.portraitViews.set(id, { card, backing, portrait, barFill, hpText, layout, side });
       }
     }
 
