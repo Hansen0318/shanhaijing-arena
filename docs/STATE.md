@@ -4,6 +4,7 @@
 **M5C-B PRESENTATION BASELINE — PASS / PLAYER VERIFIED**
 
 ## Current state
+- **猼訑 Battle Simplification PASS / PLAYER APPROVED.** Next bounded art slice is the 猼訑 Static Asset Pack: `portraitSquare`, `collectionArt`, static `battleIdle`. Idle micro-animation remains blocked until the static runtime readability gate passes.
 - **CHARACTER ART FLOW UPDATED / CURRENT AUTHORITY.** M5C-B now uses a static-first gated production flow for every current/future character: Concept approval → Battle Simplification → Static Asset Pack → Static Runtime Readability PASS → Idle Micro-animation → roster comparison → Hit/KO/Cast → Skill VFX. Static readability cannot be rescued by animation/VFX or per-character enlargement. This supersedes older Batch1 notes that bundled static art and idle animation.
 - **Next bounded M5C-B slice:** 猼訑 concept direction is now fully specified in `docs/art/M5C_B_BOTUO_VISUAL_SPEC.md`. It is ready for one player-reviewed humanoid concept image. No formal 猼訑 runtime art is approved yet; 鹿蜀 accepted assets and all verified presentation/layout rules remain protected.
 - **AUTHORITY RULE:** The entries immediately below this heading plus `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md` describe the current accepted result. Older `ENGINEERING PASS / PLAYER SMOKE PENDING`, provisional, overlay-era, or earlier layout entries retained later in this file are historical evidence only and are **not current requirements**.
