@@ -31,4 +31,7 @@
 .collection-portrait.large[data-asset-type=image] {width:100%;max-width:144px;aspect-ratio:3/4;}
 
 .collection-card .collection-portrait {overflow:hidden;background:transparent !important;}
-.collection-card .collection-portrait img {transform:scale(1.12);transform-origin:50% 40%;}
+.collection-card .collection-portrait img {object-fit:cover !important;transform:scale(1.28);transform-origin:50% 38%;}
+
+.collection-card[data-formal-art="true"] .collection-portrait {margin-bottom:1px;}
+.collection-card[data-formal-art="true"] .collection-type {font-size:10px;}
