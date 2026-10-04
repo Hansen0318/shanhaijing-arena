@@ -1,25 +1,25 @@
 /* Four visible rows within the visual viewport; no clipping/scroll workaround. */
-.team-page { height:100%;min-height:0;display:grid;grid-template-rows:44px minmax(82px,1fr) 112px 44px;gap:4px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom)); }
+.team-page { height:100%;min-height:0;display:grid;grid-template-rows:44px minmax(180px,1fr) 104px 44px;gap:4px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom)); }
 .team-page .stage-header { gap:12px; }
 .team-page .stage-header h1 { margin:0;font-size:clamp(18px,3vw,26px); }
 .team-stage { margin-left:auto;font-size:13px;white-space:nowrap; }
-.team-matchup { display:grid;grid-template-columns:minmax(0,1fr) clamp(44px,8vw,76px) minmax(0,1fr);align-items:stretch;gap:6px;min-height:0; }
+.team-matchup { display:grid;grid-template-columns:minmax(0,1fr) clamp(64px,10vw,96px) minmax(0,1fr);align-items:stretch;gap:4px;min-height:0;overflow:visible; }
 .matchup-side { min-width:0;min-height:0;display:flex;flex-direction:column; }
 .matchup-side h2 { margin:0 0 3px;font-size:11px;letter-spacing:1px;color:#b2daeb; }
 .enemy-side h2 { color:#ffc1aa; }
-.matchup-vs { font-size:clamp(36px,7vw,68px);align-self:center;text-align:center;color:#ffd689; }
-.team-slots,.enemy-slots { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;flex:1;min-height:0; }
-.team-slot,.enemy-slot { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;border:0;background:transparent;color:white;padding:0;font:600 10px system-ui,sans-serif;box-sizing:border-box;min-width:0;min-height:0; }
+.matchup-vs { font-size:clamp(52px,9vw,92px);align-self:center;text-align:center;color:#ffd689;line-height:1;font-weight:800; }
+.team-slots,.enemy-slots { display:flex;align-items:flex-end;justify-content:center;gap:0;flex:1;min-height:0;overflow:visible;padding:0 2%; }
+.team-slot,.enemy-slot { display:flex;flex:0 0 36%;height:100%;flex-direction:column;align-items:center;justify-content:flex-end;gap:1px;border:0;background:transparent;color:white;padding:0;font:600 10px system-ui,sans-serif;box-sizing:border-box;min-width:0;min-height:0;margin-inline:-2.5%; }
 .team-slot { position:relative;touch-action:manipulation;cursor:pointer; }
-.team-slot:not(.occupied) { border:1px dashed #718b9c;border-radius:8px;background:rgba(36,59,75,.3); }
+.team-slot:not(.occupied) { flex-basis:31%;height:72%;margin-inline:1%;border:1px dashed #718b9c;border-radius:8px;background:rgba(36,59,75,.3); }
 /* Static identity slot, separate from compact portraits; animation remains deferred. */
-.lineup-figure { display:grid;place-items:center;flex:1;min-height:0;min-width:0;width:100%;font-size:clamp(12px,2vw,22px);color:#b2daeb; }
+.lineup-figure { display:grid;place-items:end center;flex:1;min-height:0;min-width:0;width:100%;font-size:clamp(12px,2vw,22px);color:#b2daeb;overflow:visible; }
 .enemy-slot .lineup-figure { color:#ffc1aa; }
 .enemy-slot .lineup-figure img { transform:scaleX(-1); }
 .matchup-identity { display:flex;align-items:center;justify-content:center;gap:3px;min-width:0;font-size:12px; }
 .type-mark { font-size:17px;line-height:1;flex-shrink:0; }
 .empty-slot { display:flex;align-items:center;justify-content:center;min-height:26px;color:#b5c3cc; }
-.roster-grid { display:grid;grid-template-columns:repeat(5,64px);gap:6px;width:max-content;max-width:100%;justify-self:center; }
+.roster-grid { display:grid;grid-template-columns:repeat(5,74px);gap:6px;width:max-content;max-width:100%;justify-self:center; }
 .roster-card { display:grid;grid-template-rows:minmax(0,1fr) 12px;align-items:center;gap:1px;padding:2px;border:2px solid #627a8a;border-radius:7px;color:white;background:#2e4351;font:10px system-ui,sans-serif;touch-action:manipulation;cursor:pointer;min-width:0;min-height:44px;box-sizing:border-box; }
 .roster-card.selected { box-shadow:inset 0 0 0 2px #ffd689; }
 .roster-portrait { display:flex;align-items:center;justify-content:center;min-height:0;height:100%;width:100%;border-radius:4px;font-size:17px;font-weight:800; }
@@ -30,7 +30,7 @@
 .campaign-button:disabled { opacity:.4;cursor:default; }
 .team-slot:focus-visible,.roster-card:focus-visible { outline:3px solid white;outline-offset:1px; }
 
-.roster-bench { display:grid;grid-template-rows:44px 64px;gap:4px;justify-items:center;min-width:0; }
+.roster-bench { display:grid;grid-template-rows:40px 60px;gap:4px;justify-items:center;min-width:0; }
 .roster-filters { display:flex;gap:6px;align-items:stretch; }
 .roster-filter { display:flex;align-items:center;justify-content:center;gap:4px;min-height:44px;min-width:52px;padding:4px 12px;border:2px solid #627a8a;border-radius:7px;background:#243b4b;color:white;font:600 13px system-ui,sans-serif;touch-action:manipulation;cursor:pointer; }
 .roster-filter[aria-pressed="true"] { border-color:#ffd689;background:#425546; }
@@ -39,6 +39,10 @@
 .required-slot-mark { position:absolute;right:3px;bottom:2px;color:#ffd689;font-size:16px;line-height:1; }
 
 .roster-portrait {overflow:hidden;background:transparent !important;}
-.roster-portrait img {transform:scale(1.12);transform-origin:50% 40%;}
+.roster-portrait img {object-fit:cover !important;transform:scale(1.28);transform-origin:50% 38%;}
 .roster-card .matchup-identity {font-size:11px;line-height:12px;}
 .roster-card .type-mark {font-size:12px;}
+
+.roster-card[data-formal-art="true"] {grid-template-rows:minmax(0,1fr) 10px;}
+.compact-meta {display:flex;align-items:center;justify-content:center;min-height:10px;line-height:1;}
+.compact-meta .type-mark {font-size:11px;}
