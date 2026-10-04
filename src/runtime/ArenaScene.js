@@ -568,9 +568,9 @@ export class ArenaScene extends Phaser.Scene {
       const marks=actor.hp>0?statusMarks(this.session.statuses.forActor(actor.instanceId,this.session.elapsedSeconds)):'';
       const tier=this.labConfig?` ${this.session.tierProjections.get(actor.instanceId).tier}`:'';
       view.label.setText?.(`${identity.label}${tier}${guarded&&actor.hp>0?' ◈':''}${marks?'\n'+marks:''}`);
-      // Keep identity text above the actual visual footprint; HUD/gameplay unchanged.
+      // Graybox/debug identity text is only for placeholder actors. Formal art carries identity itself.
       const nameOffset=Math.max(42,(art?.displayHeight??0)*(art?.originY??.5)+16);
-      view.label.setPosition(position.x, position.y - nameOffset).setAlpha(actor.hp > 0 ? 1 : 0.5);
+      view.label.setPosition(position.x, position.y - nameOffset).setVisible(!hasFormalArt).setAlpha(actor.hp > 0 ? 1 : 0.5);
     }
     this.ensureLivingSelection(frame);
     this.refreshSelectionVisuals();
