@@ -4,6 +4,7 @@
 **M5C-B FORMAL ASSET INTEGRATION — CHAT ASSET AUTHORING / BATCH PREPARATION**
 
 ## Current state
+- 鹿蜀 4-frame idle micro-animation direction is PLAYER ACCEPTED: fixed feet/anchor, no glow/VFX, visible body breathing, tail vertically follows the breathing cycle rather than wagging sideways, and amplitude is ~1.3× the earlier subtle pass for small-scale readability. Technical frame/PNG/anchor/runtime validation remains before production lock and integration.
 - 鹿蜀 final battle-detail cleanup is now locked. The character no longer needs fundamental redesign; the next asset step is a single simplified battleIdle source using the fixed large-shape hierarchy, followed by ~48px runtime validation before any Hit / KO / Cast authoring.
 - 鹿蜀 simplified battle-readable concept has a CONDITIONAL PASS for direction: its ~48px reference preserves the required large-shape identity, but final battle authoring must further reduce competing red cloth/tassels, mane strand count and weapon ornament before asset lock. No fundamental silhouette redesign is required.
 - Current 鹿蜀 Concept B remains usable as an identity/collection reference but is not battle-ready: its facial treatment should move slightly toward expressive mythic anthropomorphism, and its battle derivative must substantially reduce hair/cloth/ornament/weapon micro-detail while preserving the locked high-priority silhouette cues. No production art is approved yet.
