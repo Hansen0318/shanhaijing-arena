@@ -644,3 +644,52 @@ Current provisional replacement contract is now implemented for 鹿蜀:
 Implementation is deliberately conditional on asset availability so the graybox-first development workflow still works for undeveloped characters.
 
 Do not promote this to a project-wide hard rule until player device smoke confirms the result.
+
+## 26. Second runtime/presentation correction — source implemented
+
+Status:
+**IMPLEMENTED IN SOURCE / EXECUTABLE + PLAYER VALIDATION PENDING**
+
+Latest player review supersedes two parts of Section 25.
+
+### 26.1 Formal battle sprite completely replaces graybox body marker
+When a formal battle actor sprite is visible:
+- the original filled placeholder actor circle is hidden;
+- its white outline/ring is also hidden;
+- the formal sprite is the sole body representation.
+
+Dedicated telegraphs, targeting effects, damage feedback or other explicit gameplay indicators remain separate systems and are not affected by this replacement rule.
+
+Characters without formal battle art continue to use the graybox circle placeholder.
+
+### 26.2 KO replacement contract
+Current 鹿蜀 has no authored formal battleKo asset.
+
+Existing battle descriptor/presenter architecture already supports the intended future replacement:
+- actor enters battleKo state on KO;
+- if the character has a valid/loadable formal battleKo asset or animation descriptor, that state art is rendered;
+- if formal KO art is absent, current fallback keeps a static idle identity visible with KO alpha rather than making the character disappear.
+
+Do not author 鹿蜀 KO art in this correction slice.
+
+### 26.3 Lower Team Select roster card is an information card
+Previous provisional removal of the name on a formal lower roster card is rejected.
+
+Lower roster cards retain:
+- portrait/head image;
+- character name;
+- Type icon/label.
+
+Formal art improves the portrait but does not remove those information fields.
+
+### 26.4 Upper Team Select selected lineup remains the dominant visual
+The upper selected 3v3 preview should occupy much more of the available landscape height:
+- substantially larger full-body figures;
+- tighter team grouping;
+- slight overlap permitted;
+- less unused space;
+- central VS remains prominent but should not consume width needed by the figures.
+
+Space is reclaimed by shrinking the Type filters and reducing/right-aligning the BATTLE button.
+
+This remains a provisional 鹿蜀 presentation decision until device smoke passes.
