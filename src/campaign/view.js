@@ -54,7 +54,7 @@ export class CampaignView {
   if(this.controller.screen==='team') {
    this.controller.refreshTeamOwnership();
    if(this.filterTeam!==this.controller.teamSelection){this.filterTeam=this.controller.teamSelection;this.teamFilter='all';}
-   renderTeamSelect(page,this.controller.teamSelection,{stageId:this.controller.selectedStageId,filter:this.teamFilter,onFilter:type=>{this.teamFilter=type;this.render();},
+   renderTeamSelect(page,this.controller.teamSelection,{stageId:this.controller.selectedStageId,tierByCharacterId:this.controller.acquisition.tierByCharacterId,filter:this.teamFilter,onFilter:type=>{this.teamFilter=type;this.render();},
     onBack:()=>{if(this.controller.back())this.render();},onChange:()=>this.render(),
     onBattle:()=>{const config=this.controller.startBattle();if(config)this.onStart?.(config);},
    });

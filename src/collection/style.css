@@ -6,8 +6,8 @@
 .collection-filters {display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;flex-shrink:0;}
 .collection-filters [aria-pressed=true] {background:#476b7e;border-color:#a2d8ef;}
 .collection-grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(min(84px,100%),84px));align-content:start;gap:8px;overflow-y:auto;overflow-x:hidden;min-height:0;min-width:0;padding:2px 3px 12px;overscroll-behavior:contain;}
-.collection-card {display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;padding:6px;border:1px solid #688697;border-radius:10px;background:#223440;color:#edf3f7;font:12px system-ui,sans-serif;line-height:1.2;cursor:pointer;}
-.collection-portrait {width:44px;max-width:100%;aspect-ratio:1;border-radius:8px;display:grid;place-items:center;font-size:20px;font-weight:bold;color:#fff;}
+.collection-card {display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;padding:3px;border:2px solid #688697;border-radius:10px;background:#223440;color:#edf3f7;font:12px system-ui,sans-serif;line-height:1.2;cursor:pointer;}
+.collection-portrait {width:100%;max-width:100%;aspect-ratio:1;border-radius:8px;display:grid;place-items:center;font-size:20px;font-weight:bold;color:#fff;}
 .is-locked .collection-portrait {filter:brightness(.5) saturate(.55);}
 .collection-name {display:block;margin:0;overflow-wrap:anywhere;}
 .collection-status {font-size:12px;letter-spacing:.06em;color:#c5d4dd;}
@@ -29,3 +29,6 @@
 .collection-button:disabled {opacity:.45;cursor:default;}
 
 .collection-portrait.large[data-asset-type=image] {width:100%;max-width:144px;aspect-ratio:3/4;}
+
+.collection-card .collection-portrait {overflow:hidden;background:transparent !important;}
+.collection-card .collection-portrait img {transform:scale(1.12);transform-origin:50% 40%;}

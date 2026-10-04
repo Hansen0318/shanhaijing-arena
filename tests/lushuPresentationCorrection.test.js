@@ -67,7 +67,7 @@ test('real Team/Stage/Chapter BACK routes invoke viewport reset and same-route D
 test('Team ally/enemy/bench and Collection card/Detail share static menu image binding',async()=>{
  const {renderTeamSelect}=await import('../src/roster/view.js');const {TeamSelection}=await import('../src/roster/team.js');
  const page=element('section'),team=new TeamSelection({stage:{enemyLineup:['P1','P2','P3']},saved:['P1','P2','P3']});renderTeamSelect(page,team,{document:doc,stageId:'1-1'});
- const portraits=walk(page).filter(n=>n.dataset.assetKey==='lushu.portrait');assert.equal(portraits.length,3);
+ const portraits=walk(page).filter(n=>n.dataset.assetKey==='lushu.portrait');assert.equal(portraits.length,1);
  for(const host of portraits)assert.ok(host.children.some(n=>n.tag==='img'&&n.src.endsWith('/portrait.png')));
  const collection=element('section'),view=new CollectionView(new CampaignController(),{document:doc});view.mount(collection);
  assert.equal(walk(collection).filter(n=>n.dataset.assetKey==='lushu.portrait').length,1);

@@ -253,3 +253,8 @@ Player reviews:
 
 After player approves the character direction, preserve the identity across portraitSquare, collectionArt and battleIdle assets.
 
+
+
+## Latest Team Preview / Detail correction direction — 2026-10-04
+Latest explicit player instruction supersedes the previous upper selected-slot portrait interpretation: Team Select upper3v3 uses complete static identity figures and a prominent central VS; lower roster and Collection small cards use enlarged head/bust. Reuse existing approved F1 identity/portrait files; no new production art. Other characters keep their current placeholders. Battle keeps72×96 display/fixed origin/four-frame idle. Hit/cast/KO missing-art transitions keep an existing static idle frame visible at the current projected position.
+Character Detail/Info remains a static larger identity image now. Future breathing animation and a species/myth-specific Shanhaijing scene background are recorded directions, not work in this slice. Future upper-lineup micro-animation is also deferred. Acceptance remains PLAYER SMOKE PENDING; Chat owns post-acceptance review.

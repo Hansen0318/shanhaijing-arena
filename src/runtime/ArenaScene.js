@@ -231,9 +231,6 @@ export class ArenaScene extends Phaser.Scene {
           layout.portraitSize, layout.portraitSize,
           Phaser.Display.Color.HexStringToColor(identity.color).color)
           .setStrokeStyle(2, side === 'ally' ? 0xc6f6ff : 0xffd3bf);
-        const name = this.add.text(0, layout.backingY, identity.label, {
-          fontFamily: 'sans-serif', fontSize: identity.label.includes('\n')?'19px':'23px', fontStyle: 'bold', color: '#ffffff', align:'center',
-        }).setOrigin(0.5);
         const barBack = this.add.rectangle(0, layout.hpY, layout.hpWidth, layout.hpHeight, 0x4a2020);
         const barFill = this.add.rectangle(-layout.hpWidth / 2, layout.hpY,
           layout.hpWidth, layout.hpHeight, 0xc94749).setOrigin(0, 0.5);
@@ -241,7 +238,7 @@ export class ArenaScene extends Phaser.Scene {
           fontFamily: 'sans-serif', fontSize: '13px', fontStyle: 'bold', color: '#ffffff',
           stroke: '#2a1c20', strokeThickness: 2,
         }).setOrigin(0.5);
-        card.add([backing, portrait, name, barBack, barFill, hpText]);
+        card.add([backing, portrait, barBack, barFill, hpText]);
         if (side === 'ally' && this.manualControlEnabled) {
           portrait.setInteractive();
           portrait.on('pointerdown', () => this.selectAlly(id, this.session.snapshot()));

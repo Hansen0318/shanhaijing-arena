@@ -259,3 +259,9 @@ M6C-B balance is now player verified, so formal visual integration may proceed. 
 ## M5C-B idle-motion clarification
 
 M5C-B Batch1 now explicitly includes battlefield idle micro-animation for all five Chapter1 characters in addition to portraitSquare, collectionArt and battleIdle. Idle motion must be lightweight, loopable, Pause-safe, position-neutral, compatible with static fallback and implemented through the existing M5C-A animation descriptor path. Hit/KO/cast remain the following battle-state batch.
+
+
+## Player direction — Team Preview / Detail future presentation (2026-10-04)
+Team Select upper selected3v3 is a full-body lineup preview, distinct from lower head/bust roster cards. Use static collectionArt through the shared resolver now; future idle micro-animation may inhabit the same identity container only after separate approval. Other characters retain procedural placeholders until their own approved assets exist; do not generate their art in the鹿蜀 slice.
+Character Detail/Info stays static in this correction. Future directions only: accepted breathing animation on the larger identity surface; character-specific Shanhaijing scenic background. Neither animation system nor scenic production is authorized now.
+Small cards use a shared dark-top/light-bottom gradient and read-only Tier border rule (T0white,T1green,T2blue,T3purple). Player smoke and Chat post-acceptance review precede promoting the whole visual workflow to a future-character hard rule. Battle side-card character names removed; HP/selection/KO states remain. Optional missing state art must keep a loaded idle static identity visible without changing state timing or combat geometry.

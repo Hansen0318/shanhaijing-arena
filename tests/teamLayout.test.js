@@ -14,7 +14,7 @@ test('upper matchup retains all six slot identities but no type marks or detaile
  assert.equal(nodes.filter(n=>n.className==='type-mark').length,0);
  assert.deepEqual(nodes.filter(n=>n.dataset.slot).map(n=>n.textContent),['SLOT 1','SLOT 2 · FRONT','SLOT 3']);
  assert.deepEqual(nodes.filter(n=>n.dataset.enemyId).map(n=>n.textContent),['E1','E2 · FRONT','E3']);
- assert.equal(nodes.filter(n=>n.className==='matchup-portrait').length,6);
+ assert.equal(nodes.filter(n=>n.className==='lineup-figure').length,6);
  assert.equal(nodes.filter(n=>n.className==='matchup-identity').length,6);
  assert.ok(walk(page).some(n=>n.textContent==='BATTLE'));
 });

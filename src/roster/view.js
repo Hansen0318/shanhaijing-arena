@@ -1,9 +1,10 @@
+import {decorateSmallCard} from '../assets/cardPresentation.js';
 import {decoratePortrait} from '../assets/menuImage.js';
 import { rosterCatalog } from './catalog.js';
 import { typeMark } from './typeIcons.js';
 import { stageEnemyDefinitions } from '../campaign/encounterDefinitions.js';
 const titleCase=text=>text[0].toUpperCase()+text.slice(1);
-export function renderTeamSelect(page,team,{document:doc=globalThis.document,stageId,onChange,onBattle,onBack,filter='all',onFilter}={}) {
+export function renderTeamSelect(page,team,{document:doc=globalThis.document,stageId,onChange,onBattle,onBack,filter='all',onFilter,tierByCharacterId={}}={}) {
  const node=(tag,text,className)=>{const el=doc.createElement(tag);if(text!=null)el.textContent=text;if(className)el.className=className;return el;};
  const button=(text,handler,className='campaign-button')=>{const el=node('button',text,className);el.type='button';el.onclick=handler;return el;};
  const identity=(character,showType=true)=>{
@@ -12,7 +13,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   icon.setAttribute('aria-label',`Type: ${mark.label}`);icon.dataset.type=character.type;
   if(showType)label.append(icon);label.append(node('span',character.name));return label;
  };
- const portrait=character=>{const p=node('span',character.portrait?.label??character.name,'matchup-portrait');p.style.backgroundColor=character.portrait?.color??'#c9764c';return decoratePortrait(p,character,{document:doc});};
+ const fullIdentity=character=>{const p=node('span',character.portrait?.label??character.name,'lineup-figure');return decoratePortrait(p,character,{document:doc,slot:'collectionArt'});};
  page.className+=' team-page';
  const header=node('header',null,'stage-header');
  header.append(button('BACK',()=>onBack?.(),'campaign-button back'),node('h1','SELECT TEAM'),node('span',`Stage ${stageId}`,'team-stage'));
@@ -24,7 +25,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   const slot=button(`SLOT ${index+1}${index===1?' · FRONT':''}`,()=>{if(team.remove(index))onChange?.();},'team-slot');
   slot.dataset.slot=String(index+1);slot.setAttribute('aria-label',`${slot.textContent}${required?' · REQUIRED':''} — ${id?`${rosterCatalog[id].name}, ${titleCase(rosterCatalog[id].type)}`:'EMPTY'}`);
   if(required){const badge=node('span','*','required-slot-mark');badge.setAttribute('aria-hidden','true');slot.append(badge);}
-  if(id){const character=rosterCatalog[id];slot.style.borderColor=character.portrait.color;slot.className+=' occupied';slot.dataset.type=character.type;slot.append(portrait(character),identity(character,false));}
+  if(id){const character=rosterCatalog[id];slot.className+=' occupied';slot.dataset.type=character.type;slot.append(fullIdentity(character),identity(character,false));}
   else slot.append(node('span','EMPTY','empty-slot'));
   slots.append(slot);
  }
@@ -35,7 +36,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
  for(const [index,character] of enemyDefinitions.entries()) {
   const card=node('div',`E${index+1}${index===1?' · FRONT':''}`,'enemy-slot');
   card.dataset.enemyId=character.id;card.dataset.type=character.type;
-  card.append(portrait(character),identity(character,false));enemyCards.append(card);
+  card.append(fullIdentity(character),identity(character,false));enemyCards.append(card);
  }
  enemies.append(enemyCards);matchup.append(allies,node('strong','VS','matchup-vs'),enemies);
  const bench=node('section',null,'roster-bench'),tabs=node('div',null,'roster-filters');
@@ -54,7 +55,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   const character=rosterCatalog[id],selected=team.slots.includes(id);
   if(filter!=='all' && character.type!==filter)continue;
   const card=button(null,()=>{if(team.toggle(id))onChange?.();},`roster-card${selected?' selected':''}`);
-  card.dataset.characterId=id;card.setAttribute('aria-label',`${character.name}, ${titleCase(character.type)}, ${titleCase(character.role)}`);
+  decorateSmallCard(card,character,tierByCharacterId[id]);card.dataset.characterId=id;card.setAttribute('aria-label',`${character.name}, ${titleCase(character.type)}, ${titleCase(character.role)}`);
   card.setAttribute('aria-pressed',String(selected));
   const portrait=node('span',character.portrait.label,'roster-portrait');portrait.style.backgroundColor=character.portrait.color;
   decoratePortrait(portrait,character,{document:doc});card.append(portrait,identity(character));roster.append(card);

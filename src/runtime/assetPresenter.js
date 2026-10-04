@@ -63,7 +63,13 @@ export class AssetPresenter{
    this.facings.set(id,{x:actor.x,flipX});
    if(actor.hp<=0&&state?.state!=='battleKo'){this.setState(id,characterAnimation(character,'battleKo'),now,'battleKo');state=this.states.get(id);}
    else if(!state||actor.hp>0&&state.state!=='battleIdle'&&state.state!=='inspection'&&animationFrame(state.descriptor,now-state.start).finished){this.setState(id,characterAnimation(character,'battleIdle'),now,'battleIdle');state=this.states.get(id);}
-   this.actorSprites.get(id)?.setVisible(false);const image=this.imageFor(id,state.descriptor,now-state.start);if(image){const pos=positions.get(id),asset=this.textures.get(state.descriptor.source).asset,region=animationFrame(state.descriptor,now-state.start).region,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(48*state.descriptor.scale*w/Math.max(w,h),48*state.descriptor.scale*h/Math.max(w,h)).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
+   // Missing optional state art must not hide a loaded identity. Keep state timing,
+   // but display its idle static frame at the current actor position until art exists.
+   const idle=characterAnimation(character,'battleIdle'),formalState=this.textures.has(state.descriptor.source);
+   const descriptor=formalState?state.descriptor:idle,elapsed=formalState?now-state.start:0;
+   const image=this.imageFor(id,descriptor,elapsed);
+   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?animationFrame(descriptor,elapsed,this.reducedMotion).region:null,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(48*descriptor.scale*w/Math.max(w,h),48*descriptor.scale*h/Math.max(w,h)).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
+   else this.actorSprites.get(id)?.setVisible(false); // Arena's procedural marker remains visible.
   }
   const records=this.playback.update(now,alive),ids=new Set(records.map(r=>r.id));
   for(const [id,display] of this.displays)if(!ids.has(id)){display.destroy();this.displays.delete(id);this.displayKinds.delete(id);}
