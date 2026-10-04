@@ -344,3 +344,33 @@ Simplify:
 - clean negative space around head, arms and legs.
 
 Concept B should read correctly from silhouette and 4–6 major color masses before any small details are visible.
+
+
+## 19. Battle Simplification approval — 2026-10-04
+
+Status: **PASS / PLAYER APPROVED**
+
+The player accepted the simplified battle-direction image as the canonical 猼訑 battle simplification reference.
+
+Locked from this approval:
+- broad, planted Power/Tank silhouette;
+- mythic sheep/goat face;
+- large curved horns;
+- dark shoulder-fur mantle;
+- one dominant forward protective bracer/guard;
+- simplified armor and fewer decorative elements than Concept A;
+- stronger large color/value separation;
+- simplified 2D cel-shaded rendering language;
+- mobile-first readability.
+
+This approval is for **battle simplification direction**, not yet for final runtime assets.
+
+### Next gate — Static Asset Pack
+Author/review:
+1. `portraitSquare`;
+2. `collectionArt`;
+3. static `battleIdle`.
+
+Do not author idle animation yet.
+
+After those three static assets are approved and integrated, run the mandatory Static Runtime Readability Gate at real game scale. Only after that PASS may the 4-frame idle micro-animation be authored.
