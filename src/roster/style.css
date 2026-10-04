@@ -1,5 +1,5 @@
 /* Four visible rows within the visual viewport; no clipping/scroll workaround. */
-.team-page { height:100%;min-height:0;display:grid;grid-template-rows:40px minmax(0,1fr) 120px 44px;gap:4px;padding-top:4px;padding-bottom:max(58px,calc(env(safe-area-inset-bottom) + 50px));overflow:hidden; }
+.team-page { height:100%;min-height:0;display:grid;grid-template-rows:40px minmax(0,1fr) 120px;gap:4px;padding-top:4px;padding-bottom:max(12px,env(safe-area-inset-bottom));overflow:hidden; }
 .team-page .stage-header { gap:12px; }
 .team-page .stage-header h1 { margin:0;font-size:clamp(18px,3vw,26px); }
 .team-stage { margin-left:auto;font-size:13px;white-space:nowrap; }
@@ -9,7 +9,7 @@
 .enemy-side h2 { color:#ffc1aa; }
 .matchup-vs { font-size:clamp(46px,7.5vw,78px);align-self:center;text-align:center;color:#ffd689;line-height:1;font-weight:800; }
 .team-slots,.enemy-slots { display:flex;align-items:flex-end;justify-content:center;gap:0;flex:1;min-height:0;overflow:visible;padding:0 4%; }
-.team-slot,.enemy-slot { display:flex;flex:0 0 42%;height:100%;flex-direction:column;align-items:center;justify-content:flex-end;gap:1px;border:0;background:transparent;color:white;padding:0;font:600 10px system-ui,sans-serif;box-sizing:border-box;min-width:0;min-height:0;margin-inline:-4.5%; }
+.team-slot,.enemy-slot { display:flex;flex:0 0 46%;height:100%;flex-direction:column;align-items:center;justify-content:flex-end;gap:1px;border:0;background:transparent;color:white;padding:0;font:600 10px system-ui,sans-serif;box-sizing:border-box;min-width:0;min-height:0;margin-inline:-7%; }
 .team-slot { position:relative;touch-action:manipulation;cursor:pointer; }
 .team-slot:not(.occupied) { flex-basis:31%;height:72%;margin-inline:1%;border:1px dashed #718b9c;border-radius:8px;background:rgba(36,59,75,.3); }
 /* Static identity slot, separate from compact portraits; animation remains deferred. */
@@ -19,17 +19,18 @@
 .matchup-identity { display:flex;align-items:center;justify-content:center;gap:3px;min-width:0;font-size:12px; }
 .type-mark { font-size:17px;line-height:1;flex-shrink:0; }
 .empty-slot { display:flex;align-items:center;justify-content:center;min-height:26px;color:#b5c3cc; }
-.roster-grid { display:grid;grid-template-columns:repeat(5,64px);gap:6px;width:max-content;max-width:100%;justify-self:center; }
+.roster-grid { display:flex;gap:6px;width:calc(100% - 270px);max-width:calc(100% - 270px);min-width:0;justify-self:center;overflow-x:auto;overflow-y:hidden;padding:0 4px 3px;box-sizing:border-box;overscroll-behavior-x:contain;scrollbar-width:thin;-webkit-overflow-scrolling:touch; }
+.roster-grid>.roster-card{flex:0 0 64px;}
 .roster-card { display:grid;grid-template-rows:58px 22px;align-items:center;gap:1px;padding:2px;border:2px solid #627a8a;border-radius:7px;color:white;background:#2e4351;font:10px system-ui,sans-serif;touch-action:manipulation;cursor:pointer;min-width:0;height:84px;box-sizing:border-box; }
 .roster-card.selected { box-shadow:inset 0 0 0 2px #ffd689; }
 .roster-portrait { display:flex;align-items:center;justify-content:center;min-height:0;height:100%;width:100%;border-radius:4px;font-size:17px;font-weight:800; }
 .roster-card strong { font-size:12px; }
-.team-footer { display:flex;align-items:center;justify-content:flex-end;gap:10px;min-height:0; }
+.team-footer { position:absolute;right:max(20px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:20;display:flex;align-items:flex-end;justify-content:flex-end;min-height:0; }
 .team-footer .battle { width:auto;min-width:112px;min-height:40px;height:40px;padding:3px 18px;margin-left:auto;font-size:15px; }
 .campaign-button:disabled { opacity:.4;cursor:default; }
 .team-slot:focus-visible,.roster-card:focus-visible { outline:3px solid white;outline-offset:1px; }
 
-.roster-bench { display:grid;grid-template-rows:32px 84px;gap:4px;justify-items:center;min-width:0; }
+.roster-bench { display:grid;grid-template-rows:30px 84px;gap:4px;justify-items:center;align-self:end;min-width:0;overflow:hidden; }
 .roster-filters { display:flex;gap:6px;align-items:stretch; }
 .roster-filter { display:flex;align-items:center;justify-content:center;gap:3px;min-height:32px;min-width:44px;padding:2px 8px;border:2px solid #627a8a;border-radius:7px;background:#243b4b;color:white;font:600 12px system-ui,sans-serif;touch-action:manipulation;cursor:pointer; }
 .roster-filter[aria-pressed="true"] { border-color:#ffd689;background:#425546; }
@@ -45,14 +46,19 @@
 
 /* Keep the approved hierarchy while allowing short landscape visual viewports to fit. */
 @media(max-height:420px){
- .team-page { height:100%;min-height:0;display:grid;grid-template-rows:38px minmax(0,1fr) 116px 40px;gap:2px;padding-top:2px;padding-bottom:max(54px,calc(env(safe-area-inset-bottom) + 48px));overflow:hidden; }
- .roster-bench{grid-template-rows:30px 82px;}
+ .team-page { height:100%;min-height:0;display:grid;grid-template-rows:38px minmax(0,1fr) 112px;gap:2px;padding-top:2px;padding-bottom:max(8px,env(safe-area-inset-bottom));overflow:hidden; }
+ .roster-bench{grid-template-rows:28px 80px;}
+ .roster-grid{width:calc(100% - 250px);max-width:calc(100% - 250px);}
+ .team-slot,.enemy-slot{flex-basis:48%;margin-inline:-8%;}
+ .lineup-figure img{transform:scale(1.62);}
 }
 
 /* Fit the 132px lineup even with Safari's bottom inset on a 320px viewport. */
 @media(max-height:356px){
- .team-page { height:100%;min-height:0;display:grid;grid-template-rows:36px minmax(0,1fr) 108px 36px;gap:0;padding-top:1px;padding-bottom:max(50px,calc(env(safe-area-inset-bottom) + 46px));overflow:hidden; }
- .roster-bench {grid-template-rows:28px 78px;}
- .roster-card{grid-template-rows:54px 20px;height:78px;}
+ .team-page { height:100%;min-height:0;display:grid;grid-template-rows:34px minmax(0,1fr) 104px;gap:0;padding-top:1px;padding-bottom:max(6px,env(safe-area-inset-bottom));overflow:hidden; }
+ .roster-bench {grid-template-rows:26px 76px;}
+ .roster-grid{width:calc(100% - 230px);max-width:calc(100% - 230px);}
+ .roster-card{grid-template-rows:52px 20px;height:76px;}
  .team-footer .battle {min-height:36px;height:36px;}
+ .lineup-figure img{transform:scale(1.68);}
 }
