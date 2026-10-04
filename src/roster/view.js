@@ -16,7 +16,6 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
  };
  const hasImage=(character,slot)=>resolveCharacterAsset(character,slot).type==='image';
  const fullIdentity=character=>{const p=node('span',character.portrait?.label??character.name,'lineup-figure');return decoratePortrait(p,character,{document:doc,slot:'collectionArt'});};
- const compactMeta=character=>{const mark=typeMark(character),meta=node('span',null,'compact-meta');const icon=node('span',mark.symbol,'type-mark');icon.style.color=mark.color;icon.setAttribute('aria-label',`Type: ${mark.label}`);meta.append(icon);return meta;};
  page.className+=' team-page';
  const header=node('header',null,'stage-header');
  header.append(button('BACK',()=>onBack?.(),'campaign-button back'),node('h1','SELECT TEAM'),node('span',`Stage ${stageId}`,'team-stage'));
@@ -62,7 +61,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   decorateSmallCard(card,character,tierByCharacterId[id]);card.dataset.characterId=id;card.setAttribute('aria-label',`${character.name}, ${titleCase(character.type)}, ${titleCase(character.role)}`);
   card.setAttribute('aria-pressed',String(selected));
   const portrait=node('span',character.portrait.label,'roster-portrait');portrait.style.backgroundColor=character.portrait.color;
-  const formal=hasImage(character,'portraitSquare');decoratePortrait(portrait,character,{document:doc});card.dataset.formalArt=String(formal);card.append(portrait,formal?compactMeta(character):identity(character));roster.append(card);
+  const formal=hasImage(character,'portraitSquare');decoratePortrait(portrait,character,{document:doc});card.dataset.formalArt=String(formal);card.append(portrait,identity(character));roster.append(card);
  }
  bench.append(tabs,roster);
  const footer=node('footer',null,'team-footer');
