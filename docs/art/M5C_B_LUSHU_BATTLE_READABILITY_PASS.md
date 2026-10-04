@@ -476,3 +476,29 @@ The next authoring step is:
 **produce one battleIdle source using this locked cleanup contract, then validate the result at runtime scale before creating the rest of the battle-state set.**
 
 Do not proceed to Hit / KO / Cast production until battleIdle passes the runtime-size gate.
+
+
+## 21. Idle micro-animation player acceptance
+
+Status:
+**PLAYER ACCEPTED — CURRENT 4-FRAME BREATHING DIRECTION**
+
+Player accepted the latest 4-frame 鹿蜀 idle micro-animation direction.
+
+Accepted motion language:
+- no glow, aura, motion trail or idle VFX;
+- feet / ground anchor remain fixed;
+- the body performs a visible breathing rise / lower cycle;
+- tail follows the body's breathing rhythm with vertical up/down secondary motion;
+- tail does not wag left/right;
+- tail does not perform a separate brushing / sweeping gesture;
+- head and weapon hand may follow the breathing cycle with small coordinated motion;
+- animation amplitude is intentionally increased to approximately 1.3× the earlier subtle pass so it remains visible at battle scale;
+- motion must remain idle-like and must not read as attack anticipation.
+
+The accepted direction remains subject to technical frame cleanup and runtime slicing/anchor validation before production lock.
+
+Next step:
+- prepare/validate the accepted 4-frame PNG source for runtime use;
+- confirm frame consistency, transparent background, anchor stability and approximately 48px readability;
+- only after that should Work integrate the idle loop through the existing M5C-A animation pipeline.
