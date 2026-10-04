@@ -211,6 +211,22 @@ A battle asset fails the gate if, at runtime scale:
 
 If any failure appears, simplify the battle asset before Work integration. Do not solve the problem by enlarging every character or changing gameplay geometry.
 
+## 3D. Roster-wide rendering language hard rule
+
+All current and future formal playable-character assets must preserve one coherent roster rendering language:
+
+- simplified 2D cel-shaded presentation;
+- clean, readable contour/shape separation;
+- flat or stepped shading rather than soft painterly gradients;
+- strong silhouette and large color masses;
+- controlled line density;
+- mobile-first readability;
+- richer portrait/collection detail is allowed, but it must still look like the same character/art system as the battle derivative.
+
+Do not introduce one-off character rendering styles such as photorealism, 3D-rendered/game-model presentation, thick painterly rendering, watercolor, sketch-only treatment, or unrelated comic/illustration systems unless the player explicitly approves a project-wide art-direction change.
+
+This is a roster-wide consistency rule, not a requirement that all characters share the same silhouette, face, equipment, palette or pose.
+
 ## 4. Asset style constraints
 
 - mobile-first readability;
