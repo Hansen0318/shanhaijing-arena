@@ -26,10 +26,12 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   const required=(team.stage.forcedCharacters ?? []).includes(id),slotLabel=`SLOT ${index+1}${index===1?' · FRONT':''}`;
   const slot=button(null,()=>{if(team.remove(index))onChange?.();},'team-slot');
   slot.dataset.slot=String(index+1);slot.setAttribute('aria-label',`${slotLabel}${required?' · REQUIRED':''} — ${id?`${rosterCatalog[id].name}, ${titleCase(rosterCatalog[id].type)}`:'EMPTY'}`);
-  const caption=node('span',slotLabel,'slot-caption');slot.append(caption);
   if(required){const badge=node('span','*','required-slot-mark');badge.setAttribute('aria-hidden','true');slot.append(badge);}
-  if(id){const character=rosterCatalog[id],formal=hasImage(character,'collectionArt');slot.className+=' occupied';slot.dataset.type=character.type;slot.dataset.formalArt=String(formal);slot.append(fullIdentity(character));if(!formal)slot.append(identity(character,false));}
-  else slot.append(node('span','EMPTY','empty-slot'));
+  if(id){
+   const character=rosterCatalog[id],formal=hasImage(character,'collectionArt');slot.className+=' occupied';slot.dataset.type=character.type;slot.dataset.formalArt=String(formal);
+   if(!formal)slot.append(node('span',slotLabel,'slot-caption'));
+   slot.append(fullIdentity(character));if(!formal)slot.append(identity(character,false));
+  } else {slot.append(node('span',slotLabel,'slot-caption'),node('span','EMPTY','empty-slot'));}
   slots.append(slot);
  }
  allies.append(slots);
@@ -39,7 +41,8 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
  for(const [index,character] of enemyDefinitions.entries()) {
   const slotLabel=`E${index+1}${index===1?' · FRONT':''}`,card=node('div',null,'enemy-slot'),formal=hasImage(character,'collectionArt');
   card.dataset.enemyId=character.id;card.dataset.type=character.type;card.dataset.formalArt=String(formal);
-  card.append(node('span',slotLabel,'slot-caption'),fullIdentity(character));if(!formal)card.append(identity(character,false));enemyCards.append(card);
+  if(!formal)card.append(node('span',slotLabel,'slot-caption'));
+  card.append(fullIdentity(character));if(!formal)card.append(identity(character,false));enemyCards.append(card);
  }
  enemies.append(enemyCards);matchup.append(allies,node('strong','VS','matchup-vs'),enemies);
  const bench=node('section',null,'roster-bench'),tabs=node('div',null,'roster-filters');
