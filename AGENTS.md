@@ -233,6 +233,9 @@ For non-trivial changes identify:
 - Prototype assets may be placeholders.
 - Do not produce final roster art before the combat prototype passes.
 - Approved production art must not be regenerated/restyled merely because a new session begins.
+- **Master/source assets and runtime assets are separate.** High-resolution PNGs may be retained as editable/archive masters, but gameplay must consume optimized runtime derivatives sized to the actual display footprint. Do not ship generated high-resolution source art directly when a smaller lossless/visually equivalent runtime asset is sufficient.
+- Runtime optimization must preserve animation contracts: frames in one loop keep a common canvas geometry/origin unless the animation system explicitly supports stable per-frame pivots. Do not independently tight-crop frames if that creates anchor drift.
+- Before integrating a new character animation, record source dimensions, runtime dimensions, encoded file size when practical, decoded texture footprint, frame count, and whether lazy/on-demand loading remains within the existing M5C-A cache/guard budgets. Optimize for mobile load time and memory without sacrificing the accepted small-scale readability.
 
 ## 16. Work handoff contract
 Every Work handoff must be deliberately small.
