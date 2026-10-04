@@ -236,19 +236,32 @@ A new archetype must be documented once and then become available to later chara
 
 ## 11. Future visual-production flow
 
-For each future playable character:
+For every current and future playable character, use this gated sequence:
 
-1. read hard rules and current visual archetype catalog;
+1. read current hard rules / accepted baseline / visual archetype catalog;
 2. extract canonical Shanhaijing creature traits;
 3. define Type / Role / combat identity;
 4. select or extend a reusable animation archetype;
-5. define equipment/weapon/prop language from mechanics;
-6. run silhouette-collision check against existing roster;
-7. define portraitSquare / collectionArt / battleIdle / idle micro-animation;
-8. player approves concept direction;
-9. produce the full coherent asset batch;
-10. Work integrates through the existing M5C-A asset pipeline;
-11. targeted player smoke checks scale/readability/animation feel;
-12. record the accepted character and any new reusable archetype in GitHub.
+5. define equipment / prop language from mechanics;
+6. run silhouette-collision check against the existing roster;
+7. create and player-approve the **Concept** direction;
+8. create a separate **Battle Simplification** derivative with stronger value/color contrast, fewer lines, fewer ornaments, larger readable color masses and clean negative space;
+9. produce the **Static Asset Pack**: `portraitSquare`, `collectionArt`, static `battleIdle`;
+10. integrate/preview the static assets through the existing M5C-A pipeline and run the **Static Runtime Readability Gate** at real game scale;
+11. if static readability fails, revise the art—not the animation, VFX or actor scale;
+12. only after static PASS, author the lightweight idle micro-animation;
+13. run targeted player smoke for scale/readability/idle feel;
+14. after the coherent roster batch passes, author shared-state **Hit / KO / Cast**;
+15. only after battle states are stable, author **Skill VFX**;
+16. record the accepted character, asset status and any new reusable archetype in GitHub.
 
-This flow is the default for Chapter2+ and any later roster expansion.
+Hard rules:
+- static identity must be recognizable without motion;
+- animation cannot rescue a weak silhouette;
+- VFX cannot rescue a weak silhouette;
+- do not enlarge individual characters as the default readability fix;
+- Concept/Collection detail may be richer, but battle art must remain an intentionally simplified derivative;
+- every step preserves the roster-wide 2D cel-shaded rendering language.
+
+This supersedes the older flow that treated static battle art and idle micro-animation as one production step.
+
