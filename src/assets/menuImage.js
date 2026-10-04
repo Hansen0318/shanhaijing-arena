@@ -8,10 +8,10 @@ export function bindMenuImage(image,record){
 export function decoratePortrait(host,definition,{document=globalThis.document,slot='portraitSquare'}={}){
  const asset=resolveCharacterAsset(definition,slot);host.dataset.assetKey=asset.key;host.dataset.assetType=asset.type;
  if(asset.type==='image'){
-  const label=document.createElement('span');label.textContent=host.textContent;label.style.gridArea='1/1';
+  const fallbackText=host.textContent,label=document.createElement('span');label.textContent=fallbackText;label.style.gridArea='1/1';label.hidden=true;
   const img=document.createElement('img');img.alt='';img.style.cssText='width:100%;height:100%;object-fit:contain;grid-area:1/1;min-width:0;min-height:0';
   host.style.display='grid';host.textContent='';host.append(label,img);bindMenuImage(img,asset);
-  img.onload=()=>{label.hidden=true;};const fallback=img.onerror;
+  const fallback=img.onerror;
   img.onerror=()=>{fallback();if(img.hidden)label.hidden=false;};
  }
  return host;
