@@ -231,6 +231,10 @@ For non-trivial changes identify:
 - Battle detail budget is reusable across the roster: prefer few large color blocks, few broad markings, compact equipment, limited trailing elements, separated limbs/appendages and a clean outer contour. If downscaling causes head/weapon/tail/limbs to merge into one visual mass, simplify before integration.
 - Each character must define an **identity priority hierarchy** for battle art. Lower-priority details are removed before higher-priority creature/role cues. This rule applies to Chapter1 and all future characters/archetypes.
 - Prototype assets may be placeholders.
+- **Placeholder retirement is asset-driven and roster-wide.** Prototype labels/cards/circles/rings/debug identifiers may be used only while the corresponding formal asset is unavailable.
+- Once a formal asset resolves successfully for a surface/state, that formal asset must replace the placeholder on that surface; do not stack formal art with temporary SLOT/E1/E2 FRONT/A1/E1/name/debug labels, graybox body dots/rings, or equivalent development scaffolding unless that label is part of the final approved UI.
+- This applies equally to allies/enemies and to every current/future character through shared asset/presentation logic; never implement character-ID-specific exceptions.
+- Placeholder-only characters must still retain the fallback until their formal asset exists.
 - Do not produce final roster art before the combat prototype passes.
 - Approved production art must not be regenerated/restyled merely because a new session begins.
 - **Master/source assets and runtime assets are separate.** High-resolution PNGs may be retained as editable/archive masters, but gameplay must consume optimized runtime derivatives sized to the actual display footprint. Do not ship generated high-resolution source art directly when a smaller lossless/visually equivalent runtime asset is sufficient.
