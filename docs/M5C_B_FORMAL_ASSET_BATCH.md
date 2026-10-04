@@ -246,6 +246,20 @@ For a new animation asset, the integration handoff should record:
 
 Optimization must happen before production lock, not as an emergency pass after the roster becomes large.
 
+## 4B. Formal-asset placeholder retirement hard rule
+
+This rule applies to every current and future character, ally and enemy.
+
+- Placeholder presentation is a fallback only while the corresponding formal asset is unavailable.
+- When a formal asset resolves successfully on a surface/state, retire the temporary representation for that same surface/state.
+- Team Select formal full-body slots must not keep development labels such as `SLOT 1`, `SLOT 2 · FRONT`, `E1`, `E2 · FRONT`, `E3`, temporary character-name blocks, or equivalent graybox text unless explicitly approved as final UI.
+- Battle formal sprites must replace graybox actor dots/rings and floating A/E instance/name/debug labels; placeholder-only actors retain them.
+- The same replacement contract applies to future portrait, collection, idle, Hit, KO, Cast and other formal slots as they become available.
+- Implement this through shared asset availability / presentation-state logic. Do not hard-code exceptions by character ID, chapter, ally/enemy identity, or current roster membership.
+- A missing formal asset must continue to fall back safely rather than disappear.
+
+The intent is scalable roster growth: adding a future character's formal assets should automatically retire the matching development placeholders without a new per-character code path.
+
 ## 5. Authoring dimensions
 
 Use M5C-A pipeline limits as hard ceilings:
