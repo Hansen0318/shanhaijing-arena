@@ -544,3 +544,40 @@ Recommended runtime contract:
 - first integration should test only the idle loop before authoring or wiring Hit / KO / Cast.
 
 This validation is technical source acceptance, not final in-game player acceptance. The next gate is a focused runtime smoke through the existing M5C-A animation pipeline.
+
+
+## 23. First runtime player-smoke findings
+
+Status:
+**FAIL — BOUNDED PRESENTATION / NAVIGATION CORRECTION REQUIRED**
+
+Player iPhone smoke after first runtime integration found:
+
+1. **Formal image missing outside battle**
+   - Character Detail still shows placeholder tile/text instead of 鹿蜀 formal art.
+   - Team Select / roster cards still use placeholder presentation.
+   - Collection-facing presentation must resolve the formal 鹿蜀 image through the existing asset system rather than a new one-off path.
+
+2. **Battle sprite too small**
+   - current stage fit (~36×48) is visually undersized on the real device.
+   - increase battle presentation scale/fit enough for readable character identity while preserving HUD, spacing, gameplay geometry and collision semantics.
+   - do not change actor hitbox/range to match visual scale.
+
+3. **Facing does not follow movement direction**
+   - 鹿蜀 currently keeps one facing orientation while moving both directions.
+   - runtime presentation should mirror horizontally from movement/facing state using the existing shared sprite presentation path.
+   - do not create duplicated left/right art assets if mirroring is sufficient.
+
+4. **BACK viewport restoration defect**
+   - returning from Character Detail / Team Select / related menu routes can leave the document/viewport at an incorrect scroll position.
+   - treat this as a shared navigation presentation defect, not a 鹿蜀-specific art issue.
+   - restore/normalize the intended route viewport on BACK without breaking the previously accepted portrait orientation gate / return viewport behavior.
+
+Protected:
+- accepted 4-frame breathing motion;
+- tail vertical breathing follow;
+- no glow/VFX;
+- fixed animation anchor;
+- combat/AI/progression/Tier/shard/reward rules.
+
+Do not proceed to Hit / KO / Cast until these four runtime issues pass player smoke.
