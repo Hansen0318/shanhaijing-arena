@@ -43,6 +43,8 @@ Work should not redo:
 - player-owned usability/visual smoke;
 - unaffected historical regression.
 
+Work handoffs should be one compact prompt, not a verbose recap. GitHub carries prior context. Include only: the exact unresolved executable delta, protected baseline, minimum checks, deploy/stop condition, and any player-smoke handoff. Do not provide a long version followed by a short version.
+
 ## D. Safe checkpoint flow
 For substantial tasks:
 - checkpoint after first coherent implementation;
