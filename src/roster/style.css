@@ -1,15 +1,15 @@
 /* Four visible rows within the visual viewport; no clipping/scroll workaround. */
-.team-page { height:100%;min-height:0;display:grid;grid-template-rows:44px minmax(180px,1fr) 104px 44px;gap:4px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom)); }
+.team-page { height:100%;min-height:0;display:grid;grid-template-rows:44px minmax(150px,1fr) 104px 40px;gap:4px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom)); }
 .team-page .stage-header { gap:12px; }
 .team-page .stage-header h1 { margin:0;font-size:clamp(18px,3vw,26px); }
 .team-stage { margin-left:auto;font-size:13px;white-space:nowrap; }
-.team-matchup { display:grid;grid-template-columns:minmax(0,1fr) clamp(64px,10vw,96px) minmax(0,1fr);align-items:stretch;gap:4px;min-height:0;overflow:visible; }
+.team-matchup { display:grid;grid-template-columns:minmax(0,1fr) clamp(54px,8vw,82px) minmax(0,1fr);align-items:stretch;gap:0;min-height:0;overflow:visible; }
 .matchup-side { min-width:0;min-height:0;display:flex;flex-direction:column; }
 .matchup-side h2 { margin:0 0 3px;font-size:11px;letter-spacing:1px;color:#b2daeb; }
 .enemy-side h2 { color:#ffc1aa; }
-.matchup-vs { font-size:clamp(52px,9vw,92px);align-self:center;text-align:center;color:#ffd689;line-height:1;font-weight:800; }
-.team-slots,.enemy-slots { display:flex;align-items:flex-end;justify-content:center;gap:0;flex:1;min-height:0;overflow:visible;padding:0 2%; }
-.team-slot,.enemy-slot { display:flex;flex:0 0 36%;height:100%;flex-direction:column;align-items:center;justify-content:flex-end;gap:1px;border:0;background:transparent;color:white;padding:0;font:600 10px system-ui,sans-serif;box-sizing:border-box;min-width:0;min-height:0;margin-inline:-2.5%; }
+.matchup-vs { font-size:clamp(46px,7.5vw,78px);align-self:center;text-align:center;color:#ffd689;line-height:1;font-weight:800; }
+.team-slots,.enemy-slots { display:flex;align-items:flex-end;justify-content:center;gap:0;flex:1;min-height:0;overflow:visible;padding:0; }
+.team-slot,.enemy-slot { display:flex;flex:0 0 42%;height:100%;flex-direction:column;align-items:center;justify-content:flex-end;gap:1px;border:0;background:transparent;color:white;padding:0;font:600 10px system-ui,sans-serif;box-sizing:border-box;min-width:0;min-height:0;margin-inline:-4.5%; }
 .team-slot { position:relative;touch-action:manipulation;cursor:pointer; }
 .team-slot:not(.occupied) { flex-basis:31%;height:72%;margin-inline:1%;border:1px dashed #718b9c;border-radius:8px;background:rgba(36,59,75,.3); }
 /* Static identity slot, separate from compact portraits; animation remains deferred. */
@@ -19,20 +19,20 @@
 .matchup-identity { display:flex;align-items:center;justify-content:center;gap:3px;min-width:0;font-size:12px; }
 .type-mark { font-size:17px;line-height:1;flex-shrink:0; }
 .empty-slot { display:flex;align-items:center;justify-content:center;min-height:26px;color:#b5c3cc; }
-.roster-grid { display:grid;grid-template-columns:repeat(5,74px);gap:6px;width:max-content;max-width:100%;justify-self:center; }
-.roster-card { display:grid;grid-template-rows:minmax(0,1fr) 12px;align-items:center;gap:1px;padding:2px;border:2px solid #627a8a;border-radius:7px;color:white;background:#2e4351;font:10px system-ui,sans-serif;touch-action:manipulation;cursor:pointer;min-width:0;min-height:44px;box-sizing:border-box; }
+.roster-grid { display:grid;grid-template-columns:repeat(5,64px);gap:6px;width:max-content;max-width:100%;justify-self:center; }
+.roster-card { display:grid;grid-template-rows:minmax(0,1fr) 14px;align-items:center;gap:1px;padding:2px;border:2px solid #627a8a;border-radius:7px;color:white;background:#2e4351;font:10px system-ui,sans-serif;touch-action:manipulation;cursor:pointer;min-width:0;min-height:44px;box-sizing:border-box; }
 .roster-card.selected { box-shadow:inset 0 0 0 2px #ffd689; }
 .roster-portrait { display:flex;align-items:center;justify-content:center;min-height:0;height:100%;width:100%;border-radius:4px;font-size:17px;font-weight:800; }
 .roster-card strong { font-size:12px; }
 .team-footer { display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:0; }
-.team-footer .battle { width:min(260px,35%);height:44px;padding:4px 12px; }
+.team-footer .battle { width:clamp(150px,22%,190px);min-height:40px;height:40px;padding:3px 12px;margin-left:auto;font-size:15px; }
 .team-status { margin:0;font-size:13px; }
 .campaign-button:disabled { opacity:.4;cursor:default; }
 .team-slot:focus-visible,.roster-card:focus-visible { outline:3px solid white;outline-offset:1px; }
 
-.roster-bench { display:grid;grid-template-rows:40px 60px;gap:4px;justify-items:center;min-width:0; }
+.roster-bench { display:grid;grid-template-rows:36px 64px;gap:4px;justify-items:center;min-width:0; }
 .roster-filters { display:flex;gap:6px;align-items:stretch; }
-.roster-filter { display:flex;align-items:center;justify-content:center;gap:4px;min-height:44px;min-width:52px;padding:4px 12px;border:2px solid #627a8a;border-radius:7px;background:#243b4b;color:white;font:600 13px system-ui,sans-serif;touch-action:manipulation;cursor:pointer; }
+.roster-filter { display:flex;align-items:center;justify-content:center;gap:3px;min-height:36px;min-width:46px;padding:2px 9px;border:2px solid #627a8a;border-radius:7px;background:#243b4b;color:white;font:600 12px system-ui,sans-serif;touch-action:manipulation;cursor:pointer; }
 .roster-filter[aria-pressed="true"] { border-color:#ffd689;background:#425546; }
 .roster-filter:focus-visible { outline:3px solid white;outline-offset:1px; }
 
@@ -43,11 +43,8 @@
 .roster-card .matchup-identity {font-size:11px;line-height:12px;}
 .roster-card .type-mark {font-size:12px;}
 
-.roster-card[data-formal-art="true"] {grid-template-rows:minmax(0,1fr) 10px;}
-.compact-meta {display:flex;align-items:center;justify-content:center;min-height:10px;line-height:1;}
-.compact-meta .type-mark {font-size:11px;}
 
 /* Keep the approved hierarchy while allowing short landscape visual viewports to fit. */
 @media(max-height:420px){
- .team-page { height:100%;min-height:0;display:grid;grid-template-rows:44px minmax(82px,1fr) 104px 44px;gap:4px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom)); }
+ .team-page { height:100%;min-height:0;display:grid;grid-template-rows:44px minmax(132px,1fr) 104px 40px;gap:4px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom)); }
 }
