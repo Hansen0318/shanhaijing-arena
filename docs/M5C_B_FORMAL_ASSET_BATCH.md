@@ -367,3 +367,12 @@ Do not start:
 Prepare **Batch 1 — Character identity + idle motion pack** for the five Chapter1 characters.
 
 No Work implementation is required until that batch exists and is approved.
+
+## 鹿蜀 provisional state-art replacement note (pending player acceptance)
+
+For the current 鹿蜀 validation only, the existing animation-slot contract is being exercised as follows:
+- missing optional Hit/KO/Cast formal art may temporarily fall back to a static visible idle identity;
+- once a valid formal state asset/descriptor exists for the state, that formal state art replaces the fallback automatically;
+- no state-specific art should be authored merely to satisfy this correction before Idle/presentation acceptance.
+
+After player smoke, Chat will decide whether this behavior should be promoted into the reusable future-character workflow.
