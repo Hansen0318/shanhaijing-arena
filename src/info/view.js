@@ -16,7 +16,7 @@ export function renderInfo(page,{pageId=null,onBack,onOpen}){
  page.classList.add('info-page');page.lang='en';
  const definition=infoPage(pageId),header=node('header','info-header');
  const heading=node('h1','',definition?.title??'INFO');heading.tabIndex=-1;
- header.append(action('BACK',onBack),heading);page.append(header);
+ const back=action('BACK',onBack);back.classList.add('screen-back');header.append(back,heading);page.append(header);
  if(!definition){
   const hub=node('nav','info-hub');hub.setAttribute('aria-label','Information pages');
   for(const item of INFO_PAGES)hub.append(action(item.title,()=>onOpen(item.id)));page.append(hub);return heading;
