@@ -46,3 +46,8 @@
 .roster-card[data-formal-art="true"] {grid-template-rows:minmax(0,1fr) 10px;}
 .compact-meta {display:flex;align-items:center;justify-content:center;min-height:10px;line-height:1;}
 .compact-meta .type-mark {font-size:11px;}
+
+/* Keep the approved hierarchy while allowing short landscape visual viewports to fit. */
+@media(max-height:420px){
+ .team-page { height:100%;min-height:0;display:grid;grid-template-rows:44px minmax(82px,1fr) 104px 44px;gap:4px;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom)); }
+}

@@ -37,3 +37,13 @@ test('all four Tier borders are distinct and Collection reads earned Tier withou
  const {CollectionView}=await import('../src/collection/view.js'),{CampaignController}=await import('../src/campaign/controller.js');const c=new CampaignController();c.acquisition.shardsByCharacterId.P1=30;c.acquisition.spentShardsByCharacterId.P1=30;c.acquisition.tierByCharacterId.P1='T3';const before=JSON.stringify(c.acquisition);
  const doc={createElement(tag){const n=node(tag);n.replaceChildren=(...v)=>n.children=v;n.addEventListener=()=>{};return n;}},page=doc.createElement('main'),v=new CollectionView(c,{document:doc});v.mount(page);const card=walk(page).find(n=>n.dataset.characterId==='P1');assert.equal(card.dataset.tier,'T3');assert.equal(card.style.borderColor,TIER_BORDER_COLORS.T3);assert.equal(JSON.stringify(c.acquisition),before);
 });
+
+test('Chat conditional replacement retires only formal surface names and preserves fallback identity',async()=>{
+ const page=node('main'),team=new TeamSelection({stage:{enemyLineup:['P1','P2','P3']},saved:['P1','P2','P3']});renderTeamSelect(page,team,{document:{createElement:node},stageId:'1-1'});
+ const all=walk(page),upper=all.find(n=>n.className==='team-matchup');
+ for(const host of walk(upper).filter(n=>n.dataset.formalArt==='true')){assert.equal(walk(host).some(n=>n.className==='matchup-identity'),false);const img=walk(host).find(n=>n.tag==='img');img.onload();assert.equal(walk(host).some(n=>n.textContent==='鹿蜀'&&!n.hidden),false);img.onerror();assert.equal(walk(host).some(n=>n.textContent==='鹿蜀'&&!n.hidden),true);}
+ const p1=all.find(n=>n.dataset.characterId==='P1');assert.ok(walk(p1).some(n=>n.className==='compact-meta'));assert.equal(walk(p1).some(n=>n.className==='matchup-identity'),false);
+ const p2=all.find(n=>n.dataset.characterId==='P2');assert.ok(walk(p2).some(n=>n.className==='matchup-identity'));
+ const {CollectionView}=await import('../src/collection/view.js'),{CampaignController}=await import('../src/campaign/controller.js');const doc={createElement(tag){const n=node(tag);n.replaceChildren=(...v)=>n.children=v;n.addEventListener=()=>{};return n;}},collection=doc.createElement('main');new CollectionView(new CampaignController(),{document:doc}).mount(collection);
+ const formal=walk(collection).find(n=>n.dataset.characterId==='P1'),placeholder=walk(collection).find(n=>n.dataset.characterId==='P2');assert.equal(walk(formal).some(n=>n.className==='collection-name'),false);assert.ok(walk(placeholder).some(n=>n.className==='collection-name'&&n.textContent==='猼訑'));
+});
