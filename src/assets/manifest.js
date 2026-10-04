@@ -1,6 +1,8 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 const entries=[
- {key:'lushu.battleIdle',type:'image',path:'assets/characters/lushu/battleIdle-4f.png',width:192,height:64,bytes:22010,fallback:'placeholder.battle'},
+ {key:'lushu.portrait',type:'image',path:'assets/characters/lushu/portrait.png',width:128,height:128,bytes:23816,fallback:'placeholder.portrait'},
+ {key:'lushu.identity',type:'image',path:'assets/characters/lushu/identity.png',width:144,height:192,bytes:35708,fallback:'placeholder.portrait'},
+ {key:'lushu.battleIdle',type:'image',path:'assets/characters/lushu/battleIdle-4f.png',width:384,height:128,bytes:70848,fallback:'placeholder.battle'},
  {key:'placeholder.portrait',type:'procedural',path:null},
  {key:'placeholder.battle',type:'procedural',path:null},
  {key:'placeholder.vfx',type:'procedural',path:null},

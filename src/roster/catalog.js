@@ -6,10 +6,10 @@ import {formalTierScalingProfiles} from './tierScalingProfiles.js';
 import { createCharacterDefinition } from '../combat/character.js';
 // Approved presentation only; all gameplay fields remain in the shared catalog.
 const presentation={P1:{
- assets:Object.freeze({...defaultCharacterAssets,battleIdle:'lushu.battleIdle'}),
+ assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle'}),
  animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
-  source:'lushu.battleIdle',frames:Array.from({length:4},(_,i)=>({x:i*48,y:0,width:48,height:64})),
-  fps:2.5,loop:true,origin:[.5,691/724],scale:1,staticFrame:0,
+  source:'lushu.battleIdle',frames:Array.from({length:4},(_,i)=>({x:i*96,y:0,width:96,height:128})),
+  fps:2.5,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
  })}),
 }};
 const characters=[

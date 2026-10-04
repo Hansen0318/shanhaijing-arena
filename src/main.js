@@ -51,7 +51,7 @@ const controls=createBattleControls(host,{
  onExit:()=>{if(interruption.openExit())dialog.open();},
 });
 const View=labRequested?BattleLabView:CampaignView;
-const view=new View(root,controller,{onStart:startBattle,onRender:()=>{entryRequest++;releaseLoadingContent();root.setAttribute('aria-busy','false');dialog.close();controls.hide();game?.loop.sleep();routes.setBattle(false);viewport.routeChanged();}});
+const view=new View(root,controller,{onStart:startBattle,onViewportChange:()=>viewport.surfaceChanged(),onRender:()=>{entryRequest++;releaseLoadingContent();root.setAttribute('aria-busy','false');dialog.close();controls.hide();game?.loop.sleep();routes.setBattle(false);viewport.routeChanged();}});
 async function startBattle(stageConfig=null) {
  const request=++entryRequest;
  root.setAttribute('aria-busy','true');

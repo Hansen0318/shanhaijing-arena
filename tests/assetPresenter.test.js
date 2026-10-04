@@ -25,7 +25,7 @@ test('unknown/failed image slots leave real combat running and retained session 
  let steps=0;while(session.result()==='running'&&steps++<1800){session.step(.05);p.render(session.snapshot(),session.elapsedSeconds,defs);}assert.notEqual(session.result(),'running');p.destroy();
 });
 function faithfulScene(){
- const s=scene(),created=[];const common=kind=>{const v={kind,destroyed:false,x:0,y:0,destroy(){this.destroyed=true;},setPosition(x,y){this.x=x;this.y=y;return this;}};for(const k of ['setDepth','setAlpha','setScale','setVisible','setRotation','setOrigin','setDisplaySize'])v[k]=()=>v;created.push(v);return v;};
+ const s=scene(),created=[];const common=kind=>{const v={kind,destroyed:false,x:0,y:0,destroy(){this.destroyed=true;},setPosition(x,y){this.x=x;this.y=y;return this;}};for(const k of ['setDepth','setAlpha','setScale','setVisible','setRotation','setOrigin','setDisplaySize','setFlipX'])v[k]=()=>v;created.push(v);return v;};
  s.add.graphics=()=>{const v=common('graphics');for(const k of ['clear','lineStyle','lineBetween','strokeCircle','fillStyle','fillCircle'])v[k]=()=>v;return v;};s.add.image=()=>{const v=common('image');v.setTexture=()=>v;return v;};s.created=created;return s;
 }
 test('late flipbook texture replaces Graphics fallback with an image safely',async()=>{

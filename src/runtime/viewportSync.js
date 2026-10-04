@@ -19,10 +19,12 @@ export function installViewportSync(win, host, root, onSync=()=>{}) {
   if(frame!==null)win.cancelAnimationFrame(frame);
   timers.forEach(id=>win.clearTimeout(id));frame=null;timers=[];
  }
- function settle() {
-  cancel();sync();
-  frame=win.requestAnimationFrame(sync);
-  timers=[win.setTimeout(sync,80),win.setTimeout(sync,240)];
+ function settle(normalizeRoot=false) {
+  // Route/overlay restoration owns only the root, never nested grid/detail scroll.
+  const restore=()=>{if(normalizeRoot===true){root.scrollTop=0;root.scrollLeft=0;}sync();};
+  cancel();restore();
+  frame=win.requestAnimationFrame(restore);
+  timers=[win.setTimeout(restore,80),win.setTimeout(restore,240)];
  }
  const listeners=[
   [win,'pageshow',settle],[win,'resize',settle],[win,'orientationchange',settle],
@@ -31,7 +33,8 @@ export function installViewportSync(win, host, root, onSync=()=>{}) {
  listeners.forEach(([target,event,fn])=>target.addEventListener(event,fn));
  settle();
  return {
-  routeChanged(){root.scrollTop=0;root.scrollLeft=0;settle();},
+  routeChanged(){settle(true);},
+  surfaceChanged(){settle(true);},
   destroy(){cancel();listeners.forEach(([target,event,fn])=>target.removeEventListener(event,fn));},
  };
 }

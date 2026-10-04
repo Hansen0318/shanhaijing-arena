@@ -13,9 +13,9 @@ test('approved idle resolves four equal frames with a fixed ground origin and st
  const d=characterAnimation(rosterCatalog.P1,'battleIdle');
  assert.equal(resolveCharacterAsset(rosterCatalog.P1,'battleIdle').key,key);
  assert.equal(d.source,key);assert.equal(d.frames.length,4);
- assert.deepEqual(d.origin,[.5,691/724]);assert.equal(d.scale,1);
+ assert.deepEqual(d.origin,[.5,691/724]);assert.equal(d.scale,2);
  for(let i=0;i<4;i++){
-  assert.deepEqual(d.frames[i],{x:i*48,y:0,width:48,height:64});
+  assert.deepEqual(d.frames[i],{x:i*96,y:0,width:96,height:128});
   assert.equal(animationFrame(d,i/d.fps+.001).index,i);
  }
  assert.equal(animationFrame(d,d.duration+.001).index,0);
@@ -25,17 +25,17 @@ test('approved idle resolves four equal frames with a fixed ground origin and st
 });
 test('runtime PNG is RGBA, bounded and encounter-only, never a menu image',async()=>{
  const a=assetManifest[key];assert.ok(a);
- const b=readFileSync('public/'+a.path);assert.equal(b.readUInt32BE(16),192);assert.equal(b.readUInt32BE(20),64);assert.equal(b[25],6);assert.ok(b.length<=a.bytes);
- for(const slot of ['portraitSquare','collectionArt'])assert.equal(resolveCharacterAsset(rosterCatalog.P1,slot).type,'procedural');
+ const b=readFileSync('public/'+a.path);assert.equal(b.readUInt32BE(16),384);assert.equal(b.readUInt32BE(20),128);assert.equal(b[25],6);assert.ok(b.length<=a.bytes);
+ for(const slot of ['portraitSquare','collectionArt'])assert.equal(resolveCharacterAsset(rosterCatalog.P1,slot).type,'image');
  assert.ok(!encounterAssetKeys([rosterCatalog.P2]).includes(key));assert.ok(encounterAssetKeys([rosterCatalog.P1]).includes(key));
  const cache=createAssetCache({transport:async record=>({image:{width:record.width,height:record.height},bytes:b.length})});
- assert.equal(cache.size,0);assert.equal((await cache.load(key)).key,key);assert.equal(cache.bytes,192*64*4);assert.equal(cache.size,1);
+ assert.equal(cache.size,0);assert.equal((await cache.load(key)).key,key);assert.equal(cache.bytes,384*128*4);assert.equal(cache.size,1);
  await cache.load(key);assert.equal(cache.size,1);
 });
 function trackedScene(){
  const textures=new Map(),images=[];
  const make=(x,y,texture,frame)=>{const o={x,y,texture,frame,destroyed:false};
- for(const method of ['setTexture','setOrigin','setDisplaySize','setPosition','setVisible','setDepth','setAlpha','setScale'])o[method]=(...args)=>{
+ for(const method of ['setTexture','setOrigin','setDisplaySize','setPosition','setVisible','setDepth','setAlpha','setScale','setFlipX'])o[method]=(...args)=>{
   if(method==='setTexture')[o.texture,o.frame]=args;
   if(method==='setOrigin')o.origin=args;
   if(method==='setDisplaySize')o.size=args;
@@ -51,10 +51,10 @@ test('real presenter loop freezes on battle time, resumes, exits hit/KO safely a
  const frame={allies:[{instanceId:'a1',definitionId:'P1',x:3,y:2,hp:245}],enemies:[]};const before=structuredClone(frame);
  for(let i=0;i<4;i++){
   p.render(frame,i*.4,rosterCatalog);const image=p.actorSprites.get('a1');
-  assert.equal(image.frame,`${i*48}.0.48.64`);assert.deepEqual(image.origin,[.5,691/724]);assert.deepEqual(image.size,[36,48]);assert.deepEqual([image.x,image.y],[3,2]);
+  assert.equal(image.frame,`${i*96}.0.96.128`);assert.deepEqual(image.origin,[.5,691/724]);assert.deepEqual(image.size,[72,96]);assert.deepEqual([image.x,image.y],[3,2]);
  }
  const frozen=p.actorSprites.get('a1').frame;p.render(frame,1.2,rosterCatalog);assert.equal(p.actorSprites.get('a1').frame,frozen);
- p.render(frame,1.6,rosterCatalog);assert.equal(p.actorSprites.get('a1').frame,'0.0.48.64');assert.deepEqual(frame,before);
+ p.render(frame,1.6,rosterCatalog);assert.equal(p.actorSprites.get('a1').frame,'0.0.96.128');assert.deepEqual(frame,before);
  p.hit({targetId:'a1'},rosterCatalog.P1,1.6);p.render(frame,1.7,rosterCatalog);assert.equal(p.states.get('a1').state,'battleHit');
  p.render(frame,2.1,rosterCatalog);assert.equal(p.states.get('a1').state,'battleIdle');
  const ko=structuredClone(frame);ko.allies[0].hp=0;p.render(ko,2.2,rosterCatalog);assert.equal(p.states.get('a1').state,'battleKo');
@@ -75,10 +75,12 @@ test('actual Arena enriches presentation copies with identity without modifying 
  const Arena=vm.runInNewContext(source+'\nArenaScene',{window:{},Phaser:{Scene:class{}},ARENA_STAGE:{width:1120,height:540},arenaToStage,battlePortrait,statusMarks:()=>''});
  const session=createLabBattleSession(createLabConfig()),frame=session.snapshot(),before=JSON.stringify(frame);let presented;
  const visual={setPosition(){return this;},setAlpha(){return this;},setText(){return this;}};
- const s=new Arena();s.session=session;s.actorViews=new Map([...frame.allies,...frame.enemies].map(a=>[a.instanceId,{marker:visual,label:visual}]));
- s.visualAssets={render(f){presented=f;},renderOverlays(){},renderHud(){}};s.telegraphs={render(){}};
+ const labelPositions=new Map();
+ const s=new Arena();s.session=session;s.actorViews=new Map([...frame.allies,...frame.enemies].map(a=>[a.instanceId,{marker:visual,label:{...visual,setPosition(x,y){labelPositions.set(a.instanceId,[x,y]);return this;}}}]));
+ s.visualAssets={actorSprites:new Map([['a1',{displayHeight:96,originY:691/724}]]),render(f){presented=f;},renderOverlays(){},renderHud(){}};s.telegraphs={render(){}};
  for(const m of ['ensureLivingSelection','refreshSelectionVisuals','refreshSkillButtons','refreshHud','showResult'])s[m]=()=>{};
  s.applyFrame(frame);
  for(const a of [...presented.allies,...presented.enemies])assert.equal(a.definitionId,session.actorById(a.instanceId).definitionId);
  assert.equal(JSON.stringify(frame),before);
+ const pos=arenaToStage(frame.allies[0]);assert.equal(labelPositions.get('a1')[1],pos.y-(96*691/724+16));
 });

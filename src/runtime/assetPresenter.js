@@ -9,7 +9,7 @@ let nextPresenter=0;
 export class AssetPresenter{
  constructor(scene,{cache=battleAssetCache,project=p=>p,reducedMotion=false}={}){
   this.scene=scene;this.cache=cache;this.project=project;this.reducedMotion=reducedMotion;this.prefix=`visual.${++nextPresenter}.`;this.closed=false;this.textureBytes=0;
-  this.textures=new Map();this.displays=new Map();this.displayKinds=new Map();this.actorSprites=new Map();this.overlaySprites=new Map();this.hudSprites=new Map();this.states=new Map();this.playback=new VisualPlayback();
+  this.textures=new Map();this.displays=new Map();this.displayKinds=new Map();this.actorSprites=new Map();this.overlaySprites=new Map();this.hudSprites=new Map();this.states=new Map();this.facings=new Map();this.playback=new VisualPlayback();
  }
  async loadKeys(keys){return Promise.all([...new Set(keys)].map(async key=>{
   const asset=await this.cache.load(key);if(this.closed||!asset.image||this.textures.has(key))return;
@@ -58,9 +58,12 @@ export class AssetPresenter{
   if(this.closed)return;const actors=[...frame.allies,...frame.enemies],alive=new Set(actors.filter(a=>a.hp>0).map(a=>a.instanceId)),positions=new Map(actors.map(a=>[a.instanceId,this.project(a)]));
   const stage=this.textures.get(this.stageAssetKey);if(stage&&!this.stageDisplay)this.stageDisplay=this.scene.add.image(0,0,stage.key).setOrigin(0,0).setDisplaySize(1120,540).setDepth(1);
   for(const actor of actors){const id=actor.instanceId,character=definitions[actor.definitionId];let state=this.states.get(id);
+   const previous=this.facings.get(id),dx=previous?actor.x-previous.x:0;
+   const flipX=dx>1e-6?false:dx< -1e-6?true:previous?.flipX??frame.enemies.includes(actor);
+   this.facings.set(id,{x:actor.x,flipX});
    if(actor.hp<=0&&state?.state!=='battleKo'){this.setState(id,characterAnimation(character,'battleKo'),now,'battleKo');state=this.states.get(id);}
    else if(!state||actor.hp>0&&state.state!=='battleIdle'&&state.state!=='inspection'&&animationFrame(state.descriptor,now-state.start).finished){this.setState(id,characterAnimation(character,'battleIdle'),now,'battleIdle');state=this.states.get(id);}
-   this.actorSprites.get(id)?.setVisible(false);const image=this.imageFor(id,state.descriptor,now-state.start);if(image){const pos=positions.get(id),asset=this.textures.get(state.descriptor.source).asset,region=animationFrame(state.descriptor,now-state.start).region,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(48*state.descriptor.scale*w/Math.max(w,h),48*state.descriptor.scale*h/Math.max(w,h)).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
+   this.actorSprites.get(id)?.setVisible(false);const image=this.imageFor(id,state.descriptor,now-state.start);if(image){const pos=positions.get(id),asset=this.textures.get(state.descriptor.source).asset,region=animationFrame(state.descriptor,now-state.start).region,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(48*state.descriptor.scale*w/Math.max(w,h),48*state.descriptor.scale*h/Math.max(w,h)).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
   }
   const records=this.playback.update(now,alive),ids=new Set(records.map(r=>r.id));
   for(const [id,display] of this.displays)if(!ids.has(id)){display.destroy();this.displays.delete(id);this.displayKinds.delete(id);}
@@ -80,5 +83,5 @@ export class AssetPresenter{
    }
   }
  }
- destroy(){if(this.closed)return;this.closed=true;this.stageDisplay?.destroy();for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}for(const {key} of this.textures.values())this.scene.textures?.remove(key);this.textures.clear();this.textureBytes=0;this.displayKinds.clear();this.states.clear();this.playback.clear();}
+ destroy(){if(this.closed)return;this.closed=true;this.stageDisplay?.destroy();for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}for(const {key} of this.textures.values())this.scene.textures?.remove(key);this.textures.clear();this.textureBytes=0;this.displayKinds.clear();this.states.clear();this.facings.clear();this.playback.clear();}
 }

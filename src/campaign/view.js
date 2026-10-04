@@ -22,7 +22,7 @@ function card({image,label,status,selected=false,onClick}) {
  button.append(picture,text); button.addEventListener('click',onClick); return button;
 }
 export class CampaignView {
- constructor(root,controller,{onStart,onRender}={}) {this.root=root;this.controller=controller;this.onStart=onStart;this.onRender=onRender;}
+ constructor(root,controller,{onStart,onRender,onViewportChange}={}) {this.root=root;this.controller=controller;this.onStart=onStart;this.onRender=onRender;this.onViewportChange=onViewportChange;}
  render() {
   this.collectionView?.rememberPosition();
   this.root.replaceChildren(); this.root.hidden=false;
@@ -48,7 +48,7 @@ export class CampaignView {
    this.root.append(page);heading.focus();this.onRender?.();return;
   }
   if(this.controller.screen==='collection') {
-   this.collectionView ??= new CollectionView(this.controller,{onBack:()=>{if(this.controller.back())this.render();}});
+   this.collectionView ??= new CollectionView(this.controller,{onViewportChange:()=>this.onViewportChange?.(),onBack:()=>{if(this.controller.back())this.render();}});
    this.root.append(page);this.collectionView.mount(page);this.onRender?.();return;
   }
   if(this.controller.screen==='team') {
