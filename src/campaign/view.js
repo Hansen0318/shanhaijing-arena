@@ -71,14 +71,12 @@ export class CampaignView {
  renderStages(page) {
   page.classList.add('stage-page');
   const chapter=findChapter(this.controller.chapterId), stage=findStage(this.controller.selectedStageId);
-  const header=document.createElement('header'); header.className='stage-header';
   const back=document.createElement('button');back.type='button';back.className='campaign-button back screen-back';back.textContent='BACK';
-  back.onclick=()=>{if(this.controller.back()) this.render();};
-  const heading=document.createElement('h1');heading.textContent=chapter.title;header.append(back,heading);page.append(header);
+  back.onclick=()=>{if(this.controller.back()) this.render();};page.append(back);
   const preview=document.createElement('div');preview.className='stage-preview';
   const visual=document.createElement('div');visual.className='stage-visual';
   const image=document.createElement('img');bindMenuImage(image,resolvePreview(stage.previewImage));image.alt=`Stage ${stage.stageId} preview`;image.dataset.stageId=stage.stageId;
-  const overlay=document.createElement('div');overlay.className='stage-title-overlay';overlay.textContent=`${stage.stageId} ${stage.title}`;visual.append(image,overlay);
+  const overlay=document.createElement('div');overlay.className='stage-title-overlay';overlay.append(Object.assign(document.createElement('strong'),{textContent:chapter.title}),Object.assign(document.createElement('span'),{textContent:`${stage.stageId} ${stage.title}`}));visual.append(image,overlay);
   const details=document.createElement('div');details.className='preview-details';
   const start=document.createElement('button');start.type='button';start.className='campaign-button start';start.textContent='START';
   start.disabled=stageStatus(this.controller.progress,stage.stageId)==='locked';
