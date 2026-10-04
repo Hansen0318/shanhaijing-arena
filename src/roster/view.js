@@ -18,7 +18,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
  const fullIdentity=character=>{const p=node('span',character.portrait?.label??character.name,'lineup-figure');return decoratePortrait(p,character,{document:doc,slot:'collectionArt'});};
  page.className+=' team-page';
  const header=node('header',null,'stage-header');
- header.append(button('BACK',()=>onBack?.(),'campaign-button back'),node('h1','SELECT TEAM'),node('span',`Stage ${stageId}`,'team-stage'));
+ header.append(button('BACK',()=>onBack?.(),'campaign-button back screen-back'),node('h1','SELECT TEAM'),node('span',`Stage ${stageId}`,'team-stage'));
  const matchup=node('div',null,'team-matchup'),allies=node('section',null,'matchup-side');
  allies.append(node('h2','YOUR TEAM'));
  const slots=node('div',null,'team-slots');slots.setAttribute('aria-label','Battle slots');
@@ -66,7 +66,5 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
  bench.append(tabs,roster);
  const footer=node('footer',null,'team-footer');
  const battle=button('BATTLE',()=>{if(team.canBattle)onBattle?.();},'campaign-button start battle');battle.disabled=!team.canBattle;
- const count=team.slots.filter(Boolean).length;
- const status=node('p',team.canBattle?'3 / 3 READY':`${count} / 3 — Select a valid team of 3`,'team-status');status.setAttribute('aria-live','polite');
- footer.append(status,battle);page.append(header,matchup,bench,footer);
+ footer.append(battle);page.append(header,matchup,bench,footer);
 }
