@@ -4,6 +4,8 @@
 **M5C-B FORMAL ASSET INTEGRATION — CHAT ASSET AUTHORING / BATCH PREPARATION**
 
 ## Current state
+- Global asset-performance rule now separates high-resolution master/source art from optimized runtime derivatives. All character animation assets must be resized/optimized for actual display footprint, preserve common frame geometry/origin, and remain within M5C-A lazy-load/cache/decoded-memory guards before production lock.
+- 鹿蜀 is now ready for the smallest executable integration slice: optimize and integrate only the accepted 4-frame idle loop through M5C-A, then stop for targeted player motion/readability smoke. Hit / KO / Cast remain blocked until Idle passes in runtime.
 - 鹿蜀 accepted 4-frame idle source is technically validated: RGBA PNG 2172×724, four equal 543×724 horizontal cells, stable ground baseline and readable ~48px breathing differences. Next gate is a minimal idle-only runtime integration/player smoke through M5C-A before any Hit / KO / Cast production.
 - 鹿蜀 4-frame idle micro-animation direction is PLAYER ACCEPTED: fixed feet/anchor, no glow/VFX, visible body breathing, tail vertically follows the breathing cycle rather than wagging sideways, and amplitude is ~1.3× the earlier subtle pass for small-scale readability. Technical frame/PNG/anchor/runtime validation remains before production lock and integration.
 - 鹿蜀 final battle-detail cleanup is now locked. The character no longer needs fundamental redesign; the next asset step is a single simplified battleIdle source using the fixed large-shape hierarchy, followed by ~48px runtime validation before any Hit / KO / Cast authoring.
