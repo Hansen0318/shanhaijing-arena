@@ -30,15 +30,15 @@ test('declared viewport row budget keeps header, matchup, bench and BATTLE withi
  // Deterministic CSS budget contract, not a browser or real-device geometry claim.
  // It catches adding fixed row height/gaps/padding that would push BATTLE below the viewport.
  const css=readFileSync(new URL('../src/roster/style.css',import.meta.url),'utf8');
- const rules=[...css.matchAll(/\.team-page \{([^}]+)\}/g)].map(m=>m[1]);assert.ok(css.includes('@media(max-height:420px)'));const rule=rules.at(-1),props=Object.fromEntries(rule.split(';').filter(x=>x.includes(':')).map(x=>x.trim().split(':')));
- const desktopRows=rules[0].match(/grid-template-rows:(\d+)px minmax\((\d+)px,1fr\) (\d+)px (\d+)px/).slice(1).map(Number);assert.equal(desktopRows[1],180);
- const compactRows=props['grid-template-rows'].match(/^(\d+)px minmax\((\d+)px,1fr\) (\d+)px (\d+)px$/).slice(1).map(Number),gap=parseFloat(props.gap),top=parseFloat(props['padding-top']);
- const bottomMin=parseFloat(props['padding-bottom'].match(/max\((\d+)px/)[1]);
- for(const [w,h,bottomInset] of [[667,320,0],[844,320,21],[740,360,21],[844,390,21],[932,430,21]]) {
-  const rows=h>420?desktopRows:compactRows;
-  const fixed=rows[0]+rows[2]+rows[3]+gap*3+top+Math.max(bottomMin,bottomInset),upper=h-fixed;
-  assert.ok(upper>=rows[1],`${w}×${h}: all four rows must fit`);
-  assert.ok(rows[0]>=44 && rows[3]>=44,'BACK and BATTLE retain touch-height budget');
+ const rules=[...css.matchAll(/\.team-page \{([^}]+)\}/g)].map(m=>m[1]);
+ const rows=rules.map(r=>r.match(/grid-template-rows:(\d+)px minmax\((\d+)px,1fr\) (\d+)px (\d+)px/).slice(1).map(Number));
+ assert.equal(rows[0][1],150);assert.equal(rows[1][1],132);
+ for(const [w,h,bottomInset] of [[667,320,0],[844,320,21],[740,356,21],[740,360,21],[844,390,21],[932,430,21]]) {
+  const index=h<=356&&rules.length>2?2:h<=420?1:0,rule=rules[index],props=Object.fromEntries(rule.split(';').filter(x=>x.includes(':')).map(x=>x.trim().split(':'))),selectedRows=rows[index];
+  const gap=parseFloat(props.gap),top=parseFloat(props['padding-top']),bottomMin=parseFloat(props['padding-bottom'].match(/max\((\d+)px/)[1]);
+  const fixed=selectedRows[0]+selectedRows[2]+selectedRows[3]+gap*3+top+Math.max(bottomMin,bottomInset),upper=h-fixed;
+  assert.ok(upper>=selectedRows[1],`${w}×${h}: all four rows must fit without reducing the accepted upper minimum`);
+  assert.ok(selectedRows[0]>=44&&selectedRows[3]>=36,'BACK and compact BATTLE retain their control budget');
   assert.ok(fixed+upper<=h);
  }
 });

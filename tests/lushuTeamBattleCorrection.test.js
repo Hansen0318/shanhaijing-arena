@@ -38,12 +38,23 @@ test('all four Tier borders are distinct and Collection reads earned Tier withou
  const doc={createElement(tag){const n=node(tag);n.replaceChildren=(...v)=>n.children=v;n.addEventListener=()=>{};return n;}},page=doc.createElement('main'),v=new CollectionView(c,{document:doc});v.mount(page);const card=walk(page).find(n=>n.dataset.characterId==='P1');assert.equal(card.dataset.tier,'T3');assert.equal(card.style.borderColor,TIER_BORDER_COLORS.T3);assert.equal(JSON.stringify(c.acquisition),before);
 });
 
-test('Chat conditional replacement retires only formal surface names and preserves fallback identity',async()=>{
+test('upper and Collection retire formal placeholder names while lower roster preserves name and Type',async()=>{
  const page=node('main'),team=new TeamSelection({stage:{enemyLineup:['P1','P2','P3']},saved:['P1','P2','P3']});renderTeamSelect(page,team,{document:{createElement:node},stageId:'1-1'});
  const all=walk(page),upper=all.find(n=>n.className==='team-matchup');
  for(const host of walk(upper).filter(n=>n.dataset.formalArt==='true')){assert.equal(walk(host).some(n=>n.className==='matchup-identity'),false);const img=walk(host).find(n=>n.tag==='img');img.onload();assert.equal(walk(host).some(n=>n.textContent==='鹿蜀'&&!n.hidden),false);img.onerror();assert.equal(walk(host).some(n=>n.textContent==='鹿蜀'&&!n.hidden),true);}
- const p1=all.find(n=>n.dataset.characterId==='P1');assert.ok(walk(p1).some(n=>n.className==='compact-meta'));assert.equal(walk(p1).some(n=>n.className==='matchup-identity'),false);
+ const p1=all.find(n=>n.dataset.characterId==='P1');assert.ok(walk(p1).some(n=>n.className==='matchup-identity'));assert.ok(walk(p1).some(n=>n.textContent==='鹿蜀'));assert.ok(walk(p1).some(n=>n['aria-label']==='Type: Speed'));assert.ok(walk(p1).some(n=>n.tag==='img'&&n.src.endsWith('portrait.png')));
  const p2=all.find(n=>n.dataset.characterId==='P2');assert.ok(walk(p2).some(n=>n.className==='matchup-identity'));
  const {CollectionView}=await import('../src/collection/view.js'),{CampaignController}=await import('../src/campaign/controller.js');const doc={createElement(tag){const n=node(tag);n.replaceChildren=(...v)=>n.children=v;n.addEventListener=()=>{};return n;}},collection=doc.createElement('main');new CollectionView(new CampaignController(),{document:doc}).mount(collection);
  const formal=walk(collection).find(n=>n.dataset.characterId==='P1'),placeholder=walk(collection).find(n=>n.dataset.characterId==='P2');assert.equal(walk(formal).some(n=>n.className==='collection-name'),false);assert.ok(walk(placeholder).some(n=>n.className==='collection-name'&&n.textContent==='猼訑'));
+});
+
+
+test('future formal KO slot and animation descriptor replace static idle fallback without a new PNG',async()=>{
+ for(const customDescriptor of [false,true]){
+  const s=scene(),p=new AssetPresenter(s,{cache}),character={...rosterCatalog.P1,assets:{...rosterCatalog.P1.assets,battleKo:'lushu.identity'},animationDescriptors:{...rosterCatalog.P1.animationDescriptors,...(customDescriptor?{battleKo:{...rosterCatalog.P1.animationDescriptors.battleIdle,loop:false,staticFrame:3}}:{})}};
+  await p.prepare([character]);const actor={instanceId:'a1',definitionId:'P1',x:2,y:1,hp:245},frame={allies:[actor],enemies:[]};p.render(frame,0,{P1:character});actor.hp=0;const before=JSON.stringify(frame);p.render(frame,.1,{P1:character});const image=p.actorSprites.get('a1');
+  assert.equal(p.states.get('a1').state,'battleKo');assert.equal(p.states.get('a1').descriptor.source,customDescriptor?'lushu.battleIdle':'lushu.identity');
+  if(customDescriptor){p.render(frame,1.3,{P1:character});assert.equal(image.Texture[1],'288.0.96.128');}else assert.ok(image.Texture[0].endsWith('lushu.identity'));
+  assert.deepEqual(image.Visible,[true]);assert.deepEqual(image.Alpha,[.35]);assert.deepEqual(image.Position,[2,1]);assert.equal(JSON.stringify(frame),before);p.destroy();assert.ok(s.images.every(i=>i.destroyed));
+ }
 });
