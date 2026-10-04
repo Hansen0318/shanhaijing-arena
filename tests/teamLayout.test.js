@@ -42,3 +42,11 @@ test('declared viewport row budget keeps header, matchup, bench and BATTLE withi
   assert.ok(fixed+upper<=h);
  }
 });
+
+test('overlapping full-body slot boxes stay within each team container instead of creating root horizontal scroll',()=>{
+ const css=readFileSync(new URL('../src/roster/style.css',import.meta.url),'utf8'),slots=css.match(/\.team-slots,\.enemy-slots \{([^}]+)\}/)[1],figure=css.match(/\.team-slot,\.enemy-slot \{([^}]+)\}/)[1];
+ const basis=Number(figure.match(/flex:0 0 ([\d.]+)%/)[1])/100,overlap=Number(figure.match(/margin-inline:-([\d.]+)%/)[1])/100;
+ const padding=Number(slots.match(/padding:0(?: ([\d.]+)%)?/)[1]??0)/100;
+ // Three boxes, four internal negative margins; outer negative edges still occupy visual space.
+ assert.ok((1-2*padding)*(3*basis-4*overlap)<=1,'overlap must fit without hiding/cropping the figure');
+});

@@ -5,7 +5,7 @@ Recovered81b44d33ae7467a6582306f3306679a7b8f94675 on original feat/m0-combat-cor
 
 ## Executable delta
 Initial targeted131/134: lower formal card still expected name retirement; actual Arena mock lacked setVisible and expected a retained ring; row test expected old180px. Updated these to current name+Type, marker visibility and150/132 minimum contracts.
-Revised budget test independently FAILS at667×320: all four rows need340px without inset /357px with21px inset. Product correction only <=356px responsive CSS: upper132px unchanged, header44px unchanged, bench84px (36px filters+44px information cards+4px internal gap), footer/BATTLE36px, outer gaps0, top1px. With21px inset, minimum319px fits320px. >=357px Chat rows/filter/footer/overlap/width unchanged. No redesign or132→82 reversion. RED→GREEN observed. Tests cover667×320,844×320 with21px inset,740×356,740×360,844×390,932×430.
+Revised budget test independently FAILS at667×320: all four rows need340px without inset /357px with21px inset. First product correction: <=356px responsive CSS: upper132px unchanged, header44px unchanged, bench84px (36px filters+44px information cards+4px internal gap), footer/BATTLE36px, outer gaps0, top1px. With21px inset, minimum319px fits320px. >=357px Chat rows/filter/footer/overlap/width unchanged. No redesign or132→82 reversion. Second actual public runtime defect: negative-margin slot boxes extended5px beyond root, creating a horizontal scrollbar. Added only4% symmetric team-container inset, preserving42% basis/negative4.5% overlap. A box-budget test observed RED→GREEN; final runtime recheck pending. RED→GREEN observed. Tests cover667×320,844×320 with21px inset,740×356,740×360,844×390,932×430.
 
 ## Contracts / tests
 Actual Arena applyFrame sets formal marker visible=false (fully hides both fill/stroke); absent/invisible formal sprite sets marker visible=true/fill1. No-art selection stroke remains. Snapshot/actor x/y unchanged. Dedicated telegraph adapter untouched.
@@ -14,9 +14,9 @@ Added one distinct KO test: current approved identity.png stands in for a future
 Protected72×96 scale/common origin/four-frame2.5fps loop/facing/hit visibility/Pause/Resume/scene cleanup/viewport BACK/menu dependency/cache tests PASS. Approved PNG/master and asset architecture unchanged; asset encoded/decoded delta0.
 
 ## Engineering evidence
-node --test --test-reporter=tap tests/lushu*.test.js tests/asset*.test.js tests/collection*.test.js tests/team*.test.js tests/viewportSync.test.js tests/routeOwnership.test.js tests/lazyBattleRuntime.test.js tests/battleLabRuntime.test.js tests/preBattleGate.test.js tests/appRouteReset.test.js tests/hudCardLayout.test.js →135/135 PASS.
+node --test --test-reporter=tap tests/lushu*.test.js tests/asset*.test.js tests/collection*.test.js tests/team*.test.js tests/viewportSync.test.js tests/routeOwnership.test.js tests/lazyBattleRuntime.test.js tests/battleLabRuntime.test.js tests/preBattleGate.test.js tests/appRouteReset.test.js tests/hudCardLayout.test.js →136/136 PASS.
 Asset guard40files148075bytes; npm run build PASS; git diff --check PASS. Existing large-chunk advisory unchanged. No full local regression; existing CI workflow unchanged.
-Build index-BiRUgpmE.js /index-B9L_6HzB.css /battleRuntime-D4TcgQTe.js.
+Final build fingerprints recorded after release.
 
 ## Release pending
 Push tested checkpoint, verify relevant Actions/Pages, public fingerprint/PNG resolution, Team/Collection/Detail/Battle inspection. Final status ENGINEERING PASS / PLAYER SMOKE PENDING.

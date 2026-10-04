@@ -8,7 +8,7 @@
 .matchup-side h2 { margin:0 0 3px;font-size:11px;letter-spacing:1px;color:#b2daeb; }
 .enemy-side h2 { color:#ffc1aa; }
 .matchup-vs { font-size:clamp(46px,7.5vw,78px);align-self:center;text-align:center;color:#ffd689;line-height:1;font-weight:800; }
-.team-slots,.enemy-slots { display:flex;align-items:flex-end;justify-content:center;gap:0;flex:1;min-height:0;overflow:visible;padding:0; }
+.team-slots,.enemy-slots { display:flex;align-items:flex-end;justify-content:center;gap:0;flex:1;min-height:0;overflow:visible;padding:0 4%; }
 .team-slot,.enemy-slot { display:flex;flex:0 0 42%;height:100%;flex-direction:column;align-items:center;justify-content:flex-end;gap:1px;border:0;background:transparent;color:white;padding:0;font:600 10px system-ui,sans-serif;box-sizing:border-box;min-width:0;min-height:0;margin-inline:-4.5%; }
 .team-slot { position:relative;touch-action:manipulation;cursor:pointer; }
 .team-slot:not(.occupied) { flex-basis:31%;height:72%;margin-inline:1%;border:1px dashed #718b9c;border-radius:8px;background:rgba(36,59,75,.3); }
