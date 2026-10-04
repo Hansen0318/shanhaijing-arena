@@ -24,7 +24,7 @@ test('approved static portrait/full identity resolve through shared slots, retai
  }
  assert.equal(resolveCharacterAsset(rosterCatalog.P2,'portraitSquare').type,'procedural');
 });
-function scene(){const images=[],textures=new Map();return {images,textures:{addImage(k){textures.set(k,{has:()=>true});},get:k=>textures.get(k),remove:k=>textures.delete(k)},add:{image(){const v={};for(const k of ['setTexture','setOrigin','setScale','setVisible','setDisplaySize','setPosition','setDepth','setAlpha','setFlipX'])v[k]=(...a)=>{v[k.slice(3)]=a;return v;};v.destroy=()=>v.destroyed=true;images.push(v);return v;}}};}
+function scene(){const images=[],textures=new Map();return {images,textures:{addImage(k){textures.set(k,{has:()=>true});},get:k=>textures.get(k),remove:k=>textures.delete(k)},add:{graphics(){const v={destroy(){this.destroyed=true;}};for(const k of ['setPosition','setDepth','setAlpha','setScale','clear','lineStyle','lineBetween','fillStyle','fillCircle','strokeCircle'])v[k]=()=>v;return v;},image(){const v={};for(const k of ['setTexture','setOrigin','setScale','setVisible','setDisplaySize','setPosition','setDepth','setAlpha','setFlipX'])v[k]=(...a)=>{v[k.slice(3)]=a;return v;};v.destroy=()=>v.destroyed=true;images.push(v);return v;}}};}
 test('static-first enlarged sprites mirror shared motion without moving actor/origin, retain facing at rest',async()=>{
  const s=scene(),p=new AssetPresenter(s,{reducedMotion:true,cache:{async load(key){const {assetManifest}=await import('../src/assets/manifest.js');const a=assetManifest[key];return a.type==='image'?{...a,image:{width:a.width,height:a.height}}:a;}}});
  await p.prepare([rosterCatalog.P1]);const a={instanceId:'a1',definitionId:'P1',x:5,y:2,hp:245},e={...a,instanceId:'e1',x:9},frame={allies:[a],enemies:[e]};
@@ -73,4 +73,26 @@ test('Team ally/enemy/bench and Collection card/Detail share static menu image b
  assert.equal(walk(collection).filter(n=>n.dataset.assetKey==='lushu.portrait').length,1);
  by(collection,n=>n.dataset.characterId==='P1').onclick();const full=by(collection,n=>n.dataset.assetKey==='lushu.identity');assert.ok(full.children.some(n=>n.tag==='img'&&n.src.endsWith('/identity.png')));
  assert.equal(walk(collection).some(n=>n.tag==='img'&&n.src.includes('battleIdle')),false);
+});
+
+test('attack/cast facing overrides opposing motion, expires back to motion, and rests at last facing',async()=>{
+ const s=scene(),p=new AssetPresenter(s,{cache:{async load(key){const {assetManifest}=await import('../src/assets/manifest.js');const a=assetManifest[key];return a.type==='image'?{...a,image:{width:a.width,height:a.height}}:a;}}});
+ await p.prepare([rosterCatalog.P1]);
+ const actor={instanceId:'a1',definitionId:'P1',x:5,y:2,hp:245},frame={allies:[actor],enemies:[]};
+ p.render(frame,0,rosterCatalog);
+ for(const [category,targetX,move,flip,start] of [['basic',0,.1,true,1],['special',10,-.1,false,2]]){
+  const event={actorId:'a1',category,origin:{x:5,y:2},target:{x:targetX,y:2}},before=structuredClone(event);
+  p.cast(event,rosterCatalog.P1,start);assert.deepEqual(event,before);
+  const until=p.actionFacings.get('a1').until;assert.ok(until>start);
+  actor.x+=move;const snapshot=structuredClone(frame);p.render(frame,start+.01,rosterCatalog);
+  assert.deepEqual(p.actorSprites.get('a1').FlipX,[flip]);assert.deepEqual(frame,snapshot);
+  // Frozen battle time keeps both facing and the accepted idle cell frozen.
+  const texture=p.actorSprites.get('a1').Texture; p.render(frame,start+.01,rosterCatalog);
+  assert.deepEqual(p.actorSprites.get('a1').Texture,texture);assert.deepEqual(p.actorSprites.get('a1').FlipX,[flip]);
+  actor.x+=move;p.render(frame,until+.01,rosterCatalog);
+  assert.equal(p.actionFacings.has('a1'),false);assert.deepEqual(p.actorSprites.get('a1').FlipX,[move<0]);
+  p.render(frame,until+.02,rosterCatalog);assert.deepEqual(p.actorSprites.get('a1').FlipX,[move<0]);
+  assert.deepEqual(p.actorSprites.get('a1').Position,[actor.x,actor.y]);assert.deepEqual(p.actorSprites.get('a1').Origin,[.5,691/724]);
+ }
+ p.destroy();assert.equal(p.actionFacings.size,0);
 });
