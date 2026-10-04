@@ -722,3 +722,15 @@ For 鹿蜀 this changes the visual target from approximately 72×96 to approxima
 - targeting and telegraph geometry.
 
 This is a presentation-only scale correction and remains provisional until device smoke.
+
+## 28. Player acceptance closure — 2026-10-04
+
+Status:
+**PASS / PLAYER VERIFIED**
+
+The player verified the latest deployed 鹿蜀 presentation/UI correction on device. The accepted result includes the current formal 鹿蜀 battle readability, shared placeholder-retirement behavior, Team Select formal presentation, Stage Select layout, battle facing behavior and side-relative HUD portrait mirroring.
+
+This closes the presentation-correction loop only. It does not authorize redesign of accepted 鹿蜀 assets and does not imply formal Hit / KO / Cast art exists.
+
+Canonical reusable baseline:
+`docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md`
