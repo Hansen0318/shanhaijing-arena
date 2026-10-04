@@ -1,5 +1,5 @@
 /* INFO alone scrolls its body; BACK stays outside that region. No motion/runtime work. */
-.campaign-page.info-page { height:100%; min-height:0; display:flex; flex-direction:column; gap:12px; overflow:hidden; padding:max(12px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left)); }
+.campaign-page.info-page { height:100%; min-height:0; display:flex; flex-direction:column; gap:12px; overflow:hidden; padding:max(12px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(64px,calc(env(safe-area-inset-bottom) + 54px)) max(20px,env(safe-area-inset-left)); }
 .info-header { display:flex; align-items:center; gap:18px; flex-shrink:0; }
 .info-page .info-header h1 { margin:0; }
 .info-page .campaign-button { min-height:44px; }
