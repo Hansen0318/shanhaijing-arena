@@ -1,9 +1,10 @@
 # Project State
 
 ## Milestone
-**M5C-B 鹿蜀 BATTLE IDLE — ENGINEERING PASS / PLAYER SMOKE PENDING**
+**M5C-B 鹿蜀 BATTLE IDLE — PLAYER SMOKE FAIL / CORRECTION REQUIRED**
 
 ## Current state
+- 鹿蜀 runtime player smoke failed on four bounded presentation/navigation defects: formal image absent in Character Detail/Collection/Team Select surfaces; battle sprite too small; sprite facing does not follow left/right movement direction; BACK often leaves viewport/scroll position incorrect. Idle breathing direction itself remains accepted and must not be redesigned. Hit / KO / Cast and other characters remain blocked until this correction passes.
 - **M5C-B 鹿蜀 IDLE — ENGINEERING PASS / PLAYER SMOKE PENDING.** Source `c213e81a6364381554d0bb8e51451378bd25f46a`, original `feat/m0-combat-core-20260927` /PR#1; no main merge. Runtime192×64 /4×48×64 /22,010bytes /49,152 decodedbytes /fps2.5 /1.6s /fixed origin[.5,691/724] /36×48 stage fit. Targeted/impacted44/44, guard/build/diff PASS; Actions#488 /37174412653 Test/Build/Pages SUCCESS; public JS/CSS and PNG fingerprints match. Public formal allied/enemy 鹿蜀, Pause/Resume controls and Exit→Lab host cleanup observed. Cloud countdown stayed3; sustained cloud motion is not claimed, four-frame/frozen-clock/resume contracts tested automatically. Next exact action: player iPhone8-item idle/readability/load smoke, then STOP for Chat post-acceptance review. Evidence: `docs/verification/M5C_B_LUSHU_IDLE.md`.
 - Global asset-performance rule now separates high-resolution master/source art from optimized runtime derivatives. All character animation assets must be resized/optimized for actual display footprint, preserve common frame geometry/origin, and remain within M5C-A lazy-load/cache/decoded-memory guards before production lock.
 - 鹿蜀 is now ready for the smallest executable integration slice: optimize and integrate only the accepted 4-frame idle loop through M5C-A, then stop for targeted player motion/readability smoke. Hit / KO / Cast remain blocked until Idle passes in runtime.
