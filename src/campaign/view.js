@@ -63,7 +63,7 @@ export class CampaignView {
   if(this.controller.screen==='stages') { this.renderStages(page); this.root.append(page); this.onRender?.(); return; }
   const heading=document.createElement('h1'); heading.textContent='CHAPTER SELECT';
   const header=document.createElement('header');header.className='stage-header';
-  const back=document.createElement('button');back.type='button';back.className='campaign-button';back.textContent='BACK';back.dataset.action='chapters-back';back.onclick=()=>{if(this.controller.back())this.render();};header.append(back,heading);page.append(header);
+  const back=document.createElement('button');back.type='button';back.className='campaign-button screen-back';back.textContent='BACK';back.dataset.action='chapters-back';back.onclick=()=>{if(this.controller.back())this.render();};header.append(back,heading);page.append(header);
   const grid=document.createElement('div');grid.className='chapter-grid';
   for(const chapter of orderedChapters()) grid.append(card({image:chapter.thumbnail,label:chapter.title,status:chapterStatus(this.controller.progress,chapter.chapterId),onClick:()=>{if(this.controller.openChapter(chapter.chapterId)) this.render();}}));
   page.append(grid);this.root.append(page);this.onRender?.();
@@ -72,7 +72,7 @@ export class CampaignView {
   page.classList.add('stage-page');
   const chapter=findChapter(this.controller.chapterId), stage=findStage(this.controller.selectedStageId);
   const header=document.createElement('header'); header.className='stage-header';
-  const back=document.createElement('button');back.type='button';back.className='campaign-button back';back.textContent='BACK';
+  const back=document.createElement('button');back.type='button';back.className='campaign-button back screen-back';back.textContent='BACK';
   back.onclick=()=>{if(this.controller.back()) this.render();};
   const heading=document.createElement('h1');heading.textContent=chapter.title;header.append(back,heading);page.append(header);
   const preview=document.createElement('div');preview.className='stage-preview';
