@@ -51,3 +51,15 @@ test('battle HUD portraits use shared side-based mirroring, not character-specif
  assert.match(source,/setFlipX\(view\.side==='enemy'\)/);
  assert.doesNotMatch(source,/definitionId.*setFlipX/);
 });
+
+test('executed formal HUD rendering keeps ally canonical, mirrors enemy, and reuses owned portraits',async()=>{
+ const {rosterCatalog}=await import('../src/roster/catalog.js');const s=scene(),images=[];
+ s.add.image=()=>{const image={setDisplaySize(w,h){this.size=[w,h];return this;},setFlipX(flip){this.flip=flip;return this;},destroy(){this.destroyed=true;}};images.push(image);return image;};
+ const cache=createAssetCache({transport:async record=>({image:{width:record.width,height:record.height},bytes:200})}),p=new api.AssetPresenter(s,{cache});await p.loadKeys(['lushu.portrait']);
+ const makeView=side=>({side,layout:{backingY:0,portraitSize:64},card:{addAt(image,index){assert.equal(index,2);this.image=image;}}}),views=new Map([['a1',makeView('ally')],['e1',makeView('enemy')]]);
+ const actor={definitionId:'P1',x:5,y:2,hp:245},session={actorById:()=>actor},before=structuredClone(actor);
+ p.renderHud(views,rosterCatalog,session);p.renderHud(views,rosterCatalog,session);
+ assert.equal(images.length,2);assert.equal(views.get('a1').card.image.flip,false);assert.equal(views.get('e1').card.image.flip,true);
+ assert.ok(images.every(image=>image.size[0]===64&&image.size[1]===64));assert.deepEqual(actor,before);
+ p.destroy();assert.ok(images.every(image=>image.destroyed));assert.equal(p.hudSprites.size,0);
+});
