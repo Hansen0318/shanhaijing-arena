@@ -28,7 +28,7 @@ function scene(){const images=[],textures=new Map();return {images,textures:{add
 test('static-first enlarged sprites mirror shared motion without moving actor/origin, retain facing at rest',async()=>{
  const s=scene(),p=new AssetPresenter(s,{reducedMotion:true,cache:{async load(key){const {assetManifest}=await import('../src/assets/manifest.js');const a=assetManifest[key];return a.type==='image'?{...a,image:{width:a.width,height:a.height}}:a;}}});
  await p.prepare([rosterCatalog.P1]);const a={instanceId:'a1',definitionId:'P1',x:5,y:2,hp:245},e={...a,instanceId:'e1',x:9},frame={allies:[a],enemies:[e]};
- p.render(frame,0,rosterCatalog);assert.deepEqual(p.actorSprites.get('a1').DisplaySize,[72,96]);assert.deepEqual(p.actorSprites.get('e1').DisplaySize,[72,96]);
+ p.render(frame,0,rosterCatalog);assert.deepEqual(p.actorSprites.get('a1').DisplaySize,[108,144]);assert.deepEqual(p.actorSprites.get('e1').DisplaySize,[108,144]);
  for(const [dx,flip] of [[.1,false],[-.2,true],[0,true],[.2,false]]){
   a.x+=dx;e.x+=dx;const before=structuredClone(frame);p.render(frame,.8,rosterCatalog);
   for(const actor of [a,e]){const image=p.actorSprites.get(actor.instanceId);assert.deepEqual(image.FlipX,[flip]);assert.deepEqual(image.Origin,[.5,691/724]);assert.deepEqual(image.Position,[actor.x,actor.y]);}

@@ -13,7 +13,7 @@ function scene(){const images=[],textures=new Map();const make=()=>{const v={};f
 const cache={async load(key){const a=assetManifest[key];return a?.type==='image'?{...a,image:{}}:a??{type:'procedural'};}};
 test('formal actor never vanishes during missing hit/cast/KO textures and follows current movement at the fixed origin',async()=>{
  const s=scene(),p=new AssetPresenter(s,{cache});await p.prepare([rosterCatalog.P1]);const actor={instanceId:'a1',definitionId:'P1',x:2,y:1,hp:245},f={allies:[actor],enemies:[]};p.render(f,0,rosterCatalog);
- p.hit({targetId:'a1'},rosterCatalog.P1,.1);actor.x=1.7;p.render(f,.2,rosterCatalog);const image=p.actorSprites.get('a1');assert.deepEqual(image.Visible,[true]);assert.deepEqual(image.Position,[1.7,1]);assert.deepEqual(image.Origin,[.5,691/724]);assert.deepEqual(image.DisplaySize,[72,96]);assert.deepEqual(image.FlipX,[true]);assert.equal(p.states.get('a1').state,'battleHit');
+ p.hit({targetId:'a1'},rosterCatalog.P1,.1);actor.x=1.7;p.render(f,.2,rosterCatalog);const image=p.actorSprites.get('a1');assert.deepEqual(image.Visible,[true]);assert.deepEqual(image.Position,[1.7,1]);assert.deepEqual(image.Origin,[.5,691/724]);assert.deepEqual(image.DisplaySize,[108,144]);assert.deepEqual(image.FlipX,[true]);assert.equal(p.states.get('a1').state,'battleHit');
  p.setState('a1',characterAnimation(rosterCatalog.P1,'battleCast'),.2,'battleCast');p.render(f,.3,rosterCatalog);assert.deepEqual(image.Visible,[true]);p.render(f,.7,rosterCatalog);assert.equal(p.states.get('a1').state,'battleIdle');
  actor.hp=0;p.render(f,.8,rosterCatalog);assert.deepEqual(image.Visible,[true]);assert.deepEqual(image.Alpha,[.35]);assert.equal(p.states.get('a1').state,'battleKo');p.destroy();assert.ok(s.images.every(i=>i.destroyed));
 });

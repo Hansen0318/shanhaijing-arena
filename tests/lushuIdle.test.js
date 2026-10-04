@@ -51,7 +51,7 @@ test('real presenter loop freezes on battle time, resumes, exits hit/KO safely a
  const frame={allies:[{instanceId:'a1',definitionId:'P1',x:3,y:2,hp:245}],enemies:[]};const before=structuredClone(frame);
  for(let i=0;i<4;i++){
   p.render(frame,i*.4,rosterCatalog);const image=p.actorSprites.get('a1');
-  assert.equal(image.frame,`${i*96}.0.96.128`);assert.deepEqual(image.origin,[.5,691/724]);assert.deepEqual(image.size,[72,96]);assert.deepEqual([image.x,image.y],[3,2]);
+  assert.equal(image.frame,`${i*96}.0.96.128`);assert.deepEqual(image.origin,[.5,691/724]);assert.deepEqual(image.size,[108,144]);assert.deepEqual([image.x,image.y],[3,2]);
  }
  const frozen=p.actorSprites.get('a1').frame;p.render(frame,1.2,rosterCatalog);assert.equal(p.actorSprites.get('a1').frame,frozen);
  p.render(frame,1.6,rosterCatalog);assert.equal(p.actorSprites.get('a1').frame,'0.0.96.128');assert.deepEqual(frame,before);
@@ -75,14 +75,14 @@ test('actual Arena enriches presentation copies with identity without modifying 
  const Arena=vm.runInNewContext(source+'\nArenaScene',{window:{},Phaser:{Scene:class{}},ARENA_STAGE:{width:1120,height:540},arenaToStage,battlePortrait,statusMarks:()=>''});
  const session=createLabBattleSession(createLabConfig()),frame=session.snapshot(),before=JSON.stringify(frame);let presented;
  const visual={setFillStyle(){return this;},setPosition(){return this;},setAlpha(){return this;},setText(){return this;}};
- const labelPositions=new Map(),fills=new Map(),strokes=new Map(),visibility=new Map();
- const s=new Arena();s.session=session;s.actorViews=new Map([...frame.allies,...frame.enemies].map(a=>[a.instanceId,{allied:a.instanceId.startsWith('a'),marker:{...visual,setVisible(value){visibility.set(a.instanceId,value);return this;},setStrokeStyle(width,color){strokes.set(a.instanceId,[width,color]);return this;},setFillStyle(color,alpha){fills.set(a.instanceId,alpha);return this;}},markerColor:0x112233,label:{...visual,setPosition(x,y){labelPositions.set(a.instanceId,[x,y]);return this;}}}]));
- s.visualAssets={actorSprites:new Map([['a1',{displayHeight:96,originY:691/724,visible:true}]]),render(f){presented=f;},renderOverlays(){},renderHud(){}};s.telegraphs={render(){}};
+ const labelPositions=new Map(),fills=new Map(),strokes=new Map(),visibility=new Map(),labelVisibility=new Map();
+ const s=new Arena();s.session=session;s.actorViews=new Map([...frame.allies,...frame.enemies].map(a=>[a.instanceId,{allied:a.instanceId.startsWith('a'),marker:{...visual,setVisible(value){visibility.set(a.instanceId,value);return this;},setStrokeStyle(width,color){strokes.set(a.instanceId,[width,color]);return this;},setFillStyle(color,alpha){fills.set(a.instanceId,alpha);return this;}},markerColor:0x112233,label:{...visual,setVisible(value){labelVisibility.set(a.instanceId,value);return this;},setPosition(x,y){labelPositions.set(a.instanceId,[x,y]);return this;}}}]));
+ s.visualAssets={actorSprites:new Map([['a1',{displayHeight:144,originY:691/724,visible:true}],['e2',{displayHeight:144,originY:691/724,visible:true}]]),render(f){presented=f;},renderOverlays(){},renderHud(){}};s.telegraphs={render(){}};
  s.selectedId='a1';for(const m of ['ensureLivingSelection','refreshSkillButtons','refreshHud','showResult'])s[m]=()=>{};
  s.applyFrame(frame);
  for(const a of [...presented.allies,...presented.enemies])assert.equal(a.definitionId,session.actorById(a.instanceId).definitionId);
  assert.equal(JSON.stringify(frame),before);
- assert.equal(visibility.get('a1'),false);assert.equal(fills.get('a1'),1);for(const a of [...frame.allies,...frame.enemies])if(a.instanceId!=='a1'){assert.equal(visibility.get(a.instanceId),true);assert.equal(fills.get(a.instanceId),1);}assert.equal(strokes.get('a2')[0],3);
- s.visualAssets.actorSprites.get('a1').visible=false;s.applyFrame(frame);assert.equal(visibility.get('a1'),true);assert.equal(fills.get('a1'),1);
- const pos=arenaToStage(frame.allies[0]);assert.equal(labelPositions.get('a1')[1],pos.y-(96*691/724+16));
+ for(const id of ['a1','e2']){assert.equal(visibility.get(id),false);assert.equal(labelVisibility.get(id),false);}for(const a of [...frame.allies,...frame.enemies])if(!['a1','e2'].includes(a.instanceId)){assert.equal(visibility.get(a.instanceId),true);assert.equal(labelVisibility.get(a.instanceId),true);assert.equal(fills.get(a.instanceId),1);}assert.equal(strokes.get('a2')[0],3);
+ s.visualAssets.actorSprites.get('a1').visible=false;s.applyFrame(frame);assert.equal(visibility.get('a1'),true);assert.equal(labelVisibility.get('a1'),true);assert.equal(fills.get('a1'),1);
+ const pos=arenaToStage(frame.allies[0]);assert.equal(labelPositions.get('a1')[1],pos.y-(144*691/724+16));
 });
