@@ -2,6 +2,7 @@ import {decorateSmallCard} from '../assets/cardPresentation.js';
 import {decoratePortrait} from '../assets/menuImage.js';
 import { collectionEntries,characterDetail } from './model.js';
 import { typeMark } from '../roster/typeIcons.js';
+import {resolveCharacterAsset} from '../assets/resolver.js';
 export class CollectionView {
  constructor(controller,{document=globalThis.document,onBack,onViewportChange,catalog,abilityCatalog,now=()=>Date.now()}={}) {
   this.controller=controller;this.document=document;this.onBack=onBack;this.onViewportChange=onViewportChange;this.catalog=catalog;this.abilityCatalog=abilityCatalog;this.now=now;this.upgradeTimes=new Map();this.filter='all';this.scrollTop=0;
@@ -29,9 +30,9 @@ export class CollectionView {
  renderGrid() {
   this.grid.replaceChildren();for(const button of this.filters)button.setAttribute('aria-pressed',String(button.dataset.filter===this.filter));
   for(const entry of this.entries()) {
-   const {definition,owned,shardLabel,tier}=entry,mark=typeMark(definition);
-   const card=this.button('',()=>this.openDetail(definition.id,card));card.className=`collection-card${owned?'':' is-locked'}`;decorateSmallCard(card,definition,tier);card.dataset.characterId=definition.id;card.dataset.owned=String(owned);card.setAttribute('aria-label',`${definition.name}, ${mark.label}, ${owned?'owned':'locked'}, ${shardLabel}`);
-   card.append(this.portrait(definition),this.node('strong','collection-name',definition.name),this.node('span','collection-type',`${mark.symbol} ${mark.label}`),this.node('span','collection-status',owned?tier:'LOCKED'),this.node('span','collection-shards',shardLabel));this.grid.append(card);
+   const {definition,owned,shardLabel,tier}=entry,mark=typeMark(definition),formal=resolveCharacterAsset(definition,'portraitSquare').type==='image';
+   const card=this.button('',()=>this.openDetail(definition.id,card));card.className=`collection-card${owned?'':' is-locked'}`;decorateSmallCard(card,definition,tier);card.dataset.characterId=definition.id;card.dataset.owned=String(owned);card.dataset.formalArt=String(formal);card.setAttribute('aria-label',`${definition.name}, ${mark.label}, ${owned?'owned':'locked'}, ${shardLabel}`);
+   card.append(this.portrait(definition));if(!formal)card.append(this.node('strong','collection-name',definition.name));card.append(this.node('span','collection-type',`${mark.symbol} ${mark.label}`),this.node('span','collection-status',owned?tier:'LOCKED'),this.node('span','collection-shards',shardLabel));this.grid.append(card);
   }
   this.grid.scrollTop=this.scrollTop;
  }
