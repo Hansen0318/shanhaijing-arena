@@ -4,6 +4,8 @@ Status: **PASS / PLAYER VERIFIED — 2026-10-04**
 
 This document is the canonical zero-context baseline for the currently accepted M5C-B presentation/UI behavior. It does **not** mean the whole M5C-B art milestone is complete. It locks the accepted reusable presentation rules and the current per-character asset progress so future Chat / Work sessions do not regress or rediscover them.
 
+This file records the **current accepted result**, not the chronological discussion history. Earlier provisional layouts, superseded player feedback, and old `PLAYER SMOKE PENDING` checkpoints are historical evidence only and must not be used to override this baseline.
+
 ## 1. Active development context
 
 - Repository: `Hansen0318/shanhaijing-arena`
