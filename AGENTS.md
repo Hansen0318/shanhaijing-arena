@@ -235,6 +235,7 @@ For non-trivial changes identify:
 - Once a formal asset resolves successfully for a surface/state, that formal asset must replace the placeholder on that surface; do not stack formal art with temporary SLOT/E1/E2 FRONT/A1/E1/name/debug labels, graybox body dots/rings, or equivalent development scaffolding unless that label is part of the final approved UI.
 - This applies equally to allies/enemies and to every current/future character through shared asset/presentation logic; never implement character-ID-specific exceptions.
 - Placeholder-only characters must still retain the fallback until their formal asset exists.
+- **Battle HUD portrait facing is side-relative and roster-wide.** Ally-side portrait/card art uses the canonical portrait orientation; enemy-side portrait/card art is its horizontal mirror so opposing HUD cards face inward relative to each other. Implement by HUD side/presentation state, never by character ID. This applies to all current and future characters and does not replace the separate in-arena dynamic facing rule.
 - Do not produce final roster art before the combat prototype passes.
 - Approved production art must not be regenerated/restyled merely because a new session begins.
 - **Master/source assets and runtime assets are separate.** High-resolution PNGs may be retained as editable/archive masters, but gameplay must consume optimized runtime derivatives sized to the actual display footprint. Do not ship generated high-resolution source art directly when a smaller lossless/visually equivalent runtime asset is sufficient.
