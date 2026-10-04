@@ -1,6 +1,11 @@
-#campaign { position:fixed; left:0; top:0; width:100%; height:100%; z-index:100; color:#f0f3f6; background:#1c2b38; font-family:system-ui,sans-serif; touch-action:pan-y; overflow:auto; overscroll-behavior:contain; }
+#campaign { position:fixed; left:0; top:0; width:100%; height:100%; z-index:100; color:#f0f3f6; background:#1c2b38; font-family:system-ui,sans-serif; touch-action:pan-y; overflow:hidden; overscroll-behavior:none; }
 #campaign[hidden] { display:none; }
-.campaign-page { box-sizing:border-box; min-height:100%; padding:14px max(20px,env(safe-area-inset-right)) 14px max(20px,env(safe-area-inset-left)); }
+.campaign-page { box-sizing:border-box; min-height:100%; padding:14px max(20px,env(safe-area-inset-right)) 14px max(20px,env(safe-area-inset-left)); position:relative; }
+.campaign-page:not(.landing-page){height:100%;min-height:0;overflow:hidden;padding-bottom:max(66px,calc(env(safe-area-inset-bottom) + 54px));}
+.screen-back{position:absolute !important;left:max(20px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));z-index:20;}
+.stage-header>.screen-back{position:absolute !important;}
+.stage-header:has(.screen-back){padding-left:0;}
+.stage-header:has(.screen-back) h1{margin-left:0;}
 .campaign-page h1 { margin:0 0 16px; font-size:clamp(18px,3vw,28px); letter-spacing:2px; }
 .chapter-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
 .campaign-card { padding:0; border:2px solid #617887; border-radius:8px; overflow:hidden; background:#2e4351; color:white; font:inherit; min-width:0; cursor:pointer; touch-action:manipulation; }
