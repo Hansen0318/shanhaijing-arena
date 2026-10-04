@@ -48,7 +48,7 @@ export class AssetPresenter{
  renderHud(views,definitions,session){
   if(this.closed||!views)return;
   for(const [id,view] of views){const actor=session.actorById(id),key=resolveCharacterAsset(definitions[actor.definitionId],'portraitSquare').key,texture=this.textures.get(key);if(!texture)continue;
-   let image=this.hudSprites.get(id);if(!image){image=this.scene.add.image(0,view.layout.backingY,texture.key);view.card.addAt(image,2);this.hudSprites.set(id,image);}image.setDisplaySize(view.layout.portraitSize,view.layout.portraitSize);
+   let image=this.hudSprites.get(id);if(!image){image=this.scene.add.image(0,view.layout.backingY,texture.key);view.card.addAt(image,2);this.hudSprites.set(id,image);}image.setDisplaySize(view.layout.portraitSize,view.layout.portraitSize).setFlipX(view.side==='enemy');
   }
  }
  renderOverlays(frame,definitions,statuses,now){
