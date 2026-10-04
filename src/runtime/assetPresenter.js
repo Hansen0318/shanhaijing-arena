@@ -68,7 +68,7 @@ export class AssetPresenter{
    const idle=characterAnimation(character,'battleIdle'),formalState=this.textures.has(state.descriptor.source);
    const descriptor=formalState?state.descriptor:idle,elapsed=formalState?now-state.start:0;
    const image=this.imageFor(id,descriptor,elapsed);
-   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?animationFrame(descriptor,elapsed,this.reducedMotion).region:null,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(48*descriptor.scale*w/Math.max(w,h),48*descriptor.scale*h/Math.max(w,h)).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
+   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?animationFrame(descriptor,elapsed,this.reducedMotion).region:null,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(72*descriptor.scale*w/Math.max(w,h),72*descriptor.scale*h/Math.max(w,h)).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
    else this.actorSprites.get(id)?.setVisible(false); // Arena's procedural marker remains visible.
   }
   const records=this.playback.update(now,alive),ids=new Set(records.map(r=>r.id));
