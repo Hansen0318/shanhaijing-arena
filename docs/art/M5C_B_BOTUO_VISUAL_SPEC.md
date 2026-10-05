@@ -1,7 +1,7 @@
 # M5C-B Batch1 Visual Spec — 猼訑
 
 ## Status
-**CONCEPT DIRECTION READY FOR PLAYER REVIEW — IMAGE NOT YET APPROVED**
+**CONCEPT + BATTLE SIMPLIFICATION APPROVED — STATIC ASSET PACK IN PROGRESS**
 
 This spec inherits the accepted roster-wide presentation and asset rules from:
 - `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md`
@@ -293,13 +293,9 @@ Before any final portraitSquare / collectionArt / battleIdle production asset is
 6. portrait and full-body pose feel like the same character;
 7. concept can be simplified cleanly for mobile battle use.
 
-## 17. Immediate next action
+## 17. Historical concept-gate note
 
-Create/review **one 猼訑 humanoid concept image** using the recommended shield/bracer-led protector direction.
-
-Do not generate production portraitSquare / collectionArt / battleIdle yet.
-Do not start another character.
-Do not start Hit / KO / Cast or VFX.
+The concept-image gate described here has been completed and is superseded by Sections 19–20. Do not return to concept generation unless a later player decision explicitly reopens it.
 
 
 ## 18. Concept A review — 2026-10-04
@@ -387,3 +383,14 @@ When 猼訑 reaches its Static Asset Pack / runtime integration gate:
 - its Arena actor must use the shared overhead HP system: ally blue-gradient, enemy red-gradient, same live HP/maxHP state as side HUD.
 
 Until that gate, these are requirements only. They do not mean 猼訑 portrait/runtime assets are already completed or integrated.
+
+## 21. Current production step — Static Asset Pack
+
+Status: **IN PROGRESS**
+
+Author/review exactly three static assets from the approved battle-simplified identity:
+1. `portraitSquare` — face-first square crop, head/face + slight neck/upper shoulder; minor horn/ear crop allowed; facial structure must dominate the square.
+2. `collectionArt` — full-body identity art preserving the approved planted Tank pose and simplified roster rendering language.
+3. static `battleIdle` — one battle-readable still using the approved simplified silhouette, strong value/color separation, fixed feet/ground anchor and no animation/VFX.
+
+Do not author 4-frame breathing yet. After these three static assets are approved and integrated, run the Static Runtime Readability Gate before Idle micro-animation.
