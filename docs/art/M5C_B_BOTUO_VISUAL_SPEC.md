@@ -394,3 +394,31 @@ Author/review exactly three static assets from the approved battle-simplified id
 3. static `battleIdle` — one battle-readable still using the approved simplified silhouette, strong value/color separation, fixed feet/ground anchor and no animation/VFX.
 
 Do not author 4-frame breathing yet. After these three static assets are approved and integrated, run the Static Runtime Readability Gate before Idle micro-animation.
+
+## 22. portraitSquare approval — 2026-10-05
+
+Status: **PASS / PLAYER APPROVED**
+
+The current 猼訑 square portrait is the accepted `portraitSquare` direction.
+
+Locked presentation:
+- face-first square crop;
+- mythic sheep/goat face dominates the frame;
+- head plus only slight neck/upper shoulder;
+- large curved horns may crop at the outer edge;
+- red tassel / peripheral ornament may crop;
+- eyes, muzzle, brow and primary facial morphology remain immediately readable;
+- same simplified 2D cel-shaded roster language.
+
+This satisfies the roster-wide compact portrait framing rule and is the portrait reference for Battle HUD / Team Select compact roster / Collection compact cards when 猼訑 reaches runtime integration.
+
+### Next Static Asset Pack item
+Create/review `collectionArt` only:
+- full-body identity;
+- preserve the same approved face/horns/colors/protector identity;
+- broad planted Power/Tank stance;
+- dominant forward protective bracer/guard;
+- fewer lines/details than the original Concept A;
+- no animation or VFX.
+
+Do not start static `battleIdle` until `collectionArt` direction is approved.
