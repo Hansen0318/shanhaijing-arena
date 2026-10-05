@@ -559,3 +559,32 @@ Chat-prepared production contract:
 - SHA-256: `86cb5c36d7e7a7862287da77e36ec77d04198311fb37f97fcbd46a73f175f6a0`.
 
 Next exact action is executable integration only: place the approved binary, update the manifest and P2 `battleIdle` descriptor to this exact contract, run targeted/asset-guard/build checks, deploy Pages, verify the public fingerprint, update verification/handoff docs, then stop for focused player animation/device smoke.
+
+
+## 28. Idle playback correction — 2026-10-06
+
+Status: **PLAYER DEFECT CONFIRMED / CHAT SOURCE CORRECTION COMPLETE / EXECUTABLE VERIFICATION PENDING**
+
+Player clarified the accepted presentation contract:
+- Team Select upper full-body 猼訑 preview must play the approved Idle loop;
+- Arena living 猼訑 must play the approved Idle loop whenever a more specific authored state is not available/active;
+- the approved four-frame art, timing and motion are unchanged and must not be regenerated.
+
+Static source review found two concrete causes:
+1. Team Select full-body preview was hard-wired to static `collectionArt` and never consumed `animationDescriptors.battleIdle`.
+2. Arena missing-state fallback explicitly forced `elapsed=0`, freezing a living actor on F1 whenever optional Hit/Cast art was unavailable. 猼訑 currently has Idle but no formal Hit/Cast, so combat transitions can repeatedly present a static F1 fallback.
+
+Chat source correction:
+- shared menu helper now consumes an authored battleIdle sprite sheet for Team Select full-body preview, with reduced-motion/static fallback and collectionArt fallback;
+- Team Select uses that helper when a character has >1 Idle frame;
+- Arena living missing-transient fallback keeps the authored Idle loop moving; KO fallback remains static until formal KO exists.
+
+Separate player defect still open:
+- iOS/Safari page reload can leave a large solid block / underfilled campaign surface. Static inspection narrows this to the shared viewport/root sizing path: `viewportSync` writes the Campaign root to the transient `visualViewport.height`; the screenshot is consistent with an initial/stale short visual viewport measurement leaving the lower layout viewport exposed. Because this is shared iOS viewport lifecycle behavior, do not guess a source fix without executable Safari/browser evidence.
+
+Next exact action:
+1. run targeted tests/build for the Chat source correction;
+2. deploy;
+3. verify Team Select Idle and Arena Idle playback technically;
+4. reproduce the reload underfill on iOS/Safari or an equivalent controlled viewport harness, make only the smallest proven viewport correction, and re-run the targeted viewport/route checks;
+5. stop for player smoke. No art regeneration and no Run/Move/Hit/KO/Cast/VFX authoring.
