@@ -48,7 +48,11 @@ export class AssetPresenter{
  renderHud(views,definitions,session){
   if(this.closed||!views)return;
   for(const [id,view] of views){const actor=session.actorById(id),key=resolveCharacterAsset(definitions[actor.definitionId],'portraitSquare').key,texture=this.textures.get(key);if(!texture)continue;
-   let image=this.hudSprites.get(id);if(!image){image=this.scene.add.image(0,view.layout.backingY,texture.key);view.card.addAt(image,2);this.hudSprites.set(id,image);}image.setDisplaySize(view.layout.portraitSize,view.layout.portraitSize).setFlipX(view.side==='enemy');
+   let image=this.hudSprites.get(id);if(!image){image=this.scene.add.image(0,view.layout.backingY,texture.key);view.card.addAt(image,2);this.hudSprites.set(id,image);}
+   // Compact portrait cards are face-first: head/face + a little neck, with peripheral horn/ear crop allowed.
+   const sourceW=texture.asset.width??1,sourceH=texture.asset.height??1,cropW=Math.max(1,Math.round(sourceW*.82)),cropH=Math.max(1,Math.round(sourceH*.82));
+   const cropX=Math.round((sourceW-cropW)/2),cropY=Math.round((sourceH-cropH)*.35);
+   image.setCrop?.(cropX,cropY,cropW,cropH);image.setDisplaySize(view.layout.portraitSize,view.layout.portraitSize).setFlipX(view.side==='enemy');
   }
  }
  renderOverlays(frame,definitions,statuses,now){
