@@ -1,6 +1,7 @@
 # Work Progress
 
 ## CURRENT HANDOFF POINTER
+- **RESULT ACTION CENTERING — PASS / PLAYER VERIFIED (2026-10-05).** Source `ce6384b9f639d0f06f84649afed57a22f23bc7bd`; Actions #664 / `37309963566` SUCCESS and Pages deployed. Player confirmed on device that Defeat `RETRY / EXIT` are centered correctly. Victory retains centered `NEXT STAGE / RETRY / EXIT`. Preserve this result-screen layout contract; no battle outcome/navigation logic changed.
 - **RESULT ACTION CENTERING — SOURCE COMPLETE / PAGES DEPLOY PENDING.** Source recentering is committed, but current branch HEAD `f3661f7fe7752057f9b811c43c235707c76df6fd` has no Actions run, so the public Pages build still shows the old right-shifted Defeat buttons. Do not re-edit layout unless deployment of current HEAD still reproduces the defect. Next delta: build/deploy current HEAD only, then player visual smoke.
 - **猼訑 IDENTITY ARTIFACT FIX — PASS / PLAYER VERIFIED (2026-10-05).** Player confirmed the replacement full-body identity renders correctly and the prior top horizontal crop line is gone. Preserve the corrected `botuo/identity.png`.
 - **RESULT ACTION CENTERING — CHAT IMPLEMENTED / PLAYER SMOKE PENDING.** Campaign result actions now recenter as a visible group: victory keeps `NEXT STAGE / RETRY / EXIT` centered; defeat/draw center `RETRY / EXIT` symmetrically around stage center instead of leaving them in the old second/third positions. Source-only presentation change; no battle/result logic change. Player owns focused visual confirmation.
