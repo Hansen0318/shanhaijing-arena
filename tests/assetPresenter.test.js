@@ -63,3 +63,11 @@ test('executed formal HUD rendering keeps ally canonical, mirrors enemy, and reu
  assert.ok(images.every(image=>image.size[0]===64&&image.size[1]===64));assert.deepEqual(actor,before);
  p.destroy();assert.ok(images.every(image=>image.destroyed));assert.equal(p.hudSprites.size,0);
 });
+
+test('battle HUD uses shared face-first crop and preserves side-based enemy mirroring',()=>{
+ const source=readFileSync(new URL('../src/runtime/assetPresenter.js',import.meta.url),'utf8');
+ assert.match(source,/cropW=Math\.max\(1,Math\.round\(sourceW\*\.82\)\)/);
+ assert.match(source,/cropY=Math\.round\(\(sourceH-cropH\)\*\.35\)/);
+ assert.match(source,/setCrop\?\.\(cropX,cropY,cropW,cropH\)/);
+ assert.match(source,/setFlipX\(view\.side==='enemy'\)/);
+});
