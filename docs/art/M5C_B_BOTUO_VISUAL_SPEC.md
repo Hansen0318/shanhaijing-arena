@@ -422,3 +422,34 @@ Create/review `collectionArt` only:
 - no animation or VFX.
 
 Do not start static `battleIdle` until `collectionArt` direction is approved.
+
+## 23. collectionArt approval — 2026-10-05
+
+Status: **PASS / PLAYER APPROVED**
+
+The current full-body 猼訑 identity direction is accepted as the `collectionArt` reference.
+
+Locked identity:
+- same approved sheep/goat face and large curved horns as portraitSquare;
+- broad planted Power/Tank proportions;
+- dark shoulder-fur mantle;
+- dominant forward protective bracer/guard;
+- white / dark brown / black base with restrained red + muted gold accents;
+- simplified 2D cel-shaded roster language;
+- reduced ornament density compared with Concept A.
+
+Static Asset Pack progress: 2/3 direction-approved (`portraitSquare`, `collectionArt`).
+
+### Next exact item
+Create/review **one static `battleIdle` still only**:
+- battle-readable simplified derivative of the approved identity;
+- fixed feet/ground anchor;
+- low, stable guarded stance;
+- forward protective bracer readable;
+- large color/value blocks;
+- fewer lines/details than collectionArt;
+- no breathing frames;
+- no animation;
+- no VFX.
+
+Idle micro-animation remains blocked until portraitSquare + collectionArt + static battleIdle are all approved and the Static Runtime Readability Gate passes.
