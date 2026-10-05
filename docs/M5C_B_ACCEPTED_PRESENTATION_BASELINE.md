@@ -72,6 +72,19 @@ This file records the **current accepted result**, not the chronological discuss
 - A character must not face right while firing/casting left, or vice versa.
 - This facing rule is shared and not character-ID-specific.
 
+### Compact portrait framing
+- All square compact character cards use the same face-first composition: head/face plus a little neck/upper shoulder fills the square.
+- Small edge crops of ears/horns/hair/accessories are acceptable; the face itself must remain immediately readable.
+- Applies to battle HUD, Team Select lower roster, Collection grid and future equivalent cards.
+- Character Detail/full-body identity art stays separate.
+
+### Battlefield overhead HP
+- Every living actor has an overhead HP bar above the visible silhouette.
+- Ally bars are blue-gradient; enemy bars are red-gradient.
+- Overhead HP ratio and side-card HP are sourced from the same live actor HP/maxHP state.
+- KO may hide the overhead bar.
+- Presentation only; no combat-logic change.
+
 ### Battle HUD portraits
 - Ally-side portrait/card art uses canonical portrait orientation.
 - Enemy-side portrait/card art is the horizontal mirror of the ally/canonical orientation so the two sides face inward relative to each other.
