@@ -39,6 +39,18 @@ Do not integrate one file at a time.
 
 Preferred batch sequence:
 
+### Authoring granularity hard rule
+
+Within every gate, author/review **one asset at a time** from the latest approved character reference.
+
+- Do not generate a composite sheet that bundles later-gate content.
+- If the current step is `portraitSquare`, generate/review only the portrait.
+- If the current step is `collectionArt`, generate/review only the full-body identity.
+- If the current step is static `battleIdle`, generate/review only one static battle still.
+- Do not include 4-frame Idle, Hit, KO, Cast, or Skill VFX before their gate is explicitly opened.
+- A composite sheet that accidentally contains future-gate content is reference-only and cannot count as an approved production asset for those later gates.
+- Downstream art must derive from the latest approved character identity; no silent redesign/species/palette/equipment drift is allowed.
+
 ### Batch 1A — Character identity + static runtime gate
 Across each character:
 - concept direction approved first;
