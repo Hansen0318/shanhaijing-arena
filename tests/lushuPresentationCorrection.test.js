@@ -26,7 +26,9 @@ test('approved static portrait/full identity resolve through shared slots, retai
  assert.equal(resolveCharacterAsset(rosterCatalog.P2,'portraitSquare').key,'botuo.portrait');
  assert.equal(resolveCharacterAsset(rosterCatalog.P2,'collectionArt').key,'botuo.identity');
  assert.equal(resolveCharacterAsset(rosterCatalog.P2,'battleIdle').key,'botuo.battleIdle');
- assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.frames.length,0);
+ assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.frames.length,4);
+ assert.deepEqual(rosterCatalog.P2.animationDescriptors.battleIdle.frames,Array.from({length:4},(_,i)=>({x:i*160,y:0,width:160,height:160})));
+ assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.fps,2.5);
  assert.deepEqual(rosterCatalog.P2.animationDescriptors.battleIdle.origin,[.5,158/160]);
  assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.scale,2);
  assert.equal(resolveCharacterAsset(rosterCatalog.P3,'portraitSquare').type,'procedural');
