@@ -3,6 +3,11 @@
 ## Purpose
 This playbook defines the durable development workflow for Shanhaijing Arena. It is project-wide and independent of any one milestone.
 
+## A0. Mandatory rule refresh before action
+Before planning or executing any substantial project action, first recover the current hard rules and authoritative state from GitHub. At minimum read `AGENTS.md`, this playbook, the current handoff/state pointers when progress matters, and the spec governing the proposed action. Do this before offering implementation advice, preparing assets, editing the repo, choosing tests, or writing a Work handoff.
+
+Do not assume a previous recovery is still current when the repo may have changed. The purpose is to make every recommendation start from the same authoritative constraints rather than from chat memory.
+
 ## A. Chat-first stage
 Chat should complete the maximum safe work before Work is opened:
 1. clarify/lock the player-visible requirement;
@@ -44,6 +49,8 @@ Work should not redo:
 - unaffected historical regression.
 
 Work handoffs should be one compact prompt, not a verbose recap. GitHub carries prior context. Include only: the exact unresolved executable delta, protected baseline, minimum checks, deploy/stop condition, and any player-smoke handoff. Do not provide a long version followed by a short version.
+
+Before writing that prompt, Chat must have already completed all safe Chat-owned work and reduced the task to the irreducible Work-only delta. The final player-facing Work instruction must be delivered as one complete copyable block. When a prepared ZIP/package already contains the canonical handoff, give one short copyable instruction that tells Work to recover and follow the packaged handoff; do not duplicate competing instructions.
 
 ## D. Safe checkpoint flow
 For substantial tasks:
