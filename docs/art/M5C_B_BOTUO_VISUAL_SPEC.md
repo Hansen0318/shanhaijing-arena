@@ -453,3 +453,19 @@ Create/review **one static `battleIdle` still only**:
 - no VFX.
 
 Idle micro-animation remains blocked until portraitSquare + collectionArt + static battleIdle are all approved and the Static Runtime Readability Gate passes.
+
+## 24. Process correction — composite sheet is not a production gate result
+
+The later composite sheet that repeated portrait/collection/reference panels and included 4-frame breathing imagery is **NOT** an approved Static Asset Pack result for `battleIdle` or Idle animation.
+
+Current authoritative 猼訑 status:
+- Concept: PASS / PLAYER APPROVED.
+- Battle Simplification: PASS / PLAYER APPROVED.
+- `portraitSquare`: PASS / PLAYER APPROVED.
+- `collectionArt`: PASS / PLAYER APPROVED.
+- static `battleIdle`: **NOT YET AUTHORED / NOT APPROVED**.
+- Idle micro-animation: **BLOCKED**.
+- Hit / KO / Cast: **BLOCKED**.
+- Skill VFX: **BLOCKED**.
+
+Next exact action is one **single static `battleIdle` image only**, derived from the approved 猼訑 identity. No sheet, no alternate character redesign, no four-frame animation, no VFX.
