@@ -347,6 +347,31 @@ Preferred implementation:
 
 Do not start a bone/skeletal animation subsystem.
 
+## 6B. Compact portrait framing hard rule
+
+For every current/future character, `portraitSquare` is authored and presented as a **face-first identity crop**:
+- head/face fills most of the square;
+- include only a small amount of neck/upper shoulder;
+- eyes, muzzle/jaw and primary facial morphology remain fully readable;
+- ears, horns, hair, fins, ornaments or other peripheral traits may crop slightly at the square edge;
+- do not zoom out to preserve every appendage if that makes the face small;
+- the same framing intent applies wherever `portraitSquare` is shown: battle HUD, Team Select lower roster, Collection grid and future compact character cards.
+
+`collectionArt` / Character Detail remain full-body or larger identity surfaces and are not subject to this tight crop.
+
+## 6C. Battlefield overhead HP presentation hard rule
+
+Every living Arena actor displays an overhead HP bar above the actor silhouette:
+- ally = blue gradient;
+- enemy = red gradient;
+- width ratio = live `hp / maxHp`;
+- the side HUD card and overhead bar consume the same combat snapshot/state;
+- no duplicate HP storage or presentation-specific HP calculation;
+- formal art and placeholder actors both follow the rule;
+- KO may hide the overhead bar.
+
+The bar is presentation-only and must not alter targeting, collision, range, AI, movement, telegraph geometry or damage resolution.
+
 ## 7. Portrait / Collection distinction
 
 portraitSquare:
