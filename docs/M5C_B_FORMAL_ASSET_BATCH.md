@@ -340,7 +340,7 @@ Battle sprites should:
 
 ## 6A. Idle micro-animation contract
 
-Battlefield idle motion is part of formal M5C-B presentation.
+Idle motion is part of formal M5C-B presentation across live full-body waiting surfaces, not only the battlefield. Once authored and approved, Team Select upper full-body previews use the same Idle loop; compact portrait cards and Collection identity/detail art remain static unless a later explicit decision changes those surfaces. In Arena, Idle is the living actor fallback whenever no more specific authored state is active.
 
 Required properties:
 - loopable;
@@ -349,8 +349,10 @@ Required properties:
 - does not alter hitbox/range/telegraph geometry;
 - uses battle clock / existing animation playback;
 - Pause-safe;
-- cleanly stops on hit/KO/cast transitions;
+- cleanly yields to authored hit/KO/cast/move transitions when those assets exist;
 - resumes idle after short transient states;
+- missing optional living Hit/Cast art must keep the authored Idle loop moving rather than freezing on `staticFrame`; missing KO may use the static fallback until formal KO exists;
+- Team Select full-body previews use the same authored Idle sprite sequence/descriptor timing when available;
 - has a static fallback.
 
 Preferred implementation:
