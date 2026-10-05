@@ -23,7 +23,13 @@ test('approved static portrait/full identity resolve through shared slots, retai
   assert.equal(host.children.find(n=>n.tag==='span').hidden,true);image.onload?.();assert.equal(host.children.find(n=>n.tag==='span').hidden,true);
   image.onerror();assert.equal(image.hidden,true);assert.equal(host.children.find(n=>n.tag==='span').hidden,false);
  }
- assert.equal(resolveCharacterAsset(rosterCatalog.P2,'portraitSquare').type,'procedural');
+ assert.equal(resolveCharacterAsset(rosterCatalog.P2,'portraitSquare').key,'botuo.portrait');
+ assert.equal(resolveCharacterAsset(rosterCatalog.P2,'collectionArt').key,'botuo.identity');
+ assert.equal(resolveCharacterAsset(rosterCatalog.P2,'battleIdle').key,'botuo.battleIdle');
+ assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.frames.length,0);
+ assert.deepEqual(rosterCatalog.P2.animationDescriptors.battleIdle.origin,[.5,158/160]);
+ assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.scale,2);
+ assert.equal(resolveCharacterAsset(rosterCatalog.P3,'portraitSquare').type,'procedural');
 });
 function scene(){const images=[],textures=new Map();return {images,textures:{addImage(k){textures.set(k,{has:()=>true});},get:k=>textures.get(k),remove:k=>textures.delete(k)},add:{graphics(){const v={destroy(){this.destroyed=true;}};for(const k of ['setPosition','setDepth','setAlpha','setScale','clear','lineStyle','lineBetween','fillStyle','fillCircle','strokeCircle'])v[k]=()=>v;return v;},image(){const v={};for(const k of ['setTexture','setOrigin','setScale','setVisible','setDisplaySize','setPosition','setDepth','setAlpha','setFlipX'])v[k]=(...a)=>{v[k.slice(3)]=a;return v;};v.destroy=()=>v.destroyed=true;images.push(v);return v;}}};}
 test('static-first enlarged sprites mirror shared motion without moving actor/origin, retain facing at rest',async()=>{
