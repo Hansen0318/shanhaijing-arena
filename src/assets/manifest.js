@@ -4,7 +4,7 @@ const entries=[
  {key:'lushu.identity',type:'image',path:'assets/characters/lushu/identity.png',width:144,height:192,bytes:35708,fallback:'placeholder.portrait'},
  {key:'lushu.battleIdle',type:'image',path:'assets/characters/lushu/battleIdle-4f.png',width:384,height:128,bytes:70848,fallback:'placeholder.battle'},
  {key:'botuo.portrait',type:'image',path:'assets/characters/botuo/portrait.png',width:128,height:128,bytes:32501,fallback:'placeholder.portrait'},
- {key:'botuo.identity',type:'image',path:'assets/characters/botuo/identity.png',width:160,height:192,bytes:48520,fallback:'placeholder.portrait'},
+ {key:'botuo.identity',type:'image',path:'assets/characters/botuo/identity.png',width:160,height:192,bytes:14098,fallback:'placeholder.portrait'},
  {key:'botuo.battleIdle',type:'image',path:'assets/characters/botuo/battleIdle.png',width:160,height:160,bytes:47136,fallback:'placeholder.battle'},
  {key:'placeholder.portrait',type:'procedural',path:null},
  {key:'placeholder.battle',type:'procedural',path:null},
