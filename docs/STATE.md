@@ -4,6 +4,7 @@
 **M5C-B PRESENTATION BASELINE — PASS / PLAYER VERIFIED**
 
 ## Current state
+- **猼訑 Static Asset Pack 3/3 PASS / PLAYER APPROVED.** portraitSquare + collectionArt + static battleIdle directions are approved. Current gate is Static Runtime Readability / integration only. Idle micro-animation remains blocked until player/runtime PASS.
 - **PROCESS CORRECTION:** character art is now explicitly one-asset-per-gate. The repeated 猼訑 composite sheet does not count as static battleIdle or Idle animation. Current 猼訑 Static Asset Pack remains 2/3 approved (`portraitSquare`, `collectionArt`); static `battleIdle` is the next and only authorized art item.
 - **猼訑 collectionArt PASS / PLAYER APPROVED.** Static Asset Pack is 2/3 direction-approved. Next exact item is one static `battleIdle` still. Idle micro-animation remains blocked until all three static assets are approved and pass real-runtime readability.
 - **猼訑 portraitSquare PASS / PLAYER APPROVED.** Static Asset Pack is now 1/3 direction-approved. Next exact item: `collectionArt` full-body identity. Static `battleIdle` remains blocked until collectionArt approval; Idle micro-animation remains blocked until all three static assets pass runtime readability.
