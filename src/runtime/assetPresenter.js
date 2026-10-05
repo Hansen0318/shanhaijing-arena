@@ -52,7 +52,10 @@ export class AssetPresenter{
    // Compact portrait cards are face-first: head/face + a little neck, with peripheral horn/ear crop allowed.
    const sourceW=texture.asset.width??1,sourceH=texture.asset.height??1,cropW=Math.max(1,Math.round(sourceW*.82)),cropH=Math.max(1,Math.round(sourceH*.82));
    const cropX=Math.round((sourceW-cropW)/2),cropY=Math.round((sourceH-cropH)*.35);
-   image.setCrop?.(cropX,cropY,cropW,cropH);image.setDisplaySize(view.layout.portraitSize,view.layout.portraitSize).setFlipX(view.side==='enemy');
+   image.setCrop?.(cropX,cropY,cropW,cropH);
+   // Phaser crop masks pixels without resizing: fit the visible region, centered in the card.
+   image.setOrigin?.((cropX+cropW/2)/sourceW,(cropY+cropH/2)/sourceH);
+   image.setDisplaySize(view.layout.portraitSize*sourceW/cropW,view.layout.portraitSize*sourceH/cropH).setFlipX(view.side==='enemy');
   }
  }
  renderOverlays(frame,definitions,statuses,now){

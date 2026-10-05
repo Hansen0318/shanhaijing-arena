@@ -575,7 +575,16 @@ export class ArenaScene extends Phaser.Scene {
       view.hpBar.fillStyle(0x111820,.9);view.hpBar.fillRect(hpX-2,hpY-2,hpWidth+4,hpHeight+4);
       const hpGradient=view.allied?[0x69cbff,0x2875d8]:[0xff8178,0xb82a38];
       view.hpBar.fillGradientStyle(hpGradient[0],hpGradient[1],hpGradient[0],hpGradient[1],1);
-      view.hpBar.fillRect(hpX,hpY,hpWidth*hpRatio,hpHeight);
+      if(this.game?.renderer?.type===Phaser.CANVAS){
+        // Graphics gradient commands are WebGL-only; bounded strips keep Canvas HP visible too.
+        for(let i=0;i<16;i++){
+          const start=hpWidth*i/16,end=Math.min(hpWidth*(i+1)/16,hpWidth*hpRatio);
+          if(end<=start)break;
+          const t=i/15,channel=shift=>Math.round(((hpGradient[0]>>shift)&255)*(1-t)+((hpGradient[1]>>shift)&255)*t);
+          const color=(channel(16)<<16)|(channel(8)<<8)|channel(0);
+          view.hpBar.fillStyle(color,1);view.hpBar.fillRect(hpX+start,hpY,end-start,hpHeight);
+        }
+      }else view.hpBar.fillRect(hpX,hpY,hpWidth*hpRatio,hpHeight);
       view.hpBar.lineStyle(1.5,0xffffff,.72);view.hpBar.strokeRect(hpX-1,hpY-1,hpWidth+2,hpHeight+2);
       view.hpBar.setVisible(actor.hp>0).setAlpha(actor.hp>0?1:.35);
 
