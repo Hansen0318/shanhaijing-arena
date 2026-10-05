@@ -528,3 +528,34 @@ Next exact action:
 5. keep motion restrained to breathing / tiny weight transfer / minimal fur-head-bracer follow-through.
 
 Do not regenerate portrait/collection/static battleIdle, do not create composite sheets, do not redesign 猼訑, and do not start run/move, Hit/KO/Cast or Skill VFX.
+
+
+## 27. Idle Micro-animation player approval — 2026-10-05
+
+Status: **PASS / PLAYER APPROVED — EXECUTABLE INTEGRATION PENDING**
+
+This section supersedes the earlier suggested subtle-motion wording in Section 12 wherever it conflicts with the accepted player direction.
+
+Approved 4-frame motion:
+- **F1 — neutral guarded stance:** baseline pose.
+- **F2 — strong inhale:** chest and shoulders rise clearly and substantially; torso expansion is obvious; shoulder/neck fur and hanging secondary elements lift strongly; **head remains level and must not tilt upward**.
+- **F3 — peak breath / settle:** torso remains near peak expansion; head and horns perform a **medium** visible settle (not extreme); shoulder/neck fur carries large follow-through; tassels/cloth may show strong secondary motion while feet remain planted.
+- **F4 — return:** body, head, fur and hanging elements return close to F1 for a clean loop.
+
+Locked constraints:
+- feet / ground anchor fixed across all frames;
+- actor position and scale unchanged;
+- preserve approved sheep/goat face, horn topology, mantle, protector bracer, palette and broad Tank silhouette;
+- no stepping, stomp, attack anticipation, shield pumping, large translation, glow/aura or Skill VFX;
+- this is Idle only; Run/Move, Hit/KO/Cast and Skill VFX remain later gates.
+
+Chat-prepared production contract:
+- file: `public/assets/characters/botuo/battleIdle-4f.png`;
+- PNG with transparency;
+- sheet: **640×160**;
+- frames: 4 horizontal cells, each **160×160** at x=0/160/320/480;
+- intended descriptor: `fps:2.5`, `loop:true`, `origin:[.5,158/160]`, `scale:2`, `staticFrame:0`;
+- encoded bytes: **31,355**;
+- SHA-256: `86cb5c36d7e7a7862287da77e36ec77d04198311fb37f97fcbd46a73f175f6a0`.
+
+Next exact action is executable integration only: place the approved binary, update the manifest and P2 `battleIdle` descriptor to this exact contract, run targeted/asset-guard/build checks, deploy Pages, verify the public fingerprint, update verification/handoff docs, then stop for focused player animation/device smoke.
