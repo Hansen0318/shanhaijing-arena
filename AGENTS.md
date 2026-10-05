@@ -5,6 +5,21 @@ This repository is a new game project: **Shanhaijing Arena**. It is independent 
 
 These rules are permanent for substantial Chat / Work / Codex development unless the user explicitly changes them.
 
+## 0. Mandatory pre-action rule refresh
+Before Chat, Work, or Codex analyzes, recommends, edits, generates assets, prepares a handoff, or decides verification scope for any substantial project task, it must first re-read the current project hard rules from GitHub and recover the latest authoritative state relevant to that action.
+
+Minimum pre-action check:
+1. read the latest `AGENTS.md`;
+2. read `docs/DEVELOPMENT_PLAYBOOK.md`;
+3. read `docs/PROJECT_BOUNDARIES.md` when scope/architecture contamination could matter;
+4. read the top CURRENT HANDOFF POINTER in `WORK_PROGRESS.md` and AUTHORITATIVE CURRENT STATE in `docs/STATE.md` when the action depends on current progress;
+5. read only the relevant current spec(s) for the proposed action;
+6. only after that decide what Chat can finish itself, what remains executable-only, and what should be handed to Work.
+
+Do not rely on conversation memory, an earlier prompt, or a previous recovery when newer GitHub state may exist. If the hard rules or authoritative state changed, the latest repo state wins unless the player explicitly overrides it.
+
+**Chat-first must be applied before every Work handoff, not merely at milestone start.** Chat must finish every safe task available to it first, including rule/spec updates, GitHub inspection, static/code analysis, asset preparation, exact source-delta preparation, and bounded repo edits. A Work prompt may be produced only after the remaining task has been reduced to the smallest irreducible executable/runtime delta.
+
 ## 1. Operating model
 - **User / Product Owner**: final decisions and acceptance.
 - **Chat**: game design, visual direction, specifications, defect analysis, acceptance criteria, bounded repo edits that can be independently verified.
@@ -265,6 +280,8 @@ Before creating a Work task, Chat should state internally/record in the handoff:
 
 A Work task must not contain broad phrases such as "fully test everything" or "recheck the whole game" unless the actual change impact justifies that scope.
 A Work handoff must also be concise and execution-focused. Do not repeat long background already recoverable from GitHub, do not provide both a long and short version, and do not ask the player whether they want a shorter prompt. Give one compact, precise prompt containing only the unresolved Work-owned delta, exact constraints, minimum checks, and stop condition.
+
+**Player-copyability is a hard requirement.** When Chat provides a Work prompt to the player, present exactly one final handoff prompt in a single copyable code block (or equivalent single-copy UI block) so the player can copy it in one action. Do not split the executable instructions across prose plus multiple prompt blocks. Supporting explanation may appear outside the block, but the block itself must be complete and self-sufficient. If a ZIP/package contains the canonical handoff file, prefer telling the player to attach that package and provide one short copyable launch instruction rather than duplicating a second long prompt.
 
 ## 17. Interruption protection / recoverability
 For any substantial Work task:
