@@ -469,3 +469,28 @@ Current authoritative 猼訑 status:
 - Skill VFX: **BLOCKED**.
 
 Next exact action is one **single static `battleIdle` image only**, derived from the approved 猼訑 identity. No sheet, no alternate character redesign, no four-frame animation, no VFX.
+
+## 25. static battleIdle approval — 2026-10-05
+
+Status: **PASS / PLAYER APPROVED**
+
+The single static 猼訑 battleIdle still is approved.
+
+Locked battle presentation:
+- same approved sheep/goat face, horns, mantle, palette family and protector equipment identity;
+- broad planted Power/Tank proportions;
+- low stable guarded stance;
+- fixed feet / predictable ground anchor;
+- forward protective bracer remains a primary silhouette cue;
+- large value/color masses remain readable;
+- no animation and no VFX in this gate.
+
+Static Asset Pack direction is now 3/3 approved:
+- portraitSquare: PASS;
+- collectionArt: PASS;
+- static battleIdle: PASS.
+
+### Next gate — Static Runtime Readability
+Prepare runtime derivatives and integrate only the approved three static assets through the existing asset pipeline. Verify real game scale on Team Select / Collection / Battle HUD / Arena, including compact portrait framing, enemy mirror, overhead HP, silhouette, contrast, detail density, placeholder retirement and no layout regression.
+
+Idle micro-animation remains BLOCKED until this runtime gate passes.
