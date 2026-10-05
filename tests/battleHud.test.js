@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { allyHud, enemyHud, formatBattleTime } from '../src/runtime/battleHud.js';
 
 test('ally portrait HUD keeps health text legible even when KO', () => {
@@ -33,4 +34,14 @@ test('battle timer counts down from canonical 90 seconds', () => {
   assert.equal(formatBattleTime(1.01, 90), '01:29');
   assert.equal(formatBattleTime(89.1, 90), '00:01');
   assert.equal(formatBattleTime(90, 90), '00:00');
+});
+
+test('Arena overhead HP bars are side-colored and derive from live actor hp/maxHp',()=>{
+  const source=readFileSync(new URL('../src/runtime/ArenaScene.js',import.meta.url),'utf8');
+  assert.match(source,/const hpBar = this\.add\.graphics\(\)\.setDepth\(12\)/);
+  assert.match(source,/maxHp=Math\.max\(1,liveActor\?\.maxHp\?\?actor\.maxHp\?\?1\)/);
+  assert.match(source,/const hpRatio=Math\.max\(0,Math\.min\(1,actor\.hp\/maxHp\)\)/);
+  assert.match(source,/view\.allied\?\[0x69cbff,0x2875d8\]:\[0xff8178,0xb82a38\]/);
+  assert.match(source,/fillGradientStyle/);
+  assert.match(source,/setVisible\(actor\.hp>0\)/);
 });
