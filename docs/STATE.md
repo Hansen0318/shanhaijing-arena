@@ -4,7 +4,7 @@
 **M5C-B PRESENTATION BASELINE — PASS / PLAYER VERIFIED**
 
 ## Current state
-- **Campaign result action centering — PLAYER SMOKE PENDING.** Victory keeps three centered actions; defeat/draw now recenter visible `RETRY / EXIT` around stage center. No battle outcome/navigation behavior changed.
+- **Campaign result action centering — PASS / PLAYER VERIFIED (2026-10-05).** Source `ce6384b9f639d0f06f84649afed57a22f23bc7bd`; Actions #664 / `37309963566` SUCCESS / Pages deployed. Player confirmed Defeat `RETRY / EXIT` are centered; Victory keeps centered `NEXT STAGE / RETRY / EXIT`. No battle outcome/navigation behavior changed.
 - **猼訑 Team full-body crop artifact fix — PASS / PLAYER VERIFIED.** Corrected `botuo/identity.png` is accepted on device; the prior top horizontal line is gone. Preserve this asset.
 - **猼訑 Static Runtime Readability gate — ENGINEERING PASS / PLAYER SMOKE PENDING.** Approved pack's three unmodified RGBA PNGs are integrated; Chat source `74dc0e7fd2d7019dc985fc13ad17d878cb1ea93d` retained. Tested/deployed source `960b85f787179ff79b315524146352f6f6e88a7b`; targeted 64/64, asset guard 43 files / 276232 bytes, build/diff PASS; Actions #653 / `37298785196` Test/Build/Pages SUCCESS. Existing feature branch / PR #1, no main merge. Evidence: `docs/verification/M5C_B_BOTUO_STATIC_RUNTIME.md`. No browser visual smoke per user scope: all crop/scale/mirror/HP-position/placeholder/mobile-layout acceptance remains player-owned. STOP pending focused device smoke; no new art or animation.
 - **猼訑 Static Asset Pack 3/3 PASS / PLAYER APPROVED.** portraitSquare + collectionArt + static battleIdle directions are approved. Current gate is Static Runtime Readability / integration only. Idle micro-animation remains blocked until player/runtime PASS.
