@@ -74,5 +74,6 @@ test('formal allies/enemies share unscaled full-body fit at every supported heig
  const css=readFileSync(new URL('../src/roster/style.css',import.meta.url),'utf8');
  assert.match(css,/\.lineup-figure img\{[^}]*width:100% !important;[^}]*height:100% !important;[^}]*object-fit:contain !important;[^}]*transform:none/);
  assert.match(css,/\.enemy-slot \.lineup-figure img \{ transform:scaleX\(-1\); \}/);
- assert.equal(/transform:scale\(1\.[0-9]+\)/.test(css),false,'no short-height ally-only enlargement');
+ const fullBodyRules=[...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)].filter(([,selector])=>selector.includes('.lineup-figure'));
+ assert.ok(fullBodyRules.every(([,selector,body])=>! /transform:scale\(1\.[0-9]+\)/.test(body)),'full-body rules must not enlarge allies; compact portrait scale is independent');
 });
