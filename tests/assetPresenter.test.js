@@ -71,3 +71,9 @@ test('battle HUD uses shared face-first crop and preserves side-based enemy mirr
  assert.match(source,/setCrop\?\.\(cropX,cropY,cropW,cropH\)/);
  assert.match(source,/setFlipX\(view\.side==='enemy'\)/);
 });
+
+test('missing living transient art keeps authored idle moving instead of freezing frame zero',()=>{
+ const source=readFileSync(new URL('../src/runtime/assetPresenter.js',import.meta.url),'utf8');
+ assert.match(source,/elapsed=formalState\?now-state\.start:actor\.hp>0\?now:0/);
+ assert.match(source,/KO fallback remains static/);
+});
