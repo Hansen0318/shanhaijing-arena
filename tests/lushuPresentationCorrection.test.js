@@ -97,3 +97,11 @@ test('attack/cast facing overrides opposing motion, expires back to motion, and 
  }
  p.destroy();assert.equal(p.actionFacings.size,0);
 });
+
+test('compact Team and Collection portrait surfaces share the face-first crop contract',()=>{
+ const rosterCss=readFileSync(new URL('../src/roster/style.css',import.meta.url),'utf8');
+ const collectionCss=readFileSync(new URL('../src/collection/style.css',import.meta.url),'utf8');
+ assert.match(rosterCss,/\.roster-portrait img \{[^}]*object-fit:cover !important;[^}]*transform:scale\(1\.22\);[^}]*transform-origin:50% 38%/);
+ assert.match(collectionCss,/\.collection-card \.collection-portrait img \{[^}]*object-fit:cover !important;[^}]*transform:scale\(1\.22\);[^}]*transform-origin:50% 38%/);
+ assert.match(collectionCss,/\.collection-portrait\.large\[data-asset-type=image\] \{[^}]*aspect-ratio:3\/4/);
+});
