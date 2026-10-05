@@ -374,3 +374,16 @@ Author/review:
 Do not author idle animation yet.
 
 After those three static assets are approved and integrated, run the mandatory Static Runtime Readability Gate at real game scale. Only after that PASS may the 4-frame idle micro-animation be authored.
+
+
+## 20. Roster-wide portrait / HP rules — deferred to the correct gate
+
+The new roster-wide presentation rules also apply to 猼訑, but **do not advance its production state prematurely**.
+
+When 猼訑 reaches its Static Asset Pack / runtime integration gate:
+- author `portraitSquare` as a face-first head + slight neck/upper-shoulder crop;
+- use that same portrait framing intent in battle HUD, Team Select compact roster and Collection compact cards;
+- allow minor horn/ear/accessory edge crop when necessary while preserving full facial readability;
+- its Arena actor must use the shared overhead HP system: ally blue-gradient, enemy red-gradient, same live HP/maxHP state as side HUD.
+
+Until that gate, these are requirements only. They do not mean 猼訑 portrait/runtime assets are already completed or integrated.
