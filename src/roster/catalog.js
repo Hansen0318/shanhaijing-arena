@@ -5,13 +5,22 @@ import {formalAIProfiles} from './aiProfiles.js';
 import {formalTierScalingProfiles} from './tierScalingProfiles.js';
 import { createCharacterDefinition } from '../combat/character.js';
 // Approved presentation only; all gameplay fields remain in the shared catalog.
-const presentation={P1:{
- assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle'}),
- animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
-  source:'lushu.battleIdle',frames:Array.from({length:4},(_,i)=>({x:i*96,y:0,width:96,height:128})),
-  fps:2.5,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
- })}),
-}};
+const presentation={
+ P1:{
+  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle'}),
+  animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
+   source:'lushu.battleIdle',frames:Array.from({length:4},(_,i)=>({x:i*96,y:0,width:96,height:128})),
+   fps:2.5,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
+  })}),
+ },
+ P2:{
+  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle'}),
+  // Static Runtime Readability gate: one still only. Idle micro-animation remains blocked.
+  animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
+   source:'botuo.battleIdle',duration:1.6,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
+  })}),
+ },
+};
 const characters=[
  ['P1','鹿蜀','speed','attacker',245,18,5,2.05,1.15,'#477b9e','快速近戰切入與移位攻擊。','南山異獸，以迅捷與靈動著稱；戰場上善於快速切入與改變攻擊角度。','mobile_skirmisher'],
  ['P2','猼訑','power','tank',320,14,9,1.45,.85,'#9c5c42','前線承壓、自身減傷與近距範圍攻擊。','南山異獸，形象厚重而堅韌；在隊伍中擔任承受壓力、守護同伴的前線角色。','front_guard'],
