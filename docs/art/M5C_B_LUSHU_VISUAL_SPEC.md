@@ -262,3 +262,19 @@ Character Detail/Info remains a static larger identity image now. Future breathi
 ## Current production status — 2026-10-04
 
 **PLAYER VERIFIED for current portrait / identity / battleIdle presentation.** Do not regenerate or redesign accepted 鹿蜀 portraitSquare, collectionArt/identity, or 4-frame battleIdle when a new session starts. Formal Hit / KO / Cast art is still not authored and requires a separate bounded slice. Shared UI/presentation rules are canonical in `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md`.
+
+
+## Compact portrait / battlefield HP correction — 2026-10-05
+
+Status: **APPLY NOW TO ACCEPTED 鹿蜀 PRESENTATION**
+
+Because 鹿蜀 has already completed its current accepted presentation slice, the new roster-wide presentation rules apply immediately:
+
+- compact square portrait framing uses a face-first crop: head/face plus a small amount of neck/upper shoulder fills the square;
+- minor cropping of ears/horns/accessories is acceptable, but the face remains fully readable;
+- this applies to battle HUD, Team Select lower roster and Collection compact cards;
+- Arena actors display an overhead HP bar sourced from the same live HP/maxHP as the side HUD;
+- ally overhead HP is blue-gradient; enemy overhead HP is red-gradient;
+- KO may hide the overhead bar.
+
+This is a presentation correction only. Do not redesign 鹿蜀 identity, idle animation, combat stats, hitbox, targeting, AI, Tier, rewards or progression.
