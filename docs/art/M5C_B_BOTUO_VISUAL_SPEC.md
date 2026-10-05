@@ -508,16 +508,23 @@ Current status:
 - static `battleIdle`: **PASS / PLAYER APPROVED**.
 - Static runtime integration / engineering verification: **PASS**.
 - corrected runtime `identity.png` top-line artifact: **PASS / PLAYER VERIFIED**.
-- Static Runtime Readability player gate: **not yet globally closed unless the player explicitly confirms the remaining runtime surfaces**.
-- Idle Micro-animation: **BLOCKED until that player gate closes**.
+- Static Runtime Readability player gate: **PASS / PLAYER VERIFIED**.
+- Idle Micro-animation: **AUTHORIZED / CURRENT GATE**.
 - Run / movement animation: later gate.
 - Hit / KO / Cast: later gate.
 - Skill VFX: later gate.
 
-Next exact action:
-1. recover latest deployed build and existing PASS evidence;
-2. ask for / use only the smallest remaining player smoke necessary to close 猼訑 Static Runtime Readability;
-3. if the player explicitly says the static runtime presentation is OK, record **Static Runtime Readability — PASS / PLAYER VERIFIED**;
-4. only then open the **Idle Micro-animation** gate, using the approved static `battleIdle` as the sole visual source and the one-asset-per-gate rule.
+Player closure — 2026-10-05:
+- Team Select: PASS / PLAYER VERIFIED.
+- Collection: PASS / PLAYER VERIFIED.
+- Battle HUD: PASS / PLAYER VERIFIED.
+- Arena static presentation: PASS / PLAYER VERIFIED.
 
-Do not regenerate portrait/collection/static battleIdle, do not create composite sheets, and do not redesign 猼訑.
+Next exact action:
+1. open **Idle Micro-animation** only;
+2. use the approved static `battleIdle` as the sole visual/identity source;
+3. author/review one idle animation asset/gate at a time;
+4. preserve fixed feet/ground anchor, actor position, scale, silhouette, major color blocks and protector identity;
+5. keep motion restrained to breathing / tiny weight transfer / minimal fur-head-bracer follow-through.
+
+Do not regenerate portrait/collection/static battleIdle, do not create composite sheets, do not redesign 猼訑, and do not start run/move, Hit/KO/Cast or Skill VFX.
