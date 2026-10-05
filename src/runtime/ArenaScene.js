@@ -202,6 +202,14 @@ export class ArenaScene extends Phaser.Scene {
       const visible=result==='victory' && this.campaignActions.hasNext();
       next.button.setVisible(visible);next.text.setVisible(visible);
       if(!visible) next.button.disableInteractive();
+
+      // Keep the currently visible campaign result actions centered as a group.
+      const labels=visible?['NEXT STAGE','RETRY','EXIT']:['RETRY','EXIT'];
+      const gap=230,startX=ARENA_STAGE.width/2-gap*(labels.length-1)/2;
+      for(const [index,label] of labels.entries()){
+        const view=this.resultButtons.get(label),x=startX+gap*index;
+        view.button.setPosition(x,338);view.text.setPosition(x,338);
+      }
     }
     this.resultText.setText(result.toUpperCase());
     this.resultLayer.setVisible(true);
