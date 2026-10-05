@@ -15,9 +15,9 @@ const presentation={
  },
  P2:{
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle'}),
-  // Static Runtime Readability gate: one still only. Idle micro-animation remains blocked.
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
-   source:'botuo.battleIdle',duration:1.6,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
+   source:'botuo.battleIdle',frames:Array.from({length:4},(_,i)=>({x:i*160,y:0,width:160,height:160})),
+   fps:2.5,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
   })}),
  },
 };
