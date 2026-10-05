@@ -120,8 +120,9 @@ export class ArenaScene extends Phaser.Scene {
       const label = this.add.text(0, 0, identity.label, {
         fontFamily: 'sans-serif', fontSize: '18px', color: '#ffffff', align:'center',
       }).setOrigin(0.5);
+      const hpBar = this.add.graphics().setDepth(12);
 
-      this.actorViews.set(actor.instanceId, { marker, label, allied, markerColor });
+      this.actorViews.set(actor.instanceId, { marker, label, hpBar, allied, markerColor });
     }
 
     this.createHud();
@@ -563,13 +564,28 @@ export class ArenaScene extends Phaser.Scene {
       const art=this.visualAssets.actorSprites?.get(actor.instanceId),hasFormalArt=Boolean(art?.visible);
       // Formal art fully replaces the graybox body marker. Selection/target/skill feedback belongs to dedicated UI/telegraph systems.
       view.marker.setPosition(position.x, position.y).setVisible(!hasFormalArt).setFillStyle(view.markerColor,1).setAlpha(actor.hp > 0 ? 1 : 0.35);
+
+      // One live HP state drives both this overhead bar and the side HUD card.
+      const liveActor=this.session.actorById(actor.instanceId),maxHp=Math.max(1,liveActor?.maxHp??actor.maxHp??1);
+      const hpRatio=Math.max(0,Math.min(1,actor.hp/maxHp));
+      const visibleTop=(art?.displayHeight??ACTOR_VISUAL_RADIUS*2)*(art?.originY??.5);
+      const hpOffset=Math.max(34,visibleTop+10),hpWidth=Math.max(54,Math.min(78,(art?.displayWidth??54)*.62)),hpHeight=8;
+      const hpX=position.x-hpWidth/2,hpY=position.y-hpOffset;
+      view.hpBar.clear();
+      view.hpBar.fillStyle(0x111820,.9);view.hpBar.fillRect(hpX-2,hpY-2,hpWidth+4,hpHeight+4);
+      const hpGradient=view.allied?[0x69cbff,0x2875d8]:[0xff8178,0xb82a38];
+      view.hpBar.fillGradientStyle(hpGradient[0],hpGradient[1],hpGradient[0],hpGradient[1],1);
+      view.hpBar.fillRect(hpX,hpY,hpWidth*hpRatio,hpHeight);
+      view.hpBar.lineStyle(1.5,0xffffff,.72);view.hpBar.strokeRect(hpX-1,hpY-1,hpWidth+2,hpHeight+2);
+      view.hpBar.setVisible(actor.hp>0).setAlpha(actor.hp>0?1:.35);
+
       const identity=battlePortrait(this.session,actor.instanceId);
       const guarded=this.session.statuses.damageMultiplier(actor.instanceId,this.session.elapsedSeconds)<1;
       const marks=actor.hp>0?statusMarks(this.session.statuses.forActor(actor.instanceId,this.session.elapsedSeconds)):'';
       const tier=this.labConfig?` ${this.session.tierProjections.get(actor.instanceId).tier}`:'';
       view.label.setText?.(`${identity.label}${tier}${guarded&&actor.hp>0?' ◈':''}${marks?'\n'+marks:''}`);
       // Graybox/debug identity text is only for placeholder actors. Formal art carries identity itself.
-      const nameOffset=Math.max(42,(art?.displayHeight??0)*(art?.originY??.5)+16);
+      const nameOffset=hpOffset+22;
       view.label.setPosition(position.x, position.y - nameOffset).setVisible(!hasFormalArt).setAlpha(actor.hp > 0 ? 1 : 0.5);
     }
     this.ensureLivingSelection(frame);
