@@ -45,3 +45,10 @@ test('Arena overhead HP bars are side-colored and derive from live actor hp/maxH
   assert.match(source,/fillGradientStyle/);
   assert.match(source,/setVisible\(actor\.hp>0\)/);
 });
+
+test('campaign result buttons recenter from three actions to retry/exit on defeat',()=>{
+  const source=readFileSync(new URL('../src/runtime/ArenaScene.js',import.meta.url),'utf8');
+  assert.match(source,/const labels=visible\?\['NEXT STAGE','RETRY','EXIT'\]:\['RETRY','EXIT'\]/);
+  assert.match(source,/const gap=230,startX=ARENA_STAGE\.width\/2-gap\*\(labels\.length-1\)\/2/);
+  assert.match(source,/view\.button\.setPosition\(x,338\);view\.text\.setPosition\(x,338\)/);
+});
