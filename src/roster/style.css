@@ -40,7 +40,7 @@
 .required-slot-mark { position:absolute;right:3px;bottom:2px;color:#ffd689;font-size:16px;line-height:1; }
 
 .roster-portrait {overflow:hidden;background:transparent !important;aspect-ratio:1;width:100%;height:auto;}
-.roster-portrait img {object-fit:contain !important;transform:scale(.98);transform-origin:50% 50%;}
+.roster-portrait img {object-fit:cover !important;transform:scale(1.22);transform-origin:50% 38%;}
 .roster-card .matchup-identity {font-size:11px;line-height:12px;}
 .roster-card .type-mark {font-size:12px;}
 
