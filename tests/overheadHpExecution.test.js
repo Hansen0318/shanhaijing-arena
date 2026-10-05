@@ -24,7 +24,9 @@ test('actual Arena applyFrame synchronizes overhead and side HUD HP for damage a
   assert.equal(JSON.stringify(actors),before);
   for(const actor of actors){const view=views.get(actor.instanceId),calls=view.hpBar.calls,fill=calls.filter(c=>c[0]==='fillRect').at(-1),border=calls.filter(c=>c[0]==='strokeRect').at(-1),gradient=calls.filter(c=>c[0]==='fillGradientStyle').at(-1),card=scene.cards.find(c=>c.id===actor.instanceId);
    const hpFills=calls.filter(c=>c[0]==='fillRect').slice(1);
-   assert.ok(Math.abs(hpFills.reduce((sum,c)=>sum+c[3],0)/(border[3]-2)-card.hpRatio)<1e-12);
+   const paintedWidth=hpFills.length?Math.max(...hpFills.map(c=>c[1]+c[3]))-hpFills[0][1]:0;
+   assert.ok(Math.abs(paintedWidth/(border[3]-2)-card.hpRatio)<1e-12);
+   if(renderer===1)for(let i=1;i<hpFills.length;i++)assert.ok(hpFills[i-1][1]+hpFills[i-1][3]>hpFills[i][1],'Canvas strips overlap to avoid scaling seams');
    if(ratio>0&&renderer===1)assert.ok(calls.filter(c=>c[0]==='fillStyle'&&c[1]!==0x111820).length>=2,'Canvas gradient needs explicit colored fills');
    assert.equal(calls.filter(c=>c[0]==='setVisible').at(-1)[1],ratio>0);
    assert.deepEqual(gradient.slice(1,5),view.allied?[0x69cbff,0x2875d8,0x69cbff,0x2875d8]:[0xff8178,0xb82a38,0xff8178,0xb82a38]);

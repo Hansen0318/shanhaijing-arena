@@ -582,7 +582,7 @@ export class ArenaScene extends Phaser.Scene {
           if(end<=start)break;
           const t=i/15,channel=shift=>Math.round(((hpGradient[0]>>shift)&255)*(1-t)+((hpGradient[1]>>shift)&255)*t);
           const color=(channel(16)<<16)|(channel(8)<<8)|channel(0);
-          view.hpBar.fillStyle(color,1);view.hpBar.fillRect(hpX+start,hpY,end-start,hpHeight);
+          view.hpBar.fillStyle(color,1);view.hpBar.fillRect(hpX+start,hpY,Math.min(end+1,hpWidth*hpRatio)-start,hpHeight);
         }
       }else view.hpBar.fillRect(hpX,hpY,hpWidth*hpRatio,hpHeight);
       view.hpBar.lineStyle(1.5,0xffffff,.72);view.hpBar.strokeRect(hpX-1,hpY-1,hpWidth+2,hpHeight+2);
