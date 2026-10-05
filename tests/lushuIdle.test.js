@@ -21,7 +21,8 @@ test('approved idle resolves four equal frames with a fixed ground origin and st
  assert.equal(animationFrame(d,d.duration+.001).index,0);
  assert.equal(animationFrame(d,.6,true).index,0);
  for(const state of ['battleHit','battleKo','battleCast'])assert.equal(characterAnimation(rosterCatalog.P1,state).source,'placeholder.battle');
- for(const c of Object.values(rosterCatalog).slice(1))assert.equal(characterAnimation(c,'battleIdle').source,'placeholder.battle');
+ assert.equal(characterAnimation(rosterCatalog.P2,'battleIdle').source,'botuo.battleIdle');
+ for(const c of Object.values(rosterCatalog).slice(2))assert.equal(characterAnimation(c,'battleIdle').source,'placeholder.battle');
 });
 test('runtime PNG is RGBA, bounded and encounter-only, never a menu image',async()=>{
  const a=assetManifest[key];assert.ok(a);
