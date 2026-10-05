@@ -43,7 +43,7 @@ test('declared row budget reserves lower BACK space while fitting flexible upper
   assert.match(rule,/overflow:hidden/);
  }
  assert.match(css,/\.roster-portrait \{[^}]*aspect-ratio:1/);
- assert.match(css,/object-fit:contain !important;transform:scale\(\.98\);transform-origin:50% 50%/);
+ assert.match(css,/object-fit:cover !important;transform:scale\(1\.22\);transform-origin:50% 38%/);
  assert.match(css,/\.team-footer \{[^}]*justify-content:flex-end/);
  assert.match(css,/\.team-footer \.battle \{[^}]*width:auto;min-width:112px/);
 });
