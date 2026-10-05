@@ -41,11 +41,12 @@ test('all four Tier borders are distinct and Collection reads earned Tier withou
 test('upper and Collection retire formal placeholder names while lower roster preserves name and Type',async()=>{
  const page=node('main'),team=new TeamSelection({stage:{enemyLineup:['P1','P2','P3']},saved:['P1','P2','P3']});renderTeamSelect(page,team,{document:{createElement:node},stageId:'1-1'});
  const all=walk(page),upper=all.find(n=>n.className==='team-matchup');
- for(const host of walk(upper).filter(n=>n.dataset.formalArt==='true')){assert.equal(walk(host).some(n=>n.className==='matchup-identity'),false);const img=walk(host).find(n=>n.tag==='img');assert.equal(walk(host).some(n=>n.textContent==='鹿蜀'&&!n.hidden),false);img.onload?.();assert.equal(walk(host).some(n=>n.textContent==='鹿蜀'&&!n.hidden),false);img.onerror();assert.equal(walk(host).some(n=>n.textContent==='鹿蜀'&&!n.hidden),true);}
+ for(const host of walk(upper).filter(n=>n.dataset.formalArt==='true')){assert.equal(walk(host).some(n=>n.className==='matchup-identity'),false);const img=walk(host).find(n=>n.tag==='img'),fallback=walk(host).find(n=>n.tag==='span');assert.ok(img);assert.equal(fallback?.hidden,true);img.onload?.();assert.equal(fallback?.hidden,true);img.onerror();assert.equal(fallback?.hidden,false);}
  const p1=all.find(n=>n.dataset.characterId==='P1');assert.ok(walk(p1).some(n=>n.className==='matchup-identity'));assert.ok(walk(p1).some(n=>n.textContent==='鹿蜀'));assert.ok(walk(p1).some(n=>n['aria-label']==='Type: Speed'));assert.ok(walk(p1).some(n=>n.tag==='img'&&n.src.endsWith('portrait.png')));
  const p2=all.find(n=>n.dataset.characterId==='P2');assert.ok(walk(p2).some(n=>n.className==='matchup-identity'));
  const {CollectionView}=await import('../src/collection/view.js'),{CampaignController}=await import('../src/campaign/controller.js');const doc={createElement(tag){const n=node(tag);n.replaceChildren=(...v)=>n.children=v;n.addEventListener=()=>{};return n;}},collection=doc.createElement('main');new CollectionView(new CampaignController(),{document:doc}).mount(collection);
- const formal=walk(collection).find(n=>n.dataset.characterId==='P1'),placeholder=walk(collection).find(n=>n.dataset.characterId==='P2');assert.equal(walk(formal).some(n=>n.className==='collection-name'),false);assert.ok(walk(placeholder).some(n=>n.className==='collection-name'&&n.textContent==='猼訑'));
+ const formalP1=walk(collection).find(n=>n.dataset.characterId==='P1'),formalP2=walk(collection).find(n=>n.dataset.characterId==='P2'),placeholder=walk(collection).find(n=>n.dataset.characterId==='P3');
+ assert.equal(walk(formalP1).some(n=>n.className==='collection-name'),false);assert.equal(walk(formalP2).some(n=>n.className==='collection-name'),false);assert.ok(walk(placeholder).some(n=>n.className==='collection-name'&&n.textContent==='赤鱬'));
 });
 
 
