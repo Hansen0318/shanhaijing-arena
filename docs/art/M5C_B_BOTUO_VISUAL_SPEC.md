@@ -494,3 +494,30 @@ Static Asset Pack direction is now 3/3 approved:
 Prepare runtime derivatives and integrate only the approved three static assets through the existing asset pipeline. Verify real game scale on Team Select / Collection / Battle HUD / Arena, including compact portrait framing, enemy mirror, overhead HP, silhouette, contrast, detail density, placeholder retirement and no layout regression.
 
 Idle micro-animation remains BLOCKED until this runtime gate passes.
+
+
+## 26. Current authoritative production state — 2026-10-05
+
+This section supersedes earlier in-file process snapshots such as Sections 21–24 wherever they describe an older pending state.
+
+Current status:
+- Concept: **PASS / PLAYER APPROVED**.
+- Battle Simplification: **PASS / PLAYER APPROVED**.
+- `portraitSquare`: **PASS / PLAYER APPROVED**.
+- `collectionArt`: **PASS / PLAYER APPROVED**.
+- static `battleIdle`: **PASS / PLAYER APPROVED**.
+- Static runtime integration / engineering verification: **PASS**.
+- corrected runtime `identity.png` top-line artifact: **PASS / PLAYER VERIFIED**.
+- Static Runtime Readability player gate: **not yet globally closed unless the player explicitly confirms the remaining runtime surfaces**.
+- Idle Micro-animation: **BLOCKED until that player gate closes**.
+- Run / movement animation: later gate.
+- Hit / KO / Cast: later gate.
+- Skill VFX: later gate.
+
+Next exact action:
+1. recover latest deployed build and existing PASS evidence;
+2. ask for / use only the smallest remaining player smoke necessary to close 猼訑 Static Runtime Readability;
+3. if the player explicitly says the static runtime presentation is OK, record **Static Runtime Readability — PASS / PLAYER VERIFIED**;
+4. only then open the **Idle Micro-animation** gate, using the approved static `battleIdle` as the sole visual source and the one-asset-per-gate rule.
+
+Do not regenerate portrait/collection/static battleIdle, do not create composite sheets, and do not redesign 猼訑.
