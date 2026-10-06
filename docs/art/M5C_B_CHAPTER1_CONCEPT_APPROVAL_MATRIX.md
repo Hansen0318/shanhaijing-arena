@@ -104,8 +104,11 @@ Before image generation, preserve:
 - clear support casting posture;
 - circular/flowing healing language.
 
-Primary open decision:
-**which support focus/device best communicates healing without making the design a generic mage.**
+Primary direction:
+**floating healing-water orb + compact ring focus/bracer**. This keeps the hands expressive, gives future VFX a clear source point, fits hover locomotion, and avoids a generic staff-mage silhouette.
+
+Current status:
+**CHAT CONCEPT DIRECTION READY / PLAYER VISUAL REVIEW NEXT.** No image has been generated or approved yet.
 
 ### 九尾狐
 Before image generation, preserve:
@@ -151,7 +154,9 @@ Do not create final:
 - portraitSquare;
 - collectionArt;
 - battleIdle;
-- idle animation frames;
+- locomotion frames;
+- action/cast frames;
+- VFX;
 
 until the player's concept direction for that character is explicitly approved.
 
