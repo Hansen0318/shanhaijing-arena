@@ -588,3 +588,26 @@ Next exact action:
 3. verify Team Select Idle and Arena Idle playback technically;
 4. reproduce the reload underfill on iOS/Safari or an equivalent controlled viewport harness, make only the smallest proven viewport correction, and re-run the targeted viewport/route checks;
 5. stop for player smoke. No art regeneration and no Run/Move/Hit/KO/Cast/VFX authoring.
+
+
+## 29. Team Select identity restoration — 2026-10-06
+
+Status: **PLAYER CORRECTION / CHAT SOURCE RESTORED / DEPLOY VERIFICATION PENDING**
+
+The player rejected replacing the approved Team Select full-body identity image with the battle Idle sprite sheet. This section supersedes the Team Select-specific statements in Section 28.
+
+Locked correction:
+- Team Select upper full-body 猼訑 preview uses the previously approved `collectionArt` identity image.
+- Do not substitute `battleIdle-4f.png`, its individual runtime frames, or another battle derivative into that selection-image slot.
+- The Arena Idle playback correction remains valid and unchanged: living missing-Hit/Cast fallback must keep the authored Idle animation advancing rather than freeze on F1; KO missing-art fallback may remain static.
+- The approved four-frame battle Idle asset remains an Arena battle-state asset.
+- If Team Select animation is revisited later, it must be a separate approved presentation treatment that preserves the approved Team Select visual composition rather than swapping in the battle sprite sheet.
+
+Chat source restoration:
+- `src/roster/view.js` upper full-body preview restored to `collectionArt`.
+- menu-only `decorateIdlePreview` battle-sprite substitution removed.
+- targeted menu test now protects the approved Team Select collectionArt path.
+
+The iOS/Safari reload-underfill correction and Arena Idle correction are not reverted by this change.
+
+Next exact action: targeted executable check/build/deploy of this restoration only, then player confirms the Team Select image is back to the accepted presentation. No art regeneration, no gameplay change.
