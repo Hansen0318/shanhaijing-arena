@@ -213,30 +213,23 @@ At small scale:
 
 must remain readable as four distinct large-shape cues.
 
-## 12. Idle micro-animation
+## 12. Idle presentation — current authoritative direction
 
-Use the same lightweight four-frame production philosophy accepted for 鹿蜀, but with a different motion signature.
+**Static only.**
 
-Suggested loop:
-- F1 neutral guarded stance;
-- F2 slow chest/shoulder rise;
-- F3 peak breath with tiny head/horn settle and slight fur lift;
-- F4 return toward neutral.
+The player withdrew the current breathing/Idle micro-animation requirement on 2026-10-06.
 
-Secondary motion:
-- minimal neck/shoulder fur compression;
-- tiny bracer/guard hand follow;
-- extremely small weight transfer.
+Current presentation:
+- Team Select: approved static `collectionArt`;
+- Arena idle: approved static F1 battle presentation;
+- no breathing transform;
+- no F1→F4 idle loop;
+- existing four-frame idle source may remain in the repository as historical/source material but is not an active runtime requirement.
 
-Do not use:
-- side-to-side horn swinging;
-- repeated shield pumping;
-- stomp;
-- attack wind-up;
-- large body bob;
-- VFX/glow.
+Do not resume Idle animation unless the player explicitly reopens that gate.
 
-Gameplay actor position and feet anchor stay fixed.
+The next future animation work, when authorized, is **attack/skill action micro-animation paired with the corresponding VFX**, derived from the approved 猼訑 identity and battle simplification.
+
 
 ## 13. Battle simplification gate
 
@@ -628,3 +621,20 @@ Locked implementation:
 - this presentation motion is separate from Arena F1–F4 sprite-sheet runtime playback.
 
 Arena remains on the canonical PNG sprite-sheet + explicit frame-region + animationDescriptor runtime system.
+
+
+## 31. Idle animation withdrawal — 2026-10-06
+
+Status: **AUTHORITATIVE PLAYER DECISION**
+
+The player has stopped the current breathing-animation effort. Supersede Sections 26–30 only where they require or validate breathing/Idle motion.
+
+Locked now:
+- no Team Select breathing animation;
+- no Arena breathing loop;
+- Team Select uses static approved `collectionArt`;
+- Arena uses static F1 from the approved battle presentation;
+- do not delete historical four-frame source assets merely to enforce the static presentation;
+- preserve the runtime animation framework for later state-specific action animation.
+
+Future direction: when a character's attack/skill presentation gate opens, create a short action micro-animation for the move and coordinate it with that move's VFX. Do not restart idle breathing unless the player explicitly asks.
