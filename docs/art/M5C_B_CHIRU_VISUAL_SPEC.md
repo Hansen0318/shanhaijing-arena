@@ -1,7 +1,7 @@
 # M5C-B Batch1 Visual Spec — 赤鱬
 
 ## Status
-**CURRENT NEXT GATE — CHAT CONCEPT DIRECTION READY / PLAYER VISUAL REVIEW NEXT**
+**CURRENT NEXT GATE — CONCEPT REVISION REQUIRED / PLAYER APPROVAL PENDING**
 
 This is the next Chapter1 character after accepted 鹿蜀 and 猼訑 static-runtime presentation. Only the Concept gate is open. Do not produce portraitSquare, collectionArt, battleIdle, locomotion frames, attack/cast animation or VFX until the concept is explicitly approved.
 
@@ -176,3 +176,31 @@ Player approval should answer only:
 7. Is the visual language consistent with the already accepted roster?
 
 If the answer is yes, the next gate becomes **赤鱬 Battle Simplification**. If not, revise the Concept only; do not skip ahead.
+
+
+## 15. Concept review result — REJECTED / REVISE (2026-10-06)
+
+Status: **NOT APPROVED**.
+
+Several exploratory Concept outputs were reviewed by the player and do **not** count as approved production direction.
+
+Reasons:
+- the face/body read too close to a human mage / elegant water-spirit rather than a clearly Shanhaijing-derived aquatic creature anthropomorph;
+- too many long fins/ribbons/ornamental trailing shapes;
+- excessive small line/detail density;
+- silhouette risks collapsing into a visual blob at battle scale;
+- creature identity is not strong enough before costume/VFX are considered.
+
+This rejection does not invalidate the core gameplay direction (Blast / Support / Aquatic Hover Humanoid). It invalidates the current visual execution.
+
+The next Concept revision must obey existing project hard rules more strictly:
+- species-derived mythic aquatic face first;
+- humanoid/anthropomorphic body, not a normal human base with fish decoration;
+- few large fin/gill shapes instead of many small fins/ribbons;
+- fewer contour/detail lines;
+- larger, cleaner color masses;
+- strong coral/red vs pearl/cream vs aqua/teal separation;
+- compact support focus;
+- silhouette readable when downscaled.
+
+**Next exact action:** generate one revised 赤鱬 Concept image only. Do not advance to Battle Simplification until the player explicitly approves that Concept.
