@@ -360,6 +360,22 @@ Preferred implementation:
 
 Do not start a bone/skeletal animation subsystem.
 
+### 6A.1 Future GIF runtime direction — feasibility gate required
+
+Player direction (2026-10-06): future character animation assets should evaluate replacing the current PNG sprite-sheet runtime format with GIF.
+
+This is a **future format direction, not an immediate runtime-format hard switch**. Before GIF can replace the shared frame-descriptor path, engineering must prove that the chosen implementation preserves:
+- deterministic frame timing;
+- Pause/Resume behavior;
+- state transitions between Idle / Move / Hit / Cast / KO;
+- fixed actor origin / feet anchor;
+- ally/enemy mirroring;
+- reduced-motion/static fallback;
+- mobile Safari / Chromium compatibility;
+- asset/cache/decode budgets.
+
+Until that feasibility gate passes, the currently approved PNG sprite-sheet animations remain the production baseline and must not be broken or retroactively converted.
+
 ## 6B. Compact portrait framing hard rule
 
 For every current/future character, `portraitSquare` is authored and presented as a **face-first identity crop**:
