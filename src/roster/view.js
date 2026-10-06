@@ -15,7 +15,7 @@ export function renderTeamSelect(page,team,{document:doc=globalThis.document,sta
   if(showType)label.append(icon);label.append(node('span',character.name));return label;
  };
  const hasImage=(character,slot)=>resolveCharacterAsset(character,slot).type==='image';
- const fullIdentity=character=>{const p=node('span',character.portrait?.label??character.name,'lineup-figure');return decoratePortrait(p,character,{document:doc,slot:'collectionArt',motion:'idleBreath'});};
+ const fullIdentity=character=>{const p=node('span',character.portrait?.label??character.name,'lineup-figure');return decoratePortrait(p,character,{document:doc,slot:'collectionArt'});};
  page.className+=' team-page';
  const header=node('header',null,'stage-header');
  header.append(button('BACK',()=>onBack?.(),'campaign-button back screen-back'),node('h1','SELECT TEAM'),node('span',`Stage ${stageId}`,'team-stage'));
