@@ -1,7 +1,7 @@
 # M5C-B Batch1 Visual Spec — 赤鱬
 
 ## Status
-**CURRENT NEXT GATE — CONCEPT DIRECTION / PLAYER REVIEW PENDING**
+**CURRENT NEXT GATE — CHAT CONCEPT DIRECTION READY / PLAYER VISUAL REVIEW NEXT**
 
 This is the next Chapter1 character after accepted 鹿蜀 and 猼訑 static-runtime presentation. Only the Concept gate is open. Do not produce portraitSquare, collectionArt, battleIdle, locomotion frames, attack/cast animation or VFX until the concept is explicitly approved.
 
@@ -139,3 +139,40 @@ Approve the Concept only if:
 - the design remains compatible with future shared hover locomotion and cast hooks.
 
 **Next exact action:** generate/review one 赤鱬 Concept image from this spec only. No later-gate assets in the same image.
+
+
+## 13. Concept image recipe — READY, NOT YET GENERATED
+
+When the player explicitly requests the Concept image, generate exactly **one full-body Concept image** from this recipe:
+
+- one character only;
+- full-body 3/4 view;
+- humanoid / anthropomorphic aquatic body;
+- visibly floating slightly above the implied ground;
+- coral/red aquatic identity as the dominant creature color;
+- fish-derived mythic face with gill/cheek structure and compact fin-like head/ear cues;
+- slim-to-medium Support silhouette, calm/open torso;
+- one or two large readable fin shapes only;
+- pearl/cream clothing masses with restrained aqua/teal accents;
+- floating healing-water orb close to one hand;
+- compact ring focus/bracer integrated at the opposite forearm/hand;
+- hands remain readable for future casting animation;
+- no staff, no large weapon, no attack pose;
+- simplified 2D cel-shaded rendering language consistent with 鹿蜀/猼訑;
+- clean silhouette and limited micro-detail;
+- no locomotion frames, no attack frames, no VFX sheet, no portrait crop, no asset board.
+
+The image is a **Concept review image**, not production `collectionArt` and not a runtime asset.
+
+## 14. Concept review checklist
+
+Player approval should answer only:
+1. Does the face read as a mythic fish/aquatic being rather than a human mage?
+2. Does the hovering body silhouette feel intentional and natural?
+3. Does the character read as Blast / Support rather than attacker?
+4. Are fins/gills readable without becoming visually noisy?
+5. Does the orb + ring focus feel like a support tool rather than a weapon?
+6. Is the silhouette sufficiently distinct from 九尾狐?
+7. Is the visual language consistent with the already accepted roster?
+
+If the answer is yes, the next gate becomes **赤鱬 Battle Simplification**. If not, revise the Concept only; do not skip ahead.
