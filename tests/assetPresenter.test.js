@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
-import {createLabConfig} from '../src/dev/battleLab/config.js';import {createLabBattleSession} from '../src/dev/battleLab/battleFactory.js';import {createAssetCache} from '../src/runtime/assetCache.js';
+import {createLabConfig} from '../src/dev/battleLab/config.js';import {createLabBattleSession} from '../src/dev/battleLab/battleFactory.js';import {createAssetCache} from '../src/runtime/assetCache.js';import {rosterCatalog} from '../src/roster/catalog.js';import {assetManifest} from '../src/assets/manifest.js';import {characterAnimation} from '../src/assets/battleDescriptors.js';
 const api=await import('../src/runtime/assetPresenter.js').catch(()=>({}));
 function scene(){const objects=[];const textures=new Map();const make=()=>{const v=new Proxy({destroyed:false,destroy(){this.destroyed=true;}},{get:(o,k)=>k in o?o[k]:()=>v});objects.push(v);return v;};return {objects,add:{graphics:make,image:make},textures:{exists:k=>textures.has(k),addImage(k){textures.set(k,{add(){}});return textures.get(k);},remove:k=>textures.delete(k),get:k=>textures.get(k)},keys:textures};}
 test('presenter owns loaded textures and discards stale completion after shutdown',async()=>{
@@ -76,4 +76,17 @@ test('missing living transient art keeps authored idle moving instead of freezin
  const source=readFileSync(new URL('../src/runtime/assetPresenter.js',import.meta.url),'utf8');
  assert.match(source,/elapsed=formalState\?now-state\.start:actor\.hp>0\?now:0/);
  assert.match(source,/KO fallback remains static/);
+});
+
+test('Botuo living missing Hit/Cast art keeps idle frames advancing while KO fallback stays static',async()=>{
+ const textures=new Map(),images=[];
+ const scene={textures:{addImage(k){const t={frames:new Set(),has(f){return this.frames.has(f);},add(f){this.frames.add(f);}};textures.set(k,t);return t;},get:k=>textures.get(k),remove:k=>textures.delete(k)},add:{image(){const v={setTexture(k,f){this.texture=[k,f];return this;}};for(const k of ['setOrigin','setScale','setVisible','setDisplaySize','setFlipX','setPosition','setDepth','setAlpha'])v[k]=()=>v;v.destroy=()=>{};images.push(v);return v;},graphics(){const v={};for(const k of ['setPosition','setDepth','setAlpha','setScale','clear','lineStyle','lineBetween','fillStyle','fillCircle','strokeCircle'])v[k]=()=>v;v.destroy=()=>{};return v;}}};
+ const cache={async load(key){const a=assetManifest[key];return key==='botuo.battleIdle'?{...a,image:{width:a.width,height:a.height}}:{...a};}};
+ const p=new api.AssetPresenter(scene,{cache});await p.loadKeys(['botuo.battleIdle']);
+ const actor={instanceId:'a2',definitionId:'P2',x:2,y:1,hp:320},frame={allies:[actor],enemies:[]},defs={P2:rosterCatalog.P2};
+ p.render(frame,0,defs);const sprite=p.actorSprites.get('a2');assert.equal(sprite.texture[1],'0.0.160.160');
+ p.hit({targetId:'a2'},rosterCatalog.P2,.05);p.render(frame,.41,defs);assert.equal(sprite.texture[1],'160.0.160.160');
+ p.setState('a2',characterAnimation(rosterCatalog.P2,'battleCast'),.5,'battleCast');p.render(frame,.81,defs);assert.equal(sprite.texture[1],'320.0.160.160');
+ actor.hp=0;p.render(frame,1.21,defs);assert.equal(sprite.texture[1],'0.0.160.160');
+ p.destroy();
 });
