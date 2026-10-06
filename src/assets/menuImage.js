@@ -13,13 +13,12 @@ export function decoratePortrait(host,definition,{document=globalThis.document,s
   host.style.display='grid';host.textContent='';host.append(label,img);bindMenuImage(img,asset);
   if(motion==='idleBreath'){
    host.dataset.motion='idleBreath';img.style.transformOrigin='50% 100%';
-   const reduced=document.defaultView?.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
-   if(!reduced&&typeof img.animate==='function')img.animate([
+   if(typeof img.animate==='function')img.animate([
     {transform:'translateY(0) scaleX(1) scaleY(1)',offset:0},
-    {transform:'translateY(-1.8%) scaleX(1.012) scaleY(1.035)',offset:.34},
-    {transform:'translateY(-.8%) scaleX(.998) scaleY(1.018)',offset:.68},
+    {transform:'translateY(-4%) scaleX(1.025) scaleY(1.07)',offset:.34},
+    {transform:'translateY(-1.8%) scaleX(1.008) scaleY(1.035)',offset:.68},
     {transform:'translateY(0) scaleX(1) scaleY(1)',offset:1},
-   ],{duration:1600,iterations:Infinity,easing:'ease-in-out'});
+   ],{duration:1500,iterations:Infinity,easing:'ease-in-out'});
   }
   const fallback=img.onerror;
   img.onerror=()=>{fallback();if(img.hidden)label.hidden=false;};
