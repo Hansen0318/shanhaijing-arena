@@ -86,8 +86,18 @@ After each character passes Batch 1A Static Runtime Readability:
 
 The previously explored/approved idle-frame assets may remain as historical/source evidence, but they are not an active production gate and must not drive current runtime presentation.
 
+### Batch 1C — Locomotion animation pack
+Only after a character's static runtime presentation is approved and when locomotion production is explicitly opened:
+- classify the character as a reusable locomotion archetype before authoring frames;
+- **ground locomotion:** visible foot/leg cycle, arm/torso counter-motion, plus restrained appendage/equipment follow-through;
+- **flight locomotion:** wing beat / glide / aerial body pitch and secondary follow-through; do not fake a ground walk;
+- **hover / aquatic locomotion:** character may remain suspended above the ground; use body float, fin/tail/cloth/water-linked follow-through instead of footfalls;
+- future locomotion styles must become reusable archetypes rather than character-ID engine branches.
+
+All locomotion is presentation-only. It follows the authoritative actor position/facing and must not change movement speed, collision, targeting, AI, telegraph geometry or movement mechanics.
+
 ### Batch 2 — Battle action / reaction micro-animation pack
-Only when explicitly authorized, create short program-controlled action animation states. Priority is the character's actual attack/skill delivery motion, paired with the corresponding VFX. Across the roster this may include:
+Only when explicitly authorized, create short program-controlled action animation states. Priority is the character's actual Basic/Heavy/Special/Awakening delivery motion, paired with the corresponding VFX timing. Across the roster this may include:
 - `battleCast` / attack action micro-animation;
 - `battleHit` reaction when authorized;
 - `battleKo` reaction when authorized
