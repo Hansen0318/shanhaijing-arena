@@ -1,7 +1,7 @@
 # M5C-B Batch1 Visual Spec — 赤鱬
 
 ## Status
-**CURRENT NEXT GATE — CONCEPT REVISION REQUIRED / PLAYER APPROVAL PENDING**
+**CONCEPT PASS / PLAYER APPROVED — BATTLE SIMPLIFICATION ACTIVE**
 
 This is the next Chapter1 character after accepted 鹿蜀 and 猼訑 static-runtime presentation. Only the Concept gate is open. Do not produce portraitSquare, collectionArt, battleIdle, locomotion frames, attack/cast animation or VFX until the concept is explicitly approved.
 
@@ -204,3 +204,46 @@ The next Concept revision must obey existing project hard rules more strictly:
 - silhouette readable when downscaled.
 
 **Next exact action:** generate one revised 赤鱬 Concept image only. Do not advance to Battle Simplification until the player explicitly approves that Concept.
+
+
+## 16. Revised Concept approval — 2026-10-07
+
+Status: **PASS / PLAYER APPROVED**.
+
+The player explicitly approved the revised 赤鱬 Concept direction.
+
+Locked concept identity:
+- fish/aquatic-derived mythic face rather than human-mage face;
+- visible gill/cheek + compact fin morphology;
+- humanoid `Aquatic Hover Humanoid` body plan;
+- Blast / Support rear-healer posture;
+- coral/red dominant creature identity;
+- pearl/cream secondary masses;
+- restrained aqua/teal support accent;
+- compact healing-water orb + ring focus/bracer;
+- simplified 2D cel-shaded roster language.
+
+### Next gate — Battle Simplification
+
+Player correction: **Battle Simplification is the actual Arena/mobile battle-character simplification direction, not another full-detail identity illustration.**
+
+Author/review one battle-scale simplified character reference only. Target the current Arena baseline of approximately **48px base fit** and preserve readability through a very small number of large cues:
+1. aquatic/fish head + gill/fin silhouette;
+2. hover humanoid body separation;
+3. coral/red primary body/fin mass;
+4. pearl/cream secondary mass;
+5. compact aqua/teal support focus;
+6. clear negative space between head, arms, torso and one or two major fins.
+
+Reduce/remove:
+- fine scale texture;
+- small jewelry/knots/buckles;
+- long flowing robe strips;
+- secondary fins;
+- tiny contour lines;
+- decorative water wisps;
+- any detail that only works when enlarged.
+
+The Battle Simplification review image should look like the character that could actually become the Arena battle sprite after the later static-asset gate: compact, bold, readable, and intentionally simplified. It is still a direction/reference gate, not yet the final `battleIdle` production asset.
+
+Do not start `portraitSquare`, `collectionArt`, static `battleIdle`, locomotion, action frames or VFX until the player explicitly approves this Battle Simplification.
