@@ -214,7 +214,7 @@ After M5A approval, Work maps the approved content into the existing data-driven
 
 ## M5C — Art / Animation / VFX Integration
 
-After formal data is stable, replace placeholders with approved visual assets, idle/micro-animation and skill VFX in bounded slices. AI tactical variation may be introduced alongside formal character profiles when needed, but must remain shared-engine/profile-driven.
+After formal data is stable, replace placeholders with approved visual assets in bounded slices. Current idle presentation remains static. Later motion work is split into creature-appropriate locomotion animation plus state-specific attack/cast micro-animation paired with skill VFX. AI tactical variation may be introduced alongside formal character profiles when needed, but must remain shared-engine/profile-driven.
 
 
 ## INFO Hub
@@ -331,6 +331,6 @@ Player feedback: M6C mechanic differentiation is correct but the raw Tier power 
 
 ## M5C-B — Formal Asset Batch Integration
 
-Status: **IN PROGRESS — shared presentation baseline PASS / PLAYER VERIFIED; 鹿蜀 portrait/identity/battleIdle accepted; remaining Chapter1 formal art pending.** Canonical specs: `docs/M5C_B_FORMAL_ASSET_BATCH.md` and `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md`.
+Status: **IN PROGRESS — shared presentation baseline PASS / PLAYER VERIFIED; 鹿蜀 and 猼訑 formal identity/static-runtime accepted; idle breathing withdrawn; 赤鱬 Concept is the next active gate.** Canonical specs: `docs/M5C_B_FORMAL_ASSET_BATCH.md` and `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md`.
 
-M5C-A pipeline and M6C-B balance are accepted. Prepare complete approved visual batches before Work integration. First batch: all five Chapter1 characters' portraitSquare, collectionArt and battleIdle/static assets.
+M5C-A pipeline and M6C-B balance are accepted. Continue character-by-character static formal art through the gated process. 鹿蜀 and 猼訑 static presentation are accepted. Next: 赤鱬 Concept → Battle Simplification → Static Asset Pack → Static Runtime Readability. Current Idle remains static. Later locomotion is archetype-driven (ground / flight / aquatic-hover as appropriate), and ability action micro-animation is authored together with matching VFX.
