@@ -32,7 +32,7 @@ All normal playable Chapter1 characters:
 - define an ordered battle identity hierarchy for each character and preserve the highest-priority silhouette/species cues before decorative detail;
 - pass a small-runtime readability gate before final battleIdle / battle state assets are approved.
 
-Current reusable animation archetypes are starter families, not a closed taxonomy.
+Current reusable animation/locomotion archetypes are starter families, not a closed taxonomy. Ground, aerial/flight and aquatic-hover locomotion may share the same actor/runtime state architecture while using different frame sets and body motion.
 
 ## Approval matrix
 
@@ -40,7 +40,7 @@ Current reusable animation archetypes are starter families, not a closed taxonom
 |---|---|---|---|---|---|---|---|
 | 鹿蜀 | white head; broad tiger-like markings; single vermilion/red tail; horse/deer-derived mythic traits | Speed / Attacker; mobile melee skirmisher | tall/lean/long-legged humanoid; agile directional posture; tail separated from body | Agile humanoid | paired light blades, horn-shaped short weapons, rush/hoof guards, mobility accessories are valid options | must not resemble 九尾狐 via multi-tail/ribbon mass; must stay lighter and more leg-driven than Power characters | exact face treatment; antler/horn shape; exact weapon; clothing; armor coverage; ornament language; final palette balance; final concept |
 | 猼訑 | sheep/goat-like head; large curved horns; dense neck/shoulder fur | Power / Tank; durable front guard / protector | broad shoulders; heavy center; planted and defensive symmetry | Guard humanoid | heavy bracer, shield-like guard, mace, forearm/shoulder armor | distinguish from 狌狌: defensive torso/shoulder mass and guard surface, not oversized striking fists | exact horn geometry; shield/bracer vs mace choice; armor layout; clothing; face treatment; final concept |
-| 赤鱬 | aquatic/fish traits; red/coral identity; fins/gills/scales; water-linked language | Blast / Support; ranged healer / rear support | slim-medium; calmer vertical silhouette; open support posture | Ranged caster humanoid | water orb, healing vessel, ring staff, shell focus, floating flask/support device | distinguish from 九尾狐: circular/flowing/restorative shapes; no large trailing tail-like appendage system | exact aquatic head/face treatment; fin placement; support focus/device; clothing; final color balance; final concept |
+| 赤鱬 | aquatic/fish traits; red/coral identity; fins/gills/scales; water-linked language | Blast / Support; ranged healer / rear support | slim-medium; calmer vertical silhouette; open support posture; may hover above ground | Aquatic hover humanoid + shared caster action hooks | water orb, healing vessel, ring staff, shell focus, floating flask/support device | distinguish from 九尾狐: circular/flowing/restorative shapes; no large trailing tail-like appendage system | exact aquatic head/face treatment; fin placement; support focus/device; clothing; final color balance; final concept |
 | 九尾狐 | fox-derived head/face; fox ears; nine tails; mystic fox-fire identity | Blast / Attacker; ranged burst / pressure | lean/elegant; diagonal offensive caster; readable grouped nine-tail fan | Ranged caster humanoid | fox-fire catalyst, fan, ranged talisman device, lantern/orb focus, elegant ranged weapon | distinguish from 赤鱬: sharp/projected offensive shapes; distinguish from 鹿蜀: multiple tail/fire accents rather than one red motion axis | exact face treatment; tail grouping/count presentation at battle scale; catalyst/weapon; clothing; final palette; final concept |
 | 狌狌 | primate/humanlike beast cues; strong forearms; fur; rugged close-range identity | Power / Attacker; aggressive bruiser / chase specialist | muscular compact-forward humanoid; large forearms; spring-loaded/chase posture | Bruiser humanoid | gauntlets, knuckle weapons, chain/impact gear, chase/grapple accessories | distinguish from 猼訑: forearm/hand attack mass, forward lean and asymmetry; no shield-first read | exact primate head treatment; gauntlet/weapon choice; fur distribution; clothing/armor; body bulk limit; final concept |
 
@@ -82,7 +82,7 @@ Next concept review must decide:
 6. whether the concept remains clearly Speed / Attacker at small scale.
 
 Current status:
-**humanoid exploration exists; no image approved. Previous literal quadruped direction is rejected.**
+**PASS / PLAYER VERIFIED for formal 鹿蜀 identity/static runtime. Historical pre-approval notes are superseded.**
 
 ### 猼訑
 Before image generation, preserve:
@@ -93,6 +93,9 @@ Before image generation, preserve:
 
 Primary open decision:
 **shield/bracer-led protector vs heavier weapon-led protector**, while keeping Tank readability.
+
+Current status:
+**PASS / PLAYER VERIFIED for formal 猼訑 identity/static runtime. Idle breathing is withdrawn; static idle remains authoritative.**
 
 ### 赤鱬
 Before image generation, preserve:
@@ -156,6 +159,6 @@ When all five concepts are approved, perform the five-character comparison gate 
 
 ## Immediate next action
 
-Continue with **鹿蜀 humanoid concept review**.
+Continue with **赤鱬 Concept direction**. 鹿蜀 and 猼訑 formal identity/static-runtime gates are already accepted and must not be reopened.
 
-Do not automatically generate another image from a generic "continue". The next image should be generated only when the player explicitly asks to see a concept variant or when a concept-generation step is explicitly selected.
+For 赤鱬, first lock the aquatic-hover concept direction and support focus/device; then generate/review one Concept image only. Do not author portraitSquare, collectionArt, battleIdle, locomotion frames, action frames or VFX before the Concept is explicitly player-approved.
