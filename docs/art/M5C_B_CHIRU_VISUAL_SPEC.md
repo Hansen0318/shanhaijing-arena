@@ -277,3 +277,38 @@ Author/review exactly one asset at a time from this approved battle-simplified i
 3. static `battleIdle` — blocked until collectionArt approval.
 
 Do not create composite sheets. Do not begin runtime integration, locomotion, action/cast frames, Hit/KO or VFX yet.
+
+
+## 18. portraitSquare approval — 2026-10-07
+
+Status: **PASS / PLAYER APPROVED**.
+
+The player accepted the current 赤鱬 square PNG portrait direction.
+
+Locked portrait presentation:
+- square 1:1 portrait asset;
+- face-first crop;
+- fish/aquatic mythic face dominates the frame;
+- coral/red + pearl/cream head-fin masses remain immediately readable;
+- restrained aqua/teal accents;
+- only slight neck / upper-shoulder context;
+- no full-body composition;
+- no large water-orb/VFX composition;
+- same simplified 2D cel-shaded roster language.
+
+Static Asset Pack progress: **1/3 approved**.
+
+### Next exact item — collectionArt
+
+Create/review one full-body identity image only, derived from the approved Concept + Battle Simplification + portrait identity.
+
+Requirements:
+- full-body humanoid / Aquatic Hover Humanoid identity;
+- same fish/aquatic head and face morphology as the approved portrait;
+- same coral/red, pearl/cream and restrained aqua/teal palette;
+- clear support posture;
+- compact water-orb / ring-focus identity allowed;
+- cleaner and slightly richer than battleIdle, but still within the roster-wide simplified 2D cel-shaded language;
+- no asset sheet;
+- no static battleIdle yet;
+- no locomotion frames, action frames or VFX pack.
