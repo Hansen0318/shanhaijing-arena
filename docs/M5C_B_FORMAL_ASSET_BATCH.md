@@ -340,7 +340,7 @@ Battle sprites should:
 
 ## 6A. Idle micro-animation contract
 
-Battlefield Idle motion is part of formal M5C-B presentation. Team Select upper full-body previews remain on the approved `collectionArt` identity presentation unless a separately approved Team Select motion treatment is introduced without replacing that image. In Arena, Idle is the living actor fallback whenever no more specific authored state is active.
+Battlefield Idle motion is part of formal M5C-B presentation. Team Select upper full-body previews remain on the approved `collectionArt` identity image; when player-approved motion is required, animate that same image with bounded program-controlled breathing/transform motion rather than swapping in battle sprite sheets. In Arena, Idle is the living actor fallback whenever no more specific authored state is active.
 
 Required properties:
 - loopable;
