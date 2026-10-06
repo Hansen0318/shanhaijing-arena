@@ -116,7 +116,7 @@ Do not make Type readability depend only on color.
 - device/focus readable as aid/cast tool;
 - less aggressive weapon silhouette.
 
-## 6. Shared animation archetypes
+## 6. Shared locomotion / action animation archetypes
 
 To keep production scalable, use a small number of animation structure families.
 
@@ -139,12 +139,12 @@ Idle:
 - guard hand/weapon held ready.
 
 ### Ranged caster humanoid
-Primary: 赤鱬 / 九尾狐
-Shared skeletal timing is allowed, but secondary motion and cast pose must differ.
+Primary: 九尾狐 and future grounded casters.
+Shared cast timing is allowed, but secondary motion and cast pose must differ.
 
-赤鱬:
-- open support hand;
-- water focus hovering/close.
+### Aquatic hover humanoid
+Primary: 赤鱬.
+The humanoid torso/arms remain compatible with shared cast/action hooks, but locomotion is not a ground walk. The actor may float above the ground with a clear hover baseline; travel is expressed through body drift, fin/tail/cloth follow-through and water-linked secondary motion. This is a reusable locomotion archetype for future aquatic/floating characters.
 
 九尾狐:
 - offensive projection hand/fan/catalyst;
@@ -159,17 +159,19 @@ Idle:
 - fists/gauntlets active;
 - slight forward coil.
 
-## 7. Idle micro-animation differentiation
+## 7. Locomotion differentiation
 
-The four-frame idle system can stay technically consistent while each character has a distinct motion signature:
+Current idle presentation is static. Character motion differentiation is expressed first through locomotion and later through action states:
 
-- 鹿蜀: leg-weight shift + ear twitch + one-tail sweep.
-- 猼訑: slow chest rise + horn/head settle + armor/fur shift.
-- 赤鱬: gentle torso breath + fin sway + water-focus pulse.
-- 九尾狐: small ear movement + grouped tail wave + spirit-fire pulse.
-- 狌狌: shoulder breath + hand/gauntlet flex + forward torso rock.
+- 鹿蜀: agile grounded step/run, visible leg drive, counter-swinging arms, single-tail/scarf follow-through.
+- 猼訑: heavy grounded stride, shorter planted steps, controlled arm/guard movement and torso mass transfer.
+- 赤鱬: aquatic hover locomotion; body remains suspended above the ground, with gentle body drift plus fin/tail/cloth follow-through. No fake walking cycle is required.
+- 九尾狐: light grounded caster travel unless a later explicit supernatural-float decision is approved; tails follow movement without carrying gameplay position.
+- 狌狌: forward-driving bruiser step/run with strong leg push and forearm/torso follow-through.
 
-No idle animation moves the gameplay actor position.
+Future winged/aerial characters use a flight locomotion archetype with wing beats/glide/body pitch rather than ground footfalls.
+
+All movement animation follows existing actor coordinates and movement speed; it does not own movement mechanics.
 
 ## 8. Color collision controls
 
@@ -214,8 +216,8 @@ For every new playable character, Chat first classifies:
 5. locomotion style;
 6. attack delivery style;
 7. equipment / prop language;
-8. idle secondary-motion needs;
-9. hit / KO / cast motion needs;
+8. locomotion family: ground / flight / hover-aquatic / other reusable archetype;
+9. action delivery and hit / KO motion needs;
 10. whether an existing animation archetype can be reused safely.
 
 Decision order:
@@ -249,10 +251,10 @@ For every current and future playable character, use this gated sequence:
 9. produce the **Static Asset Pack**: `portraitSquare`, `collectionArt`, static `battleIdle`;
 10. integrate/preview the static assets through the existing M5C-A pipeline and run the **Static Runtime Readability Gate** at real game scale;
 11. if static readability fails, revise the art—not the animation, VFX or actor scale;
-12. only after static PASS, author the lightweight idle micro-animation;
-13. run targeted player smoke for scale/readability/idle feel;
-14. after the coherent roster batch passes, author shared-state **Hit / KO / Cast**;
-15. only after battle states are stable, author **Skill VFX**;
+12. keep Idle static under the current authoritative direction;
+13. when locomotion is explicitly opened, author the character's reusable ground / flight / hover movement animation and run targeted player smoke;
+14. author each approved attack/skill action micro-animation together with its corresponding VFX timing;
+15. author Hit / KO reactions only when their later gate is explicitly opened;
 16. record the accepted character, asset status and any new reusable archetype in GitHub.
 
 Hard rules:
