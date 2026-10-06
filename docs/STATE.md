@@ -4,6 +4,7 @@
 **M5C-B PRESENTATION BASELINE — PASS / PLAYER VERIFIED**
 
 ## Current state
+- **赤鱬 `collectionArt` — PASS / PLAYER APPROVED (2026-10-07).** Static Asset Pack progress is now 2/3. **Current exact item: one static `battleIdle` only.** Do not begin runtime integration, locomotion, action frames or VFX yet.
 - **赤鱬 `portraitSquare` — PASS / PLAYER APPROVED (2026-10-07).** Static Asset Pack progress is now 1/3. **Current exact item: `collectionArt` only.** Do not author static `battleIdle`, runtime integration, locomotion, action frames or VFX yet.
 - **赤鱬 Battle Simplification — PASS / PLAYER APPROVED (2026-10-07).** Player accepted the actual battle-scale simplified character direction. The project now advances to the Static Asset Pack under the one-asset-per-gate rule. **Current exact item: `portraitSquare` only.** Do not author `collectionArt`, static `battleIdle`, runtime integration, locomotion, action frames or VFX yet.
 - **赤鱬 revised Concept — PASS / PLAYER APPROVED (2026-10-07).** Player explicitly approved the revised creature-first Concept. The project has advanced to **赤鱬 Battle Simplification**. This gate must produce the actual battle-scale simplified character direction for Arena/mobile readability, not another concept illustration. Preserve only the highest-priority identity cues at ~48px base fit: aquatic/fish head + gill/fin silhouette, hover humanoid body, coral/red primary mass, compact support focus, and clear limb/major-fin separation. Static Asset Pack remains blocked until Battle Simplification receives explicit player approval.
