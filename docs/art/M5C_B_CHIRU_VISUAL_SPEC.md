@@ -141,9 +141,9 @@ Approve the Concept only if:
 **Next exact action:** generate/review one 赤鱬 Concept image from this spec only. No later-gate assets in the same image.
 
 
-## 13. Concept image recipe — READY, NOT YET GENERATED
+## 13. Concept image recipe — REVISION BASELINE / PRIOR EXPLORATORY OUTPUTS REJECTED
 
-When the player explicitly requests the Concept image, generate exactly **one full-body Concept image** from this recipe:
+When the player explicitly requests the **revised** Concept image, generate exactly **one full-body Concept image** from this recipe, while also applying the stricter rejection corrections in Section 15:
 
 - one character only;
 - full-body 3/4 view;
