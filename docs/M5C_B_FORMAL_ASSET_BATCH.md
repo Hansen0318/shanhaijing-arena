@@ -77,27 +77,20 @@ At real game presentation size verify:
 
 If the static asset fails, revise the art first. Do not use animation/VFX or character enlargement to compensate.
 
-### Batch 1B — Idle micro-animation
-Only after that character's Batch 1A static runtime gate passes:
-- author the lightweight `battleIdle` micro-animation frames / motion-ready source;
-- preserve the accepted static design, anchor/origin, scale, silhouette and major color blocks;
-- animation may add breathing, tiny weight transfer, and restrained appendage/fur/ear/tail follow-through;
-- animation must not redesign the character or become necessary for identity recognition.
+### Batch 1B — Static presentation lock / roster comparison
+After each character passes Batch 1A Static Runtime Readability:
+- keep Team Select and Arena idle presentation static;
+- do not author breathing/idle-loop animation;
+- compare the current roster for silhouette separation, color/value separation, rendering-language consistency and role readability;
+- preserve the existing animation descriptor/runtime architecture for later action states, but do not use it for idle breathing.
 
-Idle animation should remain lightweight, loopable, Pause-safe and position-neutral.
+The previously explored/approved idle-frame assets may remain as historical/source evidence, but they are not an active production gate and must not drive current runtime presentation.
 
-After all five Chapter1 characters complete 1A + 1B, perform one roster-wide comparison for:
-- silhouette separation;
-- color/value separation;
-- rendering-language consistency;
-- role readability;
-- animation-archetype consistency.
-
-### Batch 2 — Battle state / reaction pack
-Across all five:
-- battleHit
-- battleKo
-- battleCast short action state
+### Batch 2 — Battle action / reaction micro-animation pack
+Only when explicitly authorized, create short program-controlled action animation states. Priority is the character's actual attack/skill delivery motion, paired with the corresponding VFX. Across the roster this may include:
+- `battleCast` / attack action micro-animation;
+- `battleHit` reaction when authorized;
+- `battleKo` reaction when authorized
 
 Preferred treatment:
 - hit = short recoil / flinch;
@@ -107,7 +100,7 @@ Preferred treatment:
 Use the existing lightweight animation descriptor system; do not introduce skeletal rigs.
 
 ### Batch 3 — Skill VFX pack
-Across all five:
+Author together with, or immediately after, the matching approved action micro-animation so motion and effect timing agree. Across all five:
 - basicVfx
 - heavyVfx
 - specialVfx
