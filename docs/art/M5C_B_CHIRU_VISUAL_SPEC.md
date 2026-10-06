@@ -312,3 +312,45 @@ Requirements:
 - no asset sheet;
 - no static battleIdle yet;
 - no locomotion frames, action frames or VFX pack.
+
+
+## 19. collectionArt approval — 2026-10-07
+
+Status: **PASS / PLAYER APPROVED**.
+
+The player accepted the current transparent full-body 赤鱬 identity art as the `collectionArt` direction.
+
+Locked collection identity:
+- same approved fish/aquatic mythic face as `portraitSquare`;
+- same Aquatic Hover Humanoid body plan;
+- full-body hover/support posture;
+- coral/red + pearl/cream large identity masses;
+- restrained aqua/teal support accents;
+- compact water-orb / ring-focus language;
+- simplified 2D cel-shaded roster rendering;
+- no identity drift from the approved Concept/Battle Simplification.
+
+Static Asset Pack progress: **2/3 approved**.
+
+### Next exact item — static battleIdle
+
+Create/review exactly one static battle still only.
+
+Requirements:
+- derive from the approved battle-simplified identity, not from a richer concept redraw;
+- intended for the Arena battle actor at current mobile scale;
+- one static pose only;
+- transparent PNG;
+- compact hover-support stance;
+- fixed predictable ground/hover anchor;
+- fish/aquatic head silhouette remains clear;
+- one or two major fin masses only;
+- few large coral/red + pearl/cream regions;
+- compact aqua/teal support focus only if it does not obscure the actor;
+- arms/torso/head/major fins remain separated by clear negative space;
+- fewer details than `collectionArt`;
+- no animation frames;
+- no VFX sheet;
+- no locomotion/action/Hit/KO content.
+
+After player approval of this static `battleIdle`, the Static Asset Pack becomes 3/3 and the next gate is Static Runtime Readability / integration.
