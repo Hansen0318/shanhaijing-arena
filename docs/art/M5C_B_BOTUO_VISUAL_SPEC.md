@@ -623,8 +623,8 @@ Locked implementation:
 - keep `collectionArt` as the exact Team Select image source;
 - do not substitute `battleIdle-4f.png` or any battle sprite frame into Team Select;
 - apply a small program-controlled breathing transform to the existing collectionArt image itself;
-- current motion profile: 1.6s loop, bottom-centered transform origin, small upward translation + slight X/Y scale expansion and return;
-- respect reduced-motion by leaving the approved image static;
+- current motion profile: 1.5s loop, bottom-centered transform origin, clearly visible upward translation + torso-scale inhale and return;
+- Team Select breathing remains active on the game screen even when the OS reports reduced-motion, because this is the player-requested character idle presentation; no battle sprite or alternate image is substituted;
 - this presentation motion is separate from Arena F1–F4 sprite-sheet runtime playback.
 
 Arena remains on the canonical PNG sprite-sheet + explicit frame-region + animationDescriptor runtime system.
