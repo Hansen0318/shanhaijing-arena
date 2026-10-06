@@ -611,10 +611,3 @@ Chat source restoration:
 The iOS/Safari reload-underfill correction and Arena Idle correction are not reverted by this change.
 
 Next exact action: targeted executable check/build/deploy of this restoration only, then player confirms the Team Select image is back to the accepted presentation. No art regeneration, no gameplay change.
-
-
-## 30. Future GIF runtime direction — 2026-10-06
-
-Player direction: future animation work should evaluate GIF as the preferred delivered animation format instead of the current PNG sprite-sheet runtime format.
-
-Current 猼訑 production remains unchanged for now: the approved `battleIdle-4f.png` and existing Arena frame-descriptor playback stay authoritative until a dedicated GIF runtime feasibility gate proves Pause-safe timing, state transitions, anchor stability, mirroring and mobile compatibility. Do not retroactively replace the current approved asset before that gate passes.
