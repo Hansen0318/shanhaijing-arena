@@ -247,3 +247,33 @@ Reduce/remove:
 The Battle Simplification review image should look like the character that could actually become the Arena battle sprite after the later static-asset gate: compact, bold, readable, and intentionally simplified. It is still a direction/reference gate, not yet the final `battleIdle` production asset.
 
 Do not start `portraitSquare`, `collectionArt`, static `battleIdle`, locomotion, action frames or VFX until the player explicitly approves this Battle Simplification.
+
+
+## 17. Battle Simplification approval — 2026-10-07
+
+Status: **PASS / PLAYER APPROVED**.
+
+The player accepted the corrected **battle-scale** 赤鱬 simplification direction.
+
+Locked battle simplification:
+- actual Arena/mobile battle character direction, not a second concept illustration;
+- target readability at the current ~48px Arena base fit;
+- compact Aquatic Hover Humanoid silhouette;
+- fish/aquatic head + gill/fin read preserved as Tier-1 identity;
+- one or two major fin masses only;
+- few large coral/red + pearl/cream color regions;
+- restrained aqua/teal support focus;
+- clear negative space between head, arms, torso and major fins;
+- fine scales, tiny jewelry, small knots/buckles, secondary fins, long robe strips, decorative wisps and other enlargement-dependent detail are removed or subordinated;
+- simplified 2D cel-shaded roster language remains authoritative.
+
+This approval locks the **Battle Simplification direction only**. It is not yet a final runtime asset.
+
+### Next gate — Static Asset Pack
+
+Author/review exactly one asset at a time from this approved battle-simplified identity:
+1. `portraitSquare` — current exact item;
+2. `collectionArt` — blocked until portrait approval;
+3. static `battleIdle` — blocked until collectionArt approval.
+
+Do not create composite sheets. Do not begin runtime integration, locomotion, action/cast frames, Hit/KO or VFX yet.
