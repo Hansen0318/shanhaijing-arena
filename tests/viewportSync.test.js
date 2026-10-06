@@ -36,7 +36,7 @@ test('visual viewport scroll/resize and pageshow refresh layout and input bounds
  const sync=installViewportSync(e.win,e.host,e.root,()=>measured++);
  const before=measured;e.win.visualViewport.offsetTop=7;e.win.visualViewport.dispatchEvent(new Event('scroll'));
  assert.equal(e.root.style.top,'7px');assert.ok(measured>before);
- e.win.visualViewport.height=330;e.win.dispatchEvent(new Event('pageshow'));assert.equal(e.root.style.height,'330px');
+ e.win.visualViewport.height=350;e.win.dispatchEvent(new Event('pageshow'));assert.equal(e.root.style.height,'350px');
  sync.destroy();const last=measured;e.win.dispatchEvent(new Event('resize'));assert.equal(measured,last);
 });
 
