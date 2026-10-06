@@ -124,19 +124,21 @@ To keep production scalable, use a small number of animation structure families.
 Primary: 鹿蜀
 Can later support other Speed melee characters.
 
-Idle:
-- alternating weight;
-- small secondary tail/scarf motion;
-- quick recovery posture.
+Locomotion/action language:
+- visible leg drive and quick step/run cadence;
+- arm counter-swing;
+- tail/scarf follows directional acceleration;
+- quick recovery posture after movement/action.
 
 ### Guard humanoid
 Primary: 猼訑
 Can support future tanks/protectors.
 
-Idle:
-- stable center;
-- slow breathing;
-- guard hand/weapon held ready.
+Locomotion/action language:
+- shorter, heavier grounded strides;
+- torso mass transfer stays controlled;
+- guard arm/equipment follows movement without exaggerated pumping;
+- planted recovery posture.
 
 ### Ranged caster humanoid
 Primary: 九尾狐 and future grounded casters.
@@ -154,10 +156,11 @@ The humanoid torso/arms remain compatible with shared cast/action hooks, but loc
 Primary: 狌狌
 Can support future Power attackers.
 
-Idle:
-- shoulders breathing;
-- fists/gauntlets active;
-- slight forward coil.
+Locomotion/action language:
+- strong leg push and forward drive;
+- forearms/gauntlets counter the stride;
+- torso remains attack-ready;
+- quick transition from chase to strike.
 
 ## 7. Locomotion differentiation
 
@@ -187,18 +190,25 @@ The main risk is 鹿蜀 vs 九尾狐. Keep 鹿蜀 visibly warmer/earthier with t
 
 ## 9. Production decision
 
-Current written directions are sufficiently differentiated to continue concept development.
+Current written directions are sufficiently differentiated to continue gated character production.
 
-Do not yet lock production art.
+Accepted closed static gates:
+- 鹿蜀 — formal identity/static runtime accepted;
+- 猼訑 — formal identity/static runtime accepted; Idle breathing withdrawn.
 
-Recommended next order:
-1. review/adjust 鹿蜀 humanoid concept until acceptable;
-2. create one concept sheet each for 猼訑, 赤鱬, 九尾狐, 狌狌 only when the player asks to generate;
-3. compare all five together before final Batch1 lock;
-4. only then produce final portraitSquare / collectionArt / battleIdle assets and idle frames;
-5. Work integrates the complete approved batch.
+Current next character gate:
+- **赤鱬 Concept**.
 
-No additional image generation should happen merely from a generic "continue" unless the current next task explicitly requires an image.
+After 赤鱬 Concept approval:
+1. Battle Simplification;
+2. Static Asset Pack (`portraitSquare`, `collectionArt`, static `battleIdle`);
+3. Static Runtime Readability;
+4. keep Idle static;
+5. later locomotion/action/VFX gates only when explicitly opened.
+
+九尾狐 and 狌狌 remain later Concept gates.
+
+No image generation happens merely from a generic "continue". Generate the next concept image only after the player explicitly asks to see it or explicitly authorizes the image gate.
 
 
 ## 10. Future character onboarding rule
