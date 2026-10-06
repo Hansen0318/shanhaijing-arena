@@ -108,7 +108,7 @@ Primary direction:
 **floating healing-water orb + compact ring focus/bracer**. This keeps the hands expressive, gives future VFX a clear source point, fits hover locomotion, and avoids a generic staff-mage silhouette.
 
 Current status:
-**CHAT CONCEPT DIRECTION READY / PLAYER VISUAL REVIEW NEXT.** No image has been generated or approved yet.
+**CONCEPT REVISION REQUIRED / PLAYER APPROVAL PENDING.** Exploratory images were reviewed and rejected because they read too human-mage/water-spirit, carried too much trailing/detail density, and were not sufficiently Shanhaijing-creature-first at battle scale. Core Aquatic Hover Humanoid / Blast Support direction remains; visual execution must be simplified and made more creature-derived.
 
 ### 九尾狐
 Before image generation, preserve:
@@ -166,4 +166,4 @@ When all five concepts are approved, perform the five-character comparison gate 
 
 Continue with **赤鱬 Concept direction**. 鹿蜀 and 猼訑 formal identity/static-runtime gates are already accepted and must not be reopened.
 
-For 赤鱬, first lock the aquatic-hover concept direction and support focus/device; then generate/review one Concept image only. Do not author portraitSquare, collectionArt, battleIdle, locomotion frames, action frames or VFX before the Concept is explicitly player-approved.
+For 赤鱬, revise and generate/review one Concept image only under the existing creature-first + mobile-readability hard rules. Do not author portraitSquare, collectionArt, battleIdle, locomotion frames, action frames or VFX before the revised Concept is explicitly player-approved.
