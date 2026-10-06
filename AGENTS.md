@@ -20,6 +20,8 @@ Do not rely on conversation memory, an earlier prompt, or a previous recovery wh
 
 **Chat-first must be applied before every Work handoff, not merely at milestone start.** Chat must finish every safe task available to it first, including rule/spec updates, GitHub inspection, static/code analysis, asset preparation, exact source-delta preparation, and bounded repo edits. A Work prompt may be produced only after the remaining task has been reduced to the smallest irreducible executable/runtime delta.
 
+**All player-facing handoff/instruction prompts must be one-click copyable.** Whenever Chat gives the player text intended to be pasted into a new Chat, Work, Codex, or another execution session, it must provide exactly one complete self-contained copyable code block for that destination. Do not split the instruction across prose plus multiple blocks, do not provide long/short competing versions, and do not make the player manually reconstruct missing context. This applies to new-Chat recovery prompts as well as Work prompts. Put this requirement near the top of successor prompts so the next Chat preserves the same behavior when it later produces another handoff.
+
 ## 1. Operating model
 - **User / Product Owner**: final decisions and acceptance.
 - **Chat**: game design, visual direction, specifications, defect analysis, acceptance criteria, bounded repo edits that can be independently verified.
