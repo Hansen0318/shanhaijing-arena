@@ -19,7 +19,7 @@ test('Team Select idle preview executes the approved Botuo F1-to-F4 sprite seque
  const document={defaultView:{matchMedia:()=>({matches:false})},createElement:make};
  const host=make('span');host.textContent='猼訑';decorateIdlePreview(host,rosterCatalog.P2,{document});
  assert.equal(host.dataset.menuAnimation,'battleIdle');assert.equal(host.dataset.assetKey,'botuo.battleIdle');
- const viewport=host.children.find(n=>n.tag==='span'),image=viewport.children.find(n=>n.tag==='img');
+ const viewport=host.children.find(n=>n.children?.some(c=>c.tag==='img')),image=viewport.children.find(n=>n.tag==='img');
  assert.ok(image.src.endsWith('/assets/characters/botuo/battleIdle-4f.png'));
  assert.equal(animations.length,1);assert.deepEqual(animations[0].map(k=>k.transform),[
   'translate(0%,0%)','translate(-25%,0%)','translate(-50%,0%)','translate(-75%,0%)','translate(0%,0%)'
