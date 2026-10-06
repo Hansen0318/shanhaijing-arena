@@ -9,14 +9,14 @@ const presentation={
  P1:{
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
-   source:'lushu.battleIdle',frames:Array.from({length:4},(_,i)=>({x:i*96,y:0,width:96,height:128})),
+   source:'lushu.battleIdle',frames:[{x:0,y:0,width:96,height:128}],
    fps:2.5,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
   })}),
  },
  P2:{
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
-   source:'botuo.battleIdle',frames:Array.from({length:4},(_,i)=>({x:i*160,y:0,width:160,height:160})),
+   source:'botuo.battleIdle',frames:[{x:0,y:0,width:160,height:160}],
    fps:2.5,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
   })}),
  },
