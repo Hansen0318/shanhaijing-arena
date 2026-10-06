@@ -18,7 +18,7 @@ test('Team Select breathing animates the approved collectionArt itself without s
  const document={defaultView:{matchMedia:()=>({matches:false})},createElement:make};
  const host=make('span');host.textContent='猼訑';
  decoratePortrait(host,{assets:{collectionArt:'botuo.identity'}},{document,slot:'collectionArt',motion:'idleBreath'});
- assert.equal(host.dataset.motion,'idleBreath');assert.equal(animations.length,1);assert.equal(animations[0].options.iterations,Infinity);assert.equal(animations[0].options.duration,1600);
+ assert.equal(host.dataset.motion,'idleBreath');assert.equal(animations.length,1);assert.equal(animations[0].options.iterations,Infinity);assert.equal(animations[0].options.duration,1500);assert.ok(animations[0].frames.some(frame=>frame.transform.includes('scaleY(1.07)')));
  const img=host.children.find(n=>n.tag==='img');assert.match(img.src,/botuo\/identity\.png$/);assert.doesNotMatch(img.src,/battleIdle/);assert.equal(img.style.transformOrigin,'50% 100%');
  animations.length=0;
  const reducedDocument={...document,defaultView:{matchMedia:()=>({matches:true})}};
