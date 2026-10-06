@@ -50,7 +50,7 @@ Work should not redo:
 
 Work handoffs should be one compact prompt, not a verbose recap. GitHub carries prior context. Include only: the exact unresolved executable delta, protected baseline, minimum checks, deploy/stop condition, and any player-smoke handoff. Do not provide a long version followed by a short version.
 
-Before writing that prompt, Chat must have already completed all safe Chat-owned work and reduced the task to the irreducible Work-only delta. The final player-facing Work instruction must be delivered as one complete copyable block. When a prepared ZIP/package already contains the canonical handoff, give one short copyable instruction that tells Work to recover and follow the packaged handoff; do not duplicate competing instructions.
+Before writing that prompt, Chat must have already completed all safe Chat-owned work and reduced the task to the irreducible Work-only delta. **Every player-facing handoff/instruction intended for a new Chat, Work, Codex, or another execution session must be delivered as exactly one complete self-contained copyable code block.** This includes new-Chat recovery prompts, not only Work prompts. Do not split required context across prose and separate blocks, and do not provide competing long/short versions. Successor-Chat prompts must state this one-click-copy rule near the top so it propagates to the next handoff. When a prepared ZIP/package already contains the canonical handoff, give one short copyable instruction that tells the destination to recover and follow the packaged handoff; do not duplicate competing instructions.
 
 ## D. Safe checkpoint flow
 For substantial tasks:
