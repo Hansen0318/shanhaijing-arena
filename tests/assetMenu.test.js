@@ -8,7 +8,7 @@ test('Team Select upper full-body preview preserves approved collectionArt inste
  const menu=readFileSync(new URL('../src/assets/menuImage.js',import.meta.url),'utf8');
  const roster=readFileSync(new URL('../src/roster/view.js',import.meta.url),'utf8');
  assert.doesNotMatch(menu,/decorateIdlePreview/);
- assert.match(roster,/decoratePortrait\(p,character,\{document:doc,slot:'collectionArt'\}\)/);
+ assert.match(roster,/decoratePortrait\(p,character,\{document:doc,slot:'collectionArt',motion:'idleBreath'\}\)/);
  assert.doesNotMatch(roster,/battleIdle.*decorateIdlePreview/);
 });
 
@@ -19,4 +19,10 @@ test('Team Select breathing animates the approved collectionArt itself without s
  const host=make('span');host.textContent='猼訑';
  decoratePortrait(host,{assets:{collectionArt:'botuo.identity'}},{document,slot:'collectionArt',motion:'idleBreath'});
  assert.equal(host.dataset.motion,'idleBreath');assert.equal(animations.length,1);assert.equal(animations[0].options.iterations,Infinity);assert.equal(animations[0].options.duration,1600);
+ const img=host.children.find(n=>n.tag==='img');assert.match(img.src,/botuo\/identity\.png$/);assert.doesNotMatch(img.src,/battleIdle/);assert.equal(img.style.transformOrigin,'50% 100%');
+ animations.length=0;
+ const reducedDocument={...document,defaultView:{matchMedia:()=>({matches:true})}};
+ const reducedHost=make('span');
+ decoratePortrait(reducedHost,{assets:{collectionArt:'botuo.identity'}},{document:reducedDocument,slot:'collectionArt',motion:'idleBreath'});
+ assert.equal(animations.length,0);assert.equal(reducedHost.children.find(n=>n.tag==='img').src,img.src);
 });
