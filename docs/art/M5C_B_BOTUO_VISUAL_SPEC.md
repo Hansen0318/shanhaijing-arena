@@ -611,3 +611,20 @@ Chat source restoration:
 The iOS/Safari reload-underfill correction and Arena Idle correction are not reverted by this change.
 
 Next exact action: targeted executable check/build/deploy of this restoration only, then player confirms the Team Select image is back to the accepted presentation. No art regeneration, no gameplay change.
+
+
+## 30. Team Select breathing treatment — 2026-10-06
+
+Status: **PLAYER REQUIREMENT / CHAT SOURCE COMPLETE / EXECUTABLE VERIFICATION PENDING**
+
+The player wants the Team Select upper full-body character to feel alive while preserving the already approved selection image.
+
+Locked implementation:
+- keep `collectionArt` as the exact Team Select image source;
+- do not substitute `battleIdle-4f.png` or any battle sprite frame into Team Select;
+- apply a small program-controlled breathing transform to the existing collectionArt image itself;
+- current motion profile: 1.6s loop, bottom-centered transform origin, small upward translation + slight X/Y scale expansion and return;
+- respect reduced-motion by leaving the approved image static;
+- this presentation motion is separate from Arena F1–F4 sprite-sheet runtime playback.
+
+Arena remains on the canonical PNG sprite-sheet + explicit frame-region + animationDescriptor runtime system.
