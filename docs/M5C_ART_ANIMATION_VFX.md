@@ -22,9 +22,11 @@ The goal is to avoid one-image-at-a-time integration. Build one reusable asset c
 Each playable character may provide:
 - portraitSquare
 - collectionArt
-- battleIdle
+- battleIdle (currently static presentation)
+- battleMove / locomotion descriptor when authored
 - battleHit
 - battleKo
+- battleCast / per-ability action descriptor when authored
 - basicVfx
 - heavyVfx
 - specialVfx
@@ -39,13 +41,15 @@ Do not require all slots before a character remains playable.
 
 Animation should be lightweight and reusable.
 
-Preferred first formal pass:
-- idle loop;
-- hit reaction;
-- KO state;
-- short cast/action motion hook.
+Current production direction:
+- idle presentation remains static unless explicitly reopened;
+- locomotion animation is authored by reusable archetype: grounded step/run, aerial flight, or aquatic/hover float;
+- short attack/cast action motion is paired with the matching ability VFX;
+- hit reaction and KO state remain later bounded reaction gates.
 
 Do not begin skeletal rigs or complex frame-heavy animation unless later approved.
+
+Locomotion descriptors must be presentation-only and consume the same authoritative actor position/facing as the existing Arena. They must never alter movement speed or combat geometry. Aquatic/fish-derived humanoids may intentionally hover above the ground; winged characters may intentionally fly. The runtime should select an archetype through character data rather than character-ID branching.
 
 Animation metadata should define:
 - source asset;
@@ -120,10 +124,11 @@ The same pipeline must support future characters.
 First integration order:
 1. portraits / Collection art;
 2. battle idle/static sprite replacement;
-3. hit + KO;
-4. Basic/Heavy/Special/Awakening VFX;
-5. persistent-area/status visual treatment;
-6. Chapter1 battlefield/background and stage preview art.
+3. locomotion animation when that character's locomotion gate opens;
+4. Basic/Heavy/Special/Awakening action micro-animation + matching VFX;
+5. hit + KO reactions when authorized;
+6. persistent-area/status visual treatment;
+7. Chapter1 battlefield/background and stage preview art.
 
 Do not block earlier steps on later assets.
 
