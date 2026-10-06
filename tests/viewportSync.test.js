@@ -39,3 +39,15 @@ test('visual viewport scroll/resize and pageshow refresh layout and input bounds
  e.win.visualViewport.height=330;e.win.dispatchEvent(new Event('pageshow'));assert.equal(e.root.style.height,'330px');
  sync.destroy();const last=measured;e.win.dispatchEvent(new Event('resize'));assert.equal(measured,last);
 });
+
+test('pageshow clamps a transient short Safari visual viewport without changing Arena canvas sizing',()=>{
+ const e=environment();const sync=installViewportSync(e.win,e.host,e.root);
+ Object.assign(e.win.visualViewport,{height:220,offsetTop:24});e.win.dispatchEvent(new Event('pageshow'));
+ assert.equal(e.root.style.height,'366px');
+ assert.equal(e.root.style.top,'24px');
+ assert.equal(e.host.style.height,'220px');
+ // Ordinary resize remains visualViewport-owned after the reload stabilization path.
+ e.win.visualViewport.height=330;e.win.dispatchEvent(new Event('resize'));
+ assert.equal(e.root.style.height,'330px');assert.equal(e.host.style.height,'330px');
+ sync.destroy();
+});
