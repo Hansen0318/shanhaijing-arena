@@ -16,5 +16,21 @@ Additional direct shared presenter check exposed stale tests predating the autho
 ## Surface contract
 P3 compact roster/grid/HUD → chiru.portrait; Team Select upper / Collection Detail → chiru.identity; Arena → chiru.battleIdle. Descriptor one region0,0,160,160; origin[.5,1], scale2 (canonical), staticFrame0. Transparent source padding supplies hover above bottom anchor; no actor-coordinate offsets or motion. All times resolve the same frame. Shared mirror/overhead HP/layout code unchanged and targeted contract tests PASS. No idleBreath/GIF/F1–F4 P3 assets.
 
-## Release pending
-Tested source SHA, Actions, Pages and public byte fingerprints to be recorded after deployment. Player-owned smoke: P3 Collection grid/detail, Team Select upper/lower, Arena and both HUD sides. No later art/motion gate authorized.
+## Release closure — ENGINEERING PASS / PLAYER SMOKE PENDING
+Tested/deployed source SHA `687b2cfe8a9a8cca943448576c732b312a947380`; exact source tree `f3cb4995667bf5f55374f98177b8b11327e16242` equals local checked build tree. CLI credential unavailable: authenticated connector saved equivalent blobs/tree, verified against local Git hashes. Complete WORK_PROGRESS history preserved. Independent bounded review found no important defects or unjustified edits.
+
+Actions #792 /37553399048: CI608/608, build112573975388 and Pages deploy112574089002 SUCCESS.
+https://github.com/Hansen0318/shanhaijing-arena/actions/runs/37553399048
+https://hansen0318.github.io/shanhaijing-arena/
+
+Public index names match local build; downloaded three bundles and three P3 PNGs compare byte-for-byte equal to dist. Public fingerprints:
+- index-fdOkQv-K.js: `51353c3ff1e052a34b00be1983431a979604846e17b51b79ae8662a15911aba6`
+- index-DcqtNRF0.css: `a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da`
+- battleRuntime-ZxZ2Uv6j.js: `b98ab573ea582af6f6e9d7cc7cdd2e78695640695ecb511e7aa093530a4fc582`
+- P3 PNG fingerprints equal asset table above.
+
+Public DOM: Collection P3 portrait loads128×128, Detail identity160×192; Team upper ally/enemy identity160×192 complete, animation:none, ally transform:none, enemy horizontal mirror matrix(-1,0,0,1,0,0). Lower portrait128×128 complete. No root horizontal overflow in Collection and no vertical overflow in Team at cloud viewport. No P3 placeholder captions on formal surfaces.
+
+Executable real AssetPresenter with Phaser Frame confirms P3 Arena texture chiru.battleIdle, source region0,0,160,160 unchanged at0/.4/.8/1.2/90s, origin[.5,1], current canonical display144×144, fixed authoritative actor positions, no snapshot mutation. Shared HUD mirror/overhead HP/static-menu/layout contracts covered by targeted tests; identical deployed runtime bytes establish the public contract. This does not claim phone visual acceptance or inspect hidden Phaser state through browser APIs.
+
+Final HEAD is this documentation-only closure commit (resolve the feature branch ref); tested source SHA above is the release artifact authority. Player-owned smoke: P3 Collection grid/detail, Team Select upper/lower, Arena and both HUD sides. No technical blocker. STOP; no breathing/locomotion/action/Hit/KO/VFX/next character/main merge.
