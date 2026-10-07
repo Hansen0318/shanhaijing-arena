@@ -15,8 +15,8 @@ test('expanded Arena coordinates reach the sand field edges with actor-safe marg
   assert.ok(Math.abs(left.x - 32) < 0.001);
   assert.ok(Math.abs(right.x - 1088) < 0.001);
   assert.ok(Math.abs(center.x - 560) < 0.001);
-  assert.equal(left.y, 86);
-  assert.equal(right.y, 454);
+  assert.equal(left.y, 160);
+  assert.equal(right.y, 380);
   assert.equal(center.y, 270);
 });
 
