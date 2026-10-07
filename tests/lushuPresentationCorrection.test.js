@@ -77,7 +77,7 @@ test('Team ally/enemy/bench and Collection card/Detail share static menu image b
  const {renderTeamSelect}=await import('../src/roster/view.js');const {TeamSelection}=await import('../src/roster/team.js');
  const page=element('section'),team=new TeamSelection({stage:{enemyLineup:['P1','P2','P3']},saved:['P1','P2','P3']});renderTeamSelect(page,team,{document:doc,stageId:'1-1'});
  const portraits=walk(page).filter(n=>n.dataset.assetKey==='lushu.portrait');assert.equal(portraits.length,1);
- for(const host of portraits)assert.ok(host.children.some(n=>n.tag==='img'&&n.src.endsWith('/portrait.png')));
+ for(const host of portraits)assert.ok(host.children.some(n=>n.tag==='img'&&n.src.endsWith('/portrait-face.png')));
  const collection=element('section'),view=new CollectionView(new CampaignController(),{document:doc});view.mount(collection);
  assert.equal(walk(collection).filter(n=>n.dataset.assetKey==='lushu.portrait').length,1);
  by(collection,n=>n.dataset.characterId==='P1').onclick();const full=by(collection,n=>n.dataset.assetKey==='lushu.identity');assert.ok(full.children.some(n=>n.tag==='img'&&n.src.endsWith('/identity.png')));
