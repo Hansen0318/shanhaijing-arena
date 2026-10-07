@@ -4,6 +4,7 @@
 **M5C-B PRESENTATION BASELINE — PASS / PLAYER VERIFIED**
 
 ## Current state
+- **赤鱬 static `battleIdle` — PASS / PLAYER APPROVED (2026-10-07).** Static Asset Pack is now 3/3 approved (`portraitSquare`, `collectionArt`, static `battleIdle`). The earlier accidental multi-frame sheets are invalid and must not be integrated. **Current gate: Static Runtime Readability / integration.** Future locomotion, action/Hit/KO and VFX remain closed.
 - **赤鱬 `collectionArt` — PASS / PLAYER APPROVED (2026-10-07).** Static Asset Pack progress is now 2/3. **Current exact item: one static `battleIdle` only.** Do not begin runtime integration, locomotion, action frames or VFX yet.
 - **赤鱬 `portraitSquare` — PASS / PLAYER APPROVED (2026-10-07).** Static Asset Pack progress is now 1/3. **Current exact item: `collectionArt` only.** Do not author static `battleIdle`, runtime integration, locomotion, action frames or VFX yet.
 - **赤鱬 Battle Simplification — PASS / PLAYER APPROVED (2026-10-07).** Player accepted the actual battle-scale simplified character direction. The project now advances to the Static Asset Pack under the one-asset-per-gate rule. **Current exact item: `portraitSquare` only.** Do not author `collectionArt`, static `battleIdle`, runtime integration, locomotion, action frames or VFX yet.
