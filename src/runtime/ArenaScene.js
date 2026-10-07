@@ -96,16 +96,18 @@ export class ArenaScene extends Phaser.Scene {
       0, 0, ARENA_STAGE.width, ARENA_STAGE.height, 0x8E7B5A,
     ).setOrigin(0, 0);
 
+    const arenaCenter = arenaToStage({ x: 5, y: 0 });
+
     this.add.line(
       0, 0,
-      ARENA_STAGE.width * 0.08, ARENA_STAGE.height / 2,
-      ARENA_STAGE.width * 0.92, ARENA_STAGE.height / 2,
+      ARENA_STAGE.width * 0.08, arenaCenter.y,
+      ARENA_STAGE.width * 0.92, arenaCenter.y,
       0x5F513B, 0.55,
     ).setOrigin(0, 0);
 
     this.add.ellipse(
-      ARENA_STAGE.width / 2,
-      ARENA_STAGE.height / 2,
+      arenaCenter.x,
+      arenaCenter.y,
       280,
       170,
     ).setStrokeStyle(2, 0x5F513B, 0.55);
