@@ -6,7 +6,7 @@ export const ARENA_STAGE = Object.freeze({
   yMin: -2,
   yMax: 2,
   horizontalPadding: 32,
-  verticalPadding: 86,
+  verticalPadding: 160,
 });
 
 export function arenaToStage({ x, y }) {
