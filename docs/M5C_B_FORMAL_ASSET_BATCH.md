@@ -86,6 +86,19 @@ After each character passes Batch 1A Static Runtime Readability:
 
 The previously explored/approved idle-frame assets may remain as historical/source evidence, but they are not an active production gate and must not drive current runtime presentation.
 
+### Player-approved near-term execution order — 2026-10-07
+
+Before returning to the remaining static character concepts, execute locomotion first for the three characters whose static runtime is already accepted:
+1. 鹿蜀 — Agile Humanoid locomotion;
+2. 猼訑 — Guard Humanoid locomotion;
+3. 赤鱬 — Aquatic Hover Humanoid locomotion.
+
+Each locomotion gate is reviewed independently, but all three must use reusable archetype/state architecture rather than character-ID engine branches.
+
+After all three locomotion slices are player/runtime verified, begin **Basic action animation + matching Basic VFX** as the first action/VFX vertical slice. Do not expand immediately to Heavy / Special / Awakening until the Basic pipeline proves state transition, facing, timing, effect attachment, recovery-to-static-idle and reduced-motion fallback.
+
+九尾狐 Concept and 狌狌 Concept are temporarily deferred until this locomotion + Basic action/VFX vertical slice is stable.
+
 ### Batch 1C — Locomotion animation pack
 Only after a character's static runtime presentation is approved and when locomotion production is explicitly opened:
 - classify the character as a reusable locomotion archetype before authoring frames;
