@@ -194,10 +194,6 @@ Current written directions are sufficiently differentiated to continue gated cha
 
 Accepted closed static gates:
 - 鹿蜀 — formal identity/static runtime accepted;
-- 猼訑 — formal identity/static runtime accepted; Idle breathing withdrawn.
-
-Accepted closed static gates:
-- 鹿蜀 — formal identity/static runtime accepted;
 - 猼訑 — formal identity/static runtime accepted; Idle breathing withdrawn;
 - 赤鱬 — revised Concept, Battle Simplification, Static Asset Pack and Static Runtime Readability all PASS / PLAYER VERIFIED; Idle remains static.
 
