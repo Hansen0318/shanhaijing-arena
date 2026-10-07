@@ -213,6 +213,22 @@ Do not tune final numeric balance yet. Use relative intent and bounded prototype
 After M5A approval, Work maps the approved content into the existing data-driven catalog, stage configs, rewards, Collection detail and battle definitions. Preserve existing engine contracts; no bespoke per-character combat engine.
 
 ## M5C — Art / Animation / VFX Integration
+### Player-approved production reorder — 2026-10-07
+
+Before resuming the remaining Chapter1 static character concepts, validate the motion/action pipeline on the three characters whose static runtime presentation is already player-verified.
+
+Authoritative short-term order:
+1. 鹿蜀 locomotion vertical slice;
+2. 猼訑 locomotion vertical slice;
+3. 赤鱬 locomotion vertical slice;
+4. player/runtime verification of the three reusable locomotion archetypes;
+5. Basic action micro-animation + matching Basic VFX vertical slice for those characters;
+6. only after the Basic action/VFX pipeline is stable, expand to Heavy / Special / Awakening;
+7. then return to 九尾狐 Concept and later 狌狌.
+
+This reorder does not reopen idle breathing. Idle presentation remains static. Locomotion/action/VFX remain presentation-only and must not change authoritative movement, collision, targeting, AI, telegraph geometry, ability timing or combat math.
+
+
 
 After formal data is stable, replace placeholders with approved visual assets in bounded slices. Current idle presentation remains static. Later motion work is split into creature-appropriate locomotion animation plus state-specific attack/cast micro-animation paired with skill VFX. AI tactical variation may be introduced alongside formal character profiles when needed, but must remain shared-engine/profile-driven.
 
