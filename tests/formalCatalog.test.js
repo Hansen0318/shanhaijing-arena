@@ -9,3 +9,25 @@ rows.forEach(([id,name,type,role,maxHp,atk,def,moveSpeed,attackSpeed,h,s,a],i)=>
  test(`${id} approved identity and exact T0 stats`,()=>{const d=rosterCatalog[id];assert.deepEqual([d.name,d.type,d.role],[name,type,role]);assert.deepEqual(d.stats,{maxHp,atk,def,moveSpeed,attackSpeed});assert.equal(d.portrait.label,name);assert.ok(d.lore);assert.ok(d.combatSummary);});
  test(`${id} unique immutable kit with exact names and cooldowns`,()=>{const d=rosterCatalog[id];['basic','heavy','special','awakening','passive'].forEach((category,j)=>{const ability=formal.formalAbilityDefinitions[category==='passive'?d.abilities.passives[0]:d.abilities[category]];assert.equal(ability.name,names[i][j]);assert.equal(ability.category,category);assert.ok(Object.isFrozen(ability));assert.ok(Object.isFrozen(ability.effect));if(j<4){assert.equal(ability.cooldown,[0,h,s,a][j]);assert.throws(()=>{ability.maxRange=100;},TypeError);}});});
 });
+
+test('P3 approved static pack resolves all surfaces without breathing or extra frames',async()=>{
+ const {resolveCharacterAsset}=await import('../src/assets/resolver.js');
+ const {characterAnimation}=await import('../src/assets/battleDescriptors.js');
+ const {animationFrame}=await import('../src/assets/playback.js');
+ const p3=rosterCatalog.P3;
+ for(const [slot,key,width,height,bytes] of [
+  ['portraitSquare','chiru.portrait',128,128,39490],
+  ['collectionArt','chiru.identity',160,192,53023],
+  ['battleIdle','chiru.battleIdle',160,160,44131],
+ ]){
+  const asset=resolveCharacterAsset(p3,slot);
+  assert.equal(asset.key,key);assert.equal(asset.type,'image');
+  assert.deepEqual([asset.width,asset.height,asset.bytes],[width,height,bytes]);
+ }
+ const idle=characterAnimation(p3,'battleIdle');
+ assert.equal(idle.source,'chiru.battleIdle');
+ assert.deepEqual(idle.frames,[{x:0,y:0,width:160,height:160}]);
+ assert.deepEqual(idle.origin,[.5,1]);assert.equal(idle.scale,2);assert.equal(idle.staticFrame,0);
+ for(const elapsed of [0,400,1000,90000])assert.deepEqual(animationFrame(idle,elapsed).region,idle.frames[0]);
+ assert.equal(p3.idleBreath,undefined);
+});

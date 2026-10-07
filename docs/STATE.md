@@ -4,6 +4,7 @@
 **M5C-B PRESENTATION BASELINE — PASS / PLAYER VERIFIED**
 
 ## Current state
+- **P3 赤鱬 STATIC RUNTIME — SOURCE / TARGETED CHECKS COMPLETE, RELEASE PENDING (2026-10-07).** Approved three PNGs integrated through shared M5C-A manifest/catalog, single static160×160 frame, bottom-center origin[.5,1], canonical scale2. Targeted81/81, guard46 files/362673 bytes, build/diff PASS. Minimum stale static/placeholder test expectations updated; no P1/P2 production, gameplay/layout/engine edits. Evidence: `docs/verification/M5C_B_CHIRU_STATIC_RUNTIME.md`. Remaining: feature commit/push, Actions/Pages, public technical fingerprint, then player phone smoke. STOP before motion/actions/VFX/next character; no main merge.
 - **赤鱬 static `battleIdle` — PASS / PLAYER APPROVED (2026-10-07).** Static Asset Pack is now 3/3 approved (`portraitSquare`, `collectionArt`, static `battleIdle`). The earlier accidental multi-frame sheets are invalid and must not be integrated. **Current gate: Static Runtime Readability / integration.** Future locomotion, action/Hit/KO and VFX remain closed.
 - **赤鱬 `collectionArt` — PASS / PLAYER APPROVED (2026-10-07).** Static Asset Pack progress is now 2/3. **Current exact item: one static `battleIdle` only.** Do not begin runtime integration, locomotion, action frames or VFX yet.
 - **赤鱬 `portraitSquare` — PASS / PLAYER APPROVED (2026-10-07).** Static Asset Pack progress is now 1/3. **Current exact item: `collectionArt` only.** Do not author static `battleIdle`, runtime integration, locomotion, action frames or VFX yet.

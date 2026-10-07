@@ -9,12 +9,12 @@ import {resolveCharacterAsset,encounterAssetKeys} from '../src/assets/resolver.j
 import {AssetPresenter} from '../src/runtime/assetPresenter.js';
 import {createAssetCache} from '../src/runtime/assetCache.js';
 const key='lushu.battleIdle';
-test('approved idle resolves four equal frames with a fixed ground origin and static fallback',()=>{
+test('approved idle resolves static F1 with a fixed ground origin and static fallback',()=>{
  const d=characterAnimation(rosterCatalog.P1,'battleIdle');
  assert.equal(resolveCharacterAsset(rosterCatalog.P1,'battleIdle').key,key);
- assert.equal(d.source,key);assert.equal(d.frames.length,4);
+ assert.equal(d.source,key);assert.equal(d.frames.length,1);
  assert.deepEqual(d.origin,[.5,691/724]);assert.equal(d.scale,2);
- for(let i=0;i<4;i++){
+ for(let i=0;i<1;i++){
   assert.deepEqual(d.frames[i],{x:i*96,y:0,width:96,height:128});
   assert.equal(animationFrame(d,i/d.fps+.001).index,i);
  }
@@ -22,7 +22,7 @@ test('approved idle resolves four equal frames with a fixed ground origin and st
  assert.equal(animationFrame(d,.6,true).index,0);
  for(const state of ['battleHit','battleKo','battleCast'])assert.equal(characterAnimation(rosterCatalog.P1,state).source,'placeholder.battle');
  assert.equal(characterAnimation(rosterCatalog.P2,'battleIdle').source,'botuo.battleIdle');
- for(const c of Object.values(rosterCatalog).slice(2))assert.equal(characterAnimation(c,'battleIdle').source,'placeholder.battle');
+ for(const c of Object.values(rosterCatalog).slice(3))assert.equal(characterAnimation(c,'battleIdle').source,'placeholder.battle');
 });
 test('runtime PNG is RGBA, bounded and encounter-only, never a menu image',async()=>{
  const a=assetManifest[key];assert.ok(a);
@@ -50,9 +50,9 @@ test('real presenter loop freezes on battle time, resumes, exits hit/KO safely a
  const cache=createAssetCache({transport:async record=>({image:{width:record.width,height:record.height},bytes:100})});
  const p=new AssetPresenter(s,{cache});await p.prepare([rosterCatalog.P1]);
  const frame={allies:[{instanceId:'a1',definitionId:'P1',x:3,y:2,hp:245}],enemies:[]};const before=structuredClone(frame);
- for(let i=0;i<4;i++){
+ for(let i=0;i<1;i++){
   p.render(frame,i*.4,rosterCatalog);const image=p.actorSprites.get('a1');
-  assert.equal(image.frame,`${i*96}.0.96.128`);assert.deepEqual(image.origin,[.5,691/724]);assert.deepEqual(image.size,[108,144]);assert.deepEqual([image.x,image.y],[3,2]);
+  assert.equal(image.frame,`0.0.96.128`);assert.deepEqual(image.origin,[.5,691/724]);assert.deepEqual(image.size,[108,144]);assert.deepEqual([image.x,image.y],[3,2]);
  }
  const frozen=p.actorSprites.get('a1').frame;p.render(frame,1.2,rosterCatalog);assert.equal(p.actorSprites.get('a1').frame,frozen);
  p.render(frame,1.6,rosterCatalog);assert.equal(p.actorSprites.get('a1').frame,'0.0.96.128');assert.deepEqual(frame,before);

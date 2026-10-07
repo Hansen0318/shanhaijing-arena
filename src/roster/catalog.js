@@ -20,6 +20,13 @@ const presentation={
    fps:2.5,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
   })}),
  },
+ P3:{
+  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'chiru.portrait',collectionArt:'chiru.identity',battleIdle:'chiru.battleIdle'}),
+  animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
+   source:'chiru.battleIdle',frames:[{x:0,y:0,width:160,height:160}],
+   fps:2.5,loop:true,origin:[.5,1],scale:2,staticFrame:0,
+  })}),
+ },
 };
 const characters=[
  ['P1','鹿蜀','speed','attacker',245,18,5,2.05,1.15,'#477b9e','快速近戰切入與移位攻擊。','南山異獸，以迅捷與靈動著稱；戰場上善於快速切入與改變攻擊角度。','mobile_skirmisher'],

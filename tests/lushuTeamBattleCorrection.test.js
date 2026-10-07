@@ -46,13 +46,13 @@ test('upper and Collection retire formal placeholder names while lower roster pr
  const p2=all.find(n=>n.dataset.characterId==='P2');assert.ok(walk(p2).some(n=>n.className==='matchup-identity'));
  const {CollectionView}=await import('../src/collection/view.js'),{CampaignController}=await import('../src/campaign/controller.js');const doc={createElement(tag){const n=node(tag);n.replaceChildren=(...v)=>n.children=v;n.addEventListener=()=>{};return n;}},collection=doc.createElement('main');new CollectionView(new CampaignController(),{document:doc}).mount(collection);
  const formalP1=walk(collection).find(n=>n.dataset.characterId==='P1'),formalP2=walk(collection).find(n=>n.dataset.characterId==='P2'),placeholder=walk(collection).find(n=>n.dataset.characterId==='P3');
- assert.equal(walk(formalP1).some(n=>n.className==='collection-name'),false);assert.equal(walk(formalP2).some(n=>n.className==='collection-name'),false);assert.ok(walk(placeholder).some(n=>n.className==='collection-name'&&n.textContent==='赤鱬'));
+ assert.equal(walk(formalP1).some(n=>n.className==='collection-name'),false);assert.equal(walk(formalP2).some(n=>n.className==='collection-name'),false);assert.equal(walk(placeholder).some(n=>n.className==='collection-name'),false);assert.ok(walk(placeholder).some(n=>n.tag==='img'&&n.src.includes('chiru/portrait.png')));
 });
 
 
 test('future formal KO slot and animation descriptor replace static idle fallback without a new PNG',async()=>{
  for(const customDescriptor of [false,true]){
-  const s=scene(),p=new AssetPresenter(s,{cache}),character={...rosterCatalog.P1,assets:{...rosterCatalog.P1.assets,battleKo:'lushu.identity'},animationDescriptors:{...rosterCatalog.P1.animationDescriptors,...(customDescriptor?{battleKo:{...rosterCatalog.P1.animationDescriptors.battleIdle,loop:false,staticFrame:3}}:{})}};
+  const s=scene(),p=new AssetPresenter(s,{cache}),character={...rosterCatalog.P1,assets:{...rosterCatalog.P1.assets,battleKo:'lushu.identity'},animationDescriptors:{...rosterCatalog.P1.animationDescriptors,...(customDescriptor?{battleKo:{...rosterCatalog.P1.animationDescriptors.battleIdle,frames:Array.from({length:4},(_,i)=>({x:i*96,y:0,width:96,height:128})),loop:false,staticFrame:3}}:{})}};
   await p.prepare([character]);const actor={instanceId:'a1',definitionId:'P1',x:2,y:1,hp:245},frame={allies:[actor],enemies:[]};p.render(frame,0,{P1:character});actor.hp=0;const before=JSON.stringify(frame);p.render(frame,.1,{P1:character});const image=p.actorSprites.get('a1');
   assert.equal(p.states.get('a1').state,'battleKo');assert.equal(p.states.get('a1').descriptor.source,customDescriptor?'lushu.battleIdle':'lushu.identity');
   if(customDescriptor){p.render(frame,1.3,{P1:character});assert.equal(image.Texture[1],'288.0.96.128');}else assert.ok(image.Texture[0].endsWith('lushu.identity'));

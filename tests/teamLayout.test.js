@@ -12,10 +12,10 @@ test('upper matchup retires formal slot captions and retains all six accessible 
  const upper=walk(page).find(n=>n.className==='team-matchup');
  const nodes=walk(upper);
  assert.equal(nodes.filter(n=>n.className==='type-mark').length,0);
- assert.deepEqual(nodes.filter(n=>n.dataset.slot).map(n=>walk(n).find(c=>c.className==='slot-caption')?.textContent),[undefined,'SLOT 2 · FRONT','SLOT 3']);
- assert.deepEqual(nodes.filter(n=>n.dataset.enemyId).map(n=>walk(n).find(c=>c.className==='slot-caption')?.textContent),['E1',undefined,'E3']);
+ assert.deepEqual(nodes.filter(n=>n.dataset.slot).map(n=>walk(n).find(c=>c.className==='slot-caption')?.textContent),[undefined,undefined,'SLOT 3']);
+ assert.deepEqual(nodes.filter(n=>n.dataset.enemyId).map(n=>walk(n).find(c=>c.className==='slot-caption')?.textContent),['E1',undefined,undefined]);
  assert.equal(nodes.filter(n=>n.className==='lineup-figure').length,6);
- assert.equal(nodes.filter(n=>n.className==='matchup-identity').length,4);
+ assert.equal(nodes.filter(n=>n.className==='matchup-identity').length,2);
  assert.ok(walk(page).some(n=>n.textContent==='BATTLE'));
  assert.equal(walk(page).some(n=>n.className==='team-status'),false);
  assert.ok(walk(page).find(n=>n.textContent==='BACK').className.includes('screen-back'));
@@ -23,7 +23,7 @@ test('upper matchup retires formal slot captions and retains all six accessible 
 test('forced front slot keeps short formation identity and accessible REQUIRED metadata without a taller title',()=>{
  const page=element('section'),team=new TeamSelection({stage:{...findStage('1-1'),forcedCharacters:['P3']},saved:['P1','P3','P5']});
  renderTeamSelect(page,team,{document:{createElement:element},stageId:'1-1'});
- const slot=walk(page).find(n=>n.dataset.slot==='2');assert.equal(walk(slot).find(n=>n.className==='slot-caption').textContent,'SLOT 2 · FRONT');
+ const slot=walk(page).find(n=>n.dataset.slot==='2');assert.equal(walk(slot).find(n=>n.className==='slot-caption'),undefined);
  assert.ok(slot['aria-label'].includes('REQUIRED'));assert.ok(walk(slot).some(n=>n.className==='required-slot-mark'));
  slot.onclick();assert.deepEqual(team.slots,['P1','P3','P5']);
 });

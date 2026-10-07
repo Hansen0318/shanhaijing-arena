@@ -26,12 +26,12 @@ test('approved static portrait/full identity resolve through shared slots, retai
  assert.equal(resolveCharacterAsset(rosterCatalog.P2,'portraitSquare').key,'botuo.portrait');
  assert.equal(resolveCharacterAsset(rosterCatalog.P2,'collectionArt').key,'botuo.identity');
  assert.equal(resolveCharacterAsset(rosterCatalog.P2,'battleIdle').key,'botuo.battleIdle');
- assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.frames.length,4);
- assert.deepEqual(rosterCatalog.P2.animationDescriptors.battleIdle.frames,Array.from({length:4},(_,i)=>({x:i*160,y:0,width:160,height:160})));
+ assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.frames.length,1);
+ assert.deepEqual(rosterCatalog.P2.animationDescriptors.battleIdle.frames,Array.from({length:1},(_,i)=>({x:i*160,y:0,width:160,height:160})));
  assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.fps,2.5);
  assert.deepEqual(rosterCatalog.P2.animationDescriptors.battleIdle.origin,[.5,158/160]);
  assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.scale,2);
- assert.equal(resolveCharacterAsset(rosterCatalog.P3,'portraitSquare').type,'procedural');
+ assert.equal(resolveCharacterAsset(rosterCatalog.P3,'portraitSquare').key,'chiru.portrait');
 });
 function scene(){const images=[],textures=new Map();return {images,textures:{addImage(k){textures.set(k,{has:()=>true});},get:k=>textures.get(k),remove:k=>textures.delete(k)},add:{graphics(){const v={destroy(){this.destroyed=true;}};for(const k of ['setPosition','setDepth','setAlpha','setScale','clear','lineStyle','lineBetween','fillStyle','fillCircle','strokeCircle'])v[k]=()=>v;return v;},image(){const v={};for(const k of ['setTexture','setOrigin','setScale','setVisible','setDisplaySize','setPosition','setDepth','setAlpha','setFlipX'])v[k]=(...a)=>{v[k.slice(3)]=a;return v;};v.destroy=()=>v.destroyed=true;images.push(v);return v;}}};}
 test('static-first enlarged sprites mirror shared motion without moving actor/origin, retain facing at rest',async()=>{
@@ -43,9 +43,9 @@ test('static-first enlarged sprites mirror shared motion without moving actor/or
   for(const actor of [a,e]){const image=p.actorSprites.get(actor.instanceId);assert.deepEqual(image.FlipX,[flip]);assert.deepEqual(image.Origin,[.5,691/724]);assert.deepEqual(image.Position,[actor.x,actor.y]);}
   assert.deepEqual(frame,before);
  }
- // Re-enable the same loop after static-size validation; all four mirrored cells survive.
+ // Reduced-motion changes cannot reopen idle playback; F1 stays mirrored.
  p.reducedMotion=false;a.x-=.1;p.render(frame,0,rosterCatalog);
- for(let i=0;i<4;i++){p.render(frame,i*.4+.001,rosterCatalog);const image=p.actorSprites.get('a1');assert.equal(image.Texture[1],`${i*96}.0.96.128`);assert.deepEqual(image.FlipX,[true]);}
+ for(let i=0;i<4;i++){p.render(frame,i*.4+.001,rosterCatalog);const image=p.actorSprites.get('a1');assert.equal(image.Texture[1],`0.0.96.128`);assert.deepEqual(image.FlipX,[true]);}
  p.destroy();assert.equal(p.facings.size,0);assert.ok(s.images.every(i=>i.destroyed));
 });
 test('same-route Detail close preserves grid scroll/focus and normalizes only root plus visualViewport',()=>{
