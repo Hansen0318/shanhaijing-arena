@@ -196,17 +196,22 @@ Accepted closed static gates:
 - 鹿蜀 — formal identity/static runtime accepted;
 - 猼訑 — formal identity/static runtime accepted; Idle breathing withdrawn.
 
-Current next character gate:
-- **赤鱬 Concept**.
+Accepted closed static gates:
+- 鹿蜀 — formal identity/static runtime accepted;
+- 猼訑 — formal identity/static runtime accepted; Idle breathing withdrawn;
+- 赤鱬 — revised Concept, Battle Simplification, Static Asset Pack and Static Runtime Readability all PASS / PLAYER VERIFIED; Idle remains static.
 
-After 赤鱬 Concept approval:
+Current next character gate:
+- **九尾狐 Concept**.
+
+After 九尾狐 Concept approval:
 1. Battle Simplification;
 2. Static Asset Pack (`portraitSquare`, `collectionArt`, static `battleIdle`);
 3. Static Runtime Readability;
 4. keep Idle static;
 5. later locomotion/action/VFX gates only when explicitly opened.
 
-九尾狐 and 狌狌 remain later Concept gates.
+狌狌 remains the later Concept gate.
 
 No image generation happens merely from a generic "continue". Generate the next concept image only after the player explicitly asks to see it or explicitly authorizes the image gate.
 
