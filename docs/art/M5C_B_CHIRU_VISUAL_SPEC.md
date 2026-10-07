@@ -354,3 +354,46 @@ Requirements:
 - no locomotion/action/Hit/KO content.
 
 After player approval of this static `battleIdle`, the Static Asset Pack becomes 3/3 and the next gate is Static Runtime Readability / integration.
+
+
+## 20. static battleIdle approval — 2026-10-07
+
+Status: **PASS / PLAYER APPROVED**.
+
+The player accepted the single static 赤鱬 battle still.
+
+Locked battle presentation:
+- one actor only;
+- one static pose only;
+- transparent PNG;
+- compact Aquatic Hover Humanoid support stance;
+- fish/aquatic head + gill/fin silhouette remains Tier-1 identity;
+- one or two major fin masses only;
+- large coral/red + pearl/cream blocks with restrained aqua/teal support cue;
+- head, arms, torso and major fins remain separated by readable negative space;
+- no animation frames;
+- no sprite sheet;
+- no large VFX composition.
+
+The accidentally generated multi-frame/F1–F4 sheets during this gate are explicitly **INVALID / NON-PRODUCTION** and must not be integrated or treated as approval evidence.
+
+Static Asset Pack is now **3/3 approved**:
+- `portraitSquare`: PASS;
+- `collectionArt`: PASS;
+- static `battleIdle`: PASS.
+
+### Next gate — Static Runtime Readability / integration
+
+Integrate only the three approved static assets through the existing M5C-A asset pipeline and verify real game presentation on Team Select / Collection / Battle HUD / Arena.
+
+Required runtime checks:
+- compact portrait framing remains face-first;
+- Team Select / Collection full-body identity uses approved `collectionArt`;
+- Arena uses the approved static `battleIdle` only;
+- enemy portrait mirroring follows the shared rule;
+- overhead ally/enemy HP remains synchronized and correctly colored;
+- silhouette/value/color separation survives real mobile scale;
+- no placeholder residue or outer-layout regression;
+- no idle/breathing loop is introduced.
+
+Locomotion, action/cast, Hit/KO and VFX remain blocked until this runtime gate is player-verified.
