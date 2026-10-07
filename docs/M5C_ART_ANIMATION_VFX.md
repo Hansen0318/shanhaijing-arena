@@ -132,6 +132,22 @@ First integration order:
 
 Do not block earlier steps on later assets.
 
+## 7A. Player-approved short-term production order — 2026-10-07
+
+The current short-term M5C order is intentionally motion-first for the already accepted static characters:
+
+1. 鹿蜀 locomotion;
+2. 猼訑 locomotion;
+3. 赤鱬 locomotion;
+4. verify reusable locomotion state architecture and player-facing motion quality;
+5. Basic action micro-animation + matching Basic VFX vertical slice;
+6. after Basic is proven, extend the same pipeline to Heavy / Special / Awakening;
+7. resume 九尾狐 and 狌狌 static production afterward.
+
+Rationale: validate movement/action state transitions and reusable animation architecture before multiplying art across the remaining roster.
+
+Idle remains static. Hit/KO remain later gates. Locomotion/action/VFX must never alter gameplay state, coordinates, speed, collision, targeting, AI, telegraph geometry, ability timing or combat math.
+
 ## 8. Battle presentation
 
 Preserve:
