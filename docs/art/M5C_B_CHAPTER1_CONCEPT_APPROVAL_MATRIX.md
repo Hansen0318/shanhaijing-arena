@@ -108,7 +108,7 @@ Primary direction:
 **floating healing-water orb + compact ring focus/bracer**. This keeps the hands expressive, gives future VFX a clear source point, fits hover locomotion, and avoids a generic staff-mage silhouette.
 
 Current status:
-**CONCEPT REVISION REQUIRED / PLAYER APPROVAL PENDING.** Exploratory images were reviewed and rejected because they read too human-mage/water-spirit, carried too much trailing/detail density, and were not sufficiently Shanhaijing-creature-first at battle scale. Core Aquatic Hover Humanoid / Blast Support direction remains; visual execution must be simplified and made more creature-derived.
+**PASS / PLAYER VERIFIED for formal 赤鱬 identity/static runtime.** Revised creature-first Concept, Battle Simplification, portraitSquare, collectionArt, static battleIdle and Static Runtime Readability have all passed player review. Idle remains static; later locomotion/action/VFX gates remain separate.
 
 ### 九尾狐
 Before image generation, preserve:
@@ -164,6 +164,6 @@ When all five concepts are approved, perform the five-character comparison gate 
 
 ## Immediate next action
 
-Continue with **赤鱬 Concept direction**. 鹿蜀 and 猼訑 formal identity/static-runtime gates are already accepted and must not be reopened.
+Continue with **九尾狐 Concept direction**. 鹿蜀、猼訑、赤鱬 formal identity/static-runtime gates are already accepted and must not be reopened.
 
-For 赤鱬, revise and generate/review one Concept image only under the existing creature-first + mobile-readability hard rules. Do not author portraitSquare, collectionArt, battleIdle, locomotion frames, action frames or VFX before the revised Concept is explicitly player-approved.
+For 九尾狐, generate/review one Concept image only under the existing creature-first + mobile-readability hard rules. Preserve fox-derived head/face, readable nine-tail identity, Blast / Attacker offensive caster posture, and strong separation from 赤鱬/鹿蜀. Do not author portraitSquare, collectionArt, battleIdle, locomotion frames, action frames or VFX before the 九尾狐 Concept is explicitly player-approved.
