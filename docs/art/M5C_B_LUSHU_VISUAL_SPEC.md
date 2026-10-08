@@ -278,3 +278,89 @@ Because 鹿蜀 has already completed its current accepted presentation slice, th
 - KO may hide the overhead bar.
 
 This is a presentation correction only. Do not redesign 鹿蜀 identity, idle animation, combat stats, hitbox, targeting, AI, Tier, rewards or progression.
+
+
+## Locomotion gate — 2026-10-08
+
+Status: **ACTIVE — CHAT AUTHORING / PLAYER REVIEW PENDING**.
+
+The old §9 breathing-idle proposal is **SUPERSEDED / NON-PRODUCTION**. Current idle remains the approved static F1 only. Do not restore breathing or idle frame playback.
+
+### Canonical source
+
+Locomotion must derive from the currently deployed battle identity, specifically the approved first frame of `lushu.battleIdle` from `public/assets/characters/lushu/battleIdle-4f.png`.
+
+Do not redesign the character and do not derive locomotion by downscaling `collectionArt`.
+
+Locked during movement authoring:
+- white horse/deer-derived mythic head;
+- current horn/antler geometry;
+- current tawny/white/charcoal/vermilion palette;
+- current clothing / compact melee equipment;
+- single vermilion tail;
+- current battle-scale simplification/detail density;
+- current actor proportions and ground/hoof baseline.
+
+### Move asset structure
+
+Target first pass:
+- one transparent horizontal PNG sprite strip;
+- 4 frames;
+- each frame **96×128**;
+- total strip **384×128**;
+- shared bottom/hoof anchor across all frames;
+- no frame may move the character horizontally inside its cell;
+- runtime facing uses horizontal mirror; do not author a second left-facing strip.
+
+### Frame choreography
+
+**Move F1 — Contact A**
+- left leg forward / right leg back;
+- right arm counters the forward left leg;
+- torso leans slightly into travel;
+- red tail trails opposite the travel impulse;
+- head remains stable and readable.
+
+**Move F2 — Passing / Compression**
+- legs pass near one another;
+- support leg carries the center of mass;
+- torso lowers slightly;
+- arms pass through neutral counter-swing;
+- tail remains one beat behind the torso.
+
+**Move F3 — Contact B**
+- right leg forward / left leg back;
+- arm counter-motion reverses from F1;
+- torso shifts weight to the opposite side;
+- tail follows through without becoming a second silhouette mass.
+
+**Move F4 — Passing / Rebound**
+- legs pass again toward F1;
+- torso rebounds slightly upward;
+- arms recover toward the next stride;
+- tail / clothing / compact equipment complete restrained follow-through.
+
+Loop: **F1 → F2 → F3 → F4 → F1**.
+
+### Motion readability hard rules
+
+At runtime scale the movement must read as actual agile locomotion, not image toggling or whole-sprite sliding:
+- visible alternating leg action;
+- readable arm counter-motion;
+- torso / weight shift;
+- single-tail follow-through;
+- no exaggerated vertical hopping;
+- no attack pose or attack VFX mixed into this asset;
+- no actor-coordinate ownership by animation.
+
+Initial playback target: **8–10 fps**, tunable in runtime without redrawing.
+
+Stopping movement returns immediately to the approved static `battleIdle` F1.
+
+### Gameplay protection
+
+The locomotion state is presentation-only and must not change movement speed, actor coordinates, collision, targeting, AI, telegraph geometry, ability timing, combat math, Tier, rewards or progression.
+
+### Gate
+
+This first 4-frame locomotion strip requires explicit player visual approval before runtime integration. Until approved, do not add `battleMove` to the production manifest/catalog and do not open 猼訑 locomotion.
