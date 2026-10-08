@@ -67,18 +67,28 @@ export class AssetPresenter{
   if(this.closed)return;const actors=[...frame.allies,...frame.enemies],alive=new Set(actors.filter(a=>a.hp>0).map(a=>a.instanceId)),positions=new Map(actors.map(a=>[a.instanceId,this.project(a)]));
   const stage=this.textures.get(this.stageAssetKey);if(stage&&!this.stageDisplay)this.stageDisplay=this.scene.add.image(0,0,stage.key).setOrigin(0,0).setDisplaySize(1120,540).setDepth(1);
   for(const actor of actors){const id=actor.instanceId,character=definitions[actor.definitionId];let state=this.states.get(id);
-   const previous=this.facings.get(id),dx=previous?actor.x-previous.x:0,actionFacing=this.actionFacings.get(id);
+   const previous=this.facings.get(id),dx=previous?actor.x-previous.x:0,dy=previous?actor.y-previous.y:0,actionFacing=this.actionFacings.get(id);
    if(actionFacing && now>actionFacing.until)this.actionFacings.delete(id);
    // Facing priority: current attack/cast direction > movement direction > last facing/default team direction.
    const activeAction=this.actionFacings.get(id);
    const flipX=activeAction?activeAction.flipX:dx>1e-6?false:dx< -1e-6?true:previous?.flipX??frame.enemies.includes(actor);
-   this.facings.set(id,{x:actor.x,flipX});
+   // Derive presentation-only motion from copied authoritative XY snapshots.
+   // Duplicate simulation time (Pause/countdown/sub-step render) must not reset a stride.
+   const displaced=Math.hypot(dx,dy)>1e-6;
+   const moving=actor.hp>0&&Boolean(previous)&&(displaced||now===previous.now&&previous.moving);
+   this.facings.set(id,{x:actor.x,y:actor.y,now,moving,flipX});
+   const idle=characterAnimation(character,'battleIdle');
+   const move=character?.animationDescriptors?.battleMove?characterAnimation(character,'battleMove'):null;
+   const baseState=moving&&move&&this.textures.has(move.source)?'battleMove':'battleIdle';
+   const base=baseState==='battleMove'?move:idle;
    if(actor.hp<=0&&state?.state!=='battleKo'){this.setState(id,characterAnimation(character,'battleKo'),now,'battleKo');state=this.states.get(id);}
-   else if(!state||actor.hp>0&&state.state!=='battleIdle'&&state.state!=='inspection'&&animationFrame(state.descriptor,now-state.start).finished){this.setState(id,characterAnimation(character,'battleIdle'),now,'battleIdle');state=this.states.get(id);}
+   else if(!state||actor.hp>0&&state.state!=='inspection'&&(
+    ['battleIdle','battleMove'].includes(state.state)?state.state!==baseState:animationFrame(state.descriptor,now-state.start).finished
+   )){this.setState(id,base,now,baseState);state=this.states.get(id);}
    // Missing optional transient art must not freeze a living authored Idle on F1.
    // Living Hit/Cast fallback keeps the Idle loop moving; KO fallback remains static.
-   const idle=characterAnimation(character,'battleIdle'),formalState=this.textures.has(state.descriptor.source);
-   const descriptor=formalState?state.descriptor:idle,elapsed=formalState?now-state.start:actor.hp>0?now:0;
+   const formalState=this.textures.has(state.descriptor.source);
+   const descriptor=formalState?state.descriptor:actor.hp>0?base:idle,elapsed=formalState?now-state.start:actor.hp>0?now:0;
    const image=this.imageFor(id,descriptor,elapsed);
    if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?animationFrame(descriptor,elapsed,this.reducedMotion).region:null,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(72*descriptor.scale*w/Math.max(w,h),72*descriptor.scale*h/Math.max(w,h)).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
    else this.actorSprites.get(id)?.setVisible(false); // Arena's procedural marker remains visible.

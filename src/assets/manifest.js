@@ -3,6 +3,7 @@ const entries=[
  {key:'lushu.portrait',type:'image',path:'assets/characters/lushu/portrait-face.png',width:128,height:128,bytes:35172,fallback:'placeholder.portrait'},
  {key:'lushu.identity',type:'image',path:'assets/characters/lushu/identity.png',width:144,height:192,bytes:35708,fallback:'placeholder.portrait'},
  {key:'lushu.battleIdle',type:'image',path:'assets/characters/lushu/battleIdle-4f.png',width:384,height:128,bytes:70848,fallback:'placeholder.battle'},
+ {key:'lushu.battleMove',type:'image',path:'assets/characters/lushu/battleMove-4f.png',width:384,height:128,bytes:54317,fallback:'placeholder.battle'},
  {key:'botuo.portrait',type:'image',path:'assets/characters/botuo/portrait.png',width:128,height:128,bytes:32501,fallback:'placeholder.portrait'},
  {key:'botuo.identity',type:'image',path:'assets/characters/botuo/identity.png',width:160,height:192,bytes:14098,fallback:'placeholder.portrait'},
  {key:'botuo.battleIdle',type:'image',path:'assets/characters/botuo/battleIdle-4f.png',width:640,height:160,bytes:31355,fallback:'placeholder.battle'},

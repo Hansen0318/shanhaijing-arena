@@ -8,7 +8,7 @@ export function resolveCharacterAsset(character,slot,options={}){return resolveA
 export function assetUrl(record,base=import.meta.env?.BASE_URL??'/'){return record?.path?`${base.endsWith('/')?base:base+'/'}${record.path}`:null;}
 export function resolvePreview(path){return resolveAsset(Object.values(assetManifest).find(a=>a.path===path)?.key,{fallback:'placeholder.stage'});}
 export function encounterAssetKeys(definitions,stage={}){
- const slots=['battleIdle','battleHit','battleKo','portraitSquare','basicVfx','heavyVfx','specialVfx','awakeningVfx'];
+ const slots=['battleIdle','battleMove','battleHit','battleKo','portraitSquare','basicVfx','heavyVfx','specialVfx','awakeningVfx'];
  const keys=definitions.flatMap(d=>[...slots.map(s=>d?.assets?.[s]),...Object.values(d?.assets?.statusOverlays??{}),...Object.values(d?.assets?.skillOverlays??{})]).filter(v=>typeof v==='string');
  if(stage.battleAssetKey)keys.push(stage.battleAssetKey);return [...new Set(keys)];
 }
