@@ -353,7 +353,7 @@ At runtime scale the movement must read as actual agile locomotion, not image to
 - no attack pose or attack VFX mixed into this asset;
 - no actor-coordinate ownership by animation.
 
-Initial playback target: **8–10 fps**, tunable in runtime without redrawing.
+Player-approved runtime playback target after phone review: **18 fps normal / 9 fps reduced-motion**. This is presentation cadence only; gameplay `moveSpeed` remains unchanged.
 
 Stopping movement returns immediately to the approved static `battleIdle` F1.
 
