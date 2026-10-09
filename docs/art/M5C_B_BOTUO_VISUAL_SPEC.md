@@ -638,3 +638,165 @@ Locked now:
 - preserve the runtime animation framework for later state-specific action animation.
 
 Future direction: when a character's attack/skill presentation gate opens, create a short action micro-animation for the move and coordinate it with that move's VFX. Do not restart idle breathing unless the player explicitly asks.
+
+
+## 29. Locomotion authoring gate — 2026-10-09
+
+Status: **ACTIVE — CHAT AUTHORING SPEC COMPLETE / PLAYER ART REVIEW PENDING**
+
+This section supersedes older in-file notes that described Run/Move as a later closed gate. The player-approved M5C production reorder and the player-verified 鹿蜀 locomotion vertical slice now make **猼訑 locomotion the current exact gate**.
+
+### 29.1 Identity source
+
+The only valid locomotion identity source is the currently approved/deployed 猼訑 battle presentation:
+- asset key: `botuo.battleIdle`;
+- source file: `public/assets/characters/botuo/battleIdle-4f.png`;
+- source dimensions: 640×160;
+- runtime static battle identity currently uses the first 160×160 cell;
+- origin: `[.5, 158/160]`;
+- scale: 2.
+
+Do not redesign 猼訑 for locomotion.
+Do not derive movement by downscaling `collectionArt`.
+Do not restore the old breathing Idle loop as the movement source.
+
+Preserve:
+- mythic sheep/goat face;
+- large curved horn topology;
+- broad shoulder/torso mass;
+- dense neck/shoulder fur mantle;
+- forward protector bracer/guard surface;
+- stone / brown / iron / muted-gold large color blocks;
+- short, planted Tank leg proportions;
+- calm protector identity.
+
+### 29.2 Reusable locomotion family
+
+猼訑 validates the **Guard Humanoid** branch of the shared grounded-terrestrial humanoid production baseline proven by 鹿蜀.
+
+Shared grounded rules inherited from 鹿蜀:
+- authored multi-frame travel, never static-pose sliding;
+- readable alternating leg contact/passing phases;
+- arm/upper-body counter-motion;
+- torso / center-of-mass transfer;
+- restrained secondary follow-through;
+- one common ground/foot baseline;
+- runtime horizontal mirror for opposite facing;
+- stop returns immediately to accepted static `battleIdle`;
+- locomotion follows authoritative actor coordinates only;
+- reduced-motion may lower cadence but may not freeze locomotion to one frame.
+
+Guard-specific differentiation:
+- stride is shorter and heavier than 鹿蜀;
+- vertical compression is more visible, forward travel pose is less elongated;
+- torso mass transfer is deliberate and controlled;
+- protector bracer stays between body and threat rather than pumping like a runner's arm;
+- free arm provides restrained counter-balance;
+- horns, mantle and hanging elements lag the body by a small amount;
+- recovery looks planted, not springy or chase-oriented.
+
+Do not copy 鹿蜀's exact pose, stride length or 18fps cadence.
+
+### 29.3 First-pass asset contract
+
+Author one transparent horizontal PNG only:
+
+`battleMove-4f.png`
+
+Target:
+- 4 frames;
+- each frame 160×160;
+- strip 640×160;
+- transparent background;
+- shared foot/ground baseline matching accepted battleIdle;
+- same runtime origin family as current P2;
+- no horizontal character translation inside individual cells;
+- left/right uses runtime horizontal mirror; no duplicate left-facing strip.
+
+No GIF.
+No interpolation.
+No skeletal rig.
+
+### 29.4 Four-frame choreography
+
+**F1 — Contact A / guarded plant**
+- near/front leg makes a short planted contact;
+- opposite leg trails only modestly;
+- torso leans slightly into travel while staying broad and defensive;
+- forward protector bracer remains presented toward threat;
+- free arm shifts slightly back for counter-balance;
+- horns and shoulder mantle remain close to neutral.
+
+**F2 — Passing / compression**
+- legs pass under the body;
+- knees/hips compress visibly;
+- torso drops slightly to communicate weight;
+- bracer remains stable in front of torso rather than swinging;
+- free arm moves toward neutral;
+- mantle/fur/hanging pieces lag behind the body shift.
+
+**F3 — Contact B / opposite plant**
+- opposite leg takes the next short contact;
+- weight transfers across the planted base;
+- torso rises slightly from compression but stays heavy;
+- free arm reverses its restrained counter-balance;
+- guard/bracer angle changes only enough to follow body orientation;
+- horn/mantle mass follows one beat behind.
+
+**F4 — Passing / planted rebound**
+- legs pass toward the next Contact A;
+- torso settles back toward neutral height;
+- shoulders and bracer recover into the guarded travel posture;
+- fur / straps / small secondary parts finish follow-through;
+- end pose must connect cleanly back to F1 without a hop.
+
+Loop:
+F1 → F2 → F3 → F4 → F1.
+
+### 29.5 Cadence target
+
+Initial player-review target:
+- **12 fps normal**;
+- shared reduced-motion locomotion policy yields **6 fps reduced**.
+
+Reason:
+- visibly animated and responsive at mobile scale;
+- clearly heavier/slower in body cadence than 鹿蜀's approved 18fps;
+- still avoids the old slow-motion/static-slide feeling.
+
+This is an initial art/runtime target and may be tuned after player phone review without redrawing if the poses are accepted.
+
+Gameplay `moveSpeed` remains the existing **1.45**.
+Do not change gameplay movement speed to match animation cadence.
+
+### 29.6 Hard constraints
+
+Do not:
+- alter P2 gameplay `moveSpeed`;
+- modify actor coordinates;
+- modify collision, AI, targeting or tactical spacing;
+- change horn topology;
+- turn the guard into a swinging shield attack;
+- add stomp impact, dust burst, glow, aura or Skill VFX;
+- create attack anticipation;
+- make the stride long/agile like 鹿蜀;
+- make the upper body pump aggressively like 狌狌;
+- reopen Idle breathing;
+- author Hit / KO / Cast / ability VFX.
+
+### 29.7 Player review gate
+
+Before runtime integration, player reviews this **one 4-frame Move strip only** for:
+1. identity remains exactly the accepted 猼訑;
+2. four poses clearly read as actual grounded movement rather than sliding;
+3. legs visibly alternate;
+4. body feels heavier and more planted than 鹿蜀;
+5. guard/bracer remains protective during travel;
+6. horn / fur / equipment follow-through does not destabilize the silhouette;
+7. common ground baseline is stable;
+8. no neighboring-frame bleed;
+9. loop reads cleanly at the intended cadence.
+
+Runtime integration is blocked until player explicitly approves the Move strip.
+
+Do not start 赤鱬 locomotion until this gate is approved and integrated/verified according to the current production order.
