@@ -10,6 +10,17 @@ test('animation clock pauses naturally and reduced motion is static',()=>{
  assert.equal(typeof playback.animationFrame,'function');const d=api.animationDescriptor({source:'placeholder.actor-strip',frames:[{x:0,y:0,width:32,height:32},{x:32,y:0,width:32,height:32}],fps:2,loop:true});
  assert.equal(playback.animationFrame(d,.6).index,1);assert.equal(playback.animationFrame(d,.6,true).index,0);assert.equal(playback.animationFrame(d,.6).index,1);assert.equal(playback.animationFrame(d,1.1).index,0);
 });
+test('explicit locomotion policy cycles every frame at half cadence under reduced motion only',()=>{
+ const d=api.animationDescriptor({source:'lushu.battleMove',frames:[0,96,192,288].map(x=>({x,y:0,width:96,height:128})),fps:9,loop:true});
+ const normal=[0,.112,.223,.334,.445],reduced=[0,.223,.445,.667,.889];
+ assert.deepEqual(normal.map(t=>playback.animationFrame(d,t,false,'locomotion').index),[0,1,2,3,0]);
+ assert.deepEqual(reduced.map(t=>playback.animationFrame(d,t,true,'locomotion').index),[0,1,2,3,0]);
+ assert.equal(playback.animationFrame(d,.112,true,'locomotion').index,0);
+ assert.deepEqual(reduced.map(t=>playback.animationFrame(d,t,true).index),[0,0,0,0,0]);
+ const once=api.animationDescriptor({...d,loop:false});
+ assert.equal(playback.animationFrame(once,.5,true,'locomotion').finished,false);
+ assert.equal(playback.animationFrame(once,.9,true,'locomotion').finished,true);
+});
 test('all generic VFX forms validate attach/layer/lifetime and reduced-motion projection',()=>{
  assert.equal(typeof api.vfxDescriptor,'function');
  for(const form of ['sprite','flipbook','burst','trail','ring','projectile','impact','persistent-area']){

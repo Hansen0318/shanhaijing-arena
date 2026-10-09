@@ -1,6 +1,8 @@
-export function animationFrame(descriptor,elapsed,reducedMotion=false){
- const time=Math.max(0,elapsed),count=Math.max(1,descriptor.frames.length);
- const index=reducedMotion?descriptor.staticFrame:descriptor.loop?Math.floor(time*descriptor.fps)%count:Math.min(count-1,Math.floor(time*descriptor.fps));
+export function animationFrame(descriptor,elapsed,reducedMotion=false,playbackMode='decorative'){
+ // Locomotion conveys movement state: reduce cadence, never turn it into static sliding.
+ // All other callers retain the existing reduced-motion/static fallback by default.
+ const locomotion=playbackMode==='locomotion',time=Math.max(0,elapsed)*(reducedMotion&&locomotion?.5:1),count=Math.max(1,descriptor.frames.length);
+ const index=reducedMotion&&!locomotion?descriptor.staticFrame:descriptor.loop?Math.floor(time*descriptor.fps)%count:Math.min(count-1,Math.floor(time*descriptor.fps));
  return {index,region:descriptor.frames[index]??null,finished:!descriptor.loop&&time>=descriptor.duration};
 }
 // Presentation records contain copied geometry; never receive mutable combat actors.

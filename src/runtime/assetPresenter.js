@@ -38,9 +38,9 @@ export class AssetPresenter{
   if(slot.endsWith('Vfx'))this.playback.play(ownerId,characterVfx(character,slot.slice(0,-3)),{x:0,y:0},now);
   else {const descriptor=slot==='battleIdle'?(character?.animationDescriptors?.battleIdle?characterAnimation(character,'battleIdle'):grayboxAnimation):animationDescriptor({source:resolveCharacterAsset(character,slot).key,duration:1});await this.loadKeys([descriptor.source]);if(!this.closed)this.setState(ownerId,descriptor,now,'inspection');}
  }
- imageFor(ownerId,descriptor,elapsed,map=this.actorSprites){
+ imageFor(ownerId,descriptor,elapsed,map=this.actorSprites,playbackMode='decorative'){
   const texture=this.textures.get(descriptor.source);if(!texture)return null;
-  const projection=animationFrame(descriptor,elapsed,this.reducedMotion),region=texture.asset.key===descriptor.source?projection.region:null;const frame=region?`${region.x}.${region.y}.${region.width}.${region.height}`:undefined;
+  const projection=animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode),region=texture.asset.key===descriptor.source?projection.region:null;const frame=region?`${region.x}.${region.y}.${region.width}.${region.height}`:undefined;
   if(region){const t=this.scene.textures?.get(texture.key);if(!t?.has?.(frame))t?.add(frame,0,region.x,region.y,region.width,region.height);}
   let sprite=map.get(ownerId);if(!sprite){sprite=this.scene.add.image(0,0,texture.key,frame);map.set(ownerId,sprite);}else sprite.setTexture(texture.key,frame);
   sprite.setOrigin(...descriptor.origin).setScale(descriptor.scale).setVisible(true);return sprite;
@@ -89,8 +89,10 @@ export class AssetPresenter{
    // Living Hit/Cast fallback keeps the Idle loop moving; KO fallback remains static.
    const formalState=this.textures.has(state.descriptor.source);
    const descriptor=formalState?state.descriptor:actor.hp>0?base:idle,elapsed=formalState?now-state.start:actor.hp>0?now:0;
-   const image=this.imageFor(id,descriptor,elapsed);
-   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?animationFrame(descriptor,elapsed,this.reducedMotion).region:null,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(72*descriptor.scale*w/Math.max(w,h),72*descriptor.scale*h/Math.max(w,h)).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
+   const resolvedState=formalState?state.state:actor.hp>0?baseState:'battleIdle';
+   const playbackMode=resolvedState==='battleMove'?'locomotion':'decorative';
+   const image=this.imageFor(id,descriptor,elapsed,this.actorSprites,playbackMode);
+   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode).region:null,w=region?.width??asset.width,h=region?.height??asset.height;image.setDisplaySize(72*descriptor.scale*w/Math.max(w,h),72*descriptor.scale*h/Math.max(w,h)).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);}
    else this.actorSprites.get(id)?.setVisible(false); // Arena's procedural marker remains visible.
   }
   const records=this.playback.update(now,alive),ids=new Set(records.map(r=>r.id));
