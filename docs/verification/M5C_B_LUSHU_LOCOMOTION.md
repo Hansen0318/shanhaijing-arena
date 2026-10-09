@@ -9,7 +9,20 @@ Exact runtime fix: animationFrame adds optional fourth argument playbackMode (de
 
 Runtime regression evidence: both modes use real BattleSession22×.05s moving ticks and actual AssetPresenter; all four frame keys observed in order with repetition; unchanged-position tick restores idle. Snapshot and definition moveSpeed compare unchanged around every presenter render. Forced reduced presenter additionally proves slower first transition, complete F1→F2→F3→F4→F1 cycle, Y-only motion, negative-X mirror, exact108×144/origin/position, and same-source decorative playback remains static. P2/P3 moving in both modes stay accepted static idle. Normal equivalent contracts remain green. Runtime PNG unchanged SHA256 `6ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74`; same isolated cell rectangles and transparent margins reuse accepted bleed/baseline evidence.
 
-Release checkpoint: source/tests/build complete; final fresh review, feature push, Pages and public fingerprint/normal browser check pending. Forced reduced runtime above is executable presenter/session evidence, not a claim of iPhone visual acceptance or forced OS/browser emulation. Do not reopen next gates.
+Release result: ENGINEERING PASS / PLAYER PHONE SMOKE PENDING. Tested/deployed source `40384c0303752fc2f50eeaf087892490846dbf92`, tree `2471ebfca926eb1f967aa600278779fb9584d866`; preserves authoritative parentdb0d744 with expected-head fast-forward lease. Final HEAD is containing docs-only closure commit (resolve active feature ref); no runtime bytes change in closure. PR #1 open/unmerged. Actions #825 /37895173738 SUCCESS: Build113704788440 (CI615/615, guard/build PASS), Pages113704911716 SUCCESS.
+
+Fresh final review: no Critical/Important/Minor findings; reviewer independently10/10 PASS. Reviewer declined to reconstruct historical RED or executor48/48/guard/build evidence; actual RED/GREEN logs and fresh targeted/build/Actions outputs were read by executor, so no unsupported acceptance substituted. Reviewer declined phone subjective judgment; remains explicitly player-owned. Skill reference resources unavailable through provider; main skill instructions read, reviewer used exact user requirements/diff instead. No implementation scope expansion.
+
+Public HTML and browser DOM select index-CHrQCTBp.js /index-DcqtNRF0.css. Fresh responses byte-identical to tested local dist:
+
+| File | Bytes | SHA256 |
+| --- | ---: | --- |
+| index-CHrQCTBp.js | 93944 | bd9b4ff33aec789d65454f15ae6c59e961a09e5e17d0fa165c9f8774d0c9bc2d |
+| battleRuntime-ZT6rAN8g.js | 1445032 | dcf00a61414a1fc4c55c7877b3398ac207f564da624f910f5d8efef8fcd5b440 |
+| index-DcqtNRF0.css | 22943 | a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da |
+| characters/lushu/battleMove-4f.png | 54317 | 6ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74 |
+
+Public Battle Lab normal lineup/skip countdown loaded actual Phaser and unchanged P1/P2/P3/HUD/overhead HP/control layout. After selecting P1 and rightward input, moving ally/enemy Lushu showed a different run pose from initial idle, with enemy horizontal mirror and no observed frame bleed/size discontinuity. Continuous exact four-frame order/cadence, vertical input, immediate stop and snapshot/speed purity are verified by exact deployed-source runtime tests above, not inferred from isolated screenshots. Forced reduced runtime uses explicit reducedMotion=true on the real presenter/session; browser tooling has no OS media-emulation capability, so this is NOT a claim of forced browser preference or iPhone visual acceptance. No code/test/build/deploy blocker; phone-only smoke remains: move P1 in four directions, confirm changing run poses rather than single-pose sliding (including current phone reduced-motion setting), then stop→static idle and check stable ground/readability. No next gate/main merge.
 
 ## Executable checkpoint
 Recovered latest authoritative feature HEAD `864007fc6fd75cf77a1446521f47d30d407c5b4d` (newer than handoff959f0b1), PR #1 open. Latest explicit player handoff approves `lushu_move_clean_strip.png` and authorizes only P1 runtime integration; it supersedes pending-art-review pointers. No main merge.
