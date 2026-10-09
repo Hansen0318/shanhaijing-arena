@@ -862,3 +862,23 @@ Runtime acceptance remains:
 - stop immediately returns to accepted static battleIdle;
 - left/right uses shared mirror;
 - gameplay moveSpeed remains1.45 and presentation never owns actor position.
+
+## Player runtime acceptance — 2026-10-10
+
+Status: **PASS / PLAYER VERIFIED — P2 LOCOMOTION CLOSED**
+
+The player completed device smoke and accepted the deployed 猼訑 locomotion.
+
+Closed accepted contract:
+- approved `battleMove-4f.png` remains authoritative;
+- normal cadence 12fps;
+- reduced-motion cadence 6fps;
+- moving state visibly cycles multiple frames and never becomes single-frame sliding;
+- stopping returns to accepted static `battleIdle`;
+- runtime horizontal mirror remains shared;
+- no neighboring-frame bleed is acceptable;
+- gameplay `moveSpeed=1.45` and authoritative actor coordinates remain unchanged.
+
+Do not reopen P2 locomotion unless a later regression is demonstrated.
+
+Next gate is P3 赤鱬 locomotion authoring/review only.
