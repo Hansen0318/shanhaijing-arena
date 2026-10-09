@@ -277,3 +277,28 @@ Hard rules:
 
 This supersedes the older flow that treated static battle art and idle micro-animation as one production step.
 
+
+
+### Grounded terrestrial humanoid production baseline — 鹿蜀 validated 2026-10-09
+
+鹿蜀 is the first player-verified grounded terrestrial humanoid locomotion vertical slice and establishes the reusable production method for later ground-travel characters.
+
+Shared method:
+- use an authored multi-frame locomotion strip rather than sliding a static battle pose;
+- movement is visibly leg-driven, with readable alternating contact/passing phases;
+- arms counter the stride;
+- torso/center-of-mass transfer supports the step;
+- tails, scarves, guards, weapons or other secondary parts follow the body's acceleration with restrained delay;
+- keep one consistent ground/hoof/foot baseline and actor origin;
+- use runtime horizontal mirroring for opposite facing rather than duplicating left/right art;
+- stop returns immediately to the accepted static battleIdle;
+- locomotion only visualizes the authoritative actor position and never owns movement mechanics;
+- reduced-motion may lower cadence but must not freeze locomotion into single-frame sliding.
+
+This is a production-method baseline, not a requirement that every terrestrial character copy 鹿蜀's exact pose, stride length or 18fps cadence. Role/species identity still controls motion weight and timing:
+- Agile humanoid: quicker/lighter drive;
+- Guard humanoid: shorter/heavier planted stride;
+- Bruiser humanoid: stronger forward push and upper-body follow-through;
+- Ranged caster humanoid: lighter controlled grounded travel.
+
+The previously discussed idea of globally increasing battlefield gameplay movement speed by +50% is not approved and must not be inferred from this animation baseline.
