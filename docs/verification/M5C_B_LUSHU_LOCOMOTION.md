@@ -12,7 +12,20 @@ Authoritative source delta:
 
 This is a presentation-cadence correction only. Recoveredcd384dd; PR #1 open/unmerged. Prior Actions #830 /37903228547 failed only three stale Lushu sample-time assertions (612/615), so Pages was skipped. Work leaves all production source unchanged, adjusts only test sample times to18/9fps and explicitly protects descriptor18fps plus gameplay2.05.
 
-Executable checkpoint:38/38 PASS (lushuMove, assetDescriptors including playback, assetPresenter, formalCatalog, assetIntegration); guard47files428346bytes/build/diff PASS. Normal exact elapsed0/.056/.112/.167/.223s yieldsF1/F2/F3/F4/F1; reduced0/.112/.223/.334/.445s does the same. Real presenter normal/reduced ordered cycle, stop→static idle, shared mirror/XY motion/geometry and P2/P3 fallback tests PASS. Real BattleSession snapshot and2.05speed unchanged around every render. Ordinary reduced animations retain static fallback. PNG384×128/54317bytes/SHA2566ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74 unchanged; origin/scale/frame order/hoof baseline reused. Build only existing chunk-size advisory/npm proxy-env warning. Feature push/new Actions/Pages/public fingerprints pending; phone subjective cadence acceptance stays player-owned.
+Executable verification:38/38 PASS (lushuMove, assetDescriptors including playback, assetPresenter, formalCatalog, assetIntegration); guard47files428346bytes/build/diff PASS. Normal exact elapsed0/.056/.112/.167/.223s yieldsF1/F2/F3/F4/F1; reduced0/.112/.223/.334/.445s does the same. Real presenter normal/reduced ordered cycle, stop→static idle, shared mirror/XY motion/geometry and P2/P3 fallback tests PASS. Real BattleSession snapshot and2.05speed unchanged around every render. Additional exact-period evaluation yields18/9fps loop durations4/18=.222222s and4/9=.444444s; at.06s normalF2 versus reducedF1 confirms reduced progression stays slower. Ordinary reduced animations retain static fallback. PNG384×128/54317bytes/SHA2566ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74 unchanged; origin/scale/frame order/hoof baseline reused. Build only existing chunk-size advisory/npm proxy-env warning. No unrelated local regression or subjective browser smoke.
+
+Release: tested/deployed source `2bfc2e784e6029147183782d8616d44b6bc964b4`, tree `cb909b661a3aa2a084c8e328d6b3bc47f238492c`. Feature fast-forward pushed with expected-head lease, PR #1 open/unmerged. Actions #831 /37903665137 SUCCESS: Build113731845371 CI615/615/guard/build PASS; Pages113731961393 SUCCESS. Final HEAD resolves the docs-only closure containing this evidence (no runtime-byte change). Work diff versuscd384dd contains only tests/lushuMove and three requested docs; src/public unchanged. No technical blocker.
+
+Public HTML selects new index-BUo05mmh.js/index-DcqtNRF0.css. Fresh public responses for all three bundles and unchanged PNG equal tested dist byte-for-byte:
+
+| File | Bytes | SHA256 |
+| --- | ---: | --- |
+| index-BUo05mmh.js | 93945 | 3bb7cd6f75ab4044a30ce7e61db89e05755d5c951514b5ef547fe328b3e7a4e2 |
+| battleRuntime-9hd1fRty.js | 1445032 | fcf5dc16c4de94462bd85e9974109a99d64a9e8244e8291daf2a23ec343f113e |
+| index-DcqtNRF0.css | 22943 | a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da |
+| characters/lushu/battleMove-4f.png | 54317 | 6ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74 |
+
+Status ENGINEERING PASS / PLAYER PHONE SMOKE PENDING. Only phone check: P1 faster leg/arm stride cadence while moving (current reduced-motion setting stays supported), no single-pose sliding, release→static idle/ground stable. Gameplay translation speed deliberately unchanged. STOP; no P2/P3 locomotion/actions/VFX/next characters/main merge. Earlier18fps executable-pending pointer and historical9/4.5fps releases are superseded by this section.
 
 ## Authoritative reduced-motion correction — 2026-10-09
 Player iPhone repro supersedes the prior release's reduced-motion expectation: Move was selected but held F1 while coordinates moved. Recovered feature HEAD `db0d7442b3db53e4bb3716743d8190182ecefd85`, PR #1 open/unmerged, latest preceding Actions37776285485 SUCCESS. Confirmed exact Arena matchMedia→AssetPresenter.reducedMotion→animationFrame.staticFrame chain agrees with Chat; no asset correction is needed.
