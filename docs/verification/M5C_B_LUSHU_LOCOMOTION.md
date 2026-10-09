@@ -1,5 +1,17 @@
 # Lushu Locomotion — 2026-10-08
 
+## Player-approved cadence increase — 2026-10-09
+
+After the reduced-motion single-frame defect was fixed and the four-frame locomotion visibly cycled on the player's phone, the player judged the limb/stride cadence too slow and explicitly approved the proposed ~2× presentation-speed adjustment.
+
+Authoritative source delta:
+- P1 `battleMove` descriptor fps: **9 → 18**.
+- Shared reduced-motion locomotion policy remains time×0.5, so effective reduced cadence becomes **4.5 → 9fps**.
+- Gameplay `moveSpeed` remains **2.05**.
+- Move PNG, frame order, origin, scale, actor coordinates, AI, collision, targeting, telegraph geometry, ability timing and combat math remain unchanged.
+
+This is a presentation-cadence correction only. Executable verification/build/deploy remain pending at this entry.
+
 ## Authoritative reduced-motion correction — 2026-10-09
 Player iPhone repro supersedes the prior release's reduced-motion expectation: Move was selected but held F1 while coordinates moved. Recovered feature HEAD `db0d7442b3db53e4bb3716743d8190182ecefd85`, PR #1 open/unmerged, latest preceding Actions37776285485 SUCCESS. Confirmed exact Arena matchMedia→AssetPresenter.reducedMotion→animationFrame.staticFrame chain agrees with Chat; no asset correction is needed.
 
