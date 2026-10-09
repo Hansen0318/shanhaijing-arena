@@ -800,3 +800,29 @@ Before runtime integration, player reviews this **one 4-frame Move strip only** 
 Runtime integration is blocked until player explicitly approves the Move strip.
 
 Do not start 赤鱬 locomotion until this gate is approved and integrated/verified according to the current production order.
+
+## 30. Locomotion strip player approval — 2026-10-10
+
+Status: **PASS / PLAYER APPROVED — RUNTIME ASSET PREP + INTEGRATION NEXT**
+
+The player approved the latest four-frame 猼訑 Guard Humanoid locomotion strip after viewing an animation preview.
+
+Approved visual/motion facts:
+- identity matches the accepted 猼訑 direction;
+- movement is grounded and visibly leg-driven;
+- limbs change across frames rather than merely vibrating in place;
+- frame spacing/padding is sufficient for clean slicing;
+- no neighboring-frame body-part bleed is acceptable;
+- Guard identity remains heavier/planted than 鹿蜀.
+
+Runtime contract:
+- moving state selects `battleMove`;
+- playback must visibly cycle F1 → F2 → F3 → F4 → repeat;
+- reduced-motion may lower cadence but **must not freeze locomotion to a single frame**;
+- stopped state returns immediately to accepted static `battleIdle`;
+- left/right facing uses the shared runtime mirror;
+- actor coordinates and gameplay `moveSpeed=1.45` remain authoritative and unchanged.
+
+The approved art must not be redrawn or reinterpreted during integration. Chat may perform lossless/whole-frame normalization into the required runtime canvas; Work must use that approved derivative rather than generating new art.
+
+Next exact action: prepare the approved strip into a runtime-ready four-cell PNG, then integrate/test/deploy only.
