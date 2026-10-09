@@ -13,7 +13,7 @@ const presentation={
    fps:2.5,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
   }),battleMove:animationDescriptor({
    source:'lushu.battleMove',frames:[0,96,192,288].map(x=>({x,y:0,width:96,height:128})),
-   fps:9,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
+   fps:18,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
   })}),
  },
  P2:{
