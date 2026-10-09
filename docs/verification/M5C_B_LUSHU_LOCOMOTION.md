@@ -10,7 +10,9 @@ Authoritative source delta:
 - Gameplay `moveSpeed` remains **2.05**.
 - Move PNG, frame order, origin, scale, actor coordinates, AI, collision, targeting, telegraph geometry, ability timing and combat math remain unchanged.
 
-This is a presentation-cadence correction only. Executable verification/build/deploy remain pending at this entry.
+This is a presentation-cadence correction only. Recoveredcd384dd; PR #1 open/unmerged. Prior Actions #830 /37903228547 failed only three stale Lushu sample-time assertions (612/615), so Pages was skipped. Work leaves all production source unchanged, adjusts only test sample times to18/9fps and explicitly protects descriptor18fps plus gameplay2.05.
+
+Executable checkpoint:38/38 PASS (lushuMove, assetDescriptors including playback, assetPresenter, formalCatalog, assetIntegration); guard47files428346bytes/build/diff PASS. Normal exact elapsed0/.056/.112/.167/.223s yieldsF1/F2/F3/F4/F1; reduced0/.112/.223/.334/.445s does the same. Real presenter normal/reduced ordered cycle, stop→static idle, shared mirror/XY motion/geometry and P2/P3 fallback tests PASS. Real BattleSession snapshot and2.05speed unchanged around every render. Ordinary reduced animations retain static fallback. PNG384×128/54317bytes/SHA2566ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74 unchanged; origin/scale/frame order/hoof baseline reused. Build only existing chunk-size advisory/npm proxy-env warning. Feature push/new Actions/Pages/public fingerprints pending; phone subjective cadence acceptance stays player-owned.
 
 ## Authoritative reduced-motion correction — 2026-10-09
 Player iPhone repro supersedes the prior release's reduced-motion expectation: Move was selected but held F1 while coordinates moved. Recovered feature HEAD `db0d7442b3db53e4bb3716743d8190182ecefd85`, PR #1 open/unmerged, latest preceding Actions37776285485 SUCCESS. Confirmed exact Arena matchMedia→AssetPresenter.reducedMotion→animationFrame.staticFrame chain agrees with Chat; no asset correction is needed.
