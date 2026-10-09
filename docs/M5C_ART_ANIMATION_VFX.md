@@ -291,3 +291,10 @@ Small cards use a shared dark-top/light-bottom gradient and read-only Tier borde
 ### Reduced-motion locomotion correction — 2026-10-08
 
 Player phone smoke exposed that treating locomotion like decorative animation and freezing it to `staticFrame` produces visibly incorrect one-frame sliding. Locomotion is a state-readability cue and must remain animated even when the OS requests reduced motion. Under reduced-motion, locomotion should use a lower-intensity / slower cadence rather than static freeze. Decorative VFX, nonessential idle motion and other optional effects may still use static or simplified fallback. This remains presentation-only and must not alter authoritative movement coordinates, speed, collision, targeting, AI, telegraph geometry or combat timing.
+
+
+### Grounded locomotion validated baseline — 2026-10-09
+
+Player verification of 鹿蜀 establishes the shared grounded-terrestrial humanoid production method: multi-frame leg-driven travel, arm counter-motion, torso/weight transfer, restrained appendage/equipment follow-through, common ground anchor, runtime facing mirror, stop→static idle, and presentation-only playback that follows authoritative actor coordinates. Later grounded characters reuse this method structurally while preserving role/species-specific cadence and weight; they do not copy 鹿蜀's exact poses or fps by default.
+
+The proposed global +50% battlefield movement-speed change was explicitly abandoned before implementation. Existing and future gameplay moveSpeed values remain on the current design scale unless separately approved.
