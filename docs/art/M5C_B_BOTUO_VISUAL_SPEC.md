@@ -826,3 +826,33 @@ Runtime contract:
 The approved art must not be redrawn or reinterpreted during integration. Chat may perform lossless/whole-frame normalization into the required runtime canvas; Work must use that approved derivative rather than generating new art.
 
 Next exact action: prepare the approved strip into a runtime-ready four-cell PNG, then integrate/test/deploy only.
+
+
+## 31. Runtime-ready approved Move derivative — 2026-10-10
+
+Status: **CHAT COMPLETE / WORK INTEGRATION NEXT**
+
+Player-approved locomotion art has been normalized without redraw into:
+- filename for handoff: `botuo_battleMove-4f_approved.png`;
+- dimensions: **640×160 RGBA**;
+- cells: four **160×160** frames;
+- bytes: **158292**;
+- SHA-256: `fd9083cacfc38d1eb1fd17e5749615e9a51781a83f0d3dfa3759c1de41c5f26b`.
+
+Normalization method:
+- isolate the four connected character silhouettes from the approved source before resizing;
+- keep one uniform scale across all frames;
+- center each silhouette independently inside its own 160×160 cell;
+- use one shared ground baseline with bottom padding;
+- preserve enough transparent side padding so no neighboring-frame pixels can survive frame slicing;
+- preserve approved F1→F2→F3→F4 order;
+- preview uses direct F1→F2→F3→F4 looping at approximately12fps.
+
+This derivative is the only approved P2 runtime Move source. Work must not redraw, regenerate, reinterpret or substitute it.
+
+Runtime acceptance remains:
+- moving actor visibly cycles all four frames;
+- reduced-motion cycles at the shared slower cadence, never static-frame sliding;
+- stop immediately returns to accepted static battleIdle;
+- left/right uses shared mirror;
+- gameplay moveSpeed remains1.45 and presentation never owns actor position.
