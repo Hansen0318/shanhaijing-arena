@@ -17,10 +17,13 @@ const presentation={
   })}),
  },
  P2:{
-  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle'}),
+  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle',battleMove:'botuo.battleMove'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'botuo.battleIdle',frames:[{x:0,y:0,width:160,height:160}],
    fps:2.5,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
+  }),battleMove:animationDescriptor({
+   source:'botuo.battleMove',frames:[0,160,320,480].map(x=>({x,y:0,width:160,height:160})),
+   fps:12,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
   })}),
  },
  P3:{

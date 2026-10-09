@@ -7,6 +7,7 @@ const entries=[
  {key:'botuo.portrait',type:'image',path:'assets/characters/botuo/portrait.png',width:128,height:128,bytes:32501,fallback:'placeholder.portrait'},
  {key:'botuo.identity',type:'image',path:'assets/characters/botuo/identity.png',width:160,height:192,bytes:14098,fallback:'placeholder.portrait'},
  {key:'botuo.battleIdle',type:'image',path:'assets/characters/botuo/battleIdle-4f.png',width:640,height:160,bytes:31355,fallback:'placeholder.battle'},
+ {key:'botuo.battleMove',type:'image',path:'assets/characters/botuo/battleMove-4f.png',width:640,height:160,bytes:158292,fallback:'placeholder.battle'},
  {key:'chiru.portrait',type:'image',path:'assets/characters/chiru/portrait.png',width:128,height:128,bytes:39490,fallback:'placeholder.portrait'},
  {key:'chiru.identity',type:'image',path:'assets/characters/chiru/identity.png',width:160,height:192,bytes:53023,fallback:'placeholder.portrait'},
  {key:'chiru.battleIdle',type:'image',path:'assets/characters/chiru/battleIdle.png',width:160,height:160,bytes:44131,fallback:'placeholder.battle'},

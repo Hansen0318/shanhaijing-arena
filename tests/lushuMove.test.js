@@ -39,7 +39,7 @@ test('actual presenter switches on XY displacement, loops, freezes duplicate tim
 });
 test('missing move safely retains static idle; unauthored characters unchanged in both motion modes',async()=>{
  for(const reducedMotion of [false,true]){const f=await fixture({missingMove:true,reducedMotion});f.render(0);f.actor.x+=1;f.render(.1);f.actor.x+=1;f.render(.3);const image=f.sprites[0];assert.equal(image.texture[1],'0.0.96.128');assert.ok(image.texture[0].endsWith('lushu.battleIdle'));f.p.destroy();
- for(const [id,key] of [['P2','botuo.battleIdle'],['P3','chiru.battleIdle']]){const f=await fixture({reducedMotion});f.actor.definitionId=id;f.render(0);f.actor.x+=1;f.render(.1);assert.ok(f.sprites[0].texture[0].endsWith(key));f.p.destroy();}}
+ for(const [id,key] of [['P3','chiru.battleIdle']]){const f=await fixture({reducedMotion});f.actor.definitionId=id;f.render(0);f.actor.x+=1;f.render(.1);assert.ok(f.sprites[0].texture[0].endsWith(key));f.p.destroy();}}
 });
 test('forced reduced-motion presenter loops all Move frames slower, preserves geometry and immediately stops',async()=>{
  const f=await fixture({reducedMotion:true});f.render(0);

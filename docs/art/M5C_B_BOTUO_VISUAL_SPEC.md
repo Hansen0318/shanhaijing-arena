@@ -1,5 +1,8 @@
 # M5C-B Batch1 Visual Spec — 猼訑
 
+## Runtime integration checkpoint — 2026-10-10
+Approved Move source is integrated byte-for-byte at `public/assets/characters/botuo/battleMove-4f.png`:640×160 RGBA,158292bytes,SHA256fd9083cacfc38d1eb1fd17e5749615e9a51781a83f0d3dfa3759c1de41c5f26b. P2 now supplies assets.battleMove and descriptor source botuo.battleMove, x0/160/320/480, four160×160 cells,fps12,looptrue,origin[.5,158/160],scale2,staticFrame0. Shared reduced playback yields6fps, not static sliding. No runtime engine/source redesign, gameplay moveSpeed1.45 unchanged; idle/portrait/identity and P1/P3 art unchanged. Targeted50/50/guard/build PASS; release/browser evidence pending in `docs/verification/M5C_B_BOTUO_LOCOMOTION.md`. No next gate until player verifies this P2 runtime.
+
 ## Status
 **CONCEPT + BATTLE SIMPLIFICATION APPROVED — STATIC ASSET PACK IN PROGRESS**
 
