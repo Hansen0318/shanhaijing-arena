@@ -414,3 +414,43 @@ P3 must follow the shared runtime-safe sprite-strip normalization hard rule befo
 - animate only the normalized cells for player approval.
 
 No fake walking and no gameplay-position bob are introduced by this packaging step.
+
+
+## 21. Locomotion runtime-safe normalization — 2026-10-10
+
+Status: **PLAYER REVIEW PASS FOR NORMALIZED PREVIEW / RUNTIME INTEGRATION NOT YET AUTHORIZED**
+
+The raw four-frame hover strip had acceptable motion direction but insufficient frame separation: some silhouettes approached/touched equal-width slice boundaries, so playback could expose neighboring-frame body parts.
+
+The corrected review path uses the project-wide runtime-safe normalization rule:
+- isolate all four intended 赤鱬 silhouettes;
+- remove neighboring-frame carryover;
+- apply one uniform scale;
+- place each pose into its own fixed 160×160 cell;
+- preserve the approved F1→F2→F3→F4 hover order;
+- keep a stable shared anchor family;
+- require transparent safety padding in every cell;
+- inspect each cell's alpha bounds independently before preview/integration.
+
+Current normalized review derivative:
+- filename: `chiru_battleMove-4f_safe.png`;
+- canvas: 640×160 RGBA;
+- cells: 4×160×160;
+- encoded bytes: 112708;
+- SHA-256: `d0839a1630f21d1b59dd0363c35e94886d3983290cac6e339f59c4afa93bc74f`;
+- measured per-frame margins L/T/R/B:
+  - F1: 26 / 43 / 27 / 4 px
+  - F2: 16 / 50 / 16 / 4 px
+  - F3: 12 / 55 / 12 / 4 px
+  - F4: 29 / 43 / 29 / 4 px
+
+Player confirmed the normalized result is acceptable as the correct no-bleed method/result.
+
+Locomotion identity remains **Aquatic Hover Humanoid**:
+- no fake walking;
+- visible body drift / travel lean;
+- fins and flowing appendages provide obvious follow-through;
+- support posture remains readable;
+- movement animation follows authoritative gameplay coordinates and must not create gameplay-position bob.
+
+Do not integrate P3 runtime until the player explicitly authorizes the normalized Move asset for Work/runtime integration.
