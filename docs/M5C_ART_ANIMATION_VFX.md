@@ -298,3 +298,26 @@ Player phone smoke exposed that treating locomotion like decorative animation an
 Player verification of 鹿蜀 establishes the shared grounded-terrestrial humanoid production method: multi-frame leg-driven travel, arm counter-motion, torso/weight transfer, restrained appendage/equipment follow-through, common ground anchor, runtime facing mirror, stop→static idle, and presentation-only playback that follows authoritative actor coordinates. Later grounded characters reuse this method structurally while preserving role/species-specific cadence and weight; they do not copy 鹿蜀's exact poses or fps by default.
 
 The proposed global +50% battlefield movement-speed change was explicitly abandoned before implementation. Existing and future gameplay moveSpeed values remain on the current design scale unless separately approved.
+
+
+## 3A. Runtime-safe sprite-strip normalization hard rule
+
+For any authored multi-frame locomotion or action sprite strip, **neighboring-frame bleed is forbidden**.
+
+Before runtime integration, if any authored frame reaches or nearly reaches a cell boundary, Chat must perform a runtime-safe normalization pass before handoff:
+1. isolate each approved frame/silhouette independently from the source sheet;
+2. remove all pixels belonging to neighboring frames;
+3. place every isolated frame into its own fixed-size transparent cell;
+4. use one uniform scale across the sequence unless the approved action explicitly requires otherwise;
+5. preserve the approved frame order and pose content;
+6. keep a common anchor/baseline appropriate to the locomotion archetype;
+7. provide explicit transparent padding on all cell sides sufficient to prevent horns, fins, fur, cloth, weapons, tails, water shapes or other appendages from crossing into adjacent cells;
+8. verify the per-cell alpha bounds before animation preview or repo integration;
+9. preview the exact normalized cells in direct runtime frame order;
+10. only the normalized derivative may be handed to Work for manifest/catalog/runtime integration.
+
+This normalization is an asset-packaging operation, **not a redraw or redesign**. It must not invent new poses, change identity, or alter gameplay coordinates.
+
+If any frame still touches a side boundary after normalization, the strip is not runtime-ready and must not be integrated.
+
+The same rule applies to future grounded, hover/aquatic, aerial and other reusable locomotion archetypes.
