@@ -52,6 +52,21 @@ Work receives **only the irreducible executable delta** that genuinely needs its
 
 If a task mixes Chat-owned and Work-only parts, Chat finishes its part first and then hands Work only the unresolved engineering delta. Do not send Work to rediscover design, repeat documentation, redo static analysis, or execute broad checks merely for convenience.
 
+## 2A. Runtime-safe multi-frame sprite normalization
+For any authored multi-frame battle sprite strip (locomotion, action/cast, hit, KO, or future flipbook animation), a visually acceptable raw strip is not automatically runtime-ready.
+
+If any frame silhouette approaches a cell boundary, frame spacing is ambiguous, or neighboring-frame bleed cannot be ruled out, Chat must prepare and verify a **runtime-safe normalized derivative before runtime integration**:
+1. use the player-approved strip/source as the only art source;
+2. isolate each frame's intended character silhouette and remove pixels belonging to neighboring frames;
+3. apply one uniform scale policy across the sequence unless the approved animation explicitly requires otherwise;
+4. place each frame into its own fixed cell with transparent safety padding;
+5. preserve the approved frame order and the intended shared anchor/baseline family;
+6. inspect every cell independently, including alpha bounds / edge clearance, and confirm no horn, fin, hair, fur, cloth, weapon, limb, VFX fragment, or other body part leaks from an adjacent frame;
+7. generate review animation previews only from the normalized safe strip when normalization was required;
+8. do not hand the asset to Work or integrate it into the repo until the no-bleed check passes.
+
+Normalization is an asset-preparation step, not a redesign. It must not invent new poses, change character identity, alter gameplay coordinates/speed/geometry, or reorder approved frames.
+
 ## 3. Mandatory zero-context bootstrap
 A new Chat / Work / Codex session must be able to continue without the player reconstructing the previous conversation.
 
