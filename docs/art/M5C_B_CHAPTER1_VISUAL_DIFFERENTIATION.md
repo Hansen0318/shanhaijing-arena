@@ -302,3 +302,12 @@ This is a production-method baseline, not a requirement that every terrestrial c
 - Ranged caster humanoid: lighter controlled grounded travel.
 
 The previously discussed idea of globally increasing battlefield gameplay movement speed by +50% is not approved and must not be inferred from this animation baseline.
+
+
+## 11. Shared multi-frame runtime-safety rule
+
+Chapter1 production exposed the same failure mode across grounded and hover locomotion: a visually acceptable composite strip may still be unsafe for equal-cell runtime slicing if silhouettes approach or cross cell boundaries.
+
+Therefore all Chapter1 and future multi-frame battle sprites inherit the project-wide runtime-safe normalization rule from `AGENTS.md` and `docs/M5C_ART_ANIMATION_VFX.md`.
+
+Before integration, any strip with boundary risk must be normalized into independent fixed cells with transparent padding, shared anchor/baseline intent, preserved approved frame order, and per-cell no-neighbor-bleed verification. This applies equally to grounded locomotion, aquatic hover locomotion, later action/cast frames, Hit, KO, and other flipbook battle states.
