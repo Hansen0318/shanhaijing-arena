@@ -37,9 +37,9 @@ test('actual presenter switches on XY displacement, loops, freezes duplicate tim
  f.actor.x-=.1;f.render(.8);assert.deepEqual(image.setFlipXValue,[true]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);
  f.actor.hp=0;f.actor.x-=.1;f.render(.9);assert.ok(image.texture[0].endsWith('lushu.battleIdle'));f.p.destroy();assert.equal(f.p.facings.size,0);
 });
-test('missing move safely retains static idle; unauthored characters unchanged in both motion modes',async()=>{
+test('missing move safely retains static idle in both motion modes',async()=>{
  for(const reducedMotion of [false,true]){const f=await fixture({missingMove:true,reducedMotion});f.render(0);f.actor.x+=1;f.render(.1);f.actor.x+=1;f.render(.3);const image=f.sprites[0];assert.equal(image.texture[1],'0.0.96.128');assert.ok(image.texture[0].endsWith('lushu.battleIdle'));f.p.destroy();
- for(const [id,key] of [['P3','chiru.battleIdle']]){const f=await fixture({reducedMotion});f.actor.definitionId=id;f.render(0);f.actor.x+=1;f.render(.1);assert.ok(f.sprites[0].texture[0].endsWith(key));f.p.destroy();}}
+ }
 });
 test('forced reduced-motion presenter loops all Move frames slower, preserves geometry and immediately stops',async()=>{
  const f=await fixture({reducedMotion:true});f.render(0);

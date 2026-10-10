@@ -454,3 +454,6 @@ Locomotion identity remains **Aquatic Hover Humanoid**:
 - movement animation follows authoritative gameplay coordinates and must not create gameplay-position bob.
 
 Do not integrate P3 runtime until the player explicitly authorizes the normalized Move asset for Work/runtime integration.
+
+## 22. Approved safe locomotion runtime integration — 2026-10-10
+Player explicitly authorized the exact safe strip; section21 authorization-pending status is historical and superseded. Byte-preserving integration: `public/assets/characters/chiru/battleMove-4f.png`,640×160 RGBA,112708bytes,SHA256d0839a1630f21d1b59dd0363c35e94886d3983290cac6e339f59c4afa93bc74f. Four160×160 cells,10fps normal/5fps reduced, origin[.5,1],scale2; static idle and gameplay1.6 unchanged. Aquatic Hover Humanoid drift/fin follow-through only; no walking/gameplay bob. Tests56/56/guard/build PASS; final deployment/public verification pending. Evidence:`../verification/M5C_B_CHIRU_LOCOMOTION.md`.

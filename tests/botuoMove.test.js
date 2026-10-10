@@ -43,12 +43,11 @@ for(const reduced of [false,true])test(`P2 actual presenter cycles all four fram
  f.actor.y-=.1;f.render(1.4);assert.ok(image.texture[0].endsWith('botuo.battleMove'));f.p.destroy();
 });
 
-test('P2 reduced cadence is half normal; decorative fallback and P1/P3 contracts remain intact',async()=>{
+test('P2 reduced cadence is half normal; decorative fallback and P1 contract remain intact',async()=>{
  const d=rosterCatalog.P2.animationDescriptors.battleMove;assert.ok(d);
  for(const [reduced,fps] of [[false,12],[true,6]])assert.deepEqual([0,1,2,3,4].map(i=>animationFrame(d,i/fps+1e-5,reduced,'locomotion').index),[0,1,2,3,0]);
  assert.equal(animationFrame(d,.09,false,'locomotion').index,1);assert.equal(animationFrame(d,.09,true,'locomotion').index,0);assert.equal(animationFrame(d,.5,true).index,0);
- assert.equal(rosterCatalog.P1.animationDescriptors.battleMove.fps,18);assert.equal(rosterCatalog.P1.stats.moveSpeed,2.05);assert.equal(rosterCatalog.P3.animationDescriptors.battleMove,undefined);
- for(const reduced of [false,true]){const f=await fixture(reduced);f.actor.definitionId='P3';f.render(0);f.actor.x+=.1;f.render(.1);assert.ok(f.p.actorSprites.get('a2').texture[0].endsWith('chiru.battleIdle'));f.p.destroy();}
+ assert.equal(rosterCatalog.P1.animationDescriptors.battleMove.fps,18);assert.equal(rosterCatalog.P1.stats.moveSpeed,2.05);
 });
 
 test('real P2 BattleSession snapshots, coordinates and moveSpeed remain gameplay-owned in both modes',async()=>{

@@ -1,5 +1,7 @@
 # Project State
 
+- **P3 LOCOMOTION — EXECUTABLE CHECKPOINT (2026-10-10).** Exact approved safe PNG integrated byte-for-byte; four160-square frames,10fps normal/5fps reduced, origin[.5,1],scale2. Targeted56/56, guard49files699346bytes, build/diff PASS. Full cycles/no sliding/duplicate time/XY/mirror/stop→idle/purity/P1/P2 PASS; gameplay1.6 unchanged. Feature push/Pages/public verification pending. Evidence:`docs/verification/M5C_B_CHIRU_LOCOMOTION.md`. Only finish this release, then player phone smoke; no next gate/main merge.
+
 ## Milestone
 **M5C-B PRESENTATION BASELINE — PASS / PLAYER VERIFIED**
 
