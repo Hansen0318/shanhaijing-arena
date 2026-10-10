@@ -397,3 +397,20 @@ Required runtime checks:
 - no idle/breathing loop is introduced.
 
 Locomotion, action/cast, Hit/KO and VFX remain blocked until this runtime gate is player-verified.
+
+
+## P3 locomotion runtime-safe normalization note — 2026-10-10
+
+The current P3 authored hover-motion direction is visually acceptable, but the raw generated sheet is not itself authoritative for runtime slicing if any pose touches a quarter boundary.
+
+P3 must follow the shared runtime-safe sprite-strip normalization hard rule before integration:
+- isolate all four hover poses independently;
+- place them into four fixed transparent cells;
+- preserve one uniform scale;
+- preserve the authored F1→F2→F3→F4 motion;
+- maintain a stable shared presentation anchor around authoritative actor coordinates;
+- ensure explicit left/right transparent padding so fins, water-orb shapes and trailing appendages cannot bleed into neighboring frames;
+- verify alpha bounds per cell;
+- animate only the normalized cells for player approval.
+
+No fake walking and no gameplay-position bob are introduced by this packaging step.
