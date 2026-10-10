@@ -60,6 +60,28 @@ Animation metadata should define:
 - scale;
 - optional reduced-motion/static fallback.
 
+## 3A. Runtime-safe sprite strip normalization
+
+Multi-frame battle art must be safe to slice before it is safe to integrate.
+
+If a generated/authored strip has uncertain spacing, touches a frame boundary, or can expose neighboring-frame body parts during playback, it must first be converted into a **runtime-safe normalized derivative**.
+
+Authoritative process:
+1. start only from the player-approved source strip / frames;
+2. isolate each intended frame silhouette independently;
+3. remove neighboring-frame pixels and other unintended carryover;
+4. use a consistent scale policy across the sequence;
+5. place each frame in a fixed runtime cell with transparent side/top/bottom safety padding appropriate to the asset;
+6. preserve the approved frame order and shared anchor/baseline family;
+7. inspect per-frame alpha bounds / cell margins rather than judging only the whole strip;
+8. confirm no neighboring-frame bleed from horns, fins, hair, fur, cloth, weapons, limbs, effects, or accessories;
+9. build animation previews from the normalized strip, not the unsafe raw strip;
+10. only after this passes may runtime integration begin.
+
+This applies to locomotion / `battleMove`, action/cast, hit reaction, KO, and any later flipbook-like battle animation.
+
+Runtime-safe normalization is not art redesign. It must not change identity, invent poses, alter gameplay position/speed/collision/AI/targeting/combat timing, or reorder approved frames.
+
 ## 4. VFX contract
 
 Each ability references generic VFX descriptors rather than rendering code inside character definitions.
