@@ -350,3 +350,7 @@ Player feedback: M6C mechanic differentiation is correct but the raw Tier power 
 Status: **IN PROGRESS — shared presentation baseline PASS / PLAYER VERIFIED; 鹿蜀 and 猼訑 formal identity/static-runtime accepted; idle breathing withdrawn; 赤鱬 Concept is the next active gate.** Canonical specs: `docs/M5C_B_FORMAL_ASSET_BATCH.md` and `docs/M5C_B_ACCEPTED_PRESENTATION_BASELINE.md`.
 
 M5C-A pipeline and M6C-B balance are accepted. Continue character-by-character static formal art through the gated process. 鹿蜀 and 猼訑 static presentation are accepted. Next: 赤鱬 Concept → Battle Simplification → Static Asset Pack → Static Runtime Readability. Current Idle remains static. Later locomotion is archetype-driven (ground / flight / aquatic-hover as appropriate), and ability action micro-animation is authored together with matching VFX.
+
+### KO early gate closure — 2026-10-12
+
+By explicit player reorder, static KO presentation for the already verified P1/P2/P3 characters was completed before the Basic action/VFX vertical slice. All three KO states are now **PASS / PLAYER VERIFIED**. This does not otherwise change the M5C sequencing: the next active gate is Basic action micro-animation + matching Basic VFX for P1/P2/P3, followed by Heavy / Special / Awakening only after the Basic pipeline is stable. 九尾狐 and 狌狌 remain later unless the player explicitly changes order again.
