@@ -353,4 +353,13 @@ M5C-A pipeline and M6C-B balance are accepted. Continue character-by-character s
 
 ### KO early gate closure — 2026-10-12
 
-By explicit player reorder, static KO presentation for the already verified P1/P2/P3 characters was completed before the Basic action/VFX vertical slice. All three KO states are now **PASS / PLAYER VERIFIED**. This does not otherwise change the M5C sequencing: the next active gate is Basic action micro-animation + matching Basic VFX for P1/P2/P3, followed by Heavy / Special / Awakening only after the Basic pipeline is stable. 九尾狐 and 狌狌 remain later unless the player explicitly changes order again.
+By explicit player reorder, static KO presentation for the already verified P1/P2/P3 characters was completed before resuming the remaining Chapter1 character-production pipeline. All three KO states are now **PASS / PLAYER VERIFIED**.
+
+Current corrected sequence after re-reading the authoritative concept matrix:
+1. 九尾狐 Concept direction → player approval;
+2. 九尾狐 required base visual presentation gates;
+3. 狌狌 Concept direction → player approval;
+4. 狌狌 required base visual presentation gates;
+5. only then resume the Basic action micro-animation + matching Basic VFX vertical slice, unless the player explicitly reorders again.
+
+This supersedes the temporary interpretation that Basic/VFX should start immediately after P1/P2/P3 KO closure.
