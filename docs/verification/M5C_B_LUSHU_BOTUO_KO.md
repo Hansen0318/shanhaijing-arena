@@ -42,3 +42,9 @@ Fresh public downloads byte-match tested dist for index, JS, battleRuntime, CSS 
 Budget closure: shared cache peak10308240 decoded bytes; scene peak10308240 decoded-equivalent bytes, independently measured and agrees with presenter.textureBytes. All P1/P2/P3 KO actually prepared and retained in every encounter order tested, no fallback/silent budget drop. Both limits remain16777216 bytes; src/assets/schema.js and presenter budget code unchanged. This is decoded-equivalent residency, not a claim about total physical GPU memory.
 
 No technical blocker. Player phone needs only P1/P2 HP0 resting size/ground contact, last-facing mirror and continued static KO/no return to Idle or Move. Existing P3 acceptance remains player-owned. STOP; no next animation/VFX gate.
+
+## Player acceptance — 2026-10-12
+
+Status: **PASS / PLAYER VERIFIED**.
+
+Player completed device smoke and accepted the deployed 鹿蜀 / 猼訑 static KO presentation, including size/ground contact, final-facing mirror behavior and static persistence. Together with the already accepted 赤鱬 KO, the three-character static KO gate is closed. Preserve the existing 16MiB texture/cache budgets and the runtime-sized P1/P2 derivatives; no further KO work is authorized unless a regression is demonstrated.
