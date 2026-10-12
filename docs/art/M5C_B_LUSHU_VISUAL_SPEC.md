@@ -364,3 +364,18 @@ The locomotion state is presentation-only and must not change movement speed, ac
 ### Gate
 
 This first 4-frame locomotion strip requires explicit player visual approval before runtime integration. Until approved, do not add `battleMove` to the production manifest/catalog and do not open 猼訑 locomotion.
+
+## Static KO approval — 2026-10-12
+
+Status: **PASS / PLAYER APPROVED — RUNTIME INTEGRATION NEXT**
+
+Approved static KO source:
+- 1254×1254 RGBA PNG;
+- 767606 bytes;
+- SHA-256 `bbc05493af9e396d72b7936ce434aa9eca824058f8141ad40ec27b0658a9015c`;
+- canonical right-facing source;
+- one grounded/resting pose only;
+- preserves 鹿蜀 white mythic head, horn/antler read, tawny/tiger markings, vermilion tail and compact blade identity;
+- no loop, no breathing, no locomotion, no death flipbook.
+
+Runtime rule: HP<=0 selects static `battleKo`; left-facing death uses the existing shared horizontal mirror from last facing. Do not redraw or regenerate this source. P3 KO is already integrated separately; current remaining executable gate is P1+P2 KO integration only.
