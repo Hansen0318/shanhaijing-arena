@@ -139,3 +139,54 @@ Author/review **one `collectionArt` only** from the approved 九尾狐 identity:
 - preserve ivory/cream fur, warm red/ember accents, dark neutral clothing and restrained gold;
 - richer than battle art but still simplified enough to remain consistent with the accepted roster;
 - no battleIdle, locomotion, KO, action frames or VFX production yet.
+
+## 15. collectionArt approval — 2026-10-12
+
+Status: **PASS / PLAYER APPROVED**.
+
+Approved `collectionArt` source:
+- 1122×1402 RGBA PNG;
+- transparent background;
+- 1803659 bytes;
+- SHA-256 `dcd9c0279208730b4809780c343fa415ae313addc3d2098a362b2604e534a053`.
+
+Locked collection presentation:
+- full-body anthropomorphic fox-spirit identity;
+- lean elegant Blast / Attacker proportions;
+- same approved fox-derived head/face as Concept + portraitSquare;
+- nine tails remain readable as grouped large masses and frame the body without swallowing torso/legs;
+- compact fox-fire focus near the forward hand;
+- ivory/cream fur, warm red/ember accents, dark neutral clothing and restrained gold;
+- simplified 2D cel-shaded roster language;
+- richer than battle art, but without identity drift.
+
+## 16. Next gate — Battle Simplification
+
+Status: **NEXT EXACT ITEM — ONE BATTLE-SCALE SIMPLIFICATION REFERENCE ONLY**.
+
+Shared hard rule applies: concept/collection detail and battle detail are separate tiers. Do **not** create final battle art by directly shrinking `collectionArt`.
+
+Target the current Arena mobile baseline (~48px base-fit readability) and preserve only the highest-priority battle cues:
+1. fox-derived head / ears / long muzzle / black nose;
+2. lean ranged-caster humanoid body silhouette;
+3. nine-tail identity reduced into a few large readable grouped masses;
+4. white/cream body-fur mass + warm red/ember tail/marking mass;
+5. compact dark-neutral waist/arm clothing mass with restrained gold;
+6. one small sharp fox-fire focus / projected flame cue;
+7. decorative trim last.
+
+Simplify/remove first:
+- small fur spikes and micro-strands;
+- tiny gold trim, buckles, jewelry and layered waist hardware;
+- excess tail-tip subdivisions;
+- tiny flame wisps;
+- fine claw/armor engravings;
+- excess garment ribbons/panels;
+- any detail that disappears at ~48px.
+
+Battle simplification acceptance:
+- head / torso / arms / legs / grouped tails stay separable at small scale;
+- nine tails do not become one giant unreadable blob;
+- silhouette remains clearly different from 鹿蜀 single-tail Speed read and 赤鱬 hover/support read;
+- Blast / Attacker ranged pressure remains obvious before VFX;
+- no final `battleIdle`, locomotion, KO, action or VFX production yet.
