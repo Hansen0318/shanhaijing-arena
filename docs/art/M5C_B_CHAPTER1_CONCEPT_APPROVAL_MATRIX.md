@@ -167,3 +167,7 @@ When all five concepts are approved, perform the five-character comparison gate 
 Continue with **九尾狐 Concept direction**. 鹿蜀、猼訑、赤鱬 formal identity/static-runtime gates are already accepted and must not be reopened.
 
 For 九尾狐, generate/review one Concept image only under the existing creature-first + mobile-readability hard rules. Preserve fox-derived head/face, readable nine-tail identity, Blast / Attacker offensive caster posture, and strong separation from 赤鱬/鹿蜀. Do not author portraitSquare, collectionArt, battleIdle, locomotion frames, action frames or VFX before the 九尾狐 Concept is explicitly player-approved.
+
+### 九尾狐 current status — PASS / PLAYER APPROVED
+
+The player approved the corrected 九尾狐 Concept on 2026-10-12. Locked identity now uses a strongly fox-derived anthropomorphic head/face, grouped readable nine-tail masses, lean Blast/Attacker ranged posture, simplified cel-shaded mobile-first shapes and fox-fire language clearly separated from 鹿蜀 and 赤鱬. The next gate is `portraitSquare` only; later static/runtime assets remain blocked until their preceding player-review gate passes.
