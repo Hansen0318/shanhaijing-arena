@@ -36,3 +36,24 @@ P1/P2 maintained their authored locomotion and static identities. Blue/red overh
 Forced reducedMotion=true is verified through actual presenter and BattleSession: all four Move frames cycle at5fps, stop→static idle; normal10fps. This is not a claim of OS/browser preference emulation: the browser tool exposes no media-emulation capability. Exact cadence/full order/duplicate time/mirror/next-tick stop/snapshot purity are asserted by executable tests rather than guessed from isolated screenshots. Player iPhone smoke remains the final device/art acceptance.
 
 No technical release blocker. Only player check: P3 left/right/up/down hover motion shows changing drift/fin/appendage poses rather than static sliding, facing correct, stable presentation anchor/size and release→accepted static idle; with Reduce Motion enabled still multi-frame at slower cadence. STOP; no combined archetype tuning, Basic/actions/VFX/Hit/KO/Cast/next character/main merge.
+
+## P3 size-continuity correction closure — 2026-10-12
+**ENGINEERING PASS / PLAYER PHONE SMOKE PENDING.** Recovered/tested/deployed source `8069c5d42ceeb8bc5c5e9f4d5d86872deac0f44a`, PR #1 open/unmerged. Final HEAD is containing docs-only closure (active feature ref); no runtime delta in closure. Existing successful deployment is reused rather than publishing identical source again.
+
+Player reproduced Move shrink / stop enlargement. Chat confirmed safe-strip transparent padding reduced visible silhouette while both Idle/Move had scale2. Chat source changes only P3 battleMove.scale2→2.7; Idle remains2. Source diff reviewed against previous a544a10: only catalog scale plus directly affected Chiru test expectations/new contract (and progress docs). Executor made no production/test/asset correction. Shared presenter/playback/projection, gameplay moveSpeed1.6, authoritative x/y, P1/P2 and all assets remain unchanged.
+
+Fresh directly impacted command: `node --test tests/chiruMove.test.js tests/lushuMove.test.js tests/botuoMove.test.js tests/assetPresenter.test.js tests/assetDescriptors.test.js tests/formalCatalog.test.js tests/assetIntegration.test.js` →51/51 PASS. P3 tests7/7 within that command. Actual presenter rendered Move194.4×194.4 (72×2.7), normal10/reduced5fps full four-frame cycles, duplicate-time protection, XY movement/shared mirror/stop→static idle; frame origin[.5,1] and projected actor anchor unchanged. Actual BattleSession snapshots remain identical around presentation calls; moveSpeed1.6 unchanged. P1/P2 regressions PASS.
+
+Read-only decoded-alpha size evidence (no normalization/export): Idle bbox(8,0,156,160), visible133.2×144px at scale2. Move F1/F2/F3/F4 visible heights137.295/128.790/122.715/137.295px at scale2.7; versus old101.7/95.4/90.9/101.7px at scale2. Height ratios relative Idle improve from63.1–70.6% to85.2–95.3%; lean/drift poses intentionally vary width/height, so this is measured compensation, not a claim of identical silhouette dimensions or player visual acceptance. PNG remains640×160RGBA/112708bytes/SHA256d0839a1630f21d1b59dd0363c35e94886d3983290cac6e339f59c4afa93bc74f; exact per-cell safe margins/full frame regions unchanged and test PASS.
+
+Asset guard49files699346bytes PASS; build PASS (existing >500kB chunk advisory only); diff whitespace PASS. Actions #864 /38203143939 SUCCESS for source8069c5d: Build114660726695, Pages114660801432 SUCCESS, configured CI628/628 PASS. No unrelated full regression run locally. Fresh public HTML/bundles/Move PNG all byte-match tested dist:
+
+| Public file | Bytes | SHA256 |
+| --- | ---: | --- |
+| index.html | 1491 | 2c19dee3c9d252969d8213ca6edb30ef2ec698aec0cd6c68666d7f9bd06c6dee |
+| assets/index-D3rgHGz9.js | 94635 | 7716ef72d88e9a95b6f115d7f63baf3ed2021c817863c5374721812aaede677b |
+| assets/index-DcqtNRF0.css | 22943 | a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da |
+| assets/battleRuntime-eEeFqKLo.js | 1445032 | af531279935047ddf213eabb0beaeace3b64651536bc6ae42c443c3149ac4864 |
+| assets/characters/chiru/battleMove-4f.png | 112708 | d0839a1630f21d1b59dd0363c35e94886d3983290cac6e339f59c4afa93bc74f |
+
+No technical blocker. Public executable payload is verified via exact bundle/PNG equality; real presenter/session contract is verified locally. No duplicate subjective browser art acceptance: player alone rechecks on iPhone whether moving/stop silhouettes now feel continuous, anchor stable and four-frame hover still cycles (including Reduce Motion). Earlier scale2/144-square Move release observations are historical and superseded by this section; Idle144-square remains accepted. STOP; no combined tuning/actions/VFX/next character/main merge.
