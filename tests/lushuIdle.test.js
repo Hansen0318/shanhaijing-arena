@@ -20,7 +20,8 @@ test('approved idle resolves static F1 with a fixed ground origin and static fal
  }
  assert.equal(animationFrame(d,d.duration+.001).index,0);
  assert.equal(animationFrame(d,.6,true).index,0);
- for(const state of ['battleHit','battleKo','battleCast'])assert.equal(characterAnimation(rosterCatalog.P1,state).source,'placeholder.battle');
+ for(const state of ['battleHit','battleCast'])assert.equal(characterAnimation(rosterCatalog.P1,state).source,'placeholder.battle');
+ assert.equal(characterAnimation(rosterCatalog.P1,'battleKo').source,'lushu.battleKo');
  assert.equal(characterAnimation(rosterCatalog.P2,'battleIdle').source,'botuo.battleIdle');
  for(const c of Object.values(rosterCatalog).slice(3))assert.equal(characterAnimation(c,'battleIdle').source,'placeholder.battle');
 });
