@@ -171,3 +171,7 @@ For 九尾狐, generate/review one Concept image only under the existing creatur
 ### 九尾狐 current status — PASS / PLAYER APPROVED
 
 The player approved the corrected 九尾狐 Concept on 2026-10-12. Locked identity now uses a strongly fox-derived anthropomorphic head/face, grouped readable nine-tail masses, lean Blast/Attacker ranged posture, simplified cel-shaded mobile-first shapes and fox-fire language clearly separated from 鹿蜀 and 赤鱬. The next gate is `portraitSquare` only; later static/runtime assets remain blocked until their preceding player-review gate passes.
+
+### 九尾狐 production progress — collectionArt approved
+
+As of 2026-10-12, 九尾狐 Concept, `portraitSquare`, and `collectionArt` are PASS / PLAYER APPROVED. The next gate is **Battle Simplification**, applying the roster-wide hard rule that battle detail is a separate tier from concept/collection detail and must remain readable at mobile runtime scale. Final `battleIdle` remains blocked until that simplification direction is approved.
