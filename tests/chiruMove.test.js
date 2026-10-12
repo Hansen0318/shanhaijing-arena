@@ -25,7 +25,7 @@ test('P3 approved Move resolves and preloads four 160-square cells at 10fps with
  const a=resolveCharacterAsset(rosterCatalog.P3,'battleMove');assert.equal(a.key,'chiru.battleMove');
  assert.equal(a.path,'assets/characters/chiru/battleMove-4f.png');assert.deepEqual([a.width,a.height,a.bytes],[640,160,112708]);assert.equal(a.fallback,'placeholder.battle');
  const d=rosterCatalog.P3.animationDescriptors.battleMove;assert.deepEqual(d.frames,[0,160,320,480].map(x=>({x,y:0,width:160,height:160})));
- assert.equal(d.source,a.key);assert.equal(d.fps,10);assert.equal(d.loop,true);assert.equal(d.staticFrame,0);assert.deepEqual(d.origin,[.5,1]);assert.equal(d.scale,2);
+ assert.equal(d.source,a.key);assert.equal(d.fps,10);assert.equal(d.loop,true);assert.equal(d.staticFrame,0);assert.deepEqual(d.origin,[.5,1]);assert.equal(d.scale,2.7);
  assert.equal(rosterCatalog.P3.animationDescriptors.battleIdle.frames.length,1);
  assert.ok(encounterAssetKeys([rosterCatalog.P3]).includes(a.key));const f=await fixture();assert.ok(f.loaded.includes(a.key));f.p.destroy();
 });
@@ -35,12 +35,23 @@ for(const reduced of [false,true])test(`P3 actual presenter cycles all four fram
  const seen=[];for(let i=0;i<=4;i++){
   f.actor.y+=.1;const before=structuredClone(f.frame),now=.1+(i?i/fps+.001:0);f.render(now);seen.push(image.texture[1]);
   assert.ok(image.texture[0].endsWith('chiru.battleMove'));assert.equal(image.texture[1],`${(i%4)*160}.0.160.160`);
-  assert.deepEqual(image.setOriginValue,[.5,1]);assert.deepEqual(image.setDisplaySizeValue,[144,144]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);assert.deepEqual(f.frame,before);
+  assert.deepEqual(image.setOriginValue,[.5,1]);assert.deepEqual(image.setDisplaySizeValue,[194.4,194.4]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);assert.deepEqual(f.frame,before);
   f.render(now);assert.equal(image.texture[1],seen.at(-1));assert.ok(image.texture[0].endsWith('chiru.battleMove'));
  }
  assert.equal(new Set(seen).size,4);f.render(1.1);assert.ok(image.texture[0].endsWith('chiru.battleIdle'));assert.equal(image.texture[1],'0.0.160.160');
  f.actor.x-=.1;f.render(1.2);assert.deepEqual(image.setFlipXValue,[true]);f.actor.x+=.1;f.render(1.3);assert.deepEqual(image.setFlipXValue,[false]);
  f.actor.y-=.1;f.render(1.4);assert.ok(image.texture[0].endsWith('chiru.battleMove'));f.p.destroy();
+});
+
+test('P3 Move visual scale compensates for safe transparent padding without changing gameplay size semantics',()=>{
+ const idle=rosterCatalog.P3.animationDescriptors.battleIdle,move=rosterCatalog.P3.animationDescriptors.battleMove;
+ assert.equal(idle.scale,2);assert.equal(move.scale,2.7);
+ // Renderer uses descriptor scale on the fixed 160-square cell. 2.7 keeps the
+ // normalized no-bleed strip near the accepted idle silhouette size while
+ // preserving the approved PNG, frame regions and gameplay coordinates.
+ assert.deepEqual(move.frames,[0,160,320,480].map(x=>({x,y:0,width:160,height:160})));
+ assert.deepEqual(move.origin,idle.origin);
+ assert.equal(rosterCatalog.P3.stats.moveSpeed,1.6);
 });
 
 test('P3 reduced cadence is half normal; decorative fallback and P1/P2 contracts remain intact',async()=>{
