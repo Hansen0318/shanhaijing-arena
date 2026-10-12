@@ -882,3 +882,18 @@ Closed accepted contract:
 Do not reopen P2 locomotion unless a later regression is demonstrated.
 
 Next gate is P3 赤鱬 locomotion authoring/review only.
+
+## Static KO approval — 2026-10-12
+
+Status: **PASS / PLAYER APPROVED — RUNTIME INTEGRATION NEXT**
+
+Approved static KO source:
+- 1254×1254 RGBA PNG;
+- 807569 bytes;
+- SHA-256 `449252330e613eadcb6f45ec5d9d3e93150c9a8f52b39405fc1973553e2d62c9`;
+- canonical right-facing source;
+- one heavy grounded/resting pose only;
+- preserves 猼訑 sheep/goat head, large curved horns, dark shoulder-fur mantle, broad Tank mass and dominant protective guard identity;
+- no loop, no breathing, no locomotion, no death flipbook.
+
+Runtime rule: HP<=0 selects static `battleKo`; left-facing death uses the existing shared horizontal mirror from last facing. Do not redraw or regenerate this source. P3 KO is already integrated separately; current remaining executable gate is P1+P2 KO integration only.
