@@ -21,3 +21,24 @@ Ruling: latest explicit derivative decision supersedes earlier1254 byte-copy run
 
 ## Direct CI dependency correction
 Actions#876/38237121648 failed only two directly coupled stale expectations: lushuIdle still expected KO placeholder; lushuTeamBattleCorrection custom slot fixture inherited the newly authored P1 KO descriptor. Minimal corrections remove KO from the unauthored-state list/add authored source assertion, and explicitly clear inherited KO descriptor only in the existing slot-only test fixture. No production correction or architecture change. Scope expands only by those two failed files: previous impacted command plus tests/lushuIdle.test.js and tests/lushuTeamBattleCorrection.test.js →92/92 PASS. Build/guard/diff PASS again; runtime bundle filenames unchanged. Rerun CI/Pages pending. Fresh review of original production delta had no findings; independent new15 tests/whitespace PASS.
+
+## Release closure — 2026-10-12
+ENGINEERING PASS / PLAYER PHONE SMOKE PENDING. Tested/deployed source `bb6d64f2cdec7a3d8a5fdfebf615cf8666189d83`, tree `081b2ebd876a4f0b1eac5cfc7ca5c4489086b581`; final feature HEAD is the containing docs-only closure, with identical production/test payload. Initial integration source973b287d37a39715b7a83e3cf2e2c194fd1dd9f4 was followed only by the two direct stale test fixes described above. No outstanding CI failure.
+
+Final local scope92/92 PASS; asset guard52files1912631bytes PASS; build and whitespace PASS; existing chunk advisory only. Fresh independent review: no findings, new15 tests independently PASS. Configured CI650/650 PASS. Actions#877/38237391974 Build114771324539 and Pages114771474109 SUCCESS. No main merge.
+
+Fresh public downloads byte-match tested dist for index, JS, battleRuntime, CSS and all three KO PNGs. Public DevLab healer-retreat/T3 enemy battle showed P1 HUD0/245 and P2 HUD0/320 with their correct low resting KO poses, no overhead HP on dead actors; live P3 and enemy locomotion/HUD/HP remained visible. Subsequent defeat showed P3 existing KO/dead portrait, P1/P2 still resting; final overlay partially occludes scene. Ground/size/both last-facing directions and100-second static persistence are mechanically checked by actual presenter/session regression; public screenshots support asset rendering and do not replace those exact assertions or player art acceptance. Canvas1120×540 unchanged, document1363×936 equals viewport (no outer overflow). Browser DOM loaded index-DDjR9mFF.js; recorded errors were browser-extension metadata errors, none from app origin. Forced reduced-motion tested in actual presenter, not OS-browser preference emulation.
+
+| Public path | Bytes | SHA256 |
+| --- | ---: | --- |
+| index.html | 1491 | ec9f6165371e9fe89688241b8c8eb6a9b240c03cd7d74b62d442831c008c5850 |
+| assets/index-DDjR9mFF.js | 95567 | 1b3cda6dee02c1817235b2359c026e3dcccb1e1da8cf0bdc102cd0b32a1c5282 |
+| assets/battleRuntime-C-tUPhHF.js | 1445032 | ab257743b99e21042b73fd1ccc1577b7b020ce88e5c79c10581386409715b8b4 |
+| assets/index-DcqtNRF0.css | 22943 | a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da |
+| assets/characters/lushu/battleKo.png | 150698 | 03c4e5a75546e8dc67044f42a9ce958bba829e423561e60a2665d7494bf77aff |
+| assets/characters/botuo/battleKo.png | 157440 | 037829ec32333a0179414a9ee8ccb57b4eb3ddb83004aa93aea5c78914fc9c57 |
+| assets/characters/chiru/battleKo.png | 905147 | f97e369fe2c6ae2d0fff1c51c96e487279b4bbe1e614925a7d1c2c4dc2a2796d |
+
+Budget closure: shared cache peak10308240 decoded bytes; scene peak10308240 decoded-equivalent bytes, independently measured and agrees with presenter.textureBytes. All P1/P2/P3 KO actually prepared and retained in every encounter order tested, no fallback/silent budget drop. Both limits remain16777216 bytes; src/assets/schema.js and presenter budget code unchanged. This is decoded-equivalent residency, not a claim about total physical GPU memory.
+
+No technical blocker. Player phone needs only P1/P2 HP0 resting size/ground contact, last-facing mirror and continued static KO/no return to Idle or Move. Existing P3 acceptance remains player-owned. STOP; no next animation/VFX gate.
