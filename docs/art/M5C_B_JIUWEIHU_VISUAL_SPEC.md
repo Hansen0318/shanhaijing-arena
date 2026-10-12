@@ -241,3 +241,27 @@ Runtime acceptance must verify:
 - no idle animation is introduced.
 
 Locomotion, KO, action/cast and VFX stay **BLOCKED** until this static runtime gate is player-verified.
+
+## 18. Runtime derivative preparation — 2026-10-13
+
+Status: **CHAT COMPLETE / WORK INTEGRATION NEXT**.
+
+Prepared runtime derivatives from player-approved transparent masters:
+- `portrait`: 128×128 RGBA PNG, 38601 bytes, SHA-256 `b2df8fab63cd71a538622914b0c0d8eabcfc104bc245fd316beaf5e24ff573ef`;
+- `identity`: 160×192 RGBA PNG, 54502 bytes, SHA-256 `f8fe054e7a0de50d66e62081ec0fd53e493674cd707d5f2e28be098ab277dd0d`, alpha bbox `(6,4)-(153,188)`;
+- static `battleIdle`: 160×160 RGBA PNG, 32063 bytes, SHA-256 `394497ffa5314a4559fee10d58d799fab9be59b282a31bb3ffebb02670ed6640`, alpha bbox `(21,16)-(139,151)`.
+
+Preparation is resize/fit only. No redesign, pose change, facing change, gameplay change or battle-state change is introduced.
+
+### Next exact executable gate
+Integrate only these three static P4 assets through the existing shared asset pipeline, then verify real-game readability. Required runtime checks:
+- Team Select / Collection use approved identity at roster-consistent visual scale;
+- compact portrait remains face-first;
+- Arena actor uses one static battleIdle only;
+- grouped tail masses remain readable at actual mobile scale;
+- actor does not present materially taller/larger than the current roster family;
+- enemy mirror remains valid;
+- HUD / overhead HP / layout remain unchanged;
+- no movement, breathing, KO, action or VFX is introduced.
+
+Locomotion, KO, action/cast and VFX remain blocked until player verification of this static runtime gate.
