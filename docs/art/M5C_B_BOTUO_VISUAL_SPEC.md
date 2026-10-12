@@ -897,3 +897,17 @@ Approved static KO source:
 - no loop, no breathing, no locomotion, no death flipbook.
 
 Runtime rule: HP<=0 selects static `battleKo`; left-facing death uses the existing shared horizontal mirror from last facing. Do not redraw or regenerate this source. P3 KO is already integrated separately; current remaining executable gate is P1+P2 KO integration only.
+
+
+### Runtime derivative for KO budget — 2026-10-12
+
+The approved1254×1254 KO master remains the visual source of truth. Because the shared Arena decoded texture/cache budget is16MiB and the battle actor is displayed far below source resolution, runtime integration must use a resize-only derivative rather than increasing the global cache budget.
+
+Runtime derivative:
+- 512×512 RGBA PNG;
+- 157440 bytes;
+- SHA-256 `037829ec32333a0179414a9ee8ccb57b4eb3ddb83004aa93aea5c78914fc9c57`;
+- produced only by proportional full-canvas resize of the approved master;
+- no crop, redraw, pose change, facing change, or content change.
+
+The approved master metadata remains recorded separately and must not be confused with the runtime derivative.
