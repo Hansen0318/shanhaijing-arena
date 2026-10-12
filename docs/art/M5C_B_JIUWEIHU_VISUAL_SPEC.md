@@ -190,3 +190,54 @@ Battle simplification acceptance:
 - silhouette remains clearly different from 鹿蜀 single-tail Speed read and 赤鱬 hover/support read;
 - Blast / Attacker ranged pressure remains obvious before VFX;
 - no final `battleIdle`, locomotion, KO, action or VFX production yet.
+
+## 17. Battle Simplification + static battleIdle approval — 2026-10-13
+
+Status: **PASS / PLAYER APPROVED**.
+
+Approved Battle Simplification reference:
+- 1122×1402 RGB JPEG;
+- 330788 bytes;
+- SHA-256 `002c858a45469ecdf2744f29b01f8dc0e7e07644826de1eafd7dc1a34b09c210`.
+
+Approved static `battleIdle` master:
+- 1122×1402 RGBA PNG;
+- transparent background;
+- 1350983 bytes;
+- SHA-256 `e90332facc504911584b96ceb95aaa86aa3b8b09e4786b199ec22e95dcb67fbd`.
+
+Locked battle presentation:
+- species-derived fox head/face remains dominant and distinct from 鹿蜀;
+- lean ranged-caster humanoid proportions;
+- nine-tail identity compressed into a few large readable masses rather than fine individual tail detail;
+- white/cream primary mass + warm red/ember secondary mass + compact dark-neutral garment mass + restrained gold;
+- compact fox-fire cue near the forward hand;
+- fewer contour/detail lines than collectionArt;
+- one static pose only; no animation/VFX sheet.
+
+### Static asset pack status
+- Concept: PASS / PLAYER APPROVED;
+- portraitSquare: PASS / PLAYER APPROVED;
+- collectionArt: PASS / PLAYER APPROVED;
+- Battle Simplification: PASS / PLAYER APPROVED;
+- static battleIdle: PASS / PLAYER APPROVED.
+
+### Next exact gate — Static Runtime Readability / integration
+Before any locomotion, KO, action/cast or VFX generation, prepare runtime-sized derivatives from the approved masters and integrate only:
+1. `portraitSquare`;
+2. `collectionArt`;
+3. static `battleIdle`.
+
+Runtime acceptance must verify:
+- compact portrait remains face-first;
+- Team Select / Collection identity uses the approved full-body art at roster-consistent visual scale;
+- Arena actor uses the approved simplified static battle pose;
+- actor height/mass is in the same presentation family as existing P1/P2/P3 rather than materially taller because the source canvas is large;
+- grouped tails remain readable and do not collapse into one blob at actual mobile scale;
+- head / torso / arms / legs / tail masses remain separable;
+- enemy horizontal mirror remains valid;
+- overhead HP/HUD/layout remain unchanged;
+- no gameplay stats, movement, targeting, AI, telegraph or combat timing change;
+- no idle animation is introduced.
+
+Locomotion, KO, action/cast and VFX stay **BLOCKED** until this static runtime gate is player-verified.
