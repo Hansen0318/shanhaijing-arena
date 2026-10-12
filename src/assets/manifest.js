@@ -12,6 +12,7 @@ const entries=[
  {key:'chiru.identity',type:'image',path:'assets/characters/chiru/identity.png',width:160,height:192,bytes:53023,fallback:'placeholder.portrait'},
  {key:'chiru.battleIdle',type:'image',path:'assets/characters/chiru/battleIdle.png',width:160,height:160,bytes:44131,fallback:'placeholder.battle'},
  {key:'chiru.battleMove',type:'image',path:'assets/characters/chiru/battleMove-4f.png',width:640,height:160,bytes:112708,fallback:'placeholder.battle'},
+ {key:'chiru.battleKo',type:'image',path:'assets/characters/chiru/battleKo.png',width:1254,height:1254,bytes:905147,fallback:'placeholder.battle'},
  {key:'placeholder.portrait',type:'procedural',path:null},
  {key:'placeholder.battle',type:'procedural',path:null},
  {key:'placeholder.vfx',type:'procedural',path:null},

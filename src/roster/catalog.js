@@ -27,13 +27,16 @@ const presentation={
   })}),
  },
  P3:{
-  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'chiru.portrait',collectionArt:'chiru.identity',battleIdle:'chiru.battleIdle',battleMove:'chiru.battleMove'}),
+  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'chiru.portrait',collectionArt:'chiru.identity',battleIdle:'chiru.battleIdle',battleMove:'chiru.battleMove',battleKo:'chiru.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'chiru.battleIdle',frames:[{x:0,y:0,width:160,height:160}],
    fps:2.5,loop:true,origin:[.5,1],scale:2,staticFrame:0,
   }),battleMove:animationDescriptor({
    source:'chiru.battleMove',frames:[0,160,320,480].map(x=>({x,y:0,width:160,height:160})),
    fps:10,loop:true,origin:[.5,1],scale:2.7,staticFrame:0,
+  }),battleKo:animationDescriptor({
+   source:'chiru.battleKo',frames:[{x:0,y:0,width:1254,height:1254}],
+   duration:1,loop:false,origin:[.5,980/1254],scale:2,staticFrame:0,
   })}),
  },
 };
