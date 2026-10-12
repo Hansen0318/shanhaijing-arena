@@ -109,3 +109,33 @@ Author/review **one portraitSquare only** from this approved identity:
 - minimal tail/fire framing if useful, but face remains dominant;
 - preserve simplified cel-shaded style and large color blocks;
 - no collectionArt, battleIdle, locomotion, KO, action or VFX yet.
+
+## 14. portraitSquare approval — 2026-10-12
+
+Status: **PASS / PLAYER APPROVED**.
+
+Approved `portraitSquare` source:
+- 1254×1254 RGBA PNG;
+- transparent background;
+- 1977883 bytes;
+- SHA-256 `00677eaf3d634ee9e406f711c0823a149c4943e39ae00c5a64fec4017d809b33`.
+
+Locked portrait framing:
+- fox-derived head/face dominates the square;
+- ears readable;
+- long fox muzzle, black nose and fox eye geometry remain distinct from 鹿蜀;
+- only slight neck/upper-ruff/upper-torso visible;
+- no excessive chest exposure;
+- no decorative background required;
+- preserve simplified cel-shaded color blocking.
+
+### Next exact item
+Author/review **one `collectionArt` only** from the approved 九尾狐 identity:
+- full-body or near-full-body identity artwork;
+- mid-long ranged casting / pressure-ready three-quarter pose;
+- nine tails remain clearly readable as grouped masses and frame the silhouette rather than swallowing it;
+- compact fox-fire focus near the forward hand;
+- lean elegant Blast / Attacker read;
+- preserve ivory/cream fur, warm red/ember accents, dark neutral clothing and restrained gold;
+- richer than battle art but still simplified enough to remain consistent with the accepted roster;
+- no battleIdle, locomotion, KO, action frames or VFX production yet.
