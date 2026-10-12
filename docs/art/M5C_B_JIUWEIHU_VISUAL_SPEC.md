@@ -53,3 +53,28 @@ Cast: concise fox-fire projection pose.
 
 ## 11. Acceptance
 Must read immediately as 九尾狐, preserve nine-tail identity, and remain readable at ~48px runtime fit.
+
+## 12. Current production gate — 2026-10-12
+
+Status: **NEXT EXACT GATE — CONCEPT IMAGE / PLAYER REVIEW ONLY**.
+
+The current active Chapter1 visual task is 九尾狐 Concept authoring. Preserve:
+- humanoid / anthropomorphic biped body;
+- strongly fox-derived mythic face, not a generic human face with ears;
+- clearly readable nine-tail identity;
+- Blast / Attacker ranged-offensive posture;
+- grouped tail masses that remain readable at mobile scale instead of forming one undifferentiated fan;
+- simplified cel-shaded shapes and strong color blocking;
+- clear separation from 鹿蜀 single-red-tail motion language and 赤鱬 circular/aquatic support language.
+
+Preferred first Concept direction:
+- lean elegant fox-warrior/caster silhouette;
+- ivory/cream fur and hair mass with warm red + ember-orange accents and dark neutral clothing;
+- nine tails organized into three readable tail groups rather than nine equal overlapping lines;
+- one compact fox-fire catalyst / orb-focus carried near the forward hand;
+- sharp projected spirit-fire shapes, not water rings;
+- no large staff and no oversized fan that hides the body;
+- no fine embroidery, tiny jewelry, dense tassels or excessive trim;
+- full body visible with separated head / torso / arms / legs / tail groups.
+
+This gate produces exactly one Concept image for player review. Do not start portraitSquare, collectionArt, battleIdle, locomotion, KO, action frames or VFX until the player explicitly approves the Concept direction.
