@@ -33,7 +33,7 @@ const presentation={
    fps:2.5,loop:true,origin:[.5,1],scale:2,staticFrame:0,
   }),battleMove:animationDescriptor({
    source:'chiru.battleMove',frames:[0,160,320,480].map(x=>({x,y:0,width:160,height:160})),
-   fps:10,loop:true,origin:[.5,1],scale:2,staticFrame:0,
+   fps:10,loop:true,origin:[.5,1],scale:2.7,staticFrame:0,
   })}),
  },
 };
