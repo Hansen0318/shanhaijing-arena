@@ -362,11 +362,12 @@ Status: **P1/P2/P3 STATIC KO PASS / PLAYER VERIFIED**.
 
 The player accepted the deployed static KO presentation for 鹿蜀, 猼訑 and 赤鱬. Preserve the accepted right-facing canonical KO art, shared last-facing mirror, grounded/static persistence, P1/P2 runtime-sized derivatives, P3 KO baseline and existing 16MiB shared cache/scene texture budgets.
 
-The KO gate is closed. The next active production gate returns to the previously approved sequence:
-1. define and player-review the **Basic action micro-animation + matching Basic VFX** visual language for the already verified P1/P2/P3 characters;
-2. Chat owns concept/spec/asset preparation and approval first;
-3. only after approved assets/specs exist does Work receive the smallest runtime integration/test/deploy delta;
-4. Heavy / Special / Awakening remain blocked until the Basic action/VFX pipeline is player-verified;
-5. 九尾狐 and 狌狌 static production remains after the action/VFX vertical slice unless the player explicitly reorders again.
+Process correction after re-reading the Chapter1 concept-control documents:
+1. the KO gate is closed;
+2. the next unfinished Chapter1 character gate is **九尾狐 Concept direction**;
+3. Chat must create/review one 九尾狐 Concept image first under the existing creature-first, humanoid, simplified cel-shaded, mobile-readability hard rules;
+4. do not author 九尾狐 portraitSquare / collectionArt / battleIdle / locomotion / KO until the Concept is explicitly player-approved;
+5. after 九尾狐 reaches the same base presentation pipeline, continue 狌狌;
+6. Basic action micro-animation + matching Basic VFX is deferred until the unfinished Chapter1 base character presentation is completed, unless the player explicitly reorders again.
 
-Do not reopen locomotion, idle breathing, KO, shared texture budgets, gameplay mechanics, AI, targeting, telegraph geometry, ability timing or combat math while authoring Basic presentation.
+Do not reopen 鹿蜀 / 猼訑 / 赤鱬 locomotion, idle breathing, KO, shared texture budgets, gameplay mechanics, AI, targeting, telegraph geometry, ability timing or combat math while producing 九尾狐 Concept.
