@@ -78,3 +78,34 @@ Preferred first Concept direction:
 - full body visible with separated head / torso / arms / legs / tail groups.
 
 This gate produces exactly one Concept image for player review. Do not start portraitSquare, collectionArt, battleIdle, locomotion, KO, action frames or VFX until the player explicitly approves the Concept direction.
+
+## 13. Concept approval — 2026-10-12
+
+Status: **PASS / PLAYER APPROVED**.
+
+Approved Concept source:
+- 1142×1378 RGB PNG;
+- 1766210 bytes;
+- SHA-256 `31476bfc573808fd62c970a386ac0ecd27ac1759e116414adc1476a693b81c45`.
+
+Locked from player approval:
+- humanoid / anthropomorphic biped body;
+- strongly fox-derived mythic head/face, not human-face-plus-ears;
+- long fox muzzle / black nose / fox jaw and eye geometry clearly distinct from 鹿蜀;
+- nine tails as readable grouped large masses;
+- ivory/cream fur with warm red/ember accents and dark neutral clothing;
+- compact fox-fire focus near the forward hand;
+- lean elegant Blast / Attacker ranged-offensive posture;
+- simplified cel-shaded large color blocks and restrained ornament for mobile readability;
+- no large staff/fan silhouette that hides the body.
+
+### Next exact item
+Author/review **one portraitSquare only** from this approved identity:
+- square crop-safe;
+- fox-derived head/face dominates frame;
+- ears readable;
+- eyes/muzzle/nose immediately distinguish 九尾狐 from 鹿蜀;
+- head + slight neck/upper torso only;
+- minimal tail/fire framing if useful, but face remains dominant;
+- preserve simplified cel-shaded style and large color blocks;
+- no collectionArt, battleIdle, locomotion, KO, action or VFX yet.
