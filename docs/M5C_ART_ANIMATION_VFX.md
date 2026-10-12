@@ -343,3 +343,15 @@ This normalization is an asset-packaging operation, **not a redraw or redesign**
 If any frame still touches a side boundary after normalization, the strip is not runtime-ready and must not be integrated.
 
 The same rule applies to future grounded, hover/aquatic, aerial and other reusable locomotion archetypes.
+
+## 3B. Runtime derivative size discipline
+
+Player-approved source art is not required to remain at authoring resolution when the runtime only displays it at a much smaller size. If an approved static battle source would exceed the shared decoded texture/cache budget, Chat should prepare a lossless-content-equivalent runtime derivative by resizing only the approved source; this is packaging/optimization, not redesign.
+
+Hard rules:
+- preserve the approved composition, transparency, facing and character identity;
+- no crop, redraw, pose change or added/removed content;
+- choose the smallest runtime dimension that remains comfortably above the actual display requirement;
+- prefer asset optimization over raising shared cache/texture budgets;
+- record the runtime derivative dimensions/bytes/SHA separately from the approved master source;
+- only change the global cache budget when bounded asset optimization cannot satisfy the existing budget and player explicitly authorizes the shared-system change.
