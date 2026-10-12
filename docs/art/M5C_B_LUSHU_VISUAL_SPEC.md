@@ -393,3 +393,6 @@ Runtime derivative:
 - no crop, redraw, pose change, facing change, or content change.
 
 The approved master metadata remains recorded separately and must not be confused with the runtime derivative.
+
+### Static KO executable checkpoint
+Approved512 derivative copied unchanged to public/assets/characters/lushu/battleKo.png. Single512frame,duration1,loopfalse,origin[.5,385/512],scale2,staticFrame0; canonical right/saved left mirror/ground-rest/deadalpha/purity PASS. Gameplay2.05 and locomotion18fps untouched. Targeted80/80/guard/build PASS; threeKO actual cache+scene preload peaks10308240bytes each within unchanged16MiB. Review/deploy/public verification pending. Evidence:../verification/M5C_B_LUSHU_BOTUO_KO.md. No next gate/main merge.

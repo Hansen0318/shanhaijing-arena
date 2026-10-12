@@ -1,0 +1,20 @@
+# P1 Lushu / P2 Botuo static KO — 2026-10-12
+
+## Executable checkpoint / ledger
+Recovered feature HEAD62486a9b44ad1b8234cdd97d6396e37052b06be7, PR#1 open/unmerged, preceding Actions38224851107 SUCCESS. Latest handoff rejects16→32MiB budget increase and supplies Chat-owned resize-only512-square runtime derivatives. Previous1254-master integration was never written/deployed. P3KO engineering release and pending phone acceptance reused; no P3 reintegration.
+
+Runtime source copies (byte-for-byte, no export/resize/crop/content change by Work):
+- P1 public/assets/characters/lushu/battleKo.png:512×512RGBA/150698bytes/SHA25603c4e5a75546e8dc67044f42a9ce958bba829e423561e60a2665d7494bf77aff.
+- P2 public/assets/characters/botuo/battleKo.png:512×512RGBA/157440bytes/SHA256037829ec32333a0179414a9ee8ccb57b4eb3ddb83004aa93aea5c78914fc9c57.
+Approved1254 masters remain visual source of truth (metadata in visual specs); neither enters runtime manifest. P3 original1254KO PNG/SHA/manifest/descriptor remain byte-unchanged.
+
+Only production delta: P1/P2 manifest records and catalog assets.battleKo/static descriptors. One full512 frame,duration1,loopfalse,staticFrame0,fps1,scale2. P1origin[.5,385/512],P2origin[.5,405/512]. Native decoded alpha>64 boundsP1(10,176,508,385),P2(5,187,511,405): visible ground bottom aligns to authoritative actor anchor without changing coords.144-square display yields P1width140.0625/height58.78125,P2width142.3125/height61.3125px (resting silhouettes, comparable to accepted live actor height144). Canonical right-facing, saved left via shared mirror, deadalpha.35 retained; no breath/loop/sliding/returnIdle/Move/deathflipbook.
+
+## Test-first / executable evidence
+New15 tests RED (missing authored KO/manifest/files/preload), then15/15 GREEN. Actual presenter in both motion modes and both facing directions transitions living Idle→Move→HP0KO, remains same KO frame/ground anchor/size/alpha through100s. Real P1/P2 BattleSession snapshots equal around render, dead position frozen, speed2.05/1.45 unchanged. SHA/PNG header/native inflation+unfilter alpha-ground tests confirm exact derivatives; no art transformation.
+
+Budget regression uses actual createAssetCache defaults + shared AssetPresenter.prepare with P1/P2/P3 encounter definitions, reversed/mixed orders and repeated definitions. External renderer/image decoder boundary doubles only; actual file bytes supplied to cache transport. All three KO keys retained in both shared cache and scene with no fallback/silent drop. Peak decoded shared cache bytes10308240 and peak scene decoded-equivalent bytes10308240 (9.83MiB), below unchanged16777216-byte16MiB budget for every order. Scene tracked independently from presenter.textureBytes and agrees; shutdown returns scene residency0. No schema/cache/presenter/loader changes.
+
+Minimum impacted command: node --test tests/lushuBotuoKo.test.js tests/chiruKo.test.js tests/lushuMove.test.js tests/botuoMove.test.js tests/chiruMove.test.js tests/assetManifest.test.js tests/formalCatalog.test.js tests/assetPresenter.test.js tests/assetCache.test.js tests/battleHud.test.js tests/assetGuard.test.js →80/80 PASS. Only stale Lushu dead Idle expectation→newKO and guard inventory50→52 updated. Guard52files1912631bytes/build/whitespace PASS. Existing build chunk advisory only. P1/P2/P3 locomotion, P3KO, HUD/deadHP/mirror assertions PASS; gameplay/projection/AI/telegraph/damage/heal/control source unchanged.
+
+Ruling: latest explicit derivative decision supersedes earlier1254 byte-copy runtime plan; both derivatives copied unchanged, no32MiB expansion. User minimum-check scope supersedes generic skill full-suite default; configured CI unchanged. Preflight manifest/descriptor→existingloader/presenter compatible; new decoded assets fit current budgets. Existing isolated linked worktree reused; exact structured handoff is the implementation plan, no design rediscovery. Review/push/Pages/public DevLab verification pending. Stop after this gate; no next animation/VFX/main merge.

@@ -7,23 +7,29 @@ import { createCharacterDefinition } from '../combat/character.js';
 // Approved presentation only; all gameplay fields remain in the shared catalog.
 const presentation={
  P1:{
-  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle',battleMove:'lushu.battleMove'}),
+  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle',battleMove:'lushu.battleMove',battleKo:'lushu.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'lushu.battleIdle',frames:[{x:0,y:0,width:96,height:128}],
    fps:2.5,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
   }),battleMove:animationDescriptor({
    source:'lushu.battleMove',frames:[0,96,192,288].map(x=>({x,y:0,width:96,height:128})),
    fps:18,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
+  }),battleKo:animationDescriptor({
+   source:'lushu.battleKo',frames:[{x:0,y:0,width:512,height:512}],
+   duration:1,loop:false,origin:[.5,385/512],scale:2,staticFrame:0,
   })}),
  },
  P2:{
-  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle',battleMove:'botuo.battleMove'}),
+  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle',battleMove:'botuo.battleMove',battleKo:'botuo.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'botuo.battleIdle',frames:[{x:0,y:0,width:160,height:160}],
    fps:2.5,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
   }),battleMove:animationDescriptor({
    source:'botuo.battleMove',frames:[0,160,320,480].map(x=>({x,y:0,width:160,height:160})),
    fps:12,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
+  }),battleKo:animationDescriptor({
+   source:'botuo.battleKo',frames:[{x:0,y:0,width:512,height:512}],
+   duration:1,loop:false,origin:[.5,405/512],scale:2,staticFrame:0,
   })}),
  },
  P3:{

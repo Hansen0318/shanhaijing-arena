@@ -35,7 +35,7 @@ test('actual presenter switches on XY displacement, loops, freezes duplicate tim
  const before=structuredClone(f.frame);f.render(.6);assert.ok(image.texture[0].endsWith('lushu.battleIdle'));assert.equal(image.texture[1],'0.0.96.128');assert.deepEqual(f.frame,before);
  f.actor.y+=.1;f.render(.7);assert.ok(image.texture[0].endsWith('lushu.battleMove'));assert.deepEqual(image.setDisplaySizeValue,[108,144]);assert.deepEqual(image.setOriginValue,[.5,691/724]);
  f.actor.x-=.1;f.render(.8);assert.deepEqual(image.setFlipXValue,[true]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);
- f.actor.hp=0;f.actor.x-=.1;f.render(.9);assert.ok(image.texture[0].endsWith('lushu.battleIdle'));f.p.destroy();assert.equal(f.p.facings.size,0);
+ f.actor.hp=0;f.actor.x-=.1;f.render(.9);assert.ok(image.texture[0].endsWith('lushu.battleKo'));f.p.destroy();assert.equal(f.p.facings.size,0);
 });
 test('missing move safely retains static idle in both motion modes',async()=>{
  for(const reducedMotion of [false,true]){const f=await fixture({missingMove:true,reducedMotion});f.render(0);f.actor.x+=1;f.render(.1);f.actor.x+=1;f.render(.3);const image=f.sprites[0];assert.equal(image.texture[1],'0.0.96.128');assert.ok(image.texture[0].endsWith('lushu.battleIdle'));f.p.destroy();
