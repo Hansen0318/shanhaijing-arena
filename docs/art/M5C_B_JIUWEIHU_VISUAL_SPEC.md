@@ -271,3 +271,20 @@ Locomotion, KO, action/cast and VFX remain blocked until player verification of 
 
 ## 20. Static runtime engineering closure — 2026-10-13
 **AUTHORITATIVE CURRENT STATE — P4 STATIC RUNTIME ENGINEERING PASS / PLAYER PHONE SMOKE PENDING (2026-10-13).** Tested/deployed source f57c0f3352e703012376a03ce7d138551a213fb3; final HEAD is containing docs-only closure. Exact approved3 PNGs integrated unchanged; Idle one160-square frame/loopfalse/duration1/origin[.5,151/160]/scale2, no Move/KO/Hit/Cast/VFX/breathing. Team/Collection identity, compact/HUD portrait, Arena staticIdle/mirror/anchor/small-render technical checks PASS; phone perception pending. Targeted78/78/guard55files2037797bytes/build/diff PASS; fresh review no findings; CI656/656. Actions#906/38325421933 Build115062839262 + Pages115062958307 SUCCESS. Public index-C8zPKbfi.js/battleRuntime-Dq3X78vd.js/index-DcqtNRF0.css and3PNG exact-byte match. All P1-P4 accepted assets retained; cache/scene decoded-equivalent peaks10955408bytes each under unchanged16MiB. P4stats/P1-P3 presentation/shared runtime/gameplay unchanged. No technical blocker. Evidence:docs/verification/M5C_B_JIUWEIHU_STATIC_RUNTIME.md. Next only player phone Team/Collection/HUD/Arena proportions/grouped tails/enemy mirror; STOP/no next gate/P5/main merge.
+
+## 18. Static Runtime Readability closure — 2026-10-13
+
+Status: **PASS / PLAYER VERIFIED**.
+
+The player accepted the deployed 九尾狐 static runtime presentation on device:
+- Team Select full-body proportion accepted;
+- Collection identity accepted;
+- Battle HUD face-first portrait accepted;
+- Arena actor height/mass accepted relative to P1/P2/P3;
+- grouped nine-tail masses remain readable at mobile scale;
+- enemy mirror accepted;
+- no placeholder/layout/gameplay regression observed by player.
+
+The P4 base static presentation gate is closed. Do not reopen Concept, portraitSquare, collectionArt, Battle Simplification or static battleIdle unless a concrete regression appears.
+
+**Next project gate is P5 狌狌 Concept authoring/review only.** P4 locomotion, KO, action/cast and VFX remain deferred under the current Chapter1 character-completion order unless the player explicitly changes the sequence.
