@@ -175,3 +175,7 @@ The player approved the corrected 九尾狐 Concept on 2026-10-12. Locked identi
 ### 九尾狐 production progress — collectionArt approved
 
 As of 2026-10-12, 九尾狐 Concept, `portraitSquare`, and `collectionArt` are PASS / PLAYER APPROVED. The next gate is **Battle Simplification**, applying the roster-wide hard rule that battle detail is a separate tier from concept/collection detail and must remain readable at mobile runtime scale. Final `battleIdle` remains blocked until that simplification direction is approved.
+
+### Current next character gate — 狌狌
+
+As of 2026-10-13, 九尾狐 Concept, portraitSquare, collectionArt, Battle Simplification, static battleIdle and Static Runtime Readability are **PASS / PLAYER VERIFIED**. Under the current Chapter1 completion order, the next unfinished roster character is **狌狌**. Author/review one 狌狌 Concept image only before any portrait/collection/battle/locomotion/action assets. P4 九尾狐 locomotion is not the next gate unless the player explicitly reorders.
