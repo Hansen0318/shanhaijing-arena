@@ -179,3 +179,13 @@ As of 2026-10-12, 九尾狐 Concept, `portraitSquare`, and `collectionArt` are P
 ### Current next character gate — 狌狌
 
 As of 2026-10-13, 九尾狐 Concept, portraitSquare, collectionArt, Battle Simplification, static battleIdle and Static Runtime Readability are **PASS / PLAYER VERIFIED**. Under the current Chapter1 completion order, the next unfinished roster character is **狌狌**. Author/review one 狌狌 Concept image only before any portrait/collection/battle/locomotion/action assets. P4 九尾狐 locomotion is not the next gate unless the player explicitly reorders.
+
+### Current next character gate — corrected to P4 locomotion
+
+Player correction on 2026-10-13 supersedes the prior note that 狌狌 should start immediately after P4 static runtime. A roster character is only temporarily complete after static identity/runtime, locomotion, and static KO/death are all player-verified.
+
+Therefore:
+- P4 九尾狐 static presentation: PASS / PLAYER VERIFIED;
+- **P4 locomotion: CURRENT GATE**;
+- P4 static KO: next after locomotion;
+- P5 狌狌 Concept: blocked until P4 KO is player-verified.
