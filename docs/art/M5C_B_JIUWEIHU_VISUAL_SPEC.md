@@ -265,3 +265,6 @@ Integrate only these three static P4 assets through the existing shared asset pi
 - no movement, breathing, KO, action or VFX is introduced.
 
 Locomotion, KO, action/cast and VFX remain blocked until player verification of this static runtime gate.
+
+## 19. Static runtime executable checkpoint — 2026-10-13
+**P4 STATIC RUNTIME — EXECUTABLE CHECKPOINT (2026-10-13).** Exact approved portrait128-square38601bytes/identity160×19254502bytes/Idle160-square32063bytes copied unchanged. Manifest/catalog data-only integration; Idle one frame/loopfalse/origin[.5,151/160]/scale2. New6 RED→GREEN; targeted70/70, guard55files2037797bytes/build PASS. Actual P1-P4 cache+scene peak10955408bytes each, every accepted asset retained;16MiB unchanged. P4stats/projection/UI/shared runtime/P1-P3 unchanged. Review/push/Pages/public runtime pending. Evidence:docs/verification/M5C_B_JIUWEIHU_STATIC_RUNTIME.md. Finish only static release then player phone smoke; no Move/KO/action/VFX/P5/main merge.
