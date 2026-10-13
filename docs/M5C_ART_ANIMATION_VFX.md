@@ -371,3 +371,23 @@ Process correction after re-reading the Chapter1 concept-control documents:
 6. Basic action micro-animation + matching Basic VFX is deferred until the unfinished Chapter1 base character presentation is completed, unless the player explicitly reorders again.
 
 Do not reopen 鹿蜀 / 猼訑 / 赤鱬 locomotion, idle breathing, KO, shared texture budgets, gameplay mechanics, AI, targeting, telegraph geometry, ability timing or combat math while producing 九尾狐 Concept.
+
+## 7B. Character-first temporary completion order — 2026-10-13
+
+Player-authoritative production order for the remaining Chapter1 roster:
+
+For each character, finish the following before starting the next character:
+1. Concept → portraitSquare → collectionArt → Battle Simplification → static battleIdle → Static Runtime Readability;
+2. locomotion authoring → runtime-safe normalization if required → integration/deploy → player verification;
+3. static death/KO art → shared `battleKo` integration/deploy → player verification.
+
+After these three stages are player-verified, that character is **temporarily complete** and the next unfinished roster character may begin.
+
+Basic / Heavy / Special / Awakening action micro-animation, Hit and VFX remain later gates and are not required for temporary character completion.
+
+Current application:
+- P1 鹿蜀: temporarily complete;
+- P2 猼訑: temporarily complete;
+- P3 赤鱬: temporarily complete;
+- P4 九尾狐: static identity/runtime complete; locomotion is next; KO follows locomotion;
+- P5 狌狌: blocked until P4 locomotion + KO are player-verified.
