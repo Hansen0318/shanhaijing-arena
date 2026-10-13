@@ -1,5 +1,8 @@
 # M5C-B Batch1 Visual Spec — 九尾狐
 
+## Locomotion engineering release — 2026-10-13
+ENGINEERING PASS / PLAYER PHONE SMOKE PENDING. Sole approved JPEG preserved; color-preserving640×160RGBA128061bytes/SHA4394bec8581c79e5b6753dcbeafa63fcf8664482d66a457d03b825c40adbb169; no rejected4dff art. Source RGB/palette/tails/fire/limbs unchanged before uniform resize, independent cells preserve all four approved poses. Shared10normal/5reduced cycles,origin[.5,151/160]/scale2,stop→staticIdle. Targeted61/61/guard/build/review PASS; sourcec63323c54f15f50cc342189cc2c8c70537760a29,Actions#923/38411382718 CI659/659/PagesSUCCESS;publicbundle/PNG match.16MiB budget/P1-P3/P4static/gameplay unchanged. Full asset/process/fingerprint/margin evidence:../verification/M5C_B_JIUWEIHU_LOCOMOTION.md. Only phone cycle/color/size/fullshape/stop/mirror acceptance remains;no KO/action/VFX/P5/main merge.
+
 ## Locomotion executable checkpoint — 2026-10-13
 Latest direct user authorizes Work approved-JPEG safe preparation + integration. Sole masterSHA423f3a5d7303ce93baa738fb1c943a4e7381e72bfddf3172ee1e9b04234dcf3e; previous damaged4dff derivative REJECTED/never used. New640×160RGBA128061bytes/SHA4394bec8581c79e5b6753dcbeafa63fcf8664482d66a457d03b825c40adbb169 preserves RGB, white/cream/red/black/gold/fire; transparent background border-connected only,uniform.31scale,ground151. Four independent cells/no bleed. Runtime10fps normal/5reduced,origin[.5,151/160],scale2,stop→acceptedstaticIdle. Targeted61/61/guard/build PASS, review/Pages/public pending. Evidence:../verification/M5C_B_JIUWEIHU_LOCOMOTION.md. No next gate/main merge.
 

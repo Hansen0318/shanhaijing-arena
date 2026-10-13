@@ -1,5 +1,20 @@
 # P4 九尾狐 locomotion — 2026-10-13
 
+## Engineering release closure
+**ENGINEERING PASS / PLAYER PHONE SMOKE PENDING**. Tested/deployed source c63323c54f15f50cc342189cc2c8c70537760a29, tree0524faeedbc691744af89ae9a57fe205f82daff5; final HEAD is containing docs-only closure with identical production/tests. Targeted61/61, asset guard56files2165858bytes, build/diff PASS. Fresh independent review: no important findings, source/PNG SHA/bounds/cuts/color-preserving alpha method/three new tests independently verified. Configured CI659/659 PASS. Actions#923/38411382718 Build115344324943 + Pages115344546974 SUCCESS. No main merge or next gate.
+
+Public https://hansen0318.github.io/shanhaijing-arena/ downloaded index/bundles/static pack/Move PNG all exactly match tested dist. Runtime uses shared normal10/reduced5 full-cycle/duplicate-time/stop/mirror/anchor contract proven by actual presenter tests; no repeated broad browser/player-owned visual smoke. Approved original is preserved, previous rejected PNG is absent. Native individual-cell inspection and original-vs-neutral-background comparison confirmed filled white/cream/red/black/gold/fire and full limbs/tails/ears; normalized no-bleed margins below. Current Idle SHA unchanged. No technical blocker.
+
+| Public path | Bytes | SHA256 |
+| --- | ---: | --- |
+| index.html |1491|bcf02487542fb6a46d41d37e800e3ba3e5b0d58dd4a6e4eb8d537d744c355a4a|
+| assets/index-Br8JFx6K.js |96693|f5bf58f370d699e43d5c3d64862375df3d23caff11c96befb233d3fcf965d461|
+| assets/battleRuntime-C_-vpmHw.js |1445032|319c8480c8c92f9f16208e95836809bd6445056b568618dcb4d3b56e53d19e1d|
+| assets/index-DcqtNRF0.css |22943|a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da|
+| assets/characters/jiuweihu/battleMove-4f.png |128061|4394bec8581c79e5b6753dcbeafa63fcf8664482d66a457d03b825c40adbb169|
+
+Shared cache and independently tracked scene decoded-equivalent peaks11365008bytes, all accepted P1-P4 assets retained in forward/reverse order. Both16MiB budgets unchanged. P4stats230/19/4/1.7/1.05, authoritative x/y, shared runtime, P1/P2/P3 locomotion/KO and approved P4static art unchanged. Exact stop returns accepted staticIdle immediately; normal/reduced all four frames loop, no single-frame sliding. Phone acceptance only: current refresh, multi-frame movement/no bleed, approved colors/full tails/fire/limbs, size/anchor, stop→Idle, enemy mirror. Do not claim player verification until confirmed; do not begin KO/action/VFX/P5/main merge.
+
 ## Executable checkpoint / ledger
 Recovered4970a74f1199056fd75a4b67bfedab8f46da9761. Latest user explicitly authorizes Work deterministic approved-JPEG processing and integration, superseding prior Chat-only reconstruction/derivative-review prerequisite. Rejected SHA4dff5c721f85d06d1986b07be3af04ccc6d8902854dc73899174f773dd8d3c95 never used. No generative imaging, recolor or redraw.
 
