@@ -363,3 +363,19 @@ Current corrected sequence after re-reading the authoritative concept matrix:
 5. only then resume the Basic action micro-animation + matching Basic VFX vertical slice, unless the player explicitly reorders again.
 
 This supersedes the temporary interpretation that Basic/VFX should start immediately after P1/P2/P3 KO closure.
+
+### Character-first temporary completion sequence — 2026-10-13
+
+This supersedes the earlier temporary ordering that would move from P4 static presentation directly to P5 Concept.
+
+For each remaining Chapter1 character, production now closes the character through three stages before advancing:
+1. complete static identity/runtime presentation;
+2. complete locomotion and player verification;
+3. complete static KO/death presentation and player verification.
+
+Only then move to the next unfinished character.
+
+Current order:
+- P4 九尾狐 locomotion → P4 KO → then P5 狌狌 Concept/static → P5 locomotion → P5 KO.
+
+Basic/Heavy/Special/Awakening action/VFX work remains deferred until this character-first temporary-completion pass is finished, unless the player explicitly reorders again.
