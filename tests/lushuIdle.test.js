@@ -23,7 +23,8 @@ test('approved idle resolves static F1 with a fixed ground origin and static fal
  for(const state of ['battleHit','battleCast'])assert.equal(characterAnimation(rosterCatalog.P1,state).source,'placeholder.battle');
  assert.equal(characterAnimation(rosterCatalog.P1,'battleKo').source,'lushu.battleKo');
  assert.equal(characterAnimation(rosterCatalog.P2,'battleIdle').source,'botuo.battleIdle');
- for(const c of Object.values(rosterCatalog).slice(3))assert.equal(characterAnimation(c,'battleIdle').source,'placeholder.battle');
+ assert.equal(characterAnimation(rosterCatalog.P4,'battleIdle').source,'jiuweihu.battleIdle');
+ assert.equal(characterAnimation(rosterCatalog.P5,'battleIdle').source,'placeholder.battle');
 });
 test('runtime PNG is RGBA, bounded and encounter-only, never a menu image',async()=>{
  const a=assetManifest[key];assert.ok(a);
