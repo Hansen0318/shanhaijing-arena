@@ -19,6 +19,14 @@ Chat should complete the maximum safe work before Work is opened:
 7. define the specific player-owned smoke, if any;
 8. only then create the smallest Work task.
 
+## A1. Character-first temporary completion
+For the current Chapter1 character-production phase, do not hop to the next unfinished character after static art alone. Complete the active character through:
+1. approved static identity/runtime presentation;
+2. approved locomotion/runtime verification;
+3. approved static death/KO/runtime verification.
+
+Only then mark that character temporarily complete and move to the next roster character. Basic/Heavy/Special/Awakening action animation, Hit and VFX are not part of this temporary-completion checkpoint unless the player explicitly changes the order.
+
 ## B. Work entry / recovery
 Work must:
 1. inspect latest remote main;
