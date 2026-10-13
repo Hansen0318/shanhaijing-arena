@@ -288,3 +288,43 @@ The player accepted the deployed 九尾狐 static runtime presentation on device
 The P4 base static presentation gate is closed. Do not reopen Concept, portraitSquare, collectionArt, Battle Simplification or static battleIdle unless a concrete regression appears.
 
 **Next project gate is P5 狌狌 Concept authoring/review only.** P4 locomotion, KO, action/cast and VFX remain deferred under the current Chapter1 character-completion order unless the player explicitly changes the sequence.
+
+## 19. Character-first continuation — locomotion next
+
+Status: **STATIC PRESENTATION PASS / PLAYER VERIFIED — LOCOMOTION NEXT**.
+
+Player-authoritative Chapter1 workflow requires 九尾狐 to complete its current base character lifecycle before 狌狌 starts:
+1. static identity/runtime presentation — PASS / PLAYER VERIFIED;
+2. **locomotion — CURRENT GATE**;
+3. static death/KO — blocked until locomotion is player-verified;
+4. only after KO verification is P4 temporarily complete and P5 may start.
+
+### Locomotion gate requirements
+Author/review a creature-appropriate ranged-caster humanoid locomotion sequence from the approved P4 `battleIdle` identity only.
+
+Preserve:
+- fox-derived head/face and ears;
+- current battle-scale body proportions;
+- grouped nine-tail masses;
+- compact fox-fire identity cue only if it does not cause frame clutter;
+- current white/cream + red/ember + dark-neutral + restrained-gold battle palette;
+- current Arena actor size/anchor family.
+
+Motion direction:
+- grounded biped locomotion, not hover;
+- elegant controlled ranged-caster travel rather than heavy march or 鹿蜀-like speed sprint;
+- legs must visibly cycle through multiple frames;
+- torso has modest forward travel lean / weight transfer;
+- arms counterbalance without becoming attack/cast poses;
+- grouped tails follow through with delayed secondary motion but must not merge into one unreadable mass;
+- no gameplay-coordinate bob or fake single-frame sliding.
+
+Runtime hard rules:
+- multi-frame strip must obey shared runtime-safe normalization/no-neighbor-bleed rules;
+- normal movement must visibly cycle multiple frames;
+- reduced motion may slow cadence but must not freeze to one frame while sliding;
+- stopping returns to the accepted static battleIdle;
+- shared runtime mirror handles facing;
+- no gameplay speed/coordinates/collision/AI/targeting/timing changes.
+
+Do not author KO, Hit, action/cast or VFX during this locomotion gate.
