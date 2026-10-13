@@ -1,0 +1,119 @@
+{
+  "source_sha": "423f3a5d7303ce93baa738fb1c943a4e7381e72bfddf3172ee1e9b04234dcf3e",
+  "source_bytes": 281391,
+  "dimensions": [
+    640,
+    160
+  ],
+  "bytes": 128061,
+  "sha256": "4394bec8581c79e5b6753dcbeafa63fcf8664482d66a457d03b825c40adbb169",
+  "frames": [
+    {
+      "frame": 1,
+      "source_interval": [
+        0,
+        390
+      ],
+      "source_bbox": [
+        7,
+        51,
+        389,
+        467
+      ],
+      "scale": 0.31,
+      "bbox": [
+        21,
+        22,
+        139,
+        151
+      ],
+      "margins": [
+        21,
+        22,
+        21,
+        9
+      ]
+    },
+    {
+      "frame": 2,
+      "source_interval": [
+        390,
+        759
+      ],
+      "source_bbox": [
+        2,
+        51,
+        363,
+        472
+      ],
+      "scale": 0.31,
+      "bbox": [
+        24,
+        20,
+        136,
+        151
+      ],
+      "margins": [
+        24,
+        20,
+        24,
+        9
+      ]
+    },
+    {
+      "frame": 3,
+      "source_interval": [
+        759,
+        1158
+      ],
+      "source_bbox": [
+        6,
+        51,
+        398,
+        472
+      ],
+      "scale": 0.31,
+      "bbox": [
+        19,
+        20,
+        141,
+        151
+      ],
+      "margins": [
+        19,
+        20,
+        19,
+        9
+      ]
+    },
+    {
+      "frame": 4,
+      "source_interval": [
+        1158,
+        1536
+      ],
+      "source_bbox": [
+        1,
+        56,
+        371,
+        472
+      ],
+      "scale": 0.31,
+      "bbox": [
+        22,
+        22,
+        137,
+        151
+      ],
+      "margins": [
+        22,
+        22,
+        23,
+        9
+      ]
+    }
+  ],
+  "retained_rgb_exact": true,
+  "foreground_pale_pixels_retained": 593,
+  "background_method": "border-connected near-white only; enclosed pale pixels retained"
+}

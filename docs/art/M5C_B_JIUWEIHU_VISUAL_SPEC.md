@@ -1,5 +1,8 @@
 # M5C-B Batch1 Visual Spec — 九尾狐
 
+## Locomotion executable checkpoint — 2026-10-13
+Latest direct user authorizes Work approved-JPEG safe preparation + integration. Sole masterSHA423f3a5d7303ce93baa738fb1c943a4e7381e72bfddf3172ee1e9b04234dcf3e; previous damaged4dff derivative REJECTED/never used. New640×160RGBA128061bytes/SHA4394bec8581c79e5b6753dcbeafa63fcf8664482d66a457d03b825c40adbb169 preserves RGB, white/cream/red/black/gold/fire; transparent background border-connected only,uniform.31scale,ground151. Four independent cells/no bleed. Runtime10fps normal/5reduced,origin[.5,151/160],scale2,stop→acceptedstaticIdle. Targeted61/61/guard/build PASS, review/Pages/public pending. Evidence:../verification/M5C_B_JIUWEIHU_LOCOMOTION.md. No next gate/main merge.
+
 ## Status
 **CONCEPT DIRECTION — PLAYER REVIEW PENDING**
 

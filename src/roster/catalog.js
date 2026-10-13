@@ -46,10 +46,13 @@ const presentation={
   })}),
  },
  P4:{
-  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'jiuweihu.portrait',collectionArt:'jiuweihu.identity',battleIdle:'jiuweihu.battleIdle'}),
+  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'jiuweihu.portrait',collectionArt:'jiuweihu.identity',battleIdle:'jiuweihu.battleIdle',battleMove:'jiuweihu.battleMove'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'jiuweihu.battleIdle',frames:[{x:0,y:0,width:160,height:160}],
    duration:1,loop:false,origin:[.5,151/160],scale:2,staticFrame:0,
+  }),battleMove:animationDescriptor({
+   source:'jiuweihu.battleMove',frames:[0,160,320,480].map(x=>({x,y:0,width:160,height:160})),
+   fps:10,loop:true,origin:[.5,151/160],scale:2,staticFrame:0,
   })}),
  },
 };
