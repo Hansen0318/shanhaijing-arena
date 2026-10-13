@@ -67,6 +67,18 @@ If any frame silhouette approaches a cell boundary, frame spacing is ambiguous, 
 
 Normalization is an asset-preparation step, not a redesign. It must not invent new poses, change character identity, alter gameplay coordinates/speed/geometry, or reorder approved frames.
 
+## 2B. Character-first temporary completion order
+For Chapter1 playable-character production, finish one character through its current base-presentation lifecycle before starting the next unfinished roster character.
+
+A character is only **temporarily complete** when all three stages below are player-verified:
+1. **identity/static presentation** — Concept → portraitSquare → collectionArt → Battle Simplification → static battleIdle → Static Runtime Readability;
+2. **locomotion** — creature-appropriate move animation authored from the approved battle identity, runtime-safe normalized when needed, integrated, deployed, and player-verified;
+3. **death / KO** — approved static death/KO image, integrated through the shared battleKo path, deployed, and player-verified.
+
+Only after stages 1–3 are closed may production advance to the next unfinished roster character, unless the player explicitly reorders the sequence.
+
+This temporary-completion rule does **not** require Basic / Heavy / Special / Awakening action animation, Hit reaction, or VFX. Those remain later shared gates unless separately authorized.
+
 ## 3. Mandatory zero-context bootstrap
 A new Chat / Work / Codex session must be able to continue without the player reconstructing the previous conversation.
 
