@@ -373,6 +373,9 @@ Process correction after re-reading the Chapter1 concept-control documents:
 Do not reopen 鹿蜀 / 猼訑 / 赤鱬 locomotion, idle breathing, KO, shared texture budgets, gameplay mechanics, AI, targeting, telegraph geometry, ability timing or combat math while producing 九尾狐 Concept.
 
 ## 7B. Character-first temporary completion order — 2026-10-13
+**2026-10-14 player acceptance update:** P4 九尾狐 static identity/runtime, locomotion, and shared static KO were all verified on the player's phone; P4 is **temporarily complete**. This supersedes older entries saying P4 locomotion/KO pending. Next character-first gate is **P5 狌狌 Concept image / player approval only**, then follow the same sequential static→move→KO pipeline. Action/Hit/VFX remain deferred; no main merge.
+
+
 
 Player-authoritative production order for the remaining Chapter1 roster:
 
