@@ -1,4 +1,8 @@
 # M5C-B Batch1 Visual Spec — 九尾狐
+## Static KO player acceptance — 2026-10-14
+**PASS / PLAYER VERIFIED.** Player tested the deployed static KO on phone and confirmed it is OK. Saved last-facing direction, persistent grounded KO, actor proportions/tails and stop→KO behavior are accepted as final for this temporary character-completion gate. Static presentation and locomotion were previously verified; **P4 is temporarily complete**. Next P5 狌狌 Concept only; do not reopen P4 art or start actions/Hit/VFX absent a concrete defect.
+
+
 
 ## Static KO engineering release — 2026-10-14
 ENGINEERING PASS / PLAYER PHONE SMOKE PENDING. Approved512RGBA195917bytes/SHAfe8a29e136f0e487e394e467d9acc0ccd8662c42351bb7ab709990320cb4d209 copied unchanged;oneframe,duration1,loopfalse,staticFrame0,origin[.5,397/512],scale2,shared last-facing mirror/deadalpha. Mainbodycontactedge397 and129.9375×75.9375display,HP0/staticpersistence/stopMove/ground/purity PASS. Source79ab8f3f1f61fedbf6d8ff72f968cf5471503528;targeted78/78/guard/build/review PASS,Actions#928/38488244792 CI667/667/PagesSUCCESS,publicKO/bundles match. ExistingP4liveart/P1-P3/gameplay/16MiB unchanged. Full evidence:../verification/M5C_B_JIUWEIHU_KO.md. Static+locomotion playerverified;onlyKO phonepose/size/ground/fullbodytails/mirror/persistence pending. P4 temporarilycomplete afterconfirmation only;no P5/action/VFX/mainmerge.
