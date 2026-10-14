@@ -19,6 +19,7 @@ const entries=[
  {key:'jiuweihu.identity',type:'image',path:'assets/characters/jiuweihu/identity.png',width:160,height:192,bytes:54502,fallback:'placeholder.portrait'},
  {key:'jiuweihu.battleIdle',type:'image',path:'assets/characters/jiuweihu/battleIdle.png',width:160,height:160,bytes:32063,fallback:'placeholder.battle'},
  {key:'jiuweihu.battleMove',type:'image',path:'assets/characters/jiuweihu/battleMove-4f.png',width:640,height:160,bytes:128061,fallback:'placeholder.battle'},
+ {key:'jiuweihu.battleKo',type:'image',path:'assets/characters/jiuweihu/battleKo.png',width:512,height:512,bytes:195917,fallback:'placeholder.battle'},
  {key:'placeholder.portrait',type:'procedural',path:null},
  {key:'placeholder.battle',type:'procedural',path:null},
  {key:'placeholder.vfx',type:'procedural',path:null},

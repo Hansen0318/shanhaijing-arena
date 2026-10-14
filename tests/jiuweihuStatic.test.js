@@ -27,10 +27,10 @@ async function fixture(order=['P1','P2','P3','P4'],reducedMotion=false){
 test('P4 all three approved slots resolve actual byte-identical runtime PNGs',()=>{
  for(const [slot,name,w,h,bytes,sha] of assets){const a=resolveCharacterAsset(rosterCatalog.P4,slot);assert.equal(a.key,'jiuweihu.'+name);assert.equal(a.path,`assets/characters/jiuweihu/${name}.png`);assert.deepEqual([a.width,a.height,a.bytes],[w,h,bytes]);const b=readFileSync(new URL('../public/'+a.path,import.meta.url));assert.equal(b.length,bytes);assert.equal(createHash('sha256').update(b).digest('hex'),sha);assert.equal(b.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.deepEqual([b.readUInt32BE(16),b.readUInt32BE(20),b[24],b[25]],[w,h,8,6]);}
 });
-test('P4 single-frame grounded static idle has no authored KO/action/breathing',()=>{
+test('P4 single-frame grounded static idle has no authored action/breathing',()=>{
  const d=characterAnimation(rosterCatalog.P4,'battleIdle');assert.equal(d.source,'jiuweihu.battleIdle');assert.deepEqual(d.frames,[{x:0,y:0,width:160,height:160}]);assert.deepEqual(d.origin,[.5,151/160]);assert.equal(d.scale,2);assert.equal(d.loop,false);assert.equal(d.staticFrame,0);
  for(const reduce of [false,true])for(const t of [0,.1,1,100])assert.equal(animationFrame(d,t,reduce).index,0);
- for(const state of ['battleKo','battleHit','battleCast']){assert.equal(rosterCatalog.P4.animationDescriptors[state],undefined);assert.equal(resolveCharacterAsset(rosterCatalog.P4,state).key,'placeholder.battle');}assert.equal(rosterCatalog.P4.idleBreath,undefined);
+ for(const state of ['battleHit','battleCast']){assert.equal(rosterCatalog.P4.animationDescriptors[state],undefined);assert.equal(resolveCharacterAsset(rosterCatalog.P4,state).key,'placeholder.battle');}assert.equal(rosterCatalog.P4.idleBreath,undefined);
  // Approved alpha extent: visible feet land at anchor; body height stays within roster family.
  assert.equal((151/160-d.origin[1])*144,0);assert.ok((151-16)*144/160>=110&&(151-16)*144/160<=144);
 });
@@ -41,7 +41,7 @@ for(const reduced of [false,true])test(`P4 shared presenter keeps same static fr
 });
 test('P1-P4 actual cache/scene retain every accepted asset within unchanged16MiB regardless of order',async t=>{
  assert.equal(ASSET_LIMITS.cacheBytes,16*1024*1024);
- for(const order of [['P1','P2','P3','P4'],['P4','P3','P2','P1']]){const f=await fixture(order);for(const id of order)for(const slot of ['portraitSquare','collectionArt','battleIdle','battleMove',...(id==='P4'?[]:['battleKo'])]){const k=rosterCatalog[id].assets[slot];assert.ok(f.p.textures.has(k),k+' must not silently drop');assert.equal((await f.cache.load(k)).key,k);}assert.ok(f.peak()<=ASSET_LIMITS.cacheBytes);assert.ok(f.s.budget().peak<=ASSET_LIMITS.cacheBytes);assert.equal(f.p.textureBytes,f.s.budget().resident);t.diagnostic(`cache peak=${f.peak()}; scene peak=${f.s.budget().peak}`);f.p.destroy();}
+ for(const order of [['P1','P2','P3','P4'],['P4','P3','P2','P1']]){const f=await fixture(order);for(const id of order)for(const slot of ['portraitSquare','collectionArt','battleIdle','battleMove','battleKo']){const k=rosterCatalog[id].assets[slot];assert.ok(f.p.textures.has(k),k+' must not silently drop');assert.equal((await f.cache.load(k)).key,k);}assert.ok(f.peak()<=ASSET_LIMITS.cacheBytes);assert.ok(f.s.budget().peak<=ASSET_LIMITS.cacheBytes);assert.equal(f.p.textureBytes,f.s.budget().resident);t.diagnostic(`cache peak=${f.peak()}; scene peak=${f.s.budget().peak}`);f.p.destroy();}
 });
 test('P4 exact stats and real BattleSession snapshot remain gameplay-owned',async()=>{
  assert.deepEqual(rosterCatalog.P4.stats,{maxHp:230,atk:19,def:4,moveSpeed:1.7,attackSpeed:1.05});const f=await fixture(),session=createLabBattleSession(createLabConfig({allyTeam:['P4','P2','P3'],skipCountdown:true}));const before=structuredClone(session.snapshot());f.p.render(session.snapshot(),0,session.characterDefinitions);assert.deepEqual(session.snapshot(),before);f.p.destroy();assert.equal(rosterCatalog.P1.animationDescriptors.battleMove.fps,18);assert.equal(rosterCatalog.P2.animationDescriptors.battleMove.fps,12);assert.equal(rosterCatalog.P3.animationDescriptors.battleMove.scale,2.7);

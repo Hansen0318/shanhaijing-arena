@@ -1,5 +1,8 @@
 # M5C-B Batch1 Visual Spec — 九尾狐
 
+## Static KO executable checkpoint — 2026-10-14
+Latest player handoff accepts static+locomotion and approves KOart. Exact512RGBA195917bytes/SHAfe8a29e136f0e487e394e467d9acc0ccd8662c42351bb7ab709990320cb4d209 copied to runtime battleKo.png unchanged. One frame/duration1/loopfalse/staticFrame0,origin[.5,397/512]/scale2 from measured mainbodycontactedge; canonical right/saved left shared mirror/deadalpha.35. HP0/static persistence/ground/size/purity PASS,existing art/movement unchanged. Targeted78/78/guard/build PASS,16MiB unchanged. Review/Pages/public pending;../verification/M5C_B_JIUWEIHU_KO.md carries full evidence. Phone smoke needed before P4 temporarily complete. No next gate/main merge.
+
 ## Locomotion engineering release — 2026-10-13
 ENGINEERING PASS / PLAYER PHONE SMOKE PENDING. Sole approved JPEG preserved; color-preserving640×160RGBA128061bytes/SHA4394bec8581c79e5b6753dcbeafa63fcf8664482d66a457d03b825c40adbb169; no rejected4dff art. Source RGB/palette/tails/fire/limbs unchanged before uniform resize, independent cells preserve all four approved poses. Shared10normal/5reduced cycles,origin[.5,151/160]/scale2,stop→staticIdle. Targeted61/61/guard/build/review PASS; sourcec63323c54f15f50cc342189cc2c8c70537760a29,Actions#923/38411382718 CI659/659/PagesSUCCESS;publicbundle/PNG match.16MiB budget/P1-P3/P4static/gameplay unchanged. Full asset/process/fingerprint/margin evidence:../verification/M5C_B_JIUWEIHU_LOCOMOTION.md. Only phone cycle/color/size/fullshape/stop/mirror acceptance remains;no KO/action/VFX/P5/main merge.
 
