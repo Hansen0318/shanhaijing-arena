@@ -1,6 +1,6 @@
 # P5 Xingxing Locomotion Integration — 2026-10-14
 
-Status: EXECUTABLE CHECKPOINT / LOCAL ENGINEERING PASS / RELEASE PENDING.
+Status: ENGINEERING PASS / PLAYER PHONE SMOKE PENDING.
 Branch feat/m0-combat-core-20260927 / PR1; recovered HEAD cf1aa476aa63d945fbb04ead7877b75d782bcf79. Permanent rules already updated by Chat; no rule rework.
 
 ## Approved input / necessary lossless repack
@@ -22,9 +22,21 @@ P5 existing Idle PNG SHA2561004c76a0ea3e5e942a60137cee5628752220edcfb8cd4c453a43
 - Guard61files3509345encodedbytes; build PASS; index-C2ZLrpAZ.js / battleRuntime-5ub_Q_wp.js / index-DcqtNRF0.css.
 - Actual all-five+identity cache and scene peak16646800bytes<16777216 unchanged16MiB; tested forward/reverse order and required textures retained. No budget increase or asset deletion.
 - PNG decode and exact RGBA crop equality / border safety / baseline / proportional visible-size checks PASS.
-- git diff --check PASS. Independent review/release/public proof pending at this checkpoint.
+- git diff --check PASS. Independent review: no critical/important defects; independent13/13 affected checks and exactRGBA comparisons PASS.
 - Existing npm http-proxy and Vite large-chunk warnings only.
 
 ## Release / exact next gate
 Push feature branch using authorized GitHub connector (CLI credentials unavailable), enforce CI/Pages/public byte-match, record release source and stop.
 After engineering release, wait for player iPhone Move gait/cadence/size/ground/fulltails/no clipping, left-right mirror and immediate static stop acceptance. Do not claim PLAYER VERIFIED; no P5KO/actions/VFX/main merge.
+
+## Release closure
+Tested/deployed source `79968249af9b46726dad109ce8113f26082febc0`; containing closure HEAD is docs-only. GitHub connector commit tree `378315df564e769cb86e0f8d9a208ab44a62703d` equals local verified tree; local checkout synchronized to remote.
+Actions #962 https://github.com/Hansen0318/shanhaijing-arena/actions/runs/38576388866: Build115894514386 and Pages115894731012 SUCCESS. CI logs677/677 and matching build filenames. Final affected13/13 PASS.
+Public downloaded files matched dist byte-for-byte:
+- index.html SHA256 a21869f570ba93a4cbf4f02604014f2e78f411d0e49532793e14861dc6ef3c00
+- index-C2ZLrpAZ.js SHA256 5a1b89bfabfef300f1da8abb819f0e14c0cbafa9509e095f1ae06d3837e650ea
+- battleRuntime-5ub_Q_wp.js SHA256 ed33df93f4266c578739ae7f32652a859d7d04d5dce4f8bbd8dec026a2c32c4c
+- index-DcqtNRF0.css SHA256 a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da
+- battleMove-4f.png SHA256 ae8c3c2c8504d999eb14d8790ee4ebcf74680f96e12a01c178d5de124992290f
+- battleIdle.png SHA2561004c76a0ea3e5e942a60137cee5628752220edcfb8cd4c453a43df7e54e3c26 (unchanged).
+Pages https://hansen0318.github.io/shanhaijing-arena/ . No technical blocker. STOP for player phone gait/cadence/size/ground/no clipping/tail/mirror/stop→Idle acceptance. No PLAYER VERIFIED claim and no next state work.
