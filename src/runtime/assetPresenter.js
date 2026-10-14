@@ -20,7 +20,14 @@ export class AssetPresenter{
   this.stageAssetKey=stage.battleAssetKey??null;
   const keys=encounterAssetKeys(definitions,stage);
   for(const d of definitions){for(const state of ['battleIdle','battleHit','battleKo','battleCast'])keys.push(characterAnimation(d,state).source);for(const cat of ['basic','heavy','special','awakening']){const v=characterVfx(d,cat,abilities[d.abilities?.[cat]]);keys.push(v.assetKey);if(v.animation)keys.push(v.animation.source);}}
-  return this.loadKeys(keys);
+  // Critical first-paint textures must not queue behind large Move/KO/VFX atlases.
+  // The shared cache processes only two image requests concurrently, so staging
+  // priorities here benefits every roster character and preserves cache budgets.
+  const portraits=definitions.map(d=>resolveCharacterAsset(d,'portraitSquare').key);
+  const idles=definitions.map(d=>characterAnimation(d,'battleIdle').source);
+  const critical=[...new Set([...portraits,...idles])];
+  const remaining=keys.filter(key=>!critical.includes(key));
+  return this.loadKeys(critical).then(()=>this.loadKeys(remaining));
  }
  setState(ownerId,descriptor,now,state){this.states.set(ownerId,{descriptor,start:now,state});}
  cast(event,character,now,ability=null){
