@@ -59,10 +59,13 @@ const presentation={
   })}),
  },
  P5:{
-  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'xingxing.portrait',collectionArt:'xingxing.identity',battleIdle:'xingxing.battleIdle'}),
+  assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'xingxing.portrait',collectionArt:'xingxing.identity',battleIdle:'xingxing.battleIdle',battleMove:'xingxing.battleMove'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'xingxing.battleIdle',frames:[{x:0,y:0,width:160,height:160}],
    duration:1,loop:false,origin:[.5,148/160],scale:2,staticFrame:0,
+  }),battleMove:animationDescriptor({
+   source:'xingxing.battleMove',frames:[[0,0],[560,0],[0,440],[560,440]].map(([x,y])=>({x,y,width:560,height:440})),
+   fps:10,loop:true,origin:[.5,426/440],scale:2.25,staticFrame:0,
   })}),
  },
 };

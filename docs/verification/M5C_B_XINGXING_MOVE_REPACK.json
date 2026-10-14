@@ -1,0 +1,93 @@
+{
+  "source_sha256": "f7219afe41d6a1396970c4618f0322e879f22f69d1b6ab326933f278ac5312ce",
+  "runtime_sha256": "ae8c3c2c8504d999eb14d8790ee4ebcf74680f96e12a01c178d5de124992290f",
+  "bytes": 1008507,
+  "size": [
+    1120,
+    880
+  ],
+  "cell": [
+    560,
+    440
+  ],
+  "baseline": 426,
+  "frames": [
+    {
+      "source_bbox": [
+        29,
+        134,
+        577,
+        546
+      ],
+      "paste_xy": [
+        6,
+        14
+      ],
+      "cell_bbox": [
+        6,
+        14,
+        554,
+        426
+      ],
+      "rgba_crop_sha256": "e474831c34f2d4426940069be9c8607a1f127b2438a2ab80b69d34fdf7b5f48a"
+    },
+    {
+      "source_bbox": [
+        87,
+        177,
+        522,
+        578
+      ],
+      "paste_xy": [
+        62,
+        25
+      ],
+      "cell_bbox": [
+        62,
+        25,
+        497,
+        426
+      ],
+      "rgba_crop_sha256": "39a7e80a58c9886b46bb9016f1d9fcffaeb8fa6731986430ce4a9c6d14a4a30a"
+    },
+    {
+      "source_bbox": [
+        63,
+        137,
+        540,
+        546
+      ],
+      "paste_xy": [
+        41,
+        17
+      ],
+      "cell_bbox": [
+        41,
+        17,
+        518,
+        426
+      ],
+      "rgba_crop_sha256": "41f9a07ae72c64be10d97deacedd809235c9e47c3beb6e540ef922d1e46a83ba"
+    },
+    {
+      "source_bbox": [
+        83,
+        172,
+        513,
+        583
+      ],
+      "paste_xy": [
+        65,
+        15
+      ],
+      "cell_bbox": [
+        65,
+        15,
+        495,
+        426
+      ],
+      "rgba_crop_sha256": "5b98582ca4b6b66229557419527bedaf3249573991fbf0eac9e4110356017155"
+    }
+  ],
+  "decoded": 3942400
+}

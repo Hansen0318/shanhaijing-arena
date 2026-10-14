@@ -23,6 +23,7 @@ const entries=[
  {key:'xingxing.portrait',type:'image',path:'assets/characters/xingxing/portrait.png',width:128,height:128,bytes:45021,fallback:'placeholder.portrait'},
  {key:'xingxing.identity',type:'image',path:'assets/characters/xingxing/identity.png',width:160,height:192,bytes:56234,fallback:'placeholder.portrait'},
  {key:'xingxing.battleIdle',type:'image',path:'assets/characters/xingxing/battleIdle.png',width:160,height:160,bytes:37808,fallback:'placeholder.battle'},
+ {key:'xingxing.battleMove',type:'image',path:'assets/characters/xingxing/battleMove-4f.png',width:1120,height:880,bytes:1008507,fallback:'placeholder.battle'},
  {key:'placeholder.portrait',type:'procedural',path:null},
  {key:'placeholder.battle',type:'procedural',path:null},
  {key:'placeholder.vfx',type:'procedural',path:null},
