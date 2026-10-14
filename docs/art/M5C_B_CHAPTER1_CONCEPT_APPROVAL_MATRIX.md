@@ -177,6 +177,9 @@ The player approved the corrected 九尾狐 Concept on 2026-10-12. Locked identi
 As of 2026-10-12, 九尾狐 Concept, `portraitSquare`, and `collectionArt` are PASS / PLAYER APPROVED. The next gate is **Battle Simplification**, applying the roster-wide hard rule that battle detail is a separate tier from concept/collection detail and must remain readable at mobile runtime scale. Final `battleIdle` remains blocked until that simplification direction is approved.
 
 ### Current next character gate — 狌狌
+**2026-10-14 P5 Concept player acceptance — PASS / PLAYER APPROVED.** Golden-yellow variant of the prior red visual board is approved as the P5 Concept reference: `金黃猩猩角色設定概念圖.png` (1536×1024 RGB PNG, 2,478,197 bytes, SHA256 `50afd4ab375df49440ef28223be66e063f82b08cc5f3c3986c98fdb00e9fd80a`). Approved golden-yellow/cream fur, species-derived primate face, strong forearm attacker silhouette, dark neutral costume and contrasting gold/bronze metal accessories. Earlier red and muddy-brown variants do not supersede this approval. Next single gated output: **P5 portraitSquare**; no collectionArt, Battle Simplification, battleIdle, Move, KO, Hit or VFX until individually authorized.
+
+
 
 As of 2026-10-13, 九尾狐 Concept, portraitSquare, collectionArt, Battle Simplification, static battleIdle and Static Runtime Readability are **PASS / PLAYER VERIFIED**. Under the current Chapter1 completion order, the next unfinished roster character is **狌狌**. Author/review one 狌狌 Concept image only before any portrait/collection/battle/locomotion/action assets. P4 九尾狐 locomotion is not the next gate unless the player explicitly reorders.
 
