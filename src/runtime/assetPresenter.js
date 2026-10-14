@@ -16,7 +16,7 @@ export class AssetPresenter{
   const residentBytes=asset.width*asset.height*4;if(this.textures.size>=64||this.textureBytes+residentBytes>ASSET_LIMITS.cacheBytes)return;
   const textureKey=this.prefix+key;try{this.scene.textures?.addImage(textureKey,asset.image);this.textures.set(key,{key:textureKey,asset});this.textureBytes+=residentBytes;}catch{this.scene.textures?.remove(textureKey);}
  }));}
- prepare(definitions,stage={},abilities={}){
+ prepare(definitions,stage={},abilities={},onCriticalReady=null){
   this.stageAssetKey=stage.battleAssetKey??null;
   const keys=encounterAssetKeys(definitions,stage);
   for(const d of definitions){for(const state of ['battleIdle','battleHit','battleKo','battleCast'])keys.push(characterAnimation(d,state).source);for(const cat of ['basic','heavy','special','awakening']){const v=characterVfx(d,cat,abilities[d.abilities?.[cat]]);keys.push(v.assetKey);if(v.animation)keys.push(v.animation.source);}}
@@ -27,7 +27,10 @@ export class AssetPresenter{
   const idles=definitions.map(d=>characterAnimation(d,'battleIdle').source);
   const critical=[...new Set([...portraits,...idles])];
   const remaining=keys.filter(key=>!critical.includes(key));
-  return this.loadKeys(critical).then(()=>this.loadKeys(remaining));
+  return this.loadKeys(critical).then(()=>{
+   if(!this.closed)onCriticalReady?.();
+   return this.loadKeys(remaining);
+  });
  }
  setState(ownerId,descriptor,now,state){this.states.set(ownerId,{descriptor,start:now,state});}
  cast(event,character,now,ability=null){
