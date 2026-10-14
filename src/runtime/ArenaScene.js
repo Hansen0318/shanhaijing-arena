@@ -73,7 +73,10 @@ export class ArenaScene extends Phaser.Scene {
     this.events.once('shutdown',()=>this.visualAssets.destroy());
     const encounterActors=[...this.session.allies,...this.session.enemies];
     const encounterDefinitions=[...new Set(encounterActors.map(a=>this.session.characterDefinitions[a.definitionId]))];
-    this.visualAssets.prepare(encounterDefinitions,this.stageConfig??{},this.session.abilityDefinitions);
+    this.visualAssets.prepare(encounterDefinitions,this.stageConfig??{},this.session.abilityDefinitions,()=>{
+      // Redraw after critical portraits resolve, even if the round is paused.
+      if(!this.visualAssets.closed && this.portraitViews)this.applyFrame(this.session.snapshot());
+    });
     this.telegraphs = new TelegraphPresenter(this,arenaToStage);
     this.events.once('shutdown',()=>this.telegraphs.destroy());
     this.events.once('shutdown',()=>this.damageNumbers.destroy());
