@@ -1,5 +1,8 @@
 # M5C-B Batch1 Visual Spec — 九尾狐
 
+## Static KO engineering release — 2026-10-14
+ENGINEERING PASS / PLAYER PHONE SMOKE PENDING. Approved512RGBA195917bytes/SHAfe8a29e136f0e487e394e467d9acc0ccd8662c42351bb7ab709990320cb4d209 copied unchanged;oneframe,duration1,loopfalse,staticFrame0,origin[.5,397/512],scale2,shared last-facing mirror/deadalpha. Mainbodycontactedge397 and129.9375×75.9375display,HP0/staticpersistence/stopMove/ground/purity PASS. Source79ab8f3f1f61fedbf6d8ff72f968cf5471503528;targeted78/78/guard/build/review PASS,Actions#928/38488244792 CI667/667/PagesSUCCESS,publicKO/bundles match. ExistingP4liveart/P1-P3/gameplay/16MiB unchanged. Full evidence:../verification/M5C_B_JIUWEIHU_KO.md. Static+locomotion playerverified;onlyKO phonepose/size/ground/fullbodytails/mirror/persistence pending. P4 temporarilycomplete afterconfirmation only;no P5/action/VFX/mainmerge.
+
 ## Static KO executable checkpoint — 2026-10-14
 Latest player handoff accepts static+locomotion and approves KOart. Exact512RGBA195917bytes/SHAfe8a29e136f0e487e394e467d9acc0ccd8662c42351bb7ab709990320cb4d209 copied to runtime battleKo.png unchanged. One frame/duration1/loopfalse/staticFrame0,origin[.5,397/512]/scale2 from measured mainbodycontactedge; canonical right/saved left shared mirror/deadalpha.35. HP0/static persistence/ground/size/purity PASS,existing art/movement unchanged. Targeted78/78/guard/build PASS,16MiB unchanged. Review/Pages/public pending;../verification/M5C_B_JIUWEIHU_KO.md carries full evidence. Phone smoke needed before P4 temporarily complete. No next gate/main merge.
 

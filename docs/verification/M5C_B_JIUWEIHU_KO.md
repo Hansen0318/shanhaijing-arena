@@ -1,5 +1,20 @@
 # P4 九尾狐 static KO — 2026-10-14
 
+## Engineering release closure
+**ENGINEERING PASS / PLAYER PHONE SMOKE PENDING**. Tested/deployed source79ab8f3f1f61fedbf6d8ff72f968cf5471503528,tree4bfc00c863489874f2bfa37cb419391c4bdbb244; final feature HEAD is containing docs-only closure with identical production/tests. Fresh independent review: no Critical/Important/Minor findings; exact PNG/SHA/main alpha contact/groundsize, new8 tests, guard/diff independently PASS. Local targeted78/78,guard57files2361775bytes/build/diff PASS. ConfiguredCI667/667 PASS. Actions#928/38488244792 Build115607007364 + Pages115607142985 SUCCESS. No main merge/next gate.
+
+Fresh public downloads all match tested dist: index, JS,battleRuntime,CSS,P4portrait/identity/Idle/Move/KO. KO exact-byte match195917bytes/SHAfe8a29e136f0e487e394e467d9acc0ccd8662c42351bb7ab709990320cb4d209. P4existing four PNG hashes unchanged. Runtime state/static100-second persistence/both last-facing directions/normal-reduced/real-session dead-position purity proved by actual presenter+BattleSession tests; no repeated player-owned phone/broad browser smoke. Shared overhead HP HP0 hidden contract unchanged and directly checked. No technical blocker.
+
+| Public path | Bytes | SHA256 |
+| --- | ---: | --- |
+| index.html |1491|50beb212967a6c5abe2b665f7b2de2e9abdef8d779122dee608ca3a49eeacd97|
+| assets/index-D0CBhPBD.js |97014|ec9413283d998d22ca922a77fb4dae53daf307c5f4c66c65601efb12f6c1288a|
+| assets/battleRuntime-DXTYd2zx.js |1445032|1614c96a0deeaffb4ecf25595e71e8e21798ac52d7c4d1f0877f5075815e8dc2|
+| assets/index-DcqtNRF0.css |22943|a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da|
+| assets/characters/jiuweihu/battleKo.png |195917|fe8a29e136f0e487e394e467d9acc0ccd8662c42351bb7ab709990320cb4d209|
+
+All4KO actually preload across orders at11934352decoded bytes in cache/scene; fullidentitypeak12413584decoded-equivalent bytes each. Both16MiB limits unchanged, no fallback/silent drop. Exact supplied artwork unchanged; all gameplay/projection/shared-runtime/UI and P1-P3/P4live presentation unchanged. Final phone acceptance only: approved lying pose/static/noMove/fullbody/tails, size/ground contact, enemy mirror/persistence, existing P1-P3 behavior. P4 is not marked temporarily complete before this phone confirmation. STOP; no P5/action/VFX/main merge.
+
 ## Executable checkpoint / ledger
 Recovered da9ad0b657f10d3ac7f6a50a99436b670fb174e1; PR#1 open/unmerged; preceding Actions38487399677 SUCCESS. Latest player handoff explicitly accepts P4 static+locomotion and KO art. This task only integrates the remaining KO runtime; no completed art/movement gate redone.
 
