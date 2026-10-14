@@ -90,3 +90,18 @@ test('Botuo living missing Hit/Cast and KO keep the approved static F1',async()=
  actor.hp=0;p.render(frame,1.21,defs);assert.equal(sprite.texture[1],'0.0.160.160');
  p.destroy();
 });
+
+
+test('shared encounter loads compact portraits and idles before optional move/KO/VFX and refreshes on critical readiness',async()=>{
+ const order=[],s=scene();
+ const cache={async load(key){order.push(key);return {type:'procedural'};}};
+ const p=new api.AssetPresenter(s,{cache}),defs=[rosterCatalog.P1,rosterCatalog.P5];
+ let criticalSnapshot=null;
+ await p.prepare(defs,{}, {},()=>{criticalSnapshot=[...order];});
+ assert.deepEqual(criticalSnapshot.slice(0,2),['lushu.portrait','xingxing.portrait']);
+ assert.ok(criticalSnapshot.includes('lushu.battleIdle'));
+ assert.ok(criticalSnapshot.includes('xingxing.battleIdle'));
+ assert.ok(!criticalSnapshot.includes('xingxing.battleMove'),'large optional move atlas must not block portraits');
+ assert.ok(order.includes('xingxing.battleMove'),'later animation atlas still preloads');
+ p.destroy();
+});
