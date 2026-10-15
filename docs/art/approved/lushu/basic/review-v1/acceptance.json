@@ -1,5 +1,5 @@
 {
-  "status": "PLAYER APPROVED / GIF AND VFX ART ONLY; RUNTIME TIMING DECISION PENDING",
+  "status": "PLAYER APPROVED / GIF AND VFX; B WINDUP SELECTED; WRITTEN DESIGN REVIEW PENDING",
   "playerApproval": {
     "at": "2026-10-15T22:12:13+08:00",
     "statement": "好ok，繼續",
@@ -41,6 +41,11 @@
   "characterSources": "docs/art/approved/lushu/basic/",
   "reviewManifest": "docs/art/candidates/lushu/basic/review-v1/review-manifest.json",
   "packagingAndChecks": "docs/art/candidates/lushu/basic/review-v1/REVIEW_NOTES.md",
-  "nextGate": "Choose timing contract A immediate damage with180ms visual lag OR B explicitly authorized180ms actual windup; see docs/verification/M5C_B_LUSHU_BASIC_PREFLIGHT.md",
+  "timingDecision": {
+    "selected": "B",
+    "at": "2026-10-15T22:18:37+08:00",
+    "scope": "Actual180ms P1 Basic pre-impact direction approved; detailed written design review still pending"
+  },
+  "nextGate": "Review docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md, then implementation planning and engineering. Do not re-ask A/B.",
   "runtimeStatus": "NOT INTEGRATED / NOT BUILT / NOT DEPLOYED"
 }

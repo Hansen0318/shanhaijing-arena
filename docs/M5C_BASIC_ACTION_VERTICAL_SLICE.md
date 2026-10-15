@@ -1,6 +1,6 @@
 # M5C Basic action + matching Basic VFX — first vertical slice (2026-10-15)
 
-**Status: FOUR POSES + VFX + GIF PLAYER APPROVED / RUNTIME TIMING DECISION PENDING.** Canonical shared method: `docs/CHARACTER_ACTION_ART_WORKFLOW.md`. Player approved the sequence F3→four poses→separate effects/composite GIF→explicit GIF approval→future integration/deploy→iPhone acceptance. The complete F1/F2/F3/F4 sequence is now player-approved; unchanged originals are under docs/art/approved/lushu/basic/. VFX/GIF were explicitly accepted2026-10-15T22:12:13+08:00. Engineering continuation was requested, but a concrete immediate-damage versus180ms-F3 synchronization decision remains unresolved. See docs/verification/M5C_B_LUSHU_BASIC_PREFLIGHT.md before any implementation. Do not silently change combat timing. GitHub governs all character/source constraints.
+**Status: FOUR POSES + VFX + GIF APPROVED / B ACTUAL180MS WINDUP SELECTED / WRITTEN DESIGN REVIEW PENDING.** Canonical shared method: `docs/CHARACTER_ACTION_ART_WORKFLOW.md`. Unchanged art originals are under docs/art/approved/lushu/basic/; GIF accepted2026-10-15T22:12:13+08:00. Player chose B at22:18:37+08:00, authorizing actual180ms pre-impact direction rather than visual-only lag. Detailed shared lifecycle, cancellation/range, rendering, accessibility, finite-memory and verification contract is proposed in docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md and awaits written review. Do not re-ask A/B or silently extend scope beyond that reviewed contract. GitHub governs all character/source constraints.
 
 ## Latest player request and revised authoring proposal — 2026-10-15
 
@@ -32,6 +32,6 @@ The player need not re-upload our own output to continue in the same work sessio
 ## Important execution boundary
 1. Chat must inspect approved P1 art and current hit/cast event timing, then present the pose/VFX concept for PLAYER acceptance before generating an image. Do not infer approval from older KO/locomotion approvals.
 2. After approval, Chat prepares the approved four-frame source, transparent safe derivative, VFX art if approved, verification/hashes; only then Work integrates against shared presentation descriptors and real cast/hit events.
-3. No changes to attack speed, damage, crit, range, targeting, cooldown, AI, movement, KO or Tier; no new player Basic button. No new character-specific runtime branching.
+3. Protect attack speed, damage/crit coefficients, configured range, cooldown, AI profiles, movement, KO art and Tier; no new player Basic button or character-ID runtime branching. Latest explicit B choice permits actual180ms P1 Basic pre-impact timing; its targeting/cancellation semantics are proposed in the linked shared-windup design, not yet implemented. Other abilities remain unchanged.
 4. Work executable gate: generic Basic action state lifetime and matching hit visual, KO/reduced-motion/last-facing/move-resume fallbacks, test/build/Pages/fingerprint and player phone smoke. Only after P1 vertical slice is player verified may the same system expand to P2–P5; Heavy/Special/Awakening remain deferred.
 5. Do not merge main.
