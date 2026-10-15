@@ -1,36 +1,40 @@
 import {battleAssetCache} from './assetCache.js';
-import {encounterAssetKeys,resolveCharacterAsset} from '../assets/resolver.js';
+import {resolveCharacterAsset} from '../assets/resolver.js';
 import {characterAnimation,characterVfx,grayboxAnimation} from '../assets/battleDescriptors.js';
 import {VisualPlayback,animationFrame} from '../assets/playback.js';
 import {animationDescriptor,vfxDescriptor} from '../assets/descriptors.js';
-import {ASSET_LIMITS} from '../assets/schema.js';
+import {AssetResidency} from './assetResidency.js';
 let nextPresenter=0;
 // This adapter has no ability execution, mutable actor or persistence capability.
 export class AssetPresenter{
- constructor(scene,{cache=battleAssetCache,project=p=>p,reducedMotion=false}={}){
-  this.scene=scene;this.cache=cache;this.project=project;this.reducedMotion=reducedMotion;this.prefix=`visual.${++nextPresenter}.`;this.closed=false;this.textureBytes=0;
-  this.textures=new Map();this.displays=new Map();this.displayKinds=new Map();this.actorSprites=new Map();this.overlaySprites=new Map();this.hudSprites=new Map();this.states=new Map();this.facings=new Map();this.actionFacings=new Map();this.playback=new VisualPlayback();
+ constructor(scene,{cache=battleAssetCache,project=p=>p,reducedMotion=false,residencyOptions={}}={}){
+  this.scene=scene;this.cache=cache;this.project=project;this.reducedMotion=reducedMotion;this.prefix=`visual.${++nextPresenter}.`;this.closed=false;this.ready=false;this.optionalLoads=new Map();this.optionalFailures=new Set();
+  this.displays=new Map();this.displayKinds=new Map();this.displayTextureKeys=new Map();this.actorSprites=new Map();this.actorTextureKeys=new Map();this.overlaySprites=new Map();this.overlayTextureKeys=new Map();this.hudSprites=new Map();this.states=new Map();this.facings=new Map();this.actionFacings=new Map();this.playback=new VisualPlayback();
+  this.residency=new AssetResidency(scene,{...residencyOptions,cache,prefix:this.prefix,onEvict:key=>this.clearOptionalDisplays(key)});this.textures=this.residency.textures;
  }
- async loadKeys(keys){return Promise.all([...new Set(keys)].map(async key=>{
-  const asset=await this.cache.load(key);if(this.closed||!asset.image||this.textures.has(key))return;
-  const residentBytes=asset.width*asset.height*4;if(this.textures.size>=64||this.textureBytes+residentBytes>ASSET_LIMITS.cacheBytes)return;
-  const textureKey=this.prefix+key;try{this.scene.textures?.addImage(textureKey,asset.image);this.textures.set(key,{key:textureKey,asset});this.textureBytes+=residentBytes;}catch{this.scene.textures?.remove(textureKey);}
- }));}
- prepare(definitions,stage={},abilities={},onCriticalReady=null){
+ get textureBytes(){return this.residency.bytes;}
+ async loadKeys(keys){return Promise.all([...new Set(keys)].map(key=>this.residency.load(key)));}
+ clearOptionalDisplays(key){for(const [map,sources] of [[this.displays,this.displayTextureKeys],[this.overlaySprites,this.overlayTextureKeys]])for(const [id,source] of sources)if(source===key){map.get(id)?.destroy();map.delete(id);sources.delete(id);this.displayKinds.delete(id);}}
+ demand(keys){for(const key of new Set(keys.filter(Boolean))){if(this.closed||this.textures.has(key)||this.optionalLoads.has(key)||this.optionalFailures.has(key)||this.residency.record(key).type!=='image')continue;const task=this.loadKeys([key]).catch(()=>{this.optionalFailures.add(key);}).finally(()=>this.optionalLoads.delete(key));this.optionalLoads.set(key,task);}}
+ whenIdle(){return Promise.all([...this.optionalLoads.values()]);}
+ async prepare(definitions,stage={},abilities={},onCriticalReady=null){
+  this.ready=false;
+  // Required descriptors must fail explicitly; transient rendering may fallback.
+  for(const d of definitions)for(const state of ['battleIdle','battleMove','battleKo'])if(d.animationDescriptors?.[state])animationDescriptor(d.animationDescriptors[state]);
   this.stageAssetKey=stage.battleAssetKey??null;
-  const keys=encounterAssetKeys(definitions,stage);
-  for(const d of definitions){for(const state of ['battleIdle','battleHit','battleKo','battleCast'])keys.push(characterAnimation(d,state).source);for(const cat of ['basic','heavy','special','awakening']){const v=characterVfx(d,cat,abilities[d.abilities?.[cat]]);keys.push(v.assetKey);if(v.animation)keys.push(v.animation.source);}}
   // Critical first-paint textures must not queue behind large Move/KO/VFX atlases.
   // The shared cache processes only two image requests concurrently, so staging
   // priorities here benefits every roster character and preserves cache budgets.
-  const portraits=definitions.map(d=>resolveCharacterAsset(d,'portraitSquare').key);
-  const idles=definitions.map(d=>characterAnimation(d,'battleIdle').source);
+  const portraits=definitions.map(d=>d.assets?.portraitSquare??resolveCharacterAsset(d,'portraitSquare').key);
+  const idles=definitions.map(d=>d.animationDescriptors?.battleIdle?.source??d.assets?.battleIdle??characterAnimation(d,'battleIdle').source);
   const critical=[...new Set([...portraits,...idles])];
-  const remaining=keys.filter(key=>!critical.includes(key));
-  return this.loadKeys(critical).then(()=>{
-   if(!this.closed)onCriticalReady?.();
-   return this.loadKeys(remaining);
-  });
+  const required=[...new Set([...critical,...definitions.flatMap(d=>['battleMove','battleKo'].map(state=>d.animationDescriptors?.[state]?.source??d.assets?.[state]).filter(Boolean))])];
+  this.residency.setPins('encounter',required);
+  await this.loadKeys(critical);if(this.closed)return;
+  onCriticalReady?.();
+  await this.loadKeys(required.filter(key=>!critical.includes(key)));if(this.closed)return;
+  this.ready=true;
+  this.residency.setPins('stage',this.stageAssetKey?[this.stageAssetKey]:[]);this.demand([this.stageAssetKey]);
  }
  setState(ownerId,descriptor,now,state){this.states.set(ownerId,{descriptor,start:now,state});}
  cast(event,character,now,ability=null){
@@ -41,18 +45,23 @@ export class AssetPresenter{
   if(Math.abs(dx)>1e-6)this.actionFacings.set(event.actorId,{flipX:dx<0,until:now+descriptor.duration});
   const overlay=character?.assets?.skillOverlays?.[event.category];if(overlay)try{this.playback.play(event.actorId,vfxDescriptor({form:'sprite',assetKey:overlay,duration:descriptor.duration}),event.origin,now,{target});}catch{/* optional invalid art falls back to existing cast */}
   if(character?.animationDescriptors?.battleCast)this.setState(event.actorId,characterAnimation(character,'battleCast'),now,'battleCast');
+  this.syncEffectPins();
  }
- hit(event,character,now){if(!this.closed)this.setState(event.targetId,characterAnimation(character,'battleHit'),now,'battleHit');}
+ hit(event,character,now){if(!this.closed){this.setState(event.targetId,characterAnimation(character,'battleHit'),now,'battleHit');this.syncEffectPins();}}
+ syncEffectPins(){const keys=[...this.playback.active.values()].flatMap(r=>[r.descriptor.assetKey,r.descriptor.animation?.source]);for(const state of this.states.values())if(['battleHit','battleCast'].includes(state.state))keys.push(state.descriptor.source);this.residency.setPins('effects',keys.filter(Boolean));this.demand(keys);}
  async inspect(ownerId,character,slot,now){
   if(slot==='none'||this.closed)return;
   if(slot.endsWith('Vfx'))this.playback.play(ownerId,characterVfx(character,slot.slice(0,-3)),{x:0,y:0},now);
-  else {const descriptor=slot==='battleIdle'?(character?.animationDescriptors?.battleIdle?characterAnimation(character,'battleIdle'):grayboxAnimation):animationDescriptor({source:resolveCharacterAsset(character,slot).key,duration:1});await this.loadKeys([descriptor.source]);if(!this.closed)this.setState(ownerId,descriptor,now,'inspection');}
+  else {const descriptor=slot==='battleIdle'?(character?.animationDescriptors?.battleIdle?characterAnimation(character,'battleIdle'):grayboxAnimation):animationDescriptor({source:resolveCharacterAsset(character,slot).key,duration:1});this.residency.setPins('inspection',[descriptor.source]);await this.loadKeys([descriptor.source]);if(!this.closed)this.setState(ownerId,descriptor,now,'inspection');}
  }
  imageFor(ownerId,descriptor,elapsed,map=this.actorSprites,playbackMode='decorative'){
   const texture=this.textures.get(descriptor.source);if(!texture)return null;
   const projection=animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode),region=texture.asset.key===descriptor.source?projection.region:null;const frame=region?`${region.x}.${region.y}.${region.width}.${region.height}`:undefined;
   if(region){const t=this.scene.textures?.get(texture.key);if(!t?.has?.(frame))t?.add(frame,0,region.x,region.y,region.width,region.height);}
   let sprite=map.get(ownerId);if(!sprite){sprite=this.scene.add.image(0,0,texture.key,frame);map.set(ownerId,sprite);}else sprite.setTexture(texture.key,frame);
+  // A state change may start another upload before the next render. Keep the
+  // old displayed actor texture pinned until setTexture actually releases it.
+  if(map===this.actorSprites){this.actorTextureKeys.set(ownerId,descriptor.source);this.residency.setPins('actor-displays',this.actorTextureKeys.values());}
   sprite.setOrigin(...descriptor.origin).setScale(descriptor.scale).setVisible(true);return sprite;
  }
  renderHud(views,definitions,session){
@@ -69,9 +78,9 @@ export class AssetPresenter{
   }
  }
  renderOverlays(frame,definitions,statuses,now){
-  if(this.closed)return;const valid=new Set();for(const actor of [...frame.allies,...frame.enemies]){if(actor.hp<=0)continue;const character=definitions[actor.definitionId];
-   for(const status of statuses.forActor(actor.instanceId,now)){const key=character?.assets?.statusOverlays?.[status.type],texture=this.textures.get(key);if(!texture)continue;const id=actor.instanceId+'.'+status.type;valid.add(id);let image=this.overlaySprites.get(id);if(!image){image=this.scene.add.image(0,0,texture.key);this.overlaySprites.set(id,image);}const p=this.project(actor);image.setPosition(p.x,p.y).setDepth(7).setDisplaySize(56,56);}
-  }for(const [id,image] of this.overlaySprites)if(!valid.has(id)){image.destroy();this.overlaySprites.delete(id);}
+  if(this.closed)return;const valid=new Set(),keys=[];for(const actor of [...frame.allies,...frame.enemies]){if(actor.hp<=0)continue;const character=definitions[actor.definitionId];
+   for(const status of statuses.forActor(actor.instanceId,now)){const key=character?.assets?.statusOverlays?.[status.type];if(key)keys.push(key);const texture=this.textures.get(key);if(!texture)continue;const id=actor.instanceId+'.'+status.type;valid.add(id);let image=this.overlaySprites.get(id);if(!image){image=this.scene.add.image(0,0,texture.key);this.overlaySprites.set(id,image);this.overlayTextureKeys.set(id,key);}const p=this.project(actor);image.setPosition(p.x,p.y).setDepth(7).setDisplaySize(56,56);}
+  }for(const [id,image] of this.overlaySprites)if(!valid.has(id)){image.destroy();this.overlaySprites.delete(id);this.overlayTextureKeys.delete(id);}this.residency.setPins('overlays',keys);this.demand(keys);
  }
  render(frame,now,definitions){
   if(this.closed)return;const actors=[...frame.allies,...frame.enemies],alive=new Set(actors.filter(a=>a.hp>0).map(a=>a.instanceId)),positions=new Map(actors.map(a=>[a.instanceId,this.project(a)]));
@@ -106,12 +115,14 @@ export class AssetPresenter{
    else this.actorSprites.get(id)?.setVisible(false); // Arena's procedural marker remains visible.
   }
   const records=this.playback.update(now,alive),ids=new Set(records.map(r=>r.id));
-  for(const [id,display] of this.displays)if(!ids.has(id)){display.destroy();this.displays.delete(id);this.displayKinds.delete(id);}
+  for(const [id,display] of this.displays)if(!ids.has(id)){display.destroy();this.displays.delete(id);this.displayKinds.delete(id);this.displayTextureKeys.delete(id);}
+  this.syncEffectPins();
   for(const r of records){
    const d=r.descriptor,elapsed=now-r.start,progress=this.reducedMotion?0:Math.min(1,elapsed/d.duration),source=positions.get(r.ownerId)??this.project(r.position),target=r.targetId?positions.get(r.targetId):r.target?this.project(r.target):source;
    const anchor=d.attach==='target'?target:d.attach==='fixed'?this.project(r.position):source;
    let display=this.displays.get(r.id);const texture=this.textures.get(d.animation?.source??d.assetKey);
    const kind=texture?'image':'graphics';if(display&&this.displayKinds.get(r.id)!==kind){display.destroy();this.displays.delete(r.id);display=null;}
+   if(texture)this.displayTextureKeys.set(r.id,d.animation?.source??d.assetKey);else this.displayTextureKeys.delete(r.id);
    if(!display){display=texture?this.scene.add.image(0,0,texture.key):this.scene.add.graphics();this.displays.set(r.id,display);this.displayKinds.set(r.id,kind);}
    display.setPosition(anchor.x,anchor.y).setDepth(d.layer).setAlpha(1-progress).setScale(d.scale);
    const angle=d.rotation==='facing'?Math.atan2(target.y-source.y,target.x-source.x):0;
@@ -122,6 +133,7 @@ export class AssetPresenter{
     else {display.strokeCircle(0,0,26);for(let i=0;i<8;i++){const a=i*Math.PI/4+angle;display.lineBetween(Math.cos(a)*20,Math.sin(a)*20,Math.cos(a)*48,Math.sin(a)*48);}}
    }
   }
+  this.residency.reclaim();
  }
- destroy(){if(this.closed)return;this.closed=true;this.stageDisplay?.destroy();for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}for(const {key} of this.textures.values())this.scene.textures?.remove(key);this.textures.clear();this.textureBytes=0;this.displayKinds.clear();this.states.clear();this.facings.clear();this.actionFacings.clear();this.playback.clear();}
+ destroy(){if(this.closed)return;this.closed=true;this.ready=false;this.stageDisplay?.destroy();for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}this.residency.destroy();this.optionalLoads.clear();this.optionalFailures.clear();this.displayKinds.clear();this.displayTextureKeys.clear();this.actorTextureKeys.clear();this.overlayTextureKeys.clear();this.states.clear();this.facings.clear();this.actionFacings.clear();this.playback.clear();}
 }

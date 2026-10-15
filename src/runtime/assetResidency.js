@@ -23,6 +23,7 @@ export class AssetResidency {
   if(this.textures.has(key))return Promise.resolve(this.touch(key));
   if(this.pending.has(key))return this.pending.get(key);
   const record=this.record(key);
+  if(record.key!==key){this.counters.failed++;return Promise.reject(Error('Unknown asset key: '+key));}
   if(record.type!=='image')return Promise.resolve(null);
   const size=record.width*record.height*4;
   const task=(async()=>{
@@ -35,7 +36,7 @@ export class AssetResidency {
     if(this.closed)return null;
     if(!asset.image||asset.key!==key||asset.width!==record.width||asset.height!==record.height)throw Error('Required image load failed: '+key);
     const textureKey=this.prefix+key;
-    try{const texture=this.scene.textures?.addImage(textureKey,asset.image);if(!texture)throw Error('Texture allocation failed');}
+    try{if(typeof this.scene.textures?.addImage!=='function')throw Error('Texture manager unavailable');const texture=this.scene.textures.addImage(textureKey,asset.image);if(texture===null||texture===false)throw Error('Texture allocation failed');}
     catch(error){this.scene.textures?.remove(textureKey);throw error;}
     const value={key:textureKey,asset};this.textures.set(key,value);this.bytes+=size;
     this.counters.loaded++;this.counters.highWaterBytes=Math.max(this.counters.highWaterBytes,this.bytes);

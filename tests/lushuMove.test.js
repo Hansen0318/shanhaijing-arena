@@ -13,9 +13,9 @@ async function fixture({missingMove=false,reducedMotion=false}={}){
  const textures=new Map(),sprites=[];
  const scene={textures:{addImage(key){textures.set(key,{has:()=>false,add(){}});},get:key=>textures.get(key),remove:key=>textures.delete(key)},add:{image(x,y,key,frame){const image={texture:[key,frame],setTexture(k,f){this.texture=[k,f];return this;},destroy(){}};for(const method of ['setOrigin','setScale','setVisible','setDisplaySize','setFlipX','setPosition','setDepth','setAlpha'])image[method]=(...args)=>{image[method+'Value']=args;return image;};sprites.push(image);return image;}}};
  const loaded=[],cache={async load(key){loaded.push(key);const a=assetManifest[key];return {...a,...(a?.type==='image'&&!(missingMove&&key==='lushu.battleMove')?{image:{width:a.width,height:a.height}}:{})};}};
- const p=new AssetPresenter(scene,{cache,reducedMotion});await p.prepare([rosterCatalog.P1,rosterCatalog.P2,rosterCatalog.P3]);
+ const p=new AssetPresenter(scene,{cache,reducedMotion});let preparationError;try{await p.prepare([rosterCatalog.P1,rosterCatalog.P2,rosterCatalog.P3]);}catch(error){if(!missingMove)throw error;preparationError=error;}
  const actor={instanceId:'a1',definitionId:'P1',x:2,y:0,hp:245},frame={allies:[actor],enemies:[]};
- return {p,actor,frame,loaded,sprites,render:now=>p.render(frame,now,rosterCatalog)};
+ return {p,actor,frame,loaded,sprites,preparationError,render:now=>p.render(frame,now,rosterCatalog)};
 }
 test('approved move slot is encounter-loaded with four isolated canonical cells and static idle preserved',async()=>{
  const asset=resolveCharacterAsset(rosterCatalog.P1,'battleMove');assert.equal(asset.key,'lushu.battleMove');assert.equal(asset.path,'assets/characters/lushu/battleMove-4f.png');assert.deepEqual([asset.width,asset.height],[384,128]);
@@ -37,8 +37,8 @@ test('actual presenter switches on XY displacement, loops, freezes duplicate tim
  f.actor.x-=.1;f.render(.8);assert.deepEqual(image.setFlipXValue,[true]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);
  f.actor.hp=0;f.actor.x-=.1;f.render(.9);assert.ok(image.texture[0].endsWith('lushu.battleKo'));f.p.destroy();assert.equal(f.p.facings.size,0);
 });
-test('missing move safely retains static idle in both motion modes',async()=>{
- for(const reducedMotion of [false,true]){const f=await fixture({missingMove:true,reducedMotion});f.render(0);f.actor.x+=1;f.render(.1);f.actor.x+=1;f.render(.3);const image=f.sprites[0];assert.equal(image.texture[1],'0.0.96.128');assert.ok(image.texture[0].endsWith('lushu.battleIdle'));f.p.destroy();
+test('missing required Move blocks readiness and diagnostic rendering safely retains Idle',async()=>{
+ for(const reducedMotion of [false,true]){const f=await fixture({missingMove:true,reducedMotion});assert.match(f.preparationError.message,/load failed.*lushu.battleMove/);assert.equal(f.p.ready,false);f.render(0);f.actor.x+=1;f.render(.1);f.actor.x+=1;f.render(.3);const image=f.sprites[0];assert.equal(image.texture[1],'0.0.96.128');assert.ok(image.texture[0].endsWith('lushu.battleIdle'));f.p.destroy();
  }
 });
 test('forced reduced-motion presenter loops all Move frames slower, preserves geometry and immediately stops',async()=>{

@@ -64,7 +64,7 @@ test('real presenter loop freezes on battle time, resumes, exits hit/KO safely a
  p.destroy();assert.equal(s.keys.size,0);assert.equal(p.states.size,0);assert.ok(s.images.every(i=>i.destroyed));assert.equal(p.textureBytes,0);
 });
 test('Lab idle inspection resolves approved descriptor rather than hiding it under graybox',async()=>{
- const p=new AssetPresenter(trackedScene(),{cache:{async load(){return {type:'procedural'};}}});
+ const p=new AssetPresenter(trackedScene(),{cache:createAssetCache({transport:async r=>({image:{width:r.width,height:r.height},bytes:r.bytes})})});
  await p.inspect('a1',rosterCatalog.P1,'battleIdle',0);assert.equal(p.states.get('a1').descriptor.source,key);p.destroy();
 });
 

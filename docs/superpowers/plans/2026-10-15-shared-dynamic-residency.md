@@ -22,16 +22,16 @@
 ### Task 1: Residency owner
 Files: new src/runtime/assetResidency.js; tests/assetResidency.test.js; src/assets/schema.js; src/runtime/assetCache.js.
 Interface: AssetResidency(scene,{cache,prefix,softBytes,hardBytes,maxEntries,onEvict}); setPins(owner,keys), release(owner), load(key), reclaim(), destroy(), textures Map, snapshot(). Cache exposes record(key), diagnostics and trim().
-- [ ] RED: test eviction vs pinned images, concurrent dedupe/reservation, overflow/failure retry, shutdown race and invalid budgets.
-- [ ] GREEN: implement LRU accounting, bounded diagnostics, ownership, resource removal and deterministic errors; expose cache metadata without coupling its eviction to live textures.
-- [ ] Verify node --test tests/assetResidency.test.js tests/assetCache.test.js; checkpoint.
+- [x] RED: test eviction vs pinned images, concurrent dedupe/reservation, overflow/failure retry, shutdown race and invalid budgets.
+- [x] GREEN: implement LRU accounting, bounded diagnostics, ownership, resource removal and deterministic errors; expose cache metadata without coupling its eviction to live textures.
+- [x] Verify node --test tests/assetResidency.test.js tests/assetCache.test.js; checkpoint.
 
 ### Task 2: Presenter and Arena readiness
 Files: src/runtime/assetPresenter.js, src/runtime/ArenaScene.js; new src/runtime/sceneAssetGate.js; tests/dynamicAssetIntegration.test.js, tests/sceneAssetGate.test.js; impacted presenter tests.
 Interface: presenter.prepare resolves only when all encounter Portrait/Idle/Move/KO image keys are resident and pinned; optional VFX/overlays load on use, pinned until display removal. Asset gate exposes start(load), state, error, destroy; callbacks apply only to current attempt.
-- [ ] RED: five unique characters/six actors, cold/warm repeated restarts, Collection separation, optional effect lifecycle, KO while loading, required failure+retry and late-shutdown tests.
-- [ ] GREEN: integrate owner, on-demand effect loads, required errors; show opaque loading/error/retry gate; freeze update/input until complete and redraw HUD before hide.
-- [ ] Verify targeted asset/cache/HUD/KO/movement/menu tests; checkpoint.
+- [x] RED: five unique characters/six actors, cold/warm repeated restarts, Collection separation, optional effect lifecycle, KO while loading, required failure+retry and late-shutdown tests.
+- [x] GREEN: integrate owner, on-demand effect loads, required errors; show opaque loading/error/retry gate; freeze update/input until complete and redraw HUD before hide.
+- [x] Verify targeted asset/cache/HUD/KO/movement/menu tests; checkpoint.
 
 ### Task 3: Release verification
 Files: docs/verification/SHARED_DYNAMIC_ASSET_RESIDENCY.md, WORK_PROGRESS.md, docs/STATE.md.
@@ -43,3 +43,7 @@ Files: docs/verification/SHARED_DYNAMIC_ASSET_RESIDENCY.md, WORK_PROGRESS.md, do
 ## Execution ledger
 Recovery168bfb1. Spec approved and user explicitly requested implementation/deploy in current Work; no repeated design approval. Dedicated clean feature checkout reused per explicit active-branch instruction.
 Ruling: preserve tested16MiB hard safety bound while replacing all-at-once refusal with per-encounter pins and LRU; 12MiB soft target permits required16597648-byte roster. No phone evidence supports raising hard cap; future larger essential sets must error visibly and request measured cap review.
+
+Task1 complete: core/cache12/12, pushed156ae4b. Task2 complete: newshared22/22, impacted156/156, full708/708 and Build PASS.
+Independent review: two important findings verified RED→GREEN: essential Idle declaration bypassed fallback validation; optional actor sprite needed independent display pins through retarget. Both fixed; full708/708 afterward. No deferred critical/important/minor findings.
+Local browser binary missing and download invalid; no browser acceptance claim. Tests run real Arena/session methods with external renderer doubled; phone smoke remains player-owned.

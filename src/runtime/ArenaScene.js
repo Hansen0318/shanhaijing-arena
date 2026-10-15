@@ -1,4 +1,5 @@
 import {AssetPresenter} from './assetPresenter.js';
+import {SceneAssetGate} from './sceneAssetGate.js';
 import {TelegraphPresenter,statusMarks} from './telegraphs.js';
 import {createLabBattleSession} from '../dev/battleLab/battleFactory.js';
 import { resultRewardLines } from '../acquisition/presentation.js';
@@ -70,13 +71,9 @@ export class ArenaScene extends Phaser.Scene {
     this.actorViews = new Map();
     this.damageNumbers = new DamageNumbers(this,arenaToStage);
     this.visualAssets=new AssetPresenter(this,{project:arenaToStage,reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});
-    this.events.once('shutdown',()=>this.visualAssets.destroy());
+    const visualAssets=this.visualAssets;this.events.once('shutdown',()=>visualAssets.destroy());
     const encounterActors=[...this.session.allies,...this.session.enemies];
     const encounterDefinitions=[...new Set(encounterActors.map(a=>this.session.characterDefinitions[a.definitionId]))];
-    this.visualAssets.prepare(encounterDefinitions,this.stageConfig??{},this.session.abilityDefinitions,()=>{
-      // Redraw after critical portraits resolve, even if the round is paused.
-      if(!this.visualAssets.closed && this.portraitViews)this.applyFrame(this.session.snapshot());
-    });
     this.telegraphs = new TelegraphPresenter(this,arenaToStage);
     this.events.once('shutdown',()=>this.telegraphs.destroy());
     this.events.once('shutdown',()=>this.damageNumbers.destroy());
@@ -138,9 +135,10 @@ export class ArenaScene extends Phaser.Scene {
     this.createResultView();
     this.applyFrame(first);
     this.selectAlly(this.selectedId, first, true);
+    this.createAssetLoadingGate(encounterDefinitions);
     this.onPlaybackChange(false, true);
     this.onSceneReady(this);
-    if(this.labConfig?.options.visualSlot&&this.labConfig.options.visualSlot!=='none'){const actor=this.session.actorById(this.selectedId);this.visualAssets.inspect(actor.instanceId,this.session.characterDefinitions[actor.definitionId],this.labConfig.options.visualSlot,0);}
+    if(this.labConfig?.options.visualSlot&&this.labConfig.options.visualSlot!=='none'){const actor=this.session.actorById(this.selectedId);this.visualAssets.inspect(actor.instanceId,this.session.characterDefinitions[actor.definitionId],this.labConfig.options.visualSlot,0).catch(()=>{});}
 
     window.__arenaSmoke = {
       stageId: this.session.stageId ?? null,
@@ -305,7 +303,7 @@ export class ArenaScene extends Phaser.Scene {
     );
 
     this.joystickBase.on('pointerdown', (pointer) => {
-      if (this.paused || !this.battleStarted || !this.selectedId || this.session.result() !== 'running') return;
+      if (this.paused || this.assetGate?.ready===false || !this.battleStarted || !this.selectedId || this.session.result() !== 'running') return;
       this.joystickPointerId = pointer.id;
       this.session.holdPlayerControl(this.selectedId);
       this.updateJoystickFromPointer(pointer);
@@ -328,6 +326,28 @@ export class ArenaScene extends Phaser.Scene {
   }
 
 
+
+  createAssetLoadingGate(definitions) {
+    const presenter=this.visualAssets,session=this.session;
+    this.assetLoadingCover=this.add.rectangle(0,0,ARENA_STAGE.width,ARENA_STAGE.height,0x253648).setOrigin(0,0).setDepth(90).setInteractive();
+    this.assetLoadingText=this.add.text(ARENA_STAGE.width/2,ARENA_STAGE.height/2,'LOADING…',{
+      fontFamily:'sans-serif',fontSize:'28px',color:'#ffffff',align:'center',
+    }).setOrigin(.5).setDepth(91).setInteractive({useHandCursor:true});
+    const gate=new SceneAssetGate(state=>{
+      if(presenter.closed||this.visualAssets!==presenter)return;
+      // Paint portraits before revealing the arena, including while paused.
+      if(state==='ready')this.applyFrame(session.snapshot());
+      this.assetLoadingCover.setVisible(state!=='ready');
+      this.assetLoadingText.setVisible(state!=='ready').setText(state==='error'?'ASSETS COULD NOT LOAD\nTAP TO RETRY':'LOADING…');
+    });
+    this.assetGate=gate;
+    const load=()=>{this.assetLoadPromise=gate.start(()=>presenter.prepare(definitions,this.stageConfig??{},session.abilityDefinitions,()=>{
+      if(!presenter.closed&&this.visualAssets===presenter&&this.portraitViews)this.applyFrame(session.snapshot());
+    }));};
+    this.assetLoadingText.on('pointerdown',()=>{if(gate.state==='error')load();});
+    this.events.once('shutdown',()=>gate.destroy());
+    load();
+  }
 
   createPreBattleCountdown() {
     this.countdownText = this.add.text(
@@ -396,7 +416,7 @@ export class ArenaScene extends Phaser.Scene {
       const ring = this.add.graphics().setDepth(23);
 
       base.on('pointerdown', () => {
-        if (this.paused || !this.battleStarted || !this.selectedId || this.session.result() !== 'running') return;
+        if (this.paused || this.assetGate?.ready===false || !this.battleStarted || !this.selectedId || this.session.result() !== 'running') return;
         const used = this.session.usePlayerAbility(this.selectedId, category);
         if (used) {
           this.renderCastEvents();
@@ -630,7 +650,7 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   update(_time, deltaMs) {
-    if (this.paused) return;
+    if (this.paused || this.assetGate?.ready===false) return;
     const deltaSeconds = Math.min(deltaMs / 1000, 0.25);
     const wasStarted = this.battleStarted;
     this.updatePreBattleCountdown(deltaSeconds);
@@ -640,7 +660,7 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   advanceBattle(deltaSeconds) {
-    if (this.paused) return;
+    if (this.paused || this.assetGate?.ready===false) return;
     this.accumulatorSeconds += deltaSeconds;
 
     while (this.accumulatorSeconds >= SIM_STEP_SECONDS && this.session.result() === 'running') {

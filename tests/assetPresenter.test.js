@@ -8,8 +8,8 @@ test('presenter owns loaded textures and discards stale completion after shutdow
  const q=new api.AssetPresenter(s,{cache});await q.loadKeys(['placeholder.actor-strip']);assert.equal(calls,1);assert.equal(s.keys.size,1);q.destroy();assert.equal(s.keys.size,0);
 });
 test('formal cast/hit/KO rendering is presentation-only and bounded; clear destroys displays',async()=>{
- assert.equal(typeof api.AssetPresenter,'function');const session=createLabBattleSession(createLabConfig({scenarioId:'persistent-area',allyTier:'T3',skipCountdown:true}));const s=scene(),p=new api.AssetPresenter(s);const before=JSON.stringify(session.snapshot());
- p.prepare(Object.values(session.characterDefinitions),{});const frame=session.snapshot();p.render(frame,0,session.characterDefinitions);assert.equal(JSON.stringify(session.snapshot()),before);
+ assert.equal(typeof api.AssetPresenter,'function');const session=createLabBattleSession(createLabConfig({scenarioId:'persistent-area',allyTier:'T3',skipCountdown:true}));const s=scene(),p=new api.AssetPresenter(s,{cache:createAssetCache({transport:async r=>({image:{width:r.width,height:r.height},bytes:r.bytes})})});const before=JSON.stringify(session.snapshot());
+ await p.prepare(Object.values(session.characterDefinitions),{});const frame=session.snapshot();p.render(frame,0,session.characterDefinitions);assert.equal(JSON.stringify(session.snapshot()),before);
  p.cast({actorId:'a2',category:'awakening',origin:{x:4,y:0},target:{x:7,y:0}},session.characterDefinitions[session.actorById('a2').definitionId],0);
  p.hit({targetId:'a1'},session.characterDefinitions[session.actorById('a1').definitionId],0);p.render(frame,.1,session.characterDefinitions);assert.ok(p.playback.active.size>0);
  const ko=structuredClone(frame);ko.allies[1].hp=0;p.render(ko,.2,session.characterDefinitions);assert.equal(p.playback.active.size,0);assert.equal(JSON.stringify(session.snapshot()),before);
@@ -19,9 +19,9 @@ test('Lab inspection uses shared presenter without combat mutation',async()=>{
  assert.equal(typeof api.AssetPresenter,'function');const session=createLabBattleSession(createLabConfig()),p=new api.AssetPresenter(scene(),{cache:createAssetCache({transport:async record=>({image:{width:record.width,height:record.height},bytes:200})})});
  const frame=session.snapshot(),before=JSON.stringify(frame);await p.inspect(frame.allies[0].instanceId,session.characterDefinitions[session.actorById(frame.allies[0].instanceId).definitionId],'battleIdle',0);p.render(frame,.6,session.characterDefinitions);assert.equal(JSON.stringify(session.snapshot()),before);assert.equal(p.states.get('a1').descriptor.source,session.characterDefinitions[session.actorById(frame.allies[0].instanceId).definitionId].animationDescriptors?.battleIdle?.source??'placeholder.actor-strip');p.destroy();
 });
-test('unknown/failed image slots leave real combat running and retained session unchanged',async()=>{
+test('failed approved images reject readiness without mutating the real combat session',async()=>{
  const session=createLabBattleSession(createLabConfig({scenarioId:'heal'})),p=new api.AssetPresenter(scene(),{cache:createAssetCache({transport:async()=>{throw Error('missing');}})});
- const defs=Object.fromEntries(Object.entries(session.characterDefinitions).map(([id,d])=>[id,{...d,assets:{...d.assets,battleIdle:'does-not-exist'}}]));await p.prepare([...session.allies,...session.enemies].map(a=>defs[a.definitionId]));
+ const defs=Object.fromEntries(Object.entries(session.characterDefinitions).map(([id,d])=>[id,{...d,assets:{...d.assets,battleIdle:'does-not-exist'}}]));const before=session.snapshot();await assert.rejects(p.prepare([...session.allies,...session.enemies].map(a=>defs[a.definitionId])),/load failed/);assert.equal(p.ready,false);assert.deepEqual(session.snapshot(),before);
  let steps=0;while(session.result()==='running'&&steps++<1800){session.step(.05);p.render(session.snapshot(),session.elapsedSeconds,defs);}assert.notEqual(session.result(),'running');p.destroy();
 });
 function faithfulScene(){
@@ -34,9 +34,9 @@ test('late flipbook texture replaces Graphics fallback with an image safely',asy
  p.cast({actorId:'a1',category:'heavy',origin:{x:0,y:0},target:{x:1,y:0}},character,0,ability);p.render(session.snapshot(),0,session.characterDefinitions);const graphics=s.created.find(v=>v.kind==='graphics');
  resolve({image:{width:64,height:32},bytes:200});await pending;p.render(session.snapshot(),.1,session.characterDefinitions);assert.equal(graphics.destroyed,true);assert.ok(s.created.some(v=>v.kind==='image'));p.destroy();
 });
-test('encounter ability-only VFX/animation assets are planned, no unrelated ability load',async()=>{
- const loaded=[],p=new api.AssetPresenter(scene(),{cache:{async load(key){loaded.push(key);return {type:'procedural'};}}}),session=createLabBattleSession(createLabConfig()),character=session.characterDefinitions[session.allies[0].definitionId];
- await p.prepare([character],{}, {[character.abilities.heavy]:{presentation:{vfx:{form:'sprite',assetKey:'placeholder.actor-strip',animation:{source:'placeholder.actor-strip',fps:2}}}},unrelated:{presentation:{vfx:{assetKey:'unrelated.art'}}}});assert.ok(loaded.includes('placeholder.actor-strip'));assert.ok(!loaded.includes('unrelated.art'));
+test('encounter ability-only VFX loads on cast, with no unrelated ability load',async()=>{
+ const loaded=[],p=new api.AssetPresenter(scene(),{cache:{async load(key){loaded.push(key);const a=assetManifest[key];return {...a,...(a?.type==='image'?{image:{width:a.width,height:a.height}}:{})};}}}),session=createLabBattleSession(createLabConfig()),character=session.characterDefinitions[session.allies[0].definitionId];
+ const ability={presentation:{vfx:{form:'sprite',assetKey:'placeholder.actor-strip',animation:{source:'placeholder.actor-strip',fps:2}}}};await p.prepare([character],{}, {[character.abilities.heavy]:ability,unrelated:{presentation:{vfx:{assetKey:'unrelated.art'}}}});assert.ok(!loaded.includes('placeholder.actor-strip'));p.cast({actorId:'a1',category:'heavy',origin:{x:0,y:0},target:{x:1,y:0}},character,0,ability);await p.whenIdle();assert.ok(loaded.includes('placeholder.actor-strip'));assert.ok(!loaded.includes('unrelated.art'));
 });
 test('target-attached VFX follows target and cleans when target KO',()=>{
  const session=createLabBattleSession(createLabConfig()),s=faithfulScene(),p=new api.AssetPresenter(s),character=session.characterDefinitions[session.allies[0].definitionId],frame=session.snapshot();
@@ -92,16 +92,16 @@ test('Botuo living missing Hit/Cast and KO keep the approved static F1',async()=
 });
 
 
-test('shared encounter loads compact portraits and idles before optional move/KO/VFX and refreshes on critical readiness',async()=>{
+test('shared encounter loads portraits and idles first, then required Move/KO before readiness',async()=>{
  const order=[],s=scene();
- const cache={async load(key){order.push(key);return {type:'procedural'};}};
+ const cache={async load(key){order.push(key);const a=assetManifest[key];return {...a,...(a?.type==='image'?{image:{width:a.width,height:a.height}}:{})};}};
  const p=new api.AssetPresenter(s,{cache}),defs=[rosterCatalog.P1,rosterCatalog.P5];
  let criticalSnapshot=null;
  await p.prepare(defs,{}, {},()=>{criticalSnapshot=[...order];});
  assert.deepEqual(criticalSnapshot.slice(0,2),['lushu.portrait','xingxing.portrait']);
  assert.ok(criticalSnapshot.includes('lushu.battleIdle'));
  assert.ok(criticalSnapshot.includes('xingxing.battleIdle'));
- assert.ok(!criticalSnapshot.includes('xingxing.battleMove'),'large optional move atlas must not block portraits');
- assert.ok(order.includes('xingxing.battleMove'),'later animation atlas still preloads');
+ assert.ok(!criticalSnapshot.includes('xingxing.battleMove'),'required move atlas must not delay portrait paint');
+ assert.ok(order.includes('xingxing.battleMove'),'move required before ready');
  p.destroy();
 });
