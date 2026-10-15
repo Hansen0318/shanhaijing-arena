@@ -1,6 +1,6 @@
 # M5C Basic action + matching Basic VFX — first vertical slice (2026-10-15)
 
-**Status: FOUR POSES + VFX + GIF APPROVED / B ACTUAL180MS WINDUP SELECTED / WRITTEN DESIGN REVIEW PENDING.** Canonical shared method: `docs/CHARACTER_ACTION_ART_WORKFLOW.md`. Unchanged art originals are under docs/art/approved/lushu/basic/; GIF accepted2026-10-15T22:12:13+08:00. Player chose B at22:18:37+08:00, authorizing actual180ms pre-impact direction rather than visual-only lag. Detailed shared lifecycle, cancellation/range, rendering, accessibility, finite-memory and verification contract is proposed in docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md and awaits written review. Do not re-ask A/B or silently extend scope beyond that reviewed contract. GitHub governs all character/source constraints.
+**Status: FOUR POSES/GIF/VFX/B/WRITTEN DESIGN PLAYER APPROVED / IMPLEMENTATION PLAN REVIEW PENDING.** Written contract docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md accepted2026-10-15T22:33:01+08:00 with「好，繼續」. Implementation plan docs/superpowers/plans/2026-10-15-shared-basic-windup.md now self-reviewed; player plan confirmation is the next gate before native execution here. Preserve approved assets and existing protected scope. Do not re-ask A/B, artwork/design approval or executor selection; do not claim code/tests/build/deploy complete. GitHub remains authoritative.
 
 ## Latest player request and revised authoring proposal — 2026-10-15
 

@@ -2,7 +2,7 @@
 
 Status: **HISTORICAL PREFLIGHT / B SELECTED; WRITTEN DESIGN REVIEW PENDING**.
 
-Latest2026-10-15T22:18:37+08:00: player chose B. Do not repeat A/B. Current proposed contract: docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md; written design review is next. Original diagnostic evidence below remains unchanged; no implementation/deployment claimed.
+Latest2026-10-15T22:33:01+08:00: player selected B and has now accepted docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md with「好，繼續」. Current next gate is implementation-plan review at docs/superpowers/plans/2026-10-15-shared-basic-windup.md, then native execution. Do not repeat A/B or design approval. Historical diagnostic evidence below remains unchanged; no implementation/deployment claimed.
 
 Recovered feature HEAD9b35358fd998186d9877db5c9609f180f94be2e9, branch feat/m0-combat-core-20260927, open PR#1 against main. Remote main16f73932a0399979ba79b92f93f5ce1c1d1909b9. Current AGENTS/playbook/boundaries/current pointers and action-art workflow/spec re-read. No main merge.
 

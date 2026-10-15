@@ -1,8 +1,8 @@
 # Shared Basic windup + P1 action/VFX synchronization
 
-Status: **B DIRECTION PLAYER APPROVED / WRITTEN DESIGN PLAYER REVIEW PENDING**.
+Status: **WRITTEN DESIGN PLAYER APPROVED / IMPLEMENTATION PLAN REVIEW PENDING**.
 
-Decision2026-10-15T22:18:37+08:00: player chose **B**, accepting actual180ms pre-impact timing rather than immediate damage with delayed visuals. This resolves the A/B choice; do not ask it again. The detailed cancellation, targeting and presentation contract below is proposed for written review before implementation. Recovery20357377e047649b0d5f80b93c246f076b5061f1; feat/m0-combat-core-20260927 / PR#1. No main merge.
+Decision2026-10-15T22:18:37+08:00: player chose **B**, accepting actual180ms pre-impact timing rather than immediate damage with delayed visuals. At22:33:01+08:00 the player reviewed this linked contract and replied「好，繼續」, accepting its cancellation, targeting, presentation and asset-preparation scope. A/B and written-design review are resolved; do not ask again. Next review docs/superpowers/plans/2026-10-15-shared-basic-windup.md before implementation. Recovery5a996ebec06e59d907a98302a3cff4991d1b31e5; feat/m0-combat-core-20260927 / PR#1. No main merge.
 
 ## 1. Intent, scope and protected baseline
 
@@ -91,4 +91,4 @@ Run targeted RED->GREEN tests first, then impacted combat/AI/tactical/Tier and a
 
 ## 9. Review / exact next gate
 
-Written design is not yet reviewed. Ask player to confirm this contract, especially movement continues, locked target/range miss, cancellation/no refund, start-to-start cadence, reduced-motion variant and lossless static-Idle runtime optimization. Do not re-ask A/B. After written-spec acceptance, create/review the implementation plan, then execute within the approved scope. No source/tests/build/deployment has been performed for this design checkpoint.
+Written design accepted2026-10-15T22:33:01+08:00, including movement, locked-target/range, cancellation/no refund, start-to-start cadence, reduced-motion and exact static-Idle runtime optimization. Implementation plan is now docs/superpowers/plans/2026-10-15-shared-basic-windup.md and awaits review before executing-plans/native implementation here. Do not re-ask A/B or design approval. No source/tests/build/deployment has been performed at this planning checkpoint.

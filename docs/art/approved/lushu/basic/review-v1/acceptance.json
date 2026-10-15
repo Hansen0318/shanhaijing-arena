@@ -1,5 +1,5 @@
 {
-  "status": "PLAYER APPROVED / GIF AND VFX; B WINDUP SELECTED; WRITTEN DESIGN REVIEW PENDING",
+  "status": "PLAYER APPROVED / GIF AND VFX; B WINDUP AND WRITTEN DESIGN APPROVED; PLAN REVIEW PENDING",
   "playerApproval": {
     "at": "2026-10-15T22:12:13+08:00",
     "statement": "好ok，繼續",
@@ -44,8 +44,8 @@
   "timingDecision": {
     "selected": "B",
     "at": "2026-10-15T22:18:37+08:00",
-    "scope": "Actual180ms P1 Basic pre-impact direction approved; detailed written design review still pending"
+    "scope": "Actual180ms P1 Basic pre-impact direction approved; detailed written design accepted2026-10-15T22:33:01+08:00 with 好，繼續"
   },
-  "nextGate": "Review docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md, then implementation planning and engineering. Do not re-ask A/B.",
+  "nextGate": "Review docs/superpowers/plans/2026-10-15-shared-basic-windup.md, then native engineering here. Written design accepted; do not re-ask A/B/design/art/executor.",
   "runtimeStatus": "NOT INTEGRATED / NOT BUILT / NOT DEPLOYED"
 }
