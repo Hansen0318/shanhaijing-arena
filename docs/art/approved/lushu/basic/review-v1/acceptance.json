@@ -1,0 +1,46 @@
+{
+  "status": "PLAYER APPROVED / GIF AND VFX ART ONLY; RUNTIME TIMING DECISION PENDING",
+  "playerApproval": {
+    "at": "2026-10-15T22:12:13+08:00",
+    "statement": "好ok，繼續",
+    "scope": "Reviewed normal/slow GIF and effects accepted; continue integration subject to hard rules, unchanged gameplay unless explicitly authorized"
+  },
+  "recoveryHead": "9b35358fd998186d9877db5c9609f180f94be2e9",
+  "files": [
+    {
+      "path": "docs/art/approved/lushu/basic/review-v1/lushu-basic-vfx-review-v1.gif",
+      "reviewSource": "docs/art/candidates/lushu/basic/review-v1/lushu-basic-vfx-review-v1.gif",
+      "bytes": 606235,
+      "sha256": "9f192efaaac7ffcf2ae8b3c9679a1f0b8d095dd9d274e2549583923072b84760"
+    },
+    {
+      "path": "docs/art/approved/lushu/basic/review-v1/lushu-basic-vfx-review-v1-slow.gif",
+      "reviewSource": "docs/art/candidates/lushu/basic/review-v1/lushu-basic-vfx-review-v1-slow.gif",
+      "bytes": 606235,
+      "sha256": "09c32b96ae93d83026824a275d33f91f6510930d4374114d3c248eb6e7b49de7"
+    },
+    {
+      "path": "docs/art/approved/lushu/basic/review-v1/lushu-basic-4f-safe-review-v1.png",
+      "reviewSource": "docs/art/candidates/lushu/basic/review-v1/lushu-basic-4f-safe-review-v1.png",
+      "bytes": 324652,
+      "sha256": "89f2c98fe5c71ca31b34105c2cd6d5f37c2cff6e1071dc523c58ff2fda32fe03"
+    },
+    {
+      "path": "docs/art/approved/lushu/basic/review-v1/blade-sweep-raw-v1.png",
+      "reviewSource": "docs/art/candidates/lushu/basic/review-v1/blade-sweep-raw-v1.png",
+      "bytes": 546563,
+      "sha256": "026e5bb7860f132ad08057e5ba7fcc18ecd1a81842db6d718d4b927a490995cd"
+    },
+    {
+      "path": "docs/art/approved/lushu/basic/review-v1/contact-spark-raw-v1.png",
+      "reviewSource": "docs/art/candidates/lushu/basic/review-v1/contact-spark-raw-v1.png",
+      "bytes": 1035009,
+      "sha256": "fa09e5fef4e3d203e8a86f27e0c9de7c30a02a66dfc29c482dfaf2cc9b0f89e9"
+    }
+  ],
+  "characterSources": "docs/art/approved/lushu/basic/",
+  "reviewManifest": "docs/art/candidates/lushu/basic/review-v1/review-manifest.json",
+  "packagingAndChecks": "docs/art/candidates/lushu/basic/review-v1/REVIEW_NOTES.md",
+  "nextGate": "Choose timing contract A immediate damage with180ms visual lag OR B explicitly authorized180ms actual windup; see docs/verification/M5C_B_LUSHU_BASIC_PREFLIGHT.md",
+  "runtimeStatus": "NOT INTEGRATED / NOT BUILT / NOT DEPLOYED"
+}

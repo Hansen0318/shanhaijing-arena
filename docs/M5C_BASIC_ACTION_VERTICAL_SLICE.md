@@ -1,6 +1,6 @@
 # M5C Basic action + matching Basic VFX — first vertical slice (2026-10-15)
 
-**Status: FOUR CHARACTER POSES PLAYER APPROVED / VFX + GIF REVIEW PENDING.** Canonical shared method: `docs/CHARACTER_ACTION_ART_WORKFLOW.md`. Player approved the sequence F3→four poses→separate effects/composite GIF→explicit GIF approval→future integration/deploy→iPhone acceptance. The complete F1/F2/F3/F4 sequence is now player-approved; unchanged originals are under docs/art/approved/lushu/basic/. VFX/GIF and engineering slice are not approved yet. GitHub governs all character/source constraints.
+**Status: FOUR POSES + VFX + GIF PLAYER APPROVED / RUNTIME TIMING DECISION PENDING.** Canonical shared method: `docs/CHARACTER_ACTION_ART_WORKFLOW.md`. Player approved the sequence F3→four poses→separate effects/composite GIF→explicit GIF approval→future integration/deploy→iPhone acceptance. The complete F1/F2/F3/F4 sequence is now player-approved; unchanged originals are under docs/art/approved/lushu/basic/. VFX/GIF were explicitly accepted2026-10-15T22:12:13+08:00. Engineering continuation was requested, but a concrete immediate-damage versus180ms-F3 synchronization decision remains unresolved. See docs/verification/M5C_B_LUSHU_BASIC_PREFLIGHT.md before any implementation. Do not silently change combat timing. GitHub governs all character/source constraints.
 
 ## Latest player request and revised authoring proposal — 2026-10-15
 
