@@ -1,5 +1,7 @@
 # M5C Basic action + matching Basic VFX — first vertical slice (2026-10-15)
 
+Latest2026-10-15 execution: P1 plan accepted22:43:03+08:00; runtime implemented, targeted94/full751/guard/build PASS. CI/Pages/public proof pending, then iPhone acceptance only. Evidence/rulings docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md. Earlier planning/review pending sections are historical; no new approval/re-authoring required for accepted P1 revision, no other-character attack authorization.
+
 **Status: FOUR POSES/GIF/VFX/B/WRITTEN DESIGN PLAYER APPROVED / IMPLEMENTATION PLAN REVIEW PENDING.** Written contract docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md accepted2026-10-15T22:33:01+08:00 with「好，繼續」. Implementation plan docs/superpowers/plans/2026-10-15-shared-basic-windup.md now self-reviewed; player plan confirmation is the next gate before native execution here. Preserve approved assets and existing protected scope. Do not re-ask A/B, artwork/design approval or executor selection; do not claim code/tests/build/deploy complete. GitHub remains authoritative.
 
 ## Latest player request and revised authoring proposal — 2026-10-15

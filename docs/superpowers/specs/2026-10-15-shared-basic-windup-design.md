@@ -1,5 +1,7 @@
 # Shared Basic windup + P1 action/VFX synchronization
 
+Execution update2026-10-15: implementation plan accepted22:43:03+08:00; runtime local gates PASS, release/public proof then iPhone pending. Authoritative execution evidence docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md. Earlier plan-review-pending text is historical; do not re-ask.
+
 Status: **WRITTEN DESIGN PLAYER APPROVED / IMPLEMENTATION PLAN REVIEW PENDING**.
 
 Decision2026-10-15T22:18:37+08:00: player chose **B**, accepting actual180ms pre-impact timing rather than immediate damage with delayed visuals. At22:33:01+08:00 the player reviewed this linked contract and replied「好，繼續」, accepting its cancellation, targeting, presentation and asset-preparation scope. A/B and written-design review are resolved; do not ask again. Next review docs/superpowers/plans/2026-10-15-shared-basic-windup.md before implementation. Recovery5a996ebec06e59d907a98302a3cff4991d1b31e5; feat/m0-combat-core-20260927 / PR#1. No main merge.

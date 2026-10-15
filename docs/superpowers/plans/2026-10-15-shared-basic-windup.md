@@ -1,5 +1,7 @@
 # Shared Basic Windup Implementation Plan
 
+Execution update2026-10-15: player approved22:43:03+08:00; Tasks1–4 committed a6db06e,aad9ea8,668aa48,3dd4acb. Task5 local gates94targeted/751full/build/guard/diff PASS; CI/Pages/public pending. Canonical actual evidence/rulings docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md. Original planning gate text below is historical, not a request to re-approve.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task in the current session. Steps use checkbox (`- [ ]`) syntax for tracking. Native execution is preserved from the reviewed design; do not spawn subagents without explicit user instruction.
 
 **Goal:** Integrate accepted P1 Basic art with actual180ms windup, synchronized real damage/contact and protected existing combat/presentation.

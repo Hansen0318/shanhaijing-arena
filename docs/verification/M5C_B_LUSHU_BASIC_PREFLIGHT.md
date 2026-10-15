@@ -1,5 +1,7 @@
 # P1 Basic action runtime preflight — 2026-10-15
 
+Superseding execution2026-10-15: B/design/plan all accepted; native implementation locally verified751/751. Release/public proof pending. Current canonical evidence: M5C_B_LUSHU_BASIC_RUNTIME.md; historical preflight below is retained, not an unresolved approval gate.
+
 Status: **HISTORICAL PREFLIGHT / B SELECTED; WRITTEN DESIGN REVIEW PENDING**.
 
 Latest2026-10-15T22:33:01+08:00: player selected B and has now accepted docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md with「好，繼續」. Current next gate is implementation-plan review at docs/superpowers/plans/2026-10-15-shared-basic-windup.md, then native execution. Do not repeat A/B or design approval. Historical diagnostic evidence below remains unchanged; no implementation/deployment claimed.

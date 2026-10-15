@@ -1,6 +1,26 @@
 # P1 Basic runtime execution evidence
 
-Status: **TASKS1–4 PASS / FINAL REGRESSION+RELEASE PENDING / NOT DEPLOYED**.
+Status: **LOCAL ENGINEERING PASS / CI+PAGES+PUBLIC PROOF PENDING / IPHONE PENDING**.
+
+## Latest release evidence
+
+Final targeted plan command94/94 PASS; npm test751/751 PASS,0skip/cancel/todo; npm run build exit0, guard65files3674128bytes,Vite99modules; git diff --check exit0. Existing large Phaser chunk warning nonfatal, threshold unchanged. Dist:index-DvSMU-Ie.js,battleRuntime-CXDlB1v9.js,index-DcqtNRF0.css. Source checkpoint3dd4acb; CI/Pages/public pending.
+
+Executable protected-baseline comparison against4160621: all catalog fields except added P1.actionDescriptors deep-equal; all ability fields except new windupMs deep-equal; P1.basic180,others0; no AI/Tier/campaign/Collection diff; only4new public PNGs, all originals unchanged. Asset tests confirm approved PNG/GIF hashes and Idle F1 RGBA equality. Move/KO geometry/fps remain unchanged.
+
+Self-review, not independent: full implementation range4160621..3dd4acb checked against accepted spec, all5 Review Focus cases, required failures, cast/hit ordering, tokens/KO/control/coarse steps. No Critical/Important finding or deferred minor. Existing simulation-clock result overlay freezes final snapshot including legitimate winning contact; no post-result damage, shutdown/Restart destroys records. No new wall-clock timer.
+
+### Execution rulings and limitations
+
+1. Approved native feature checkout retained instead of another worktree; cost if wrong: unpushed changes local until checkpoint.
+2. Cloud secondary skill resources unavailable; exact installed6.4.2 scripts used and briefs checked; cost: tooling-version mismatch risk.
+3. Image transport double reads actual PNG IHDR/encoded bytes; all PNGs Pillow-decoded,new RGBA exact; cost: browser decoder still requires device acceptance.
+4. Terminal cleanup preserves real winning events for same render; explicit clear/Exit drops queues; cost: terminal feedback loss if wrong, tested.
+5. No production ArenaScene edit: existing phases/copy-identity enrichment already work, actual-method regression covers it; cost: future routing changes must keep tests.
+6. Accepted plan prohibits automatic subagents, so honest self-review only; cost: no independent second reviewer.
+7. Review BASE4160621 bounds current authorized implementation, not unrelated earlier feature history; protected diff/deep-equality/full tests cover baseline; cost: not a fresh audit of earlier accepted work.
+
+Release/phone acceptance not claimed until actual external gates. No main merge.
 
 Player approved implementation plan at2026-10-15T22:43:03+08:00 with「好繼續」. BASE4160621453626071e6ec2b13e282336794df549c, active feature/PR#1, no main merge. Canonical design/plan under docs/superpowers/{specs,plans}/2026-10-15-shared-basic-windup*.md. Native execution here, no new approval gate between tasks.
 
