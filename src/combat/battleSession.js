@@ -11,6 +11,7 @@ import { chooseSoftTarget } from './targeting.js';
 import {
   startAbility,
   finishAbility,
+  cancelAbility,
   tickAbilityCooldown,
   isTargetInRange,
 } from './ability.js';
@@ -137,12 +138,37 @@ export class BattleSession {
     this.damageEvents = [];
     this.healEvents = [];
     this.pendingHits = [];
+    this.pendingBasics=new Map();this.nextBasicActionId=0;
     this.statuses = new BattleStatuses();
     this.areas=new PersistentAreas();this.mobilityEvidence=new Map();this.effects=new TierEffectRuntime(this);
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 
-  clearTransientCombat(){this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();}
+  clearTransientCombat({preserveEvents=false}={}){for(const id of this.pendingBasics.keys())this.cancelBasicAction(id,'battle_end');this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();if(!preserveEvents){this.castEvents=[];this.damageEvents=[];this.healEvents=[];}}
+
+  basicActionEvent(record,phase,hit=false,reason=null){
+    const actor=this.actorById(record.actorId),target=this.actorById(record.targetId);
+    this.recordCast(actor,target,'basic',record.source,record.definition,hit,{phase,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...record.origin},attackTarget:{...record.target}});
+  }
+
+  cancelBasicAction(actorId,reason){
+    const record=this.pendingBasics.get(actorId);if(!record)return false;
+    this.pendingBasics.delete(actorId);cancelAbility(this.actorById(actorId).abilityState.basic);this.basicActionEvent(record,'cancel',false,reason);return true;
+  }
+
+  resolveBasicActions(){
+    for(const [id,r] of this.pendingBasics){
+      const actor=this.actorById(id),target=this.actorById(r.targetId);
+      const reason=!actor||!canCharacterAct(actor)?'source_ko':!target||!canCharacterAct(target)?'target_ko':this.statuses.controlled(id,this.elapsedSeconds)?'control':null;
+      if(reason){this.cancelBasicAction(id,reason);continue;}
+      if(r.dueAt>this.elapsedSeconds+1e-9)continue;
+      this.pendingBasics.delete(id);let hit=false;
+      finishAbility({caster:actor,slot:actor.abilityState.basic,definition:r.definition,applyEffect:()=>{
+        if(target.teamId!==actor.teamId&&isTargetInRange(actor,target,r.definition.range))hit=this.applyAbilityEffects(actor,target,r.definition,'basic',r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
+      }});
+      this.basicActionEvent(r,'resolve',hit);
+    }
+  }
 
   drainHealEvents() { return this.healEvents.splice(0); }
 
@@ -163,6 +189,7 @@ export class BattleSession {
     if (Number.isFinite(amount) && amount > 0) this.damageEvents.push({
       actorId:actor.instanceId, targetId:target.instanceId, category, source, amount, critical,
       position:{x:target.x,y:target.y},
+      ...(hitContext.actionId?{actionId:hitContext.actionId}:{}),
     });
     if(amount>0&&!hitContext.residual)this.effects.trigger('hit',actor,target,category,{definition,source});
     return amount;
@@ -172,7 +199,7 @@ export class BattleSession {
     return this.castEvents.splice(0);
   }
 
-  recordCast(actor, target, category, source, definition, hit) {
+  recordCast(actor, target, category, source, definition, hit,metadata={}) {
     this.castEvents.push({
       actorId: actor.instanceId,
       category,
@@ -183,6 +210,7 @@ export class BattleSession {
       hit,
       minRange: definition.minRange,
       maxRange: definition.maxRange,
+      ...metadata,
     });
   }
 
@@ -268,13 +296,18 @@ export class BattleSession {
     const actorDefinition=this.definitionForActor(actor);
     const definition=this.actorAbilityDefinitions.get(actor.instanceId)[actorDefinition.abilities[category]],slot=actor.abilityState[category];
     if(!definition||!slot||this.statuses.controlled(actor.instanceId,this.elapsedSeconds))return false;
-    if(category==='basic'&&(this.cadence.get(actor.instanceId)>0||[...this.delayedImpacts.values()].some(hit=>hit.actorId===actor.instanceId&&hit.category==='basic')))return false;
+    if(category==='basic'&&(this.pendingBasics.has(actor.instanceId)||this.cadence.get(actor.instanceId)>0||[...this.delayedImpacts.values()].some(hit=>hit.actorId===actor.instanceId&&hit.category==='basic')))return false;
     const context=this.teamContext(actor);
     const target=resolveAbilityTarget(actor,definition,{...context,enemyTarget:requestedTarget??context.enemyTarget});
     if(!startAbility({caster:actor,slot,definition,target,source,ignoreRange:source==='player',allowNoTarget:source==='player'}))return false;
+    if(category!=='basic')this.cancelBasicAction(actor.instanceId,'new_ability');
     const canHit=target&&canCharacterAct(target)&&isTargetInRange(actor,target,definition.range);
     if(canHit&&category==='basic')this.cadence.set(actor.instanceId,Math.max(TIER_SAFETY.basicInterval,1/actorDefinition.stats.attackSpeed));
     if(canHit)this.effects.trigger('cast',actor,target,category);
+    if(canHit&&definition.windupMs>0){
+      const r={actionId:`basic.${++this.nextBasicActionId}`,actorId:actor.instanceId,targetId:target.instanceId,source,definition,startedAt:this.elapsedSeconds,dueAt:this.elapsedSeconds+definition.windupMs/1000,origin:{x:actor.x,y:actor.y},target:{x:target.x,y:target.y}};
+      this.pendingBasics.set(actor.instanceId,r);this.targetIds.set(actor.instanceId,target.instanceId);this.basicActionEvent(r,'start');return true;
+    }
     let applied=false;
     const delay=this.tacticalEnabled&&definition.telegraph&&definition.effect.coefficient>0&&canHit
       ?this.threats.create(actor,target,definition,this.elapsedSeconds*1000):null;
@@ -287,7 +320,7 @@ export class BattleSession {
     return true;
   }
 
-  applyAbilityEffects(actor,target,definition,category,source,context,geometry=null) {
+  applyAbilityEffects(actor,target,definition,category,source,context,geometry=null,hitContext={}) {
     const actorDefinition=this.definitionForActor(actor);let applied=false;
     if(!geometry){const before={x:actor.x,y:actor.y};applyAbilityMovement(actor,target,definition.effect.movement,this.arenaBounds);if(definition.effect.movement?.kind==='reposition'){const from=Math.atan2(before.y-target.y,before.x-target.x),to=Math.atan2(actor.y-target.y,actor.x-target.x);this.mobilityEvidence.set(actor.instanceId,{targetId:target.instanceId,at:this.elapsedSeconds,distance:Math.hypot(actor.x-before.x,actor.y-before.y),angle:Math.abs(Math.atan2(Math.sin(to-from),Math.cos(to-from)))});}}
     const victims=geometry?(definition.effect.areaRadius!=null?context.enemies.filter(v=>canCharacterAct(v)&&containsDanger(v,geometry)):[target].filter(v=>v&&canCharacterAct(v)&&containsDanger(v,geometry))):resolveEffectTargets(actor,target,definition,context);
@@ -300,7 +333,7 @@ export class BattleSession {
         this.statuses.applyMitigation(victim.instanceId,definition.effect.reduction,definition.effect.duration,this.elapsedSeconds);applied=true;
       }else if(definition.effect.coefficient>0){
         const hits=definition.effect.hits??1,hitDefinition=hits===1?definition:{...definition,effect:{...definition.effect,coefficient:definition.effect.coefficient/hits}};
-        applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.definitionForActor(victim),hitDefinition,category,source,{hitIndex:0,totalHits:hits})>0||applied;
+        applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.definitionForActor(victim),hitDefinition,category,source,{...hitContext,hitIndex:0,totalHits:hits})>0||applied;
         for(let hit=1;hit<hits;hit++)this.pendingHits.push({actorId:actor.instanceId,targetId:victim.instanceId,definition:hitDefinition,category,source,hitIndex:hit,totalHits:hits,due:this.elapsedSeconds+hit*definition.effect.hitInterval});
       }
     }
@@ -311,6 +344,7 @@ export class BattleSession {
   step(deltaSeconds) {
     positiveFinite(deltaSeconds, 'deltaSeconds');
     if (this.result() !== 'running') { this.clearTransientCombat(); return this.snapshot(); }
+    this.resolveBasicActions();
     for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.delayedImpacts.delete(id);this.threats.remove(id);}
 
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
@@ -447,8 +481,9 @@ export class BattleSession {
       if(isTargetInRange(actor,target,hit.definition.range))this.applyResolvedDamage(actor,target,this.definitionForActor(actor),this.definitionForActor(target),hit.definition,hit.category,hit.source,{hitIndex:hit.hitIndex,totalHits:hit.totalHits});
     }
     this.pendingHits=this.result()==='running'?remaining:[];
+    this.resolveBasicActions();
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
-    if(this.result()!=='running')this.clearTransientCombat();
+    if(this.result()!=='running')this.clearTransientCombat({preserveEvents:true});
     return this.snapshot();
   }
 }
