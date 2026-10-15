@@ -1,5 +1,20 @@
 # P5 Xingxing static KO — 2026-10-15 lossless-crop follow-up
 
+## Current release closure — 2026-10-15
+
+**P5 STATIC KO — ENGINEERING PASS / PLAYER IPHONE SMOKE PENDING (2026-10-15).** Tested/deployed source `d4ec0fb789617db1159756d4dd5c7ab2372de5f7`; this closure is documentation only. Approved lossless480×288 KO integrated unchanged through shared battleKo. Targeted86/86 and local/CI686/686 PASS; guard62files3667880bytes and Build PASS. Actual all-five battle portrait/Idle/Move/KO residency16597648bytes in both orders, no missing textures, unchanged16777216-byte cap (179568bytes spare). Collection menu images separately validated and all five public PNGs match the build. Actions#987 run38697371716: build116297026881 and Pages116297160854 SUCCESS. Public index.html, index-2C9LBe0-.js, battleRuntime-BRQs-BB9.js, index-DcqtNRF0.css, P5KO/Idle/Move and five Collection PNGs (12files) freshly downloaded and byte-identical to tested dist. KO SHA256e9bf9bbd3684aeb45422d53046eb2c7fd218da058ee9f48d582ac54a6a5ae4e8. Public URL: https://hansen0318.github.io/shanhaijing-arena/ . P1–P4, approved art, gameplay/AI/Tier/reward, P5Idle/Move and shared readiness unchanged; PR#1 open/unmerged. Evidence: `docs/verification/M5C_B_XINGXING_KO.md`. **STOP: only player iPhone KO pose/size/ground/full-body/tail/last-facing/static-persistence acceptance next. No PLAYER VERIFIED claim, actions/Hit/VFX or main merge.**
+
+Public fingerprint SHA256:
+
+| File | SHA256 |
+| --- | --- |
+| index.html | fc1d49e782ff162cc97d6b468717caf10079b75e36a52b468fdddb940871b955 |
+| assets/index-2C9LBe0-.js | 6c02652ae54c7e30c2ff74c60ea9114419749dd489fc1dce20c446f6bbe7ce44 |
+| assets/battleRuntime-BRQs-BB9.js | 27e150a678d0d72fc9a001240a2a2abf39451cb50f82aae17d42928a15ad042a |
+| assets/index-DcqtNRF0.css | a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da |
+
+Source workflow: https://github.com/Hansen0318/shanhaijing-arena/actions/runs/38697371716 . The checkpoint below records implementation details; its release-pending wording is superseded by this closure. No further runtime work is authorized before player acceptance.
+
 ## Current executable checkpoint — 2026-10-15
 
 **LOCAL ENGINEERING PASS / CI-PAGES RELEASE PENDING / PLAYER IPHONE SMOKE PENDING.** Recovery HEAD `38fdcf1`; active feature branch/PR#1 unchanged, no main merge. Chat's menu-versus-Arena fixture correction is preserved. The former mixed-residency blocker below is historical and superseded by this integration.
