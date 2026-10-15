@@ -3,7 +3,7 @@ import {assetManifest} from '../assets/manifest.js';
 import {resolveAsset,assetUrl} from '../assets/resolver.js';
 export function createAssetCache({manifest=assetManifest,transport=browserImageTransport,maxEntries=ASSET_LIMITS.cacheEntries,maxBytes=ASSET_LIMITS.cacheBytes}={}){
  if(!Number.isInteger(maxEntries)||maxEntries<1||maxEntries>ASSET_LIMITS.cacheEntries||!Number.isInteger(maxBytes)||maxBytes<1||maxBytes>ASSET_LIMITS.cacheBytes)throw new RangeError('Invalid cache budget');
- const cache=new Map(),pending=new Map(),queue=[];let bytes=0,active=0;
+ const cache=new Map(),pending=new Map(),queue=[];let bytes=0,active=0,highWaterBytes=0,loadedCount=0,failedCount=0;
  function runTransport(record){if(active>=2)return new Promise((resolve,reject)=>queue.push(()=>runTransport(record).then(resolve,reject)));active++;const release=()=>{active--;queue.shift()?.();};try{return Promise.resolve(transport(record)).finally(release);}catch(error){release();return Promise.reject(error);}}
  async function request(key){
   const record=resolveAsset(key,{manifest});if(record.type!=='image')return record;
@@ -15,10 +15,11 @@ export function createAssetCache({manifest=assetManifest,transport=browserImageT
    if(!Number.isInteger(width)||!Number.isInteger(height)||width<=0||height<=0||width>ASSET_LIMITS.dimension||height>ASSET_LIMITS.dimension||width*height>ASSET_LIMITS.pixels||width!==record.width||height!==record.height||!Number.isInteger(loaded.bytes)||loaded.bytes<=0||loaded.bytes>ASSET_LIMITS.bytes||loaded.bytes>record.bytes||loaded.bytes>maxBytes)throw Error('Decoded asset budget/metadata mismatch');
    const residentBytes=width*height*4;if(residentBytes>maxBytes)throw Error('Decoded memory budget exceeded');const value=Object.freeze({...record,...loaded,residentBytes});
    while(cache.size>=maxEntries||bytes+residentBytes>maxBytes){const oldest=cache.keys().next().value;if(oldest===undefined)break;bytes-=cache.get(oldest).residentBytes;cache.delete(oldest);}
-   cache.set(record.key,value);bytes+=residentBytes;return value;
-  }catch{const fallback=resolveAsset(record.fallback,{manifest,failed:new Set([record.key])});return fallback.type==='image'?request(fallback.key):fallback;}finally{pending.delete(record.key);}})();pending.set(record.key,promise);return promise;
+   cache.set(record.key,value);bytes+=residentBytes;highWaterBytes=Math.max(highWaterBytes,bytes);loadedCount++;return value;
+  }catch{failedCount++;const fallback=resolveAsset(record.fallback,{manifest,failed:new Set([record.key])});return fallback.type==='image'?request(fallback.key):fallback;}finally{pending.delete(record.key);}})();pending.set(record.key,promise);return promise;
  }
- return {load:request,get size(){return cache.size;},get bytes(){return bytes;}};
+ function trim(targetBytes=0){if(!Number.isInteger(targetBytes)||targetBytes<0)throw new RangeError('Invalid trim target');for(const [key,value] of cache){if(bytes<=targetBytes)break;cache.delete(key);bytes-=value.residentBytes;}}
+ return {load:request,record:key=>resolveAsset(key,{manifest}),trim,diagnostics:()=>({estimatedLiveBytes:bytes,highWaterBytes,loaded:loadedCount,failed:failedCount,pending:pending.size,active,queued:queue.length}),get size(){return cache.size;},get bytes(){return bytes;}};
 }
 export async function browserImageTransport(record){
  const response=await fetch(assetUrl(record),{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('Asset download failed');
