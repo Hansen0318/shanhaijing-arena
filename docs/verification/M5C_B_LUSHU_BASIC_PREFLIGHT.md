@@ -1,6 +1,6 @@
 # P1 Basic action runtime preflight — 2026-10-15
 
-Superseding execution2026-10-15: B/design/plan all accepted; native implementation locally verified751/751. Release/public proof pending. Current canonical evidence: M5C_B_LUSHU_BASIC_RUNTIME.md; historical preflight below is retained, not an unresolved approval gate.
+Final execution2026-10-15: ENGINEERING PASS / PLAYER IPHONE PENDING. Deployed source7e7ae7371bbcade8434fe4e3771ebb5c65eab7a3, targeted94/local+CI751/build/guard PASS, Actions#1004/38758231891 PagesSUCCESS,33public files exact-byte match. Evidence/rulings: docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md; fingerprints adjacent JSON. Plan/art/GIF/B gates resolved. STOP for iPhone, no new actions/VFX/main merge.
 
 Status: **HISTORICAL PREFLIGHT / B SELECTED; WRITTEN DESIGN REVIEW PENDING**.
 

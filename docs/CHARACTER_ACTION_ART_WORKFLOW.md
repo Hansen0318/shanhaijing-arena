@@ -1,6 +1,6 @@
 # Character action art, VFX and animation review workflow
 
-Latest execution2026-10-15: exact P1 art/GIF, B design and implementation plan all accepted; native runtime locally verified751/751, release/public proof pending. Canonical evidence/rulings: docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md. Historical gates below are resolved for this P1 revision only. First full production slice remains iPhone-validation pending. Explicitly approved B authorizes actual180ms P1 Basic windup; never delay HP/text independently to fit art. Future actions still follow art→GIF→runtime review gates.
+Final execution2026-10-15: ENGINEERING PASS / PLAYER IPHONE PENDING. Deployed source7e7ae7371bbcade8434fe4e3771ebb5c65eab7a3, targeted94/local+CI751/build/guard PASS, Actions#1004/38758231891 PagesSUCCESS,33public files exact-byte match. Evidence/rulings: docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md; fingerprints adjacent JSON. Plan/art/GIF/B gates resolved. STOP for iPhone, no new actions/VFX/main merge.
 
 Status: **PLAYER-APPROVED PROCESS / FIRST P1 SLICE VALIDATION PENDING — 2026-10-15**.
 

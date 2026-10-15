@@ -1,6 +1,20 @@
 # P1 Basic runtime execution evidence
 
-Status: **LOCAL ENGINEERING PASS / CI+PAGES+PUBLIC PROOF PENDING / IPHONE PENDING**.
+Status: **ENGINEERING PASS / PLAYER IPHONE SMOKE PENDING — 2026-10-15**.
+
+## Final deployed result
+
+Tested/deployed source **7e7ae7371bbcade8434fe4e3771ebb5c65eab7a3**, final HEAD is docs-only closure. Native implementation checkpoints a6db06e/aad9ea8/668aa48/3dd4acb. Targeted94/94; local final751/751 and CI751/751; guard65files3674128bytes; Build/diff/protected-baseline PASS. Shared simulation owns180ms P1 Basic/F3 damage; other abilities remain legacy0. Approved exact art/GIF unchanged; runtime resize-only derivatives and exact-pixel Idle F1, existing Move/KO/Collection/stats/AI/Tier/reward protected. Cache and scene full-required16763144bytes, unchanged16MiB,20Restart cycles/no missing required textures. Self-review only, not independent or iPhone acceptance.
+
+Actions **#1004 /38758231891**, build116502273046 and Pages116502490526 **SUCCESS**. Actual deploy log environment URL https://hansen0318.github.io/shanhaijing-arena/ ; deployment reported success2026-10-15T15:14:43Z. CI logs confirm751tests/751pass/0fail and same build asset names. Public33files downloaded after deployment and byte-compared against tested dist: HTML, both JS, CSS, all28manifest character images including new4derivatives/all-five Portrait/Idle/Move/KO/Collection, plus old protected Lushu Idle strip. **All exact-byte PASS**. Full sizes/SHA256/source/run IDs: `M5C_B_LUSHU_BASIC_PUBLIC_FINGERPRINT.json`.
+
+Public fingerprint: index-DvSMU-Ie.js SHA256b103bd6e0af031358d50e565f8b7ab6285d192d1a36d6f71de35b1596f034b20; battleRuntime-CXDlB1v9.js SHA256fa393bf0237eae0259f6ee926d8e79407df27f7da6a27e1f1f6ea20767b69a94; index-DcqtNRF0.css SHA256a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da. HTML SHA2568cf66807b65ad5c2d7b94c6a9ab35b2dd75ee53d397b708aead21592b2ef2447.
+
+### Exact next action — player iPhone only
+
+Open https://hansen0318.github.io/shanhaijing-arena/?v=7e7ae73 . Check first attack has no blank HUD/art; distinct four poses and single true impact/blade/contact; mirrored moving attacks/ground/Idle-or-Move return; KO interruption; Pause/Restart no disappearing art or old spark. Do not claim phone PASS until player reports it. **STOP: no next character/attack art, new VFX or main merge.** PR#1 remains open/unmerged; main unchanged16f73932a0399979ba79b92f93f5ce1c1d1909b9. Existing build chunk/action-Node deprecation warnings are nonfatal and unrelated; thresholds/workflow untouched.
+
+Everything below is chronological execution history, not unresolved current gates.
 
 ## Latest release evidence
 
