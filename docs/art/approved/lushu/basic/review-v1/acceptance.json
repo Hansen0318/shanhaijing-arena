@@ -1,5 +1,5 @@
 {
-  "status": "PLAYER APPROVED / GIF AND VFX; B WINDUP AND WRITTEN DESIGN APPROVED; PLAN REVIEW PENDING",
+  "status": "ART/GIF/VFX/DESIGN/PLAN APPROVED; ENGINEERING DEPLOYED; PLAYER ATTACK VISUAL FEEDBACK POSITIVE",
   "playerApproval": {
     "at": "2026-10-15T22:12:13+08:00",
     "statement": "好ok，繼續",
@@ -46,6 +46,17 @@
     "at": "2026-10-15T22:18:37+08:00",
     "scope": "Actual180ms P1 Basic pre-impact direction approved; detailed written design accepted2026-10-15T22:33:01+08:00 with 好，繼續"
   },
-  "nextGate": "Review docs/superpowers/plans/2026-10-15-shared-basic-windup.md, then native engineering here. Written design accepted; do not re-ask A/B/design/art/executor.",
-  "runtimeStatus": "NOT INTEGRATED / NOT BUILT / NOT DEPLOYED"
+  "nextGate": "Do not redo art/GIF/design/plan/runtime/deploy. Await unreported device-check results or explicit new scope. Recover latest WORK_PROGRESS.md / docs/STATE.md and docs/CHARACTER_ACTION_ART_WORKFLOW.md.",
+  "runtimeStatus": "ENGINEERING PASS / DEPLOYED 7e7ae7371bbcade8434fe4e3771ebb5c65eab7a3 / UNREPORTED DEVICE CHECKS PENDING",
+  "historicalPreIntegrationStatus": {
+    "status": "PLAYER APPROVED / GIF AND VFX; B WINDUP AND WRITTEN DESIGN APPROVED; PLAN REVIEW PENDING",
+    "nextGate": "Review docs/superpowers/plans/2026-10-15-shared-basic-windup.md, then native engineering here. Written design accepted; do not re-ask A/B/design/art/executor.",
+    "runtimeStatus": "NOT INTEGRATED / NOT BUILT / NOT DEPLOYED"
+  },
+  "playerRuntimeFeedback": {
+    "at": "2026-10-16T07:18:49+08:00",
+    "statement": "這樣不錯，有吧這些正確製作攻擊動畫效果歷程，紀錄在github相關文件嗎？才可確保未來其他chat和work無縫接軌",
+    "scope": "Positive feedback on attack animation/effects; preserve end-to-end process for successors. Device unspecified; do not infer individually unreported KO/Pause/Restart acceptance.",
+    "evidence": "docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md"
+  }
 }

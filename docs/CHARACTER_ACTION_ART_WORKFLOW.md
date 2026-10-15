@@ -1,5 +1,28 @@
 # Character action art, VFX and animation review workflow
 
+## 可重用的完整製作歷程與接手索引 — 2026-10-16
+
+P1 Basic 已完成工程驗證與部署，玩家回覆「這樣不錯」，肯定本次攻擊動畫／效果。本流程可作為後續角色的製作方法；不代表其他角色的形象、攻擊、美術或戰鬥時序自動獲准。KO／Pause／Restart 等未逐項回報項目維持待確認。下方舊日期的 pending／proposal 是歷史階段；當前狀態以最新 WORK_PROGRESS.md、STATE.md、驗證紀錄為準。
+
+| 階段 | 本次正確做法／需保存的成果 | 唯一可追溯來源 |
+| --- | --- | --- |
+| 形象 Recovery | 只用核准 identity、battleIdle；先核對臉／角／體型／服裝／尾巴／小型武器 | public/assets/characters/lushu/identity.png、battleIdle-4f.png |
+| 關鍵姿勢 | 先單獨完成 F3 命中姿勢並讓玩家審核，再逐張做 F1 蓄勢、F2 出手、F4 收勢；不靠一次四格自由生成鎖定形象 | docs/art/approved/lushu/basic/；候選與失敗歷史保留在 docs/art/candidates/lushu/basic/ |
+| 特效分層 | 角色圖不烘焙刀光；blade sweep 在角色後、真實命中 contact spark 在前；保留效果原圖與生成提示詞 | approved/lushu/basic/review-v1/ 的 blade-sweep-raw-v1.png、contact-spark-raw-v1.png；候選同目錄有提示詞 |
+| 安全包裝 | 接受後保留原 PNG；固定透明格、統一縮放與接地 family，逐格確認武器／角／尾巴完整及 alpha 邊界，不直接切四格拼貼 | docs/art/candidates/lushu/basic/review-v1/prepare_review.py、REVIEW_NOTES.md、review-manifest.json、SHA256SUMS.json |
+| GIF 審核 | 先交正常／慢速、正向／鏡射與 Idle return 合成預覽；玩家核准後才進 runtime；GIF 只作審核材料 | docs/art/approved/lushu/basic/review-v1/acceptance.json 與 normal/slow GIF |
+| 時序契約 | 先查真實 Basic 傷害時點；本次玩家選 B，明確授權實際 180ms 前搖。禁止只延遲 HP／傷害字製造同步，也不得將 P1 的數值直接套用別人 | docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md、對應 plans/ 文件 |
+| Runtime 素材 | 確認預算再製作核准來源的縮放衍生；P1 Idle 僅無損擷取原 F1，原 strip 不動；runtime 不使用 GIF | scripts/prepareLushuBasicAssets.py、approved/lushu/basic/review-v1/runtime-manifest.json、public/assets/characters/lushu/ 新4張 PNG |
+| 共用整合 | BattleSession 發出 start/resolve/cancel；ActionPlayback 等真實 resolve 才播 F3；AssetPresenter 分開畫角色／刀光／命中。資料驅動，沒有引擎角色 ID 特例 | src/combat/battleSession.js、src/assets/actionPlayback.js、src/assets/descriptors.js、src/runtime/assetPresenter.js、src/roster/catalog.js |
+| 工程驗證／發布 | 先測載入、預算、時序、落空／取消、KO、鏡射、reduced、Restart／切場，再 Build、CI、Pages 與公開逐檔比對；記錄來源 commit 與裝置驗收界線 | docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md、M5C_B_LUSHU_BASIC_PUBLIC_FINGERPRINT.json |
+
+**關鍵教訓**：一次四格生成曾出現形象漂移、姿勢不清、武器／邊界問題；不把失敗候選當 reference。改用核准 GitHub identity＋已接受的單張 F3 作逐姿勢製作，先完成玩家審核，再用可重現腳本包裝。每次檢查實際寫出的 PNG 能完整解碼，原檔／hash／候選／核准／runtime 衍生分開保存。玩家不必重傳本專案已保存的四張圖才能接續。
+
+**不能盲抄的 P1 數值**：120/60/100/120ms、180ms windup、128格尺寸、origin/scale、特效附著位置是本次核准資料，不是所有角色的固定模板。後續招式必須重新對應核准形象、武器與真實技能契約；一般流程與共用管線才是重用的部分。16MiB 安全上限與動態 residency 保留，不能為了新增圖片提高上限或忽略必要貼圖失敗。
+
+**零上下文接手**：先最新 remote/branch/PR/HEAD → AGENTS/playbook/boundaries → WORK_PROGRESS/STATE → 本文件 → 當前招式的 approved 素材／acceptance／manifest → 實作設計與驗證證據。從第一個未完成 gate 接續，不根據下方歷史 pending 文字重開已完成任務。Chat 先完成可做的檢查、素材準備與規格，Work 只接剩餘 executable delta；若另開 Work 包，遵守已有 START_HERE.md＋WORK_HANDOFF.md＋核准素材／checksums 的完整 ZIP，以及單一可一鍵複製 handoff 規則。沒有新授權就停在當前驗收，不自行開始其他角色攻擊。
+
+
 Final execution2026-10-15: ENGINEERING PASS / PLAYER IPHONE PENDING. Deployed source7e7ae7371bbcade8434fe4e3771ebb5c65eab7a3, targeted94/local+CI751/build/guard PASS, Actions#1004/38758231891 PagesSUCCESS,33public files exact-byte match. Evidence/rulings: docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md; fingerprints adjacent JSON. Plan/art/GIF/B gates resolved. STOP for iPhone, no new actions/VFX/main merge.
 
 Status: **PLAYER-APPROVED PROCESS / FIRST P1 SLICE VALIDATION PENDING — 2026-10-15**.

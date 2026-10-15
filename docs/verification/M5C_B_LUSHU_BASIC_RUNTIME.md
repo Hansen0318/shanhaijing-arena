@@ -1,5 +1,12 @@
 # P1 Basic runtime execution evidence
 
+## 最新玩家回饋與接手狀態 — 2026-10-16
+
+玩家於 2026-10-16T07:18:49+08:00 回覆：「這樣不錯，有吧這些正確製作攻擊動畫效果歷程，紀錄在github相關文件嗎？才可確保未來其他chat和work無縫接軌」。記錄為 **P1 Basic 攻擊動畫／效果正面回饋與流程保存要求**。未從這句話推定裝置、KO／Pause／Restart 已逐項驗收。工程測試、Build、CI、Pages、public fingerprint 已完成；既有證據沿用，不重新部署。本次只有文件／核准狀態 metadata 更新，沒有修改圖片、程式或戰鬥規則。
+
+接手者先讀 WORK_PROGRESS.md CURRENT HANDOFF POINTER、docs/STATE.md 最新 AUTHORITATIVE CURRENT STATE，再讀 docs/CHARACTER_ACTION_ART_WORKFLOW.md 與 docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md。已核准角色姿勢、VFX、GIF、B 時序設計與實作均不得重做。下一步仍為玩家尚未逐項回報的實機項目；沒有新角色／招式授權，不開始新攻擊或 VFX，不 merge main。
+
+
 Status: **ENGINEERING PASS / PLAYER IPHONE SMOKE PENDING — 2026-10-15**.
 
 ## Final deployed result

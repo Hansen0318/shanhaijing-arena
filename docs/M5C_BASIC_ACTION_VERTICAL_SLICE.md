@@ -1,5 +1,12 @@
 # M5C Basic action + matching Basic VFX — first vertical slice (2026-10-15)
 
+## 最新玩家回饋與接手狀態 — 2026-10-16
+
+玩家於 2026-10-16T07:18:49+08:00 回覆：「這樣不錯，有吧這些正確製作攻擊動畫效果歷程，紀錄在github相關文件嗎？才可確保未來其他chat和work無縫接軌」。記錄為 **P1 Basic 攻擊動畫／效果正面回饋與流程保存要求**。未從這句話推定裝置、KO／Pause／Restart 已逐項驗收。工程測試、Build、CI、Pages、public fingerprint 已完成；既有證據沿用，不重新部署。本次只有文件／核准狀態 metadata 更新，沒有修改圖片、程式或戰鬥規則。
+
+接手者先讀 WORK_PROGRESS.md CURRENT HANDOFF POINTER、docs/STATE.md 最新 AUTHORITATIVE CURRENT STATE，再讀 docs/CHARACTER_ACTION_ART_WORKFLOW.md 與 docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md。已核准角色姿勢、VFX、GIF、B 時序設計與實作均不得重做。下一步仍為玩家尚未逐項回報的實機項目；沒有新角色／招式授權，不開始新攻擊或 VFX，不 merge main。
+
+
 Final execution2026-10-15: ENGINEERING PASS / PLAYER IPHONE PENDING. Deployed source7e7ae7371bbcade8434fe4e3771ebb5c65eab7a3, targeted94/local+CI751/build/guard PASS, Actions#1004/38758231891 PagesSUCCESS,33public files exact-byte match. Evidence/rulings: docs/verification/M5C_B_LUSHU_BASIC_RUNTIME.md; fingerprints adjacent JSON. Plan/art/GIF/B gates resolved. STOP for iPhone, no new actions/VFX/main merge.
 
 **Status: FOUR POSES/GIF/VFX/B/WRITTEN DESIGN PLAYER APPROVED / IMPLEMENTATION PLAN REVIEW PENDING.** Written contract docs/superpowers/specs/2026-10-15-shared-basic-windup-design.md accepted2026-10-15T22:33:01+08:00 with「好，繼續」. Implementation plan docs/superpowers/plans/2026-10-15-shared-basic-windup.md now self-reviewed; player plan confirmation is the next gate before native execution here. Preserve approved assets and existing protected scope. Do not re-ask A/B, artwork/design approval or executor selection; do not claim code/tests/build/deploy complete. GitHub remains authoritative.
