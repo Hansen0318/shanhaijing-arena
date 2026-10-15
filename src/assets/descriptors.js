@@ -22,3 +22,9 @@ export function vfxDescriptor(input,{manifest=assetManifest}={}){
  if(form==='flipbook'&&!animation&&manifest[assetKey].type==='image')throw new TypeError('Flipbook requires animation');
  return immutable({form,assetKey,duration,attach,rotation,layer,loop:input.loop??false,cleanup:'owner-or-duration',animation,...common(input)});
 }
+export function actionDescriptor(input,{manifest=assetManifest}={}){
+ const animation=animationDescriptor(input.animation,{manifest}),frameDurationsMs=input.frameDurationsMs,impactFrame=input.impactFrame,coordinateSize=input.coordinateSize;
+ if(animation.loop||animation.frames.length!==4||!Array.isArray(frameDurationsMs)||frameDurationsMs.length!==4||frameDurationsMs.some(n=>!Number.isInteger(n)||n<1||n>1000)||impactFrame!==2||!Array.isArray(coordinateSize)||coordinateSize.length!==2||coordinateSize.some(n=>!finite(n,1,2048)))throw new TypeError('Invalid action timing/coordinates');
+ const effect=(e)=>{if(!e||manifest[e.assetKey]?.type!=='image'||!Array.isArray(e.offset)||!Array.isArray(e.size)||e.offset.length!==2||e.size.length!==2||e.offset.some(n=>!finite(n,-2048,2048))||e.size.some(n=>!finite(n,1,2048))||!Number.isInteger(e.layer)||e.layer<1||e.layer>19)throw new TypeError('Invalid action effect');return {assetKey:e.assetKey,offset:e.offset,size:e.size,layer:e.layer};};
+ return immutable({animation,frameDurationsMs,impactFrame,coordinateSize,blade:effect(input.blade),contact:effect(input.contact)});
+}

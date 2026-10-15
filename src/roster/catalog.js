@@ -1,4 +1,4 @@
-import {animationDescriptor} from '../assets/descriptors.js';
+import {animationDescriptor,actionDescriptor} from '../assets/descriptors.js';
 import {defaultCharacterAssets} from '../assets/manifest.js';
 import {formalTierEffects} from './tierEffects.js';
 import {formalAIProfiles} from './aiProfiles.js';
@@ -7,7 +7,12 @@ import { createCharacterDefinition } from '../combat/character.js';
 // Approved presentation only; all gameplay fields remain in the shared catalog.
 const presentation={
  P1:{
-  actionDescriptors:Object.freeze({basic:Object.freeze({animation:{source:'lushu.battleBasic'},blade:{assetKey:'lushu.basicBlade'},contact:{assetKey:'lushu.basicContact'}})}),
+  actionDescriptors:Object.freeze({basic:actionDescriptor({
+   animation:{source:'lushu.battleBasic',frames:[0,128,256,384].map(x=>({x,y:0,width:128,height:128})),duration:.4,loop:false,staticFrame:2,origin:[.5,.8369846715109296],scale:2.4731182795698925},
+   frameDurationsMs:[120,60,100,120],impactFrame:2,coordinateSize:[384,384],
+   blade:{assetKey:'lushu.basicBlade',offset:[176,65],size:[192,160],layer:4},
+   contact:{assetKey:'lushu.basicContact',offset:[262,91],size:[169,113],layer:6},
+  })}),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle',battleMove:'lushu.battleMove',battleKo:'lushu.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'lushu.battleIdle',frames:[{x:0,y:0,width:96,height:128}],
