@@ -1,0 +1,93 @@
+{
+  "status": "FOUR-POSE ART REVIEW PENDING",
+  "recoveryHead": "9318bf3128c3ca0a166be94f3f35e7faad028f3b",
+  "approvedKeyPose": "docs/art/approved/lushu/basic/F3-contact-v1.png",
+  "identitySources": [
+    "public/assets/characters/lushu/identity.png",
+    "public/assets/characters/lushu/battleIdle-4f.png"
+  ],
+  "workflow": "docs/CHARACTER_ACTION_ART_WORKFLOW.md",
+  "frames": [
+    {
+      "pose": "F1 - WINDUP",
+      "path": "docs/art/candidates/lushu/basic/F1-windup-v1.png",
+      "status": "CANDIDATE / PLAYER REVIEW PENDING",
+      "size": [
+        1215,
+        1295
+      ],
+      "bytes": 1009734,
+      "sha256": "795217a13d453ad6dd87daa11d819f11c557b6354755c269696695efb0bbaed9",
+      "visibleAlpha128Bounds": [
+        88,
+        114,
+        1159,
+        1171
+      ]
+    },
+    {
+      "pose": "F2 - STRIKE",
+      "path": "docs/art/candidates/lushu/basic/F2-strike-v1.png",
+      "status": "CANDIDATE / PLAYER REVIEW PENDING",
+      "size": [
+        1215,
+        1295
+      ],
+      "bytes": 896227,
+      "sha256": "dcc995d71f7bb4ae60fc9655c90dfd2e4d5e75f0935d3b17a058a7ce29e49cd8",
+      "visibleAlpha128Bounds": [
+        95,
+        152,
+        1197,
+        1166
+      ]
+    },
+    {
+      "pose": "F3 - CONTACT",
+      "path": "docs/art/approved/lushu/basic/F3-contact-v1.png",
+      "status": "PLAYER APPROVED / KEY POSE ONLY",
+      "size": [
+        1214,
+        1295
+      ],
+      "bytes": 770182,
+      "sha256": "0ecfa9f8cba1beec93dbfc823b0f5ac4600e7bf63ff8104ffd719cd8ad700955",
+      "visibleAlpha128Bounds": [
+        114,
+        172,
+        1192,
+        1129
+      ]
+    },
+    {
+      "pose": "F4 - RECOVERY",
+      "path": "docs/art/candidates/lushu/basic/F4-recovery-v1.png",
+      "status": "CANDIDATE / PLAYER REVIEW PENDING",
+      "size": [
+        1215,
+        1295
+      ],
+      "bytes": 874089,
+      "sha256": "bdbb66575871c9700fa2054a0a66ce2aeb7f459e63eb370c89e3f70d6115d102",
+      "visibleAlpha128Bounds": [
+        157,
+        80,
+        1055,
+        1197
+      ]
+    }
+  ],
+  "reviewContactSheet": {
+    "path": "docs/art/candidates/lushu/basic/Basic-four-pose-review-v1.png",
+    "size": [
+      2400,
+      780
+    ],
+    "uniformPreviewScale": 0.43,
+    "baseline": 660,
+    "alignment": "translation only based on visible-alpha foot bottom; original pixels/files unchanged",
+    "sha256": "b004a9cbb1fe565ea459674922dcaebf89faa46e8e525312d53f9650863d0378",
+    "notRuntimeSheet": true
+  },
+  "nextGate": "Player review of F1/F2/F4 and the full pose sequence; only then safe packaging/independent VFX/composite GIF. No runtime or deployment."
+}

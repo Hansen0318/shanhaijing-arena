@@ -1,5 +1,5 @@
 {
-  "status": "CANDIDATE / PLAYER REVIEW PENDING",
+  "status": "PLAYER APPROVED / F3 KEY POSE ONLY",
   "character": "P1 Lushu",
   "action": "Basic",
   "pose": "F3 contact",
@@ -28,7 +28,7 @@
     "compactBladeVisible": true,
     "headAntlersHandsFeetTailVisible": true,
     "transparentAlphaPresent": true,
-    "identityApprovedByPlayer": false,
+    "identityApprovedByPlayer": true,
     "safePackingCompleted": false,
     "vfxBakedIn": false
   },
@@ -36,6 +36,13 @@
     "Reference-conditioned image edit; not a locked-layer or pixel-identical claim.",
     "Visible geometry is review-only; low-alpha scattered pixels and tight right margin need cleanup/padding after art approval.",
     "Do not regenerate accepted art for layout repairs.",
-    "Wait for F3 player review before F1/F2/F4, VFX, GIF or runtime work."
-  ]
+    "Wait for F3 player review before F1/F2/F4, VFX, GIF or runtime work.",
+    "F3 player review passed; preserve exact PNG and perform only accepted packaging cleanup later."
+  ],
+  "approvedArtifact": "docs/art/approved/lushu/basic/F3-contact-v1.png",
+  "playerApproval": {
+    "at": "2026-10-15T21:12:41+08:00",
+    "statement": "好可以，你繼續",
+    "scope": "F3 identity, weapon and contact pose only; not full sequence, VFX, GIF or runtime"
+  }
 }
