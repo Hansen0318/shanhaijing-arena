@@ -1,4 +1,27 @@
-# P5 Xingxing static KO — 2026-10-15 preflight blocker
+# P5 Xingxing static KO — 2026-10-15 lossless-crop follow-up
+
+**Current status: FAIL / INCOMPLETE — battle-only memory PASS, existing mixed battle+Collection fixture still loses images; stopped as explicitly requested.**
+
+Latest request supersedes the exact512 runtime canvas with the attached480×288 lossless crop. ZIP SHA256 `9dff08cde523e692295283469b6a8b3695332f154c0b3b5b69c090abcf4cd330`; both SHA256SUMS entries verified. New PNG158535bytes/SHA256 `e9bf9bbd3684aeb45422d53046eb2c7fd218da058ee9f48d582ac54a6a5ae4e8`; crop rectangle `(20,149)-(500,437)` is exact RGBA-equal to the archived approved512 source. All discarded alpha values are zero; local bbox `(4,8)-(475,279)`. New crop archived unchanged at `docs/art/approved/xingxing/battleKo-480x288.png`.
+
+Recovery HEAD `60d8d3a`; current rules unchanged from previous recovery. Latest handoff proposed crop-corrected origin[236/480,279/288], scale1.875, static one-frame/duration1/loopfalse. These calculations were read, but descriptor/HP0 runtime integration was **not committed or claimed complete** after the memory stop condition triggered.
+
+Repeated real manifest/cache/presenter loader preflight using a temporary in-memory480×288 KO record and P5 asset mapping, exact attached PNG metadata, existing shared portrait-ready priority, both roster orders:
+
+| Load scope | Required decoded bytes | Cap | Result |
+| --- | ---: | ---: | --- |
+| All5 battle Portrait/Idle/Move/KO only | 16,597,648 | 16,777,216 | PASS, all required textures present, both orders |
+| Above + all5 collectionArt, as currently exercised by xingxingStatic.test.js fixture | 17,199,760 | 16,777,216 | FAIL, deficit422544 and identity images refused |
+
+Forward order actual scene16708240bytes, missing botuo/chiru/jiuweihu/xingxing identity; reverse16720528bytes, missing jiuweihu/chiru/botuo/lushu identity. **No battle texture was missing in the new crop's battle-only check.** The former316048-byte pure-battle deficit is resolved by this candidate; do not report that old blocker as still applying to ordinary battle-only residency.
+
+Scope distinction matters: production `ArenaScene` prepares current-encounter battle keys, while the existing static regression fixture additionally calls `loadKeys` on every collectionArt. Collection/Team Select full-body images use their menu path. This follow-up does **not** prove normal battle requires every full-body identity in the scene. However, the current full-residency regression contract fails with the new asset; the player's explicit instruction says to stop if memory/tests still fail, so the executor did not weaken/rewrite that fixture or expand into shared residency changes.
+
+Exact next action: review/authorize the existing test's mixed-residency contract against the real menu-versus-Arena loading paths (or explicitly scope a shared residency solution), then resume static KO integration. Preserve all approved images, the16MiB cap and shared readiness. Do not simply omit an expected image to force a green result.
+
+No production/test-source change, public KO, new integration build/CI/public fingerprint, HP0/mirror/persistence acceptance or phone-ready KO release is claimed in this follow-up. Stopped immediately after the relevant residency reproduction, as requested. Existing deployed release remains untouched.
+
+## Historical exact512 preflight (superseded canvas)
 
 Status: **FAIL / INCOMPLETE — exact-512 integration blocked by unchanged 16MiB scene budget**.
 Recovery HEAD `89d8680` on `feat/m0-combat-core-20260927`, PR #1. Latest player request and attached WORK_HANDOFF authorize this static KO integration and state that its art is approved; this supersedes the older progress pointer saying KO art authoring is next. Shared portrait readiness and P5 locomotion remain PLAYER VERIFIED.
