@@ -2,6 +2,20 @@
 
 **Status: CHAT DESIGN PROPOSAL / PLAYER MOTION & VFX APPROVAL PENDING.** Not yet an approved asset, executable milestone, or Work handoff. GitHub governs all current character/source constraints.
 
+## Latest player request and revised authoring proposal — 2026-10-15
+
+Player requests a reliable route to qualified four-frame attack art, visually elaborate blade/attack effects, and a reusable workflow for later battlefield action animations. This supersedes the earlier restrained-only VFX preference at the **design direction** level; exact VFX/color/strength still needs art review. It does not approve the rejected drafts or authorize runtime/code/build/deploy now.
+
+Proposed recovery from the failed four-up generation attempts:
+1. Use only approved identity.png and battleIdle-4f.png as identity sources. Work one complete pose at a time, beginning with F3 contact to expose head/antler/weapon/proportion drift early. Seek review of that key pose before extending its visual solution to F1/F2/F4. Reference-conditioned editing is an attempt, not a guarantee of locked pixels; genuine layered pose editing would require actual segmentation/occlusion repair, not claiming an image prompt creates immutable layers.
+2. Four character poses: F1 load/compress, F2 clearly intermediate blade/arm extension, F3 unmistakable contact/follow-through, F4 retraction/return. Retain full weapon and ground family; vary joint/torso/hoof poses, not whole-sprite wobble. Compare each independently against approved source before packing. No new creature identity/armor/weapon.
+3. Author blade sweep, short luminous arc, and contact burst as **separate transparent VFX**, not baked over the character. Preserve actor visibility and normal-vs-strong-skill hierarchy. Character four-key-pose count does not force VFX to four frames; effect timing and implementation can be chosen later. Existing cyan/white is only a proposal, not newly approved final art.
+4. After player art acceptance, deterministically package the exact retained pixels into equal-sized safely padded PNG cells (no regeneration to fix layout), with common scale/ground anchors. Keep original single-frame PNGs, packed sheet, metadata, checksums and revision identity. Need both individual-pose and animated-preview review.
+5. Render GIF/short preview combining character and independent VFX for review; GIF is a review artifact, while the game consumes PNG/frame data and shared event-driven presentation. Check anticipation/strike/contact/recovery, weapon continuity, feet, tail, left/right behavior and action end→Idle/Move. Four drawings alone do not establish animation timing quality.
+6. Only then explicitly authorize shared runtime integration: match real cast/hit events, preserve damage/cadence/movement/AI/Tier/rewards, protect KO/pause/reduced-motion and dynamic residency, then scoped engineering checks/deploy/iPhone acceptance. Do not shift combat damage timing merely to fit the preview.
+
+The player need not re-upload our own output to continue in the same work session. Preserve accepted originals/versions in the canonical GitHub asset history and a self-contained handoff ZIP for successors; never depend on temporary conversation/scratch availability. Each later character/attack follows this same approval and packaging contract, without character-specific engine branches. The method is proposed; no new qualified art or runtime result claimed yet.
+
 ## Recovered authority
 - P1–P5 Concept/static battleIdle/locomotion/static KO, shared dynamic residency, shared first-entry portraits: PLAYER VERIFIED, protected.
 - `src/roster/abilities.js`: P1 鹿蜀 Basic `P1.basic`, named 踏角; description 近距角蹄攻擊; close-range [min0,preferred0.65,max1.25] Arena units, coefficient1, cooldown0, standard Basic cadence from Attack Speed1.15. No attack movement added to authoritative XY.
