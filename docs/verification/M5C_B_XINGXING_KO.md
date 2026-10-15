@@ -1,5 +1,22 @@
 # P5 Xingxing static KO — 2026-10-15 lossless-crop follow-up
 
+## Current executable checkpoint — 2026-10-15
+
+**LOCAL ENGINEERING PASS / CI-PAGES RELEASE PENDING / PLAYER IPHONE SMOKE PENDING.** Recovery HEAD `38fdcf1`; active feature branch/PR#1 unchanged, no main merge. Chat's menu-versus-Arena fixture correction is preserved. The former mixed-residency blocker below is historical and superseded by this integration.
+
+- Exact archived480×288 PNG158535bytes/SHA256 `e9bf9bbd3684aeb45422d53046eb2c7fd218da058ee9f48d582ac54a6a5ae4e8` copied byte-for-byte to `public/assets/characters/xingxing/battleKo.png`; native RGBA decode, exact crop(20,149)-(500,437) of approved512 source, retained pixels and discardedalpha0 all freshly verified.
+- Only production delta: one manifest entry plus P5 shared assets/descriptor registration. One frame480×288, duration1/fps1, loopfalse, staticFrame0, origin[236/480,279/288], scale1.875. Presenter output135×81 compensates512→480 canvas without resizing the art's visible footprint. Visible silhouette132.46875×76.21875px; y279 foot-contact lands exactly on actor ground anchor.
+- Shared last-facing mirror retained. Independent review checked Phaser4.2.1 TransformerImage implementation: canonical retained pixels exactly preserve the proposed512 geometry. Phaser frame-center flip semantics with noncentral origin introduce a2.25px horizontal shift relative to that never-deployed512 proposal when mirrored; vertical ground, size, actor coordinates and facing remain correct. New test's geometry model explicitly accounts for this; no shared renderer change was made.
+- Seven new KO tests initially RED on absent formal KO, then GREEN. Actual shared presenter proves Idle→Move→HP0KO, both facing directions and normal/reduced modes, static persistence through100s, no source/frame revert, deadalpha.35, and texture cleanup. Actual BattleSession dead coordinates and snapshots remain authoritative; P5speed1.85 unchanged. Existing overheadHP tests cover HP0 hiding through untouched shared UI.
+- Targeted **86/86 PASS**: P5KO/static/Move, P1–P4KO, assetPresenter/cache/guard, HUD, Collection and menu tests. Local CI-equivalent **686/686 PASS**. Collection assets remain independently validated menu images; Arena memory tests now require **all five** portrait/Idle/Move/KO sets, including new P5KO, with no ignored missing keys.
+- Both roster orders actual cache and scene peak **16,597,648 bytes**, below unchanged16,777,216 by179,568; every required texture remains resident. No menu full-body images forced into Arena. Cold-readiness regression retained and passed; presenter/cache/ArenaScene production code unchanged.
+- Build PASS; guard62files3667880encodedbytes; fingerprints `index-2C9LBe0-.js`, `battleRuntime-BRQs-BB9.js`, `index-DcqtNRF0.css`. Existing npm http-proxy and Vite large-chunk warnings only. `git diff --check` PASS.
+- Independent review found no critical/important defects; the small Phaser flip-offset caveat above is documented and test geometry corrected. All P1–P4 catalog presentation and all gameplay catalog source compare unchanged; accepted P5Idle/Move and shared readiness unchanged. Only directly obsolete P5 pre-KO expectations and inventory totals updated.
+
+Next only feature push/CI/Pages/public byte-match, record closure, then STOP for iPhone lying pose/size/ground/fullbody/tail/last-facing/static-persistence smoke. No PLAYER VERIFIED, next actions/Hit/VFX or whole-character completion claim.
+
+## Historical crop preflight (superseded by corrected test contract)
+
 **Current status: FAIL / INCOMPLETE — battle-only memory PASS, existing mixed battle+Collection fixture still loses images; stopped as explicitly requested.**
 
 Latest request supersedes the exact512 runtime canvas with the attached480×288 lossless crop. ZIP SHA256 `9dff08cde523e692295283469b6a8b3695332f154c0b3b5b69c090abcf4cd330`; both SHA256SUMS entries verified. New PNG158535bytes/SHA256 `e9bf9bbd3684aeb45422d53046eb2c7fd218da058ee9f48d582ac54a6a5ae4e8`; crop rectangle `(20,149)-(500,437)` is exact RGBA-equal to the archived approved512 source. All discarded alpha values are zero; local bbox `(4,8)-(475,279)`. New crop archived unchanged at `docs/art/approved/xingxing/battleKo-480x288.png`.

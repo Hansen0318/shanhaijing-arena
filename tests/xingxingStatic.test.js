@@ -30,7 +30,7 @@ test('P5 all three approved slots resolve actual byte-identical runtime PNGs',()
 test('P5 single-frame grounded static idle has no authored action/breathing',()=>{
  const d=characterAnimation(rosterCatalog.P5,'battleIdle');assert.equal(d.source,'xingxing.battleIdle');assert.deepEqual(d.frames,[{x:0,y:0,width:160,height:160}]);assert.deepEqual(d.origin,[.5,148/160]);assert.equal(d.scale,2);assert.equal(d.duration,1);assert.equal(d.loop,false);assert.equal(d.staticFrame,0);
  for(const reduce of [false,true])for(const t of [0,.1,1,100])assert.equal(animationFrame(d,t,reduce).index,0);
- for(const state of ['battleKo','battleHit','battleCast']){assert.equal(rosterCatalog.P5.animationDescriptors[state],undefined);assert.equal(resolveCharacterAsset(rosterCatalog.P5,state).key,'placeholder.battle');}assert.equal(rosterCatalog.P5.idleBreath,undefined);
+ for(const state of ['battleHit','battleCast']){assert.equal(rosterCatalog.P5.animationDescriptors[state],undefined);assert.equal(resolveCharacterAsset(rosterCatalog.P5,state).key,'placeholder.battle');}assert.equal(rosterCatalog.P5.idleBreath,undefined);
  // Approved alpha extent: visible feet land at anchor; body height stays within roster family.
  assert.equal((148/160-d.origin[1])*144,0);assert.ok((148-16)*144/160>=110&&(148-16)*144/160<=144);
 });
@@ -41,7 +41,7 @@ for(const reduced of [false,true])test(`P5 shared presenter keeps same static fr
 });
 test('P1-P4 plus P5 actual cache/scene retain every accepted asset within unchanged16MiB regardless of order',async t=>{
  assert.equal(ASSET_LIMITS.cacheBytes,16*1024*1024);
- for(const order of [['P1','P2','P3','P4','P5'],['P5','P4','P3','P2','P1']]){const f=await fixture(order);for(const id of order)for(const slot of (id==='P5'?['portraitSquare','battleIdle','battleMove']:['portraitSquare','battleIdle','battleMove','battleKo'])){const k=rosterCatalog[id].assets[slot];assert.ok(f.p.textures.has(k),k+' must not silently drop');assert.equal((await f.cache.load(k)).key,k);}assert.ok(f.peak()<=ASSET_LIMITS.cacheBytes);assert.ok(f.s.budget().peak<=ASSET_LIMITS.cacheBytes);assert.equal(f.p.textureBytes,f.s.budget().resident);t.diagnostic(`cache peak=${f.peak()}; scene peak=${f.s.budget().peak}`);f.p.destroy();}
+ for(const order of [['P1','P2','P3','P4','P5'],['P5','P4','P3','P2','P1']]){const f=await fixture(order);for(const id of order)for(const slot of ['portraitSquare','battleIdle','battleMove','battleKo']){const k=rosterCatalog[id].assets[slot];assert.ok(f.p.textures.has(k),k+' must not silently drop');assert.equal((await f.cache.load(k)).key,k);}assert.ok(f.peak()<=ASSET_LIMITS.cacheBytes);assert.ok(f.s.budget().peak<=ASSET_LIMITS.cacheBytes);assert.equal(f.p.textureBytes,f.s.budget().resident);t.diagnostic(`cache peak=${f.peak()}; scene peak=${f.s.budget().peak}`);f.p.destroy();}
 });
 test('P5 exact stats and real BattleSession snapshot remain gameplay-owned',async()=>{
  assert.deepEqual(rosterCatalog.P5.stats,{maxHp:285,atk:17,def:7,moveSpeed:1.85,attackSpeed:1});const f=await fixture(),session=createLabBattleSession(createLabConfig({allyTeam:['P5','P2','P3'],skipCountdown:true}));const before=structuredClone(session.snapshot());f.p.render(session.snapshot(),0,session.characterDefinitions);assert.deepEqual(session.snapshot(),before);f.p.destroy();assert.equal(rosterCatalog.P1.animationDescriptors.battleMove.fps,18);assert.equal(rosterCatalog.P2.animationDescriptors.battleMove.fps,12);assert.equal(rosterCatalog.P3.animationDescriptors.battleMove.scale,2.7);
