@@ -3,6 +3,8 @@
 ## Status
 **M5C-A PLAYER VERIFIED / M5C-B BATCH PREPARATION ACTIVE**
 
+**2026-10-15 current action authoring gate:** `docs/CHARACTER_ACTION_ART_WORKFLOW.md` records the player-approved F3→four-pose→independent VFX/composite GIF→player approval→future runtime/deploy→iPhone process. First P1 Basic slice is art-review pending, not production-proven. Required: approved GitHub identity only, no weapon loss/redesign, deterministic safe packaging of exact accepted pixels, and GIF approval before runtime changes. No re-upload of our retained outputs is required; versioned canonical files + manifest/checksums + ZIP support zero-context handoff.
+
 Gameplay/progression through M6C is PLAYER VERIFIED. M5C now focuses on visual integration without changing accepted combat, progression, AI, Tier, reward, or save semantics.
 
 The goal is to avoid one-image-at-a-time integration. Build one reusable asset contract/pipeline, then integrate complete character/environment/VFX batches.

@@ -1,0 +1,41 @@
+{
+  "status": "CANDIDATE / PLAYER REVIEW PENDING",
+  "character": "P1 Lushu",
+  "action": "Basic",
+  "pose": "F3 contact",
+  "runtimeIntegrated": false,
+  "referenceCommit": "2c04ac6158a47b8eef262eb7bcabddade88d9b32",
+  "identitySources": [
+    {
+      "path": "public/assets/characters/lushu/identity.png",
+      "sha256": "bf82ac4f64f517a5503f6a3cabc53e046df8ef9ce16bf9ba5dba8d6567f497a1"
+    },
+    {
+      "path": "public/assets/characters/lushu/battleIdle-4f.png",
+      "sha256": "ca123eb6eb15c1f32fab2c9d732d40d7db279ed2e4332a1043172d3fb0bef327"
+    }
+  ],
+  "image": {
+    "path": "docs/art/candidates/lushu/basic/F3-contact-v1.png",
+    "width": 1214,
+    "height": 1295,
+    "mode": "RGBA",
+    "bytes": 770182,
+    "sha256": "0ecfa9f8cba1beec93dbfc823b0f5ac4600e7bf63ff8104ffd719cd8ad700955"
+  },
+  "checks": {
+    "oneFigure": true,
+    "compactBladeVisible": true,
+    "headAntlersHandsFeetTailVisible": true,
+    "transparentAlphaPresent": true,
+    "identityApprovedByPlayer": false,
+    "safePackingCompleted": false,
+    "vfxBakedIn": false
+  },
+  "notes": [
+    "Reference-conditioned image edit; not a locked-layer or pixel-identical claim.",
+    "Visible geometry is review-only; low-alpha scattered pixels and tight right margin need cleanup/padding after art approval.",
+    "Do not regenerate accepted art for layout repairs.",
+    "Wait for F3 player review before F1/F2/F4, VFX, GIF or runtime work."
+  ]
+}

@@ -3,6 +3,10 @@
 ## Purpose
 This playbook defines the durable development workflow for Shanhaijing Arena. It is project-wide and independent of any one milestone.
 
+## Action art → GIF → runtime gate
+
+Canonical method: `docs/CHARACTER_ACTION_ART_WORKFLOW.md`, player-approved process2026-10-15; first P1 slice validation pending. Recover exact GitHub identity, review F3 first, then four distinct poses; author VFX separately, preserve accepted pixels during safe equal-cell packaging, and obtain explicit composite GIF approval **before** action runtime integration or deployment. Keep source PNGs/versions/metadata/checksums/GIF and acceptance history in GitHub + self-contained handoff ZIP. A successor resumes the first unfinished review gate, not a fresh redesign. Process approval is not approval of generated art or proof of a working battlefield animation.
+
 ## A0. Mandatory rule refresh before action
 Before planning or executing any substantial project action, first recover the current hard rules and authoritative state from GitHub. At minimum read `AGENTS.md`, this playbook, the current handoff/state pointers when progress matters, and the spec governing the proposed action. Do this before offering implementation advice, preparing assets, editing the repo, choosing tests, or writing a Work handoff.
 

@@ -1,6 +1,6 @@
 # M5C Basic action + matching Basic VFX — first vertical slice (2026-10-15)
 
-**Status: CHAT DESIGN PROPOSAL / PLAYER MOTION & VFX APPROVAL PENDING.** Not yet an approved asset, executable milestone, or Work handoff. GitHub governs all current character/source constraints.
+**Status: PLAYER-APPROVED AUTHORING PROCESS / F3 ART REVIEW PENDING.** Canonical shared method: `docs/CHARACTER_ACTION_ART_WORKFLOW.md`. Player approved the sequence F3→four poses→separate effects/composite GIF→explicit GIF approval→future integration/deploy→iPhone acceptance. Exact art/VFX/GIF and engineering slice are not approved yet. GitHub governs all character/source constraints.
 
 ## Latest player request and revised authoring proposal — 2026-10-15
 
@@ -14,7 +14,7 @@ Proposed recovery from the failed four-up generation attempts:
 5. Render GIF/short preview combining character and independent VFX for review; GIF is a review artifact, while the game consumes PNG/frame data and shared event-driven presentation. Check anticipation/strike/contact/recovery, weapon continuity, feet, tail, left/right behavior and action end→Idle/Move. Four drawings alone do not establish animation timing quality.
 6. Only then explicitly authorize shared runtime integration: match real cast/hit events, preserve damage/cadence/movement/AI/Tier/rewards, protect KO/pause/reduced-motion and dynamic residency, then scoped engineering checks/deploy/iPhone acceptance. Do not shift combat damage timing merely to fit the preview.
 
-The player need not re-upload our own output to continue in the same work session. Preserve accepted originals/versions in the canonical GitHub asset history and a self-contained handoff ZIP for successors; never depend on temporary conversation/scratch availability. Each later character/attack follows this same approval and packaging contract, without character-specific engine branches. The method is proposed; no new qualified art or runtime result claimed yet.
+The player need not re-upload our own output to continue in the same work session. Preserve accepted originals/versions in the canonical GitHub asset history and a self-contained handoff ZIP for successors; never depend on temporary conversation/scratch availability. Each later character/attack follows this same approval and packaging contract, without character-specific engine branches. **Update2026-10-15:** the player now approved following and documenting this process. It is not yet validated by a full action release; art/VFX/GIF approval gates remain. Current F3 candidate is archived separately from approved/runtime art.
 
 ## Recovered authority
 - P1–P5 Concept/static battleIdle/locomotion/static KO, shared dynamic residency, shared first-entry portraits: PLAYER VERIFIED, protected.
