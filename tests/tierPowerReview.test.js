@@ -13,7 +13,7 @@ test('future range opt-out keeps actual AI preferred band synchronized with reso
 });
 test('delayed mobile Basic starts cadence at cast and cannot flood threats between impacts',()=>{
  const lab=createLabBattleSession(createLabConfig({allyTeam:['P1','P1','P1'],enemyTeam:['P1','P1','P1']}));
- const basic=createAbilityDefinition({...formalAbilityDefinitions['P1.basic'],telegraph:{telegraphMs:300,dodgeable:false,commitment:'mobile',dangerRadius:.5}});
+ const basic=createAbilityDefinition({...formalAbilityDefinitions['P1.basic'],windupMs:0,telegraph:{telegraphMs:300,dodgeable:false,commitment:'mobile',dangerRadius:.5}});
  const s=createBattleSession({allies:lab.allies,enemies:lab.enemies,characterDefinitions:rosterCatalog,abilityDefinitions:{...formalAbilityDefinitions,'P1.basic':basic},tierByActorId:{a1:'T3'},tacticalEnabled:true,rng:()=>.99});
  s.allies[0].x=0;s.allies[0].y=0;s.enemies[0].x=1;s.enemies[0].y=0;
  for(const a of s.actors)for(const k of ['heavy','special','awakening']){a.abilityState[k].phase='cooldown';a.abilityState[k].cooldownRemaining=20;}

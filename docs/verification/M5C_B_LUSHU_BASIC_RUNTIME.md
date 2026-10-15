@@ -1,6 +1,6 @@
 # P1 Basic runtime execution evidence
 
-Status: **IN PROGRESS / TASK1 ASSET + TASK2 CORE PASS / FULL REGRESSION NOT YET GREEN / NOT DEPLOYED**.
+Status: **TASKS1–4 PASS / FINAL REGRESSION+RELEASE PENDING / NOT DEPLOYED**.
 
 Player approved implementation plan at2026-10-15T22:43:03+08:00 with「好繼續」. BASE4160621453626071e6ec2b13e282336794df549c, active feature/PR#1, no main merge. Canonical design/plan under docs/superpowers/{specs,plans}/2026-10-15-shared-basic-windup*.md. Native execution here, no new approval gate between tasks.
 
@@ -23,3 +23,11 @@ Full diagnostic regression729 tests:722PASS/7FAIL. Named failures preserved for 
 ## Task3: pure phased action playback
 
 New action/descriptor tests RED5/5 for absent API. GREEN10/10 with existing descriptor/playback regression. Validated immutable P1-only action metadata, explicit120/60/100/120 timing, real-event-gated F3, delayed/coarse resolve, miss/no spark, cancellation/stale token isolation, captured facing/copied events, bounded64 records and reduced-motion static contact. Asset guard remains PASS. Presenter is still pending, so no on-screen engine synchronization PASS yet.
+
+## Task4: real presenter/readiness bridge
+
+Initial integration RED13/16: missing phase routing, required action textures, explicit failures and new inventory. GREEN17/17 integration,28/28 with Arena readiness/residency. Actual Arena.renderCastEvents executes with real session/presenter and records damage-number delivery only on F3. No production ArenaScene edit needed: existing phase-forwarding and identity-enriched copied snapshots already satisfy contract. New test helper initially used raw identity-less combat snapshots; corrected it to mirror actual Arena.applyFrame enrichment, not change production. Lethal contact, miss/cancel without generic burst, higher ability replacement, ordinary hit priority, KO, coarse resolve, captured mirror, <=1px ground offset, Pause/reduced validated.
+
+Readiness retains Portrait/Idle first, then required action/effects. Each new-key failure explicitly rejects with ready=false, preserves existing actor/portrait and retries. All5roster20Restart cycles in reversed orders include optional Collection cache art, concurrent shared-key actions and legacy VFX; required inventory16763144, scene/cache peaks<=16777216, no required allocation failure, destruction leaves zero textures/pins/displays. Decoded accounting is not total device RAM.
+
+Initial integrated full regression750/750 PASS before extra actual-Arena bridge test (targeted PASS); final full run due. Seven stale failures corrected at cause: inventory65files3674128bytes; required16763144/23pins; exactF1Idle96width/cachebytes; future multiframe KO fixture uses unchanged Move source rather than single-cell Idle; legacy telegraph fixture explicitlywindup0; Tier assertion advances180ms with other actors isolated, retains exact damage math; P5 all-five peaks now action-inclusive. No failure suppressed/guard raised. Mistyped optional npm assets:check script absent; supported node scripts/checkAssets.js PASS.

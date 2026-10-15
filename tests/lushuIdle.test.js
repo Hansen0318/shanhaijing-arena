@@ -28,11 +28,11 @@ test('approved idle resolves static F1 with a fixed ground origin and static fal
 });
 test('runtime PNG is RGBA, bounded and encounter-only, never a menu image',async()=>{
  const a=assetManifest[key];assert.ok(a);
- const b=readFileSync('public/'+a.path);assert.equal(b.readUInt32BE(16),384);assert.equal(b.readUInt32BE(20),128);assert.equal(b[25],6);assert.ok(b.length<=a.bytes);
+ const b=readFileSync('public/'+a.path);assert.equal(b.readUInt32BE(16),96);assert.equal(b.readUInt32BE(20),128);assert.equal(b[25],6);assert.ok(b.length<=a.bytes);
  for(const slot of ['portraitSquare','collectionArt'])assert.equal(resolveCharacterAsset(rosterCatalog.P1,slot).type,'image');
  assert.ok(!encounterAssetKeys([rosterCatalog.P2]).includes(key));assert.ok(encounterAssetKeys([rosterCatalog.P1]).includes(key));
  const cache=createAssetCache({transport:async record=>({image:{width:record.width,height:record.height},bytes:b.length})});
- assert.equal(cache.size,0);assert.equal((await cache.load(key)).key,key);assert.equal(cache.bytes,384*128*4);assert.equal(cache.size,1);
+ assert.equal(cache.size,0);assert.equal((await cache.load(key)).key,key);assert.equal(cache.bytes,96*128*4);assert.equal(cache.size,1);
  await cache.load(key);assert.equal(cache.size,1);
 });
 function trackedScene(){

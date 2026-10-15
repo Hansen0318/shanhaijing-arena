@@ -52,9 +52,9 @@ test('upper and Collection retire formal placeholder names while lower roster pr
 
 test('future formal KO slot and animation descriptor replace static idle fallback without a new PNG',async()=>{
  for(const customDescriptor of [false,true]){
-  const s=scene(),p=new AssetPresenter(s,{cache}),character={...rosterCatalog.P1,assets:{...rosterCatalog.P1.assets,battleKo:'lushu.identity'},animationDescriptors:{...rosterCatalog.P1.animationDescriptors,...(customDescriptor?{battleKo:{...rosterCatalog.P1.animationDescriptors.battleIdle,frames:Array.from({length:4},(_,i)=>({x:i*96,y:0,width:96,height:128})),loop:false,staticFrame:3}}:{battleKo:undefined})}};
+  const s=scene(),p=new AssetPresenter(s,{cache}),character={...rosterCatalog.P1,assets:{...rosterCatalog.P1.assets,battleKo:'lushu.identity'},animationDescriptors:{...rosterCatalog.P1.animationDescriptors,...(customDescriptor?{battleKo:{...rosterCatalog.P1.animationDescriptors.battleIdle,source:'lushu.battleMove',frames:Array.from({length:4},(_,i)=>({x:i*96,y:0,width:96,height:128})),loop:false,staticFrame:3}}:{battleKo:undefined})}};
   await p.prepare([character]);const actor={instanceId:'a1',definitionId:'P1',x:2,y:1,hp:245},frame={allies:[actor],enemies:[]};p.render(frame,0,{P1:character});actor.hp=0;const before=JSON.stringify(frame);p.render(frame,.1,{P1:character});const image=p.actorSprites.get('a1');
-  assert.equal(p.states.get('a1').state,'battleKo');assert.equal(p.states.get('a1').descriptor.source,customDescriptor?'lushu.battleIdle':'lushu.identity');
+  assert.equal(p.states.get('a1').state,'battleKo');assert.equal(p.states.get('a1').descriptor.source,customDescriptor?'lushu.battleMove':'lushu.identity');
   if(customDescriptor){p.render(frame,1.3,{P1:character});assert.equal(image.Texture[1],'288.0.96.128');}else assert.ok(image.Texture[0].endsWith('lushu.identity'));
   assert.deepEqual(image.Visible,[true]);assert.deepEqual(image.Alpha,[.35]);assert.deepEqual(image.Position,[2,1]);assert.equal(JSON.stringify(frame),before);p.destroy();assert.ok(s.images.every(i=>i.destroyed));
  }
