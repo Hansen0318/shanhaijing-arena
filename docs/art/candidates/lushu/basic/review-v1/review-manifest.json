@@ -1,0 +1,451 @@
+{
+  "status": "CHARACTER POSES PLAYER APPROVED / VFX AND GIF REVIEW PENDING",
+  "recoveryHead": "ee1ee9229e5b8b88128acd5caaa7813e37344837",
+  "playerPoseApproval": {
+    "at": "2026-10-15T21:43:37+08:00",
+    "statement": "好可以，繼續",
+    "scope": "All four character poses; not VFX, GIF or runtime"
+  },
+  "cellSize": [
+    384,
+    384
+  ],
+  "stripSize": [
+    1536,
+    384
+  ],
+  "sourceScale": 0.25,
+  "visibleGroundBaseline": 320,
+  "previewOrigin": [
+    0.5,
+    0.8333333333333334
+  ],
+  "normalization": "Full source-canvas uniform resize and translation only; no threshold deletion/crop/redraw",
+  "layout": [
+    {
+      "source": {
+        "path": "docs/art/approved/lushu/basic/F1-windup-v1.png",
+        "sha256": "795217a13d453ad6dd87daa11d819f11c557b6354755c269696695efb0bbaed9",
+        "bytes": 1009734,
+        "size": [
+          1215,
+          1295
+        ],
+        "mode": "RGBA"
+      },
+      "cell": {
+        "path": "docs/art/candidates/lushu/basic/review-v1/F1-windup-v1-cell.png",
+        "sha256": "692f7ae013479383d9bc4da1363ee37cc3324b5a7a1b292f85c04b1624b35f40",
+        "bytes": 91748,
+        "size": [
+          384,
+          384
+        ],
+        "mode": "RGBA"
+      },
+      "uniformScale": 0.25,
+      "fullCanvasResize": [
+        304,
+        324
+      ],
+      "translation": [
+        40,
+        27
+      ],
+      "sourceVisibleFootBottom": 1171,
+      "alphaNonzeroBounds": [
+        59,
+        53,
+        333,
+        330
+      ],
+      "nonzeroAlphaMarginsLTRB": [
+        59,
+        53,
+        51,
+        54
+      ],
+      "sourcePixelsDeleted": 0
+    },
+    {
+      "source": {
+        "path": "docs/art/approved/lushu/basic/F2-strike-v1.png",
+        "sha256": "dcc995d71f7bb4ae60fc9655c90dfd2e4d5e75f0935d3b17a058a7ce29e49cd8",
+        "bytes": 896227,
+        "size": [
+          1215,
+          1295
+        ],
+        "mode": "RGBA"
+      },
+      "cell": {
+        "path": "docs/art/candidates/lushu/basic/review-v1/F2-strike-v1-cell.png",
+        "sha256": "f09ad308a144c5ebe280287fa0185299cd36f7609e338ffd07d0fdd0dd5c2fdf",
+        "bytes": 81688,
+        "size": [
+          384,
+          384
+        ],
+        "mode": "RGBA"
+      },
+      "uniformScale": 0.25,
+      "fullCanvasResize": [
+        304,
+        324
+      ],
+      "translation": [
+        40,
+        28
+      ],
+      "sourceVisibleFootBottom": 1166,
+      "alphaNonzeroBounds": [
+        61,
+        64,
+        342,
+        323
+      ],
+      "nonzeroAlphaMarginsLTRB": [
+        61,
+        64,
+        42,
+        61
+      ],
+      "sourcePixelsDeleted": 0
+    },
+    {
+      "source": {
+        "path": "docs/art/approved/lushu/basic/F3-contact-v1.png",
+        "sha256": "0ecfa9f8cba1beec93dbfc823b0f5ac4600e7bf63ff8104ffd719cd8ad700955",
+        "bytes": 770182,
+        "size": [
+          1214,
+          1295
+        ],
+        "mode": "RGBA"
+      },
+      "cell": {
+        "path": "docs/art/candidates/lushu/basic/review-v1/F3-contact-v1-cell.png",
+        "sha256": "a4fc3e5c41e8598f2eea7803099cdf1ea60f5e6530913bd02c67c253744b5e27",
+        "bytes": 71505,
+        "size": [
+          384,
+          384
+        ],
+        "mode": "RGBA"
+      },
+      "uniformScale": 0.25,
+      "fullCanvasResize": [
+        304,
+        324
+      ],
+      "translation": [
+        40,
+        38
+      ],
+      "sourceVisibleFootBottom": 1129,
+      "alphaNonzeroBounds": [
+        66,
+        79,
+        341,
+        323
+      ],
+      "nonzeroAlphaMarginsLTRB": [
+        66,
+        79,
+        43,
+        61
+      ],
+      "sourcePixelsDeleted": 0
+    },
+    {
+      "source": {
+        "path": "docs/art/approved/lushu/basic/F4-recovery-v1.png",
+        "sha256": "bdbb66575871c9700fa2054a0a66ce2aeb7f459e63eb370c89e3f70d6115d102",
+        "bytes": 874089,
+        "size": [
+          1215,
+          1295
+        ],
+        "mode": "RGBA"
+      },
+      "cell": {
+        "path": "docs/art/candidates/lushu/basic/review-v1/F4-recovery-v1-cell.png",
+        "sha256": "3fde8826983e861be6769417bdfe16f5195c176cc8e162440d0767151b10b84c",
+        "bytes": 81762,
+        "size": [
+          384,
+          384
+        ],
+        "mode": "RGBA"
+      },
+      "uniformScale": 0.25,
+      "fullCanvasResize": [
+        304,
+        324
+      ],
+      "translation": [
+        40,
+        21
+      ],
+      "sourceVisibleFootBottom": 1197,
+      "alphaNonzeroBounds": [
+        77,
+        39,
+        333,
+        323
+      ],
+      "nonzeroAlphaMarginsLTRB": [
+        77,
+        39,
+        51,
+        61
+      ],
+      "sourcePixelsDeleted": 0
+    }
+  ],
+  "idleReturn": {
+    "source": "public/assets/characters/lushu/battleIdle-4f.png",
+    "region": [
+      0,
+      0,
+      96,
+      128
+    ],
+    "previewScale": 2.3,
+    "gameplayAnchorChanged": false
+  },
+  "effects": {
+    "bladeSweep": {
+      "raw": "blade-sweep-raw-v1.png",
+      "scale": 0.14,
+      "position": [
+        224,
+        65
+      ],
+      "layer": "behind actor"
+    },
+    "contactSpark": {
+      "raw": "contact-spark-raw-v1.png",
+      "scale": 0.11,
+      "position": [
+        310,
+        91
+      ],
+      "layer": "in front; blade tip"
+    },
+    "note": "Independent candidate sprites; opacity-only decay, no added hit/projectile/range"
+  },
+  "timeline": [
+    {
+      "label": "IDLE",
+      "characterPose": "approved Idle",
+      "durationMs": 550,
+      "arcOpacity": 0,
+      "contactOpacity": 0
+    },
+    {
+      "label": "F1 / WINDUP",
+      "characterPose": 1,
+      "durationMs": 120,
+      "arcOpacity": 0,
+      "contactOpacity": 0
+    },
+    {
+      "label": "F2 / STRIKE",
+      "characterPose": 2,
+      "durationMs": 60,
+      "arcOpacity": 0.55,
+      "contactOpacity": 0
+    },
+    {
+      "label": "F3 / CONTACT",
+      "characterPose": 3,
+      "durationMs": 40,
+      "arcOpacity": 1,
+      "contactOpacity": 1
+    },
+    {
+      "label": "F3 / CONTACT",
+      "characterPose": 3,
+      "durationMs": 40,
+      "arcOpacity": 0.55,
+      "contactOpacity": 0.55
+    },
+    {
+      "label": "F3 / SETTLE",
+      "characterPose": 3,
+      "durationMs": 20,
+      "arcOpacity": 0.18,
+      "contactOpacity": 0.18
+    },
+    {
+      "label": "F4 / RECOVERY",
+      "characterPose": 4,
+      "durationMs": 120,
+      "arcOpacity": 0,
+      "contactOpacity": 0
+    },
+    {
+      "label": "RETURN TO APPROVED IDLE",
+      "characterPose": "approved Idle",
+      "durationMs": 650,
+      "arcOpacity": 0,
+      "contactOpacity": 0
+    }
+  ],
+  "timingScope": "400ms action plus Idle holds; preview only, NOT a combat cadence/damage timing change",
+  "gifChecks": [
+    {
+      "path": "lushu-basic-vfx-review-v1.gif",
+      "frames": 8,
+      "durationsMs": [
+        550,
+        120,
+        60,
+        40,
+        40,
+        20,
+        120,
+        650
+      ],
+      "totalMs": 1600
+    },
+    {
+      "path": "lushu-basic-vfx-review-v1-slow.gif",
+      "frames": 8,
+      "durationsMs": [
+        550,
+        360,
+        180,
+        120,
+        120,
+        60,
+        360,
+        650
+      ],
+      "totalMs": 2400
+    }
+  ],
+  "files": [
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/F1-windup-v1-cell.png",
+      "sha256": "692f7ae013479383d9bc4da1363ee37cc3324b5a7a1b292f85c04b1624b35f40",
+      "bytes": 91748,
+      "size": [
+        384,
+        384
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/F2-strike-v1-cell.png",
+      "sha256": "f09ad308a144c5ebe280287fa0185299cd36f7609e338ffd07d0fdd0dd5c2fdf",
+      "bytes": 81688,
+      "size": [
+        384,
+        384
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/F3-contact-v1-cell.png",
+      "sha256": "a4fc3e5c41e8598f2eea7803099cdf1ea60f5e6530913bd02c67c253744b5e27",
+      "bytes": 71505,
+      "size": [
+        384,
+        384
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/F4-recovery-v1-cell.png",
+      "sha256": "3fde8826983e861be6769417bdfe16f5195c176cc8e162440d0767151b10b84c",
+      "bytes": 81762,
+      "size": [
+        384,
+        384
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/alpha-light-dark-review-v1.png",
+      "sha256": "4623617918ddbc03ae71bac5ba912e0cb32c5da9b47bf819cb52b5f478bd822c",
+      "bytes": 550118,
+      "size": [
+        1536,
+        840
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/blade-sweep-raw-v1.png",
+      "sha256": "026e5bb7860f132ad08057e5ba7fcc18ecd1a81842db6d718d4b927a490995cd",
+      "bytes": 546563,
+      "size": [
+        1374,
+        1145
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/contact-composite-review-v1.png",
+      "sha256": "8930b64c7081c73ec5f482ffe047fb5eb128ac9ed8cfdbe0f8fd254405bdfd49",
+      "bytes": 205456,
+      "size": [
+        960,
+        690
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/contact-spark-raw-v1.png",
+      "sha256": "fa09e5fef4e3d203e8a86f27e0c9de7c30a02a66dfc29c482dfaf2cc9b0f89e9",
+      "bytes": 1035009,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/lushu-basic-4f-safe-review-v1.png",
+      "sha256": "89f2c98fe5c71ca31b34105c2cd6d5f37c2cff6e1071dc523c58ff2fda32fe03",
+      "bytes": 324652,
+      "size": [
+        1536,
+        384
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/lushu-basic-vfx-review-v1-slow.gif",
+      "sha256": "09c32b96ae93d83026824a275d33f91f6510930d4374114d3c248eb6e7b49de7",
+      "bytes": 606235,
+      "size": [
+        960,
+        690
+      ],
+      "mode": "P"
+    },
+    {
+      "path": "docs/art/candidates/lushu/basic/review-v1/lushu-basic-vfx-review-v1.gif",
+      "sha256": "9f192efaaac7ffcf2ae8b3c9679a1f0b8d095dd9d274e2549583923072b84760",
+      "bytes": 606235,
+      "size": [
+        960,
+        690
+      ],
+      "mode": "P"
+    }
+  ],
+  "checks": {
+    "sourceHashes": "PASS",
+    "equalCells": "PASS",
+    "stripRoundTrip": "PASS",
+    "transparentMargins": "PASS >=12px each edge, every nonzero-alpha pixel retained",
+    "visualInspection": "See REVIEW_NOTES.md for manual inspection and pending player GIF acceptance",
+    "runtimeTests": "NOT RUN / OUT OF SCOPE",
+    "buildCIdeploy": "NOT RUN / OUT OF SCOPE"
+  },
+  "nextGate": "Explicit player VFX + composite GIF review. No integration, deployment or main merge."
+}

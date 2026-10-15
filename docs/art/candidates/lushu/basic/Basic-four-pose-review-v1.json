@@ -1,5 +1,5 @@
 {
-  "status": "FOUR-POSE ART REVIEW PENDING",
+  "status": "PLAYER APPROVED / FOUR CHARACTER POSES ONLY",
   "recoveryHead": "9318bf3128c3ca0a166be94f3f35e7faad028f3b",
   "approvedKeyPose": "docs/art/approved/lushu/basic/F3-contact-v1.png",
   "identitySources": [
@@ -11,7 +11,7 @@
     {
       "pose": "F1 - WINDUP",
       "path": "docs/art/candidates/lushu/basic/F1-windup-v1.png",
-      "status": "CANDIDATE / PLAYER REVIEW PENDING",
+      "status": "PLAYER APPROVED / CHARACTER POSE ONLY",
       "size": [
         1215,
         1295
@@ -23,12 +23,13 @@
         114,
         1159,
         1171
-      ]
+      ],
+      "approvedPath": "docs/art/approved/lushu/basic/F1-windup-v1.png"
     },
     {
       "pose": "F2 - STRIKE",
       "path": "docs/art/candidates/lushu/basic/F2-strike-v1.png",
-      "status": "CANDIDATE / PLAYER REVIEW PENDING",
+      "status": "PLAYER APPROVED / CHARACTER POSE ONLY",
       "size": [
         1215,
         1295
@@ -40,12 +41,13 @@
         152,
         1197,
         1166
-      ]
+      ],
+      "approvedPath": "docs/art/approved/lushu/basic/F2-strike-v1.png"
     },
     {
       "pose": "F3 - CONTACT",
       "path": "docs/art/approved/lushu/basic/F3-contact-v1.png",
-      "status": "PLAYER APPROVED / KEY POSE ONLY",
+      "status": "PLAYER APPROVED / CHARACTER POSE ONLY",
       "size": [
         1214,
         1295
@@ -57,12 +59,13 @@
         172,
         1192,
         1129
-      ]
+      ],
+      "approvedPath": "docs/art/approved/lushu/basic/F3-contact-v1.png"
     },
     {
       "pose": "F4 - RECOVERY",
       "path": "docs/art/candidates/lushu/basic/F4-recovery-v1.png",
-      "status": "CANDIDATE / PLAYER REVIEW PENDING",
+      "status": "PLAYER APPROVED / CHARACTER POSE ONLY",
       "size": [
         1215,
         1295
@@ -74,7 +77,8 @@
         80,
         1055,
         1197
-      ]
+      ],
+      "approvedPath": "docs/art/approved/lushu/basic/F4-recovery-v1.png"
     }
   ],
   "reviewContactSheet": {
@@ -89,5 +93,10 @@
     "sha256": "b004a9cbb1fe565ea459674922dcaebf89faa46e8e525312d53f9650863d0378",
     "notRuntimeSheet": true
   },
-  "nextGate": "Player review of F1/F2/F4 and the full pose sequence; only then safe packaging/independent VFX/composite GIF. No runtime or deployment."
+  "nextGate": "Prepare safe packaging, independent blade/contact VFX and composite GIF; stop for explicit player GIF approval. No runtime or deployment.",
+  "playerApproval": {
+    "at": "2026-10-15T21:43:37+08:00",
+    "statement": "好可以，繼續",
+    "scope": "F1/F2/F3/F4 poses and full pose sequence only; VFX/GIF/runtime acceptance still pending"
+  }
 }
