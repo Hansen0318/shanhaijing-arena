@@ -22,7 +22,7 @@ function scene(){
 }
 async function fixture(order=['P1','P2','P3','P4','P5'],reducedMotion=false){
  let peak=0;const s=scene(),cache=createAssetCache({transport:async record=>{const b=readFileSync(new URL('../public/'+record.path,import.meta.url));return {image:{width:record.width,height:record.height},bytes:b.length};}});
- const p=new AssetPresenter(s,{reducedMotion,cache:{async load(k){const a=await cache.load(k);peak=Math.max(peak,cache.bytes);return a;}}});await p.prepare(order.map(id=>rosterCatalog[id]));await p.loadKeys(order.map(id=>rosterCatalog[id].assets.collectionArt));return {p,s,cache,peak:()=>peak};
+ const p=new AssetPresenter(s,{reducedMotion,cache:{async load(k){const a=await cache.load(k);peak=Math.max(peak,cache.bytes);return a;}}});await p.prepare(order.map(id=>rosterCatalog[id]));return {p,s,cache,peak:()=>peak};
 }
 test('P5 all three approved slots resolve actual byte-identical runtime PNGs',()=>{
  for(const [slot,name,w,h,bytes,sha] of assets){const a=resolveCharacterAsset(rosterCatalog.P5,slot);assert.equal(a.key,'xingxing.'+name);assert.equal(a.path,`assets/characters/xingxing/${name}.png`);assert.deepEqual([a.width,a.height,a.bytes],[w,h,bytes]);const b=readFileSync(new URL('../public/'+a.path,import.meta.url));assert.equal(b.length,bytes);assert.equal(createHash('sha256').update(b).digest('hex'),sha);assert.equal(b.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.deepEqual([b.readUInt32BE(16),b.readUInt32BE(20),b[24],b[25]],[w,h,8,6]);}
@@ -41,8 +41,24 @@ for(const reduced of [false,true])test(`P5 shared presenter keeps same static fr
 });
 test('P1-P4 plus P5 actual cache/scene retain every accepted asset within unchanged16MiB regardless of order',async t=>{
  assert.equal(ASSET_LIMITS.cacheBytes,16*1024*1024);
- for(const order of [['P1','P2','P3','P4','P5'],['P5','P4','P3','P2','P1']]){const f=await fixture(order);for(const id of order)for(const slot of (id==='P5'?['portraitSquare','collectionArt','battleIdle','battleMove']:['portraitSquare','collectionArt','battleIdle','battleMove','battleKo'])){const k=rosterCatalog[id].assets[slot];assert.ok(f.p.textures.has(k),k+' must not silently drop');assert.equal((await f.cache.load(k)).key,k);}assert.ok(f.peak()<=ASSET_LIMITS.cacheBytes);assert.ok(f.s.budget().peak<=ASSET_LIMITS.cacheBytes);assert.equal(f.p.textureBytes,f.s.budget().resident);t.diagnostic(`cache peak=${f.peak()}; scene peak=${f.s.budget().peak}`);f.p.destroy();}
+ for(const order of [['P1','P2','P3','P4','P5'],['P5','P4','P3','P2','P1']]){const f=await fixture(order);for(const id of order)for(const slot of (id==='P5'?['portraitSquare','battleIdle','battleMove']:['portraitSquare','battleIdle','battleMove','battleKo'])){const k=rosterCatalog[id].assets[slot];assert.ok(f.p.textures.has(k),k+' must not silently drop');assert.equal((await f.cache.load(k)).key,k);}assert.ok(f.peak()<=ASSET_LIMITS.cacheBytes);assert.ok(f.s.budget().peak<=ASSET_LIMITS.cacheBytes);assert.equal(f.p.textureBytes,f.s.budget().resident);t.diagnostic(`cache peak=${f.peak()}; scene peak=${f.s.budget().peak}`);f.p.destroy();}
 });
 test('P5 exact stats and real BattleSession snapshot remain gameplay-owned',async()=>{
  assert.deepEqual(rosterCatalog.P5.stats,{maxHp:285,atk:17,def:7,moveSpeed:1.85,attackSpeed:1});const f=await fixture(),session=createLabBattleSession(createLabConfig({allyTeam:['P5','P2','P3'],skipCountdown:true}));const before=structuredClone(session.snapshot());f.p.render(session.snapshot(),0,session.characterDefinitions);assert.deepEqual(session.snapshot(),before);f.p.destroy();assert.equal(rosterCatalog.P1.animationDescriptors.battleMove.fps,18);assert.equal(rosterCatalog.P2.animationDescriptors.battleMove.fps,12);assert.equal(rosterCatalog.P3.animationDescriptors.battleMove.scale,2.7);
+});
+
+test('Collection full-body images remain real independently validated menu assets, not Arena textures',async()=>{
+ const {bindMenuImage}=await import('../src/assets/menuImage.js');
+ assert.equal(typeof bindMenuImage,'function');
+ for(const id of ['P1','P2','P3','P4','P5']){
+  const key=rosterCatalog[id].assets.collectionArt;
+  const record=resolveCharacterAsset(rosterCatalog[id],'collectionArt');
+  assert.equal(record.key,key);
+  assert.equal(record.type,'image');
+  const bytes=readFileSync(new URL('../public/'+record.path,import.meta.url));
+  assert.equal(bytes.length,record.bytes);
+ }
+ const f=await fixture();
+ for(const id of ['P1','P2','P3','P4','P5'])assert.equal(f.p.textures.has(rosterCatalog[id].assets.collectionArt),false,'Arena must not preload Collection art');
+ f.p.destroy();
 });
