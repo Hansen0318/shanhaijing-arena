@@ -379,3 +379,9 @@ Current order:
 - P4 九尾狐 locomotion → P4 KO → then P5 狌狌 Concept/static → P5 locomotion → P5 KO.
 
 Basic/Heavy/Special/Awakening action/VFX work remains deferred until this character-first temporary-completion pass is finished, unless the player explicitly reorders again.
+
+## CURRENT OVERRIDING CHARACTER-COMPLETE DELIVERY ORDER — 2026-10-16
+
+**Player-authoritative change, supersedes older cross-roster Basic-first/Heavy-second sequencing.** The delivery unit is a fully playable character, not a skill category across the whole roster. Finish all action visuals and matching VFX for P1 before P2; then P3, P4, P5. For each character: approved identity/static/Move/KO (already player-verified P1–P5) → Basic action + matching VFX → Heavy action + VFX → Special action + VFX → Awakening action + VFX → Hit reaction and character-wide regression/iPhone acceptance. The Basic/Heavy/Special/Awakening ordering can follow skill dependencies where appropriate; no jumping to another character while the current character's complete kit is unfinished unless player explicitly reprioritizes. Future new characters complete the same character-specific pipeline before accepted as fully delivered; player-visible reviews can be smaller slices without reopening approved older art.
+
+**Immediate gate:** P1 鹿蜀 Basic action/VFX visual ACCEPTED by player 2026-10-16 (not an assertion that all optional Pause/Restart/KO device checks were individually performed); proceed Chat-first to recover P1 Heavy `逐風衝` combat, approved equipment and visual specs before designing Heavy action + corresponding VFX. Keep Basic source/timing protected; no gameplay rewrite or main merge.
