@@ -2,7 +2,10 @@ import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 const entries=[
  {key:'lushu.portrait',type:'image',path:'assets/characters/lushu/portrait-face.png',width:128,height:128,bytes:35172,fallback:'placeholder.portrait'},
  {key:'lushu.identity',type:'image',path:'assets/characters/lushu/identity.png',width:144,height:192,bytes:35708,fallback:'placeholder.portrait'},
- {key:'lushu.battleIdle',type:'image',path:'assets/characters/lushu/battleIdle-4f.png',width:384,height:128,bytes:70848,fallback:'placeholder.battle'},
+ {key:'lushu.battleIdle',type:'image',path:'assets/characters/lushu/battleIdle-static.png',width:96,height:128,bytes:18033,fallback:'placeholder.battle'},
+ {key:'lushu.battleBasic',type:'image',path:'assets/characters/lushu/battleBasic-4f.png',width:512,height:128,bytes:51713,fallback:'placeholder.battle'},
+ {key:'lushu.basicBlade',type:'image',path:'assets/characters/lushu/basic-blade.png',width:97,height:81,bytes:5050,fallback:'placeholder.vfx'},
+ {key:'lushu.basicContact',type:'image',path:'assets/characters/lushu/basic-contact.png',width:85,height:57,bytes:2300,fallback:'placeholder.vfx'},
  {key:'lushu.battleMove',type:'image',path:'assets/characters/lushu/battleMove-4f.png',width:384,height:128,bytes:54317,fallback:'placeholder.battle'},
  {key:'lushu.battleKo',type:'image',path:'assets/characters/lushu/battleKo.png',width:512,height:512,bytes:150698,fallback:'placeholder.battle'},
  {key:'botuo.portrait',type:'image',path:'assets/characters/botuo/portrait.png',width:128,height:128,bytes:32501,fallback:'placeholder.portrait'},

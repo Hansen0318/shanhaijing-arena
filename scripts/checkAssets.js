@@ -23,6 +23,7 @@ export function validateAssetFiles({manifest,root,referencedKeys}){
 export function presentationReferences(characters,stages,abilities){
  const refs=[];const vfx=d=>{if(d?.assetKey)refs.push(d.assetKey);if(d?.animation?.source)refs.push(d.animation.source);};
  for(const c of characters){for(const value of Object.values(c.assets??{}))if(typeof value==='string')refs.push(value);else if(value)refs.push(...Object.values(value));for(const d of Object.values(c.animationDescriptors??{}))if(d.source)refs.push(d.source);for(const d of Object.values(c.vfxDescriptors??{}))vfx(d);}
+ for(const c of characters)for(const d of Object.values(c.actionDescriptors??{})){if(d.animation?.source)refs.push(d.animation.source);vfx(d.blade);vfx(d.contact);}
  for(const a of Object.values(abilities))vfx(a.presentation?.vfx);for(const stage of stages)if(stage.battleAssetKey)refs.push(stage.battleAssetKey);return refs;
 }
 export function validateCurrentAssets(){

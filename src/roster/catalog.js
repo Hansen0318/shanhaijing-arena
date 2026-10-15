@@ -7,6 +7,7 @@ import { createCharacterDefinition } from '../combat/character.js';
 // Approved presentation only; all gameplay fields remain in the shared catalog.
 const presentation={
  P1:{
+  actionDescriptors:Object.freeze({basic:Object.freeze({animation:{source:'lushu.battleBasic'},blade:{assetKey:'lushu.basicBlade'},contact:{assetKey:'lushu.basicContact'}})}),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle',battleMove:'lushu.battleMove',battleKo:'lushu.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'lushu.battleIdle',frames:[{x:0,y:0,width:96,height:128}],

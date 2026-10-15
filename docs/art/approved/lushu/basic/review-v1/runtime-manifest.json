@@ -1,0 +1,113 @@
+{
+  "status": "RUNTIME DERIVATIVE PREPARED / ENGINEERING AND PHONE PENDING",
+  "sourceAcceptance": "docs/art/approved/lushu/basic/review-v1/acceptance.json",
+  "files": [
+    {
+      "path": "public/assets/characters/lushu/battleIdle-static.png",
+      "width": 96,
+      "height": 128,
+      "bytes": 18033,
+      "sha256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2",
+      "decodedBytes": 49152
+    },
+    {
+      "path": "public/assets/characters/lushu/battleBasic-4f.png",
+      "width": 512,
+      "height": 128,
+      "bytes": 51713,
+      "sha256": "2bc2710fdbb5c031339f876d1f69486899ff293711d7dc1b3407dd59ecbcb690",
+      "decodedBytes": 262144
+    },
+    {
+      "path": "public/assets/characters/lushu/basic-blade.png",
+      "width": 97,
+      "height": 81,
+      "bytes": 5050,
+      "sha256": "8f90ebfc918dfe1cd77845b1502290dd572f636179edcada0876dae2a32475b1",
+      "decodedBytes": 31428
+    },
+    {
+      "path": "public/assets/characters/lushu/basic-contact.png",
+      "width": 85,
+      "height": 57,
+      "bytes": 2300,
+      "sha256": "2faada0f95507b0616157338b90a976145a870cb03a354a16c9fe5c6761d46f6",
+      "decodedBytes": 19380
+    }
+  ],
+  "frames": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "x": 128,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "x": 256,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "x": 384,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    }
+  ],
+  "origin": [
+    0.5,
+    0.8369846715109296
+  ],
+  "scale": 2.4731182795698925,
+  "visibleBounds": [
+    [
+      21,
+      19,
+      110,
+      107
+    ],
+    [
+      21,
+      22,
+      113,
+      107
+    ],
+    [
+      23,
+      27,
+      113,
+      107
+    ],
+    [
+      26,
+      14,
+      101,
+      107
+    ]
+  ],
+  "idleVisibleBounds": [
+    9,
+    7,
+    82,
+    122
+  ],
+  "sourceCellSize": [
+    384,
+    384
+  ],
+  "frameDurationsMs": [
+    120,
+    60,
+    100,
+    120
+  ],
+  "impactFrame": 2,
+  "allFiveEstimatedBytes": 16763144
+}
