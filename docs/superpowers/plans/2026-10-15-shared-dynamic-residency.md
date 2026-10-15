@@ -35,10 +35,10 @@ Interface: presenter.prepare resolves only when all encounter Portrait/Idle/Move
 
 ### Task 3: Release verification
 Files: docs/verification/SHARED_DYNAMIC_ASSET_RESIDENCY.md, WORK_PROGRESS.md, docs/STATE.md.
-- [ ] Compare P1–P5 file hashes/descriptors/gameplay source to recovery168bfb1.
-- [ ] Run npm test, npm run build, git diff --check; independent review and direct fixes if needed.
-- [ ] Publish feature checkpoint; verify CI/Pages and public index/bundles/all approved character PNGs against tested dist.
-- [ ] Record actual counts, estimates/caveats/source SHA, CI/public proofs; STOP for player cold entry/restarts/KO/pause/Collection navigation phone smoke.
+- [x] Compare P1–P5 file hashes/descriptors/gameplay source to recovery168bfb1.
+- [x] Run npm test, npm run build, git diff --check; independent review and direct fixes if needed.
+- [x] Publish feature checkpoint; verify CI/Pages and public index/bundles/all approved character PNGs against tested dist.
+- [x] Record actual counts, estimates/caveats/source SHA, CI/public proofs; STOP for player cold entry/restarts/KO/pause/Collection navigation phone smoke.
 
 ## Execution ledger
 Recovery168bfb1. Spec approved and user explicitly requested implementation/deploy in current Work; no repeated design approval. Dedicated clean feature checkout reused per explicit active-branch instruction.
@@ -47,3 +47,5 @@ Ruling: preserve tested16MiB hard safety bound while replacing all-at-once refus
 Task1 complete: core/cache12/12, pushed156ae4b. Task2 complete: newshared22/22, impacted156/156, full708/708 and Build PASS.
 Independent review: two important findings verified RED→GREEN: essential Idle declaration bypassed fallback validation; optional actor sprite needed independent display pins through retarget. Both fixed; full708/708 afterward. No deferred critical/important/minor findings.
 Local browser binary missing and download invalid; no browser acceptance claim. Tests run real Arena/session methods with external renderer doubled; phone smoke remains player-owned.
+
+Task3 complete: source0b8edaa; Actions995/run38702374369 build116313404311 + deploy116313543286 SUCCESS; CI708/708, public30/30 exact-byte matches, PR1 open/unmerged. Stop for player iPhone smoke; no further engineering scope.

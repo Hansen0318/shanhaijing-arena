@@ -1,6 +1,21 @@
 # Shared dynamic asset residency verification — 2026-10-15
 
-Status: **LOCAL ENGINEERING PASS / CI-PAGES RELEASE PENDING / PLAYER IPHONE SMOKE PENDING**.
+Status: **ENGINEERING PASS / PLAYER IPHONE SMOKE PENDING**.
+
+## Authoritative release closure
+
+Tested and publicly deployed source: `0b8edaaeb392f85b006c5c90e7ee269eba84b8d1`. This closure changes documentation only. [Actions#995](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/38702374369): build job116313404311 and Pages deploy116313543286 both SUCCESS. CI logs independently confirm708 tests/708pass/0fail, unchanged62file/3667880byte guard and matching bundle names. PR#1 remains open, unmerged.
+
+Fresh public downloads from https://hansen0318.github.io/shanhaijing-arena/ verified **30/30 exact byte matches** against tested local dist: HTML, current main/runtime JS, CSS, and all26 character files. Select the current CI fingerprint files rather than obsolete local output files from former builds.
+
+| Public file | SHA256 |
+| --- | --- |
+| index.html | b0d318435fb71d02f3ffc3d1dfb703b3cf84a548beef5d5b5d5981f251673ca8 |
+| assets/index-oftBxKQK.js | 2e39710ece3e6e76ba75dbc445eebfa83017d371161ccd3e77e3bfaae34275bb |
+| assets/battleRuntime-ByoySI4i.js | 5165fe1638c8e79a7682c3c96c66da04dd6a5a369aad85d3fe4c2ee25bf81737 |
+| assets/index-DcqtNRF0.css | a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da |
+
+**STOP: engineering release complete; only player iPhone cold entry, multiple Restarts, KO/pause and Collection→battle→Collection remain.** No PLAYER VERIFIED claim or measured Safari/GPU budget increase. No further implementation/new art/actions/VFX/main merge.
 
 ## Recovery and protected baseline
 
@@ -40,4 +55,4 @@ These counters estimate decoded width×height×4 **per layer**, not total RAM or
 
 ## Release and player gate
 
-Pending: publish integration checkpoint, CI/Pages, byte-match public HTML/JS/CSS and all26 character files to tested dist, record source/workflow proof. Then **STOP** for iPhone cold entry, several Restart cycles, KO/pause, Collection→battle→Collection: no blank/late HUD, missing fighters, lost KO/mirror or menu images. Do not mark PLAYER VERIFIED or start new actions/VFX before explicit acceptance. Never merge main.
+Release checkpoint, CI/Pages and all30 public byte matches are complete as recorded above. **STOP** for iPhone cold entry, several Restart cycles, KO/pause, Collection→battle→Collection: no blank/late HUD, missing fighters, lost KO/mirror or menu images. Do not mark PLAYER VERIFIED or start new actions/VFX before explicit acceptance. Never merge main.
