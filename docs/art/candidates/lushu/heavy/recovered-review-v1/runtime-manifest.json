@@ -1,0 +1,156 @@
+{
+  "status": "RUNTIME DERIVATIVES / ENGINEERING PENDING",
+  "sourceAcceptance": "docs/art/candidates/lushu/heavy/recovered-review-v1/acceptance.json",
+  "files": [
+    {
+      "path": "public/assets/characters/lushu/battleHeavy-4f.png",
+      "width": 512,
+      "height": 128,
+      "bytes": 52398,
+      "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334",
+      "decodedBytes": 262144
+    },
+    {
+      "path": "public/assets/characters/lushu/heavy-wind.png",
+      "width": 112,
+      "height": 112,
+      "bytes": 11447,
+      "sha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec",
+      "decodedBytes": 50176
+    },
+    {
+      "path": "public/assets/characters/lushu/heavy-impact.png",
+      "width": 128,
+      "height": 86,
+      "bytes": 10339,
+      "sha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+      "decodedBytes": 44032
+    },
+    {
+      "path": "public/assets/characters/botuo/battleKo-trimmed.png",
+      "width": 512,
+      "height": 331,
+      "bytes": 158388,
+      "sha256": "4a54caf87303df0eb856d5385748c1a88fb1604534851a536eed16d76b30ebf2",
+      "decodedBytes": 677888
+    }
+  ],
+  "frames": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "x": 128,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "x": 256,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "x": 384,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    }
+  ],
+  "origin": [
+    0.5,
+    0.8758107134278165
+  ],
+  "scale": 3.1944444444444446,
+  "frameDurationsMs": [
+    200,
+    80,
+    140,
+    180
+  ],
+  "coordinateSize": [
+    256,
+    256
+  ],
+  "blade": {
+    "assetKey": "lushu.heavyWind",
+    "offset": [
+      110,
+      54
+    ],
+    "size": [
+      170,
+      170
+    ],
+    "layer": 4
+  },
+  "contact": {
+    "assetKey": "lushu.heavyImpact",
+    "offset": [
+      -75,
+      -80
+    ],
+    "size": [
+      150,
+      100
+    ],
+    "layer": 6,
+    "attach": "target"
+  },
+  "visibleBounds": [
+    [
+      21,
+      35,
+      107,
+      112
+    ],
+    [
+      20,
+      38,
+      109,
+      112
+    ],
+    [
+      13,
+      40,
+      116,
+      112
+    ],
+    [
+      20,
+      40,
+      107,
+      112
+    ]
+  ],
+  "idleBounds": [
+    9,
+    7,
+    82,
+    122
+  ],
+  "koTrim": {
+    "source": "public/assets/characters/botuo/battleKo.png",
+    "sourceSHA256": "037829ec32333a0179414a9ee8ccb57b4eb3ddb83004aa93aea5c78914fc9c57",
+    "rect": [
+      0,
+      125,
+      512,
+      456
+    ],
+    "origin": [
+      0.5,
+      0.8459214501510574
+    ],
+    "scale": 2,
+    "savedDecodedBytes": 370688,
+    "allRGBAInsideRectPreserved": true,
+    "fullWidthForExactMirroring": true
+  },
+  "requiredDecodedBytes": 16748808,
+  "hardLimit": 16777216
+}

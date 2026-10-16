@@ -12,7 +12,7 @@ const presentation={
    frameDurationsMs:[120,60,100,120],impactFrame:2,coordinateSize:[384,384],
    blade:{assetKey:'lushu.basicBlade',offset:[176,65],size:[192,160],layer:4},
    contact:{assetKey:'lushu.basicContact',offset:[262,91],size:[169,113],layer:6},
-  })}),
+  }),heavy:actionDescriptor({"animation":{"source":"lushu.battleHeavy","frames":[{"x":0,"y":0,"width":128,"height":128},{"x":128,"y":0,"width":128,"height":128},{"x":256,"y":0,"width":128,"height":128},{"x":384,"y":0,"width":128,"height":128}],"duration":0.6,"loop":false,"staticFrame":2,"origin":[0.5,0.8758107134278165],"scale":3.1944444444444446},"frameDurationsMs":[200,80,140,180],"impactFrame":2,"coordinateSize":[256,256],"blade":{"assetKey":"lushu.heavyWind","offset":[110,54],"size":[170,170],"layer":4},"contact":{"assetKey":"lushu.heavyImpact","offset":[-75,-80],"size":[150,100],"layer":6,"attach":"target"}}) }),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle',battleMove:'lushu.battleMove',battleKo:'lushu.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'lushu.battleIdle',frames:[{x:0,y:0,width:96,height:128}],
@@ -34,8 +34,8 @@ const presentation={
    source:'botuo.battleMove',frames:[0,160,320,480].map(x=>({x,y:0,width:160,height:160})),
    fps:12,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
   }),battleKo:animationDescriptor({
-   source:'botuo.battleKo',frames:[{x:0,y:0,width:512,height:512}],
-   duration:1,loop:false,origin:[.5,405/512],scale:2,staticFrame:0,
+   source:'botuo.battleKo',frames:[{x:0,y:0,width:512,height:331}],
+   duration:1,loop:false,origin:[.5,280/331],scale:2,staticFrame:0,
   })}),
  },
  P3:{

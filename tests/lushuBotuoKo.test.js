@@ -34,15 +34,16 @@ async function fixture(id='P1',reducedMotion=false,order=['P1','P2','P3']){
 }
 
 for(const c of cases){
+ const h=c.id==='P2'?331:512,oy=c.id==='P2'?280/331:c.bottom/512,sy=c.id==='P2'?125:0;
  test(`${c.id} runtime KO manifest/descriptor is a single static grounded 512 frame`,()=>{
-  const a=resolveCharacterAsset(rosterCatalog[c.id],'battleKo');assert.equal(a.key,c.name+'.battleKo');assert.equal(a.path,`assets/characters/${c.name}/battleKo.png`);assert.deepEqual([a.width,a.height,a.bytes],[512,512,c.bytes]);assert.equal(a.fallback,'placeholder.battle');
-  const d=characterAnimation(rosterCatalog[c.id],'battleKo');assert.equal(d.source,a.key);assert.deepEqual(d.frames,[{x:0,y:0,width:512,height:512}]);assert.deepEqual(d.origin,[.5,c.bottom/512]);assert.equal(d.scale,2);assert.equal(d.duration,1);assert.equal(d.loop,false);assert.equal(d.staticFrame,0);
+  const a=resolveCharacterAsset(rosterCatalog[c.id],'battleKo');assert.equal(a.key,c.name+'.battleKo');assert.equal(a.path,`assets/characters/${c.name}/${c.id==='P2'?'battleKo-trimmed.png':'battleKo.png'}`);assert.deepEqual([a.width,a.height,a.bytes],[512,h,c.id==='P2'?readFileSync('public/'+a.path).length:c.bytes]);assert.equal(a.fallback,'placeholder.battle');
+  const d=characterAnimation(rosterCatalog[c.id],'battleKo');assert.equal(d.source,a.key);assert.deepEqual(d.frames,[{x:0,y:0,width:512,height:h}]);assert.deepEqual(d.origin,[.5,oy]);assert.equal(d.scale,2);assert.equal(d.duration,1);assert.equal(d.loop,false);assert.equal(d.staticFrame,0);
   for(const reduced of [false,true])for(const now of [0,.5,1,100])assert.equal(animationFrame(d,now,reduced).index,0);
  });
  for(const reduced of [false,true])for(const left of [false,true])test(`${c.id} HP0 keeps static KO / saved ${left?'left':'right'} facing (reduced=${reduced})`,async()=>{
   const f=await fixture(c.id,reduced);f.render(0);const image=f.p.actorSprites.get('a1');assert.ok(image.texture[0].endsWith(c.name+'.battleIdle'));
   f.actor.x+=left?-.1:.1;f.render(.1);assert.ok(image.texture[0].endsWith(c.name+'.battleMove'));assert.deepEqual(image.setFlipXValue,[left]);
-  f.actor.hp=0;const before=structuredClone(f.frame);for(const now of [.2,1.2,10,100]){f.render(now);assert.ok(image.texture[0].endsWith(c.name+'.battleKo'));assert.equal(image.texture[1],'0.0.512.512');assert.deepEqual(image.setFlipXValue,[left]);assert.deepEqual(image.setOriginValue,[.5,c.bottom/512]);assert.deepEqual(image.setDisplaySizeValue,[144,144]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);assert.deepEqual(image.setAlphaValue,[.35]);assert.equal(f.p.states.get('a1').state,'battleKo');assert.deepEqual(f.frame,before);}
+  f.actor.hp=0;const before=structuredClone(f.frame);for(const now of [.2,1.2,10,100]){f.render(now);assert.ok(image.texture[0].endsWith(c.name+'.battleKo'));assert.equal(image.texture[1],`0.0.512.${h}`);assert.deepEqual(image.setFlipXValue,[left]);assert.deepEqual(image.setOriginValue,[.5,oy]);assert.deepEqual(image.setDisplaySizeValue,[144,144*h/512]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);assert.deepEqual(image.setAlphaValue,[.35]);assert.equal(f.p.states.get('a1').state,'battleKo');assert.deepEqual(f.frame,before);}
   assert.equal(rosterCatalog[c.id].stats.moveSpeed,c.speed);f.p.destroy();assert.equal(f.budget().sceneBytes,0);
  });
  test(`${c.id} actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned`,async()=>{
@@ -58,7 +59,7 @@ for(const c of cases){
   const raw=inflateSync(Buffer.concat(chunks)),stride=512*4,pixels=Buffer.alloc(stride*512),paeth=(a,b,c)=>{const p=a+b-c,da=Math.abs(p-a),db=Math.abs(p-b),dc=Math.abs(p-c);return da<=db&&da<=dc?a:db<=dc?b:c;};
   for(let y=0;y<512;y++)for(let x=0;x<stride;x++){const filter=raw[y*(stride+1)],left=x>=4?pixels[y*stride+x-4]:0,up=y?pixels[(y-1)*stride+x]:0,ul=y&&x>=4?pixels[(y-1)*stride+x-4]:0;assert.ok(filter<=4);pixels[y*stride+x]=(raw[y*(stride+1)+1+x]+[0,left,up,Math.floor((left+up)/2),paeth(left,up,ul)][filter])&255;}
   let minX=512,minY=512,maxX=-1,maxY=-1;for(let y=0;y<512;y++)for(let x=0;x<512;x++)if(pixels[(y*512+x)*4+3]>64){minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x);maxY=Math.max(maxY,y);}
-  assert.deepEqual([minX,minY,maxX+1,maxY+1],c.bbox);const d=rosterCatalog[c.id].animationDescriptors.battleKo;assert.ok(Math.abs((maxY+1)/512-d.origin[1])*144<.01);assert.ok((maxX+1-minX)*144/512>130);assert.ok((maxY+1-minY)*144/512<70);
+  assert.deepEqual([minX,minY,maxX+1,maxY+1],c.bbox);const d=rosterCatalog[c.id].animationDescriptors.battleKo;assert.ok(Math.abs((maxY+1-sy)/h-d.origin[1])*144*h/512<.01);assert.ok((maxX+1-minX)*144/512>130);assert.ok((maxY+1-minY)*144/512<70);
  });
 }
 

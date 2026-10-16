@@ -66,8 +66,10 @@ export class AssetPresenter{
   const d=sample.descriptor,[cw,ch]=d.coordinateSize,sx=displaySize.width/cw,sy=displaySize.height/ch;
   for(const kind of ['blade','contact']){const spec=d[kind],opacity=sample[kind+'Opacity'];let image=effects.get(kind);
    if(opacity>0&&!image){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required action texture unavailable: '+spec.assetKey);image=this.scene.add.image(0,0,texture.key);effects.set(kind,image);}
-   if(!image)continue;const x=spec.offset[0]+spec.size[0]/2-d.animation.origin[0]*cw,y=spec.offset[1]+spec.size[1]/2-d.animation.origin[1]*ch;
-   image.actionId=sample.actionId;image.setOrigin(.5,.5).setDisplaySize(spec.size[0]*sx,spec.size[1]*sy).setFlipX(sample.flipX).setPosition(position.x+(sample.flipX?-x:x)*sx,position.y+y*sy).setDepth(spec.layer).setAlpha(opacity).setVisible(opacity>0);
+   if(!image)continue;const targetAttached=spec.attach==='target'&&sample.contactTarget;
+   const anchor=targetAttached?this.project(sample.contactTarget):position;
+   const x=spec.offset[0]+spec.size[0]/2-(targetAttached?0:d.animation.origin[0]*cw),y=spec.offset[1]+spec.size[1]/2-(targetAttached?0:d.animation.origin[1]*ch);
+   image.actionId=sample.actionId;image.setOrigin(.5,.5).setDisplaySize(spec.size[0]*sx,spec.size[1]*sy).setFlipX(sample.flipX).setPosition(anchor.x+(sample.flipX?-x:x)*sx,anchor.y+y*sy).setDepth(spec.layer).setAlpha(opacity).setVisible(opacity>0);
   }
  }
  imageFor(ownerId,descriptor,elapsed,map=this.actorSprites,playbackMode='decorative',frameIndex=null){

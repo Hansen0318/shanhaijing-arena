@@ -22,24 +22,24 @@ Feature branch feat/m0-combat-core-20260927 / PR1; no main merge. Preserve origi
 ### Task1: Shared pending action lifecycle
 **Files:** src/combat/ability.js, src/roster/abilities.js, src/combat/battleSession.js; tests/heavyWindup.test.js and directly stale Basic assertions.
 **Interfaces:** consume windupMs opt-in; produce category-aware start/resolve/cancel, pendingActions and damage.actionId; preserve pendingBasics compatibility.
-- [ ] Write Heavy no-early-damage/cooldown/cancellation/AI/mirror/Tier/escape tests.
-- [ ] Run node --test tests/heavyWindup.test.js; observe RED immediate damage/missing lifecycle.
-- [ ] Generalize pending lifecycle, opt in280ms Heavy; protect Basic behavior.
-- [ ] Run Heavy+Basic targeted tests GREEN; checkpoint.
+- [x] Write Heavy no-early-damage/cooldown/cancellation/AI/mirror/Tier/escape tests.
+- [x] Run node --test tests/heavyWindup.test.js; observe RED immediate damage/missing lifecycle.
+- [x] Generalize pending lifecycle, opt in280ms Heavy; protect Basic behavior.
+- [x] Run Heavy+Basic targeted tests GREEN; checkpoint.
 
 ### Task2: Exact asset packaging and category descriptor
 **Files:** scripts/prepareLushuHeavyRuntime.py, public optimized Heavy/KO derivatives, src/assets/manifest.js, src/roster/catalog.js; tests/lushuHeavyAssets.test.js.
 **Interfaces:**512x128 Heavy atlas plus112x112/128x86 FX; botuo512x331/origin[.5,280/331],scale2. Existing actionDescriptor {frameDurationsMs:[200,80,140,180],impactFrame:2}.
-- [ ] Write missing Heavy asset/actual decoded budget/KO pixel and both-facing transform tests; observe RED.
-- [ ] Create source-hashed deterministic derivatives; register metadata, add Heavy action with measured scale/anchor/effect placement.
-- [ ] Run asset, Basic unchanged-source and affected KO tests GREEN; checkpoint.
+- [x] Write missing Heavy asset/actual decoded budget/KO pixel and both-facing transform tests; observe RED.
+- [x] Create source-hashed deterministic derivatives; register metadata, add Heavy action with measured scale/anchor/effect placement.
+- [x] Run asset, Basic unchanged-source and affected KO tests GREEN; checkpoint.
 
 ### Task3: Presenter bridge, release and closure
 **Files:** tests/heavyActionIntegration.test.js; affected regression fixtures, verification docs and progress/state.
 **Interfaces:** existing presenter.cast handles shared events; no new combat capabilities in renderer.
-- [ ] Write actual BattleSession→presenter no-contact-before-hit test, miss/cancel/KO/reduced/mirror/Pause/Restart and mixed Basic+Heavy ownership.
-- [ ] Observe failures, fix only confirmed bridge defects, run focused checks GREEN.
-- [ ] Full npm test, asset guard/build, source/art protection and diff checks.
+- [x] Write actual BattleSession→presenter no-contact-before-hit test, miss/cancel/KO/reduced/mirror/Pause/Restart and mixed Basic+Heavy ownership.
+- [x] Observe failures, fix only confirmed bridge defects, run focused checks GREEN.
+- [x] Full npm test, asset guard/build, source/art protection and diff checks.
 - [ ] Whole-delta review, fix material findings with RED→GREEN.
 - [ ] Feature push without skipCI, inspect successful Actions/Pages, verify public fingerprints.
 - [ ] Record engineering evidence and separate player phone checklist, stop without main merge.

@@ -1,5 +1,8 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 const entries=[
+ {key:'lushu.battleHeavy',type:'image',path:'assets/characters/lushu/battleHeavy-4f.png',width:512,height:128,bytes:52398,fallback:'placeholder.battle'},
+ {key:'lushu.heavyWind',type:'image',path:'assets/characters/lushu/heavy-wind.png',width:112,height:112,bytes:11447,fallback:'placeholder.vfx'},
+ {key:'lushu.heavyImpact',type:'image',path:'assets/characters/lushu/heavy-impact.png',width:128,height:86,bytes:10339,fallback:'placeholder.vfx'},
  {key:'lushu.portrait',type:'image',path:'assets/characters/lushu/portrait-face.png',width:128,height:128,bytes:35172,fallback:'placeholder.portrait'},
  {key:'lushu.identity',type:'image',path:'assets/characters/lushu/identity.png',width:144,height:192,bytes:35708,fallback:'placeholder.portrait'},
  {key:'lushu.battleIdle',type:'image',path:'assets/characters/lushu/battleIdle-static.png',width:96,height:128,bytes:18033,fallback:'placeholder.battle'},
@@ -12,7 +15,7 @@ const entries=[
  {key:'botuo.identity',type:'image',path:'assets/characters/botuo/identity.png',width:160,height:192,bytes:14098,fallback:'placeholder.portrait'},
  {key:'botuo.battleIdle',type:'image',path:'assets/characters/botuo/battleIdle-4f.png',width:640,height:160,bytes:31355,fallback:'placeholder.battle'},
  {key:'botuo.battleMove',type:'image',path:'assets/characters/botuo/battleMove-4f.png',width:640,height:160,bytes:158292,fallback:'placeholder.battle'},
- {key:'botuo.battleKo',type:'image',path:'assets/characters/botuo/battleKo.png',width:512,height:512,bytes:157440,fallback:'placeholder.battle'},
+ {key:'botuo.battleKo',type:'image',path:'assets/characters/botuo/battleKo-trimmed.png',width:512,height:331,bytes:158388,fallback:'placeholder.battle'},
  {key:'chiru.portrait',type:'image',path:'assets/characters/chiru/portrait.png',width:128,height:128,bytes:39490,fallback:'placeholder.portrait'},
  {key:'chiru.identity',type:'image',path:'assets/characters/chiru/identity.png',width:160,height:192,bytes:53023,fallback:'placeholder.portrait'},
  {key:'chiru.battleIdle',type:'image',path:'assets/characters/chiru/battleIdle.png',width:160,height:160,bytes:44131,fallback:'placeholder.battle'},

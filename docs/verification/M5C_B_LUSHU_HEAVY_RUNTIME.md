@@ -11,3 +11,12 @@ Status: implementation pending; no runtime/build/deploy PASS yet.
 Task1 RED16/16 observed: immediate damage/no phase. Generalized pending action engine; Basic stale assertions updated only for authorized Heavy opt-in. Ruling: read-only pendingBasics getter preserves diagnostics while all production actions use one pendingActions map. Ruling: reusable clear+manual step exposed missing tacticalState after clear; recreate empty state before Object.keys to preserve safe cleanup/reuse. Covered by Heavy clear cancellation test.
 
 Task1 complete: Heavy16 RED→GREEN; Basic14 retained; focused30/30 PASS. Not deployed.
+
+Task2 asset tests RED3→GREEN4/4; original Basic bytes and Botuo master preserved; all-five scene16748808bytes, both-facing crop transform exact,8cache scene cycles.
+Ruling: Heavy impact must attach to actual resolved target coordinates, unlike existing Basic source-attached contact. Add optional effect attach=target and copy resolve target in shared playback; preserve default Basic geometry. Bridge RED5 failures prove missing attachment/snapshot; existing Arena feedback already synced.
+First full diagnostic:16 failures, largely stale inventory/budget/KO frame and old immediate-Heavy expectations; two Phaser import failures before dependency install. No failures hidden; fix direct contracts before release.
+
+Task2 complete: independent Heavy assets + lossless512x331 KO derivative registered; protected source hashes preserved.
+Task3 focused50/50 PASS; bridge RED5→GREEN target-attachment coordinates copied on resolve and anchored to target. First full regression had stale inventory/pinned-count/frame geometry/immediate-Heavy assertions; updated exact new contracts, preserving master hashes and adding true-time assertions. A Basic-only asset test needed explicit reclaim of a warmed optional collection texture because improved budget no longer evicts it by incidental hard-limit pressure. All required keys remain asserted. Dependencies npm ci19packages. Full782/782 PASS; asset guard68files3749260bytes; BuildPASS (Vite existing large-chunk advisory only), diff-checkPASS. Independent whole-delta review in progress. Not deployed yet.
+
+Independent review preliminary Important: same actor Heavy→Basic action replaces playback but reuses Heavy effect image textures. Separate-actor concurrency tests missed cross-skill effect ownership; must add real AI sequence RED test and clear/rebind effect images on accepted new action before release. Checkpoint remains INCOMPLETE/review-pending; do not deploy.

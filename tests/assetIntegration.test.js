@@ -5,7 +5,7 @@ test('Lab visual inspection is presentation-only session data and rejects invali
  const config=createLabConfig({visualSlot:'battleIdle'});assert.equal(config.options.visualSlot,'battleIdle');assert.throws(()=>createLabConfig({visualSlot:'secret'}));
 });
 test('cast event carries target identity for presentation without changing shared impact',()=>{
- const session=createLabBattleSession(createLabConfig({scenarioId:'aoe'}));assert.equal(session.usePlayerAbility('a1','heavy'),true);const event=session.drainCastEvents()[0];assert.ok(event.targetId?.startsWith('e'));assert.ok(session.actorById(event.targetId).hp<session.actorById(event.targetId).maxHp);
+ const session=createLabBattleSession(createLabConfig({scenarioId:'aoe'}));assert.equal(session.usePlayerAbility('a1','heavy'),true);const event=session.drainCastEvents()[0];assert.ok(event.targetId?.startsWith('e'));assert.equal(event.phase,'start');assert.equal(session.actorById(event.targetId).hp,session.actorById(event.targetId).maxHp);for(const a of session.actors)session.holdPlayerControl(a.instanceId);session.step(.28);assert.ok(session.actorById(event.targetId).hp<session.actorById(event.targetId).maxHp);assert.ok(session.drainCastEvents().some(e=>e.phase==='resolve'&&e.actionId===event.actionId));
 });
 test('ability factory retains optional immutable presentation without changing mechanics',()=>{
  const input={id:'future.heavy',category:'heavy',cooldown:3,maxRange:2,targetingRule:'enemy',effect:{coefficient:1.4}};const base=createAbilityDefinition(input),art={vfx:{form:'sprite',assetKey:'placeholder.actor-strip'}},decorated=createAbilityDefinition({...input,presentation:art});
