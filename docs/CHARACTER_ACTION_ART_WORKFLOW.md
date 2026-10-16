@@ -128,3 +128,13 @@ Before adding another accepted action to the shared renderer, measure the actual
 Independent action-effect images belong to actionId/category; when a new action replaces one on the same actor, destroy/rebind previous effect images. Test actual same-actor Basic→Heavy and Heavy→Basic, not just two different actors. A batched render must show the last real resolved impact once even if a later valid action has already started; preserve simulation/HP/CD/input timestamps, do not invent an animation lock. Repeat renders at the same simulation time must remain visually frozen, and an impact sampled after playback expiry must still clean up.
 
 A budget fix may use deterministic lossless removal of fully transparent canvas rows while preserving the approved original file. Prove complete nonzero-alpha retention, exact pixel equality and adjusted origin/display transforms for BOTH mirror directions. Keeping full logical width avoids the center-of-flip shift caused by asymmetric horizontal trimming. This is packaging, not new character artwork or permission to alter colors/pose. Required decoded/cache/reservation peaks still need actual measurement. Current Heavy uses a512x331 Botuo KO derivative, original512x512 retained, same144px display width/scale2, origin[.5,280/331]; all-five+Basic+Heavy16748808bytes under unchanged16MiB.
+
+
+## Runtime regression lessons — P1 Heavy player feedback (2026-10-16)
+
+- Do not fit a crouched/wide action's full silhouette height to standing Idle height: that inflates the actual head/torso. Compare head/body size against the approved action/Idle at real display scale, use one authored pixel-scale policy across all action cells, and separately align grounded baseline. Preserve masters.
+- Asset presence, manifest pinning and automated tests do not prove visible VFX. Inspect real presenter coordinates, draw order, direction and body-height contact; player phone acceptance remains separate. Keep VFX independently layered when correcting body scale.
+- For an opted-in manual empty Heavy swing, run the authored action lifecycle and sweep in current displayed facing, spend the existing cooldown, and resolve as a miss. No fabricated target, acquire-on-resolve, damage, movement or contact burst. This does not authorize changes to other abilities' mechanics.
+- Include the actual skill-button-to-session-facing bridge in regression coverage; direct session calls alone cannot prove the control forwards the correct direction.
+
+Case evidence: docs/verification/M5C_B_LUSHU_HEAVY_FEEDBACK.md.
