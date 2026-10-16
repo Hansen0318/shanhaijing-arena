@@ -171,12 +171,12 @@ export class BattleSession {
   resolveActions(){
     for(const [id,r] of this.pendingActions){
       const actor=this.actorById(id),target=this.actorById(r.targetId);
-      const reason=!actor||!canCharacterAct(actor)?'source_ko':!target||!canCharacterAct(target)?'target_ko':this.statuses.controlled(id,this.elapsedSeconds)?'control':null;
+      const reason=!actor||!canCharacterAct(actor)?'source_ko':r.targetId!==null&&(!target||!canCharacterAct(target))?'target_ko':this.statuses.controlled(id,this.elapsedSeconds)?'control':null;
       if(reason){this.cancelAction(id,reason);continue;}
       if(r.dueAt>this.elapsedSeconds+1e-9)continue;
       this.pendingActions.delete(id);let hit=false;
       const applyEffect=()=>{
-        if(target.teamId!==actor.teamId&&isTargetInRange(actor,target,r.definition.range))hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
+        if(target&&target.teamId!==actor.teamId&&isTargetInRange(actor,target,r.definition.range))hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
       };
       if(r.category==='basic')finishAbility({caster:actor,slot:actor.abilityState.basic,definition:r.definition,applyEffect});
       else applyEffect();
@@ -280,7 +280,7 @@ export class BattleSession {
     return true;
   }
 
-  usePlayerAbility(instanceId, category) {
+  usePlayerAbility(instanceId, category, aim={}) {
     if (!['heavy', 'special', 'awakening'].includes(category)) return false;
 
     const actor = this.actorById(instanceId);
@@ -295,7 +295,7 @@ export class BattleSession {
     if (!definition || !slot) return false;
 
     actor.controlHandoff.registerPlayerInput(this.elapsedSeconds * 1000);
-    return this.executeAbility(actor, category, 'player');
+    return this.executeAbility(actor, category, 'player',null,aim);
   }
 
   teamContext(actor) {
@@ -305,8 +305,8 @@ export class BattleSession {
     return {allies,enemies,enemyTarget:chooseSoftTarget(actor,enemies,current)};
   }
 
-  // Both controllers execute effects here. Manual air casting retains its existing contract.
-  executeAbility(actor,category,source,requestedTarget=null) {
+  // Both controllers execute effects here; opted-in manual whiffs use the same action lifecycle.
+  executeAbility(actor,category,source,requestedTarget=null,aim={}) {
     const actorDefinition=this.definitionForActor(actor);
     const definition=this.actorAbilityDefinitions.get(actor.instanceId)[actorDefinition.abilities[category]],slot=actor.abilityState[category];
     if(!definition||!slot||this.statuses.controlled(actor.instanceId,this.elapsedSeconds))return false;
@@ -320,10 +320,13 @@ export class BattleSession {
     const canHit=target&&canCharacterAct(target)&&isTargetInRange(actor,target,definition.range);
     if(canHit&&category==='basic')this.cadence.set(actor.instanceId,Math.max(TIER_SAFETY.basicInterval,1/actorDefinition.stats.attackSpeed));
     if(canHit)this.effects.trigger('cast',actor,target,category);
-    if(canHit&&definition.windupMs>0){
-      const r={actionId:`${category}.${++this.nextActionId}`,category,actorId:actor.instanceId,targetId:target.instanceId,source,definition,startedAt:this.elapsedSeconds,dueAt:this.elapsedSeconds+definition.windupMs/1000,origin:{x:actor.x,y:actor.y},target:{x:target.x,y:target.y}};
+    if(definition.windupMs>0&&(canHit||source==='player'&&category!=='basic')){
+      // A whiff owns an aim point, never a damage target. No acquisition at resolve.
+      const facingX=aim.facingX===-1?-1:aim.facingX===1?1:(Math.sign(this.playerMovement.get(actor.instanceId)?.x)|| (actor.teamId===this.allies[0].teamId?1:-1));
+      const attackTarget=canHit?{x:target.x,y:target.y}:{x:actor.x+facingX,y:actor.y};
+      const r={actionId:`${category}.${++this.nextActionId}`,category,actorId:actor.instanceId,targetId:canHit?target.instanceId:null,source,definition,startedAt:this.elapsedSeconds,dueAt:this.elapsedSeconds+definition.windupMs/1000,origin:{x:actor.x,y:actor.y},target:attackTarget};
       if(category!=='basic')finishAbility({caster:actor,slot,definition});
-      this.pendingActions.set(actor.instanceId,r);this.targetIds.set(actor.instanceId,target.instanceId);this.actionEvent(r,'start');return true;
+      this.pendingActions.set(actor.instanceId,r);if(canHit)this.targetIds.set(actor.instanceId,target.instanceId);this.actionEvent(r,'start');return true;
     }
     let applied=false;
     const delay=this.tacticalEnabled&&definition.telegraph&&definition.effect.coefficient>0&&canHit

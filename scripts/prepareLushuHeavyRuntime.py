@@ -33,16 +33,19 @@ assert ko.crop((0,456,512,512)).getchannel('A').getbbox() is None
 trim=ko.crop(rect);records.append(save(trim,old.with_name('battleKo-trimmed.png')))
 atlas=Image.open(OUT/'battleHeavy-4f.png').convert('RGBA');cells=[atlas.crop((i*128,0,(i+1)*128,128)) for i in range(4)]
 idle=Image.open(OUT/'battleIdle-static.png').convert('RGBA');ib=visible(idle);fb=visible(cells[3])
-height=(ib[3]-ib[1])*144/128
-scale=height*128/(fb[3]-fb[1])/72
+# Crouched Heavy height includes pose compression, not a smaller character.
+# Use the approved authored-action pixel scale (Basic), retaining one scale for all four cells.
+# Compare head/torso at actual display size; never stretch a crouch to Idle's full height.
+scale=2.4731182795698925
 idle_foot=(ib[3]-691/724*128)*144/128
 origin=[.5,112/128-idle_foot/(72*scale)]
 assert .05<=scale<=4 and 0<=origin[1]<=1
-manifest={'status':'RUNTIME DERIVATIVES / ENGINEERING PENDING','sourceAcceptance':str((SOURCE/'acceptance.json').relative_to(ROOT)),
+manifest={'status':'RUNTIME DERIVATIVES / FEEDBACK CORRECTION / PHONE PENDING','sourceAcceptance':str((SOURCE/'acceptance.json').relative_to(ROOT)),
           'files':records,'frames':[{'x':i*128,'y':0,'width':128,'height':128} for i in range(4)],
+          'normalization':{'policy':'accepted-action pixel scale, not crouched silhouette height','reference':'P1 Basic accepted runtime scale','sharedAcrossFourFrames':True},
           'origin':origin,'scale':scale,'frameDurationsMs':[200,80,140,180],'coordinateSize':[256,256],
-          'blade':{'assetKey':'lushu.heavyWind','offset':[110,54],'size':[170,170],'layer':4},
-          'contact':{'assetKey':'lushu.heavyImpact','offset':[-75,-80],'size':[150,100],'layer':6,'attach':'target'},
+          'blade':{'assetKey':'lushu.heavyWind','offset':[100,35],'size':[230,230],'layer':6},
+          'contact':{'assetKey':'lushu.heavyImpact','offset':[-105,-145],'size':[210,140],'layer':7,'attach':'target'},
           'visibleBounds':[visible(c) for c in cells],'idleBounds':ib,
           'koTrim':{'source':str(old.relative_to(ROOT)),'sourceSHA256':sha(old),'rect':rect,'origin':[.5,280/331],'scale':2,'savedDecodedBytes':370688,'allRGBAInsideRectPreserved':True,'fullWidthForExactMirroring':True},
           'requiredDecodedBytes':16748808,'hardLimit':16777216}

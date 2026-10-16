@@ -1,0 +1,297 @@
+{
+  "scope": "Static rasterization of real AssetPresenter output; not browser or phone verification",
+  "panels": [
+    {
+      "scenario": "hit",
+      "label": "Idle baseline",
+      "time": 0,
+      "objects": [
+        {
+          "path": "public/assets/characters/lushu/battleIdle-static.png",
+          "frame": [
+            0,
+            0,
+            96,
+            128
+          ],
+          "x": 150,
+          "y": 205,
+          "width": 108,
+          "height": 144,
+          "originX": 0.5,
+          "originY": 0.9544198895027625,
+          "flipX": false,
+          "alpha": 1,
+          "depth": 5,
+          "sha256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2"
+        }
+      ]
+    },
+    {
+      "scenario": "hit",
+      "label": "F1 windup",
+      "time": 0,
+      "objects": [
+        {
+          "path": "public/assets/characters/lushu/battleHeavy-4f.png",
+          "frame": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "x": 150,
+          "y": 205,
+          "width": 178.06451612903226,
+          "height": 178.06451612903226,
+          "originX": 0.5,
+          "originY": 0.8760471715109296,
+          "flipX": false,
+          "alpha": 1,
+          "depth": 5,
+          "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334"
+        }
+      ]
+    },
+    {
+      "scenario": "hit",
+      "label": "F2 supplied wind",
+      "time": 0.2,
+      "objects": [
+        {
+          "path": "public/assets/characters/lushu/battleHeavy-4f.png",
+          "frame": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "x": 150,
+          "y": 205,
+          "width": 178.06451612903226,
+          "height": 178.06451612903226,
+          "originX": 0.5,
+          "originY": 0.8760471715109296,
+          "flipX": false,
+          "alpha": 1,
+          "depth": 5,
+          "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334"
+        },
+        {
+          "path": "public/assets/characters/lushu/heavy-wind.png",
+          "frame": null,
+          "x": 210.51411290322582,
+          "y": 153.34176171805382,
+          "width": 159.9798387096774,
+          "height": 159.9798387096774,
+          "originX": 0.5,
+          "originY": 0.5,
+          "flipX": false,
+          "alpha": 0.55,
+          "depth": 6,
+          "sha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec"
+        }
+      ]
+    },
+    {
+      "scenario": "hit",
+      "label": "F3 supplied impact",
+      "time": 0.28,
+      "objects": [
+        {
+          "path": "public/assets/characters/lushu/battleHeavy-4f.png",
+          "frame": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "x": 150,
+          "y": 205,
+          "width": 178.06451612903226,
+          "height": 178.06451612903226,
+          "originX": 0.5,
+          "originY": 0.8760471715109296,
+          "flipX": false,
+          "alpha": 1,
+          "depth": 5,
+          "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334"
+        },
+        {
+          "path": "public/assets/characters/lushu/heavy-wind.png",
+          "frame": null,
+          "x": 210.5141129032258,
+          "y": 153.34176171805382,
+          "width": 159.9798387096774,
+          "height": 159.9798387096774,
+          "originX": 0.5,
+          "originY": 0.5,
+          "flipX": false,
+          "alpha": 1,
+          "depth": 6,
+          "sha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec"
+        },
+        {
+          "path": "public/assets/characters/lushu/heavy-impact.png",
+          "frame": null,
+          "x": 196.80000000021272,
+          "y": 152.83266129032256,
+          "width": 146.06854838709677,
+          "height": 97.37903225806451,
+          "originX": 0.5,
+          "originY": 0.5,
+          "flipX": false,
+          "alpha": 1,
+          "depth": 7,
+          "sha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65"
+        }
+      ]
+    },
+    {
+      "scenario": "hit",
+      "label": "F4 recovery",
+      "time": 0.42,
+      "objects": [
+        {
+          "path": "public/assets/characters/lushu/battleHeavy-4f.png",
+          "frame": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "x": 150,
+          "y": 205,
+          "width": 178.06451612903226,
+          "height": 178.06451612903226,
+          "originX": 0.5,
+          "originY": 0.8760471715109296,
+          "flipX": false,
+          "alpha": 1,
+          "depth": 5,
+          "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334"
+        },
+        {
+          "path": "public/assets/characters/lushu/heavy-impact.png",
+          "frame": null,
+          "x": 196.80000000021272,
+          "y": 152.83266129032256,
+          "width": 146.06854838709677,
+          "height": 97.37903225806451,
+          "originX": 0.5,
+          "originY": 0.5,
+          "flipX": false,
+          "alpha": 4.440892098500626e-16,
+          "depth": 7,
+          "sha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65"
+        }
+      ]
+    },
+    {
+      "scenario": "hit",
+      "label": "Idle return",
+      "time": 0.6,
+      "objects": [
+        {
+          "path": "public/assets/characters/lushu/battleIdle-static.png",
+          "frame": [
+            0,
+            0,
+            96,
+            128
+          ],
+          "x": 150,
+          "y": 205,
+          "width": 108,
+          "height": 144,
+          "originX": 0.5,
+          "originY": 0.9544198895027625,
+          "flipX": false,
+          "alpha": 1,
+          "depth": 5,
+          "sha256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2"
+        }
+      ]
+    },
+    {
+      "scenario": "air-right",
+      "label": "Air swing / no impact",
+      "time": 0.2,
+      "objects": [
+        {
+          "path": "public/assets/characters/lushu/battleHeavy-4f.png",
+          "frame": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "x": 150,
+          "y": 205,
+          "width": 178.06451612903226,
+          "height": 178.06451612903226,
+          "originX": 0.5,
+          "originY": 0.8760471715109296,
+          "flipX": false,
+          "alpha": 1,
+          "depth": 5,
+          "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334"
+        },
+        {
+          "path": "public/assets/characters/lushu/heavy-wind.png",
+          "frame": null,
+          "x": 210.51411290322582,
+          "y": 153.34176171805382,
+          "width": 159.9798387096774,
+          "height": 159.9798387096774,
+          "originX": 0.5,
+          "originY": 0.5,
+          "flipX": false,
+          "alpha": 0.55,
+          "depth": 6,
+          "sha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec"
+        }
+      ]
+    },
+    {
+      "scenario": "air-left",
+      "label": "Air swing / no impact",
+      "time": 0.2,
+      "objects": [
+        {
+          "path": "public/assets/characters/lushu/battleHeavy-4f.png",
+          "frame": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "x": 150,
+          "y": 205,
+          "width": 178.06451612903226,
+          "height": 178.06451612903226,
+          "originX": 0.5,
+          "originY": 0.8760471715109296,
+          "flipX": true,
+          "alpha": 1,
+          "depth": 5,
+          "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334"
+        },
+        {
+          "path": "public/assets/characters/lushu/heavy-wind.png",
+          "frame": null,
+          "x": 89.48588709677418,
+          "y": 153.34176171805382,
+          "width": 159.9798387096774,
+          "height": 159.9798387096774,
+          "originX": 0.5,
+          "originY": 0.5,
+          "flipX": true,
+          "alpha": 0.55,
+          "depth": 6,
+          "sha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec"
+        }
+      ]
+    }
+  ]
+}

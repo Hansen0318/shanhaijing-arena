@@ -1,5 +1,5 @@
 {
-  "status": "RUNTIME DERIVATIVES / ENGINEERING PENDING",
+  "status": "RUNTIME DERIVATIVES / FEEDBACK CORRECTION / PHONE PENDING",
   "sourceAcceptance": "docs/art/candidates/lushu/heavy/recovered-review-v1/acceptance.json",
   "files": [
     {
@@ -61,11 +61,16 @@
       "height": 128
     }
   ],
+  "normalization": {
+    "policy": "accepted-action pixel scale, not crouched silhouette height",
+    "reference": "P1 Basic accepted runtime scale",
+    "sharedAcrossFourFrames": true
+  },
   "origin": [
     0.5,
-    0.8758107134278165
+    0.8760471715109296
   ],
-  "scale": 3.1944444444444446,
+  "scale": 2.4731182795698925,
   "frameDurationsMs": [
     200,
     80,
@@ -79,26 +84,26 @@
   "blade": {
     "assetKey": "lushu.heavyWind",
     "offset": [
-      110,
-      54
+      100,
+      35
     ],
     "size": [
-      170,
-      170
+      230,
+      230
     ],
-    "layer": 4
+    "layer": 6
   },
   "contact": {
     "assetKey": "lushu.heavyImpact",
     "offset": [
-      -75,
-      -80
+      -105,
+      -145
     ],
     "size": [
-      150,
-      100
+      210,
+      140
     ],
-    "layer": 6,
+    "layer": 7,
     "attach": "target"
   },
   "visibleBounds": [

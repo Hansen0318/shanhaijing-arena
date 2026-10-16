@@ -417,7 +417,7 @@ export class ArenaScene extends Phaser.Scene {
 
       base.on('pointerdown', () => {
         if (this.paused || this.assetGate?.ready===false || !this.battleStarted || !this.selectedId || this.session.result() !== 'running') return;
-        const used = this.session.usePlayerAbility(this.selectedId, category);
+        const used = this.session.usePlayerAbility(this.selectedId, category, {facingX:this.visualAssets?.facings.get(this.selectedId)?.flipX?-1:1});
         if (used) {
           this.renderCastEvents();
           this.applyFrame(this.session.snapshot());

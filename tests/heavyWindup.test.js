@@ -58,9 +58,9 @@ test('movement and ordinary incoming damage do not root or cancel Heavy',()=>{
  const {session:s,actor:a,target:t}=fixture();s.executeAbility(a,'heavy','player',t);a.damage(1);s.setPlayerMovement('a1',{x:0,y:1});s.step(.05);
  assert.ok(a.y>0);assert.equal(s.pendingActions.size,1);assert.equal(s.drainCastEvents().some(e=>e.phase==='cancel'),false);
 });
-test('air cast keeps spent cooldown, no pending attack or fabricated hit',()=>{
+test('air cast keeps spent cooldown, phased swing and no fabricated hit',()=>{
  const {session:s,actor:a,target:t}=fixture();t.x=10;s.executeAbility(a,'heavy','player',t);
- assert.equal(s.pendingActions.size,0);assert.equal(a.abilityState.heavy.cooldownRemaining,3);assert.equal(s.drainDamageEvents().length,0);assert.equal(s.drainCastEvents()[0].hit,false);
+ assert.equal(s.pendingActions.size,1);assert.equal(a.abilityState.heavy.cooldownRemaining,3);assert.equal(s.drainDamageEvents().length,0);const e=s.drainCastEvents()[0];assert.equal(e.hit,false);assert.equal(e.phase,'start');assert.equal(e.targetId,null);
 });
 test('Pause/no step freezes pending Heavy; coarse step and terminal kill clear exactly once',()=>{
  const {session:s,actor:a,target:t,step}=fixture();for(const e of s.enemies)if(e!==t)e.damage(e.hp);t.damage(t.hp-1);

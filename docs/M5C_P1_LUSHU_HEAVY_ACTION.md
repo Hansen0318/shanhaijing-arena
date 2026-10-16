@@ -1,5 +1,11 @@
 # P1 鹿蜀 Heavy「逐風衝」— Chat-first action & VFX art direction
 
+## Current player feedback correction
+
+**P1 HEAVY — PLAYER FEEDBACK CORRECTION / LOCAL PASS / RELEASE PENDING (2026-10-16).** Player phone feedback supersedes prior engineering PASS: body enlarged, VFX not apparent, manual empty swing required. Fixed crouch-height normalization (3.194444→2.473118), common four-frame scale and recomputed ground; supplied wind/impact PNG unchanged, sweep above actor and impact at actual target torso. Shared opted-in nonbasic manual whiff uses real280ms phased action + current facing + cooldown3, no target acquisition/move/damage/RNG or false impact. Basic180ms/source art unchanged. New8 regression cases RED→GREEN incl actual Arena Heavy button; full794/794, guard68files3749260bytes/build/diff PASS; independent review no Critical/Important. Static presenter proof inspected, NOT browser/phone acceptance; Browser connector unavailable. Evidence docs/verification/M5C_B_LUSHU_HEAVY_FEEDBACK.md and heavy-feedback-v1/. NEXT feature release CI/Pages/public fingerprint, then player phone retest; never main merge.
+
+Earlier closure entries below are historical and do not override this feedback.
+
 ## Current closure — deployed / phone pending
 
 **P1 HEAVY — ENGINEERING PASS / PLAYER IPHONE PENDING (2026-10-16).** Deployed source8e567c6d04283b5836fc3fd75e462dd63b61a3ae; current containing closure docs-only. Local786/786, CI Test/Build, guard68files3749260bytes/build/diff/protected masters PASS. Actions1029/38906923263 build116992698282+deploy116992873617 SUCCESS; public15files exact-byte match, index-BCMYloNo.js/battleRuntime-sDqtkTW6.js/index-DcqtNRF0.css. Independent Important VFX ownership finding fixed with RED→GREEN; true280ms move/hit/F3/target-contact/HP sync, Basic180ms preserved. Exact transparent-row BotuoKO derivative retains original master and both-facing grounded pixels; required16748808bytes within unchanged16MiB. Evidence docs/verification/M5C_B_LUSHU_HEAVY_RUNTIME.md + PUBLIC_FINGERPRINT.json. **STOP: player phone test https://hansen0318.github.io/shanhaijing-arena/?v=8e567c6 for Heavy sync/distinction/mirror/Basic return/interruptions/Pause/Restart.** No phone PASS, no Special/Awakening/new character/main merge.
