@@ -1,0 +1,151 @@
+{
+  "sourceCommit": "8e567c6d04283b5836fc3fd75e462dd63b61a3ae",
+  "workflowRun": 38906923263,
+  "url": "https://hansen0318.github.io/shanhaijing-arena/",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 1491,
+      "sha256": "e68a0ceca80a13acc02f569034184a830ddce57274e6d672dd83fe5fca8c889f",
+      "publicSHA256": "e68a0ceca80a13acc02f569034184a830ddce57274e6d672dd83fe5fca8c889f",
+      "publicBytes": 1491,
+      "match": true
+    },
+    {
+      "path": "assets/index-BCMYloNo.js",
+      "bytes": 101231,
+      "sha256": "37f25610a4c46ada72d279930e3a0feb7df7f9daecc41bcdbe2a8175379ec92b",
+      "publicSHA256": "37f25610a4c46ada72d279930e3a0feb7df7f9daecc41bcdbe2a8175379ec92b",
+      "publicBytes": 101231,
+      "match": true
+    },
+    {
+      "path": "assets/index-DcqtNRF0.css",
+      "bytes": 22943,
+      "sha256": "a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da",
+      "publicSHA256": "a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da",
+      "publicBytes": 22943,
+      "match": true
+    },
+    {
+      "path": "assets/battleRuntime-sDqtkTW6.js",
+      "bytes": 1459016,
+      "sha256": "53c1014105891ed883e8cc423fbff294d7dc1e9c4f8b5d8edb432b3ba34364e2",
+      "publicSHA256": "53c1014105891ed883e8cc423fbff294d7dc1e9c4f8b5d8edb432b3ba34364e2",
+      "publicBytes": 1459016,
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleHeavy-4f.png",
+      "bytes": 52398,
+      "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334",
+      "publicSHA256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334",
+      "publicBytes": 52398,
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/heavy-wind.png",
+      "bytes": 11447,
+      "sha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec",
+      "publicSHA256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec",
+      "publicBytes": 11447,
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/heavy-impact.png",
+      "bytes": 10339,
+      "sha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+      "publicSHA256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+      "publicBytes": 10339,
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleBasic-4f.png",
+      "bytes": 51713,
+      "sha256": "2bc2710fdbb5c031339f876d1f69486899ff293711d7dc1b3407dd59ecbcb690",
+      "publicSHA256": "2bc2710fdbb5c031339f876d1f69486899ff293711d7dc1b3407dd59ecbcb690",
+      "publicBytes": 51713,
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/basic-blade.png",
+      "bytes": 5050,
+      "sha256": "8f90ebfc918dfe1cd77845b1502290dd572f636179edcada0876dae2a32475b1",
+      "publicSHA256": "8f90ebfc918dfe1cd77845b1502290dd572f636179edcada0876dae2a32475b1",
+      "publicBytes": 5050,
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/basic-contact.png",
+      "bytes": 2300,
+      "sha256": "2faada0f95507b0616157338b90a976145a870cb03a354a16c9fe5c6761d46f6",
+      "publicSHA256": "2faada0f95507b0616157338b90a976145a870cb03a354a16c9fe5c6761d46f6",
+      "publicBytes": 2300,
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleIdle-static.png",
+      "bytes": 18033,
+      "sha256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2",
+      "publicSHA256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2",
+      "publicBytes": 18033,
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleMove-4f.png",
+      "bytes": 54317,
+      "sha256": "6ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74",
+      "publicSHA256": "6ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74",
+      "publicBytes": 54317,
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleKo.png",
+      "bytes": 150698,
+      "sha256": "03c4e5a75546e8dc67044f42a9ce958bba829e423561e60a2665d7494bf77aff",
+      "publicSHA256": "03c4e5a75546e8dc67044f42a9ce958bba829e423561e60a2665d7494bf77aff",
+      "publicBytes": 150698,
+      "match": true
+    },
+    {
+      "path": "assets/characters/botuo/battleKo-trimmed.png",
+      "bytes": 158388,
+      "sha256": "4a54caf87303df0eb856d5385748c1a88fb1604534851a536eed16d76b30ebf2",
+      "publicSHA256": "4a54caf87303df0eb856d5385748c1a88fb1604534851a536eed16d76b30ebf2",
+      "publicBytes": 158388,
+      "match": true
+    },
+    {
+      "path": "assets/characters/botuo/battleKo.png",
+      "bytes": 157440,
+      "sha256": "037829ec32333a0179414a9ee8ccb57b4eb3ddb83004aa93aea5c78914fc9c57",
+      "publicSHA256": "037829ec32333a0179414a9ee8ccb57b4eb3ddb83004aa93aea5c78914fc9c57",
+      "publicBytes": 157440,
+      "match": true
+    }
+  ],
+  "allMatch": true,
+  "scope": "Current index, CSS/entry/runtime bundles, all new Heavy/KO derivatives and protected Basic/Idle/Move/KO/source KO; no phone smoke claim.",
+  "verifiedAt": "2026-10-16T21:23:10.460659+08:00",
+  "ci": {
+    "id": 38906923263,
+    "runNumber": 1029,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/38906923263",
+    "jobs": [
+      {
+        "id": 116992698282,
+        "name": "build",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 116992873617,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  }
+}

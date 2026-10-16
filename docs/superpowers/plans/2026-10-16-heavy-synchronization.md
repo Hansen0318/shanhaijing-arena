@@ -40,6 +40,8 @@ Feature branch feat/m0-combat-core-20260927 / PR1; no main merge. Preserve origi
 - [x] Write actual BattleSession→presenter no-contact-before-hit test, miss/cancel/KO/reduced/mirror/Pause/Restart and mixed Basic+Heavy ownership.
 - [x] Observe failures, fix only confirmed bridge defects, run focused checks GREEN.
 - [x] Full npm test, asset guard/build, source/art protection and diff checks.
-- [ ] Whole-delta review, fix material findings with RED→GREEN.
-- [ ] Feature push without skipCI, inspect successful Actions/Pages, verify public fingerprints.
-- [ ] Record engineering evidence and separate player phone checklist, stop without main merge.
+- [x] Whole-delta review, fix material findings with RED→GREEN.
+- [x] Feature push without skipCI, inspect successful Actions/Pages, verify public fingerprints.
+- [x] Record engineering evidence and separate player phone checklist, stop without main merge.
+
+Completed engineering/release; phone acceptance is player-owned and pending. See verification ledger.
