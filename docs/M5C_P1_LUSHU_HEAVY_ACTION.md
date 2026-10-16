@@ -1,6 +1,8 @@
 # P1 鹿蜀 Heavy「逐風衝」— Chat-first action & VFX art direction
 
-Status: **PLAYER ART DIRECTION REVIEW PENDING — 2026-10-16**. No production images, animation approval, runtime modifications or deployment at this checkpoint.
+Status: **HEAVY ART DEVELOPMENT AUTHORIZED / F3 CANDIDATE PLAYER REVIEW PENDING — 2026-10-16**.
+
+Player2026-10-16T07:58:33+08:00 asks to confirm Heavy next and develop its action/VFX for review before integration/deploy. Existing proposed direction below and staged F3-first gate applied; no extra design confirmation requested. One candidate saved docs/art/candidates/lushu/heavy/F3-contact-v1.png with exact prompt, checksums, three approved reference hashes and REVIEW_NOTES. Selected original1254RGBA/969599bytes/SHA256b889b214a2c2835cf26ae60b0d98e2086df2cdf1e66df0921f04065f446776b7. No baked VFX. First internal attempt rejected for glow/edge; selected candidate has no obvious visible clipping but faint alpha reaches bottom, so not runtime-ready or approved. STOP for F3 identity/weapon/heavy silhouette review, then remaining poses/VFX/character-only+composite GIF. No game code/public asset/test/build/CI/Pages/main merge. Current Heavy windup0 stays unchanged; art-preview timing is not an authorized gameplay change. Four-skill motion matrix and reproducible source/check notes are in the candidate REVIEW_NOTES.
 
 ## Authority and protected material
 - Recovered AGENTS.md, DEVELOPMENT_PLAYBOOK.md, WORK_PROGRESS.md, STATE.md, action workflow, M5C art rules, current ability data and deployed P1 Basic.

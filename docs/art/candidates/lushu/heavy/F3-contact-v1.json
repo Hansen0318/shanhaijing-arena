@@ -1,0 +1,83 @@
+{
+  "status": "CANDIDATE / PLAYER F3 IDENTITY-WEAPON-POSE REVIEW PENDING / NOT RUNTIME READY",
+  "recoveredHead": "f63cf5395e92156b12873410f89b80c618234a25",
+  "requestAt": "2026-10-16T07:58:33+08:00",
+  "scope": "Player authorized Heavy art development under existing staged review; F3 approval required before remaining poses/VFX/GIF. No integration/deploy before explicit animation approval.",
+  "candidate": {
+    "path": "docs/art/candidates/lushu/heavy/F3-contact-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "bytes": 969599,
+    "sha256": "b889b214a2c2835cf26ae60b0d98e2086df2cdf1e66df0921f04065f446776b7",
+    "alphaBBox": [
+      55,
+      27,
+      1240,
+      1254
+    ],
+    "nonzeroAlphaEdgeClearance": [
+      55,
+      27,
+      14,
+      0
+    ],
+    "alphaOver128BBox": [
+      90,
+      187,
+      1220,
+      1130
+    ],
+    "alphaRange": [
+      0,
+      255
+    ]
+  },
+  "references": [
+    {
+      "path": "public/assets/characters/lushu/identity.png",
+      "role": "canonical identity",
+      "sha256": "bf82ac4f64f517a5503f6a3cabc53e046df8ef9ce16bf9ba5dba8d6567f497a1"
+    },
+    {
+      "path": "public/assets/characters/lushu/battleIdle-4f.png",
+      "role": "canonical battle identity/scale family",
+      "sha256": "ca123eb6eb15c1f32fab2c9d732d40d7db279ed2e4332a1043172d3fb0bef327"
+    },
+    {
+      "path": "docs/art/approved/lushu/basic/F3-contact-v1.png",
+      "role": "approved Basic identity/weapon/style and motion contrast only",
+      "sha256": "0ecfa9f8cba1beec93dbfc823b0f5ac4600e7bf63ff8104ffd719cd8ad700955"
+    }
+  ],
+  "generation": {
+    "tool": "built-in image_gen",
+    "prompt": "F3-contact-v1.prompt.txt",
+    "selectedInternalAttempt": 2,
+    "noPostGenerationPixelEditing": true
+  },
+  "internalRejectedAttempt": {
+    "sha256": "1b456c4b4287ad1f6d0394b1e3627193280c272e4402e5641f3b206de9d03b64",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 1794206,
+    "alphaBBox": [
+      0,
+      13,
+      1504,
+      1024
+    ],
+    "reason": "Background glow/alpha to canvas edges; not acceptable as character-only asset. Not an approved identity reference; not used to generate selected candidate."
+  },
+  "checks": {
+    "decode": "PASS",
+    "referenceHashes": "PASS",
+    "visualWeaponPresent": "inspected",
+    "visualWholeBody": "inspected, no obvious visible clipping",
+    "identityAndPoseApproval": "PLAYER PENDING",
+    "transparentSafetyMargins": "NOT PASS: nonzero-alpha residue reaches bottom; needs reviewed safe preparation before strip/GIF/runtime",
+    "frameBleed": "single pose only; no multiframe strip produced",
+    "runtimeTestBuildDeploy": "NOT RUN / NOT AUTHORIZED AT THIS ART GATE"
+  },
+  "next": "Stop for F3 identity/weapon/heavy silhouette review. On approval, individually author F1/F2/F4, then separate unique Heavy wind/contact effects, safe packaging and effects-off/on normal/slow mirrored GIF for explicit approval. No automatic runtime/Pages."
+}
