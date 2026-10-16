@@ -1,0 +1,71 @@
+{
+  "status": "OLD WORK GIF AND TWO VFX ORIGINALS RECOVERED / PLAYER ACCEPTANCE UNCONFIRMED",
+  "receivedTaipei": "2026-10-16T20:28:41+08:00",
+  "baseHead": "1a3f3a34a0aaeba3f7dbfed8c48d652f66eb6187",
+  "source": "User reattached existing old Work outputs. Byte-exact preservation; no regeneration or recomposition.",
+  "files": [
+    {
+      "uploadedName": "46C13B6D-7028-4726-B1EC-C2766AD21F0C.png",
+      "path": "docs/art/candidates/lushu/heavy/recovered-review-v1/impact-raw-v1.png",
+      "role": "independent contact/air-break impact",
+      "bytes": 765446,
+      "sha256": "c4125c640fa4582fc913c8cc1a447947cdc23912b087b138d8df3d810a08b9b0",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "frames": 1,
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "uploadedName": "A41988C1-8F78-4056-A874-126BFEF533C6.png",
+      "path": "docs/art/candidates/lushu/heavy/recovered-review-v1/wind-sweep-raw-v1.png",
+      "role": "independent wind/blade sweep",
+      "bytes": 779184,
+      "sha256": "5cb1c2f02774a0e0f91a0e0a5112a2b15ecf1cef6d8c755febd90ac970651e5d",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "frames": 1,
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "uploadedName": "lushu-heavy-review-v1.gif",
+      "path": "docs/art/candidates/lushu/heavy/recovered-review-v1/lushu-heavy-review-v1.gif",
+      "role": "existing old Work review GIF",
+      "bytes": 662746,
+      "sha256": "c233bdbc464a62943950619ddbb56054870e4e7c51808b97c7d8b9775dfaa845",
+      "width": 1120,
+      "height": 790,
+      "mode": "P",
+      "frames": 8,
+      "durationsMs": [
+        600,
+        200,
+        80,
+        40,
+        50,
+        50,
+        180,
+        650
+      ],
+      "totalDurationMs": 1850,
+      "loop": 0,
+      "characterPoseCount": 4
+    }
+  ],
+  "observedGif": "1120x790, 8 timeline frames, 1850ms loop; character-only and VFX-on columns; right-facing above and smaller left-mirrored below; approved Idle hold, F1,F2,F3 contact/air break/settle,F4,Idle return. Four character action poses, not eight authored poses.",
+  "approval": "Receipt and file existence do not establish player pose/GIF/VFX approval. Existing F3 A acceptance remains unchanged. No new approval inferred from memory.",
+  "limits": [
+    "Original GIF assembly script, separated transparent character derivatives, safe strip and layout/VFX transform manifest not supplied; exact PNG-to-GIF provenance and reproducibility cannot be independently established.",
+    "No separate slow GIF supplied. No runtime timing approval. GIF footer says 600ms action preview; encoded action segments total600ms, game Heavy windup remains0ms.",
+    "GIF decode and static frame inspection completed; actual device playback/visual acceptance remains player-owned.",
+    "No runtime-safe transparent character/no-bleed/edge certification inferred from GIF or VFX alpha modes."
+  ],
+  "next": "Show recovered GIF; receive player review of four poses and VFX/GIF. Preserve sources; recover/reconstruct documented deterministic packaging only after authorized gate. No runtime/build/deploy/main merge."
+}
