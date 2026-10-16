@@ -1,0 +1,107 @@
+{
+  "recoveredHead": "e4977ce87e61a79718bed555984b8cbc2b329b0b",
+  "dateTaipei": "2026-10-16",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": 1,
+  "status": "RECOVERY VERIFIED / FULL POSE REVIEW PENDING",
+  "inventory": [
+    {
+      "path": "docs/art/candidates/lushu/heavy/F1-windup-v1.png",
+      "bytes": 1178386,
+      "sha256": "b0b86d2a493c843e99fcc9156bc239490b653a39bc114869f19e94a025170b5e"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/F1-windup-v1.prompt.txt",
+      "bytes": 3483,
+      "sha256": "76e2c2db12f54649ec084482d26bb6b88a9af47d8de70041e48431343ecb6c1a"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/F2-strike-v1.png",
+      "bytes": 1150478,
+      "sha256": "91fd3b2635be9446105ddb9c1ce130e39ddb4712e9b7f2a7fbb6aafc8f985e26"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/F2-strike-v1.prompt.txt",
+      "bytes": 3532,
+      "sha256": "b3933fa1fb825d8ef6374d64133ab7fe9373b9a06403a2b09c18175b0e3a8a4d"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/F3-contact-v1.json",
+      "bytes": 3020,
+      "sha256": "7e18e2f100e2479d8ee43ab68da85537d17bd0ae30b32ecc14d30017f0d5cdf9"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/F3-contact-v1.png",
+      "bytes": 969599,
+      "sha256": "b889b214a2c2835cf26ae60b0d98e2086df2cdf1e66df0921f04065f446776b7"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/F3-contact-v1.prompt.txt",
+      "bytes": 3992,
+      "sha256": "546100a98ddcc4a4530a2b6ec15b2f79b25baa52f9b7b327b69999d4b22deeb8"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/F4-recovery-v1.png",
+      "bytes": 1716657,
+      "sha256": "ebcf442bc5cb69c9f13760ff7bbc7a5705bda83cbf3a3bf991f61721ce7fdfa6"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/F4-recovery-v1.prompt.txt",
+      "bytes": 2241,
+      "sha256": "c72bcc6c7c1754c6bc131dcb26046c1f297e81ff1a360e5656ed70feb184a9ed"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/FOUR_POSE_REVIEW_V1.md",
+      "bytes": 4745,
+      "sha256": "4d0836df87e49311701e3257e1340575bb21c881359de75f212bec4df0bcadf6"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/REVIEW_NOTES.md",
+      "bytes": 4019,
+      "sha256": "8a38f6f21d97e8616f7de02ff0315977125518b210ca213d3a940392a805e4e7"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/four-pose-review-layout-v1.json",
+      "bytes": 2558,
+      "sha256": "f36826ee7a6a61314e72839c700b2544a591e3f25a9a55c61d8775a80152535a"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/four-pose-review-v1.png",
+      "bytes": 507091,
+      "sha256": "e41278e44113f4c0448584331407c2bec968927a196a777652eae9ec39d33eb3"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/prepare_pose_review.py",
+      "bytes": 3404,
+      "sha256": "d7922c483f69061bf05bad4848376740988f7113c76a44617616bd75581c781f"
+    },
+    {
+      "path": "docs/art/approved/lushu/heavy/F3-contact-selected-A.jpeg",
+      "bytes": 311619,
+      "sha256": "bd58b7bb4aa4758735d1ec74e65c5ca206836e39b397b6ce38fd4af02cacc5e2"
+    },
+    {
+      "path": "docs/art/approved/lushu/heavy/acceptance.json",
+      "bytes": 2006,
+      "sha256": "f9b11765b687a54aa5727919edba56f7b70e81d688058fa3debbbb18e780e210"
+    }
+  ],
+  "recoveredOldWork": "Existing committed four-pose sources/review/script only. No Heavy GIF, independent VFX, safe transparent strip, or ZIP found in current tree or searched reachable feature history. Private old Work filesystem unavailable; its contents cannot be confirmed. No claim that no private GIF exists.",
+  "approval": "Only exact F3 A approved; F1/F2/F4 and full sequence remain candidates. Conversation memory is not acceptance evidence.",
+  "checks": [
+    "Full decode and recorded SHA256 match for four selected sources and review PNG",
+    "PR1 open, not merged, expected feature branch/head; no PR discussion entries",
+    "Remote heads feature e4977ce and main 16f7393; feature art history inventoried",
+    "Latest Actions run1028 / 38826527028 success at f63cf5395e92156b12873410f89b80c618234a25; not Heavy runtime verification"
+  ],
+  "missing": [
+    "Heavy VFX PNG",
+    "Character-only GIF",
+    "Character+VFX GIF",
+    "Normal/slow/mirrored/Idle-return GIF",
+    "Safe transparent sprite strip",
+    "Heavy review GIF manifest",
+    "Heavy handoff ZIP"
+  ],
+  "next": "Player reviews existing four-pose-review-v1.png, F1/F2/F4 and full sequence. STOP; no GIF authoring, runtime, build, deployment or main merge in this recovery."
+}

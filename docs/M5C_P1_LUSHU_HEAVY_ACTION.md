@@ -1,5 +1,10 @@
 # P1 鹿蜀 Heavy「逐風衝」— Chat-first action & VFX art direction
 
+## New Work recovery2026-10-16
+
+**P1 HEAVY NEW WORK RECOVERY (2026-10-16) — FOUR-POSE REVIEW PENDING.** Recovered remote e4977ce87e61a79718bed555984b8cbc2b329b0b / feature branch / open PR#1. Existing F1/F2/F4 originals, exact accepted F3 A, review sheet/layout and script recovered unchanged; five image hashes/full decodes PASS. No Heavy GIF/independent VFX/safe strip/ZIP found in current tree or searched reachable feature history; Basic GIFs are not Heavy. Old private Work filesystem is unavailable, so unpublished Heavy GIF existence/completion/acceptance cannot be confirmed. Do not regenerate or infer acceptance from conversation memory. Inventory/checks/limits: docs/art/candidates/lushu/heavy/RECOVERY_20261016.json. **STOP for player F1/F2/F4/full-sequence review** of existing four-pose-review-v1.png. F3 A alone remains approved; safe packaging/VFX/GIF and Runtime remain pending. Docs-only recovery, no art/source/public/tests/build/Pages/main merge.
+
+
 ## Latest four-pose candidate review2026-10-16
 
 F3 A remains accepted as exact uploaded JPEG, checkpoint9b7215c. F1 loaded high near-arm knife chamber, F2 diagonal strike-in-progress and F4 retracted/upright recovery are now individual generated candidates, NOT approved. Review docs/art/candidates/lushu/heavy/four-pose-review-v1.png and FOUR_POSE_REVIEW_V1.md; source prompts/original PNGs/checksums and deterministic comparison script are adjacent. Common full-canvas preview scale.30/ground baseline, no original modifications. Initial wrong-hand attempts rejected; transparent-pixel RGB glow misdiagnosis corrected by actual alpha composition, faint edge residue still awaits safe normalization. STOP for full-pose review, then independent Heavy VFX + safe character-only/composite GIF approval; no runtime/Pages yet. Older F3-pending text below is historical and does not override selectedA.
