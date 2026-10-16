@@ -1,5 +1,5 @@
 {
-  "status": "OLD WORK GIF AND TWO VFX ORIGINALS RECOVERED / PLAYER ACCEPTANCE UNCONFIRMED",
+  "status": "RECOVERED / PASS / PLAYER VISUAL APPROVED",
   "receivedTaipei": "2026-10-16T20:28:41+08:00",
   "baseHead": "1a3f3a34a0aaeba3f7dbfed8c48d652f66eb6187",
   "source": "User reattached existing old Work outputs. Byte-exact preservation; no regeneration or recomposition.",
@@ -60,12 +60,12 @@
     }
   ],
   "observedGif": "1120x790, 8 timeline frames, 1850ms loop; character-only and VFX-on columns; right-facing above and smaller left-mirrored below; approved Idle hold, F1,F2,F3 contact/air break/settle,F4,Idle return. Four character action poses, not eight authored poses.",
-  "approval": "Receipt and file existence do not establish player pose/GIF/VFX approval. Existing F3 A acceptance remains unchanged. No new approval inferred from memory.",
+  "approval": "Explicit player visual approval 2026-10-16T20:33:23+08:00; see acceptance.json. Supersedes earlier acceptance-unconfirmed state. Runtime/timing/phone gameplay remain unverified.",
   "limits": [
     "Original GIF assembly script, separated transparent character derivatives, safe strip and layout/VFX transform manifest not supplied; exact PNG-to-GIF provenance and reproducibility cannot be independently established.",
     "No separate slow GIF supplied. No runtime timing approval. GIF footer says 600ms action preview; encoded action segments total600ms, game Heavy windup remains0ms.",
     "GIF decode and static frame inspection completed; actual device playback/visual acceptance remains player-owned.",
     "No runtime-safe transparent character/no-bleed/edge certification inferred from GIF or VFX alpha modes."
   ],
-  "next": "Show recovered GIF; receive player review of four poses and VFX/GIF. Preserve sources; recover/reconstruct documented deterministic packaging only after authorized gate. No runtime/build/deploy/main merge."
+  "next": "Prepare reproducible runtime-safe PNG derivatives from accepted sources and manifest/checksums; inspect real Heavy event/timing path before defining shared runtime integration. Preserve real hit/HP timing unless separately authorized. No regeneration/repeated visual gate for unchanged accepted GIF. No merge main."
 }

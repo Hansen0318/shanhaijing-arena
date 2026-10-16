@@ -1,5 +1,5 @@
 {
-  "status": "PLAYER SELECTED F3 A / REMAINING POSES AND GIF PENDING",
+  "status": "F3 A APPROVED / FULL FOUR-POSE GIF + VFX VISUALLY APPROVED",
   "approvedAt": "2026-10-16T12:42:56+08:00",
   "statements": [
     {
@@ -28,10 +28,16 @@
   },
   "scope": "Approves F3 identity/weapon/pose and authorizes individual F1/F2/F4 candidates. Does not approve unseen poses/effects/GIF, runtime timing changes or deployment.",
   "technicalLimits": "Uploaded JPEG has white background and no alpha. Preserve it byte-for-byte; future transparent derivative/normalization must retain accepted character colors and pose, document and inspect before GIF/runtime. Earlier A raw PNG glow/background issue does not invalidate player's pose selection, but is not a transparency PASS.",
-  "next": "Generate F1/F2/F4 from exact selected A + canonical GitHub identity/Idle. Review full four poses before independent VFX/GIF approval and later integration.",
+  "next": "Prepare reproducible runtime-safe PNG derivatives from accepted sources and manifest/checksums; inspect real Heavy event/timing path before defining shared runtime integration. Preserve real hit/HP timing unless separately authorized. No regeneration/repeated visual gate for unchanged accepted GIF. No merge main.",
   "relatedCandidateSequence": {
     "path": "docs/art/candidates/lushu/heavy/four-pose-review-v1.png",
     "notes": "docs/art/candidates/lushu/heavy/FOUR_POSE_REVIEW_V1.md",
-    "status": "F1/F2/F4 AND FULL SEQUENCE PLAYER REVIEW PENDING; ONLY THIS EXACT F3 A APPROVED"
+    "status": "FULL SEQUENCE VISUALLY ACCEPTED AS SHOWN IN RECOVERED GIF; source-to-GIF exact provenance and runtime-safe derivatives remain unverified"
+  },
+  "historyNote": "Original approvedAt/statements/file retain the exact F3 A selection history; latest full-sequence approval is linked separately.",
+  "fullSequenceAcceptance": {
+    "at": "2026-10-16T20:33:23+08:00",
+    "path": "docs/art/candidates/lushu/heavy/recovered-review-v1/acceptance.json",
+    "gifSha256": "c233bdbc464a62943950619ddbb56054870e4e7c51808b97c7d8b9775dfaa845"
   }
 }

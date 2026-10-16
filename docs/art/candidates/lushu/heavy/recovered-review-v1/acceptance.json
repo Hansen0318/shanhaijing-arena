@@ -1,0 +1,77 @@
+{
+  "status": "PASS / PLAYER VISUAL APPROVED — HEAVY FOUR-POSE GIF + MATCHING VFX",
+  "approvedAt": "2026-10-16T20:33:23+08:00",
+  "statement": "好，確認ok，紀錄進度和規則，接下來呢",
+  "reviewContext": "Direct response to recovered Heavy GIF link and two independent VFX originals at feature commit6df031a14435301a0861687b563ff39da320538f.",
+  "files": [
+    {
+      "uploadedName": "46C13B6D-7028-4726-B1EC-C2766AD21F0C.png",
+      "path": "docs/art/candidates/lushu/heavy/recovered-review-v1/impact-raw-v1.png",
+      "role": "independent contact/air-break impact",
+      "bytes": 765446,
+      "sha256": "c4125c640fa4582fc913c8cc1a447947cdc23912b087b138d8df3d810a08b9b0",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "frames": 1,
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "uploadedName": "A41988C1-8F78-4056-A874-126BFEF533C6.png",
+      "path": "docs/art/candidates/lushu/heavy/recovered-review-v1/wind-sweep-raw-v1.png",
+      "role": "independent wind/blade sweep",
+      "bytes": 779184,
+      "sha256": "5cb1c2f02774a0e0f91a0e0a5112a2b15ecf1cef6d8c755febd90ac970651e5d",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "frames": 1,
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "uploadedName": "lushu-heavy-review-v1.gif",
+      "path": "docs/art/candidates/lushu/heavy/recovered-review-v1/lushu-heavy-review-v1.gif",
+      "role": "existing old Work review GIF",
+      "bytes": 662746,
+      "sha256": "c233bdbc464a62943950619ddbb56054870e4e7c51808b97c7d8b9775dfaa845",
+      "width": 1120,
+      "height": 790,
+      "mode": "P",
+      "frames": 8,
+      "durationsMs": [
+        600,
+        200,
+        80,
+        40,
+        50,
+        50,
+        180,
+        650
+      ],
+      "totalDurationMs": 1850,
+      "loop": 0,
+      "characterPoseCount": 4
+    }
+  ],
+  "scope": [
+    "Visual acceptance of the four action poses as presented in this exact recovered GIF",
+    "Independent wind-sweep and impact VFX and composite presentation",
+    "Effects-off/on, right/left mirror and Idle-return presentation in this GIF"
+  ],
+  "doesNotCertify": [
+    "Runtime integration, actual hit/F3 synchronization, combat timing change, build/deploy, iPhone gameplay acceptance",
+    "Byte-level provenance from source PNGs to the historical GIF; original assembly script and transparent character derivatives are still absent",
+    "Unseen variants, new images or material alterations to accepted poses/effects"
+  ],
+  "protectedF3": {
+    "path": "docs/art/approved/lushu/heavy/F3-contact-selected-A.jpeg",
+    "sha256": "bd58b7bb4aa4758735d1ec74e65c5ca206836e39b397b6ce38fd4af02cacc5e2"
+  },
+  "next": "Prepare reproducible runtime-safe PNG derivatives from accepted sources and manifest/checksums; inspect real Heavy event/timing path before defining shared runtime integration. Preserve real hit/HP timing unless separately authorized. No regeneration/repeated visual gate for unchanged accepted GIF. No merge main."
+}
