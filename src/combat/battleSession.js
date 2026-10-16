@@ -138,35 +138,49 @@ export class BattleSession {
     this.damageEvents = [];
     this.healEvents = [];
     this.pendingHits = [];
-    this.pendingBasics=new Map();this.nextBasicActionId=0;
+    this.pendingActions=new Map();this.nextActionId=0;
     this.statuses = new BattleStatuses();
     this.areas=new PersistentAreas();this.mobilityEvidence=new Map();this.effects=new TierEffectRuntime(this);
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 
-  clearTransientCombat({preserveEvents=false}={}){for(const id of this.pendingBasics.keys())this.cancelBasicAction(id,'battle_end');this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();if(!preserveEvents){this.castEvents=[];this.damageEvents=[];this.healEvents=[];}}
+  clearTransientCombat({preserveEvents=false}={}){for(const id of this.pendingActions.keys())this.cancelAction(id,'battle_end');this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();if(!preserveEvents){this.castEvents=[];this.damageEvents=[];this.healEvents=[];}}
 
-  basicActionEvent(record,phase,hit=false,reason=null){
+  // Compatibility view for existing Basic-only diagnostics. One shared engine
+  // owns every opted-in action; categories select data, never character IDs.
+  get pendingBasics(){return new Map([...this.pendingActions].filter(([,r])=>r.category==='basic'));}
+
+  actionEvent(record,phase,hit=false,reason=null){
     const actor=this.actorById(record.actorId),target=this.actorById(record.targetId);
-    this.recordCast(actor,target,'basic',record.source,record.definition,hit,{phase,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...record.origin},attackTarget:{...record.target}});
+    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...record.origin},attackTarget:{...record.target}});
   }
 
   cancelBasicAction(actorId,reason){
-    const record=this.pendingBasics.get(actorId);if(!record)return false;
-    this.pendingBasics.delete(actorId);cancelAbility(this.actorById(actorId).abilityState.basic);this.basicActionEvent(record,'cancel',false,reason);return true;
+    return this.pendingActions.get(actorId)?.category==='basic'?this.cancelAction(actorId,reason):false;
   }
 
-  resolveBasicActions(){
-    for(const [id,r] of this.pendingBasics){
+  cancelAction(actorId,reason){
+    const record=this.pendingActions.get(actorId);if(!record)return false;
+    this.pendingActions.delete(actorId);
+    // Basic spends cadence; active skills spend cooldown at start. Cancelling
+    // either kind must never refund the resource already spent.
+    if(record.category==='basic')cancelAbility(this.actorById(actorId).abilityState.basic);
+    this.actionEvent(record,'cancel',false,reason);return true;
+  }
+
+  resolveActions(){
+    for(const [id,r] of this.pendingActions){
       const actor=this.actorById(id),target=this.actorById(r.targetId);
       const reason=!actor||!canCharacterAct(actor)?'source_ko':!target||!canCharacterAct(target)?'target_ko':this.statuses.controlled(id,this.elapsedSeconds)?'control':null;
-      if(reason){this.cancelBasicAction(id,reason);continue;}
+      if(reason){this.cancelAction(id,reason);continue;}
       if(r.dueAt>this.elapsedSeconds+1e-9)continue;
-      this.pendingBasics.delete(id);let hit=false;
-      finishAbility({caster:actor,slot:actor.abilityState.basic,definition:r.definition,applyEffect:()=>{
-        if(target.teamId!==actor.teamId&&isTargetInRange(actor,target,r.definition.range))hit=this.applyAbilityEffects(actor,target,r.definition,'basic',r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
-      }});
-      this.basicActionEvent(r,'resolve',hit);
+      this.pendingActions.delete(id);let hit=false;
+      const applyEffect=()=>{
+        if(target.teamId!==actor.teamId&&isTargetInRange(actor,target,r.definition.range))hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
+      };
+      if(r.category==='basic')finishAbility({caster:actor,slot:actor.abilityState.basic,definition:r.definition,applyEffect});
+      else applyEffect();
+      this.actionEvent(r,'resolve',hit);
     }
   }
 
@@ -296,17 +310,20 @@ export class BattleSession {
     const actorDefinition=this.definitionForActor(actor);
     const definition=this.actorAbilityDefinitions.get(actor.instanceId)[actorDefinition.abilities[category]],slot=actor.abilityState[category];
     if(!definition||!slot||this.statuses.controlled(actor.instanceId,this.elapsedSeconds))return false;
-    if(category==='basic'&&(this.pendingBasics.has(actor.instanceId)||this.cadence.get(actor.instanceId)>0||[...this.delayedImpacts.values()].some(hit=>hit.actorId===actor.instanceId&&hit.category==='basic')))return false;
+    const pending=this.pendingActions.get(actor.instanceId);
+    if(pending?.category!=='basic'&&pending&&(source==='ai'||category==='basic'))return false;
+    if(category==='basic'&&(this.pendingActions.has(actor.instanceId)||this.cadence.get(actor.instanceId)>0||[...this.delayedImpacts.values()].some(hit=>hit.actorId===actor.instanceId&&hit.category==='basic')))return false;
     const context=this.teamContext(actor);
     const target=resolveAbilityTarget(actor,definition,{...context,enemyTarget:requestedTarget??context.enemyTarget});
     if(!startAbility({caster:actor,slot,definition,target,source,ignoreRange:source==='player',allowNoTarget:source==='player'}))return false;
-    if(category!=='basic')this.cancelBasicAction(actor.instanceId,'new_ability');
+    if(category!=='basic')this.cancelAction(actor.instanceId,'new_ability');
     const canHit=target&&canCharacterAct(target)&&isTargetInRange(actor,target,definition.range);
     if(canHit&&category==='basic')this.cadence.set(actor.instanceId,Math.max(TIER_SAFETY.basicInterval,1/actorDefinition.stats.attackSpeed));
     if(canHit)this.effects.trigger('cast',actor,target,category);
     if(canHit&&definition.windupMs>0){
-      const r={actionId:`basic.${++this.nextBasicActionId}`,actorId:actor.instanceId,targetId:target.instanceId,source,definition,startedAt:this.elapsedSeconds,dueAt:this.elapsedSeconds+definition.windupMs/1000,origin:{x:actor.x,y:actor.y},target:{x:target.x,y:target.y}};
-      this.pendingBasics.set(actor.instanceId,r);this.targetIds.set(actor.instanceId,target.instanceId);this.basicActionEvent(r,'start');return true;
+      const r={actionId:`${category}.${++this.nextActionId}`,category,actorId:actor.instanceId,targetId:target.instanceId,source,definition,startedAt:this.elapsedSeconds,dueAt:this.elapsedSeconds+definition.windupMs/1000,origin:{x:actor.x,y:actor.y},target:{x:target.x,y:target.y}};
+      if(category!=='basic')finishAbility({caster:actor,slot,definition});
+      this.pendingActions.set(actor.instanceId,r);this.targetIds.set(actor.instanceId,target.instanceId);this.actionEvent(r,'start');return true;
     }
     let applied=false;
     const delay=this.tacticalEnabled&&definition.telegraph&&definition.effect.coefficient>0&&canHit
@@ -344,7 +361,7 @@ export class BattleSession {
   step(deltaSeconds) {
     positiveFinite(deltaSeconds, 'deltaSeconds');
     if (this.result() !== 'running') { this.clearTransientCombat(); return this.snapshot(); }
-    this.resolveBasicActions();
+    this.resolveActions();
     for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.delayedImpacts.delete(id);this.threats.remove(id);}
 
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
@@ -362,7 +379,8 @@ export class BattleSession {
         return { actor, intent: { kind: 'idle', reason: 'ko', targetId: null } };
       }
       const opponents = actor.teamId === this.allies[0].teamId ? this.enemies : this.allies;
-      const state=this.tacticalStates.get(actor.instanceId),actorDefinition=this.definitionForActor(actor);
+      const state=this.tacticalStates.get(actor.instanceId)??{},actorDefinition=this.definitionForActor(actor);
+      if(!this.tacticalStates.has(actor.instanceId))this.tacticalStates.set(actor.instanceId,state);
       const profile=this.tacticalEnabled?actorDefinition.aiProfile:null;
       const controlled=actor.controlHandoff.controlSource(nowMs)==='player';
       if(controlled){for(const k of Object.keys(state))delete state[k];}
@@ -481,7 +499,7 @@ export class BattleSession {
       if(isTargetInRange(actor,target,hit.definition.range))this.applyResolvedDamage(actor,target,this.definitionForActor(actor),this.definitionForActor(target),hit.definition,hit.category,hit.source,{hitIndex:hit.hitIndex,totalHits:hit.totalHits});
     }
     this.pendingHits=this.result()==='running'?remaining:[];
-    this.resolveBasicActions();
+    this.resolveActions();
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
     if(this.result()!=='running')this.clearTransientCombat({preserveEvents:true});
     return this.snapshot();
