@@ -28,5 +28,10 @@
   },
   "scope": "Approves F3 identity/weapon/pose and authorizes individual F1/F2/F4 candidates. Does not approve unseen poses/effects/GIF, runtime timing changes or deployment.",
   "technicalLimits": "Uploaded JPEG has white background and no alpha. Preserve it byte-for-byte; future transparent derivative/normalization must retain accepted character colors and pose, document and inspect before GIF/runtime. Earlier A raw PNG glow/background issue does not invalidate player's pose selection, but is not a transparency PASS.",
-  "next": "Generate F1/F2/F4 from exact selected A + canonical GitHub identity/Idle. Review full four poses before independent VFX/GIF approval and later integration."
+  "next": "Generate F1/F2/F4 from exact selected A + canonical GitHub identity/Idle. Review full four poses before independent VFX/GIF approval and later integration.",
+  "relatedCandidateSequence": {
+    "path": "docs/art/candidates/lushu/heavy/four-pose-review-v1.png",
+    "notes": "docs/art/candidates/lushu/heavy/FOUR_POSE_REVIEW_V1.md",
+    "status": "F1/F2/F4 AND FULL SEQUENCE PLAYER REVIEW PENDING; ONLY THIS EXACT F3 A APPROVED"
+  }
 }

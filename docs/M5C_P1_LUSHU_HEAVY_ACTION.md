@@ -1,5 +1,9 @@
 # P1 鹿蜀 Heavy「逐風衝」— Chat-first action & VFX art direction
 
+## Latest four-pose candidate review2026-10-16
+
+F3 A remains accepted as exact uploaded JPEG, checkpoint9b7215c. F1 loaded high near-arm knife chamber, F2 diagonal strike-in-progress and F4 retracted/upright recovery are now individual generated candidates, NOT approved. Review docs/art/candidates/lushu/heavy/four-pose-review-v1.png and FOUR_POSE_REVIEW_V1.md; source prompts/original PNGs/checksums and deterministic comparison script are adjacent. Common full-canvas preview scale.30/ground baseline, no original modifications. Initial wrong-hand attempts rejected; transparent-pixel RGB glow misdiagnosis corrected by actual alpha composition, faint edge residue still awaits safe normalization. STOP for full-pose review, then independent Heavy VFX + safe character-only/composite GIF approval; no runtime/Pages yet. Older F3-pending text below is historical and does not override selectedA.
+
 ## Latest selection2026-10-16T12:42:56+08:00 — A, not B
 
 Player first selected「第一個圖片」then attached exact image「這張」. This selects the WIDE A pose, not the later square candidate currently named candidates/lushu/heavy/F3-contact-v1.png. Preserve exact uploaded master at docs/art/approved/lushu/heavy/F3-contact-selected-A.jpeg (1536x1024RGB/311619bytes/SHA256bd58b7bb4aa4758735d1ec74e65c5ca206836e39b397b6ce38fd4af02cacc5e2); approval statements/scope in adjacent acceptance.json. A's earlier internal background/alpha rejection was technical, not a veto over the player's pose choice. White JPEG has no alpha; do not treat selected art as runtime-ready or overwrite it for transparency. Next individually produce F1/F2/F4 from selected A plus approved canonical identity/Idle; STOP for full-pose review before VFX/GIF approval. No runtime or deployment authorization from unseen material. Historical F3-pending/B references below are superseded by this selection.

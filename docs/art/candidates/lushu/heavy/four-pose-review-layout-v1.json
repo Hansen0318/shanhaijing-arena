@@ -1,0 +1,110 @@
+{
+  "status": "PLAYER FOUR-POSE REVIEW PENDING / NOT A SPRITE STRIP",
+  "scalePolicy": "uniform .30 full-canvas preview scale, common visible foot baseline440; no source cropping/deletion/redraw",
+  "files": [
+    {
+      "label": "F1 - Windup",
+      "path": "docs/art/candidates/lushu/heavy/F1-windup-v1.png",
+      "sha256": "b0b86d2a493c843e99fcc9156bc239490b653a39bc114869f19e94a025170b5e",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1178386,
+      "mode": "RGBA",
+      "alphaBBox": [
+        0,
+        22,
+        1220,
+        1230
+      ],
+      "visibleBoundsForPlacementOnly": [
+        28,
+        131,
+        1217,
+        1192
+      ],
+      "previewScale": 0.3,
+      "translation": [
+        82,
+        82
+      ]
+    },
+    {
+      "label": "F2 - Strike",
+      "path": "docs/art/candidates/lushu/heavy/F2-strike-v1.png",
+      "sha256": "91fd3b2635be9446105ddb9c1ce130e39ddb4712e9b7f2a7fbb6aafc8f985e26",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1150478,
+      "mode": "RGBA",
+      "alphaBBox": [
+        0,
+        21,
+        1252,
+        1254
+      ],
+      "visibleBoundsForPlacementOnly": [
+        18,
+        128,
+        1249,
+        1155
+      ],
+      "previewScale": 0.3,
+      "translation": [
+        622,
+        94
+      ]
+    },
+    {
+      "label": "F3 - Selected A",
+      "path": "docs/art/approved/lushu/heavy/F3-contact-selected-A.jpeg",
+      "sha256": "bd58b7bb4aa4758735d1ec74e65c5ca206836e39b397b6ce38fd4af02cacc5e2",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 311619,
+      "mode": "RGB",
+      "alphaBBox": null,
+      "visibleBoundsForPlacementOnly": [
+        63,
+        15,
+        1500,
+        1009
+      ],
+      "previewScale": 0.3,
+      "translation": [
+        1119,
+        137
+      ]
+    },
+    {
+      "label": "F4 - Recovery",
+      "path": "docs/art/candidates/lushu/heavy/F4-recovery-v1.png",
+      "sha256": "ebcf442bc5cb69c9f13760ff7bbc7a5705bda83cbf3a3bf991f61721ce7fdfa6",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1716657,
+      "mode": "RGBA",
+      "alphaBBox": [
+        41,
+        13,
+        1484,
+        1010
+      ],
+      "visibleBoundsForPlacementOnly": [
+        160,
+        15,
+        1378,
+        1008
+      ],
+      "previewScale": 0.3,
+      "translation": [
+        1659,
+        138
+      ]
+    }
+  ],
+  "reviewImage": {
+    "path": "docs/art/candidates/lushu/heavy/four-pose-review-v1.png",
+    "sha256": "e41278e44113f4c0448584331407c2bec968927a196a777652eae9ec39d33eb3",
+    "bytes": 507091
+  }
+}

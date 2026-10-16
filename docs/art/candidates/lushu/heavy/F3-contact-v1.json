@@ -1,5 +1,6 @@
 {
-  "status": "CANDIDATE / PLAYER F3 IDENTITY-WEAPON-POSE REVIEW PENDING / NOT RUNTIME READY",
+  "status": "HISTORICAL CANDIDATE B / NOT SELECTED / PLAYER SELECTED WIDE A INSTEAD",
+  "supersededBy": "docs/art/approved/lushu/heavy/acceptance.json",
   "recoveredHead": "f63cf5395e92156b12873410f89b80c618234a25",
   "requestAt": "2026-10-16T07:58:33+08:00",
   "scope": "Player authorized Heavy art development under existing staged review; F3 approval required before remaining poses/VFX/GIF. No integration/deploy before explicit animation approval.",
