@@ -55,3 +55,40 @@ test('target attachment copies real resolved coordinates and rejects old action 
  const e={actorId:'a',actionId:'one',phase:'resolve',resolvedAt:.28,hit:true,target:{x:1.9,y:.1}};p.handle(e,d);e.target.x=99;
  assert.deepEqual(p.sample('a',.28).contactTarget,{x:1.9,y:.1});p.handle({...e,actionId:'stale',target:{x:50,y:50}},d);assert.equal(p.sample('a',.28).contactTarget.x,1.9);
 });
+test('real AI Heavy→Basic replaces effect textures without changing either skill cadence',async()=>{
+ const f=await fixture(),s=f.session;s.executeAbility(f.actor,'heavy','ai',f.target);paint(f);
+ let sawHeavy=false,sawBasicWind=false,sawBasicContact=false;
+ for(let i=0;i<14;i++){
+  for(const a of s.actors)if(a!==f.actor)s.holdPlayerControl(a.instanceId);
+  s.step(.05);paint(f);const image=f.p.actorSprites.get('a1'),effects=f.p.actionEffects.get('a1');
+  if(image.texture.endsWith('battleHeavy')&&effects?.get('contact')?.visible){sawHeavy=true;assert.ok(effects.get('contact').texture.endsWith('lushu.heavyImpact'));}
+  if(image.texture.endsWith('battleBasic')&&effects?.get('blade')?.visible){sawBasicWind=true;assert.ok(effects.get('blade').texture.endsWith('lushu.basicBlade'));}
+  if(image.texture.endsWith('battleBasic')&&effects?.get('contact')?.visible){sawBasicContact=true;assert.ok(effects.get('contact').texture.endsWith('lushu.basicContact'));}
+ }
+ assert.ok(sawHeavy&&sawBasicWind&&sawBasicContact);f.p.destroy();
+});
+test('same actor resolved Basic→Heavy binds Heavy textures, duplicate/stale starts preserve the current action',async()=>{
+ const f=await fixture(),p=f.p,d=rosterCatalog.P1,frame={allies:[{instanceId:'a1',definitionId:'P1',x:0,y:0,hp:1}],enemies:[]};
+ const start=(category,id,time)=>({actorId:'a1',category,actionId:id,phase:'start',startedAt:time,origin:{x:0,y:0},target:{x:2,y:0}});
+ p.cast(start('basic','b',0),d,0);p.cast({actorId:'a1',category:'basic',actionId:'b',phase:'resolve',resolvedAt:.18,hit:true,target:{x:2,y:0}},d,.18);p.render(frame,.18,rosterCatalog);
+ const old=p.actionEffects.get('a1').get('contact');p.cast(start('heavy','h',.2),d,.2);p.render(frame,.4,rosterCatalog);
+ assert.ok(old.destroyed);const wind=p.actionEffects.get('a1').get('blade');assert.ok(wind.texture.endsWith('lushu.heavyWind'));
+ p.cast(start('heavy','h',.2),d,.4);p.cast(start('basic','stale',.1),d,.4);p.render(frame,.4,rosterCatalog);assert.equal(p.actionEffects.get('a1').get('blade'),wind);assert.ok(!wind.destroyed);f.p.destroy();
+});
+test('batched resolve+next start paints the real Heavy impact once without delaying next simulation action',async()=>{
+ const f=await fixture(),p=f.p,d=rosterCatalog.P1,frame={allies:[{instanceId:'a1',definitionId:'P1',x:1.35,y:0,hp:1}],enemies:[]};
+ p.cast({actorId:'a1',category:'heavy',actionId:'h',phase:'start',startedAt:0,origin:{x:0,y:0},target:{x:2,y:0}},d,0);p.render(frame,0,rosterCatalog);
+ p.cast({actorId:'a1',category:'heavy',actionId:'h',phase:'resolve',resolvedAt:.3,hit:true,target:{x:2,y:0}},d,.35);
+ p.cast({actorId:'a1',category:'basic',actionId:'b',phase:'start',startedAt:.3,origin:{x:1.35,y:0},target:{x:2,y:0}},d,.35);
+ p.render(frame,.35,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleHeavy'));assert.equal(p.actorSprites.get('a1').frame,'256.0.128.128');assert.ok(contact(f)?.visible);
+ const effect=contact(f);p.render(frame,.35,rosterCatalog);assert.equal(contact(f),effect);assert.equal(effect.alpha,1,'Pause remains fixed');
+ assert.equal(p.actions.active.get('a1').actionId,'b','simulation/action token was never postponed');
+ p.render(frame,.4,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleBasic'));assert.ok(!contact(f)?.visible);f.p.destroy();
+});
+test('late first paint of a resolved hit clears its one-frame effect even after playback already expired',async()=>{
+ const f=await fixture(),p=f.p,d=rosterCatalog.P1,frame={allies:[{instanceId:'a1',definitionId:'P1',x:1,y:0,hp:1}],enemies:[]};
+ p.cast({actorId:'a1',category:'heavy',actionId:'h',phase:'start',startedAt:0,origin:{x:0,y:0},target:{x:2,y:0}},d,0);
+ p.cast({actorId:'a1',category:'heavy',actionId:'h',phase:'resolve',resolvedAt:.28,hit:true,target:{x:2,y:0}},d,1);
+ p.render(frame,1,rosterCatalog);assert.ok(contact(f)?.visible);assert.equal(p.actions.active.size,0);
+ p.render(frame,1.05,rosterCatalog);assert.equal(p.actionEffects.size,0);assert.equal(p.pendingImpactViews.size,0);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleIdle'));f.p.destroy();
+});
