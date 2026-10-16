@@ -1,0 +1,371 @@
+{
+  "status": "PACKAGING PREPARED / VISUAL QA AND SHARED RUNTIME PREFLIGHT REQUIRED",
+  "sourceAcceptance": "docs/art/candidates/lushu/heavy/recovered-review-v1/acceptance.json",
+  "sourceGIFUnchanged": {
+    "uploadedName": "lushu-heavy-review-v1.gif",
+    "path": "docs/art/candidates/lushu/heavy/recovered-review-v1/lushu-heavy-review-v1.gif",
+    "role": "existing old Work review GIF",
+    "bytes": 662746,
+    "sha256": "c233bdbc464a62943950619ddbb56054870e4e7c51808b97c7d8b9775dfaa845",
+    "width": 1120,
+    "height": 790,
+    "mode": "P",
+    "frames": 8,
+    "durationsMs": [
+      600,
+      200,
+      80,
+      40,
+      50,
+      50,
+      180,
+      650
+    ],
+    "totalDurationMs": 1850,
+    "loop": 0,
+    "characterPoseCount": 4
+  },
+  "toolVersions": {
+    "python": "3.12.14",
+    "pillow": "12.3.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "layout": [
+    {
+      "source": "docs/art/candidates/lushu/heavy/F1-windup-v1.png",
+      "sourceSHA256": "b0b86d2a493c843e99fcc9156bc239490b653a39bc114869f19e94a025170b5e",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "extraction": {
+        "operation": "preserve original RGBA including all faint alpha pixels"
+      },
+      "fullCanvasScale": 0.145,
+      "fullCanvasResize": [
+        182,
+        182
+      ],
+      "translation": [
+        37,
+        51
+      ],
+      "visibleFootSource": 1192,
+      "alphaBounds": [
+        38,
+        67,
+        216,
+        227
+      ],
+      "visibleBounds": [
+        41,
+        70,
+        214,
+        224
+      ],
+      "marginsLTRB": [
+        38,
+        67,
+        40,
+        29
+      ]
+    },
+    {
+      "source": "docs/art/candidates/lushu/heavy/F2-strike-v1.png",
+      "sourceSHA256": "91fd3b2635be9446105ddb9c1ce130e39ddb4712e9b7f2a7fbb6aafc8f985e26",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "extraction": {
+        "operation": "preserve original RGBA including all faint alpha pixels"
+      },
+      "fullCanvasScale": 0.145,
+      "fullCanvasResize": [
+        182,
+        182
+      ],
+      "translation": [
+        37,
+        57
+      ],
+      "visibleFootSource": 1155,
+      "alphaBounds": [
+        37,
+        65,
+        219,
+        227
+      ],
+      "visibleBounds": [
+        40,
+        76,
+        218,
+        225
+      ],
+      "marginsLTRB": [
+        37,
+        65,
+        37,
+        29
+      ]
+    },
+    {
+      "source": "docs/art/approved/lushu/heavy/F3-contact-selected-A.jpeg",
+      "sourceSHA256": "bd58b7bb4aa4758735d1ec74e65c5ca206836e39b397b6ce38fd4af02cacc5e2",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "extraction": {
+        "operation": "alpha-only JPEG background extraction; original RGB retained at every pixel",
+        "whiteMinimum": 180,
+        "neutralChannelSpreadMaximum": 24,
+        "connectivity": 4,
+        "negativeSpaceSeedsXY": [
+          [
+            334,
+            452
+          ],
+          [
+            615,
+            521
+          ],
+          [
+            208,
+            715
+          ],
+          [
+            241,
+            754
+          ]
+        ],
+        "removedBackgroundPixels": 1038760,
+        "notGlobalWhiteKey": true,
+        "sourceRGBChangedPixels": 0
+      },
+      "fullCanvasScale": 0.145,
+      "fullCanvasResize": [
+        223,
+        148
+      ],
+      "translation": [
+        16,
+        78
+      ],
+      "visibleFootSource": 1009,
+      "alphaBounds": [
+        23,
+        78,
+        236,
+        226
+      ],
+      "visibleBounds": [
+        25,
+        80,
+        234,
+        224
+      ],
+      "marginsLTRB": [
+        23,
+        78,
+        20,
+        30
+      ]
+    },
+    {
+      "source": "docs/art/candidates/lushu/heavy/F4-recovery-v1.png",
+      "sourceSHA256": "ebcf442bc5cb69c9f13760ff7bbc7a5705bda83cbf3a3bf991f61721ce7fdfa6",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "extraction": {
+        "operation": "preserve original RGBA including all faint alpha pixels"
+      },
+      "fullCanvasScale": 0.145,
+      "fullCanvasResize": [
+        223,
+        148
+      ],
+      "translation": [
+        16,
+        78
+      ],
+      "visibleFootSource": 1008,
+      "alphaBounds": [
+        37,
+        78,
+        219,
+        226
+      ],
+      "visibleBounds": [
+        39,
+        80,
+        216,
+        224
+      ],
+      "marginsLTRB": [
+        37,
+        78,
+        37,
+        30
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/F1-cell.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 43068,
+      "sha256": "ce108e77f21dac076c954ae34599b933ee7fa15c46a6f3e92bbdbcb5e00000cf",
+      "decodedBytes": 262144,
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/F2-cell.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 41622,
+      "sha256": "b78e9fc4989b9ce4feba69855900813e06496d193e39ffedd4d4dedc7551a947",
+      "decodedBytes": 262144,
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/F3-extracted-source.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1117818,
+      "sha256": "38a149efb17fcd7e23e856818c6c71d4423a38100f8c9e6f5c47b746821524aa",
+      "decodedBytes": 6291456,
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/F3-cell.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 43598,
+      "sha256": "92c505fa6d341c65327f92b34ec3e1a9131640d97d1e190524b49dff30e3cd2b",
+      "decodedBytes": 262144,
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/F4-cell.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 36935,
+      "sha256": "3e3463446ff4df7b7afc4831e3d4162a4ede5b52ac3aef72320e760f0b8a0695",
+      "decodedBytes": 262144,
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/heavy-4f-safe-256.png",
+      "width": 1024,
+      "height": 256,
+      "bytes": 162990,
+      "sha256": "3155f87986a8c228f6933a5cce6634eed2479dcdbae92100dbed86e85aea49ef",
+      "decodedBytes": 1048576,
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/heavy-4f-128.png",
+      "width": 512,
+      "height": 128,
+      "bytes": 52398,
+      "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334",
+      "decodedBytes": 262144,
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/heavy-wind.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 14270,
+      "sha256": "c158e546ad7b9d153cda90ae67c6e80eb6c2ccb607c5681015ef6e2fca6459a3",
+      "decodedBytes": 65536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/heavy-impact.png",
+      "width": 144,
+      "height": 96,
+      "bytes": 12422,
+      "sha256": "3adec30d10d8dc519618db1e82a9e3424c25ace4836381b4f9cccf2d745123b4",
+      "decodedBytes": 55296,
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/runtime-prep-v1/alpha-proof.png",
+      "width": 1024,
+      "height": 600,
+      "bytes": 273677,
+      "sha256": "bc80a3b4f22adbd87bd9dfcc6e8d9c080a6073cdf0bf2881e668b8a125ba0b48",
+      "decodedBytes": 2457600,
+      "mode": "RGB"
+    }
+  ],
+  "equalCellSize": [
+    256,
+    256
+  ],
+  "runtimeCellSize": [
+    128,
+    128
+  ],
+  "groundBaseline": 224,
+  "runtimeGroundBaseline": 112.0,
+  "runtimeVisibleBounds": [
+    [
+      21,
+      35,
+      107,
+      112
+    ],
+    [
+      20,
+      38,
+      109,
+      112
+    ],
+    [
+      13,
+      40,
+      116,
+      112
+    ],
+    [
+      20,
+      40,
+      107,
+      112
+    ]
+  ],
+  "sourcePolicy": "Full-canvas uniform resize/padding. F1/F2/F4 original alpha untouched. F3 only explicit background alpha extraction; RGB unchanged. No source pose crop/redraw, no GIF sprite extraction.",
+  "timing": {
+    "previewFramesMs": [
+      200,
+      80,
+      140,
+      180
+    ],
+    "contactOffsetMs": 280,
+    "actualHeavyWindupMs": 0,
+    "runtimeTimingApproved": false
+  },
+  "budget": {
+    "unchangedHardLimit": 16777216,
+    "baselineRequiredDecodedBytes": 16763144,
+    "additionalHeavyRuntimeBytes": 382976,
+    "naiveAllPinnedTotal": 17146120,
+    "naiveAllPinnedFits": false,
+    "requiredNext": "Shared action residency/load-readiness design; cannot pin all new Heavy assets alongside existing required set under16MiB. Do not raise limit."
+  },
+  "notCertified": [
+    "Historical PNG-to-GIF exact composition/provenance",
+    "Actual Arena placement/scale/effect anchors",
+    "Hit/F3 synchronization",
+    "Full encounter texture residency",
+    "Build/deploy/phone gameplay"
+  ]
+}

@@ -1,0 +1,550 @@
+{
+  "status": "PREFLIGHT VERIFIED / ENGINEERING DESIGN REQUIRED",
+  "ability": {
+    "id": "P1.heavy",
+    "name": "逐風衝",
+    "description": "短距切入後重擊。",
+    "category": "heavy",
+    "cooldown": 3,
+    "windupMs": 0,
+    "unlockTier": 0,
+    "canCrit": true,
+    "critChance": 0.2,
+    "critMultiplier": 1.75,
+    "range": 3,
+    "minRange": 0,
+    "preferredRange": 0.9,
+    "maxRange": 3,
+    "targetingRule": "enemy",
+    "telegraph": null,
+    "effect": {
+      "coefficient": 1.4,
+      "movement": {
+        "kind": "engage",
+        "distance": 1.6,
+        "stopDistance": 0.65
+      }
+    },
+    "ai": {
+      "priority": 20
+    },
+    "tierScaling": {
+      "aoe": false,
+      "mobility": true,
+      "status": false,
+      "windup": false
+    }
+  },
+  "observations": [
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "targetX": 2,
+      "before": {
+        "time": 0,
+        "actorX": 0,
+        "targetHp": 285
+      },
+      "after": {
+        "time": 0,
+        "actorX": 1.35,
+        "targetHp": 270.58,
+        "cooldownRemaining": 3
+      },
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 1.35,
+            "y": 0
+          },
+          "target": {
+            "x": 2,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 3
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 14.419999999999998,
+          "critical": false,
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        }
+      ],
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "targetX": -2,
+      "before": {
+        "time": 0,
+        "actorX": 0,
+        "targetHp": 285
+      },
+      "after": {
+        "time": 0,
+        "actorX": -1.35,
+        "targetHp": 270.58,
+        "cooldownRemaining": 3
+      },
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": -1.35,
+            "y": 0
+          },
+          "target": {
+            "x": -2,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 3
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 14.419999999999998,
+          "critical": false,
+          "position": {
+            "x": -2,
+            "y": 0
+          }
+        }
+      ],
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "targetX": 2,
+      "before": {
+        "time": 0,
+        "actorX": 0,
+        "targetHp": 285
+      },
+      "after": {
+        "time": 0,
+        "actorX": 1.35,
+        "targetHp": 270.58,
+        "cooldownRemaining": 3
+      },
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 1.35,
+            "y": 0
+          },
+          "target": {
+            "x": 2,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 3
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 14.419999999999998,
+          "critical": false,
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        }
+      ],
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "targetX": -2,
+      "before": {
+        "time": 0,
+        "actorX": 0,
+        "targetHp": 285
+      },
+      "after": {
+        "time": 0,
+        "actorX": -1.35,
+        "targetHp": 270.58,
+        "cooldownRemaining": 3
+      },
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": -1.35,
+            "y": 0
+          },
+          "target": {
+            "x": -2,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 3
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 14.419999999999998,
+          "critical": false,
+          "position": {
+            "x": -2,
+            "y": 0
+          }
+        }
+      ],
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "targetX": 2,
+      "before": {
+        "time": 0,
+        "actorX": 0,
+        "targetHp": 285
+      },
+      "after": {
+        "time": 0,
+        "actorX": 1.35,
+        "targetHp": 270.58,
+        "cooldownRemaining": 3
+      },
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 1.35,
+            "y": 0
+          },
+          "target": {
+            "x": 2,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 3
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 14.419999999999998,
+          "critical": false,
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        }
+      ],
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "targetX": -2,
+      "before": {
+        "time": 0,
+        "actorX": 0,
+        "targetHp": 285
+      },
+      "after": {
+        "time": 0,
+        "actorX": -1.35,
+        "targetHp": 270.58,
+        "cooldownRemaining": 3
+      },
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": -1.35,
+            "y": 0
+          },
+          "target": {
+            "x": -2,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 3
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 14.419999999999998,
+          "critical": false,
+          "position": {
+            "x": -2,
+            "y": 0
+          }
+        }
+      ],
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "targetX": 2,
+      "before": {
+        "time": 0,
+        "actorX": 0,
+        "targetHp": 285
+      },
+      "after": {
+        "time": 0,
+        "actorX": 1.35,
+        "targetHp": 270.58,
+        "cooldownRemaining": 3
+      },
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 1.35,
+            "y": 0
+          },
+          "target": {
+            "x": 2,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 3
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 14.419999999999998,
+          "critical": false,
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        }
+      ],
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "targetX": -2,
+      "before": {
+        "time": 0,
+        "actorX": 0,
+        "targetHp": 285
+      },
+      "after": {
+        "time": 0,
+        "actorX": -1.35,
+        "targetHp": 270.58,
+        "cooldownRemaining": 3
+      },
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": -1.35,
+            "y": 0
+          },
+          "target": {
+            "x": -2,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 3
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 14.419999999999998,
+          "critical": false,
+          "position": {
+            "x": -2,
+            "y": 0
+          }
+        }
+      ],
+      "existingPhasedPlaybackStarted": false
+    }
+  ],
+  "protectedSourceHashes": {
+    "src/roster/abilities.js": "af3e8a0f075e9fcef9ecb560a33e7e5b4df834422e08f6eeb367e124383961fb",
+    "src/combat/ability.js": "e3adacd23d2b3f421cf88a96bd03185cd2e14c71d3569487021977c3876d6787",
+    "src/combat/battleSession.js": "5b96b5c32841470bf25822d53ffba9e848ea93b29681519176b3588166e4b208",
+    "src/combat/abilityMovement.js": "cf2556bd232e99b55207324e61c45160bae1a994b7f5959072c3fccdf8d72415",
+    "src/assets/actionPlayback.js": "a4c098d55b8ecd929973bbf94818c46d4a0b2b5e912cba5c0c4ed8a76b1e9ac5",
+    "src/runtime/assetPresenter.js": "be21132594ad6f0bf471b5bbdc850692c66f544709207b88795fa379c8b9efef"
+  },
+  "budget": {
+    "requiredBaseline": 16763144,
+    "baselineFiles": [
+      {
+        "key": "lushu.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "botuo.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "chiru.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "jiuweihu.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "xingxing.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "lushu.battleIdle",
+        "decodedBytes": 49152
+      },
+      {
+        "key": "botuo.battleIdle",
+        "decodedBytes": 409600
+      },
+      {
+        "key": "chiru.battleIdle",
+        "decodedBytes": 102400
+      },
+      {
+        "key": "jiuweihu.battleIdle",
+        "decodedBytes": 102400
+      },
+      {
+        "key": "xingxing.battleIdle",
+        "decodedBytes": 102400
+      },
+      {
+        "key": "lushu.battleMove",
+        "decodedBytes": 196608
+      },
+      {
+        "key": "lushu.battleKo",
+        "decodedBytes": 1048576
+      },
+      {
+        "key": "botuo.battleMove",
+        "decodedBytes": 409600
+      },
+      {
+        "key": "botuo.battleKo",
+        "decodedBytes": 1048576
+      },
+      {
+        "key": "chiru.battleMove",
+        "decodedBytes": 409600
+      },
+      {
+        "key": "chiru.battleKo",
+        "decodedBytes": 6290064
+      },
+      {
+        "key": "jiuweihu.battleMove",
+        "decodedBytes": 409600
+      },
+      {
+        "key": "jiuweihu.battleKo",
+        "decodedBytes": 1048576
+      },
+      {
+        "key": "xingxing.battleMove",
+        "decodedBytes": 3942400
+      },
+      {
+        "key": "xingxing.battleKo",
+        "decodedBytes": 552960
+      },
+      {
+        "key": "lushu.battleBasic",
+        "decodedBytes": 262144
+      },
+      {
+        "key": "lushu.basicBlade",
+        "decodedBytes": 31428
+      },
+      {
+        "key": "lushu.basicContact",
+        "decodedBytes": 19380
+      }
+    ],
+    "hardLimit": 16777216,
+    "additionalHeavy": 382976,
+    "naiveRequiredTotal": 17146120,
+    "naiveAllPinnedFits": false
+  },
+  "conclusion": "Heavy moves and damages in one call at unchanged simulation time, cooldown begins immediately. Cast has no phased action identity, so current four-pose ActionPlayback does not start. Accepted preview F3 begins280ms after F1; cannot preserve both full anticipation and immediate damage without an explicit real-timing decision. Added assets exceed existing16MiB if all stay pinned. No product source changes."
+}
