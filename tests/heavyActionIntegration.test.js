@@ -75,7 +75,7 @@ test('same actor resolved Basic→Heavy binds Heavy textures, duplicate/stale st
  assert.ok(old.destroyed);const wind=p.actionEffects.get('a1').get('blade');assert.ok(wind.texture.endsWith('lushu.heavyWind'));
  p.cast(start('heavy','h',.2),d,.4);p.cast(start('basic','stale',.1),d,.4);p.render(frame,.4,rosterCatalog);assert.equal(p.actionEffects.get('a1').get('blade'),wind);assert.ok(!wind.destroyed);f.p.destroy();
 });
-test('batched resolve+next start paints the real Heavy impact once without delaying next simulation action',async()=>{
+test('batched resolve+next start retains opted-in real Heavy impact window without delaying next simulation action',async()=>{
  const f=await fixture(),p=f.p,d=rosterCatalog.P1,frame={allies:[{instanceId:'a1',definitionId:'P1',x:1.35,y:0,hp:1}],enemies:[]};
  p.cast({actorId:'a1',category:'heavy',actionId:'h',phase:'start',startedAt:0,origin:{x:0,y:0},target:{x:2,y:0}},d,0);p.render(frame,0,rosterCatalog);
  p.cast({actorId:'a1',category:'heavy',actionId:'h',phase:'resolve',resolvedAt:.3,hit:true,target:{x:2,y:0}},d,.35);
@@ -83,7 +83,7 @@ test('batched resolve+next start paints the real Heavy impact once without delay
  p.render(frame,.35,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleHeavy'));assert.equal(p.actorSprites.get('a1').frame,'256.0.128.128');assert.ok(contact(f)?.visible);
  const effect=contact(f);p.render(frame,.35,rosterCatalog);assert.equal(contact(f),effect);assert.equal(effect.alpha,1,'Pause remains fixed');
  assert.equal(p.actions.active.get('a1').actionId,'b','simulation/action token was never postponed');
- p.render(frame,.4,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleBasic'));assert.ok(!contact(f)?.visible);f.p.destroy();
+ p.render(frame,.4,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleHeavy'));assert.ok(contact(f)?.visible);assert.equal(p.actions.active.get('a1').actionId,'b');p.render(frame,.44,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleBasic'));assert.ok(!contact(f)?.visible);f.p.destroy();
 });
 test('late first paint of a resolved hit clears its one-frame effect even after playback already expired',async()=>{
  const f=await fixture(),p=f.p,d=rosterCatalog.P1,frame={allies:[{instanceId:'a1',definitionId:'P1',x:1,y:0,hp:1}],enemies:[]};

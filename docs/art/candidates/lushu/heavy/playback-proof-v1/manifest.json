@@ -1,0 +1,89 @@
+{
+  "status": "TECHNICAL REVIEW / PLAYER PHONE DISPLAY NOT CONFIRMED",
+  "scope": "Production BattleSession and AssetPresenter reconstruction, NOT actual browser recording. Generic procedural later-skill effects are not rasterized; PNG action layers and actual actor/target motion are shown. Isolated rows hold manual control; comparison releases it to real AI with all skills ready.",
+  "baselineCommit": "4a7615daafd67ec11c18662d36ec562a2e43e368",
+  "stepMs": 20,
+  "heavyImpactVisibleSampleCountBefore": 1,
+  "heavyImpactVisibleSampleCountAfter": 7,
+  "coreEventsDamageAndPositionsIdentical": true,
+  "files": [
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/heavy-vfx-and-action-normal.gif",
+      "bytes": 612951,
+      "sha256": "6e3f9df1b61207880f6953ce14586b5470ba5b9de817330be39b252a4980b344",
+      "decodedFrames": 12,
+      "durationMs": 1420,
+      "loop": 0
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/heavy-vfx-and-action-slow.gif",
+      "bytes": 612951,
+      "sha256": "aad1915e51db41eb102cba51bfcf728f5335e240858b9f367c730cb534f56758",
+      "decodedFrames": 12,
+      "durationMs": 4260,
+      "loop": 0
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/heavy-composite-normal.gif",
+      "bytes": 170533,
+      "sha256": "87db86344e325be018ff5437146d94a1af82beb63971c3bcbe22754ad9a23cbe",
+      "decodedFrames": 12,
+      "durationMs": 1420,
+      "loop": 0
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/heavy-composite-slow.gif",
+      "bytes": 170533,
+      "sha256": "82145156953b9a8ccdf9699498d95ad0d9c4d098dcd60046e67c9b32683f6f30",
+      "decodedFrames": 12,
+      "durationMs": 4260,
+      "loop": 0
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/heavy-ai-handoff-before-after.gif",
+      "bytes": 353780,
+      "sha256": "80c68e2fe5a6eb95b20f92a1c5ef48e952cee5546d51c97d8b71bfe4e315b0e6",
+      "decodedFrames": 21,
+      "durationMs": 1420,
+      "loop": 0
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/supplied-vfx-proof.png",
+      "bytes": 139497,
+      "sha256": "f700be6fc5437d80b04e78210b97ba9b664028d74066c562c6eac160c459e5e1"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/composite-contact-proof.png",
+      "bytes": 77259,
+      "sha256": "92531cd2f3091372ce2d1cd8c2cc3073a18528c4c4128b32220ff4d6d9808ae2"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/trace-current.json",
+      "bytes": 261709,
+      "sha256": "df939c217669a751f1c2172353b8b157cab6e494b0d368b3d31fc38e2be64c2c"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/trace-before.json",
+      "bytes": 89348,
+      "sha256": "653885414bf0ba5eb54b912364ed17b65326a3714976a551b4fa543d79ca3a32"
+    }
+  ],
+  "sources": [
+    {
+      "path": "public/assets/characters/lushu/battleHeavy-4f.png",
+      "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334"
+    },
+    {
+      "path": "public/assets/characters/lushu/heavy-wind.png",
+      "sha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec"
+    },
+    {
+      "path": "public/assets/characters/lushu/heavy-impact.png",
+      "sha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65"
+    },
+    {
+      "path": "docs/art/approved/lushu/heavy/F3-contact-selected-A.jpeg",
+      "sha256": "bd58b7bb4aa4758735d1ec74e65c5ca206836e39b397b6ce38fd4af02cacc5e2"
+    }
+  ]
+}

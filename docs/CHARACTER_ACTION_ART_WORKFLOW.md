@@ -142,3 +142,12 @@ A budget fix may use deterministic lossless removal of fully transparent canvas 
 - Include the actual skill-button-to-session-facing bridge in regression coverage; direct session calls alone cannot prove the control forwards the correct direction.
 
 Case evidence: docs/verification/M5C_B_LUSHU_HEAVY_FEEDBACK.md.
+
+
+## Real cast-chain VFX visibility — Heavy defect 2026-10-17
+
+Asset hashes, dimensions, isolated manual-control previews and a single successful paint do not establish battlefield VFX readability. Reproduce the actual campaign factory with every skill ready and immediate AI handoff. Test multiple simulation steps per paint: a phased real hit followed by an immediate/nonphased cast can erase both active action and pending impact before rendering. A one-frame safeguard is insufficient for readable impact.
+
+Completed impact retention must be an explicit reusable presentation policy, bounded by the original authored hold, actual confirmed hit and owner lifecycle. Preserve core damage/CD/input/AI timestamps, reject stale tokens, freeze Pause, clear KO/scene teardown and never manufacture air-hit bursts. P1 Heavy opts in; Basic's data/policy is unchanged. Retained Heavy F3 can temporarily cover a subsequent Basic's anticipation frames; record that visual priority rather than claiming all new poses stay visible.
+
+Give the player standalone supplied VFX, character-only/VFX-only/composite normal+slow GIFs, and actual cast-chain before/after evidence with reproducible traces and hashes. Label draw-command reconstruction separately from real browser/screen recording and phone acceptance. Current evidence: docs/art/candidates/lushu/heavy/playback-proof-v1/README.md.

@@ -46,7 +46,7 @@ manifest={'status':'RUNTIME DERIVATIVES / FEEDBACK CORRECTION / PHONE PENDING','
           'normalization':{'policy':'accepted-action pixel scale, not crouched silhouette height','reference':'P1 Basic accepted runtime scale','sharedAcrossFourFrames':True},
           'origin':origin,'scale':scale,'frameDurationsMs':[200,80,140,180],'coordinateSize':[256,256],
           'blade':{'assetKey':'lushu.heavyWind','offset':[42.5,-22.5],'size':[345,345],'layer':6},
-          'contact':{'assetKey':'lushu.heavyImpact','offset':[-183.75,-197.5],'size':[367.5,245],'layer':7,'attach':'target'},
+          'contact':{'assetKey':'lushu.heavyImpact','offset':[-183.75,-197.5],'size':[367.5,245],'layer':7,'attach':'target','retainOnNextCast':True},
           'visibleBounds':[visible(c) for c in cells],'idleBounds':ib,
           'koTrim':{'source':str(old.relative_to(ROOT)),'sourceSHA256':sha(old),'rect':rect,'origin':[.5,280/331],'scale':2,'savedDecodedBytes':370688,'allRGBAInsideRectPreserved':True,'fullWidthForExactMirroring':True},
           'requiredDecodedBytes':16748808,'hardLimit':16777216}

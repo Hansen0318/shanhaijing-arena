@@ -111,7 +111,8 @@
       245
     ],
     "layer": 7,
-    "attach": "target"
+    "attach": "target",
+    "retainOnNextCast": true
   },
   "visibleBounds": [
     [

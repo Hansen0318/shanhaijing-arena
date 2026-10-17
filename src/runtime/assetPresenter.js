@@ -50,16 +50,17 @@ export class AssetPresenter{
     const current=this.actions.active.get(event.actorId);
     if(event.phase==='resolve'&&event.hit===true&&beforeResolvedAt===null&&current?.actionId===event.actionId&&current.resolvedAt!==null){
      // Multiple simulation steps may resolve one action then start another
-     // before the next paint. Keep the last real impact for one visible frame;
+     // before the next paint. Keep the last real impact for one visible frame,
+     // or its original authored hold when that action opts into retention;
      // never postpone simulation, input, cooldown or HP to fit the presentation.
      const sample=this.actions.sample(event.actorId,current.resolvedAt,this.reducedMotion);
-     if(sample){while(this.pendingImpactViews.size>=64&&!this.pendingImpactViews.has(event.actorId))this.pendingImpactViews.delete(this.pendingImpactViews.keys().next().value);this.pendingImpactViews.set(event.actorId,{sample,paintedAt:null});}
+     if(sample){while(this.pendingImpactViews.size>=64&&!this.pendingImpactViews.has(event.actorId))this.pendingImpactViews.delete(this.pendingImpactViews.keys().next().value);this.pendingImpactViews.set(event.actorId,{sample,resolvedAt:current.resolvedAt,paintedAt:null,displaySample:null});}
     }
-    if(event.phase==='cancel'&&old?.actionId===event.actionId)this.clearAction(event.actorId);
+    if(event.phase==='cancel'&&old?.actionId===event.actionId)this.clearAction(event.actorId,{preserveImpact:this.pendingImpactViews.get(event.actorId)?.sample.descriptor.contact.retainOnNextCast===true});
    }
    return;
   }
-  if(this.actions.active.has(event.actorId)){this.clearAction(event.actorId);this.states.delete(event.actorId);}
+  if(this.actions.active.has(event.actorId)){this.clearAction(event.actorId,{preserveImpact:this.pendingImpactViews.get(event.actorId)?.sample.descriptor.contact.retainOnNextCast===true});this.states.delete(event.actorId);}
   const descriptor=characterVfx(character,event.category,ability);
   const target=event.target??event.origin,dx=target.x-event.origin.x,dy=target.y-event.origin.y,len=Math.hypot(dx,dy)||1;
   this.playback.play(event.actorId,descriptor,event.origin,now,{targetId:event.targetId??null,target,direction:{x:dx/len,y:dy/len}});
@@ -77,7 +78,7 @@ export class AssetPresenter{
   else {const descriptor=slot==='battleIdle'?(character?.animationDescriptors?.battleIdle?characterAnimation(character,'battleIdle'):grayboxAnimation):animationDescriptor({source:resolveCharacterAsset(character,slot).key,duration:1});this.residency.setPins('inspection',[descriptor.source]);await this.loadKeys([descriptor.source]);if(!this.closed)this.setState(ownerId,descriptor,now,'inspection');}
  }
  clearActionEffects(ownerId){const effects=this.actionEffects.get(ownerId);if(effects)for(const image of effects.values())image.destroy();this.actionEffects.delete(ownerId);}
- clearAction(ownerId){this.actions.remove(ownerId);this.pendingImpactViews.delete(ownerId);this.clearActionEffects(ownerId);}
+ clearAction(ownerId,{preserveImpact=false}={}){this.actions.remove(ownerId);if(!preserveImpact)this.pendingImpactViews.delete(ownerId);this.clearActionEffects(ownerId);}
  renderActionEffects(ownerId,sample,position,displaySize){
   let effects=this.actionEffects.get(ownerId);
   if(effects&&[...effects.values()].some(image=>image.actionId!==sample.actionId)){this.clearActionEffects(ownerId);effects=null;}
@@ -127,8 +128,17 @@ export class AssetPresenter{
    let action=actor.hp>0?this.actions.sample(id,now,this.reducedMotion):null;
    const impact=this.pendingImpactViews.get(id);
    if(impact){
-    if(impact.paintedAt!==null&&impact.paintedAt!==now)this.pendingImpactViews.delete(id);
-    else {impact.paintedAt=now;action=impact.sample;}
+    const hold=impact.sample.descriptor.frameDurationsMs[2]/1000,retain=impact.sample.descriptor.contact.retainOnNextCast===true;
+    const expired=!retain||now-impact.resolvedAt+1e-9>=hold;
+    if(impact.paintedAt!==null&&impact.paintedAt!==now&&expired)this.pendingImpactViews.delete(id);
+    else {
+     // Confirmed opted-in impacts keep their original display window even if
+     // an automatic next cast replaces the live action before this paint.
+     // A late first paint still gets one frame; repeated Pause paints freeze.
+     if(impact.paintedAt===null)impact.displaySample=impact.sample;
+     else if(impact.paintedAt!==now){const fade=Math.max(0,1-(now-impact.resolvedAt)/hold);impact.displaySample={...impact.sample,bladeOpacity:impact.sample.bladeOpacity*fade,contactOpacity:impact.sample.contactOpacity*fade};}
+     impact.paintedAt=now;action=impact.displaySample;
+    }
    }
    if((hadAction||this.actionEffects.has(id))&&!action&&actor.hp>0){this.clearAction(id);this.states.delete(id);state=undefined;}
    const previous=this.facings.get(id),dx=previous?actor.x-previous.x:0,dy=previous?actor.y-previous.y:0,actionFacing=this.actionFacings.get(id);
