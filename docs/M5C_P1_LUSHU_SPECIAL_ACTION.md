@@ -1,6 +1,6 @@
 # P1 鹿蜀 Special「迴蹄」— F3-first candidate production
 
-## Current gate
+## Current gate — F3 v2 technical cleanup, pose approval still pending
 
 2026-10-17 player accepts deployed Heavy source33a0f21 and explicitly asks to continue the next work. Heavy closure: docs/verification/M5C_B_LUSHU_HEAVY_PLAYER_ACCEPTANCE.json, commitd0bce45. Next is P1 Special, not Awakening or another character. Current Special output is a SINGLE unapproved F3 character-pose candidate. Stop for identity/weapon/pose review before F1/F2/F4, VFX/GIF or integration. No production/gameplay/public changes.
 
@@ -38,3 +38,7 @@ Show only F3 for player identity/weapon/pose review. No F1/F2/F4, VFX/GIF, runti
 ## Actual F3 technical inspection
 
 F3-contact-v1.png is1536x1024 RGBA,1644513bytes, fully decoded; alpha range0..254, core(alpha>=128) bounds(65,13,1488,1008). All core limbs, knife, antlers and tail fit. Nonzero-alpha bounds(0,10,1500,1011) reveal soft fringe/background residue touching left edge, so this is NOT clean-transparent/runtime-ready art. Preserve original master/hash, review pose only first, then safe color-preserving preparation after approval. No acceptance of this new candidate inferred.
+
+## F3 v2 cleanup checkpoint — 2026-10-17T10:51:46+08:00
+
+Player asks to continue unfinished work, without explicitly accepting the pose. Image_gen edited the unapproved v1 into a separate v2. Preserve v1 unchanged. v2 is1536x1024 RGBA with alpha0..254; nonzero bounds(49,10,1508,1012), edge clearance49/10/28/12px. Actual alpha-compositing on white/dark backgrounds shows no backdrop glow and complete character silhouette. RGB data under alpha0 is invisible in actual compositing and must not be misreported as visible fringe. Metadata/prompt/hashes and F3-contact-v2-alpha-review.png are saved; scripts/inspectLushuSpecialF3.py reproduces inspection. The generated edit changes pixels and requires explicit player review of identity, knife and kick pose. This is source background QA, not runtime normalization or animation approval. NEXT only F3 v2 review; no remaining poses or integration yet.

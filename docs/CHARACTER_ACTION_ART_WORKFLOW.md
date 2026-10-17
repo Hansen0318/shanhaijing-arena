@@ -163,3 +163,7 @@ Do not silently hide an accepted skill-identifying effect in reduced-motion mode
 ## Heavy player closure and successor rule — 2026-10-17
 
 Heavy source33a0f21 is now player-verified; see M5C_B_LUSHU_HEAVY_PLAYER_ACCEPTANCE.json. Earlier Heavy runtime/size rejection statements above are historical. Preserve accepted art and corrections. Bind a device acceptance to the exact deployed source, wording and changed scope; do not turn a general confirmation into a fabricated per-device/per-case matrix. Reuse engineering evidence when code has not changed. Continue P1 Special through F3 review first; preview timing never changes immediate Special gameplay without a separately approved timing contract.
+
+## Transparent candidate diagnosis — actual compositing (2026-10-17)
+
+For generated RGBA candidates, inspect actual alpha values and composite on opaque light/dark backgrounds. Colored RGB under alpha0 is invisible and must not be mistaken for rendered glow by an RGB-only thumbnail. Check complete silhouette and transparent outer borders; keep source hash and a reproducible QA derivative. Alpha/background QA is separate from player pose approval and safe equal-cell runtime normalization. When an unapproved candidate needs generative cleanup, retain the original and version the edit; never claim the edit preserved exact pixels or inherited approval.

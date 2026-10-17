@@ -1,0 +1,49 @@
+{
+  "status": "F3 V2 CANDIDATE / PLAYER POSE REVIEW PENDING / NOT RUNTIME READY",
+  "at": "2026-10-17T10:51:46+08:00",
+  "request": "未完成就繼續",
+  "requestScope": "Continue unresolved technical cleanup; NOT explicit pose approval.",
+  "tool": "built-in image_gen edit",
+  "parent": {
+    "path": "docs/art/candidates/lushu/special/F3-contact-v1.png",
+    "sha256": "f52db8878e7d01dc91db97724f6608477c76c6aed46d9a22d26754bbbca1bd21"
+  },
+  "file": {
+    "path": "docs/art/candidates/lushu/special/F3-contact-v2.png",
+    "sha256": "0608897035880af59bfb86940f5510f82f5354bef725fca1d9268a821eaf7ba1",
+    "bytes": 1634550,
+    "mode": "RGBA",
+    "dimensions": [
+      1536,
+      1024
+    ]
+  },
+  "alphaInspection": {
+    "extrema": [
+      0,
+      254
+    ],
+    "bounds": [
+      49,
+      10,
+      1508,
+      1012
+    ],
+    "edgeClearanceLeftTopRightBottom": [
+      49,
+      10,
+      28,
+      12
+    ],
+    "allOuterEdgesTransparent": true,
+    "notes": "Actual alpha compositing inspected on opaque white and dark. RGB under alpha0 may contain glow colors but is invisible when alpha is respected; do not judge raw RGB thumbnails as rendered fringe. Max alpha254 retained exactly as generated. This is candidate source, not safe equal-cell runtime packaging."
+  },
+  "visualInspection": "Same intended right-facing turning kick, two arms/two legs, split hooves, compact curved knife, deer face/antlers, mane, red tail and costume visually retained; generation changes pixels, so no byte-identical pose/identity guarantee or inferred player approval.",
+  "qa": {
+    "path": "docs/art/candidates/lushu/special/F3-contact-v2-alpha-review.png",
+    "sha256": "d7d94170ddc420d42d0e7a6483fbacc0292334fdaa87886584a71ef7faab0e00",
+    "method": "Deterministic alpha composite on opaque white/dark and uniform downscale for inspection only; master unchanged."
+  },
+  "approval": null,
+  "next": "Player explicit F3 identity/knife/pose acceptance before F1/F2/F4 or VFX/GIF. No runtime/timing change."
+}
