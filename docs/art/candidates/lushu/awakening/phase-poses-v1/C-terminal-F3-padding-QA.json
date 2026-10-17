@@ -1,0 +1,32 @@
+{
+  "status": "PADDING / SOURCE PIXEL PRESERVATION QA PASS; NOT RUNTIME READY",
+  "source": "docs/art/approved/lushu/awakening/terminal-f3-v1/F3-terminal-master.png",
+  "sha256": "c736acca0da5fb5b6c7824a8dfb4bfb2719cf2ce99af74c54dde21773821f3d0",
+  "derivative": "docs/art/candidates/lushu/awakening/phase-poses-v1/C-terminal-F3-padded.png",
+  "derivativeSha256": "ff3b9db7011826ee93349b971634ac17bc78d5c23dccd0b0073ba0d1f61cbfc8",
+  "dimensions": [
+    1856,
+    1344
+  ],
+  "sourceTranslation": [
+    160,
+    160
+  ],
+  "scale": 1,
+  "sourceRgbaPixelsPreserved": true,
+  "alphaPixelsDeleted": 0,
+  "rgbPixelsModified": 0,
+  "alphaBounds": [
+    160,
+    179,
+    1634,
+    1184
+  ],
+  "transparentOuterMargins": [
+    160,
+    179,
+    222,
+    160
+  ],
+  "limitation": "Original invisible low-alpha noise and max-alpha254 are deliberately retained. This PASS covers exact pixel preservation and blank exterior padding only, not alpha cleanup, shared animation anchors, final scale or texture budgets."
+}

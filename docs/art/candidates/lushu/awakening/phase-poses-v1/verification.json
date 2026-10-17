@@ -1,0 +1,23 @@
+{
+  "status": "ASSET PREPARATION CHECKS PASS / FOUR POSES PLAYER REVIEW PENDING",
+  "approvedF3Sha256": "c736acca0da5fb5b6c7824a8dfb4bfb2719cf2ce99af74c54dde21773821f3d0",
+  "checks": [
+    "Packaging replay changed files: []",
+    "All 5 sources and padded derivatives match SHA256 manifest",
+    "All PNGs fully decode",
+    "Padded crops equal complete original RGBA pixels",
+    "Exterior nonzero-alpha bounds have at least160px padding",
+    "Approved F3 bytes unchanged",
+    "src/public/Basic/Heavy/Special protected diff empty",
+    "git diff --check exit0"
+  ],
+  "history": [
+    "Initial replay snapshot comparison failed; sequential diagnostic rerun and final full replay comparison had no changed files; no speculative packaging algorithm fix was applied.",
+    "Whole-file shell output is capped at about1MiB and inserts a 'bytes omitted' marker. Early padding uploads were rejected by expected blob-SHA checks and never referenced from branch. Final uploads use bounded400000-character base64 chunks, exact lengths/alphabet and expected Git blob SHA checks."
+  ],
+  "limitations": [
+    "Padding retains original low-alpha noise and max-alpha254; no cleanup PASS.",
+    "Pose board is not a runtime-normalized strip; skull density/anchor/ground, mirrored phase playback, VFX/GIF remain future gates.",
+    "No npm/build/gameplay tests/deploy needed or run for these art-only sources. No runtime implementation or phone acceptance claim."
+  ]
+}

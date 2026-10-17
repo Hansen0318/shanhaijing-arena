@@ -1,0 +1,145 @@
+{
+  "status": "FOUR NEW POSE CANDIDATES / PLAYER REVIEW PENDING",
+  "approvedTerminalReceipt": "docs/art/approved/lushu/awakening/terminal-f3-v1/acceptance.json",
+  "references": [
+    "docs/art/approved/lushu/awakening/terminal-f3-v1/F3-terminal-master.png",
+    "public/assets/characters/lushu/identity.png"
+  ],
+  "tool": "built-in image_gen; each new pose independently conditioned on both listed images",
+  "poses": [
+    {
+      "pose": "F1-anticipation",
+      "source": "docs/art/candidates/lushu/awakening/phase-poses-v1/F1-anticipation.png",
+      "sha256": "3838ab20e18e42c4ede642b282c458f53f46fde5a2ce99d494bfaf7c9a5c2b06",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sourceAlphaBounds": [
+        0,
+        19,
+        1530,
+        1024
+      ],
+      "padded": "docs/art/candidates/lushu/awakening/phase-poses-v1/F1-anticipation-padded.png",
+      "paddedSha256": "b9aad76d8de95c9f470c35454dec05b60c09a2e069a150b763fdc2b2648465b1",
+      "margins": [
+        160,
+        179,
+        166,
+        160
+      ],
+      "rgbaPixelsPreserved": true,
+      "sourceScale": 1,
+      "playerStatus": "CANDIDATE / PLAYER REVIEW PENDING"
+    },
+    {
+      "pose": "A-first-rush-contact",
+      "source": "docs/art/candidates/lushu/awakening/phase-poses-v1/A-first-rush-contact.png",
+      "sha256": "47362e20f4b9eb6d969d699973bd5ab8f02e91109ed056f8a6e87a83062fc51d",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sourceAlphaBounds": [
+        0,
+        29,
+        1512,
+        1024
+      ],
+      "padded": "docs/art/candidates/lushu/awakening/phase-poses-v1/A-first-rush-contact-padded.png",
+      "paddedSha256": "6cf30a527f4d922088c17d2033243de8d6dbcd57593434edbacbe23622a3bcbe",
+      "margins": [
+        160,
+        189,
+        184,
+        160
+      ],
+      "rgbaPixelsPreserved": true,
+      "sourceScale": 1,
+      "playerStatus": "CANDIDATE / PLAYER REVIEW PENDING"
+    },
+    {
+      "pose": "B-return-contact",
+      "source": "docs/art/candidates/lushu/awakening/phase-poses-v1/B-return-contact.png",
+      "sha256": "89d59425c5b9790cd9974e0b08e368b09778147c663f14b6253c9f23d9d6156f",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sourceAlphaBounds": [
+        0,
+        9,
+        1474,
+        1006
+      ],
+      "padded": "docs/art/candidates/lushu/awakening/phase-poses-v1/B-return-contact-padded.png",
+      "paddedSha256": "af5a68fbd65d0a8ac5c68a798e18d451dbcf0ed25960e119f89a0d41440c5960",
+      "margins": [
+        160,
+        169,
+        222,
+        178
+      ],
+      "rgbaPixelsPreserved": true,
+      "sourceScale": 1,
+      "playerStatus": "CANDIDATE / PLAYER REVIEW PENDING"
+    },
+    {
+      "pose": "C-terminal-F3",
+      "source": "docs/art/approved/lushu/awakening/terminal-f3-v1/F3-terminal-master.png",
+      "sha256": "c736acca0da5fb5b6c7824a8dfb4bfb2719cf2ce99af74c54dde21773821f3d0",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sourceAlphaBounds": [
+        0,
+        19,
+        1474,
+        1024
+      ],
+      "padded": "docs/art/candidates/lushu/awakening/phase-poses-v1/C-terminal-F3-padded.png",
+      "paddedSha256": "ff3b9db7011826ee93349b971634ac17bc78d5c23dccd0b0073ba0d1f61cbfc8",
+      "margins": [
+        160,
+        179,
+        222,
+        160
+      ],
+      "rgbaPixelsPreserved": true,
+      "sourceScale": 1,
+      "playerStatus": "F3 LIKENESS APPROVED"
+    },
+    {
+      "pose": "F4-recovery",
+      "source": "docs/art/candidates/lushu/awakening/phase-poses-v1/F4-recovery.png",
+      "sha256": "5c0435b7edd0bb8b2dac6d9bf29b5f71e3e2a39b5a3769dc91e4503dff5eb2c7",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sourceAlphaBounds": [
+        27,
+        21,
+        992,
+        1514
+      ],
+      "padded": "docs/art/candidates/lushu/awakening/phase-poses-v1/F4-recovery-padded.png",
+      "paddedSha256": "d53b8b4124e6e810ad1a5511c7ff309d2ec939c0b72fa3038ec0256d16d5058b",
+      "margins": [
+        187,
+        181,
+        192,
+        182
+      ],
+      "rgbaPixelsPreserved": true,
+      "sourceScale": 1,
+      "playerStatus": "CANDIDATE / PLAYER REVIEW PENDING"
+    }
+  ],
+  "board": "five-pose-review.jpg",
+  "boardSha256": "221dff931afcbb09607bdb8361237fbe16e8851216408e771f649caa339a320b",
+  "qa": "PNG decode, source hashes, full-canvas preservation, minimum160px exterior alpha padding PASS; identity/anatomy visually inspected, final likeness/pose acceptance is player-owned.",
+  "limits": "No alpha cleanup claimed. No common animation anchors/skull-size normalization, GIF/VFX or runtime integration. Source pixel-scale board is for pose review only. F3 unchanged; other poses not approved."
+}
