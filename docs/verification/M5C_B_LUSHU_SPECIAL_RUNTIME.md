@@ -1,5 +1,7 @@
 # P1 Special 迴蹄 — runtime integration
 
+**2026-10-17 Asia/Taipei — P1 SPECIAL「迴蹄」PHONE PASS / PLAYER VERIFIED (handoff confirmation).** Player's new-Chat handoff explicitly states「P1 鹿蜀 Special『迴蹄』目前版本 OK」「手機驗收 OK」for deployed source `67c45ebb5e09fe0e70d3d271bc2c1b0322a50dc6` (Actions #1034; public fingerprint in `docs/verification/M5C_B_LUSHU_SPECIAL_RUNTIME.md`). This closes the *current Special phone acceptance gate*; it does not assert individually unreported left/right, KO, pause or restart subchecks. Preserve approved F1–F4/GIF/VFX and shared actual 320ms sync; no rework of Basic/Heavy/Special. **NEXT P1 Awakening「南山奔襲」 Chat-first mechanics/art/VFX preflight and F3-first review** (actual three hits/120ms interval, coefficient 2.2 total, CD12); no gameplay edits or new character. Complete Awakening then P1 Hit/reactions and final character smoke before P2. No main merge.
+
 Status: DEPLOYED / ENGINEERING PASS / PLAYER PHONE PENDING.
 
 ## Authorization and contract
