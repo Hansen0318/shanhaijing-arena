@@ -1,5 +1,31 @@
 # P1 鹿蜀 Awakening「南山奔襲」— Chat-first mechanics and visual preflight
 
+## Three-rush executable-contract proposal — Chat-first, pending player timing/geometry approval (2026-10-17)
+
+**Approved already:** three distinct fast rushes, each independently eligible to hit, T0 coefficient weights [0.40,0.70,1.10] totaling 2.20, strongest last VFX, speed identity, whole-action contract before terminal F3. **NOT approved as implementation:** exact times, path length, swept-hit collision shape, re-aim rules, wall behavior, immunity or position changes.
+
+### Proposed timing (real gameplay, not just preview)
+| Time from cast | Event | Real HP event |
+|--|--|--|
+| 0–80ms | visibly compressed anticipation; snapshot intent/initial target | none |
+| 80–150ms | first forward swept rush on legal arena path | hit 0 on swept collision at or before 150ms, coeff 0.40 |
+| 150–300ms | recovery-to-direction then angled return/crossing rush | hit 1 if independently swept-collides, coeff 0.70 |
+| 300–460ms | final fastest committed rush / terminal posture F3 | hit 2 if independently swept-collides, coeff 1.10 |
+| 460–650ms | finite aftermath and grounded recovery to normal Move/Idle | no extra damage |
+
+Above contact deadlines are visual targets, not permission to defer/force a hit or credit absent overlap. No contact = no HP event/target burst; the next segment still executes. Per-segment at most one hit; each hit uses a single distinct hitIndex and genuine target coordinate on confirmed swept overlap. Critical/damage RNG evaluated **only** for actual collisions; existing per-hit crit, mitigation and Tier scaling preserved. No fake HP/number or target burst.
+
+### Proposed route and runtime safeguards
+- **Single acquired target** for the skill's three segments; do not silently retarget another enemy after a miss/KO. Each segment determines its direction from the current actual caster and live surviving target position at segment start, constrained to fixed bounded travel distance and arena bounds. Re-aim only at segment boundaries, not homing within a segment. No teleport. A brief detour/return arc establishes the second direction visually while staying inside legal bounds; third is a decisive forward charge. Exact travel distance/width and acceleration to be measured against arena scale and confirmed before coding.
+- Use swept capsule / segment-vs-target hurtbox overlap **along the authoritative traversed path** (not only center-to-center distance at due time). Each segment records hit/miss once, with no multiple hits from frame subdivision. If target steps out before actual overlap, that segment misses. If later segment physically reaches target, that segment can hit even when previous ones missed.
+- Target dies before a later segment: do not assign further damage to dead target; allow safe whiff/clean recovery. Caster KO / interrupt / battle-end cancels pending movement/damage/VFX, preserving actual cooldown semantics. Avoid damage outside legal arena, no wall-passing or force beyond bounds. No new AoE, knockback, DoT or guaranteed stun; no auto-target-switch.
+- Position must be updated by shared real combat model (player and AI identical), not visual-only sprites, and render interpolation/camera/VFX must follow real position. Contact F3 and third true impact frame must coincide with hit 2. Reduced-motion cuts camera shake/trails but never alters simulated travel/hits. Whiff still renders **source** motion/trail, not fake **target** impact.
+- Validation matrix: hits 000, 001, 010, 011, 100, 101, 110, 111; moving-away dodge, crossing collision, target death after first/second, wall clamp, mirror, interruption, restart, AI/player parity, Tier behavior, 16MiB required texture budget, full 650ms limit, source F3 pose and independently distinguishable hit1/hit2 VFX. Verify three damage events max, weighted total if all hit, no phantom damage when none do.
+
+### Design decision still required before F3
+The user's latest 「好，繼續」 continues design and authorizes documentation, **not** explicit approval of new actual hit times, trajectory/collision geometry or gameplay modifications. Present the 150/300/460ms and overall 650ms timing with segment-boundary tracking/swept collisions as a concrete proposal for player approval. Do not hand a runtime Work task or render F3 until this contract is settled. Existing implementation remains 0/+120/+240ms, equal split, range-based pending hits and zero active dash movement.
+
+
 ## P1 Awakening approved independent hit weighting — 2026-10-17
 
 Player「好我同意 妳把這些紀錄到github相關文件然後繼續」approves the proposed **design** for 「南山奔襲」: three individually collision-qualified hits with increasing *base coefficients* **0.40 / 0.70 / 1.10**, sum **2.20** (T0 baseline), not conditional combos. Third hit must retain coefficient1.10 if hits1/2 miss; no guaranteed hit, no fake HP, no fake target burst. Only real collision at each event can generate that hit's damage and target-attached impact VFX. First VFX smallest, second intermediate, final largest and most distinct; on phone compare independently rendered damage text, true HP bar steps and effects, and preserve existing defense/crit/Tier semantics. Actual visible HP significance is **not verified** until combat/phone test; visual legibility is not permission to change HP or give invulnerability. This supersedes equal-per-hit coefficient as a **future implementation requirement**, not a claim runtime already changed: current `battleSession.js` divides 2.20 evenly and checks later hits by range, not path collision; current ability lacks triple displacement. Keep 3 hits, CD12, total2.20; change timing/travel/hit geometry only after separate fully specified contract and approval. Multi-hit weight arrays must use generic shared data-driven schema, no P1 conditional runtime exceptions. Do not generate terminal F3 until choreography/real mechanics constraints reviewed; do not modify Basic/Heavy/Special/P2/main.
