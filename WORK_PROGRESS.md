@@ -2,6 +2,10 @@
 
 ## CURRENT HANDOFF POINTER
 
+**2026-10-17 Asia/Taipei — P1 AWAKENING THREE-RUSH DESIGN ORDER PLAYER APPROVED / CHOREOGRAPHY PREPARATION.** Player authorizes three-phase concept 起衝突進→折返追擊→終結奔襲 and hard sequencing **whole three-rush architecture first, then terminal third-impact F3 candidate**, followed by earlier impact poses/VFX/GIF review. This is *workflow/theme approval only*: no displacement distance/timing/pose/runtime approval. Current implementation still three damage hits 0/+120/+240ms, zero windup, no movement; new actual triple movement requires explicit combat contract. Detailed proposal and cross-session gate in `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md`; hard process `AGENTS.md`, `docs/DEVELOPMENT_PLAYBOOK.md`, `docs/CHARACTER_ACTION_ART_WORKFLOW.md`. **NEXT Chat:** lock proposed path/timing/event mapping, then terminal F3 art only after gameplay design authorization. No Work, no P2/main merge.
+
+
+
 **2026-10-17 Asia/Taipei — P1 AWAKENING CHAT-FIRST PREFLIGHT STARTED / NO ART OR RUNTIME APPROVAL.** P1 Special phone PASS remains closed. New `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md` captures existing P1.awakening T0 CD12, total coefficient2.2, three real hit events at 0/+120/+240ms relative to effect resolution, current zero windup and **no gameplay displacement/AoE/DoT**, plus distinct proposed F3 silhouette, target VFX and player art/GIF/timing gates. **NEXT** obtain/inspect approved P1 reference and produce *only F3 character-only candidate* for player review; no new Work needed for this Chat-owned gate. No existing accepted art or gameplay edits, no P2/main merge.
 
 
