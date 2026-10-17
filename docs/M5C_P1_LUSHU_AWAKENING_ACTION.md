@@ -1,5 +1,16 @@
 # P1 鹿蜀 Awakening「南山奔襲」— Chat-first mechanics and visual preflight
 
+## Terminal F3 production brief — reference recovered, image pending
+
+GitHub source refs confirmed on active feature branch (blob SHAs, **not** player acceptance of a newly rendered F3):
+- `public/assets/characters/lushu/identity.png` Git blob SHA `1fddc20ac781faf4e0c3271a96de5225fde4f458`
+- `public/assets/characters/lushu/battleIdle-4f.png` Git blob SHA `c0052ab9c6699d4abc2b26ce7d5d0ce1563d2543`
+
+**Only third collision's F3 first; NOT first-rush generic contact.** Frame must preserve the exact approved anthropomorphic Lushu's recognizable head/antlers/face, body proportions, hoof arrangement, tail, outfit color scheme and compact held weapon, facing canonical right. Pose: body drives forward low, power visibly supported by one planted rear hoof and one extended lead leg; shoulders/antlers lead actual contact, torso stretched diagonally forward, arms/weapon readable rather than hidden, tail follows velocity without clipping. Different from approved Special turning/rotational kick and Heavy one-shot planted weapon contact. No extra horns, enlarged actor, costume redesign, motion streak baked into character, explosion baked in character or duplicates of limbs. Transparent complete single-pose PNG with generous alpha margins, consistent ground family. **Candidate remains UNAPPROVED** until player sees and confirms it. Use reference pixels for identity inspection; blob IDs are provenance, not image conditioning by themselves.
+
+Three distinct impact beats must remain synchronized to *real* swept collisions, not a composite fake: first0.40 small wedge; second0.70 crossing fracture; third1.10 unique largest layered terminal burst, only on hit. Prepare independent right/left projected review and effects-off pose test once character source exists. Design cannot guarantee actual high-speed triple travel until runtime implementation and visual device smoke. Next Chat task is create F3 from actual approved visual source; if the creation interface cannot accept recovered GitHub art as visual reference, STOP before making a misleading ungrounded candidate and preserve this exact handoff; do not claim an image was generated or accepted.
+
+
 ## Player-approved P1 Awakening three-rush gameplay contract — 2026-10-17
 
 Player「好 可以 確認紀錄github流程規則進度，然後繼續」explicitly approves the previously presented **real** three-contact schedule **150 / 300 / 460 ms from cast** and **650 ms full playback including recovery**, plus **three independent path-swept collision checks**, each at most once. Design-approved T0 hit coefficients **0.40 / 0.70 / 1.10** sum **2.20**, cooldown **12s**, no extra attack, no guaranteed contact or target impact FX on whiff. Three segments are 起衝突進 → 折返追擊 → 終結奔襲. Third segment remains independently damaging if first/second missed, and third terminal-contact F3 is the first art candidate **only after the three-phase choreography is specified**. Authoritative details: `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md`.
