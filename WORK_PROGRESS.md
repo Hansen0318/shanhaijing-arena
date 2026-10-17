@@ -2,6 +2,10 @@
 
 ## CURRENT HANDOFF POINTER
 
+**2026-10-17 Asia/Taipei — P1 AWAKENING THREE-RUSH EXECUTABLE CONTRACT PROPOSED / PLAYER TIMING APPROVAL PENDING.** Chat completed deterministic choreography/hit/miss design proposal in `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md`: proposed contacts150/300/460ms, recover by650ms; re-aim only at each rush boundary, path-swept collision per segment, independent hit masks000–111, preserve approved weights0.40/0.70/1.10 and true event/VFX synchronization. Proposed actual displacement/timing/collision geometry remains **UNAPPROVED and UNIMPLEMENTED**; exact distance/width awaits arena review. Do not generate terminal F3 or hand off runtime before gameplay contract decision. Protect P1 Basic/Heavy/Special, no P2/main merge.
+
+
+
 **2026-10-17 Asia/Taipei — P1 AWAKENING WEIGHTED THREE-HIT DESIGN PLAYER APPROVED / IMPLEMENTATION NOT STARTED.** Player accepts coefficient sequence **0.40/0.70/1.10** (sum2.20) across **three independently collision-qualified rush hits**, including terminal-only hit1.10 when first/second miss; unique escalating VFX and readable on-phone real HP/damage display, no fake hits. Real runtime still evenly splits2.20, later hit checks range, no authored triple displacement, initial hit 0ms and +120/+240ms. Authoritative spec `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md` and shared workflow/hard rules updated. Next Chat gate: resolve **actual rush path + hit event timing/geometry** design; only then terminal third-hit F3, independent VFX/GIF/player review. Timing suggestion150/300/460ms plus650ms presentation is **not separately locked as real combat timing**. No code/art/deploy or P2/main.
 
 
