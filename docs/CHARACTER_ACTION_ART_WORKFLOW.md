@@ -159,3 +159,7 @@ Bind each player preview acceptance to exact source/derivative hashes and the ac
 ## Reduced-motion skill readability and separate release trails (2026-10-17)
 
 Do not silently hide an accepted skill-identifying effect in reduced-motion mode. Use a brief static release cue instead of moving trails, with no new flash/strobe, repeated hit or damage implication. Source sweep and target-hit contact have separate finite presentation lifetimes; making a sweep readable must not prolong the impact/character pose, cooldown, cast windup or simulation. Measure normal and reduced-mode source-sweep visibility independently from contact; include whiffs, both directions, following AI casts, Pause and KO cleanup. Heavy currently opts into260ms static/fading blade afterglow via shared data; Basic retains its approved existing behavior. A code-proven reduced-mode hiding path does not prove that the player enabled that OS setting.
+
+## Heavy player closure and successor rule — 2026-10-17
+
+Heavy source33a0f21 is now player-verified; see M5C_B_LUSHU_HEAVY_PLAYER_ACCEPTANCE.json. Earlier Heavy runtime/size rejection statements above are historical. Preserve accepted art and corrections. Bind a device acceptance to the exact deployed source, wording and changed scope; do not turn a general confirmation into a fabricated per-device/per-case matrix. Reuse engineering evidence when code has not changed. Continue P1 Special through F3 review first; preview timing never changes immediate Special gameplay without a separately approved timing contract.

@@ -15,3 +15,7 @@ Six new heavySweepVisibility cases fail against prior implementation (normal alp
 ## Release
 
 Independent review: no Critical/Important findings;42 focused checks plus stale/cancel/duplicate ownership probes PASS. Source33a0f219ead1e8b758854aa9a2568c305952385c deployed. Actions #1033 / run38991438086 build117274483217 and deploy117274573059 SUCCESS. Public15 local/dist files match exact bytes/SHA256; M5C_B_LUSHU_HEAVY_SWEEP_PUBLIC_FINGERPRINT.json records bundles index-CC1n-uam.js, battleRuntime-B0YAtIxP.js and index-DcqtNRF0.css plus protected PNGs. Browser opened normal landing at https://hansen0318.github.io/shanhaijing-arena/?v=33a0f21 successfully; this does not verify actual attack visibility. Phone retest remains required. Main remains16f73932a0399979ba79b92f93f5ce1c1d1909b9. Existing approved playback-proof-v1 files and acceptance remain immutable. Stop after deployed correction and report link; no main merge or new skill production.
+
+## Player acceptance — 2026-10-17T09:55:09+08:00
+
+Player confirms「我測試可以，確認」for source33a0f21, closing the targeted Heavy correction as PASS / PLAYER VERIFIED. Exact statement/scope: M5C_B_LUSHU_HEAVY_PLAYER_ACCEPTANCE.json. Earlier pending text is historical. This does not individually certify every OS setting or KO/Pause/Restart/device case. Next P1 Special F3-first; do not redo accepted Heavy.

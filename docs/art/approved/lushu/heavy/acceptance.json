@@ -1,5 +1,5 @@
 {
-  "status": "F3 A APPROVED / FULL FOUR-POSE GIF + VFX VISUALLY APPROVED",
+  "status": "F3 A / FOUR-POSE GIF + VFX APPROVED / CURRENT HEAVY RUNTIME CORRECTION PLAYER VERIFIED",
   "approvedAt": "2026-10-16T12:42:56+08:00",
   "statements": [
     {
@@ -28,7 +28,7 @@
   },
   "scope": "Approves F3 identity/weapon/pose and authorizes individual F1/F2/F4 candidates. Does not approve unseen poses/effects/GIF, runtime timing changes or deployment.",
   "technicalLimits": "Uploaded JPEG has white background and no alpha. Preserve it byte-for-byte; future transparent derivative/normalization must retain accepted character colors and pose, document and inspect before GIF/runtime. Earlier A raw PNG glow/background issue does not invalidate player's pose selection, but is not a transparency PASS.",
-  "next": "Prepare reproducible runtime-safe PNG derivatives from accepted sources and manifest/checksums; inspect real Heavy event/timing path before defining shared runtime integration. Preserve real hit/HP timing unless separately authorized. No regeneration/repeated visual gate for unchanged accepted GIF. No merge main.",
+  "next": "P1 Special 迴蹄 F3-first art workflow; keep Basic/Heavy unchanged, no main merge.",
   "relatedCandidateSequence": {
     "path": "docs/art/candidates/lushu/heavy/four-pose-review-v1.png",
     "notes": "docs/art/candidates/lushu/heavy/FOUR_POSE_REVIEW_V1.md",
@@ -39,5 +39,10 @@
     "at": "2026-10-16T20:33:23+08:00",
     "path": "docs/art/candidates/lushu/heavy/recovered-review-v1/acceptance.json",
     "gifSha256": "c233bdbc464a62943950619ddbb56054870e4e7c51808b97c7d8b9775dfaa845"
+  },
+  "phoneAcceptance": {
+    "at": "2026-10-17T09:55:09+08:00",
+    "path": "docs/verification/M5C_B_LUSHU_HEAVY_PLAYER_ACCEPTANCE.json",
+    "sourceCommit": "33a0f219ead1e8b758854aa9a2568c305952385c"
   }
 }

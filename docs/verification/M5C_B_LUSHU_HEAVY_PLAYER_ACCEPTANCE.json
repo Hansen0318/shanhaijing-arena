@@ -1,0 +1,13 @@
+{
+  "status": "PASS / PLAYER VERIFIED FOR CURRENT HEAVY CORRECTION",
+  "at": "2026-10-17T09:55:09+08:00",
+  "statement": "我測試可以，確認，妳紀錄進度規則，然後看看接下來要做什麼，就繼續做",
+  "sourceCommit": "33a0f219ead1e8b758854aa9a2568c305952385c",
+  "releaseClosureCommit": "b87415e3c56ab26495605c067799dc4511d3fc40",
+  "scope": "Player confirms current deployed Heavy correction after the targeted retest request: readable source sweep and real-hit impact, including prior size/air-swing corrections. Generic approval is not an individually itemized report of all facings, OS reduced-motion setting, KO/Pause/Restart or device matrix. Those engineering checks retain their recorded scope.",
+  "evidence": [
+    "docs/verification/M5C_B_LUSHU_HEAVY_SWEEP.md",
+    "docs/verification/M5C_B_LUSHU_HEAVY_SWEEP_PUBLIC_FINGERPRINT.json"
+  ],
+  "next": "P1 Special 迴蹄 F3-first art workflow; keep Basic/Heavy unchanged, no main merge."
+}
