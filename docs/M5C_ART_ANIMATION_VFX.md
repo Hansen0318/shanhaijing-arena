@@ -415,7 +415,7 @@ Player corrected earlier Basic-all-five then Heavy-all-five workflow. Finish **P
 
 ### Large, unmistakable cast and impact VFX — PLAYER HARD RULE 2026-10-17
 
-Player feedback on deployed P1 Heavy: the attack light/sweep must be larger, and the actual-hit effect must independently be clearly larger and more obvious. This is a requested correction, not acceptance of the current Heavy presentation.
+Player feedback on deployed P1 Heavy: the attack light/sweep must be larger, and the actual-hit effect must independently be clearly larger and more obvious. This was the correction request; corrected source33a0f21 is now player-verified at2026-10-17T09:55:09+08:00 (M5C_B_LUSHU_HEAVY_PLAYER_ACCEPTANCE.json). Preserve the accepted baseline and apply the same readability requirement to P1 Special next.
 
 - At actual phone battle scale, maintain an unmistakable **Basic < Heavy < Special < Awakening** progression in visible effect footprint, spectacle and impact emphasis. A tiny numerical size change, faint glow, or richer description alone does not meet the requirement. Special must visibly exceed Heavy; Awakening has the largest, strongest, most immediately recognizable payoff.
 - Review **cast/weapon/attack-light VFX** and **target impact VFX** separately. Both must read clearly, with sufficient visual size, contrast and visible peak. Stronger effects retain each skill's distinct shape, trajectory, layering, material/color language and rhythm; do not scale/recolor the identical effect to impersonate a different skill.

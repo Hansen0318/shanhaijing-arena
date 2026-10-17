@@ -1,0 +1,56 @@
+{
+  "status": "F3 POSE CANDIDATE / PLAYER REVIEW PENDING / NOT RUNTIME READY",
+  "createdAt": "2026-10-17 Asia/Taipei",
+  "tool": "built-in image_gen",
+  "file": {
+    "path": "docs/art/candidates/lushu/special/F3-contact-v1.png",
+    "sha256": "f52db8878e7d01dc91db97724f6608477c76c6aed46d9a22d26754bbbca1bd21",
+    "bytes": 1644513,
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA"
+  },
+  "references": [
+    {
+      "path": "public/assets/characters/lushu/identity.png",
+      "sha256": "bf82ac4f64f517a5503f6a3cabc53e046df8ef9ce16bf9ba5dba8d6567f497a1",
+      "role": "authoritative identity"
+    },
+    {
+      "path": "public/assets/characters/lushu/battleIdle-4f.png",
+      "sha256": "ca123eb6eb15c1f32fab2c9d732d40d7db279ed2e4332a1043172d3fb0bef327",
+      "role": "authoritative identity"
+    },
+    {
+      "path": "docs/art/approved/lushu/heavy/F3-contact-selected-A.jpeg",
+      "sha256": "bd58b7bb4aa4758735d1ec74e65c5ca206836e39b397b6ce38fd4af02cacc5e2",
+      "role": "approved gear/detail comparison only; not pose template"
+    }
+  ],
+  "visualInspection": {
+    "identity": "White deer-derived face, brown antlers, white mane, striped fur, red horse tail, black/gold costume and compact curved knife retained in this candidate; final judgment belongs to player.",
+    "pose": "Single supporting split hoof and one extended rotating kick toward right; two arms/two legs, knife visible at waist guard; differs from Heavy planted lunge.",
+    "bounds": "Core silhouette complete; no visible cropped hoof, knife, antler or tail.",
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "nonzeroAlphaBounds": [
+      0,
+      10,
+      1500,
+      1011
+    ],
+    "alpha128Bounds": [
+      65,
+      13,
+      1488,
+      1008
+    ],
+    "alphaWarning": "Soft semitransparent background/fringe reaches left edge; not a clean cutout PASS. Preserve master. Future color-faithful deterministic packaging only after pose approval; do not infer runtime transparency readiness."
+  },
+  "approval": null,
+  "next": "Player reviews identity/weapon/F3 pose before remaining poses or VFX. No runtime or timing approval."
+}
