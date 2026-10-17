@@ -13,7 +13,7 @@ function scene(){const images=[],textures=new Map();const make=()=>{const v={};f
 const cache={async load(key){const a=assetManifest[key];return a?.type==='image'?{...a,image:{}}:a??{type:'procedural'};}};
 test('formal actor never vanishes during missing hit/cast/KO textures and follows current movement at the fixed origin',async()=>{
  const s=scene(),p=new AssetPresenter(s,{cache});await p.prepare([rosterCatalog.P1]);const actor={instanceId:'a1',definitionId:'P1',x:2,y:1,hp:245},f={allies:[actor],enemies:[]};p.render(f,0,rosterCatalog);
- p.hit({targetId:'a1'},rosterCatalog.P1,.1);actor.x=1.7;p.render(f,.2,rosterCatalog);const image=p.actorSprites.get('a1');assert.deepEqual(image.Visible,[true]);assert.deepEqual(image.Position,[1.7,1]);assert.deepEqual(image.Origin,[.5,691/724]);assert.deepEqual(image.DisplaySize,[108,144]);assert.deepEqual(image.FlipX,[true]);assert.equal(p.states.get('a1').state,'battleHit');
+ p.hit({targetId:'a1'},rosterCatalog.P1,.1);actor.x=1.7;p.render(f,.2,rosterCatalog);const image=p.actorSprites.get('a1');assert.deepEqual(image.Visible,[true]);assert.deepEqual(image.Position,[1.7,1]);assert.deepEqual(image.Origin,[.5,(691/724*128-35)/91]);assert.deepEqual(image.DisplaySize,[108,102.375]);assert.deepEqual(image.FlipX,[true]);assert.equal(p.states.get('a1').state,'battleHit');
  p.setState('a1',characterAnimation(rosterCatalog.P1,'battleCast'),.2,'battleCast');p.render(f,.3,rosterCatalog);assert.deepEqual(image.Visible,[true]);p.render(f,.7,rosterCatalog);assert.equal(p.states.get('a1').state,'battleIdle');
  actor.hp=0;p.render(f,.8,rosterCatalog);assert.deepEqual(image.Visible,[true]);assert.deepEqual(image.Alpha,[.35]);assert.equal(p.states.get('a1').state,'battleKo');p.destroy();assert.ok(s.images.every(i=>i.destroyed));
 });
@@ -52,10 +52,10 @@ test('upper and Collection retire formal placeholder names while lower roster pr
 
 test('future formal KO slot and animation descriptor replace static idle fallback without a new PNG',async()=>{
  for(const customDescriptor of [false,true]){
-  const s=scene(),p=new AssetPresenter(s,{cache}),character={...rosterCatalog.P1,assets:{...rosterCatalog.P1.assets,battleKo:'lushu.identity'},animationDescriptors:{...rosterCatalog.P1.animationDescriptors,...(customDescriptor?{battleKo:{...rosterCatalog.P1.animationDescriptors.battleIdle,source:'lushu.battleMove',frames:Array.from({length:4},(_,i)=>({x:i*96,y:0,width:96,height:128})),loop:false,staticFrame:3}}:{battleKo:undefined})}};
+  const s=scene(),p=new AssetPresenter(s,{cache}),character={...rosterCatalog.P1,assets:{...rosterCatalog.P1.assets,battleKo:'lushu.identity'},animationDescriptors:{...rosterCatalog.P1.animationDescriptors,...(customDescriptor?{battleKo:{...rosterCatalog.P1.animationDescriptors.battleIdle,source:'lushu.battleMove',frames:Array.from({length:4},(_,i)=>({x:i*96,y:0,width:96,height:91})),loop:false,staticFrame:3}}:{battleKo:undefined})}};
   await p.prepare([character]);const actor={instanceId:'a1',definitionId:'P1',x:2,y:1,hp:245},frame={allies:[actor],enemies:[]};p.render(frame,0,{P1:character});actor.hp=0;const before=JSON.stringify(frame);p.render(frame,.1,{P1:character});const image=p.actorSprites.get('a1');
   assert.equal(p.states.get('a1').state,'battleKo');assert.equal(p.states.get('a1').descriptor.source,customDescriptor?'lushu.battleMove':'lushu.identity');
-  if(customDescriptor){p.render(frame,1.3,{P1:character});assert.equal(image.Texture[1],'288.0.96.128');}else assert.ok(image.Texture[0].endsWith('lushu.identity'));
+  if(customDescriptor){p.render(frame,1.3,{P1:character});assert.equal(image.Texture[1],'288.0.96.91');}else assert.ok(image.Texture[0].endsWith('lushu.identity'));
   assert.deepEqual(image.Visible,[true]);assert.deepEqual(image.Alpha,[.35]);assert.deepEqual(image.Position,[2,1]);assert.equal(JSON.stringify(frame),before);p.destroy();assert.ok(s.images.every(i=>i.destroyed));
  }
 });

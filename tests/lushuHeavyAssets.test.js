@@ -27,7 +27,7 @@ test('all five characters plus Basic/Heavy remain loaded across repeated scenes 
  const cache=createAssetCache({transport:pngTransport});
  for(let i=0;i<8;i++){
   const scene=assetScene(),p=new AssetPresenter(scene,{cache});await p.prepare(i%2?Object.values(rosterCatalog).reverse():Object.values(rosterCatalog));
-  assert.equal(p.textureBytes,16748808);assert.ok(p.textures.has('lushu.battleBasic'));assert.ok(p.textures.has('lushu.battleHeavy'));
+  assert.equal(p.textureBytes,16775432);assert.ok(p.textures.has('lushu.battleBasic'));assert.ok(p.textures.has('lushu.battleHeavy'));
   assert.equal(p.residency.snapshot().failed,0);assert.ok(scene.budget().peak<=16777216);assert.ok(cache.diagnostics().highWaterBytes<=16777216);p.destroy();assert.equal(scene.budget().bytes,0);
  }
 });

@@ -13,10 +13,10 @@ function fixture(options={}){
 test('Heavy opts into280ms at every Tier without altering Basic or other skills',()=>{
  const d=formalAbilityDefinitions['P1.heavy'];assert.equal(d.windupMs,280);
  assert.equal(createAbilityDefinition({...d,id:'other.heavy'}).windupMs,280);
- assert.throws(()=>createAbilityDefinition({...d,category:'special'}));
+ assert.throws(()=>createAbilityDefinition({...d,category:'awakening'}));
  assert.throws(()=>createAbilityDefinition({...d,telegraph:{telegraphMs:500,dangerRadius:1}}));
  for(const tier of ['T0','T1','T2','T3']){const {session:s}=fixture({tier});assert.equal(s.actorAbilityDefinitions.get('a1')['P1.heavy'].windupMs,280);}
- for(const [key,d] of Object.entries(formalAbilityDefinitions))if(d.category!=='passive')assert.equal(d.windupMs,key==='P1.basic'?180:key==='P1.heavy'?280:0);
+ for(const [key,d] of Object.entries(formalAbilityDefinitions))if(d.category!=='passive')assert.equal(d.windupMs,key==='P1.basic'?180:key==='P1.heavy'?280:key==='P1.special'?320:0);
 });
 for(const source of ['player','ai'])for(const sign of [1,-1])test(`Heavy ${source} facing${sign} has no early move/HP/RNG, resolves once with matching actionId`,()=>{
  let draws=0;const f=fixture({rng:()=>{draws++;return .99;}}),{session:s,actor:a,target:t}=f;t.x=sign*2;
@@ -40,7 +40,7 @@ test('successful other manual skill cancels Heavy once without refund or late hi
  Object.assign(a.abilityState.special,{phase:'ready',cooldownRemaining:0});assert.equal(s.executeAbility(a,'special','player',t),true);
  const es=s.drainCastEvents();assert.equal(es.filter(e=>e.category==='heavy'&&e.phase==='cancel').length,1);
  assert.ok(Math.abs(a.abilityState.heavy.cooldownRemaining-2.9)<1e-9);s.drainDamageEvents();step(.3);
- assert.equal(s.drainDamageEvents().length,0);assert.equal(s.pendingActions.size,0);
+ assert.equal(s.drainDamageEvents().length,0);assert.equal(s.pendingActions.size,1);step(.02);assert.equal(s.drainDamageEvents().length,1);assert.equal(s.pendingActions.size,0);
 });
 test('range escape produces locked miss without damage, RNG, movement or retarget',()=>{
  let draws=0;const {session:s,actor:a,target:t,step}=fixture({rng:()=>{draws++;return .99;}});

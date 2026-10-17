@@ -1,5 +1,8 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 const entries=[
+ {key:'lushu.battleSpecial',type:'image',path:'assets/characters/lushu/battleSpecial-4f.png',width:320,height:80,bytes:22107,fallback:'placeholder.battle'},
+ {key:'lushu.specialWind',type:'image',path:'assets/characters/lushu/special-wind.png',width:96,height:80,bytes:11593,fallback:'placeholder.vfx'},
+ {key:'lushu.specialImpact',type:'image',path:'assets/characters/lushu/special-impact.png',width:112,height:72,bytes:16246,fallback:'placeholder.vfx'},
  {key:'lushu.battleHeavy',type:'image',path:'assets/characters/lushu/battleHeavy-4f.png',width:512,height:128,bytes:52398,fallback:'placeholder.battle'},
  {key:'lushu.heavyWind',type:'image',path:'assets/characters/lushu/heavy-wind.png',width:112,height:112,bytes:11447,fallback:'placeholder.vfx'},
  {key:'lushu.heavyImpact',type:'image',path:'assets/characters/lushu/heavy-impact.png',width:128,height:86,bytes:10339,fallback:'placeholder.vfx'},
@@ -9,8 +12,8 @@ const entries=[
  {key:'lushu.battleBasic',type:'image',path:'assets/characters/lushu/battleBasic-4f.png',width:512,height:128,bytes:51713,fallback:'placeholder.battle'},
  {key:'lushu.basicBlade',type:'image',path:'assets/characters/lushu/basic-blade.png',width:97,height:81,bytes:5050,fallback:'placeholder.vfx'},
  {key:'lushu.basicContact',type:'image',path:'assets/characters/lushu/basic-contact.png',width:85,height:57,bytes:2300,fallback:'placeholder.vfx'},
- {key:'lushu.battleMove',type:'image',path:'assets/characters/lushu/battleMove-4f.png',width:384,height:128,bytes:54317,fallback:'placeholder.battle'},
- {key:'lushu.battleKo',type:'image',path:'assets/characters/lushu/battleKo.png',width:512,height:512,bytes:150698,fallback:'placeholder.battle'},
+ {key:'lushu.battleMove',type:'image',path:'assets/characters/lushu/battleMove-trimmed.png',width:384,height:91,bytes:54173,fallback:'placeholder.battle'},
+ {key:'lushu.battleKo',type:'image',path:'assets/characters/lushu/battleKo-trimmed.png',width:512,height:472,bytes:151575,fallback:'placeholder.battle'},
  {key:'botuo.portrait',type:'image',path:'assets/characters/botuo/portrait.png',width:128,height:128,bytes:32501,fallback:'placeholder.portrait'},
  {key:'botuo.identity',type:'image',path:'assets/characters/botuo/identity.png',width:160,height:192,bytes:14098,fallback:'placeholder.portrait'},
  {key:'botuo.battleIdle',type:'image',path:'assets/characters/botuo/battleIdle-4f.png',width:640,height:160,bytes:31355,fallback:'placeholder.battle'},

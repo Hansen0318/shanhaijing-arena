@@ -23,7 +23,7 @@ export function createAbilityDefinition(input) {
   if (!ACTIVE_CATEGORIES.has(input?.category)) throw new TypeError('Unknown ability category');
   const cooldown = nonnegativeFinite(input.cooldown, 'cooldown');
   const windupMs=input.windupMs??0;
-  if(!Number.isInteger(windupMs)||windupMs<0||windupMs>1000||windupMs>0&&(!['basic','heavy'].includes(input.category)||input.telegraph!=null))throw new RangeError('Invalid action windup');
+  if(!Number.isInteger(windupMs)||windupMs<0||windupMs>1000||windupMs>0&&(!['basic','heavy','special'].includes(input.category)||input.telegraph!=null))throw new RangeError('Invalid action windup');
   const unlockTier = nonnegativeFinite(input.unlockTier ?? 0, 'unlockTier');
   const canCrit = input.canCrit === undefined ? false : input.canCrit;
   if (typeof canCrit !== 'boolean') throw new TypeError('canCrit must be boolean');

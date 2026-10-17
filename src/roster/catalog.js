@@ -12,17 +12,17 @@ const presentation={
    frameDurationsMs:[120,60,100,120],impactFrame:2,coordinateSize:[384,384],
    blade:{assetKey:'lushu.basicBlade',offset:[176,65],size:[192,160],layer:4},
    contact:{assetKey:'lushu.basicContact',offset:[262,91],size:[169,113],layer:6},
-  }),heavy:actionDescriptor({"animation":{"source":"lushu.battleHeavy","frames":[{"x":0,"y":0,"width":128,"height":128},{"x":128,"y":0,"width":128,"height":128},{"x":256,"y":0,"width":128,"height":128},{"x":384,"y":0,"width":128,"height":128}],"duration":0.6,"loop":false,"staticFrame":2,"origin":[0.5,0.8760471715109296],"scale":2.4731182795698925},"frameDurationsMs":[200,80,140,180],"coordinateSize":[256,256],"blade":{"assetKey":"lushu.heavyWind","offset":[42.5,-22.5],"size":[345,345],"layer":6,"holdAfterResolveMs":260},"contact":{"assetKey":"lushu.heavyImpact","offset":[-183.75,-197.5],"size":[367.5,245],"layer":7,"attach":"target","retainOnNextCast":true},"impactFrame":2}) }),
+  }),heavy:actionDescriptor({"animation":{"source":"lushu.battleHeavy","frames":[{"x":0,"y":0,"width":128,"height":128},{"x":128,"y":0,"width":128,"height":128},{"x":256,"y":0,"width":128,"height":128},{"x":384,"y":0,"width":128,"height":128}],"duration":0.6,"loop":false,"staticFrame":2,"origin":[0.5,0.8760471715109296],"scale":2.4731182795698925},"frameDurationsMs":[200,80,140,180],"coordinateSize":[256,256],"blade":{"assetKey":"lushu.heavyWind","offset":[42.5,-22.5],"size":[345,345],"layer":6,"holdAfterResolveMs":260},"contact":{"assetKey":"lushu.heavyImpact","offset":[-183.75,-197.5],"size":[367.5,245],"layer":7,"attach":"target","retainOnNextCast":true},"impactFrame":2}),special:actionDescriptor({"animation":{"source":"lushu.battleSpecial","frames":[{"x":0,"y":0,"width":80,"height":80},{"x":80,"y":0,"width":80,"height":80},{"x":160,"y":0,"width":80,"height":80},{"x":240,"y":0,"width":80,"height":80}],"duration":0.76,"loop":false,"staticFrame":2,"origin":[0.375,0.8133930272432843],"scale":2.9},"frameDurationsMs":[200,120,200,240],"impactFrame":2,"coordinateSize":[80,80],"blade":{"assetKey":"lushu.specialWind","offset":[-16.367816091954026,-28.568404563832274],"size":[128.73563218390805,107.27969348659005],"layer":6,"holdAfterResolveMs":280},"contact":{"assetKey":"lushu.specialImpact","offset":[-67.04980842911878,-66.85823754789273],"size":[134.09961685823757,93.86973180076629],"layer":7,"attach":"target","retainOnNextCast":true}}) }),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle',battleMove:'lushu.battleMove',battleKo:'lushu.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'lushu.battleIdle',frames:[{x:0,y:0,width:96,height:128}],
    fps:2.5,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
   }),battleMove:animationDescriptor({
-   source:'lushu.battleMove',frames:[0,96,192,288].map(x=>({x,y:0,width:96,height:128})),
-   fps:18,loop:true,origin:[.5,691/724],scale:2,staticFrame:0,
+   source:'lushu.battleMove',frames:[0,96,192,288].map(x=>({x,y:0,width:96,height:91})),
+   fps:18,loop:true,origin:[.5,0.9578653390808087],scale:1.5,staticFrame:0,
   }),battleKo:animationDescriptor({
-   source:'lushu.battleKo',frames:[{x:0,y:0,width:512,height:512}],
-   duration:1,loop:false,origin:[.5,385/512],scale:2,staticFrame:0,
+   source:'lushu.battleKo',frames:[{x:0,y:0,width:512,height:472}],
+   duration:1,loop:false,origin:[.5,375/472],scale:2,staticFrame:0,
   })}),
  },
  P2:{

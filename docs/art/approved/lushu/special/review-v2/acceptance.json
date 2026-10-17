@@ -1,19 +1,38 @@
 {
-  "status": "PLAYER APPROVED FOUR-POSE COMPOSITE GIF AND INDEPENDENT VFX / RUNTIME AND DEPLOYMENT AUTHORIZED / REAL TIMING DECISION PENDING",
+  "status": "PLAYER APPROVED FOUR-POSE GIF / VFX / REAL320ms WINDUP / SCOPED FEATURE DEPLOYMENT AUTHORIZED",
   "approvedAt": "2026-10-17T14:22:27+08:00",
   "statement": "我確認核准，紀錄進度和流程規則，確認後可以繼續進行至部署",
-  "scope": "Explicit acceptance of the linked normal/slow full four-pose composite and character-only GIF plus shown independent source/impact VFX. Authorizes preserving/publishing these assets and progress/process records to the existing feature branch, and continuing scoped integration through deployment. No main merge. Does not specify a real 320ms combat windup; prior review notes explicitly excluded simulation-timing approval.",
+  "scope": "Explicit acceptance of the linked normal/slow full four-pose composite and character-only GIF plus shown independent source/impact VFX. Authorizes preserving/publishing these assets and progress/process records to the existing feature branch, and continuing scoped integration through deployment. No main merge. Does not specify a real 320ms combat windup; prior review notes explicitly excluded simulation-timing approval. Superseded timing-pending clause: see realTimingApproval for subsequent explicit approval.",
   "files": [
-    {"path":"docs/art/candidates/lushu/special/review-v2/lushu-special-composite-v2-normal.gif","sha256":"bc6b4094e9a972150693eb345d265c159d08c75b6a7e83b8c8980ede2e5dff02"},
-    {"path":"docs/art/candidates/lushu/special/review-v2/lushu-special-composite-v2-slow.gif","sha256":"87eb0d84d3b6ac24a55ecd2e630b0aac14508b9fc2735c69319991f07ce86356"},
-    {"path":"docs/art/candidates/lushu/special/review-v2/lushu-special-character-only-v2-normal.gif","sha256":"a435488678e775713a84ed7e49dfba6fce7923285751d837d0c44187f2f0aad2"},
-    {"path":"docs/art/candidates/lushu/special/vfx-review-v1/source-sweep-raw-v1.png","sha256":"c935ed96e64b55991e6f87f4c8ffa8560a07d153f3b1523fec67e361f4a31a4e"},
-    {"path":"docs/art/candidates/lushu/special/vfx-review-v1/target-impact-raw-v1.png","sha256":"e9f4933fcb91d4c16338da44aae00d5a85ce421089f261cdd6db43eaf6e2bf40"}
+    {
+      "path": "docs/art/candidates/lushu/special/review-v2/lushu-special-composite-v2-normal.gif",
+      "sha256": "bc6b4094e9a972150693eb345d265c159d08c75b6a7e83b8c8980ede2e5dff02"
+    },
+    {
+      "path": "docs/art/candidates/lushu/special/review-v2/lushu-special-composite-v2-slow.gif",
+      "sha256": "87eb0d84d3b6ac24a55ecd2e630b0aac14508b9fc2735c69319991f07ce86356"
+    },
+    {
+      "path": "docs/art/candidates/lushu/special/review-v2/lushu-special-character-only-v2-normal.gif",
+      "sha256": "a435488678e775713a84ed7e49dfba6fce7923285751d837d0c44187f2f0aad2"
+    },
+    {
+      "path": "docs/art/candidates/lushu/special/vfx-review-v1/source-sweep-raw-v1.png",
+      "sha256": "c935ed96e64b55991e6f87f4c8ffa8560a07d153f3b1523fec67e361f4a31a4e"
+    },
+    {
+      "path": "docs/art/candidates/lushu/special/vfx-review-v1/target-impact-raw-v1.png",
+      "sha256": "e9f4933fcb91d4c16338da44aae00d5a85ce421089f261cdd6db43eaf6e2bf40"
+    }
   ],
   "originalPoses": "docs/art/approved/lushu/special/recovered-inputs-v1/receipt.json",
   "transformAndTimingManifest": "docs/art/candidates/lushu/special/review-v2/review-manifest.json",
   "previewContactAfterStartMs": 320,
-  "currentActualSpecialWindupMs": 0,
-  "realTimingApproval": null,
-  "constraints": "Preserve exact approved pixels and original GIFs; shared data-driven runtime; single real hit, cooldown6, reposition.65; no fake HP delay, extra hit/AoE/DoT, actor enlargement, other character/skill work, budget increase or main merge. Deployment authorization persists after the outstanding material timing choice."
+  "currentActualSpecialWindupMs": 320,
+  "realTimingApproval": {
+    "approvedAt": "2026-10-17T14:45:48+08:00",
+    "statement": "好，我確認， 繼續，並紀錄進度和流程 如果要整合到硬規則相關資料，就整合",
+    "scope": "Approves proposed real320ms startup. Reposition, real single hit, F3 and actual-target impact resolve together. Continue source-preserving runtime packaging/shared integration/tests/feature deployment. No main merge."
+  },
+  "constraints": "Preserve approved originals/GIFs; deterministic runtime derivatives allowed. Shared data-driven runtime, one real hit; T0 CD6/reposition.65 and existing Tier scaling remain. No fake HP delay, extra hit/AoE/DoT, actor enlargement, other character/skill work, budget increase or main merge."
 }

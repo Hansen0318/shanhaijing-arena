@@ -1,5 +1,8 @@
 # Character action art, VFX and animation review workflow
 
+**2026-10-17T14:45:48+08:00 — P1 SPECIAL REAL320ms APPROVED / IMPLEMENTATION IN PROGRESS.** Player「好，我確認， 繼續，並紀錄進度和流程 如果要整合到硬規則相關資料，就整合」accepts real320ms startup and existing feature deployment scope. Acceptance: `docs/art/approved/lushu/special/review-v2/acceptance.json`. Earlier timing/GIF pending gates below are historical, do not reopen. Shared pending-action pipeline now opts Special into320ms: reposition, one real hit, F3/contact and Tier post_cast effects resolve together; T0 CD6/.65 unchanged, existing Tier scaling retained. Deterministic approved-source80px cells plus separate source/target PNGs; P1 Move/KO only lose outer fully transparent rows with exact visible-pixel/ground transforms, originals retained. All-five required16,775,432/16,777,216 bytes; no cap increase. Independent review found left-facing noncentral action-origin drift; reproduced RED and fixed generically for authored actions, preserving established locomotion/KO policy. NEXT finish full checks/visual projection, feature CI/Pages/public fingerprint, then player phone review. No deployment or phone PASS claimed yet; no main merge.
+
+
 ## Special GIF acceptance and retained deployment authority — 2026-10-17
 
 Player14:22:27 explicitly approved full Special composite GIF/VFX and continuing through deployment. Bind exact files and statement in `docs/art/approved/lushu/special/review-v2/acceptance.json`; accepted poses/FX/GIF are immutable and no duplicate review/publication approval is needed. The previous missing-source and preview-only gates are closed. Preserve review-v2 reproducible packaging, receipt, manifest, checksums and visual/timeline proof.

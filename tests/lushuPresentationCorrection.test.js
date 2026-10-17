@@ -40,7 +40,7 @@ test('static-first enlarged sprites mirror shared motion without moving actor/or
  p.render(frame,0,rosterCatalog);assert.deepEqual(p.actorSprites.get('a1').DisplaySize,[108,144]);assert.deepEqual(p.actorSprites.get('e1').DisplaySize,[108,144]);
  for(const [dx,flip] of [[.1,false],[-.2,true],[0,true],[.2,false]]){
   a.x+=dx;e.x+=dx;const before=structuredClone(frame);p.render(frame,.8,rosterCatalog);
-  for(const actor of [a,e]){const image=p.actorSprites.get(actor.instanceId);assert.deepEqual(image.FlipX,[flip]);assert.deepEqual(image.Origin,[.5,691/724]);assert.deepEqual(image.Position,[actor.x,actor.y]);}
+  for(const actor of [a,e]){const image=p.actorSprites.get(actor.instanceId);assert.deepEqual(image.FlipX,[flip]);assert.deepEqual(image.Origin,[.5,(691/724*128-35)/91]);assert.deepEqual(image.Position,[actor.x,actor.y]);}
   assert.deepEqual(frame,before);
  }
  // Reduced-motion changes cannot reopen idle playback; F1 stays mirrored.

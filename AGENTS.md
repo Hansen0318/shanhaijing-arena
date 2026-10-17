@@ -1,5 +1,10 @@
 # AGENTS.md
 
+## Approved action timing and source-preserving residency
+
+Record visual/GIF approval separately from actual combat timing approval, including exact statement and scope. Once both are explicit, continue the authorized integration/deployment without reopening completed gates. Bind authored contact frame, displacement, real HP/RNG event, target VFX and post_cast effects to the same shared resolve actionId; never fake synchronization by delaying only HP text. T0 constants and existing Tier scaling are separate contracts. Runtime derivatives may remove only proven fully transparent outer rows and downsample approved sources under a recorded deterministic policy; keep originals/GIFs immutable, preserve visible-pixel world placement in both directions and test noncentral authored-action origins against actual renderer flip semantics. Fit every required asset in the existing cache cap; never silently evict required art or raise the cap. Engineering/deploy evidence does not imply phone acceptance. P1 Special320ms approval2026-10-17T14:45:48+08:00 is the current bounded case; it grants no new skill/character or main merge.
+
+
 ## Purpose
 This repository is a new game project: **Shanhaijing Arena**. It is independent from `shanhaijing-td`.
 

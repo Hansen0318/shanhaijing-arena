@@ -34,9 +34,9 @@ async function fixture(id='P1',reducedMotion=false,order=['P1','P2','P3']){
 }
 
 for(const c of cases){
- const h=c.id==='P2'?331:512,oy=c.id==='P2'?280/331:c.bottom/512,sy=c.id==='P2'?125:0;
+ const h=c.id==='P2'?331:472,oy=c.id==='P2'?280/331:375/472,sy=c.id==='P2'?125:10;
  test(`${c.id} runtime KO manifest/descriptor is a single static grounded 512 frame`,()=>{
-  const a=resolveCharacterAsset(rosterCatalog[c.id],'battleKo');assert.equal(a.key,c.name+'.battleKo');assert.equal(a.path,`assets/characters/${c.name}/${c.id==='P2'?'battleKo-trimmed.png':'battleKo.png'}`);assert.deepEqual([a.width,a.height,a.bytes],[512,h,c.id==='P2'?readFileSync('public/'+a.path).length:c.bytes]);assert.equal(a.fallback,'placeholder.battle');
+  const a=resolveCharacterAsset(rosterCatalog[c.id],'battleKo');assert.equal(a.key,c.name+'.battleKo');assert.equal(a.path,`assets/characters/${c.name}/battleKo-trimmed.png`);assert.deepEqual([a.width,a.height,a.bytes],[512,h,readFileSync('public/'+a.path).length]);assert.equal(a.fallback,'placeholder.battle');
   const d=characterAnimation(rosterCatalog[c.id],'battleKo');assert.equal(d.source,a.key);assert.deepEqual(d.frames,[{x:0,y:0,width:512,height:h}]);assert.deepEqual(d.origin,[.5,oy]);assert.equal(d.scale,2);assert.equal(d.duration,1);assert.equal(d.loop,false);assert.equal(d.staticFrame,0);
   for(const reduced of [false,true])for(const now of [0,.5,1,100])assert.equal(animationFrame(d,now,reduced).index,0);
  });

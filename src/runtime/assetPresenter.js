@@ -187,7 +187,7 @@ export class AssetPresenter{
    const resolvedState=formalState?state.state:actor.hp>0?baseState:'battleIdle';
    const playbackMode=resolvedState==='battleMove'?'locomotion':'decorative';
    const image=this.imageFor(id,descriptor,elapsed,this.actorSprites,playbackMode,action?.frameIndex??null);
-   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?(action?descriptor.frames[action.frameIndex]:animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode).region):null,w=region?.width??asset.width,h=region?.height??asset.height,width=72*descriptor.scale*w/Math.max(w,h),height=72*descriptor.scale*h/Math.max(w,h);image.setDisplaySize(width,height).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);if(action)this.renderActionEffects(id,action,pos,{width,height});}
+   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?(action?descriptor.frames[action.frameIndex]:animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode).region):null,w=region?.width??asset.width,h=region?.height??asset.height,width=72*descriptor.scale*w/Math.max(w,h),height=72*descriptor.scale*h/Math.max(w,h);image.setOrigin(action&&flipX?1-descriptor.origin[0]:descriptor.origin[0],descriptor.origin[1]).setDisplaySize(width,height).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);if(action)this.renderActionEffects(id,action,pos,{width,height});}
    else this.actorSprites.get(id)?.setVisible(false); // Arena's procedural marker remains visible.
   }
   this.renderBladeAfterglows(alive,positions,now);

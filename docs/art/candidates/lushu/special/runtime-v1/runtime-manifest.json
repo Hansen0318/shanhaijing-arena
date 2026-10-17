@@ -1,0 +1,195 @@
+{
+  "status": "EXACT APPROVED SOURCE DERIVATIVES / REAL320ms AUTHORIZED / INTEGRATION CHECKS REQUIRED",
+  "files": [
+    {
+      "path": "public/assets/characters/lushu/battleSpecial-4f.png",
+      "width": 320,
+      "height": 80,
+      "bytes": 22107,
+      "sha256": "e7e5c1eebfab6b2ae9dd49961aee586180ce5809e99b70c48f3176a6d04d423a",
+      "decodedBytes": 102400
+    },
+    {
+      "path": "public/assets/characters/lushu/special-wind.png",
+      "width": 96,
+      "height": 80,
+      "bytes": 11593,
+      "sha256": "4b787f80490e463db71b6e76cda1efd0a6a86fe9a4fd7a34e233772ad99bb501",
+      "decodedBytes": 30720
+    },
+    {
+      "path": "public/assets/characters/lushu/special-impact.png",
+      "width": 112,
+      "height": 72,
+      "bytes": 16246,
+      "sha256": "8d5c695c5c27233ec9525bacba2e56b705d1e68aaf88461414615ff4b8e922ab",
+      "decodedBytes": 32256
+    },
+    {
+      "path": "public/assets/characters/lushu/battleMove-trimmed.png",
+      "width": 384,
+      "height": 91,
+      "bytes": 54173,
+      "sha256": "b5c592d570974e2fd03524fc2194d1213f84b31b07e3e1a09177e2af790236f6",
+      "decodedBytes": 139776
+    },
+    {
+      "path": "public/assets/characters/lushu/battleKo-trimmed.png",
+      "width": 512,
+      "height": 472,
+      "bytes": 151575,
+      "sha256": "dbd1fc4bb7e2512b26c6b841ab8651765cd5f5324f5d3d08fe1b312e682abf0a",
+      "decodedBytes": 966656
+    }
+  ],
+  "trims": [
+    {
+      "original": "public/assets/characters/lushu/battleMove-4f.png",
+      "sha256": "6ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74",
+      "rect": [
+        0,
+        35,
+        384,
+        126
+      ],
+      "allOriginalVisiblePixelsPreserved": true,
+      "savedDecodedBytes": 56832
+    },
+    {
+      "original": "public/assets/characters/lushu/battleKo.png",
+      "sha256": "03c4e5a75546e8dc67044f42a9ce958bba829e423561e60a2665d7494bf77aff",
+      "rect": [
+        0,
+        10,
+        512,
+        482
+      ],
+      "allOriginalVisiblePixelsPreserved": true,
+      "savedDecodedBytes": 81920
+    }
+  ],
+  "descriptor": {
+    "animation": {
+      "source": "lushu.battleSpecial",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 80,
+          "height": 80
+        },
+        {
+          "x": 80,
+          "y": 0,
+          "width": 80,
+          "height": 80
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "width": 80,
+          "height": 80
+        },
+        {
+          "x": 240,
+          "y": 0,
+          "width": 80,
+          "height": 80
+        }
+      ],
+      "duration": 0.76,
+      "loop": false,
+      "staticFrame": 2,
+      "origin": [
+        0.375,
+        0.8133930272432843
+      ],
+      "scale": 2.9
+    },
+    "frameDurationsMs": [
+      200,
+      120,
+      200,
+      240
+    ],
+    "impactFrame": 2,
+    "coordinateSize": [
+      80,
+      80
+    ],
+    "blade": {
+      "assetKey": "lushu.specialWind",
+      "offset": [
+        -16.367816091954026,
+        -28.568404563832274
+      ],
+      "size": [
+        128.73563218390805,
+        107.27969348659005
+      ],
+      "layer": 6,
+      "holdAfterResolveMs": 280
+    },
+    "contact": {
+      "assetKey": "lushu.specialImpact",
+      "offset": [
+        -67.04980842911878,
+        -66.85823754789273
+      ],
+      "size": [
+        134.09961685823757,
+        93.86973180076629
+      ],
+      "layer": 7,
+      "attach": "target",
+      "retainOnNextCast": true
+    }
+  },
+  "normalization": "Approved 640x480 review cells, transparent-only crop90,140,490,450; uniform .2 scale and9px vertical padding. Skull density normalization preserved. Common scale2.9 matches Basic head/torso, not crouched silhouette height.",
+  "alphaBounds": [
+    [
+      6,
+      16,
+      72,
+      68
+    ],
+    [
+      5,
+      14,
+      56,
+      68
+    ],
+    [
+      6,
+      19,
+      74,
+      68
+    ],
+    [
+      14,
+      11,
+      56,
+      68
+    ]
+  ],
+  "requiredDecodedBytes": 16775432,
+  "hardLimit": 16777216,
+  "move": {
+    "origin": [
+      0.5,
+      0.9578653390808087
+    ],
+    "scale": 1.5,
+    "frameWidth": 96,
+    "frameHeight": 91
+  },
+  "ko": {
+    "origin": [
+      0.5,
+      0.7944915254237288
+    ],
+    "scale": 2,
+    "frameWidth": 512,
+    "frameHeight": 472
+  }
+}

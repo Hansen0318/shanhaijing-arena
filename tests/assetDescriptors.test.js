@@ -11,7 +11,7 @@ test('animation clock pauses naturally and reduced motion is static',()=>{
  assert.equal(playback.animationFrame(d,.6).index,1);assert.equal(playback.animationFrame(d,.6,true).index,0);assert.equal(playback.animationFrame(d,.6).index,1);assert.equal(playback.animationFrame(d,1.1).index,0);
 });
 test('explicit locomotion policy cycles every frame at half cadence under reduced motion only',()=>{
- const d=api.animationDescriptor({source:'lushu.battleMove',frames:[0,96,192,288].map(x=>({x,y:0,width:96,height:128})),fps:9,loop:true});
+ const d=api.animationDescriptor({source:'lushu.battleMove',frames:[0,96,192,288].map(x=>({x,y:0,width:96,height:91})),fps:9,loop:true});
  const normal=[0,.112,.223,.334,.445],reduced=[0,.223,.445,.667,.889];
  assert.deepEqual(normal.map(t=>playback.animationFrame(d,t,false,'locomotion').index),[0,1,2,3,0]);
  assert.deepEqual(reduced.map(t=>playback.animationFrame(d,t,true,'locomotion').index),[0,1,2,3,0]);

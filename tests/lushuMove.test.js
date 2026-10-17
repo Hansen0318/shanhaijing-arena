@@ -18,41 +18,41 @@ async function fixture({missingMove=false,reducedMotion=false}={}){
  return {p,actor,frame,loaded,sprites,preparationError,render:now=>p.render(frame,now,rosterCatalog)};
 }
 test('approved move slot is encounter-loaded with four isolated canonical cells and static idle preserved',async()=>{
- const asset=resolveCharacterAsset(rosterCatalog.P1,'battleMove');assert.equal(asset.key,'lushu.battleMove');assert.equal(asset.path,'assets/characters/lushu/battleMove-4f.png');assert.deepEqual([asset.width,asset.height],[384,128]);
- const d=rosterCatalog.P1.animationDescriptors.battleMove;assert.deepEqual(d.frames,[0,96,192,288].map(x=>({x,y:0,width:96,height:128})));
+ const asset=resolveCharacterAsset(rosterCatalog.P1,'battleMove');assert.equal(asset.key,'lushu.battleMove');assert.equal(asset.path,'assets/characters/lushu/battleMove-trimmed.png');assert.deepEqual([asset.width,asset.height],[384,91]);
+ const d=rosterCatalog.P1.animationDescriptors.battleMove;assert.deepEqual(d.frames,[0,96,192,288].map(x=>({x,y:0,width:96,height:91})));
  assert.equal(d.fps,18);
  assert.deepEqual([0,.056,.112,.167,.223].map(t=>animationFrame(d,t).index),[0,1,2,3,0]);
  assert.deepEqual([0,.112,.223,.334,.445].map(t=>animationFrame(d,t,true,'locomotion').index),[0,1,2,3,0]);
  assert.equal(rosterCatalog.P1.animationDescriptors.battleIdle.frames.length,1);
- assert.deepEqual(d.origin,[.5,691/724]);assert.equal(d.scale,2);assert.ok(encounterAssetKeys([rosterCatalog.P1]).includes('lushu.battleMove'));
+ assert.deepEqual(d.origin,[.5,(691/724*128-35)/91]);assert.equal(d.scale,1.5);assert.ok(encounterAssetKeys([rosterCatalog.P1]).includes('lushu.battleMove'));
  const f=await fixture();assert.ok(f.loaded.includes('lushu.battleMove'));f.p.destroy();
 });
 test('actual presenter switches on XY displacement, loops, freezes duplicate time, stops immediately and mirrors',async()=>{
  const f=await fixture();f.render(0);const image=f.sprites[0];assert.ok(image.texture[0].endsWith('lushu.battleIdle'));
- f.actor.x+=.1;f.render(.1);assert.ok(image.texture[0].endsWith('lushu.battleMove'));assert.equal(image.texture[1],'0.0.96.128');
- for(const [time,x] of [[.156,96],[.212,192],[.267,288],[.323,0]]){f.actor.x+=.1;f.render(time);assert.equal(image.texture[1],`${x}.0.96.128`);}
- f.render(.323);assert.ok(image.texture[0].endsWith('lushu.battleMove'));assert.equal(image.texture[1],'0.0.96.128');
- const before=structuredClone(f.frame);f.render(.6);assert.ok(image.texture[0].endsWith('lushu.battleIdle'));assert.equal(image.texture[1],'0.0.96.128');assert.deepEqual(f.frame,before);
- f.actor.y+=.1;f.render(.7);assert.ok(image.texture[0].endsWith('lushu.battleMove'));assert.deepEqual(image.setDisplaySizeValue,[108,144]);assert.deepEqual(image.setOriginValue,[.5,691/724]);
+ f.actor.x+=.1;f.render(.1);assert.ok(image.texture[0].endsWith('lushu.battleMove'));assert.equal(image.texture[1],image.texture[0].endsWith('lushu.battleMove')?'0.0.96.91':'0.0.96.128');
+ for(const [time,x] of [[.156,96],[.212,192],[.267,288],[.323,0]]){f.actor.x+=.1;f.render(time);assert.equal(image.texture[1],`${x}.0.96.91`);}
+ f.render(.323);assert.ok(image.texture[0].endsWith('lushu.battleMove'));assert.equal(image.texture[1],image.texture[0].endsWith('lushu.battleMove')?'0.0.96.91':'0.0.96.128');
+ const before=structuredClone(f.frame);f.render(.6);assert.ok(image.texture[0].endsWith('lushu.battleIdle'));assert.equal(image.texture[1],image.texture[0].endsWith('lushu.battleMove')?'0.0.96.91':'0.0.96.128');assert.deepEqual(f.frame,before);
+ f.actor.y+=.1;f.render(.7);assert.ok(image.texture[0].endsWith('lushu.battleMove'));assert.deepEqual(image.setDisplaySizeValue,[108,102.375]);assert.deepEqual(image.setOriginValue,[.5,(691/724*128-35)/91]);
  f.actor.x-=.1;f.render(.8);assert.deepEqual(image.setFlipXValue,[true]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);
  f.actor.hp=0;f.actor.x-=.1;f.render(.9);assert.ok(image.texture[0].endsWith('lushu.battleKo'));f.p.destroy();assert.equal(f.p.facings.size,0);
 });
 test('missing required Move blocks readiness and diagnostic rendering safely retains Idle',async()=>{
- for(const reducedMotion of [false,true]){const f=await fixture({missingMove:true,reducedMotion});assert.match(f.preparationError.message,/load failed.*lushu.battleMove/);assert.equal(f.p.ready,false);f.render(0);f.actor.x+=1;f.render(.1);f.actor.x+=1;f.render(.3);const image=f.sprites[0];assert.equal(image.texture[1],'0.0.96.128');assert.ok(image.texture[0].endsWith('lushu.battleIdle'));f.p.destroy();
+ for(const reducedMotion of [false,true]){const f=await fixture({missingMove:true,reducedMotion});assert.match(f.preparationError.message,/load failed.*lushu.battleMove/);assert.equal(f.p.ready,false);f.render(0);f.actor.x+=1;f.render(.1);f.actor.x+=1;f.render(.3);const image=f.sprites[0];assert.equal(image.texture[1],image.texture[0].endsWith('lushu.battleMove')?'0.0.96.91':'0.0.96.128');assert.ok(image.texture[0].endsWith('lushu.battleIdle'));f.p.destroy();
  }
 });
 test('forced reduced-motion presenter loops all Move frames slower, preserves geometry and immediately stops',async()=>{
  const f=await fixture({reducedMotion:true});f.render(0);
  const seen=[];for(const [time,x] of [[.1,0],[.156,0],[.212,96],[.323,192],[.434,288],[.545,0]]){
   f.actor.y+=.1;const before=structuredClone(f.frame);f.render(time);const image=f.sprites[0];
-  assert.ok(image.texture[0].endsWith('lushu.battleMove'));assert.equal(image.texture[1],`${x}.0.96.128`);seen.push(x);
-  assert.deepEqual(image.setDisplaySizeValue,[108,144]);assert.deepEqual(image.setOriginValue,[.5,691/724]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);assert.deepEqual(f.frame,before);
+  assert.ok(image.texture[0].endsWith('lushu.battleMove'));assert.equal(image.texture[1],`${x}.0.96.91`);seen.push(x);
+  assert.deepEqual(image.setDisplaySizeValue,[108,102.375]);assert.deepEqual(image.setOriginValue,[.5,(691/724*128-35)/91]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);assert.deepEqual(f.frame,before);
  }
  assert.deepEqual([...new Set(seen)],[0,96,192,288]);
  f.render(1.05);assert.ok(f.sprites[0].texture[0].endsWith('lushu.battleIdle'));
  f.actor.x-=.1;f.render(1.1);assert.deepEqual(f.sprites[0].setFlipXValue,[true]);
  // Even this same four-frame source stays static when requested as ordinary decorative playback.
- const image=f.p.imageFor('ordinary',rosterCatalog.P1.animationDescriptors.battleMove,.7);assert.equal(image.texture[1],'0.0.96.128');f.p.destroy();
+ const image=f.p.imageFor('ordinary',rosterCatalog.P1.animationDescriptors.battleMove,.7);assert.equal(image.texture[1],image.texture[0].endsWith('lushu.battleMove')?'0.0.96.91':'0.0.96.128');f.p.destroy();
 });
 test('real BattleSession motion/stop playback leaves authoritative snapshots and moveSpeed untouched in both modes',async()=>{
  for(const reducedMotion of [false,true]){
@@ -60,7 +60,7 @@ test('real BattleSession motion/stop playback leaves authoritative snapshots and
   assert.equal(speed,2.05);
   const render=()=>{const before=structuredClone(s.snapshot()),snap=s.snapshot();for(const team of ['allies','enemies'])snap[team]=snap[team].map(a=>({...a,definitionId:s.actorById(a.instanceId).definitionId}));f.p.render(snap,s.elapsedSeconds,rosterCatalog);assert.deepEqual(s.snapshot(),before);assert.equal(s.characterDefinitions.P1.stats.moveSpeed,speed);};
   render();const frames=[];for(let i=0;i<22;i++){s.holdPlayerControl('a1');s.setPlayerMovement('a1',{x:1,y:0});s.step(.05);render();frames.push(f.p.actorSprites.get('a1').texture[1]);}
-  assert.deepEqual([...new Set(frames)],['0.0.96.128','96.0.96.128','192.0.96.128','288.0.96.128']);
+  assert.deepEqual([...new Set(frames)],['0.0.96.91','96.0.96.91','192.0.96.91','288.0.96.91']);
   s.holdPlayerControl('a1');s.setPlayerMovement('a1',{x:0,y:0});s.step(.05);render();assert.ok(f.p.actorSprites.get('a1').texture[0].endsWith('lushu.battleIdle'));f.p.destroy();
  }
 });
