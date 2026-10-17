@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-10-17T09:19:28+08:00",
+  "playerStatement": "好，我確認可以，繼續修改目前在遊戲沒有特效的問題，你可以紀錄進度和正確規則流程",
+  "status": "PLAYER APPROVED PREVIEW / BATTLEFIELD VFX NOT ACCEPTED",
+  "sourceCommit": "f391491a1b85d4f5cdcfa1c5629b0615505c01ac",
+  "scope": "Presented supplied VFX and reconstructed character + VFX previews only. Does not approve phone/browser attack visibility, runtime completion, or unproduced Special/Awakening visuals.",
+  "files": [
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/heavy-composite-normal.gif",
+      "sha256": "87db86344e325be018ff5437146d94a1af82beb63971c3bcbe22754ad9a23cbe"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/heavy-composite-slow.gif",
+      "sha256": "82145156953b9a8ccdf9699498d95ad0d9c4d098dcd60046e67c9b32683f6f30"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/heavy-vfx-and-action-normal.gif",
+      "sha256": "6e3f9df1b61207880f6953ce14586b5470ba5b9de817330be39b252a4980b344"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/heavy-vfx-and-action-slow.gif",
+      "sha256": "aad1915e51db41eb102cba51bfcf728f5335e240858b9f367c730cb534f56758"
+    },
+    {
+      "path": "docs/art/candidates/lushu/heavy/playback-proof-v1/supplied-vfx-proof.png",
+      "sha256": "f700be6fc5437d80b04e78210b97ba9b664028d74066c562c6eac160c459e5e1"
+    }
+  ]
+}
