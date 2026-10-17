@@ -98,7 +98,8 @@
       345,
       345
     ],
-    "layer": 6
+    "layer": 6,
+    "holdAfterResolveMs": 260
   },
   "contact": {
     "assetKey": "lushu.heavyImpact",
