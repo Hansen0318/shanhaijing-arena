@@ -1,5 +1,9 @@
 # P1 鹿蜀 Heavy「逐風衝」— Chat-first action & VFX art direction
 
+## Current implementation — approved larger VFX
+
+**P1 HEAVY VFX ENLARGEMENT — APPROVED / LOCAL ENGINEERING PASS / RELEASE PENDING (2026-10-17 Asia/Taipei).** Player08:44:34 confirms bounded design: sweep linear1.5x (345x345), real-hit impact1.75x (367.5x245), both centers fixed. Only Heavy descriptor offset/size changed in production; preparation metadata/script synchronized, actor2.473118/origin/Basic/approved originals/PNG bytes/core/renderer/CD3/280ms/whiff semantics unchanged. Existing tests strengthened: initial3 size assertions RED, final43/43 targeted PASS; guard68files3749260bytes/build/diff/protected comparison PASS. All-required decoded16748808 unchanged. Static presenter projection inspected both directions without proof-panel clipping; not phone acceptance. Evidence docs/verification/M5C_B_LUSHU_HEAVY_VFX_SIZE.md + heavy-vfx-size-v1/. NEXT feature CI/Pages/public fingerprint, then phone review of enlarged FX; no further design confirmation, Special/Awakening implementation or main merge.
+
 ## Current request — visibly larger VFX, 2026-10-17 Asia/Taipei
 
 Player requires a larger outgoing attack-light/sweep and an independently clearer/larger real-hit explosion. The deployed cc4c1ad effect footprint is not player-accepted. Record the shared requirement for later Special/Awakening and all characters in docs/M5C_ART_ANIMATION_VFX.md ("Large, unmistakable cast and impact VFX").

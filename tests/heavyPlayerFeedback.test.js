@@ -35,6 +35,11 @@ for(const facingX of [-1,1])test(`air swing renders the supplied wind PNG above 
  f.step(.2);paint();const actor=p.actorSprites.get('a1'),wind=p.actionEffects.get('a1')?.get('blade');
  assert.ok(wind?.visible,'wind must exist even without a target');assert.ok(wind.texture.endsWith('lushu.heavyWind'));assert.ok(wind.depth>actor.depth,'sweep cannot be hidden behind character');
  assert.equal(actor.flipX,facingX<0);assert.equal(wind.flipX,facingX<0);assert.ok(wind.displayWidth>=150,'independent FX retains readable footprint after body correction');
+ const effectScale=72*2.4731182795698925/256,source=arenaToStage(f.actor);
+ assert.ok(Math.abs(wind.displayWidth-230*1.5*effectScale)<1e-8,'approved 1.5x sweep width');
+ assert.ok(Math.abs(wind.displayHeight-230*1.5*effectScale)<1e-8,'approved 1.5x sweep height');
+ assert.ok(Math.abs(wind.x-source.x-facingX*87*effectScale)<1e-8,'enlargement preserves sweep horizontal center in either facing');
+ assert.ok(Math.abs(wind.y-source.y-(150-rosterCatalog.P1.actionDescriptors.heavy.animation.origin[1]*256)*effectScale)<1e-8,'enlargement preserves sweep height');
  assert.ok(actor.displayHeight<=180,'Heavy cannot inflate the crouched body to standing height');
  f.step(.08);paint();assert.equal(p.actorSprites.get('a1').frame,'256.0.128.128');assert.ok(!p.actionEffects.get('a1')?.get('contact')?.visible);
  f.step(.32);paint();assert.ok(p.actorSprites.get('a1').texture.endsWith('lushu.battleIdle'));assert.equal(p.actionEffects.size,0);p.destroy();
@@ -46,7 +51,11 @@ test('Heavy stays grounded after body-scale correction and contact centers on ta
  assert.ok(d.animation.scale<=2.5,'reject crouching-height enlargement');assert.ok(Math.abs((112-d.animation.origin[1]*128)*scale-(122-idle.origin[1]*128)*idleScale)<1e-8);
  s.usePlayerAbility('a1','heavy');for(const e of s.drainCastEvents())p.cast(e,rosterCatalog.P1,0);f.step(.28);for(const e of s.drainCastEvents())p.cast(e,rosterCatalog.P1,.28);
  const snap=s.snapshot();for(const side of ['allies','enemies'])snap[side]=snap[side].map(a=>({...a,definitionId:s.actorById(a.instanceId).definitionId}));p.render(snap,.28,rosterCatalog);
- const contact=p.actionEffects.get('a1').get('contact'),target=arenaToStage(f.target);assert.ok(contact.visible);assert.ok(contact.texture.endsWith('lushu.heavyImpact'));assert.ok(target.y-contact.y>=45&&target.y-contact.y<=75,'contact is at torso height rather than feet');assert.ok(contact.depth>5);p.destroy();
+ const contact=p.actionEffects.get('a1').get('contact'),target=arenaToStage(f.target);assert.ok(contact.visible);assert.ok(contact.texture.endsWith('lushu.heavyImpact'));assert.ok(target.y-contact.y>=45&&target.y-contact.y<=75,'contact is at torso height rather than feet');assert.ok(contact.depth>5);
+ const effectScale=72*2.4731182795698925/256;
+ assert.ok(Math.abs(contact.displayWidth-210*1.75*effectScale)<1e-8,'approved 1.75x impact width');
+ assert.ok(Math.abs(contact.displayHeight-140*1.75*effectScale)<1e-8,'approved 1.75x impact height');
+ assert.ok(Math.abs(contact.x-target.x)<1e-8);assert.ok(Math.abs(contact.y-target.y+75*effectScale)<1e-8,'enlargement preserves actual target-contact center');p.destroy();
 });
 for(const flipX of [true,false])test(`actual Arena Heavy button forwards displayed facing flipX=${flipX} into an empty swing`,async()=>{
  const {readFileSync}=await import('node:fs'),{default:vm}=await import('node:vm');

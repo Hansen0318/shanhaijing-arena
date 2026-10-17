@@ -61,6 +61,13 @@
       "height": 128
     }
   ],
+  "vfxEnlargement": {
+    "approvedAt": "2026-10-17T08:44:34+08:00",
+    "baselineCommit": "cc4c1ade12a3191f8c1b8e9c637e94f1715cf2a5",
+    "bladeLinearFactor": 1.5,
+    "contactLinearFactor": 1.75,
+    "visualCentersPreserved": true
+  },
   "normalization": {
     "policy": "accepted-action pixel scale, not crouched silhouette height",
     "reference": "P1 Basic accepted runtime scale",
@@ -84,24 +91,24 @@
   "blade": {
     "assetKey": "lushu.heavyWind",
     "offset": [
-      100,
-      35
+      42.5,
+      -22.5
     ],
     "size": [
-      230,
-      230
+      345,
+      345
     ],
     "layer": 6
   },
   "contact": {
     "assetKey": "lushu.heavyImpact",
     "offset": [
-      -105,
-      -145
+      -183.75,
+      -197.5
     ],
     "size": [
-      210,
-      140
+      367.5,
+      245
     ],
     "layer": 7,
     "attach": "target"

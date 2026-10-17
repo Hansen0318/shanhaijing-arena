@@ -42,10 +42,11 @@ origin=[.5,112/128-idle_foot/(72*scale)]
 assert .05<=scale<=4 and 0<=origin[1]<=1
 manifest={'status':'RUNTIME DERIVATIVES / FEEDBACK CORRECTION / PHONE PENDING','sourceAcceptance':str((SOURCE/'acceptance.json').relative_to(ROOT)),
           'files':records,'frames':[{'x':i*128,'y':0,'width':128,'height':128} for i in range(4)],
+          'vfxEnlargement':{'approvedAt':'2026-10-17T08:44:34+08:00','baselineCommit':'cc4c1ade12a3191f8c1b8e9c637e94f1715cf2a5','bladeLinearFactor':1.5,'contactLinearFactor':1.75,'visualCentersPreserved':True},
           'normalization':{'policy':'accepted-action pixel scale, not crouched silhouette height','reference':'P1 Basic accepted runtime scale','sharedAcrossFourFrames':True},
           'origin':origin,'scale':scale,'frameDurationsMs':[200,80,140,180],'coordinateSize':[256,256],
-          'blade':{'assetKey':'lushu.heavyWind','offset':[100,35],'size':[230,230],'layer':6},
-          'contact':{'assetKey':'lushu.heavyImpact','offset':[-105,-145],'size':[210,140],'layer':7,'attach':'target'},
+          'blade':{'assetKey':'lushu.heavyWind','offset':[42.5,-22.5],'size':[345,345],'layer':6},
+          'contact':{'assetKey':'lushu.heavyImpact','offset':[-183.75,-197.5],'size':[367.5,245],'layer':7,'attach':'target'},
           'visibleBounds':[visible(c) for c in cells],'idleBounds':ib,
           'koTrim':{'source':str(old.relative_to(ROOT)),'sourceSHA256':sha(old),'rect':rect,'origin':[.5,280/331],'scale':2,'savedDecodedBytes':370688,'allRGBAInsideRectPreserved':True,'fullWidthForExactMirroring':True},
           'requiredDecodedBytes':16748808,'hardLimit':16777216}
