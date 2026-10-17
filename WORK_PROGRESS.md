@@ -2,6 +2,9 @@
 
 ## CURRENT HANDOFF POINTER
 
+**2026-10-17 Asia/Taipei — P1 AWAKENING CHAT-FIRST PREFLIGHT STARTED / NO ART OR RUNTIME APPROVAL.** P1 Special phone PASS remains closed. New `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md` captures existing P1.awakening T0 CD12, total coefficient2.2, three real hit events at 0/+120/+240ms relative to effect resolution, current zero windup and **no gameplay displacement/AoE/DoT**, plus distinct proposed F3 silhouette, target VFX and player art/GIF/timing gates. **NEXT** obtain/inspect approved P1 reference and produce *only F3 character-only candidate* for player review; no new Work needed for this Chat-owned gate. No existing accepted art or gameplay edits, no P2/main merge.
+
+
 **2026-10-17 Asia/Taipei — P1 SPECIAL「迴蹄」PHONE PASS / PLAYER VERIFIED (handoff confirmation).** Player's new-Chat handoff explicitly states「P1 鹿蜀 Special『迴蹄』目前版本 OK」「手機驗收 OK」for deployed source `67c45ebb5e09fe0e70d3d271bc2c1b0322a50dc6` (Actions #1034; public fingerprint in `docs/verification/M5C_B_LUSHU_SPECIAL_RUNTIME.md`). This closes the *current Special phone acceptance gate*; it does not assert individually unreported left/right, KO, pause or restart subchecks. Preserve approved F1–F4/GIF/VFX and shared actual 320ms sync; no rework of Basic/Heavy/Special. **NEXT P1 Awakening「南山奔襲」 Chat-first mechanics/art/VFX preflight and F3-first review** (actual three hits/120ms interval, coefficient 2.2 total, CD12); no gameplay edits or new character. Complete Awakening then P1 Hit/reactions and final character smoke before P2. No main merge.
 
 
