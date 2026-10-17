@@ -1,5 +1,11 @@
 # P1 鹿蜀 Awakening「南山奔襲」— Chat-first mechanics and visual preflight
 
+## P1 Awakening approved independent hit weighting — 2026-10-17
+
+Player「好我同意 妳把這些紀錄到github相關文件然後繼續」approves the proposed **design** for 「南山奔襲」: three individually collision-qualified hits with increasing *base coefficients* **0.40 / 0.70 / 1.10**, sum **2.20** (T0 baseline), not conditional combos. Third hit must retain coefficient1.10 if hits1/2 miss; no guaranteed hit, no fake HP, no fake target burst. Only real collision at each event can generate that hit's damage and target-attached impact VFX. First VFX smallest, second intermediate, final largest and most distinct; on phone compare independently rendered damage text, true HP bar steps and effects, and preserve existing defense/crit/Tier semantics. Actual visible HP significance is **not verified** until combat/phone test; visual legibility is not permission to change HP or give invulnerability. This supersedes equal-per-hit coefficient as a **future implementation requirement**, not a claim runtime already changed: current `battleSession.js` divides 2.20 evenly and checks later hits by range, not path collision; current ability lacks triple displacement. Keep 3 hits, CD12, total2.20; change timing/travel/hit geometry only after separate fully specified contract and approval. Multi-hit weight arrays must use generic shared data-driven schema, no P1 conditional runtime exceptions. Do not generate terminal F3 until choreography/real mechanics constraints reviewed; do not modify Basic/Heavy/Special/P2/main.
+
+
+
 ## Player-approved design order — three rushes BEFORE terminal F3 (2026-10-17)
 
 Player approves the **sequence and overall concept**: three fast collisions: (1) 起衝突進, (2) 折返追擊, (3) 終結奔襲. Finish whole-action choreography, travel paths, hit↔motion↔VFX mapping and visual distinction *before generating F3*. The **first art-review image** will be third hit's terminal-contact F3, not first impact. Player has **not yet approved** specific collision distances, durations, displacement mechanics, contact poses, effects or a change to the runtime gameplay. This corrects the earlier generic F3-first shorthand, which remains valid only **after** the full triple-hit design gate.
