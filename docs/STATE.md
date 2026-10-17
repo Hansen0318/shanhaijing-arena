@@ -1,5 +1,9 @@
 # Project State
 
+**2026-10-17 Asia/Taipei — P1 AWAKENING TRIPLE RUSH REAL TIMING/COLLISION PLAYER DESIGN APPROVED / ART NEXT.** Approved contacts at **150/300/460ms**, complete presentation **650ms**, three separately swept-path collision-qualified hit attempts with weights **0.40/0.70/1.10** (sum2.20), strongest terminal VFX, no fake impact on miss. Three-pass route concept 起衝突進→折返追擊→終結奔襲. Current runtime is still original 0/+120/+240ms, equal coefficients, range checks, zero displacement: **NOT ENGINEERED**. Next Chat-first: verify approved P1 identity asset, finish terminal F3 art specification, produce **one unapproved character-only third-hit F3 candidate** for player acceptance; then earlier phase poses/VFX/GIF. Actual collision distance/width/path clamp to be parameterized against arena and verified before runtime integration, no fabricated metrics. No Work yet; no P2/main merge.
+
+
+
 **2026-10-17 Asia/Taipei — P1 AWAKENING THREE-RUSH EXECUTABLE CONTRACT PROPOSED / PLAYER TIMING APPROVAL PENDING.** Chat completed deterministic choreography/hit/miss design proposal in `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md`: proposed contacts150/300/460ms, recover by650ms; re-aim only at each rush boundary, path-swept collision per segment, independent hit masks000–111, preserve approved weights0.40/0.70/1.10 and true event/VFX synchronization. Proposed actual displacement/timing/collision geometry remains **UNAPPROVED and UNIMPLEMENTED**; exact distance/width awaits arena review. Do not generate terminal F3 or hand off runtime before gameplay contract decision. Protect P1 Basic/Heavy/Special, no P2/main merge.
 
 
