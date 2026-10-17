@@ -1,0 +1,294 @@
+{
+  "status": "COMPOSITE GIF PLAYER REVIEW PENDING / NO RUNTIME INTEGRATION",
+  "inputs": [
+    {
+      "frame": "F1",
+      "source": "docs/art/approved/lushu/special/recovered-inputs-v1/F1.png",
+      "sha256": "d4e77f82fce5cca42b46a52fbac8d03180c78a8b44efb3b4a48335543f6702b3",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sourceAlphaBounds": [
+        65,
+        7,
+        1508,
+        1024
+      ],
+      "sourceCoreBounds": [
+        80,
+        10,
+        1404,
+        1015
+      ],
+      "sourceFoot": 1015,
+      "supportX": 550,
+      "skullReferenceBox": [
+        761,
+        154,
+        928,
+        345
+      ],
+      "skullWidth": 167,
+      "sourceDensityFactor": 1.0479041916167664,
+      "commonAuthoredScale": 0.22,
+      "effectiveUniformXYScale": 0.23053892215568864,
+      "resize": [
+        354,
+        236
+      ],
+      "translation": [
+        113,
+        186
+      ],
+      "alphaMargins": [
+        129,
+        186,
+        201,
+        58
+      ],
+      "transformedPixelsPreserved": true,
+      "sourcePixelsDeleted": 0
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/approved/lushu/special/recovered-inputs-v1/F2.png",
+      "sha256": "ba8eed4a287599726ed977daf187f64746ff407d10d4921404ed1d999a1122c2",
+      "dimensions": [
+        1222,
+        1287
+      ],
+      "sourceAlphaBounds": [
+        0,
+        9,
+        1214,
+        1287
+      ],
+      "sourceCoreBounds": [
+        16,
+        16,
+        1206,
+        1269
+      ],
+      "sourceFoot": 1269,
+      "supportX": 600,
+      "skullReferenceBox": [
+        570,
+        183,
+        769,
+        353
+      ],
+      "skullWidth": 199,
+      "sourceDensityFactor": 0.8793969849246231,
+      "commonAuthoredScale": 0.22,
+      "effectiveUniformXYScale": 0.1934673366834171,
+      "resize": [
+        236,
+        249
+      ],
+      "translation": [
+        124,
+        174
+      ],
+      "alphaMargins": [
+        124,
+        175,
+        280,
+        58
+      ],
+      "transformedPixelsPreserved": true,
+      "sourcePixelsDeleted": 0
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/approved/lushu/special/recovered-inputs-v1/F3.png",
+      "sha256": "0608897035880af59bfb86940f5510f82f5354bef725fca1d9268a821eaf7ba1",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sourceAlphaBounds": [
+        49,
+        10,
+        1508,
+        1012
+      ],
+      "sourceCoreBounds": [
+        61,
+        13,
+        1489,
+        1009
+      ],
+      "sourceFoot": 1009,
+      "supportX": 550,
+      "skullReferenceBox": [
+        560,
+        157,
+        735,
+        300
+      ],
+      "skullWidth": 175,
+      "sourceDensityFactor": 1.0,
+      "commonAuthoredScale": 0.22,
+      "effectiveUniformXYScale": 0.22,
+      "resize": [
+        338,
+        225
+      ],
+      "translation": [
+        119,
+        198
+      ],
+      "alphaMargins": [
+        130,
+        198,
+        191,
+        58
+      ],
+      "transformedPixelsPreserved": true,
+      "sourcePixelsDeleted": 0
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/approved/lushu/special/recovered-inputs-v1/F4.png",
+      "sha256": "98d4b4a6b716000e8faf4398972adf7f874e1ea1129a22e3d80921800078c27c",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "sourceAlphaBounds": [
+        0,
+        16,
+        1072,
+        1414
+      ],
+      "sourceCoreBounds": [
+        70,
+        36,
+        1049,
+        1395
+      ],
+      "sourceFoot": 1395,
+      "supportX": 435,
+      "skullReferenceBox": [
+        635,
+        205,
+        839,
+        399
+      ],
+      "skullWidth": 204,
+      "sourceDensityFactor": 0.8578431372549019,
+      "commonAuthoredScale": 0.22,
+      "effectiveUniformXYScale": 0.18872549019607843,
+      "resize": [
+        205,
+        273
+      ],
+      "translation": [
+        158,
+        157
+      ],
+      "alphaMargins": [
+        169,
+        161,
+        281,
+        57
+      ],
+      "transformedPixelsPreserved": true,
+      "sourcePixelsDeleted": 0
+    }
+  ],
+  "cell": [
+    640,
+    480
+  ],
+  "ground": 420,
+  "supportX": 240,
+  "normalization": "Single skull-width source-density policy, then common .22 XY scale. No per-silhouette height fit.",
+  "idleSource": "public/assets/characters/lushu/battleIdle-4f.png F1",
+  "idleScale": 2.25,
+  "previewTimingMs": {
+    "idleBefore": 400,
+    "F1": 200,
+    "F2": 120,
+    "F3": 200,
+    "F4": 240,
+    "idleAfter": 560,
+    "contactAt": 720,
+    "cycle": 1720
+  },
+  "previewTimingDoesNotAuthorizeCombatDelay": true,
+  "order": [
+    "Idle",
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "Idle"
+  ],
+  "directions": [
+    "right",
+    "left mirror"
+  ],
+  "vfxSources": [
+    {
+      "path": "docs/art/candidates/lushu/special/vfx-review-v1/source-sweep-raw-v1.png",
+      "sha256": "c935ed96e64b55991e6f87f4c8ffa8560a07d153f3b1523fec67e361f4a31a4e"
+    },
+    {
+      "path": "docs/art/candidates/lushu/special/vfx-review-v1/target-impact-raw-v1.png",
+      "sha256": "e9f4933fcb91d4c16338da44aae00d5a85ce421089f261cdd6db43eaf6e2bf40"
+    }
+  ],
+  "sourceWindowMs": [
+    600,
+    1000
+  ],
+  "contactWindowMs": [
+    720,
+    1080
+  ],
+  "sourcePeakSize": [
+    480,
+    400
+  ],
+  "contactPeakSize": [
+    500,
+    350
+  ],
+  "gifs": [
+    {
+      "file": "lushu-special-composite-v2-normal.gif",
+      "sha256": "bc6b4094e9a972150693eb345d265c159d08c75b6a7e83b8c8980ede2e5dff02",
+      "bytes": 2236476,
+      "encodedFrames": 32,
+      "timelineSamples": 86,
+      "durationMs": 3440,
+      "pixelTimelineRoundTrip": "PASS"
+    },
+    {
+      "file": "lushu-special-composite-v2-slow.gif",
+      "sha256": "87eb0d84d3b6ac24a55ecd2e630b0aac14508b9fc2735c69319991f07ce86356",
+      "bytes": 2236476,
+      "encodedFrames": 32,
+      "timelineSamples": 86,
+      "durationMs": 6880,
+      "pixelTimelineRoundTrip": "PASS"
+    },
+    {
+      "file": "lushu-special-character-only-v2-normal.gif",
+      "sha256": "a435488678e775713a84ed7e49dfba6fce7923285751d837d0c44187f2f0aad2",
+      "bytes": 361704,
+      "encodedFrames": 12,
+      "timelineSamples": 86,
+      "durationMs": 3440,
+      "pixelTimelineRoundTrip": "PASS"
+    }
+  ],
+  "limits": [
+    "Review animation, not recorded gameplay.",
+    "Special simulation hit remains 0ms; preview hit is 320ms after action start.",
+    "Effects/GIF not player-approved until explicit confirmation.",
+    "No runtime texture budget, build, deploy or phone acceptance claim."
+  ]
+}

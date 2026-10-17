@@ -1,0 +1,112 @@
+{
+  "status": "UNAPPROVED INDEPENDENT VFX CANDIDATES / FULL POSE GIF BLOCKED BY MISSING SOURCES",
+  "approvedF3SHA256": "0608897035880af59bfb86940f5510f82f5354bef725fca1d9268a821eaf7ba1",
+  "scope": "Generated separate effects plus deterministic exact-source padding and FX-only/static-F3 study. No character pose generation. Preview timing is not a combat timing decision.",
+  "previewLayout": {
+    "source": [
+      480,
+      400
+    ],
+    "contact": [
+      500,
+      350
+    ],
+    "actorVisibleHeight": 170,
+    "contactOnsetMs": 420,
+    "loopMs": 1440
+  },
+  "limitations": [
+    "Missing exact approved F1/F2/F4. Held F3 is clearly labeled, not an attack animation.",
+    "No real target or HP simulation. The contact panel illustrates a confirmed-hit visual only.",
+    "No phone-scale acceptance or runtime synchronization evidence.",
+    "Final Special>Heavy comparison with approved full motion/runtime remains pending."
+  ],
+  "records": [
+    {
+      "source": "docs/art/candidates/lushu/special/vfx-review-v1/source-sweep-raw-v1.png",
+      "sha256": "c935ed96e64b55991e6f87f4c8ffa8560a07d153f3b1523fec67e361f4a31a4e",
+      "bytes": 888546,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        29,
+        9,
+        1238,
+        1254
+      ],
+      "opaqueCoreBounds": [
+        37,
+        67,
+        1224,
+        1147
+      ],
+      "derivative": "docs/art/candidates/lushu/special/vfx-review-v1/source-sweep-padded-v1.png",
+      "derivativeSHA256": "3a004fb3838e861701460124d5eeefc4b3233691ab9da50ffdcdc819b015d56c",
+      "padding": 128,
+      "safeMargins": [
+        157,
+        137,
+        144,
+        128
+      ],
+      "exactOriginalPixelsPreserved": true
+    },
+    {
+      "source": "docs/art/candidates/lushu/special/vfx-review-v1/target-impact-raw-v1.png",
+      "sha256": "e9f4933fcb91d4c16338da44aae00d5a85ce421089f261cdd6db43eaf6e2bf40",
+      "bytes": 2080537,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds": [
+        0,
+        17,
+        1524,
+        1024
+      ],
+      "opaqueCoreBounds": [
+        120,
+        87,
+        1423,
+        919
+      ],
+      "derivative": "docs/art/candidates/lushu/special/vfx-review-v1/target-impact-padded-v1.png",
+      "derivativeSHA256": "0872d9739b4d967c24bb7b27f6441702699e0038acc0c1b63a8e4177c6e15b58",
+      "padding": 128,
+      "safeMargins": [
+        128,
+        145,
+        140,
+        128
+      ],
+      "exactOriginalPixelsPreserved": true
+    },
+    {
+      "file": "docs/art/candidates/lushu/special/vfx-review-v1/special-vfx-study-normal-v1.gif",
+      "sha256": "77205033b6e51a81c328e12dafed49f35e05270086a11236189cac61fcc3d33b",
+      "frames": 11,
+      "durationMs": 1440,
+      "decodedPixelsRoundTrip": "PASS",
+      "status": "UNAPPROVED VFX STUDY; F3 STATIC, NOT FOUR-POSE ANIMATION"
+    },
+    {
+      "file": "docs/art/candidates/lushu/special/vfx-review-v1/special-vfx-study-slow-v1.gif",
+      "sha256": "892eeab2ec9a148919e456280ca5db181dd41a958e3ef6e78892a86d6b766bd3",
+      "frames": 11,
+      "durationMs": 2880,
+      "decodedPixelsRoundTrip": "PASS",
+      "status": "UNAPPROVED VFX STUDY; F3 STATIC, NOT FOUR-POSE ANIMATION"
+    }
+  ]
+}

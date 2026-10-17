@@ -1,8 +1,18 @@
 # P1 鹿蜀 Special「迴蹄」— F3-first candidate production
 
-## Current gate — F3 v2 player approved; remaining pose candidates
+## Authoritative gate — GIF/VFX accepted; real timing choice before runtime
 
-2026-10-17 player accepts deployed Heavy source33a0f21 and explicitly asks to continue the next work. Heavy closure: docs/verification/M5C_B_LUSHU_HEAVY_PLAYER_ACCEPTANCE.json, commitd0bce45. Next is P1 Special, not Awakening or another character. Current Special output is a SINGLE unapproved F3 character-pose candidate. Stop for identity/weapon/pose review before F1/F2/F4, VFX/GIF or integration. No production/gameplay/public changes.
+Player2026-10-17T14:22:27+08:00 accepts the complete linked composite GIF/effects and authorizes records and continuing through deployment. Exact hashes/scope: `approved/lushu/special/review-v2/acceptance.json`. No duplicate art/GIF or publication approval needed. `verification/M5C_B_LUSHU_SPECIAL_INTEGRATION_PREFLIGHT.md` and the reproducible8case integration-preflight.json establish immediate0ms Special versus320ms accepted preview contact and current16MiB residency limits. NEXT explicit real320ms windup decision, then scoped shared implementation/tests/feature deployment. This is a material simulation delay not automatically authorized by visual GIF approval; no fake HP delay. All old missing-original/GIF-review/STOP entries below are historical.
+
+## Latest gate — Full four-pose + VFX GIF v2 review
+
+2026-10-17T14:12:32+08:00 player reattaches F1/F2/F3/F4 and authorizes full composite GIF plus progress/process recording. `approved/lushu/special/recovered-inputs-v1/receipt.json` binds each original hash to the previously accepted sequence; F3 matches immutable accepted v2. All missing source blockers below are resolved. Do not regenerate poses or request duplicate pose approval. Review output is `candidates/lushu/special/review-v2/` with safe four cells, independent existing VFX, normal/slow and character-only GIFs, right/left and original Idle return. Preparation and exact checks are in REVIEW_NOTES/manifest/checksums plus `scripts/prepareLushuSpecialComposite.py`.
+
+NEXT explicit player composite/VFX GIF acceptance. Preview source and single-impact timings are illustrative; real Special still has0ms hit, CD6/reposition.65/onehit. No runtime/build/deploy or main merge. Historical sections below explain prior gates, not current blockers.
+
+## Current gate — Four-pose approval recovered; independent VFX study / exact-source recovery
+
+Player explicitly accepted F1–F4 at2026-10-17T11:22:40+08:00 and requested large-effect GIF production. The current repo had only F3; recovery records this acceptance without inventing bindings for unavailable F1/F2/F4 files. See approved/lushu/special/four-pose-conversation-acceptance.json. Independent source rotational sweep and target impact candidates plus STATIC-F3 VFX-only studies are now retained in candidates/lushu/special/vfx-review-v1/. Do not regenerate accepted poses. Next recover originals and obtain effect/full composite review. These preview transforms do not authorize runtime/timing changes. Heavy remains player-verified.
 
 ## Authoritative mechanics and limits
 
@@ -31,9 +41,9 @@ Source-side rotational wind arc should emphasize the hoof/pivot sweep, with a la
 
 Identity references: public/assets/characters/lushu/identity.png and battleIdle-4f.png. Approved Heavy F3 A may be consulted only for exact already-approved gear/details, not copied as Special pose. Candidate prompt/hash/metadata live under docs/art/candidates/lushu/special/. A generated pose is not pixel-identical preservation, transparent-runtime PASS or approval. Full decode, actual alpha and edge clearance must be checked before delivery; any normalization, remaining poses and GIF follow explicit approval. Preserve original sources and accepted preview files unchanged.
 
-## Stop
+## Current stop boundary
 
-Show only F3 for player identity/weapon/pose review. No F1/F2/F4, VFX/GIF, runtime/build/deploy, timing edits, Awakening, other character or main merge at this gate.
+Independent VFX candidate review is available. Full four-pose GIF is blocked by missing approved F1/F2/F4 originals; recover or request exact original reattachment. Do not use different poses or present held F3 as an attack animation. No runtime/build/deploy/timing edits, Awakening, other character or main merge. Historical F3-only review notes below remain evidence of earlier stages.
 
 ## Actual F3 technical inspection
 

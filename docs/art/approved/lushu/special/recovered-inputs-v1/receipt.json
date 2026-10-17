@@ -1,0 +1,17 @@
+{
+  "status": "PLAYER-PROVIDED PREVIOUSLY APPROVED FOUR-POSE SOURCES / COMPOSITE GIF REVIEW PENDING",
+  "receivedAt": "2026-10-17T14:12:32+08:00",
+  "statement": "我給你F1-4，妳確認順序，妳現在要連同特效妳剛剛做的，整理成gif給我確認嗎，是的話就做，紀錄進度和流程",
+  "priorPoseAcceptanceAt": "2026-10-17T11:22:40+08:00",
+  "priorPoseAcceptance": "剛剛你做的F1-4ok，妳接下來是做包含大場面特效gif嗎，是的話就做",
+  "order": ["F1 anticipation/load", "F2 knee raise/intermediate", "F3 turning kick/contact", "F4 recover"],
+  "scope": "Bind supplied originals to the previously accepted pose sequence, prepare deterministic review GIF with existing candidate VFX, and record progress/process. This is NOT approval of the unreviewed composite GIF, VFX or runtime timing.",
+  "files": [
+    {"name":"F1.png", "libraryFileId":"libfile_0acf5a741d04819196610dde00cbcd59", "sha256":"d4e77f82fce5cca42b46a52fbac8d03180c78a8b44efb3b4a48335543f6702b3"},
+    {"name":"F2.png", "libraryFileId":"libfile_89ba33d4d6188191884bfa99aaa23d3b", "sha256":"ba8eed4a287599726ed977daf187f64746ff407d10d4921404ed1d999a1122c2"},
+    {"name":"F3.png", "libraryFileId":"libfile_810c07ea70888191866ca1910953a641", "sha256":"0608897035880af59bfb86940f5510f82f5354bef725fca1d9268a821eaf7ba1"},
+    {"name":"F4.png", "libraryFileId":"libfile_ed91ada59db48191a7945ecec8f079f8", "sha256":"98d4b4a6b716000e8faf4398972adf7f874e1ea1129a22e3d80921800078c27c"}
+  ],
+  "checks": "F3 is byte-identical to the existing accepted F3-contact-v2.png; all four copied originals retained byte-identically. Visual order checked. No generated replacement poses.",
+  "resolvedBlocker": "Exact F1/F2/F4 source gap documented in vfx-review-v1 is now resolved by explicit player reattachment."
+}

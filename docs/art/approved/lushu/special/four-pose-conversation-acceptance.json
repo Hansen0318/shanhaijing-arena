@@ -1,0 +1,24 @@
+{
+  "status": "FOUR-POSE CONVERSATION ACCEPTANCE RECOVERED / EXACT F1 F2 F4 SOURCES MISSING",
+  "statement": "剛剛你做的F1-4ok，妳接下來是做包含大場面特效gif嗎，是的話就做",
+  "statementAt": "2026-10-17T11:22:40+08:00",
+  "provenance": "Prior project conversation recovered through Personal Context; acceptance statement also present in current project context. This is not an asset-hash binding.",
+  "verifiedGitHubHead": "a1f0f22007a0cefb31df8f482f5b3731a9166737",
+  "availableApprovedF3": {
+    "path": "docs/art/candidates/lushu/special/F3-contact-v2.png",
+    "sha256": "0608897035880af59bfb86940f5510f82f5354bef725fca1d9268a821eaf7ba1"
+  },
+  "missing": [
+    "Exact approved Special F1 source PNG",
+    "Exact approved Special F2 source PNG",
+    "Exact approved Special F4 source PNG"
+  ],
+  "recoveryChecks": [
+    "Feature HEAD full file tree and tracked checkout",
+    "Current Special acceptance/spec/state",
+    "Library targeted search and all files created after 2026-10-17T10:50:00+08:00: no matching source",
+    "Prior project conversation confirms acceptance but returns no attachment/file locator"
+  ],
+  "scope": "Continue independently authorized source rotational VFX and target-contact candidates. Preserve exact F3. Do not regenerate missing approved poses, borrow Basic/Heavy poses, fabricate a four-pose GIF, or mark new effects approved.",
+  "nextForFullGif": "Recover original approved F1/F2/F4 image files; ask player to reattach exact originals only if recovery remains unavailable."
+}

@@ -1,0 +1,345 @@
+{
+  "status": "GIF/VFX APPROVED / READ-ONLY PREFLIGHT PASS / REAL TIMING AND RESIDENCY DESIGN REQUIRED",
+  "approval": "docs/art/approved/lushu/special/review-v2/acceptance.json",
+  "ability": {
+    "id": "P1.special",
+    "name": "迴蹄",
+    "description": "斜向移位後攻擊。",
+    "category": "special",
+    "cooldown": 6,
+    "windupMs": 0,
+    "unlockTier": 0,
+    "canCrit": true,
+    "critChance": 0.15,
+    "critMultiplier": 1.75,
+    "range": 2.6,
+    "minRange": 0,
+    "preferredRange": 0.85,
+    "maxRange": 2.6,
+    "targetingRule": "enemy",
+    "telegraph": null,
+    "effect": {
+      "coefficient": 1.3,
+      "movement": {
+        "kind": "reposition",
+        "distance": 0.65
+      }
+    },
+    "ai": {
+      "priority": 30
+    },
+    "tierScaling": {
+      "aoe": false,
+      "mobility": true,
+      "status": false,
+      "windup": false
+    }
+  },
+  "cases": [
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "sign": 1,
+      "before": {
+        "at": 0,
+        "x": 0,
+        "y": 0,
+        "hp": 320
+      },
+      "after": {
+        "at": 0,
+        "x": 0.4596194077712559,
+        "y": 0.4596194077712559,
+        "hp": 309.11,
+        "cooldown": 6
+      },
+      "damageCount": 1,
+      "phasedActionStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "sign": -1,
+      "before": {
+        "at": 0,
+        "x": 0,
+        "y": 0,
+        "hp": 320
+      },
+      "after": {
+        "at": 0,
+        "x": -0.4596194077712559,
+        "y": -0.4596194077712559,
+        "hp": 309.11,
+        "cooldown": 6
+      },
+      "damageCount": 1,
+      "phasedActionStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "sign": 1,
+      "before": {
+        "at": 0,
+        "x": 0,
+        "y": 0,
+        "hp": 320
+      },
+      "after": {
+        "at": 0,
+        "x": 0.4596194077712559,
+        "y": 0.4596194077712559,
+        "hp": 309.11,
+        "cooldown": 6
+      },
+      "damageCount": 1,
+      "phasedActionStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "sign": -1,
+      "before": {
+        "at": 0,
+        "x": 0,
+        "y": 0,
+        "hp": 320
+      },
+      "after": {
+        "at": 0,
+        "x": -0.4596194077712559,
+        "y": -0.4596194077712559,
+        "hp": 309.11,
+        "cooldown": 6
+      },
+      "damageCount": 1,
+      "phasedActionStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "sign": 1,
+      "before": {
+        "at": 0,
+        "x": 0,
+        "y": 0,
+        "hp": 320
+      },
+      "after": {
+        "at": 0,
+        "x": 0.4596194077712559,
+        "y": 0.4596194077712559,
+        "hp": 309.11,
+        "cooldown": 6
+      },
+      "damageCount": 1,
+      "phasedActionStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "sign": -1,
+      "before": {
+        "at": 0,
+        "x": 0,
+        "y": 0,
+        "hp": 320
+      },
+      "after": {
+        "at": 0,
+        "x": -0.4596194077712559,
+        "y": -0.4596194077712559,
+        "hp": 309.11,
+        "cooldown": 6
+      },
+      "damageCount": 1,
+      "phasedActionStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "sign": 1,
+      "before": {
+        "at": 0,
+        "x": 0,
+        "y": 0,
+        "hp": 320
+      },
+      "after": {
+        "at": 0,
+        "x": 0.4596194077712559,
+        "y": 0.4596194077712559,
+        "hp": 309.11,
+        "cooldown": 6
+      },
+      "damageCount": 1,
+      "phasedActionStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "sign": -1,
+      "before": {
+        "at": 0,
+        "x": 0,
+        "y": 0,
+        "hp": 320
+      },
+      "after": {
+        "at": 0,
+        "x": -0.4596194077712559,
+        "y": -0.4596194077712559,
+        "hp": 309.11,
+        "cooldown": 6
+      },
+      "damageCount": 1,
+      "phasedActionStarted": false
+    }
+  ],
+  "protectedSources": {
+    "src/roster/abilities.js": "76725650bd5fac7cfa535f1e594ec5f4146ab5fec6cfbce72f17e5b0dfbd0d44",
+    "src/combat/battleSession.js": "8405b074b098b18b0a68f4cc47d19ce997ea5db90a77ac45acd8cd63af6dea46",
+    "src/assets/actionPlayback.js": "bc0eabb7ef2309e0b1807417abbc4229f3491d6c222c8e24e48a376c84925434",
+    "src/runtime/assetPresenter.js": "4bbde9ac12d271c61dfb7e2176ffc30b38e5d062788996abfabc910d27cc143c",
+    "src/roster/catalog.js": "0b47b13642c0a037d9d64d5dfbc633dd38bbd74c215e5e8692e95658e95677a1",
+    "src/assets/manifest.js": "6b9a7fdd62504dc745ba11ebeed7f3a3b9c32d8fb1ec7930dd40fb60cc13d712"
+  },
+  "timing": {
+    "actualWindupMs": 0,
+    "approvedPreviewContactMs": 320,
+    "sharedPendingActionSupportsOptInWindup": true,
+    "realTimingApproved": false,
+    "recommended": "Explicit real320ms windup: spend cooldown at start; existing shared resolve performs diagonal reposition and one hit together at320ms, with F3/target impact/HP at that same real resolve."
+  },
+  "budget": {
+    "hardLimit": 16777216,
+    "requiredBaseline": 16748808,
+    "freeBytes": 28408,
+    "baselineFiles": [
+      {
+        "key": "lushu.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "botuo.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "chiru.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "jiuweihu.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "xingxing.portrait",
+        "decodedBytes": 65536
+      },
+      {
+        "key": "lushu.battleIdle",
+        "decodedBytes": 49152
+      },
+      {
+        "key": "botuo.battleIdle",
+        "decodedBytes": 409600
+      },
+      {
+        "key": "chiru.battleIdle",
+        "decodedBytes": 102400
+      },
+      {
+        "key": "jiuweihu.battleIdle",
+        "decodedBytes": 102400
+      },
+      {
+        "key": "xingxing.battleIdle",
+        "decodedBytes": 102400
+      },
+      {
+        "key": "lushu.battleMove",
+        "decodedBytes": 196608
+      },
+      {
+        "key": "lushu.battleKo",
+        "decodedBytes": 1048576
+      },
+      {
+        "key": "botuo.battleMove",
+        "decodedBytes": 409600
+      },
+      {
+        "key": "botuo.battleKo",
+        "decodedBytes": 677888
+      },
+      {
+        "key": "chiru.battleMove",
+        "decodedBytes": 409600
+      },
+      {
+        "key": "chiru.battleKo",
+        "decodedBytes": 6290064
+      },
+      {
+        "key": "jiuweihu.battleMove",
+        "decodedBytes": 409600
+      },
+      {
+        "key": "jiuweihu.battleKo",
+        "decodedBytes": 1048576
+      },
+      {
+        "key": "xingxing.battleMove",
+        "decodedBytes": 3942400
+      },
+      {
+        "key": "xingxing.battleKo",
+        "decodedBytes": 552960
+      },
+      {
+        "key": "lushu.battleBasic",
+        "decodedBytes": 262144
+      },
+      {
+        "key": "lushu.basicBlade",
+        "decodedBytes": 31428
+      },
+      {
+        "key": "lushu.basicContact",
+        "decodedBytes": 19380
+      },
+      {
+        "key": "lushu.battleHeavy",
+        "decodedBytes": 262144
+      },
+      {
+        "key": "lushu.heavyWind",
+        "decodedBytes": 50176
+      },
+      {
+        "key": "lushu.heavyImpact",
+        "decodedBytes": 44032
+      }
+    ],
+    "exampleDerivativeDimensions": {
+      "characterStrip": {
+        "width": 512,
+        "height": 128
+      },
+      "sourceVfx": {
+        "width": 112,
+        "height": 112
+      },
+      "contactVfx": {
+        "width": 128,
+        "height": 86
+      }
+    },
+    "exampleAdditionalDecodedBytes": 356352,
+    "naiveTotal": 17105160,
+    "naiveFits": false,
+    "policy": "Do not publish high-resolution review cells, enlarge16MiB, degrade art to fit28KiB, or alter another approved character as an unreviewed workaround. Measure a bounded exact-pixel packaging or shared action-residency solution before integration."
+  },
+  "conclusion": "Approval closes art/GIF gates and authorizes scoped deployment. It does not specify actual320ms timing. Existing Special remains immediate and emits no phased actionId, so accepted full anticipation and real contact cannot both be matched without a material timing decision. No product/runtime source changed."
+}
