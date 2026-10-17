@@ -1,0 +1,11 @@
+{
+  "status": "F3 V2 PLAYER APPROVED / OTHER POSES AND VFX NOT APPROVED",
+  "at": "2026-10-17T10:58:54+08:00",
+  "statement": "這個我確認ok，可以繼續，確認未來會增加規則說的畫有攻擊特效且更加的明顯大爆破感",
+  "selected": {
+    "path": "docs/art/candidates/lushu/special/F3-contact-v2.png",
+    "sha256": "0608897035880af59bfb86940f5510f82f5354bef725fca1d9268a821eaf7ba1"
+  },
+  "scope": "Explicit identity/weapon/turning-kick F3 v2 acceptance. Authorizes F1/F2/F4 candidates. Reinforces larger, unmistakable, explosive Special source/impact VFX after pose review; does not approve unseen poses/effects/GIF or timing/runtime changes.",
+  "constraints": "Preserve exact accepted F3 pixels, separate VFX from character, compare Special>Heavy at same phone scale, single real hit only; no AoE/DoT/extra hit/character enlargement or main merge."
+}

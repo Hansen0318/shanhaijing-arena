@@ -167,3 +167,7 @@ Heavy source33a0f21 is now player-verified; see M5C_B_LUSHU_HEAVY_PLAYER_ACCEPTA
 ## Transparent candidate diagnosis — actual compositing (2026-10-17)
 
 For generated RGBA candidates, inspect actual alpha values and composite on opaque light/dark backgrounds. Colored RGB under alpha0 is invisible and must not be mistaken for rendered glow by an RGB-only thumbnail. Check complete silhouette and transparent outer borders; keep source hash and a reproducible QA derivative. Alpha/background QA is separate from player pose approval and safe equal-cell runtime normalization. When an unapproved candidate needs generative cleanup, retain the original and version the edit; never claim the edit preserved exact pixels or inherited approval.
+
+## Special F3 acceptance / larger explosive VFX confirmation — 2026-10-17
+
+Player10:58 explicitly accepts P1 Special F3 v2 and confirms later effects must be clearly visible, larger and more explosive under the existing Basic<Heavy<Special<Awakening rule. Save accepted pose/hash separately from future pose/effect/GIF review. Continue individual remaining poses first; do not bake effects into them or infer unseen VFX approval. Outgoing effect and actual-hit burst must each be reviewed independently at equal actor scale; maintain reduced-mode static cues and finite cleanup.
