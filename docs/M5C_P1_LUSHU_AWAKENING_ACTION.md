@@ -1,5 +1,22 @@
 # P1 鹿蜀 Awakening「南山奔襲」— Chat-first mechanics and visual preflight
 
+## Player-approved design order — three rushes BEFORE terminal F3 (2026-10-17)
+
+Player approves the **sequence and overall concept**: three fast collisions: (1) 起衝突進, (2) 折返追擊, (3) 終結奔襲. Finish whole-action choreography, travel paths, hit↔motion↔VFX mapping and visual distinction *before generating F3*. The **first art-review image** will be third hit's terminal-contact F3, not first impact. Player has **not yet approved** specific collision distances, durations, displacement mechanics, contact poses, effects or a change to the runtime gameplay. This corrects the earlier generic F3-first shorthand, which remains valid only **after** the full triple-hit design gate.
+
+### Choreography proposal for separate review, not approved gameplay
+| Phase | Proposed movement and silhouette | Independent target VFX | Engine alignment constraint |
+| --- | --- | --- | --- |
+| A 起衝突進 | Compress low then launch in a direct fast approach; forward knee/hoof/antler silhouette | narrow wedge pressure burst, small fracture ring | Hit 0; do not claim actual travel currently exists |
+| B 折返追擊 | rebound / sharp angled return, unmistakably different body twist | cross-shear streaks and double-edge radial crack | Hit 1; current engine resolves +120ms after hit 0 |
+| C 終結奔襲 | strongest planted forward collision with lowered antlers and separated limbs; this is **terminal F3** | largest layered ridge-shatter/pressure-ring burst with finite fade, on true target | Hit 2; current engine resolves +240ms after hit 0 |
+| Recovery | stabilize at legal arena coordinate and return to Idle/Move | finite wake expires with skill | no fourth damage event |
+
+**Engineering decision pending:** current `P1.awakening` has 0ms windup, three 0/+120/+240ms damage hits, no movement field. A readable real triple traversal and rebound almost certainly requires an explicitly chosen travel/timing contract; do not silently implement one, nor animate fake gameplay displacement unconnected to actor position. Separate the player-approved *theme/workflow* from proposed geometry and real timing. Preserve T0 cooldown12, coefficient2.2 total, three true hits, targeting/range, Tier scaling unless player explicitly authorizes a bounded change. Any actor motion must synchronize authoritative position, combat hit events and VFX, deal safely with target death, walls, interruption, facing, whiff, AI and reduced-motion. No invented DoT/AoE/extra hits.
+
+**Next Chat-owned deliverable:** complete technical choreography options and verification of engine semantics; request player approval of proposed real movement/timing if change is necessary. Only then generate terminal F3 from exact approved identity; subsequent first/second impact pose set may need more than four total poses. Do not create artwork based only on prose without recovering canonical approved identity; do not start Work yet.
+
+
 Status: **DESIGN PREFLIGHT / F3 ART NOT YET AUTHORED OR PLAYER APPROVED** (2026-10-17 Asia/Taipei). P1 Basic, Heavy, Special are player verified; P1 Awakening next; Hit/reactions and full P1 character smoke follow. No P2, no main merge.
 
 ## Verified gameplay contract
