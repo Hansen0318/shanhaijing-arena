@@ -2,6 +2,10 @@
 
 ## CURRENT HANDOFF POINTER
 
+**2026-10-17 Asia/Taipei — P1 AWAKENING WEIGHTED THREE-HIT DESIGN PLAYER APPROVED / IMPLEMENTATION NOT STARTED.** Player accepts coefficient sequence **0.40/0.70/1.10** (sum2.20) across **three independently collision-qualified rush hits**, including terminal-only hit1.10 when first/second miss; unique escalating VFX and readable on-phone real HP/damage display, no fake hits. Real runtime still evenly splits2.20, later hit checks range, no authored triple displacement, initial hit 0ms and +120/+240ms. Authoritative spec `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md` and shared workflow/hard rules updated. Next Chat gate: resolve **actual rush path + hit event timing/geometry** design; only then terminal third-hit F3, independent VFX/GIF/player review. Timing suggestion150/300/460ms plus650ms presentation is **not separately locked as real combat timing**. No code/art/deploy or P2/main.
+
+
+
 **2026-10-17 Asia/Taipei — P1 AWAKENING THREE-RUSH DESIGN ORDER PLAYER APPROVED / CHOREOGRAPHY PREPARATION.** Player authorizes three-phase concept 起衝突進→折返追擊→終結奔襲 and hard sequencing **whole three-rush architecture first, then terminal third-impact F3 candidate**, followed by earlier impact poses/VFX/GIF review. This is *workflow/theme approval only*: no displacement distance/timing/pose/runtime approval. Current implementation still three damage hits 0/+120/+240ms, zero windup, no movement; new actual triple movement requires explicit combat contract. Detailed proposal and cross-session gate in `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md`; hard process `AGENTS.md`, `docs/DEVELOPMENT_PLAYBOOK.md`, `docs/CHARACTER_ACTION_ART_WORKFLOW.md`. **NEXT Chat:** lock proposed path/timing/event mapping, then terminal F3 art only after gameplay design authorization. No Work, no P2/main merge.
 
 
