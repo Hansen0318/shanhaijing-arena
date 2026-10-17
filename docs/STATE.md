@@ -1,5 +1,9 @@
 # Project State
 
+**2026-10-17 Asia/Taipei — P1 AWAKENING REAL THREE-RUSH CONTRACT PLAYER APPROVED / TERMINAL F3 BRIEF READY.** Player explicitly approves real hits at150/300/460ms, full playback650ms, three independent swept collisions, weighted T0 coefficients0.40/0.70/1.10 (sum2.20). Governance, playbook, action workflow, Awakening spec updated; source unchanged. Approved identity Git blob SHA1fddc20a and battleIdle blob SHAc0052ab9 were fetched/verified; third terminal-hit F3 exact-art brief added to `docs/M5C_P1_LUSHU_AWAKENING_ACTION.md`. **F3 NOT YET PRODUCED OR PLAYER APPROVED**, exact travel width/distance still subject to measured implementation; do not create derivative from imagination without approved source as visual input. NEXT Chat: asset-conditioned F3 candidate → player review, then earlier phases/VFX/GIF. No runtime/Work/P2/main merge.
+
+
+
 **2026-10-17 Asia/Taipei — P1 AWAKENING TRIPLE RUSH REAL TIMING/COLLISION PLAYER DESIGN APPROVED / ART NEXT.** Approved contacts at **150/300/460ms**, complete presentation **650ms**, three separately swept-path collision-qualified hit attempts with weights **0.40/0.70/1.10** (sum2.20), strongest terminal VFX, no fake impact on miss. Three-pass route concept 起衝突進→折返追擊→終結奔襲. Current runtime is still original 0/+120/+240ms, equal coefficients, range checks, zero displacement: **NOT ENGINEERED**. Next Chat-first: verify approved P1 identity asset, finish terminal F3 art specification, produce **one unapproved character-only third-hit F3 candidate** for player acceptance; then earlier phase poses/VFX/GIF. Actual collision distance/width/path clamp to be parameterized against arena and verified before runtime integration, no fabricated metrics. No Work yet; no P2/main merge.
 
 
