@@ -413,6 +413,19 @@ Player corrected earlier Basic-all-five then Heavy-all-five workflow. Finish **P
 
 ## Mandatory action-power visual escalation — player rule 2026-10-16
 
+### Large, unmistakable cast and impact VFX — PLAYER HARD RULE 2026-10-17
+
+Player feedback on deployed P1 Heavy: the attack light/sweep must be larger, and the actual-hit effect must independently be clearly larger and more obvious. This is a requested correction, not acceptance of the current Heavy presentation.
+
+- At actual phone battle scale, maintain an unmistakable **Basic < Heavy < Special < Awakening** progression in visible effect footprint, spectacle and impact emphasis. A tiny numerical size change, faint glow, or richer description alone does not meet the requirement. Special must visibly exceed Heavy; Awakening has the largest, strongest, most immediately recognizable payoff.
+- Review **cast/weapon/attack-light VFX** and **target impact VFX** separately. Both must read clearly, with sufficient visual size, contrast and visible peak. Stronger effects retain each skill's distinct shape, trajectory, layering, material/color language and rhythm; do not scale/recolor the identical effect to impersonate a different skill.
+- Increase the effects independently of the approved actor's head/body scale and grounded baseline. Preserve the approved character, weapon and original images. VFX size is presentation only: it must not expand hit geometry, reach, damage, hit count, target acquisition or actual HP/damage timing.
+- Only real confirmed hits show damaging contact/explosion. An empty manual Heavy swing still shows its authored body action and outgoing sweep, but no fabricated hit burst. Utility/heal/defense skills escalate their correct non-damage visual language rather than fake attack explosions; sustained target effects follow actual active status only.
+- Compare effects-on at the same real display scale against the previous completed skill, in both directions and in an actual target-contact scenario. Also inspect effects-off to preserve motion differentiation. Check HUD/target readability, clipping, pause/cleanup, reduced motion and existing finite texture/frame budgets. Player phone verification remains required; image presence or tests alone do not establish visual acceptance.
+- Apply this requirement to **P1's remaining Heavy/Special/Awakening work and all future characters**. P1 has authored Basic and Heavy descriptors; Special/Awakening authored action/VFX gates are still unfinished. Their real gameplay abilities existing does not mean their distinct authored visuals have been completed or accepted. Preserve approved Basic unless the player explicitly reopens it.
+
+The player approved this qualitative requirement. Exact enlargement multipliers proposed by the assistant remain design proposals until separately confirmed; do not describe them as player-selected values.
+
 For each character's four active categories, **Basic < Heavy < Special < Awakening** in perceived impact, animation commitment and spectacle. This is a **relative visual hierarchy**, not a new damage formula or numerical guarantee: individual ability data (including defensive/heal skills) remain authoritative. Preserve readability, role/species identity and mobile performance.
 
 - **Basic:** fast, compact, readable signature strike, brief contact flash/trail; little screen occupation.

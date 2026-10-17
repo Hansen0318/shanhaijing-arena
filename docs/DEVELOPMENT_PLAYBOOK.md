@@ -146,6 +146,8 @@ When a player approves four poses as the art source, preserve that exact image a
 
 ## Mandatory action-power visual escalation — player rule 2026-10-16
 
+**2026-10-17 player clarification:** effect size must be visibly larger and easier to recognize at real phone battle scale, not merely described as stronger. Review BOTH outgoing weapon/light effects and target impact bursts separately. Heavy < Special < Awakening must show a clear successive increase in effect footprint and emphasis, while retaining different motion/VFX signatures. Canonical requirement: `docs/M5C_ART_ANIMATION_VFX.md` → "Large, unmistakable cast and impact VFX". Do not enlarge the actor, invent attack range/damage, or label unproduced skills complete.
+
 For each character's four active categories, **Basic < Heavy < Special < Awakening** in perceived impact, animation commitment and spectacle. This is a **relative visual hierarchy**, not a new damage formula or numerical guarantee: individual ability data (including defensive/heal skills) remain authoritative. Preserve readability, role/species identity and mobile performance.
 
 - **Basic:** fast, compact, readable signature strike, brief contact flash/trail; little screen occupation.

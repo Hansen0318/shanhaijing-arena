@@ -1,5 +1,9 @@
 # Character action art, VFX and animation review workflow
 
+## Phone-scale VFX enlargement acceptance — player clarification 2026-10-17
+
+Canonical requirement: `docs/M5C_ART_ANIMATION_VFX.md` → "Large, unmistakable cast and impact VFX". Before closing a skill, compare outgoing light/sweep AND real-target impact separately against the preceding skill at the same actual phone display scale. Basic < Heavy < Special < Awakening must be immediately apparent in effect size and impact emphasis, with distinct skill-specific motion and VFX. Never enlarge the actor or damage geometry to meet this requirement. Preserve original art, mirror/grounding, finite budgets and true-hit-only contact. P1 Heavy's current effect size was rejected as insufficient; previous source/GIF acceptance is not acceptance of its current runtime footprint. Special/Awakening authored visuals remain unfinished and must follow the existing review gates under this stronger rule.
+
 ## 可重用的完整製作歷程與接手索引 — 2026-10-16
 
 P1 Basic 已完成工程驗證與部署，玩家回覆「這樣不錯」，肯定本次攻擊動畫／效果。本流程可作為後續角色的製作方法；不代表其他角色的形象、攻擊、美術或戰鬥時序自動獲准。KO／Pause／Restart 等未逐項回報項目維持待確認。下方舊日期的 pending／proposal 是歷史階段；當前狀態以最新 WORK_PROGRESS.md、STATE.md、驗證紀錄為準。
