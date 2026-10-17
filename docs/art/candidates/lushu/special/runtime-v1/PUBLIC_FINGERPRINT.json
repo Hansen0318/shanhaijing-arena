@@ -1,0 +1,137 @@
+{
+  "sourceSha": "67c45ebb5e09fe0e70d3d271bc2c1b0322a50dc6",
+  "checkedAt": "2026-10-17T06:59:29.865632+00:00",
+  "baseUrl": "https://hansen0318.github.io/shanhaijing-arena/",
+  "kind": "Public HTTP exact-byte fingerprint against local production build; not phone acceptance",
+  "allMatch": true,
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 1491,
+      "localSha256": "fe0ff1d3143a4f9bece4bf6cd6a477fc2e389643e33d7b52772f0f4993af7316",
+      "publicSha256": "fe0ff1d3143a4f9bece4bf6cd6a477fc2e389643e33d7b52772f0f4993af7316",
+      "match": true
+    },
+    {
+      "path": "assets/battleRuntime-Bb3b-o-u.js",
+      "status": 200,
+      "bytes": 1461825,
+      "localSha256": "6cc5ecb377852a5e16dab7fc6477390708dc1205ceb176a384616691d677ff83",
+      "publicSha256": "6cc5ecb377852a5e16dab7fc6477390708dc1205ceb176a384616691d677ff83",
+      "match": true
+    },
+    {
+      "path": "assets/index-8JGZpf69.js",
+      "status": 200,
+      "bytes": 102775,
+      "localSha256": "92fc3a06ca572b075e65a68a2fc2cb4e6b0fb9c3e44c963a52a2fe93bfdab6e0",
+      "publicSha256": "92fc3a06ca572b075e65a68a2fc2cb4e6b0fb9c3e44c963a52a2fe93bfdab6e0",
+      "match": true
+    },
+    {
+      "path": "assets/index-DcqtNRF0.css",
+      "status": 200,
+      "bytes": 22943,
+      "localSha256": "a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da",
+      "publicSha256": "a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleIdle-static.png",
+      "status": 200,
+      "bytes": 18033,
+      "localSha256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2",
+      "publicSha256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleMove-trimmed.png",
+      "status": 200,
+      "bytes": 54173,
+      "localSha256": "b5c592d570974e2fd03524fc2194d1213f84b31b07e3e1a09177e2af790236f6",
+      "publicSha256": "b5c592d570974e2fd03524fc2194d1213f84b31b07e3e1a09177e2af790236f6",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleKo-trimmed.png",
+      "status": 200,
+      "bytes": 151575,
+      "localSha256": "dbd1fc4bb7e2512b26c6b841ab8651765cd5f5324f5d3d08fe1b312e682abf0a",
+      "publicSha256": "dbd1fc4bb7e2512b26c6b841ab8651765cd5f5324f5d3d08fe1b312e682abf0a",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleBasic-4f.png",
+      "status": 200,
+      "bytes": 51713,
+      "localSha256": "2bc2710fdbb5c031339f876d1f69486899ff293711d7dc1b3407dd59ecbcb690",
+      "publicSha256": "2bc2710fdbb5c031339f876d1f69486899ff293711d7dc1b3407dd59ecbcb690",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/basic-blade.png",
+      "status": 200,
+      "bytes": 5050,
+      "localSha256": "8f90ebfc918dfe1cd77845b1502290dd572f636179edcada0876dae2a32475b1",
+      "publicSha256": "8f90ebfc918dfe1cd77845b1502290dd572f636179edcada0876dae2a32475b1",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/basic-contact.png",
+      "status": 200,
+      "bytes": 2300,
+      "localSha256": "2faada0f95507b0616157338b90a976145a870cb03a354a16c9fe5c6761d46f6",
+      "publicSha256": "2faada0f95507b0616157338b90a976145a870cb03a354a16c9fe5c6761d46f6",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleHeavy-4f.png",
+      "status": 200,
+      "bytes": 52398,
+      "localSha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334",
+      "publicSha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/heavy-wind.png",
+      "status": 200,
+      "bytes": 11447,
+      "localSha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec",
+      "publicSha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/heavy-impact.png",
+      "status": 200,
+      "bytes": 10339,
+      "localSha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+      "publicSha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/battleSpecial-4f.png",
+      "status": 200,
+      "bytes": 22107,
+      "localSha256": "e7e5c1eebfab6b2ae9dd49961aee586180ce5809e99b70c48f3176a6d04d423a",
+      "publicSha256": "e7e5c1eebfab6b2ae9dd49961aee586180ce5809e99b70c48f3176a6d04d423a",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/special-wind.png",
+      "status": 200,
+      "bytes": 11593,
+      "localSha256": "4b787f80490e463db71b6e76cda1efd0a6a86fe9a4fd7a34e233772ad99bb501",
+      "publicSha256": "4b787f80490e463db71b6e76cda1efd0a6a86fe9a4fd7a34e233772ad99bb501",
+      "match": true
+    },
+    {
+      "path": "assets/characters/lushu/special-impact.png",
+      "status": 200,
+      "bytes": 16246,
+      "localSha256": "8d5c695c5c27233ec9525bacba2e56b705d1e68aaf88461414615ff4b8e922ab",
+      "publicSha256": "8d5c695c5c27233ec9525bacba2e56b705d1e68aaf88461414615ff4b8e922ab",
+      "match": true
+    }
+  ]
+}

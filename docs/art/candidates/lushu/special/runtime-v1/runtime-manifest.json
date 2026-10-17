@@ -1,5 +1,5 @@
 {
-  "status": "EXACT APPROVED SOURCE DERIVATIVES / REAL320ms AUTHORIZED / INTEGRATION CHECKS REQUIRED",
+  "status": "DEPLOYED / ENGINEERING PASS / PLAYER PHONE PENDING",
   "files": [
     {
       "path": "public/assets/characters/lushu/battleSpecial-4f.png",
@@ -191,5 +191,14 @@
     "scale": 2,
     "frameWidth": 512,
     "frameHeight": 472
+  },
+  "release": {
+    "sourceSha": "67c45ebb5e09fe0e70d3d271bc2c1b0322a50dc6",
+    "actionsRun": 39011872100,
+    "buildJob": 117335937679,
+    "deployJob": 117336027166,
+    "publicFingerprint": "PUBLIC_FINGERPRINT.json",
+    "publicFilesMatched": 16,
+    "phoneAcceptance": "PENDING"
   }
 }

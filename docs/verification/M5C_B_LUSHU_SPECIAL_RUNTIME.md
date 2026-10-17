@@ -1,6 +1,6 @@
 # P1 Special 迴蹄 — runtime integration
 
-Status: LOCAL ENGINEERING PASS / FEATURE RELEASE NEXT / PLAYER PHONE PENDING.
+Status: DEPLOYED / ENGINEERING PASS / PLAYER PHONE PENDING.
 
 ## Authorization and contract
 
@@ -28,3 +28,11 @@ Independent review found Special noncentral origin. Test reproduced left52.2px d
 ## Release and stop
 
 Push only feat/m0-combat-core-20260927 / PR#1; require Actions test/build/deploy and exact public fingerprint. Record source SHA/run/jobs/public files after success. Then player owns phone review of Special right/left, visibly distinct larger sweep and real-target burst,320ms synchronization, empty swing, actor size and return to Idle/Basic. Engineering evidence is not device PASS. No Awakening/other-character work or main merge.
+
+## Release evidence — 2026-10-17T14:59+08:00
+
+Source67c45ebb5e09fe0e70d3d271bc2c1b0322a50dc6, tree3f9862db513d541ec883bf3f299aff537a49f03f. Authorized GitHub connector publication recreated the exact local tree (local checkpointf890c42); native push lacked credentials, no credential extraction or force push. Readback PR#1 remains OPEN/unmerged, correct branch/head.
+
+Actions#1034 https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39011872100: Test/Build job117335937679 and Pages job117336027166 SUCCESS. Public HTTP16files match local build bytes/SHA256: runtime-v1/PUBLIC_FINGERPRINT.json. Bundles index-8JGZpf69.js / battleRuntime-Bb3b-o-u.js / index-DcqtNRF0.css. This closure is documentation only and skips duplicate CI.
+
+Player phone review URL: https://hansen0318.github.io/shanhaijing-arena/?v=67c45eb . Check left/right source sweep + actual-target burst, clear Special-vs-Heavy distinction,320ms contact/HP synchronization, empty swing, unchanged body scale and return to Idle/Basic. Phone outcome remains UNVERIFIED. No main merge or next-skill production.
