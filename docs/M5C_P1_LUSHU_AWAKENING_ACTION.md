@@ -1,5 +1,14 @@
 # P1 鹿蜀 Awakening「南山奔襲」— Chat-first mechanics and visual preflight
 
+## 2026-10-18 — terminal F3 likeness approved; pose production continues
+
+Player at 2026-10-18T06:47:26+08:00: 「好這個f3的形象我審核通過，紀錄github進度和相關流程規則，依照規則繼續」. Exact shown master SHA256 `c736acca0da5fb5b6c7824a8dfb4bfb2719cf2ce99af74c54dde21773821f3d0` is copied byte-for-byte to `docs/art/approved/lushu/awakening/terminal-f3-v1/F3-terminal-master.png`; receipt: `docs/art/approved/lushu/awakening/terminal-f3-v1/acceptance.json`. **F3 LIKENESS / IDENTITY PLAYER APPROVED; CONTINUATION AUTHORIZED.** This preserves the shown terminal pose; no approval of unseen phase poses, VFX, GIF, alpha changes, runtime, deploy or phone smoke is inferred. This entry supersedes older F3-not-produced/player-pending status below; those remain historical.
+
+Continue with deterministic source-preserving transparent padding and independent character-only candidates: anticipation → first-rush contact → second return/crossing contact → exact approved terminal F3 → recovery. This is an authoring/review plan, not a new gameplay contract or acceptance of unshown poses. Extra key poses are justified by three separate contacts; do not force one generic four-pose loop. Contacts150/300/460ms, full650ms, coeff0.40/0.70/1.10 and CD12 remain design approved but unimplemented. After pose review, independent escalating VFX and composite normal/slow/mirrored/effects-off/Idle-return GIF require explicit player acceptance before runtime. No deploy/P2/main merge.
+
+Source has invisible alpha1–8 noise; preserve immutable master. Padding must preserve every source RGBA pixel; if noise remains inside original canvas, report it rather than claim it was cleaned. No source redesign or regenerative repair of this approved F3. Runtime readiness remains a later shared-scale/anchor/budget gate. Checkpoint with [skip ci] to prevent art-only changes auto-deploying.
+
+
 ## 2026-10-17 — referenced terminal F3 candidate, player review pending
 
 Recovery confirmed feature/PR1 HEAD `ac2b3d818c16d29a4b7f8d179efc0de204202dda` and remote main `16f73932a0399979ba79b92f93f5ce1c1d1909b9`. Actual approved identity/idle Git blobs match `1fddc20ac781faf4e0c3271a96de5225fde4f458` / `c0052ab9c6699d4abc2b26ce7d5d0ce1563d2543`. Reviewed approved Basic/Heavy/Special art and current ability/action/VFX runtime. Latest user handoff authorizes only image-conditioned third/final-rush F3 candidate and preservation, then STOP.
