@@ -1,0 +1,141 @@
+{
+  "status": "CANDIDATE / PLAYER REVIEW PENDING",
+  "recoveredHead": "ac2b3d818c16d29a4b7f8d179efc0de204202dda",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": 1,
+  "ability": "P1.awakening",
+  "pose": "third terminal collision F3 only",
+  "generator": "built-in image_gen image-conditioned generation",
+  "selected": "F3-terminal-candidate-v1.png",
+  "references": [
+    {
+      "path": "public/assets/characters/lushu/identity.png",
+      "sha256": "bf82ac4f64f517a5503f6a3cabc53e046df8ef9ce16bf9ba5dba8d6567f497a1",
+      "gitBlob": "1fddc20ac781faf4e0c3271a96de5225fde4f458"
+    },
+    {
+      "path": "public/assets/characters/lushu/battleIdle-4f.png",
+      "sha256": "ca123eb6eb15c1f32fab2c9d732d40d7db279ed2e4332a1043172d3fb0bef327",
+      "gitBlob": "c0052ab9c6699d4abc2b26ce7d5d0ce1563d2543"
+    },
+    {
+      "path": "docs/art/approved/lushu/basic/F3-contact-v1.png",
+      "sha256": "0ecfa9f8cba1beec93dbfc823b0f5ac4600e7bf63ff8104ffd719cd8ad700955",
+      "gitBlob": "dd67d9140a3ec7966dea2bb24e6ac45d5220e252"
+    },
+    {
+      "path": "docs/art/approved/lushu/heavy/F3-contact-selected-A.jpeg",
+      "sha256": "bd58b7bb4aa4758735d1ec74e65c5ca206836e39b397b6ce38fd4af02cacc5e2",
+      "gitBlob": "9ac41c6ae7b0f213ec59a5796e421791294bb8b1"
+    },
+    {
+      "path": "docs/art/approved/lushu/special/recovered-inputs-v1/F3.png",
+      "sha256": "0608897035880af59bfb86940f5510f82f5354bef725fca1d9268a821eaf7ba1",
+      "gitBlob": "0612c9e00a0fe0f86306bdaab26f96c27cc33292"
+    }
+  ],
+  "conditioning": {
+    "attempt-01.png": [
+      "public/assets/characters/lushu/identity.png",
+      "docs/art/approved/lushu/basic/F3-contact-v1.png",
+      "docs/art/approved/lushu/heavy/F3-contact-selected-A.jpeg"
+    ],
+    "attempt-02.png": [
+      "attempt-01.png",
+      "docs/art/approved/lushu/basic/F3-contact-v1.png"
+    ],
+    "F3-terminal-candidate-v1.png": [
+      "docs/art/approved/lushu/basic/F3-contact-v1.png"
+    ]
+  },
+  "files": {
+    "F3-terminal-candidate-v1.png": {
+      "sha256": "c736acca0da5fb5b6c7824a8dfb4bfb2719cf2ce99af74c54dde21773821f3d0",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 1548826,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds": [
+        0,
+        19,
+        1474,
+        1024
+      ],
+      "alphaGt8Bounds": [
+        84,
+        186,
+        1465,
+        882
+      ],
+      "transparentPixels": 1110346,
+      "lowAlphaNoisePixels": 27902
+    },
+    "attempt-01.png": {
+      "sha256": "15db91421aa509bd009c98489a201680f5e33b1bbd40754a37e82edd2ff69001",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 1761154,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds": [
+        0,
+        53,
+        1497,
+        1002
+      ],
+      "alphaGt8Bounds": [
+        23,
+        173,
+        1495,
+        902
+      ],
+      "transparentPixels": 983579,
+      "lowAlphaNoisePixels": 27203
+    },
+    "attempt-02.png": {
+      "sha256": "6a3825e882263a335bf2e39bf74063a3c36000fd822c56409e0581700dd702ac",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 1726317,
+      "alphaExtrema": [
+        0,
+        254
+      ],
+      "alphaBounds": [
+        25,
+        51,
+        1498,
+        1008
+      ],
+      "alphaGt8Bounds": [
+        27,
+        163,
+        1495,
+        905
+      ],
+      "transparentPixels": 972771,
+      "lowAlphaNoisePixels": 26502
+    }
+  },
+  "visualReview": {
+    "identity": "Compared with actual approved identity, idle and accepted Basic/Heavy/Special: white species face/mane, brown antlers, gold/black markings, black/gold gear, red sash/tail, compact curved knife retained. Candidate likeness requires explicit player acceptance.",
+    "anatomy": "Two arms, two legs, cloven hooves, visible compact knife; complete silhouette, no visible clipping. Low forward rush differs from upright Basic/Heavy and Special high turning kick.",
+    "lightDark": "Selected candidate alpha-composited onto white and dark backgrounds; no visible external glow. Raw hidden RGB backdrop is not composited VFX.",
+    "strictAlpha": "NOT runtime-ready: low alpha 1-8 noise reaches canvas edges; alpha max254. Significant silhouette alpha>8 bbox [84,186,1465,882], margins84/186/71/142px. Preserve raw master. Strict alpha cleanup and padded deterministic derivative must be inspected after pose acceptance before sequence/GIF/runtime. Do not claim strict alpha PASS."
+  },
+  "scope": "No approved/public/src changes, other poses, VFX, GIF, runtime or deployment. Historical unreferenced Chat F3 is explicitly invalid and not used. Attempts01/02 are unselected candidates, not approved references."
+}
