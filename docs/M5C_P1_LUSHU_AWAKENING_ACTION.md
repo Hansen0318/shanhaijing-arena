@@ -1,5 +1,10 @@
 # P1 鹿蜀 Awakening「南山奔襲」— Chat-first mechanics and visual preflight
 
+## 2026-10-18 — all five Awakening character poses player approved
+
+Player at2026-10-18T08:47:38+08:00 「我確認ok」accepts poses1/2/3/5 on the five-pose review at951dac8; terminal F3/pose4 was approved earlier. Receipt and exact approved source hashes: `docs/art/approved/lushu/awakening/phase-poses-v1/acceptance.json`. **ALL FIVE CHARACTER POSES PLAYER APPROVED; VFX/GIF NOT YET APPROVED.** Preserve all shown source bytes; do not regenerate poses. Continue source-preserving common skull-density/ground/anchor normalization, independent three-stage escalating VFX and normal/slow/mirrored/effects-off/Idle-return composite GIF review. Distinguish real runtime from illustrative preview; no actual implementation/deploy/phone acceptance or P2/main merge. Approved gameplay contract is unchanged and remains unimplemented. Old pose-review-pending entries below are historical.
+
+
 ## 2026-10-18 — five-pose review prepared; four new poses pending
 
 F3 likeness approval is checkpoint `bff847d0f43812e4ba6e79949a5b1ddd193ca440`; exact approved terminal source remains SHA256 `c736acca0da5fb5b6c7824a8dfb4bfb2719cf2ce99af74c54dde21773821f3d0`. Four independent new candidates were made with actual approved terminal F3 + identity.png as image inputs: F1 anticipation, A first-rush contact, B return/crossing contact, F4 recovery. Candidate originals, prompts, padded derivatives, five-pose board, light/dark QA and per-file hashes: `docs/art/candidates/lushu/awakening/phase-poses-v1/`. Reproduce using `python scripts/prepareLushuAwakeningReview.py` (Pillow).
