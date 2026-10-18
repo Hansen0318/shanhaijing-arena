@@ -1,5 +1,14 @@
 # Project State
 
+## AUTHORITATIVE CURRENT STATE — 2026-10-18 — scoped Awakening release authorized / browser gate and deployment pending
+
+Player at2026-10-18T12:17:25+08:00: 「好，確認紀錄進度規則和流程，沒問題就然後繼續」, responding to completed integration112f0d3943aa74d59798dfe67d14cab694b6a671 and next steps browser check→Pages deployment→phone acceptance. **Scoped verification/deployment authorized**, no repeated art/contract approval required. Integration877/877/build/source/cache evidence stays recorded; this is not deployment/phone PASS.
+
+Release uses existing feature branch/PR1/Pages pipeline, never main merge. One-shot commit flag `[awakening browser]` opts into real Chromium/Phaser pose/source/contact/mirror/reduced-motion/Idle/teardown checks before Configure Pages/upload/deploy; failure prevents release. Browser tool is pinned and installed outside the repository; production dependencies/source/assets unchanged. Browser evidence is uploaded as `awakening-browser-verification`; deterministic render samples are not device FPS or phone acceptance. This host has no Chromium; its download returns a zero-size/invalid archive, so do not claim local browser PASS. CI is the executable browser environment.
+
+NEXT inspect exact release Actions jobs, browser evidence/screenshots, deployment result and public JS/CSS/all13 runtime PNG fingerprints; record exact SHA/URLs/outcomes. Phone remains player-owned and P1 is not declared fully verified from CI alone. No new art/P2/Hit reactions/main merge. After release use `[skip ci]` for evidence-only closure to avoid unintended redeploy. Historical NOT DEPLOYED entries remain prior checkpoints; only later evidence may close deployment. Every successor prompt stays one complete copyable block.
+
+
 ## AUTHORITATIVE CURRENT STATE — 2026-10-18 — approved Awakening runtime integrated / automated verification PASS / NOT DEPLOYED
 
 Player executable acceptance: 「好確認，繼續」2026-10-18T10:10+08:00, against preflight fa29a9c; later status question confirms this work is integrating the accepted animation into the game. **Runtime integration IMPLEMENTED;877/877 automated tests, build, asset guard and diff checks PASS.** Shared staged actions now drive three real ray-clipped displacements, boundary-only locked-target re-aim, independent relative swept hits0.40/0.70/1.10, no miss HP/RNG/target FX, cancellation and true event-owned body/source/target feedback. Default50ms is preserved outside actual staged windows; action intervals<=10ms and exact event/status/area boundaries. Existing defense/crit/Tier contracts preserved.
