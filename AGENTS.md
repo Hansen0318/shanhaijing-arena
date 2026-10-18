@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## 2026-10-18 — Current P2 Basic art gate / protected closure
+
+P1 is COMPLETE BY EXISTING ACCEPTANCE EVIDENCE, generic Hit CANCELLED / NOT REQUIRED. P2 accepted identity/static Idle/Move/KO stay protected; actual approved gold beast-face bracer/red sash images supersede older unaccepted gray/plain-guard suggestions. Current first unfinished gate is Basic「角擊」ONE F3 **ART CANDIDATE / PLAYER REVIEW PENDING** at `docs/art/candidates/botuo/basic/key-pose-v1/`; source SHA256 `19a8e9f8cf74c870558a4ea734b67e03d5eacce71072c5bc979931cf00f42f36`. Read `docs/M5C_P2_BOTUO_BASIC_ACTION.md` and current top WORK_PROGRESS/STATE; do not follow historical P1 Hit/P2 Idle/Move-pending pointers. No remaining poses/VFX/GIF/runtime/deploy before the corresponding player gates. Current Basic remains immediate single hit, no P1 windup inheritance; preserve real Tier controls. No main merge/P3, no repeated accepted tests/deploy. Successor handoff: `docs/handoffs/P2_BOTUO_BASIC_NEXT_CHAT.md` (one complete code block).
+
 ## 2026-10-18 — PLAYER DECISION: cancel ordinary Hit Reaction, preserve uninterrupted abilities
 
 Player explicitly rejects ordinary on-hit pose/animation: being damaged must **not** switch into a hurt/recoil stance or interrupt an ongoing attack/cast/movement. Concurrent hit recoil and offensive VFX clutter combat readability. **Cancel the entire P1 ordinary Hit Reaction production/review/GIF/integration/deploy gate**, and remove it from mandatory P1 completion criteria. Do not create equivalent per-character ordinary Hit animation for P2–P5 by default. This supersedes older “Hit next” handoffs/proposals, including KO>Cast>Hit>Move>Idle and two-100ms poses; those are HISTORY / REJECTED, not pending tasks.

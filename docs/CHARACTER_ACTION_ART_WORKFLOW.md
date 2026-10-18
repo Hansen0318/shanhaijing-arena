@@ -1,5 +1,13 @@
 # Character action art, VFX and animation review workflow
 
+## 2026-10-18 — P2 猼訑 Basic F3 CANDIDATE / PLAYER REVIEW PENDING
+
+Recovery fetched feature `39f7d2b50202c93798ef7d3cf38a57ee8388fcaa`, clean branch `feat/m0-combat-core-20260927`, PR #1 open/unmerged; checkpoint is the containing feature commit (resolve remote ref again). **P1 COMPLETE BY EXISTING ACCEPTANCE EVIDENCE; ordinary Hit CANCELLED / NOT REQUIRED.** Preserve all P1 approvals; no repeat tests/deploy/device sign-off. P2 Concept/portrait/collection/static Idle/static runtime/Move/KO accepted; static Idle only. No prior approved P2 action/VFX/GIF found; runtime has no P2 actionDescriptors.
+
+**Current first unfinished gate: Basic「角擊」ONE F3 player art review.** Built-in imagegen candidate from approved identity/Idle/Move: `docs/art/candidates/botuo/basic/key-pose-v1/F3-contact-master.png`, SHA256 `19a8e9f8cf74c870558a4ea734b67e03d5eacce71072c5bc979931cf00f42f36`. Prompt, PNG/alpha/hash verification, opaque light/dark QA preserved beside source; low-alpha noise reported, no source cleanup claimed. **ART CANDIDATE, NOT PLAYER ART APPROVED / NOT INTEGRATED / NOT DEPLOYED.** No F1/F2/F4, new VFX or GIF yet.
+
+Contract, base acceptance inventory, four-skill proposed motion differentiation and timing caveat: `docs/M5C_P2_BOTUO_BASIC_ACTION.md`. Basic T0 is single-target coefficient1.00/range1.4/windup0/no displacement; no P1 windup copied or HP delay. Existing Tier effects/control protected. Chat owns art/review preparation; Work runtime remains blocked until explicit pose/GIF and any material timing approvals. **STOP for player F3 review**, not Heavy/P3. Full self-contained successor: `docs/handoffs/P2_BOTUO_BASIC_NEXT_CHAT.md`. Existing accepted deployment remains8e2f5e0; no suite/build/Pages/public verification rerun. Candidate/docs-only checkpoint uses `[skip ci]`; no main merge, no protected source/public/receipt changes.
+
 ## 2026-10-18 — PLAYER DECISION: cancel ordinary Hit Reaction, preserve uninterrupted abilities
 
 Player explicitly rejects ordinary on-hit pose/animation: being damaged must **not** switch into a hurt/recoil stance or interrupt an ongoing attack/cast/movement. Concurrent hit recoil and offensive VFX clutter combat readability. **Cancel the entire P1 ordinary Hit Reaction production/review/GIF/integration/deploy gate**, and remove it from mandatory P1 completion criteria. Do not create equivalent per-character ordinary Hit animation for P2–P5 by default. This supersedes older “Hit next” handoffs/proposals, including KO>Cast>Hit>Move>Idle and two-100ms poses; those are HISTORY / REJECTED, not pending tasks.

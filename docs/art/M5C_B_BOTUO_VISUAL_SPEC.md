@@ -1,5 +1,9 @@
 # M5C-B Batch1 Visual Spec — 猼訑
 
+## 2026-10-18 — Current P2 Basic art gate / protected closure
+
+P1 is COMPLETE BY EXISTING ACCEPTANCE EVIDENCE, generic Hit CANCELLED / NOT REQUIRED. P2 accepted identity/static Idle/Move/KO stay protected; actual approved gold beast-face bracer/red sash images supersede older unaccepted gray/plain-guard suggestions. Current first unfinished gate is Basic「角擊」ONE F3 **ART CANDIDATE / PLAYER REVIEW PENDING** at `docs/art/candidates/botuo/basic/key-pose-v1/`; source SHA256 `19a8e9f8cf74c870558a4ea734b67e03d5eacce71072c5bc979931cf00f42f36`. Read `docs/M5C_P2_BOTUO_BASIC_ACTION.md` and current top WORK_PROGRESS/STATE; do not follow historical P1 Hit/P2 Idle/Move-pending pointers. No remaining poses/VFX/GIF/runtime/deploy before the corresponding player gates. Current Basic remains immediate single hit, no P1 windup inheritance; preserve real Tier controls. No main merge/P3, no repeated accepted tests/deploy. Successor handoff: `docs/handoffs/P2_BOTUO_BASIC_NEXT_CHAT.md` (one complete code block).
+
 ## Runtime engineering closure — 2026-10-10
 Status **ENGINEERING PASS / PLAYER PHONE SMOKE PENDING**. Tested/deployed sourceebbbf0457d35538a4118df665d1bef13781881da; Actions #845 /37998245333 SUCCESS, CI621/621, Pages SUCCESS. Normal12/reduced6fps full four-frame cycles, no static sliding, stop→accepted static idle, shared mirror/XY/size/anchor and gameplay1.45/snapshot protections PASS. Exact approved PNG and descriptor recorded below remain unchanged. Public bundles/PNG match tested build byte-for-byte; public Arena renders differing P2 Move poses. Exact forced-reduced cycle is real presenter/session evidence, not OS preference emulation. Full fingerprints/evidence:`docs/verification/M5C_B_BOTUO_LOCOMOTION.md`. Final HEAD is the docs-only closure containing this section. Do not start P3 until player verifies P2.
 

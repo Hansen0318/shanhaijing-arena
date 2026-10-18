@@ -1,0 +1,128 @@
+{
+  "status": "ART CANDIDATE / PLAYER REVIEW PENDING",
+  "source": {
+    "path": "docs/art/candidates/botuo/basic/key-pose-v1/F3-contact-master.png",
+    "sha256": "19a8e9f8cf74c870558a4ea734b67e03d5eacce71072c5bc979931cf00f42f36",
+    "bytes": 1018592,
+    "size": [
+      1447,
+      1087
+    ],
+    "mode": "RGBA"
+  },
+  "references": [
+    {
+      "path": "public/assets/characters/botuo/identity.png",
+      "sha256": "79a210c187745886fb9c1fce3877512b275998bc17c7c537369fdc6f2b8dae5b",
+      "bytes": 14098,
+      "size": [
+        160,
+        192
+      ],
+      "mode": "P"
+    },
+    {
+      "path": "public/assets/characters/botuo/portrait.png",
+      "sha256": "f7ceff655ab04902b434069bb5862d3211b3353c997e4e535743c2ff92bca864",
+      "bytes": 32501,
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "public/assets/characters/botuo/battleIdle.png",
+      "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+      "bytes": 47136,
+      "size": [
+        160,
+        160
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "public/assets/characters/botuo/battleIdle-4f.png",
+      "sha256": "86cb5c36d7e7a7862287da77e36ec77d04198311fb37f97fcbd46a73f175f6a0",
+      "bytes": 31355,
+      "size": [
+        640,
+        160
+      ],
+      "mode": "P"
+    },
+    {
+      "path": "public/assets/characters/botuo/battleMove-4f.png",
+      "sha256": "fd9083cacfc38d1eb1fd17e5749615e9a51781a83f0d3dfa3759c1de41c5f26b",
+      "bytes": 158292,
+      "size": [
+        640,
+        160
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "public/assets/characters/botuo/battleKo.png",
+      "sha256": "037829ec32333a0179414a9ee8ccb57b4eb3ddb83004aa93aea5c78914fc9c57",
+      "bytes": 157440,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "public/assets/characters/botuo/battleKo-trimmed.png",
+      "sha256": "4a54caf87303df0eb856d5385748c1a88fb1604534851a536eed16d76b30ebf2",
+      "bytes": 158388,
+      "size": [
+        512,
+        331
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "current_runtime_idle": {
+    "path": "public/assets/runtime-packing-v1/botuo-battleIdle.png",
+    "sha256": "ce9838208b4e1ecc58f5bdb0cf70cf6200e0426ab17216daf9e1d1cebc92a82f",
+    "bytes": 25193,
+    "size": [
+      160,
+      160
+    ],
+    "mode": "RGBA"
+  },
+  "alpha": {
+    "extrema": [
+      0,
+      255
+    ],
+    "nonzero_bbox_exclusive": [
+      39,
+      23,
+      1419,
+      1042
+    ],
+    "alpha_gt_64_bbox_exclusive": [
+      228,
+      144,
+      1282,
+      995
+    ],
+    "transparent_pixels": 1010032,
+    "opaque_pixels": 944,
+    "low_alpha_1_to_8_pixels": 13017,
+    "outer_edges_clear": true
+  },
+  "scope": "PNG/alpha/bounds/reference hashes only; no runtime, player acceptance, GIF or phone proof. Low-alpha source pixels are preserved, not cleaned.",
+  "qa": {
+    "path": "docs/art/candidates/botuo/basic/key-pose-v1/QA-light-dark.png",
+    "sha256": "2a0432fc788a3c578c63d6fba7c755bbe5f0f61b215e2263efce138295e0e7aa",
+    "bytes": 310943,
+    "size": [
+      1080,
+      660
+    ],
+    "mode": "RGB"
+  }
+}
