@@ -32,7 +32,19 @@ jobs:
         run: npm ci
 
       - name: Test
+        if: "!contains(github.event.head_commit.message, '[botuo basic release]')"
         run: npm test
+      - name: Test bounded P2 Basic release surface
+        if: contains(github.event.head_commit.message, '[botuo basic release]')
+        run: |
+          node --input-type=module - <<'JS'
+          import {readFileSync} from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          const report=JSON.parse(readFileSync('docs/verification/M5C_P2_BOTUO_BASIC_RUNTIME.json'));
+          const [command,...args]=report.tests.command.split(/\s+/);
+          if(command!=='node'||args[0]!=='--test')throw Error('Unexpected release test command');
+          execFileSync(process.execPath,args,{stdio:'inherit'});
+          JS
 
       - name: Build
         run: npm run build
@@ -52,6 +64,22 @@ jobs:
         with:
           name: awakening-browser-verification
           path: ${{ runner.temp }}/awakening-browser
+          if-no-files-found: warn
+      - name: Check approved P2 Basic in real Chromium
+        if: contains(github.event.head_commit.message, '[botuo basic release]')
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/arena-browser-tool
+          ARENA_BROWSER_OUTPUT: ${{ runner.temp }}/botuo-basic-browser
+        run: |
+          npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
+          node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+          node scripts/checkBotuoBasicBrowser.mjs
+      - name: Preserve P2 Basic browser evidence
+        if: always() && contains(github.event.head_commit.message, '[botuo basic release]')
+        uses: actions/upload-artifact@v4
+        with:
+          name: botuo-basic-browser-verification
+          path: ${{ runner.temp }}/botuo-basic-browser
           if-no-files-found: warn
       - name: Configure Pages
         uses: actions/configure-pages@v5

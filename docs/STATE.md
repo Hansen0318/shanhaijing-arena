@@ -1,5 +1,11 @@
 # Project State
 
+## 2026-10-18 — P2 Basic scoped release AUTHORIZED / browser and deploy pending
+
+Player「好，繼續」responds to explicit next-step browser verification → feature Pages/public fingerprint → targeted P2 phone acceptance. This authorizes that bounded release, not Heavy/P3/main merge or phone PASS. Runtime checkpoint f2f4d0ad0af842543dc0ae77700a039d978fafe9 remains ENGINEERING PASS,220/220/build; do not repeat approved art/GIF/250ms or full P1.
+
+Release flag [botuo basic release] opts into existing30-file impacted command plus real Chromium/Phaser normal/reduced ×left/right body/source/contact/miss/Pause/destroy checks before Pages upload/deploy. Default full-suite step is skipped only for this bounded flag; no weakening of failed checks. Browser harness uses controlled direct-call fixture; actualAI/player path evidence remains prior engineering tests. No local Chromium installed; real browser execution belongs to CI. NEXT inspect CI/evidence/screenshots and actual deployment/public fingerprints; phone acceptance remains player-owned. Details docs/verification/M5C_P2_BOTUO_BASIC_RELEASE.md.
+
 ## 2026-10-18 — P2 Basic ENGINEERING PASS / NOT DEPLOYED
 
 Current Work scope packaging/integration/necessary verification/build completed against recovered d40abb0. Packing checkpoint2f1de8669d183653dcf0ab4f75bc92489266a02c; final checkpoint is containing feature commit, fetch latest. PLAYER ART APPROVED + PLAYER EXECUTABLE CONTRACT APPROVED / ENGINEERING PASS / NOT DEPLOYED / NOT PLAYER VERIFIED. P1 COMPLETE and ordinary Hit CANCELLED remain closed.
