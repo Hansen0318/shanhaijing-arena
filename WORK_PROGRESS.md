@@ -1,5 +1,14 @@
 # Work Progress
 
+## CURRENT HANDOFF POINTER — Awakening independent VFX and composite GIF review ready
+
+All five character poses are PLAYER APPROVED (receipt at a353773; `docs/art/approved/lushu/awakening/phase-poses-v1/acceptance.json`). Exact approved sources remain immutable. New review-only assets: `docs/art/candidates/lushu/awakening/vfx-review-v1/` (three distinct source/impact pairs; C first clipped candidate retained separately and replaced) and `composite-review-v1/` (normal,3x slow, character-only,VFX-only,whiff GIFs, each with both directions and approved Idle return). Reproduce with `python scripts/prepareLushuAwakeningComposite.py`; verify with `python scripts/verifyLushuAwakeningReview.py`.
+
+**POSES PLAYER APPROVED / VFX + GIF CANDIDATE / PLAYER REVIEW PENDING.** Full-canvas uniform-XY skull-density normalization, common pelvis/ground family, exact resized source insertion,16px cell margins; independent VFX split-rejoin and source contour checks;5 GIF hashes/decode/frame-count/total duration checks PASS. Actual GIF contact proof150/300/460ms and mirrored1150/1300/1460ms inspected. Effects size uses significant-alpha content, preserving full original asset, with source caps350/400/450 and impact caps180/270/400. Original low-alpha noise retained, no cleanup claim. One truncated B impact derivative was detected, deterministically re-extracted and decoded, then atomic exact-byte writes checked; no damaged derivative accepted.
+
+**PREVIEW ONLY:** scripted route/contacts, no combat simulation/HP/damage implementation. Runtime still old0/+120/+240ms equal split/no triple dash; no ENGINEERING PASS/deploy/phone verification. NEXT: explicit player review of independent effects and normal/slow composite GIFs; only after acceptance proceed to separately bounded runtime preparation and geometry decisions. Keep real design150/300/460ms,650ms,coeff0.40/0.70/1.10,CD12; preserve Basic/Heavy/Special, no P2/main merge. Commit [skip ci] prevents automatic Pages deployment. Older pending pose text below is historical.
+
+
 ## CURRENT HANDOFF POINTER — all five Awakening character poses player approved
 
 Player at2026-10-18T08:47:38+08:00 「我確認ok」accepts poses1/2/3/5 on the five-pose review at951dac8; terminal F3/pose4 was approved earlier. Receipt and exact approved source hashes: `docs/art/approved/lushu/awakening/phase-poses-v1/acceptance.json`. **ALL FIVE CHARACTER POSES PLAYER APPROVED; VFX/GIF NOT YET APPROVED.** Preserve all shown source bytes; do not regenerate poses. Continue source-preserving common skull-density/ground/anchor normalization, independent three-stage escalating VFX and normal/slow/mirrored/effects-off/Idle-return composite GIF review. Distinguish real runtime from illustrative preview; no actual implementation/deploy/phone acceptance or P2/main merge. Approved gameplay contract is unchanged and remains unimplemented. Old pose-review-pending entries below are historical.
