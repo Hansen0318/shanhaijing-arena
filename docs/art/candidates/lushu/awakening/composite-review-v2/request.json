@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-18T09:12:07+08:00",
+  "statement": "進度流程規則先紀錄到github相關資料文件，第一段要改更快",
+  "previousCheckpoint": "35971db7ea3beb96fa725d59c85e7a252cee24f3",
+  "status": "FIRST RUSH FASTER REQUESTED / V2 PREVIEW TIMING CANDIDATE",
+  "candidate": {
+    "anticipationMs": 80,
+    "firstRushMs": 30,
+    "contactsMs": [
+      110,
+      260,
+      420
+    ],
+    "recoveryMs": 610
+  },
+  "scope": "No player approval of exact candidate timings, VFX/GIF, runtime or deployment; poses remain approved. Preserve previous materials and compare before/after."
+}
