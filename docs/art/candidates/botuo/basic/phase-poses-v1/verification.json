@@ -1,0 +1,132 @@
+{
+  "scope": "Static PNG decode/alpha/bounds/hashes and uniform-source-scale light/dark review only",
+  "frames": [
+    {
+      "path": "docs/art/candidates/botuo/basic/phase-poses-v1/F1-anticipation-master.png",
+      "sha256": "f3d52aa3b85557aa0fd88e02b6c1948ac0ff4618909ef07ef0472f983f7ecd54",
+      "bytes": 1179163,
+      "size": [
+        1446,
+        1087
+      ],
+      "nonzero_bbox": [
+        0,
+        17,
+        1434,
+        1087
+      ],
+      "alpha_gt64_bbox": [
+        187,
+        35,
+        1334,
+        1025
+      ],
+      "raw_nonzero_edges_clear": false,
+      "visible_alpha_gt64_clearance_px": 35,
+      "border_alpha_max": 1,
+      "low_alpha_1_to_8_pixels": 19617,
+      "status": "ART CANDIDATE / PLAYER REVIEW PENDING"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/phase-poses-v1/F2-release-master-v2.png",
+      "sha256": "224d185e8678850708fd4a045e515cee0e587e4aec9ebb9e8c1d2c702c492341",
+      "bytes": 1184963,
+      "size": [
+        1446,
+        1087
+      ],
+      "nonzero_bbox": [
+        0,
+        19,
+        1430,
+        1087
+      ],
+      "alpha_gt64_bbox": [
+        161,
+        108,
+        1406,
+        1015
+      ],
+      "raw_nonzero_edges_clear": false,
+      "visible_alpha_gt64_clearance_px": 40,
+      "border_alpha_max": 1,
+      "low_alpha_1_to_8_pixels": 18072,
+      "status": "ART CANDIDATE / PLAYER REVIEW PENDING"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/key-pose-v1/F3-contact-master.png",
+      "sha256": "19a8e9f8cf74c870558a4ea734b67e03d5eacce71072c5bc979931cf00f42f36",
+      "bytes": 1018592,
+      "size": [
+        1447,
+        1087
+      ],
+      "nonzero_bbox": [
+        39,
+        23,
+        1419,
+        1042
+      ],
+      "alpha_gt64_bbox": [
+        228,
+        144,
+        1282,
+        995
+      ],
+      "raw_nonzero_edges_clear": true,
+      "visible_alpha_gt64_clearance_px": 92,
+      "border_alpha_max": 0,
+      "low_alpha_1_to_8_pixels": 13017,
+      "status": "PLAYER ART APPROVED"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/phase-poses-v1/F4-recovery-master.png",
+      "sha256": "de4126fe9f357a63b8b1b444c0e69a986feed10b09c50771c5816ceda18e9b66",
+      "bytes": 899049,
+      "size": [
+        1446,
+        1087
+      ],
+      "nonzero_bbox": [
+        25,
+        18,
+        1424,
+        1087
+      ],
+      "alpha_gt64_bbox": [
+        348,
+        96,
+        1187,
+        995
+      ],
+      "raw_nonzero_edges_clear": false,
+      "visible_alpha_gt64_clearance_px": 92,
+      "border_alpha_max": 1,
+      "low_alpha_1_to_8_pixels": 14409,
+      "status": "ART CANDIDATE / PLAYER REVIEW PENDING"
+    }
+  ],
+  "rejected": {
+    "path": "docs/art/candidates/botuo/basic/phase-poses-v1/F2-release-rejected-v1.png",
+    "sha256": "1527bec5194cde387d4d56445920bad7a2a47ca393c6a1c17524839c10239b40",
+    "size": [
+      1446,
+      1087
+    ],
+    "nonzero_bbox": [
+      0,
+      39,
+      1446,
+      1087
+    ],
+    "status": "REJECTED BY SELF-REVIEW / DO NOT USE",
+    "reason": "Leading horn has only 7px alpha>64 right margin; insufficient safety clearance. Replaced by version2; no claim of proven missing anatomy."
+  },
+  "review_board_sha256": "40967ab2de828d6d53641853897a4a3ada9186b1f91f272b8d2dab53d7f03917",
+  "limitations": [
+    "No cleanup of low-alpha source noise",
+    "No runtime normalization or calibrated phone-scale proof",
+    "No GIF/VFX approval, runtime integration, engineering test or deployment",
+    "New poses use regenerated pixels and require explicit player review"
+  ]
+}
