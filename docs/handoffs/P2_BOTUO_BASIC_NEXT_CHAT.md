@@ -1,27 +1,23 @@
-# P2 Basic GIF review / zero-context handoff
+# P2 Basic executable preflight / zero-context handoff
 
 ```text
-【山海經聯盟 — P2 猼訑 Basic GIF 接手】
+【山海經聯盟 — P2 猼訑 Basic 已核准 GIF／整合前契約】
 所有後續 Chat／Work／Codex 接手指令必須是一個完整、自足、可一鍵複製 code block。
-GitHub 唯一權威。先 fetch 最新 remote，核對 branch／HEAD／PR／工作目錄與近期 commits。
-Repository Hansen0318/shanhaijing-arena；分支 feat/m0-combat-core-20260927；PR #1 open/unmerged。
-本輪 recovery dec02b2786b8d3829a5b4cb0b01350e62023a9bd；最新 checkpoint 是包含此檔的 feature commit，重新查 remote，不把 baseline 當永久 HEAD。
-必讀 AGENTS、WORK_PROGRESS、STATE 頂部、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、DEVELOPMENT_ROADMAP、DEVELOPMENT_ACCELERATION、M5C_ART_ANIMATION_VFX、CHARACTER_ACTION_ART_WORKFLOW、docs/M5C_P2_BOTUO_BASIC_ACTION.md。
-P1 COMPLETE，普通 Hit CANCELLED。禁止重畫／重測／重部署／重新驗收 P1；保留真正扣血、數字、技能 VFX、合法控制及 KO。P2 核准 identity／Idle／Move／KO／runtime packing 全保護。
-F3 PLAYER ART APPROVED，receipt docs/art/approved/botuo/basic/f3-v1/acceptance.json；原圖19a8e9f8cf74c870558a4ea734b67e03d5eacce71072c5bc979931cf00f42f36，不重生成。
-玩家17:22:42+08:00「好接下來是做gif給我確認嗎，是的話就給我連結看」授權使用已展示姿勢進 GIF 預覽，覆蓋前次停在姿勢階段的指標。不要捏造獨立 F1/F2/F4 核准原文；最終可視範圍待整組 GIF 審核。
-當前第一未完成 Gate：玩家審核 Basic「角擊」正常／慢速 composite GIF。
-檔案與 README/manifest/checksums：
-docs/art/candidates/botuo/basic/composite-review-v1/
-botuo-basic-composite-normal.gif：SHA25655c70c31141da605ee16f558bc6c9629c1ceeab73acb3314a2b3066d1c98ae9d
-botuo-basic-composite-slow.gif：SHA2568f9fd7662e54565ff6fdfe5e709fd4862f0e3b819a85bfe7c777dec4829ab553
-另有 character-only normal/slow、reduced static cue、獨立 source-force/target-impact PNG、exact prompts、全透明 safe cells、QA。
-重現 python scripts/prepareBotuoBasicReview.py；不得改 P1 或直接重生成 accepted pixels。
-正常2800ms／慢速8400ms含雙方向與 Idle；decoded最短40/120ms、完整 pixel/timeline roundtrip PASS。
-完整 source canvas 依人工標記 skull height 等密度縮放，統一 XY 比例與蹄底，原始 pixels 未刪、resized pixels 完整保留，safe cell 外圍至少35px透明。原圖低alpha雜訊保留。
-獨立出招角形金褐壓力弧＋碎岩真實命中風格；body effects-OFF可辨，特效出招與命中分開明顯，未來Basic<Heavy<Special<Awakening逐級增強。正常速度、手機尺度實感仍由玩家審核。
-這是示意預覽，不是真實碰撞／HP／遊戲錄影。F1/F2/F3/F4=160/80/160/160ms、preview contact240ms後，不是授權 real timing；現行Basic windup0ms、單敵係數1.00、range1.4、無位移、attackSpeed0.85保護。不可直接套P1 windup或假延遲HP。
-沒有 GIF/VFX PASS、runtime integration、ENGINEERING PASS、Build/deploy/手機 PASS。若玩家明確接受，記錄精確 statement/hash/scope，再做最小 runtime preflight與另需的時序契約決策；先前圖與F3不重開審核。
-保留16MiB cache/scene、reserve、shared data-driven架構。Chat先完成素材／靜態工作，Work只負責核准後不可替代工程；[skip ci] checkpoint同步規則進度。
-禁止 merge main、新增取代分支、TD、Heavy/P3或提前部署。現在停在 GIF 玩家審核。
+GitHub 唯一權威。先fetch最新remote，核對HEAD／branch／PR／工作目錄與近期commits。
+Repository Hansen0318/shanhaijing-arena；既有分支feat/m0-combat-core-20260927；PR #1 open/unmerged。禁止merge main、新建取代分支、引入TD、開始Heavy/P3。
+先讀AGENTS、WORK_PROGRESS、STATE頂部、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、DEVELOPMENT_ROADMAP、DEVELOPMENT_ACCELERATION、M5C_ART_ANIMATION_VFX、CHARACTER_ACTION_ART_WORKFLOW及docs/M5C_P2_BOTUO_BASIC_ACTION.md。
+玩家19:23:19及19:23:43+08:00「我審核ok，紀錄github相關流程規則進度，然後繼續」已接受四姿勢、獨立出招／命中VFX及正常／慢速GIF。Receipt docs/art/approved/botuo/basic/composite-v1/acceptance.json，checkpoint b7c0df68d5a85de844d35d4892413ec4dc345bfd。最新HEAD以包含此檔的feature Git history／remote ref為準。
+核准來源在docs/art/candidates/botuo/basic/composite-review-v1/，原candidate資料夾名是歷史，不能重生成／重開美術審核。正常GIF SHA55c70c31141da605ee16f558bc6c9629c1ceeab73acb3314a2b3066d1c98ae9d；慢速8f9fd7662e54565ff6fdfe5e709fd4862f0e3b819a85bfe7c777dec4829ab553。
+P1 COMPLETE BY EXISTING ACCEPTANCE EVIDENCE，普通Hit CANCELLED；所有P1及P2基礎Idle/Move/KO素材、runtime及既有驗收證據保護，不重新跑P1整套測試／部署／玩家驗收。普通受傷不中斷，合法技能控制保留。
+已完成新P2 preflight；先讀docs/verification/M5C_P2_BOTUO_BASIC_PREFLIGHT.md/.json。
+重現python scripts/prepareBotuoBasicRuntimeProbe.py，再node scripts/inspectBotuoBasicPreflight.mjs；這不是P1重測或browser/phone驗收。
+16 current direct-call cases +4Tiers +4misses證明Basic現為0ms即時HP，無phased action token。12 sandbox-only240/250ms提案測量中，normal50ms步長兩者都於250msresolve。
+當前唯一玩家決策：建議P2 Basic固定250ms真實前搖(T0–T3)，F1/F2/F3/F4=160/90/160/160ms，總570；已核准GIF為240mscontact，差10ms。這不是已核准契約，先取得明確時序決策再改production。
+同一real resolve才扣HP／damage-critical數字／目標特效，鎖原target並在resolve用現有projected range重查，逃出落空、不假命中、不延遲UI。原係數1／crit／Tier／range／cadence-at-start／無位移保留，普通受傷不取消，KO/合法control/new skill按現有規則取消、不退cadence，沒有新動畫鎖。
+source效果160至resolve+200；contact效果actualhit至+200；F3body160、F4body160獨立。現有contact fade綁F3hold，後續若採此契約需generic opt-in contact lifetime，預設P1行為不變；實際cast-chain可見／miss／Pause／KO／destroy仍需工程證據。
+目前required16,552,840／16,777,216bytes、optional reserve131,072，新增可用93,304。89,856byte低密度PNG試包雖fits但因模糊REJECTED，不可採用，資料在docs/verification/P2_BASIC_RUNTIME_PACK_PROBE/。更高品質packing仍待工程解決，不能提高上限、砍approved pixels或靜默drop required資產。
+P2現有Idle/Move/KO只量測完全空白RGBA外列潛在45,056byte可無損節省，尚未變更；任何pack須保留原檔、逐RGBA/both-facing origin-scale/world位置證明後才可採。
+目前NOT IMPLEMENTED／NOT ENGINEERING PASS／NOT DEPLOYED／PHONE PENDING。這次沒有build／Pages／public fingerprint或P1重驗收。舊部署沿用8e2f5e049095017d7350b1d0d61e96527ab21e44。
+玩家接受時序後，完成高品質package與最小shared/data integration、直接影響測試、build/scoped release/public fingerprint，再玩家手機驗收。保持出招與命中都明顯、角色動作effects-OFF可辨、未來Basic<Heavy<Special<Awakening；不可重開已核准美術或自動開始下一技能。
+Chat先完成可做的靜態／素材工作，Work只接不可替代工程。每個coherent slice [skip ci] commit+push並同步progress/state/workflow。現在停止於250ms實際契約決策。
 ```

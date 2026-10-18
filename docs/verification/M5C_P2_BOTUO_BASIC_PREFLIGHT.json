@@ -1,0 +1,2938 @@
+{
+  "status": "PREFLIGHT MEASURED / EXECUTABLE TIMING DECISION PENDING",
+  "sourceHead": "b7c0df68d5a85de844d35d4892413ec4dc345bfd",
+  "scope": "Actual production session/direct executeAbility player/ai source flags; not UI/automatic-AI/browser/device verification. Residency uses real cache/presenter and actual public/probe PNG headers with doubled decoder/draw API; probe files remain under docs, no runtime files or visual quality PASS claim.",
+  "ability": {
+    "id": "P2.basic",
+    "name": "角擊",
+    "description": "近距角擊。",
+    "category": "basic",
+    "cooldown": 0,
+    "windupMs": 0,
+    "unlockTier": 0,
+    "canCrit": true,
+    "critChance": 0.1,
+    "critMultiplier": 1.5,
+    "range": 1.4,
+    "minRange": 0,
+    "preferredRange": 0.7,
+    "maxRange": 1.4,
+    "targetingRule": "enemy",
+    "telegraph": null,
+    "effect": {
+      "coefficient": 1
+    },
+    "ai": {
+      "priority": 0
+    },
+    "tierScaling": {
+      "aoe": false,
+      "mobility": false,
+      "status": false,
+      "windup": false
+    }
+  },
+  "directCases": [
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "side": "allies",
+      "direction": -1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "a1",
+        "category": "basic",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": -0.7,
+          "y": 0
+        },
+        "targetId": "e1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "player",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": -0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "side": "allies",
+      "direction": 1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "a1",
+        "category": "basic",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": "e1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "player",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "side": "enemies",
+      "direction": -1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "e1",
+        "category": "basic",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": -0.7,
+          "y": 0
+        },
+        "targetId": "a1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "e1",
+        "targetId": "a1",
+        "category": "basic",
+        "source": "player",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": -0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "side": "enemies",
+      "direction": 1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "e1",
+        "category": "basic",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": "a1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "e1",
+        "targetId": "a1",
+        "category": "basic",
+        "source": "player",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "side": "allies",
+      "direction": -1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "a1",
+        "category": "basic",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": -0.7,
+          "y": 0
+        },
+        "targetId": "e1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "player",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": -0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "side": "allies",
+      "direction": 1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "a1",
+        "category": "basic",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": "e1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "player",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "side": "enemies",
+      "direction": -1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "e1",
+        "category": "basic",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": -0.7,
+          "y": 0
+        },
+        "targetId": "a1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "e1",
+        "targetId": "a1",
+        "category": "basic",
+        "source": "player",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": -0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "side": "enemies",
+      "direction": 1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "e1",
+        "category": "basic",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": "a1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "e1",
+        "targetId": "a1",
+        "category": "basic",
+        "source": "player",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "side": "allies",
+      "direction": -1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "a1",
+        "category": "basic",
+        "source": "ai",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": -0.7,
+          "y": 0
+        },
+        "targetId": "e1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": -0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "side": "allies",
+      "direction": 1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "a1",
+        "category": "basic",
+        "source": "ai",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": "e1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "side": "enemies",
+      "direction": -1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": -0.7,
+          "y": 0
+        },
+        "targetId": "a1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "e1",
+        "targetId": "a1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": -0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "side": "enemies",
+      "direction": 1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": "a1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "e1",
+        "targetId": "a1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "side": "allies",
+      "direction": -1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "a1",
+        "category": "basic",
+        "source": "ai",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": -0.7,
+          "y": 0
+        },
+        "targetId": "e1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": -0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "side": "allies",
+      "direction": 1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "a1",
+        "category": "basic",
+        "source": "ai",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": "e1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "side": "enemies",
+      "direction": -1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": -0.7,
+          "y": 0
+        },
+        "targetId": "a1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "e1",
+        "targetId": "a1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": -0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "side": "enemies",
+      "direction": 1,
+      "before": {
+        "time": 0,
+        "hp": 320,
+        "x": 0,
+        "y": 0
+      },
+      "after": {
+        "time": 0,
+        "hp": 315,
+        "x": 0,
+        "y": 0,
+        "cadence": 1.1764705882352942
+      },
+      "cast": {
+        "actorId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": "a1",
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.4
+      },
+      "damage": {
+        "actorId": "e1",
+        "targetId": "a1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      },
+      "existingPhasedPlaybackStarted": false
+    }
+  ],
+  "tierCases": [
+    {
+      "tier": "T0",
+      "definition": {
+        "id": "P2.basic",
+        "name": "角擊",
+        "description": "近距角擊。",
+        "category": "basic",
+        "cooldown": 0,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.1,
+        "critMultiplier": 1.5,
+        "range": 1.4,
+        "minRange": 0,
+        "preferredRange": 0.7,
+        "maxRange": 1.4,
+        "targetingRule": "enemy",
+        "telegraph": null,
+        "effect": {
+          "coefficient": 1
+        },
+        "ai": {
+          "priority": 0
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": false
+        }
+      },
+      "stats": {
+        "maxHp": 320,
+        "atk": 14,
+        "def": 9,
+        "moveSpeed": 1.45,
+        "attackSpeed": 0.85
+      },
+      "cadence": 1.1764705882352942,
+      "damage": 5,
+      "event": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 5,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      }
+    },
+    {
+      "tier": "T1",
+      "definition": {
+        "id": "P2.basic",
+        "name": "角擊",
+        "description": "近距角擊。",
+        "category": "basic",
+        "cooldown": 0,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.1,
+        "critMultiplier": 1.5,
+        "range": 1.4454999999999998,
+        "minRange": 0,
+        "preferredRange": 0.7227499999999999,
+        "maxRange": 1.4454999999999998,
+        "targetingRule": "enemy",
+        "telegraph": null,
+        "effect": {
+          "coefficient": 1
+        },
+        "ai": {
+          "priority": 0
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": false
+        }
+      },
+      "stats": {
+        "maxHp": 480,
+        "atk": 14,
+        "def": 9,
+        "moveSpeed": 1.4906,
+        "attackSpeed": 0.8967500000000002
+      },
+      "cadence": 1.1151379983272929,
+      "damage": 10.355000000000018,
+      "event": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 10.354999999999997,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      }
+    },
+    {
+      "tier": "T2",
+      "definition": {
+        "id": "P2.basic",
+        "name": "角擊",
+        "description": "近距角擊。",
+        "category": "basic",
+        "cooldown": 0,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.1,
+        "critMultiplier": 1.5,
+        "range": 1.4909999999999999,
+        "minRange": 0,
+        "preferredRange": 0.7454999999999999,
+        "maxRange": 1.4909999999999999,
+        "targetingRule": "enemy",
+        "telegraph": null,
+        "effect": {
+          "coefficient": 1
+        },
+        "ai": {
+          "priority": 0
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": false
+        }
+      },
+      "stats": {
+        "maxHp": 720,
+        "atk": 14,
+        "def": 9,
+        "moveSpeed": 1.5312000000000001,
+        "attackSpeed": 0.95285
+      },
+      "cadence": 1.0494831295586924,
+      "damage": 17.495000000000005,
+      "event": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 17.494999999999997,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      }
+    },
+    {
+      "tier": "T3",
+      "definition": {
+        "id": "P2.basic",
+        "name": "角擊",
+        "description": "近距角擊。",
+        "category": "basic",
+        "cooldown": 0,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.1,
+        "critMultiplier": 1.5,
+        "range": 1.5637999999999999,
+        "minRange": 0,
+        "preferredRange": 0.7818999999999999,
+        "maxRange": 1.5637999999999999,
+        "targetingRule": "enemy",
+        "telegraph": null,
+        "effect": {
+          "coefficient": 1
+        },
+        "ai": {
+          "priority": 0
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": false
+        }
+      },
+      "stats": {
+        "maxHp": 1200,
+        "atk": 14,
+        "def": 9,
+        "moveSpeed": 1.5921,
+        "attackSpeed": 1.037
+      },
+      "cadence": 0.9643201542912248,
+      "damage": 31.180000000000064,
+      "event": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "basic",
+        "source": "ai",
+        "amount": 31.18,
+        "critical": false,
+        "eventAt": 0,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      }
+    }
+  ],
+  "outOfRangeCases": [
+    {
+      "source": "player",
+      "side": "allies",
+      "accepted": true,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 8,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4
+        }
+      ],
+      "targetHpUnchanged": true
+    },
+    {
+      "source": "player",
+      "side": "enemies",
+      "accepted": true,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "basic",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 8,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4
+        }
+      ],
+      "targetHpUnchanged": true
+    },
+    {
+      "source": "ai",
+      "side": "allies",
+      "accepted": false,
+      "casts": [],
+      "targetHpUnchanged": true
+    },
+    {
+      "source": "ai",
+      "side": "enemies",
+      "accepted": false,
+      "casts": [],
+      "targetHpUnchanged": true
+    }
+  ],
+  "proposedTiming": [
+    {
+      "windupMs": 240,
+      "outcome": "hit",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "resolve",
+          "eventAt": 0.25,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "resolvedAt": 0.25,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "basic",
+          "source": "ai",
+          "amount": 5,
+          "critical": false,
+          "eventAt": 0.25,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          },
+          "actionId": "basic.1"
+        }
+      ],
+      "firstActualHitMs": 250,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 240,
+      "outcome": "escape",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 8,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "resolve",
+          "eventAt": 0.25,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "resolvedAt": 0.25,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [],
+      "firstActualHitMs": null,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 240,
+      "outcome": "ordinary_damage",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "resolve",
+          "eventAt": 0.25,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "resolvedAt": 0.25,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "basic",
+          "source": "ai",
+          "amount": 5,
+          "critical": false,
+          "eventAt": 0.25,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          },
+          "actionId": "basic.1"
+        }
+      ],
+      "firstActualHitMs": 250,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 240,
+      "outcome": "source_ko",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "cancel",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "reason": "source_ko",
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [],
+      "firstActualHitMs": null,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 240,
+      "outcome": "target_ko",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "cancel",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "reason": "target_ko",
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [],
+      "firstActualHitMs": null,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 240,
+      "outcome": "new_skill",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "cancel",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.24,
+          "windupMs": 240,
+          "reason": "new_ability",
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        },
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "damageEvents": [],
+      "firstActualHitMs": null,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 250,
+      "outcome": "hit",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "resolve",
+          "eventAt": 0.25,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "resolvedAt": 0.25,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "basic",
+          "source": "ai",
+          "amount": 5,
+          "critical": false,
+          "eventAt": 0.25,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          },
+          "actionId": "basic.1"
+        }
+      ],
+      "firstActualHitMs": 250,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 250,
+      "outcome": "escape",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 8,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "resolve",
+          "eventAt": 0.25,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "resolvedAt": 0.25,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [],
+      "firstActualHitMs": null,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 250,
+      "outcome": "ordinary_damage",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "resolve",
+          "eventAt": 0.25,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "resolvedAt": 0.25,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "basic",
+          "source": "ai",
+          "amount": 5,
+          "critical": false,
+          "eventAt": 0.25,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          },
+          "actionId": "basic.1"
+        }
+      ],
+      "firstActualHitMs": 250,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 250,
+      "outcome": "source_ko",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "cancel",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "reason": "source_ko",
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [],
+      "firstActualHitMs": null,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 250,
+      "outcome": "target_ko",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "cancel",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "reason": "target_ko",
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "damageEvents": [],
+      "firstActualHitMs": null,
+      "cadenceAfter300ms": 0.8764705882352939
+    },
+    {
+      "windupMs": 250,
+      "outcome": "new_skill",
+      "kind": "IN-MEMORY PROPOSAL, NOT INSTALLED/APPROVED",
+      "start": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "start",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "castEvents": [
+        {
+          "actorId": "a1",
+          "category": "basic",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.4,
+          "phase": "cancel",
+          "eventAt": 0,
+          "actionId": "basic.1",
+          "startedAt": 0,
+          "dueAt": 0.25,
+          "windupMs": 250,
+          "reason": "new_ability",
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        },
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "damageEvents": [],
+      "firstActualHitMs": null,
+      "cadenceAfter300ms": 0.8764705882352939
+    }
+  ],
+  "budget": [
+    {
+      "reverse": false,
+      "baseline": {
+        "scene": {
+          "requested": 36,
+          "loaded": 36,
+          "evicted": 0,
+          "failed": 0,
+          "highWaterBytes": 16552840,
+          "loadOrder": [
+            "lushu.portrait",
+            "botuo.portrait",
+            "chiru.portrait",
+            "jiuweihu.portrait",
+            "xingxing.portrait",
+            "lushu.battleIdle",
+            "botuo.battleIdle",
+            "chiru.battleIdle",
+            "jiuweihu.battleIdle",
+            "xingxing.battleIdle",
+            "lushu.battleMove",
+            "lushu.battleKo",
+            "botuo.battleMove",
+            "botuo.battleKo",
+            "chiru.battleMove",
+            "chiru.battleKo",
+            "jiuweihu.battleMove",
+            "jiuweihu.battleKo",
+            "xingxing.battleMove",
+            "xingxing.battleKo",
+            "lushu.battleBasic",
+            "lushu.basicBlade",
+            "lushu.basicContact",
+            "lushu.battleHeavy",
+            "lushu.heavyWind",
+            "lushu.heavyImpact",
+            "lushu.battleSpecial",
+            "lushu.specialWind",
+            "lushu.specialImpact",
+            "lushu.battleAwakening",
+            "lushu.awakeningASource",
+            "lushu.awakeningAImpact",
+            "lushu.awakeningBSource",
+            "lushu.awakeningBImpact",
+            "lushu.awakeningCSource",
+            "lushu.awakeningCImpact"
+          ],
+          "highWaterReservedBytes": 16552840,
+          "estimatedLiveBytes": 16552840,
+          "reservedBytes": 0,
+          "pending": 0,
+          "pinned": 36,
+          "softBytes": 12582912,
+          "hardBytes": 16777216,
+          "optionalReserveBytes": 131072,
+          "closed": false
+        },
+        "cache": {
+          "estimatedLiveBytes": 16552840,
+          "highWaterBytes": 16552840,
+          "loaded": 36,
+          "failed": 0,
+          "pending": 0,
+          "active": 0,
+          "queued": 0
+        },
+        "actualScene": {
+          "bytes": 16552840,
+          "peak": 16552840
+        },
+        "files": [
+          {
+            "key": "lushu.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "botuo.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "chiru.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "jiuweihu.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "xingxing.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "lushu.battleIdle",
+            "width": 96,
+            "height": 128,
+            "decodedBytes": 49152
+          },
+          {
+            "key": "botuo.battleIdle",
+            "width": 160,
+            "height": 160,
+            "decodedBytes": 102400
+          },
+          {
+            "key": "chiru.battleIdle",
+            "width": 160,
+            "height": 160,
+            "decodedBytes": 102400
+          },
+          {
+            "key": "jiuweihu.battleIdle",
+            "width": 160,
+            "height": 160,
+            "decodedBytes": 102400
+          },
+          {
+            "key": "xingxing.battleIdle",
+            "width": 160,
+            "height": 160,
+            "decodedBytes": 102400
+          },
+          {
+            "key": "lushu.battleMove",
+            "width": 384,
+            "height": 91,
+            "decodedBytes": 139776
+          },
+          {
+            "key": "lushu.battleKo",
+            "width": 512,
+            "height": 472,
+            "decodedBytes": 966656
+          },
+          {
+            "key": "botuo.battleMove",
+            "width": 640,
+            "height": 160,
+            "decodedBytes": 409600
+          },
+          {
+            "key": "botuo.battleKo",
+            "width": 512,
+            "height": 331,
+            "decodedBytes": 677888
+          },
+          {
+            "key": "chiru.battleMove",
+            "width": 640,
+            "height": 118,
+            "decodedBytes": 302080
+          },
+          {
+            "key": "chiru.battleKo",
+            "width": 1254,
+            "height": 1254,
+            "decodedBytes": 6290064
+          },
+          {
+            "key": "jiuweihu.battleMove",
+            "width": 640,
+            "height": 160,
+            "decodedBytes": 409600
+          },
+          {
+            "key": "jiuweihu.battleKo",
+            "width": 512,
+            "height": 438,
+            "decodedBytes": 897024
+          },
+          {
+            "key": "xingxing.battleMove",
+            "width": 1120,
+            "height": 880,
+            "decodedBytes": 3942400
+          },
+          {
+            "key": "xingxing.battleKo",
+            "width": 480,
+            "height": 288,
+            "decodedBytes": 552960
+          },
+          {
+            "key": "lushu.battleBasic",
+            "width": 512,
+            "height": 101,
+            "decodedBytes": 206848
+          },
+          {
+            "key": "lushu.basicBlade",
+            "width": 97,
+            "height": 81,
+            "decodedBytes": 31428
+          },
+          {
+            "key": "lushu.basicContact",
+            "width": 85,
+            "height": 57,
+            "decodedBytes": 19380
+          },
+          {
+            "key": "lushu.battleHeavy",
+            "width": 512,
+            "height": 85,
+            "decodedBytes": 174080
+          },
+          {
+            "key": "lushu.heavyWind",
+            "width": 112,
+            "height": 112,
+            "decodedBytes": 50176
+          },
+          {
+            "key": "lushu.heavyImpact",
+            "width": 128,
+            "height": 86,
+            "decodedBytes": 44032
+          },
+          {
+            "key": "lushu.battleSpecial",
+            "width": 320,
+            "height": 59,
+            "decodedBytes": 75520
+          },
+          {
+            "key": "lushu.specialWind",
+            "width": 96,
+            "height": 80,
+            "decodedBytes": 30720
+          },
+          {
+            "key": "lushu.specialImpact",
+            "width": 112,
+            "height": 72,
+            "decodedBytes": 32256
+          },
+          {
+            "key": "lushu.battleAwakening",
+            "width": 640,
+            "height": 128,
+            "decodedBytes": 327680
+          },
+          {
+            "key": "lushu.awakeningASource",
+            "width": 96,
+            "height": 61,
+            "decodedBytes": 23424
+          },
+          {
+            "key": "lushu.awakeningAImpact",
+            "width": 96,
+            "height": 77,
+            "decodedBytes": 29568
+          },
+          {
+            "key": "lushu.awakeningBSource",
+            "width": 96,
+            "height": 73,
+            "decodedBytes": 28032
+          },
+          {
+            "key": "lushu.awakeningBImpact",
+            "width": 96,
+            "height": 88,
+            "decodedBytes": 33792
+          },
+          {
+            "key": "lushu.awakeningCSource",
+            "width": 93,
+            "height": 96,
+            "decodedBytes": 35712
+          },
+          {
+            "key": "lushu.awakeningCImpact",
+            "width": 96,
+            "height": 93,
+            "decodedBytes": 35712
+          }
+        ]
+      },
+      "planningCandidateAfter": {
+        "scene": {
+          "requested": 39,
+          "loaded": 39,
+          "evicted": 0,
+          "failed": 0,
+          "highWaterBytes": 16642696,
+          "loadOrder": [
+            "lushu.portrait",
+            "botuo.portrait",
+            "chiru.portrait",
+            "jiuweihu.portrait",
+            "xingxing.portrait",
+            "lushu.battleIdle",
+            "botuo.battleIdle",
+            "chiru.battleIdle",
+            "jiuweihu.battleIdle",
+            "xingxing.battleIdle",
+            "lushu.battleMove",
+            "lushu.battleKo",
+            "botuo.battleMove",
+            "botuo.battleKo",
+            "chiru.battleMove",
+            "chiru.battleKo",
+            "jiuweihu.battleMove",
+            "jiuweihu.battleKo",
+            "xingxing.battleMove",
+            "xingxing.battleKo",
+            "lushu.battleBasic",
+            "lushu.basicBlade",
+            "lushu.basicContact",
+            "lushu.battleHeavy",
+            "lushu.heavyWind",
+            "lushu.heavyImpact",
+            "lushu.battleSpecial",
+            "lushu.specialWind",
+            "lushu.specialImpact",
+            "lushu.battleAwakening",
+            "lushu.awakeningASource",
+            "lushu.awakeningAImpact",
+            "lushu.awakeningBSource",
+            "lushu.awakeningBImpact",
+            "lushu.awakeningCSource",
+            "lushu.awakeningCImpact",
+            "preflight.botuo.basicPoses",
+            "preflight.botuo.basicSource",
+            "preflight.botuo.basicContact"
+          ],
+          "highWaterReservedBytes": 16642696,
+          "estimatedLiveBytes": 16642696,
+          "reservedBytes": 0,
+          "pending": 0,
+          "pinned": 39,
+          "softBytes": 12582912,
+          "hardBytes": 16777216,
+          "optionalReserveBytes": 131072,
+          "closed": false
+        },
+        "cache": {
+          "estimatedLiveBytes": 16642696,
+          "highWaterBytes": 16642696,
+          "loaded": 39,
+          "failed": 0,
+          "pending": 0,
+          "active": 0,
+          "queued": 0
+        },
+        "actualScene": {
+          "bytes": 16642696,
+          "peak": 16642696
+        }
+      },
+      "remainingBytes": 134520,
+      "cleanupBytes": 0
+    },
+    {
+      "reverse": true,
+      "baseline": {
+        "scene": {
+          "requested": 36,
+          "loaded": 36,
+          "evicted": 0,
+          "failed": 0,
+          "highWaterBytes": 16552840,
+          "loadOrder": [
+            "xingxing.portrait",
+            "jiuweihu.portrait",
+            "chiru.portrait",
+            "botuo.portrait",
+            "lushu.portrait",
+            "xingxing.battleIdle",
+            "jiuweihu.battleIdle",
+            "chiru.battleIdle",
+            "botuo.battleIdle",
+            "lushu.battleIdle",
+            "xingxing.battleMove",
+            "xingxing.battleKo",
+            "jiuweihu.battleMove",
+            "jiuweihu.battleKo",
+            "chiru.battleMove",
+            "chiru.battleKo",
+            "botuo.battleMove",
+            "botuo.battleKo",
+            "lushu.battleMove",
+            "lushu.battleKo",
+            "lushu.battleBasic",
+            "lushu.basicBlade",
+            "lushu.basicContact",
+            "lushu.battleHeavy",
+            "lushu.heavyWind",
+            "lushu.heavyImpact",
+            "lushu.battleSpecial",
+            "lushu.specialWind",
+            "lushu.specialImpact",
+            "lushu.battleAwakening",
+            "lushu.awakeningASource",
+            "lushu.awakeningAImpact",
+            "lushu.awakeningBSource",
+            "lushu.awakeningBImpact",
+            "lushu.awakeningCSource",
+            "lushu.awakeningCImpact"
+          ],
+          "highWaterReservedBytes": 16552840,
+          "estimatedLiveBytes": 16552840,
+          "reservedBytes": 0,
+          "pending": 0,
+          "pinned": 36,
+          "softBytes": 12582912,
+          "hardBytes": 16777216,
+          "optionalReserveBytes": 131072,
+          "closed": false
+        },
+        "cache": {
+          "estimatedLiveBytes": 16552840,
+          "highWaterBytes": 16552840,
+          "loaded": 36,
+          "failed": 0,
+          "pending": 0,
+          "active": 0,
+          "queued": 0
+        },
+        "actualScene": {
+          "bytes": 16552840,
+          "peak": 16552840
+        },
+        "files": [
+          {
+            "key": "xingxing.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "jiuweihu.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "chiru.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "botuo.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "lushu.portrait",
+            "width": 128,
+            "height": 128,
+            "decodedBytes": 65536
+          },
+          {
+            "key": "xingxing.battleIdle",
+            "width": 160,
+            "height": 160,
+            "decodedBytes": 102400
+          },
+          {
+            "key": "jiuweihu.battleIdle",
+            "width": 160,
+            "height": 160,
+            "decodedBytes": 102400
+          },
+          {
+            "key": "chiru.battleIdle",
+            "width": 160,
+            "height": 160,
+            "decodedBytes": 102400
+          },
+          {
+            "key": "botuo.battleIdle",
+            "width": 160,
+            "height": 160,
+            "decodedBytes": 102400
+          },
+          {
+            "key": "lushu.battleIdle",
+            "width": 96,
+            "height": 128,
+            "decodedBytes": 49152
+          },
+          {
+            "key": "xingxing.battleMove",
+            "width": 1120,
+            "height": 880,
+            "decodedBytes": 3942400
+          },
+          {
+            "key": "xingxing.battleKo",
+            "width": 480,
+            "height": 288,
+            "decodedBytes": 552960
+          },
+          {
+            "key": "jiuweihu.battleMove",
+            "width": 640,
+            "height": 160,
+            "decodedBytes": 409600
+          },
+          {
+            "key": "jiuweihu.battleKo",
+            "width": 512,
+            "height": 438,
+            "decodedBytes": 897024
+          },
+          {
+            "key": "chiru.battleMove",
+            "width": 640,
+            "height": 118,
+            "decodedBytes": 302080
+          },
+          {
+            "key": "chiru.battleKo",
+            "width": 1254,
+            "height": 1254,
+            "decodedBytes": 6290064
+          },
+          {
+            "key": "botuo.battleMove",
+            "width": 640,
+            "height": 160,
+            "decodedBytes": 409600
+          },
+          {
+            "key": "botuo.battleKo",
+            "width": 512,
+            "height": 331,
+            "decodedBytes": 677888
+          },
+          {
+            "key": "lushu.battleMove",
+            "width": 384,
+            "height": 91,
+            "decodedBytes": 139776
+          },
+          {
+            "key": "lushu.battleKo",
+            "width": 512,
+            "height": 472,
+            "decodedBytes": 966656
+          },
+          {
+            "key": "lushu.battleBasic",
+            "width": 512,
+            "height": 101,
+            "decodedBytes": 206848
+          },
+          {
+            "key": "lushu.basicBlade",
+            "width": 97,
+            "height": 81,
+            "decodedBytes": 31428
+          },
+          {
+            "key": "lushu.basicContact",
+            "width": 85,
+            "height": 57,
+            "decodedBytes": 19380
+          },
+          {
+            "key": "lushu.battleHeavy",
+            "width": 512,
+            "height": 85,
+            "decodedBytes": 174080
+          },
+          {
+            "key": "lushu.heavyWind",
+            "width": 112,
+            "height": 112,
+            "decodedBytes": 50176
+          },
+          {
+            "key": "lushu.heavyImpact",
+            "width": 128,
+            "height": 86,
+            "decodedBytes": 44032
+          },
+          {
+            "key": "lushu.battleSpecial",
+            "width": 320,
+            "height": 59,
+            "decodedBytes": 75520
+          },
+          {
+            "key": "lushu.specialWind",
+            "width": 96,
+            "height": 80,
+            "decodedBytes": 30720
+          },
+          {
+            "key": "lushu.specialImpact",
+            "width": 112,
+            "height": 72,
+            "decodedBytes": 32256
+          },
+          {
+            "key": "lushu.battleAwakening",
+            "width": 640,
+            "height": 128,
+            "decodedBytes": 327680
+          },
+          {
+            "key": "lushu.awakeningASource",
+            "width": 96,
+            "height": 61,
+            "decodedBytes": 23424
+          },
+          {
+            "key": "lushu.awakeningAImpact",
+            "width": 96,
+            "height": 77,
+            "decodedBytes": 29568
+          },
+          {
+            "key": "lushu.awakeningBSource",
+            "width": 96,
+            "height": 73,
+            "decodedBytes": 28032
+          },
+          {
+            "key": "lushu.awakeningBImpact",
+            "width": 96,
+            "height": 88,
+            "decodedBytes": 33792
+          },
+          {
+            "key": "lushu.awakeningCSource",
+            "width": 93,
+            "height": 96,
+            "decodedBytes": 35712
+          },
+          {
+            "key": "lushu.awakeningCImpact",
+            "width": 96,
+            "height": 93,
+            "decodedBytes": 35712
+          }
+        ]
+      },
+      "planningCandidateAfter": {
+        "scene": {
+          "requested": 39,
+          "loaded": 39,
+          "evicted": 0,
+          "failed": 0,
+          "highWaterBytes": 16642696,
+          "loadOrder": [
+            "xingxing.portrait",
+            "jiuweihu.portrait",
+            "chiru.portrait",
+            "botuo.portrait",
+            "lushu.portrait",
+            "xingxing.battleIdle",
+            "jiuweihu.battleIdle",
+            "chiru.battleIdle",
+            "botuo.battleIdle",
+            "lushu.battleIdle",
+            "xingxing.battleMove",
+            "xingxing.battleKo",
+            "jiuweihu.battleMove",
+            "jiuweihu.battleKo",
+            "chiru.battleMove",
+            "chiru.battleKo",
+            "botuo.battleMove",
+            "botuo.battleKo",
+            "lushu.battleMove",
+            "lushu.battleKo",
+            "lushu.battleBasic",
+            "lushu.basicBlade",
+            "lushu.basicContact",
+            "lushu.battleHeavy",
+            "lushu.heavyWind",
+            "lushu.heavyImpact",
+            "lushu.battleSpecial",
+            "lushu.specialWind",
+            "lushu.specialImpact",
+            "lushu.battleAwakening",
+            "lushu.awakeningASource",
+            "lushu.awakeningAImpact",
+            "lushu.awakeningBSource",
+            "lushu.awakeningBImpact",
+            "lushu.awakeningCSource",
+            "lushu.awakeningCImpact",
+            "preflight.botuo.basicContact",
+            "preflight.botuo.basicSource",
+            "preflight.botuo.basicPoses"
+          ],
+          "highWaterReservedBytes": 16642696,
+          "estimatedLiveBytes": 16642696,
+          "reservedBytes": 0,
+          "pending": 0,
+          "pinned": 39,
+          "softBytes": 12582912,
+          "hardBytes": 16777216,
+          "optionalReserveBytes": 131072,
+          "closed": false
+        },
+        "cache": {
+          "estimatedLiveBytes": 16642696,
+          "highWaterBytes": 16642696,
+          "loaded": 39,
+          "failed": 0,
+          "pending": 0,
+          "active": 0,
+          "queued": 0
+        },
+        "actualScene": {
+          "bytes": 16642696,
+          "peak": 16642696
+        }
+      },
+      "remainingBytes": 134520,
+      "cleanupBytes": 0
+    }
+  ],
+  "planningCandidate": {
+    "records": [
+      {
+        "key": "preflight.botuo.basicPoses",
+        "type": "image",
+        "path": "docs/verification/P2_BASIC_RUNTIME_PACK_PROBE/poses-4f-PLANNING.png",
+        "width": 312,
+        "height": 60,
+        "bytes": 23759,
+        "fallback": "placeholder.battle"
+      },
+      {
+        "key": "preflight.botuo.basicSource",
+        "type": "image",
+        "path": "docs/verification/P2_BASIC_RUNTIME_PACK_PROBE/source-PLANNING.png",
+        "width": 48,
+        "height": 36,
+        "bytes": 3072,
+        "fallback": "placeholder.vfx"
+      },
+      {
+        "key": "preflight.botuo.basicContact",
+        "type": "image",
+        "path": "docs/verification/P2_BASIC_RUNTIME_PACK_PROBE/contact-PLANNING.png",
+        "width": 48,
+        "height": 42,
+        "bytes": 3982,
+        "fallback": "placeholder.vfx"
+      }
+    ],
+    "additionalDecodedBytes": 89856,
+    "notSelected": true,
+    "qualityRejectedAtThisDensity": true,
+    "visualComparison": "docs/verification/P2_BASIC_RUNTIME_PACK_PROBE/density-comparison.png"
+  },
+  "protectedHashes": {
+    "src/roster/abilities.js": "f7dd31c2d9da65519fbe3da60fab27aaeefd2f5cad03e107d68348525957345b",
+    "src/roster/catalog.js": "403253853b372eadcafa9afb8876d896171874d26c99a43e371445cc7b6cff78",
+    "src/combat/ability.js": "63283096c116f1e43e32d4d52979832de12c591597b3901d83d098ecdfdf091f",
+    "src/combat/battleSession.js": "1b3c0bb45daedd4830556dde2eba448192697daa96df52d97af136bd4247cd03",
+    "src/assets/actionPlayback.js": "389266ec7a1232c4996a1b655490670f0e1ba03a4d764775458589bea49893c3",
+    "src/runtime/assetPresenter.js": "4bd0b4d75127924665605f139c25c92cdfd98450d26ea7e7bbad9b699442469e",
+    "src/runtime/assetResidency.js": "96808ee3379a23db6c88e38e0d26939a3ba979191ac468002ec381c1e7648bb9",
+    "src/runtime/assetCache.js": "46684c94e315687394c4309b491c2a778d1ace18dde86a4d283a394753670576"
+  },
+  "acceptedPreview": {
+    "relativeContactMs": 240,
+    "phaseMs": [
+      160,
+      80,
+      160,
+      160
+    ],
+    "totalActionMs": 560,
+    "sourceRelativeWindowMs": [
+      160,
+      440
+    ],
+    "contactRelativeWindowMs": [
+      240,
+      440
+    ]
+  },
+  "proposedContract": {
+    "status": "PLAYER DECISION PENDING",
+    "fixedWindupMs": 250,
+    "reason": "Existing normal50ms simulation resolves nominal240ms at250ms; choose an exact existing-tick boundary rather than modify the shared clock.",
+    "previewContactMs": 240,
+    "differenceFromPreviewMs": 10,
+    "tiers": "fixed T0-T3",
+    "phases": [
+      160,
+      90,
+      160,
+      160
+    ],
+    "actionEndMs": 570,
+    "sourceWindowMs": [
+      160,
+      450
+    ],
+    "targetWindowMs": [
+      250,
+      450
+    ]
+  },
+  "conclusion": "Immediate P2 Basic emits one unphased cast and one immediate real damage event, no pending action; existing ActionPlayback cannot start from that event. In-memory240/250ms proposals both resolve at250ms on normal50ms steps. Proposed exact250ms windup changes gameplay and needs separate explicit approval. Low-density texture probe fits metadata residency but visibly blurs accepted art and is REJECTED, not an integration solution. Higher-fidelity packing remains engineering work; no budget increase or approved-source edits authorized."
+}

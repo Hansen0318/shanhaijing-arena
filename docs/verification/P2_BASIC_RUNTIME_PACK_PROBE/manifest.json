@@ -1,0 +1,126 @@
+{
+  "status": "LOW-DENSITY PROBE REJECTED BY VISUAL SELF-REVIEW / NOT INTEGRATED",
+  "records": [
+    {
+      "frame": "F1",
+      "source": "docs/art/candidates/botuo/basic/composite-review-v1/F1-safe-cell.png",
+      "sha256": "3634cec5036f5346af9f851696aa3884074fefc932fbc711b338e4e5c696e755",
+      "losslessCrop": [
+        96,
+        136,
+        304,
+        296
+      ],
+      "cropReconstructionExactRGBA": true,
+      "downsample": [
+        78,
+        60
+      ],
+      "downsampleIsLossyNotPixelIdentical": true
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/candidates/botuo/basic/composite-review-v1/F2-safe-cell.png",
+      "sha256": "d6a4966dc30ba4335c00848a6b5937ca8809aca142e4d5e2e25fdee60f20626e",
+      "losslessCrop": [
+        96,
+        136,
+        304,
+        296
+      ],
+      "cropReconstructionExactRGBA": true,
+      "downsample": [
+        78,
+        60
+      ],
+      "downsampleIsLossyNotPixelIdentical": true
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/candidates/botuo/basic/composite-review-v1/F3-safe-cell.png",
+      "sha256": "b3df62572c4ac09cfe8a7117855dcba07a792598290668cbd3697c50c4a2b6a3",
+      "losslessCrop": [
+        96,
+        136,
+        304,
+        296
+      ],
+      "cropReconstructionExactRGBA": true,
+      "downsample": [
+        78,
+        60
+      ],
+      "downsampleIsLossyNotPixelIdentical": true
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/candidates/botuo/basic/composite-review-v1/F4-safe-cell.png",
+      "sha256": "500d579631b56192e2da019f30d4d093554c2b2ac4baa209b7607296010eb4dc",
+      "losslessCrop": [
+        96,
+        136,
+        304,
+        296
+      ],
+      "cropReconstructionExactRGBA": true,
+      "downsample": [
+        78,
+        60
+      ],
+      "downsampleIsLossyNotPixelIdentical": true
+    }
+  ],
+  "files": [
+    {
+      "path": "docs/verification/P2_BASIC_RUNTIME_PACK_PROBE/poses-4f-PLANNING.png",
+      "size": [
+        312,
+        60
+      ],
+      "bytes": 23759,
+      "sha256": "9e1c4e2b5f972767d6440c86c40bef910a7f4c330ec50b9792d5842e9a9da0b0",
+      "decodedBytes": 74880
+    },
+    {
+      "path": "docs/verification/P2_BASIC_RUNTIME_PACK_PROBE/source-PLANNING.png",
+      "size": [
+        48,
+        36
+      ],
+      "bytes": 3072,
+      "sha256": "affe80bad31ec47b471b8b34dad18f53f03eebb2158bac8ff2b06211fae686ed",
+      "decodedBytes": 6912
+    },
+    {
+      "path": "docs/verification/P2_BASIC_RUNTIME_PACK_PROBE/contact-PLANNING.png",
+      "size": [
+        48,
+        42
+      ],
+      "bytes": 3982,
+      "sha256": "8e92b480171c4f8916021e3ae172b0a35fb12410ab4ee19860bc3946bfd5281a",
+      "decodedBytes": 8064
+    }
+  ],
+  "additionalDecodedBytes": 89856,
+  "proposedWorldCell": [
+    208,
+    160
+  ],
+  "proposedCoordinateSize": [
+    208,
+    160
+  ],
+  "displayScale": 2.888888888888889,
+  "originForSameVisibleFootAsAcceptedIdle": [
+    0.1875,
+    0.9637499999999999
+  ],
+  "groundRationale": "Accepted runtime Idle visible foot140 vs origin158 at0.9 => foot at actorY-16.2; proposed action pivot retains that offset. Not the preview-visible-floor transform.",
+  "mirrorRationale": "Crop is symmetric about original canvas x200; shared action renderer complements originX on flip. Actual presenter both-facing proof still required.",
+  "limitations": [
+    "Crop pixel retention verified; low-density final downsample visibly softens the face/outlines in the same-size comparison and is NOT selected for integration.",
+    "This is an engineering feasibility comparison, not replacement art or a new visual acceptance demand.",
+    "Renderer, palette/texture registration, contact alignment and phone quality remain later validation."
+  ]
+}
