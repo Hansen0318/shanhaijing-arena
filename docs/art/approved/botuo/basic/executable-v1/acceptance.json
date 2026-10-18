@@ -1,0 +1,53 @@
+{
+  "status": "PLAYER EXECUTABLE CONTRACT APPROVED",
+  "character": "P2 猼訑",
+  "ability": "Basic 角擊",
+  "acceptedAt": "2026-10-18T19:43:23+08:00",
+  "statement": "如果這樣是符合邏輯的話，我同意",
+  "presentedCheckpoint": "3acdc848d39b13793e10a511422a64860b9dd91e",
+  "presentedSpec": "docs/verification/M5C_P2_BOTUO_BASIC_PREFLIGHT.md",
+  "rationale": "Real damage must synchronize with contact after anticipation; existing nominal50ms grid resolves proposed240ms and250ms at250ms.",
+  "contract": {
+    "realWindupMs": 250,
+    "tiers": [
+      "T0",
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "bodyFrameDurationsMs": [
+      160,
+      90,
+      160,
+      160
+    ],
+    "sourceStartsMs": 160,
+    "sourceEndsMsAfterActualResolve": 200,
+    "contactDurationMs": 200,
+    "contactRequiresActualHit": true,
+    "realDamageAndTextAndContactShareResolve": true,
+    "rangeRecheckedAtResolve": true,
+    "targetLocked": true,
+    "ordinaryDamageCancels": false,
+    "existingKoControlAndNewSkillCancellationPreserved": true,
+    "cadenceChargedAtStart": true,
+    "cadenceRefundOnCancel": false,
+    "preserve": [
+      "coefficient",
+      "range",
+      "crit",
+      "Tier stats",
+      "attack frequency",
+      "no displacement"
+    ]
+  },
+  "visualReceipt": "docs/art/approved/botuo/basic/composite-v1/acceptance.json",
+  "exclusions": [
+    "No implementation/engineering/build/deployment/phone acceptance claimed",
+    "Rejected low-density planning pack is not approved",
+    "No P1 changes or repeated acceptance",
+    "No Heavy/P3/main merge"
+  ],
+  "nextGate": "High-fidelity runtime packing, then bounded integration and directly affected engineering checks",
+  "currentSlice": "Record decision and explain next steps per preceding player request; no production change"
+}

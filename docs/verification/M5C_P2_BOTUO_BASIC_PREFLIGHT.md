@@ -1,6 +1,6 @@
 # P2 猼訑 Basic runtime preflight — 2026-10-18
 
-Status: **VISUAL PLAYER APPROVED / PREFLIGHT MEASURED / EXECUTABLE TIMING DECISION PENDING**.
+Current decision update2026-10-18T19:43:23+08:00: **VISUAL + EXECUTABLE250ms CONTRACT PLAYER APPROVED / NOT IMPLEMENTED**. Exact statement and bounded contract: `docs/art/approved/botuo/basic/executable-v1/acceptance.json`. Historical proposal/measurement below remains unchanged evidence; its decision-pending stop is superseded. NEXT high-fidelity packing, then bounded integration/affected checks. No implementation/build/deploy/phone acceptance in this decision-only slice.
 Measured source `b7c0df68d5a85de844d35d4892413ec4dc345bfd`; feature `feat/m0-combat-core-20260927`, PR #1. Resolve latest containing docs commit remotely.
 Acceptance: `docs/art/approved/botuo/basic/composite-v1/acceptance.json`; statement「我審核ok，紀錄github相關流程規則進度，然後繼續」at19:23:19+08:00, repeated19:23:43. It closes presented F1/F2v2/F3/F4 + source/contact VFX + normal/slow visual playback. Do not regenerate accepted images or reopen those gates.
 
