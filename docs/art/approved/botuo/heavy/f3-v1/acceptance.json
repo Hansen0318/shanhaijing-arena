@@ -1,0 +1,15 @@
+{
+  "recordedDate": "2026-10-19",
+  "timezone": "Asia/Taipei",
+  "statementTime": "Exact approval timestamp not inferred.",
+  "status": "F3 DESIGN / PLAYER ART APPROVED",
+  "playerStatement": "這個我approved，github先紀錄進度和流程，繼續下面前我發現他在發出basic整個角色會變小，可能影響以後的技能也會，這個要先修改，確認修改後一樣紀錄github進度流程和規則",
+  "scope": "Presented P2 Heavy 震嶺 single F3 design/identity/forward beast-bracer bash only. Does not approve unseen poses, VFX, GIF, timing, runtime or release.",
+  "source": {
+    "path": "docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png",
+    "sha256": "0049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206"
+  },
+  "candidateCommit": "d31e055167bc8d59fbac47f24bcebfc8db5712e9",
+  "priority": "Pause further Heavy production; diagnose/fix user-reported P2 Basic whole-body size shrink first. User explicitly requests GitHub recording before and after this fix.",
+  "notVerified": "Basic size defect is open; previous overall Basic acceptance retained as historical scope, not revoked or repeated in full."
+}

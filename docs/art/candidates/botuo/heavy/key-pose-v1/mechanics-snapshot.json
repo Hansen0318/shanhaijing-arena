@@ -1,0 +1,210 @@
+{
+  "baseline": "4d849f760adb2219fcb12b4b710b71507948ebff",
+  "scope": "Imported pure definitions/projections only; not combat simulation, AI, browser, build or player evidence.",
+  "tiers": [
+    {
+      "tier": "T0",
+      "definition": {
+        "id": "P2.heavy",
+        "name": "震嶺",
+        "description": "近距重擊；控制效果保留後續。",
+        "category": "heavy",
+        "cooldown": 4,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.2,
+        "critMultiplier": 1.75,
+        "range": 1.8,
+        "minRange": 0,
+        "preferredRange": 0.8,
+        "maxRange": 1.8,
+        "targetingRule": "enemy",
+        "telegraph": {
+          "telegraphMs": 650,
+          "projectileTravelMs": 0,
+          "dodgeable": true,
+          "dangerShape": "circle",
+          "dangerRadius": 0.7,
+          "commitment": "locked",
+          "interruptible": false
+        },
+        "effect": {
+          "coefficient": 1.3
+        },
+        "ai": {
+          "priority": 20
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": true
+        }
+      },
+      "heavyEffects": []
+    },
+    {
+      "tier": "T1",
+      "definition": {
+        "id": "P2.heavy",
+        "name": "震嶺",
+        "description": "近距重擊；控制效果保留後續。",
+        "category": "heavy",
+        "cooldown": 3.7760000000000002,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.2,
+        "critMultiplier": 1.75,
+        "range": 1.8585,
+        "minRange": 0,
+        "preferredRange": 0.8260000000000001,
+        "maxRange": 1.8585,
+        "targetingRule": "enemy",
+        "telegraph": {
+          "telegraphMs": 633.75,
+          "projectileTravelMs": 0,
+          "dodgeable": true,
+          "dangerShape": "circle",
+          "dangerRadius": 0.7,
+          "commitment": "locked",
+          "interruptible": false
+        },
+        "effect": {
+          "coefficient": 1.3
+        },
+        "ai": {
+          "priority": 20
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": true
+        }
+      },
+      "heavyEffects": []
+    },
+    {
+      "tier": "T2",
+      "definition": {
+        "id": "P2.heavy",
+        "name": "震嶺",
+        "description": "近距重擊；控制效果保留後續。",
+        "category": "heavy",
+        "cooldown": 3.552,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.2,
+        "critMultiplier": 1.75,
+        "range": 1.917,
+        "minRange": 0,
+        "preferredRange": 0.852,
+        "maxRange": 1.917,
+        "targetingRule": "enemy",
+        "telegraph": {
+          "telegraphMs": 617.5,
+          "projectileTravelMs": 0,
+          "dodgeable": true,
+          "dangerShape": "circle",
+          "dangerRadius": 0.7,
+          "commitment": "locked",
+          "interruptible": false
+        },
+        "effect": {
+          "coefficient": 1.3
+        },
+        "ai": {
+          "priority": 20
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": true
+        }
+      },
+      "heavyEffects": [
+        {
+          "id": "boyi.stagger",
+          "name": "震退",
+          "kind": "status",
+          "category": "heavy",
+          "status": {
+            "type": "control",
+            "magnitude": 1,
+            "duration": 0.40249999999999997,
+            "tierScaling": {
+              "duration": true,
+              "strength": false
+            }
+          },
+          "trigger": "hit",
+          "recipient": "target"
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "definition": {
+        "id": "P2.heavy",
+        "name": "震嶺",
+        "description": "近距重擊；控制效果保留後續。",
+        "category": "heavy",
+        "cooldown": 3.216,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.2,
+        "critMultiplier": 1.75,
+        "range": 2.0106,
+        "minRange": 0,
+        "preferredRange": 0.8936000000000001,
+        "maxRange": 2.0106,
+        "targetingRule": "enemy",
+        "telegraph": {
+          "telegraphMs": 591.5,
+          "projectileTravelMs": 0,
+          "dodgeable": true,
+          "dangerShape": "circle",
+          "dangerRadius": 0.7,
+          "commitment": "locked",
+          "interruptible": false
+        },
+        "effect": {
+          "coefficient": 1.3
+        },
+        "ai": {
+          "priority": 20
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": true
+        }
+      },
+      "heavyEffects": [
+        {
+          "id": "boyi.stagger",
+          "name": "震退",
+          "kind": "status",
+          "category": "heavy",
+          "status": {
+            "type": "control",
+            "magnitude": 1,
+            "duration": 0.4375,
+            "tierScaling": {
+              "duration": true,
+              "strength": false
+            }
+          },
+          "trigger": "hit",
+          "recipient": "target"
+        }
+      ]
+    }
+  ]
+}

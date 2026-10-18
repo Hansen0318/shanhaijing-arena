@@ -1,3 +1,7 @@
+# Superseded successor pointer — 2026-10-19
+
+Basic remains PASS / PLAYER VERIFIED. Player「好繼續」authorized the next Heavy design/art slice. Current gate is ONE Heavy F3 candidate review; recover `docs/handoffs/P2_BOTUO_HEAVY_NEXT_CHAT.md` and `docs/M5C_P2_BOTUO_HEAVY_ACTION.md`. Do not restart Basic or read the historical handoff below as current.
+
 # P2 Basic PLAYER VERIFIED / next unfinished gate: P2 Heavy design and art
 
 ```text
