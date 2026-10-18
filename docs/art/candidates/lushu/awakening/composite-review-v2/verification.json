@@ -1,0 +1,16 @@
+{
+  "status": "REVIEW ASSET CHECKS PASS / PLAYER VFX-GIF REVIEW PENDING",
+  "checks": [
+    "5 approved source hashes unchanged",
+    "Uniform-XY resized source insertion exact",
+    "Minimum16px cell alpha margins",
+    "3 VFX significant contours inside raw canvas",
+    "6 padded VFX components rejoin byte-exactly",
+    "5 GIF SHA256/decode/frame-count/duration checks",
+    "Actual GIF contact and mirrored event-time proof generated from manifest",
+    "git diff --check",
+    "src/public unchanged"
+  ],
+  "vfxSizing": "Visible alpha>8 core, without deleting source pixels: wake caps350/400/450x190; impact caps180/270/400 square. Per-draw visible-clipping assertions passed during generation.",
+  "limits": "Illustrative scripted preview; no game collision/damage/HP simulation. No runtime/deploy/phone PASS. Original low-alpha noise retained; no cleanup claim. VFX and GIF are candidates, not approved."
+}

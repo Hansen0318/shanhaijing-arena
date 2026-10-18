@@ -1,5 +1,14 @@
 # Character action art, VFX and animation review workflow
 
+## 2026-10-18 — faster first-rush v2 preview ready, player review pending
+
+Requested revision recorded first at e46d29c. V2 retains80ms anticipation, compresses first travel70→30ms; the remaining original timeline is advanced40ms without changing its phase durations. **Candidate** contact110/260/420ms,recovery610ms; original real-design150/300/460ms,total650ms is NOT silently superseded. These exact new numbers need separate player acceptance before real gameplay changes. Coeff0.40/0.70/1.10,total2.20,CD12 unchanged; no extra hits.
+
+Review assets: `docs/art/candidates/lushu/awakening/composite-review-v2/` normal/3x-slow/character-only/VFX-only/whiff GIFs, before-after first rush comparison, source/padding/event metadata and decoded contact proof. Reproduce `python scripts/prepareLushuAwakeningComposite.py --fast-opening`; verify `python scripts/verifyLushuAwakeningReview.py --fast-opening`. V1 GIFs, approved pose sources, normalized pose cells and VFX source records remain unchanged. Six corresponding decoded contact crops have mean absolute RGB error<0.10/255 (quantization only); later contact intervals150/160ms preserved. All5 v2 GIF hashes/decode/frame count/total duration checked; visible bounds/approved-source protection PASS. Before-after export list-duration TypeError was fixed, rerun passed; no source/runtime change.
+
+**POSES PLAYER APPROVED / SPEED-V2 + VFX/GIF CANDIDATE / PLAYER REVIEW PENDING.** Normal total1920ms and slow5760ms include both directions and350ms Idle hold each. These are illustrative scripted previews, not combat/HP/physical collision tests. No runtime implementation/ENGINEERING PASS/deploy/phone acceptance. NEXT player reviews first-rush speed and VFX/GIF; no new runtime task until acceptance and exact timing contract decision. Preserve Basic/Heavy/Special; no P2/main merge; commit [skip ci].
+
+
 ## 2026-10-18 — first-rush speed revision requested; prior GIF not accepted
 
 Player2026-10-18T09:12:07+08:00: 「進度流程規則先紀錄到github相關資料文件，第一段要改更快」. Record35971db assets/provenance/checks before revision. **Five character poses remain PLAYER APPROVED; VFX/GIF remain CANDIDATE / PLAYER REVIEW PENDING.** This revision request is not acceptance of the prior GIF or permission to integrate/deploy.

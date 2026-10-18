@@ -3,7 +3,7 @@ No game code, damage, positions or runtime descriptors are changed by this scrip
 """
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageOps, ImageFont
-import hashlib, json, math, io, os
+import hashlib, json, math, io, os, sys
 
 ROOT=Path(__file__).resolve().parents[1]
 POSES=ROOT/'docs/art/candidates/lushu/awakening/phase-poses-v1'
@@ -36,7 +36,9 @@ def save(im,path,**options):
 def panel(im,bg='#1e2837'):
  x=Image.new('RGBA',im.size,bg);x.alpha_composite(im);return x.convert('RGB')
 
-def main():
+def main(fast_opening=False):
+ global OUT
+ if fast_opening:OUT=ROOT/'docs/art/candidates/lushu/awakening/composite-review-v2'
  OUT.mkdir(parents=True,exist_ok=True);FX.mkdir(parents=True,exist_ok=True)
  manifest=json.loads((POSES/'phase-pose-manifest.json').read_text())
  expected={r['pose']:r['sha256'] for r in manifest['poses']}
@@ -120,6 +122,8 @@ def main():
    if t<=b:return x+(y-x)*(t-a)/(b-a)
   return 600
  def frame(t,mode='full',mirrored=False,miss=False):
+  # Time-warp only the first travel interval; later durations and pixels stay unchanged.
+  if fast_opening and t>80:t=80+(t-80)*70/30 if t<=110 else t+40
   im=Image.new('RGBA',SCENE,'#172533');d=ImageDraw.Draw(im)
   d.line((35,GROUND,925,GROUND),fill='#334559',width=2)
   d.ellipse((520,GROUND-8,540,GROUND+8),outline='#7790a6',width=2)
@@ -142,13 +146,13 @@ def main():
   if mirrored:im=ImageOps.mirror(im)
   d=ImageDraw.Draw(im)
   d.text((20,14),'LUSHU AWAKENING - ART PREVIEW ONLY',font=font(20),fill='white')
-  d.text((20,44),'Scripted contacts 150 / 300 / 460 ms; recovery 650 ms',font=font(16),fill='#c1d0df')
+  d.text((20,44),'Candidate 110 / 260 / 420 ms; recovery 610 ms' if fast_opening else 'Scripted contacts 150 / 300 / 460 ms; recovery 650 ms',font=font(16),fill='#c1d0df')
   d.text((20,505),('WHIFF: no target burst' if miss else '3 staged impacts; no HP/damage simulation')+' | '+mode+' | '+('MIRROR' if mirrored else 'RIGHT'),font=font(16),fill='#c1d0df')
   return im.convert('RGB')
- times=sorted(set(list(range(0,651,20))+[150,175,300,320,460,510,650]))
+ times=sorted(set(list(range(0,611,20))+[80,110,135,260,280,420,470,610])) if fast_opening else sorted(set(list(range(0,651,20))+[150,175,300,320,460,510,650]))
  durations=[b-a for a,b in zip(times,times[1:])]+[350]
  # GIF minimum tick is10ms: snap175 to170 for pose transition only, never hit timestamps.
- times=[170 if t==175 else t for t in times];times=sorted(set(times))
+ times=[t//10*10 for t in times];times=sorted(set(times))
  durations=[b-a for a,b in zip(times,times[1:])]+[350]
  gifrecords=[]
  for name,mode,speed,whiff in [('normal','full',1,False),('slow','full',3,False),('character-only','body',1,False),('vfx-only','fx',1,False),('whiff','full',1,True)]:
@@ -164,11 +168,13 @@ def main():
    except EOFError:break
   assert total==sum(ds),(name,total,sum(ds))
   gifrecords.append({'file':path.name,'sha256':sha(path),'bytes':path.stat().st_size,'decodedFrames':count,'durationMs':total,'bothDirections':True})
- save(frame(460),OUT/'terminal-composite.jpg',quality=94)
+ save(frame(420 if fast_opening else 460),OUT/'terminal-composite.jpg',quality=94)
  # Whiff proof is exact in the target-only effects mode before labels: no impact pixels are drawn.
- assert frame(150,'fx',miss=True).tobytes()!=frame(150,'fx',miss=False).tobytes()
+ contact=110 if fast_opening else 150
+ assert frame(contact,'fx',miss=True).tobytes()!=frame(contact,'fx',miss=False).tobytes()
  data={'status':'CHARACTER POSES APPROVED / VFX + COMPOSITE GIF PLAYER REVIEW PENDING','records':records,'vfx':fxrecords,'gifs':gifrecords,
-  'previewContactsMs':[150,300,460],'previewRecoveryMs':650,'gifTickMs':10,'slowMultiplier':3,
+  'previewContactsMs':[110,260,420] if fast_opening else [150,300,460],'previewRecoveryMs':610 if fast_opening else 650,'gifTickMs':10,'slowMultiplier':3,
+  'speedRevision':{'requested':'first rush faster','status':'UNAPPROVED PREVIEW NUMBERS','anticipationMs':80,'firstRushMs':30,'afterFirstShiftMs':-40,'laterDurationsPreserved':True} if fast_opening else None,
   'sourcePreservation':'All original PNG bytes immutable; full source canvases uniformly resized; exact resized-pixel insertion verified; no redraw or pose regeneration.',
   'geometryBoundary':'All travel, contacts and target positions here are scripted illustration, not combat simulation or validated swept collision. Real runtime remains old equal hits0/+120/+240ms/no triple dash. No engineering/deploy/phone PASS.',
   'alphaBoundary':'Low-alpha original noise retained. No alpha deletion or cleanup claim; transparent padding and no-neighbor bleed verified.',
@@ -176,4 +182,4 @@ def main():
  (OUT/'review-manifest.json').write_text(json.dumps(data,indent=2)+'\n')
  print(json.dumps({'normalization':'PASS','vfxSplit':'PASS','gifDecodeDuration':'PASS','gifs':gifrecords}))
 
-if __name__=='__main__':main()
+if __name__=='__main__':main('--fast-opening' in sys.argv)
