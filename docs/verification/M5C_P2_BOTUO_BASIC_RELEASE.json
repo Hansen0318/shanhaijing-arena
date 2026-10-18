@@ -1,0 +1,42 @@
+{
+  "status": "ENGINEERING PASS / DEPLOYED / PLAYER PHONE PENDING",
+  "releaseSha": "db451cda0e396736b170d0196d32655649303a36",
+  "runtimeIntegrationSha": "f2f4d0ad0af842543dc0ae77700a039d978fafe9",
+  "url": "https://hansen0318.github.io/shanhaijing-arena/?v=db451cd",
+  "run": 39127557379,
+  "runUrl": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39127557379",
+  "buildJob": 117675784662,
+  "deployJob": 117675979008,
+  "build": "success",
+  "boundedTests": {
+    "total": 220,
+    "pass": 220,
+    "fail": 0
+  },
+  "browser": {
+    "status": "PASS",
+    "cases": 4,
+    "screenshots": 24,
+    "artifact": 12137275017,
+    "artifactSha256": "10144759c6e1d93b1e75bf74a22fbaf1d28cba85cd88ae3cba54fae0fc1dea6d",
+    "retainedPngs": 5,
+    "kind": "Actual Chromium/Phaser/WebGL + PNG decode; controlled direct-call fixture, not automatic AI/UI/mobile/FPS/GPU-memory proof",
+    "visualInspection": "Normal right contact, left release, reduced left contact and F3\u2192F4 with lingering contact inspected; fifth retained Idle proof. Not phone acceptance."
+  },
+  "pagesArtifact": {
+    "id": 12137215339,
+    "sha256": "3a9b1d625908abae7a1ad7478c0af9244f76479b155654ad4cfc9701613e0dc5"
+  },
+  "publicFingerprint": {
+    "status": "PASS",
+    "files": 15,
+    "basis": "Downloaded actual CI Pages artifact matched local index/linked JS/CSS and source11PNGs, then public exact bytes matched CI"
+  },
+  "failedAttempt": {
+    "sha": "da03a3e2a73e827223650c4e447c18b81cbf8305",
+    "run": 39127303719,
+    "artifact": 12137170042,
+    "reason": "Fixture retained Move at same-time teleport; incorrect Idle comparison. Fixture initial motion history isolated; strict Idle/geometry assertions unchanged; no production fix or weakening. Pages correctly skipped."
+  },
+  "remaining": "Only targeted player phone acceptance for deployed P2 Basic. No art/GIF/timing reapproval or full P1 replay. No Heavy/P3/main merge."
+}

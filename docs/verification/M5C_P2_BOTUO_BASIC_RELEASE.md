@@ -1,5 +1,13 @@
 # P2 Basic scoped release — authorized / execution pending
 
+## Final release result — DEPLOYED / PLAYER PHONE PENDING
+
+Release db451cda0e396736b170d0196d32655649303a36, Actions39127557379: build117675784662 and deploy117675979008 SUCCESS.220/220 bounded tests, Build/asset guard and actual Chromium/Phaser4cases/24screenshots PASS. Full evidence artifact12137275017, retained JSON +5PNG at P2_BASIC_BROWSER/. Representative normal/reduced/right/left/release/contact/recovery screenshots inspected. Controlled fixed-time direct-call fixtures are not live AI/input/mobile/FPS/GPU memory claims; actualAI/player engine paths remain engineering evidence.
+
+Public index +2JS +CSS +11new runtime PNGs =15files exactly match downloaded actual CI Pages artifact12137215339; local current linked files/source bytes match CI too. Older unused local build bundles were excluded from the comparison; only actual released CI files counted. JS index-Dean7ASJ.js and battleRuntime-D2L5qqzD.js; CSS index-DcqtNRF0.css. Evidence M5C_P2_BOTUO_BASIC_PUBLIC_FINGERPRINT.json + RELEASE.json. Live https://hansen0318.github.io/shanhaijing-arena/?v=db451cd . No main merge, P1 redo, source art changes or player-phone PASS.
+
+NEXT ONLY player P2 phone review: clearly readable body/outgoing and contact effects; contact and real HP/numbers synchronize; both facings/Idle return and Pause/Restart. Receipt remains pending until player explicitly confirms. Evidence closure uses [skip ci] and does not redeploy. Historical pending/failed-attempt sections below remain evidence, superseded by this result.
+
 Player「好，繼續」accepts the proposed next step: bounded real-browser verification, feature Pages deployment/fingerprint, then P2 phone review. Runtime f2f4d0ad0af842543dc0ae77700a039d978fafe9 has220/220 impacted checks/build and approved receipts; do not repeat those player gates or whole P1. No main merge/Heavy/P3.
 
 ## Executable release gate
