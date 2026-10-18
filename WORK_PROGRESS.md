@@ -1,5 +1,15 @@
 # Work Progress
 
+## CURRENT HANDOFF POINTER — 2026-10-18 — P1 Hit key pose CANDIDATE / PLAYER REVIEW PENDING
+
+Recovered remote `a45072f25bc423d64c5c7ad18009a51ad61be1ce`, clean feature branch/PR1. Awakening remains PASS / PLAYER VERIFIED at runtime8e2f5e0; no prior release checks rerun. Current bounded spec: `docs/M5C_P1_LUSHU_HIT_REACTION.md`.
+
+Completed: true positive-damage event/descriptor/fallback/presenter/priority/Pause/cleanup/residency inspection; single built-in-imagegen right-facing grounded hurt key pose from approved identity+Idle strip; immutable master, source-preserving padded candidate, light/dark QA, exact prompt/hashes/manifest at `docs/art/candidates/lushu/hit/key-pose-v1/`. Candidate master SHA256 `d350b49316f3f0f4394d4004a78e8ca20deff5cbd08141d674cd5f81062b9b87`; padded review SHA256 `4dcf1de138801d4bb0f63bcbadd5b3e65398726eb02b2cc1c63abf54f471a57d`. Source alpha1–8 noise preserved/reported, not claimed cleaned. No art acceptance inferred.
+
+Actual new checks: PNG decode/alpha/bounds/padding exact RGBA preservation and light/dark visual inspection; `node scripts/inspectLushuHitPreflight.mjs` PASS (mock decoder/draw API; all-five required scene/cache peak16,552,840/16,777,216, reserve131,072; current fallback/repeated-Hit/destroy checks); diff/static/protected source checks. Proposed two100ms Hit poses, KO>Cast>Hit>Move>Idle, no gameplay effect; candidate two96-square planning envelope73,728bytes leaves150,648 bytes, actual packing/required readiness remains future integration work.
+
+**NEXT ONLY: player reviews ONE Hit key pose identity/weapon/standing recoil.** Stop before further pose generation/GIF/runtime/release until corresponding approval. Future settling pose→normalized normal/slow/both-facing GIF→explicit GIF acceptance→scoped shared integration/verification/release→player in-game acceptance→P1 whole-character regression. Current Hit is NOT IMPLEMENTED / NOT DEPLOYED / NOT PLAYER VERIFIED. P2 unstarted; protect approved art/gameplay and finite budget. Checkpoint `[skip ci]`; no main merge. One complete copyable block for any successor handoff.
+
 ## CURRENT HANDOFF POINTER — 2026-10-18 — Awakening PASS / PLAYER VERIFIED — runtime acceptance closed
 
 Player on 2026-10-18: 「我測試確認ok，核准，紀錄github相關規則進度流程」, responding to the deployed Awakening phone-review handoff. **P1 鹿蜀 Awakening「南山奔襲」: ENGINEERING PASS / DEPLOYED / PASS — PLAYER VERIFIED.** This closes the scoped player/phone acceptance gate for runtime `8e2f5e049095017d7350b1d0d61e96527ab21e44`, live https://hansen0318.github.io/shanhaijing-arena/?v=8e2f5e0 . Baseline docs checkpoint: `8e528a49c9d5defb8958891a4b05a991689b1c45`. Immutable runtime receipt: `docs/art/approved/lushu/awakening/runtime-v1/acceptance.json`.

@@ -1,0 +1,19 @@
+{
+  "status": "CANDIDATE / KEY POSE PLAYER REVIEW PENDING",
+  "sourceHead": "a45072f25bc423d64c5c7ad18009a51ad61be1ce",
+  "tool": "built-in imagegen",
+  "referenceHashes": {
+    "public/assets/characters/lushu/identity.png": "bf82ac4f64f517a5503f6a3cabc53e046df8ef9ce16bf9ba5dba8d6567f497a1",
+    "public/assets/characters/lushu/battleIdle-4f.png": "ca123eb6eb15c1f32fab2c9d732d40d7db279ed2e4332a1043172d3fb0bef327"
+  },
+  "files": {
+    "Hit-key-light-dark.jpg": "2827797d5374bd4e2e8237cea66bd52b9294622d35d2e64c401d6e91c314f441",
+    "Hit-key-master.png": "d350b49316f3f0f4394d4004a78e8ca20deff5cbd08141d674cd5f81062b9b87",
+    "Hit-key-padded.png": "4dcf1de138801d4bb0f63bcbadd5b3e65398726eb02b2cc1c63abf54f471a57d",
+    "preflight.json": "18c153e2c19dcba82e4b6d5b7b28f079b635dcc3b7c9265a739a154407a0af94",
+    "prompt.txt": "628dbb1bb589c4be936612ca04fa327c5c2593be94492cd79cab154cc52927be",
+    "qa.json": "18bbeff837a936dc1b0dc737de081438a6d17674292f215d2000e773f452fa8b"
+  },
+  "reviewScope": "ONE standing right-facing Hit key pose identity/equipment/pose only; not GIF/runtime/deploy",
+  "next": "Explicit player key-pose approval, then settling pose and safely normalized GIF review"
+}

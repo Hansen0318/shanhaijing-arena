@@ -1,5 +1,9 @@
 # Character action art, VFX and animation review workflow
 
+## 2026-10-18 — current authorized Hit reaction slice
+
+P1 Hit now has one unapproved key-pose candidate, not an attack F3 or four-frame sequence. Read `docs/M5C_P1_LUSHU_HIT_REACTION.md` and its key-pose manifest. Latest player task explicitly requires Hit-specific design/key pose → required poses/safe preparation → GIF → approval → scoped integration/release → player acceptance. Do not copy attack timings/frame count or generate remaining poses before key-pose acceptance. This scoped clarification preserves every earlier accepted attack and its sources; no new permanent rule/AGENTS edit is needed.
+
 ## 2026-10-18 — Awakening PASS / PLAYER VERIFIED — runtime acceptance closed
 
 Player on 2026-10-18: 「我測試確認ok，核准，紀錄github相關規則進度流程」, responding to the deployed Awakening phone-review handoff. **P1 鹿蜀 Awakening「南山奔襲」: ENGINEERING PASS / DEPLOYED / PASS — PLAYER VERIFIED.** This closes the scoped player/phone acceptance gate for runtime `8e2f5e049095017d7350b1d0d61e96527ab21e44`, live https://hansen0318.github.io/shanhaijing-arena/?v=8e2f5e0 . Baseline docs checkpoint: `8e528a49c9d5defb8958891a4b05a991689b1c45`. Immutable runtime receipt: `docs/art/approved/lushu/awakening/runtime-v1/acceptance.json`.

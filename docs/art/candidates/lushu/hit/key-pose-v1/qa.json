@@ -1,0 +1,54 @@
+{
+  "status": "CANDIDATE / KEY POSE REVIEW PENDING",
+  "mode": "RGBA",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "sourceAlphaBBox": [
+    35,
+    47,
+    1236,
+    1206
+  ],
+  "sourceVisibleAlphaOver8BBox": [
+    326,
+    60,
+    983,
+    1185
+  ],
+  "sourceAlphaExtrema": [
+    0,
+    255
+  ],
+  "paddedSize": [
+    1664,
+    1664
+  ],
+  "paddedAlphaBBox": [
+    240,
+    252,
+    1441,
+    1411
+  ],
+  "sourcePixelPreservation": true,
+  "paddingOffset": [
+    205,
+    205
+  ],
+  "alphaUnder9Pixels": 18435,
+  "notVerified": [
+    "Player identity/weapon/pose acceptance",
+    "Multi-pose consistency / GIF",
+    "Runtime source-to-world anchor/scale",
+    "In-game readability"
+  ],
+  "Hit-key-master.png": {
+    "bytes": 849884,
+    "sha256": "d350b49316f3f0f4394d4004a78e8ca20deff5cbd08141d674cd5f81062b9b87"
+  },
+  "Hit-key-padded.png": {
+    "bytes": 842516,
+    "sha256": "4dcf1de138801d4bb0f63bcbadd5b3e65398726eb02b2cc1c63abf54f471a57d"
+  }
+}
