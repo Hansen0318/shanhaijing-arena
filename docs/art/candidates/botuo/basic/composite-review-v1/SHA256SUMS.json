@@ -1,0 +1,23 @@
+{
+  "F1-safe-cell.png": "3634cec5036f5346af9f851696aa3884074fefc932fbc711b338e4e5c696e755",
+  "F2-safe-cell.png": "d6a4966dc30ba4335c00848a6b5937ca8809aca142e4d5e2e25fdee60f20626e",
+  "F3-safe-cell.png": "b3df62572c4ac09cfe8a7117855dcba07a792598290668cbd3697c50c4a2b6a3",
+  "F4-safe-cell.png": "500d579631b56192e2da019f30d4d093554c2b2ac4baa209b7607296010eb4dc",
+  "README.md": "08c898636b28a94d22d7e0b9fc250edd257b576d83ce4785c5a99658bbd7b291",
+  "approved-idle-return-cell.png": "1d40af88c47ca3f51c102442701a7a8f928fb61aee3b1968c737e05f641f9e7d",
+  "botuo-basic-character-only-normal.gif": "fde66fb2f12777eb35032aed2059472a7dd20c2f2bd68cc061a44c15795bc0eb",
+  "botuo-basic-character-only-slow.gif": "2f1094dfac2f3c178c41afe457337716eed9e5cfdfd2c4a5dffaba356a74d42c",
+  "botuo-basic-composite-normal.gif": "55c70c31141da605ee16f558bc6c9629c1ceeab73acb3314a2b3066d1c98ae9d",
+  "botuo-basic-composite-slow.gif": "8f9fd7662e54565ff6fdfe5e709fd4862f0e3b819a85bfe7c777dec4829ab553",
+  "botuo-basic-four-safe-cells.png": "d86ad4a85e82f77fa9bffe348c831585eb2d3249ae680dab2aa0a0722d35d780",
+  "botuo-basic-reduced-cues-normal.gif": "1cea89554e2b9d1e7807462116d5f17c27eae0af96c9bd9ea01ca1aead7fdfe1",
+  "contact-review.png": "60b0dc00550c464b1b4f05cf79a63c3a78a9fc5863c9d89e53a7fc373622f9f4",
+  "review-manifest.json": "6280c4ec527a3010a43fa2859c6e25d72035e52581d3cbfbb802802a43409e6d",
+  "sequence-review.png": "0e48a049217b58c816bfc157e0767134afe44389c1c05b35413e592c605e8fc0",
+  "skull-landmarks-QA.png": "f05c0d9d47ffd1a6ff90ddfaed70d8c04ac720989bd6e6493881192cec4f4e6b",
+  "source-force-prompt.txt": "cdb6e5a104da548316f8f5094a5ac6d20fced438674a45ecff8f911ae148b66d",
+  "source-force-raw-v1.png": "af91c036c67b029f63755eb47e394aaf47ae8aa343eb9f154b9a8e086cfa3a26",
+  "target-impact-prompt.txt": "627029eb0362b23ea8e003d2a3cee1811afefe20c2ef9a6eb4ba7ea7a1d73e0c",
+  "target-impact-raw-v1.png": "5216b032d2fdde86853a56f11db8cadf9d23ad5fa0a31acf99993193859439b9",
+  "vfx-light-dark-QA.png": "8820738a76c7aaabc85467072e6af382381c1eb5d91f6a265db3f3e91f6d4e33"
+}

@@ -1,0 +1,318 @@
+{
+  "status": "GIF/VFX CANDIDATE / PLAYER REVIEW PENDING",
+  "userAuthorization": "2026-10-18T17:22:42+08:00 \u597d\u63a5\u4e0b\u4f86\u662f\u505agif\u7d66\u6211\u78ba\u8a8d\u55ce\uff0c\u662f\u7684\u8a71\u5c31\u7d66\u6211\u9023\u7d50\u770b",
+  "authorizationScope": "Proceed with shown poses to composite GIF review; no fabricated standalone per-pose acceptance or runtime authority.",
+  "recoveredHead": "dec02b2786b8d3829a5b4cb0b01350e62023a9bd",
+  "poses": [
+    {
+      "frame": "F1",
+      "source": "docs/art/candidates/botuo/basic/phase-poses-v1/F1-anticipation-master.png",
+      "sha256": "f3d52aa3b85557aa0fd88e02b6c1948ac0ff4618909ef07ef0472f983f7ecd54",
+      "sourceSize": [
+        1446,
+        1087
+      ],
+      "sourceCoreBounds": [
+        187,
+        35,
+        1334,
+        1025
+      ],
+      "skullBox": [
+        870,
+        170,
+        1015,
+        340
+      ],
+      "skullWidth": 145,
+      "skullHeight": 170,
+      "targetSkullHeight": 20,
+      "uniformXYScale": 0.11764705882352941,
+      "supportX": 450,
+      "translatedXY": [
+        82,
+        153
+      ],
+      "resizedSize": [
+        170,
+        128
+      ],
+      "alphaMargins": [
+        102,
+        155,
+        159,
+        44
+      ],
+      "resizedPixelsPreserved": true,
+      "sourcePixelsDeleted": 0
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/candidates/botuo/basic/phase-poses-v1/F2-release-master-v2.png",
+      "sha256": "224d185e8678850708fd4a045e515cee0e587e4aec9ebb9e8c1d2c702c492341",
+      "sourceSize": [
+        1446,
+        1087
+      ],
+      "sourceCoreBounds": [
+        161,
+        108,
+        1406,
+        1015
+      ],
+      "skullBox": [
+        1160,
+        330,
+        1305,
+        495
+      ],
+      "skullWidth": 145,
+      "skullHeight": 165,
+      "targetSkullHeight": 20,
+      "uniformXYScale": 0.12121212121212122,
+      "supportX": 420,
+      "translatedXY": [
+        84,
+        151
+      ],
+      "resizedSize": [
+        175,
+        132
+      ],
+      "alphaMargins": [
+        101,
+        154,
+        143,
+        43
+      ],
+      "resizedPixelsPreserved": true,
+      "sourcePixelsDeleted": 0
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/candidates/botuo/basic/key-pose-v1/F3-contact-master.png",
+      "sha256": "19a8e9f8cf74c870558a4ea734b67e03d5eacce71072c5bc979931cf00f42f36",
+      "sourceSize": [
+        1447,
+        1087
+      ],
+      "sourceCoreBounds": [
+        228,
+        144,
+        1282,
+        995
+      ],
+      "skullBox": [
+        1035,
+        445,
+        1170,
+        590
+      ],
+      "skullWidth": 135,
+      "skullHeight": 145,
+      "targetSkullHeight": 20,
+      "uniformXYScale": 0.13793103448275862,
+      "supportX": 450,
+      "translatedXY": [
+        73,
+        137
+      ],
+      "resizedSize": [
+        200,
+        150
+      ],
+      "alphaMargins": [
+        102,
+        149,
+        147,
+        43
+      ],
+      "resizedPixelsPreserved": true,
+      "sourcePixelsDeleted": 0
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/candidates/botuo/basic/phase-poses-v1/F4-recovery-master.png",
+      "sha256": "de4126fe9f357a63b8b1b444c0e69a986feed10b09c50771c5816ceda18e9b66",
+      "sourceSize": [
+        1446,
+        1087
+      ],
+      "sourceCoreBounds": [
+        348,
+        96,
+        1187,
+        995
+      ],
+      "skullBox": [
+        850,
+        205,
+        960,
+        355
+      ],
+      "skullWidth": 110,
+      "skullHeight": 150,
+      "targetSkullHeight": 20,
+      "uniformXYScale": 0.13333333333333333,
+      "supportX": 460,
+      "translatedXY": [
+        74,
+        141
+      ],
+      "resizedSize": [
+        193,
+        145
+      ],
+      "alphaMargins": [
+        118,
+        151,
+        165,
+        36
+      ],
+      "resizedPixelsPreserved": true,
+      "sourcePixelsDeleted": 0
+    }
+  ],
+  "cell": [
+    400,
+    320
+  ],
+  "ground": 274,
+  "supportX": 135,
+  "normalization": "Author-selected facial skull height to20px, matching approximately22px source Idle skull at0.9 display; uniform XY per source; full canvas retained, no silhouette-height fit. Height chosen because F4 face is more frontal/narrower.",
+  "idle": {
+    "path": "public/assets/runtime-packing-v1/botuo-battleIdle.png",
+    "sha256": "ce9838208b4e1ecc58f5bdb0cf70cf6200e0426ab17216daf9e1d1cebc92a82f",
+    "scale": 0.9,
+    "sourceVisibleFoot": 140,
+    "previewXY": [
+      63,
+      148
+    ],
+    "previewGroundOnly": true
+  },
+  "vfx": [
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/source-force-raw-v1.png",
+      "sha256": "af91c036c67b029f63755eb47e394aaf47ae8aa343eb9f154b9a8e086cfa3a26",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "alphaBounds": [
+        0,
+        19,
+        1512,
+        1024
+      ],
+      "lowAlphaPixels": 48207,
+      "reviewSize": [
+        180,
+        134
+      ],
+      "policy": "full-canvas resize, no source pixel deletion"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/target-impact-raw-v1.png",
+      "sha256": "5216b032d2fdde86853a56f11db8cadf9d23ad5fa0a31acf99993193859439b9",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "alphaBounds": [
+        27,
+        29,
+        1490,
+        1024
+      ],
+      "lowAlphaPixels": 62938,
+      "reviewSize": [
+        142,
+        126
+      ],
+      "policy": "full-canvas resize, no source pixel deletion"
+    }
+  ],
+  "previewTimelineMs": {
+    "idleBefore": 400,
+    "F1": 160,
+    "F2": 80,
+    "F3": 160,
+    "F4": 160,
+    "idleAfter": 440,
+    "contact": 640,
+    "cycle": 1400
+  },
+  "sourceWindow": [
+    560,
+    840
+  ],
+  "contactWindow": [
+    640,
+    840
+  ],
+  "directions": [
+    "right",
+    "left mirror"
+  ],
+  "slowFactor": 3,
+  "gifs": [
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/botuo-basic-composite-normal.gif",
+      "sha256": "55c70c31141da605ee16f558bc6c9629c1ceeab73acb3314a2b3066d1c98ae9d",
+      "bytes": 355097,
+      "frames": 22,
+      "samples": 70,
+      "totalMs": 2800,
+      "minimumDecodedHoldMs": 40,
+      "pixelTimelineRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/botuo-basic-composite-slow.gif",
+      "sha256": "8f9fd7662e54565ff6fdfe5e709fd4862f0e3b819a85bfe7c777dec4829ab553",
+      "bytes": 355097,
+      "frames": 22,
+      "samples": 70,
+      "totalMs": 8400,
+      "minimumDecodedHoldMs": 120,
+      "pixelTimelineRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/botuo-basic-character-only-normal.gif",
+      "sha256": "fde66fb2f12777eb35032aed2059472a7dd20c2f2bd68cc061a44c15795bc0eb",
+      "bytes": 167313,
+      "frames": 12,
+      "samples": 70,
+      "totalMs": 2800,
+      "minimumDecodedHoldMs": 80,
+      "pixelTimelineRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/botuo-basic-character-only-slow.gif",
+      "sha256": "2f1094dfac2f3c178c41afe457337716eed9e5cfdfd2c4a5dffaba356a74d42c",
+      "bytes": 167313,
+      "frames": 12,
+      "samples": 70,
+      "totalMs": 8400,
+      "minimumDecodedHoldMs": 240,
+      "pixelTimelineRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/botuo-basic-reduced-cues-normal.gif",
+      "sha256": "1cea89554e2b9d1e7807462116d5f17c27eae0af96c9bd9ea01ca1aead7fdfe1",
+      "bytes": 252802,
+      "frames": 16,
+      "samples": 70,
+      "totalMs": 2800,
+      "minimumDecodedHoldMs": 40,
+      "pixelTimelineRoundTrip": "PASS"
+    }
+  ],
+  "limits": [
+    "Scripted visual preview, not real collision/damage/HP or game recording.",
+    "Current real P2 Basic windup remains0ms; preview contact is240ms after visual action start, not approved gameplay timing.",
+    "Pose/FX sizes and anchors are review candidates, not runtime descriptors or measured GPU budget.",
+    "Reduced cue preview only demonstrates static FX shapes, not an implemented reduced-motion mode.",
+    "No VFX/GIF/player device PASS or runtime/deployment claim."
+  ]
+}
