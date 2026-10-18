@@ -1,4 +1,5 @@
-import {animationDescriptor,actionDescriptor} from '../assets/descriptors.js';
+import {repackAnimationRows,repackActionEffectRows} from '../assets/runtimePacking.js';
+import {animationDescriptor as validateAnimationDescriptor,actionDescriptor as validateActionDescriptor} from '../assets/descriptors.js';
 import {defaultCharacterAssets} from '../assets/manifest.js';
 import {formalTierEffects} from './tierEffects.js';
 import {formalAIProfiles} from './aiProfiles.js';
@@ -14,6 +15,8 @@ function packedAnimation(input,top,height){
  const a=input,oldHeight=a.frames[0].height;
  return animationDescriptor({...a,frames:a.frames.map(f=>({...f,height})),origin:[a.origin[0],(a.origin[1]*oldHeight-top)/height],scale:a.scale*Math.max(a.frames[0].width,height)/Math.max(a.frames[0].width,oldHeight)});
 }
+const actionDescriptor=input=>validateActionDescriptor(repackActionEffectRows(input));
+const animationDescriptor=input=>validateAnimationDescriptor(repackAnimationRows(input));
 const presentation={
  P1:{
   actionDescriptors:Object.freeze({basic:packedAction({

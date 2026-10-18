@@ -1,0 +1,301 @@
+[
+  {
+    "character": "P2",
+    "slot": "battleIdle",
+    "oldDescriptor": {
+      "source": "botuo.battleIdle",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        }
+      ],
+      "fps": 2.5,
+      "duration": 0.4,
+      "loop": true,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.9875
+      ],
+      "scale": 2
+    },
+    "asset": {
+      "key": "botuo.battleIdle",
+      "type": "image",
+      "path": "assets/runtime-packing-v1/botuo-battleIdle.png",
+      "width": 160,
+      "height": 160,
+      "bytes": 25193,
+      "fallback": "placeholder.battle"
+    },
+    "top": 13,
+    "height": 145
+  },
+  {
+    "character": "P2",
+    "slot": "battleMove",
+    "oldDescriptor": {
+      "source": "botuo.battleMove",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        },
+        {
+          "x": 320,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        },
+        {
+          "x": 480,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        }
+      ],
+      "fps": 12,
+      "duration": 0.3333333333333333,
+      "loop": true,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.9875
+      ],
+      "scale": 2
+    },
+    "asset": {
+      "key": "botuo.battleMove",
+      "type": "image",
+      "path": "assets/characters/botuo/battleMove-4f.png",
+      "width": 640,
+      "height": 160,
+      "bytes": 158292,
+      "fallback": "placeholder.battle"
+    },
+    "top": 3,
+    "height": 155
+  },
+  {
+    "character": "P4",
+    "slot": "battleIdle",
+    "oldDescriptor": {
+      "source": "jiuweihu.battleIdle",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        }
+      ],
+      "fps": 1,
+      "duration": 1,
+      "loop": false,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.94375
+      ],
+      "scale": 2
+    },
+    "asset": {
+      "key": "jiuweihu.battleIdle",
+      "type": "image",
+      "path": "assets/characters/jiuweihu/battleIdle.png",
+      "width": 160,
+      "height": 160,
+      "bytes": 32063,
+      "fallback": "placeholder.battle"
+    },
+    "top": 15,
+    "height": 137
+  },
+  {
+    "character": "P4",
+    "slot": "battleMove",
+    "oldDescriptor": {
+      "source": "jiuweihu.battleMove",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        },
+        {
+          "x": 320,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        },
+        {
+          "x": 480,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        }
+      ],
+      "fps": 10,
+      "duration": 0.4,
+      "loop": true,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.94375
+      ],
+      "scale": 2
+    },
+    "asset": {
+      "key": "jiuweihu.battleMove",
+      "type": "image",
+      "path": "assets/characters/jiuweihu/battleMove-4f.png",
+      "width": 640,
+      "height": 160,
+      "bytes": 128061,
+      "fallback": "placeholder.battle"
+    },
+    "top": 19,
+    "height": 133
+  },
+  {
+    "character": "P5",
+    "slot": "battleIdle",
+    "oldDescriptor": {
+      "source": "xingxing.battleIdle",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 160,
+          "height": 160
+        }
+      ],
+      "fps": 1,
+      "duration": 1,
+      "loop": false,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.925
+      ],
+      "scale": 2
+    },
+    "asset": {
+      "key": "xingxing.battleIdle",
+      "type": "image",
+      "path": "assets/characters/xingxing/battleIdle.png",
+      "width": 160,
+      "height": 160,
+      "bytes": 37808,
+      "fallback": "placeholder.battle"
+    },
+    "top": 15,
+    "height": 134
+  },
+  {
+    "character": "P5",
+    "slot": "battleMove",
+    "oldDescriptor": {
+      "source": "xingxing.battleMove",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 560,
+          "height": 440
+        },
+        {
+          "x": 560,
+          "y": 0,
+          "width": 560,
+          "height": 440
+        },
+        {
+          "x": 0,
+          "y": 440,
+          "width": 560,
+          "height": 440
+        },
+        {
+          "x": 560,
+          "y": 440,
+          "width": 560,
+          "height": 440
+        }
+      ],
+      "fps": 10,
+      "duration": 0.4,
+      "loop": true,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.9681818181818181
+      ],
+      "scale": 2.25
+    },
+    "asset": {
+      "key": "xingxing.battleMove",
+      "type": "image",
+      "path": "assets/characters/xingxing/battleMove-4f.png",
+      "width": 1120,
+      "height": 880,
+      "bytes": 1008507,
+      "fallback": "placeholder.battle"
+    },
+    "top": 13,
+    "height": 414
+  },
+  {
+    "character": "P5",
+    "slot": "battleKo",
+    "oldDescriptor": {
+      "source": "xingxing.battleKo",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 480,
+          "height": 288
+        }
+      ],
+      "fps": 1,
+      "duration": 1,
+      "loop": false,
+      "staticFrame": 0,
+      "origin": [
+        0.49166666666666664,
+        0.96875
+      ],
+      "scale": 1.875
+    },
+    "asset": {
+      "key": "xingxing.battleKo",
+      "type": "image",
+      "path": "assets/characters/xingxing/battleKo.png",
+      "width": 480,
+      "height": 288,
+      "bytes": 158535,
+      "fallback": "placeholder.battle"
+    },
+    "top": 3,
+    "height": 279
+  }
+]

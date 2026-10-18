@@ -1,5 +1,12 @@
 # Project State
 
+## 2026-10-18 — P2 Basic high-fidelity packing checkpoint / integration pending
+
+Recovered `d40abb0e4b19a7b6471387934167df6b95334194`, feature branch/PR1 open, clean checkout. Authorized current Work scope: source-faithful packaging → bounded runtime → affected checks/build, **NO DEPLOYMENT**; `[skip ci]` checkpoints.
+Exact accepted review RGBA poses cropped to four158×143cells, no additional pose downsample; independent FX keep exact accepted review density with zero-RGBA edge removal. Seven legacy animation packs use only per-frame empty rows with pivot/scale compensation; one P1 C-source effect removes only exact empty rows with compensated size/offset. Originals/receipts/GIFs remain unchanged; this is no P1 art/timing redesign or repeated acceptance.
+Measured full required+new pack16,630,060bytes,147,156free,131,072optional reserve retained (16,084extra). Saves399,160, adds476,380. Real cache/presenter with PNG-header decoder/draw doubles:39keys, no eviction/failure, matching scene/cache high water, destroy zero. Not browser/GPU/device evidence.
+Evidence `docs/verification/P2_BASIC_RUNTIME_ASSETS.json`, reproducible `python scripts/prepareBotuoBasicRuntime.py`; `node --test tests/botuoBasicPacking.test.js`2/2 PASS exact RGBA + both-facing coordinate proof. Runtime integration/ENGINEERING PASS/build/deploy/phone remain pending. NEXT install approved250ms ability and shared action/contact lifetime, affected checks/build. P1 remains COMPLETE, ordinary Hit CANCELLED. Preserve existing branch, no main merge/Heavy/P3.
+
 ## 2026-10-18 19:43+08:00 — P2 Basic executable250ms contract PLAYER APPROVED
 
 Player「如果這樣是符合邏輯的話，我同意」at2026-10-18T19:43:23+08:00 accepts the explained250ms real-windup recommendation from feature preflight `3acdc848d39b13793e10a511422a64860b9dd91e`. Rationale verified in existing preflight: current Basic resolves immediately, accepted visual contact is240ms, and normal50ms steps resolve both240/250ms at250ms. Acceptance receipt: `docs/art/approved/botuo/basic/executable-v1/acceptance.json`. **PLAYER EXECUTABLE CONTRACT APPROVED / NOT IMPLEMENTED**, separate from immutable visual acceptance. Do not ask for timing or art approval again unless actual scope changes.
