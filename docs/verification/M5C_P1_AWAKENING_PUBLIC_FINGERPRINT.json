@@ -1,0 +1,143 @@
+{
+  "releaseCommit": "8e2f5e049095017d7350b1d0d61e96527ab21e44",
+  "url": "https://hansen0318.github.io/shanhaijing-arena/",
+  "status": "PASS",
+  "files": [
+    {
+      "file": "index.html",
+      "localBytes": 1491,
+      "publicBytes": 1491,
+      "localSha256": "0dadd9b51b227d08b62cea67d911c39adeeb693a40326add49ca6f30ac72a164",
+      "publicSha256": "0dadd9b51b227d08b62cea67d911c39adeeb693a40326add49ca6f30ac72a164",
+      "match": true
+    },
+    {
+      "file": "assets/battleRuntime-Bt34mgQY.js",
+      "localBytes": 1476523,
+      "publicBytes": 1476523,
+      "localSha256": "dda51906f15a7be1017c2f30e17a06ada8f4d2010c451cc45d01b33887339be7",
+      "publicSha256": "dda51906f15a7be1017c2f30e17a06ada8f4d2010c451cc45d01b33887339be7",
+      "match": true
+    },
+    {
+      "file": "assets/index-D7Qjj1EB.js",
+      "localBytes": 109598,
+      "publicBytes": 109598,
+      "localSha256": "8b82a0937e26301439a129146045032902b8f7fe4b9815592759b15bf1f71e3d",
+      "publicSha256": "8b82a0937e26301439a129146045032902b8f7fe4b9815592759b15bf1f71e3d",
+      "match": true
+    },
+    {
+      "file": "assets/index-DcqtNRF0.css",
+      "localBytes": 22943,
+      "publicBytes": 22943,
+      "localSha256": "a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da",
+      "publicSha256": "a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da",
+      "match": true
+    },
+    {
+      "file": "assets/characters/lushu/awakening-runtime-v1/A-impact.png",
+      "localBytes": 4816,
+      "publicBytes": 4816,
+      "localSha256": "9203187e4f0ff2f2d216573232b2011bc92d7deab77a0e19daabf2d414484e0f",
+      "publicSha256": "9203187e4f0ff2f2d216573232b2011bc92d7deab77a0e19daabf2d414484e0f",
+      "match": true
+    },
+    {
+      "file": "assets/characters/lushu/awakening-runtime-v1/A-source.png",
+      "localBytes": 3674,
+      "publicBytes": 3674,
+      "localSha256": "907ded470c53345a78576a9e653517094638103169b0220eeaa8a5da7cf1597d",
+      "publicSha256": "907ded470c53345a78576a9e653517094638103169b0220eeaa8a5da7cf1597d",
+      "match": true
+    },
+    {
+      "file": "assets/characters/lushu/awakening-runtime-v1/B-impact.png",
+      "localBytes": 11880,
+      "publicBytes": 11880,
+      "localSha256": "2f420d07b9f4dc657f7c03984c4a714a341d3790777cf16bf943d8f545b3e675",
+      "publicSha256": "2f420d07b9f4dc657f7c03984c4a714a341d3790777cf16bf943d8f545b3e675",
+      "match": true
+    },
+    {
+      "file": "assets/characters/lushu/awakening-runtime-v1/B-source.png",
+      "localBytes": 8187,
+      "publicBytes": 8187,
+      "localSha256": "6e1dfbfd19e44d9fd8c1efff036b85a019427f199d8c4ecd3d0a41c5c351d30c",
+      "publicSha256": "6e1dfbfd19e44d9fd8c1efff036b85a019427f199d8c4ecd3d0a41c5c351d30c",
+      "match": true
+    },
+    {
+      "file": "assets/characters/lushu/awakening-runtime-v1/C-impact.png",
+      "localBytes": 7312,
+      "publicBytes": 7312,
+      "localSha256": "5cf93d209a18d05ec0928412f61ad4a066d5007c2062a7550c43a27f277c7744",
+      "publicSha256": "5cf93d209a18d05ec0928412f61ad4a066d5007c2062a7550c43a27f277c7744",
+      "match": true
+    },
+    {
+      "file": "assets/characters/lushu/awakening-runtime-v1/C-source.png",
+      "localBytes": 2842,
+      "publicBytes": 2842,
+      "localSha256": "5dc914fe070263c76a4d641f5b879fc706bfd7b11daae3c8345dea24f34c0fff",
+      "publicSha256": "5dc914fe070263c76a4d641f5b879fc706bfd7b11daae3c8345dea24f34c0fff",
+      "match": true
+    },
+    {
+      "file": "assets/characters/lushu/awakening-runtime-v1/poses-5f.png",
+      "localBytes": 64019,
+      "publicBytes": 64019,
+      "localSha256": "7f8a948ab69d8883f5152a0eee86f7e5ff060d183b7d58aef0552360372dfe22",
+      "publicSha256": "7f8a948ab69d8883f5152a0eee86f7e5ff060d183b7d58aef0552360372dfe22",
+      "match": true
+    },
+    {
+      "file": "assets/runtime-packing-v1/botuo-battleIdle.png",
+      "localBytes": 25193,
+      "publicBytes": 25193,
+      "localSha256": "ce9838208b4e1ecc58f5bdb0cf70cf6200e0426ab17216daf9e1d1cebc92a82f",
+      "publicSha256": "ce9838208b4e1ecc58f5bdb0cf70cf6200e0426ab17216daf9e1d1cebc92a82f",
+      "match": true
+    },
+    {
+      "file": "assets/runtime-packing-v1/chiru-battleMove.png",
+      "localBytes": 112306,
+      "publicBytes": 112306,
+      "localSha256": "9c434853c15b9f744b29ecb2495ab4ef96894dec071dcb9db740343f4b0e0f85",
+      "publicSha256": "9c434853c15b9f744b29ecb2495ab4ef96894dec071dcb9db740343f4b0e0f85",
+      "match": true
+    },
+    {
+      "file": "assets/runtime-packing-v1/jiuweihu-battleKo.png",
+      "localBytes": 197980,
+      "publicBytes": 197980,
+      "localSha256": "43f0e143e665eadad03352fd78b4b363f9b072700fbb58498635e8eb705a52a4",
+      "publicSha256": "43f0e143e665eadad03352fd78b4b363f9b072700fbb58498635e8eb705a52a4",
+      "match": true
+    },
+    {
+      "file": "assets/runtime-packing-v1/lushu-battleBasic.png",
+      "localBytes": 51449,
+      "publicBytes": 51449,
+      "localSha256": "d3920ab4129868f71a3f3a08d29262773cc75ee08da80610fd9e14af904e2ac9",
+      "publicSha256": "d3920ab4129868f71a3f3a08d29262773cc75ee08da80610fd9e14af904e2ac9",
+      "match": true
+    },
+    {
+      "file": "assets/runtime-packing-v1/lushu-battleHeavy.png",
+      "localBytes": 51992,
+      "publicBytes": 51992,
+      "localSha256": "3f9f501520886eed5d2f790e603481575f17ab2196357dd1f5a69ca8d5cc3a9f",
+      "publicSha256": "3f9f501520886eed5d2f790e603481575f17ab2196357dd1f5a69ca8d5cc3a9f",
+      "match": true
+    },
+    {
+      "file": "assets/runtime-packing-v1/lushu-battleSpecial.png",
+      "localBytes": 21979,
+      "publicBytes": 21979,
+      "localSha256": "ec19456d1b7d067f0a56ae98ce2b1d83554cef3e5318e7faf2e1b579d81320cd",
+      "publicSha256": "ec19456d1b7d067f0a56ae98ce2b1d83554cef3e5318e7faf2e1b579d81320cd",
+      "match": true
+    }
+  ]
+}

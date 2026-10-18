@@ -1,5 +1,9 @@
 # P1 Awakening runtime integration — automated verification
 
+## Subsequent release closure
+
+8e2f5e0 deployed after879tests/build/realChromium4cases28screenshots passed. Public17filefingerprint PASS; see M5C_P1_AWAKENING_RELEASE.md. Phone remains pending. Historical automated-only/not-deployed statements below describe the prior integration checkpoint.
+
 2026-10-18 Asia/Taipei. Source baseline fa29a9caa04a9b91b69169def720327b3c1f1476; feature feat/m0-combat-core-20260927 / PR1, main unmerged. Player「好確認，繼續」at10:10+08 accepts preflight Section2 and source-preserving packing. **IMPLEMENTED / AUTOMATED ENGINEERING CHECKS PASS / NOT DEPLOYED / BROWSER AND PHONE PENDING.**
 
 ## Delivered behavior

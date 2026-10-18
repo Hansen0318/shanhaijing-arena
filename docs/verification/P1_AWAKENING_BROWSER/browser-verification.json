@@ -1,0 +1,1163 @@
+{
+  "kind": "Real Chromium/Phaser deterministic render, actual PNG decode; NOT mobile/FPS/GPU-memory acceptance",
+  "cases": [
+    {
+      "reduced": false,
+      "sign": 1,
+      "bytes": 16552840,
+      "hp": 320,
+      "renderer": 2,
+      "frames": [
+        {
+          "label": "anticipation",
+          "file": "normal-right-anticipation.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "0.0.128.128",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 320,
+          "hits": [],
+          "contacts": []
+        },
+        {
+          "label": "rushA",
+          "file": "normal-right-rushA.png",
+          "time": 0.085,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "128.0.128.128",
+            "x": 511.9999999997817,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningASource",
+            "flipX": false,
+            "alpha": 0.85
+          },
+          "hp": 320,
+          "hits": [],
+          "contacts": []
+        },
+        {
+          "label": "hitA",
+          "file": "normal-right-hitA.png",
+          "time": 0.105,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "128.0.128.128",
+            "x": 608.0000000002182,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningASource",
+            "flipX": false,
+            "alpha": 0.85
+          },
+          "hp": 319,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningAImpact",
+              "hitIndex": 0,
+              "at": 0.10175,
+              "flipX": false,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "hitB",
+          "file": "normal-right-hitB.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "256.0.128.128",
+            "x": 669.4400000004974,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningBSource",
+            "flipX": true,
+            "alpha": 0.85
+          },
+          "hp": 317.29,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.15423076923076928
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningAImpact",
+              "hitIndex": 0,
+              "at": 0.10175,
+              "flipX": false,
+              "visible": true
+            },
+            {
+              "texture": "visual.1.lushu.awakeningBImpact",
+              "hitIndex": 1,
+              "at": 0.15423076923076928,
+              "flipX": true,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "hitC",
+          "file": "normal-right-hitC.png",
+          "time": 0.36,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "384.0.128.128",
+            "x": 598.0571428573159,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningCSource",
+            "flipX": false,
+            "alpha": 0.85
+          },
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.15423076923076928
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningCImpact",
+              "hitIndex": 2,
+              "at": 0.3499999999999999,
+              "flipX": false,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "recovery",
+          "file": "normal-right-recovery.png",
+          "time": 0.47,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "512.0.128.128",
+            "x": 678.8000000005401,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.15423076923076928
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningCImpact",
+              "hitIndex": 2,
+              "at": 0.3499999999999999,
+              "flipX": false,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "idle",
+          "file": "normal-right-idle.png",
+          "time": 0.61,
+          "body": {
+            "texture": "visual.1.lushu.battleIdle",
+            "frame": "0.0.96.128",
+            "x": 678.8000000005401,
+            "y": 334,
+            "width": 108,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9544198895027625
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.15423076923076928
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": []
+        }
+      ],
+      "cleanup": {
+        "closed": true,
+        "bytes": 0,
+        "active": 0,
+        "impacts": 0
+      }
+    },
+    {
+      "reduced": false,
+      "sign": -1,
+      "bytes": 16552840,
+      "hp": 320,
+      "renderer": 2,
+      "frames": [
+        {
+          "label": "anticipation",
+          "file": "normal-left-anticipation.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "0.0.128.128",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 320,
+          "hits": [],
+          "contacts": []
+        },
+        {
+          "label": "rushA",
+          "file": "normal-left-rushA.png",
+          "time": 0.085,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "128.0.128.128",
+            "x": 463.9999999995636,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningASource",
+            "flipX": true,
+            "alpha": 0.85
+          },
+          "hp": 320,
+          "hits": [],
+          "contacts": []
+        },
+        {
+          "label": "hitA",
+          "file": "normal-left-hitA.png",
+          "time": 0.105,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "128.0.128.128",
+            "x": 367.9999999991272,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningASource",
+            "flipX": true,
+            "alpha": 0.85
+          },
+          "hp": 319,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningAImpact",
+              "hitIndex": 0,
+              "at": 0.10175,
+              "flipX": true,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "hitB",
+          "file": "normal-left-hitB.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "256.0.128.128",
+            "x": 306.559999998848,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningBSource",
+            "flipX": false,
+            "alpha": 0.85
+          },
+          "hp": 317.29,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.1542307692307692
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningAImpact",
+              "hitIndex": 0,
+              "at": 0.10175,
+              "flipX": true,
+              "visible": true
+            },
+            {
+              "texture": "visual.1.lushu.awakeningBImpact",
+              "hitIndex": 1,
+              "at": 0.1542307692307692,
+              "flipX": false,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "hitC",
+          "file": "normal-left-hitC.png",
+          "time": 0.36,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "384.0.128.128",
+            "x": 377.9428571420296,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningCSource",
+            "flipX": true,
+            "alpha": 0.85
+          },
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.1542307692307692
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningCImpact",
+              "hitIndex": 2,
+              "at": 0.3499999999999999,
+              "flipX": true,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "recovery",
+          "file": "normal-left-recovery.png",
+          "time": 0.47,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "512.0.128.128",
+            "x": 297.1999999988055,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.1542307692307692
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningCImpact",
+              "hitIndex": 2,
+              "at": 0.3499999999999999,
+              "flipX": true,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "idle",
+          "file": "normal-left-idle.png",
+          "time": 0.61,
+          "body": {
+            "texture": "visual.1.lushu.battleIdle",
+            "frame": "0.0.96.128",
+            "x": 297.1999999988055,
+            "y": 334,
+            "width": 108,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9544198895027625
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.1542307692307692
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": []
+        }
+      ],
+      "cleanup": {
+        "closed": true,
+        "bytes": 0,
+        "active": 0,
+        "impacts": 0
+      }
+    },
+    {
+      "reduced": true,
+      "sign": 1,
+      "bytes": 16552840,
+      "hp": 320,
+      "renderer": 2,
+      "frames": [
+        {
+          "label": "anticipation",
+          "file": "reduced-right-anticipation.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "0.0.128.128",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 320,
+          "hits": [],
+          "contacts": []
+        },
+        {
+          "label": "rushA",
+          "file": "reduced-right-rushA.png",
+          "time": 0.085,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "128.0.128.128",
+            "x": 511.9999999997817,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningASource",
+            "flipX": false,
+            "alpha": 0.85
+          },
+          "hp": 320,
+          "hits": [],
+          "contacts": []
+        },
+        {
+          "label": "hitA",
+          "file": "reduced-right-hitA.png",
+          "time": 0.105,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "128.0.128.128",
+            "x": 608.0000000002182,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningASource",
+            "flipX": false,
+            "alpha": 0.85
+          },
+          "hp": 319,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningAImpact",
+              "hitIndex": 0,
+              "at": 0.10175,
+              "flipX": false,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "hitB",
+          "file": "reduced-right-hitB.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "256.0.128.128",
+            "x": 669.4400000004974,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningBSource",
+            "flipX": true,
+            "alpha": 0.85
+          },
+          "hp": 317.29,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.15423076923076928
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningAImpact",
+              "hitIndex": 0,
+              "at": 0.10175,
+              "flipX": false,
+              "visible": true
+            },
+            {
+              "texture": "visual.1.lushu.awakeningBImpact",
+              "hitIndex": 1,
+              "at": 0.15423076923076928,
+              "flipX": true,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "hitC",
+          "file": "reduced-right-hitC.png",
+          "time": 0.36,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "384.0.128.128",
+            "x": 598.0571428573159,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningCSource",
+            "flipX": false,
+            "alpha": 0.85
+          },
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.15423076923076928
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningCImpact",
+              "hitIndex": 2,
+              "at": 0.3499999999999999,
+              "flipX": false,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "recovery",
+          "file": "reduced-right-recovery.png",
+          "time": 0.47,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "512.0.128.128",
+            "x": 678.8000000005401,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.15423076923076928
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningCImpact",
+              "hitIndex": 2,
+              "at": 0.3499999999999999,
+              "flipX": false,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "idle",
+          "file": "reduced-right-idle.png",
+          "time": 0.61,
+          "body": {
+            "texture": "visual.1.lushu.battleIdle",
+            "frame": "0.0.96.128",
+            "x": 678.8000000005401,
+            "y": 334,
+            "width": 108,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9544198895027625
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.15423076923076928
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": []
+        }
+      ],
+      "cleanup": {
+        "closed": true,
+        "bytes": 0,
+        "active": 0,
+        "impacts": 0
+      }
+    },
+    {
+      "reduced": true,
+      "sign": -1,
+      "bytes": 16552840,
+      "hp": 320,
+      "renderer": 2,
+      "frames": [
+        {
+          "label": "anticipation",
+          "file": "reduced-left-anticipation.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "0.0.128.128",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 320,
+          "hits": [],
+          "contacts": []
+        },
+        {
+          "label": "rushA",
+          "file": "reduced-left-rushA.png",
+          "time": 0.085,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "128.0.128.128",
+            "x": 463.9999999995636,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningASource",
+            "flipX": true,
+            "alpha": 0.85
+          },
+          "hp": 320,
+          "hits": [],
+          "contacts": []
+        },
+        {
+          "label": "hitA",
+          "file": "reduced-left-hitA.png",
+          "time": 0.105,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "128.0.128.128",
+            "x": 367.9999999991272,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningASource",
+            "flipX": true,
+            "alpha": 0.85
+          },
+          "hp": 319,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningAImpact",
+              "hitIndex": 0,
+              "at": 0.10175,
+              "flipX": true,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "hitB",
+          "file": "reduced-left-hitB.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "256.0.128.128",
+            "x": 306.559999998848,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningBSource",
+            "flipX": false,
+            "alpha": 0.85
+          },
+          "hp": 317.29,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.1542307692307692
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningAImpact",
+              "hitIndex": 0,
+              "at": 0.10175,
+              "flipX": true,
+              "visible": true
+            },
+            {
+              "texture": "visual.1.lushu.awakeningBImpact",
+              "hitIndex": 1,
+              "at": 0.1542307692307692,
+              "flipX": false,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "hitC",
+          "file": "reduced-left-hitC.png",
+          "time": 0.36,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "384.0.128.128",
+            "x": 377.9428571420296,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.lushu.awakeningCSource",
+            "flipX": true,
+            "alpha": 0.85
+          },
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.1542307692307692
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningCImpact",
+              "hitIndex": 2,
+              "at": 0.3499999999999999,
+              "flipX": true,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "recovery",
+          "file": "reduced-left-recovery.png",
+          "time": 0.47,
+          "body": {
+            "texture": "visual.1.lushu.battleAwakening",
+            "frame": "512.0.128.128",
+            "x": 297.1999999988055,
+            "y": 334,
+            "width": 167.56363636363636,
+            "height": 167.56363636363636,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.1542307692307692
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.lushu.awakeningCImpact",
+              "hitIndex": 2,
+              "at": 0.3499999999999999,
+              "flipX": true,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "label": "idle",
+          "file": "reduced-left-idle.png",
+          "time": 0.61,
+          "body": {
+            "texture": "visual.1.lushu.battleIdle",
+            "frame": "0.0.96.128",
+            "x": 297.1999999988055,
+            "y": 334,
+            "width": 108,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9544198895027625
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 309.46000000000004,
+          "hits": [
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 0,
+              "at": 0.10175
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 1,
+              "at": 0.1542307692307692
+            },
+            {
+              "actionId": "awakening.1",
+              "hitIndex": 2,
+              "at": 0.3499999999999999
+            }
+          ],
+          "contacts": []
+        }
+      ],
+      "cleanup": {
+        "closed": true,
+        "bytes": 0,
+        "active": 0,
+        "impacts": 0
+      }
+    }
+  ],
+  "errors": [],
+  "status": "PASS"
+}
