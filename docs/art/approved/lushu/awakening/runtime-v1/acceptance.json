@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-18",
+  "status": "PASS / PLAYER VERIFIED",
+  "playerStatement": "我測試確認ok，核准，紀錄github相關規則進度流程",
+  "scope": "P1 鹿蜀 Awakening 南山奔襲 deployed runtime; overall acceptance responding to the player/phone review handoff",
+  "deployedRuntimeCommit": "8e2f5e049095017d7350b1d0d61e96527ab21e44",
+  "presentedUrl": "https://hansen0318.github.io/shanhaijing-arena/?v=8e2f5e0",
+  "priorDocumentationCommit": "8e528a49c9d5defb8958891a4b05a991689b1c45",
+  "releaseActionsRun": 39097029256,
+  "evidence": [
+    {
+      "path": "docs/verification/M5C_P1_AWAKENING_PUBLIC_FINGERPRINT.json",
+      "sha256": "fa3d6740c5a8c2092f3777c26559eb03c89c0ae72cf3978854fccaa69f18da6f"
+    },
+    {
+      "path": "docs/verification/P1_AWAKENING_BROWSER/browser-verification.json",
+      "sha256": "82f2befc5c6cb420acfae63f92f748be3506635f77d0a044903819fc201d3c02"
+    },
+    {
+      "path": "docs/art/approved/lushu/awakening/composite-v3/acceptance.json",
+      "sha256": "21530282ed14d2ae2e7d3787650663b293cc6196737bfa1ce1ab2b6838cacf53"
+    }
+  ],
+  "observationLimits": "Overall user confirmation only; no per-checklist results, device/browser identifiers, FPS or GPU-memory measurement reported. Phone context comes from the preceding review handoff.",
+  "notClosed": [
+    "P1 Hit reaction",
+    "P1 character-wide regression and player acceptance",
+    "P2"
+  ],
+  "nextMilestone": "P1 Hit reaction, then P1 character-wide regression/player acceptance",
+  "changeScope": "Documentation and receipt only; preserve deployed build, approved sources and prior receipts; no main merge or redeployment."
+}
