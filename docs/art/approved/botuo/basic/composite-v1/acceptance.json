@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "characterId": "P2",
+  "abilityId": "P2.basic",
+  "abilityName": "角擊",
+  "status": "PLAYER VISUAL APPROVED — COMPOSITE REVIEW V1",
+  "approvedAt": "2026-10-18T19:23:19+08:00",
+  "repeatedAt": "2026-10-18T19:23:43+08:00",
+  "playerStatement": "我審核ok，紀錄github相關流程規則進度，然後繼續",
+  "presentedSourceCheckpoint": "1319da6ad7a7b0c2903f10c3ca01009d1966d507",
+  "publishedEquivalentCheckpoint": "45c8d52402004af7bfea9ddef9d2f366b6fcff3a",
+  "reviewFiles": [
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/botuo-basic-composite-normal.gif",
+      "sha256": "55c70c31141da605ee16f558bc6c9629c1ceeab73acb3314a2b3066d1c98ae9d"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/botuo-basic-composite-slow.gif",
+      "sha256": "8f9fd7662e54565ff6fdfe5e709fd4862f0e3b819a85bfe7c777dec4829ab553"
+    },
+    {
+      "path": "docs/art/candidates/botuo/basic/composite-review-v1/botuo-basic-character-only-normal.gif",
+      "sha256": "fde66fb2f12777eb35032aed2059472a7dd20c2f2bd68cc061a44c15795bc0eb"
+    }
+  ],
+  "acceptedScope": [
+    "Presented four-pose body animation F1/F2v2/F3/F4",
+    "Presented independent caster horn-force and target crushed-stone impact visuals",
+    "Presented normal/slow visual playback, both facing directions and Idle return"
+  ],
+  "continuation": "Perform bounded runtime preflight with immutable accepted sources; do not reopen accepted visual gates.",
+  "excludedScope": [
+    "Changing real Basic hit from immediate to preview240ms",
+    "Collision/range/cadence/crit/stat changes",
+    "Unshown reduced-motion/device cases",
+    "Runtime ENGINEERING PASS",
+    "Deployment or in-game player acceptance"
+  ],
+  "immutableSourceManifest": "docs/art/candidates/botuo/basic/composite-review-v1/review-manifest.json",
+  "sourcePolicy": "Accepted binaries remain at versioned source paths; historical candidates folder/status metadata is superseded for this exact visual scope by this receipt. Do not rewrite prior receipts/history or regenerate accepted images."
+}
