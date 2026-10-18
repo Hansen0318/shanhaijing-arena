@@ -1,0 +1,40 @@
+{
+  "recordedDate": "2026-10-19",
+  "timezone": "Asia/Taipei",
+  "statementTime": "Not supplied; do not infer an exact approval timestamp.",
+  "status": "PASS / PLAYER VERIFIED",
+  "playerStatement": "好，我測試過了，basic approved，妳紀錄github相關流程紀錄和規則",
+  "scope": "P2 猼訑 Basic 角擊 deployed runtime; overall acceptance responding to the pending player phone-review handoff.",
+  "deployedRuntimeCommit": "db451cda0e396736b170d0196d32655649303a36",
+  "presentedUrl": "https://hansen0318.github.io/shanhaijing-arena/?v=db451cd",
+  "priorDocumentationCommit": "2bf0ff55ddf69f73eb6ca7f1e34e16b5648590bb",
+  "releaseActionsRun": 39127557379,
+  "evidence": [
+    {
+      "path": "docs/verification/M5C_P2_BOTUO_BASIC_RELEASE.json",
+      "sha256": "90193e2759c35388e94c3d97cfed6d0067203742786bd739a700f9655c9260de"
+    },
+    {
+      "path": "docs/verification/M5C_P2_BOTUO_BASIC_PUBLIC_FINGERPRINT.json",
+      "sha256": "10dbd7551b6217c8e1017507e5b7ae39173f099449a871d8c44769a524bab2f3"
+    },
+    {
+      "path": "docs/art/approved/botuo/basic/composite-v1/acceptance.json",
+      "sha256": "f1596f2aa8fdbe307c81726829bd4628020f2aece9b29ac8e8045bd8c058dc0b"
+    },
+    {
+      "path": "docs/art/approved/botuo/basic/executable-v1/acceptance.json",
+      "sha256": "b5c39748012e6803e707d8a64a798e1fd54cb4ae2a16e5ea748c7d8c3ce13618"
+    }
+  ],
+  "observationLimits": "Overall player confirmation only. No individual results for each facing, reduced-motion setting, Pause/Restart, device/browser identity, FPS or GPU-memory measurement were reported. Phone-review context comes from the preceding handoff; no extra checklist observations are fabricated.",
+  "notClosed": [
+    "P2 Heavy 震嶺 formal action/VFX",
+    "P2 Special 守群 formal action/VFX",
+    "P2 Awakening 鎮岳 formal action/VFX",
+    "P2 whole-character completion",
+    "P3"
+  ],
+  "nextMilestone": "Recover P2 Heavy 震嶺 existing mechanics and approved identity, then design/choreography and F3-first art gate. No Heavy asset approval or runtime/release authorization inferred.",
+  "changeScope": "Documentation and new receipt only; no code/assets/older receipts changed, no tests/build/release repeated, no main merge."
+}
