@@ -1,0 +1,714 @@
+{
+  "scope": "Source-preserving installed runtime packaging; device raster quality and GPU memory unverified",
+  "protected": [
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v3/lushu-awakening-normal.gif",
+      "sha256": "717fd576352d1e050cc914460908adf05c770d683cf25599237090e06b8be4e2"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v3/lushu-awakening-slow.gif",
+      "sha256": "a8c9fb9e082c5529ca0477a6ae5a5225bd5c3b817c7035b844be17f1328944cd"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v3/lushu-awakening-character-only.gif",
+      "sha256": "e62250644203b4eadb23d0c8a4daa7955e0778f825b4811dc5f2b4673d98b44d"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v3/lushu-awakening-vfx-only.gif",
+      "sha256": "b362b042a33ed60c6b7723df0c0c40f2f94de889d20ce7cfd8ae90819d054ff4"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v3/lushu-awakening-whiff.gif",
+      "sha256": "c2c61e01376a236264e3c675e14833faf05df1938b69543476a322919d63e4a1"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v3/first-rush-before-after.gif",
+      "sha256": "1ad26c8a57f55e37cab52fdd64196289f6bbc27733971460b303d8d4f6ea4521"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/phase-poses-v1/F1-anticipation.png",
+      "sha256": "3838ab20e18e42c4ede642b282c458f53f46fde5a2ce99d494bfaf7c9a5c2b06"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/phase-poses-v1/A-first-rush-contact.png",
+      "sha256": "47362e20f4b9eb6d969d699973bd5ab8f02e91109ed056f8a6e87a83062fc51d"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/phase-poses-v1/B-return-contact.png",
+      "sha256": "89d59425c5b9790cd9974e0b08e368b09778147c663f14b6253c9f23d9d6156f"
+    },
+    {
+      "path": "docs/art/approved/lushu/awakening/terminal-f3-v1/F3-terminal-master.png",
+      "sha256": "c736acca0da5fb5b6c7824a8dfb4bfb2719cf2ce99af74c54dde21773821f3d0"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/phase-poses-v1/F4-recovery.png",
+      "sha256": "5c0435b7edd0bb8b2dac6d9bf29b5f71e3e2a39b5a3769dc91e4503dff5eb2c7"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/vfx-review-v1/A-pair-raw.png",
+      "sha256": "9c6176ac7ca3b101b0b81d6b082de9b8af71ed58aefbe8e0498e0904629322d5"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/vfx-review-v1/B-pair-raw.png",
+      "sha256": "d7c653573320e4b7b259f92b11363e901bde104da47ebcb53c982e66bdda8be6"
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/vfx-review-v1/C-pair-raw.png",
+      "sha256": "0b796045c13fdb06f86d848d34ef4bd146ba6a4afd3d6e4eeb44ee85913cc27f"
+    }
+  ],
+  "poses": [
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v2/F1-anticipation-cell.png",
+      "sha256": "05c4ce11cf46f71203f0cb6899fa41b563158a40cd327c67af4da964fd0d7754",
+      "restorationExact": true
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v2/A-first-rush-contact-cell.png",
+      "sha256": "f2a628582d5cbef28a64ac1ab58fa46fe87e2baa0614d6d05986249e203fae10",
+      "restorationExact": true
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v2/B-return-contact-cell.png",
+      "sha256": "7f305d6c65303d7de6492146500aa897432db629d5157028e00921f2366e161a",
+      "restorationExact": true
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v2/C-terminal-F3-cell.png",
+      "sha256": "b96d53b26ebe4e3f1e51c57454e4c2bc855b0588046653af6093be2d7c65d827",
+      "restorationExact": true
+    },
+    {
+      "path": "docs/art/candidates/lushu/awakening/composite-review-v2/F4-recovery-cell.png",
+      "sha256": "b686c2acfc45a5bb04c39545fe6ddf7981b5ee568ba094a892766b0fba9a19a3",
+      "restorationExact": true
+    }
+  ],
+  "vfx": [
+    {
+      "source": "docs/art/candidates/lushu/awakening/vfx-review-v1/A-source-padded.png",
+      "sha256": "561ad5298bebc545de539f7333a4fd7f9756a4f6bf4262842a36e77fe62c7314",
+      "paddedReconstructionExact": true,
+      "significantAlphaBox": [
+        108,
+        256,
+        1047,
+        585
+      ],
+      "logicalPreviewSize": [
+        520,
+        329
+      ],
+      "previewAnchor": [
+        215.25559105431307,
+        156.73588924387644
+      ]
+    },
+    {
+      "source": "docs/art/candidates/lushu/awakening/vfx-review-v1/A-impact-padded.png",
+      "sha256": "7feb2009260edbf8eff5415f726d226a1de5fcdfd14b737f694a4822af4d4798",
+      "paddedReconstructionExact": true,
+      "significantAlphaBox": [
+        349,
+        176,
+        990,
+        721
+      ],
+      "logicalPreviewSize": [
+        308,
+        248
+      ],
+      "previewAnchor": [
+        188.00312012480498,
+        125.94383775351014
+      ]
+    },
+    {
+      "source": "docs/art/candidates/lushu/awakening/vfx-review-v1/B-source-padded.png",
+      "sha256": "5b95d915790dc169764c9a7f969ee2b307fadcfd89ce28a242a3f97b316b6c0a",
+      "paddedReconstructionExact": true,
+      "significantAlphaBox": [
+        126,
+        137,
+        1061,
+        822
+      ],
+      "logicalPreviewSize": [
+        349,
+        264
+      ],
+      "previewAnchor": [
+        164.62043795620437,
+        133
+      ]
+    },
+    {
+      "source": "docs/art/candidates/lushu/awakening/vfx-review-v1/B-impact-padded.png",
+      "sha256": "5d0e0be56232cbf2aac4ed458f4d98da173e0a0680373aff2d32c494aba3c298",
+      "paddedReconstructionExact": true,
+      "significantAlphaBox": [
+        199,
+        145,
+        931,
+        803
+      ],
+      "logicalPreviewSize": [
+        385,
+        352
+      ],
+      "previewAnchor": [
+        208.4016393442623,
+        174.8360655737705
+      ]
+    },
+    {
+      "source": "docs/art/candidates/lushu/awakening/vfx-review-v1/C-source-padded.png",
+      "sha256": "8f5aa92e5ffb4ccf263aae85d31404488218e273867340faad333e5e36d17b88",
+      "paddedReconstructionExact": true,
+      "significantAlphaBox": [
+        237,
+        424,
+        773,
+        642
+      ],
+      "logicalPreviewSize": [
+        847,
+        879
+      ],
+      "previewAnchor": [
+        423.97388059701495,
+        447.48134328358213
+      ]
+    },
+    {
+      "source": "docs/art/candidates/lushu/awakening/vfx-review-v1/C-impact-padded.png",
+      "sha256": "3f3e4a56142eed7d1778e5566ba32ffd175c94e327017637db092cbf2e339667",
+      "paddedReconstructionExact": true,
+      "significantAlphaBox": [
+        237,
+        261,
+        877,
+        783
+      ],
+      "logicalPreviewSize": [
+        678,
+        654
+      ],
+      "previewAnchor": [
+        348.125,
+        326.25
+      ]
+    }
+  ],
+  "lossless": [
+    {
+      "key": "botuo.battleIdle",
+      "source": "public/assets/characters/botuo/battleIdle-4f.png",
+      "sha256": "86cb5c36d7e7a7862287da77e36ec77d04198311fb37f97fcbd46a73f175f6a0",
+      "crop": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "sourceSize": [
+        640,
+        160
+      ],
+      "restorationExact": false,
+      "onlyDisplayedCell": true,
+      "savedBytes": 307200
+    },
+    {
+      "key": "lushu.battleBasic",
+      "source": "public/assets/characters/lushu/battleBasic-4f.png",
+      "sha256": "2bc2710fdbb5c031339f876d1f69486899ff293711d7dc1b3407dd59ecbcb690",
+      "crop": [
+        0,
+        10,
+        512,
+        111
+      ],
+      "sourceSize": [
+        512,
+        128
+      ],
+      "restorationExact": true,
+      "onlyDisplayedCell": false,
+      "savedBytes": 55296
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "source": "public/assets/characters/lushu/battleHeavy-4f.png",
+      "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334",
+      "crop": [
+        0,
+        31,
+        512,
+        116
+      ],
+      "sourceSize": [
+        512,
+        128
+      ],
+      "restorationExact": true,
+      "onlyDisplayedCell": false,
+      "savedBytes": 88064
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "source": "public/assets/characters/lushu/battleSpecial-4f.png",
+      "sha256": "e7e5c1eebfab6b2ae9dd49961aee586180ce5809e99b70c48f3176a6d04d423a",
+      "crop": [
+        0,
+        10,
+        320,
+        69
+      ],
+      "sourceSize": [
+        320,
+        80
+      ],
+      "restorationExact": true,
+      "onlyDisplayedCell": false,
+      "savedBytes": 26880
+    },
+    {
+      "key": "chiru.battleMove",
+      "source": "public/assets/characters/chiru/battleMove-4f.png",
+      "sha256": "d0839a1630f21d1b59dd0363c35e94886d3983290cac6e339f59c4afa93bc74f",
+      "crop": [
+        0,
+        42,
+        640,
+        160
+      ],
+      "sourceSize": [
+        640,
+        160
+      ],
+      "restorationExact": true,
+      "onlyDisplayedCell": false,
+      "savedBytes": 107520
+    },
+    {
+      "key": "jiuweihu.battleKo",
+      "source": "public/assets/characters/jiuweihu/battleKo.png",
+      "sha256": "fe8a29e136f0e487e394e467d9acc0ccd8662c42351bb7ab709990320cb4d209",
+      "crop": [
+        0,
+        47,
+        512,
+        485
+      ],
+      "sourceSize": [
+        512,
+        512
+      ],
+      "restorationExact": true,
+      "onlyDisplayedCell": false,
+      "savedBytes": 151552
+    }
+  ],
+  "assets": {
+    "lushu.battleAwakening": {
+      "path": "public/assets/characters/lushu/awakening-runtime-v1/poses-5f.png",
+      "width": 640,
+      "height": 128,
+      "bytes": 64019,
+      "decodedBytes": 327680,
+      "sha256": "7f8a948ab69d8883f5152a0eee86f7e5ff060d183b7d58aef0552360372dfe22"
+    },
+    "lushu.awakeningASource": {
+      "path": "public/assets/characters/lushu/awakening-runtime-v1/A-source.png",
+      "width": 96,
+      "height": 61,
+      "bytes": 3674,
+      "decodedBytes": 23424,
+      "sha256": "907ded470c53345a78576a9e653517094638103169b0220eeaa8a5da7cf1597d"
+    },
+    "lushu.awakeningAImpact": {
+      "path": "public/assets/characters/lushu/awakening-runtime-v1/A-impact.png",
+      "width": 96,
+      "height": 77,
+      "bytes": 4816,
+      "decodedBytes": 29568,
+      "sha256": "9203187e4f0ff2f2d216573232b2011bc92d7deab77a0e19daabf2d414484e0f"
+    },
+    "lushu.awakeningBSource": {
+      "path": "public/assets/characters/lushu/awakening-runtime-v1/B-source.png",
+      "width": 96,
+      "height": 73,
+      "bytes": 8187,
+      "decodedBytes": 28032,
+      "sha256": "6e1dfbfd19e44d9fd8c1efff036b85a019427f199d8c4ecd3d0a41c5c351d30c"
+    },
+    "lushu.awakeningBImpact": {
+      "path": "public/assets/characters/lushu/awakening-runtime-v1/B-impact.png",
+      "width": 96,
+      "height": 88,
+      "bytes": 11880,
+      "decodedBytes": 33792,
+      "sha256": "2f420d07b9f4dc657f7c03984c4a714a341d3790777cf16bf943d8f545b3e675"
+    },
+    "lushu.awakeningCSource": {
+      "path": "public/assets/characters/lushu/awakening-runtime-v1/C-source.png",
+      "width": 93,
+      "height": 96,
+      "bytes": 2842,
+      "decodedBytes": 35712,
+      "sha256": "5dc914fe070263c76a4d641f5b879fc706bfd7b11daae3c8345dea24f34c0fff"
+    },
+    "lushu.awakeningCImpact": {
+      "path": "public/assets/characters/lushu/awakening-runtime-v1/C-impact.png",
+      "width": 96,
+      "height": 93,
+      "bytes": 7312,
+      "decodedBytes": 35712,
+      "sha256": "5cf93d209a18d05ec0928412f61ad4a066d5007c2062a7550c43a27f277c7744"
+    },
+    "botuo.battleIdle": {
+      "path": "public/assets/runtime-packing-v1/botuo-battleIdle.png",
+      "width": 160,
+      "height": 160,
+      "bytes": 25193,
+      "decodedBytes": 102400,
+      "sha256": "ce9838208b4e1ecc58f5bdb0cf70cf6200e0426ab17216daf9e1d1cebc92a82f"
+    },
+    "lushu.battleBasic": {
+      "path": "public/assets/runtime-packing-v1/lushu-battleBasic.png",
+      "width": 512,
+      "height": 101,
+      "bytes": 51449,
+      "decodedBytes": 206848,
+      "sha256": "d3920ab4129868f71a3f3a08d29262773cc75ee08da80610fd9e14af904e2ac9"
+    },
+    "lushu.battleHeavy": {
+      "path": "public/assets/runtime-packing-v1/lushu-battleHeavy.png",
+      "width": 512,
+      "height": 85,
+      "bytes": 51992,
+      "decodedBytes": 174080,
+      "sha256": "3f9f501520886eed5d2f790e603481575f17ab2196357dd1f5a69ca8d5cc3a9f"
+    },
+    "lushu.battleSpecial": {
+      "path": "public/assets/runtime-packing-v1/lushu-battleSpecial.png",
+      "width": 320,
+      "height": 59,
+      "bytes": 21979,
+      "decodedBytes": 75520,
+      "sha256": "ec19456d1b7d067f0a56ae98ce2b1d83554cef3e5318e7faf2e1b579d81320cd"
+    },
+    "chiru.battleMove": {
+      "path": "public/assets/runtime-packing-v1/chiru-battleMove.png",
+      "width": 640,
+      "height": 118,
+      "bytes": 112306,
+      "decodedBytes": 302080,
+      "sha256": "9c434853c15b9f744b29ecb2495ab4ef96894dec071dcb9db740343f4b0e0f85"
+    },
+    "jiuweihu.battleKo": {
+      "path": "public/assets/runtime-packing-v1/jiuweihu-battleKo.png",
+      "width": 512,
+      "height": 438,
+      "bytes": 197980,
+      "decodedBytes": 897024,
+      "sha256": "43f0e143e665eadad03352fd78b4b363f9b072700fbb58498635e8eb705a52a4"
+    }
+  },
+  "descriptor": {
+    "kind": "staged",
+    "animation": {
+      "source": "lushu.battleAwakening",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        },
+        {
+          "x": 512,
+          "y": 0,
+          "width": 128,
+          "height": 128
+        }
+      ],
+      "duration": 0.61,
+      "loop": false,
+      "staticFrame": 3,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "scale": 2.327272727272727
+    },
+    "coordinateSize": [
+      320,
+      320
+    ],
+    "durationMs": 610,
+    "recoveryStartMs": 470,
+    "phaseFrames": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "frameDurationsMs": [
+      80,
+      55,
+      145,
+      190,
+      140
+    ],
+    "stages": [
+      {
+        "blade": {
+          "assetKey": "lushu.awakeningASource",
+          "offset": [
+            -155.25559105431307,
+            61.26411075612356
+          ],
+          "size": [
+            520,
+            329
+          ],
+          "layer": 6,
+          "opacity": 0.85
+        },
+        "contact": {
+          "assetKey": "lushu.awakeningAImpact",
+          "offset": [
+            -188.00312012480498,
+            -235.94383775351014
+          ],
+          "size": [
+            308,
+            248
+          ],
+          "layer": 7,
+          "attach": "target"
+        },
+        "contactHoldMs": 80,
+        "startMs": 80,
+        "endMs": 135
+      },
+      {
+        "blade": {
+          "assetKey": "lushu.awakeningBSource",
+          "offset": [
+            -104.62043795620437,
+            85
+          ],
+          "size": [
+            349,
+            264
+          ],
+          "layer": 6,
+          "opacity": 0.85
+        },
+        "contact": {
+          "assetKey": "lushu.awakeningBImpact",
+          "offset": [
+            -208.4016393442623,
+            -284.8360655737705
+          ],
+          "size": [
+            385,
+            352
+          ],
+          "layer": 7,
+          "attach": "target"
+        },
+        "contactHoldMs": 90,
+        "startMs": 135,
+        "endMs": 280
+      },
+      {
+        "blade": {
+          "assetKey": "lushu.awakeningCSource",
+          "offset": [
+            -363.97388059701495,
+            -229.48134328358213
+          ],
+          "size": [
+            847,
+            879
+          ],
+          "layer": 6,
+          "opacity": 0.85
+        },
+        "contact": {
+          "assetKey": "lushu.awakeningCImpact",
+          "offset": [
+            -348.125,
+            -436.25
+          ],
+          "size": [
+            678,
+            654
+          ],
+          "layer": 7,
+          "attach": "target"
+        },
+        "contactHoldMs": 130,
+        "startMs": 280,
+        "endMs": 470
+      }
+    ]
+  },
+  "budget": {
+    "requiredBytes": 16552840,
+    "hardBytes": 16777216,
+    "minimumOptionalReserveBytes": 131072,
+    "headroomBytes": 224376
+  },
+  "limitations": [
+    "Decoded RGBA accounting is not actual browser/GPU allocation",
+    "Downsampling deterministic but not pixel identical to original",
+    "Raster quality/device acceptance remains pending"
+  ],
+  "startupMeasurement": {
+    "method": "Actual AssetResidency+createAssetCache with real PNG headers/encoded bytes and renderer allocation double; all36 required requests concurrent",
+    "requiredKeys": [
+      "lushu.portrait",
+      "lushu.battleIdle",
+      "lushu.battleMove",
+      "lushu.battleKo",
+      "lushu.battleBasic",
+      "lushu.basicBlade",
+      "lushu.basicContact",
+      "lushu.battleHeavy",
+      "lushu.heavyWind",
+      "lushu.heavyImpact",
+      "lushu.battleSpecial",
+      "lushu.specialWind",
+      "lushu.specialImpact",
+      "lushu.battleAwakening",
+      "lushu.awakeningASource",
+      "lushu.awakeningAImpact",
+      "lushu.awakeningBSource",
+      "lushu.awakeningBImpact",
+      "lushu.awakeningCSource",
+      "lushu.awakeningCImpact",
+      "botuo.portrait",
+      "botuo.battleIdle",
+      "botuo.battleMove",
+      "botuo.battleKo",
+      "chiru.portrait",
+      "chiru.battleIdle",
+      "chiru.battleMove",
+      "chiru.battleKo",
+      "jiuweihu.portrait",
+      "jiuweihu.battleIdle",
+      "jiuweihu.battleMove",
+      "jiuweihu.battleKo",
+      "xingxing.portrait",
+      "xingxing.battleIdle",
+      "xingxing.battleMove",
+      "xingxing.battleKo"
+    ],
+    "requiredKeyCount": 36,
+    "startupReservedBytes": 16552840,
+    "scene": {
+      "requested": 36,
+      "loaded": 36,
+      "evicted": 0,
+      "failed": 0,
+      "highWaterBytes": 16552840,
+      "loadOrder": [
+        "lushu.portrait",
+        "lushu.battleIdle",
+        "lushu.battleMove",
+        "lushu.battleKo",
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact",
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact",
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact",
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact",
+        "botuo.portrait",
+        "botuo.battleIdle",
+        "botuo.battleMove",
+        "botuo.battleKo",
+        "chiru.portrait",
+        "chiru.battleIdle",
+        "chiru.battleMove",
+        "chiru.battleKo",
+        "jiuweihu.portrait",
+        "jiuweihu.battleIdle",
+        "jiuweihu.battleMove",
+        "jiuweihu.battleKo",
+        "xingxing.portrait",
+        "xingxing.battleIdle",
+        "xingxing.battleMove",
+        "xingxing.battleKo"
+      ],
+      "highWaterReservedBytes": 16552840,
+      "estimatedLiveBytes": 16552840,
+      "reservedBytes": 0,
+      "pending": 0,
+      "pinned": 36,
+      "softBytes": 12582912,
+      "hardBytes": 16777216,
+      "optionalReserveBytes": 131072,
+      "closed": false
+    },
+    "decoded": {
+      "estimatedLiveBytes": 16552840,
+      "highWaterBytes": 16552840,
+      "loaded": 36,
+      "failed": 0,
+      "pending": 0,
+      "active": 0,
+      "queued": 0
+    },
+    "optionalIdentityFitsHardCapButRejectedForReserve": true,
+    "teardownBytes": 0
+  },
+  "verification": {
+    "commands": [
+      "python scripts/prepareLushuAwakeningRuntime.py",
+      "node --test tests/awakeningRuntimePacking.test.js tests/assetManifest.test.js tests/assetCache.test.js tests/assetResidency.test.js tests/lushuBasicAssets.test.js tests/lushuSpecialAssets.test.js tests/dynamicAssetIntegration.test.js",
+      "node --test tests/chiruMove.test.js tests/jiuweihuKo.test.js tests/xingxingKo.test.js",
+      "node scripts/checkAssets.js"
+    ],
+    "results": [
+      "13 derivatives;14 acceptance-bound hashes protected;6 legacy source hashes match historical preflight",
+      "39/39 pass",
+      "22/22 pass",
+      "78 files;3897370 encoded bytes"
+    ]
+  }
+}

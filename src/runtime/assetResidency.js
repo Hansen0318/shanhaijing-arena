@@ -3,9 +3,10 @@ import {resolveAsset} from '../assets/resolver.js';
 
 // One owner per scene. Pins describe presentation consumers, never combat state.
 export class AssetResidency {
- constructor(scene,{cache,prefix='',softBytes=RESIDENCY_LIMITS.softBytes,hardBytes=RESIDENCY_LIMITS.hardBytes,maxEntries=RESIDENCY_LIMITS.maxEntries,onEvict=()=>{}}={}){
+ constructor(scene,{cache,prefix='',softBytes=RESIDENCY_LIMITS.softBytes,hardBytes=RESIDENCY_LIMITS.hardBytes,maxEntries=RESIDENCY_LIMITS.maxEntries,optionalReserveBytes=hardBytes===RESIDENCY_LIMITS.hardBytes?131072:0,onEvict=()=>{}}={}){
   if(!Number.isInteger(hardBytes)||hardBytes<1||hardBytes>RESIDENCY_LIMITS.hardBytes||!Number.isInteger(softBytes)||softBytes<0||softBytes>hardBytes||!Number.isInteger(maxEntries)||maxEntries<1||maxEntries>RESIDENCY_LIMITS.maxEntries)throw new RangeError('Invalid residency budget');
-  Object.assign(this,{scene,cache,prefix,softBytes,hardBytes,maxEntries,onEvict});
+  if(!Number.isInteger(optionalReserveBytes)||optionalReserveBytes<0||optionalReserveBytes>hardBytes)throw new RangeError('Invalid optional reserve');
+  Object.assign(this,{scene,cache,prefix,softBytes,hardBytes,maxEntries,optionalReserveBytes,onEvict});
   this.textures=new Map();this.pins=new Map();this.pending=new Map();this.closed=false;this.bytes=0;this.reservedBytes=0;
   this.counters={requested:0,loaded:0,evicted:0,failed:0,highWaterBytes:0,loadOrder:[]};
  }
@@ -17,7 +18,7 @@ export class AssetResidency {
  remove(key){const value=this.textures.get(key);if(!value)return;this.onEvict(key,value);this.scene.textures?.remove(value.key);this.textures.delete(key);this.bytes-=value.asset.width*value.asset.height*4;this.counters.evicted++;}
  evictOne(){for(const key of this.textures.keys())if(!this.pinned(key)){this.remove(key);return true;}return false;}
  reclaim(){while(this.bytes+this.reservedBytes>this.softBytes&&this.evictOne()){};}
- load(key){
+ load(key,{required=true}={}){
   if(this.closed)return Promise.resolve(null);
   this.counters.requested++;
   if(this.textures.has(key))return Promise.resolve(this.touch(key));
@@ -25,13 +26,14 @@ export class AssetResidency {
   const record=this.record(key);
   if(record.key!==key){this.counters.failed++;return Promise.reject(Error('Unknown asset key: '+key));}
   if(record.type!=='image')return Promise.resolve(null);
-  const size=record.width*record.height*4;
+  const size=record.width*record.height*4,limit=this.hardBytes-(required?0:this.optionalReserveBytes);
   const task=(async()=>{
    let reserved=false;
    try{
-    while((this.bytes+this.reservedBytes+size>this.hardBytes||this.textures.size+this.pending.size>=this.maxEntries)&&this.evictOne()){}
-    if(this.bytes+this.reservedBytes+size>this.hardBytes||this.textures.size+this.pending.size>=this.maxEntries)throw Error('Scene texture safety budget exceeded: '+key);
+    while((this.bytes+this.reservedBytes+size>limit||this.textures.size+this.pending.size>=this.maxEntries)&&this.evictOne()){}
+    if(this.bytes+this.reservedBytes+size>limit||this.textures.size+this.pending.size>=this.maxEntries)throw Error('Scene texture safety budget exceeded: '+key);
     this.reservedBytes+=size;reserved=true;
+    this.counters.highWaterReservedBytes=Math.max(this.counters.highWaterReservedBytes??0,this.bytes+this.reservedBytes);
     const asset=await this.cache.load(key);
     if(this.closed)return null;
     if(!asset.image||asset.key!==key||asset.width!==record.width||asset.height!==record.height)throw Error('Required image load failed: '+key);
@@ -50,6 +52,6 @@ export class AssetResidency {
   task.finally(()=>{if(this.pending.get(key)===task)this.pending.delete(key);}).catch(()=>{});
   return task;
  }
- snapshot(){return {...this.counters,loadOrder:[...this.counters.loadOrder],estimatedLiveBytes:this.bytes,reservedBytes:this.reservedBytes,pending:this.pending.size,pinned:[...this.textures.keys()].filter(k=>this.pinned(k)).length,softBytes:this.softBytes,hardBytes:this.hardBytes,closed:this.closed};}
+ snapshot(){return {...this.counters,loadOrder:[...this.counters.loadOrder],estimatedLiveBytes:this.bytes,reservedBytes:this.reservedBytes,pending:this.pending.size,pinned:[...this.textures.keys()].filter(k=>this.pinned(k)).length,softBytes:this.softBytes,hardBytes:this.hardBytes,optionalReserveBytes:this.optionalReserveBytes,closed:this.closed};}
  destroy(){if(this.closed)return;this.closed=true;this.pins.clear();for(const key of [...this.textures.keys()])this.remove(key);}
 }

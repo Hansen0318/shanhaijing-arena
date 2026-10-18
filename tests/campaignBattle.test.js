@@ -19,11 +19,18 @@ test('routing consumes lineup, formation, duration and returns fresh sessions fo
  assert.equal(findStage('1-1').allySpawnFormation[0].x,0);
  assert.throws(()=>createStageBattleSession({...config,enemyLineup:['missing','enemy','enemy']}));
 });
-test('stage battle completes Victory under unchanged graybox rules',()=>{
- // Protected legacy graybox outcome; production tactics are separately tested for deterministic termination.
+test('legacy opt-out stage battle preserves seeded graybox Victory',()=>{
+ // Explicit opt-out fixture protects the legacy ability contract's seeded Victory.
+ // Production staged mechanics have independently tested termination/retry below.
  const session=createStageBattleSession(findStage('1-1'),{tacticalEnabled:false});
+ for(const [id,table] of session.actorAbilityDefinitions)session.actorAbilityDefinitions.set(id,Object.fromEntries(Object.entries(table).map(([key,value])=>{const {stagedAction,...legacy}=value;return [key,legacy];})));
  for(let i=0;i<1801 && session.result()==='running';i++) session.step(.05);
  assert.equal(session.result(),'victory');
 });
 
 const findStage=id=>({...stageData(id),selectedTeam:['P2','P4','P1']});
+
+test('current staged stage1-1 wins deterministically and Retry starts fresh',()=>{
+ const run=()=>{const session=createStageBattleSession(findStage('1-1'),{tacticalEnabled:false});for(let i=0;i<1801&&session.result()==='running';i++)session.step(.05);return session;};
+ const first=run(),retry=run();assert.equal(first.result(),'victory');assert.deepEqual(first.snapshot(),retry.snapshot());assert.equal(first.pendingActions.size,0);assert.equal(retry.pendingActions.size,0);
+});

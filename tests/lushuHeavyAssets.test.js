@@ -4,9 +4,9 @@ import {AssetPresenter} from '../src/runtime/assetPresenter.js';import {createAs
 const png=p=>decodeRgbaPng(readFileSync(p)),sha=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
 test('Heavy uses exact prepared padded cells with independent approved VFX',()=>{
  const a=assetManifest['lushu.battleHeavy'];assert.ok(a,'Heavy manifest key');const p='public/'+a.path;
- assert.equal(sha(p),sha('docs/art/candidates/lushu/heavy/runtime-prep-v1/heavy-4f-128.png'));
- const im=png(p);assert.deepEqual([im.width,im.height],[512,128]);
- for(let i=0;i<4;i++){const c=cropRgba(im,[i*128,0,128,128]);let n=0;for(let y=0;y<128;y++)for(let x=0;x<128;x++)if(c[(y*128+x)*4+3]){assert.ok(x>=5&&x<123&&y>=5&&y<123);n++;}assert.ok(n>1000);}
+ const original=png('docs/art/candidates/lushu/heavy/runtime-prep-v1/heavy-4f-128.png');assert.deepEqual(png(p).pixels,cropRgba(original,[0,31,512,85]));
+ const im=png(p);assert.deepEqual([im.width,im.height],[512,85]);
+ for(let i=0;i<4;i++){const c=cropRgba(im,[i*128,0,128,85]);let n=0;for(let y=0;y<85;y++)for(let x=0;x<128;x++)if(c[(y*128+x)*4+3]){assert.ok(x>=5&&x<123);n++;}assert.ok(n>1000);}
  const d=rosterCatalog.P1.actionDescriptors.heavy;assert.deepEqual(d.frameDurationsMs,[200,80,140,180]);assert.equal(d.impactFrame,2);assert.equal(d.contact.attach,'target');
  assert.deepEqual([assetManifest[d.blade.assetKey].width,assetManifest[d.blade.assetKey].height],[112,112]);assert.deepEqual([assetManifest[d.contact.assetKey].width,assetManifest[d.contact.assetKey].height],[128,86]);
  assert.equal(sha('docs/art/candidates/lushu/heavy/recovered-review-v1/lushu-heavy-review-v1.gif'),'c233bdbc464a62943950619ddbb56054870e4e7c51808b97c7d8b9775dfaa845');
@@ -27,7 +27,7 @@ test('all five characters plus Basic/Heavy remain loaded across repeated scenes 
  const cache=createAssetCache({transport:pngTransport});
  for(let i=0;i<8;i++){
   const scene=assetScene(),p=new AssetPresenter(scene,{cache});await p.prepare(i%2?Object.values(rosterCatalog).reverse():Object.values(rosterCatalog));
-  assert.equal(p.textureBytes,16775432);assert.ok(p.textures.has('lushu.battleBasic'));assert.ok(p.textures.has('lushu.battleHeavy'));
+  assert.equal(p.textureBytes,16552840);assert.ok(p.textures.has('lushu.battleBasic'));assert.ok(p.textures.has('lushu.battleHeavy'));
   assert.equal(p.residency.snapshot().failed,0);assert.ok(scene.budget().peak<=16777216);assert.ok(cache.diagnostics().highWaterBytes<=16777216);p.destroy();assert.equal(scene.budget().bytes,0);
  }
 });

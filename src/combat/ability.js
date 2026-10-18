@@ -1,3 +1,4 @@
+import {createStagedAction} from './stagedAction.js';
 import {createTelegraph} from './threats.js';
 import {immutable} from '../assets/schema.js';
 import {createScalingOptIn} from './tierScaling.js';
@@ -46,6 +47,8 @@ export function createAbilityDefinition(input) {
     throw new RangeError('Basic ability cooldown must be 0');
   }
 
+  const stagedAction=createStagedAction(input.stagedAction);
+  if(stagedAction&&(windupMs!==0||input.telegraph!=null||input.targetingRule!=='enemy'||Math.abs(stagedAction.segments.reduce((n,l)=>n+l.coefficient,0)-(input.effect?.coefficient??0))>1e-9))throw new RangeError('Invalid staged ability contract');
   return Object.freeze({
     id: input.id,
     name: input.name ?? input.id,
@@ -53,6 +56,7 @@ export function createAbilityDefinition(input) {
     category: input.category,
     cooldown,
     windupMs,
+    ...(stagedAction?{stagedAction}:{}),
     unlockTier,
     canCrit,
     critChance,

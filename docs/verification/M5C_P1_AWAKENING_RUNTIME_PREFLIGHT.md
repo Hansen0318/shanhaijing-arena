@@ -1,5 +1,9 @@
 # P1 Awakening — measured runtime preflight
 
+## Subsequent decision — 2026-10-18T10:10+08:00
+
+Player「好確認，繼續」explicitly accepts the complete Section2 executable contract and Section3/4 source-preserving packaging proposal at fa29a9c. Runtime integration is authorized; the report below remains the immutable historical measured proposal. No integration/deploy/phone result is implied by approval.
+
 ## Status and authority
 
 2026-10-18, Asia/Taipei. **PREFLIGHT COMPLETE / EXECUTABLE CONTRACT PROPOSED / PLAYER DECISION PENDING. Runtime NOT IMPLEMENTED; no integration ENGINEERING PASS, deployment or phone acceptance.**

@@ -10,8 +10,9 @@ export class PersistentAreas{
   const record=freezeEffectData({id:`area-${++this.sequence}`,sourceId,sourceTeamId,geometry:{shape:'circle',center:{x:center.x,y:center.y},origin:{x:center.x,y:center.y},radius:spec.radius},spec:structuredClone(spec),definition,category,source,startTime:now,expiryTime:now+spec.duration});
   this.records.set(record.id,record);this.nextTicks.set(record.id,now+(spec.behavior==='impact'?0:spec.interval));return record;
  }
- tick(now,actors,apply){
+ tick(now,actors,apply,onlyId=null){
   for(const area of this.records.values()){
+   if(onlyId!==null&&area.id!==onlyId)continue;
    if(now+1e-9>=area.expiryTime){this.remove(area.id);continue;}
    const due=this.nextTicks.get(area.id);if(now+1e-9<due)continue;
    this.evaluations++;

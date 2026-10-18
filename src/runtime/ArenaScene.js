@@ -222,11 +222,11 @@ export class ArenaScene extends Phaser.Scene {
     const damage=this.session.drainDamageEvents();
     this.damageNumbers?.render(damage);
     this.damageNumbers?.renderHeal(this.session.drainHealEvents());
-    for(const event of damage){const actor=this.session.actorById(event.targetId);this.visualAssets.hit(event,this.session.characterDefinitions[actor.definitionId],this.session.elapsedSeconds);}
+    for(const event of damage){const actor=this.session.actorById(event.targetId);this.visualAssets.hit(event,this.session.characterDefinitions[actor.definitionId],event.eventAt??this.session.elapsedSeconds);}
     for(const event of this.session.drainCastEvents()){
       const actor=this.session.actorById(event.actorId),character=this.session.characterDefinitions[actor.definitionId];
       const ability=this.session.abilityDefinitions[character.abilities[event.category]];
-      this.visualAssets.cast(event,character,this.session.elapsedSeconds,ability);
+      this.visualAssets.cast(event,character,event.eventAt??this.session.elapsedSeconds,ability);
     }
   }
 
@@ -663,15 +663,17 @@ export class ArenaScene extends Phaser.Scene {
     if (this.paused || this.assetGate?.ready===false) return;
     this.accumulatorSeconds += deltaSeconds;
 
-    while (this.accumulatorSeconds >= SIM_STEP_SECONDS && this.session.result() === 'running') {
-      this.accumulatorSeconds -= SIM_STEP_SECONDS;
+    while (this.session.result() === 'running') {
+      const stepSeconds=this.session.simulationStepSeconds?.()??SIM_STEP_SECONDS;
+      if(this.accumulatorSeconds+1e-9<stepSeconds)break;
+      this.accumulatorSeconds -= stepSeconds;
 
       if (this.joystickPointerId !== null && this.selectedId) {
         this.session.holdPlayerControl(this.selectedId);
         this.session.setPlayerMovement(this.selectedId, this.joystickVector);
       }
 
-      this.session.step(SIM_STEP_SECONDS);
+      this.session.step(stepSeconds);
       this.applyKoFixtureIfNeeded();
     }
 

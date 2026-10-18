@@ -12,12 +12,12 @@ export class AssetPresenter{
   this.scene=scene;this.cache=cache;this.project=project;this.reducedMotion=reducedMotion;this.prefix=`visual.${++nextPresenter}.`;this.closed=false;this.ready=false;this.optionalLoads=new Map();this.optionalFailures=new Set();
   this.displays=new Map();this.displayKinds=new Map();this.displayTextureKeys=new Map();this.actorSprites=new Map();this.actorTextureKeys=new Map();this.overlaySprites=new Map();this.overlayTextureKeys=new Map();this.hudSprites=new Map();this.states=new Map();this.facings=new Map();this.actionFacings=new Map();this.playback=new VisualPlayback();
   this.residency=new AssetResidency(scene,{...residencyOptions,cache,prefix:this.prefix,onEvict:key=>this.clearOptionalDisplays(key)});this.textures=this.residency.textures;
-  this.actions=new ActionPlayback();this.actionEffects=new Map();this.pendingImpactViews=new Map();this.bladeAfterglows=new Map();
+  this.actions=new ActionPlayback();this.actionEffects=new Map();this.pendingImpactViews=new Map();this.bladeAfterglows=new Map();this.stagedImpacts=new Map();this.stagedImpactSprites=new Map();this.stagedEventKeys=new Map();
  }
  get textureBytes(){return this.residency.bytes;}
  async loadKeys(keys){return Promise.all([...new Set(keys)].map(key=>this.residency.load(key)));}
  clearOptionalDisplays(key){for(const [map,sources] of [[this.displays,this.displayTextureKeys],[this.overlaySprites,this.overlayTextureKeys]])for(const [id,source] of sources)if(source===key){map.get(id)?.destroy();map.delete(id);sources.delete(id);this.displayKinds.delete(id);}}
- demand(keys){for(const key of new Set(keys.filter(Boolean))){if(this.closed||this.textures.has(key)||this.optionalLoads.has(key)||this.optionalFailures.has(key)||this.residency.record(key).type!=='image')continue;const task=this.loadKeys([key]).catch(()=>{this.optionalFailures.add(key);}).finally(()=>this.optionalLoads.delete(key));this.optionalLoads.set(key,task);}}
+ demand(keys){for(const key of new Set(keys.filter(Boolean))){if(this.closed||this.textures.has(key)||this.optionalLoads.has(key)||this.optionalFailures.has(key)||this.residency.record(key).type!=='image')continue;const task=this.residency.load(key,{required:false}).catch(()=>{this.optionalFailures.add(key);}).finally(()=>this.optionalLoads.delete(key));this.optionalLoads.set(key,task);}}
  whenIdle(){return Promise.all([...this.optionalLoads.values()]);}
  async prepare(definitions,stage={},abilities={},onCriticalReady=null){
   this.ready=false;
@@ -30,7 +30,7 @@ export class AssetPresenter{
   const portraits=definitions.map(d=>d.assets?.portraitSquare??resolveCharacterAsset(d,'portraitSquare').key);
   const idles=definitions.map(d=>d.animationDescriptors?.battleIdle?.source??d.assets?.battleIdle??characterAnimation(d,'battleIdle').source);
   const critical=[...new Set([...portraits,...idles])];
-  const actionKeys=definitions.flatMap(d=>Object.keys(d.actionDescriptors??{}).flatMap(category=>{const a=characterAction(d,category);return [a.animation.source,a.blade.assetKey,a.contact.assetKey];}));
+  const actionKeys=definitions.flatMap(d=>Object.keys(d.actionDescriptors??{}).flatMap(category=>{const a=characterAction(d,category);return a.kind==='staged'?[a.animation.source,...a.stages.flatMap(s=>[s.blade.assetKey,s.contact.assetKey])]:[a.animation.source,a.blade.assetKey,a.contact.assetKey];}));
   const required=[...new Set([...critical,...definitions.flatMap(d=>['battleMove','battleKo'].map(state=>d.animationDescriptors?.[state]?.source??d.assets?.[state]).filter(Boolean)),...actionKeys])];
   this.residency.setPins('encounter',required);
   await this.loadKeys(critical);if(this.closed)return;
@@ -45,6 +45,7 @@ export class AssetPresenter{
   if(event.phase){
    const action=characterAction(character,event.category);
    if(action){
+    if(action.kind==='staged'){this.castStaged(event,action);return;}
     const old=this.actions.active.get(event.actorId),beforeResolvedAt=old?.resolvedAt;
     this.actions.handle(event,action);
     const current=this.actions.active.get(event.actorId);
@@ -75,6 +76,56 @@ export class AssetPresenter{
   if(character?.animationDescriptors?.battleCast)this.setState(event.actorId,characterAnimation(character,'battleCast'),now,'battleCast');
   this.syncEffectPins();
  }
+ castStaged(event,descriptor){
+  const before=this.actions.active.get(event.actorId);
+  this.actions.handle(event,descriptor);
+  const current=this.actions.active.get(event.actorId);
+  if(event.phase==='start'&&current?.actionId===event.actionId&&before?.actionId!==event.actionId){
+   // A new action releases its predecessor's source/body, never confirmed contacts.
+   const retained=this.pendingImpactViews.get(event.actorId);
+   if(retained?.sample.descriptor.contact.retainOnNextCast&&retained.sample.contactTarget){
+    const sample=retained.sample,key=event.actorId+'.'+sample.actionId+'.legacy';
+    while(this.stagedImpacts.size>=192)this.removeStagedImpact(this.stagedImpacts.keys().next().value);
+    this.stagedImpacts.set(key,{actionId:sample.actionId,ownerId:event.actorId,targetId:null,hitIndex:0,descriptor:sample.descriptor,eventAt:retained.resolvedAt,target:{...sample.contactTarget},flipX:sample.flipX,paintedAt:retained.paintedAt,opacity:sample.contactOpacity});
+   }
+   this.pendingImpactViews.delete(event.actorId);this.clearBladeAfterglow(event.actorId);
+   this.clearActionEffects(event.actorId);this.states.delete(event.actorId);
+  }
+  if(event.phase==='segment'&&current?.actionId===event.actionId&&current.stageIndex===event.hitIndex){
+   const old=this.facings.get(event.actorId);if(old&&Math.abs(event.direction?.x??0)>1e-9)old.flipX=event.direction.x<0;
+   this.actionFacings.set(event.actorId,{flipX:current.flipX,until:current.startedAt+descriptor.durationMs/1000});
+  }
+  if(event.phase==='resolve'&&current?.actionId===event.actionId&&event.hit===true&&Number.isInteger(event.hitIndex)&&descriptor.stages[event.hitIndex]&&Number.isFinite(event.eventAt)&&event.eventAt>=current.startedAt){
+   const id=event.actionId+'.'+event.hitIndex,key=event.actorId+'.'+id;
+   if(this.stagedEventKeys.has(key))return;
+   this.stagedEventKeys.set(key,event.eventAt);while(this.stagedEventKeys.size>512)this.stagedEventKeys.delete(this.stagedEventKeys.keys().next().value);
+   while(this.stagedImpacts.size>=192)this.removeStagedImpact(this.stagedImpacts.keys().next().value);
+   const target=event.target??event.attackTarget;
+   if(target)this.stagedImpacts.set(key,{actionId:event.actionId,ownerId:event.actorId,targetId:event.targetId??null,hitIndex:event.hitIndex,descriptor,eventAt:event.eventAt,target:{x:target.x,y:target.y},flipX:Math.abs(event.direction?.x??0)>1e-9?event.direction.x<0:current.flipX,paintedAt:null});
+  }
+  if((event.phase==='end'||event.phase==='cancel')&&before?.actionId===event.actionId){
+   this.clearActionEffects(event.actorId);this.states.delete(event.actorId);
+   if(event.phase==='cancel'){this.clearStagedImpacts(event.actorId);this.actionFacings.delete(event.actorId);}
+  }
+ }
+ removeStagedImpact(key){this.stagedImpactSprites.get(key)?.destroy();this.stagedImpactSprites.delete(key);this.stagedImpacts.delete(key);}
+ clearStagedImpacts(ownerId){for(const [key,r] of this.stagedImpacts)if(r.ownerId===ownerId)this.removeStagedImpact(key);}
+ renderStagedImpacts(alive,positions,now){
+  for(const [key,r] of this.stagedImpacts){
+   const stage=r.descriptor.kind==='staged'?r.descriptor.stages[r.hitIndex]:{contact:r.descriptor.contact,contactHoldMs:r.descriptor.frameDurationsMs[2]},hold=stage.contactHoldMs/1000,age=now-r.eventAt;
+   if(!alive.has(r.ownerId)||r.targetId&&!alive.has(r.targetId)||r.paintedAt!==null&&r.paintedAt!==now&&age+1e-9>=hold){this.removeStagedImpact(key);continue;}
+   if(age<0)continue;
+   const spec=stage.contact,d=r.descriptor,frame=d.animation.frames[0],width=72*d.animation.scale*frame.width/Math.max(frame.width,frame.height),height=72*d.animation.scale*frame.height/Math.max(frame.width,frame.height),sx=width/d.coordinateSize[0],sy=height/d.coordinateSize[1];
+   let image=this.stagedImpactSprites.get(key);
+   if(!image){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required staged contact unavailable: '+spec.assetKey);image=this.scene.add.image(0,0,texture.key);this.stagedImpactSprites.set(key,image);}
+   const anchor=r.targetId?positions.get(r.targetId)??this.project(r.target):this.project(r.target),x=spec.offset[0]+spec.size[0]/2,y=spec.offset[1]+spec.size[1]/2;
+   // Event time controls normal expiry. A late first paint retains one confirmed cue;
+   // the next distinct paint expires it, so stalls do not replay HP or extend lifetime.
+   if(r.paintedAt!==now)r.opacity=r.paintedAt===null&&age>=hold?1:this.reducedMotion&&d.kind==='staged'?1:Math.max(0,1-age/hold);
+   image.actionId=r.actionId;image.hitIndex=r.hitIndex;image.eventAt=r.eventAt;
+   image.setOrigin(.5,.5).setDisplaySize(spec.size[0]*sx,spec.size[1]*sy).setPosition(anchor.x+(r.flipX?-x:x)*sx,anchor.y+y*sy).setFlipX(r.flipX).setDepth(spec.layer).setAlpha(r.opacity).setVisible(true);r.paintedAt=now;
+  }
+ }
  hit(event,character,now){if(!this.closed){this.setState(event.targetId,characterAnimation(character,'battleHit'),now,'battleHit');this.syncEffectPins();}}
  syncEffectPins(){const keys=[...this.playback.active.values()].flatMap(r=>[r.descriptor.assetKey,r.descriptor.animation?.source]);for(const state of this.states.values())if(['battleHit','battleCast'].includes(state.state))keys.push(state.descriptor.source);this.residency.setPins('effects',keys.filter(Boolean));this.demand(keys);}
  async inspect(ownerId,character,slot,now){
@@ -83,7 +134,7 @@ export class AssetPresenter{
   else {const descriptor=slot==='battleIdle'?(character?.animationDescriptors?.battleIdle?characterAnimation(character,'battleIdle'):grayboxAnimation):animationDescriptor({source:resolveCharacterAsset(character,slot).key,duration:1});this.residency.setPins('inspection',[descriptor.source]);await this.loadKeys([descriptor.source]);if(!this.closed)this.setState(ownerId,descriptor,now,'inspection');}
  }
  clearActionEffects(ownerId){const effects=this.actionEffects.get(ownerId);if(effects)for(const image of effects.values())image.destroy();this.actionEffects.delete(ownerId);}
- clearAction(ownerId,{preserveImpact=false}={}){this.actions.remove(ownerId);if(!preserveImpact)this.pendingImpactViews.delete(ownerId);this.clearActionEffects(ownerId);}
+ clearAction(ownerId,{preserveImpact=false}={}){this.actions.remove(ownerId);this.clearStagedImpacts(ownerId);if(!preserveImpact)this.pendingImpactViews.delete(ownerId);this.clearActionEffects(ownerId);}
  clearBladeAfterglow(ownerId){this.bladeAfterglows.get(ownerId)?.image?.destroy();this.bladeAfterglows.delete(ownerId);}
  renderBladeAfterglows(alive,positions,now){
   for(const [id,record] of this.bladeAfterglows){
@@ -104,10 +155,11 @@ export class AssetPresenter{
   let effects=this.actionEffects.get(ownerId);
   if(effects&&[...effects.values()].some(image=>image.actionId!==sample.actionId)){this.clearActionEffects(ownerId);effects=null;}
   if(!effects){effects=new Map();this.actionEffects.set(ownerId,effects);}
-  const d=sample.descriptor,[cw,ch]=d.coordinateSize,sx=displaySize.width/cw,sy=displaySize.height/ch;
+  const descriptor=sample.descriptor,d=descriptor.kind==='staged'?{...descriptor,...descriptor.stages[Math.max(0,sample.stageIndex)]}:descriptor,[cw,ch]=d.coordinateSize,sx=displaySize.width/cw,sy=displaySize.height/ch;
   for(const kind of ['blade','contact']){const spec=d[kind],opacity=sample[kind+'Opacity'];let image=effects.get(kind);
    if(opacity>0&&!image){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required action texture unavailable: '+spec.assetKey);image=this.scene.add.image(0,0,texture.key);effects.set(kind,image);}
-   if(!image)continue;const targetAttached=spec.attach==='target'&&sample.contactTarget;
+   if(!image)continue;if(opacity>0){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required action texture unavailable: '+spec.assetKey);if(image.texture!==texture.key)image.setTexture(texture.key);}
+   const targetAttached=spec.attach==='target'&&sample.contactTarget;
    const anchor=targetAttached?this.project(sample.contactTarget):position;
    const x=spec.offset[0]+spec.size[0]/2-(targetAttached?0:d.animation.origin[0]*cw),y=spec.offset[1]+spec.size[1]/2-(targetAttached?0:d.animation.origin[1]*ch);
    image.actionId=sample.actionId;image.setOrigin(.5,.5).setDisplaySize(spec.size[0]*sx,spec.size[1]*sy).setFlipX(sample.flipX).setPosition(anchor.x+(sample.flipX?-x:x)*sx,anchor.y+y*sy).setDepth(spec.layer).setAlpha(opacity).setVisible(opacity>0);
@@ -191,6 +243,7 @@ export class AssetPresenter{
    else this.actorSprites.get(id)?.setVisible(false); // Arena's procedural marker remains visible.
   }
   this.renderBladeAfterglows(alive,positions,now);
+  this.renderStagedImpacts(alive,positions,now);
   const records=this.playback.update(now,alive),ids=new Set(records.map(r=>r.id));
   for(const [id,display] of this.displays)if(!ids.has(id)){display.destroy();this.displays.delete(id);this.displayKinds.delete(id);this.displayTextureKeys.delete(id);}
   this.syncEffectPins();
@@ -212,5 +265,5 @@ export class AssetPresenter{
   }
   this.residency.reclaim();
  }
- destroy(){if(this.closed)return;this.closed=true;this.ready=false;this.stageDisplay?.destroy();for(const id of this.actionEffects.keys())this.clearAction(id);this.actions.clear();this.pendingImpactViews.clear();for(const id of this.bladeAfterglows.keys())this.clearBladeAfterglow(id);for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}this.residency.destroy();this.optionalLoads.clear();this.optionalFailures.clear();this.displayKinds.clear();this.displayTextureKeys.clear();this.actorTextureKeys.clear();this.overlayTextureKeys.clear();this.states.clear();this.facings.clear();this.actionFacings.clear();this.playback.clear();}
+ destroy(){if(this.closed)return;this.closed=true;this.ready=false;this.stageDisplay?.destroy();for(const id of this.actionEffects.keys())this.clearAction(id);this.actions.clear();this.pendingImpactViews.clear();for(const key of this.stagedImpacts.keys())this.removeStagedImpact(key);this.stagedEventKeys.clear();for(const id of this.bladeAfterglows.keys())this.clearBladeAfterglow(id);for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}this.residency.destroy();this.optionalLoads.clear();this.optionalFailures.clear();this.displayKinds.clear();this.displayTextureKeys.clear();this.actorTextureKeys.clear();this.overlayTextureKeys.clear();this.states.clear();this.facings.clear();this.actionFacings.clear();this.playback.clear();}
 }

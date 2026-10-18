@@ -15,14 +15,14 @@ function paint(f,drain=true){
 const contact=f=>f.p.actionEffects.get('a1')?.get('contact');
 for(const reduced of [false,true])for(const sign of [1,-1])test(`Heavy bridge real hit/F3/target contact/Idle agree reduced=${reduced}, direction=${sign}`,async()=>{
  const f=await fixture(reduced,sign),s=f.session,hp=f.target.hp;s.executeAbility(f.actor,'heavy','player',f.target);paint(f);
- assert.equal(f.p.actorSprites.get('a1').frame,'0.0.128.128');assert.ok(!contact(f)?.visible);
- f.step(.2);paint(f);assert.equal(f.p.actorSprites.get('a1').frame,reduced?'0.0.128.128':'128.0.128.128');assert.equal(f.target.hp,hp);
+ assert.equal(f.p.actorSprites.get('a1').frame,'0.0.128.85');assert.ok(!contact(f)?.visible);
+ f.step(.2);paint(f);assert.equal(f.p.actorSprites.get('a1').frame,reduced?'0.0.128.85':'128.0.128.85');assert.equal(f.target.hp,hp);
  f.step(.079);paint(f);assert.ok(!contact(f)?.visible);assert.equal(f.target.hp,hp);
- f.step(.001);const damage=paint(f);assert.equal(damage.length,1);assert.equal(f.p.actorSprites.get('a1').frame,'256.0.128.128');assert.ok(contact(f).visible);assert.equal(contact(f).actionId,damage[0].actionId);assert.equal(contact(f).flipX,sign<0);
+ f.step(.001);const damage=paint(f);assert.equal(damage.length,1);assert.equal(f.p.actorSprites.get('a1').frame,'256.0.128.85');assert.ok(contact(f).visible);assert.equal(contact(f).actionId,damage[0].actionId);assert.equal(contact(f).flipX,sign<0);
  assert.ok(Math.abs(contact(f).x-f.target.x*40)<1e-9,'impact center is actual target, not source-attached slash');
  assert.equal(f.p.playback.active.size,0,'no duplicate procedural burst');
  const frozen=[f.p.actorSprites.get('a1').frame,contact(f).x,contact(f).alpha];paint(f);assert.deepEqual([f.p.actorSprites.get('a1').frame,contact(f).x,contact(f).alpha],frozen);
- f.step(.14);paint(f);assert.equal(f.p.actorSprites.get('a1').frame,reduced?'0.0.96.128':'384.0.128.128');assert.ok(!contact(f)?.visible);
+ f.step(.14);paint(f);assert.equal(f.p.actorSprites.get('a1').frame,reduced?'0.0.96.128':'384.0.128.85');assert.ok(!contact(f)?.visible);
  f.step(.18);paint(f);assert.ok(f.p.actorSprites.get('a1').texture.endsWith('lushu.battleIdle'));assert.equal(f.p.actions.active.size,0);assert.equal(f.p.actionEffects.size,0);f.p.destroy();
 });
 test('actual Arena bridge routes Heavy HP feedback and F3 through the same resolved event',async()=>{
@@ -31,7 +31,7 @@ test('actual Arena bridge routes Heavy HP feedback and F3 through the same resol
  arena.session=f.session;arena.visualAssets=f.p;arena.damageNumbers={render:es=>numbers.push(...es),renderHeal(){}};
  f.session.executeAbility(f.actor,'heavy','player',f.target);arena.renderCastEvents();paint(f,false);assert.equal(numbers.length,0);
  f.step(.279);arena.renderCastEvents();paint(f,false);assert.equal(numbers.length,0);assert.ok(!contact(f)?.visible);
- f.step(.001);arena.renderCastEvents();paint(f,false);assert.equal(numbers.length,1);assert.equal(contact(f).actionId,numbers[0].actionId);assert.equal(f.p.actorSprites.get('a1').frame,'256.0.128.128');f.p.destroy();
+ f.step(.001);arena.renderCastEvents();paint(f,false);assert.equal(numbers.length,1);assert.equal(contact(f).actionId,numbers[0].actionId);assert.equal(f.p.actorSprites.get('a1').frame,'256.0.128.85');f.p.destroy();
 });
 for(const kind of ['miss','control','sourceKO','clear'])test(`Heavy ${kind} never leaves false contact or stale effects`,async()=>{
  const f=await fixture(),s=f.session;s.executeAbility(f.actor,'heavy','player',f.target);paint(f);
@@ -80,7 +80,7 @@ test('batched resolve+next start retains opted-in real Heavy impact window witho
  p.cast({actorId:'a1',category:'heavy',actionId:'h',phase:'start',startedAt:0,origin:{x:0,y:0},target:{x:2,y:0}},d,0);p.render(frame,0,rosterCatalog);
  p.cast({actorId:'a1',category:'heavy',actionId:'h',phase:'resolve',resolvedAt:.3,hit:true,target:{x:2,y:0}},d,.35);
  p.cast({actorId:'a1',category:'basic',actionId:'b',phase:'start',startedAt:.3,origin:{x:1.35,y:0},target:{x:2,y:0}},d,.35);
- p.render(frame,.35,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleHeavy'));assert.equal(p.actorSprites.get('a1').frame,'256.0.128.128');assert.ok(contact(f)?.visible);
+ p.render(frame,.35,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleHeavy'));assert.equal(p.actorSprites.get('a1').frame,'256.0.128.85');assert.ok(contact(f)?.visible);
  const effect=contact(f);p.render(frame,.35,rosterCatalog);assert.equal(contact(f),effect);assert.equal(effect.alpha,1,'Pause remains fixed');
  assert.equal(p.actions.active.get('a1').actionId,'b','simulation/action token was never postponed');
  p.render(frame,.4,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleHeavy'));assert.ok(contact(f)?.visible);assert.equal(p.actions.active.get('a1').actionId,'b');p.render(frame,.44,rosterCatalog);assert.ok(p.actorSprites.get('a1').texture.endsWith('battleBasic'));assert.ok(!contact(f)?.visible);f.p.destroy();

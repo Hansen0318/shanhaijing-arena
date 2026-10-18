@@ -5,14 +5,23 @@ import {formalAIProfiles} from './aiProfiles.js';
 import {formalTierScalingProfiles} from './tierScalingProfiles.js';
 import { createCharacterDefinition } from '../combat/character.js';
 // Approved presentation only; all gameplay fields remain in the shared catalog.
+// Lossless empty-row packing preserves pixel density, authored pivots and effect coordinates.
+function packedAction(input,top,height){
+ const a=input.animation,oldHeight=a.frames[0].height,oldCh=input.coordinateSize[1],shift=top*oldCh/oldHeight;
+ return actionDescriptor({...input,animation:{...a,frames:a.frames.map(f=>({...f,height})),origin:[a.origin[0],(a.origin[1]*oldHeight-top)/height]},coordinateSize:[input.coordinateSize[0],oldCh*height/oldHeight],...Object.fromEntries(['blade','contact'].map(kind=>[kind,{...input[kind],offset:[input[kind].offset[0],input[kind].offset[1]-(input[kind].attach==='target'?0:shift)]}]))});
+}
+function packedAnimation(input,top,height){
+ const a=input,oldHeight=a.frames[0].height;
+ return animationDescriptor({...a,frames:a.frames.map(f=>({...f,height})),origin:[a.origin[0],(a.origin[1]*oldHeight-top)/height],scale:a.scale*Math.max(a.frames[0].width,height)/Math.max(a.frames[0].width,oldHeight)});
+}
 const presentation={
  P1:{
-  actionDescriptors:Object.freeze({basic:actionDescriptor({
+  actionDescriptors:Object.freeze({basic:packedAction({
    animation:{source:'lushu.battleBasic',frames:[0,128,256,384].map(x=>({x,y:0,width:128,height:128})),duration:.4,loop:false,staticFrame:2,origin:[.5,.8369846715109296],scale:2.4731182795698925},
    frameDurationsMs:[120,60,100,120],impactFrame:2,coordinateSize:[384,384],
    blade:{assetKey:'lushu.basicBlade',offset:[176,65],size:[192,160],layer:4},
    contact:{assetKey:'lushu.basicContact',offset:[262,91],size:[169,113],layer:6},
-  }),heavy:actionDescriptor({"animation":{"source":"lushu.battleHeavy","frames":[{"x":0,"y":0,"width":128,"height":128},{"x":128,"y":0,"width":128,"height":128},{"x":256,"y":0,"width":128,"height":128},{"x":384,"y":0,"width":128,"height":128}],"duration":0.6,"loop":false,"staticFrame":2,"origin":[0.5,0.8760471715109296],"scale":2.4731182795698925},"frameDurationsMs":[200,80,140,180],"coordinateSize":[256,256],"blade":{"assetKey":"lushu.heavyWind","offset":[42.5,-22.5],"size":[345,345],"layer":6,"holdAfterResolveMs":260},"contact":{"assetKey":"lushu.heavyImpact","offset":[-183.75,-197.5],"size":[367.5,245],"layer":7,"attach":"target","retainOnNextCast":true},"impactFrame":2}),special:actionDescriptor({"animation":{"source":"lushu.battleSpecial","frames":[{"x":0,"y":0,"width":80,"height":80},{"x":80,"y":0,"width":80,"height":80},{"x":160,"y":0,"width":80,"height":80},{"x":240,"y":0,"width":80,"height":80}],"duration":0.76,"loop":false,"staticFrame":2,"origin":[0.375,0.8133930272432843],"scale":2.9},"frameDurationsMs":[200,120,200,240],"impactFrame":2,"coordinateSize":[80,80],"blade":{"assetKey":"lushu.specialWind","offset":[-16.367816091954026,-28.568404563832274],"size":[128.73563218390805,107.27969348659005],"layer":6,"holdAfterResolveMs":280},"contact":{"assetKey":"lushu.specialImpact","offset":[-67.04980842911878,-66.85823754789273],"size":[134.09961685823757,93.86973180076629],"layer":7,"attach":"target","retainOnNextCast":true}}) }),
+  },10,101),heavy:packedAction({"animation":{"source":"lushu.battleHeavy","frames":[{"x":0,"y":0,"width":128,"height":128},{"x":128,"y":0,"width":128,"height":128},{"x":256,"y":0,"width":128,"height":128},{"x":384,"y":0,"width":128,"height":128}],"duration":0.6,"loop":false,"staticFrame":2,"origin":[0.5,0.8760471715109296],"scale":2.4731182795698925},"frameDurationsMs":[200,80,140,180],"coordinateSize":[256,256],"blade":{"assetKey":"lushu.heavyWind","offset":[42.5,-22.5],"size":[345,345],"layer":6,"holdAfterResolveMs":260},"contact":{"assetKey":"lushu.heavyImpact","offset":[-183.75,-197.5],"size":[367.5,245],"layer":7,"attach":"target","retainOnNextCast":true},"impactFrame":2},31,85),special:packedAction({"animation":{"source":"lushu.battleSpecial","frames":[{"x":0,"y":0,"width":80,"height":80},{"x":80,"y":0,"width":80,"height":80},{"x":160,"y":0,"width":80,"height":80},{"x":240,"y":0,"width":80,"height":80}],"duration":0.76,"loop":false,"staticFrame":2,"origin":[0.375,0.8133930272432843],"scale":2.9},"frameDurationsMs":[200,120,200,240],"impactFrame":2,"coordinateSize":[80,80],"blade":{"assetKey":"lushu.specialWind","offset":[-16.367816091954026,-28.568404563832274],"size":[128.73563218390805,107.27969348659005],"layer":6,"holdAfterResolveMs":280},"contact":{"assetKey":"lushu.specialImpact","offset":[-67.04980842911878,-66.85823754789273],"size":[134.09961685823757,93.86973180076629],"layer":7,"attach":"target","retainOnNextCast":true}},10,59),awakening:actionDescriptor({"kind":"staged","animation":{"source":"lushu.battleAwakening","frames":[{"x":0,"y":0,"width":128,"height":128},{"x":128,"y":0,"width":128,"height":128},{"x":256,"y":0,"width":128,"height":128},{"x":384,"y":0,"width":128,"height":128},{"x":512,"y":0,"width":128,"height":128}],"duration":0.61,"loop":false,"staticFrame":3,"origin":[0.5,0.93125],"scale":2.327272727272727},"coordinateSize":[320,320],"durationMs":610,"recoveryStartMs":470,"phaseFrames":[0,1,2,3,4],"frameDurationsMs":[80,55,145,190,140],"stages":[{"blade":{"assetKey":"lushu.awakeningASource","offset":[-155.25559105431307,61.26411075612356],"size":[520,329],"layer":6,"opacity":0.85},"contact":{"assetKey":"lushu.awakeningAImpact","offset":[-188.00312012480498,-235.94383775351014],"size":[308,248],"layer":7,"attach":"target"},"contactHoldMs":80,"startMs":80,"endMs":135},{"blade":{"assetKey":"lushu.awakeningBSource","offset":[-104.62043795620437,85.0],"size":[349,264],"layer":6,"opacity":0.85},"contact":{"assetKey":"lushu.awakeningBImpact","offset":[-208.4016393442623,-284.8360655737705],"size":[385,352],"layer":7,"attach":"target"},"contactHoldMs":90,"startMs":135,"endMs":280},{"blade":{"assetKey":"lushu.awakeningCSource","offset":[-363.97388059701495,-229.48134328358213],"size":[847,879],"layer":6,"opacity":0.85},"contact":{"assetKey":"lushu.awakeningCImpact","offset":[-348.125,-436.25],"size":[678,654],"layer":7,"attach":"target"},"contactHoldMs":130,"startMs":280,"endMs":470}]}) }),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'lushu.portrait',collectionArt:'lushu.identity',battleIdle:'lushu.battleIdle',battleMove:'lushu.battleMove',battleKo:'lushu.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'lushu.battleIdle',frames:[{x:0,y:0,width:96,height:128}],
@@ -43,10 +52,10 @@ const presentation={
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'chiru.battleIdle',frames:[{x:0,y:0,width:160,height:160}],
    fps:2.5,loop:true,origin:[.5,1],scale:2,staticFrame:0,
-  }),battleMove:animationDescriptor({
+  }),battleMove:packedAnimation({
    source:'chiru.battleMove',frames:[0,160,320,480].map(x=>({x,y:0,width:160,height:160})),
    fps:10,loop:true,origin:[.5,1],scale:2.7,staticFrame:0,
-  }),battleKo:animationDescriptor({
+  },42,118),battleKo:animationDescriptor({
    source:'chiru.battleKo',frames:[{x:0,y:0,width:1254,height:1254}],
    duration:1,loop:false,origin:[.5,980/1254],scale:2,staticFrame:0,
   })}),
@@ -59,10 +68,10 @@ const presentation={
   }),battleMove:animationDescriptor({
    source:'jiuweihu.battleMove',frames:[0,160,320,480].map(x=>({x,y:0,width:160,height:160})),
    fps:10,loop:true,origin:[.5,151/160],scale:2,staticFrame:0,
-  }),battleKo:animationDescriptor({
+  }),battleKo:packedAnimation({
    source:'jiuweihu.battleKo',frames:[{x:0,y:0,width:512,height:512}],
    duration:1,loop:false,origin:[.5,397/512],scale:2,staticFrame:0,
-  })}),
+  },47,438)}),
  },
  P5:{
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'xingxing.portrait',collectionArt:'xingxing.identity',battleIdle:'xingxing.battleIdle',battleMove:'xingxing.battleMove',battleKo:'xingxing.battleKo'}),

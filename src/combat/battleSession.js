@@ -1,3 +1,4 @@
+import {beginLeg,legPosition,relativeSweep} from './stagedAction.js';
 import {PersistentAreas} from './persistentAreas.js';
 import {TierEffectRuntime} from './tierEffectRuntime.js';
 import {resolveTierProjection,resolveTierAbilities} from './tierEffects.js';
@@ -22,6 +23,7 @@ import { canCharacterAct } from './character.js';
 import { resolveDamage } from './combatResolver.js';
 import { createSeededRandom, DEFAULT_BATTLE_SEED } from './seededRandom.js';
 
+const motionPlans=new WeakMap();
 const ACTIVE_CATEGORIES = ['basic', 'heavy', 'special', 'awakening'];
 
 export const DEFAULT_ARENA_BOUNDS = Object.freeze({
@@ -47,6 +49,7 @@ function clamp(value, min, max) {
 }
 
 function moveToward(actor, target, speed, dt, bounds, stopDistance = AI_ENGAGE_DISTANCE) {
+  actor=motionPlans.get(actor)??actor;
   const dx = target.x - actor.x;
   const dy = target.y - actor.y;
   const distance = Math.hypot(dx, dy);
@@ -58,6 +61,7 @@ function moveToward(actor, target, speed, dt, bounds, stopDistance = AI_ENGAGE_D
 }
 
 function moveAway(actor, target, speed, dt, bounds, desiredDistance) {
+  actor=motionPlans.get(actor)??actor;
   const dx = actor.x - target.x;
   const dy = actor.y - target.y;
   const distance = Math.hypot(dx, dy);
@@ -73,6 +77,7 @@ function moveAway(actor, target, speed, dt, bounds, desiredDistance) {
 }
 
 function moveByVector(actor, vector, speed, dt, bounds) {
+  actor=motionPlans.get(actor)??actor;
   const magnitude = Math.hypot(vector.x, vector.y);
   if (magnitude <= 0) return;
   const scale = magnitude > 1 ? 1 / magnitude : 1;
@@ -152,7 +157,7 @@ export class BattleSession {
 
   actionEvent(record,phase,hit=false,reason=null){
     const actor=this.actorById(record.actorId),target=this.actorById(record.targetId);
-    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...record.origin},attackTarget:{...record.target}});
+    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,eventAt:this.elapsedSeconds,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...record.origin},attackTarget:{...record.target}});
   }
 
   cancelBasicAction(actorId,reason){
@@ -165,12 +170,14 @@ export class BattleSession {
     // Basic spends cadence; active skills spend cooldown at start. Cancelling
     // either kind must never refund the resource already spent.
     if(record.category==='basic')cancelAbility(this.actorById(actorId).abilityState.basic);
-    this.actionEvent(record,'cancel',false,reason);return true;
+    if(record.staged)this.stagedEvent(record,'cancel',{reason});else this.actionEvent(record,'cancel',false,reason);return true;
   }
 
-  resolveActions(){
-    for(const [id,r] of this.pendingActions){
+  resolveActions(onlyId=null){
+    for(const [id,r] of [...this.pendingActions].sort(([a],[b])=>a.localeCompare(b))){
+      if(onlyId!==null&&id!==onlyId)continue;
       const actor=this.actorById(id),target=this.actorById(r.targetId);
+      if(r.staged){this.resolveStagedBoundary(r);continue;}
       const reason=!actor||!canCharacterAct(actor)?'source_ko':r.targetId!==null&&(!target||!canCharacterAct(target))?'target_ko':this.statuses.controlled(id,this.elapsedSeconds)?'control':null;
       if(reason){this.cancelAction(id,reason);continue;}
       if(r.dueAt>this.elapsedSeconds+1e-9)continue;
@@ -201,9 +208,10 @@ export class BattleSession {
       powerMultiplier:this.tierProjections.get(actor.instanceId).scales[hitContext.residual?'persistentMagnitude':'damage'],
       damageMultiplier:this.statuses.damageMultiplier(target.instanceId,this.elapsedSeconds) });
     if (Number.isFinite(amount) && amount > 0) this.damageEvents.push({
-      actorId:actor.instanceId, targetId:target.instanceId, category, source, amount, critical,
+      actorId:actor.instanceId, targetId:target.instanceId, category, source, amount, critical,eventAt:this.elapsedSeconds,
       position:{x:target.x,y:target.y},
       ...(hitContext.actionId?{actionId:hitContext.actionId}:{}),
+      ...(hitContext.eventAt!=null?{eventAt:hitContext.eventAt,hitIndex:hitContext.hitIndex}:{}),
     });
     if(amount>0&&!hitContext.residual)this.effects.trigger('hit',actor,target,category,{definition,source});
     return amount;
@@ -256,6 +264,7 @@ export class BattleSession {
       return false;
     }
 
+    if(this.pendingActions.get(instanceId)?.staged)this.cancelAction(instanceId,'movement');
     const scale = magnitude > 1 ? 1 / magnitude : 1;
     const normalized = { x: vector.x * scale, y: vector.y * scale };
     this.playerMovement.set(instanceId, normalized);
@@ -320,6 +329,12 @@ export class BattleSession {
     const canHit=target&&canCharacterAct(target)&&isTargetInRange(actor,target,definition.range);
     if(canHit&&category==='basic')this.cadence.set(actor.instanceId,Math.max(TIER_SAFETY.basicInterval,1/actorDefinition.stats.attackSpeed));
     if(canHit)this.effects.trigger('cast',actor,target,category);
+    if(definition.stagedAction){
+      const facingX=aim.facingX===-1?-1:aim.facingX===1?1:(Math.sign(this.playerMovement.get(actor.instanceId)?.x)||(actor.teamId===this.allies[0].teamId?1:-1));
+      const r={staged:true,actionId:`${category}.${++this.nextActionId}`,category,actorId:actor.instanceId,targetId:canHit?target.instanceId:null,source,definition,startedAt:this.elapsedSeconds,origin:{x:actor.x,y:actor.y},target:canHit?{x:target.x,y:target.y}:{x:actor.x+facingX,y:actor.y},direction:{x:facingX,y:0},hitIndex:-1,settled:definition.stagedAction.segments.map(()=>false)};
+      if(canHit){const length=Math.hypot(target.x-actor.x,target.y-actor.y);if(length>1e-9)r.direction={x:(target.x-actor.x)/length,y:(target.y-actor.y)/length};}
+      finishAbility({caster:actor,slot,definition});this.pendingActions.set(actor.instanceId,r);if(canHit)this.targetIds.set(actor.instanceId,target.instanceId);this.stagedEvent(r,'start');return true;
+    }
     if(definition.windupMs>0&&(canHit||source==='player'&&category!=='basic')){
       // A whiff owns an aim point, never a damage target. No acquisition at resolve.
       const facingX=aim.facingX===-1?-1:aim.facingX===1?1:(Math.sign(this.playerMovement.get(actor.instanceId)?.x)|| (actor.teamId===this.allies[0].teamId?1:-1));
@@ -343,6 +358,7 @@ export class BattleSession {
   applyAbilityEffects(actor,target,definition,category,source,context,geometry=null,hitContext={}) {
     const actorDefinition=this.definitionForActor(actor);let applied=false;
     if(!geometry){const before={x:actor.x,y:actor.y};applyAbilityMovement(actor,target,definition.effect.movement,this.arenaBounds);if(definition.effect.movement?.kind==='reposition'){const from=Math.atan2(before.y-target.y,before.x-target.x),to=Math.atan2(actor.y-target.y,actor.x-target.x);this.mobilityEvidence.set(actor.instanceId,{targetId:target.instanceId,at:this.elapsedSeconds,distance:Math.hypot(actor.x-before.x,actor.y-before.y),angle:Math.abs(Math.atan2(Math.sin(to-from),Math.cos(to-from)))});}}
+    const planned=motionPlans.get(actor);if(planned&&definition.effect.movement){planned.x=actor.x;planned.y=actor.y;}
     const victims=geometry?(definition.effect.areaRadius!=null?context.enemies.filter(v=>canCharacterAct(v)&&containsDanger(v,geometry)):[target].filter(v=>v&&canCharacterAct(v)&&containsDanger(v,geometry))):resolveEffectTargets(actor,target,definition,context);
     for(const victim of victims) {
       if(definition.effect.kind==='heal'){
@@ -361,13 +377,122 @@ export class BattleSession {
     return applied;
   }
 
-  step(deltaSeconds) {
+  hasStagedAction(){return [...this.pendingActions.values()].some(r=>r.staged);}
+
+  simulationStepSeconds(){return this.hasStagedAction()?.01:.05;}
+
+  stagedIntervalSeconds(limit){
+    if(!this.hasStagedAction())return limit;
+    let dt=Math.min(limit,.01);
+    const deadlines=[...this.pendingActions.values()].flatMap(r=>r.staged?[...r.definition.stagedAction.segments.flatMap(l=>[l.startMs,l.centerMs,l.endMs]),r.definition.stagedAction.recoveryMs].map(ms=>r.startedAt+ms/1000):[r.dueAt]);
+    deadlines.push(...[...this.statuses.records.values()].map(v=>v.expiryTime),...this.pendingHits.map(v=>v.due),...[...this.delayedImpacts.values()].map(v=>v.threat.impactAtMs/1000),...this.areas.nextTicks.values(),...[...this.areas.records.values()].map(v=>v.expiryTime));
+    for(const t of deadlines)if(t>this.elapsedSeconds+1e-9)dt=Math.min(dt,t-this.elapsedSeconds);
+    return dt;
+  }
+
+  stagedEvent(r,phase,extra={}){
+    const actor=this.actorById(r.actorId),target=this.actorById(r.targetId);
+    this.recordCast(actor,target,r.category,r.source,r.definition,false,{staged:true,phase,actionId:r.actionId,startedAt:r.startedAt,eventAt:this.elapsedSeconds,hitIndex:r.hitIndex,direction:{...r.direction},attackOrigin:{...r.origin},attackTarget:{...r.target},...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...extra});
+  }
+
+  resolveStagedBoundary(r){
+    const actor=this.actorById(r.actorId),spec=r.definition.stagedAction;
+    if(!canCharacterAct(actor)||this.statuses.controlled(r.actorId,this.elapsedSeconds)){this.cancelAction(r.actorId,!canCharacterAct(actor)?'source_ko':'control');return;}
+    const ms=(this.elapsedSeconds-r.startedAt)*1000;
+    if(r.hitIndex>=0&&ms+1e-6>=spec.segments[r.hitIndex].endMs&&!r.settled[r.hitIndex]){r.settled[r.hitIndex]=true;this.stagedEvent(r,'resolve',{hit:false,collision:false});}
+    const next=r.hitIndex+1;
+    if(next<spec.segments.length&&ms+1e-6>=spec.segments[next].startMs){beginLeg(r,next,actor,this.actorById(r.targetId),this.arenaBounds);this.stagedEvent(r,'segment');}
+    if(ms+1e-6>=spec.recoveryMs){this.pendingActions.delete(r.actorId);this.stagedEvent(r,'end');}
+  }
+
+  step(deltaSeconds){
+    positiveFinite(deltaSeconds,'deltaSeconds');const held=this.actors.filter(a=>a.controlHandoff.controlSource(this.elapsedSeconds*1000)==='player').map(a=>[a,a.controlHandoff.lastPlayerInputAt]);const until=Math.min(this.maxSeconds,this.elapsedSeconds+deltaSeconds);
+    while(this.elapsedSeconds<until-1e-10&&this.result()==='running'){
+      for(const [a] of held)a.controlHandoff.registerPlayerInput(this.elapsedSeconds*1000);
+      this.resolveActions();const dt=this.stagedIntervalSeconds(until-this.elapsedSeconds);
+      this.stepInterval(dt);
+    }
+    for(const [a,last] of held)a.controlHandoff.lastPlayerInputAt=last;
+    if(this.result()!=='running')this.clearTransientCombat({preserveEvents:true});return this.snapshot();
+  }
+
+  applyAreaPulse(area,victim){
+    const actor=this.actorById(area.sourceId);if(!actor||!canCharacterAct(actor))return;
+    if(area.spec.coefficient){const definition={...area.definition,canCrit:false,critChance:0,telegraph:null,effect:{coefficient:area.spec.coefficient}};this.applyResolvedDamage(actor,victim,this.definitionForActor(actor),this.definitionForActor(victim),definition,area.category,area.source,{residual:true});}
+    if(area.spec.status)this.statuses.apply({...area.spec.status,sourceId:actor.instanceId,targetId:victim.instanceId,areaId:area.id,key:area.id},this.elapsedSeconds);
+  }
+
+  advanceStagedMotion(dt){
+    const begin=this.elapsedSeconds,end=begin+dt;
+    const paths=new Map(this.actors.map(a=>[a.instanceId,{from:{x:a.x,y:a.y},to:canCharacterAct(a)&&!this.statuses.controlled(a.instanceId,begin)?motionPlans.get(a)??{x:a.x,y:a.y}:{x:a.x,y:a.y},start:0}]));
+    for(const r of this.pendingActions.values())if(r.staged){const p=paths.get(r.actorId);p.to=r.hitIndex<0?p.from:legPosition(r,end);}
+    for(const a of this.actors)motionPlans.delete(a);
+    const point=(id,u)=>{const p=paths.get(id),f=p.start>=1?0:Math.max(0,(u-p.start)/(1-p.start));return {x:p.from.x+(p.to.x-p.from.x)*f,y:p.from.y+(p.to.y-p.from.y)*f};};
+    const place=u=>{for(const a of this.actors)Object.assign(a,point(a.instanceId,u));};
+    let cursor=0;
+    while(cursor<=1){
+      const contacts=[];
+      for(const r of this.pendingActions.values()){
+        if(!r.staged){if(r.dueAt<=end+1e-9)contacts.push({r,u:Math.max(cursor,(r.dueAt-begin)/dt),legacy:true});continue;}
+        if(r.hitIndex<0||r.settled[r.hitIndex])continue;
+        const leg=r.definition.stagedAction.segments[r.hitIndex];if(begin>=r.startedAt+leg.endMs/1000-1e-9)continue;
+        const target=this.actorById(r.targetId);if(!target||!canCharacterAct(target))continue;
+        const spec=r.definition.stagedAction,u=relativeSweep(point(r.actorId,cursor),paths.get(r.actorId).to,point(r.targetId,cursor),paths.get(r.targetId).to,spec.sourceRadius+spec.targetRadius);
+        if(u!==null)contacts.push({r,u:cursor+(1-cursor)*u});
+      }
+      // All discrete damage at this interval's boundary joins the swept TOI
+      // queue, so an earlier identity can KO/cancel a later same-time source.
+      for(const hit of this.pendingHits)if(hit.due<=end+1e-9)contacts.push({r:hit,u:Math.max(cursor,(hit.due-begin)/dt),queued:true});
+      for(const [id,hit] of this.delayedImpacts)if(hit.threat.impactAtMs/1000<=end+1e-9)contacts.push({r:hit,u:Math.max(cursor,(hit.threat.impactAtMs/1000-begin)/dt),delayed:id});
+      for(const area of this.areas.records.values()){
+        const due=this.areas.nextTicks.get(area.id);if(due<=end+1e-9&&due<area.expiryTime-1e-9)contacts.push({r:{actorId:area.sourceId,hitIndex:0},u:Math.max(cursor,(due-begin)/dt),area});
+      }
+      contacts.sort((a,b)=>(Math.abs(a.u-b.u)*dt>1e-9?a.u-b.u:0)||a.r.actorId.localeCompare(b.r.actorId)||(a.r.hitIndex??0)-(b.r.hitIndex??0));
+      if(!contacts.length)break;
+      const {r,u,legacy,queued,delayed,area}=contacts[0];cursor=u;place(u);this.elapsedSeconds=begin+u*dt;
+      const actor=this.actorById(r.actorId),target=this.actorById(r.targetId);
+      if(area){
+        this.areas.tick(this.elapsedSeconds,this.actors,(record,victim)=>this.applyAreaPulse(record,victim),area.id);
+      }
+      if(queued)this.pendingHits=this.pendingHits.filter(hit=>hit!==r);
+      if(delayed){this.delayedImpacts.delete(delayed);this.threats.remove(delayed);}
+      if(!area&&(!actor||!canCharacterAct(actor)||this.statuses.controlled(r.actorId,this.elapsedSeconds))){this.cancelAction(r.actorId,'source_interrupted');continue;}
+      if(area){/* pulse was resolved above; common KO/path cleanup follows */}
+      else if(queued){
+        if(target&&canCharacterAct(target)&&isTargetInRange(actor,target,r.definition.range))this.applyResolvedDamage(actor,target,this.definitionForActor(actor),this.definitionForActor(target),r.definition,r.category,r.source,{hitIndex:r.hitIndex,totalHits:r.totalHits,eventAt:this.elapsedSeconds});
+      }else if(delayed){
+        const applied=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),r.threat.geometry);
+        this.recordCast(actor,{...r.threat.geometry.center},r.category,r.source,r.definition,applied,{eventAt:this.elapsedSeconds});
+      }else if(legacy){
+        this.resolveActions(r.actorId);
+        // Repositions happen at a point in time, never along a fictitious swept path.
+        for(const a of this.actors){const prior=point(a.instanceId,u);if(Math.hypot(a.x-prior.x,a.y-prior.y)>1e-9){const p=paths.get(a.instanceId);p.from={x:a.x,y:a.y};p.to={x:a.x,y:a.y};p.start=u;}}
+      }else{
+        r.settled[r.hitIndex]=true;const coefficient=r.definition.stagedAction.segments[r.hitIndex].coefficient;
+        const definition={...r.definition,effect:{...r.definition.effect,coefficient,hits:1}};
+        const amount=this.applyResolvedDamage(actor,target,this.definitionForActor(actor),this.definitionForActor(target),definition,r.category,r.source,{actionId:r.actionId,hitIndex:r.hitIndex,totalHits:r.settled.length,eventAt:this.elapsedSeconds});
+        this.stagedEvent(r,'resolve',{hit:amount>0,collision:true});
+        if(amount>0)this.effects.trigger('post_cast',actor,target,r.category,{definition,source:r.source});
+      }
+      for(const a of this.actors)if(!canCharacterAct(a)||this.statuses.controlled(a.instanceId,this.elapsedSeconds)){
+        const p=paths.get(a.instanceId);p.to={x:a.x,y:a.y};p.from={x:a.x,y:a.y};p.start=u;
+        if(this.pendingActions.get(a.instanceId)?.staged)this.cancelAction(a.instanceId,!canCharacterAct(a)?'source_ko':'control');
+      }
+      if(this.result()!=='running'){this.clearTransientCombat({preserveEvents:true});return;}
+    }
+    place(1);this.elapsedSeconds=begin;
+  }
+
+  stepInterval(deltaSeconds) {
     positiveFinite(deltaSeconds, 'deltaSeconds');
     if (this.result() !== 'running') { this.clearTransientCombat(); return this.snapshot(); }
     this.resolveActions();
     for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.delayedImpacts.delete(id);this.threats.remove(id);}
 
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
+    // Preserve the legacy cooldown-before-intent evaluation. If a real staged
+    // start shortens this interval, unrelated clocks consume only that duration.
+    const clocks=this.actors.map(actor=>({actor,cadence:this.cadence.get(actor.instanceId),slots:ACTIVE_CATEGORIES.map(category=>[actor.abilityState[category],{...actor.abilityState[category]}])}));
     for (const actor of this.actors) {
       for (const category of ACTIVE_CATEGORIES) {
         tickAbilityCooldown(actor.abilityState[category], deltaSeconds);
@@ -419,7 +544,31 @@ export class BattleSession {
       return { actor, intent };
     });
 
+    // A ready slot is not an action: the selected AI intent must really cast.
+    // Start opted-in actions at the intent boundary, before any actor advances.
+    const startedSlots=new Set();
+    for(const {actor,intent} of intents){
+      if(intent.kind!=='ability'||actor.controlHandoff.controlSource(nowMs)==='player'||this.pendingActions.get(actor.instanceId)?.staged)continue;
+      const definition=this.actorAbilityDefinitions.get(actor.instanceId)[intent.definitionId];
+      if(definition?.stagedAction&&this.executeAbility(actor,intent.category,'ai',this.actorById(intent.targetId)))startedSlots.add(actor.abilityState[intent.category]);
+    }
+    const planning=this.hasStagedAction();
+    if(planning){
+      const requested=deltaSeconds;deltaSeconds=this.stagedIntervalSeconds(deltaSeconds);
+      if(deltaSeconds<requested){
+        for(const {actor,cadence,slots} of clocks){
+          for(const [slot,before] of slots)if(!startedSlots.has(slot)){Object.assign(slot,before);tickAbilityCooldown(slot,deltaSeconds);}
+          this.cadence.set(actor.instanceId,Math.max(0,cadence-deltaSeconds));
+        }
+      }
+      // These casts started at the interval boundary, so their new cooldown
+      // advances with the same time as every other actor (including anticipation).
+      for(const slot of startedSlots)tickAbilityCooldown(slot,deltaSeconds);
+      for(const a of this.actors)motionPlans.set(a,{x:a.x,y:a.y});
+    }
+
     for (const { actor, intent } of intents) {
+      if(this.pendingActions.get(actor.instanceId)?.staged)continue;
       if (!canCharacterAct(actor)||this.statuses.controlled(actor.instanceId,this.elapsedSeconds)) continue;
 
       const actorDefinition = this.definitionForActor(actor);
@@ -479,6 +628,7 @@ export class BattleSession {
       this.executeAbility(actor,intent.category,'ai',target);
     }
 
+    if(planning){this.advanceStagedMotion(deltaSeconds);if(this.result()!=='running')return this.snapshot();}
     this.elapsedSeconds = Math.min(this.maxSeconds, this.elapsedSeconds + deltaSeconds);
     this.statuses.expire(this.elapsedSeconds);
     for(const threat of this.threats.takeDue(this.elapsedSeconds*1000)){
@@ -489,11 +639,7 @@ export class BattleSession {
       this.recordCast(actor,{...threat.geometry.center},hit.category,hit.source,hit.definition,applied);
     }
     this.areas.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
-    this.areas.tick(this.elapsedSeconds,this.actors,(area,victim)=>{
-      const actor=this.actorById(area.sourceId);if(!actor||!canCharacterAct(actor))return;
-      if(area.spec.coefficient){const definition={...area.definition,canCrit:false,critChance:0,telegraph:null,effect:{coefficient:area.spec.coefficient}};this.applyResolvedDamage(actor,victim,this.definitionForActor(actor),this.definitionForActor(victim),definition,area.category,area.source,{residual:true});}
-      if(area.spec.status)this.statuses.apply({...area.spec.status,sourceId:actor.instanceId,targetId:victim.instanceId,areaId:area.id,key:area.id},this.elapsedSeconds);
-    });
+    this.areas.tick(this.elapsedSeconds,this.actors,(area,victim)=>this.applyAreaPulse(area,victim));
     const remaining=[];
     for(const hit of this.pendingHits) {
       const actor=this.actorById(hit.actorId),target=this.actorById(hit.targetId);

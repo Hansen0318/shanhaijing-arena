@@ -21,8 +21,8 @@ for(const reduced of [false,true])test(`campaign Heavy impact survives real AI n
  const f=await fixture(reduced),{s,p}=f;s.usePlayerAbility('a1','heavy');f.paint();const token=f.events[0].actionId;
  for(let i=0;i<5;i++){f.step(.05);f.paint();} // t=.25
  f.step(.05);f.step(.05); // real hit t=.30, then AI Awakening before paint at .35
- f.paint();assert.ok(f.events.some(e=>e.actorId==='a1'&&e.category==='awakening'&&!e.phase));
- const contact=()=>p.actionEffects.get('a1')?.get('contact');
+ f.paint();assert.ok(f.events.some(e=>e.actorId==='a1'&&e.category==='awakening'&&e.phase==='start'));
+ const contact=()=>[...p.stagedImpactSprites.values()].find(image=>image.actionId===token)??p.actionEffects.get('a1')?.get('contact');
  assert.ok(contact()?.visible,'confirmed Heavy impact was erased by immediate AI cast');assert.equal(contact().actionId,token);assert.ok(contact().texture.endsWith('lushu.heavyImpact'));
  assert.equal(f.damage.filter(d=>d.actionId===token).length,1,'presentation must not create extra hits');
  const frozen={alpha:contact().alpha,x:contact().x,y:contact().y};f.paint();assert.deepEqual({alpha:contact().alpha,x:contact().x,y:contact().y},frozen);
@@ -30,8 +30,8 @@ for(const reduced of [false,true])test(`campaign Heavy impact survives real AI n
  f.step(.05);f.paint();assert.ok(!contact()?.visible||contact().actionId!==token,'old Heavy impact must expire at its original endpoint');p.destroy();assert.equal(f.scene.budget().bytes,0);
 });
 test('completed retained impact cleans up immediately on KO and destruction',async()=>{
- const f=await fixture(),{s,p}=f;s.usePlayerAbility('a1','heavy');f.paint();for(let i=0;i<7;i++)f.step(.05);f.paint();assert.ok(p.actionEffects.get('a1')?.get('contact')?.visible);
- f.a.damage(f.a.hp);f.paint();assert.equal(p.pendingImpactViews.has('a1'),false);assert.equal(p.actionEffects.has('a1'),false);p.destroy();assert.ok(f.scene.objects.every(o=>o.destroyed));
+ const f=await fixture(),{s,p}=f;s.usePlayerAbility('a1','heavy');f.paint();for(let i=0;i<7;i++)f.step(.05);f.paint();assert.ok([...p.stagedImpactSprites.values()].some(x=>x.visible)||p.actionEffects.get('a1')?.get('contact')?.visible);
+ f.a.damage(f.a.hp);f.paint();assert.equal(p.pendingImpactViews.has('a1'),false);assert.equal(p.actionEffects.has('a1'),false);assert.equal(p.stagedImpacts.size,0);p.destroy();assert.ok(f.scene.objects.every(o=>o.destroyed));
 });
 test('impact-retention policy is opt-in data; Basic descriptor and validation remain protected',()=>{
  const d=rosterCatalog.P1.actionDescriptors.heavy;assert.equal(d.contact.retainOnNextCast,true);assert.equal(rosterCatalog.P1.actionDescriptors.basic.contact.retainOnNextCast,undefined);
