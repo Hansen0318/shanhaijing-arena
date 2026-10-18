@@ -1,5 +1,10 @@
 # P1 Awakening v3 — next Work: measured runtime preflight
 
+## Recovery override — measured preflight complete, stop for contract decision
+
+The preflight requested below has been completed. Read the **top** WORK_PROGRESS/STATE and `docs/verification/M5C_P1_AWAKENING_RUNTIME_PREFLIGHT.md` plus its JSON evidence. Do not repeat this preflight, reopen visual gates or begin implementation/deployment before the player decides the exact executable contract. The report's next-step section supersedes the historical task below. Latest measured source a82d544; fetch latest remote again. Both measurement scripts are reproducible read-only probes of product/art, not implementations. Commit [skip ci], no main merge/P2. Every player-facing successor prompt must be exactly one complete copyable block.
+
+
 GitHub Hansen0318/shanhaijing-arena is the only authority. Active feat/m0-combat-core-20260927, PR1, never merge main. Fetch latest remote HEAD; reviewed artifact commit d8e895ad9d86aaef2e2d15a82e54e13f275d79ca is only a recovery reference. Read latest AGENTS.md, DEVELOPMENT_PLAYBOOK, PROJECT_BOUNDARIES, top WORK_PROGRESS/STATE, DEVELOPMENT_ROADMAP, M5C_ART_ANIMATION_VFX, CHARACTER_ACTION_ART_WORKFLOW, M5C_P1_LUSHU_AWAKENING_ACTION and acceptance receipt before deciding scope. Every successor prompt must be exactly one complete copyable block.
 
 ## Already completed
