@@ -13,3 +13,9 @@ Local host lacks Chromium and attempted download produced invalid zero-size arch
 RELEASE AUTHORIZED / REAL BROWSER + CI + DEPLOYMENT + PUBLIC FINGERPRINT PENDING / PHONE PENDING.
 
 Runtime source/approved art unchanged. Preserve the14 original hashes, prior GIFs/receipts and13 installed derivatives. No P2, new art, gameplay changes, main merge, broad new feature or phone acceptance. Evidence-only closure must use [skip ci].
+
+## Attempt1066 — browser caught direct-destroy cleanup gap
+
+Release candidate aae4d75, Actions39096827103/build117584919092: install/test877/build PASS; real Chromium loaded all required PNGs and passed the right-facing anticipation/A/B/C/recovery/Idle pose/effect/hit checks, but direct Game.destroy left presenter.closed=false and16,552,840 accounted bytes. CI failed and Pages deployment was skipped. Artifact12125335456 retains7 actual screenshots and failure record; normal-right-hitC inspected, confirming authored body/source/contact art is present. This is not a release or phone PASS.
+
+Root cause verified in installed Phaser4.2.1: Game.runDestroy→SceneManager.destroy→Systems.destroy emits `destroy`, without `shutdown`. Arena cleanup only subscribed to shutdown. Shared ownCleanup now listens to both and removes both listeners on first event, clearing session/presenter/telegraphs/numbers/readiness gate exactly once. Actual Arena-create regression reproduced failure on destroy then passes for both event orders. Full879/879 and build PASS locally; no gameplay/art changes. Next tagged release reruns real browser check before deployment. Current local fingerprint:index-D7Qjj1EB.js,battleRuntime-Bt34mgQY.js,index-DcqtNRF0.css.

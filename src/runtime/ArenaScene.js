@@ -63,20 +63,27 @@ export class ArenaScene extends Phaser.Scene {
     this.onSceneReady = data.onSceneReady ?? (() => {});
   }
 
+  ownCleanup(cleanup) {
+    const events=this.events;
+    const release=()=>{events.off('shutdown',release);events.off('destroy',release);cleanup();};
+    // Phaser stop/restart emits shutdown; Game.destroy emits destroy directly.
+    events.once('shutdown',release);events.once('destroy',release);
+  }
+
   create() {
     this.selectedKoFixture = !this.labConfig && new URLSearchParams(window.location.search).get('fixture') === 'ko';
     this.session = this.labConfig ? createLabBattleSession(this.labConfig) : this.stageConfig ? createStageBattleSession(this.stageConfig) : createDemoBattleSession();
-    const battleSession=this.session;this.events.once('shutdown',()=>battleSession.clearTransientCombat());
+    const battleSession=this.session;this.ownCleanup(()=>battleSession.clearTransientCombat());
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
     this.damageNumbers = new DamageNumbers(this,arenaToStage);
     this.visualAssets=new AssetPresenter(this,{project:arenaToStage,reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});
-    const visualAssets=this.visualAssets;this.events.once('shutdown',()=>visualAssets.destroy());
+    const visualAssets=this.visualAssets;this.ownCleanup(()=>visualAssets.destroy());
     const encounterActors=[...this.session.allies,...this.session.enemies];
     const encounterDefinitions=[...new Set(encounterActors.map(a=>this.session.characterDefinitions[a.definitionId]))];
     this.telegraphs = new TelegraphPresenter(this,arenaToStage);
-    this.events.once('shutdown',()=>this.telegraphs.destroy());
-    this.events.once('shutdown',()=>this.damageNumbers.destroy());
+    this.ownCleanup(()=>this.telegraphs.destroy());
+    this.ownCleanup(()=>this.damageNumbers.destroy());
     this.selectedId = this.labConfig?.selectedAllyId ?? 'a2';
     this.fixtureKoApplied = false;
     this.preBattleGate = new PreBattleGate(this.labConfig?.options.skipCountdown ? 0 : undefined);
@@ -345,7 +352,7 @@ export class ArenaScene extends Phaser.Scene {
       if(!presenter.closed&&this.visualAssets===presenter&&this.portraitViews)this.applyFrame(session.snapshot());
     }));};
     this.assetLoadingText.on('pointerdown',()=>{if(gate.state==='error')load();});
-    this.events.once('shutdown',()=>gate.destroy());
+    this.ownCleanup(()=>gate.destroy());
     load();
   }
 
