@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "characterId": "P2",
+  "character": "猼訑",
+  "abilityId": "P2.basic",
+  "abilityName": "角擊",
+  "status": "PLAYER ART APPROVED — F3 ONLY",
+  "approvedAt": "2026-10-18T15:36:06+08:00",
+  "playerStatement": "好f3我approved，繼續，要確保未來動畫東西要足夠明顯",
+  "presentedCheckpoint": "a72e372c63e181a7b635fcac8034d6abffc554a2",
+  "source": {
+    "path": "docs/art/candidates/botuo/basic/key-pose-v1/F3-contact-master.png",
+    "sha256": "19a8e9f8cf74c870558a4ea734b67e03d5eacce71072c5bc979931cf00f42f36",
+    "width": 1447,
+    "height": 1087,
+    "bytes": 1018592
+  },
+  "acceptedScope": [
+    "Presented F3 character identity, equipment and contact pose",
+    "Continue individual F1/F2/F4 pose production under existing workflow"
+  ],
+  "readabilityRequirement": "Future animation must be conspicuous and legible at actual mobile battle scale: visibly distinct articulated load/release/contact/recovery, effects-off recognition, independently visible caster and true-target effects, Basic<Heavy<Special<Awakening hierarchy. Do not enlarge actor, invent hits/range, or change real damage timing. Static/reduced-mode cues must retain identity.",
+  "excludedScope": [
+    "Unseen F1/F2/F4 approval",
+    "VFX/GIF approval",
+    "Any combat timing change",
+    "Runtime integration, engineering/deployment/player-device acceptance"
+  ],
+  "nextGate": "Produce and self-inspect F1/F2/F4 from approved identity and exact approved F3; present all four poses for explicit player review before VFX/GIF.",
+  "sourcePolicy": "Approved original stays byte-immutable at versioned source path; candidate directory name is historical and does not negate this receipt."
+}
