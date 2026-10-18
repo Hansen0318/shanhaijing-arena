@@ -1,5 +1,13 @@
 # Character action art, VFX and animation review workflow
 
+## 2026-10-18 — P2 Basic ENGINEERING PASS / NOT DEPLOYED
+
+Current Work scope packaging/integration/necessary verification/build completed against recovered d40abb0. Packing checkpoint2f1de8669d183653dcf0ab4f75bc92489266a02c; final checkpoint is containing feature commit, fetch latest. PLAYER ART APPROVED + PLAYER EXECUTABLE CONTRACT APPROVED / ENGINEERING PASS / NOT DEPLOYED / NOT PLAYER VERIFIED. P1 COMPLETE and ordinary Hit CANCELLED remain closed.
+
+Accepted-density poses/independent FX integrated through shared250ms action path; F3body160ms/contact200ms independent, HP/text/contact same true resolve. Original art/receipts retained. Exact blank-row derivatives preserve both-facing world placement. Full required scene/cache16,630,060bytes,131,072reserve retained plus16,084extra; no evictions. 220/220 directly affected tests + Build/asset guard PASS; six cold/warm/Restart residency cases, independent review0 Critical/Important. Not browser/GPU/phone evidence. Full evidence docs/verification/M5C_P2_BOTUO_BASIC_RUNTIME.md/.json; residency/provenance/logs linked there.
+
+STOP / NEXT GATE: explicit scoped release authorization, then only remaining required render/browser release checks → feature Pages/public fingerprint → targeted P2 phone acceptance. No automatic deploy/main merge/Heavy/P3, repeated art/GIF/250ms approval or full P1 rerun. Checkpoints [skip ci]; successor docs/handoffs/P2_BOTUO_BASIC_NEXT_CHAT.md.
+
 ## 2026-10-18 19:43+08:00 — P2 Basic executable250ms contract PLAYER APPROVED
 
 Player「如果這樣是符合邏輯的話，我同意」at2026-10-18T19:43:23+08:00 accepts the explained250ms real-windup recommendation from feature preflight `3acdc848d39b13793e10a511422a64860b9dd91e`. Rationale verified in existing preflight: current Basic resolves immediately, accepted visual contact is240ms, and normal50ms steps resolve both240/250ms at250ms. Acceptance receipt: `docs/art/approved/botuo/basic/executable-v1/acceptance.json`. **PLAYER EXECUTABLE CONTRACT APPROVED / NOT IMPLEMENTED**, separate from immutable visual acceptance. Do not ask for timing or art approval again unless actual scope changes.

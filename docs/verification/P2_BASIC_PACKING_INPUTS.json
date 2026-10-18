@@ -32,7 +32,8 @@
       "fallback": "placeholder.battle"
     },
     "top": 13,
-    "height": 145
+    "height": 145,
+    "sourceSha256": "ce9838208b4e1ecc58f5bdb0cf70cf6200e0426ab17216daf9e1d1cebc92a82f"
   },
   {
     "character": "P2",
@@ -85,7 +86,8 @@
       "fallback": "placeholder.battle"
     },
     "top": 3,
-    "height": 155
+    "height": 155,
+    "sourceSha256": "fd9083cacfc38d1eb1fd17e5749615e9a51781a83f0d3dfa3759c1de41c5f26b"
   },
   {
     "character": "P4",
@@ -120,7 +122,8 @@
       "fallback": "placeholder.battle"
     },
     "top": 15,
-    "height": 137
+    "height": 137,
+    "sourceSha256": "394497ffa5314a4559fee10d58d799fab9be59b282a31bb3ffebb02670ed6640"
   },
   {
     "character": "P4",
@@ -173,7 +176,8 @@
       "fallback": "placeholder.battle"
     },
     "top": 19,
-    "height": 133
+    "height": 133,
+    "sourceSha256": "4394bec8581c79e5b6753dcbeafa63fcf8664482d66a457d03b825c40adbb169"
   },
   {
     "character": "P5",
@@ -208,7 +212,8 @@
       "fallback": "placeholder.battle"
     },
     "top": 15,
-    "height": 134
+    "height": 134,
+    "sourceSha256": "1004c76a0ea3e5e942a60137cee5628752220edcfb8cd4c453a43df7e54e3c26"
   },
   {
     "character": "P5",
@@ -261,7 +266,8 @@
       "fallback": "placeholder.battle"
     },
     "top": 13,
-    "height": 414
+    "height": 414,
+    "sourceSha256": "ae8c3c2c8504d999eb14d8790ee4ebcf74680f96e12a01c178d5de124992290f"
   },
   {
     "character": "P5",
@@ -296,6 +302,7 @@
       "fallback": "placeholder.battle"
     },
     "top": 3,
-    "height": 279
+    "height": 279,
+    "sourceSha256": "e9bf9bbd3684aeb45422d53046eb2c7fd218da058ee9f48d582ac54a6a5ae4e8"
   }
 ]

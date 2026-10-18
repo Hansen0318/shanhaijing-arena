@@ -84,10 +84,10 @@ test('Botuo living missing Hit/Cast and KO keep the approved static F1',async()=
  const cache={async load(key){const a=assetManifest[key];return key==='botuo.battleIdle'?{...a,image:{width:a.width,height:a.height}}:{...a};}};
  const p=new api.AssetPresenter(scene,{cache});await p.loadKeys(['botuo.battleIdle']);
  const actor={instanceId:'a2',definitionId:'P2',x:2,y:1,hp:320},frame={allies:[actor],enemies:[]},defs={P2:rosterCatalog.P2};
- p.render(frame,0,defs);const sprite=p.actorSprites.get('a2');assert.equal(sprite.texture[1],'0.0.160.160');
- p.hit({targetId:'a2'},rosterCatalog.P2,.05);p.render(frame,.41,defs);assert.equal(sprite.texture[1],'0.0.160.160');
- p.setState('a2',characterAnimation(rosterCatalog.P2,'battleCast'),.5,'battleCast');p.render(frame,.81,defs);assert.equal(sprite.texture[1],'0.0.160.160');
- actor.hp=0;p.render(frame,1.21,defs);assert.equal(sprite.texture[1],'0.0.160.160');
+ p.render(frame,0,defs);const sprite=p.actorSprites.get('a2');assert.equal(sprite.texture[1],'0.0.160.145');
+ p.hit({targetId:'a2'},rosterCatalog.P2,.05);p.render(frame,.41,defs);assert.equal(sprite.texture[1],'0.0.160.145');
+ p.setState('a2',characterAnimation(rosterCatalog.P2,'battleCast'),.5,'battleCast');p.render(frame,.81,defs);assert.equal(sprite.texture[1],'0.0.160.145');
+ actor.hp=0;p.render(frame,1.21,defs);assert.equal(sprite.texture[1],'0.0.160.145');
  p.destroy();
 });
 

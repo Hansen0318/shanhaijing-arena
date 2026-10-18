@@ -1,5 +1,5 @@
 {
-  "status": "SOURCE-PRESERVING PACK / RUNTIME VERIFICATION PENDING",
+  "status": "SOURCE-PRESERVING PACK VERIFIED / see M5C_P2_BOTUO_BASIC_RUNTIME.md for integration gate",
   "sourceCheckpoint": "d40abb0e4b19a7b6471387934167df6b95334194",
   "files": [
     {

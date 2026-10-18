@@ -1,0 +1,57 @@
+{
+  "status": "ENGINEERING PASS / NOT DEPLOYED / PLAYER PHONE PENDING",
+  "recoveredHead": "d40abb0e4b19a7b6471387934167df6b95334194",
+  "packingCheckpoint": "2f1de8669d183653dcf0ab4f75bc92489266a02c",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": 1,
+  "tests": {
+    "command": "node --test tests/botuoBasicPacking.test.js tests/botuoBasicRuntime.test.js tests/actionPlayback.test.js tests/stagedActionPlayback.test.js tests/basicActionIntegration.test.js tests/heavyActionIntegration.test.js tests/specialActionIntegration.test.js tests/assetDescriptors.test.js tests/botuoIdleRuntime.test.js tests/botuoMove.test.js tests/lushuBotuoKo.test.js tests/assetResidency.test.js tests/assetPresenter.test.js tests/lushuSpecialAssets.test.js tests/dynamicAssetIntegration.test.js tests/awakeningRuntimePacking.test.js tests/lushuHeavyAssets.test.js tests/xingxingKo.test.js tests/jiuweihuStatic.test.js tests/xingxingStatic.test.js tests/jiuweihuMove.test.js tests/xingxingMove.test.js tests/assetManifest.test.js tests/assetCache.test.js tests/assetGuard.test.js tests/sceneAssetGate.test.js tests/arenaAssetReadiness.test.js tests/assetIntegration.test.js tests/assetResolver.test.js tests/awakeningActionIntegration.test.js",
+    "total": 220,
+    "pass": 220,
+    "fail": 0,
+    "scope": "P2 behavior and directly affected presentation/packing/cache/lifecycle; not full P1 or whole-project rerun"
+  },
+  "build": {
+    "command": "npm run build",
+    "result": "PASS",
+    "assetFiles": 81,
+    "assetEncodedBytes": 4083312,
+    "warning": "Existing Vite chunk and npm http-proxy environment advisories"
+  },
+  "sourceSha256": {
+    "src/assets/actionPlayback.js": "b4af613c484819f5c43cc057cfecf22d617ad2b6d4f628760d76fa0b84568516",
+    "src/assets/descriptors.js": "0dd94550ae9a38ea5f7f7ecd40e24c02f2e43f2878db9e2a82339cb2f5b0ab23",
+    "src/roster/abilities.js": "7466190c04cc3944c26fefa25945255212bca3a7fb01ae23025f506506ee8218",
+    "src/roster/catalog.js": "3216f372dc6a08eb57d2365944ba9cee55cfb598a9f268c5f5414d7b475a947e",
+    "src/runtime/assetPresenter.js": "115015e0c884eba089373b41b6884ec6cc1e851109ac7e643b9b3c0907cdc43d",
+    "src/assets/runtimePacking.js": "49c05efd0e6da0b536e3fd3ab8b700ef1d1f1842a0e744f9965444df6d7ad02f",
+    "src/assets/manifest.js": "3696e68fc100d6e9799044055dbd500150a56507aa9046dda9446418ef51f0fc"
+  },
+  "localBuildFingerprints": {
+    "dist/index.html": "ed9933db6baddf1a3ecd8e4878a99919c33b651710f9b98fda2a8a2b8ce5ce98",
+    "dist/assets/battleRuntime-D2L5qqzD.js": "bc0b696a2b949cf36752cc3c8dffe6f609953b68a7446a4c58800301240d51b7",
+    "dist/assets/battleRuntime-Dhqm0OR7.js": "c07343ce436d93b766fde6b6f08b9ddc096533110f54725063942d2ee41ae1b8",
+    "dist/assets/index-B9bXp-7z.js": "cbc926a322a68268daa0b750c04f0351595a0ec26f606367750b92ce553f12e9",
+    "dist/assets/index-DcqtNRF0.css": "a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da",
+    "dist/assets/index-Dean7ASJ.js": "924b2519a0d01150a28ccb2ad468e2616f971c6b889b3b562c0d2e2222b57102"
+  },
+  "scopeLimits": [
+    "No deployment/public fingerprint/browser/GPU/FPS/mobile acceptance",
+    "Real PNG decoding and pixel transforms; Phaser/image drawing boundary doubled except real Phaser Frame idle test",
+    "Eight actual automatic AI decision cases; actual player skill API cancel; Basic has no player button",
+    "Actual Arena renderCastEvents bridge in VM, not browser"
+  ],
+  "review": {
+    "kind": "independent read-only reviewer",
+    "critical": 0,
+    "important": 0,
+    "minor": "Packing pending label corrected to final verification reference"
+  },
+  "decisions": [
+    "No additional pose downsample after accepted review density; exact blank RGBA crop and pivot padding",
+    "Seven animation and one P1 C-source lossless blank-row derivatives preserve world pixels; originals retained",
+    "Lethal true-hit contact survives on corpse for finite200ms; owner KO clears",
+    "CLI push has no credentials; connected GitHub uploads verified blob/tree with non-force same-branch update. Local a88a39e and canonical2f1de86 have identical trees"
+  ],
+  "nextGate": "STOP: explicit scoped release authorization, then only required bounded render/browser gate, feature Pages/public fingerprint and P2 phone acceptance; no repeat art/timing or full P1"
+}

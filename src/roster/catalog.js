@@ -38,6 +38,12 @@ const presentation={
   })}),
  },
  P2:{
+  actionDescriptors:Object.freeze({basic:actionDescriptor({
+   animation:{source:'botuo.basicPoses',frames:[0,158,316,474].map(x=>({x,y:0,width:158,height:143})),duration:.57,loop:false,staticFrame:2,origin:[35/158,142.2/143],scale:158/72},
+   frameDurationsMs:[160,90,160,160],impactFrame:2,coordinateSize:[158,143],
+   blade:{assetKey:'botuo.basicSource',offset:[47,-10],size:[146,114],layer:4,startMs:160,holdAfterResolveMs:200},
+   contact:{assetKey:'botuo.basicContact',offset:[-52,-144.2],size:[105,115],layer:6,attach:'target',retainOnNextCast:true,durationMs:200},
+  })}),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle',battleMove:'botuo.battleMove',battleKo:'botuo.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'botuo.battleIdle',frames:[{x:0,y:0,width:160,height:160}],

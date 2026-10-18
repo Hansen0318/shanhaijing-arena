@@ -60,13 +60,19 @@ export class AssetPresenter{
       while(this.bladeAfterglows.size>=64)this.clearBladeAfterglow(this.bladeAfterglows.keys().next().value);
       this.bladeAfterglows.set(event.actorId,{sample,resolvedAt:current.resolvedAt,image:null});
      }
-     if(sample&&event.hit===true){while(this.pendingImpactViews.size>=64&&!this.pendingImpactViews.has(event.actorId))this.pendingImpactViews.delete(this.pendingImpactViews.keys().next().value);this.pendingImpactViews.set(event.actorId,{sample,resolvedAt:current.resolvedAt,paintedAt:null,displaySample:null});}
+     // Opt-in confirmed contacts own their lifetime; never hold the body in F3.
+     if(sample&&event.hit===true&&action.contact.durationMs&&sample.contactTarget){
+      const key=event.actorId+'.'+event.actionId+'.independent';
+      while(this.stagedImpacts.size>=192)this.removeStagedImpact(this.stagedImpacts.keys().next().value);
+      this.stagedImpacts.set(key,{independent:true,actionId:event.actionId,ownerId:event.actorId,targetId:event.targetId??null,hitIndex:0,descriptor:action,eventAt:current.resolvedAt,target:{...sample.contactTarget},flipX:sample.flipX,paintedAt:null});
+     }
+     if(sample&&event.hit===true&&!action.contact.durationMs){while(this.pendingImpactViews.size>=64&&!this.pendingImpactViews.has(event.actorId))this.pendingImpactViews.delete(this.pendingImpactViews.keys().next().value);this.pendingImpactViews.set(event.actorId,{sample,resolvedAt:current.resolvedAt,paintedAt:null,displaySample:null});}
     }
     if(event.phase==='cancel'&&old?.actionId===event.actionId){if(this.bladeAfterglows.get(event.actorId)?.sample.actionId===event.actionId)this.clearBladeAfterglow(event.actorId);this.clearAction(event.actorId,{preserveImpact:this.pendingImpactViews.get(event.actorId)?.sample.descriptor.contact.retainOnNextCast===true});}
    }
    return;
   }
-  if(this.actions.active.has(event.actorId)){this.clearAction(event.actorId,{preserveImpact:this.pendingImpactViews.get(event.actorId)?.sample.descriptor.contact.retainOnNextCast===true});this.states.delete(event.actorId);}
+  if(this.actions.active.has(event.actorId)){this.clearAction(event.actorId,{preserveIndependent:true,preserveImpact:this.pendingImpactViews.get(event.actorId)?.sample.descriptor.contact.retainOnNextCast===true});this.states.delete(event.actorId);}
   const descriptor=characterVfx(character,event.category,ability);
   const target=event.target??event.origin,dx=target.x-event.origin.x,dy=target.y-event.origin.y,len=Math.hypot(dx,dy)||1;
   this.playback.play(event.actorId,descriptor,event.origin,now,{targetId:event.targetId??null,target,direction:{x:dx/len,y:dy/len}});
@@ -109,11 +115,11 @@ export class AssetPresenter{
   }
  }
  removeStagedImpact(key){this.stagedImpactSprites.get(key)?.destroy();this.stagedImpactSprites.delete(key);this.stagedImpacts.delete(key);}
- clearStagedImpacts(ownerId){for(const [key,r] of this.stagedImpacts)if(r.ownerId===ownerId)this.removeStagedImpact(key);}
+ clearStagedImpacts(ownerId,{preserveIndependent=false}={}){for(const [key,r] of this.stagedImpacts)if(r.ownerId===ownerId&&!(preserveIndependent&&r.independent))this.removeStagedImpact(key);}
  renderStagedImpacts(alive,positions,now){
   for(const [key,r] of this.stagedImpacts){
-   const stage=r.descriptor.kind==='staged'?r.descriptor.stages[r.hitIndex]:{contact:r.descriptor.contact,contactHoldMs:r.descriptor.frameDurationsMs[2]},hold=stage.contactHoldMs/1000,age=now-r.eventAt;
-   if(!alive.has(r.ownerId)||r.targetId&&!alive.has(r.targetId)||r.paintedAt!==null&&r.paintedAt!==now&&age+1e-9>=hold){this.removeStagedImpact(key);continue;}
+   const stage=r.descriptor.kind==='staged'?r.descriptor.stages[r.hitIndex]:{contact:r.descriptor.contact,contactHoldMs:r.descriptor.contact.durationMs??r.descriptor.frameDurationsMs[2]},hold=stage.contactHoldMs/1000,age=now-r.eventAt;
+   if(!alive.has(r.ownerId)||r.targetId&&!r.independent&&!alive.has(r.targetId)||r.paintedAt!==null&&r.paintedAt!==now&&age+1e-9>=hold){this.removeStagedImpact(key);continue;}
    if(age<0)continue;
    const spec=stage.contact,d=r.descriptor,frame=d.animation.frames[0],width=72*d.animation.scale*frame.width/Math.max(frame.width,frame.height),height=72*d.animation.scale*frame.height/Math.max(frame.width,frame.height),sx=width/d.coordinateSize[0],sy=height/d.coordinateSize[1];
    let image=this.stagedImpactSprites.get(key);
@@ -121,7 +127,7 @@ export class AssetPresenter{
    const anchor=r.targetId?positions.get(r.targetId)??this.project(r.target):this.project(r.target),x=spec.offset[0]+spec.size[0]/2,y=spec.offset[1]+spec.size[1]/2;
    // Event time controls normal expiry. A late first paint retains one confirmed cue;
    // the next distinct paint expires it, so stalls do not replay HP or extend lifetime.
-   if(r.paintedAt!==now)r.opacity=r.paintedAt===null&&age>=hold?1:this.reducedMotion&&d.kind==='staged'?1:Math.max(0,1-age/hold);
+   if(r.paintedAt!==now)r.opacity=r.paintedAt===null&&age>=hold?1:this.reducedMotion&&(d.kind==='staged'||r.independent)?1:Math.max(0,1-age/hold);
    image.actionId=r.actionId;image.hitIndex=r.hitIndex;image.eventAt=r.eventAt;
    image.setOrigin(.5,.5).setDisplaySize(spec.size[0]*sx,spec.size[1]*sy).setPosition(anchor.x+(r.flipX?-x:x)*sx,anchor.y+y*sy).setFlipX(r.flipX).setDepth(spec.layer).setAlpha(r.opacity).setVisible(true);r.paintedAt=now;
   }
@@ -134,7 +140,7 @@ export class AssetPresenter{
   else {const descriptor=slot==='battleIdle'?(character?.animationDescriptors?.battleIdle?characterAnimation(character,'battleIdle'):grayboxAnimation):animationDescriptor({source:resolveCharacterAsset(character,slot).key,duration:1});this.residency.setPins('inspection',[descriptor.source]);await this.loadKeys([descriptor.source]);if(!this.closed)this.setState(ownerId,descriptor,now,'inspection');}
  }
  clearActionEffects(ownerId){const effects=this.actionEffects.get(ownerId);if(effects)for(const image of effects.values())image.destroy();this.actionEffects.delete(ownerId);}
- clearAction(ownerId,{preserveImpact=false}={}){this.actions.remove(ownerId);this.clearStagedImpacts(ownerId);if(!preserveImpact)this.pendingImpactViews.delete(ownerId);this.clearActionEffects(ownerId);}
+ clearAction(ownerId,{preserveImpact=false,preserveIndependent=false}={}){this.actions.remove(ownerId);this.clearStagedImpacts(ownerId,{preserveIndependent});if(!preserveImpact)this.pendingImpactViews.delete(ownerId);this.clearActionEffects(ownerId);}
  clearBladeAfterglow(ownerId){this.bladeAfterglows.get(ownerId)?.image?.destroy();this.bladeAfterglows.delete(ownerId);}
  renderBladeAfterglows(alive,positions,now){
   for(const [id,record] of this.bladeAfterglows){
@@ -213,7 +219,7 @@ export class AssetPresenter{
      impact.paintedAt=now;action=impact.displaySample;
     }
    }
-   if((hadAction||this.actionEffects.has(id))&&!action&&actor.hp>0){this.clearAction(id);this.states.delete(id);state=undefined;}
+   if((hadAction||this.actionEffects.has(id))&&!action&&actor.hp>0){this.clearAction(id,{preserveIndependent:true});this.states.delete(id);state=undefined;}
    const previous=this.facings.get(id),dx=previous?actor.x-previous.x:0,dy=previous?actor.y-previous.y:0,actionFacing=this.actionFacings.get(id);
    if(actionFacing && now>actionFacing.until)this.actionFacings.delete(id);
    // Facing priority: current attack/cast direction > movement direction > last facing/default team direction.

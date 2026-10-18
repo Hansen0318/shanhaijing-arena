@@ -47,3 +47,10 @@ test('lossless existing C-source repack preserves RGBA and both-facing effect pl
   assert.ok(Math.abs(-229.48134328358213+(y+36)*879/96-(spec.offset[1]+y*spec.size[1]/26))<1e-9);
  }
 });
+test('new pack is bound to approved review hashes and specifically F2 v2',()=>{
+ const r=JSON.parse(readFileSync(report)),base='docs/art/candidates/botuo/basic/composite-review-v1/',sums=JSON.parse(readFileSync(base+'SHA256SUMS.json')),manifest=JSON.parse(readFileSync(base+'review-manifest.json'));
+ const sha=p=>createHash('sha256').update(readFileSync(p)).digest('hex');for(const f of r.poseCells)assert.equal(sha(f.source),sums[f.source.split('/').at(-1)]);for(const f of r.files)assert.equal(sha(f.output),f.sha256);
+ assert.ok(manifest.poses[1].source.endsWith('F2-release-master-v2.png'));assert.equal(sha(manifest.poses[1].source),manifest.poses[1].sha256);
+ for(const pose of manifest.poses)assert.equal(sha(pose.source),pose.sha256);
+ for(const f of JSON.parse(readFileSync('docs/art/approved/botuo/basic/composite-v1/acceptance.json')).reviewFiles)assert.equal(sha(f.path),f.sha256);
+});
