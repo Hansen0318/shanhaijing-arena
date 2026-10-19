@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## 2026-10-19 — Basic size-fix scoped release AUTHORIZED / pending
+
+Player「完成了嗎，未完成就繼續」at08:05:55+08:00 responds to explicit browser→deploy→fingerprint→size-review next step. Continue that bounded release from3f85dd5; no new art/Heavy production/main merge. Existing feature/PR1 Pages pipeline flags[botuo basic release][botuo body scale] run only67affected checks, Build/guard and updated real Chromium checker before deploy. Evidence/authorization: docs/verification/M5C_P2_BOTUO_BASIC_BODY_SCALE_RELEASE.md. Release/browser/public/phone results remain pending until measured. Prior engineering, F3 approval, other character acceptance and16MiB/reserve protected. Evidence closure[skip ci]; latestcheckpoint is containing commit, fetch again.
+
 ## 2026-10-19 — Basic body-scale correction ENGINEERING PASS / NOT DEPLOYED
 
 Heavy F3 is PLAYER ART APPROVED; receipt docs/art/approved/botuo/heavy/f3-v1/acceptance.json and approval/priority remote07a51545853796a0cf69e52cecfd1bf835d99344. Continue to protect it; do not repeat F3 review. Player-reported Basic shrinking took priority over remaining Heavy art.
