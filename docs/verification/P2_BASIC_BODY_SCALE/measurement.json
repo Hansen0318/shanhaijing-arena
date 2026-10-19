@@ -1,0 +1,287 @@
+{
+  "status": "ENGINEERING PASS / NOT DEPLOYED / PLAYER VISUAL FIX REVIEW PENDING",
+  "baseline": "07a51545853796a0cf69e52cecfd1bf835d99344",
+  "kind": "Pure descriptor/pixel-density analysis plus separately recorded actual Session/Presenter tests with external Phaser boundary doubled. Not browser or mobile evidence.",
+  "landmarks": {
+    "referenceSource": "public/assets/characters/botuo/battleIdle.png",
+    "referenceBox": [
+      84,
+      18,
+      100,
+      43
+    ],
+    "referenceSpan": 25,
+    "actionSpan": 20,
+    "selection": "Author-selected forehead-to-muzzle, excluding horns/mane/ears. Action source boxes retained in accepted review manifest. Not an automatic anatomy measurement or silhouette-height normalization."
+  },
+  "before": {
+    "animation": {
+      "source": "botuo.basicPoses",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 158,
+          "height": 143
+        },
+        {
+          "x": 158,
+          "y": 0,
+          "width": 158,
+          "height": 143
+        },
+        {
+          "x": 316,
+          "y": 0,
+          "width": 158,
+          "height": 143
+        },
+        {
+          "x": 474,
+          "y": 0,
+          "width": 158,
+          "height": 143
+        }
+      ],
+      "fps": 7.017543859649123,
+      "duration": 0.57,
+      "loop": false,
+      "staticFrame": 2,
+      "origin": [
+        0.22151898734177214,
+        0.9944055944055943
+      ],
+      "scale": 2.1944444444444446
+    },
+    "frameDurationsMs": [
+      160,
+      90,
+      160,
+      160
+    ],
+    "impactFrame": 2,
+    "coordinateSize": [
+      158,
+      143
+    ],
+    "blade": {
+      "startMs": 160,
+      "assetKey": "botuo.basicSource",
+      "offset": [
+        47,
+        -10
+      ],
+      "size": [
+        146,
+        114
+      ],
+      "layer": 4,
+      "holdAfterResolveMs": 200
+    },
+    "contact": {
+      "durationMs": 200,
+      "assetKey": "botuo.basicContact",
+      "offset": [
+        -52,
+        -144.2
+      ],
+      "size": [
+        105,
+        115
+      ],
+      "layer": 6,
+      "attach": "target",
+      "retainOnNextCast": true
+    }
+  },
+  "after": {
+    "animation": {
+      "source": "botuo.basicPoses",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 158,
+          "height": 143
+        },
+        {
+          "x": 158,
+          "y": 0,
+          "width": 158,
+          "height": 143
+        },
+        {
+          "x": 316,
+          "y": 0,
+          "width": 158,
+          "height": 143
+        },
+        {
+          "x": 474,
+          "y": 0,
+          "width": 158,
+          "height": 143
+        }
+      ],
+      "fps": 7.017543859649123,
+      "duration": 0.57,
+      "loop": false,
+      "staticFrame": 2,
+      "origin": [
+        0.22151898734177214,
+        0.9818181818181818
+      ],
+      "scale": 2.46875
+    },
+    "frameDurationsMs": [
+      160,
+      90,
+      160,
+      160
+    ],
+    "impactFrame": 2,
+    "coordinateSize": [
+      177.75,
+      160.875
+    ],
+    "blade": {
+      "startMs": 160,
+      "assetKey": "botuo.basicSource",
+      "offset": [
+        51.375,
+        5.75
+      ],
+      "size": [
+        146,
+        114
+      ],
+      "layer": 4,
+      "holdAfterResolveMs": 200
+    },
+    "contact": {
+      "durationMs": 200,
+      "assetKey": "botuo.basicContact",
+      "offset": [
+        -52,
+        -144.2
+      ],
+      "size": [
+        105,
+        115
+      ],
+      "layer": 6,
+      "attach": "target",
+      "retainOnNextCast": true
+    }
+  },
+  "idle": {
+    "source": "botuo.battleIdle",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 160,
+        "height": 145
+      }
+    ],
+    "fps": 2.5,
+    "duration": 0.4,
+    "loop": true,
+    "staticFrame": 0,
+    "origin": [
+      0.5,
+      1
+    ],
+    "scale": 2
+  },
+  "move": {
+    "source": "botuo.battleMove",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 160,
+        "height": 155
+      },
+      {
+        "x": 160,
+        "y": 0,
+        "width": 160,
+        "height": 155
+      },
+      {
+        "x": 320,
+        "y": 0,
+        "width": 160,
+        "height": 155
+      },
+      {
+        "x": 480,
+        "y": 0,
+        "width": 160,
+        "height": 155
+      }
+    ],
+    "fps": 12,
+    "duration": 0.3333333333333333,
+    "loop": true,
+    "staticFrame": 0,
+    "origin": [
+      0.5,
+      1
+    ],
+    "scale": 2
+  },
+  "invariants": {
+    "otherFourCharactersDeepEqual": true,
+    "P2IdleMoveKoDeepEqual": true,
+    "P2StatsDeepEqual": true,
+    "PNGOriginalsAndRuntimeUnchanged": true,
+    "worldFootY": -16.2,
+    "sourceFxSize": [
+      146,
+      114
+    ],
+    "contactFxSize": [
+      105,
+      115
+    ],
+    "sourceFxCenter": [
+      85,
+      -95.2
+    ],
+    "targetFxRelativeCenter": [
+      0.5,
+      -86.7
+    ],
+    "requiredKeys": 39,
+    "requiredBytes": 16630060,
+    "reserve": 131072
+  },
+  "density": {
+    "idlePixelsPerSourcePixel": 0.9,
+    "beforeActionPixelsPerSourcePixel": 1,
+    "afterActionPixelsPerSourcePixel": 1.125,
+    "idleLandmarkWorldPixels": 22.5,
+    "beforeActionLandmarkWorldPixels": 20,
+    "afterActionLandmarkWorldPixels": 22.5
+  },
+  "files": [
+    {
+      "path": "public/assets/botuo-basic-packing-v1/botuo-battleIdle.png",
+      "sha256": "3fc4b62aa3bcbf490f1dd7becc745de3b859de46fed170335e19d10c11400441"
+    },
+    {
+      "path": "public/assets/botuo-basic-packing-v1/botuo-basicPoses.png",
+      "sha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de"
+    },
+    {
+      "path": "public/assets/botuo-basic-packing-v1/botuo-basicSource.png",
+      "sha256": "01de21c7d55baf6b35922859d43c12aaf01f05dfa21809af34b85f3a7ff7dc86"
+    },
+    {
+      "path": "public/assets/botuo-basic-packing-v1/botuo-basicContact.png",
+      "sha256": "9fa8dc4ff29f5b6741e972670a4344df0805e3ab43e7c1007741adfc5e4bf513"
+    }
+  ]
+}

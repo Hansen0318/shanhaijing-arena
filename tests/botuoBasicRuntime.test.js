@@ -7,6 +7,30 @@ function step(f,t){hold(f);f.session.step(t);}
 export function paint(f){const s=f.session,damage=s.drainDamageEvents(),casts=s.drainCastEvents();for(const e of damage)f.p.hit(e,rosterCatalog[s.actorById(e.targetId).definitionId],s.elapsedSeconds);for(const e of casts)f.p.cast(e,rosterCatalog[s.actorById(e.actorId).definitionId],s.elapsedSeconds);const frame=s.snapshot();for(const side of ['allies','enemies'])frame[side]=frame[side].map(a=>({...a,definitionId:s.actorById(a.instanceId).definitionId}));f.p.render(frame,s.elapsedSeconds,rosterCatalog);return {damage,casts};}
 async function visual(reducedMotion=false){const f=fixture();f.scene=assetScene();f.p=new AssetPresenter(f.scene,{cache:createAssetCache({transport:pngTransport}),reducedMotion});await f.p.prepare(Object.values(rosterCatalog));return f;}
 const contacts=f=>[...f.p.stagedImpactSprites.values()].filter(x=>x.visible&&!x.destroyed);
+for(const reduced of [false,true])for(const direction of [-1,1])test('P2 Basic retains Idle skull density, planted foot and approved independent FX '+reduced+'/'+direction,async()=>{
+ const f=await visual(reduced);f.target.x=direction*.65;paint(f);
+ const idle=f.p.actorSprites.get('a1'),idleDensity=idle.displayWidth/160;
+ // Same forehead-to-muzzle landmark convention: accepted Idle y18..43;
+ // accepted action review normalized each authored skull to20px.
+ const expectedSkull=25*idleDensity,foot=(127-idle.originY*145)*idle.displayHeight/145;
+ f.session.executeAbility(f.actor,'basic','ai',f.target);paint(f);
+ const poses=[];
+ for(const time of [0,.16,.25,.41]){
+  if(time>f.session.elapsedSeconds)step(f,time-f.session.elapsedSeconds);paint(f);
+  const body=f.p.actorSprites.get('a1');
+  if(!body.texture.endsWith('botuo.basicPoses'))continue;
+  poses.push(body.frame);const density=body.displayWidth/158;
+  assert.ok(Math.abs(20*density-expectedSkull)<1e-9,'action skull must match accepted Idle, not arbitrary20px');
+  assert.ok(Math.abs((126-body.originY*143)*body.displayHeight/143-foot)<1e-9,'calibration preserves world foot');
+  assert.ok(Math.abs(((direction<0?158-35:35)-body.originX*158)*density)<1e-9,'calibration preserves mirrored support X');
+  if(time===.16){const fx=f.p.actionEffects.get('a1').get('blade');assert.equal(fx.displayWidth,146);assert.equal(fx.displayHeight,114);assert.ok(Math.abs(fx.x-direction*85)<1e-9);assert.ok(Math.abs(fx.y+95.2)<1e-9);}
+  if(time===.25){const fx=contacts(f)[0];assert.equal(fx.displayWidth,105);assert.equal(fx.displayHeight,115);assert.ok(Math.abs(fx.x-(f.target.x+direction*.5))<1e-9);assert.ok(Math.abs(fx.y+86.7)<1e-9);}
+ }
+ assert.equal(new Set(poses).size,reduced?2:4);
+ step(f,.57-f.session.elapsedSeconds);paint(f);assert.ok(f.p.actorSprites.get('a1').texture.endsWith('botuo.battleIdle'));assert.equal(f.p.actorSprites.get('a1').displayWidth,144);
+ f.session.holdPlayerControl('a1');f.session.setPlayerMovement('a1',{x:direction,y:0});f.session.step(.05);paint(f);assert.ok(f.p.actorSprites.get('a1').texture.endsWith('botuo.battleMove'));assert.equal(f.p.actorSprites.get('a1').displayWidth,144);
+ f.p.destroy();assert.equal(f.scene.budget().bytes,0);
+});
 for(const tier of ['T0','T1','T2','T3'])test('P2 '+tier+' locked 250ms real windup; one damage/resolve and cadence at start',()=>{
  const f=fixture({tier}),s=f.session,hp=f.target.hp;const def=s.actorAbilityDefinitions.get('a1')['P2.basic'];assert.equal(def.windupMs,250);
  assert.equal(s.executeAbility(f.actor,'basic','ai',f.target),true);assert.equal(f.target.hp,hp);assert.equal(s.drainCastEvents()[0].phase,'start');assert.equal(s.cadence.get('a1'),1/s.definitionForActor(f.actor).stats.attackSpeed);
@@ -73,5 +97,5 @@ test('opt-in source/contact schema is bounded and old P1 defaults stay absent',a
 });
 for(const direction of [-1,1])test('actual rendered noncentral action pivot retains approved skull density/foot and mirror '+direction,async()=>{
  const f=await visual();f.target.x=direction*.65;paint(f);const idle=f.p.actorSprites.get('a1'),foot=(127-idle.originY*145)*idle.displayHeight/145;assert.ok(Math.abs(foot+16.2)<1e-9);
- f.session.executeAbility(f.actor,'basic','ai',f.target);paint(f);const image=f.p.actorSprites.get('a1');assert.equal(image.displayWidth,158);assert.equal(image.displayHeight,143);assert.ok(Math.abs((126-image.originY*143)-foot)<1e-9);const pixelX=direction<0?158-35:35;assert.ok(Math.abs(pixelX-image.originX*158)<1e-9);f.p.destroy();
+ f.session.executeAbility(f.actor,'basic','ai',f.target);paint(f);const image=f.p.actorSprites.get('a1');assert.equal(image.displayWidth,177.75);assert.equal(image.displayHeight,160.875);assert.ok(Math.abs((126-image.originY*143)*image.displayHeight/143-foot)<1e-9);const pixelX=direction<0?158-35:35;assert.ok(Math.abs(pixelX-image.originX*158)<1e-9);f.p.destroy();
 });

@@ -1,4 +1,5 @@
 import {repackAnimationRows,repackActionEffectRows} from '../assets/runtimePacking.js';
+import {calibrateActionBody} from '../assets/actionCalibration.js';
 import {animationDescriptor as validateAnimationDescriptor,actionDescriptor as validateActionDescriptor} from '../assets/descriptors.js';
 import {defaultCharacterAssets} from '../assets/manifest.js';
 import {formalTierEffects} from './tierEffects.js';
@@ -17,6 +18,7 @@ function packedAnimation(input,top,height){
 }
 const actionDescriptor=input=>validateActionDescriptor(repackActionEffectRows(input));
 const animationDescriptor=input=>validateAnimationDescriptor(repackAnimationRows(input));
+const botuoIdleAnimation=animationDescriptor({source:'botuo.battleIdle',frames:[{x:0,y:0,width:160,height:160}],fps:2.5,loop:true,origin:[.5,158/160],scale:2,staticFrame:0});
 const presentation={
  P1:{
   actionDescriptors:Object.freeze({basic:packedAction({
@@ -38,17 +40,14 @@ const presentation={
   })}),
  },
  P2:{
-  actionDescriptors:Object.freeze({basic:actionDescriptor({
+  actionDescriptors:Object.freeze({basic:actionDescriptor(calibrateActionBody({
    animation:{source:'botuo.basicPoses',frames:[0,158,316,474].map(x=>({x,y:0,width:158,height:143})),duration:.57,loop:false,staticFrame:2,origin:[35/158,142.2/143],scale:158/72},
    frameDurationsMs:[160,90,160,160],impactFrame:2,coordinateSize:[158,143],
    blade:{assetKey:'botuo.basicSource',offset:[47,-10],size:[146,114],layer:4,startMs:160,holdAfterResolveMs:200},
    contact:{assetKey:'botuo.basicContact',offset:[-52,-144.2],size:[105,115],layer:6,attach:'target',retainOnNextCast:true,durationMs:200},
-  })}),
+  },{reference:botuoIdleAnimation,referenceSpan:25,actionSpan:20,referenceFoot:127,actionFoot:126}))}),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle',battleMove:'botuo.battleMove',battleKo:'botuo.battleKo'}),
-  animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
-   source:'botuo.battleIdle',frames:[{x:0,y:0,width:160,height:160}],
-   fps:2.5,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
-  }),battleMove:animationDescriptor({
+  animationDescriptors:Object.freeze({battleIdle:botuoIdleAnimation,battleMove:animationDescriptor({
    source:'botuo.battleMove',frames:[0,160,320,480].map(x=>({x,y:0,width:160,height:160})),
    fps:12,loop:true,origin:[.5,158/160],scale:2,staticFrame:0,
   }),battleKo:animationDescriptor({

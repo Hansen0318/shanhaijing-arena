@@ -1,3 +1,7 @@
+# Current successor — Basic size-fix release gate
+
+Heavy F3 remains PLAYER APPROVED. Basic landmark-density correction is implemented and67affected checks/build pass, but NOT DEPLOYED; no new browser/phone result. Continue docs/handoffs/P2_BOTUO_BASIC_SCALE_NEXT_WORK.md before Heavy production. Earlier F3-pending handoff is history.
+
 # Current priority override — 2026-10-19
 
 Heavy F3 PLAYER APPROVED; receipt docs/art/approved/botuo/heavy/f3-v1/acceptance.json. Player reports Basic size shrink and explicitly requests GitHub record → fix → record. Do not repeat F3 review or continue Heavy poses before Basic scale fix. Existing handoff below is history for completed review, preserve references.

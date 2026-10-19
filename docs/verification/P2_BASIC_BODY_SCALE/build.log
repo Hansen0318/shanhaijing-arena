@@ -1,0 +1,10 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> shanhaijing-arena@0.0.1 build
+> node scripts/checkAssets.js && vite build
+
+Asset guard PASS { files: 81, bytes: 4083312 }
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 102 modules transformed.
+rendering chunks...

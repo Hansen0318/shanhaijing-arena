@@ -1,0 +1,70 @@
+✖ P2 Basic retains Idle skull density, planted foot and approved independent FX false/-1 (35.352184ms)
+✖ P2 Basic retains Idle skull density, planted foot and approved independent FX false/1 (16.876735ms)
+✖ P2 Basic retains Idle skull density, planted foot and approved independent FX true/-1 (15.546611ms)
+✖ P2 Basic retains Idle skull density, planted foot and approved independent FX true/1 (3.366133ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 258.652037
+
+✖ failing tests:
+
+test at ../scale-baseline/tests/botuoBasicRuntime.test.js:10:65
+✖ P2 Basic retains Idle skull density, planted foot and approved independent FX false/-1 (35.352184ms)
+  AssertionError [ERR_ASSERTION]: action skull must match accepted Idle, not arbitrary20px
+      at TestContext.<anonymous> (file:///workspace/scratch/e1891cb61982/scale-baseline/tests/botuoBasicRuntime.test.js:23:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at ../scale-baseline/tests/botuoBasicRuntime.test.js:10:65
+✖ P2 Basic retains Idle skull density, planted foot and approved independent FX false/1 (16.876735ms)
+  AssertionError [ERR_ASSERTION]: action skull must match accepted Idle, not arbitrary20px
+      at TestContext.<anonymous> (file:///workspace/scratch/e1891cb61982/scale-baseline/tests/botuoBasicRuntime.test.js:23:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at ../scale-baseline/tests/botuoBasicRuntime.test.js:10:65
+✖ P2 Basic retains Idle skull density, planted foot and approved independent FX true/-1 (15.546611ms)
+  AssertionError [ERR_ASSERTION]: action skull must match accepted Idle, not arbitrary20px
+      at TestContext.<anonymous> (file:///workspace/scratch/e1891cb61982/scale-baseline/tests/botuoBasicRuntime.test.js:23:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at ../scale-baseline/tests/botuoBasicRuntime.test.js:10:65
+✖ P2 Basic retains Idle skull density, planted foot and approved independent FX true/1 (3.366133ms)
+  AssertionError [ERR_ASSERTION]: action skull must match accepted Idle, not arbitrary20px
+      at TestContext.<anonymous> (file:///workspace/scratch/e1891cb61982/scale-baseline/tests/botuoBasicRuntime.test.js:23:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

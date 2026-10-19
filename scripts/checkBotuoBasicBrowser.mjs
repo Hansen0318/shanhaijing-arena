@@ -21,6 +21,7 @@ try{
    evidence.current={label,...sample};
    if(label==='anticipation'){assert.equal(sample.body.frame,'0.0.158.143');assert.equal(sample.hits.length,0);assert.equal(sample.wind,null);assert.equal(sample.contacts.length,0);}
    if(label==='release'){assert.equal(sample.body.frame,reduced?'0.0.158.143':'158.0.158.143');assert.ok(sample.wind?.texture.endsWith('botuo.basicSource'));assert.equal(sample.hp,setup.hp);assert.equal(sample.contacts.length,0);}
+   if(sample.body.texture.endsWith('botuo.basicPoses')){assert.equal(sample.body.width,177.75);assert.equal(sample.body.height,160.875);assert.ok(Math.abs(20*sample.body.width/158-22.5)<1e-8,'accepted Idle skull density');}
    if(label==='contact'){assert.equal(sample.body.frame,'316.0.158.143');assert.equal(sample.hits.length,1);assert.ok(Math.abs(sample.hits[0].at-.25)<1e-9);assert.ok(sample.hp<setup.hp);assert.equal(sample.contacts.length,1);assert.equal(sample.contacts[0].actionId,sample.hits[0].actionId);assert.equal(sample.body.flipX,sign<0);assert.ok(Math.abs((126-sample.body.origin[1]*143)*sample.body.height/143-sample.idleFoot)<1e-8);}
    if(label==='afterF3'){assert.equal(sample.contacts.length,1);assert.ok(sample.wind);if(reduced)assert.ok(sample.body.texture.endsWith('botuo.battleIdle'));else assert.equal(sample.body.frame,'474.0.158.143');}
    if(label==='effectsEnd'){assert.equal(sample.contacts.length,0);assert.equal(sample.wind,null);}
