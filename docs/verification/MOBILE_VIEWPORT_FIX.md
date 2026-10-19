@@ -1,5 +1,11 @@
 # Mobile menu enlargement / clipping — open defect
 
+## Reproduction and fix candidate
+
+Diagnostic source d5805a840324910139b8ce52adcc29d5e06fd733, Actions39201400645 build117894941331 SUCCESS, deploy SKIPPED. Artifact12163589029 SHA25659b55890047bbff8404f0ab52502b3de3f04f2d0bb35bb46bf67424daa59bfb5 contains actual built-app Chromium/WebKit six cases. Normal landscape/short/rotation/reload/routes fit. Chromium visual-page scale2/3 reproduces clipped menus: layout width852 remains the CSS-vw basis while visualViewport/root width426/284 shrinks; at3 none of the three controls fully fit. This reproduces a mechanism matching the screenshots, not proof of the player's exact device scale or gesture. No page errors.
+
+Fix keeps campaign/canvas logical width/height = visual viewport × page scale and counter-transforms fixed surfaces into the visible viewport, including body-owned orientation/exit overlays. Scale1 remains unchanged; no meta zoom prohibition, font/actor/art/combat/save change. Also fixes visualViewport scroll Event accidentally enabling the pageshow-only transient-height clamp. New regressions RED4/4 before production change, GREEN4/4 afterward; relevant53/53 PASS; build and81-file asset guard PASS. Release browser gate now requires mobile menu bounds and zoomed route navigation, real app Chapter→Stage→Team→Battle, Pause and visible/clickable Exit dialog, return to menu, and zoom restoration. Engineering browser/deployment/public proof still pending; physical phone review remains pending. Heavy paused, PR1 open/unmerged.
+
 ## Player report — 2026-10-19
 
 Player「整個變的比例很怪，無法遊戲，妳確認後修改」with IMG_2661.png and IMG_2662.png (2556×1179) shows enlarged/clipped Landing content and a partially filled content surface. This is NOT acceptance of the previous body-scale fix or a request for more character scaling. Prior scoped browser4cases exercised a direct Arena fixture and did not cover actual built-app Landing navigation on mobile. Heavy production remains paused.

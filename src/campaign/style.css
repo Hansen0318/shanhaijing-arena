@@ -51,6 +51,7 @@
 #orientation-gate p { font-size:16px;margin:0; }
 .exit-overlay { position:fixed;inset:0;z-index:200;background:rgba(8,19,28,.82);display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;color:white;font-family:system-ui,sans-serif; }
 .exit-overlay[hidden] { display:none; }
+#orientation-gate,.exit-overlay { inset:auto;left:var(--app-vp-left,0px);top:var(--app-vp-top,0px);width:var(--app-vp-width,100%);height:var(--app-vp-height,100%);transform:var(--app-vp-transform,none);transform-origin:0 0; }
 .exit-panel { background:#243b4b;border:2px solid #91a9b8;border-radius:12px;width:min(520px,92vw);padding:20px;text-align:center;box-sizing:border-box; }
 .exit-panel h2 { margin:0 0 8px;font-size:clamp(19px,4vw,28px); }
 .exit-panel p { margin:0 0 20px;font-size:clamp(13px,2.5vw,16px); }

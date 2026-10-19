@@ -49,7 +49,37 @@ try{
    }
    if(engine==='chromium'&&initial==='landscape'){
     const cdp=await context.newCDPSession(page);
-    for(const zoom of [1.5,2,3]){await cdp.send('Emulation.setPageScaleFactor',{pageScaleFactor:zoom});await sample(page,record,'zoom-'+zoom);}
+    for(const zoom of [1.5,2,3]){
+     await cdp.send('Emulation.setPageScaleFactor',{pageScaleFactor:zoom});await sample(page,record,'zoom-'+zoom);
+     if(!probe){
+      await page.getByRole('button',{name:'INFO',exact:true}).click();
+      await page.getByRole('button',{name:'BACK',exact:true}).click();
+      await sample(page,record,'zoom-'+zoom+'-return');
+     }
+    }
+    if(!probe){
+     await page.getByRole('button',{name:'BATTLE',exact:true}).click();
+     await page.locator('.chapter-grid .campaign-card:not(:disabled)').first().click();
+     await page.locator('.stage-page>.start').click();
+     await page.locator('.team-page .start.battle').click();
+     await page.locator('canvas').waitFor({state:'visible'});
+     await page.waitForFunction(()=>window.__arenaSmoke?.battleStarted,{},{timeout:20000});
+     const canvas=await page.locator('canvas').boundingBox();
+     await page.mouse.click(canvas.x+canvas.width*72/1120,canvas.y+canvas.height*56/540);
+     await page.waitForFunction(()=>window.__arenaSmoke?.selectedId==='a1');
+     await page.locator('.battle-controls').getByRole('button',{name:'Pause',exact:true}).click();
+     await page.locator('.battle-controls').getByRole('button',{name:'Resume',exact:true}).waitFor();
+     await page.locator('.battle-controls').getByRole('button',{name:'Exit',exact:true}).click();
+     const bounds=await page.locator('.exit-actions button').evaluateAll(nodes=>nodes.map(n=>{const b=n.getBoundingClientRect();return {x:b.x,y:b.y,width:b.width,height:b.height};}));
+     const m=await measure(page);assert.ok(bounds.every(b=>visible(m,b)),'zoomed exit dialog controls fit');
+     await page.screenshot({path:path.join(out,record.name+'-zoom-battle-exit.png')});
+     record.battle={zoom:3,canvas:m.canvas,exitButtons:bounds,pauseResumeClickable:true,canvasPortraitSelection:'a1'};
+     await page.getByRole('dialog').getByRole('button',{name:'EXIT',exact:true}).click();
+     await page.locator('.stage-page').waitFor();
+     await page.getByRole('button',{name:'BACK',exact:true}).click();
+     await page.getByRole('button',{name:'BACK',exact:true}).click();
+     await sample(page,record,'zoom-battle-return');
+    }
     await cdp.send('Emulation.setPageScaleFactor',{pageScaleFactor:1});await sample(page,record,'zoom-restored');
    }
    await context.close();

@@ -51,3 +51,34 @@ test('pageshow clamps a transient short Safari visual viewport without changing 
  assert.equal(e.root.style.height,'330px');assert.equal(e.host.style.height,'330px');
  sync.destroy();
 });
+
+for(const zoom of [1.5,2,3])test(`page scale ${zoom} retains one stable logical UI and fits its transformed bounds into the visual viewport`,()=>{
+ const e=environment(),vars=new Map();e.win.document={documentElement:{style:{setProperty:(k,v)=>vars.set(k,v)}}};
+ Object.assign(e.win,{innerWidth:852,innerHeight:330});
+ Object.assign(e.win.visualViewport,{width:852/zoom,height:330/zoom,scale:zoom,offsetLeft:17,offsetTop:9});
+ const sync=installViewportSync(e.win,e.host,e.root);
+ assert.equal(e.root.style.width,'852px');assert.equal(e.root.style.height,'330px');
+ assert.equal(e.root.style.left,'17px');assert.equal(e.root.style.top,'9px');
+ assert.equal(e.root.style.transform,`scale(${1/zoom})`);assert.equal(e.root.style.transformOrigin,'0 0');
+ assert.ok(Math.abs(parseFloat(e.root.style.width)/zoom-e.win.visualViewport.width)<1e-9);
+ assert.equal(e.host.style.height,'330px');assert.equal(e.host.style.transform,e.root.style.transform);
+ assert.ok(Math.abs(parseFloat(e.host.style.left)-(17+(852-1120*330/540)/(2*zoom)))<1e-9);
+ assert.equal(vars.get('--app-vp-width'),'852px');assert.equal(vars.get('--app-vp-height'),'330px');assert.equal(vars.get('--app-vp-transform'),`scale(${1/zoom})`);
+ assert.equal(vars.get('--app-vp-left'),'17px');assert.equal(vars.get('--app-vp-top'),'9px');
+ e.win.dispatchEvent(new Event('pageshow'));assert.equal(e.root.style.height,'330px');
+ Object.assign(e.win.visualViewport,{scale:1,width:852,height:330,offsetLeft:0,offsetTop:0});e.win.dispatchEvent(new Event('resize'));
+ assert.equal(e.root.style.transform,'none');assert.equal(e.host.style.transform,'none');assert.equal(e.root.style.width,'852px');sync.destroy();
+});
+test('zoomed width-constrained Arena remains vertically centered in the visible viewport',()=>{
+ const e=environment();Object.assign(e.win,{innerWidth:600,innerHeight:400});
+ Object.assign(e.win.visualViewport,{width:300,height:200,scale:2,offsetLeft:10,offsetTop:20});
+ const sync=installViewportSync(e.win,e.host,e.root);
+ assert.equal(e.host.style.width,'600px');assert.equal(e.host.style.left,'10px');
+ assert.ok(Math.abs(parseFloat(e.host.style.height)-289.2857142857143)<1e-9);
+ assert.ok(Math.abs(parseFloat(e.host.style.top)-47.67857142857143)<1e-9);sync.destroy();
+});
+test('viewport scroll events cannot accidentally enable the pageshow-only root-height clamp',()=>{
+ const e=environment();const sync=installViewportSync(e.win,e.host,e.root);
+ e.win.visualViewport.height=220;e.win.visualViewport.dispatchEvent(new Event('scroll'));
+ assert.equal(e.root.style.height,'220px');sync.destroy();
+});
