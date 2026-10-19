@@ -12,7 +12,7 @@ for(const reduced of [false,true])for(const direction of [-1,1])test('P2 Basic r
  const idle=f.p.actorSprites.get('a1'),idleDensity=idle.displayWidth/160;
  // Same forehead-to-muzzle landmark convention: accepted Idle y18..43;
  // accepted action review normalized each authored skull to20px.
- const expectedSkull=25*idleDensity,foot=(127-idle.originY*145)*idle.displayHeight/145;
+ const expectedSkull=25*idleDensity,foot=(158-idle.originY*160)*idle.displayHeight/160;
  f.session.executeAbility(f.actor,'basic','ai',f.target);paint(f);
  const poses=[];
  for(const time of [0,.16,.25,.41]){
@@ -28,7 +28,7 @@ for(const reduced of [false,true])for(const direction of [-1,1])test('P2 Basic r
  }
  assert.equal(new Set(poses).size,reduced?2:4);
  step(f,.57-f.session.elapsedSeconds);paint(f);assert.ok(f.p.actorSprites.get('a1').texture.endsWith('botuo.battleIdle'));assert.equal(f.p.actorSprites.get('a1').displayWidth,144);
- f.session.holdPlayerControl('a1');f.session.setPlayerMovement('a1',{x:direction,y:0});f.session.step(.05);paint(f);assert.ok(f.p.actorSprites.get('a1').texture.endsWith('botuo.battleMove'));assert.equal(f.p.actorSprites.get('a1').displayWidth,144);
+ f.session.holdPlayerControl('a1');f.session.setPlayerMovement('a1',{x:direction,y:0});f.session.step(.05);paint(f);assert.ok(f.p.actorSprites.get('a1').texture.endsWith('botuo.battleMove'));assert.equal(f.p.actorSprites.get('a1').displayWidth,112.5);
  f.p.destroy();assert.equal(f.scene.budget().bytes,0);
 });
 for(const tier of ['T0','T1','T2','T3'])test('P2 '+tier+' locked 250ms real windup; one damage/resolve and cadence at start',()=>{
@@ -53,7 +53,7 @@ for(const reduced of [false,true])for(const direction of [-1,1])test('P2 visual 
 });
 test('P2 accepted source/descriptor and full required residency retain reserve',async()=>{
  assert.equal(formalAbilityDefinitions['P2.basic'].windupMs,250);const d=rosterCatalog.P2.actionDescriptors.basic;assert.deepEqual(d.frameDurationsMs,[160,90,160,160]);assert.equal(d.blade.startMs,160);assert.equal(d.contact.durationMs,200);
- const f=await visual();assert.equal(f.p.textureBytes,16630060);assert.equal(f.p.residency.snapshot().optionalReserveBytes,131072);assert.equal(f.scene.budget().bytes,16630060);assert.equal(f.p.residency.snapshot().evicted,0);f.p.destroy();
+ const f=await visual();assert.equal(f.p.textureBytes,16639660);assert.equal(f.p.residency.snapshot().optionalReserveBytes,131072);assert.equal(f.scene.budget().bytes,16639660);assert.equal(f.p.residency.snapshot().evicted,0);f.p.destroy();
 });
 for(const tacticalEnabled of [false,true])for(const side of ['allies','enemies'])for(const direction of [-1,1])test('real automatic AI decision → P2 shared action '+tacticalEnabled+'/'+side+'/'+direction,()=>{
  const f=fixture({tacticalEnabled}),s=f.session,actor=s.actorById(side==='allies'?'a1':'e1'),target=s.actorById(side==='allies'?'e1':'a1');
@@ -96,6 +96,6 @@ test('opt-in source/contact schema is bounded and old P1 defaults stay absent',a
  assert.throws(()=>actionDescriptor({...d,contact:{...d.contact,durationMs:0}}));for(const category of ['basic','heavy','special']){assert.equal(rosterCatalog.P1.actionDescriptors[category].contact.durationMs,undefined);assert.equal(rosterCatalog.P1.actionDescriptors[category].blade.startMs,undefined);}
 });
 for(const direction of [-1,1])test('actual rendered noncentral action pivot retains approved skull density/foot and mirror '+direction,async()=>{
- const f=await visual();f.target.x=direction*.65;paint(f);const idle=f.p.actorSprites.get('a1'),foot=(127-idle.originY*145)*idle.displayHeight/145;assert.ok(Math.abs(foot+16.2)<1e-9);
+ const f=await visual();f.target.x=direction*.65;paint(f);const idle=f.p.actorSprites.get('a1'),foot=(158-idle.originY*160)*idle.displayHeight/160;assert.ok(Math.abs(foot)<1e-9);
  f.session.executeAbility(f.actor,'basic','ai',f.target);paint(f);const image=f.p.actorSprites.get('a1');assert.equal(image.displayWidth,177.75);assert.equal(image.displayHeight,160.875);assert.ok(Math.abs((126-image.originY*143)*image.displayHeight/143-foot)<1e-9);const pixelX=direction<0?158-35:35;assert.ok(Math.abs(pixelX-image.originX*158)<1e-9);f.p.destroy();
 });

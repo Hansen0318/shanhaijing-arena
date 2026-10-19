@@ -25,7 +25,7 @@ test('P2 approved Move resolves and preloads four lossless 160×155 cells at 12f
  const a=resolveCharacterAsset(rosterCatalog.P2,'battleMove');assert.equal(a.key,'botuo.battleMove');
  assert.equal(a.path,'assets/botuo-basic-packing-v1/botuo-battleMove.png');assert.deepEqual([a.width,a.height,a.bytes],[640,155,158226]);assert.equal(a.fallback,'placeholder.battle');
  const d=rosterCatalog.P2.animationDescriptors.battleMove;assert.deepEqual(d.frames,[0,160,320,480].map(x=>({x,y:0,width:160,height:155})));
- assert.equal(d.source,a.key);assert.equal(d.fps,12);assert.equal(d.loop,true);assert.equal(d.staticFrame,0);assert.deepEqual(d.origin,[.5,1]);assert.equal(d.scale,2);
+ assert.equal(d.source,a.key);assert.equal(d.fps,12);assert.equal(d.loop,true);assert.equal(d.staticFrame,0);assert.deepEqual(d.origin,[.5,153/155]);assert.equal(d.scale,1.5625);
  assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.frames.length,1);
  assert.ok(encounterAssetKeys([rosterCatalog.P2]).includes(a.key));const f=await fixture();assert.ok(f.loaded.includes(a.key));f.p.destroy();
 });
@@ -35,10 +35,10 @@ for(const reduced of [false,true])test(`P2 actual presenter cycles all four fram
  const seen=[];for(let i=0;i<=4;i++){
   f.actor.y+=.1;const before=structuredClone(f.frame),now=.1+(i?i/fps+.001:0);f.render(now);seen.push(image.texture[1]);
   assert.ok(image.texture[0].endsWith('botuo.battleMove'));assert.equal(image.texture[1],`${(i%4)*160}.0.160.155`);
-  assert.deepEqual(image.setOriginValue,[.5,1]);assert.deepEqual(image.setDisplaySizeValue,[144,139.5]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);assert.deepEqual(f.frame,before);
+  assert.deepEqual(image.setOriginValue,[.5,153/155]);assert.deepEqual(image.setDisplaySizeValue,[112.5,108.984375]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);assert.deepEqual(f.frame,before);
   f.render(now);assert.equal(image.texture[1],seen.at(-1));assert.ok(image.texture[0].endsWith('botuo.battleMove'));
  }
- assert.equal(new Set(seen).size,4);f.render(1.1);assert.ok(image.texture[0].endsWith('botuo.battleIdle'));assert.equal(image.texture[1],'0.0.160.145');
+ assert.equal(new Set(seen).size,4);f.render(1.1);assert.ok(image.texture[0].endsWith('botuo.battleIdle'));assert.equal(image.texture[1],'0.0.160.160');
  f.actor.x-=.1;f.render(1.2);assert.deepEqual(image.setFlipXValue,[true]);f.actor.x+=.1;f.render(1.3);assert.deepEqual(image.setFlipXValue,[false]);
  f.actor.y-=.1;f.render(1.4);assert.ok(image.texture[0].endsWith('botuo.battleMove'));f.p.destroy();
 });

@@ -1,5 +1,11 @@
 # AGENTS.md
 
+## 2026-10-19 — P2 STATIC-BASELINE SIZE DEFECT / correction release pending
+
+Player IMG_2674/2675/2676 reports Idle/Move/attack size mismatch and explicitly requires the pre-animation static size. This is NOT acceptance of previous Basic/body or viewport fixes. Root and correction: docs/verification/P2_STATIC_SCALE_FIX.md. Restore exact originally approved static PNG (27c65e3f…a0d2b8) and144×144 canvas, align Move/Basic face22.5world and foot0 with shared data calibration, preserve all source bytes/gameplay/independentFX. Previous Idle strip F1 was smaller than original static; do not mix its density with another source. Retired-F1 regeneration binding excluded.
+
+Engineering115/115 affected tests + Build/81guard PASS; full927:922PASS/5preexisting FAIL explicitly named in report (baseline925/6FAIL).39keys16,639,660bytes +131,072reserve retained with6,484extra; no cap raise. Corrected actual-browser continuity/release checks pending; no player PASS. Heavy paused, P1 COMPLETE and F3 approval protected, no P3/main merge. NEXT verify/deploy exact correction, inspect actual static→Move4→Basic4→Idle raster and real app mobile UI, then targeted player phone review. Prior phone-only handoff is superseded by this new defect. GitHub remains authoritative; all successor prompts one complete code block.
+
 ## 2026-10-19 — Mobile viewport fix DEPLOYED / PHONE REVIEW PENDING
 
 Public exact-byte verification BLOCKED by host proxy CONNECT timeout (not evidence of a site outage); downloaded actual CI Pages artifact matches local build15/15 files. See public-fingerprint.json: publicVerification=false. Deployment success and browser gate PASS are independently established; do not misreport public hashes or redeploy unchanged code for this network failure.

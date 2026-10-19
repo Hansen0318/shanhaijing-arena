@@ -15,12 +15,14 @@ test('P2 high fidelity packing preserves accepted RGBA, legacy pixels and both-f
   if(a.kind==='legacy'){
    const d=rosterCatalog[a.character].animationDescriptors[a.slot];
    for(let i=0;i<a.oldDescriptor.frames.length;i++){
-    const old=a.oldDescriptor,of=old.frames[i],nf=d.frames[i];
+    const old=a.oldDescriptor,of=old.frames[i],nf=a.character==='P2'?{x:of.x,y:of.y/of.height*a.packedHeight,width:of.width,height:a.packedHeight}:d.frames[i];
     assert.deepEqual(cropRgba(packed,[nf.x,nf.y,nf.width,nf.height]),cropRgba(original,[of.x,of.y+a.top,of.width,a.packedHeight]));
     // Every removed RGBA byte is zero, including transparent RGB.
     const cell=cropRgba(original,[of.x,of.y,of.width,of.height]);
     for(let y=0;y<of.height;y++)if(y<a.top||y>=a.top+a.packedHeight)assert.ok(cell.subarray(y*of.width*4,(y+1)*of.width*4).every(v=>v===0));
-    for(const flip of [false,true])for(const [x,y] of [[0,0],[nf.width/2,nf.height/2],[nf.width-1,nf.height-1]]){
+    // Historical packed pixels remain immutable. P2 now intentionally restores
+    // pre-animation static art / calibrated Move; new scale tests own placement.
+    if(a.character!=='P2')for(const flip of [false,true])for(const [x,y] of [[0,0],[nf.width/2,nf.height/2],[nf.width-1,nf.height-1]]){
      const before=72*old.scale/Math.max(of.width,of.height),after=72*d.scale/Math.max(nf.width,nf.height);
      assert.ok(Math.abs((flip?-1:1)*(x-of.width*old.origin[0])*before-(flip?-1:1)*(x-nf.width*d.origin[0])*after)<1e-9);
      assert.ok(Math.abs((y+a.top-of.height*old.origin[1])*before-(y-nf.height*d.origin[1])*after)<1e-9);

@@ -19,7 +19,7 @@ function runtimeScene(){
 test('formal idle presentation is intentionally static F1 while keeping runtime frame architecture',async()=>{
  const d=characterAnimation(rosterCatalog.P2,'battleIdle');
  assert.equal(d.frames.length,1);
- assert.deepEqual(d.frames[0],{x:0,y:0,width:160,height:145});
+ assert.deepEqual(d.frames[0],{x:0,y:0,width:160,height:160});
  assert.equal(d.staticFrame,0);
  const scene=runtimeScene(),asset=assetManifest['botuo.battleIdle'];
  const presenter=new AssetPresenter(scene,{cache:{async load(){return {...asset,image:{width:asset.width,height:asset.height}};}}});
@@ -28,8 +28,8 @@ test('formal idle presentation is intentionally static F1 while keeping runtime 
  for(const t of [0,.4,.8,1.2,3]){
   presenter.render(snapshot,t,rosterCatalog);
   const s=presenter.actorSprites.get('a2');
-  assert.deepEqual([s.frame.cutX,s.frame.cutY,s.frame.cutWidth,s.frame.cutHeight],[0,0,160,145]);
-  assert.deepEqual(s.origin,[.5,1]);
+  assert.deepEqual([s.frame.cutX,s.frame.cutY,s.frame.cutWidth,s.frame.cutHeight],[0,0,160,160]);
+  assert.deepEqual(s.origin,[.5,158/160]);
   assert.deepEqual([s.x,s.y],[314,275]);
  }
  presenter.destroy();
@@ -38,5 +38,5 @@ test('formal idle presentation is intentionally static F1 while keeping runtime 
 test('Lushu and Botuo formal idle descriptors are both static F1 in the current presentation phase',()=>{
  const l=characterAnimation(rosterCatalog.P1,'battleIdle'),b=characterAnimation(rosterCatalog.P2,'battleIdle');
  assert.equal(l.frames.length,1);assert.deepEqual(l.frames[0],{x:0,y:0,width:96,height:128});
- assert.equal(b.frames.length,1);assert.deepEqual(b.frames[0],{x:0,y:0,width:160,height:145});
+ assert.equal(b.frames.length,1);assert.deepEqual(b.frames[0],{x:0,y:0,width:160,height:160});
 });

@@ -11,7 +11,10 @@ def record(source,output,**extra):
  im=read(output)
  return dict(source=str(source.relative_to(ROOT)),sourceSha256=sha(source),output=str(output.relative_to(ROOT)),sha256=sha(output),width=im.width,height=im.height,encodedBytes=output.stat().st_size,decodedBytes=im.width*im.height*4,**extra)
 files=[];mapping={};saved=0
-for c in json.loads((ROOT/'docs/verification/P2_BASIC_PACKING_INPUTS.json').read_text()):
+# Idle F1 was superseded by the original approved static source after the
+# player's scale report. Never rebind that retired derivative on regeneration.
+active_legacy=[c for c in json.loads((ROOT/'docs/verification/P2_BASIC_PACKING_INPUTS.json').read_text()) if c['asset']['key']!='botuo.battleIdle']
+for c in active_legacy:
  a=c['asset'];d=c['oldDescriptor'];top=c['top'];height=c['height'];source=ROOT/'public'/a['path'];assert sha(source)==c['sourceSha256'];im=read(source)
  oldh=d['frames'][0]['height'];assert im.height%oldh==0
  packed=Image.new('RGBA',(im.width,im.height//oldh*height));restored=Image.new('RGBA',im.size)
@@ -51,7 +54,7 @@ for a in new:
  pattern=r"\{key:'"+re.escape(a['key'])+r"',type:'image',path:'[^']+',width:\d+,height:\d+,bytes:\d+,fallback:'[^']+'\}"
  if re.search(pattern,text):text=re.sub(pattern,lambda _:entry,text)
  else:text=text.replace('const entries=[','const entries=[\n '+entry+',')
-for f,c in zip(files,json.loads((ROOT/'docs/verification/P2_BASIC_PACKING_INPUTS.json').read_text())):
+for f,c in zip(files,active_legacy):
  if f['kind']!='legacy':continue
  key=c['asset']['key'];replacement="{key:'%s',type:'image',path:'%s',width:%d,height:%d,bytes:%d,fallback:'placeholder.battle'}"%(key,str(Path(f['output']).relative_to('public')),f['width'],f['height'],f['encodedBytes'])
  text=re.sub(r"\{key:'"+re.escape(key)+r"',type:'image',path:'[^']+',width:\d+,height:\d+,bytes:\d+,fallback:'[^']+'\}",lambda _:replacement,text)

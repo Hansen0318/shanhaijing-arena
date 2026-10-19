@@ -26,7 +26,7 @@ const entries=[
  {key:'lushu.battleKo',type:'image',path:'assets/characters/lushu/battleKo-trimmed.png',width:512,height:472,bytes:151575,fallback:'placeholder.battle'},
  {key:'botuo.portrait',type:'image',path:'assets/characters/botuo/portrait.png',width:128,height:128,bytes:32501,fallback:'placeholder.portrait'},
  {key:'botuo.identity',type:'image',path:'assets/characters/botuo/identity.png',width:160,height:192,bytes:14098,fallback:'placeholder.portrait'},
- {key:'botuo.battleIdle',type:'image',path:'assets/botuo-basic-packing-v1/botuo-battleIdle.png',width:160,height:145,bytes:25140,fallback:'placeholder.battle'},
+ {key:'botuo.battleIdle',type:'image',path:'assets/characters/botuo/battleIdle.png',width:160,height:160,bytes:47136,fallback:'placeholder.battle'},
  {key:'botuo.battleMove',type:'image',path:'assets/botuo-basic-packing-v1/botuo-battleMove.png',width:640,height:155,bytes:158226,fallback:'placeholder.battle'},
  {key:'botuo.battleKo',type:'image',path:'assets/characters/botuo/battleKo-trimmed.png',width:512,height:331,bytes:158388,fallback:'placeholder.battle'},
  {key:'chiru.portrait',type:'image',path:'assets/characters/chiru/portrait.png',width:128,height:128,bytes:39490,fallback:'placeholder.portrait'},

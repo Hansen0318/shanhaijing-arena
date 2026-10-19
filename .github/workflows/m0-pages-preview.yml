@@ -46,7 +46,7 @@ jobs:
           import {readFileSync} from 'node:fs';
           import {execFileSync} from 'node:child_process';
           const report=JSON.parse(readFileSync('docs/verification/M5C_P2_BOTUO_BASIC_RUNTIME.json'));
-          const bounded='node --test tests/botuoBasicRuntime.test.js tests/botuoBasicPacking.test.js tests/assetPresenter.test.js tests/actionPlayback.test.js tests/botuoIdleRuntime.test.js tests/botuoMove.test.js';
+          const bounded='node --test tests/botuoStaticScale.test.js tests/botuoBasicRuntime.test.js tests/botuoBasicPacking.test.js tests/assetPresenter.test.js tests/actionPlayback.test.js tests/botuoIdleRuntime.test.js tests/botuoMove.test.js tests/assetGuard.test.js tests/awakeningRuntimePacking.test.js tests/basicActionIntegration.test.js tests/dynamicAssetIntegration.test.js tests/lushuHeavyAssets.test.js tests/lushuSpecialAssets.test.js tests/xingxingKo.test.js';
           const [command,...args]=(process.env.BOTUO_BODY_SCALE==='true'?bounded:report.tests.command).split(/\s+/);
           if(command!=='node'||args[0]!=='--test')throw Error('Unexpected release test command');
           execFileSync(process.execPath,args,{stdio:'inherit'});
