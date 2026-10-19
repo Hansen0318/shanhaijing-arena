@@ -61,6 +61,9 @@ try{
      await page.getByRole('button',{name:'BATTLE',exact:true}).click();
      await page.locator('.chapter-grid .campaign-card:not(:disabled)').first().click();
      await page.locator('.stage-page>.start').click();
+     // A new profile intentionally starts with no saved team. Select owned
+     // starter cards through the real UI rather than mutating save fixtures.
+     for(const id of ['P1','P2','P3'])await page.locator(`.roster-card[data-character-id="${id}"]`).click();
      await page.locator('.team-page .start.battle').click();
      await page.locator('canvas').waitFor({state:'visible'});
      await page.waitForFunction(()=>window.__arenaSmoke?.battleStarted,{},{timeout:20000});
