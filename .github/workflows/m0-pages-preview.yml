@@ -32,8 +32,11 @@ jobs:
         run: npm ci
 
       - name: Test
-        if: "!contains(github.event.head_commit.message, '[botuo basic release]')"
+        if: "!contains(github.event.head_commit.message, '[botuo basic release]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[viewport release]')"
         run: npm test
+      - name: Test bounded viewport surface
+        if: contains(github.event.head_commit.message, '[viewport probe]') || contains(github.event.head_commit.message, '[viewport release]')
+        run: node --test tests/viewportSync.test.js tests/landingView.test.js tests/routeOwnership.test.js tests/campaignNavigation.test.js tests/appRouteReset.test.js tests/lazyBattleRuntime.test.js
       - name: Test bounded P2 Basic release surface
         if: contains(github.event.head_commit.message, '[botuo basic release]')
         env:
@@ -84,14 +87,34 @@ jobs:
           name: botuo-basic-browser-verification
           path: ${{ runner.temp }}/botuo-basic-browser
           if-no-files-found: warn
+      - name: Check mobile viewport in Chromium and WebKit
+        if: contains(github.event.head_commit.message, '[viewport probe]') || contains(github.event.head_commit.message, '[viewport release]')
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/arena-browser-tool
+          ARENA_BROWSER_OUTPUT: ${{ runner.temp }}/mobile-viewport
+          VIEWPORT_PROBE: ${{ contains(github.event.head_commit.message, '[viewport probe]') }}
+        run: |
+          npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
+          node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium webkit --only-shell
+          node scripts/checkMobileViewport.mjs
+      - name: Preserve mobile viewport evidence
+        if: always() && (contains(github.event.head_commit.message, '[viewport probe]') || contains(github.event.head_commit.message, '[viewport release]'))
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-viewport-verification
+          path: ${{ runner.temp }}/mobile-viewport
+          if-no-files-found: warn
       - name: Configure Pages
+        if: "!contains(github.event.head_commit.message, '[viewport probe]')"
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
+        if: "!contains(github.event.head_commit.message, '[viewport probe]')"
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
+    if: "!contains(github.event.head_commit.message, '[viewport probe]')"
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
