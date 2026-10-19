@@ -1,0 +1,7 @@
+2026-10-19T00:07:46.3616505Z   BOTUO_BODY_SCALE: true
+2026-10-19T00:07:47.3435934Z # tests 67
+2026-10-19T00:07:47.3436554Z # pass 67
+2026-10-19T00:07:47.3436896Z # fail 0
+2026-10-19T00:07:47.5237004Z Asset guard PASS { files: 81, bytes: 4083312 }
+2026-10-19T00:07:48.4803493Z [32m✓ built in 684ms[39m
+2026-10-19T00:08:14.7102162Z {"status":"PASS","cases":4,"screenshots":24,"output":"/home/runner/work/_temp/botuo-basic-browser"}

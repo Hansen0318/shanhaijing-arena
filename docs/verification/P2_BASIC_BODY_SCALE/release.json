@@ -1,0 +1,77 @@
+{
+  "status": "ENGINEERING PASS / DEPLOYED / PUBLIC FINGERPRINT PASS / PLAYER SIZE FIX REVIEW PENDING",
+  "releaseSha": "4607a6bee2675ddf812c5387d787e128969ea684",
+  "runtimeCorrectionSha": "3f85dd5820296bfc0ff7801464cad9d525a5feb3",
+  "url": "https://hansen0318.github.io/shanhaijing-arena/?v=4607a6b",
+  "run": 39179339552,
+  "runUrl": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39179339552",
+  "buildJob": 117828553702,
+  "deployJob": 117828757017,
+  "build": "success",
+  "deploy": "success",
+  "boundedTests": {
+    "total": 67,
+    "pass": 67,
+    "fail": 0
+  },
+  "browser": {
+    "status": "PASS",
+    "cases": 4,
+    "screenshots": 24,
+    "retainedPngs": 6,
+    "artifact": 12156075061,
+    "artifactSha256": "6618ce1f1e9da3c9891cebb4e310c30a90635b328e454a900cff01d2dbbf7bdc",
+    "kind": "Actual Chromium/Phaser/WebGL + PNG decode; controlled direct-call fixture, not automatic AI/UI/mobile/FPS/GPU-memory proof",
+    "visualInspection": "Normal right anticipation/contact/recovery/Idle, normal left release and reduced left contact inspected. Not a phone or automatic AI/UI/FPS/GPU-memory result."
+  },
+  "pagesArtifact": {
+    "id": 12155054593,
+    "sha256": "df58d63c7c1e280dd2fd0219e2943d58672033862ae74eb89a5c3c82b396ee3d"
+  },
+  "evidence": [
+    {
+      "path": "docs/verification/P2_BASIC_BODY_SCALE/browser/browser-verification.json",
+      "sha256": "ca1450eaa4a1c53c06760dae642e867519e8754c9c0183f01896eddc95416c89",
+      "bytes": 22493
+    },
+    {
+      "path": "docs/verification/P2_BASIC_BODY_SCALE/browser/normal-left-release.png",
+      "sha256": "2b8d464d2eab7f0ca863320b21e745530aecbf2cad585fc57d819e8102cae3fb",
+      "bytes": 168349
+    },
+    {
+      "path": "docs/verification/P2_BASIC_BODY_SCALE/browser/normal-right-afterF3.png",
+      "sha256": "d27c93edb9f5c9022cfd319b531f3f341280a3472d0babc0e14ac21c60ad90e6",
+      "bytes": 165251
+    },
+    {
+      "path": "docs/verification/P2_BASIC_BODY_SCALE/browser/normal-right-anticipation.png",
+      "sha256": "5269e2039fe1b37ab71c0139efc58810b73edb36f6c786dc8518a8d8d36cb462",
+      "bytes": 164929
+    },
+    {
+      "path": "docs/verification/P2_BASIC_BODY_SCALE/browser/normal-right-contact.png",
+      "sha256": "383b114d12777a6b5e2ac18e54f879c7b9236e76bc4e8019d4a6d78ada9d296d",
+      "bytes": 169443
+    },
+    {
+      "path": "docs/verification/P2_BASIC_BODY_SCALE/browser/normal-right-idle.png",
+      "sha256": "850e173da48b93d0f0d6b8d8e8ab0aeebaf65991333827e732ac9084e421384c",
+      "bytes": 161899
+    },
+    {
+      "path": "docs/verification/P2_BASIC_BODY_SCALE/browser/reduced-left-contact.png",
+      "sha256": "0c396d8023493c2e13af9e3002ef4100fe0117e1a335190a0ae6ab1e1909d79f",
+      "bytes": 169457
+    }
+  ],
+  "protected": "All approved art/receipts and runtime PNGs, P1/P3/P4/P5, P2 Idle/Move/KO/stats,250ms resolve/CD/Tier and independent source/contact geometry retained; all required39 keys16630060bytes and131072reserve.",
+  "nextGate": "Player verifies only reported size continuity and Idle/Move return; no Heavy continuation before size-fix closure.",
+  "publicFingerprint": {
+    "status": "PASS",
+    "files": 15,
+    "basis": "Downloaded actual CI Pages artifact and local build match byte-for-byte; public exact-byte reconstruction matches all15. Large-file connection truncation handled by131072byte HTTP Range requests; no hash sampling.",
+    "path": "docs/verification/P2_BASIC_BODY_SCALE/public-fingerprint.json",
+    "sha256": "9ec1864203d66e70665d4fa0e9f48b0fa44aecfde3e1b41fe4e7b078f3517153"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "releaseSha": "4607a6bee2675ddf812c5387d787e128969ea684",
+  "run": 39179339552,
+  "kind": "Public exact bytes compared to downloaded CI Pages artifact12155054593; local build exact-byte match too",
+  "files": [
+    {
+      "path": "assets/battleRuntime-Nb_zRT7t.js",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/battleRuntime-Nb_zRT7t.js?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 1477250,
+      "expectedSha256": "ad8eb084988db97f4b4eb23584b9daa5dd2d4aad168c8d518b220e87450f4665",
+      "publicSha256": "ad8eb084988db97f4b4eb23584b9daa5dd2d4aad168c8d518b220e87450f4665",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicContact.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-basicContact.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 23940,
+      "expectedSha256": "9fa8dc4ff29f5b6741e972670a4344df0805e3ab43e7c1007741adfc5e4bf513",
+      "publicSha256": "9fa8dc4ff29f5b6741e972670a4344df0805e3ab43e7c1007741adfc5e4bf513",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicPoses.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-basicPoses.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 122498,
+      "expectedSha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de",
+      "publicSha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicSource.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-basicSource.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 24791,
+      "expectedSha256": "01de21c7d55baf6b35922859d43c12aaf01f05dfa21809af34b85f3a7ff7dc86",
+      "publicSha256": "01de21c7d55baf6b35922859d43c12aaf01f05dfa21809af34b85f3a7ff7dc86",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-battleIdle.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-battleIdle.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 25140,
+      "expectedSha256": "3fc4b62aa3bcbf490f1dd7becc745de3b859de46fed170335e19d10c11400441",
+      "publicSha256": "3fc4b62aa3bcbf490f1dd7becc745de3b859de46fed170335e19d10c11400441",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-battleMove.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-battleMove.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 158226,
+      "expectedSha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5",
+      "publicSha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 32104,
+      "expectedSha256": "5a4e195ebca765d82672a0023ce990c5f15315ff023e1b24dd93f21ce572ef90",
+      "publicSha256": "5a4e195ebca765d82672a0023ce990c5f15315ff023e1b24dd93f21ce572ef90",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/jiuweihu-battleMove.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/jiuweihu-battleMove.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 127746,
+      "expectedSha256": "853e551ee7f1b7d79cd3047596f6f7923260236633060567552ccdb7760826f9",
+      "publicSha256": "853e551ee7f1b7d79cd3047596f6f7923260236633060567552ccdb7760826f9",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/lushu-awakeningCSource.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/lushu-awakeningCSource.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 2754,
+      "expectedSha256": "c231ff7fe06c68557c766df131223395bc5d5c337fd40ae1144a48ced726820b",
+      "publicSha256": "c231ff7fe06c68557c766df131223395bc5d5c337fd40ae1144a48ced726820b",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleIdle.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/xingxing-battleIdle.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 37752,
+      "expectedSha256": "a2154800b7a89de2977e7a81453a961eeffe544c2e5637c5d573346f11809b9c",
+      "publicSha256": "a2154800b7a89de2977e7a81453a961eeffe544c2e5637c5d573346f11809b9c",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleKo.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/xingxing-battleKo.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 160775,
+      "expectedSha256": "1f76985f4e39e466919440b99ff62ad3382aec0748a48ad453300ad8851b177f",
+      "publicSha256": "1f76985f4e39e466919440b99ff62ad3382aec0748a48ad453300ad8851b177f",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleMove.png",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/xingxing-battleMove.png?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 1021517,
+      "expectedSha256": "2553208b199638d8a3d54337e3fd36625ab8777ffc290defde653e7c55f78255",
+      "publicSha256": "2553208b199638d8a3d54337e3fd36625ab8777ffc290defde653e7c55f78255",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/index-DTmlBQKA.js",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/index-DTmlBQKA.js?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 112831,
+      "expectedSha256": "b3821ff5298e3f95b806523e2ad5b5c4c8370977c16b5cc4d818b33a64758f10",
+      "publicSha256": "b3821ff5298e3f95b806523e2ad5b5c4c8370977c16b5cc4d818b33a64758f10",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "assets/index-DcqtNRF0.css",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/index-DcqtNRF0.css?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 22943,
+      "expectedSha256": "a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da",
+      "publicSha256": "a20af2bfa9f5a700823772a0d7e0391b1760c35336de8cc621b36e54bad501da",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    },
+    {
+      "path": "index.html",
+      "url": "https://hansen0318.github.io/shanhaijing-arena/index.html?v=4607a6bee2675ddf812c5387d787e128969ea684",
+      "status": 206,
+      "bytes": 1491,
+      "expectedSha256": "a3a204c6607b3dff820493b950f3d65dce9d13c9634e3abf719f6ca9463ff979",
+      "publicSha256": "a3a204c6607b3dff820493b950f3d65dce9d13c9634e3abf719f6ca9463ff979",
+      "match": true,
+      "ciEqualsLocal": true,
+      "method": "HTTP Range exact-byte reconstruction,131072byte parts"
+    }
+  ]
+}
