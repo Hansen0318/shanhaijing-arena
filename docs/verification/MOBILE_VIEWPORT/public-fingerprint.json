@@ -1,0 +1,99 @@
+{
+  "status": "PUBLIC CHECK BLOCKED; CI_EQUALS_LOCAL PASS15/15",
+  "releaseSha": "50f303db304f427ca80c1c9c4e0b0b101859b392",
+  "pagesArtifact": 12164307671,
+  "publicVerification": false,
+  "reason": "Host proxy CONNECT timeout on direct public requests; search retrieval also inaccessible. Do not infer public bytes or phone acceptance from deployment.",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 1491,
+      "sha256": "e2c67667273d0c3f4207feebf4ece0213800b51ef67272a904f1038b31c36c42",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/battleRuntime-DytfPQ8q.js",
+      "bytes": 1477250,
+      "sha256": "357307fef6a6cee946ab549ff2ea78eb443f9a3a35c17210b2519c95a387d6b6",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/index-BTs-O4-h.css",
+      "bytes": 23164,
+      "sha256": "d132dc331b3f60f6c24df12328e5b9fb61481cb7ef6f9b616825ba50077be9da",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/index-DTigY8sz.js",
+      "bytes": 113193,
+      "sha256": "fc8a394075a658a28787dc26873c95309d2fe58a4257c71d98e737f079e13a63",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicContact.png",
+      "bytes": 23940,
+      "sha256": "9fa8dc4ff29f5b6741e972670a4344df0805e3ab43e7c1007741adfc5e4bf513",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicPoses.png",
+      "bytes": 122498,
+      "sha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicSource.png",
+      "bytes": 24791,
+      "sha256": "01de21c7d55baf6b35922859d43c12aaf01f05dfa21809af34b85f3a7ff7dc86",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-battleIdle.png",
+      "bytes": 25140,
+      "sha256": "3fc4b62aa3bcbf490f1dd7becc745de3b859de46fed170335e19d10c11400441",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-battleMove.png",
+      "bytes": 158226,
+      "sha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png",
+      "bytes": 32104,
+      "sha256": "5a4e195ebca765d82672a0023ce990c5f15315ff023e1b24dd93f21ce572ef90",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/jiuweihu-battleMove.png",
+      "bytes": 127746,
+      "sha256": "853e551ee7f1b7d79cd3047596f6f7923260236633060567552ccdb7760826f9",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/lushu-awakeningCSource.png",
+      "bytes": 2754,
+      "sha256": "c231ff7fe06c68557c766df131223395bc5d5c337fd40ae1144a48ced726820b",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleIdle.png",
+      "bytes": 37752,
+      "sha256": "a2154800b7a89de2977e7a81453a961eeffe544c2e5637c5d573346f11809b9c",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleKo.png",
+      "bytes": 160775,
+      "sha256": "1f76985f4e39e466919440b99ff62ad3382aec0748a48ad453300ad8851b177f",
+      "ciEqualsLocal": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleMove.png",
+      "bytes": 1021517,
+      "sha256": "2553208b199638d8a3d54337e3fd36625ab8777ffc290defde653e7c55f78255",
+      "ciEqualsLocal": true
+    }
+  ]
+}

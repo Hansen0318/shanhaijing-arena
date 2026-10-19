@@ -1,4 +1,14 @@
-# Mobile menu enlargement / clipping — open defect
+# Mobile menu enlargement / clipping — fix deployed, phone pending
+
+## Release closure
+
+Public exact-byte verification BLOCKED: repeated direct requests time out at proxy CONNECT; independent search open cannot access the page either. This is not proof the deployed site is down. Downloaded actual CI Pages index +2JS +CSS +11runtime PNGs match local build15/15 exact bytes. Structured per-file hashes and explicit publicVerification=false in MOBILE_VIEWPORT/public-fingerprint.json. Do not claim a public fingerprint PASS or redo deployment solely for this network failure. Deployment Actions success is established separately; player phone review remains pending.
+
+Source50f303db304f427ca80c1c9c4e0b0b101859b392; Actions39202217431 build117897526482/deploy117898058327 SUCCESS. https://hansen0318.github.io/shanhaijing-arena/?v=50f303d . Relevant54/54 + build/asset guard81 PASS; separate local input4/4 PASS. First release attempt39202130997 was superseded/cancelled before deployment while test setup was completed: fresh profiles must select their three starter cards through the real UI, not assume a saved team. No failed browser assertion was weakened.
+
+Release actual Chromium/WebKit6cases/38menu samples plus battle-modal screenshot =39screenshots PASS, zero page errors. Engine profiles landscape852×330, portrait393×730→landscape, short852×240; reload and all three menu routes/back. Chromium page scale1.5/2/3 returns and restoration PASS. At3 real UI selects owned P1/P2/P3, launches stage1-1, waits for countdown, clicks rendered canvas portrait and observes selectedId=a1, pauses, opens visible in-bounds Exit controls, exits to preview and returns Landing. This proves that specific canvas hit target and DOM navigation, not all joystick/skill/touch paths or sustained gameplay/FPS. Physical iOS browser chrome/restore and the player's exact scale remain unmeasured. Three retained release screenshots and one probe failure screenshot inspected.
+
+Downloaded artifacts: mobile12163809761 ZIP SHA2560d0ac946003d9caddc9c1a436c2b05bd8ea21f416828e748c64d0d57c85dab26; Pages12164307671 ZIP SHA2565e32c437fea91e50924a7cb6379e9b5ae2a14b1e37bcc7798a5b7ee4a7a4de15. Structured geometry/full gate observations retained in MOBILE_VIEWPORT/release/mobile-viewport.json; baseline in probe/. Public fingerprint is recorded separately. Independent read-only reviewer found no critical/important code issues; width-fit, overlay-offset, zoomed-pageshow and real canvas-pointer gaps were addressed. Player phone acceptance and previous Basic size review remain pending; Heavy paused, no main merge.
 
 ## Reproduction and fix candidate
 

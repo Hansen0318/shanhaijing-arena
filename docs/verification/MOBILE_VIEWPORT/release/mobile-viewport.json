@@ -1,0 +1,5305 @@
+{
+  "kind": "Actual built-app Chromium/WebKit with mobile emulation; not physical iOS/browser chrome/device acceptance",
+  "mode": "RELEASE",
+  "cases": [
+    {
+      "name": "chromium-landscape",
+      "samples": [
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "load",
+          "file": "chromium-landscape-load.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "reload",
+          "file": "chromium-landscape-reload.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-battle",
+          "file": "chromium-landscape-return-battle.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-collection",
+          "file": "chromium-landscape-return-collection.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-info",
+          "file": "chromium-landscape-return-info.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 568,
+            "height": 220,
+            "scale": 1.5,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 568,
+            "height": 220,
+            "font": "16px",
+            "display": "block",
+            "transform": "matrix(0.666667, 0, 0, 0.666667, 0, 0)",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 568,
+            "height": 220,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 32.489585876464844,
+            "y": 69.13542175292969,
+            "width": 297.9895935058594,
+            "height": 61.41667175292969,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 373.5520935058594,
+            "y": -26.39583396911621,
+            "width": 143.33334350585938,
+            "height": 143.3333282470703,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 364.5520935058594,
+              "y": 42.66666793823242,
+              "width": 184.78128051757812,
+              "height": 34.66666793823242,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 364.5520935058594,
+              "y": 85.33333587646484,
+              "width": 184.78128051757812,
+              "height": 34.666664123535156,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 364.5520935058594,
+              "y": 128,
+              "width": 184.78128051757812,
+              "height": 34.66667175292969,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "zoom-1.5",
+          "file": "chromium-landscape-zoom-1.5.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 568,
+            "height": 220,
+            "scale": 1.5,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 568,
+            "height": 220,
+            "font": "16px",
+            "display": "block",
+            "transform": "matrix(0.666667, 0, 0, 0.666667, 0, 0)",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 568,
+            "height": 220,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 32.489585876464844,
+            "y": 69.13542175292969,
+            "width": 297.9895935058594,
+            "height": 61.41667175292969,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 373.5520935058594,
+            "y": -26.39583396911621,
+            "width": 143.33334350585938,
+            "height": 143.3333282470703,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 364.5520935058594,
+              "y": 42.66666793823242,
+              "width": 184.78128051757812,
+              "height": 34.66666793823242,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 364.5520935058594,
+              "y": 85.33333587646484,
+              "width": 184.78128051757812,
+              "height": 34.666664123535156,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 364.5520935058594,
+              "y": 128,
+              "width": 184.78128051757812,
+              "height": 34.66667175292969,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "zoom-1.5-return",
+          "file": "chromium-landscape-zoom-1.5-return.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 426,
+            "height": 165,
+            "scale": 2,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 426,
+            "height": 165,
+            "font": "16px",
+            "display": "block",
+            "transform": "matrix(0.5, 0, 0, 0.5, 0, 0)",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 426,
+            "height": 165,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 24.3671875,
+            "y": 51.8515625,
+            "width": 223.4921875,
+            "height": 46.0625,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 280.1640625,
+            "y": -19.796875,
+            "width": 107.5,
+            "height": 107.5,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 273.4140625,
+              "y": 32,
+              "width": 138.5859375,
+              "height": 26,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 273.4140625,
+              "y": 64,
+              "width": 138.5859375,
+              "height": 26,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 273.4140625,
+              "y": 96,
+              "width": 138.5859375,
+              "height": 26,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "zoom-2",
+          "file": "chromium-landscape-zoom-2.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 426,
+            "height": 165,
+            "scale": 2,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 426,
+            "height": 165,
+            "font": "16px",
+            "display": "block",
+            "transform": "matrix(0.5, 0, 0, 0.5, 0, 0)",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 426,
+            "height": 165,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 24.3671875,
+            "y": 51.8515625,
+            "width": 223.4921875,
+            "height": 46.0625,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 280.1640625,
+            "y": -19.796875,
+            "width": 107.5,
+            "height": 107.5,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 273.4140625,
+              "y": 32,
+              "width": 138.5859375,
+              "height": 26,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 273.4140625,
+              "y": 64,
+              "width": 138.5859375,
+              "height": 26,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 273.4140625,
+              "y": 96,
+              "width": 138.5859375,
+              "height": 26,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "zoom-2-return",
+          "file": "chromium-landscape-zoom-2-return.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 284,
+            "height": 110,
+            "scale": 3,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 284,
+            "height": 110,
+            "font": "16px",
+            "display": "block",
+            "transform": "matrix(0.333333, 0, 0, 0.333333, 0, 0)",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 284,
+            "height": 110,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 16.244792938232422,
+            "y": 34.567710876464844,
+            "width": 148.9947967529297,
+            "height": 30.708335876464844,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 186.7760467529297,
+            "y": -13.197916984558105,
+            "width": 71.66667175292969,
+            "height": 71.66666412353516,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 182.2760467529297,
+              "y": 21.33333396911621,
+              "width": 92.39064025878906,
+              "height": 17.33333396911621,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 182.2760467529297,
+              "y": 42.66666793823242,
+              "width": 92.39064025878906,
+              "height": 17.333332061767578,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 182.2760467529297,
+              "y": 64,
+              "width": 92.39064025878906,
+              "height": 17.333335876464844,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "zoom-3",
+          "file": "chromium-landscape-zoom-3.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 284,
+            "height": 110,
+            "scale": 3,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 284,
+            "height": 110,
+            "font": "16px",
+            "display": "block",
+            "transform": "matrix(0.333333, 0, 0, 0.333333, 0, 0)",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 284,
+            "height": 110,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 16.244792938232422,
+            "y": 34.567710876464844,
+            "width": 148.9947967529297,
+            "height": 30.708335876464844,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 186.7760467529297,
+            "y": -13.197916984558105,
+            "width": 71.66667175292969,
+            "height": 71.66666412353516,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 182.2760467529297,
+              "y": 21.33333396911621,
+              "width": 92.39064025878906,
+              "height": 17.33333396911621,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 182.2760467529297,
+              "y": 42.66666793823242,
+              "width": 92.39064025878906,
+              "height": 17.333332061767578,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 182.2760467529297,
+              "y": 64,
+              "width": 92.39064025878906,
+              "height": 17.333335876464844,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "zoom-3-return",
+          "file": "chromium-landscape-zoom-3-return.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 284,
+            "height": 110,
+            "scale": 3,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 284,
+            "height": 110,
+            "font": "16px",
+            "display": "block",
+            "transform": "matrix(0.333333, 0, 0, 0.333333, 0, 0)",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 284,
+            "height": 110,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 16.244792938232422,
+            "y": 34.567710876464844,
+            "width": 148.9947967529297,
+            "height": 30.708335876464844,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 186.7760467529297,
+            "y": -13.197916984558105,
+            "width": 71.66667175292969,
+            "height": 71.66666412353516,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 182.2760467529297,
+              "y": 21.33333396911621,
+              "width": 92.39064025878906,
+              "height": 17.33333396911621,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 182.2760467529297,
+              "y": 42.66666793823242,
+              "width": 92.39064025878906,
+              "height": 17.333332061767578,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 182.2760467529297,
+              "y": 64,
+              "width": 92.39064025878906,
+              "height": 17.333335876464844,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "zoom-battle-return",
+          "file": "chromium-landscape-zoom-battle-return.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "zoom-restored",
+          "file": "chromium-landscape-zoom-restored.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "label": "BATTLE",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 10,
+              "width": 275.828125,
+              "height": 30,
+              "font": "25.56px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 276,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px",
+              "textAdjust": "auto"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "COLLECTION",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 8,
+              "width": 199.265625,
+              "height": 30,
+              "font": "25.56px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 199,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px",
+              "textAdjust": "auto"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "INFO",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 12,
+              "width": 78.0625,
+              "height": 30,
+              "font": "25.56px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 78,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px",
+              "textAdjust": "auto"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        }
+      ],
+      "battle": {
+        "zoom": 3,
+        "canvas": {
+          "x": 27.921875,
+          "y": 0,
+          "width": 228.14584350585938,
+          "height": 110,
+          "font": "16px",
+          "display": "block",
+          "transform": "none",
+          "scrollWidth": 684,
+          "scrollHeight": 330
+        },
+        "exitButtons": [
+          {
+            "x": 62.66666793823242,
+            "y": 61,
+            "width": 50.218753814697266,
+            "height": 14.666671752929688
+          },
+          {
+            "x": 116.88542175292969,
+            "y": 61,
+            "width": 50.22395324707031,
+            "height": 14.666671752929688
+          },
+          {
+            "x": 171.109375,
+            "y": 61,
+            "width": 50.223968505859375,
+            "height": 14.666671752929688
+          }
+        ],
+        "pauseResumeClickable": true,
+        "canvasPortraitSelection": "a1"
+      }
+    },
+    {
+      "name": "chromium-portrait",
+      "samples": [
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "load",
+          "file": "chromium-portrait-load.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "reload",
+          "file": "chromium-portrait-reload.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-battle",
+          "file": "chromium-portrait-return-battle.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-collection",
+          "file": "chromium-portrait-return-collection.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.703125,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 93
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.171875,
+              "height": 52,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-info",
+          "file": "chromium-portrait-return-info.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "label": "BATTLE",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 10,
+              "width": 275.828125,
+              "height": 30,
+              "font": "25.56px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 276,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px",
+              "textAdjust": "auto"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "COLLECTION",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 8,
+              "width": 199.265625,
+              "height": 30,
+              "font": "25.56px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 199,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px",
+              "textAdjust": "auto"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "INFO",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 12,
+              "width": 78.0625,
+              "height": 30,
+              "font": "25.56px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 78,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px",
+              "textAdjust": "auto"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "chromium-short",
+      "samples": [
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 86.828125,
+            "width": 446.984375,
+            "height": 39.875,
+            "font": "38.34px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 40
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "load",
+          "file": "chromium-short-load.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 86.828125,
+            "width": 446.984375,
+            "height": 39.875,
+            "font": "38.34px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 40
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "reload",
+          "file": "chromium-short-reload.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 86.828125,
+            "width": 446.984375,
+            "height": 39.875,
+            "font": "38.34px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 40
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-battle",
+          "file": "chromium-short-return-battle.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 86.828125,
+            "width": 446.984375,
+            "height": 39.875,
+            "font": "38.34px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 40
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-collection",
+          "file": "chromium-short-return-collection.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 86.828125,
+            "width": 446.984375,
+            "height": 39.875,
+            "font": "38.34px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 40
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.171875,
+              "height": 48,
+              "font": "17.04px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px",
+            "textAdjust": "auto"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-info",
+          "file": "chromium-short-return-info.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "label": "BATTLE",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 240,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 240,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 320
+            },
+            "title": {
+              "x": 20,
+              "y": 10,
+              "width": 275.828125,
+              "height": 30,
+              "font": "25.56px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 276,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px",
+              "textAdjust": "auto"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "COLLECTION",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 240,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 240,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "title": {
+              "x": 20,
+              "y": 8,
+              "width": 199.265625,
+              "height": 30,
+              "font": "25.56px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 199,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px",
+              "textAdjust": "auto"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "INFO",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 240,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 240,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "title": {
+              "x": 20,
+              "y": 12,
+              "width": 78.0625,
+              "height": 30,
+              "font": "25.56px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 78,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px",
+              "textAdjust": "auto"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "webkit-landscape",
+      "samples": [
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "load",
+          "file": "webkit-landscape-load.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "reload",
+          "file": "webkit-landscape-reload.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-battle",
+          "file": "webkit-landscape-return-battle.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-collection",
+          "file": "webkit-landscape-return-collection.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-info",
+          "file": "webkit-landscape-return-info.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "label": "BATTLE",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 10,
+              "width": 275.828125,
+              "height": 30,
+              "font": "25.560001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 276,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "COLLECTION",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 8,
+              "width": 199.265625,
+              "height": 30,
+              "font": "25.560001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 199,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "INFO",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 12,
+              "width": 78.0625,
+              "height": 30,
+              "font": "25.560001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 78,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "webkit-portrait",
+      "samples": [
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "load",
+          "file": "webkit-portrait-load.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "reload",
+          "file": "webkit-portrait-reload.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-battle",
+          "file": "webkit-portrait-return-battle.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-collection",
+          "file": "webkit-portrait-return-collection.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 330,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 330,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 330,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 330
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 103.6875,
+            "width": 446.984375,
+            "height": 92.125,
+            "font": "44.304001px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 92
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -39.59375,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 64,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 128,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 192,
+              "width": 277.15625,
+              "height": 52,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 48
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-info",
+          "file": "webkit-portrait-return-info.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "label": "BATTLE",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 10,
+              "width": 275.828125,
+              "height": 30,
+              "font": "25.560001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 276,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "COLLECTION",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 8,
+              "width": 199.265625,
+              "height": 30,
+              "font": "25.560001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 199,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "INFO",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 330,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 330,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 330,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 330
+            },
+            "title": {
+              "x": 20,
+              "y": 12,
+              "width": 78.0625,
+              "height": 30,
+              "font": "25.560001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 78,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "webkit-short",
+      "samples": [
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 66.890625,
+            "width": 446.984375,
+            "height": 79.71875,
+            "font": "38.340004px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 80
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "load",
+          "file": "webkit-short-load.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 66.890625,
+            "width": 446.984375,
+            "height": 79.71875,
+            "font": "38.340004px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 80
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "reload",
+          "file": "webkit-short-reload.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 66.890625,
+            "width": 446.984375,
+            "height": 79.71875,
+            "font": "38.340004px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 80
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-battle",
+          "file": "webkit-short-return-battle.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 66.890625,
+            "width": 446.984375,
+            "height": 79.71875,
+            "font": "38.340004px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 80
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-collection",
+          "file": "webkit-short-return-collection.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        },
+        {
+          "window": {
+            "width": 852,
+            "height": 240,
+            "dpr": 3
+          },
+          "vv": {
+            "width": 852,
+            "height": 240,
+            "scale": 1,
+            "left": 0,
+            "top": 0
+          },
+          "root": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "page": {
+            "x": 0,
+            "y": 0,
+            "width": 852,
+            "height": 240,
+            "font": "16px",
+            "display": "grid",
+            "transform": "none",
+            "scrollWidth": 852,
+            "scrollHeight": 240
+          },
+          "title": {
+            "x": 48.734375,
+            "y": 66.890625,
+            "width": 446.984375,
+            "height": 79.71875,
+            "font": "38.340004px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 447,
+            "scrollHeight": 80
+          },
+          "sun": {
+            "x": 560.328125,
+            "y": -28.796875,
+            "width": 215,
+            "height": 215,
+            "font": "16px",
+            "display": "block",
+            "transform": "none",
+            "scrollWidth": 213,
+            "scrollHeight": 213
+          },
+          "buttons": [
+            {
+              "text": "BATTLE",
+              "x": 546.828125,
+              "y": 26,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "COLLECTION",
+              "x": 546.828125,
+              "y": 86,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            },
+            {
+              "text": "INFO",
+              "x": 546.828125,
+              "y": 146,
+              "width": 277.15625,
+              "height": 48,
+              "font": "17.040001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 273,
+              "scrollHeight": 44
+            }
+          ],
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+          "htmlStyle": {
+            "font": "16px"
+          },
+          "canvas": null,
+          "hostDetached": true,
+          "label": "return-info",
+          "file": "webkit-short-return-info.png",
+          "visibleButtons": [
+            "BATTLE",
+            "COLLECTION",
+            "INFO"
+          ]
+        }
+      ],
+      "routes": [
+        {
+          "label": "BATTLE",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 240,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 240,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 320
+            },
+            "title": {
+              "x": 20,
+              "y": 10,
+              "width": 275.828125,
+              "height": 30,
+              "font": "25.560001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 276,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "COLLECTION",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 240,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 240,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "title": {
+              "x": 20,
+              "y": 8,
+              "width": 199.265625,
+              "height": 30,
+              "font": "25.560001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 199,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        },
+        {
+          "label": "INFO",
+          "measurement": {
+            "window": {
+              "width": 852,
+              "height": 240,
+              "dpr": 3
+            },
+            "vv": {
+              "width": 852,
+              "height": 240,
+              "scale": 1,
+              "left": 0,
+              "top": 0
+            },
+            "root": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "page": {
+              "x": 0,
+              "y": 0,
+              "width": 852,
+              "height": 240,
+              "font": "16px",
+              "display": "flex",
+              "transform": "none",
+              "scrollWidth": 852,
+              "scrollHeight": 240
+            },
+            "title": {
+              "x": 20,
+              "y": 12,
+              "width": 78.0625,
+              "height": 30,
+              "font": "25.560001px",
+              "display": "block",
+              "transform": "none",
+              "scrollWidth": 78,
+              "scrollHeight": 30
+            },
+            "sun": null,
+            "buttons": [],
+            "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+            "htmlStyle": {
+              "font": "16px"
+            },
+            "canvas": null,
+            "hostDetached": true
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "PASS",
+  "serverLog": "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m4174\u001b[22m/shanhaijing-arena/\u001b[39m\n"
+}
