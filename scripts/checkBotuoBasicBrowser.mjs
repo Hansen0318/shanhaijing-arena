@@ -25,7 +25,8 @@ try{
     if(index===-1){p.actions.active.clear();p.facings.clear();p.states.clear();}
     const frame=s.snapshot();frame.allies[0].x+=index<0?0:(index+1)*.05*sign;
     for(const side of ['allies','enemies'])frame[side]=frame[side].map(a=>({...a,definitionId:s.actorById(a.instanceId).definitionId}));
-    p.render(frame,index<0?0:1+index/(reduced?6:12)+.001,s.characterDefinitions);scene.game.step(performance.now(),0);
+    // Sample just inside each authored hold, not on a floating-point boundary.
+    p.render(frame,index<0?0:1+index/(reduced?6:12)+.001+index*.00001,s.characterDefinitions);scene.game.step(performance.now(),0);
     const b=p.actorSprites.get('a1');return {texture:b.texture.key,frame:b.frame.name,width:b.displayWidth,height:b.displayHeight,origin:[b.originX,b.originY]};
    },{index,reduced,sign});
    if(index<0){assert.equal(sample.width,144);assert.equal(sample.height,144);assert.equal(sample.frame,'0.0.160.160');}
