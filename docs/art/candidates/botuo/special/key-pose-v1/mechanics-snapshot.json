@@ -1,0 +1,2224 @@
+{
+  "status": "READ-ONLY MECHANICS PREFLIGHT PASS; NO ART/RUNTIME ACCEPTANCE",
+  "sourceCheckpoint": "8eb5e2b4814f86d4710a23b3a5e0346428ecd9f3",
+  "directCases": 32,
+  "direct": [
+    {
+      "tier": "T0",
+      "side": "allies",
+      "source": "player",
+      "tactical": false,
+      "cooldown": 8,
+      "selfReduction": 0.25,
+      "duration": 4,
+      "aiOpportunityRange": 2.2,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.25,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T0",
+      "side": "allies",
+      "source": "player",
+      "tactical": true,
+      "cooldown": 8,
+      "selfReduction": 0.25,
+      "duration": 4,
+      "aiOpportunityRange": 2.2,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.25,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T0",
+      "side": "allies",
+      "source": "ai",
+      "tactical": false,
+      "cooldown": 8,
+      "selfReduction": 0.25,
+      "duration": 4,
+      "aiOpportunityRange": 2.2,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.25,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T0",
+      "side": "allies",
+      "source": "ai",
+      "tactical": true,
+      "cooldown": 8,
+      "selfReduction": 0.25,
+      "duration": 4,
+      "aiOpportunityRange": 2.2,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.25,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T0",
+      "side": "enemies",
+      "source": "player",
+      "tactical": false,
+      "cooldown": 8,
+      "selfReduction": 0.25,
+      "duration": 4,
+      "aiOpportunityRange": 2.2,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.25,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T0",
+      "side": "enemies",
+      "source": "player",
+      "tactical": true,
+      "cooldown": 8,
+      "selfReduction": 0.25,
+      "duration": 4,
+      "aiOpportunityRange": 2.2,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.25,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T0",
+      "side": "enemies",
+      "source": "ai",
+      "tactical": false,
+      "cooldown": 8,
+      "selfReduction": 0.25,
+      "duration": 4,
+      "aiOpportunityRange": 2.2,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.25,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T0",
+      "side": "enemies",
+      "source": "ai",
+      "tactical": true,
+      "cooldown": 8,
+      "selfReduction": 0.25,
+      "duration": 4,
+      "aiOpportunityRange": 2.2,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.25,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "side": "allies",
+      "source": "player",
+      "tactical": false,
+      "cooldown": 7.5520000000000005,
+      "selfReduction": 0.275,
+      "duration": 4.32,
+      "aiOpportunityRange": 2.3100000000000005,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.3100000000000005
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "side": "allies",
+      "source": "player",
+      "tactical": true,
+      "cooldown": 7.5520000000000005,
+      "selfReduction": 0.275,
+      "duration": 4.32,
+      "aiOpportunityRange": 2.3100000000000005,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.3100000000000005
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "side": "allies",
+      "source": "ai",
+      "tactical": false,
+      "cooldown": 7.5520000000000005,
+      "selfReduction": 0.275,
+      "duration": 4.32,
+      "aiOpportunityRange": 2.3100000000000005,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.3100000000000005
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "side": "allies",
+      "source": "ai",
+      "tactical": true,
+      "cooldown": 7.5520000000000005,
+      "selfReduction": 0.275,
+      "duration": 4.32,
+      "aiOpportunityRange": 2.3100000000000005,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.3100000000000005
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "side": "enemies",
+      "source": "player",
+      "tactical": false,
+      "cooldown": 7.5520000000000005,
+      "selfReduction": 0.275,
+      "duration": 4.32,
+      "aiOpportunityRange": 2.3100000000000005,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.3100000000000005
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "side": "enemies",
+      "source": "player",
+      "tactical": true,
+      "cooldown": 7.5520000000000005,
+      "selfReduction": 0.275,
+      "duration": 4.32,
+      "aiOpportunityRange": 2.3100000000000005,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.3100000000000005
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "side": "enemies",
+      "source": "ai",
+      "tactical": false,
+      "cooldown": 7.5520000000000005,
+      "selfReduction": 0.275,
+      "duration": 4.32,
+      "aiOpportunityRange": 2.3100000000000005,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.3100000000000005
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "side": "enemies",
+      "source": "ai",
+      "tactical": true,
+      "cooldown": 7.5520000000000005,
+      "selfReduction": 0.275,
+      "duration": 4.32,
+      "aiOpportunityRange": 2.3100000000000005,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.3100000000000005
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "side": "allies",
+      "source": "player",
+      "tactical": false,
+      "cooldown": 7.104,
+      "selfReduction": 0.3,
+      "duration": 4.6,
+      "aiOpportunityRange": 2.4200000000000004,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.4200000000000004
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.18,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "side": "allies",
+      "source": "player",
+      "tactical": true,
+      "cooldown": 7.104,
+      "selfReduction": 0.3,
+      "duration": 4.6,
+      "aiOpportunityRange": 2.4200000000000004,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.4200000000000004
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.18,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "side": "allies",
+      "source": "ai",
+      "tactical": false,
+      "cooldown": 7.104,
+      "selfReduction": 0.3,
+      "duration": 4.6,
+      "aiOpportunityRange": 2.4200000000000004,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.4200000000000004
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.18,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "side": "allies",
+      "source": "ai",
+      "tactical": true,
+      "cooldown": 7.104,
+      "selfReduction": 0.3,
+      "duration": 4.6,
+      "aiOpportunityRange": 2.4200000000000004,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.4200000000000004
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.18,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "side": "enemies",
+      "source": "player",
+      "tactical": false,
+      "cooldown": 7.104,
+      "selfReduction": 0.3,
+      "duration": 4.6,
+      "aiOpportunityRange": 2.4200000000000004,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.4200000000000004
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.18,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "side": "enemies",
+      "source": "player",
+      "tactical": true,
+      "cooldown": 7.104,
+      "selfReduction": 0.3,
+      "duration": 4.6,
+      "aiOpportunityRange": 2.4200000000000004,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.4200000000000004
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.18,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "side": "enemies",
+      "source": "ai",
+      "tactical": false,
+      "cooldown": 7.104,
+      "selfReduction": 0.3,
+      "duration": 4.6,
+      "aiOpportunityRange": 2.4200000000000004,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.4200000000000004
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.18,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "side": "enemies",
+      "source": "ai",
+      "tactical": true,
+      "cooldown": 7.104,
+      "selfReduction": 0.3,
+      "duration": 4.6,
+      "aiOpportunityRange": 2.4200000000000004,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.4200000000000004
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.18,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.6,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "side": "allies",
+      "source": "player",
+      "tactical": false,
+      "cooldown": 6.432,
+      "selfReduction": 0.3375,
+      "duration": 5,
+      "aiOpportunityRange": 2.596,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.596
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3375,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.2025,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "side": "allies",
+      "source": "player",
+      "tactical": true,
+      "cooldown": 6.432,
+      "selfReduction": 0.3375,
+      "duration": 5,
+      "aiOpportunityRange": 2.596,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.596
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3375,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.2025,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "side": "allies",
+      "source": "ai",
+      "tactical": false,
+      "cooldown": 6.432,
+      "selfReduction": 0.3375,
+      "duration": 5,
+      "aiOpportunityRange": 2.596,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.596
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3375,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.2025,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "side": "allies",
+      "source": "ai",
+      "tactical": true,
+      "cooldown": 6.432,
+      "selfReduction": 0.3375,
+      "duration": 5,
+      "aiOpportunityRange": 2.596,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.596
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3375,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.2025,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "side": "enemies",
+      "source": "player",
+      "tactical": false,
+      "cooldown": 6.432,
+      "selfReduction": 0.3375,
+      "duration": 5,
+      "aiOpportunityRange": 2.596,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.596
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3375,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.2025,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "side": "enemies",
+      "source": "player",
+      "tactical": true,
+      "cooldown": 6.432,
+      "selfReduction": 0.3375,
+      "duration": 5,
+      "aiOpportunityRange": 2.596,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.596
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3375,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.2025,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "side": "enemies",
+      "source": "ai",
+      "tactical": false,
+      "cooldown": 6.432,
+      "selfReduction": 0.3375,
+      "duration": 5,
+      "aiOpportunityRange": 2.596,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.596
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3375,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.2025,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "side": "enemies",
+      "source": "ai",
+      "tactical": true,
+      "cooldown": 6.432,
+      "selfReduction": 0.3375,
+      "duration": 5,
+      "aiOpportunityRange": 2.596,
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "special",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.596
+        }
+      ],
+      "statuses": [
+        {
+          "id": "status-1",
+          "sourceId": "e1",
+          "targetId": "e1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.3375,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "e1",
+          "targetId": "e2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.2025,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 5,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    }
+  ],
+  "lifecycle": [
+    {
+      "case": "refresh-replace-and-expiry",
+      "first": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "refreshed": [
+        {
+          "id": "status-3",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 1,
+          "expiryTime": 5.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-4",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 1,
+          "expiryTime": 5.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "expiryTime": 5.32,
+      "remaining": 0,
+      "fixture": "clock and cooldown readiness controlled, not natural overlap"
+    },
+    {
+      "case": "source-ko",
+      "records": [],
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "recipient-ko",
+      "records": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "clear-restart",
+      "records": [],
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "move",
+      "records": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "position": [
+        0.07453,
+        0
+      ]
+    },
+    {
+      "case": "ordinary-damage",
+      "records": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "control-after-activation",
+      "records": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.275,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.ally",
+          "type": "mitigation",
+          "magnitude": 0.165,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4.32,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-3",
+          "sourceId": "e1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "probe-control",
+          "type": "control",
+          "magnitude": 1,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 0.2,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "special-then-heavy-same-clock",
+      "at": 0,
+      "enemyHpLoss": 9.199999999999989,
+      "records": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "base-mitigation",
+          "type": "mitigation",
+          "magnitude": 0.25,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 4,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "special",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 2.2
+        },
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.8,
+          "phase": "start",
+          "presentationOnly": true,
+          "actionId": "presentation.1",
+          "startedAt": 0,
+          "dueAt": 0,
+          "eventAt": 0,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        },
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8,
+          "phase": "resolve",
+          "presentationOnly": true,
+          "actionId": "presentation.1",
+          "startedAt": 0,
+          "dueAt": 0,
+          "eventAt": 0,
+          "resolvedAt": 0,
+          "attackOrigin": {
+            "x": 0,
+            "y": 0
+          },
+          "attackTarget": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ]
+    }
+  ],
+  "ai": [
+    {
+      "near": false,
+      "intent": {
+        "kind": "move",
+        "movement": "approach",
+        "reason": "skill_spacing_too_far",
+        "category": "basic",
+        "definitionId": "P2.basic",
+        "targetId": "e1",
+        "desiredRange": 0.7
+      }
+    },
+    {
+      "near": true,
+      "intent": {
+        "kind": "ability",
+        "category": "special",
+        "definitionId": "P2.special",
+        "targetId": "a1",
+        "pursue": false
+      }
+    }
+  ],
+  "damage": [
+    {
+      "tier": "T0",
+      "unguarded": 9.2,
+      "guarded": 6.8999999999999995,
+      "multiplier": 0.75
+    },
+    {
+      "tier": "T1",
+      "unguarded": 16.161499999999997,
+      "guarded": 11.717087499999996,
+      "multiplier": 0.725
+    },
+    {
+      "tier": "T2",
+      "unguarded": 25.443499999999993,
+      "guarded": 17.810449999999992,
+      "multiplier": 0.7
+    },
+    {
+      "tier": "T3",
+      "unguarded": 43.234,
+      "guarded": 28.642525,
+      "multiplier": 0.6625
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/roster/abilities.js",
+      "sha256": "a6fada12cf25571148e0f54d86083aab7fd4123c5770ba510c07f620f57f2084"
+    },
+    {
+      "path": "src/roster/catalog.js",
+      "sha256": "e8fdacd217d2f7b34b46c62f83e9abe6ff287e05a00da9adac8f4626d9007108"
+    },
+    {
+      "path": "src/roster/tierEffects.js",
+      "sha256": "2f157c7edb1df0873a9c906212c9459699a34ac947489c5b4bb4d11585c026fa"
+    },
+    {
+      "path": "src/roster/tierScalingProfiles.js",
+      "sha256": "7c1c597c7e0906d14b2b72844a71d5d6d522ae17988d1d2eabba9074852f735b"
+    },
+    {
+      "path": "src/combat/battleSession.js",
+      "sha256": "5995fc3a16f0421740637d86b2d87f93ccd3007da29c4a047ddaa4764b928ec0"
+    },
+    {
+      "path": "src/combat/statuses.js",
+      "sha256": "332520e1666ad334594e814970089ec0587a3c3a123abae52d5d995948037e47"
+    },
+    {
+      "path": "src/combat/tierEffects.js",
+      "sha256": "7c79798c6ba726095fb062130d8fb8a9319c6468f6993e372533967b28afacfc"
+    },
+    {
+      "path": "src/combat/tierEffectRuntime.js",
+      "sha256": "eb9df2f6a1fd17de9485e782402a4812bc9a707b7e820355d2e0c01b4862bdf4"
+    },
+    {
+      "path": "src/combat/ai.js",
+      "sha256": "d09305a2299ec4cd944365046a483b6bcb255bcf1f5244356ee7cd4a4cc3dea2"
+    },
+    {
+      "path": "src/runtime/statusPresentation.js",
+      "sha256": "e0b97fa9d60c324fe0e26d59eb28625e047697484e86f53de74367ffb1b75465"
+    },
+    {
+      "path": "src/runtime/ArenaScene.js",
+      "sha256": "f03df38839177122cc1a5dbe4c0c4627c9efdabb1786e44f1cd7b486c87b49c3"
+    },
+    {
+      "path": "src/runtime/assetPresenter.js",
+      "sha256": "bcd920eec4ad3119133d2ec0841b91abcd911ae55c6f5f18d091cd1bc93d7f28"
+    }
+  ],
+  "limitations": [
+    "No rendered status VFX, browser, build or phone verification.",
+    "Cleanup callbacks/despawn behavior additionally traced statically; status records do not autonomously detect arbitrary actor-array removal.",
+    "Cast event hit=true means mitigation applied, not a damage hit.",
+    "Manual cooldown/clock manipulation only in the isolated refresh fixture."
+  ]
+}

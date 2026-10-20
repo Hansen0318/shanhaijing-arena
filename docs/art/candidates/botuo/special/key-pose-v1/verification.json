@@ -1,0 +1,111 @@
+{
+  "status": "DESIGN / FIRST KEY POSE CANDIDATE / PLAYER REVIEW PENDING",
+  "generator": "built-in image_gen; no CLI fallback",
+  "source": {
+    "path": "docs/art/candidates/botuo/special/key-pose-v1/F3-protection-master.png",
+    "sha256": "00dc78f20e09da6f8c55b67497653046cb5c7aa6253df2ffaa3d7b41c7bdf8a6",
+    "bytes": 1256843,
+    "size": [
+      1222,
+      1287
+    ],
+    "mode": "RGBA"
+  },
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "path": "public/assets/characters/botuo/identity.png",
+      "sha256": "79a210c187745886fb9c1fce3877512b275998bc17c7c537369fdc6f2b8dae5b",
+      "bytes": 14098,
+      "size": [
+        160,
+        192
+      ],
+      "mode": "P"
+    },
+    {
+      "path": "public/assets/characters/botuo/battleIdle.png",
+      "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+      "bytes": 47136,
+      "size": [
+        160,
+        160
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png",
+      "sha256": "0049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206",
+      "bytes": 1186261,
+      "size": [
+        1446,
+        1087
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "alpha": {
+    "extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      16,
+      1186,
+      1287
+    ],
+    "alpha_gt64_bbox": [
+      89,
+      19,
+      1136,
+      1265
+    ],
+    "outer_edge_maxima": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "low_alpha_1_to8": 17813,
+    "handling": "Source faint edge alpha retained; padding only, no threshold cleanup."
+  },
+  "padded": {
+    "path": "docs/art/candidates/botuo/special/key-pose-v1/F3-protection-padded.png",
+    "sha256": "6e3ede34ef34daeab759fed0d5a0d04e08ef5a2c449fd1441b5dccc9ebd23944",
+    "bytes": 1235714,
+    "size": [
+      1302,
+      1367
+    ],
+    "mode": "RGBA"
+  },
+  "padding": {
+    "each_side": 40,
+    "RGBA_crop_back_exact": true,
+    "outer_edges_clear": true
+  },
+  "qa": {
+    "path": "docs/art/candidates/botuo/special/key-pose-v1/QA-light-dark.png",
+    "sha256": "5a9fb5bf0b5f019e22d40bfcbb8931d05e94b9847c6887a7420fb74eb87cf15d",
+    "bytes": 334989,
+    "size": [
+      1100,
+      720
+    ],
+    "mode": "RGB"
+  },
+  "selfReview": [
+    "One complete upright right-facing figure; both cloven hooves visible.",
+    "Curled ram horns, white face, brown mantle, red sash, cream/gold tabard retained.",
+    "One beast-face bracer drawn inward at upper chest; opposite smaller bracer supports from below.",
+    "No baked VFX, new weapon, enemy or fake impact.",
+    "Generated anatomy/equipment projections are new pixels, not pixel-identical to approved art; player review required."
+  ],
+  "notProven": [
+    "Player art acceptance",
+    "Multi-frame/ground-anchor/body-density calibration at actual game scale",
+    "Runtime packing/residency fit",
+    "GIF/executable contract/runtime/phone acceptance"
+  ]
+}
