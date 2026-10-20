@@ -1,0 +1,134 @@
+[
+  {
+    "character": "P3",
+    "key": "chiru.battleMove",
+    "input": "public/assets/runtime-packing-v1/chiru-battleMove.png",
+    "inputSha256": "9c434853c15b9f744b29ecb2495ab4ef96894dec071dcb9db740343f4b0e0f85",
+    "descriptor": {
+      "source": "chiru.battleMove",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 160,
+          "height": 118
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "width": 160,
+          "height": 118
+        },
+        {
+          "x": 320,
+          "y": 0,
+          "width": 160,
+          "height": 118
+        },
+        {
+          "x": 480,
+          "y": 0,
+          "width": 160,
+          "height": 118
+        }
+      ],
+      "fps": 10,
+      "duration": 0.4,
+      "loop": true,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        1
+      ],
+      "scale": 2.7
+    }
+  },
+  {
+    "character": "P4",
+    "key": "jiuweihu.battleMove",
+    "input": "public/assets/botuo-basic-packing-v1/jiuweihu-battleMove.png",
+    "inputSha256": "853e551ee7f1b7d79cd3047596f6f7923260236633060567552ccdb7760826f9",
+    "descriptor": {
+      "source": "jiuweihu.battleMove",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 160,
+          "height": 133
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "width": 160,
+          "height": 133
+        },
+        {
+          "x": 320,
+          "y": 0,
+          "width": 160,
+          "height": 133
+        },
+        {
+          "x": 480,
+          "y": 0,
+          "width": 160,
+          "height": 133
+        }
+      ],
+      "fps": 10,
+      "duration": 0.4,
+      "loop": true,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.9924812030075187
+      ],
+      "scale": 2
+    }
+  },
+  {
+    "character": "P5",
+    "key": "xingxing.battleMove",
+    "input": "public/assets/botuo-basic-packing-v1/xingxing-battleMove.png",
+    "inputSha256": "2553208b199638d8a3d54337e3fd36625ab8777ffc290defde653e7c55f78255",
+    "descriptor": {
+      "source": "xingxing.battleMove",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 560,
+          "height": 414
+        },
+        {
+          "x": 560,
+          "y": 0,
+          "width": 560,
+          "height": 414
+        },
+        {
+          "x": 0,
+          "y": 414,
+          "width": 560,
+          "height": 414
+        },
+        {
+          "x": 560,
+          "y": 414,
+          "width": 560,
+          "height": 414
+        }
+      ],
+      "fps": 10,
+      "duration": 0.4,
+      "loop": true,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.9975845410628019
+      ],
+      "scale": 2.25
+    }
+  }
+]

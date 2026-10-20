@@ -149,7 +149,7 @@ export class BattleSession {
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 
-  clearTransientCombat({preserveEvents=false}={}){for(const id of this.pendingActions.keys())this.cancelAction(id,'battle_end');this.pendingHits=[];this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();if(!preserveEvents){this.castEvents=[];this.damageEvents=[];this.healEvents=[];}}
+  clearTransientCombat({preserveEvents=false}={}){for(const id of this.pendingActions.keys())this.cancelAction(id,'battle_end');this.pendingHits=[];for(const hit of this.delayedImpacts.values())this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'battle_end');this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();if(!preserveEvents){this.castEvents=[];this.damageEvents=[];this.healEvents=[];}}
 
   // Compatibility view for existing Basic-only diagnostics. One shared engine
   // owns every opted-in action; categories select data, never character IDs.
@@ -219,6 +219,14 @@ export class BattleSession {
 
   drainCastEvents() {
     return this.castEvents.splice(0);
+  }
+
+  // Observational lifecycle only: no pendingActions entry, clocks, locks or RNG.
+  recordImpactPresentation(record,phase,hit=false,reason=null){
+    if(!record)return;
+    const actor=this.actorById(record.actorId);if(!actor)return;
+    const target=phase==='resolve'&&hit?this.actorById(record.targetId):record.target;
+    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,presentationOnly:true,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,eventAt:this.elapsedSeconds,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...record.origin},attackTarget:{...record.target}});
   }
 
   recordCast(actor, target, category, source, definition, hit,metadata={}) {
@@ -346,12 +354,16 @@ export class BattleSession {
     let applied=false;
     const delay=this.tacticalEnabled&&definition.telegraph&&definition.effect.coefficient>0&&canHit
       ?this.threats.create(actor,target,definition,this.elapsedSeconds*1000):null;
+    const impactPresentation=definition.presentation?.actionLifecycle==='existing-impact'?{
+      actionId:`presentation.${++this.nextActionId}`,actorId:actor.instanceId,targetId:canHit?target.instanceId:null,definition,category,source,startedAt:this.elapsedSeconds,dueAt:delay?delay.impactAtMs/1000:this.elapsedSeconds,origin:{x:actor.x,y:actor.y},target:canHit?{x:target.x,y:target.y}:{x:actor.x+(aim.facingX===-1?-1:aim.facingX===1?1:(Math.sign(this.playerMovement.get(actor.instanceId)?.x)||(actor.teamId===this.allies[0].teamId?1:-1))),y:actor.y}
+    }:null;
+    this.recordImpactPresentation(impactPresentation,'start');
     finishAbility({caster:actor,slot,definition,applyEffect:()=>{
-      if(delay)this.delayedImpacts.set(delay.id,{actorId:actor.instanceId,targetId:target.instanceId,definition,category,source,threat:delay});
+      if(delay)this.delayedImpacts.set(delay.id,{actorId:actor.instanceId,targetId:target.instanceId,definition,category,source,threat:delay,...(impactPresentation?{impactPresentation}:{})});
       else if(canHit)applied=this.applyAbilityEffects(actor,target,definition,category,source,context);
     }});
     if(target?.teamId!==actor.teamId&&target)this.targetIds.set(actor.instanceId,target.instanceId);
-    if(!delay)this.recordCast(actor,target,category,source,definition,applied);
+    if(!delay){if(impactPresentation)this.recordImpactPresentation(impactPresentation,'resolve',applied);else this.recordCast(actor,target,category,source,definition,applied);}
     return true;
   }
 
@@ -456,13 +468,13 @@ export class BattleSession {
       }
       if(queued)this.pendingHits=this.pendingHits.filter(hit=>hit!==r);
       if(delayed){this.delayedImpacts.delete(delayed);this.threats.remove(delayed);}
-      if(!area&&(!actor||!canCharacterAct(actor)||this.statuses.controlled(r.actorId,this.elapsedSeconds))){this.cancelAction(r.actorId,'source_interrupted');continue;}
+      if(!area&&(!actor||!canCharacterAct(actor)||this.statuses.controlled(r.actorId,this.elapsedSeconds))){this.cancelAction(r.actorId,'source_interrupted');if(delayed)this.recordImpactPresentation(r.impactPresentation,'cancel',false,'source_interrupted');continue;}
       if(area){/* pulse was resolved above; common KO/path cleanup follows */}
       else if(queued){
         if(target&&canCharacterAct(target)&&isTargetInRange(actor,target,r.definition.range))this.applyResolvedDamage(actor,target,this.definitionForActor(actor),this.definitionForActor(target),r.definition,r.category,r.source,{hitIndex:r.hitIndex,totalHits:r.totalHits,eventAt:this.elapsedSeconds});
       }else if(delayed){
         const applied=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),r.threat.geometry);
-        this.recordCast(actor,{...r.threat.geometry.center},r.category,r.source,r.definition,applied,{eventAt:this.elapsedSeconds});
+        if(r.impactPresentation)this.recordImpactPresentation(r.impactPresentation,'resolve',applied);else this.recordCast(actor,{...r.threat.geometry.center},r.category,r.source,r.definition,applied,{eventAt:this.elapsedSeconds});
       }else if(legacy){
         this.resolveActions(r.actorId);
         // Repositions happen at a point in time, never along a fictitious swept path.
@@ -487,7 +499,7 @@ export class BattleSession {
     positiveFinite(deltaSeconds, 'deltaSeconds');
     if (this.result() !== 'running') { this.clearTransientCombat(); return this.snapshot(); }
     this.resolveActions();
-    for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.delayedImpacts.delete(id);this.threats.remove(id);}
+    for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'source_ko');this.delayedImpacts.delete(id);this.threats.remove(id);}
 
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
     // Preserve the legacy cooldown-before-intent evaluation. If a real staged
@@ -634,9 +646,9 @@ export class BattleSession {
     for(const threat of this.threats.takeDue(this.elapsedSeconds*1000)){
       const hit=this.delayedImpacts.get(threat.id);this.delayedImpacts.delete(threat.id);if(!hit)continue;
       const actor=this.actorById(hit.actorId),target=this.actorById(hit.targetId);
-      if(!actor||!canCharacterAct(actor))continue;
+      if(!actor||!canCharacterAct(actor)){this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'source_ko');continue;}
       const applied=this.applyAbilityEffects(actor,target,hit.definition,hit.category,hit.source,this.teamContext(actor),threat.geometry);
-      this.recordCast(actor,{...threat.geometry.center},hit.category,hit.source,hit.definition,applied);
+      if(hit.impactPresentation)this.recordImpactPresentation(hit.impactPresentation,'resolve',applied);else this.recordCast(actor,{...threat.geometry.center},hit.category,hit.source,hit.definition,applied);
     }
     this.areas.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
     this.areas.tick(this.elapsedSeconds,this.actors,(area,victim)=>this.applyAreaPulse(area,victim));

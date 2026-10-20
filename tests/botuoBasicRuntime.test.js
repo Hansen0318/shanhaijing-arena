@@ -53,7 +53,7 @@ for(const reduced of [false,true])for(const direction of [-1,1])test('P2 visual 
 });
 test('P2 accepted source/descriptor and full required residency retain reserve',async()=>{
  assert.equal(formalAbilityDefinitions['P2.basic'].windupMs,250);const d=rosterCatalog.P2.actionDescriptors.basic;assert.deepEqual(d.frameDurationsMs,[160,90,160,160]);assert.equal(d.blade.startMs,160);assert.equal(d.contact.durationMs,200);
- const f=await visual();assert.equal(f.p.textureBytes,16639660);assert.equal(f.p.residency.snapshot().optionalReserveBytes,131072);assert.equal(f.scene.budget().bytes,16639660);assert.equal(f.p.residency.snapshot().evicted,0);f.p.destroy();
+ const f=await visual();assert.equal(f.p.textureBytes,16622164);assert.equal(f.p.residency.snapshot().optionalReserveBytes,131072);assert.equal(f.scene.budget().bytes,16622164);assert.equal(f.p.residency.snapshot().evicted,0);f.p.destroy();
 });
 for(const tacticalEnabled of [false,true])for(const side of ['allies','enemies'])for(const direction of [-1,1])test('real automatic AI decision → P2 shared action '+tacticalEnabled+'/'+side+'/'+direction,()=>{
  const f=fixture({tacticalEnabled}),s=f.session,actor=s.actorById(side==='allies'?'a1':'e1'),target=s.actorById(side==='allies'?'e1':'a1');

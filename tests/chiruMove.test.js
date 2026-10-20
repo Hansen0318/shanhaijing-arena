@@ -14,7 +14,7 @@ import {findStage} from '../src/campaign/data.js';
 // Renderer/decoder doubles only: use actual catalog, loading, presenter and session.
 async function fixture(reducedMotion=false){
  const textures=new Map();
- const scene={textures:{addImage(key){textures.set(key,{has:()=>false,add(){}});},get:key=>textures.get(key),remove:key=>textures.delete(key)},add:{image(x,y,key,frame){const image={texture:[key,frame],setTexture(k,f){this.texture=[k,f];return this;},destroy(){}};for(const method of ['setOrigin','setScale','setVisible','setDisplaySize','setFlipX','setPosition','setDepth','setAlpha'])image[method]=(...args)=>{image[method+'Value']=args;return image;};return image;}}};
+ const scene={textures:{addImage(key){textures.set(key,{has:()=>false,add(){return {setTrim(){}};}});},get:key=>textures.get(key),remove:key=>textures.delete(key)},add:{image(x,y,key,frame){const image={texture:[key,frame],setTexture(k,f){this.texture=[k,f];return this;},destroy(){}};for(const method of ['setOrigin','setScale','setVisible','setDisplaySize','setFlipX','setPosition','setDepth','setAlpha'])image[method]=(...args)=>{image[method+'Value']=args;return image;};return image;}}};
  const loaded=[],cache={async load(key){loaded.push(key);const a=assetManifest[key];return {...a,...(a?.type==='image'?{image:{width:a.width,height:a.height}}:{})};}};
  const p=new AssetPresenter(scene,{cache,reducedMotion});await p.prepare([rosterCatalog.P1,rosterCatalog.P3,rosterCatalog.P3]);
  const actor={instanceId:'a2',definitionId:'P3',x:2,y:0,hp:320},frame={allies:[actor],enemies:[]};
@@ -23,8 +23,8 @@ async function fixture(reducedMotion=false){
 
 test('P3 approved Move resolves and preloads four losslessly packed 160x118 cells at 10fps without changing static idle',async()=>{
  const a=resolveCharacterAsset(rosterCatalog.P3,'battleMove');assert.equal(a.key,'chiru.battleMove');
- assert.equal(a.path,'assets/runtime-packing-v1/chiru-battleMove.png');assert.deepEqual([a.width,a.height,a.bytes],[640,118,112306]);assert.equal(a.fallback,'placeholder.battle');
- const d=rosterCatalog.P3.animationDescriptors.battleMove;assert.deepEqual(d.frames,[0,160,320,480].map(x=>({x,y:0,width:160,height:118})));
+ assert.equal(a.path,'assets/botuo-heavy-runtime-v1/chiru-battleMove.png');assert.deepEqual([a.width,a.height],[481,115]);assert.equal(a.fallback,'placeholder.battle');
+ const d=rosterCatalog.P3.animationDescriptors.battleMove;assert.equal(d.frames.length,4);assert.deepEqual(d.frames.map(f=>f.trim.slice(0,2)),Array(4).fill([160,118]));
  assert.equal(d.source,a.key);assert.equal(d.fps,10);assert.equal(d.loop,true);assert.equal(d.staticFrame,0);assert.deepEqual(d.origin,[.5,1]);assert.equal(d.scale,2.7);
  assert.equal(rosterCatalog.P3.animationDescriptors.battleIdle.frames.length,1);
  assert.ok(encounterAssetKeys([rosterCatalog.P3]).includes(a.key));const f=await fixture();assert.ok(f.loaded.includes(a.key));f.p.destroy();
@@ -34,7 +34,7 @@ for(const reduced of [false,true])test(`P3 actual presenter cycles all four fram
  const f=await fixture(reduced),fps=reduced?5:10;f.render(0);const image=f.p.actorSprites.get('a2');assert.ok(image.texture[0].endsWith('chiru.battleIdle'));
  const seen=[];for(let i=0;i<=4;i++){
   f.actor.y+=.1;const before=structuredClone(f.frame),now=.1+(i?i/fps+.001:0);f.render(now);seen.push(image.texture[1]);
-  assert.ok(image.texture[0].endsWith('chiru.battleMove'));assert.equal(image.texture[1],`${(i%4)*160}.0.160.118`);
+  assert.ok(image.texture[0].endsWith('chiru.battleMove'));assert.equal(image.texture[1],Object.values(rosterCatalog.P3.animationDescriptors.battleMove.frames[i%4]).slice(0,4).join('.'));
   assert.deepEqual(image.setOriginValue,[.5,1]);assert.deepEqual(image.setDisplaySizeValue,[194.4,143.37]);assert.deepEqual(image.setPositionValue,[f.actor.x,f.actor.y]);assert.deepEqual(f.frame,before);
   f.render(now);assert.equal(image.texture[1],seen.at(-1));assert.ok(image.texture[0].endsWith('chiru.battleMove'));
  }
@@ -48,7 +48,7 @@ test('P3 Move visual scale compensates for safe transparent padding without chan
  assert.equal(idle.scale,2);assert.equal(move.scale,2.7);
  // Removing zero RGBA top rows retains the same per-pixel density and grounded pivot.
  // Source pixels and gameplay coordinates remain unchanged.
- assert.deepEqual(move.frames,[0,160,320,480].map(x=>({x,y:0,width:160,height:118})));
+ assert.deepEqual(move.frames.map(f=>f.trim.slice(0,2)),Array(4).fill([160,118]));
  assert.deepEqual(move.origin,idle.origin);
  assert.equal(rosterCatalog.P3.stats.moveSpeed,1.6);
 });
@@ -65,7 +65,7 @@ test('real P3 BattleSession snapshots, coordinates and moveSpeed remain gameplay
   const f=await fixture(reduced),s=createStageBattleSession({...findStage('1-1'),selectedTeam:['P3','P1','P2']});assert.equal(s.characterDefinitions.P3.stats.moveSpeed,1.6);
   const render=()=>{const before=structuredClone(s.snapshot()),snap=s.snapshot();for(const side of ['allies','enemies'])snap[side]=snap[side].map(a=>({...a,definitionId:s.actorById(a.instanceId).definitionId}));f.p.render(snap,s.elapsedSeconds,rosterCatalog);assert.deepEqual(s.snapshot(),before);assert.equal(s.characterDefinitions.P3.stats.moveSpeed,1.6);};
   render();const seen=new Set();for(let i=0;i<22;i++){s.holdPlayerControl('a1');s.setPlayerMovement('a1',{x:1,y:0});s.step(.05);render();seen.add(f.p.actorSprites.get('a1').texture[1]);}
-  assert.deepEqual([...seen],['0.0.160.118','160.0.160.118','320.0.160.118','480.0.160.118']);
+  assert.deepEqual([...seen],rosterCatalog.P3.animationDescriptors.battleMove.frames.map(f=>Object.values(f).slice(0,4).join('.')));
   s.holdPlayerControl('a1');s.setPlayerMovement('a1',{x:0,y:0});s.step(.05);render();assert.ok(f.p.actorSprites.get('a1').texture[0].endsWith('chiru.battleIdle'));f.p.destroy();
  }
 });

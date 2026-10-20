@@ -1,5 +1,21 @@
 # AGENTS.md
 
+## 2026-10-20 — Heavy A RUNTIME LOCAL PASS / CI BROWSER PROBE next
+
+Player A receipt closes executable decision. Generic existing-impact observational lifecycle preserves real hit/CD/AI/movement/target geometry; immediate paths enterF3 at0ms, tactical F1/F2→actualTierresolve→F3/F4. Exact approved cells and independent source/contact installed, no regenerated art. Pure-damage hit unaffected; real resolve catch-up handles intervening legal casts without simulation locks or duplicate damage.
+
+136affected tests PASS +Build/84guard4336374bytes PASS. Lossless native-trim metadata onP3/P4/P5 Move retains everyRGBA pixel, old logical canvas/scale/origin/FPS/flip; originals untouched. Full42required keys16622164bytes, 16MiB cap +131072reserve preserved with23980extra;0failures/evictions/cleanup0. No P2Idle/Move/Basic/KO/P1art changes, old five suite failures documented, no wholeP1 replay/fullsuite PASS claim.
+
+Report docs/verification/M5C_P2_BOTUO_HEAVY_RUNTIME.md and P2_HEAVY_RUNTIME/. Local Chromium download ZIP truncated, so real browser pending. NEXT CI[botuo heavy probe]runs136affected/build +8realWebGL action cases +24native-trim comparisons +2actualbuiltmobile-entry/Pause/Restart/cleanup cases, uploads evidence and SKIPS Pages. Inspect evidence/fix before same-gated[botuo heavy release]deployment/public fingerprints/phone handoff. Current source0fe44b3 still live; NOT deployed/PLAYERPHONEVERIFIED. No Special/Awakening/P3/main merge; successor single copy block.
+
+
+## 2026-10-20 — Heavy EXECUTABLE A PLAYER APPROVED / integration in progress
+
+Player「A」explicitly selects the explained preserved-timing contract at230400a. Receipt `docs/art/approved/botuo/heavy/executable-v1/acceptance.json`. Tactical in-range F1→F2 until existing Tier-scaled actual resolve→F3→F4; non-tactical immediate hit/manual whiff startsF3/source→F4, omits anticipation. Do not ask A/B or GIF approval again, add320ms/250ms delay, alter true HP/CD/AI/geometry/Tier controls or fake contact. Current user already authorizes integration/minimum engineering/build/browser/release/Pages/fingerprint. Not yet implemented/deployed/phone-verified.
+
+NEXT shared observational presentation lifecycle + source-preserving runtime pack + affected tests. Read-only measurement finds per-frame zero-RGBA trim can recover capacity without resampling accepted art, requiring generic frame trim metadata and both-facing pixel/world/native-Phaser proof. Keep16MiB+131072reserve and visible Portrait/Idle/Move/KO protection, no P2-ID branch. P1 COMPLETE/P2Basic/size/KO/approvedHeavy sources/GIF protected. No Special/Awakening/P3/main merge. Previous executable-choice-pending entries are historical.
+
+
 ## 2026-10-20 — Heavy recovery VERIFIED / executable presentation decision pending
 
 Exact delivered normal/slow GIF + source/contact VFX now recovered with hash-bound visual receipt; normal truncation repaired byte-exactly, not regenerated. `scripts/verifyBotuoHeavyRecovery.py` PASS. Read-only production preflight `scripts/inspectBotuoHeavyPreflight.mjs`:16direct/4Tier/6outcome/2residency-order probes PASS. No production source or art edits. Full decision/evidence: `docs/verification/M5C_P2_BOTUO_HEAVY_PREFLIGHT.md` + `P2_HEAVY_RECOVERY/{executable-preflight,packing-measurement}.json`.

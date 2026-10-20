@@ -14,7 +14,7 @@ import {findStage} from '../src/campaign/data.js';
 // Renderer/decoder doubles only: use actual catalog, loading, presenter and session.
 async function fixture(reducedMotion=false){
  const textures=new Map();
- const scene={textures:{addImage(key){textures.set(key,{has:()=>false,add(){}});},get:key=>textures.get(key),remove:key=>textures.delete(key)},add:{image(x,y,key,frame){const image={texture:[key,frame],setTexture(k,f){this.texture=[k,f];return this;},destroy(){}};for(const method of ['setOrigin','setScale','setVisible','setDisplaySize','setFlipX','setPosition','setDepth','setAlpha'])image[method]=(...args)=>{image[method+'Value']=args;return image;};return image;}}};
+ const scene={textures:{addImage(key){textures.set(key,{has:()=>false,add(){return {setTrim(){}};}});},get:key=>textures.get(key),remove:key=>textures.delete(key)},add:{image(x,y,key,frame){const image={texture:[key,frame],setTexture(k,f){this.texture=[k,f];return this;},destroy(){}};for(const method of ['setOrigin','setScale','setVisible','setDisplaySize','setFlipX','setPosition','setDepth','setAlpha'])image[method]=(...args)=>{image[method+'Value']=args;return image;};return image;}}};
  const loaded=[],cache={async load(key){loaded.push(key);const a=assetManifest[key];return {...a,...(a?.type==='image'?{image:{width:a.width,height:a.height}}:{})};}};
  const p=new AssetPresenter(scene,{cache,reducedMotion});await p.prepare([rosterCatalog.P1,rosterCatalog.P2,rosterCatalog.P3]);
  const actor={instanceId:'a2',definitionId:'P2',x:2,y:0,hp:320},frame={allies:[actor],enemies:[]};

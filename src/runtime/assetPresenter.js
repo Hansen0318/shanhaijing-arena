@@ -12,7 +12,7 @@ export class AssetPresenter{
   this.scene=scene;this.cache=cache;this.project=project;this.reducedMotion=reducedMotion;this.prefix=`visual.${++nextPresenter}.`;this.closed=false;this.ready=false;this.optionalLoads=new Map();this.optionalFailures=new Set();
   this.displays=new Map();this.displayKinds=new Map();this.displayTextureKeys=new Map();this.actorSprites=new Map();this.actorTextureKeys=new Map();this.overlaySprites=new Map();this.overlayTextureKeys=new Map();this.hudSprites=new Map();this.states=new Map();this.facings=new Map();this.actionFacings=new Map();this.playback=new VisualPlayback();
   this.residency=new AssetResidency(scene,{...residencyOptions,cache,prefix:this.prefix,onEvict:key=>this.clearOptionalDisplays(key)});this.textures=this.residency.textures;
-  this.actions=new ActionPlayback();this.actionEffects=new Map();this.pendingImpactViews=new Map();this.bladeAfterglows=new Map();this.stagedImpacts=new Map();this.stagedImpactSprites=new Map();this.stagedEventKeys=new Map();
+  this.actions=new ActionPlayback();this.actionEffects=new Map();this.pendingImpactViews=new Map();this.bladeAfterglows=new Map();this.stagedImpacts=new Map();this.stagedImpactSprites=new Map();this.stagedEventKeys=new Map();this.presentationEventKeys=new Set();
  }
  get textureBytes(){return this.residency.bytes;}
  async loadKeys(keys){return Promise.all([...new Set(keys)].map(key=>this.residency.load(key)));}
@@ -46,6 +46,14 @@ export class AssetPresenter{
    const action=characterAction(character,event.category);
    if(action){
     if(action.kind==='staged'){this.castStaged(event,action);return;}
+    if(event.presentationOnly){
+     const key=event.actorId+'.'+event.actionId+'.'+event.phase;
+     if(this.presentationEventKeys.has(key))return;
+     this.presentationEventKeys.add(key);while(this.presentationEventKeys.size>512)this.presentationEventKeys.delete(this.presentationEventKeys.values().next().value);
+     // Simulation may legally run another action during an existing telegraph.
+     // A real later resolve owns its F3 cue without replaying anticipation or HP.
+     if(event.phase==='resolve'&&this.actions.active.get(event.actorId)?.actionId!==event.actionId)this.actions.handle({...event,phase:'start',startedAt:event.resolvedAt},action);
+    }
     const old=this.actions.active.get(event.actorId),beforeResolvedAt=old?.resolvedAt;
     this.actions.handle(event,action);
     const current=this.actions.active.get(event.actorId);
@@ -174,7 +182,7 @@ export class AssetPresenter{
  imageFor(ownerId,descriptor,elapsed,map=this.actorSprites,playbackMode='decorative',frameIndex=null){
   const texture=this.textures.get(descriptor.source);if(!texture)return null;
   const projection=animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode),region=texture.asset.key===descriptor.source?(frameIndex===null?projection.region:descriptor.frames[frameIndex]):null;const frame=region?`${region.x}.${region.y}.${region.width}.${region.height}`:undefined;
-  if(region){const t=this.scene.textures?.get(texture.key);if(!t?.has?.(frame))t?.add(frame,0,region.x,region.y,region.width,region.height);}
+  if(region){const t=this.scene.textures?.get(texture.key);if(!t?.has?.(frame)){const added=t?.add(frame,0,region.x,region.y,region.width,region.height);if(region.trim)added.setTrim(...region.trim,region.width,region.height);}}
   let sprite=map.get(ownerId);if(!sprite){sprite=this.scene.add.image(0,0,texture.key,frame);map.set(ownerId,sprite);}else sprite.setTexture(texture.key,frame);
   // A state change may start another upload before the next render. Keep the
   // old displayed actor texture pinned until setTexture actually releases it.
@@ -245,7 +253,7 @@ export class AssetPresenter{
    const resolvedState=formalState?state.state:actor.hp>0?baseState:'battleIdle';
    const playbackMode=resolvedState==='battleMove'?'locomotion':'decorative';
    const image=this.imageFor(id,descriptor,elapsed,this.actorSprites,playbackMode,action?.frameIndex??null);
-   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?(action?descriptor.frames[action.frameIndex]:animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode).region):null,w=region?.width??asset.width,h=region?.height??asset.height,width=72*descriptor.scale*w/Math.max(w,h),height=72*descriptor.scale*h/Math.max(w,h);image.setOrigin(action&&flipX?1-descriptor.origin[0]:descriptor.origin[0],descriptor.origin[1]).setDisplaySize(width,height).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);if(action)this.renderActionEffects(id,action,pos,{width,height});}
+   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?(action?descriptor.frames[action.frameIndex]:animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode).region):null,w=region?.trim?.[0]??region?.width??asset.width,h=region?.trim?.[1]??region?.height??asset.height,width=72*descriptor.scale*w/Math.max(w,h),height=72*descriptor.scale*h/Math.max(w,h);image.setOrigin(action&&flipX?1-descriptor.origin[0]:descriptor.origin[0],descriptor.origin[1]).setDisplaySize(width,height).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);if(action)this.renderActionEffects(id,action,pos,{width,height});}
    else this.actorSprites.get(id)?.setVisible(false); // Arena's procedural marker remains visible.
   }
   this.renderBladeAfterglows(alive,positions,now);
@@ -271,5 +279,5 @@ export class AssetPresenter{
   }
   this.residency.reclaim();
  }
- destroy(){if(this.closed)return;this.closed=true;this.ready=false;this.stageDisplay?.destroy();for(const id of this.actionEffects.keys())this.clearAction(id);this.actions.clear();this.pendingImpactViews.clear();for(const key of this.stagedImpacts.keys())this.removeStagedImpact(key);this.stagedEventKeys.clear();for(const id of this.bladeAfterglows.keys())this.clearBladeAfterglow(id);for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}this.residency.destroy();this.optionalLoads.clear();this.optionalFailures.clear();this.displayKinds.clear();this.displayTextureKeys.clear();this.actorTextureKeys.clear();this.overlayTextureKeys.clear();this.states.clear();this.facings.clear();this.actionFacings.clear();this.playback.clear();}
+ destroy(){if(this.closed)return;this.closed=true;this.ready=false;this.stageDisplay?.destroy();for(const id of this.actionEffects.keys())this.clearAction(id);this.actions.clear();this.pendingImpactViews.clear();for(const key of this.stagedImpacts.keys())this.removeStagedImpact(key);this.stagedEventKeys.clear();this.presentationEventKeys.clear();for(const id of this.bladeAfterglows.keys())this.clearBladeAfterglow(id);for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}this.residency.destroy();this.optionalLoads.clear();this.optionalFailures.clear();this.displayKinds.clear();this.displayTextureKeys.clear();this.actorTextureKeys.clear();this.overlayTextureKeys.clear();this.states.clear();this.facings.clear();this.actionFacings.clear();this.playback.clear();}
 }

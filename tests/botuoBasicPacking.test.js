@@ -15,7 +15,7 @@ test('P2 high fidelity packing preserves accepted RGBA, legacy pixels and both-f
   if(a.kind==='legacy'){
    const d=rosterCatalog[a.character].animationDescriptors[a.slot];
    for(let i=0;i<a.oldDescriptor.frames.length;i++){
-    const old=a.oldDescriptor,of=old.frames[i],nf=a.character==='P2'?{x:of.x,y:of.y/of.height*a.packedHeight,width:of.width,height:a.packedHeight}:d.frames[i];
+    const old=a.oldDescriptor,of=old.frames[i],nf=a.character==='P2'||d.frames[i].trim?{x:of.x,y:of.y/of.height*a.packedHeight,width:of.width,height:a.packedHeight}:d.frames[i];
     assert.deepEqual(cropRgba(packed,[nf.x,nf.y,nf.width,nf.height]),cropRgba(original,[of.x,of.y+a.top,of.width,a.packedHeight]));
     // Every removed RGBA byte is zero, including transparent RGB.
     const cell=cropRgba(original,[of.x,of.y,of.width,of.height]);

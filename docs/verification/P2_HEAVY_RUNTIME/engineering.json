@@ -1,0 +1,28 @@
+{
+  "status": "LOCAL AFFECTED ENGINEERING PASS / CI BROWSER PENDING / NOT DEPLOYED",
+  "tests": {
+    "command": "node --test tests/botuoHeavyLifecycle.test.js tests/botuoHeavyRuntime.test.js tests/botuoHeavyPacking.test.js tests/frameTrim.test.js tests/actionPlayback.test.js tests/assetPresenter.test.js tests/assetResidency.test.js tests/dynamicAssetIntegration.test.js tests/assetGuard.test.js tests/botuoBasicRuntime.test.js tests/botuoBasicPacking.test.js tests/botuoStaticScale.test.js tests/botuoMove.test.js tests/xingxingMove.test.js tests/jiuweihuMove.test.js tests/chiruMove.test.js",
+    "passed": 136,
+    "failed": 0
+  },
+  "build": "PASS",
+  "assetGuard": {
+    "files": 84,
+    "bytes": 4336374
+  },
+  "required": {
+    "keys": 42,
+    "decodedBytes": 16622164,
+    "hardBytes": 16777216,
+    "optionalReserveBytes": 131072,
+    "remainingBytes": 155052,
+    "extraAfterReserveBytes": 23980,
+    "savedDecodedBytes": 734952,
+    "heavyAdditionDecodedBytes": 717456
+  },
+  "sourceApproval": "docs/art/approved/botuo/heavy/composite-v1/acceptance.json",
+  "executableApproval": "docs/art/approved/botuo/heavy/executable-v1/acceptance.json",
+  "existingSuiteFailures": "Full suite not rerun under explicit scoped-test instruction. Existing five named in docs/verification/P2_STATIC_SCALE_FIX.md remain historical, not claimed fixed/full-suite PASS.",
+  "browser": "Local Chromium download returned truncated ZIP repeatedly; no local real browser claim. CI probe requires Chromium WebGL, native trim raster and real built entry before release.",
+  "limits": "No phone/FPS/GPU-memory acceptance. No new320/250ms windup; existing exact real damage events unchanged in19 paired/whiff/cancel cases."
+}

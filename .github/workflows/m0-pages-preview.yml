@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Test
-        if: "!contains(github.event.head_commit.message, '[botuo basic release]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[viewport release]')"
+        if: "!contains(github.event.head_commit.message, '[botuo heavy') && !contains(github.event.head_commit.message, '[botuo basic release]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[viewport release]')"
         run: npm test
       - name: Test bounded viewport surface
         if: contains(github.event.head_commit.message, '[viewport probe]') || contains(github.event.head_commit.message, '[viewport release]')
@@ -51,6 +51,10 @@ jobs:
           if(command!=='node'||args[0]!=='--test')throw Error('Unexpected release test command');
           execFileSync(process.execPath,args,{stdio:'inherit'});
           JS
+
+      - name: Test bounded P2 Heavy shared presentation and lossless packing
+        if: contains(github.event.head_commit.message, '[botuo heavy')
+        run: node --test tests/botuoHeavyLifecycle.test.js tests/botuoHeavyRuntime.test.js tests/botuoHeavyPacking.test.js tests/frameTrim.test.js tests/actionPlayback.test.js tests/assetPresenter.test.js tests/assetResidency.test.js tests/dynamicAssetIntegration.test.js tests/assetGuard.test.js tests/botuoBasicRuntime.test.js tests/botuoBasicPacking.test.js tests/botuoStaticScale.test.js tests/botuoMove.test.js tests/xingxingMove.test.js tests/jiuweihuMove.test.js tests/chiruMove.test.js
 
       - name: Build
         run: npm run build
@@ -105,17 +109,34 @@ jobs:
           name: mobile-viewport-verification
           path: ${{ runner.temp }}/mobile-viewport
           if-no-files-found: warn
+      - name: Check P2 Heavy and lossless trim in real Chromium and built entry
+        if: contains(github.event.head_commit.message, '[botuo heavy')
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/arena-browser-tool
+          ARENA_BROWSER_OUTPUT: ${{ runner.temp }}/botuo-heavy-browser
+        run: |
+          npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
+          node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+          node scripts/checkBotuoHeavyBrowser.mjs
+          node scripts/checkBotuoHeavyBuiltEntry.mjs
+      - name: Preserve P2 Heavy browser evidence
+        if: always() && contains(github.event.head_commit.message, '[botuo heavy')
+        uses: actions/upload-artifact@v4
+        with:
+          name: botuo-heavy-browser-verification
+          path: ${{ runner.temp }}/botuo-heavy-browser
+          if-no-files-found: warn
       - name: Configure Pages
-        if: "!contains(github.event.head_commit.message, '[viewport probe]')"
+        if: "!contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
-        if: "!contains(github.event.head_commit.message, '[viewport probe]')"
+        if: "!contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
-    if: "!contains(github.event.head_commit.message, '[viewport probe]')"
+    if: "!contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

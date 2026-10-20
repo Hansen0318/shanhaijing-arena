@@ -9,6 +9,7 @@ export function animationDescriptor(input,{manifest=assetManifest}={}){
  const source=input.source??'placeholder.battle',asset=manifest[source];if(!asset)throw new TypeError('Unknown animation source');
  const frames=input.frames??[];if(!Array.isArray(frames)||frames.length>128)throw new TypeError('Invalid frame count');
  for(const frame of frames){if(asset.type!=='image'||['x','y','width','height'].some(k=>!Number.isInteger(frame[k]))||frame.x<0||frame.y<0||frame.width<=0||frame.height<=0||frame.x+frame.width>asset.width||frame.y+frame.height>asset.height)throw new TypeError('Frame region outside source');}
+ for(const f of frames)if(f.trim!==undefined){const t=f.trim;if(!Array.isArray(t)||t.length!==4||t.some(n=>!Number.isInteger(n))||t[0]<1||t[1]<1||t[0]>2048||t[1]>2048||t[2]<0||t[3]<0||t[2]+f.width>t[0]||t[3]+f.height>t[1])throw new TypeError('Invalid frame trim');}
  const fps=input.fps??(input.duration?Math.max(1,frames.length)/input.duration:8),duration=input.duration??Math.max(1,frames.length)/fps;
  if(!finite(fps,.1,60)||!finite(duration,.01,10)||typeof (input.loop??false)!=='boolean')throw new TypeError('Invalid animation timing');
  const staticFrame=input.staticFrame??0;if(!Number.isInteger(staticFrame)||staticFrame<0||staticFrame>=Math.max(1,frames.length))throw new TypeError('Invalid static fallback');

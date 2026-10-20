@@ -1,0 +1,16 @@
+{
+  "status": "PLAYER EXECUTABLE CONTRACT A APPROVED / INTEGRATION AND RELEASE AUTHORIZED",
+  "recordedDate": "2026-10-20",
+  "playerStatement": "A",
+  "presentedSourceHead": "230400a6bd21aace55313a96a41045402e24796c",
+  "decision": "Preserve all current gameplay hit times. Tactical in-range uses F1/F2 before actual Tier-scaled threat resolution then F3/F4. Immediate non-tactical hit and manual whiff begin at F3/source then F4; F1/F2 omitted only on these immediate paths. No320ms or250ms new windup.",
+  "preserve": [
+    "T0range1.8/CD4/coefficient1.30/single-target single real hit/no displacement",
+    "Tier-scaled650ms tactical telegraph, threat geometry, target rules, existing legal control and cancellation semantics",
+    "ordinary damage does not interrupt",
+    "source VFX on air cast, contact only on actual hit",
+    "P1 complete, P2 Basic/size/KO and all approved source pixels",
+    "16MiB decoded cap plus131072bytes reserve and shared dynamic residency"
+  ],
+  "scope": "Authorizes scoped shared lifecycle/presentation/faithful packing, minimum affected verification, release gates, existing-feature Pages deployment and public fingerprint; not phone acceptance or Special/Awakening/P3."
+}

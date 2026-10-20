@@ -7,5 +7,5 @@ export function assetScene(){
   for(const [method,fields] of Object.entries({setPosition:['x','y'],setTexture:['texture','frame'],setOrigin:['originX','originY'],setDisplaySize:['displayWidth','displayHeight'],setFlipX:['flipX'],setDepth:['depth'],setAlpha:['alpha'],setVisible:['visible'],setScale:['scale'],setRotation:['rotation']}))o[method]=(...values)=>{fields.forEach((f,i)=>o[f]=values[i]);return o;};
   for(const k of ['setCrop','clear','lineStyle','lineBetween','strokeCircle','fillStyle','fillCircle'])o[k]=()=>o;objects.push(o);return o;
  }
- return {keys,objects,budget:()=>({bytes,peak}),add:{image,graphics:()=>image()},textures:{addImage(key,im){bytes+=im.width*im.height*4;peak=Math.max(peak,bytes);const frames=new Set();const t={image:im,has:f=>frames.has(f),add:f=>frames.add(f)};keys.set(key,t);return t;},get:k=>keys.get(k),remove(k){const t=keys.get(k);if(t)bytes-=t.image.width*t.image.height*4;keys.delete(k);}}};
+ return {keys,objects,budget:()=>({bytes,peak}),add:{image,graphics:()=>image()},textures:{addImage(key,im){bytes+=im.width*im.height*4;peak=Math.max(peak,bytes);const frames=new Set();const t={image:im,has:f=>frames.has(f),add:f=>{frames.add(f);return {setTrim(){}};}};keys.set(key,t);return t;},get:k=>keys.get(k),remove(k){const t=keys.get(k);if(t)bytes-=t.image.width*t.image.height*4;keys.delete(k);}}};
 }
