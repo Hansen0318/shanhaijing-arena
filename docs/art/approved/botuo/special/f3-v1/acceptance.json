@@ -1,0 +1,24 @@
+{
+  "status": "SPECIAL PROTECTIVE KEY POSE / PLAYER ART APPROVED",
+  "recordedDate": "2026-10-21",
+  "recordedTimezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "好這個我確認ok，紀錄下來後繼續",
+  "reviewedCheckpoint": "92ce4db215cb313bbd84cb75bc1353ddac9e14ca",
+  "presentedArtifact": "https://github.com/Hansen0318/shanhaijing-arena/blob/92ce4db215cb313bbd84cb75bc1353ddac9e14ca/docs/art/candidates/botuo/special/key-pose-v1/F3-protection-master.png",
+  "source": {
+    "path": "docs/art/candidates/botuo/special/key-pose-v1/F3-protection-master.png",
+    "sha256": "00dc78f20e09da6f8c55b67497653046cb5c7aa6253df2ffaa3d7b41c7bdf8a6",
+    "bytes": 1256843
+  },
+  "scope": "Acceptance of displayed Special upright inward supported bracer key pose/design; acknowledgment of existing immediate Special then available-skill behavior while mitigation remains. F3 means protective establishment, not an offensive contact.",
+  "existingMechanicsConfirmed": "T0 self25%4s/CD8/windup0; no movement or attack lock; actual Special-to-Heavy same-clock probe passed. Preserve existing Tier/control/KO/readiness behavior. No new gameplay/timing change.",
+  "notApproved": [
+    "Unseen F1/F2/F4",
+    "VFX/GIF",
+    "Any new timing or gameplay behavior",
+    "Runtime integration/deployment/phone acceptance",
+    "Whole P2 completion"
+  ],
+  "nextGate": "Author individual F1/F2/F4 from approved identity + this exact F3, show full four-pose sequence for player review before independent VFX/GIF."
+}

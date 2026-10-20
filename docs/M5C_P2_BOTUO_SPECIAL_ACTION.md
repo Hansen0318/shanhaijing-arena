@@ -1,4 +1,12 @@
-# P2 猼訑 Special「守群」— FIRST KEY POSE / PLAYER REVIEW PENDING
+# P2 猼訑 Special「守群」— F3 APPROVED / REMAINING POSE REVIEW NEXT
+
+## 2026-10-21 — Special F3 PLAYER ART APPROVED / remaining poses next
+
+Player「好這個我確認ok，紀錄下來後繼續」accepts the displayed protective key pose and continuation after the existing immediate Special→Heavy/ongoing mitigation explanation. Exact source SHA25600dc78f20e09da6f8c55b67497653046cb5c7aa6253df2ffaa3d7b41c7bdf8a6 remains immutable at key-pose-v1/F3-protection-master.png. Hash-bound receipt: `docs/art/approved/botuo/special/f3-v1/acceptance.json`; reviewed commit92ce4db. Older first-key-pose pending entries below are historical. No new gameplay/timing authorized or needed; mitigation remains independent of short gesture and subsequent movement/skills.
+
+NEXT author individual F1/F2/F4: F1 low/open guard initiation from approved Idle without offensive crouch; F2 diagonal inward/lifting guard transit with opposite hand approaching support; F3 exact accepted high supported brace; F4 clearly reopening/lowering guard recovery, opposite hand released, upright balance returning to Idle. These are artistic sequence roles, not a newly authorized startup delay or combat lock. Special's immediate effect must not wait for F3 in future runtime; executable contract remains a later gate. Keep same head/torso/limb/equipment proportions, one large guard on same anatomical arm, one small bracer, sash/tabard and two grounded hooves. Individual poses must visibly differ without VFX; no forward Heavy punch/low Basic horn strike/downward Awakening release.
+
+Stop after displaying all four poses for player review. F1/F2/F4, VFX/GIF/runtime/phone remain unapproved; no other-character/skill work. No accepted source regenerated, no source/public/workflow changes; no unchanged engineering/build/deploy replay.16MiB+131072reserve/Shared Dynamic Asset Residency remain protected. Early acceptance checkpoint[skip ci] records this approval before generation; latest progress/state and successor pointer will be updated with the completed candidate slice.
 
 ## 2026-10-21 — Actual mechanics recovered; first protective pose delivered
 
