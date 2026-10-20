@@ -91,6 +91,6 @@ try{
  }
  if(!probe)assert.deepEqual(report.errors,[]);
  report.status=probe?'PROBE COMPLETE':'PASS';
- if(probe)execFileSync(process.execPath,['scripts/checkActorScaleBrowser.mjs'],{stdio:'inherit',env:{...process.env,ARENA_BROWSER_OUTPUT:path.join(out,'actor-scale')}});
+ if(probe||process.env.ACTOR_SCALE_RELEASE==='true')execFileSync(process.execPath,['scripts/checkActorScaleBrowser.mjs'],{stdio:'inherit',env:{...process.env,ARENA_BROWSER_OUTPUT:path.join(out,'actor-scale')}});
 }catch(e){report.status='FAIL';report.failure=String(e);throw e;}
 finally{report.serverLog=serverLog;await writeFile(path.join(out,'mobile-viewport.json'),JSON.stringify(report,null,2)+'\n');await browser?.close();server.kill('SIGTERM');console.log(JSON.stringify({status:report.status,cases:report.cases.length,errors:report.errors}));}

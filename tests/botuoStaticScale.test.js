@@ -20,13 +20,16 @@ test('P2 countdown/Idle uses the exact pre-animation static source and original 
  p.destroy();
 });
 
-test('P2 Move uses static skull density and grounded feet, not equal sprite canvas scale',async()=>{
+test('P2 Move preserves approved body authoring density instead of shrinking to a pose-dependent skull span',async()=>{
  const scene=assetScene(),p=new AssetPresenter(scene,{cache:createAssetCache({transport:pngTransport})});
  await p.prepare([rosterCatalog.P2]);
  const actor={instanceId:'a1',definitionId:'P2',x:4,y:0,hp:320},frame={allies:[actor],enemies:[]};
  p.render(frame,0,rosterCatalog);actor.x+=.1;p.render(frame,.1,rosterCatalog);
  const image=p.actorSprites.get('a1');
- assert.ok(Math.abs(32*image.displayWidth/160-22.5)<1e-9,'32px Move face must equal original 25px static face at0.9 density');
+ const study=JSON.parse(readFileSync('docs/verification/P2_MOVE_BODY/measurements.json'));
+ assert.equal(createHash('sha256').update(readFileSync('public/'+assetManifest['botuo.battleMove'].path)).digest('hex'),study.sourceMoveSha256);
+ assert.ok(Math.min(...study.movePigmentPixels)*(image.displayWidth/160)**2>=study.idlePigmentPixels*.9**2*.95,'equipment-region pigment area exposes body shrink independently of posed skull height');
+ assert.equal(image.displayWidth/160,.9,'Move body uses the same approved authoring density as static Idle');
  assert.ok(Math.abs((153-image.originY*155)*image.displayHeight/155)<1e-9,'no foot-plane jump');
  actor.x-=.1;p.render(frame,.2,rosterCatalog);assert.equal(image.flipX,true);
  p.render(frame,.3,rosterCatalog);assert.equal(image.displayHeight,144,'stop returns to canonical static');

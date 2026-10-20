@@ -93,6 +93,7 @@ jobs:
           ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/arena-browser-tool
           ARENA_BROWSER_OUTPUT: ${{ runner.temp }}/mobile-viewport
           VIEWPORT_PROBE: ${{ contains(github.event.head_commit.message, '[viewport probe]') }}
+          ACTOR_SCALE_RELEASE: ${{ contains(github.event.head_commit.message, '[move body release]') }}
         run: |
           npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
           node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium webkit --only-shell

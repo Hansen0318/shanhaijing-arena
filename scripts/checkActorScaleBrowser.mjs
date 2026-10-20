@@ -71,7 +71,9 @@ try{
     if(result.characterId==='P2'&&['battleIdle','battleMove','action'].includes(sample.state)){
      const face=sample.state==='action'?20:sample.state==='battleMove'?32:25,foot=sample.state==='action'?126:sample.state==='battleMove'?153:158;
      sample.anatomy={faceWorld:face*sample.display[0]/sample.region.width,groundOffset:(foot-sample.origin[1]*sample.region.height)*sample.display[1]/sample.region.height};
-     assert.ok(Math.abs(sample.anatomy.faceWorld-22.5)<1e-7);assert.ok(Math.abs(sample.anatomy.groundOffset)<1e-7);
+     const expectedFace=sample.state==='battleMove'?28.8:22.5;
+     assert.ok(Math.abs(sample.anatomy.faceWorld-expectedFace)<1e-7);
+     if(sample.state==='battleMove'){sample.anatomy.bodyDensity=sample.display[0]/sample.region.width;assert.ok(Math.abs(sample.anatomy.bodyDensity-.9)<1e-7);}assert.ok(Math.abs(sample.anatomy.groundOffset)<1e-7);
     }
    }
    const before=result.samples.find(x=>x.label==='idle-before'),after=result.samples.find(x=>x.label==='idle-away');

@@ -1,0 +1,23 @@
+{
+  "sourceIdleSha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+  "sourceMoveSha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5",
+  "roiInEach160Cell": [
+    5,
+    45,
+    90,
+    120
+  ],
+  "mask": "alpha>128, R>90, G>45, 1.2<R/G<2.7, B<0.72*G",
+  "idlePigmentPixels": 1525,
+  "movePigmentPixels": [
+    2019,
+    1895,
+    1887,
+    2001
+  ],
+  "note": "Equipment-region colored pixel area is a secondary bulk/shrink check, not full-body anatomy or perspective invariant. Posed longitudinal skull length is not a whole-actor density ruler.",
+  "beforeDensity": 0.703125,
+  "afterDensity": 0.9,
+  "staticDensity": 0.9,
+  "sourceBytesChanged": false
+}

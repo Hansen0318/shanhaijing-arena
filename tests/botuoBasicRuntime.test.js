@@ -28,7 +28,7 @@ for(const reduced of [false,true])for(const direction of [-1,1])test('P2 Basic r
  }
  assert.equal(new Set(poses).size,reduced?2:4);
  step(f,.57-f.session.elapsedSeconds);paint(f);assert.ok(f.p.actorSprites.get('a1').texture.endsWith('botuo.battleIdle'));assert.equal(f.p.actorSprites.get('a1').displayWidth,144);
- f.session.holdPlayerControl('a1');f.session.setPlayerMovement('a1',{x:direction,y:0});f.session.step(.05);paint(f);assert.ok(f.p.actorSprites.get('a1').texture.endsWith('botuo.battleMove'));assert.equal(f.p.actorSprites.get('a1').displayWidth,112.5);
+ f.session.holdPlayerControl('a1');f.session.setPlayerMovement('a1',{x:direction,y:0});f.session.step(.05);paint(f);assert.ok(f.p.actorSprites.get('a1').texture.endsWith('botuo.battleMove'));assert.equal(f.p.actorSprites.get('a1').displayWidth,144);
  f.p.destroy();assert.equal(f.scene.budget().bytes,0);
 });
 for(const tier of ['T0','T1','T2','T3'])test('P2 '+tier+' locked 250ms real windup; one damage/resolve and cadence at start',()=>{

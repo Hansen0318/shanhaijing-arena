@@ -30,7 +30,7 @@ try{
     const b=p.actorSprites.get('a1');return {texture:b.texture.key,frame:b.frame.name,width:b.displayWidth,height:b.displayHeight,origin:[b.originX,b.originY]};
    },{index,reduced,sign});
    if(index<0){assert.equal(sample.width,144);assert.equal(sample.height,144);assert.equal(sample.frame,'0.0.160.160');}
-   else{assert.equal(sample.frame,`${index*160}.0.160.155`);assert.equal(sample.width,112.5);assert.ok(Math.abs(32*sample.width/160-22.5)<1e-9);assert.ok(Math.abs((153-sample.origin[1]*155)*sample.height/155)<1e-9);}
+   else{assert.equal(sample.frame,`${index*160}.0.160.155`);assert.equal(sample.width,144);assert.equal(sample.width/160,.9);assert.ok(Math.abs((153-sample.origin[1]*155)*sample.height/155)<1e-9);}
    const file=`${reduced?'reduced':'normal'}-${sign>0?'right':'left'}-${index<0?'static-baseline':'move-'+index}.png`;
    await page.locator('canvas').screenshot({path:path.join(out,file)});record.continuity.push({file,...sample});
   }

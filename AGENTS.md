@@ -1,5 +1,12 @@
 # AGENTS.md
 
+## 2026-10-20 12:43 — player isolates Move shrinking / correction release pending
+
+Player confirms countdown/Idle and fighting size normal; **only Move is too small**, with IMG_2688/2689 phone evidence. This supersedes old next-only phone-review/descriptor-conformance reasoning. Root: prior Move face25/32 normalization shrank entire approved body by21.875%; a renderer matching that bad descriptor was not proof of correct body scale. Fix only P2 Move authoring-density data back to0.9 (144×139.5 packed frame), retain grounded foot0/origin153/155. Original PNGs, Idle/Basic/VFX/KO and P1/P3–P5 all protected; full catalog deep-equality outside P2 Move verified. No renderer character exception or post-render multiplier. Authoring-grid/body/equipment comparison, not posed skull length or silhouette-height fitting, owns this correction.
+
+Report `docs/verification/P2_MOVE_BODY_FIX.md`, measurements/old-new source board in `P2_MOVE_BODY/`. Independent equipment-area regression RED on old data→GREEN;115affected PASS +Build/81guard PASS. Existing decoded39keys16,639,660bytes/16MiB+131072reserve unchanged; five old full-suite failures retained, not rerun. REAL BROWSER/DEPLOY/PUBLIC PENDING, NOT PLAYER VERIFIED. Release gates existing Basic raster +6mobile entry cases +4case actual built-entry P1–P5 trace before Pages; `[move body release]` adds no bypass. Continue only measured release/fingerprint/scoped P2 phone review; no Heavy/P3/new art/main merge. Latest checkpoint is containing commit; fetch fresh.
+
+
 ## 2026-10-20 — scale diagnostics complete / existing release verified / PHONE SIZE REVIEW PENDING
 
 Authoritative report: `docs/verification/P2_STATIC_SCALE_EXECUTABLE.md`; summary/complete compressed trace/public fingerprints in `docs/verification/P2_STATIC_SCALE/`. Existing static correction **already DEPLOYED** at `2d83ef6c2a753a77a92b2c2379dace4663866dee` (Actions39247774008); public16/16 complete files exact match CI/local,104/104 local built files equal actual Pages artifact. Previous deployment-pending entries are historical. User's earlier phone-loaded SHA remains unknown; do not assume stale cache or acceptance.
