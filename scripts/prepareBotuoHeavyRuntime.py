@@ -61,6 +61,17 @@ for filename,size,box,key in [('source-pressure-raw-v1.png',(230,154),(0,5,230,1
     new.append(record);effects.append(record)
 action=dict(animation=dict(source='botuo.heavyPoses',frames=[dict(x=i*w,y=0,width=w,height=h)for i in range(4)],duration=.64,loop=False,staticFrame=2,origin=[42/w,151/h],scale=w/72),frameDurationsMs=[160,160,160,160],impactFrame=2,coordinateSize=[w,h],blade=dict(assetKey='botuo.heavySource',offset=[30,1],size=[230,144],layer=4,startMs=160,holdAfterResolveMs=280),contact=dict(assetKey='botuo.heavyContact',offset=[-102,-152],size=[204,161],layer=6,attach='target',retainOnNextCast=True,durationMs=280))
 (ROOT/'src/assets/framePacking.js').write_text('// Lossless native-Phaser trim; original logical cells and pivots retained.\nexport const runtimeFramePacking='+json.dumps(mapping,indent=2)+';\nexport function repackAnimationFrames(input){const frames=runtimeFramePacking[input.source];return frames?{...input,frames}:input;}\n')
+# Restore the shared final frame pass after an upstream Basic row-pack rebuild.
+# Idempotent: row calibration runs first, native logical-frame trim runs last.
+packing=ROOT/'src/assets/runtimePacking.js';packing_text=packing.read_text()
+if "import {repackAnimationFrames}" not in packing_text:
+    packing_text="import {repackAnimationFrames} from './framePacking.js';\n"+packing_text
+packing_text=packing_text.replace('if(!p)return input;', 'if(!p)return repackAnimationFrames(input);')
+packing_text=packing_text.replace('return {...input,frames:input.frames.map', 'return repackAnimationFrames({...input,frames:input.frames.map')
+packing_text=packing_text.replace('Math.max(w,p.oldHeight)};', 'Math.max(w,p.oldHeight)});')
+assert 'if(!p)return repackAnimationFrames(input);' in packing_text
+assert 'return repackAnimationFrames({...input,frames:input.frames.map' in packing_text
+packing.write_text(packing_text)
 (ROOT/'src/assets/botuoHeavyRuntime.js').write_text('// Source-preserving accepted Heavy review geometry; combat timing is not owned here.\nexport const botuoHeavyAction='+json.dumps(action,indent=2)+';\n')
 manifest=ROOT/'src/assets/manifest.js';text=manifest.read_text()
 for entry in new+legacy:

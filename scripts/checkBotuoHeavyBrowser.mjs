@@ -71,13 +71,19 @@ try{
       const current=p.imageFor('qa-current',d,i/d.fps+.001,p.actorSprites,'locomotion',i).setOrigin(...d.origin).setDisplaySize(width,height).setFlipX(flipX).setPosition(500,300);const after=capture();current.setVisible(false);
       // Untrimmed control: same immutable full logical cell, only atlas UV changes.
       const tile=document.createElement('canvas');tile.width=f.width+37;tile.height=f.height+29;tile.getContext('2d').drawImage(image,f.x,f.y,f.width,f.height,17,13,f.width,f.height);
+      // Same original texture, same native trim quad: isolates GPU quad interpolation
+      // from any packing/source change, while retaining the original UV location.
+      const tf=d.frames[i],[lw,lh,tx,ty]=tf.trim,trimName='trim'+i;
+      if(!sc.textures.get(key).has(trimName))sc.textures.get(key).add(trimName,0,f.x+tx,f.y+ty,tf.width,tf.height).setTrim(lw,lh,tx,ty,tf.width,tf.height);
+      const native=sc.add.image(500,300,key,trimName).setOrigin(...d.origin).setDisplaySize(width,height).setFlipX(flipX),nativePixels=capture();native.destroy();
+      let nativeMax=0,nativeSum=0,packMax=0,packSum=0;for(let j=0;j<before.length;j++){let delta=Math.abs(before[j]-nativePixels[j]);nativeMax=Math.max(nativeMax,delta);nativeSum+=delta;delta=Math.abs(after[j]-nativePixels[j]);packMax=Math.max(packMax,delta);packSum+=delta;}
       const controlKey='qa-control';sc.textures.addCanvas(controlKey,tile);sc.textures.get(controlKey).add('full',0,17,13,f.width,f.height);
       const control=sc.add.image(500,300,controlKey,'full').setOrigin(...d.origin).setDisplaySize(width,height).setFlipX(flipX),retiled=capture();control.destroy();sc.textures.remove(controlKey);
       let controlMax=0,controlSum=0;for(let j=0;j<before.length;j++){const delta=Math.abs(before[j]-retiled[j]);controlMax=Math.max(controlMax,delta);controlSum+=delta;}
-      const pictures={};if(entry.character==='P5'&&i===1){for(const [label,data]of Object.entries({original:before,trimmed:after,untrimmedControl:retiled})){ctx.putImageData(new ImageData(new Uint8ClampedArray(data),canvas.width,canvas.height),0,0);pictures[label]=canvas.toDataURL('image/png').split(',')[1];}}
+      const pictures={};if(entry.character==='P5'&&i===1){for(const [label,data]of Object.entries({original:before,trimmed:after,untrimmedControl:retiled,nativeTrimControl:nativePixels})){ctx.putImageData(new ImageData(new Uint8ClampedArray(data),canvas.width,canvas.height),0,0);pictures[label]=canvas.toDataURL('image/png').split(',')[1];}}
       let changed=0,max=0,sum=0;
       for(let j=0;j<before.length;j++){const delta=Math.abs(before[j]-after[j]);if(delta)changed++;max=Math.max(max,delta);sum+=delta;}
-      results.push({character:entry.character,frame:i,flipX,changedChannels:changed,maxDelta:max,meanChannelDelta:sum/before.length,controlMaxDelta:controlMax,controlMeanChannelDelta:controlSum/before.length,pictures,logical:[current.frame.realWidth,current.frame.realHeight],expected:[f.width,f.height]});current.setVisible(false);original.destroy();
+      results.push({character:entry.character,frame:i,flipX,changedChannels:changed,maxDelta:max,meanChannelDelta:sum/before.length,nativeTrimMaxDelta:nativeMax,nativeTrimMeanChannelDelta:nativeSum/before.length,packVsNativeMaxDelta:packMax,packVsNativeMeanChannelDelta:packSum/before.length,controlMaxDelta:controlMax,controlMeanChannelDelta:controlSum/before.length,pictures,logical:[current.frame.realWidth,current.frame.realHeight],expected:[f.width,f.height]});current.setVisible(false);original.destroy();
      }
      sc.textures.remove(key);
     }
