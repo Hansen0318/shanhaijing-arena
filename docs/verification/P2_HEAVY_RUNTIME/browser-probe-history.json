@@ -1,0 +1,24 @@
+{
+  "status": "CAUSE ISOLATED / FINAL EQUIVALENCE GATE PENDING",
+  "probes": [
+    {
+      "sha": "238b337a3dc74bc2cc1435cead4b1e32ac2861f9",
+      "run": 39435871811,
+      "artifact": 12272530258,
+      "failure": "Native trim vs full quad max11 exceeds8; later checks not reached."
+    },
+    {
+      "sha": "021dfac6f1ecb988f755d6dbd1dfbe1fb5ba0ba8",
+      "run": 39436816556,
+      "artifact": 12271816651,
+      "failure": "Native trim max15 vs full frame; untrimmed retile control max1 rules out simple atlas UV cause. Built fixture incorrectly selects actor while paused, selection rejected. No production defect asserted."
+    },
+    {
+      "sha": "107e34fcf1a1cdf08addfa9a60d4c0aa906fcdbf",
+      "run": 39437401236,
+      "artifact": 12272871883,
+      "result": "Original-texture native trim control reproduces max2\u201315 in all24cases. New packed vs original native-trim control max1, mean<.0000063 in all24. Actual built mobile entry2cases PASS after fixture selection corrected. Old absolute max8 assertion intentionally retained for diagnosis, so build job remainsFAIL."
+    }
+  ],
+  "next": "Final gate compares packing against independent original-texture native trim within1channel, mean<.00001; retains original-full global mean<.01 and max/mean bounded by native-control+1/.00001. Raw fullRGBA/world geometry remain exact. Then run all8action cases and actual built cases before any deployment."
+}

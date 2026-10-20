@@ -1,0 +1,8 @@
+{
+  "kind": "Actual built mobile-emulation Campaign→Stage→Team→countdown→Arena; Heavy callback, HP/contact, Pause/Restart/cleanup. Not physical touch/phone verification.",
+  "cases": [],
+  "errors": [],
+  "status": "FAIL",
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(start.texture.endsWith('botuo.heavyPoses'))\n",
+  "serverLog": "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m4175\u001b[22m/shanhaijing-arena/\u001b[39m\n"
+}

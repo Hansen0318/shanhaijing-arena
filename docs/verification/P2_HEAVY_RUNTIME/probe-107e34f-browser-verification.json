@@ -1,0 +1,898 @@
+{
+  "kind": "Real Chromium/Phaser/WebGL controlled session and native-trim raster comparison; no physical phone/FPS/GPU-memory claim",
+  "cases": [
+    {
+      "tactical": false,
+      "reduced": false,
+      "sign": -1,
+      "hp": 229.07,
+      "initialHp": 245,
+      "bytes": 16622164,
+      "keys": 42,
+      "renderer": 2,
+      "idle": {
+        "width": 144,
+        "height": 144,
+        "foot": 0
+      },
+      "frames": [
+        {
+          "label": "F3",
+          "file": "instant-normal-left-F3.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.botuo.heavyPoses",
+            "frame": "350.0.175.162",
+            "width": 175,
+            "height": 162,
+            "origin": [
+              0.76,
+              0.9320987654320988
+            ],
+            "flipX": true
+          },
+          "wind": "visual.1.botuo.heavySource",
+          "hp": 229.07,
+          "hits": [
+            {
+              "at": 0,
+              "amount": 15.929999999999996
+            }
+          ],
+          "contacts": [
+            {
+              "at": 0,
+              "x": 437.5999999994436,
+              "y": 262.5,
+              "alpha": 1,
+              "flipX": true
+            }
+          ]
+        },
+        {
+          "label": "F4",
+          "file": "instant-normal-left-F4.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.botuo.heavyPoses",
+            "frame": "525.0.175.162",
+            "width": 175,
+            "height": 162,
+            "origin": [
+              0.76,
+              0.9320987654320988
+            ],
+            "flipX": true
+          },
+          "wind": "visual.1.botuo.heavySource",
+          "hp": 229.07,
+          "hits": [
+            {
+              "at": 0,
+              "amount": 15.929999999999996
+            }
+          ],
+          "contacts": [
+            {
+              "at": 0,
+              "x": 437.5999999994436,
+              "y": 262.5,
+              "alpha": 0.4285714285714286,
+              "flipX": true
+            }
+          ]
+        },
+        {
+          "label": "fxEnd",
+          "file": "instant-normal-left-fxEnd.png",
+          "time": 0.28,
+          "body": {
+            "texture": "visual.1.botuo.heavyPoses",
+            "frame": "525.0.175.162",
+            "width": 175,
+            "height": 162,
+            "origin": [
+              0.76,
+              0.9320987654320988
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 229.07,
+          "hits": [
+            {
+              "at": 0,
+              "amount": 15.929999999999996
+            }
+          ],
+          "contacts": []
+        },
+        {
+          "label": "idle",
+          "file": "instant-normal-left-idle.png",
+          "time": 0.32,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 229.07,
+          "hits": [
+            {
+              "at": 0,
+              "amount": 15.929999999999996
+            }
+          ],
+          "contacts": []
+        }
+      ],
+      "pauseFrozen": true,
+      "whiff": {
+        "frame": "350.0.175.162",
+        "flipX": true,
+        "source": true,
+        "contacts": 0,
+        "hpUnchanged": true,
+        "additionalDamage": 0
+      },
+      "ko": {
+        "texture": "visual.1.botuo.battleKo",
+        "contacts": 0,
+        "actions": 0
+      },
+      "cleanup": {
+        "closed": true,
+        "bytes": 0,
+        "actions": 0,
+        "contacts": 0,
+        "source": 0
+      }
+    },
+    {
+      "tactical": false,
+      "reduced": false,
+      "sign": 1,
+      "hp": 229.07,
+      "initialHp": 245,
+      "bytes": 16622164,
+      "keys": 42,
+      "renderer": 2,
+      "idle": {
+        "width": 144,
+        "height": 144,
+        "foot": 0
+      },
+      "frames": [
+        {
+          "label": "F3",
+          "file": "instant-normal-right-F3.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.botuo.heavyPoses",
+            "frame": "350.0.175.162",
+            "width": 175,
+            "height": 162,
+            "origin": [
+              0.24,
+              0.9320987654320988
+            ],
+            "flipX": false
+          },
+          "wind": "visual.1.botuo.heavySource",
+          "hp": 229.07,
+          "hits": [
+            {
+              "at": 0,
+              "amount": 15.929999999999996
+            }
+          ],
+          "contacts": [
+            {
+              "at": 0,
+              "x": 538.3999999999018,
+              "y": 262.5,
+              "alpha": 1,
+              "flipX": false
+            }
+          ]
+        },
+        {
+          "label": "F4",
+          "file": "instant-normal-right-F4.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.botuo.heavyPoses",
+            "frame": "525.0.175.162",
+            "width": 175,
+            "height": 162,
+            "origin": [
+              0.24,
+              0.9320987654320988
+            ],
+            "flipX": false
+          },
+          "wind": "visual.1.botuo.heavySource",
+          "hp": 229.07,
+          "hits": [
+            {
+              "at": 0,
+              "amount": 15.929999999999996
+            }
+          ],
+          "contacts": [
+            {
+              "at": 0,
+              "x": 538.3999999999018,
+              "y": 262.5,
+              "alpha": 0.4285714285714286,
+              "flipX": false
+            }
+          ]
+        },
+        {
+          "label": "fxEnd",
+          "file": "instant-normal-right-fxEnd.png",
+          "time": 0.28,
+          "body": {
+            "texture": "visual.1.botuo.heavyPoses",
+            "frame": "525.0.175.162",
+            "width": 175,
+            "height": 162,
+            "origin": [
+              0.24,
+              0.9320987654320988
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 229.07,
+          "hits": [
+            {
+              "at": 0,
+              "amount": 15.929999999999996
+            }
+          ],
+          "contacts": []
+        },
+        {
+          "label": "idle",
+          "file": "instant-normal-right-idle.png",
+          "time": 0.32,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 229.07,
+          "hits": [
+            {
+              "at": 0,
+              "amount": 15.929999999999996
+            }
+          ],
+          "contacts": []
+        }
+      ],
+      "pauseFrozen": true,
+      "whiff": {
+        "frame": "350.0.175.162",
+        "flipX": false,
+        "source": true,
+        "contacts": 0,
+        "hpUnchanged": true,
+        "additionalDamage": 0
+      },
+      "ko": {
+        "texture": "visual.1.botuo.battleKo",
+        "contacts": 0,
+        "actions": 0
+      }
+    }
+  ],
+  "trim": [
+    {
+      "character": "P3",
+      "frame": 0,
+      "flipX": false,
+      "changedChannels": 11280,
+      "maxDelta": 5,
+      "meanChannelDelta": 0.005505125661375661,
+      "nativeTrimMaxDelta": 5,
+      "nativeTrimMeanChannelDelta": 0.005504298941798942,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000004133597883597884,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.0000016534391534391535,
+      "pictures": {},
+      "logical": [
+        160,
+        118
+      ],
+      "expected": [
+        160,
+        118
+      ]
+    },
+    {
+      "character": "P3",
+      "frame": 0,
+      "flipX": true,
+      "changedChannels": 11280,
+      "maxDelta": 5,
+      "meanChannelDelta": 0.005505125661375661,
+      "nativeTrimMaxDelta": 5,
+      "nativeTrimMeanChannelDelta": 0.005504298941798942,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000004133597883597884,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.0000016534391534391535,
+      "pictures": {},
+      "logical": [
+        160,
+        118
+      ],
+      "expected": [
+        160,
+        118
+      ]
+    },
+    {
+      "character": "P3",
+      "frame": 1,
+      "flipX": false,
+      "changedChannels": 11434,
+      "maxDelta": 4,
+      "meanChannelDelta": 0.005419146825396825,
+      "nativeTrimMaxDelta": 4,
+      "nativeTrimMeanChannelDelta": 0.005419146825396825,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000003306878306878307,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.0000037202380952380952,
+      "pictures": {},
+      "logical": [
+        160,
+        118
+      ],
+      "expected": [
+        160,
+        118
+      ]
+    },
+    {
+      "character": "P3",
+      "frame": 1,
+      "flipX": true,
+      "changedChannels": 11434,
+      "maxDelta": 4,
+      "meanChannelDelta": 0.005419146825396825,
+      "nativeTrimMaxDelta": 4,
+      "nativeTrimMeanChannelDelta": 0.005419146825396825,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000003306878306878307,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.0000037202380952380952,
+      "pictures": {},
+      "logical": [
+        160,
+        118
+      ],
+      "expected": [
+        160,
+        118
+      ]
+    },
+    {
+      "character": "P3",
+      "frame": 2,
+      "flipX": false,
+      "changedChannels": 7610,
+      "maxDelta": 3,
+      "meanChannelDelta": 0.0032882771164021163,
+      "nativeTrimMaxDelta": 3,
+      "nativeTrimMeanChannelDelta": 0.0032903439153439155,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000006200396825396825,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.00000496031746031746,
+      "pictures": {},
+      "logical": [
+        160,
+        118
+      ],
+      "expected": [
+        160,
+        118
+      ]
+    },
+    {
+      "character": "P3",
+      "frame": 2,
+      "flipX": true,
+      "changedChannels": 7610,
+      "maxDelta": 3,
+      "meanChannelDelta": 0.0032882771164021163,
+      "nativeTrimMaxDelta": 3,
+      "nativeTrimMeanChannelDelta": 0.0032903439153439155,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000006200396825396825,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.00000496031746031746,
+      "pictures": {},
+      "logical": [
+        160,
+        118
+      ],
+      "expected": [
+        160,
+        118
+      ]
+    },
+    {
+      "character": "P3",
+      "frame": 3,
+      "flipX": false,
+      "changedChannels": 7412,
+      "maxDelta": 4,
+      "meanChannelDelta": 0.003226686507936508,
+      "nativeTrimMaxDelta": 4,
+      "nativeTrimMeanChannelDelta": 0.0032254464285714286,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000004546957671957672,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000004546957671957672,
+      "pictures": {},
+      "logical": [
+        160,
+        118
+      ],
+      "expected": [
+        160,
+        118
+      ]
+    },
+    {
+      "character": "P3",
+      "frame": 3,
+      "flipX": true,
+      "changedChannels": 7412,
+      "maxDelta": 4,
+      "meanChannelDelta": 0.003226686507936508,
+      "nativeTrimMaxDelta": 4,
+      "nativeTrimMeanChannelDelta": 0.0032254464285714286,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000004546957671957672,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000004546957671957672,
+      "pictures": {},
+      "logical": [
+        160,
+        118
+      ],
+      "expected": [
+        160,
+        118
+      ]
+    },
+    {
+      "character": "P4",
+      "frame": 0,
+      "flipX": false,
+      "changedChannels": 3861,
+      "maxDelta": 2,
+      "meanChannelDelta": 0.0016534391534391533,
+      "nativeTrimMaxDelta": 2,
+      "nativeTrimMeanChannelDelta": 0.0016546792328042328,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000002066798941798942,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000005787037037037037,
+      "pictures": {},
+      "logical": [
+        160,
+        133
+      ],
+      "expected": [
+        160,
+        133
+      ]
+    },
+    {
+      "character": "P4",
+      "frame": 0,
+      "flipX": true,
+      "changedChannels": 3861,
+      "maxDelta": 2,
+      "meanChannelDelta": 0.0016534391534391533,
+      "nativeTrimMaxDelta": 2,
+      "nativeTrimMeanChannelDelta": 0.0016546792328042328,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000002066798941798942,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000005787037037037037,
+      "pictures": {},
+      "logical": [
+        160,
+        133
+      ],
+      "expected": [
+        160,
+        133
+      ]
+    },
+    {
+      "character": "P4",
+      "frame": 1,
+      "flipX": false,
+      "changedChannels": 2985,
+      "maxDelta": 3,
+      "meanChannelDelta": 0.0012681878306878306,
+      "nativeTrimMaxDelta": 3,
+      "nativeTrimMeanChannelDelta": 0.001267361111111111,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 8.267195767195768e-7,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000004133597883597884,
+      "pictures": {},
+      "logical": [
+        160,
+        133
+      ],
+      "expected": [
+        160,
+        133
+      ]
+    },
+    {
+      "character": "P4",
+      "frame": 1,
+      "flipX": true,
+      "changedChannels": 2985,
+      "maxDelta": 3,
+      "meanChannelDelta": 0.0012681878306878306,
+      "nativeTrimMaxDelta": 3,
+      "nativeTrimMeanChannelDelta": 0.001267361111111111,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 8.267195767195768e-7,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000004133597883597884,
+      "pictures": {},
+      "logical": [
+        160,
+        133
+      ],
+      "expected": [
+        160,
+        133
+      ]
+    },
+    {
+      "character": "P4",
+      "frame": 2,
+      "flipX": false,
+      "changedChannels": 3308,
+      "maxDelta": 3,
+      "meanChannelDelta": 0.0014095568783068784,
+      "nativeTrimMaxDelta": 3,
+      "nativeTrimMeanChannelDelta": 0.0014087301587301588,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000003306878306878307,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.00000496031746031746,
+      "pictures": {},
+      "logical": [
+        160,
+        133
+      ],
+      "expected": [
+        160,
+        133
+      ]
+    },
+    {
+      "character": "P4",
+      "frame": 2,
+      "flipX": true,
+      "changedChannels": 3308,
+      "maxDelta": 3,
+      "meanChannelDelta": 0.0014095568783068784,
+      "nativeTrimMaxDelta": 3,
+      "nativeTrimMeanChannelDelta": 0.0014087301587301588,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000003306878306878307,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.00000496031746031746,
+      "pictures": {},
+      "logical": [
+        160,
+        133
+      ],
+      "expected": [
+        160,
+        133
+      ]
+    },
+    {
+      "character": "P4",
+      "frame": 3,
+      "flipX": false,
+      "changedChannels": 8555,
+      "maxDelta": 5,
+      "meanChannelDelta": 0.004601107804232805,
+      "nativeTrimMaxDelta": 5,
+      "nativeTrimMeanChannelDelta": 0.004596974206349206,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000004133597883597884,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000003306878306878307,
+      "pictures": {},
+      "logical": [
+        160,
+        133
+      ],
+      "expected": [
+        160,
+        133
+      ]
+    },
+    {
+      "character": "P4",
+      "frame": 3,
+      "flipX": true,
+      "changedChannels": 8555,
+      "maxDelta": 5,
+      "meanChannelDelta": 0.004601107804232805,
+      "nativeTrimMaxDelta": 5,
+      "nativeTrimMeanChannelDelta": 0.004596974206349206,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000004133597883597884,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000003306878306878307,
+      "pictures": {},
+      "logical": [
+        160,
+        133
+      ],
+      "expected": [
+        160,
+        133
+      ]
+    },
+    {
+      "character": "P5",
+      "frame": 0,
+      "flipX": false,
+      "changedChannels": 3726,
+      "maxDelta": 5,
+      "meanChannelDelta": 0.0019080687830687832,
+      "nativeTrimMaxDelta": 5,
+      "nativeTrimMeanChannelDelta": 0.0019072420634920636,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000003306878306878307,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.00000248015873015873,
+      "pictures": {},
+      "logical": [
+        560,
+        414
+      ],
+      "expected": [
+        560,
+        414
+      ]
+    },
+    {
+      "character": "P5",
+      "frame": 0,
+      "flipX": true,
+      "changedChannels": 3726,
+      "maxDelta": 5,
+      "meanChannelDelta": 0.0019080687830687832,
+      "nativeTrimMaxDelta": 5,
+      "nativeTrimMeanChannelDelta": 0.0019072420634920636,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000003306878306878307,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.00000248015873015873,
+      "pictures": {},
+      "logical": [
+        560,
+        414
+      ],
+      "expected": [
+        560,
+        414
+      ]
+    },
+    {
+      "character": "P5",
+      "frame": 1,
+      "flipX": false,
+      "changedChannels": 6327,
+      "maxDelta": 11,
+      "meanChannelDelta": 0.004420469576719576,
+      "nativeTrimMaxDelta": 11,
+      "nativeTrimMeanChannelDelta": 0.004418816137566137,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.00000496031746031746,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000002066798941798942,
+      "pictures": {
+        "original": "trim-P5-1-right-original.png",
+        "trimmed": "trim-P5-1-right-trimmed.png",
+        "untrimmedControl": "trim-P5-1-right-untrimmedControl.png",
+        "nativeTrimControl": "trim-P5-1-right-nativeTrimControl.png"
+      },
+      "logical": [
+        560,
+        414
+      ],
+      "expected": [
+        560,
+        414
+      ]
+    },
+    {
+      "character": "P5",
+      "frame": 1,
+      "flipX": true,
+      "changedChannels": 6327,
+      "maxDelta": 11,
+      "meanChannelDelta": 0.004420469576719576,
+      "nativeTrimMaxDelta": 11,
+      "nativeTrimMeanChannelDelta": 0.004418816137566137,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.00000496031746031746,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000002066798941798942,
+      "pictures": {
+        "original": "trim-P5-1-left-original.png",
+        "trimmed": "trim-P5-1-left-trimmed.png",
+        "untrimmedControl": "trim-P5-1-left-untrimmedControl.png",
+        "nativeTrimControl": "trim-P5-1-left-nativeTrimControl.png"
+      },
+      "logical": [
+        560,
+        414
+      ],
+      "expected": [
+        560,
+        414
+      ]
+    },
+    {
+      "character": "P5",
+      "frame": 2,
+      "flipX": false,
+      "changedChannels": 7082,
+      "maxDelta": 9,
+      "meanChannelDelta": 0.004992559523809524,
+      "nativeTrimMaxDelta": 9,
+      "nativeTrimMeanChannelDelta": 0.004994212962962963,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000003306878306878307,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.0000016534391534391535,
+      "pictures": {},
+      "logical": [
+        560,
+        414
+      ],
+      "expected": [
+        560,
+        414
+      ]
+    },
+    {
+      "character": "P5",
+      "frame": 2,
+      "flipX": true,
+      "changedChannels": 7082,
+      "maxDelta": 9,
+      "meanChannelDelta": 0.004992559523809524,
+      "nativeTrimMaxDelta": 9,
+      "nativeTrimMeanChannelDelta": 0.004994212962962963,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.000003306878306878307,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.0000016534391534391535,
+      "pictures": {},
+      "logical": [
+        560,
+        414
+      ],
+      "expected": [
+        560,
+        414
+      ]
+    },
+    {
+      "character": "P5",
+      "frame": 3,
+      "flipX": false,
+      "changedChannels": 7158,
+      "maxDelta": 15,
+      "meanChannelDelta": 0.00531167328042328,
+      "nativeTrimMaxDelta": 15,
+      "nativeTrimMeanChannelDelta": 0.0053125,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.00000496031746031746,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000003306878306878307,
+      "pictures": {},
+      "logical": [
+        560,
+        414
+      ],
+      "expected": [
+        560,
+        414
+      ]
+    },
+    {
+      "character": "P5",
+      "frame": 3,
+      "flipX": true,
+      "changedChannels": 7158,
+      "maxDelta": 15,
+      "meanChannelDelta": 0.00531167328042328,
+      "nativeTrimMaxDelta": 15,
+      "nativeTrimMeanChannelDelta": 0.0053125,
+      "packVsNativeMaxDelta": 1,
+      "packVsNativeMeanChannelDelta": 0.00000496031746031746,
+      "controlMaxDelta": 1,
+      "controlMeanChannelDelta": 0.000003306878306878307,
+      "pictures": {},
+      "logical": [
+        560,
+        414
+      ],
+      "expected": [
+        560,
+        414
+      ]
+    }
+  ],
+  "errors": [],
+  "current": {
+    "label": "idle",
+    "time": 0.32,
+    "body": {
+      "texture": "visual.1.botuo.battleIdle",
+      "frame": "0.0.160.160",
+      "width": 144,
+      "height": 144,
+      "origin": [
+        0.5,
+        0.9875
+      ],
+      "flipX": false
+    },
+    "wind": null,
+    "hp": 229.07,
+    "hits": [
+      {
+        "at": 0,
+        "amount": 15.929999999999996
+      }
+    ],
+    "contacts": []
+  },
+  "status": "FAIL",
+  "failure": "AssertionError [ERR_ASSERTION]: {\"character\":\"P5\",\"frame\":1,\"flipX\":false,\"changedChannels\":6327,\"maxDelta\":11,\"meanChannelDelta\":0.004420469576719576,\"nativeTrimMaxDelta\":11,\"nativeTrimMeanChannelDelta\":0.004418816137566137,\"packVsNativeMaxDelta\":1,\"packVsNativeMeanChannelDelta\":0.00000496031746031746,\"controlMaxDelta\":1,\"controlMeanChannelDelta\":0.000002066798941798942,\"pictures\":{\"original\":\"trim-P5-1-right-original.png\",\"trimmed\":\"trim-P5-1-right-trimmed.png\",\"untrimmedControl\":\"trim-P5-1-right-untrimmedControl.png\",\"nativeTrimControl\":\"trim-P5-1-right-nativeTrimControl.png\"},\"logical\":[560,414],\"expected\":[560,414]}",
+  "serverLog": "\n  \u001b[32m\u001b[1mVITE\u001b[22m v8.3.1\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m122\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m\n\n  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m4173\u001b[22m/shanhaijing-arena/\u001b[39m\n"
+}

@@ -88,7 +88,10 @@ try{
      sc.textures.remove(key);
     }
     for(const [o,visible]of hidden)if(o.active)o.setVisible(visible);return results;
-   },inputs);for(const r of results){for(const [label,data]of Object.entries(r.pictures)){const file=`trim-${r.character}-${r.frame}-${r.flipX?'left':'right'}-${label}.png`;await writeFile(path.join(out,file),Buffer.from(data,'base64'));r.pictures[label]=file;}}evidence.trim=results;for(const r of results){assert.deepEqual(r.logical,r.expected);assert.ok(r.meanChannelDelta<.01,JSON.stringify(r));assert.ok(r.maxDelta<=8,JSON.stringify(r));}evidence.trim=results;
+   },inputs);for(const r of results){for(const [label,data]of Object.entries(r.pictures)){const file=`trim-${r.character}-${r.frame}-${r.flipX?'left':'right'}-${label}.png`;await writeFile(path.join(out,file),Buffer.from(data,'base64'));r.pictures[label]=file;}}evidence.trim=results;for(const r of results){assert.deepEqual(r.logical,r.expected);assert.ok(r.meanChannelDelta<.01,JSON.stringify(r));// Native trimmed quads alter GPU subpixel interpolation even on the ORIGINAL
+    // texture. Packing must match that independent control within one channel
+    // level; retain the original/full comparison and its strict mean bound too.
+    assert.ok(r.packVsNativeMaxDelta<=1,JSON.stringify(r));assert.ok(r.packVsNativeMeanChannelDelta<.00001,JSON.stringify(r));assert.ok(r.maxDelta<=r.nativeTrimMaxDelta+1,JSON.stringify(r));assert.ok(r.meanChannelDelta<=r.nativeTrimMeanChannelDelta+.00001,JSON.stringify(r));}evidence.trim=results;
   }
   const cleanup=await page.evaluate(()=>{const sc=window.fixtureScene,p=sc.visualAssets;sc.game.destroy(true);sc.game.step(performance.now(),0);return {closed:p.closed,bytes:p.textureBytes,actions:p.actions.active.size,contacts:p.stagedImpacts.size,source:p.bladeAfterglows.size};});assert.deepEqual(cleanup,{closed:true,bytes:0,actions:0,contacts:0,source:0});record.cleanup=cleanup;await context.close();
  }
