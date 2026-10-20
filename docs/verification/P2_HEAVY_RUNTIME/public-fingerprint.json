@@ -1,0 +1,174 @@
+{
+  "releaseSha": "acf454741757f58efa980fdcd03f028a472e87a3",
+  "status": "PASS",
+  "ciLocalFiles": 110,
+  "ciLocalAllMatch": true,
+  "publicFiles": 15,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 1491,
+      "sha256": "303dab429b30d84af86ebc2de40d59fc595d62700f100717cb415d9f5a47cd3f",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 1491,
+      "publicSha256": "303dab429b30d84af86ebc2de40d59fc595d62700f100717cb415d9f5a47cd3f",
+      "match": true
+    },
+    {
+      "path": "assets/battleRuntime-CuTQPWk7.js",
+      "bytes": 1479380,
+      "sha256": "07a676a6701494686ea37e0204d28692b8a526f485617031987df6906c8a4b6f",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/battleRuntime-CuTQPWk7.js?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 1479380,
+      "publicSha256": "07a676a6701494686ea37e0204d28692b8a526f485617031987df6906c8a4b6f",
+      "match": true
+    },
+    {
+      "path": "assets/index-Cv_UjM7f.js",
+      "bytes": 115812,
+      "sha256": "0239ff13189e94464f2db5a315d4e354c1cee97b007fef90ea7dee123a7f71a0",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/index-Cv_UjM7f.js?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 115812,
+      "publicSha256": "0239ff13189e94464f2db5a315d4e354c1cee97b007fef90ea7dee123a7f71a0",
+      "match": true
+    },
+    {
+      "path": "assets/index-BTs-O4-h.css",
+      "bytes": 23164,
+      "sha256": "d132dc331b3f60f6c24df12328e5b9fb61481cb7ef6f9b616825ba50077be9da",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/index-BTs-O4-h.css?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 23164,
+      "publicSha256": "d132dc331b3f60f6c24df12328e5b9fb61481cb7ef6f9b616825ba50077be9da",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicSource.png",
+      "bytes": 24791,
+      "sha256": "01de21c7d55baf6b35922859d43c12aaf01f05dfa21809af34b85f3a7ff7dc86",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-basicSource.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 24791,
+      "publicSha256": "01de21c7d55baf6b35922859d43c12aaf01f05dfa21809af34b85f3a7ff7dc86",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-battleIdle.png",
+      "bytes": 25140,
+      "sha256": "3fc4b62aa3bcbf490f1dd7becc745de3b859de46fed170335e19d10c11400441",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-battleIdle.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 25140,
+      "publicSha256": "3fc4b62aa3bcbf490f1dd7becc745de3b859de46fed170335e19d10c11400441",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicPoses.png",
+      "bytes": 122498,
+      "sha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-basicPoses.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 122498,
+      "publicSha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-battleMove.png",
+      "bytes": 158226,
+      "sha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-battleMove.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 158226,
+      "publicSha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicContact.png",
+      "bytes": 23940,
+      "sha256": "9fa8dc4ff29f5b6741e972670a4344df0805e3ab43e7c1007741adfc5e4bf513",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-basic-packing-v1/botuo-basicContact.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 23940,
+      "publicSha256": "9fa8dc4ff29f5b6741e972670a4344df0805e3ab43e7c1007741adfc5e4bf513",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavySource.png",
+      "bytes": 55428,
+      "sha256": "4c17e65aee4fed9942914c0558f8dd2d32e921fed391fb34040c5d63a9284132",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-heavy-runtime-v1/botuo-heavySource.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 55428,
+      "publicSha256": "4c17e65aee4fed9942914c0558f8dd2d32e921fed391fb34040c5d63a9284132",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/chiru-battleMove.png",
+      "bytes": 111694,
+      "sha256": "a47cf90429ee2dc729dfd17042d9c2335a2f267f4334fa23d31b99435d335336",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-heavy-runtime-v1/chiru-battleMove.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 111694,
+      "publicSha256": "a47cf90429ee2dc729dfd17042d9c2335a2f267f4334fa23d31b99435d335336",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/jiuweihu-battleMove.png",
+      "bytes": 126786,
+      "sha256": "d247724edd204b97e94439ff5fa6143e0280f9ec5c021fa5de6386e1e234f927",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-heavy-runtime-v1/jiuweihu-battleMove.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 126786,
+      "publicSha256": "d247724edd204b97e94439ff5fa6143e0280f9ec5c021fa5de6386e1e234f927",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavyPoses.png",
+      "bytes": 135352,
+      "sha256": "1a9622806ace2a9e6bb5b5b0b88bc5e1b5a0800f17b4f97b83462e1da74d20dc",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-heavy-runtime-v1/botuo-heavyPoses.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 135352,
+      "publicSha256": "1a9622806ace2a9e6bb5b5b0b88bc5e1b5a0800f17b4f97b83462e1da74d20dc",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/xingxing-battleMove.png",
+      "bytes": 1014025,
+      "sha256": "8d396f0fb1f73383e5951e97b7b246158b7c1c97dd33fcebccfc6ef6dbc99edd",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-heavy-runtime-v1/xingxing-battleMove.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 1014025,
+      "publicSha256": "8d396f0fb1f73383e5951e97b7b246158b7c1c97dd33fcebccfc6ef6dbc99edd",
+      "match": true
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavyContact.png",
+      "bytes": 49350,
+      "sha256": "cc4496ce23ab43f3ecf89ab9410caa287c7c267d0da43f424cdcc7fe3cb1b92b",
+      "ciMatch": true,
+      "url": "https://hansen0318.github.io/shanhaijing-arena/assets/botuo-heavy-runtime-v1/botuo-heavyContact.png?v=acf454741757f58efa980fdcd03f028a472e87a3",
+      "status": 200,
+      "publicBytes": 49350,
+      "publicSha256": "cc4496ce23ab43f3ecf89ab9410caa287c7c267d0da43f424cdcc7fe3cb1b92b",
+      "match": true
+    }
+  ]
+}

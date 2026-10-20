@@ -1,5 +1,5 @@
 {
-  "status": "ENGINEERING VERIFIED / DEPLOYMENT PENDING / NOT PLAYER PHONE VERIFIED",
+  "status": "ENGINEERING VERIFIED / DEPLOYED / PLAYER HEAVY PHONE REVIEW PENDING",
   "visualApproval": "docs/art/approved/botuo/heavy/composite-v1/acceptance.json",
   "executableApproval": "docs/art/approved/botuo/heavy/executable-v1/acceptance.json",
   "verification": "docs/verification/P2_HEAVY_RUNTIME/engineering.json",
@@ -30,5 +30,9 @@
   "runtimeUsesGif": false,
   "recoveryEvidence": "docs/verification/P2_HEAVY_RECOVERY/recovered-checksums.json",
   "originalReviewManifest": "docs/art/candidates/botuo/heavy/composite-review-v1/review-manifest.json",
-  "note": "Original review manifest retained as historical input; recovered byte-exact hashes and acceptance own current provenance, not stale truncated-file metadata."
+  "note": "Original review manifest retained as historical input; recovered byte-exact hashes and acceptance own current provenance, not stale truncated-file metadata.",
+  "releaseSha": "acf454741757f58efa980fdcd03f028a472e87a3",
+  "releaseRun": 39438531259,
+  "deploymentRecord": "docs/verification/P2_HEAVY_RUNTIME/release.json",
+  "publicFingerprint": "docs/verification/P2_HEAVY_RUNTIME/public-fingerprint.json"
 }

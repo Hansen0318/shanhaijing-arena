@@ -1,5 +1,5 @@
 {
-  "status": "AFFECTED ENGINEERING AND REAL BROWSER PASS / RELEASE AUTHORIZED / DEPLOYMENT PENDING",
+  "status": "ENGINEERING PASS / DEPLOYED / PUBLIC FINGERPRINT PASS / PLAYER HEAVY PHONE REVIEW PENDING",
   "tests": {
     "command": "node --test tests/botuoHeavyLifecycle.test.js tests/botuoHeavyRuntime.test.js tests/botuoHeavyPacking.test.js tests/frameTrim.test.js tests/actionPlayback.test.js tests/assetPresenter.test.js tests/assetResidency.test.js tests/dynamicAssetIntegration.test.js tests/assetGuard.test.js tests/botuoBasicRuntime.test.js tests/botuoBasicPacking.test.js tests/botuoStaticScale.test.js tests/botuoMove.test.js tests/xingxingMove.test.js tests/jiuweihuMove.test.js tests/chiruMove.test.js",
     "passed": 136,
@@ -25,18 +25,21 @@
   "existingSuiteFailures": "Full suite not rerun under explicit scoped-test instruction. Existing five named in docs/verification/P2_STATIC_SCALE_FIX.md remain historical, not claimed fixed/full-suite PASS.",
   "browser": {
     "probeSha": "0cba0c43de9ed9cb99effeeee1fd899609f4de95",
-    "run": 39437790482,
-    "buildJob": 118679314649,
-    "artifact": 12271787501,
-    "artifactSha256": "377be75689c00d3c1e3a1981838fe3703f05dd5477ab9a81b11c5b3c021a45c5",
+    "run": 39438531259,
+    "buildJob": 118681911254,
+    "artifact": 12272253342,
+    "artifactSha256": "74f70dddaebda036d12510a511ee740acf8a819ff6011570e32d86d38d13d12d",
     "actionCases": 8,
     "nativeTrimCases": 24,
     "builtEntryCases": 2,
     "screenshots": 50,
     "errors": 0,
     "status": "PASS",
-    "visualInspection": "Representative tactical F1, mirrored/reduced F3, normal F3 and built normal contact inspected; raw50captures in artifact. Not independent phone/anatomical approval."
+    "visualInspection": "Representative tactical F1, mirrored/reduced F3, normal F3 and built normal contact inspected; raw50captures in artifact. Not independent phone/anatomical approval.",
+    "releaseSha": "acf454741757f58efa980fdcd03f028a472e87a3"
   },
   "limits": "No phone/FPS/GPU-memory acceptance. No new320/250ms windup; existing exact real damage events unchanged in19 paired/whiff/cancel cases.",
-  "review": "Independent read-only review found no blocking defects; native trim comparison rationale and generator idempotency separately reviewed."
+  "review": "Independent read-only review found no blocking defects; native trim comparison rationale and generator idempotency separately reviewed.",
+  "deployment": "docs/verification/P2_HEAVY_RUNTIME/release.json",
+  "publicFingerprint": "docs/verification/P2_HEAVY_RUNTIME/public-fingerprint.json"
 }
