@@ -1,5 +1,5 @@
 {
-  "status": "CAUSE ISOLATED / FINAL EQUIVALENCE GATE PENDING",
+  "status": "FINAL ALL GATES PASS",
   "probes": [
     {
       "sha": "238b337a3dc74bc2cc1435cead4b1e32ac2861f9",
@@ -18,7 +18,13 @@
       "run": 39437401236,
       "artifact": 12272871883,
       "result": "Original-texture native trim control reproduces max2\u201315 in all24cases. New packed vs original native-trim control max1, mean<.0000063 in all24. Actual built mobile entry2cases PASS after fixture selection corrected. Old absolute max8 assertion intentionally retained for diagnosis, so build job remainsFAIL."
+    },
+    {
+      "sha": "0cba0c43de9ed9cb99effeeee1fd899609f4de95",
+      "run": 39437790482,
+      "artifact": 12271787501,
+      "result": "136affected/build/guard PASS.8WebGL actions,24native trim controls,2built entry cases PASS. Pages skipped intentionally."
     }
   ],
-  "next": "Final gate compares packing against independent original-texture native trim within1channel, mean<.00001; retains original-full global mean<.01 and max/mean bounded by native-control+1/.00001. Raw fullRGBA/world geometry remain exact. Then run all8action cases and actual built cases before any deployment."
+  "next": "Same-gated feature release, Pages artifact/public fingerprints, targeted player phone review."
 }

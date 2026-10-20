@@ -1,5 +1,5 @@
 {
-  "status": "LOCAL AFFECTED ENGINEERING PASS / CI BROWSER PENDING / NOT DEPLOYED",
+  "status": "AFFECTED ENGINEERING AND REAL BROWSER PASS / RELEASE AUTHORIZED / DEPLOYMENT PENDING",
   "tests": {
     "command": "node --test tests/botuoHeavyLifecycle.test.js tests/botuoHeavyRuntime.test.js tests/botuoHeavyPacking.test.js tests/frameTrim.test.js tests/actionPlayback.test.js tests/assetPresenter.test.js tests/assetResidency.test.js tests/dynamicAssetIntegration.test.js tests/assetGuard.test.js tests/botuoBasicRuntime.test.js tests/botuoBasicPacking.test.js tests/botuoStaticScale.test.js tests/botuoMove.test.js tests/xingxingMove.test.js tests/jiuweihuMove.test.js tests/chiruMove.test.js",
     "passed": 136,
@@ -23,6 +23,20 @@
   "sourceApproval": "docs/art/approved/botuo/heavy/composite-v1/acceptance.json",
   "executableApproval": "docs/art/approved/botuo/heavy/executable-v1/acceptance.json",
   "existingSuiteFailures": "Full suite not rerun under explicit scoped-test instruction. Existing five named in docs/verification/P2_STATIC_SCALE_FIX.md remain historical, not claimed fixed/full-suite PASS.",
-  "browser": "Local Chromium download returned truncated ZIP repeatedly; no local real browser claim. CI probe requires Chromium WebGL, native trim raster and real built entry before release.",
-  "limits": "No phone/FPS/GPU-memory acceptance. No new320/250ms windup; existing exact real damage events unchanged in19 paired/whiff/cancel cases."
+  "browser": {
+    "probeSha": "0cba0c43de9ed9cb99effeeee1fd899609f4de95",
+    "run": 39437790482,
+    "buildJob": 118679314649,
+    "artifact": 12271787501,
+    "artifactSha256": "377be75689c00d3c1e3a1981838fe3703f05dd5477ab9a81b11c5b3c021a45c5",
+    "actionCases": 8,
+    "nativeTrimCases": 24,
+    "builtEntryCases": 2,
+    "screenshots": 50,
+    "errors": 0,
+    "status": "PASS",
+    "visualInspection": "Representative tactical F1, mirrored/reduced F3, normal F3 and built normal contact inspected; raw50captures in artifact. Not independent phone/anatomical approval."
+  },
+  "limits": "No phone/FPS/GPU-memory acceptance. No new320/250ms windup; existing exact real damage events unchanged in19 paired/whiff/cancel cases.",
+  "review": "Independent read-only review found no blocking defects; native trim comparison rationale and generator idempotency separately reviewed."
 }

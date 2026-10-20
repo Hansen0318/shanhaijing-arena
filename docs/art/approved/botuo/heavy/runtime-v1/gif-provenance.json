@@ -1,0 +1,34 @@
+{
+  "status": "ENGINEERING VERIFIED / DEPLOYMENT PENDING / NOT PLAYER PHONE VERIFIED",
+  "visualApproval": "docs/art/approved/botuo/heavy/composite-v1/acceptance.json",
+  "executableApproval": "docs/art/approved/botuo/heavy/executable-v1/acceptance.json",
+  "verification": "docs/verification/P2_HEAVY_RUNTIME/engineering.json",
+  "probeSha": "0cba0c43de9ed9cb99effeeee1fd899609f4de95",
+  "run": 39437790482,
+  "gifs": [
+    {
+      "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-normal.gif",
+      "sha256": "2f72bc4f16cc35af773c805bdf97eb6a89f819f11d3ad0d1b9f78b35bc1cb001",
+      "bytes": 772380,
+      "decodedFrames": 36,
+      "samples": 168,
+      "totalMs": 6720,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-slow.gif",
+      "sha256": "a81180a5eabb7df2116776dc27714ffd985c179f863ddf865c19fa2693cf3724",
+      "bytes": 772380,
+      "decodedFrames": 36,
+      "samples": 168,
+      "totalMs": 20160,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    }
+  ],
+  "runtimeUsesGif": false,
+  "recoveryEvidence": "docs/verification/P2_HEAVY_RECOVERY/recovered-checksums.json",
+  "originalReviewManifest": "docs/art/candidates/botuo/heavy/composite-review-v1/review-manifest.json",
+  "note": "Original review manifest retained as historical input; recovered byte-exact hashes and acceptance own current provenance, not stale truncated-file metadata."
+}

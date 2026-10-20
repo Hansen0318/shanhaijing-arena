@@ -1,5 +1,11 @@
 # P2 Heavy — preserved timing runtime integration
 
+## 2026-10-20 — Heavy A ENGINEERING / REAL BROWSER PASS; release next
+
+Exact approved GIF/F1–F4/source/contact and player A preserved-timing integration verified. Probe0cba0c43de9ed9cb99effeeee1fd899609f4de95 / Actions39437790482 build118679314649 SUCCESS;136affected/build/84file4336374byte guard PASS. Real WebGL8action cases,24native-trim controls and2actual built mobile-entry cases PASS;50captures,0page errors. Independent review no blocking defects. Reports docs/verification/P2_HEAVY_RUNTIME/ and docs/art/approved/botuo/heavy/runtime-v1/. Prior diagnostic failures retained; paused selection was fixture bug. Native trimmed-quad rasterization differs2–15levels from full quad even on original texture; packed vs original native-trim control<=1channel, mean<.00001. Exact originalRGBA/world canvas/scale/anchor/flip preserved; no source loss/resampling or relaxed unexplained visual gate.
+
+42required keys16622164bytes,16MiB+131072reserve+23980extra preserved; all portraits/Idle/Move/KO pinned, cleanup0. A maintains true Tier650ms tactical timing; immediate/whiff entersF3 at0ms. No new combat locks/damage/AI/range/CD/targeting changes. Current live0fe44b3 not Heavy. NEXT authorized same-gated[botuo heavy release] Pages, actual artifact/public fingerprints, then scoped phone Heavy test. NOT PLAYER PHONE VERIFIED; no Special/Awakening/P3/main merge/new art or repeated approvals.
+
 ## Current state
 
 Player A approved, receipt docs/art/approved/botuo/heavy/executable-v1/acceptance.json. Source-preserving runtime integrated locally;136directly affected tests PASS, build/84file guard PASS. Not deployed; browser gate pending. Detailed machine evidence and logs: P2_HEAVY_RUNTIME/engineering.json, affected-tests.log, build.log.
@@ -19,3 +25,7 @@ TDD failures observed before schema/renderer, packing, lifecycle and concurrency
 Build guard84files4336374bytes PASS. Local browser package installed but browser ZIP truncated; do not claim local WebGL. New CI[botuo heavy probe]runs same affected suite/build plus checkBotuoHeavyBrowser.mjs (8tactical/instant×normal/reduced×both-facing,24native-trim original/current raster comparisons,40screenshots) and checkBotuoHeavyBuiltEntry.mjs (2actualmobile-emulation built entry/control-callback/HP/contact/Pause/Restart/cleanup cases). Probe explicitly skips all Pages upload/deploy. Real screenshots/results must be inspected, failures fixed, then normal[botuo heavy release]with same gates deploys. This adds a bounded new release gate, not a bypass using old viewport/basic tags.
 
 NEXT run CI probe, inspect actual browser evidence and fix any issue; checkpoint before long steps. Once PASS, publish exact tested feature release and verify complete public asset fingerprints, then supply scoped phone checklist. P2 Heavy runtime not PLAYER PHONE VERIFIED. No Special/Awakening/P3 art production/main merge.
+
+## Native renderer diagnosis
+
+Original full frame versus packed native trim initially failed arbitrary max8 at P5(max15). Untrimmed retile control max1 did not explain it. The independent ORIGINAL-TEXTURE native-trim control reproduces full-frame differences for all24cases, isolating native trimmed-quad rasterization; finite subpixel interpolation is a likely mechanism, not separately established. Packed versus that control max1 and mean<=.00000621. Final gate requires<=1/.00001 versus original native trim, retains full-frame mean<.01 and bounds full-vs-packed max/mean by native control+1/.00001. Raw fullRGBA reconstruction and world coordinate/scale/anchor/mirror remain exact. Diagnostic runJSON retained, not relabeled PASS. Built entry originally selected while paused; fixture now unpauses and asserts actualP2 selection, leaving product behavior unchanged. Generator reapplication retains generated output byte-for-byte.

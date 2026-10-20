@@ -1,0 +1,86 @@
+{
+  "kind": "Actual built mobile-emulation Campaign→Stage→Team→countdown→Arena; Heavy callback, HP/contact, Pause/Restart/cleanup. Not physical touch/phone verification.",
+  "cases": [
+    {
+      "reduced": false,
+      "start": {
+        "selected": "P2",
+        "stage": "1-3",
+        "texture": "visual.1.botuo.heavyPoses",
+        "frame": "0.0.175.162",
+        "hp": 230,
+        "before": 230,
+        "bytes": 12792100,
+        "keys": 38
+      },
+      "hit": {
+        "frame": "350.0.175.162",
+        "hp": 218.53,
+        "elapsed": 0.6499999999999999,
+        "contacts": 1,
+        "width": 175,
+        "height": 162
+      },
+      "file": "built-normal-heavy-contact.png",
+      "pauseFrozen": true,
+      "restart": {
+        "oldClosed": true,
+        "oldBytes": 0,
+        "newBytes": 12792100,
+        "newReady": true
+      },
+      "cleanup": {
+        "closed": true,
+        "bytes": 0
+      }
+    },
+    {
+      "reduced": true,
+      "start": {
+        "selected": "P2",
+        "stage": "1-3",
+        "texture": "visual.1.botuo.heavyPoses",
+        "frame": "0.0.175.162",
+        "hp": 230,
+        "before": 230,
+        "bytes": 12792100,
+        "keys": 38
+      },
+      "hit": {
+        "frame": "350.0.175.162",
+        "hp": 218.53,
+        "elapsed": 0.6499999999999999,
+        "contacts": 1,
+        "width": 175,
+        "height": 162
+      },
+      "file": "built-reduced-heavy-contact.png",
+      "pauseFrozen": true,
+      "restart": {
+        "oldClosed": true,
+        "oldBytes": 0,
+        "newBytes": 12792100,
+        "newReady": true
+      },
+      "cleanup": {
+        "closed": true,
+        "bytes": 0
+      }
+    }
+  ],
+  "errors": [],
+  "current": {
+    "reduced": true,
+    "start": {
+      "selected": "P2",
+      "stage": "1-3",
+      "texture": "visual.1.botuo.heavyPoses",
+      "frame": "0.0.175.162",
+      "hp": 230,
+      "before": 230,
+      "bytes": 12792100,
+      "keys": 38
+    }
+  },
+  "status": "PASS"
+}

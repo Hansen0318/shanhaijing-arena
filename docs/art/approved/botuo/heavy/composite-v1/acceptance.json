@@ -1,7 +1,7 @@
 {
-  "status": "PLAYER GIF / PRESENTED VFX VISUAL APPROVED; EXECUTABLE CONTRACT PENDING",
+  "status": "PLAYER GIF / PRESENTED VFX VISUAL APPROVED; EXECUTABLE A RECEIPT LINKED",
   "recordedDate": "2026-10-20",
-  "playerStatement": "work有提供heavy的gif參考，我確認核准會讓新的work繼續",
+  "playerStatement": "work\u6709\u63d0\u4f9bheavy\u7684gif\u53c3\u8003\uff0c\u6211\u78ba\u8a8d\u6838\u51c6\u6703\u8b93\u65b0\u7684work\u7e7c\u7e8c",
   "scope": "Specific delivered Heavy normal/slow composite, shown approved poses and independent source/contact VFX. Not real gameplay timing, integration, deployment, or phone verification. Companion character-only/reduced files are archived support, no separate unseen-file approval inferred.",
   "deliveryEvidence": {
     "priorWorkAssistantAt": "2026-10-20T13:06:06Z",
@@ -206,5 +206,7 @@
       "all delays slow=normal*3",
       "all four pose acceptance hashes and both VFX hashes match"
     ]
-  }
+  },
+  "originalRecordedStatus": "PLAYER GIF / PRESENTED VFX VISUAL APPROVED; EXECUTABLE CONTRACT PENDING",
+  "executableApproval": "docs/art/approved/botuo/heavy/executable-v1/acceptance.json"
 }

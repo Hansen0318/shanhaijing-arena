@@ -1,0 +1,149 @@
+{
+  "status": "ENGINEERING VERIFIED / DEPLOYMENT PENDING / NOT PLAYER PHONE VERIFIED",
+  "visualApproval": "docs/art/approved/botuo/heavy/composite-v1/acceptance.json",
+  "executableApproval": "docs/art/approved/botuo/heavy/executable-v1/acceptance.json",
+  "verification": "docs/verification/P2_HEAVY_RUNTIME/engineering.json",
+  "probeSha": "0cba0c43de9ed9cb99effeeee1fd899609f4de95",
+  "run": 39437790482,
+  "assets": [
+    {
+      "key": "botuo.heavyPoses",
+      "output": "public/assets/botuo-heavy-runtime-v1/botuo-heavyPoses.png",
+      "width": 700,
+      "height": 162,
+      "bytes": 135352,
+      "sha256": "1a9622806ace2a9e6bb5b5b0b88bc5e1b5a0800f17b4f97b83462e1da74d20dc"
+    },
+    {
+      "key": "botuo.heavySource",
+      "source": "docs/art/candidates/botuo/heavy/composite-review-v1/source-pressure-raw-v1.png",
+      "sourceSha256": "54c649d7b5d7e39a0959966e9ddfc8a861bdd516fd006a9d2cc1daf37da2c3cd",
+      "reviewSize": [
+        230,
+        154
+      ],
+      "crop": [
+        0,
+        5,
+        230,
+        149
+      ],
+      "output": "public/assets/botuo-heavy-runtime-v1/botuo-heavySource.png",
+      "width": 230,
+      "height": 144,
+      "bytes": 55428,
+      "sha256": "4c17e65aee4fed9942914c0558f8dd2d32e921fed391fb34040c5d63a9284132"
+    },
+    {
+      "key": "botuo.heavyContact",
+      "source": "docs/art/candidates/botuo/heavy/composite-review-v1/target-impact-raw-v1.png",
+      "sourceSha256": "b845dcd063a1e2552fa718b2595ae0a6ea5606656d6f8c379c58c7e7fea0f688",
+      "reviewSize": [
+        210,
+        168
+      ],
+      "crop": [
+        3,
+        4,
+        207,
+        165
+      ],
+      "output": "public/assets/botuo-heavy-runtime-v1/botuo-heavyContact.png",
+      "width": 204,
+      "height": 161,
+      "bytes": 49350,
+      "sha256": "cc4496ce23ab43f3ecf89ab9410caa287c7c267d0da43f424cdcc7fe3cb1b92b"
+    }
+  ],
+  "action": {
+    "animation": {
+      "source": "botuo.heavyPoses",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 175,
+          "height": 162
+        },
+        {
+          "x": 175,
+          "y": 0,
+          "width": 175,
+          "height": 162
+        },
+        {
+          "x": 350,
+          "y": 0,
+          "width": 175,
+          "height": 162
+        },
+        {
+          "x": 525,
+          "y": 0,
+          "width": 175,
+          "height": 162
+        }
+      ],
+      "duration": 0.64,
+      "loop": false,
+      "staticFrame": 2,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "scale": 2.4305555555555554
+    },
+    "frameDurationsMs": [
+      160,
+      160,
+      160,
+      160
+    ],
+    "impactFrame": 2,
+    "coordinateSize": [
+      175,
+      162
+    ],
+    "blade": {
+      "assetKey": "botuo.heavySource",
+      "offset": [
+        30,
+        1
+      ],
+      "size": [
+        230,
+        144
+      ],
+      "layer": 4,
+      "startMs": 160,
+      "holdAfterResolveMs": 280
+    },
+    "contact": {
+      "assetKey": "botuo.heavyContact",
+      "offset": [
+        -102,
+        -152
+      ],
+      "size": [
+        204,
+        161
+      ],
+      "layer": 6,
+      "attach": "target",
+      "retainOnNextCast": true,
+      "durationMs": 280
+    }
+  },
+  "packingReport": "docs/verification/P2_HEAVY_RUNTIME_PACK.json",
+  "actualTiming": "A: existing650ms Tier-scaled tactical resolve; immediate hit/whiff0ms F3. GIF preview timing not combat clock.",
+  "residency": {
+    "keys": 42,
+    "decodedBytes": 16622164,
+    "hardBytes": 16777216,
+    "optionalReserveBytes": 131072,
+    "remainingBytes": 155052,
+    "extraAfterReserveBytes": 23980,
+    "savedDecodedBytes": 734952,
+    "heavyAdditionDecodedBytes": 717456
+  }
+}

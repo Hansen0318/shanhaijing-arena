@@ -1,5 +1,11 @@
 # AGENTS.md
 
+## 2026-10-20 — Heavy A ENGINEERING / REAL BROWSER PASS; release next
+
+Exact approved GIF/F1–F4/source/contact and player A preserved-timing integration verified. Probe0cba0c43de9ed9cb99effeeee1fd899609f4de95 / Actions39437790482 build118679314649 SUCCESS;136affected/build/84file4336374byte guard PASS. Real WebGL8action cases,24native-trim controls and2actual built mobile-entry cases PASS;50captures,0page errors. Independent review no blocking defects. Reports docs/verification/P2_HEAVY_RUNTIME/ and docs/art/approved/botuo/heavy/runtime-v1/. Prior diagnostic failures retained; paused selection was fixture bug. Native trimmed-quad rasterization differs2–15levels from full quad even on original texture; packed vs original native-trim control<=1channel, mean<.00001. Exact originalRGBA/world canvas/scale/anchor/flip preserved; no source loss/resampling or relaxed unexplained visual gate.
+
+42required keys16622164bytes,16MiB+131072reserve+23980extra preserved; all portraits/Idle/Move/KO pinned, cleanup0. A maintains true Tier650ms tactical timing; immediate/whiff entersF3 at0ms. No new combat locks/damage/AI/range/CD/targeting changes. Current live0fe44b3 not Heavy. NEXT authorized same-gated[botuo heavy release] Pages, actual artifact/public fingerprints, then scoped phone Heavy test. NOT PLAYER PHONE VERIFIED; no Special/Awakening/P3/main merge/new art or repeated approvals.
+
 ## 2026-10-20 — Heavy A RUNTIME LOCAL PASS / CI BROWSER PROBE next
 
 Player A receipt closes executable decision. Generic existing-impact observational lifecycle preserves real hit/CD/AI/movement/target geometry; immediate paths enterF3 at0ms, tactical F1/F2→actualTierresolve→F3/F4. Exact approved cells and independent source/contact installed, no regenerated art. Pure-damage hit unaffected; real resolve catch-up handles intervening legal casts without simulation locks or duplicate damage.
