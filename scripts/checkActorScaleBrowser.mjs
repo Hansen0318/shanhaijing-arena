@@ -39,7 +39,7 @@ try{
    const result=await page.evaluate(({actorId,sign})=>{
     const scene=window.__scaleScene,s=scene.session,p=scene.visualAssets,a=s.actorById(actorId),d=s.characterDefinitions[a.definitionId],target=s.actors.find(t=>t.teamId!==a.teamId);
     s.clearTransientCombat();p.actions.clear();p.states.clear();p.facings.clear();p.actionFacings.clear();
-    for(const actor of s.actors){actor.hp=s.definitionForActor(actor).stats.maxHp;Object.assign(actor,{x:12,y:3});for(const c of ['heavy','special','awakening'])Object.assign(actor.abilityState[c],{phase:'cooldown',cooldownRemaining:99});s.cadence.set(actor.instanceId,99);s.holdPlayerControl(actor.instanceId);s.setPlayerMovement(actor.instanceId,{x:0,y:0});}
+    for(const actor of s.actors){if(actor.hp<=0)throw Error('Diagnostic actor unexpectedly KO before scale study');actor.heal(actor.maxHp);Object.assign(actor,{x:12,y:3});for(const c of ['heavy','special','awakening'])Object.assign(actor.abilityState[c],{phase:'cooldown',cooldownRemaining:99});s.cadence.set(actor.instanceId,99);s.holdPlayerControl(actor.instanceId);s.setPlayerMovement(actor.instanceId,{x:0,y:0});}
     Object.assign(a,{x:4,y:0});Object.assign(target,{x:4+.65*sign,y:0});
     const samples=[],images={};
     const capture=label=>{
@@ -59,8 +59,8 @@ try{
      if(d.actionDescriptors?.[category])continue; // Protected P1 skills have existing raster gates.
      Object.assign(a.abilityState[category],{phase:'ready',cooldownRemaining:0});s.executeAbility(a,category,'ai',target);capture(category+'-cast');step(1);capture(category+'-after');
     }
-    a.hp=0;capture('ko');const ko=JSON.stringify(samples.at(-1));step(.1);capture('ko-hold');
-    return {actorId,characterId:a.definitionId,sign,accepted,samples,images,ko,cache:p.textureBytes,reserve:p.residency.snapshot().optionalReserveBytes};
+    capture('pause-repaint');
+    return {actorId,characterId:a.definitionId,sign,accepted,samples,images,cache:p.textureBytes,reserve:p.residency.snapshot().optionalReserveBytes};
    },{actorId,sign});
    assert.equal(result.accepted,true,'real Basic accepted for '+result.characterId);
    for(const sample of result.samples){
@@ -77,8 +77,19 @@ try{
    assert.deepEqual(after.display,before.display);assert.equal(after.texture,before.texture);assert.deepEqual(after.origin,before.origin);assert.equal(result.reserve,131072);
    for(const [label,url]of Object.entries(result.images))await writeFile(path.join(out,`${stage}-${reduced?'reduced':'normal'}-${result.characterId}-${sign}-${label}.png`),Buffer.from(url.split(',')[1],'base64'));
    delete result.images;record.actors.push(result);
-   await page.screenshot({path:path.join(out,`${stage}-${reduced?'reduced':'normal'}-${result.characterId}-${sign}-ko.png`)});
+   await page.screenshot({path:path.join(out,`${stage}-${reduced?'reduced':'normal'}-${result.characterId}-${sign}-end.png`)});
   }
+  // CharacterState.hp is getter-only. Use real damage, after all living-state
+  // studies, so KO is actual engine state and no unsupported revival is needed.
+  record.ko=await page.evaluate(()=>{
+   const scene=window.__scaleScene,s=scene.session,p=scene.visualAssets;s.clearTransientCombat();
+   for(const a of s.actors)a.damage(a.hp);
+   scene.renderCastEvents();scene.applyFrame(s.snapshot());scene.game.step(performance.now(),0);
+   const read=()=>s.actors.map(a=>{const b=p.actorSprites.get(a.instanceId);return {actorId:a.instanceId,characterId:a.definitionId,hp:a.hp,state:p.states.get(a.instanceId).state,source:p.actorTextureKeys.get(a.instanceId),expected:s.characterDefinitions[a.definitionId].animationDescriptors.battleKo.source,display:[b.displayWidth,b.displayHeight],origin:[b.originX,b.originY],flipX:b.flipX};});
+   const before=read();scene.applyFrame(s.snapshot());scene.game.step(performance.now(),0);return {before,after:read()};
+  });
+  assert.deepEqual(record.ko.before,record.ko.after);for(const k of record.ko.before){assert.equal(k.hp,0);assert.equal(k.state,'battleKo');assert.equal(k.source,k.expected);}
+  await page.screenshot({path:path.join(out,`${stage}-${reduced?'reduced':'normal'}-ko.png`)});
   // Actual exit/restart UI, retaining old presenter to prove lifecycle cleanup.
   await page.evaluate(()=>{window.__oldScalePresenter=window.__scaleScene.visualAssets;window.__scaleScene.game.loop.wake();});
   await page.locator('.battle-controls').getByRole('button',{name:'Exit',exact:true}).click();
