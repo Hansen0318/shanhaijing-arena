@@ -1,5 +1,12 @@
 # Project State
 
+## 2026-10-20 — Player approves Work-shown P2 Heavy GIF; artifact binding required before implementation
+
+Player states: 「work有提供heavy的gif參考，我確認核准會讓新的work繼續」. **Player approval of the specific Heavy preview GIF actually shown by the preceding Work is acknowledged.** This does **not** authorize guessing which unseen file/version was shown, nor bypassing source provenance. At Chat audit, current feature docs only establish F1/F2/F4 + F3 **art approval** (`docs/art/approved/botuo/heavy/poses-v1/acceptance.json`), and current handoff says VFX/GIF next; the shown Work GIF's exact GitHub path, bytes, GIF SHA256, frames/durations, VFX sources/receipts and display link are **not yet identified in authoritative GitHub**. Its approved scope must be bound to the exact preview by incoming Work, retrieving predecessor's output/artifact and comparing to committed assets; do not fabricate a receipt or mark unknown VFX/runtime player-approved.
+
+**NEXT BOUNDED WORK:** fresh remote/PR/HEAD recovery, identify exactly which Heavy GIF the player just approved, copy/archive approved immutable visual preview with SHA256/provenance, validate normal/slow/no-FX/right+mirror/Idle return as applicable and actual approved images without alteration. If proven, record scoped `PLAYER GIF APPROVED` receipt and protect those exact VFX/art sources; then begin only missing Heavy runtime integration and necessary engineering/deploy within GitHub's distinct executable-contract review/authorization gate. Preserve P2 size `PLAYER VERIFIED`, P1 COMPLETE, approved P2 Basic/KO/Heavy F1–F4, T0 Heavy range1.8 CD4 coefficient1.30 one-target single real hit no displacement, strategic telegraph Tier-scaled650ms distinct from Basic250ms, 16MiB+131072 reserve, generic architecture/no normal Hit reactions. If exact GIF cannot be recovered, report provenance blocker instead of recreating it or falsely claiming authoritative GIF approval. No P3/main merge. All successor instructions one self-contained block.
+
+
 ## 2026-10-20 19:57 +08:00 — Heavy FOUR POSES PLAYER APPROVED / VFX + GIF next
 
 Player「好，妳繼續」responds to the displayed four-pose board and explicit F1/F2/F4 art-review gate at fffad484da54c8ca59f88c394ba870116a953a7a. Selected F1/F2/F4 PLAYER ART APPROVED; existing F3 approval retained, superseded drafts excluded. Exact hash-bound receipt: `docs/art/approved/botuo/heavy/poses-v1/acceptance.json`. Prior pose-review-pending entries are historical. P2 size defect remains PLAYER VERIFIED.
