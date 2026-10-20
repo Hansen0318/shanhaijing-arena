@@ -1,5 +1,10 @@
 # Character action art, VFX and animation review workflow
 
+## Scale regression lesson — approved body density, not pose-dependent skull length
+
+The2026-10-20 P2 phone report confirms that renderer/descriptor agreement can still faithfully render a wrong-sized actor. Prior25/32face-span calibration reduced the whole Move body despite original body pixels already using the approved static authoring unit. That conversion is retired for P2 Move; release/evidence: `verification/P2_MOVE_BODY_FIX.md`. Compare original body/equipment/limb proportions across all poses at actual rendered size before choosing any anatomical ruler; foreshortening, mane and face posture can alter projected facial length. Equal source canvas size alone is also insufficient. Keep approved sources immutable; repair source-specific data through shared contracts, preserve grounded support and independent FX, and prove a regression fails the player-visible bad configuration rather than asserting it as expected. P2 Idle/Basic size is normal per player; Move correction remains phone-review pending, not blanket art or whole-character approval.
+
+
 ## 2026-10-19 — Mobile viewport fix DEPLOYED / PHONE REVIEW PENDING
 
 Public exact-byte verification BLOCKED by host proxy CONNECT timeout (not evidence of a site outage); downloaded actual CI Pages artifact matches local build15/15 files. See public-fingerprint.json: publicVerification=false. Deployment success and browser gate PASS are independently established; do not misreport public hashes or redeploy unchanged code for this network failure.

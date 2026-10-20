@@ -1,5 +1,14 @@
 # P2 Move body density correction — 2026-10-20
 
+## DEPLOYED / ENGINEERING PASS / PLAYER MOVE SIZE REVIEW PENDING
+
+Release `0fe44b3c5eed46402d0394af6dff128a72be7393`, Actions [39371658550](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39371658550), build118460665060 / deploy118461659898 SUCCESS. Basic actual Chromium4cases/44screenshots, mobile Chromium/WebKit6actual entry cases, and actual built-entry cross-roster4cases/32actor-sequences/880samples/24real KO PASS; all four Retry/Restart presenters closed with0bytes, Exit returns to preview. PNGs and P2 Idle/Basic/KO +other catalog fields unchanged. Both facings and reduced motion covered; physical phone appearance not inferred.
+
+Downloaded artifact hashes independently matched: Basic12241547841 `3b82000f6ca8023bbb5474cf7ca36c8a7ae538cbdd6ead8d6d337a71978451ec`; mobile12241701561 `4f5f58b8745e7f8e894da6aec193572977a6414b85706b15f99bd2eeecdaa08a`; Pages12241835976 `ab2ac6f85360846ca892a43b6ec01b697949b7a1f173f8ff661c265851aa09c3`. All104built files byte-exact equal CI; public16complete index/JS/CSS/runtime PNG files match CI/local SHA256. Details P2_MOVE_BODY/{release.json,public-fingerprint.json,basic-browser.json,mobile-viewport.json,actor-scale-trace.json.gz}. Actual rendered Move144×139.5/foot0, source density0.9, restored original body footprint; generated per-state head-span metadata is a posed source diagnostic, not an equal-face-size claim. Actual raster excerpts inspected and retained in actual-built-continuity.png.
+
+Test URL: https://hansen0318.github.io/shanhaijing-arena/?v=0fe44b3c5eed46402d0394af6dff128a72be7393 . NEXT ONLY scoped P2 phone review: ready→Move→stop→Basic→Move; keep Heavy paused and defect not PLAYER VERIFIED until explicit confirmation. Do not rerun unchanged approved P1/art/whole suite/release or restore25/32Move conversion. This release closure supersedes historical pending text below; evidence-only commit[skip ci].
+
+
 ## Player evidence and scope
 
 Player at12:43 Asia/Taipei: 「準備的時候正常大小。移動的時候會變小。打架的時候又變正常，應該只剩下移動的動畫參考的圖要調整和待機準備一樣大」. Inspected both supplied phone PNGs: countdown uses accepted large static actor, locomotion is visibly smaller. Idle/Basic remain protected. This is new rejection of Move size, not phone acceptance of earlier diagnostics. Their loaded source SHA is unproven; do not blame cache.

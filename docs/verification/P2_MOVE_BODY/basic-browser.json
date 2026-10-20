@@ -1,0 +1,1123 @@
+{
+  "kind": "Actual Chromium/Phaser/WebGL + PNG decode; controlled direct-call fixture, not automatic AI/UI/mobile/FPS/GPU-memory proof",
+  "cases": [
+    {
+      "reduced": false,
+      "sign": 1,
+      "bytes": 16639660,
+      "keys": 39,
+      "hp": 245,
+      "renderer": 2,
+      "frames": [
+        {
+          "label": "anticipation",
+          "file": "normal-right-anticipation.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "0.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 245,
+          "hits": [],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "release",
+          "file": "normal-right-release.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "158.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 245,
+          "hits": [],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "contact",
+          "file": "normal-right-contact.png",
+          "time": 0.25,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "316.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.botuo.basicContact",
+              "actionId": "basic.1",
+              "at": 0.25,
+              "x": 535.2999999998855,
+              "y": 247.3,
+              "alpha": 1,
+              "flipX": false
+            }
+          ],
+          "idleFoot": 0
+        },
+        {
+          "label": "afterF3",
+          "file": "normal-right-afterF3.png",
+          "time": 0.41,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "474.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 0.5000000000000004
+          },
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.botuo.basicContact",
+              "actionId": "basic.1",
+              "at": 0.25,
+              "x": 535.2999999998855,
+              "y": 247.3,
+              "alpha": 0.20000000000000018,
+              "flipX": false
+            }
+          ],
+          "idleFoot": 0
+        },
+        {
+          "label": "effectsEnd",
+          "file": "normal-right-effectsEnd.png",
+          "time": 0.45,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "474.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "idle",
+          "file": "normal-right-idle.png",
+          "time": 0.57,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [],
+          "idleFoot": 0
+        }
+      ],
+      "continuity": [
+        {
+          "file": "normal-right-static-baseline.png",
+          "texture": "visual.1.botuo.battleIdle",
+          "frame": "0.0.160.160",
+          "width": 144,
+          "height": 144,
+          "origin": [
+            0.5,
+            0.9875
+          ]
+        },
+        {
+          "file": "normal-right-move-0.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "0.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "normal-right-move-1.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "160.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "normal-right-move-2.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "320.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "normal-right-move-3.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "480.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        }
+      ],
+      "pauseFrozen": true,
+      "miss": {
+        "hpUnchanged": true,
+        "additionalHits": 0,
+        "contacts": 0,
+        "wind": true
+      },
+      "cleanup": {
+        "closed": true,
+        "bytes": 0,
+        "actions": 0,
+        "contacts": 0,
+        "source": 0
+      }
+    },
+    {
+      "reduced": false,
+      "sign": -1,
+      "bytes": 16639660,
+      "keys": 39,
+      "hp": 245,
+      "renderer": 2,
+      "frames": [
+        {
+          "label": "anticipation",
+          "file": "normal-left-anticipation.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "0.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.7784810126582279,
+              0.8811188811188811
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 245,
+          "hits": [],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "release",
+          "file": "normal-left-release.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "158.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.7784810126582279,
+              0.8811188811188811
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 245,
+          "hits": [],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "contact",
+          "file": "normal-left-contact.png",
+          "time": 0.25,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "316.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.7784810126582279,
+              0.8811188811188811
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.botuo.basicContact",
+              "actionId": "basic.1",
+              "at": 0.25,
+              "x": 440.69999999946003,
+              "y": 247.3,
+              "alpha": 1,
+              "flipX": true
+            }
+          ],
+          "idleFoot": 0
+        },
+        {
+          "label": "afterF3",
+          "file": "normal-left-afterF3.png",
+          "time": 0.41,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "474.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.7784810126582279,
+              0.8811188811188811
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 0.5000000000000004
+          },
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.botuo.basicContact",
+              "actionId": "basic.1",
+              "at": 0.25,
+              "x": 440.69999999946003,
+              "y": 247.3,
+              "alpha": 0.20000000000000018,
+              "flipX": true
+            }
+          ],
+          "idleFoot": 0
+        },
+        {
+          "label": "effectsEnd",
+          "file": "normal-left-effectsEnd.png",
+          "time": 0.45,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "474.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.7784810126582279,
+              0.8811188811188811
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "idle",
+          "file": "normal-left-idle.png",
+          "time": 0.57,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [],
+          "idleFoot": 0
+        }
+      ],
+      "continuity": [
+        {
+          "file": "normal-left-static-baseline.png",
+          "texture": "visual.1.botuo.battleIdle",
+          "frame": "0.0.160.160",
+          "width": 144,
+          "height": 144,
+          "origin": [
+            0.5,
+            0.9875
+          ]
+        },
+        {
+          "file": "normal-left-move-0.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "0.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "normal-left-move-1.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "160.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "normal-left-move-2.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "320.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "normal-left-move-3.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "480.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        }
+      ],
+      "pauseFrozen": true,
+      "miss": {
+        "hpUnchanged": true,
+        "additionalHits": 0,
+        "contacts": 0,
+        "wind": true
+      },
+      "cleanup": {
+        "closed": true,
+        "bytes": 0,
+        "actions": 0,
+        "contacts": 0,
+        "source": 0
+      }
+    },
+    {
+      "reduced": true,
+      "sign": 1,
+      "bytes": 16639660,
+      "keys": 39,
+      "hp": 245,
+      "renderer": 2,
+      "frames": [
+        {
+          "label": "anticipation",
+          "file": "reduced-right-anticipation.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "0.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 245,
+          "hits": [],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "release",
+          "file": "reduced-right-release.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "0.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 245,
+          "hits": [],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "contact",
+          "file": "reduced-right-contact.png",
+          "time": 0.25,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "316.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.botuo.basicContact",
+              "actionId": "basic.1",
+              "at": 0.25,
+              "x": 535.2999999998855,
+              "y": 247.3,
+              "alpha": 1,
+              "flipX": false
+            }
+          ],
+          "idleFoot": 0
+        },
+        {
+          "label": "afterF3",
+          "file": "reduced-right-afterF3.png",
+          "time": 0.41,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": false
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.botuo.basicContact",
+              "actionId": "basic.1",
+              "at": 0.25,
+              "x": 535.2999999998855,
+              "y": 247.3,
+              "alpha": 1,
+              "flipX": false
+            }
+          ],
+          "idleFoot": 0
+        },
+        {
+          "label": "effectsEnd",
+          "file": "reduced-right-effectsEnd.png",
+          "time": 0.45,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "idle",
+          "file": "reduced-right-idle.png",
+          "time": 0.57,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": false
+          },
+          "wind": null,
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [],
+          "idleFoot": 0
+        }
+      ],
+      "continuity": [
+        {
+          "file": "reduced-right-static-baseline.png",
+          "texture": "visual.1.botuo.battleIdle",
+          "frame": "0.0.160.160",
+          "width": 144,
+          "height": 144,
+          "origin": [
+            0.5,
+            0.9875
+          ]
+        },
+        {
+          "file": "reduced-right-move-0.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "0.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "reduced-right-move-1.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "160.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "reduced-right-move-2.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "320.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "reduced-right-move-3.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "480.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        }
+      ],
+      "pauseFrozen": true,
+      "miss": {
+        "hpUnchanged": true,
+        "additionalHits": 0,
+        "contacts": 0,
+        "wind": true
+      },
+      "cleanup": {
+        "closed": true,
+        "bytes": 0,
+        "actions": 0,
+        "contacts": 0,
+        "source": 0
+      }
+    },
+    {
+      "reduced": true,
+      "sign": -1,
+      "bytes": 16639660,
+      "keys": 39,
+      "hp": 245,
+      "renderer": 2,
+      "frames": [
+        {
+          "label": "anticipation",
+          "file": "reduced-left-anticipation.png",
+          "time": 0,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "0.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.7784810126582279,
+              0.8811188811188811
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 245,
+          "hits": [],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "release",
+          "file": "reduced-left-release.png",
+          "time": 0.16,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "0.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.7784810126582279,
+              0.8811188811188811
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 245,
+          "hits": [],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "contact",
+          "file": "reduced-left-contact.png",
+          "time": 0.25,
+          "body": {
+            "texture": "visual.1.botuo.basicPoses",
+            "frame": "316.0.158.143",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 177.75,
+            "height": 160.875,
+            "origin": [
+              0.7784810126582279,
+              0.8811188811188811
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.botuo.basicContact",
+              "actionId": "basic.1",
+              "at": 0.25,
+              "x": 440.69999999946003,
+              "y": 247.3,
+              "alpha": 1,
+              "flipX": true
+            }
+          ],
+          "idleFoot": 0
+        },
+        {
+          "label": "afterF3",
+          "file": "reduced-left-afterF3.png",
+          "time": 0.41,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": true
+          },
+          "wind": {
+            "texture": "visual.1.botuo.basicSource",
+            "alpha": 1
+          },
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [
+            {
+              "texture": "visual.1.botuo.basicContact",
+              "actionId": "basic.1",
+              "at": 0.25,
+              "x": 440.69999999946003,
+              "y": 247.3,
+              "alpha": 1,
+              "flipX": true
+            }
+          ],
+          "idleFoot": 0
+        },
+        {
+          "label": "effectsEnd",
+          "file": "reduced-left-effectsEnd.png",
+          "time": 0.45,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [],
+          "idleFoot": 0
+        },
+        {
+          "label": "idle",
+          "file": "reduced-left-idle.png",
+          "time": 0.57,
+          "body": {
+            "texture": "visual.1.botuo.battleIdle",
+            "frame": "0.0.160.160",
+            "x": 487.99999999967275,
+            "y": 334,
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "flipX": true
+          },
+          "wind": null,
+          "hp": 233.9,
+          "hits": [
+            {
+              "actionId": "basic.1",
+              "at": 0.25,
+              "critical": false
+            }
+          ],
+          "contacts": [],
+          "idleFoot": 0
+        }
+      ],
+      "continuity": [
+        {
+          "file": "reduced-left-static-baseline.png",
+          "texture": "visual.1.botuo.battleIdle",
+          "frame": "0.0.160.160",
+          "width": 144,
+          "height": 144,
+          "origin": [
+            0.5,
+            0.9875
+          ]
+        },
+        {
+          "file": "reduced-left-move-0.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "0.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "reduced-left-move-1.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "160.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "reduced-left-move-2.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "320.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        },
+        {
+          "file": "reduced-left-move-3.png",
+          "texture": "visual.1.botuo.battleMove",
+          "frame": "480.0.160.155",
+          "width": 144,
+          "height": 139.5,
+          "origin": [
+            0.5,
+            0.9870967741935484
+          ]
+        }
+      ],
+      "pauseFrozen": true,
+      "miss": {
+        "hpUnchanged": true,
+        "additionalHits": 0,
+        "contacts": 0,
+        "wind": true
+      },
+      "cleanup": {
+        "closed": true,
+        "bytes": 0,
+        "actions": 0,
+        "contacts": 0,
+        "source": 0
+      }
+    }
+  ],
+  "errors": [],
+  "current": {
+    "label": "idle",
+    "time": 0.57,
+    "body": {
+      "texture": "visual.1.botuo.battleIdle",
+      "frame": "0.0.160.160",
+      "x": 487.99999999967275,
+      "y": 334,
+      "width": 144,
+      "height": 144,
+      "origin": [
+        0.5,
+        0.9875
+      ],
+      "flipX": true
+    },
+    "wind": null,
+    "hp": 233.9,
+    "hits": [
+      {
+        "actionId": "basic.1",
+        "at": 0.25,
+        "critical": false
+      }
+    ],
+    "contacts": [],
+    "idleFoot": 0
+  },
+  "status": "PASS"
+}
