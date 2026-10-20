@@ -90,6 +90,12 @@ try{
   });
   assert.deepEqual(record.ko.before,record.ko.after);for(const k of record.ko.before){assert.equal(k.hp,0);assert.equal(k.state,'battleKo');assert.equal(k.source,k.expected);}
   await page.screenshot({path:path.join(out,`${stage}-${reduced?'reduced':'normal'}-ko.png`)});
+  // All-KO correctly opens the result screen, whose RETRY lives on canvas.
+  // Exercise that actual UI before testing the in-battle restart dialog.
+  const retry=await page.evaluate(()=>{const scene=window.__scaleScene;window.__koScalePresenter=scene.visualAssets;const b=scene.resultButtons.get('RETRY').button;scene.game.loop.wake();return {x:b.x,y:b.y,visible:scene.resultLayer.visible};});assert.equal(retry.visible,true);
+  const canvas=await page.locator('canvas').boundingBox();await page.mouse.click(canvas.x+retry.x*canvas.width/1120,canvas.y+retry.y*canvas.height/540);
+  await page.waitForFunction(()=>window.__scaleScene.visualAssets!==window.__koScalePresenter&&window.__scaleScene.assetGate?.ready,{},{timeout:60000});
+  record.koRetry=await page.evaluate(()=>({oldClosed:window.__koScalePresenter.closed,oldBytes:window.__koScalePresenter.textureBytes}));assert.deepEqual(record.koRetry,{oldClosed:true,oldBytes:0});
   // Actual exit/restart UI, retaining old presenter to prove lifecycle cleanup.
   await page.evaluate(()=>{window.__oldScalePresenter=window.__scaleScene.visualAssets;window.__scaleScene.game.loop.wake();});
   await page.locator('.battle-controls').getByRole('button',{name:'Exit',exact:true}).click();
