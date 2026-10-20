@@ -68,14 +68,21 @@ try{
       const f=entry.descriptor.frames[i],name='frame'+i;if(!sc.textures.get(key).has(name))sc.textures.get(key).add(name,0,f.x,f.y,f.width,f.height);
       const width=72*d.scale*f.width/Math.max(f.width,f.height),height=72*d.scale*f.height/Math.max(f.width,f.height);
       const original=sc.add.image(500,300,key,name).setOrigin(...d.origin).setDisplaySize(width,height).setFlipX(flipX);const before=capture();original.setVisible(false);
-      const current=p.imageFor('qa-current',d,i/d.fps+.001,p.actorSprites,'locomotion',i).setOrigin(...d.origin).setDisplaySize(width,height).setFlipX(flipX).setPosition(500,300);const after=capture();let changed=0,max=0,sum=0;
+      const current=p.imageFor('qa-current',d,i/d.fps+.001,p.actorSprites,'locomotion',i).setOrigin(...d.origin).setDisplaySize(width,height).setFlipX(flipX).setPosition(500,300);const after=capture();current.setVisible(false);
+      // Untrimmed control: same immutable full logical cell, only atlas UV changes.
+      const tile=document.createElement('canvas');tile.width=f.width+37;tile.height=f.height+29;tile.getContext('2d').drawImage(image,f.x,f.y,f.width,f.height,17,13,f.width,f.height);
+      const controlKey='qa-control';sc.textures.addCanvas(controlKey,tile);sc.textures.get(controlKey).add('full',0,17,13,f.width,f.height);
+      const control=sc.add.image(500,300,controlKey,'full').setOrigin(...d.origin).setDisplaySize(width,height).setFlipX(flipX),retiled=capture();control.destroy();sc.textures.remove(controlKey);
+      let controlMax=0,controlSum=0;for(let j=0;j<before.length;j++){const delta=Math.abs(before[j]-retiled[j]);controlMax=Math.max(controlMax,delta);controlSum+=delta;}
+      const pictures={};if(entry.character==='P5'&&i===1){for(const [label,data]of Object.entries({original:before,trimmed:after,untrimmedControl:retiled})){ctx.putImageData(new ImageData(new Uint8ClampedArray(data),canvas.width,canvas.height),0,0);pictures[label]=canvas.toDataURL('image/png').split(',')[1];}}
+      let changed=0,max=0,sum=0;
       for(let j=0;j<before.length;j++){const delta=Math.abs(before[j]-after[j]);if(delta)changed++;max=Math.max(max,delta);sum+=delta;}
-      results.push({character:entry.character,frame:i,flipX,changedChannels:changed,maxDelta:max,meanChannelDelta:sum/before.length,logical:[current.frame.realWidth,current.frame.realHeight],expected:[f.width,f.height]});current.setVisible(false);original.destroy();
+      results.push({character:entry.character,frame:i,flipX,changedChannels:changed,maxDelta:max,meanChannelDelta:sum/before.length,controlMaxDelta:controlMax,controlMeanChannelDelta:controlSum/before.length,pictures,logical:[current.frame.realWidth,current.frame.realHeight],expected:[f.width,f.height]});current.setVisible(false);original.destroy();
      }
      sc.textures.remove(key);
     }
     for(const [o,visible]of hidden)if(o.active)o.setVisible(visible);return results;
-   },inputs);for(const r of results){assert.deepEqual(r.logical,r.expected);assert.ok(r.meanChannelDelta<.01,JSON.stringify(r));assert.ok(r.maxDelta<=8,JSON.stringify(r));}evidence.trim=results;
+   },inputs);for(const r of results){for(const [label,data]of Object.entries(r.pictures)){const file=`trim-${r.character}-${r.frame}-${r.flipX?'left':'right'}-${label}.png`;await writeFile(path.join(out,file),Buffer.from(data,'base64'));r.pictures[label]=file;}}evidence.trim=results;for(const r of results){assert.deepEqual(r.logical,r.expected);assert.ok(r.meanChannelDelta<.01,JSON.stringify(r));assert.ok(r.maxDelta<=8,JSON.stringify(r));}evidence.trim=results;
   }
   const cleanup=await page.evaluate(()=>{const sc=window.fixtureScene,p=sc.visualAssets;sc.game.destroy(true);sc.game.step(performance.now(),0);return {closed:p.closed,bytes:p.textureBytes,actions:p.actions.active.size,contacts:p.stagedImpacts.size,source:p.bladeAfterglows.size};});assert.deepEqual(cleanup,{closed:true,bytes:0,actions:0,contacts:0,source:0});record.cleanup=cleanup;await context.close();
  }
