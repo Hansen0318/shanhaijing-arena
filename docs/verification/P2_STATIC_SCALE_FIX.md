@@ -1,5 +1,14 @@
 # P2 static-baseline continuity correction
 
+## 2026-10-20 — scale diagnostics complete / existing release verified / PHONE SIZE REVIEW PENDING
+
+Authoritative report: `docs/verification/P2_STATIC_SCALE_EXECUTABLE.md`; summary/complete compressed trace/public fingerprints in `docs/verification/P2_STATIC_SCALE/`. Existing static correction **already DEPLOYED** at `2d83ef6c2a753a77a92b2c2379dace4663866dee` (Actions39247774008); public16/16 complete files exact match CI/local,104/104 local built files equal actual Pages artifact. Previous deployment-pending entries are historical. User's earlier phone-loaded SHA remains unknown; do not assume stale cache or acceptance.
+
+Final test-only probe403176fb5a864fde538c4f8a916d8be99d68e247 / Actions39346391924 build118380181357 SUCCESS, deploy SKIPPED. Actual built campaign entry/UI/countdown, real session Basic and movement retreat>2units (minimum3.4775), normal/reduced×both directions:4cases/32actor-sequences/880samples acrossP1–P5,24real KO actors, four result-Retry and in-battle-Restart zero-byte cleanup/Exit PASS. No residual actor/parent/VFX multiplier reproduced. P2 before/after Idle exact144×144/source/origin, authored face22.5/foot0. This is **DIAGNOSTIC PASS / FIELD DEFECT OPEN / NOT PLAYER VERIFIED**, not independent full-body anatomy or physical iOS proof. P1 non-Basic completed evidence reused; no full P1 replay. Fresh affected115/115 +Build/81guard PASS; full suite not rerun and five prior failures remain named in static-fix report.16MiB/131072reserve unchanged.
+
+No production source/art/VFX/gameplay/KO changes or new deployment; only diagnostics/evidence. Invalid initial getter-hp KO probe and subsequent result-vs-battle navigation timeout are disclosed in report; only final actual-damage/Retry trace owns complete evidence. NEXT ONLY targeted player P2 phone review at https://hansen0318.github.io/shanhaijing-arena/?v=2d83ef6 . If it still fails, isolate time-aligned source frames plus face/trunk/equipment/limb/ground landmarks, not a guessed scale. Do not declare fixed/resume Heavy before player confirms. HeavyF3 protected; P1 COMPLETE closed; no P3/art generation/main merge. Evidence closure[skip ci], latest HEAD is containing commit; successor instructions one complete self-contained code block.
+
+
 ## 2026-10-20 — residual-scale executable recovery / probe in progress
 
 Recovered feature `2f538d5cacb85c0779b72373eb19985973371745`, PR1 open/unmerged, clean checkout. Fresh Actions inspection establishes static-scale source `2d83ef6c2a753a77a92b2c2379dace4663866dee` **already DEPLOYED**, run39247774008 build118043815756/deploy118044737486 SUCCESS. This supersedes earlier deployment-pending text only; does not resolve the new player report. HEAD differs from deployed source only in four documentation files. No unchanged redeploy.

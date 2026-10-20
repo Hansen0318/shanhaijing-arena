@@ -1,12 +1,13 @@
-# Mobile viewport repair deployed — phone and Basic size review pending
+# P2 scale diagnostic evidence complete — phone review remains open
 
 ```text
-【山海經聯盟 — 整頁比例修正已部署；手機驗收待確認】
-公開逐位元核對因host proxy CONNECT逾時BLOCKED；CI Pages與local15files一致，publicVerification=false，不能寫公開fingerprint PASS。Actions部署成功不等於公開bytes已驗證，亦無理由重部署；連線恢復時可只補公開讀取。
-GitHub唯一權威：Hansen0318/shanhaijing-arena，feat/m0-combat-core-20260927，PR1 open/unmerged；先確認最新remote。所有接手指令單一完整自足code block。最新checkpoint為包含本檔的文件commit；不要建替代分支或merge main。
-先讀AGENTS/WORK_PROGRESS/STATE頂部及docs/verification/MOBILE_VIEWPORT_FIX.md、MOBILE_VIEWPORT/release/mobile-viewport.json、public-fingerprint.json，保護PROJECT_BOUNDARIES與既有流程。
-玩家回報整頁放大裁切、無法遊戲，不是Basic尺寸核准。已獨立修正visualViewport scale與CSS layout座標不一致，並修正scroll Event誤開pageshow高度clamp。未更動角色/技能/存檔/圖資。source50f303db304f427ca80c1c9c4e0b0b101859b392已DEPLOYED：https://hansen0318.github.io/shanhaijing-arena/?v=50f303d 。Actions39202217431 build117897526482/deploy117898058327 SUCCESS，54/54+Build/81asset guard；local input4/4。Chromium/WebKit真實built-app6情境39截圖PASS；含縮放1.5/2/3、旋轉/重載/選單返回、zoom3真實選隊進戰鬥/畫布頭像a1/Pause/Exit/返回。不是實體iOS/FPS/全部觸控或Basic驗收。不要重跑無變動驗證、重部署或再放大角色。
-NEXT只等玩家手機確認整頁選單完整、可進戰鬥及退出，再確認猼訑Basic從Idle/Move→攻擊→返回比例；兩項修正尚未PLAYER VERIFIED。收到明確回覆後以原話/版本/範圍記錄，不能把CI等同玩家驗收。若新缺陷，僅針對對應範圍調查。
-Heavy製作暫停；HeavyF3已PLAYER APPROVED，receipt docs/art/approved/botuo/heavy/f3-v1/acceptance.json及master0049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206不動；不重審。P1 COMPLETE、一般Hit取消、普通傷害不中斷、合法控制/KO、250ms及Tier/16MiB+131072reserve保護。Basic先前身體校準22.5px與source/contact獨立世界尺寸保留。不要新Heavy姿勢/P3/main merge。
-永久規則：整頁viewport缺陷與角色地標密度分開診斷；direct Arena fixture不是實際手機UI證明。改viewport要驗實際built入口路由、scale/offset/旋轉/重載、變換後canvas命中和body層modal，gate失敗不得部署。文件closure[skip ci]，docsHEAD比部署source新不代表要重部署。
+【山海經聯盟 — P2 角色比例缺陷仍開啟；Heavy 暫停】
+GitHub唯一權威：Hansen0318/shanhaijing-arena，feature feat/m0-combat-core-20260927，PR1。禁止替代分支、merge main或引入TD玩法。所有後續Chat/Work/Codex指令必須單一完整、自足、可一鍵複製區塊。
+先fetch最新remote並核對HEAD/PR/tree；讀AGENTS、WORK_PROGRESS與STATE頂部、PROJECT_BOUNDARIES及docs/verification/P2_STATIC_SCALE_EXECUTABLE.md。最新checkpoint為包含本檔的commit，不得視舊checkpoint永久最新。
+原靜態尺度修正早已部署：2d83ef6c2a753a77a92b2c2379dace4663866dee，Actions39247774008成功。公開16檔完整bytes與CI/local一致；本地build104檔等於Pages產物。測試網址 https://hansen0318.github.io/shanhaijing-arena/?v=2d83ef6 。先前玩家手機所載SHA未知，不要猜舊快取。
+最新診斷403176fb5a864fde538c4f8a916d8be99d68e247，Actions39346391924，build118380181357成功、部署跳過。四個實際built入口案例、P1–P5共32角色序列/880採樣、24真實KO、左右/Reduced Motion、實際結果Retry與戰場Restart/Exit清理通過。猼訑實際移動退離超過近戰範圍，Idle回復相同材質144×144與origin，作者選定face22.5/foot0；未重現額外殘留倍率。完整gzip追蹤/summary/public fingerprint留在docs/verification/P2_STATIC_SCALE/。
+診斷PASS不等於全身比例正確或PLAYER VERIFIED；未測實體iOS、每個軀幹/護臂/四肢比例或所有觸控，P1非Basic完整技能沿用原已核准證據，不能宣稱本次重新全驗。新程式只改診斷與文件，production/核准圖資/VFX/KO/玩法不變，無新部署。115相關測試+Build/81guard通過；全套未重跑，五個舊失敗仍保留，16MiB+131072reserve不改。
+NEXT只等玩家在固定網址測猼訑：靠近→Basic→回Idle→明確退離→停止。狀態維持FIELD DEFECT OPEN/NOT PLAYER VERIFIED，未收到明確確認不得恢復Heavy。若仍發生，記錄相同版本時間對齊畫面，並量測臉、軀幹、護臂/武器、四肢、接地；不能只用畫框或單一臉部標準，也不能猜倍率或重畫核准素材。只針對新證據做最小回歸/共用資料修正。
+保護P1 COMPLETE、P2 Basic已核准動作/VFX、Heavy F3 receipt docs/art/approved/botuo/heavy/f3-v1/acceptance.json；一般Hit取消、普通傷害不中斷技能。不製作Heavy/P3/新圖，不重跑無變更的廣泛驗證，不重部署同一source。
+初版KO診斷未真正進KO及後續結果頁操作測試錯誤已揭露，不能沿用它們聲稱KO成功；只以最終真實damage/Retry evidence為準。工程與玩家驗收分開；文件closure使用[skip ci]。
 ```

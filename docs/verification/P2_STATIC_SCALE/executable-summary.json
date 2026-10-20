@@ -1,0 +1,27 @@
+{
+  "probeSha": "403176fb5a864fde538c4f8a916d8be99d68e247",
+  "releaseSha": "2d83ef6c2a753a77a92b2c2379dace4663866dee",
+  "run": 39346391924,
+  "buildJob": 118380181357,
+  "deploy": "SKIPPED",
+  "artifact": 12231516514,
+  "artifactSha256": "3068fc4ea6786eccb304f438dcf2ccf272ca36e5e370ca576d18e81451c29aa9",
+  "status": "DIAGNOSTIC PASS / FIELD DEFECT OPEN / NOT PLAYER VERIFIED",
+  "cases": 4,
+  "actorSequences": 32,
+  "samples": 880,
+  "koActors": 24,
+  "retreatMinimumDistance": 3.4774999999999996,
+  "traceSha256": "1eba158865255a1081fca779f46c4130bcc717b0fa741ceebe780a9abdc73f49",
+  "compressedTraceSha256": "3949f77b50bf5aa6627bbdb9c35e8d3cf93e841db56be6f3db428dd637631926",
+  "publicFilesMatched": 16,
+  "fullSuite": "NOT RERUN; five preexisting failures remain documented",
+  "productionChanged": false,
+  "limitations": [
+    "Chromium actor probe; physical iOS/WebKit actor trace not measured",
+    "Descriptor agreement and selected authored facial/foot landmarks do not independently certify every body/equipment proportion",
+    "Controlled positions/time and session movement API, not sustained automatic AI or touch joystick performance",
+    "P1 completed non-Basic action rasters reused, not replayed",
+    "New probe does not rerun direct Game.destroy; unchanged prior browser evidence reused"
+  ]
+}
