@@ -1,5 +1,13 @@
 # AGENTS.md
 
+## 2026-10-20 — Heavy F1/F2/F4 CANDIDATES READY / FOUR-POSE PLAYER REVIEW
+
+P2 size acceptance is recorded at `bc866bcf0ebb15ae3e373d72268987bd96d525fb`; size blocker remains closed. Continued to the first unfinished art gate: built-in Imagegen individual F1 load, F2 chest-level intermediate bracer strike, F4 lowered-guard recovery. Immutable approved F3 reused by path/hash only. Full sources/prompts/revisions/verification/reproducible light-dark review board: `docs/art/candidates/botuo/heavy/poses-v1/`. F2 initial draft too close to F3 and F4 costume drift preserved as superseded, not approved references; corrected selected candidates inspected.
+
+PNG decode/alpha/hash checks PASS; selected sources have at most alpha1 at outer edges, solid anatomy fully interior. Separate40px padding derivatives preserve exact full RGBA crop-back; no source cleanup/overwrite. Four-pose board uses same0.28 raw-source-pixel scale, not pose-height fitting; **not runtime anatomical-density/ground/timing proof**. F2/F4 projected proportions/equipment and motion continuity remain player review scope. F3 exact SHA2560049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206 unchanged. No src/public/gameplay/approved receipt edits, no new runtime tests/build/deploy; docs/art-only[skip ci]. Prior release0fe44b3 remains live.
+
+NEXT ONLY review F1/F2/F4 alongside existing approved F3. **CANDIDATES / NOT PLAYER ART APPROVED**. Required gate `docs/CHARACTER_ACTION_ART_WORKFLOW.md` §2: show full four-pose sequence for player review; pose acceptance precedes deterministic accepted-art packaging/VFX/GIF/runtime. Do not infer unseen-pose approval from size sign-off or continuation. After explicit pose approval proceed independent source/contact VFX, then GIF review; no P3/main merge. Current successor remains single self-contained block in `docs/handoffs/P2_BOTUO_HEAVY_NEXT_CHAT.md`.
+
 ## 2026-10-20 19:26 +08:00 — P2 SIZE PLAYER VERIFIED / Heavy remaining poses resumed
 
 Player explicitly confirms「正常了，ok，紀錄進度和流程規則，然後繼續」following the phone review link for source release `0fe44b3c5eed46402d0394af6dff128a72be7393`. **P2 Idle/Move/Basic actor-size defect CLOSED / PLAYER VERIFIED; Heavy size blocker lifted.** Receipt: `docs/verification/P2_MOVE_BODY/player-acceptance.json`. This links the scoped sign-off to the supplied release; player did not supply a device bundle hash. Earlier size-review pending/Heavy-paused statements below are history. No unrelated physical-device behavior is inferred.

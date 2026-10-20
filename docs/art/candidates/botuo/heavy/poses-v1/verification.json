@@ -1,0 +1,151 @@
+{
+  "status": "CANDIDATES — F1/F2/F4 PLAYER REVIEW PENDING; F3 previously approved",
+  "tool": "built-in image_gen, three independent calls plus targeted F4 costume correction and distinct F2 revision",
+  "references": [
+    "public/assets/characters/botuo/identity.png",
+    "public/assets/characters/botuo/battleIdle.png",
+    "docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png"
+  ],
+  "poses": [
+    {
+      "maxEdgeAlpha": 1,
+      "solidAlphaBounds": [
+        214,
+        20,
+        1346,
+        1070
+      ],
+      "pose": "F1",
+      "path": "docs/art/candidates/botuo/heavy/poses-v1/F1-anticipation-master.png",
+      "sha256": "71c5f3210b051c2c2863b8bf8cb37c2fb22a3e5eedcf5599dd9cda3219e7dc03",
+      "dimensions": [
+        1446,
+        1088
+      ],
+      "bytes": 1199204,
+      "alphaBounds": [
+        0,
+        17,
+        1437,
+        1088
+      ],
+      "nonzeroEdgePixels": {
+        "top": 0,
+        "bottom": 61,
+        "left": 13,
+        "right": 0
+      },
+      "transparentPixels": 894881,
+      "padding": {
+        "path": "docs/art/candidates/botuo/heavy/poses-v1/F1-anticipation-padded.png",
+        "pixels": 40,
+        "exactRGBAcropBack": true,
+        "sha256": "3d95841367ebb910498eff8a016ec9b9a7b6c8621aea00ddf58cad0c1908d1ce"
+      }
+    },
+    {
+      "maxEdgeAlpha": 0,
+      "solidAlphaBounds": [
+        205,
+        18,
+        1301,
+        1057
+      ],
+      "pose": "F2",
+      "path": "docs/art/candidates/botuo/heavy/poses-v1/F2-strike-master.png",
+      "sha256": "79ae8013b49f764dc38b4b49d53b47ca3a928570f7fe29fd0028a4d287ee64ac",
+      "dimensions": [
+        1446,
+        1088
+      ],
+      "bytes": 1112539,
+      "alphaBounds": [
+        41,
+        15,
+        1422,
+        1078
+      ],
+      "nonzeroEdgePixels": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      },
+      "transparentPixels": 934587,
+      "padding": {
+        "path": "docs/art/candidates/botuo/heavy/poses-v1/F2-strike-padded.png",
+        "pixels": 40,
+        "exactRGBAcropBack": true,
+        "sha256": "3943f72260e5ace41d5b71bc6652c6b035f5f40b8c96a759fc5eea0e0fef3c7b"
+      }
+    },
+    {
+      "maxEdgeAlpha": 1,
+      "solidAlphaBounds": [
+        150,
+        47,
+        1372,
+        1044
+      ],
+      "pose": "F3",
+      "path": "docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png",
+      "sha256": "0049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206",
+      "dimensions": [
+        1446,
+        1087
+      ],
+      "bytes": 1186261,
+      "alphaBounds": [
+        0,
+        23,
+        1438,
+        1063
+      ],
+      "nonzeroEdgePixels": {
+        "top": 0,
+        "bottom": 0,
+        "left": 1,
+        "right": 0
+      },
+      "transparentPixels": 896251
+    },
+    {
+      "maxEdgeAlpha": 1,
+      "solidAlphaBounds": [
+        281,
+        23,
+        1222,
+        1137
+      ],
+      "pose": "F4",
+      "path": "docs/art/candidates/botuo/heavy/poses-v1/F4-recovery-master.png",
+      "sha256": "fb3b97f1ed28c37ea78fe57dadfb3deaf12f6711d3a936ff296e3db0a05e58aa",
+      "dimensions": [
+        1346,
+        1168
+      ],
+      "bytes": 1180472,
+      "alphaBounds": [
+        0,
+        21,
+        1278,
+        1140
+      ],
+      "nonzeroEdgePixels": {
+        "top": 0,
+        "bottom": 0,
+        "left": 5,
+        "right": 0
+      },
+      "transparentPixels": 900207,
+      "padding": {
+        "path": "docs/art/candidates/botuo/heavy/poses-v1/F4-recovery-padded.png",
+        "pixels": 40,
+        "exactRGBAcropBack": true,
+        "sha256": "eb39b1dc4caae9a04809f296bbed9b1b008e5c212c6bb3f4508c2bcf31b582a3"
+      }
+    }
+  ],
+  "reviewPolicy": "Same .28 raw-pixel scale and bottom aligned source canvases for review only. No silhouette height fitting; not an authored anatomical normalization, runtime size, support-foot or timing proof. Source PNGs unmodified. Faint edge alpha retained; separate40px padding derivatives prove exact RGBA crop-back and clear outer bounds. F3 known alpha1 left edge retained. No integration or deployment.",
+  "selfReview": "Complete horns/2 arms/2 legs/hooves in selected figures; one beast bracer, other smaller cuff; no baked effects. F1 loaded, F2 bracer crosses chest, F3 peak extended, F4 lowered guard. Initial F2 too close to F3 was superseded. Selected F2 now bent elbow/diagonal bracer close to chest, visibly short of F3 full reach. Player must assess continuity/readability. Perspective changes bracer/face projection; body/gear continuity remains review scope. F4 first draft invented chest emblem/white waist tufts; superseded after targeted correction, not used as approved reference."
+}
