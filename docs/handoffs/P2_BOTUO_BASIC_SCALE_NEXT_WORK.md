@@ -1,11 +1,12 @@
-# P2 Move scale repair deployed — targeted phone review pending
+# Current successor — P2 size accepted / Heavy remaining poses
 
 ```text
-【山海經聯盟 — P2 Move縮小已修正部署；手機驗收待確認】
-GitHub唯一權威：Hansen0318/shanhaijing-arena；branch feat/m0-combat-core-20260927；PR1 open/unmerged。禁止替代分支、merge main、TD玩法。任何後續Chat/Work/Codex接手指令必須單一完整、自足、可一鍵複製區塊。
-先fetch最新remote，核對HEAD/PR/tree；讀AGENTS、WORK_PROGRESS、STATE頂部、PROJECT_BOUNDARIES、docs/verification/P2_MOVE_BODY_FIX.md。最新docs checkpoint為包含本檔的commit，不把舊checkpoint當永久最新。
-玩家2026-10-20 12:43確認準備/待機與打架大小正常，只有Move縮小，提供IMG_2688/2689。根因是先前Move25/32臉長校準將全身縮成78.125%；不能再沿用錯誤描述器測試宣稱身體比例正常。現在只修P2 Move資料恢復原始核准身體繪製density0.9/display144×139.5/foot0，四幀原圖、Idle/Basic/VFX/KO及其他角色資料不改；共用renderer/calibration code未改，無角色特例。不同姿勢臉部投影長度不能單獨當全身尺寸尺，也不能只因canvas相同就假定比例正確。
-Source release0fe44b3c5eed46402d0394af6dff128a72be7393已部署。Actions39371658550 build118460665060/deploy118461659898 SUCCESS。115affected+Build/81guard通過；獨立量體回歸old-data RED→GREEN；Basic實際Chromium4cases44截圖、手機Chromium/WebKit6cases、實際built入口P1–P5 trace4cases/32sequences/880samples/24KO及Retry/Restart/Exit通過，舊presenter均closed/0bytes。公開16完整檔案等於CI/local SHA256，104local build檔案等於Pages產物。完整gzip追蹤、release/public JSON與QA在docs/verification/P2_MOVE_BODY/。全套未重跑，五個舊失敗保留；16MiB+131072reserve/39required keys16,639,660bytes不變。
-測試網址 https://hansen0318.github.io/shanhaijing-arena/?v=0fe44b3c5eed46402d0394af6dff128a72be7393 。目前ENGINEERING PASS/DEPLOYED/NOT PLAYER VERIFIED。NEXT只等玩家測猼訑ready→Move→stop→Basic→Move，確認移動不再縮小；未明確確認不得解除阻擋或恢復Heavy。若仍有新缺陷，只針對相同版本的Move與實際身體地標追查，不重跑無變動的廣泛測試或重部署同一source。不可把舊2d83ef6或c99256f的診斷當成這次修正release。
-保護P1 COMPLETE、P2 Basic已核准動作/VFX、HeavyF3 receipt docs/art/approved/botuo/heavy/f3-v1/acceptance.json。一般Hit取消、普通傷害不中斷技能。不得製作Heavy/P3/新圖或merge main。玩家確認後記錄原話/版本/範圍，再依現行流程恢復下一個未完成關卡。文件closure[skip ci]不代表新source部署。
+【山海經聯盟 — P2 Heavy 剩餘姿勢接手】
+GitHub唯一權威：Hansen0318/shanhaijing-arena，feat/m0-combat-core-20260927，PR1。先fetch最新remote、核對HEAD/PR/工作目錄，不建替代分支、不merge main、不引入TD。最新checkpoint是包含本文件的commit，不固定為永久HEAD。
+必讀AGENTS.md、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、WORK_PROGRESS/STATE頂部、DEVELOPMENT_ROADMAP、M5C_ART_ANIMATION_VFX、CHARACTER_ACTION_ART_WORKFLOW、M5C_P2_BOTUO_HEAVY_ACTION、P2_MOVE_BODY_FIX與P2_MOVE_BODY/player-acceptance.json。
+2026-10-20 19:26:12+08:00玩家「正常了，ok，紀錄進度和流程規則，然後繼續」明確確認P2尺寸正常，關閉Move縮小/Idle-Move-Basic比例缺陷並解除Heavy阻擋。測試連結source release0fe44b3c5eed46402d0394af6dff128a72be7393已部署；不是手機bundle hash證明。工程115affected/Build/81guard及實際built入口/跨P1–P5追蹤與公開fingerprint既有證據沿用，不為流程重測或重部署；五個舊全套失敗保留。
+保留原始static SHA25627c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8，Move density0.9/display144×139.5/foot0；禁止恢復25/32縮身。以多個身體/裝備地標和原始繪製密度判斷，不用單一姿勢臉長/canvas/姿勢高度代替全身尺寸。P1 COMPLETE、P2 Basic動作/VFX、KO保護。
+Heavy F3已核准：docs/art/approved/botuo/heavy/f3-v1/acceptance.json，原圖docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png，SHA2560049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206。不得重新生成或重審F3。NEXT只逐張製作F1蓄勢、F2出手、F4收勢，再展示F1–F4給玩家審核。維持原形象/身體尺度/單臂獸面護具、抬頭前方護臂重擊，與Basic低頭角擊不同。未核准姿勢不得當核准reference。
+四姿勢審核後才獨立出招/命中特效、normal/slow/no-FX/左右/Idle-return GIF審核，再另外核對真實Heavy契約及工程授權後整合。Heavy現有T0射程1.8/CD4/係數1.30/單目標單次無位移，戰術telegraph650ms隨Tier縮放不是通用前搖，非戰術/空放目前立即recordCast；不複製Basic250ms，不捏造命中/位移/新判定。一般Hit永久取消，普通傷害不中斷技能。
+保留16MiB decoded cap、131072reserve與Guard，後續Heavy完整residency需另測，不暗降既有清晰度。候選與原圖/prompts/hashes/QA分開，art/docs-only[skip ci]不改src/public、不部署、不開始P3/Special/Awakening。所有未來Chat/Work/Codex接手指令必須同樣放單一完整自足可一鍵複製區塊。
 ```

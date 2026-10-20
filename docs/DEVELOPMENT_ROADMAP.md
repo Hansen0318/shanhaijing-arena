@@ -1,5 +1,13 @@
 # Development Roadmap — Post-M1
 
+## 2026-10-20 19:26 +08:00 — P2 SIZE PLAYER VERIFIED / Heavy remaining poses resumed
+
+Player explicitly confirms「正常了，ok，紀錄進度和流程規則，然後繼續」following the phone review link for source release `0fe44b3c5eed46402d0394af6dff128a72be7393`. **P2 Idle/Move/Basic actor-size defect CLOSED / PLAYER VERIFIED; Heavy size blocker lifted.** Receipt: `docs/verification/P2_MOVE_BODY/player-acceptance.json`. This links the scoped sign-off to the supplied release; player did not supply a device bundle hash. Earlier size-review pending/Heavy-paused statements below are history. No unrelated physical-device behavior is inferred.
+
+NEXT: retain approved Heavy F3 SHA256 `0049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206`, author individual F1 anticipation / F2 intermediate forward bracer strike / F4 recovery, then show full four poses for player review. No new F3 generation/reapproval; no unseen-pose/VFX/GIF/timing/runtime approval inferred. Follow pose review → separate source/contact VFX → normal/slow/no-effects/both-facing/Idle-return GIF review → executable-contract review → integration/release → phone acceptance. Current art slice does not change deployed runtime.
+
+Permanent scale rule: use approved body/equipment authoring density and ground anchor, inspect multiple stable anatomy/equipment landmarks plus actual built-app transitions. Neither canvas bounds, crouched height, a single projected skull span nor descriptor conformance establishes visual scale. Preserve P2 Move density0.9/display144×139.5/foot0 and original static baseline; do not restore25/32whole-body shrink. Separate character and VFX transforms. P1 COMPLETE/accepted P2 Basic/KO/art protected; ordinary Hit canceled, damage does not interrupt skill. Keep16MiB cap/131072reserve, gameplay/Tier/timing/AI/save/rewards unchanged. No P3/TD/main merge/replacement branch. Docs/art-only checkpoints[skip ci], no unchanged redeploy; fetch current feature HEAD and put all successor instructions in one self-contained copyable block.
+
 ## 2026-10-19 — Mobile viewport fix DEPLOYED / PHONE REVIEW PENDING
 
 Public exact-byte verification BLOCKED by host proxy CONNECT timeout (not evidence of a site outage); downloaded actual CI Pages artifact matches local build15/15 files. See public-fingerprint.json: publicVerification=false. Deployment success and browser gate PASS are independently established; do not misreport public hashes or redeploy unchanged code for this network failure.

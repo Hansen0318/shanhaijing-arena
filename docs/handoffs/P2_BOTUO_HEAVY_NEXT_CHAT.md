@@ -1,22 +1,12 @@
-# Current successor — Basic size-fix release gate
-
-Heavy F3 remains PLAYER APPROVED. Basic landmark-density correction is implemented and67affected checks/build pass, but NOT DEPLOYED; no new browser/phone result. Continue docs/handoffs/P2_BOTUO_BASIC_SCALE_NEXT_WORK.md before Heavy production. Earlier F3-pending handoff is history.
-
-# Current priority override — 2026-10-19
-
-Heavy F3 PLAYER APPROVED; receipt docs/art/approved/botuo/heavy/f3-v1/acceptance.json. Player reports Basic size shrink and explicitly requests GitHub record → fix → record. Do not repeat F3 review or continue Heavy poses before Basic scale fix. Existing handoff below is history for completed review, preserve references.
-
-# P2 Heavy — F3 design / art review pending
+# Current successor — P2 size accepted / Heavy remaining poses
 
 ```text
-【山海經聯盟 — P2 猼訑 Heavy 震嶺 F3 審核接手】
-所有後續 Chat／Work／Codex 接手指令必須放在單一完整、自足、可一鍵複製 code block。
-GitHub唯一權威。Hansen0318/shanhaijing-arena；feat/m0-combat-core-20260927；PR1 open/unmerged；不建取代分支、不merge main、不引入TD。先fetch最新remote/確認branch、HEAD、PR、工作目錄與近期commits。最新checkpoint為包含本檔的feature commit，不當作永遠最新。
-先讀AGENTS.md、docs/DEVELOPMENT_PLAYBOOK.md、PROJECT_BOUNDARIES.md、WORK_PROGRESS.md/STATE.md頂部、DEVELOPMENT_ROADMAP.md、DEVELOPMENT_ACCELERATION.md、M5C_ART_ANIMATION_VFX.md、CHARACTER_ACTION_ART_WORKFLOW.md、M5C_P2_BOTUO_HEAVY_ACTION.md，及docs/art/candidates/botuo/heavy/key-pose-v1/的prompt.txt、verification.json、mechanics-snapshot.json與原圖。
-P1 COMPLETE；P2基礎形象/Idle/Move/KO/Basic PASS PLAYER VERIFIED，禁止重驗、重畫或重部署。Basic驗收receipt docs/art/approved/botuo/basic/runtime-v1/acceptance.json不動；原部署db451cd不因文件較新而重發。一般Hit永久取消，普通傷害不中斷，合法控制/KO保留。
-玩家「好繼續」後已完成Heavy機制/四技能動作區別設計與一張F3候選：抬身、旋腰、獸面護臂向前重擊，與Basic低頭角擊不同。F3-contact-master.png SHA2560049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206，尚未核准。原圖左邊alpha1噪點保留；另40px留邊F3-contact-padded.png完整RGBA還原通過。淺深底與144px高度QA是靜態研究，不是實際手機比例/動畫/工程證據。
-NEXT只審核這一張F3的設計/形象/護臂/重擊姿勢，等明確核准後才做F1/F2/F4，再獨立出招/命中特效、正常/慢速/無特效/左右/Idle返回GIF審核。沒有Heavy候選核准receipt，禁止捏造已核准或生成其他姿勢。
-現有Heavy單目標單次、係數1.30、無位移，T0射程1.8/CD4/crit20%x1.75；windupMs0，戰術telegraph650ms隨Tier調整。實際T0-T3投影與T2+控制見mechanics-snapshot.json。tactical有目標延後、非tactical及空放目前立即recordCast，未具有Heavy action token；後續工程preflight需確認真實事件，不套用Basic250ms、不把650ms說成通用前搖。任何變更需另外確切契約核准。空放要保留未來動作與出招FX，沒命中不產生contact/HP/數字，現階段尚未整合這套正式Heavy動畫。
-工程預算仍16MiB，131072 reserve；既有required16630060bytes只剩16084額外空間，不代表Heavy已fit。不升預算、不靜默卸載、不犧牲核准清晰度；完整residency與保真包裝是後續工程Gate。
-本slice只有候選/文件/PNG/alpha/hash/淺深底檢查，沒有新runtime、tests/build/browser、部署或玩家驗收。保護所有src/public/舊receipt與核准原圖；checkpoint[skip ci]，commit+push同一分支並核對remote，禁止art-only意外Pages。不要開始Special/Awakening/P3。除非玩家明確核准或要求修正F3，停於目前F3審核Gate。
+【山海經聯盟 — P2 Heavy 剩餘姿勢接手】
+GitHub唯一權威：Hansen0318/shanhaijing-arena，feat/m0-combat-core-20260927，PR1。先fetch最新remote、核對HEAD/PR/工作目錄，不建替代分支、不merge main、不引入TD。最新checkpoint是包含本文件的commit，不固定為永久HEAD。
+必讀AGENTS.md、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、WORK_PROGRESS/STATE頂部、DEVELOPMENT_ROADMAP、M5C_ART_ANIMATION_VFX、CHARACTER_ACTION_ART_WORKFLOW、M5C_P2_BOTUO_HEAVY_ACTION、P2_MOVE_BODY_FIX與P2_MOVE_BODY/player-acceptance.json。
+2026-10-20 19:26:12+08:00玩家「正常了，ok，紀錄進度和流程規則，然後繼續」明確確認P2尺寸正常，關閉Move縮小/Idle-Move-Basic比例缺陷並解除Heavy阻擋。測試連結source release0fe44b3c5eed46402d0394af6dff128a72be7393已部署；不是手機bundle hash證明。工程115affected/Build/81guard及實際built入口/跨P1–P5追蹤與公開fingerprint既有證據沿用，不為流程重測或重部署；五個舊全套失敗保留。
+保留原始static SHA25627c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8，Move density0.9/display144×139.5/foot0；禁止恢復25/32縮身。以多個身體/裝備地標和原始繪製密度判斷，不用單一姿勢臉長/canvas/姿勢高度代替全身尺寸。P1 COMPLETE、P2 Basic動作/VFX、KO保護。
+Heavy F3已核准：docs/art/approved/botuo/heavy/f3-v1/acceptance.json，原圖docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png，SHA2560049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206。不得重新生成或重審F3。NEXT只逐張製作F1蓄勢、F2出手、F4收勢，再展示F1–F4給玩家審核。維持原形象/身體尺度/單臂獸面護具、抬頭前方護臂重擊，與Basic低頭角擊不同。未核准姿勢不得當核准reference。
+四姿勢審核後才獨立出招/命中特效、normal/slow/no-FX/左右/Idle-return GIF審核，再另外核對真實Heavy契約及工程授權後整合。Heavy現有T0射程1.8/CD4/係數1.30/單目標單次無位移，戰術telegraph650ms隨Tier縮放不是通用前搖，非戰術/空放目前立即recordCast；不複製Basic250ms，不捏造命中/位移/新判定。一般Hit永久取消，普通傷害不中斷技能。
+保留16MiB decoded cap、131072reserve與Guard，後續Heavy完整residency需另測，不暗降既有清晰度。候選與原圖/prompts/hashes/QA分開，art/docs-only[skip ci]不改src/public、不部署、不開始P3/Special/Awakening。所有未來Chat/Work/Codex接手指令必須同樣放單一完整自足可一鍵複製區塊。
 ```

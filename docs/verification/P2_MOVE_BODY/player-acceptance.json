@@ -1,0 +1,13 @@
+{
+  "status": "PLAYER VERIFIED — P2 actor size continuity",
+  "recordedAt": "2026-10-20T19:26:12+08:00",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "正常了，ok，紀錄進度和流程規則，然後繼續",
+  "scope": "Player confirms previously reported P2 Move shrink/Idle-Move-Basic size continuity is normal. Closes this actor-size blocker and authorizes continuation of Heavy from already approved F3. Not approval of unseen Heavy poses/VFX/GIF/timing/runtime or unrelated phone conditions.",
+  "reviewedRelease": "0fe44b3c5eed46402d0394af6dff128a72be7393",
+  "reviewUrl": "https://hansen0318.github.io/shanhaijing-arena/?v=0fe44b3c5eed46402d0394af6dff128a72be7393",
+  "versionBinding": "Release linked for the pending phone review immediately before player confirmation; no device-loaded bundle hash was provided by player.",
+  "recoveredFeatureHead": "79415f60193cc13429557a4f3e3cec9b61a894b4",
+  "evidence": "docs/verification/P2_MOVE_BODY_FIX.md",
+  "nextGate": "Heavy F1/F2/F4 candidate art, retain approved F3; four-pose player review before VFX/GIF and runtime."
+}
