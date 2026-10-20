@@ -49,20 +49,21 @@ try{
      samples.push({label,time:s.elapsedSeconds,actorId,characterId:a.definitionId,state:active?'action':state.state,texture:b.texture.key,frame:b.frame.name,source:[b.texture.source[0].width,b.texture.source[0].height],region,display:[b.displayWidth,b.displayHeight],scale:[b.scaleX,b.scaleY],origin:[b.originX,b.originY],parent:parent?{scale:[parent.scaleX,parent.scaleY],position:[parent.x,parent.y]}:null,worldMatrix:{a:matrix.a,b:matrix.b,c:matrix.c,d:matrix.d,tx:matrix.tx,ty:matrix.ty},position:[b.x,b.y],actorPosition:[a.x,a.y],flipX:b.flipX,descriptor:{source:descriptor.source,scale:descriptor.scale,origin:descriptor.origin},expected:[72*descriptor.scale*region.width/Math.max(region.width,region.height),72*descriptor.scale*region.height/Math.max(region.width,region.height)]});
      if(['idle-before','move-approach','basic-start','basic-4','idle-after','move-away','ko'].includes(label))images[label]=scene.game.canvas.toDataURL('image/png');
     };
-    const step=dt=>{for(const actor of s.actors){s.holdPlayerControl(actor.instanceId);s.setPlayerMovement(actor.instanceId,{x:0,y:0});}s.step(dt);};
-    capture('idle-before');a.x+=.05*sign;step(.05);capture('move-approach');step(.05);capture('idle-near');
+    const step=(dt,movement=null)=>{for(const actor of s.actors){s.holdPlayerControl(actor.instanceId);s.setPlayerMovement(actor.instanceId,actor===a&&movement?movement:{x:0,y:0});}s.step(dt);};
+    capture('idle-before');step(.05,{x:sign,y:0});capture('move-approach');step(.05);capture('idle-near');
     s.cadence.set(actorId,0);const accepted=s.executeAbility(a,'basic','ai',target);capture('basic-start');
     for(let i=0;i<15;i++){step(.05);capture('basic-'+i);}
-    capture('idle-after');a.x-=.2*sign;step(.05);capture('move-away');step(.05);capture('idle-away');
+    capture('idle-after');for(let i=0;i<40;i++)step(.05,{x:-sign,y:0});capture('move-away');const retreatDistance=Math.hypot(a.x-target.x,a.y-target.y);step(.05);capture('idle-away');
     // Extra non-phased VFX must not leave an actor transform behind.
     for(const category of ['heavy','special','awakening']){
      if(d.actionDescriptors?.[category])continue; // Protected P1 skills have existing raster gates.
      Object.assign(a.abilityState[category],{phase:'ready',cooldownRemaining:0});s.executeAbility(a,category,'ai',target);capture(category+'-cast');step(1);capture(category+'-after');
     }
     capture('pause-repaint');
-    return {actorId,characterId:a.definitionId,sign,accepted,samples,images,cache:p.textureBytes,reserve:p.residency.snapshot().optionalReserveBytes};
+    return {actorId,characterId:a.definitionId,sign,accepted,retreatDistance,samples,images,cache:p.textureBytes,reserve:p.residency.snapshot().optionalReserveBytes};
    },{actorId,sign});
    assert.equal(result.accepted,true,'real Basic accepted for '+result.characterId);
+   assert.ok(result.retreatDistance>2,'retreat must actually leave the nearby target');
    for(const sample of result.samples){
     for(let i=0;i<2;i++)assert.ok(Math.abs(sample.display[i]-sample.expected[i])<1e-7,JSON.stringify(sample));
     assert.equal(sample.parent,null,'actor is not parented to VFX');
