@@ -1,0 +1,47 @@
+{
+  "status": "PASS / PLAYER VERIFIED / P2 HEAVY COMPLETE",
+  "recordedDate": "2026-10-21",
+  "recordedTimezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "我確認完成ok，進度流程規則紀錄github，然後或要新創一個work，要他無縫接軌，開發後續，要跟他說什麼",
+  "skill": {
+    "character": "P2 猼訑",
+    "category": "heavy",
+    "name": "震嶺"
+  },
+  "sourceCheckpoint": "d097b1d787867cb86618db4233e33fb85cbacf8f",
+  "acceptedReleaseSha": "acf454741757f58efa980fdcd03f028a472e87a3",
+  "presentedTestUrl": "https://hansen0318.github.io/shanhaijing-arena/?v=acf454741757f58efa980fdcd03f028a472e87a3",
+  "versionBinding": "Player confirms completion after the supplied Heavy test URL and handoff. Release binding follows that presentation; player did not supply an independently captured device bundle hash.",
+  "scope": "Overall scoped player acceptance of the deployed Heavy skill, including its approved existing-timing contract A. Closes the pending Heavy phone-review gate.",
+  "notClaimed": [
+    "An itemized physical-device case matrix for both facings, reduced motion, Pause/Restart/KO or whiff",
+    "Device/browser identity, independent device bundle hash, FPS or actual GPU-memory measurement",
+    "Special/Awakening art, timing, runtime or phone approval",
+    "Whole P2 completion or entire-suite green"
+  ],
+  "evidence": {
+    "release": "docs/verification/P2_HEAVY_RUNTIME/release.json",
+    "engineering": "docs/verification/P2_HEAVY_RUNTIME/engineering.json",
+    "publicFingerprint": "docs/verification/P2_HEAVY_RUNTIME/public-fingerprint.json",
+    "visualAcceptance": "docs/art/approved/botuo/heavy/composite-v1/acceptance.json",
+    "executableAcceptance": "docs/art/approved/botuo/heavy/executable-v1/acceptance.json",
+    "actionsRun": 39438531259
+  },
+  "currentSlice": {
+    "type": "Acceptance/process/handoff documentation only",
+    "productionSourceChanged": false,
+    "approvedArtChanged": false,
+    "testsRerun": false,
+    "buildRerun": false,
+    "redeployed": false,
+    "evidencePolicy": "Reuse unchanged prior engineering/deployment/public evidence; no full P1 or unrelated Basic replay."
+  },
+  "continuation": {
+    "authorizedBy": "我確認完成ok，進度流程規則紀錄github，然後或要新創一個work，要他無縫接軌，開發後續，要跟他說什麼",
+    "nextSkill": "P2 Special 守群",
+    "nextGate": "Recover actual self-mitigation/Tier/state lifecycle → distinguish protective choreography from accepted Basic/Heavy and reserved Awakening → key-pose player review through existing art workflow.",
+    "scope": "New Work may begin the next bounded Special design/art-review gate. This is not approval of unseen art/GIF, altered combat timing/mechanics, future runtime or whole P2 completion.",
+    "handoff": "docs/handoffs/P2_BOTUO_SPECIAL_NEXT_WORK.md"
+  }
+}

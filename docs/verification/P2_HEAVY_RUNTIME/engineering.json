@@ -1,5 +1,5 @@
 {
-  "status": "ENGINEERING PASS / DEPLOYED / PUBLIC FINGERPRINT PASS / PLAYER HEAVY PHONE REVIEW PENDING",
+  "status": "ENGINEERING PASS / DEPLOYED / PUBLIC FINGERPRINT PASS / PLAYER VERIFIED / HEAVY COMPLETE",
   "tests": {
     "command": "node --test tests/botuoHeavyLifecycle.test.js tests/botuoHeavyRuntime.test.js tests/botuoHeavyPacking.test.js tests/frameTrim.test.js tests/actionPlayback.test.js tests/assetPresenter.test.js tests/assetResidency.test.js tests/dynamicAssetIntegration.test.js tests/assetGuard.test.js tests/botuoBasicRuntime.test.js tests/botuoBasicPacking.test.js tests/botuoStaticScale.test.js tests/botuoMove.test.js tests/xingxingMove.test.js tests/jiuweihuMove.test.js tests/chiruMove.test.js",
     "passed": 136,
@@ -38,8 +38,14 @@
     "visualInspection": "Representative tactical F1, mirrored/reduced F3, normal F3 and built normal contact inspected; raw50captures in artifact. Not independent phone/anatomical approval.",
     "releaseSha": "acf454741757f58efa980fdcd03f028a472e87a3"
   },
-  "limits": "No phone/FPS/GPU-memory acceptance. No new320/250ms windup; existing exact real damage events unchanged in19 paired/whiff/cancel cases.",
+  "limits": "Overall Heavy player phone acceptance is bound in the linked receipt. No fabricated per-case/device/FPS/GPU-memory claims. Engineering evidence below belongs to the prior unchanged source; not rerun for this closure.",
   "review": "Independent read-only review found no blocking defects; native trim comparison rationale and generator idempotency separately reviewed.",
   "deployment": "docs/verification/P2_HEAVY_RUNTIME/release.json",
-  "publicFingerprint": "docs/verification/P2_HEAVY_RUNTIME/public-fingerprint.json"
+  "publicFingerprint": "docs/verification/P2_HEAVY_RUNTIME/public-fingerprint.json",
+  "statusBeforePlayerAcceptance": "ENGINEERING PASS / DEPLOYED / PUBLIC FINGERPRINT PASS / PLAYER HEAVY PHONE REVIEW PENDING",
+  "playerAcceptance": "docs/art/approved/botuo/heavy/runtime-v1/acceptance.json",
+  "playerAcceptanceRecordedDate": "2026-10-21",
+  "phoneVerified": true,
+  "nextGate": "P2 Special 守群 existing-mechanics recovery, protective choreography and key-pose review; later gates remain unapproved.",
+  "limitsBeforePlayerAcceptance": "No phone/FPS/GPU-memory acceptance. No new320/250ms windup; existing exact real damage events unchanged in19 paired/whiff/cancel cases."
 }
