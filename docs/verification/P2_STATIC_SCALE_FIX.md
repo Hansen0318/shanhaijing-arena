@@ -1,5 +1,12 @@
 # P2 static-baseline continuity correction
 
+## 2026-10-20 — residual-scale executable recovery / probe in progress
+
+Recovered feature `2f538d5cacb85c0779b72373eb19985973371745`, PR1 open/unmerged, clean checkout. Fresh Actions inspection establishes static-scale source `2d83ef6c2a753a77a92b2c2379dace4663866dee` **already DEPLOYED**, run39247774008 build118043815756/deploy118044737486 SUCCESS. This supersedes earlier deployment-pending text only; does not resolve the new player report. HEAD differs from deployed source only in four documentation files. No unchanged redeploy.
+
+Fresh local affected115/115, Build and81-file asset guard PASS. Actual public entry loads and Chapter→Team navigation observed; not yet a measured scale result. Existing CI Basic4cases/44screenshots artifact12182844609 and mobile6cases artifact12182964634 available. New test-only built-app actor trace probe added: actual entry/UI/countdown, original compiled runtime response with test-only scene access, controlled session positions/time, P1–P5 via real stage1-1/1-3, both facings/reduced, Basic→Idle→retreat, non-action casts, KO/restart/exit, exact transforms and P2 landmark/ground measurements. No source/art/gameplay/descriptor changes. `[viewport probe]` prevents Pages deployment; output included under mobile-viewport-verification/actor-scale. Probe syntax checked; executable result PENDING. Do not claim a new root cause, roster anatomy PASS or player acceptance from this checkpoint. Heavy stays paused, P1 protected. Next inspect actual probe JSON/raster and fix only evidence-backed defects; otherwise report version/coverage gaps and ask for targeted phone verification.
+
+
 ## 2026-10-20 Chat-first scale-defect gate — user reports post-attack growth / move-away shrink
 
 Player still observes P2 猼訑 actor **enlarge immediately after attack and shrink upon moving away from an enemy**. This supersedes any earlier assumed acceptance of size correction. **Do not claim the 2026-10-19 static-baseline engineering fix solved this field defect, or claim it was deployed without reading fresh HEAD/Actions.** The known 2026-10-19 correction already restores original static PNG, calibrates Move & Basic to 22.5-world facial landmark and foot=0. It passed 115 affected tests + build, while browser/deploy/physical player verification were pending at the time of that report. Reuse that patch, do not remake it.
