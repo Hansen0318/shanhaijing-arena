@@ -1,0 +1,25 @@
+{
+  "status": "F1/F2/F4 PLAYER ART APPROVED; F3 prior approval retained",
+  "recordedAt": "2026-10-20T19:57:38+08:00",
+  "playerStatement": "好，妳繼續",
+  "context": "Reply to four-pose board at fffad484da54c8ca59f88c394ba870116a953a7a and explicit request to review F1/F2/F4 identity/pose before VFX/GIF.",
+  "scope": "Selected displayed F1/F2/F4 art only; excludes superseded drafts and unseen VFX/GIF/timing/runtime/deployment.",
+  "sources": [
+    {
+      "path": "docs/art/candidates/botuo/heavy/poses-v1/F1-anticipation-master.png",
+      "sha256": "71c5f3210b051c2c2863b8bf8cb37c2fb22a3e5eedcf5599dd9cda3219e7dc03"
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/poses-v1/F2-strike-master.png",
+      "sha256": "79ae8013b49f764dc38b4b49d53b47ca3a928570f7fe29fd0028a4d287ee64ac"
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png",
+      "sha256": "0049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206"
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/poses-v1/F4-recovery-master.png",
+      "sha256": "fb3b97f1ed28c37ea78fe57dadfb3deaf12f6711d3a936ff296e3db0a05e58aa"
+    }
+  ]
+}

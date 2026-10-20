@@ -1,5 +1,11 @@
 # Character action art, VFX and animation review workflow
 
+## 2026-10-20 19:57 +08:00 — Heavy FOUR POSES PLAYER APPROVED / VFX + GIF next
+
+Player「好，妳繼續」responds to the displayed four-pose board and explicit F1/F2/F4 art-review gate at fffad484da54c8ca59f88c394ba870116a953a7a. Selected F1/F2/F4 PLAYER ART APPROVED; existing F3 approval retained, superseded drafts excluded. Exact hash-bound receipt: `docs/art/approved/botuo/heavy/poses-v1/acceptance.json`. Prior pose-review-pending entries are historical. P2 size defect remains PLAYER VERIFIED.
+
+NEXT independent amber/angular forward bracer pressure source + broader stone-like true-target burst, visibly stronger than accepted Basic at same actor display size; preserve approved actor pixels/body size and no projectile/AoE/gameplay inference. Package approved poses reproducibly using multiple anatomy/equipment/ground landmarks; create normal/slow/no-FX/both-facing/Idle-return composite GIF, clearly preview timing only. VFX/GIF are NOT PLAYER APPROVED. Stop for composite review before runtime integration/deploy; actual Heavy650ms tactical telegraph is Tier-scaled, not universal windup or Basic250ms. Preserve16MiB+131072reserve/Guard, P1 COMPLETE/Basic/KO, ordinary Hit canceled; no main merge/P3. Docs/art-only[skip ci], current source0fe44b3 deployment unchanged. All successor prompts single complete self-contained copyable block.
+
 ## 2026-10-20 19:26 +08:00 — P2 SIZE PLAYER VERIFIED / Heavy remaining poses resumed
 
 Player explicitly confirms「正常了，ok，紀錄進度和流程規則，然後繼續」following the phone review link for source release `0fe44b3c5eed46402d0394af6dff128a72be7393`. **P2 Idle/Move/Basic actor-size defect CLOSED / PLAYER VERIFIED; Heavy size blocker lifted.** Receipt: `docs/verification/P2_MOVE_BODY/player-acceptance.json`. This links the scoped sign-off to the supplied release; player did not supply a device bundle hash. Earlier size-review pending/Heavy-paused statements below are history. No unrelated physical-device behavior is inferred.

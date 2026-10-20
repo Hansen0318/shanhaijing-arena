@@ -1,5 +1,11 @@
 # AGENTS.md
 
+## 2026-10-20 19:57 +08:00 — Heavy FOUR POSES PLAYER APPROVED / VFX + GIF next
+
+Player「好，妳繼續」responds to the displayed four-pose board and explicit F1/F2/F4 art-review gate at fffad484da54c8ca59f88c394ba870116a953a7a. Selected F1/F2/F4 PLAYER ART APPROVED; existing F3 approval retained, superseded drafts excluded. Exact hash-bound receipt: `docs/art/approved/botuo/heavy/poses-v1/acceptance.json`. Prior pose-review-pending entries are historical. P2 size defect remains PLAYER VERIFIED.
+
+NEXT independent amber/angular forward bracer pressure source + broader stone-like true-target burst, visibly stronger than accepted Basic at same actor display size; preserve approved actor pixels/body size and no projectile/AoE/gameplay inference. Package approved poses reproducibly using multiple anatomy/equipment/ground landmarks; create normal/slow/no-FX/both-facing/Idle-return composite GIF, clearly preview timing only. VFX/GIF are NOT PLAYER APPROVED. Stop for composite review before runtime integration/deploy; actual Heavy650ms tactical telegraph is Tier-scaled, not universal windup or Basic250ms. Preserve16MiB+131072reserve/Guard, P1 COMPLETE/Basic/KO, ordinary Hit canceled; no main merge/P3. Docs/art-only[skip ci], current source0fe44b3 deployment unchanged. All successor prompts single complete self-contained copyable block.
+
 ## 2026-10-20 — Heavy F1/F2/F4 CANDIDATES READY / FOUR-POSE PLAYER REVIEW
 
 P2 size acceptance is recorded at `bc866bcf0ebb15ae3e373d72268987bd96d525fb`; size blocker remains closed. Continued to the first unfinished art gate: built-in Imagegen individual F1 load, F2 chest-level intermediate bracer strike, F4 lowered-guard recovery. Immutable approved F3 reused by path/hash only. Full sources/prompts/revisions/verification/reproducible light-dark review board: `docs/art/candidates/botuo/heavy/poses-v1/`. F2 initial draft too close to F3 and F4 costume drift preserved as superseded, not approved references; corrected selected candidates inspected.
