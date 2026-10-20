@@ -1,0 +1,44 @@
+[
+  {
+    "attachment": "17F84FDB-410B-423D-A5C0-C9662FE03A49(2).jpeg",
+    "sha256": "fd1f7f0290cf170ad55330394fff21c3bf45281650df215267cfa8c8de603384",
+    "closestSource": "docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png",
+    "meanRGBDifference": 30.6472,
+    "scope": "Visual JPEG reference only; formal acceptance hashes own runtime source selection."
+  },
+  {
+    "attachment": "2033BDF0-31ED-481F-9FED-45497172F4B9(2).jpeg",
+    "sha256": "9df2d8b7caa29db06d7fc1c8761b28306c0e1091fa6ba030c65f3a53e58ed8a3",
+    "closestSource": "docs/art/candidates/botuo/heavy/poses-v1/F4-recovery-master.png",
+    "meanRGBDifference": 0.3194,
+    "scope": "Visual JPEG reference only; formal acceptance hashes own runtime source selection."
+  },
+  {
+    "attachment": "61C37505-6ECF-4E1C-B765-8BFFB4F850E2(2).jpeg",
+    "sha256": "cf1220022c614ec4b0eb28e1b83d1b0b370d061c45a1f42ddaf29f0366a8aaf7",
+    "closestSource": "docs/art/candidates/botuo/heavy/poses-v1/F2-strike-master.png",
+    "meanRGBDifference": 0.2872,
+    "scope": "Visual JPEG reference only; formal acceptance hashes own runtime source selection."
+  },
+  {
+    "attachment": "7C033A49-F706-4B7E-96C5-4ADDE52E404F(2).jpeg",
+    "sha256": "36caf8f91d15b8b2adec398b9b1fafa47d38cdbad6ecb0ac59b87e04b6e7c2a3",
+    "closestSource": "docs/art/candidates/botuo/heavy/poses-v1/F1-anticipation-master.png",
+    "meanRGBDifference": 0.3133,
+    "scope": "Visual JPEG reference only; formal acceptance hashes own runtime source selection."
+  },
+  {
+    "attachment": "D4126DB9-CAC7-464A-9F24-54B360EE59F7(2).jpeg",
+    "sha256": "f2b77dec1a041fbc8986e370d843e19462a9ce74f8df869a49c80300792317fe",
+    "closestSource": "docs/art/candidates/botuo/heavy/poses-v1/four-pose-review.png",
+    "meanRGBDifference": 0.7826,
+    "scope": "Visual JPEG reference only; formal acceptance hashes own runtime source selection."
+  },
+  {
+    "attachment": "F302F8ED-46BE-4F7D-91DC-F6E086264B76(2).jpeg",
+    "sha256": "e6ff54cd82dc411c01c31ae936f79aa20f5e4823c6ee461ecfacd6c718e378c4",
+    "closestSource": "docs/art/candidates/botuo/heavy/poses-v1/F4-recovery-superseded-costume-drift.png",
+    "meanRGBDifference": 0.3059,
+    "scope": "Visual JPEG reference only; formal acceptance hashes own runtime source selection."
+  }
+]

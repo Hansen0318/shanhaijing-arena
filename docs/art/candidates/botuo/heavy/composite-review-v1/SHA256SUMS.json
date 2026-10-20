@@ -1,0 +1,23 @@
+{
+  "F1-safe-cell.png": "88c0b3babfedcf4a02a129fa18ea367f50c75bedfa046a2281e4ba276503463b",
+  "F2-safe-cell.png": "9cc70d063036d7dc34d1a0ef2409fd7ec409ddd9177c4a7027e016979f516320",
+  "F3-safe-cell.png": "db353bd75c229bc46ec16fa18751fc26b7726eefed6d3b0d32e76fbea5efb461",
+  "F4-safe-cell.png": "11e05a1bb98a852021bbe95651dbf5d0f7211524f4da13ccb5b04a57cbc0dd73",
+  "README.md": "6ce4ef2074f173fc37a6dbf2751537d4e76590e3bc057b0ce0dbe49b84522b09",
+  "air-cast-review.png": "adf99975acd609ed3c6215492600334ce3573f5ddd7d2b585a0035c7154f1cfd",
+  "approved-idle-return-cell.png": "1556dcbc8d1f32762db2c96773f561412d5d6be197164fe1751da6f80ef2d694",
+  "basic-heavy-vfx-comparison.png": "8fc1267682d216924b580ce94adac1d6dde456f604ad829d823997f28b9d878e",
+  "botuo-heavy-character-only.gif": "d2a4df015ec4506f5323da88e6bdaa8169ee930a501ada5c9ace24332c948d94",
+  "botuo-heavy-composite-normal.gif": "9ea0723ab51bf7771622e626e30bfcc23fae611f86843f3b93017269e1fa2ee7",
+  "botuo-heavy-composite-slow.gif": "a81180a5eabb7df2116776dc27714ffd985c179f863ddf865c19fa2693cf3724",
+  "botuo-heavy-reduced-cues.gif": "95bd7fc4f72a30b5f3a1a8abd57a92a6db2eb33788d059355a27d782565be1bc",
+  "contact-review.png": "0919dd6024bb78e6329a27b997b099d317ba0e5d3480692998b2069898552bdc",
+  "decoded-facing-hit-whiff-QA.png": "3fea0b7a409d968b440bffea258ba3411645fd4a0c9f1fade0bbd4594acf3f99",
+  "review-manifest.json": "3a040ab99a0572b6e3fd521fb55e58cdd871e0e73306b5231dfcd1fc8951848c",
+  "sequence-review.png": "eb11add492d5fa686ec87678142b754da6a0b5a91b937b80dd94ff40dbc87a48",
+  "source-pressure-prompt.txt": "cb0c3094e3c530166402d1c86e585aa814d189517e9b9a968c269d791407f83d",
+  "source-pressure-raw-v1.png": "54c649d7b5d7e39a0959966e9ddfc8a861bdd516fd006a9d2cc1daf37da2c3cd",
+  "target-impact-prompt.txt": "c1fa5a0b8f4f7844900e110dde553966b86a1e56fb3583b4cb61306c890db03b",
+  "target-impact-raw-v1.png": "b845dcd063a1e2552fa718b2595ae0a6ea5606656d6f8c379c58c7e7fea0f688",
+  "vfx-light-dark-QA.png": "9c33ef65ddda695f3ba52cade6ab6e2e072b64987b342c5e1deb211a0c8fb58b"
+}

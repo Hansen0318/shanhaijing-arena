@@ -1,0 +1,1696 @@
+{
+  "status": "PREFLIGHT PASS / EXECUTABLE PRESENTATION CONTRACT UNSET / NOT INTEGRATED OR DEPLOYED",
+  "sourceHead": "2037800beef4200c012bd6a41e52355e2c8d69f5",
+  "scope": "Production-session direct probes, not automatic AI/UI/browser/phone proof. Real cache/presenter with actual PNG headers; decoder/Phaser allocation boundary doubled.",
+  "direct": [
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "side": "allies",
+      "direction": -1,
+      "startEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "startDamage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "side": "allies",
+      "direction": 1,
+      "startEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "startDamage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "side": "enemies",
+      "direction": -1,
+      "startEvents": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "startDamage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": false,
+      "side": "enemies",
+      "direction": 1,
+      "startEvents": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "startDamage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "side": "allies",
+      "direction": -1,
+      "startEvents": [],
+      "startDamage": [],
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0.65,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "side": "allies",
+      "direction": 1,
+      "startEvents": [],
+      "startDamage": [],
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0.65,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "side": "enemies",
+      "direction": -1,
+      "startEvents": [],
+      "startDamage": [],
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0.65,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "player",
+      "tacticalEnabled": true,
+      "side": "enemies",
+      "direction": 1,
+      "startEvents": [],
+      "startDamage": [],
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0.65,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "side": "allies",
+      "direction": -1,
+      "startEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "startDamage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "side": "allies",
+      "direction": 1,
+      "startEvents": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "startDamage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "side": "enemies",
+      "direction": -1,
+      "startEvents": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "startDamage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": false,
+      "side": "enemies",
+      "direction": 1,
+      "startEvents": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "startDamage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": "a1",
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "side": "allies",
+      "direction": -1,
+      "startEvents": [],
+      "startDamage": [],
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0.65,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "side": "allies",
+      "direction": 1,
+      "startEvents": [],
+      "startDamage": [],
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0.65,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "side": "enemies",
+      "direction": -1,
+      "startEvents": [],
+      "startDamage": [],
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": -0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0.65,
+          "position": {
+            "x": -0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    },
+    {
+      "source": "ai",
+      "tacticalEnabled": true,
+      "side": "enemies",
+      "direction": 1,
+      "startEvents": [],
+      "startDamage": [],
+      "casts": [
+        {
+          "actorId": "e1",
+          "category": "heavy",
+          "source": "ai",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "e1",
+          "targetId": "a1",
+          "category": "heavy",
+          "source": "ai",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0.65,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "sourcePosition": [
+        0,
+        0
+      ],
+      "targetHpLoss": 9.199999999999989
+    }
+  ],
+  "tiers": [
+    {
+      "tier": "T0",
+      "definition": {
+        "id": "P2.heavy",
+        "name": "震嶺",
+        "description": "近距重擊；控制效果保留後續。",
+        "category": "heavy",
+        "cooldown": 4,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.2,
+        "critMultiplier": 1.75,
+        "range": 1.8,
+        "minRange": 0,
+        "preferredRange": 0.8,
+        "maxRange": 1.8,
+        "targetingRule": "enemy",
+        "telegraph": {
+          "telegraphMs": 650,
+          "projectileTravelMs": 0,
+          "dodgeable": true,
+          "dangerShape": "circle",
+          "dangerRadius": 0.7,
+          "commitment": "locked",
+          "interruptible": false
+        },
+        "effect": {
+          "coefficient": 1.3
+        },
+        "ai": {
+          "priority": 20
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": true
+        }
+      },
+      "scheduledMs": 650,
+      "actualHitMs": 650.0000000000003,
+      "cast": {
+        "actorId": "a1",
+        "category": "heavy",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": null,
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.8
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "heavy",
+        "source": "player",
+        "amount": 9.2,
+        "critical": false,
+        "eventAt": 0.6500000000000004,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      }
+    },
+    {
+      "tier": "T1",
+      "definition": {
+        "id": "P2.heavy",
+        "name": "震嶺",
+        "description": "近距重擊；控制效果保留後續。",
+        "category": "heavy",
+        "cooldown": 3.7760000000000002,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.2,
+        "critMultiplier": 1.75,
+        "range": 1.8585,
+        "minRange": 0,
+        "preferredRange": 0.8260000000000001,
+        "maxRange": 1.8585,
+        "targetingRule": "enemy",
+        "telegraph": {
+          "telegraphMs": 633.75,
+          "projectileTravelMs": 0,
+          "dodgeable": true,
+          "dangerShape": "circle",
+          "dangerRadius": 0.7,
+          "commitment": "locked",
+          "interruptible": false
+        },
+        "effect": {
+          "coefficient": 1.3
+        },
+        "ai": {
+          "priority": 20
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": true
+        }
+      },
+      "scheduledMs": 633.75,
+      "actualHitMs": 640.0000000000003,
+      "cast": {
+        "actorId": "a1",
+        "category": "heavy",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": null,
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.8585
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "heavy",
+        "source": "player",
+        "amount": 16.161499999999997,
+        "critical": false,
+        "eventAt": 0.6400000000000003,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      }
+    },
+    {
+      "tier": "T2",
+      "definition": {
+        "id": "P2.heavy",
+        "name": "震嶺",
+        "description": "近距重擊；控制效果保留後續。",
+        "category": "heavy",
+        "cooldown": 3.552,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.2,
+        "critMultiplier": 1.75,
+        "range": 1.917,
+        "minRange": 0,
+        "preferredRange": 0.852,
+        "maxRange": 1.917,
+        "targetingRule": "enemy",
+        "telegraph": {
+          "telegraphMs": 617.5,
+          "projectileTravelMs": 0,
+          "dodgeable": true,
+          "dangerShape": "circle",
+          "dangerRadius": 0.7,
+          "commitment": "locked",
+          "interruptible": false
+        },
+        "effect": {
+          "coefficient": 1.3
+        },
+        "ai": {
+          "priority": 20
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": true
+        }
+      },
+      "scheduledMs": 617.5,
+      "actualHitMs": 620.0000000000003,
+      "cast": {
+        "actorId": "a1",
+        "category": "heavy",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": null,
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 1.917
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "heavy",
+        "source": "player",
+        "amount": 25.443499999999993,
+        "critical": false,
+        "eventAt": 0.6200000000000003,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      }
+    },
+    {
+      "tier": "T3",
+      "definition": {
+        "id": "P2.heavy",
+        "name": "震嶺",
+        "description": "近距重擊；控制效果保留後續。",
+        "category": "heavy",
+        "cooldown": 3.216,
+        "windupMs": 0,
+        "unlockTier": 0,
+        "canCrit": true,
+        "critChance": 0.2,
+        "critMultiplier": 1.75,
+        "range": 2.0106,
+        "minRange": 0,
+        "preferredRange": 0.8936000000000001,
+        "maxRange": 2.0106,
+        "targetingRule": "enemy",
+        "telegraph": {
+          "telegraphMs": 591.5,
+          "projectileTravelMs": 0,
+          "dodgeable": true,
+          "dangerShape": "circle",
+          "dangerRadius": 0.7,
+          "commitment": "locked",
+          "interruptible": false
+        },
+        "effect": {
+          "coefficient": 1.3
+        },
+        "ai": {
+          "priority": 20
+        },
+        "tierScaling": {
+          "aoe": false,
+          "mobility": false,
+          "status": false,
+          "windup": true
+        }
+      },
+      "scheduledMs": 591.5,
+      "actualHitMs": 600.0000000000003,
+      "cast": {
+        "actorId": "a1",
+        "category": "heavy",
+        "source": "player",
+        "origin": {
+          "x": 0,
+          "y": 0
+        },
+        "target": {
+          "x": 0.7,
+          "y": 0
+        },
+        "targetId": null,
+        "hit": true,
+        "minRange": 0,
+        "maxRange": 2.0106
+      },
+      "damage": {
+        "actorId": "a1",
+        "targetId": "e1",
+        "category": "heavy",
+        "source": "player",
+        "amount": 43.234,
+        "critical": false,
+        "eventAt": 0.6000000000000003,
+        "position": {
+          "x": 0.7,
+          "y": 0
+        }
+      }
+    }
+  ],
+  "outcomes": [
+    {
+      "outcome": "air_cast",
+      "accepted": true,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 8,
+            "y": 0
+          },
+          "targetId": "e1",
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [],
+      "hpBefore": 320,
+      "hpAfter": 320,
+      "pending": 0
+    },
+    {
+      "outcome": "ai_out_of_range",
+      "accepted": false,
+      "casts": [],
+      "damage": [],
+      "hpBefore": 320,
+      "hpAfter": 320,
+      "pending": 0
+    },
+    {
+      "outcome": "escape",
+      "accepted": true,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [],
+      "hpBefore": 320,
+      "hpAfter": 320,
+      "pending": 0
+    },
+    {
+      "outcome": "ordinary_damage",
+      "accepted": true,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": true,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "heavy",
+          "source": "player",
+          "amount": 9.2,
+          "critical": false,
+          "eventAt": 0.65,
+          "position": {
+            "x": 0.7,
+            "y": 0
+          }
+        }
+      ],
+      "hpBefore": 320,
+      "hpAfter": 310.8,
+      "pending": 0
+    },
+    {
+      "outcome": "source_ko",
+      "accepted": true,
+      "casts": [],
+      "damage": [],
+      "hpBefore": 320,
+      "hpAfter": 320,
+      "pending": 0
+    },
+    {
+      "outcome": "target_ko",
+      "accepted": true,
+      "casts": [
+        {
+          "actorId": "a1",
+          "category": "heavy",
+          "source": "player",
+          "origin": {
+            "x": 0,
+            "y": 0
+          },
+          "target": {
+            "x": 0.7,
+            "y": 0
+          },
+          "targetId": null,
+          "hit": false,
+          "minRange": 0,
+          "maxRange": 1.8
+        }
+      ],
+      "damage": [],
+      "hpBefore": 320,
+      "hpAfter": 0,
+      "pending": 0
+    }
+  ],
+  "residency": [
+    {
+      "reverse": false,
+      "snapshot": {
+        "requested": 39,
+        "loaded": 39,
+        "evicted": 0,
+        "failed": 0,
+        "highWaterBytes": 16639660,
+        "loadOrder": [
+          "lushu.portrait",
+          "botuo.portrait",
+          "chiru.portrait",
+          "jiuweihu.portrait",
+          "xingxing.portrait",
+          "lushu.battleIdle",
+          "botuo.battleIdle",
+          "chiru.battleIdle",
+          "jiuweihu.battleIdle",
+          "xingxing.battleIdle",
+          "lushu.battleMove",
+          "lushu.battleKo",
+          "botuo.battleMove",
+          "botuo.battleKo",
+          "chiru.battleMove",
+          "chiru.battleKo",
+          "jiuweihu.battleMove",
+          "jiuweihu.battleKo",
+          "xingxing.battleMove",
+          "xingxing.battleKo",
+          "lushu.battleBasic",
+          "lushu.basicBlade",
+          "lushu.basicContact",
+          "lushu.battleHeavy",
+          "lushu.heavyWind",
+          "lushu.heavyImpact",
+          "lushu.battleSpecial",
+          "lushu.specialWind",
+          "lushu.specialImpact",
+          "lushu.battleAwakening",
+          "lushu.awakeningASource",
+          "lushu.awakeningAImpact",
+          "lushu.awakeningBSource",
+          "lushu.awakeningBImpact",
+          "lushu.awakeningCSource",
+          "lushu.awakeningCImpact",
+          "botuo.basicPoses",
+          "botuo.basicSource",
+          "botuo.basicContact"
+        ],
+        "highWaterReservedBytes": 16639660,
+        "estimatedLiveBytes": 16639660,
+        "reservedBytes": 0,
+        "pending": 0,
+        "pinned": 39,
+        "softBytes": 12582912,
+        "hardBytes": 16777216,
+        "optionalReserveBytes": 131072,
+        "closed": false
+      },
+      "cache": {
+        "estimatedLiveBytes": 16639660,
+        "highWaterBytes": 16639660,
+        "loaded": 39,
+        "failed": 0,
+        "pending": 0,
+        "active": 0,
+        "queued": 0
+      },
+      "actual": {
+        "bytes": 16639660,
+        "peak": 16639660
+      },
+      "keys": [
+        "lushu.portrait",
+        "botuo.portrait",
+        "chiru.portrait",
+        "jiuweihu.portrait",
+        "xingxing.portrait",
+        "lushu.battleIdle",
+        "botuo.battleIdle",
+        "chiru.battleIdle",
+        "jiuweihu.battleIdle",
+        "xingxing.battleIdle",
+        "lushu.battleMove",
+        "lushu.battleKo",
+        "botuo.battleMove",
+        "botuo.battleKo",
+        "chiru.battleMove",
+        "chiru.battleKo",
+        "jiuweihu.battleMove",
+        "jiuweihu.battleKo",
+        "xingxing.battleMove",
+        "xingxing.battleKo",
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact",
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact",
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact",
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact",
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "availableAfterReserve": 6484,
+      "cleanupBytes": 0
+    },
+    {
+      "reverse": true,
+      "snapshot": {
+        "requested": 39,
+        "loaded": 39,
+        "evicted": 0,
+        "failed": 0,
+        "highWaterBytes": 16639660,
+        "loadOrder": [
+          "xingxing.portrait",
+          "jiuweihu.portrait",
+          "chiru.portrait",
+          "botuo.portrait",
+          "lushu.portrait",
+          "xingxing.battleIdle",
+          "jiuweihu.battleIdle",
+          "chiru.battleIdle",
+          "botuo.battleIdle",
+          "lushu.battleIdle",
+          "xingxing.battleMove",
+          "xingxing.battleKo",
+          "jiuweihu.battleMove",
+          "jiuweihu.battleKo",
+          "chiru.battleMove",
+          "chiru.battleKo",
+          "botuo.battleMove",
+          "botuo.battleKo",
+          "lushu.battleMove",
+          "lushu.battleKo",
+          "botuo.basicPoses",
+          "botuo.basicSource",
+          "botuo.basicContact",
+          "lushu.battleBasic",
+          "lushu.basicBlade",
+          "lushu.basicContact",
+          "lushu.battleHeavy",
+          "lushu.heavyWind",
+          "lushu.heavyImpact",
+          "lushu.battleSpecial",
+          "lushu.specialWind",
+          "lushu.specialImpact",
+          "lushu.battleAwakening",
+          "lushu.awakeningASource",
+          "lushu.awakeningAImpact",
+          "lushu.awakeningBSource",
+          "lushu.awakeningBImpact",
+          "lushu.awakeningCSource",
+          "lushu.awakeningCImpact"
+        ],
+        "highWaterReservedBytes": 16639660,
+        "estimatedLiveBytes": 16639660,
+        "reservedBytes": 0,
+        "pending": 0,
+        "pinned": 39,
+        "softBytes": 12582912,
+        "hardBytes": 16777216,
+        "optionalReserveBytes": 131072,
+        "closed": false
+      },
+      "cache": {
+        "estimatedLiveBytes": 16639660,
+        "highWaterBytes": 16639660,
+        "loaded": 39,
+        "failed": 0,
+        "pending": 0,
+        "active": 0,
+        "queued": 0
+      },
+      "actual": {
+        "bytes": 16639660,
+        "peak": 16639660
+      },
+      "keys": [
+        "xingxing.portrait",
+        "jiuweihu.portrait",
+        "chiru.portrait",
+        "botuo.portrait",
+        "lushu.portrait",
+        "xingxing.battleIdle",
+        "jiuweihu.battleIdle",
+        "chiru.battleIdle",
+        "botuo.battleIdle",
+        "lushu.battleIdle",
+        "xingxing.battleMove",
+        "xingxing.battleKo",
+        "jiuweihu.battleMove",
+        "jiuweihu.battleKo",
+        "chiru.battleMove",
+        "chiru.battleKo",
+        "botuo.battleMove",
+        "botuo.battleKo",
+        "lushu.battleMove",
+        "lushu.battleKo",
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact",
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact",
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact",
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact",
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "availableAfterReserve": 6484,
+      "cleanupBytes": 0
+    }
+  ],
+  "protectedHashes": {
+    "src/roster/abilities.js": "7466190c04cc3944c26fefa25945255212bca3a7fb01ae23025f506506ee8218",
+    "src/roster/catalog.js": "4eea6ed650cfba4d2cb421fca89b939aca6fdc5a2bcb5e57f790d6411a1f5210",
+    "src/combat/ability.js": "63283096c116f1e43e32d4d52979832de12c591597b3901d83d098ecdfdf091f",
+    "src/combat/battleSession.js": "1b3c0bb45daedd4830556dde2eba448192697daa96df52d97af136bd4247cd03",
+    "src/assets/actionPlayback.js": "b4af613c484819f5c43cc057cfecf22d617ad2b6d4f628760d76fa0b84568516",
+    "src/runtime/assetPresenter.js": "115015e0c884eba089373b41b6884ec6cc1e851109ac7e643b9b3c0907cdc43d",
+    "src/runtime/assetResidency.js": "96808ee3379a23db6c88e38e0d26939a3ba979191ac468002ec381c1e7648bb9",
+    "src/assets/manifest.js": "17bcf7d37bb42c8fd000286c70ce719baf1b5ecb66b5cfe1b6abf19d6a494767"
+  },
+  "conclusion": "All Heavy events currently unphased; tactical start emits no cast event and resolves after Tier-scaled telegraph. Non-tactical hits and player out-of-range casts emit immediately. Shared phased playback cannot consume these as approved full anticipation-before-hit. Do not infer approval to shift real damage or copy Basic250ms. Preserve existing target geometry/control/cancellation and all protected paths pending explicit contract selection."
+}

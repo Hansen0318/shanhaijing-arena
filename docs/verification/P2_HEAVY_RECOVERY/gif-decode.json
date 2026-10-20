@@ -1,0 +1,513 @@
+[
+  {
+    "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-character-only.gif",
+    "sha256": "d2a4df015ec4506f5323da88e6bdaa8169ee930a501ada5c9ace24332c948d94",
+    "bytes": 190962,
+    "fullyDecodedFrames": 12,
+    "decodeError": null,
+    "frames": [
+      {
+        "frame": 0,
+        "duration": 800,
+        "pixelSha256": "10c3e677750f5d3a71e800c49813d15f21be08c05c0a072da33504689fcad314"
+      },
+      {
+        "frame": 1,
+        "duration": 320,
+        "pixelSha256": "487b52dacd8a25a3e21874ccc806ef675da56adbc4c7ad2248b54cf29ba79bd3"
+      },
+      {
+        "frame": 2,
+        "duration": 320,
+        "pixelSha256": "38b04bd29ea7eef7250d219187302b56773d40d5600a83729e8fce4324115d6f"
+      },
+      {
+        "frame": 3,
+        "duration": 320,
+        "pixelSha256": "3cadabe9c6fcf76c88afa1610bb8d30ed6049452898607874d29bddb010ffe96"
+      },
+      {
+        "frame": 4,
+        "duration": 320,
+        "pixelSha256": "a9bb05c0333cf5c605263b75518088a67b6c57fdcf7644055cee03fb64ca232a"
+      },
+      {
+        "frame": 5,
+        "duration": 1280,
+        "pixelSha256": "10c3e677750f5d3a71e800c49813d15f21be08c05c0a072da33504689fcad314"
+      },
+      {
+        "frame": 6,
+        "duration": 800,
+        "pixelSha256": "8c7ee06f1e0e90589cc9b64c0a1040f0ae87172e0e1dd5142abb0350a7099155"
+      },
+      {
+        "frame": 7,
+        "duration": 320,
+        "pixelSha256": "f5295737fc739ef9cfde5b5b453b89f3b05e05cf4632e768612656dcdd7fb8e1"
+      },
+      {
+        "frame": 8,
+        "duration": 320,
+        "pixelSha256": "a276b709d4411ee512d818f7d08f472b6f0543c97020de1c9b2ff449cf545e14"
+      },
+      {
+        "frame": 9,
+        "duration": 320,
+        "pixelSha256": "f669b37dce61c5ee70699df4744909abeb1729416d025427f5c133fa5b4ce966"
+      },
+      {
+        "frame": 10,
+        "duration": 320,
+        "pixelSha256": "071279fbc31f60948afd3b2334c712b71788368f6e716b086a8d1f29dc6c44dd"
+      },
+      {
+        "frame": 11,
+        "duration": 1280,
+        "pixelSha256": "8c7ee06f1e0e90589cc9b64c0a1040f0ae87172e0e1dd5142abb0350a7099155"
+      }
+    ]
+  },
+  {
+    "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-normal.gif",
+    "sha256": "9ea0723ab51bf7771622e626e30bfcc23fae611f86843f3b93017269e1fa2ee7",
+    "bytes": 717501,
+    "fullyDecodedFrames": 33,
+    "decodeError": "image file is truncated (0 bytes not processed)",
+    "frames": [
+      {
+        "frame": 0,
+        "duration": 400,
+        "pixelSha256": "5617e8b348858e9f8cd593541aa10fb8e03ce80054c8095888df3f134ada319f"
+      },
+      {
+        "frame": 1,
+        "duration": 160,
+        "pixelSha256": "19ce4babab57746a631f409337b2372a67c268356ae88136dc63046d79a79055"
+      },
+      {
+        "frame": 2,
+        "duration": 160,
+        "pixelSha256": "c7036b70325ef3de61e6afb47707dced26b5184b87924ee82be94f6c09207d69"
+      },
+      {
+        "frame": 3,
+        "duration": 160,
+        "pixelSha256": "fb72bff6c2a96d221958379e62314b28a697741669c67db669f72e644f313d3f"
+      },
+      {
+        "frame": 4,
+        "duration": 40,
+        "pixelSha256": "884f9939b69af95f5002706b18e9ac8debd9b5eb29fb23bbb07371fc226f761a"
+      },
+      {
+        "frame": 5,
+        "duration": 40,
+        "pixelSha256": "b26db37af17e7b073beac4ee870a9337fac55468531cf9685be9acab02708914"
+      },
+      {
+        "frame": 6,
+        "duration": 40,
+        "pixelSha256": "39942a3432597f3987c9284b5f7240a3d0a9f64a14481722b915d1e9418e07bd"
+      },
+      {
+        "frame": 7,
+        "duration": 40,
+        "pixelSha256": "c2ee534cc78b5281ca660cad08f980ad57490f9a20ce3ab0a94e595c488b1617"
+      },
+      {
+        "frame": 8,
+        "duration": 640,
+        "pixelSha256": "5617e8b348858e9f8cd593541aa10fb8e03ce80054c8095888df3f134ada319f"
+      },
+      {
+        "frame": 9,
+        "duration": 400,
+        "pixelSha256": "c48e712468ab46e15c8f4c20cc810e76214d213e1f17191c80934d87010a5056"
+      },
+      {
+        "frame": 10,
+        "duration": 160,
+        "pixelSha256": "f5a6a5e60bd079f9592bc8c5017398013caabce5358fbce2fd8253d79f5b32b7"
+      },
+      {
+        "frame": 11,
+        "duration": 160,
+        "pixelSha256": "0af3af4e787332e5387c329225779af9da4b88a180f3a543c9e15e9122ccfe23"
+      },
+      {
+        "frame": 12,
+        "duration": 160,
+        "pixelSha256": "8216721b2ef05bf5f42f7efa08f66285d07c00b2a868c8e9b6ae11e35e32a4d1"
+      },
+      {
+        "frame": 13,
+        "duration": 40,
+        "pixelSha256": "f7a0dd3a53abbc4c56c2b17f9631c71cf55874b8c61143bf69753f028ca50b08"
+      },
+      {
+        "frame": 14,
+        "duration": 40,
+        "pixelSha256": "646a687cc3f2b7412f02e0a117e15af979d58a3f58a1798c841faa448eb91ebf"
+      },
+      {
+        "frame": 15,
+        "duration": 40,
+        "pixelSha256": "2e529291dc1c4d4c61410c6bb5c776e7ad116b2f6d755946b2b4edb8aba9153b"
+      },
+      {
+        "frame": 16,
+        "duration": 40,
+        "pixelSha256": "74a5846c3882df4b18fe3333c8643c4cd069da2a31fe9d3a97044ea56ba59d25"
+      },
+      {
+        "frame": 17,
+        "duration": 640,
+        "pixelSha256": "c48e712468ab46e15c8f4c20cc810e76214d213e1f17191c80934d87010a5056"
+      },
+      {
+        "frame": 18,
+        "duration": 400,
+        "pixelSha256": "e3b5d39c6e618abf942894852090423da33144042fad2e9fe97e3dde2e30dc2c"
+      },
+      {
+        "frame": 19,
+        "duration": 160,
+        "pixelSha256": "a61b5381dec766d44f2208cc4a1d52267afd4ae8689cc4122d7ec63d21918baa"
+      },
+      {
+        "frame": 20,
+        "duration": 160,
+        "pixelSha256": "8a03feef4ec90419d9f4857306f1d5e01f35f86aaba1bed1209b0d6ad1896097"
+      },
+      {
+        "frame": 21,
+        "duration": 160,
+        "pixelSha256": "538f1acaef50f217157e8506aea6cd4faf821a663dd417aab122397b9f6ade5c"
+      },
+      {
+        "frame": 22,
+        "duration": 40,
+        "pixelSha256": "70aa59c5e0d99da1f93d6b9a75dc6c96ae80e213cf0bbef6e90e3273b3ec9e12"
+      },
+      {
+        "frame": 23,
+        "duration": 40,
+        "pixelSha256": "bfbd21e8eaee7f7680522b67a70cb731c582006c6c087eb91c1cf6faa88c1594"
+      },
+      {
+        "frame": 24,
+        "duration": 40,
+        "pixelSha256": "fc7e83799b2faa0501269952bddfb0023c9d8c4f42af2773e2a0599a96763341"
+      },
+      {
+        "frame": 25,
+        "duration": 40,
+        "pixelSha256": "37cb923a3e8e95fb483383985e25b68e40594f5ae1108135dcef9650a5df12f5"
+      },
+      {
+        "frame": 26,
+        "duration": 640,
+        "pixelSha256": "e3b5d39c6e618abf942894852090423da33144042fad2e9fe97e3dde2e30dc2c"
+      },
+      {
+        "frame": 27,
+        "duration": 400,
+        "pixelSha256": "12d7aaaeb7df2b74238bb04bd004c76bb1b4ba72d228d82b918f0cd641f69c16"
+      },
+      {
+        "frame": 28,
+        "duration": 160,
+        "pixelSha256": "53c862b2506d98e1101131915f8374d978c4b4001e5550003e66214526c73dd5"
+      },
+      {
+        "frame": 29,
+        "duration": 160,
+        "pixelSha256": "4f7e99209ff36ab675318a0f43d6beba22cff8f7a14b758555fa3de3c863d2ae"
+      },
+      {
+        "frame": 30,
+        "duration": 160,
+        "pixelSha256": "6d9026f42164e4a13b8322505d1e6eae3d815562a157518e6bd79acb65cd8b77"
+      },
+      {
+        "frame": 31,
+        "duration": 40,
+        "pixelSha256": "106e9bca0d4c9f1c64eed1e406f64dfbdf28005dba2eaf743038309192f99111"
+      },
+      {
+        "frame": 32,
+        "duration": 40,
+        "pixelSha256": "63e05d3246e68a7edf7b64c78b74d2eef87c5fdd5b93efc18eb5c3653e0c4eef"
+      }
+    ]
+  },
+  {
+    "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-slow.gif",
+    "sha256": "a81180a5eabb7df2116776dc27714ffd985c179f863ddf865c19fa2693cf3724",
+    "bytes": 772380,
+    "fullyDecodedFrames": 36,
+    "decodeError": null,
+    "frames": [
+      {
+        "frame": 0,
+        "duration": 1200,
+        "pixelSha256": "5617e8b348858e9f8cd593541aa10fb8e03ce80054c8095888df3f134ada319f"
+      },
+      {
+        "frame": 1,
+        "duration": 480,
+        "pixelSha256": "19ce4babab57746a631f409337b2372a67c268356ae88136dc63046d79a79055"
+      },
+      {
+        "frame": 2,
+        "duration": 480,
+        "pixelSha256": "c7036b70325ef3de61e6afb47707dced26b5184b87924ee82be94f6c09207d69"
+      },
+      {
+        "frame": 3,
+        "duration": 480,
+        "pixelSha256": "fb72bff6c2a96d221958379e62314b28a697741669c67db669f72e644f313d3f"
+      },
+      {
+        "frame": 4,
+        "duration": 120,
+        "pixelSha256": "884f9939b69af95f5002706b18e9ac8debd9b5eb29fb23bbb07371fc226f761a"
+      },
+      {
+        "frame": 5,
+        "duration": 120,
+        "pixelSha256": "b26db37af17e7b073beac4ee870a9337fac55468531cf9685be9acab02708914"
+      },
+      {
+        "frame": 6,
+        "duration": 120,
+        "pixelSha256": "39942a3432597f3987c9284b5f7240a3d0a9f64a14481722b915d1e9418e07bd"
+      },
+      {
+        "frame": 7,
+        "duration": 120,
+        "pixelSha256": "c2ee534cc78b5281ca660cad08f980ad57490f9a20ce3ab0a94e595c488b1617"
+      },
+      {
+        "frame": 8,
+        "duration": 1920,
+        "pixelSha256": "5617e8b348858e9f8cd593541aa10fb8e03ce80054c8095888df3f134ada319f"
+      },
+      {
+        "frame": 9,
+        "duration": 1200,
+        "pixelSha256": "c48e712468ab46e15c8f4c20cc810e76214d213e1f17191c80934d87010a5056"
+      },
+      {
+        "frame": 10,
+        "duration": 480,
+        "pixelSha256": "f5a6a5e60bd079f9592bc8c5017398013caabce5358fbce2fd8253d79f5b32b7"
+      },
+      {
+        "frame": 11,
+        "duration": 480,
+        "pixelSha256": "0af3af4e787332e5387c329225779af9da4b88a180f3a543c9e15e9122ccfe23"
+      },
+      {
+        "frame": 12,
+        "duration": 480,
+        "pixelSha256": "8216721b2ef05bf5f42f7efa08f66285d07c00b2a868c8e9b6ae11e35e32a4d1"
+      },
+      {
+        "frame": 13,
+        "duration": 120,
+        "pixelSha256": "f7a0dd3a53abbc4c56c2b17f9631c71cf55874b8c61143bf69753f028ca50b08"
+      },
+      {
+        "frame": 14,
+        "duration": 120,
+        "pixelSha256": "646a687cc3f2b7412f02e0a117e15af979d58a3f58a1798c841faa448eb91ebf"
+      },
+      {
+        "frame": 15,
+        "duration": 120,
+        "pixelSha256": "2e529291dc1c4d4c61410c6bb5c776e7ad116b2f6d755946b2b4edb8aba9153b"
+      },
+      {
+        "frame": 16,
+        "duration": 120,
+        "pixelSha256": "74a5846c3882df4b18fe3333c8643c4cd069da2a31fe9d3a97044ea56ba59d25"
+      },
+      {
+        "frame": 17,
+        "duration": 1920,
+        "pixelSha256": "c48e712468ab46e15c8f4c20cc810e76214d213e1f17191c80934d87010a5056"
+      },
+      {
+        "frame": 18,
+        "duration": 1200,
+        "pixelSha256": "e3b5d39c6e618abf942894852090423da33144042fad2e9fe97e3dde2e30dc2c"
+      },
+      {
+        "frame": 19,
+        "duration": 480,
+        "pixelSha256": "a61b5381dec766d44f2208cc4a1d52267afd4ae8689cc4122d7ec63d21918baa"
+      },
+      {
+        "frame": 20,
+        "duration": 480,
+        "pixelSha256": "8a03feef4ec90419d9f4857306f1d5e01f35f86aaba1bed1209b0d6ad1896097"
+      },
+      {
+        "frame": 21,
+        "duration": 480,
+        "pixelSha256": "538f1acaef50f217157e8506aea6cd4faf821a663dd417aab122397b9f6ade5c"
+      },
+      {
+        "frame": 22,
+        "duration": 120,
+        "pixelSha256": "70aa59c5e0d99da1f93d6b9a75dc6c96ae80e213cf0bbef6e90e3273b3ec9e12"
+      },
+      {
+        "frame": 23,
+        "duration": 120,
+        "pixelSha256": "bfbd21e8eaee7f7680522b67a70cb731c582006c6c087eb91c1cf6faa88c1594"
+      },
+      {
+        "frame": 24,
+        "duration": 120,
+        "pixelSha256": "fc7e83799b2faa0501269952bddfb0023c9d8c4f42af2773e2a0599a96763341"
+      },
+      {
+        "frame": 25,
+        "duration": 120,
+        "pixelSha256": "37cb923a3e8e95fb483383985e25b68e40594f5ae1108135dcef9650a5df12f5"
+      },
+      {
+        "frame": 26,
+        "duration": 1920,
+        "pixelSha256": "e3b5d39c6e618abf942894852090423da33144042fad2e9fe97e3dde2e30dc2c"
+      },
+      {
+        "frame": 27,
+        "duration": 1200,
+        "pixelSha256": "12d7aaaeb7df2b74238bb04bd004c76bb1b4ba72d228d82b918f0cd641f69c16"
+      },
+      {
+        "frame": 28,
+        "duration": 480,
+        "pixelSha256": "53c862b2506d98e1101131915f8374d978c4b4001e5550003e66214526c73dd5"
+      },
+      {
+        "frame": 29,
+        "duration": 480,
+        "pixelSha256": "4f7e99209ff36ab675318a0f43d6beba22cff8f7a14b758555fa3de3c863d2ae"
+      },
+      {
+        "frame": 30,
+        "duration": 480,
+        "pixelSha256": "6d9026f42164e4a13b8322505d1e6eae3d815562a157518e6bd79acb65cd8b77"
+      },
+      {
+        "frame": 31,
+        "duration": 120,
+        "pixelSha256": "106e9bca0d4c9f1c64eed1e406f64dfbdf28005dba2eaf743038309192f99111"
+      },
+      {
+        "frame": 32,
+        "duration": 120,
+        "pixelSha256": "63e05d3246e68a7edf7b64c78b74d2eef87c5fdd5b93efc18eb5c3653e0c4eef"
+      },
+      {
+        "frame": 33,
+        "duration": 120,
+        "pixelSha256": "5a9b5ceafcca27fc0aa30a55c137c41fffab3229600de1444a9c3ce63bb3a410"
+      },
+      {
+        "frame": 34,
+        "duration": 120,
+        "pixelSha256": "884bfc77a6b60401379bbbe188c34c11adb686d59a47ad0840dfe8decd650649"
+      },
+      {
+        "frame": 35,
+        "duration": 1920,
+        "pixelSha256": "12d7aaaeb7df2b74238bb04bd004c76bb1b4ba72d228d82b918f0cd641f69c16"
+      }
+    ]
+  },
+  {
+    "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-reduced-cues.gif",
+    "sha256": "95bd7fc4f72a30b5f3a1a8abd57a92a6db2eb33788d059355a27d782565be1bc",
+    "bytes": 296923,
+    "fullyDecodedFrames": 14,
+    "decodeError": null,
+    "frames": [
+      {
+        "frame": 0,
+        "duration": 400,
+        "pixelSha256": "0887561fbe40a54aa95d82fdab4de060ef9ec17fd0b4a7286ecc47574eee5b30"
+      },
+      {
+        "frame": 1,
+        "duration": 160,
+        "pixelSha256": "8c2600e570d7f0a757f047dcb47c8586979cc0b74c1eb55a0450c57e01bde467"
+      },
+      {
+        "frame": 2,
+        "duration": 160,
+        "pixelSha256": "95ec686f6e8dfc3f74af16db8ce996137276ee35eed7310b0f5d738c3f77fd89"
+      },
+      {
+        "frame": 3,
+        "duration": 160,
+        "pixelSha256": "fc0f649defd486490ceb4129eff8450ea12d4116741fa162a2db5d4926bcef11"
+      },
+      {
+        "frame": 4,
+        "duration": 120,
+        "pixelSha256": "2dcb3a0cbfc4aba60ea54d1c5d5e4f66d991bcfe10649d75f008954ec9765517"
+      },
+      {
+        "frame": 5,
+        "duration": 40,
+        "pixelSha256": "bda6a3c1b20f827c276ba91bf348f83bf0e9655fae8b53c9adb104f501867a32"
+      },
+      {
+        "frame": 6,
+        "duration": 640,
+        "pixelSha256": "0887561fbe40a54aa95d82fdab4de060ef9ec17fd0b4a7286ecc47574eee5b30"
+      },
+      {
+        "frame": 7,
+        "duration": 400,
+        "pixelSha256": "d1c017f3a34ccd5d807d3894ab6260556ce5263c3d7ef31b7447576ebe75cb5a"
+      },
+      {
+        "frame": 8,
+        "duration": 160,
+        "pixelSha256": "1a5b4ba770ae8a8dce0db7cb8626207b7827ebea66ca400fbe95de36a399384d"
+      },
+      {
+        "frame": 9,
+        "duration": 160,
+        "pixelSha256": "bbb6abf519454b0f85eb51c44704b70a4110e543fd17d6b65777644ee8eae1cc"
+      },
+      {
+        "frame": 10,
+        "duration": 160,
+        "pixelSha256": "77476ed2506e7b4a414799ef777559f9b44f6be20c811e95d2b3c77105f52387"
+      },
+      {
+        "frame": 11,
+        "duration": 120,
+        "pixelSha256": "befe726cb21561c1dd5bae3af65eda2bbedc96bb2f95277817fe2f32b551a17a"
+      },
+      {
+        "frame": 12,
+        "duration": 40,
+        "pixelSha256": "aeef1979620b4e576f46d560256ce39994aeacee61719a4d0242c63999df7044"
+      },
+      {
+        "frame": 13,
+        "duration": 640,
+        "pixelSha256": "d1c017f3a34ccd5d807d3894ab6260556ce5263c3d7ef31b7447576ebe75cb5a"
+      }
+    ]
+  }
+]

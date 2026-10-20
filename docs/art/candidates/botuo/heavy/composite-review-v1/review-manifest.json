@@ -1,0 +1,261 @@
+{
+  "status": "VFX + GIF CANDIDATE / PLAYER REVIEW PENDING",
+  "poseApproval": "docs/art/approved/botuo/heavy/poses-v1/acceptance.json",
+  "recoveredHead": "c563cfdc53f64b39a3f429ed048c8fccc23a7726",
+  "poses": [
+    {
+      "frame": "F1",
+      "source": "docs/art/candidates/botuo/heavy/poses-v1/F1-anticipation-master.png",
+      "sha256": "71c5f3210b051c2c2863b8bf8cb37c2fb22a3e5eedcf5599dd9cda3219e7dc03",
+      "sourceSize": [
+        1446,
+        1088
+      ],
+      "sourceCoreBounds": [
+        214,
+        20,
+        1346,
+        1070
+      ],
+      "rawSourceDensity": 0.126,
+      "sourceRearHoofX": 400,
+      "xy": [
+        85,
+        139
+      ],
+      "resizedSize": [
+        182,
+        137
+      ],
+      "fullResizedRGBApreserved": true,
+      "deletedSourcePixels": 0,
+      "previewGroundResidualPixels": 0
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/candidates/botuo/heavy/poses-v1/F2-strike-master.png",
+      "sha256": "79ae8013b49f764dc38b4b49d53b47ca3a928570f7fe29fd0028a4d287ee64ac",
+      "sourceSize": [
+        1446,
+        1088
+      ],
+      "sourceCoreBounds": [
+        205,
+        18,
+        1301,
+        1057
+      ],
+      "rawSourceDensity": 0.126,
+      "sourceRearHoofX": 390,
+      "xy": [
+        86,
+        141
+      ],
+      "resizedSize": [
+        182,
+        137
+      ],
+      "fullResizedRGBApreserved": true,
+      "deletedSourcePixels": 0,
+      "previewGroundResidualPixels": 0
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png",
+      "sha256": "0049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206",
+      "sourceSize": [
+        1446,
+        1087
+      ],
+      "sourceCoreBounds": [
+        150,
+        47,
+        1372,
+        1044
+      ],
+      "rawSourceDensity": 0.126,
+      "sourceRearHoofX": 400,
+      "xy": [
+        85,
+        142
+      ],
+      "resizedSize": [
+        182,
+        137
+      ],
+      "fullResizedRGBApreserved": true,
+      "deletedSourcePixels": 0,
+      "previewGroundResidualPixels": 0
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/candidates/botuo/heavy/poses-v1/F4-recovery-master.png",
+      "sha256": "fb3b97f1ed28c37ea78fe57dadfb3deaf12f6711d3a936ff296e3db0a05e58aa",
+      "sourceSize": [
+        1346,
+        1168
+      ],
+      "sourceCoreBounds": [
+        281,
+        23,
+        1222,
+        1137
+      ],
+      "rawSourceDensity": 0.126,
+      "sourceRearHoofX": 470,
+      "xy": [
+        76,
+        131
+      ],
+      "resizedSize": [
+        170,
+        147
+      ],
+      "fullResizedRGBApreserved": true,
+      "deletedSourcePixels": 0,
+      "previewGroundResidualPixels": 0
+    }
+  ],
+  "idle": {
+    "path": "public/assets/characters/botuo/battleIdle.png",
+    "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+    "size": [
+      144,
+      144
+    ],
+    "xy": [
+      108,
+      132
+    ],
+    "groundAnchor": 158
+  },
+  "vfx": [
+    {
+      "source": "docs/art/candidates/botuo/heavy/composite-review-v1/source-pressure-raw-v1.png",
+      "sha256": "54c649d7b5d7e39a0959966e9ddfc8a861bdd516fd006a9d2cc1daf37da2c3cd",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "alphaBounds": [
+        0,
+        33,
+        1521,
+        1024
+      ],
+      "transparentPixels": 861797,
+      "reviewSize": [
+        230,
+        154
+      ],
+      "policy": "Preserve full RGBA source incl. translucent glow, no cleanup or crop."
+    },
+    {
+      "source": "docs/art/candidates/botuo/heavy/composite-review-v1/target-impact-raw-v1.png",
+      "sha256": "b845dcd063a1e2552fa718b2595ae0a6ea5606656d6f8c379c58c7e7fea0f688",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "alphaBounds": [
+        0,
+        9,
+        1530,
+        1024
+      ],
+      "transparentPixels": 996871,
+      "reviewSize": [
+        210,
+        168
+      ],
+      "policy": "Preserve full RGBA source incl. translucent glow, no cleanup or crop."
+    }
+  ],
+  "previewTimelineMs": {
+    "idleBefore": 400,
+    "F1": 160,
+    "F2": 160,
+    "F3": 160,
+    "F4": 160,
+    "idleAfter": 640,
+    "contact": 720,
+    "cycle": 1680
+  },
+  "sourceWindow": [
+    560,
+    1000
+  ],
+  "contactWindow": [
+    720,
+    1000
+  ],
+  "fxComparison": [
+    {
+      "layer": "source",
+      "heavyVisiblePixelsAlphaGt64": 15103,
+      "basicVisiblePixelsAlphaGt64": 6050,
+      "ratio": 2.4963636363636366,
+      "threshold": 64,
+      "scope": "Art preview footprint at stated display size, not damage geometry or measured phone perception"
+    },
+    {
+      "layer": "contact",
+      "heavyVisiblePixelsAlphaGt64": 11058,
+      "basicVisiblePixelsAlphaGt64": 4871,
+      "ratio": 2.2701703962225417,
+      "threshold": 64,
+      "scope": "Art preview footprint at stated display size, not damage geometry or measured phone perception"
+    }
+  ],
+  "gifs": [
+    {
+      "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-normal.gif",
+      "sha256": "2f72bc4f16cc35af773c805bdf97eb6a89f819f11d3ad0d1b9f78b35bc1cb001",
+      "bytes": 772380,
+      "decodedFrames": 36,
+      "samples": 168,
+      "totalMs": 6720,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-slow.gif",
+      "sha256": "a81180a5eabb7df2116776dc27714ffd985c179f863ddf865c19fa2693cf3724",
+      "bytes": 772380,
+      "decodedFrames": 36,
+      "samples": 168,
+      "totalMs": 20160,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-character-only.gif",
+      "sha256": "d2a4df015ec4506f5323da88e6bdaa8169ee930a501ada5c9ace24332c948d94",
+      "bytes": 190962,
+      "decodedFrames": 12,
+      "samples": 84,
+      "totalMs": 6720,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-reduced-cues.gif",
+      "sha256": "95bd7fc4f72a30b5f3a1a8abd57a92a6db2eb33788d059355a27d782565be1bc",
+      "bytes": 296923,
+      "decodedFrames": 14,
+      "samples": 84,
+      "totalMs": 3360,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    }
+  ],
+  "policy": [
+    "One .126 uniform XY raw-pixel density for all four approved high-resolution poses; translation-only foot alignment, no face-span/silhouette-height fitting, no regenerating approved art.",
+    "Preview packing density is NOT final renderer contract/anatomy calibration. Inspect face/trunk/bracer/hooves/Idle continuity, require multiple independent landmarks and actual built-app validation before runtime.",
+    "Fresh complete composites + shared GIF palette/disposal2; no pose blending/ghosting/interpolated anatomy.",
+    "HIT uses schematic cross only; no enemy art or actual collision/HP is simulated. AIR CAST retains source effect, has no target burst.",
+    "Preview phase holds proposed for art readability, not settled Heavy650ms telegraph/Tier/non-tactical/whiff timing. No gameplay change or Basic250ms inference.",
+    "Same exact static Idle144x144 in Basic/Heavy FX comparison. Heavy source230x154 vs180x134; contact210x168 vs142x126, art display sizes only, not hit geometry.",
+    "Reduced cues are a visual candidate, not implemented or device-verified accessibility. No runtime cache/residency/build/browser/Pages changes."
+  ]
+}

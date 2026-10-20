@@ -1,0 +1,210 @@
+{
+  "status": "PLAYER GIF / PRESENTED VFX VISUAL APPROVED; EXECUTABLE CONTRACT PENDING",
+  "recordedDate": "2026-10-20",
+  "playerStatement": "work有提供heavy的gif參考，我確認核准會讓新的work繼續",
+  "scope": "Specific delivered Heavy normal/slow composite, shown approved poses and independent source/contact VFX. Not real gameplay timing, integration, deployment, or phone verification. Companion character-only/reduced files are archived support, no separate unseen-file approval inferred.",
+  "deliveryEvidence": {
+    "priorWorkAssistantAt": "2026-10-20T13:06:06Z",
+    "normalLink": "sandbox:/workspace/scratch/6e415327749c/shanhaijing-arena/docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-normal.gif",
+    "slowLink": "sandbox:/workspace/scratch/6e415327749c/shanhaijing-arena/docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-slow.gif",
+    "retrieval": "Prior delivery message retrieved for link provenance only; archived bytes/hashes and verified recovery now committed as authority. Prior assistant13:06:46Z states GIF batch not pushed."
+  },
+  "gifs": [
+    {
+      "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-normal.gif",
+      "sha256": "2f72bc4f16cc35af773c805bdf97eb6a89f819f11d3ad0d1b9f78b35bc1cb001",
+      "bytes": 772380,
+      "decodedFrames": 36,
+      "samples": 168,
+      "totalMs": 6720,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/composite-review-v1/botuo-heavy-composite-slow.gif",
+      "sha256": "a81180a5eabb7df2116776dc27714ffd985c179f863ddf865c19fa2693cf3724",
+      "bytes": 772380,
+      "decodedFrames": 36,
+      "samples": 168,
+      "totalMs": 20160,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    }
+  ],
+  "poses": [
+    {
+      "frame": "F1",
+      "source": "docs/art/candidates/botuo/heavy/poses-v1/F1-anticipation-master.png",
+      "sha256": "71c5f3210b051c2c2863b8bf8cb37c2fb22a3e5eedcf5599dd9cda3219e7dc03",
+      "sourceSize": [
+        1446,
+        1088
+      ],
+      "sourceCoreBounds": [
+        214,
+        20,
+        1346,
+        1070
+      ],
+      "rawSourceDensity": 0.126,
+      "sourceRearHoofX": 400,
+      "xy": [
+        85,
+        139
+      ],
+      "resizedSize": [
+        182,
+        137
+      ],
+      "fullResizedRGBApreserved": true,
+      "deletedSourcePixels": 0,
+      "previewGroundResidualPixels": 0
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/candidates/botuo/heavy/poses-v1/F2-strike-master.png",
+      "sha256": "79ae8013b49f764dc38b4b49d53b47ca3a928570f7fe29fd0028a4d287ee64ac",
+      "sourceSize": [
+        1446,
+        1088
+      ],
+      "sourceCoreBounds": [
+        205,
+        18,
+        1301,
+        1057
+      ],
+      "rawSourceDensity": 0.126,
+      "sourceRearHoofX": 390,
+      "xy": [
+        86,
+        141
+      ],
+      "resizedSize": [
+        182,
+        137
+      ],
+      "fullResizedRGBApreserved": true,
+      "deletedSourcePixels": 0,
+      "previewGroundResidualPixels": 0
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png",
+      "sha256": "0049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206",
+      "sourceSize": [
+        1446,
+        1087
+      ],
+      "sourceCoreBounds": [
+        150,
+        47,
+        1372,
+        1044
+      ],
+      "rawSourceDensity": 0.126,
+      "sourceRearHoofX": 400,
+      "xy": [
+        85,
+        142
+      ],
+      "resizedSize": [
+        182,
+        137
+      ],
+      "fullResizedRGBApreserved": true,
+      "deletedSourcePixels": 0,
+      "previewGroundResidualPixels": 0
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/candidates/botuo/heavy/poses-v1/F4-recovery-master.png",
+      "sha256": "fb3b97f1ed28c37ea78fe57dadfb3deaf12f6711d3a936ff296e3db0a05e58aa",
+      "sourceSize": [
+        1346,
+        1168
+      ],
+      "sourceCoreBounds": [
+        281,
+        23,
+        1222,
+        1137
+      ],
+      "rawSourceDensity": 0.126,
+      "sourceRearHoofX": 470,
+      "xy": [
+        76,
+        131
+      ],
+      "resizedSize": [
+        170,
+        147
+      ],
+      "fullResizedRGBApreserved": true,
+      "deletedSourcePixels": 0,
+      "previewGroundResidualPixels": 0
+    }
+  ],
+  "vfx": [
+    {
+      "source": "docs/art/candidates/botuo/heavy/composite-review-v1/source-pressure-raw-v1.png",
+      "sha256": "54c649d7b5d7e39a0959966e9ddfc8a861bdd516fd006a9d2cc1daf37da2c3cd",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "alphaBounds": [
+        0,
+        33,
+        1521,
+        1024
+      ],
+      "transparentPixels": 861797,
+      "reviewSize": [
+        230,
+        154
+      ],
+      "policy": "Preserve full RGBA source incl. translucent glow, no cleanup or crop."
+    },
+    {
+      "source": "docs/art/candidates/botuo/heavy/composite-review-v1/target-impact-raw-v1.png",
+      "sha256": "b845dcd063a1e2552fa718b2595ae0a6ea5606656d6f8c379c58c7e7fea0f688",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "alphaBounds": [
+        0,
+        9,
+        1530,
+        1024
+      ],
+      "transparentPixels": 996871,
+      "reviewSize": [
+        210,
+        168
+      ],
+      "policy": "Preserve full RGBA source incl. translucent glow, no cleanup or crop."
+    }
+  ],
+  "recovery": {
+    "workspace": "/workspace/scratch/6e415327749c/shanhaijing-arena",
+    "predecessorHead": "c563cfdc53f64b39a3f429ed048c8fccc23a7726",
+    "incomingRemoteHead": "1dcead8a246a4c0dd856b1da14e0a954ed40ab4b",
+    "truncatedNormal": {
+      "path": "docs/verification/P2_HEAVY_RECOVERY/normal-truncated.bin",
+      "sha256": "9ea0723ab51bf7771622e626e30bfcc23fae611f86843f3b93017269e1fa2ee7",
+      "bytes": 717501,
+      "fullyDecodedFrames": 33,
+      "error": "image file is truncated (0 bytes not processed)"
+    },
+    "method": "Parse slow GIF blocks; divide all36 Graphic Control Extension delays by3. No pixel/palette/LZW/image blocks changed. Result exactly matches original recorded normal SHA256 and byte length; truncated input is exact prefix. This recovers original expected bytes, not a new candidate.",
+    "checks": [
+      "normal772380bytes/36frames/6720ms",
+      "slow772380bytes/36frames/20160ms",
+      "36 decoded RGB frames identical between normal and slow",
+      "all delays slow=normal*3",
+      "all four pose acceptance hashes and both VFX hashes match"
+    ]
+  }
+}

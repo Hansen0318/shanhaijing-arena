@@ -1,0 +1,53 @@
+{
+  "status": "READ-ONLY PACKING MEASUREMENT / NOT SELECTED OR INSTALLED",
+  "scope": "Lossless crop of exact accepted-review raster density; not final multi-landmark body calibration or phone quality proof. No runtime assets generated.",
+  "commonCropWith8pxPadding": [
+    93,
+    123,
+    268,
+    285
+  ],
+  "frameSize": [
+    175,
+    162
+  ],
+  "fourFrameDecodedBytes": 453600,
+  "allFourFullRGBARoundTrip": true,
+  "vfx": [
+    {
+      "source": "docs/art/candidates/botuo/heavy/composite-review-v1/source-pressure-raw-v1.png",
+      "resizedSize": [
+        230,
+        154
+      ],
+      "allRGBABounds": [
+        0,
+        5,
+        230,
+        149
+      ],
+      "croppedDecodedBytes": 132480
+    },
+    {
+      "source": "docs/art/candidates/botuo/heavy/composite-review-v1/target-impact-raw-v1.png",
+      "resizedSize": [
+        210,
+        168
+      ],
+      "allRGBABounds": [
+        3,
+        4,
+        207,
+        165
+      ],
+      "croppedDecodedBytes": 131376
+    }
+  ],
+  "additionalDecodedBytes": 717456,
+  "currentRequiredBytes": 16639660,
+  "hardBytes": 16777216,
+  "reserveBytes": 131072,
+  "availableAfterReserve": 6484,
+  "shortfallAgainstReserve": 710972,
+  "conclusion": "Simple faithful packing cannot fit the present all-required pin set. Need shared residency/transparent-only optimization proof before integration, no budget increase or downsample workaround."
+}

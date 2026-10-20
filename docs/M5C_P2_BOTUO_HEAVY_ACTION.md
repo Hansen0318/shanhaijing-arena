@@ -1,5 +1,25 @@
 # P2 猼訑 Heavy「震嶺」— F3 design candidate
 
+## 2026-10-20 — Heavy recovery VERIFIED / executable presentation decision pending
+
+Exact delivered normal/slow GIF + source/contact VFX now recovered with hash-bound visual receipt; normal truncation repaired byte-exactly, not regenerated. `scripts/verifyBotuoHeavyRecovery.py` PASS. Read-only production preflight `scripts/inspectBotuoHeavyPreflight.mjs`:16direct/4Tier/6outcome/2residency-order probes PASS. No production source or art edits. Full decision/evidence: `docs/verification/M5C_P2_BOTUO_HEAVY_PREFLIGHT.md` + `P2_HEAVY_RECOVERY/{executable-preflight,packing-measurement}.json`.
+
+True tactical hit is Tier-scaled650/633.75/617.5/591.5ms; non-tactical/air casts0ms; all events unphased. Preview contact320ms is not live timing permission. **NEXT exact player choice:** A preserve gameplay timings, tactical full poses, immediate paths beginF3/source→F4 (omit anticipation); B separately authorize/review real320ms immediate-path windup while preserving tactical timing. A recommended under user no-gameplay-change rule; neither silently selected. No repeat pose/GIF approval or release permission request. Existing user authorizes integration/deploy once contract satisfied.
+
+Current39keys16,639,660bytes, reserve131,072 leaves6,484; faithful review-raster example717,456additionalbytes does not fit. Need shared residency/transparent-only engineering, no cap raise/clarity reduction/required-key eviction. No runtime implementation/build/browser/Pages/fingerprint/phone PASS in this slice. Live prior source0fe44b3 unchanged, NOT Heavy test release. P1/P2Basic/size/KO closed, no Special/Awakening/P3/main merge. Handoff updated; future prompts one complete copyable block.
+
+
+## 2026-10-20 — Heavy delivered GIF RECOVERED / PLAYER VISUAL APPROVED / executable preflight next
+
+Recovered the predecessor's uncommitted review batch from `/workspace/scratch/6e415327749c/shanhaijing-arena` at c563cfd, without copying its stale progress files. Prior assistant delivery2026-10-20T13:06:06Z names exact normal/slow sandbox paths; player statement「work有提供heavy的gif參考，我確認核准會讓新的work繼續」is now bound in `docs/art/approved/botuo/heavy/composite-v1/acceptance.json`. Four pose acceptance hashes and two independent VFX hashes match. Normal SHA256 `2f72bc4f16cc35af773c805bdf97eb6a89f819f11d3ad0d1b9f78b35bc1cb001`; slow `a81180a5eabb7df2116776dc27714ffd985c179f863ddf865c19fa2693cf3724`. No new artwork or preview substituted.
+
+Normal on predecessor disk/index was truncated717501bytes/SHA9ea0723a…e1fa2ee7, failing full Pillow decode at frame34. Complete slow772380bytes36frames matches original manifest. Reverse only all36 GIF graphic-control delays /3: exact original normal772380bytes/SHA2f72bc4f…bc1cb001 recovered; truncated file is its exact prefix. Normal/slow decoded36frames identical RGB, total6720/20160ms, all delays3x. Archive truncated `.bin`, historical decode failure, original stale checksum manifest and corrected recovered checksums under `docs/verification/P2_HEAVY_RECOVERY/`. Reproduce read-only `python scripts/verifyBotuoHeavyRecovery.py`; do not rerun prepare over accepted preview. Historical candidate status/checksum text is superseded by receipt and recovered checksums, retained as evidence.
+
+Attachment visual mapping:7C033…F1;61C375…selectedF2;17F84…F3;2033…selectedF4;F302…superseded costume-drift F4 (EXCLUDED);D412…four-pose board. Attachment order is not F1–F4; JPEGs never replace official PNGs. Exact uploaded hashes/comparison scope recorded. Pose/VFX/GIF art approval CLOSED; companion no-FX/reduced files archived without inventing independent approval. No PLAYER PHONE VERIFIED inference.
+
+NEXT measure real Heavy tactical/Tier/non-tactical/manual-whiff event lifecycle and complete live required residency, then settle executable contract before production integration. Preview contact320ms after action start is not authorized gameplay delay. Preserve T0range1.8/CD4/coeff1.30/single-hit/no-displacement, existing Tier controls, P1 COMPLETE/P2size PLAYER VERIFIED/Basic/KO and16MiB+131072reserve. User authorizes missing integration/release only within these gates. No src/public changes, build/deploy or repeat P1/Basic tests in this recovery-only checkpoint; current source release0fe44b3 remains live. No main merge/replacement branch/P3/Special/Awakening. Successor instructions one complete copyable block.
+
+
 ## 2026-10-20 19:57 +08:00 — Heavy FOUR POSES PLAYER APPROVED / VFX + GIF next
 
 Player「好，妳繼續」responds to the displayed four-pose board and explicit F1/F2/F4 art-review gate at fffad484da54c8ca59f88c394ba870116a953a7a. Selected F1/F2/F4 PLAYER ART APPROVED; existing F3 approval retained, superseded drafts excluded. Exact hash-bound receipt: `docs/art/approved/botuo/heavy/poses-v1/acceptance.json`. Prior pose-review-pending entries are historical. P2 size defect remains PLAYER VERIFIED.
