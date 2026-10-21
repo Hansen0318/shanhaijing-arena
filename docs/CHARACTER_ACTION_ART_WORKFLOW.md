@@ -1,5 +1,9 @@
 # Character action art, VFX and animation review workflow
 
+## 2026-10-21 — P2 Special DEPLOYED / PUBLIC VERIFIED / PHONE NEXT
+
+Scoped「授權部署」receipt and final release record `docs/verification/P2_SPECIAL_RUNTIME/release.json`:536685401cfa0805b5836b057a27dd0692c46879 / Actions1092 run39593187720 build+deploySUCCESS;164bounded/Build/87guardPASS;145actualCI/local files and39complete public-fileSHA256matches. Browser1091 reused through machine-checked exact source/evidence equality, no new art/gameplay or Browser replay. NEXT only player Special phone acceptance at the release.testUrl; no wholeP2/Awakening/P3/main merge/newbranch or unchanged redeploy. Older authorization/contract/visual pending pointers are historical. Core WORK_PROGRESS/STATE top entries and Special WORK_LOG/RELEASE.md carry exact evidence/limits.
+
 ## 2026-10-21 — P2 Special BROWSER PASS / RELEASE AUTHORIZATION NEXT / NOT DEPLOYED
 
 Actual tested feature `50edd53b69010ad9b5f700c3282cb2e8acb29c6a`, Actions #1091 / run39563136667:164/164 scoped tests, build/87-file guard4614620encoded bytes PASS;4controlled Chromium/Phaser WebGL cases(normal/reduced×left/right),126native sampling comparisons,16same-clock Basic/Heavy/other legal skill/Move chaining subcases and2actual built mobile-emulation Campaign→Stage→Team→Arena cases PASS,22captures,0page errors. Reports `docs/verification/P2_SPECIAL_RUNTIME/{browser-gate,browser-verification,built-entry,ci-jobs}.json`; ledger WORK_LOG.md,4inspected screenshots retained, artifact12328207752. Native-original max<=1LSB;2BasicF3UV-rounding cases match independently retiled ORIGINAL pixels exactly(0delta), with strict control mean bound.

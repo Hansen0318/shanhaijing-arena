@@ -1,0 +1,743 @@
+{
+  "testedCommit": "50edd53b69010ad9b5f700c3282cb2e8acb29c6a",
+  "releaseCommit": "536685401cfa0805b5836b057a27dd0692c46879",
+  "browserRun": 39563136667,
+  "runtimePaths": [
+    "src",
+    "public",
+    "scripts",
+    "tests",
+    "index.html",
+    "package.json",
+    "package-lock.json",
+    "vite.config.js"
+  ],
+  "sourceEquality": "PASS",
+  "files": [
+    {
+      "path": "assets/battleRuntime-CanzUHQt.js",
+      "bytes": 1486487,
+      "sha256": "65ed4b53466605df3ce4633fed7a089672720181c70684749a8be6d2a3382c9e"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicContact.png",
+      "bytes": 23940,
+      "sha256": "9fa8dc4ff29f5b6741e972670a4344df0805e3ab43e7c1007741adfc5e4bf513"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicPoses.png",
+      "bytes": 122498,
+      "sha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-basicSource.png",
+      "bytes": 24791,
+      "sha256": "01de21c7d55baf6b35922859d43c12aaf01f05dfa21809af34b85f3a7ff7dc86"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-battleIdle.png",
+      "bytes": 25140,
+      "sha256": "3fc4b62aa3bcbf490f1dd7becc745de3b859de46fed170335e19d10c11400441"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/botuo-battleMove.png",
+      "bytes": 158226,
+      "sha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png",
+      "bytes": 32104,
+      "sha256": "5a4e195ebca765d82672a0023ce990c5f15315ff023e1b24dd93f21ce572ef90"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/jiuweihu-battleMove.png",
+      "bytes": 127746,
+      "sha256": "853e551ee7f1b7d79cd3047596f6f7923260236633060567552ccdb7760826f9"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/lushu-awakeningCSource.png",
+      "bytes": 2754,
+      "sha256": "c231ff7fe06c68557c766df131223395bc5d5c337fd40ae1144a48ced726820b"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleIdle.png",
+      "bytes": 37752,
+      "sha256": "a2154800b7a89de2977e7a81453a961eeffe544c2e5637c5d573346f11809b9c"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleKo.png",
+      "bytes": 160775,
+      "sha256": "1f76985f4e39e466919440b99ff62ad3382aec0748a48ad453300ad8851b177f"
+    },
+    {
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleMove.png",
+      "bytes": 1021517,
+      "sha256": "2553208b199638d8a3d54337e3fd36625ab8777ffc290defde653e7c55f78255"
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavyContact.png",
+      "bytes": 49350,
+      "sha256": "cc4496ce23ab43f3ecf89ab9410caa287c7c267d0da43f424cdcc7fe3cb1b92b"
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavyPoses.png",
+      "bytes": 135352,
+      "sha256": "1a9622806ace2a9e6bb5b5b0b88bc5e1b5a0800f17b4f97b83462e1da74d20dc"
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavySource.png",
+      "bytes": 55428,
+      "sha256": "4c17e65aee4fed9942914c0558f8dd2d32e921fed391fb34040c5d63a9284132"
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/chiru-battleMove.png",
+      "bytes": 111694,
+      "sha256": "a47cf90429ee2dc729dfd17042d9c2335a2f267f4334fa23d31b99435d335336"
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/jiuweihu-battleMove.png",
+      "bytes": 126786,
+      "sha256": "d247724edd204b97e94439ff5fa6143e0280f9ec5c021fa5de6386e1e234f927"
+    },
+    {
+      "path": "assets/botuo-heavy-runtime-v1/xingxing-battleMove.png",
+      "bytes": 1014025,
+      "sha256": "8d396f0fb1f73383e5951e97b7b246158b7c1c97dd33fcebccfc6ef6dbc99edd"
+    },
+    {
+      "path": "assets/characters/botuo/battleIdle-4f.png",
+      "bytes": 31355,
+      "sha256": "86cb5c36d7e7a7862287da77e36ec77d04198311fb37f97fcbd46a73f175f6a0"
+    },
+    {
+      "path": "assets/characters/botuo/battleIdle.png",
+      "bytes": 47136,
+      "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8"
+    },
+    {
+      "path": "assets/characters/botuo/battleKo-trimmed.png",
+      "bytes": 158388,
+      "sha256": "4a54caf87303df0eb856d5385748c1a88fb1604534851a536eed16d76b30ebf2"
+    },
+    {
+      "path": "assets/characters/botuo/battleKo.png",
+      "bytes": 157440,
+      "sha256": "037829ec32333a0179414a9ee8ccb57b4eb3ddb83004aa93aea5c78914fc9c57"
+    },
+    {
+      "path": "assets/characters/botuo/battleMove-4f.png",
+      "bytes": 158292,
+      "sha256": "fd9083cacfc38d1eb1fd17e5749615e9a51781a83f0d3dfa3759c1de41c5f26b"
+    },
+    {
+      "path": "assets/characters/botuo/identity.png",
+      "bytes": 14098,
+      "sha256": "79a210c187745886fb9c1fce3877512b275998bc17c7c537369fdc6f2b8dae5b"
+    },
+    {
+      "path": "assets/characters/botuo/portrait.png",
+      "bytes": 32501,
+      "sha256": "f7ceff655ab04902b434069bb5862d3211b3353c997e4e535743c2ff92bca864"
+    },
+    {
+      "path": "assets/characters/chiru/battleIdle.png",
+      "bytes": 44131,
+      "sha256": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d"
+    },
+    {
+      "path": "assets/characters/chiru/battleKo.png",
+      "bytes": 905147,
+      "sha256": "f97e369fe2c6ae2d0fff1c51c96e487279b4bbe1e614925a7d1c2c4dc2a2796d"
+    },
+    {
+      "path": "assets/characters/chiru/battleMove-4f.png",
+      "bytes": 112708,
+      "sha256": "d0839a1630f21d1b59dd0363c35e94886d3983290cac6e339f59c4afa93bc74f"
+    },
+    {
+      "path": "assets/characters/chiru/identity.png",
+      "bytes": 53023,
+      "sha256": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a"
+    },
+    {
+      "path": "assets/characters/chiru/portrait.png",
+      "bytes": 39490,
+      "sha256": "bc2568ddf8b6d80c3f3f818dce646b66515dd7f0c130fa4bd02249333e44b245"
+    },
+    {
+      "path": "assets/characters/jiuweihu/battleIdle.png",
+      "bytes": 32063,
+      "sha256": "394497ffa5314a4559fee10d58d799fab9be59b282a31bb3ffebb02670ed6640"
+    },
+    {
+      "path": "assets/characters/jiuweihu/battleKo.png",
+      "bytes": 195917,
+      "sha256": "fe8a29e136f0e487e394e467d9acc0ccd8662c42351bb7ab709990320cb4d209"
+    },
+    {
+      "path": "assets/characters/jiuweihu/battleMove-4f.png",
+      "bytes": 128061,
+      "sha256": "4394bec8581c79e5b6753dcbeafa63fcf8664482d66a457d03b825c40adbb169"
+    },
+    {
+      "path": "assets/characters/jiuweihu/identity.png",
+      "bytes": 54502,
+      "sha256": "f8fe054e7a0de50d66e62081ec0fd53e493674cd707d5f2e28be098ab277dd0d"
+    },
+    {
+      "path": "assets/characters/jiuweihu/portrait.png",
+      "bytes": 38601,
+      "sha256": "b2df8fab63cd71a538622914b0c0d8eabcfc104bc245fd316beaf5e24ff573ef"
+    },
+    {
+      "path": "assets/characters/lushu/awakening-runtime-v1/A-impact.png",
+      "bytes": 4816,
+      "sha256": "9203187e4f0ff2f2d216573232b2011bc92d7deab77a0e19daabf2d414484e0f"
+    },
+    {
+      "path": "assets/characters/lushu/awakening-runtime-v1/A-source.png",
+      "bytes": 3674,
+      "sha256": "907ded470c53345a78576a9e653517094638103169b0220eeaa8a5da7cf1597d"
+    },
+    {
+      "path": "assets/characters/lushu/awakening-runtime-v1/B-impact.png",
+      "bytes": 11880,
+      "sha256": "2f420d07b9f4dc657f7c03984c4a714a341d3790777cf16bf943d8f545b3e675"
+    },
+    {
+      "path": "assets/characters/lushu/awakening-runtime-v1/B-source.png",
+      "bytes": 8187,
+      "sha256": "6e1dfbfd19e44d9fd8c1efff036b85a019427f199d8c4ecd3d0a41c5c351d30c"
+    },
+    {
+      "path": "assets/characters/lushu/awakening-runtime-v1/C-impact.png",
+      "bytes": 7312,
+      "sha256": "5cf93d209a18d05ec0928412f61ad4a066d5007c2062a7550c43a27f277c7744"
+    },
+    {
+      "path": "assets/characters/lushu/awakening-runtime-v1/C-source.png",
+      "bytes": 2842,
+      "sha256": "5dc914fe070263c76a4d641f5b879fc706bfd7b11daae3c8345dea24f34c0fff"
+    },
+    {
+      "path": "assets/characters/lushu/awakening-runtime-v1/poses-5f.png",
+      "bytes": 64019,
+      "sha256": "7f8a948ab69d8883f5152a0eee86f7e5ff060d183b7d58aef0552360372dfe22"
+    },
+    {
+      "path": "assets/characters/lushu/basic-blade.png",
+      "bytes": 5050,
+      "sha256": "8f90ebfc918dfe1cd77845b1502290dd572f636179edcada0876dae2a32475b1"
+    },
+    {
+      "path": "assets/characters/lushu/basic-contact.png",
+      "bytes": 2300,
+      "sha256": "2faada0f95507b0616157338b90a976145a870cb03a354a16c9fe5c6761d46f6"
+    },
+    {
+      "path": "assets/characters/lushu/battleBasic-4f.png",
+      "bytes": 51713,
+      "sha256": "2bc2710fdbb5c031339f876d1f69486899ff293711d7dc1b3407dd59ecbcb690"
+    },
+    {
+      "path": "assets/characters/lushu/battleHeavy-4f.png",
+      "bytes": 52398,
+      "sha256": "20762908aa65cb829e1506ae875a6beec9b637f94133f9ab4b71a9242b116334"
+    },
+    {
+      "path": "assets/characters/lushu/battleIdle-4f.png",
+      "bytes": 70848,
+      "sha256": "ca123eb6eb15c1f32fab2c9d732d40d7db279ed2e4332a1043172d3fb0bef327"
+    },
+    {
+      "path": "assets/characters/lushu/battleIdle-static.png",
+      "bytes": 18033,
+      "sha256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2"
+    },
+    {
+      "path": "assets/characters/lushu/battleKo-trimmed.png",
+      "bytes": 151575,
+      "sha256": "dbd1fc4bb7e2512b26c6b841ab8651765cd5f5324f5d3d08fe1b312e682abf0a"
+    },
+    {
+      "path": "assets/characters/lushu/battleKo.png",
+      "bytes": 150698,
+      "sha256": "03c4e5a75546e8dc67044f42a9ce958bba829e423561e60a2665d7494bf77aff"
+    },
+    {
+      "path": "assets/characters/lushu/battleMove-4f.png",
+      "bytes": 54317,
+      "sha256": "6ecceda53ceb1ed23fbbe2c75166c65b365af2ee23f3122d7531165ed1beff74"
+    },
+    {
+      "path": "assets/characters/lushu/battleMove-trimmed.png",
+      "bytes": 54173,
+      "sha256": "b5c592d570974e2fd03524fc2194d1213f84b31b07e3e1a09177e2af790236f6"
+    },
+    {
+      "path": "assets/characters/lushu/battleSpecial-4f.png",
+      "bytes": 22107,
+      "sha256": "e7e5c1eebfab6b2ae9dd49961aee586180ce5809e99b70c48f3176a6d04d423a"
+    },
+    {
+      "path": "assets/characters/lushu/heavy-impact.png",
+      "bytes": 10339,
+      "sha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65"
+    },
+    {
+      "path": "assets/characters/lushu/heavy-wind.png",
+      "bytes": 11447,
+      "sha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec"
+    },
+    {
+      "path": "assets/characters/lushu/identity.png",
+      "bytes": 35708,
+      "sha256": "bf82ac4f64f517a5503f6a3cabc53e046df8ef9ce16bf9ba5dba8d6567f497a1"
+    },
+    {
+      "path": "assets/characters/lushu/portrait-face.png",
+      "bytes": 35172,
+      "sha256": "beb57539d9b115517cf3fea07ec1fb60abb46c52f4bc53b14676406092952351"
+    },
+    {
+      "path": "assets/characters/lushu/special-impact.png",
+      "bytes": 16246,
+      "sha256": "8d5c695c5c27233ec9525bacba2e56b705d1e68aaf88461414615ff4b8e922ab"
+    },
+    {
+      "path": "assets/characters/lushu/special-wind.png",
+      "bytes": 11593,
+      "sha256": "4b787f80490e463db71b6e76cda1efd0a6a86fe9a4fd7a34e233772ad99bb501"
+    },
+    {
+      "path": "assets/characters/xingxing/battleIdle.png",
+      "bytes": 37808,
+      "sha256": "1004c76a0ea3e5e942a60137cee5628752220edcfb8cd4c453a43df7e54e3c26"
+    },
+    {
+      "path": "assets/characters/xingxing/battleKo.png",
+      "bytes": 158535,
+      "sha256": "e9bf9bbd3684aeb45422d53046eb2c7fd218da058ee9f48d582ac54a6a5ae4e8"
+    },
+    {
+      "path": "assets/characters/xingxing/battleMove-4f.png",
+      "bytes": 1008507,
+      "sha256": "ae8c3c2c8504d999eb14d8790ee4ebcf74680f96e12a01c178d5de124992290f"
+    },
+    {
+      "path": "assets/characters/xingxing/identity.png",
+      "bytes": 56234,
+      "sha256": "2886b52e91f2c2f839f9ccba415e5453c90cda105e5377dd371cd042658dbc21"
+    },
+    {
+      "path": "assets/characters/xingxing/portrait.png",
+      "bytes": 45021,
+      "sha256": "ae9c7a38628bca93a419335d8c59e6ba583176a966d85a74571eae53b4f54651"
+    },
+    {
+      "path": "assets/index-BTs-O4-h.css",
+      "bytes": 23164,
+      "sha256": "d132dc331b3f60f6c24df12328e5b9fb61481cb7ef6f9b616825ba50077be9da"
+    },
+    {
+      "path": "assets/index-Cvroc7Nx.js",
+      "bytes": 131784,
+      "sha256": "ee7e31e47fb97cb3668245fe92acfbd39db4095ed1c87a59950831e0434957cb"
+    },
+    {
+      "path": "assets/pipeline/actor-strip.svg",
+      "bytes": 249,
+      "sha256": "b26a8d2a7c6f015ca58abefdde8b01e93c6e6c44ae5b5faccf5005cc2d130700"
+    },
+    {
+      "path": "assets/runtime-packing-v1/botuo-battleIdle.png",
+      "bytes": 25193,
+      "sha256": "ce9838208b4e1ecc58f5bdb0cf70cf6200e0426ab17216daf9e1d1cebc92a82f"
+    },
+    {
+      "path": "assets/runtime-packing-v1/chiru-battleMove.png",
+      "bytes": 112306,
+      "sha256": "9c434853c15b9f744b29ecb2495ab4ef96894dec071dcb9db740343f4b0e0f85"
+    },
+    {
+      "path": "assets/runtime-packing-v1/jiuweihu-battleKo.png",
+      "bytes": 197980,
+      "sha256": "43f0e143e665eadad03352fd78b4b363f9b072700fbb58498635e8eb705a52a4"
+    },
+    {
+      "path": "assets/runtime-packing-v1/lushu-battleBasic.png",
+      "bytes": 51449,
+      "sha256": "d3920ab4129868f71a3f3a08d29262773cc75ee08da80610fd9e14af904e2ac9"
+    },
+    {
+      "path": "assets/runtime-packing-v1/lushu-battleHeavy.png",
+      "bytes": 51992,
+      "sha256": "3f9f501520886eed5d2f790e603481575f17ab2196357dd1f5a69ca8d5cc3a9f"
+    },
+    {
+      "path": "assets/runtime-packing-v1/lushu-battleSpecial.png",
+      "bytes": 21979,
+      "sha256": "ec19456d1b7d067f0a56ae98ce2b1d83554cef3e5318e7faf2e1b579d81320cd"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-basicContact.png",
+      "bytes": 23921,
+      "sha256": "2c86503c0b5ef1f4572651942e9b22103837ba3fda7c8ebd4f3e4cd95faf44bb"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-basicPoses.png",
+      "bytes": 122080,
+      "sha256": "d6ea5204df99e37ec1bbe5bdf9b165d40a7aa1e6e6992d84e4cd3bcab870be57"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-basicSource.png",
+      "bytes": 24769,
+      "sha256": "64eedf28ee64795b1348000a5972a53f3514a782a20567865d05c41c049aab52"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-battleIdle.png",
+      "bytes": 47089,
+      "sha256": "e04cec55ffe4d467c4d3e86d6cbedb6951a25fe91425e7cdcbe810511d023084"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-battleKo.png",
+      "bytes": 158294,
+      "sha256": "c7676d1034c3907f446e14146b42d03ae520fca99879aad3db99df9c6a368957"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-battleMove.png",
+      "bytes": 157159,
+      "sha256": "ec20efdae76ce483ff84740898872e22a880423d2472b8a062327cfed8548a37"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-heavyPoses.png",
+      "bytes": 135047,
+      "sha256": "bdc06bd7d550f969cca551b15bb6de42bbcaa2255e84b7a9ab062b6564f5f429"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-specialActivation.png",
+      "bytes": 126042,
+      "sha256": "37f6ea67c7ee29a846fa5f8546c19bf5493b9e849659c0c1688da38f8c5d2da7"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-specialPoses.png",
+      "bytes": 145899,
+      "sha256": "3f7fed1a9b9d6f60aa9cf0522c0245af2d42145079e170ba6942817d894e5e90"
+    },
+    {
+      "path": "assets/special-runtime-v1/botuo-specialState.png",
+      "bytes": 51745,
+      "sha256": "d86bedae11b9517715c6f5b7cd32ec4c2e2f13d23316e8bb8637c42a7d81302a"
+    },
+    {
+      "path": "assets/special-runtime-v1/chiru-battleIdle.png",
+      "bytes": 44025,
+      "sha256": "c1f6849c41daadda43f01bcf7bd51875dd5a5125cecf0a10c848a33663c5eae8"
+    },
+    {
+      "path": "assets/special-runtime-v1/chiru-battleKo.png",
+      "bytes": 865249,
+      "sha256": "d8af126e055a4d6093c9e587c2303771160d369211f9c825eefaef0aab97f12c"
+    },
+    {
+      "path": "assets/special-runtime-v1/jiuweihu-battleIdle.png",
+      "bytes": 31803,
+      "sha256": "a670e38d5dfbda7c6715c9326e7271b18d6d51570737690c483dffaab1ddfb55"
+    },
+    {
+      "path": "assets/special-runtime-v1/jiuweihu-battleKo.png",
+      "bytes": 197208,
+      "sha256": "e735e35f7f78af055c545bc04ab4714a92d2c9c75d6a95bba2da14d936e9196b"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-awakeningAImpact.png",
+      "bytes": 4684,
+      "sha256": "000c059dd5e5ba482618e08ab1077cabafbbabd5dbec382c7ff28e2bf756e23a"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-awakeningASource.png",
+      "bytes": 3565,
+      "sha256": "c6ab35144a8010b1e177fb63e25a7d11a99b8167b3a36eaf96008381df3e5be2"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-awakeningBImpact.png",
+      "bytes": 11759,
+      "sha256": "09c329d0744a53fd5ab59111ae448d60439a7285fe92adcc265ec0beea023a2a"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-awakeningBSource.png",
+      "bytes": 8091,
+      "sha256": "22114932f165760d7087dbbcfe3a63b26a40cfeec4ce3392e94aaaa3fb0888b1"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-awakeningCImpact.png",
+      "bytes": 7125,
+      "sha256": "c06432a64ca3fcde16f95fab3ce1cbbadcf394045ac39d2b8b42fea8e36b10db"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-awakeningCSource.png",
+      "bytes": 2698,
+      "sha256": "b446a76c1b32d6810013c3d2f861149e5a6d6e40814a642e0d876b3dcca7eb24"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-basicBlade.png",
+      "bytes": 4951,
+      "sha256": "8e72c3121d3f95166c8c456fc58f08f49b55234717a88980d1c9100c57cca222"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-basicContact.png",
+      "bytes": 2181,
+      "sha256": "d52cfd9ecf8ed96f6650e0167f4bb963935782b8f9e0d052eccbabd5dbc978f8"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-battleAwakening.png",
+      "bytes": 63389,
+      "sha256": "ef9021316a7983ee77e15d550045e0454ecaa706f8325031c4949d38361f0abe"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-battleBasic.png",
+      "bytes": 51330,
+      "sha256": "ca24d04ea7d90d663440cf8440e7df4ea62089c23eef9e51d4fd200b6c978a5e"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-battleHeavy.png",
+      "bytes": 52007,
+      "sha256": "37830cb6fafef9d05a7346f5c25b79dc60426b225809fdc6972c31d3e4d536c9"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-battleIdle.png",
+      "bytes": 17934,
+      "sha256": "c3fc923e7fefe6f6249c30b6dee6e70f33639a5ffe2a7d5fd9ce749fd011a5df"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-battleKo.png",
+      "bytes": 151344,
+      "sha256": "29ee68b70174383cf9539a068623b95da4b8dd84643a169db3e1484cfcfdbf01"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-battleMove.png",
+      "bytes": 54158,
+      "sha256": "9b4000858f07ec30957812da9fe522ee015ecfc6a33c71231ec577b151a268c7"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-battleSpecial.png",
+      "bytes": 22004,
+      "sha256": "b6ba5ee504eb4c54951e05400d3d33af6c2c53460a5ab57ea3231fa78b5ed9e3"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-heavyImpact.png",
+      "bytes": 10339,
+      "sha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-heavyWind.png",
+      "bytes": 11418,
+      "sha256": "0660b40eeb9d64c7b2c37d92c281e078fdb127b849efdf3a1acd7607496a01df"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-specialImpact.png",
+      "bytes": 16162,
+      "sha256": "a402af849601340993955c3d5b067d8b2fb1eaeed36028e069ff07f47f5f8174"
+    },
+    {
+      "path": "assets/special-runtime-v1/lushu-specialWind.png",
+      "bytes": 11584,
+      "sha256": "bdd7d40b3e18e3660bd89b05209a636e933b4ad7350dc3b3f2d7a266ae47597d"
+    },
+    {
+      "path": "assets/special-runtime-v1/xingxing-battleIdle.png",
+      "bytes": 37591,
+      "sha256": "48a43cee2a211140f2868c654afda2b3c1594542f0b2498661585ffbee415a87"
+    },
+    {
+      "path": "assets/special-runtime-v1/xingxing-battleKo.png",
+      "bytes": 160640,
+      "sha256": "230931f424948db39c171fad7b2093c485b10483efee07baff77529bab523aef"
+    },
+    {
+      "path": "campaign/chapter-1.svg",
+      "bytes": 479,
+      "sha256": "99c4b84ee23c65d621e090e253bb4492eff1daed85bc485f99ccc674b6e7bc63"
+    },
+    {
+      "path": "campaign/chapter-2.svg",
+      "bytes": 479,
+      "sha256": "e041c3aaf97e2b4def2d9cf2ea4146c0a6f715926c6a5f1f7194066b9247f479"
+    },
+    {
+      "path": "campaign/chapter-3.svg",
+      "bytes": 479,
+      "sha256": "df3f5655798e64b2f7d4c22c224fc7a271694111cea8093a4962f98bdcf12b7b"
+    },
+    {
+      "path": "campaign/chapter-4.svg",
+      "bytes": 479,
+      "sha256": "3115ee593d54166bebd3964b3fbfa43e25fcb0d7c4efc562c09f08b1ea7c2b77"
+    },
+    {
+      "path": "campaign/chapter-5.svg",
+      "bytes": 479,
+      "sha256": "6d84cf68874b7d099f78fe84259639e575303b53f308dc1508117bf0be918504"
+    },
+    {
+      "path": "campaign/chapter-6.svg",
+      "bytes": 479,
+      "sha256": "6e24209789d5340686c93706502f27626d8fdfbc6dac1ac56be0113baf49a131"
+    },
+    {
+      "path": "campaign/stage-1-1.svg",
+      "bytes": 478,
+      "sha256": "2ff078a34edf5da15c2783a24cf506cb66bd1ec22ea4cbdca3e6e38ede42a6d2"
+    },
+    {
+      "path": "campaign/stage-1-2.svg",
+      "bytes": 476,
+      "sha256": "a968aed73e9863deabc11ccd413d73721d1e99df7cc11d92ee4d6966d8762285"
+    },
+    {
+      "path": "campaign/stage-1-3.svg",
+      "bytes": 487,
+      "sha256": "cfd6cd1792b3d21e004e62c922dc62ee947402dc7a8364ba6ee70cffc4c55b65"
+    },
+    {
+      "path": "campaign/stage-1-4.svg",
+      "bytes": 495,
+      "sha256": "37f18fa6195e8192bfbaca53f17f7ccb8a150fe031a665290846b9020538b61b"
+    },
+    {
+      "path": "campaign/stage-1-5.svg",
+      "bytes": 494,
+      "sha256": "9d33d0644619dcbdce63d1da594eb801a1acd2c5178f8de81acbb0e8f0411013"
+    },
+    {
+      "path": "campaign/stage-2-1.svg",
+      "bytes": 478,
+      "sha256": "f09447550de3f24933f018192e400407a1e9c5ba5ce4e7b286b55804824cbb67"
+    },
+    {
+      "path": "campaign/stage-2-2.svg",
+      "bytes": 476,
+      "sha256": "5a5c44c83ffa043fd42133a554b0ebce33986735dbc9da67541178883053574d"
+    },
+    {
+      "path": "campaign/stage-2-3.svg",
+      "bytes": 487,
+      "sha256": "9067b2f95a300ef74045d3fd4031de491c1418acaa88e0b64327aaabb10fbafc"
+    },
+    {
+      "path": "campaign/stage-2-4.svg",
+      "bytes": 495,
+      "sha256": "5822f8502fce36407bec06a0222ad0e8bd252489f8d982c7ec4aeb5866fcb334"
+    },
+    {
+      "path": "campaign/stage-2-5.svg",
+      "bytes": 494,
+      "sha256": "415c2614b95ffe37ad94c5fc265fb068efe8df268bc89d8dc3e423a88423bb87"
+    },
+    {
+      "path": "campaign/stage-3-1.svg",
+      "bytes": 478,
+      "sha256": "7f1326db552fd3a8834a053c36d372e1019f068eeba98ea867e13ef0f191bbac"
+    },
+    {
+      "path": "campaign/stage-3-2.svg",
+      "bytes": 476,
+      "sha256": "af4f303cc509d658c72cff849fbf3bf479f8d867092f8532dd2da30a509ef954"
+    },
+    {
+      "path": "campaign/stage-3-3.svg",
+      "bytes": 487,
+      "sha256": "2153ec0be396300f80f10c519afa132f447f1d3e3f407f5243aca5462c38232a"
+    },
+    {
+      "path": "campaign/stage-3-4.svg",
+      "bytes": 495,
+      "sha256": "e317c921e6ea7af5acbd407d95f2b531462ba596945fab38e763ca5fd92f9e6d"
+    },
+    {
+      "path": "campaign/stage-3-5.svg",
+      "bytes": 494,
+      "sha256": "39c5faa70d165fef402640c360a6777c9fae59d644a2ac69e254100670ccc2c6"
+    },
+    {
+      "path": "campaign/stage-4-1.svg",
+      "bytes": 478,
+      "sha256": "30c5aaadfc51504c5c161ae3638889f303df091e667907a0191e0d26e7b93dc1"
+    },
+    {
+      "path": "campaign/stage-4-2.svg",
+      "bytes": 476,
+      "sha256": "b1acce3b608ab545f5361a614980cbd4e391a528118f4de308c137fbf5dc5785"
+    },
+    {
+      "path": "campaign/stage-4-3.svg",
+      "bytes": 487,
+      "sha256": "676b8db8173c65b25c4c9080c170cf7c8acb17979f771679015c27d3bf98b07e"
+    },
+    {
+      "path": "campaign/stage-4-4.svg",
+      "bytes": 495,
+      "sha256": "73ad7ed1e72951286ba684cc2ce100a21d96c9cfdaecc7b57375b2d78af239bf"
+    },
+    {
+      "path": "campaign/stage-4-5.svg",
+      "bytes": 494,
+      "sha256": "f0c3e3a9ba395baaa119934c024b8b59e72fcb03ff9fabe15a9097356a00cbde"
+    },
+    {
+      "path": "campaign/stage-5-1.svg",
+      "bytes": 478,
+      "sha256": "67ecdbbf256ae21678bd7b021faa284023f08895a8c92c32b846011fc05dd48e"
+    },
+    {
+      "path": "campaign/stage-5-2.svg",
+      "bytes": 476,
+      "sha256": "969a399fa214ba142cc360a4a500d9dc71d5acbe8dcc5fa0ad069c50a661c650"
+    },
+    {
+      "path": "campaign/stage-5-3.svg",
+      "bytes": 487,
+      "sha256": "906a348e685431f0853de73723d7dea654ae813625d4878e683f8251cc8d80b5"
+    },
+    {
+      "path": "campaign/stage-5-4.svg",
+      "bytes": 495,
+      "sha256": "139f4420786b549745d81c1579ddca5ac7f74cb887f53fae3d91fe41fc80522b"
+    },
+    {
+      "path": "campaign/stage-5-5.svg",
+      "bytes": 494,
+      "sha256": "2a2c97f3350c135d308e8d07c74404432325d31828da4c3a3efce18cc580a71d"
+    },
+    {
+      "path": "campaign/stage-6-1.svg",
+      "bytes": 478,
+      "sha256": "7a3ee7261782d8a97777afdc8391ac6e91d09714628318f9e00f90f92abd3c27"
+    },
+    {
+      "path": "campaign/stage-6-2.svg",
+      "bytes": 476,
+      "sha256": "167ecae8bf7f9431bdebe8f333d206797299ab5a351dd2ad13f22c8a2c4a0912"
+    },
+    {
+      "path": "campaign/stage-6-3.svg",
+      "bytes": 487,
+      "sha256": "492b80e3ce99872ba25123470e03c1b4b2ae5f36ac6ca4dc666d780494b2d798"
+    },
+    {
+      "path": "campaign/stage-6-4.svg",
+      "bytes": 495,
+      "sha256": "9a9352ebcfa712673886cd1b5180c44ac4bdd6f0757159b65605a4ffec30d852"
+    },
+    {
+      "path": "campaign/stage-6-5.svg",
+      "bytes": 494,
+      "sha256": "b0a5332eac1922a8401f9f7ec999970b07cf1c93407a24581fe3085e08398b16"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1491,
+      "sha256": "adc84824ed489119e1023541c6510731d5d037669f39d52bb9657002a736bfbb"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+2026-10-21T11:36:43.1003975Z Asset guard PASS { files: 87, bytes: 4614620 }
+2026-10-21T11:36:45.6347239Z # tests 164
+2026-10-21T11:36:45.6347449Z # pass 164
+2026-10-21T11:36:45.6347554Z # fail 0
+2026-10-21T11:36:45.6711464Z [36;1mconsole.log('Authorized release: exact Browser-tested runtime source, receipt/report hashes and build inventory PASS');[0m
+2026-10-21T11:36:46.2459348Z Authorized release: exact Browser-tested runtime source, receipt/report hashes and build inventory PASS
+2026-10-21T11:37:05.2511213Z Reported success!
+2026-10-21T11:37:05.2845572Z Evaluated environment url: https://hansen0318.github.io/shanhaijing-arena/
