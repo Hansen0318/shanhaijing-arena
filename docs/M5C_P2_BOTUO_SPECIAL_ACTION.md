@@ -1,4 +1,16 @@
-# P2 猼訑 Special「守群」— F3 APPROVED / REMAINING POSE REVIEW NEXT
+# P2 猼訑 Special「守群」— F3 APPROVED / FOUR-POSE REVIEW PENDING
+
+## 2026-10-21 — Special F3 APPROVED / F1-F2-F4 CANDIDATES READY
+
+Player「好這個我確認ok，紀錄下來後繼續」accepts the displayed Special protective key pose/design after immediate Special→Heavy with ongoing mitigation explanation. Receipt `docs/art/approved/botuo/special/f3-v1/acceptance.json` binds exact F3 SHA25600dc78f20e09da6f8c55b67497653046cb5c7aa6253df2ffaa3d7b41c7bdf8a6/reviewed92ce4db. Early approval checkpointa9ea66955702b0b0b0e6e852f6de00e004d12c40 pushed before new generation. PR1 open/unmerged, samefeature branch. Prior first-pose-pending entries below are historical.
+
+**CURRENT PLAYER GATE:** `docs/art/candidates/botuo/special/poses-v1/four-pose-review.png` (dark QA alongside). New individual F1 low/open initiation, F2 inward lifting transition, F4 open/lowered recovery are CANDIDATES; exact accepted F3 reused without new generation. Built-in Imagegen sources/prompts, three initial torso-costume-drift drafts (SUPERSEDED/EXCLUDED), targeted correction prompts, selected source hashes/PNG-alpha/full decode/40px in-memory exact padding and same0.44raw-pixel-scale light/dark boards in poses-v1. Different equipment projections/small costume details remain player art judgment, not exact-pixel identity or runtime calibration. All full source pixels retained; no height-based character fit, runtime-normalized strip or GIF produced.
+
+Existing mechanism retained: immediate Special mitigation allows available subsequent skills/movement while status persists. Prior32direct/8lifecycle/2AI/4paired-damage evidence unchanged and reused, including SAME-clock Special→Heavy. Preview sequence roles do not authorize a startup/global cooldown, hold-to-protect, delay untilF3 or forced completion before next skill. Persistent status VFX must stay independent of short body action and survive legal later skills until true expiry/cleanup; no fake damage/contact. T0 self25%4s/CD8/windup0, existing T1+one-ally protection/control/KO retained.
+
+Only docs/art changed; src/public/workflows/oldapproved sources unchanged. PNG/hash/QA/protected-path/diff checks PASS, no unchanged runtime tests/build/browser/deploy/P1/Basic/Heavy replay. Heavy COMPLETE/PLAYER VERIFIED, liveacf4547,16MiB+131072reserve/42keys16622164bytes/23980extra retained; new masters are not loaded or budget-fit claims. Five known suite failures retained, no whole-suite PASS. This checkpoint[skip ci]; latest remote is containing feature commit, fetch again.
+
+**NEXT ONLY:** player reviews selected F1/F2/F4 alongside accepted F3. After explicit pose acceptance record exact sources/statement before independent activation+actual-recipient state VFX and preview Gate. No VFX/GIF/newtiming/runtime/phone or wholeP2 approval inferred; no P2Awakening/P3/main merge/replacement branch/TD. Canonical successor docs/handoffs/P2_BOTUO_SPECIAL_NEXT_WORK.md; all future instructions one self-contained copyable block.
 
 ## 2026-10-21 — Special F3 PLAYER ART APPROVED / remaining poses next
 

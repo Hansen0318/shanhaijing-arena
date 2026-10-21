@@ -1,0 +1,17 @@
+{
+  "F1-initiation-master.png": "47991e48daf386071438000f888bc75aea7910b859aa7259cca3456beaee9183",
+  "F1-revision-prompt.txt": "64c4ccac71634efb26b263e01234806e20ac812a4b24fa2f6de30360b769d844",
+  "F1-superseded-chest-drift.png": "bb37a82afd03069dfd0214d4fa41eb6f821545d3c5bfee74f4c7afa91fc6586b",
+  "F2-inward-master.png": "e7325e1a4a2fd1f6215823b6797bc70ed5b7e7ddc9c72ee8420a746b5497dd36",
+  "F2-revision-prompt.txt": "719706ed916902ab0d550ebc6a60bcdd02f8885af051ea156e044090c0afb7c1",
+  "F2-superseded-chest-drift.png": "c528f6072e2bb37ad60075a4dd10dd5065b81bddcf868e336fae82bc2abbd336",
+  "F4-release-master.png": "733e950c4c6f5c7fbbbcfbcb7b3a1e939217ef983aac8bbc1f712ffec9ae8df0",
+  "F4-revision-prompt.txt": "d77618a38632eade8b5d21549878804830fafb3eea92c7bb8d00bd6bbb471779",
+  "F4-superseded-chest-drift.png": "45fbae57be6e260387cf9ec6194d4f829e2682b158e579cfee6083ffaec3310e",
+  "README.md": "d757e7c006c01af763105a9ae6110886009ce6b1ecd114d1edb62a1d7bb45a68",
+  "four-pose-dark-QA.png": "891cc7ab5c6ab1675ee626bcde9d4867ac1fa3f2a6b2c65e4289b72452dfbac5",
+  "four-pose-review.png": "e40114361de5b15b5aa6d632bcc6e44d4958282e2be09c5eac16b61ce613b893",
+  "inspect_poses.py": "696074a41bd7e0fd670d437c50b06082421b53bf918bed138d780cbc1859d776",
+  "prompts.json": "18d479c1c77df8c06bd523c49e28fba5879ce34e5bb1bb5d8a8529ee42dcd1bc",
+  "verification.json": "4af8ea05532f76a88fc6eb7df1fdb0c015c1dac8dd08f0ba48d37f80a6272a63"
+}
