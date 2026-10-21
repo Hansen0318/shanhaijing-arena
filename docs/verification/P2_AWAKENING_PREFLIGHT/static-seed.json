@@ -1,0 +1,127 @@
+{
+  "kind": "Read-only catalog/Tier projection; no BattleSession simulation or gameplay verification",
+  "sourceCommit": "dd3624141767e6e219174b539674a98312c2b2c1",
+  "tiers": {
+    "T0": {
+      "id": "P2.awakening",
+      "name": "鎮岳",
+      "category": "awakening",
+      "targetingRule": "enemy",
+      "cooldown": 14,
+      "windupMs": 0,
+      "range": 2.2,
+      "coefficient": 1.7,
+      "areaCenter": "caster",
+      "areaRadius": 2.2,
+      "canCrit": false,
+      "telegraph": {
+        "telegraphMs": 900,
+        "projectileTravelMs": 0,
+        "dodgeable": true,
+        "dangerShape": "circle",
+        "dangerRadius": 2.2,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "protection": []
+    },
+    "T1": {
+      "id": "P2.awakening",
+      "name": "鎮岳",
+      "category": "awakening",
+      "targetingRule": "enemy",
+      "cooldown": 13.216000000000001,
+      "windupMs": 0,
+      "range": 2.2715,
+      "coefficient": 1.7,
+      "areaCenter": "caster",
+      "areaRadius": 2.2572,
+      "canCrit": false,
+      "telegraph": {
+        "telegraphMs": 877.5,
+        "projectileTravelMs": 0,
+        "dodgeable": true,
+        "dangerShape": "circle",
+        "dangerRadius": 2.2572,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "protection": []
+    },
+    "T2": {
+      "id": "P2.awakening",
+      "name": "鎮岳",
+      "category": "awakening",
+      "targetingRule": "enemy",
+      "cooldown": 12.432,
+      "windupMs": 0,
+      "range": 2.343,
+      "coefficient": 1.7,
+      "areaCenter": "caster",
+      "areaRadius": 2.3144000000000005,
+      "canCrit": false,
+      "telegraph": {
+        "telegraphMs": 855,
+        "projectileTravelMs": 0,
+        "dodgeable": true,
+        "dangerShape": "circle",
+        "dangerRadius": 2.3144000000000005,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "protection": []
+    },
+    "T3": {
+      "id": "P2.awakening",
+      "name": "鎮岳",
+      "category": "awakening",
+      "targetingRule": "enemy",
+      "cooldown": 11.256,
+      "windupMs": 0,
+      "range": 2.4574000000000003,
+      "coefficient": 1.7,
+      "areaCenter": "caster",
+      "areaRadius": 2.4145,
+      "canCrit": false,
+      "telegraph": {
+        "telegraphMs": 818.9999999999999,
+        "projectileTravelMs": 0,
+        "dodgeable": true,
+        "dangerShape": "circle",
+        "dangerRadius": 2.4145,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "protection": [
+        {
+          "id": "boyi.team",
+          "name": "鎮守",
+          "kind": "protect",
+          "category": "awakening",
+          "recipient": "team",
+          "radius": 2.832,
+          "status": {
+            "type": "mitigation",
+            "magnitude": 0.135,
+            "duration": 3.75,
+            "tierScaling": {
+              "duration": true,
+              "strength": true
+            }
+          },
+          "trigger": "post_cast"
+        }
+      ]
+    }
+  },
+  "sourceSha256": {
+    "src/roster/abilities.js": "4538a5179f7d9e824f9780bd70d1018baa397bf63da3f203eeb650d7106e2065",
+    "src/roster/catalog.js": "c6c2c18f8bc02bbbf113a193e7f52568ddd11c83f918144b632560ba98795ab4",
+    "src/roster/tierEffects.js": "2f157c7edb1df0873a9c906212c9459699a34ac947489c5b4bb4d11585c026fa",
+    "src/combat/tierEffects.js": "7c79798c6ba726095fb062130d8fb8a9319c6468f6993e372533967b28afacfc",
+    "src/combat/tierEffectRuntime.js": "c0200834c9aae7fc18ee26a5cdb7519188dff0825dfa9240d00aeaddb9d7f4ba",
+    "src/combat/battleSession.js": "5237fe9946692e2c16a31511925070a30f078abcb94a5fdc3d3098ec0b6500f9",
+    "src/combat/effectTargeting.js": "5238691b4c22dfbe72906b79c5b2588be9b67d48666d221e10d7d5f207a91d90",
+    "src/combat/threats.js": "1d1568171a94fd52fdc2fd8a75d4e35ae5ff9eb1bc1dae4b050cf2d62609200c"
+  }
+}

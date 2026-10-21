@@ -1,5 +1,8 @@
 {
-  "status": "ENGINEERING PASS / DEPLOYED / PUBLIC FINGERPRINT PASS / PLAYER PHONE PENDING",
+  "status": "ENGINEERING PASS / DEPLOYED / PUBLIC FINGERPRINT PASS / PLAYER VERIFIED / SPECIAL COMPLETE",
+  "statusBeforePlayerAcceptance": "ENGINEERING PASS / DEPLOYED / PUBLIC FINGERPRINT PASS / PLAYER PHONE PENDING",
+  "playerAcceptance": "docs/art/approved/botuo/special/runtime-v1/acceptance.json",
+  "playerAcceptanceRecordedDate": "2026-10-21",
   "date": "2026-10-21",
   "timezone": "Asia/Taipei",
   "releaseSha": "536685401cfa0805b5836b057a27dd0692c46879",
@@ -53,16 +56,16 @@
   "approvedSourceFilesChanged": false,
   "gameplaySourceChanged": false,
   "ordinaryHitReintroduced": false,
-  "phoneVerified": false,
+  "phoneVerified": true,
   "wholeP2Complete": false,
   "fullSuite": "Not rerun; five historical failures remain recorded. Only bounded164 release tests are claimed PASS.",
-  "nextGate": "Player phone verification of this exact deployed Special build",
+  "nextGate": "P2 Awakening 鎮岳 actual mechanics recovery and one key-pose candidate review; no unseen art or runtime approval inherited",
   "phoneChecklist": [
     "Select Botuo; cast Special then immediately use ready Heavy or Move. The new action must start while the protective aura remains.",
     "Aura must follow the real status and disappear at expiry; KO and Restart must not leave residual effects. Pause must not advance simulation.",
     "Idle/Move/Attack proportions, both facings, Special and Heavy effects remain readable and consistent."
   ],
-  "stop": "Await explicit player runtime acceptance; no P2 Awakening/P3, main merge, replacement branch or repeated release.",
+  "stop": "Special player Gate CLOSED. Next Work may complete only the bounded Awakening mechanics/design/one-key-pose stage and stop for player review. No P3, main merge, replacement branch, repeated release or future-gate approval.",
   "evidence": [
     "docs/verification/P2_SPECIAL_RUNTIME/release-ci-jobs.json",
     "docs/verification/P2_SPECIAL_RUNTIME/release-ci-summary.txt",

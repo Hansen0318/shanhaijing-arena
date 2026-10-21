@@ -1,0 +1,50 @@
+{
+  "status": "PASS / PLAYER VERIFIED / P2 SPECIAL COMPLETE",
+  "recordedDate": "2026-10-21",
+  "recordedTimezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "這個我approved ，紀錄github進度流程規則，我會創新的work接續妳的作業，要讓她無縫接軌，提供我要給新的work的prompts",
+  "skill": {
+    "character": "P2 猼訑",
+    "category": "special",
+    "name": "守群"
+  },
+  "reviewedDocumentationCheckpoint": "dd3624141767e6e219174b539674a98312c2b2c1",
+  "acceptedReleaseSha": "536685401cfa0805b5836b057a27dd0692c46879",
+  "presentedTestUrl": "https://hansen0318.github.io/shanhaijing-arena/?v=536685401cfa0805b5836b057a27dd0692c46879",
+  "versionBinding": "Direct overall approval following the supplied exact deployed Special URL and focused phone-review checklist. Binding follows that presentation; no independently captured device bundle hash was supplied.",
+  "scope": "Overall player runtime acceptance of deployed P2 Special 守群; closes its pending player phone-review Gate. Existing art/GIF/executable approvals are reused, not replaced.",
+  "notClaimed": [
+    "An itemized physical-device result for every checklist case/facing/reduced-motion mode",
+    "Device/browser identity, exact review time, independent device bundle hash, FPS or actual GPU memory",
+    "P2 Awakening art/design/GIF/executable/runtime acceptance",
+    "Whole P2 completion or full-suite green"
+  ],
+  "evidence": {
+    "release": "docs/verification/P2_SPECIAL_RUNTIME/release.json",
+    "releaseAtApprovalRef": "dd3624141767e6e219174b539674a98312c2b2c1",
+    "publicFingerprint": "docs/verification/P2_SPECIAL_RUNTIME/public-fingerprint.json",
+    "publicFingerprintSha256": "8315b7da13b922e6d15d902e4f44783e3232540139e706ef764ad486cfc0505b",
+    "browser": "docs/verification/P2_SPECIAL_RUNTIME/browser-gate.json",
+    "visual": "docs/art/approved/botuo/special/composite-v1/acceptance.json",
+    "executable": "docs/art/approved/botuo/special/executable-v1/acceptance.json",
+    "actionsRun": 39593187720
+  },
+  "currentSlice": {
+    "type": "Player acceptance, read-only next-skill seed recovery and process/handoff documentation only",
+    "productionSourceChanged": false,
+    "approvedArtChanged": false,
+    "testsRerun": false,
+    "buildRerun": false,
+    "browserRerun": false,
+    "redeployed": false
+  },
+  "continuation": {
+    "authorizedBy": "這個我approved ，紀錄github進度流程規則，我會創新的work接續妳的作業，要讓她無縫接軌，提供我要給新的work的prompts",
+    "nextSkill": "P2 Awakening 鎮岳",
+    "nextGate": "Use prepared catalog/Tier seed recovery; measure only missing actual production-session mechanics, differentiate action, produce one character-only F3/key-pose candidate and stop for player review.",
+    "scope": "New Work continues the next bounded mechanics/design/key-pose review stage; no unseen art, four-pose/VFX/GIF, executable timing change, runtime integration or deployment approval is inherited.",
+    "handoff": "docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md",
+    "preparation": "docs/M5C_P2_BOTUO_AWAKENING_ACTION.md"
+  }
+}

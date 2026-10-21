@@ -1,4 +1,13 @@
-# P2 猼訑 Special「守群」— EXECUTION CONTRACT REVIEW / VISUAL PACKAGE APPROVED
+# P2 猼訑 Special「守群」— COMPLETE / PLAYER VERIFIED
+
+## 2026-10-21 — P2 Special COMPLETE / PLAYER VERIFIED; Awakening key-pose NEXT
+
+Player explicitly approves the presented deployed Special and requests GitHub progress/process/rules plus a seamless new Work handoff. Exact statement/version/scope is in `docs/art/approved/botuo/special/runtime-v1/acceptance.json`, bound to536685401cfa0805b5836b057a27dd0692c46879 and its presented URL. Special runtime/phone Gate CLOSED / PLAYER VERIFIED; no itemized device case matrix/FPS/GPU/hash measurements invented. P1 COMPLETE and P2accepted Idle/Move/KO/scale/Basic/Heavy remain protected. WholeP2 is NOT complete.
+
+Reuse unchanged Special164scoped/build/87guard, Browser4WebGL/126sampling/16chain/2built, deploymentActions1092,145CI/local and39complete public-hash evidence. Current slice only records acceptance, process and handoff; no src/public/scripts/tests/workflow/approved-art changes, engineering rerun or redeployment. Existing45required16611224decoded/16MiB cap/131072reserve/34920extra and five historical full-suite failures remain inherited evidence. Receipt, release.json/RELEASE.md and Special WORK_LOG distinguish art/GIF/contract/runtime/engineering/deploy/player gates; old phone/deploy/contract-pending pointers are historical, not tasks to repeat.
+
+NEXT bounded new Work: P2 Awakening「鎮岳」missing actual mechanics evidence → differentiated action → ONE character-only F3/key-pose candidate → STOP for player review. Read `docs/M5C_P2_BOTUO_AWAKENING_ACTION.md` and `docs/verification/P2_AWAKENING_PREFLIGHT/static-seed.json`; read-only catalog/Tier recovery is prepared, not actual gameplay verification or approved design. T0caster AoE2.2/coefficient1.7/CD14, windup0 vs tactical telegraph900ms; preserve true Tier timing, T3post_cast team protection and accepted Special coexistence. Do not carry Special's deployment/art approval into unseen Awakening. Canonical successor `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`, always ONE complete self-contained copyable prompt. No main merge/alternate branch/TD/P3, no repeated Special art/engineering/release, no Awakening F1-F4/VFX/GIF/Runtime/deploy before later gates. Docs-only checkpoint[skip ci]; latest docsHEAD is newer than live releaseSHA.
+
 
 ## 2026-10-21 — Special Runtime INTEGRATED / local scoped verification PASS / native browser NEXT
 

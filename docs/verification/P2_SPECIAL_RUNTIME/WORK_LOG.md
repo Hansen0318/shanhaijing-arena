@@ -1,5 +1,14 @@
 # P2 Special Runtime ledger — plan docs/plans/2026-10-21-p2-special-runtime.md
 
+## 2026-10-21 — P2 Special COMPLETE / PLAYER VERIFIED; Awakening key-pose NEXT
+
+Player explicitly approves the presented deployed Special and requests GitHub progress/process/rules plus a seamless new Work handoff. Exact statement/version/scope is in `docs/art/approved/botuo/special/runtime-v1/acceptance.json`, bound to536685401cfa0805b5836b057a27dd0692c46879 and its presented URL. Special runtime/phone Gate CLOSED / PLAYER VERIFIED; no itemized device case matrix/FPS/GPU/hash measurements invented. P1 COMPLETE and P2accepted Idle/Move/KO/scale/Basic/Heavy remain protected. WholeP2 is NOT complete.
+
+Reuse unchanged Special164scoped/build/87guard, Browser4WebGL/126sampling/16chain/2built, deploymentActions1092,145CI/local and39complete public-hash evidence. Current slice only records acceptance, process and handoff; no src/public/scripts/tests/workflow/approved-art changes, engineering rerun or redeployment. Existing45required16611224decoded/16MiB cap/131072reserve/34920extra and five historical full-suite failures remain inherited evidence. Receipt, release.json/RELEASE.md and Special WORK_LOG distinguish art/GIF/contract/runtime/engineering/deploy/player gates; old phone/deploy/contract-pending pointers are historical, not tasks to repeat.
+
+NEXT bounded new Work: P2 Awakening「鎮岳」missing actual mechanics evidence → differentiated action → ONE character-only F3/key-pose candidate → STOP for player review. Read `docs/M5C_P2_BOTUO_AWAKENING_ACTION.md` and `docs/verification/P2_AWAKENING_PREFLIGHT/static-seed.json`; read-only catalog/Tier recovery is prepared, not actual gameplay verification or approved design. T0caster AoE2.2/coefficient1.7/CD14, windup0 vs tactical telegraph900ms; preserve true Tier timing, T3post_cast team protection and accepted Special coexistence. Do not carry Special's deployment/art approval into unseen Awakening. Canonical successor `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`, always ONE complete self-contained copyable prompt. No main merge/alternate branch/TD/P3, no repeated Special art/engineering/release, no Awakening F1-F4/VFX/GIF/Runtime/deploy before later gates. Docs-only checkpoint[skip ci]; latest docsHEAD is newer than live releaseSHA.
+
+
 ## Release CLOSED / PLAYER PHONE PENDING — 2026-10-21
 
 Authorized release536685401cfa0805b5836b057a27dd0692c46879; Actions1092/run39593187720 build119198973026/deploy119199183277SUCCESS.164/164scoped tests/Build/87guard4614620bytesPASS. CI verifies exact src/public/scripts/tests/root build input equality to Browser50edd53b69010ad9b5f700c3282cb2e8acb29c6a and recorded report hashes, so Browser1091 evidence reused unchanged, not rerun. Workflow selector/source-proof/inventory and authorization/progress were the only release changes; no gameplay, assets, tests or accepted art changes. Main remains unmerged; same branch/PR1.

@@ -1,6 +1,10 @@
-# P2 Special 守群 — deployed, phone verification pending
+# P2 Special 守群 — COMPLETE / PLAYER VERIFIED
 
-The player explicitly authorized this bounded deployment with「授權部署」. Release source `536685401cfa0805b5836b057a27dd0692c46879`, same feature branch and PR #1, no main merge. Actual Actions #1092 / [run39593187720](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39593187720) build119198973026 and deploy119199183277 succeeded. The prior No Deploy stop is superseded only for this authorized release; player runtime acceptance is still pending.
+## Player acceptance — 2026-10-21 Asia/Taipei
+
+The player explicitly approves the presented deployed Special and asks to record progress/process/rules and prepare a seamless new Work handoff. Exact statement and scope are bound to536685401cfa0805b5836b057a27dd0692c46879 in `docs/art/approved/botuo/special/runtime-v1/acceptance.json`. The Special phone-review Gate is CLOSED / PLAYER VERIFIED. This is overall scoped acceptance following the supplied URL/checklist, not an independently measured device hash or itemized result for each case. Prior pending text/checklist below is release history. No unchanged tests/build/Browser/redeployment are repeated in this acceptance-only update. NEXT is the bounded P2 Awakening「鎮岳」mechanics/design/one-key-pose review stage; wholeP2 and unseen Awakening art/runtime remain unapproved.
+
+The player explicitly authorized this bounded deployment with「授權部署」. Release source `536685401cfa0805b5836b057a27dd0692c46879`, same feature branch and PR #1, no main merge. Actual Actions #1092 / [run39593187720](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39593187720) build119198973026 and deploy119199183277 succeeded. At deployment player runtime acceptance was pending; the newer acceptance section above now closes that Gate.
 
 Test URL: https://hansen0318.github.io/shanhaijing-arena/?v=536685401cfa0805b5836b057a27dd0692c46879
 
@@ -16,4 +20,4 @@ No approved art, original masters, GIF, existing acceptance receipt, gameplay or
 2. Aura ends at actual expiry; KO/Restart leave no residual effects. Pause freezes combat.
 3. Confirm Idle/Move/Attack size consistency, both facings and clear Special/Heavy effects.
 
-Stop for the player's scoped confirmation of this exact link. Do not promote to PLAYER VERIFIED or whole-P2 complete before that confirmation. No Awakening/P3/new art/merge/redeployment. Evidence-only closure uses `[skip ci]`; a later documentation HEAD is not a new runtime release.
+The above was the checklist presented before the recorded overall acceptance. Special is now PLAYER VERIFIED; wholeP2 is not complete. Continue only the separately scoped Awakening key-pose handoff, with no P3/merge/redeployment or inherited unseen-art/runtime approval. Evidence-only closure uses `[skip ci]`; a later documentation HEAD is not a new runtime release.
