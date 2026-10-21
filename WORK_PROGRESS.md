@@ -1,5 +1,9 @@
 # Work Progress
 
+## 2026-10-22 — 鎮岳容量方向核准／書面設計待審
+
+玩家原文及有限核准範圍已記 `docs/verification/P2_AWAKENING_PREFLIGHT/capacity-direction-decision.json`。核對目前程式：動態單場 residency **並未取消** 16MiB decoded cache/scene hard cap；45 required 仍同場釘選，optional reserve131072。`docs/superpowers/specs/2026-10-22-p2-awakening-capacity-design.md` 書面規格提出將既有赤鱬 KO 的 1244×1254 runtime derivative 無損分成11個邏輯區塊、同一張2048×550 atlas；唯讀 RGBA 重組相同。估算節省1734304 bytes，四張鎮岳候選加入後49 required16022192 + reserve131072，預留623952。這只是方向設計及算術，不是安裝實物、Phaser native、完整容量或Runtime PASS。玩家尚未審閱新書面規格；不得將詢問部署解讀成 Pages 授權。下一步：書面規格玩家審核→另行實作計畫／包裝與驗證→鎮岳執行契約審核→Runtime及必要測試→獨立部署授權／手機驗收；不跳 Gate。此 docs-only slice 沿用未變16個機制案例和Special證據，不重跑原164/Browser/CI/公開比對或full-suite；保留五個歷史失敗。
+
 ## 2026-10-22 — 鎮岳執行前檢提案 / 容量阻擋 / 玩家契約審核 NEXT
 
 已從最新 feature remote `6983ee15fe768874924c28ccd72227e47041ada8` 恢復，PR #1 open/unmerged；玩家先前核准的鎮岳姿勢與 VFX/GIF receipt 保持。新增 `docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md`：對照實際 cast/action、逐人 damage、`boyi.team` status provenance、Special 共存與清理，提出共用純呈現所有權／即時與 tactical 分流契約。這是**未核准提案**，不是 Runtime 整合或新的美術驗收。

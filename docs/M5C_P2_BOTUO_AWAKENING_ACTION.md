@@ -1,5 +1,9 @@
 # P2 猼訑 Awakening「鎮岳」— VFX/GIF APPROVED / EXECUTION PREFLIGHT NEXT
 
+## 2026-10-22 — Capacity direction approved; written design review pending
+
+The player's exact response and limited scope are in `docs/verification/P2_AWAKENING_PREFLIGHT/capacity-direction-decision.json`. Dynamic encounter asset allocation is active, **but the 16MiB cache/scene hard caps were not canceled**; all required keys remain pinned and 131072 bytes optional reserve remains. The new written `docs/superpowers/specs/2026-10-22-p2-awakening-capacity-design.md` proposes exact Chiru KO multi-region compositing: eleven parts in one2048×550 atlas, modeled KO decoded saving1734304, 49 required16022192 + reserve131072 leaves623952. The read-only source RGBA reassembly is exact; no packed PNG, native sampling or actual high-water validation exists. Player confirmed direction, not the full written specification, Awakening execution contract, integration or Pages release. NEXT written-spec review; do not integrate/deploy. All earlier art/GIF receipts and unchanged mechanics stay protected.
+
 ## 2026-10-22 — Execution preflight proposal / capacity BLOCKED / player contract review NEXT
 
 New `docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md` is a review candidate, **not an approved executable contract**. Actual runtime inspection finds one-target AoE cast presentation cannot prove each real victim, delayed damage events need observational action correlation, and `boyi.team` records currently lack the `presentationSource` used by Special's generic style reconciler. Proposed shared read-only lifecycle keeps instant0ms and tactical900/819ms distinct; damage/status ownership stays with real simulation records, no fake air contact/protection, and independent Special/MAX expiry remains. No src/public/gameplay changes.

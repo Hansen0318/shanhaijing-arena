@@ -1,0 +1,25 @@
+{
+  "status": "CHIRU KO LOSSLESS SPLIT DIRECTION APPROVED; WRITTEN DESIGN REVIEW PENDING",
+  "recordedDate": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "確認紀錄進度規則流程 目前應該沒有16mib限制吧，上次有取消過，用動態配置？現在要做什麼 部署到遊戲嗎，這樣我同意核准",
+  "precedingPresentedDirection": "Keep the current 16MiB and 131072-byte reserve; source-exact split the existing Chiru KO into eleven regions in one texture, projected to save 1734304 decoded bytes and leave 623952 bytes after all 49 required textures and reserve. No Runtime or deployment authorization inferred from confirming this direction.",
+  "baseCommit": "bfb19e8d669c3f6ee52c08d8a726ca48248b25ea",
+  "priorPreflight": {
+    "path": "docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md",
+    "sha256": "58911cb1d672d9283b0bc973600b8fddd8472e78c7471d192e664ff22ff56fe5"
+  },
+  "sourceDerivative": {
+    "path": "public/assets/special-runtime-v1/chiru-battleKo.png",
+    "sha256": "d8af126e055a4d6093c9e587c2303771160d369211f9c825eefaef0aab97f12c"
+  },
+  "writtenDesignForReview": "docs/superpowers/specs/2026-10-22-p2-awakening-capacity-design.md",
+  "clarification": "Current code has dynamic encounter residency and still enforces a 16MiB decoded cache/scene hard cap; this answer corrects the player's uncertainty without changing the rule.",
+  "notApproved": [
+    "the newly written full compositing specification",
+    "a generated or installed packing atlas",
+    "an Awakening executable contract or Runtime integration",
+    "build, Browser, Pages deployment, public verification or phone acceptance"
+  ]
+}
