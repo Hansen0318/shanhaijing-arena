@@ -1,5 +1,9 @@
 # Work Progress
 
+## 2026-10-22 — 全局動態素材政策確認／書面規格待審
+
+玩家明示全遊戲不限定固定總容量、不是特定角色拆圖，要求驗證後部署以在遊戲中審招式，並對提出的共用策略答「確認，繼續」。精確新決定與舊 Chiru KO 方案的取代關係寫於 `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md`。目前實際 `schema.js`／`assetCache.js`／`assetResidency.js` 仍施加16MiB、64entry與131072 reserve；新政策**尚未實作或測試**，不能稱為現況。文件等待玩家獨立審閱，再寫需審閱的實作計畫；驗證後的部署方向已明確，但現階段沒有 Pages 動作。保留逐檔驗證、完整 required、真實載入失敗及回收、全部美術／機制與 PR#1；舊45/49key容量算術只作歷史證據，舊KO分塊規格不實作。此次 docs-only [skip ci]，沒有 src/public/tests/build/Browser/deploy 或 full-suite 重跑，五個歷史失敗不宣稱已解決。
+
 ## 2026-10-22 — 鎮岳容量方向核准／書面設計待審
 
 玩家原文及有限核准範圍已記 `docs/verification/P2_AWAKENING_PREFLIGHT/capacity-direction-decision.json`。核對目前程式：動態單場 residency **並未取消** 16MiB decoded cache/scene hard cap；45 required 仍同場釘選，optional reserve131072。`docs/superpowers/specs/2026-10-22-p2-awakening-capacity-design.md` 書面規格提出將既有赤鱬 KO 的 1244×1254 runtime derivative 無損分成11個邏輯區塊、同一張2048×550 atlas；唯讀 RGBA 重組相同。估算節省1734304 bytes，四張鎮岳候選加入後49 required16022192 + reserve131072，預留623952。這只是方向設計及算術，不是安裝實物、Phaser native、完整容量或Runtime PASS。玩家尚未審閱新書面規格；不得將詢問部署解讀成 Pages 授權。下一步：書面規格玩家審核→另行實作計畫／包裝與驗證→鎮岳執行契約審核→Runtime及必要測試→獨立部署授權／手機驗收；不跳 Gate。此 docs-only slice 沿用未變16個機制案例和Special證據，不重跑原164/Browser/CI/公開比對或full-suite；保留五個歷史失敗。

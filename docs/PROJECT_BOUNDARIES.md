@@ -1,5 +1,9 @@
 # Project Boundaries — Shanhaijing Arena
 
+## 2026-10-22 — Global decoded-byte limit direction (design only)
+
+Player explicitly selected a game-wide shared dynamic-residency policy without a fixed **total decoded-byte hard ceiling**, superseding the character-specific Chiru KO split proposal, and wants a verified deployment for in-game skill review. Written design `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md` awaits independent review. Existing 16MiB/cache/scene/64-entry/131072-reserve code remains unchanged until an approved plan and tested implementation; earlier fixed-cap rules below document historical releases, not the new policy. Preserve per-asset limits, all required presentation keys, error handling, scene cleanup, approved art/gameplay and the same feature branch/PR. No immediate deployment or phone acceptance is inferred.
+
 ## Purpose
 Prevent accidental contamination from other Shanhaijing projects, especially `shanhaijing-td`.
 

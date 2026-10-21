@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## 2026-10-22 — 全遊戲無固定總容量方向確認／新書面規格待審
+
+玩家「應該要整體不限定容量，不是針對單一角色，妳繼續做到部署，我才能確認遊戲裡的招式是否ok」明確取代先前赤鱬 KO 分塊方向，對提出的共用動態 residency 無固定 decoded-byte 硬上限、保留單檔安全驗證／按場載入／閒置回收／失敗處理回覆「確認，繼續」。正式規格 `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md` **待玩家獨立書面審閱**；只確認對話設計，不代表文件／實作計畫／Runtime PASS。當前程式仍有16MiB cache/scene硬上限與64-entry、131072 reserve；本次未改 src/public/tests/已核准素材，沒有建置、Browser或部署。玩家授權的終點是驗證後部署供實際遊戲審核，不是立即發布。先前 KO 規格保留為 superseded 歷史，禁止實作其11片方案當前置條件。下一 Gate：書面規格審閱→實作計畫審閱→共用策略與鎮岳契約/忠實素材整合及驗證→Pages公開核對→玩家手機審核。PR#1維持 open/unmerged，唯一 feature 分支、GitHub權威；所有交接指令單一自足 code block。保護 P1/P2、取消普通 Hit、機制時序與五個歷史 full-suite failures。
+
 ## 2026-10-22 — 鎮岳容量方向核准、16MiB仍有效／書面設計審核 NEXT
 
 Player replied「確認紀錄進度規則流程 目前應該沒有16mib限制吧，上次有取消過，用動態配置？現在要做什麼 部署到遊戲嗎，這樣我同意核准」to the prior Chiru KO lossless-split direction. Decision is recorded in `docs/verification/P2_AWAKENING_PREFLIGHT/capacity-direction-decision.json`; it approves investigating/documenting that direction, **not** the newly written full design, executable contract, Runtime or Pages. Current `src/assets/schema.js` still enforces 16MiB asset-cache and scene hard caps; dynamic encounter residency is also present, and `AssetResidency` still pins all required with 131072 optional reserve. Written 11-part single-atlas KO proposal `docs/superpowers/specs/2026-10-22-p2-awakening-capacity-design.md`: old6239904→modeled4505600 decoded, saves1734304; projected49 required16022192 + reserve131072 leaves623952. In-memory source RGBA reconstruction only; no actual atlas/native/encoded/residency PASS. NEXT written-spec player review, then implementation plan/selection only after approval; no src/public/build/Browser/deploy. Preserve all accepted art, source, gameplay, branch/PR, ordinary Hit cancellation, instant/tactical split and five historical full-suite failures. Newest entry supersedes old capacity-blocked-as-no-option status, not its evidence. Handoff remains one complete code block.

@@ -1,5 +1,9 @@
 # Development Playbook
 
+## 2026-10-22 — 全局容量新方向／書面審核
+
+玩家明確要求全遊戲無固定總decoded-byte上限，非單一角色赤鱬KO拆圖，並要求完成驗證後部署供遊戲內確認；對共用策略回覆「確認，繼續」。新 `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md` 是待獨立書面審閱的規格；下方舊16MiB硬規則、KO拆圖NEXT等是當時程式與決策的歷史紀錄，不能覆蓋此新方向，也不能反過來宣稱現有程式已移除硬上限。新政策須經規格審閱→計畫審閱→TDD共用實作，保留單檔guard、按場全required、真失敗處理／釋放，並在鎮岳契約與真瀏覽器／Build驗證後才Pages及公開指紋。舊方案不實作；核准來源／機制／PR仍受保護。此次docs-only[skip ci]，沒有Runtime或部署。
+
 ## 2026-10-21 — Awakening VFX/GIF PLAYER APPROVED / execution preflight NEXT
 
 Player「這個我確認OK，你紀錄github流程進度規則」accepts the normal GIF embedded in the preceding response and its linked visual-review package at `e1cdefa22c99aceae149a0a854210da9941c36e9`. Exact wording, primary normal GIF, seven linked GIFs, static reduced cue, three raw VFX and manifest/reference hashes are bound in `docs/art/approved/botuo/awakening/visual-v1/acceptance.json`. **PLAYER VFX/GIF VISUAL GATE CLOSED / APPROVED.** This records the presented package, not invented independent playback/device cases for every link. Old candidate/pending fields in frozen manifests/checkpoint/QA remain historical; authoritative latest approval is this receipt and progress entry. Do not ask again or regenerate accepted F1–F4/VFX/GIF.
