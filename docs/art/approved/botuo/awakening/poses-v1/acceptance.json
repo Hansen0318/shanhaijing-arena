@@ -1,0 +1,48 @@
+{
+  "status": "ALL FOUR AWAKENING POSES / PLAYER ART APPROVED",
+  "recordedDate": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "我確認OK，紀錄規則流程進度，如有必要存下素材，然後繼續",
+  "reviewedCheckpoint": "921637d1948783c25621f76069251da9a111d89e",
+  "reviewedBoards": [
+    {
+      "path": "docs/art/candidates/botuo/awakening/poses-v1/four-pose-light.png",
+      "sha256": "09b7aa5ac70651e80cbf8afe6baeda91051a37f16c7e3a5e85e23fd5e3d0802e"
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/poses-v1/four-pose-dark.png",
+      "sha256": "f675b079791d7edb87ebe41c7f687021018564f021e912cc25ff242bfe6af6c4"
+    }
+  ],
+  "sources": {
+    "F1": {
+      "master": "docs/art/candidates/botuo/awakening/poses-v1/F1-load-master.png",
+      "sha256": "450d6416c99e87ba16943816be23877e57fc14f121cd642f781d043247b6da4a",
+      "candidate": "docs/art/candidates/botuo/awakening/poses-v1/F1-candidate.png",
+      "playerApproved": false
+    },
+    "F2": {
+      "master": "docs/art/candidates/botuo/awakening/poses-v1/F2-downstroke-master.png",
+      "sha256": "a44a2efbff450625772ed3c13309f60715167125d15f324c3ac69eeba0d73360",
+      "candidate": "docs/art/candidates/botuo/awakening/poses-v1/F2-candidate.png",
+      "playerApproved": false
+    },
+    "F3": {
+      "master": "docs/art/candidates/botuo/awakening/key-pose-v2/F3-downward-master.png",
+      "sha256": "2520b8a7e8d2b480dbb78ada0059a3a999bbdbebb5d6383f3743d416d3aa9d0e",
+      "candidate": "docs/art/candidates/botuo/awakening/key-pose-v2/F3-candidate.png",
+      "playerApproved": true
+    },
+    "F4": {
+      "master": "docs/art/candidates/botuo/awakening/poses-v1/F4-recovery-master.png",
+      "sha256": "3bdeed52c9cda94f42cde5a7e1333e4c9030583d5d827806c902c320655bd788",
+      "candidate": "docs/art/candidates/botuo/awakening/poses-v1/F4-candidate.png",
+      "playerApproved": false
+    }
+  },
+  "priorF3Acceptance": "docs/art/approved/botuo/awakening/f3-v2/acceptance.json",
+  "scope": "Presented F1 raised load/F2 downstroke/F4 recovery and full four-pose sequence accepted; existing corrected F3 approval retained. Source masters/padding/prompt/QA remain immutable.",
+  "excluded": "Unseen VFX/GIF/executable timing/Runtime/deployment/whole P2 acceptance. Not an itemized device/performance/foot-lock report.",
+  "nextGate": "Independent radial caster release, true-victim contact and conditional actual-recipient T3 protection VFX plus faithfully packed normal/slow/noFX/mirrored/return/reduced/instant-path preview; STOP for visual review."
+}

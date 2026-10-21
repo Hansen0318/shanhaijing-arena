@@ -1,5 +1,14 @@
 # Project State
 
+## 2026-10-21 — Awakening FOUR POSES PLAYER APPROVED / VFX-GIF NEXT
+
+Player「我確認OK，紀錄規則流程進度，如有必要存下素材，然後繼續」accepts the presented four-pose set at921637d1948783c25621f76069251da9a111d89e. Receipt `docs/art/approved/botuo/awakening/poses-v1/acceptance.json` binds both reviewed boards and exact F1/F2/F3/F4 master hashes. Corrected F3 approval retained; all character masters/prompts/QA/padding/old manifests unchanged. Old pose-pending entries are historical. **FULL FOUR-POSE ART GATE CLOSED**, do not regenerate/reopen it.
+
+NEXT: independent caster-centered radial earth/pressure release, real-victim contact and actual-recipient T3 mitigation cue; safely package approved art and create normal/slow/effects-off/both-facing/Idle-return/reduced and instant-path previews for player VFX/GIF review. Largest Awakening spectacle at unchanged actor scale, visibly stronger/different than Heavy/Special. No extra damage/hits/displacement/ground-hit/DoT/shield/invulnerability. T0 instant0 vs tactical900ms/T3tactical819ms remain existing different paths; no universal new load delay. Target contact only on actual hit; T3boyi.team only on successful post_cast, actual recipients/lifetime3.75s, not unconditional whole-team aura; Special coexistence must survive.
+
+Review timing/choreography is presentation proposal, not executable contract/Runtime acceptance. Reuse unchanged16mechanics/Special engineering/release; no full-suite/build/Browser/deploy. STOP after new VFX/GIF review material, no integration/release until later explicit gates. Samebranch/PR1 open-unmerged, protected P1/all acceptedP2,16MiB+131072reserve/allrequired and five historical failures retained, no main merge/newbranch/P3/TD. Save approval-first checkpoint[skip ci] before generating new VFX.
+
+
 ## 2026-10-21 — Awakening FOUR-POSE ART CANDIDATES / PLAYER REVIEW PENDING
 
 Corrected F3 v2 PLAYER ART APPROVED is durably recorded at cddb7047195884a80a07c4a75a1ec492c7baf5fd and `docs/art/approved/botuo/awakening/f3-v2/acceptance.json`; exact F3 source/master unchanged. New `docs/art/candidates/botuo/awakening/poses-v1/` contains three independent F1 raised-load/F2 downstroke/F4 recovery masters, complete prompts/reference hashes, exact-RGBA48px padding, alpha QA, inspected light/dark full-four review and manifest/reproduction script. No four-up generation, no VFX/GIF. Original F3 reused, rejected v1/extra-hoof draft never used.
