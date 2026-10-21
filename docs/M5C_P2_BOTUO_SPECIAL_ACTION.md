@@ -1,4 +1,10 @@
-# P2 猼訑 Special「守群」— F3 APPROVED / FOUR-POSE REVIEW PENDING
+# P2 猼訑 Special「守群」— FOUR POSES APPROVED / VFX + GIF NEXT
+
+## 2026-10-21 — ALL FOUR POSES PLAYER APPROVED / independent VFX + GIF next
+
+Player「這個可以，我approved 紀錄規則流程進度 github，有必要存下材料 然後繼續」accepts the displayed four-pose board at45be0c0. Receipt `docs/art/approved/botuo/special/poses-v1/acceptance.json` locks selected F1/F2/F4 plus unchanged earlier approved F3. All exact source PNGs, prompts, rejected draft history, light/dark QA and checksums are already GitHub-backed; preserve by reference/hash, no regeneration or redundant art replacement. Previous pose-pending entries below are historical.
+
+NEXT separate caster activation and sustained recipient mitigation VFX, deterministic safe equal-cell packing of approved sources, normal/slow/character-only/right+left/Idle-Move-return/reduced/chain previews; STOP for actual GIF/VFX review. Stronger protective shape/layers than Heavy at same body scale, no fake damaging burst or absorption shield. Every timing in preview remains illustrative; immediate state onset and immediate available next skill must not be delayed by F1/F2/F3/F4. Body action may be superseded by next legal skill while persistent recipient effect remains. No VFX/GIF/executable/runtime/phone approval inferred. Only docs/art; no unchanged tests/build/deploy replay.
 
 ## 2026-10-21 — Special F3 APPROVED / F1-F2-F4 CANDIDATES READY
 
