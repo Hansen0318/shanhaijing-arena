@@ -1,5 +1,10 @@
 # Project State
 
+## 2026-10-21 — Special EXECUTION CONTRACT / PACKING PLAYER APPROVED; shared integration active
+
+玩家直接回覆工程契約及32份舊貼圖無損包裝的確認問題：「號，確認紀錄流程規則後 繼續」。receipt `docs/art/approved/botuo/special/executable-v1/acceptance.json` 綁定既有前檢文件及packing-manifest SHA256；視覺/動作/工程契約/包裝核准均CLOSED，不再重問。NEXT執行 `docs/plans/2026-10-21-p2-special-runtime.md`；進度與測試ledger `docs/verification/P2_SPECIAL_RUNTIME/WORK_LOG.md`。保留立即減傷/接ready技與Move，獨立activation/status ownership、真實source/recipient/Tier、16MiB+131072reserve和全部required；無機制時序變更。僅核准接續共用Runtime整合及必要驗證，未聲稱工程PASS或授權部署/手機/全P2完成。舊pending條目為歷史；不重畫、不merge main/開替代分支/Awakening/P3/TD。
+
+
 ## 2026-10-21 — Special MOTION/GIF APPROVAL RECONFIRMED / next unfinished contract gate
 
 玩家在normal GIF展示、slow/instant-chain連結及Special四姿勢／Heavy接技區別說明後，回覆「ok 我approved ，紀錄github進度流程規則，繼續繼續」。已保存追加receipt `docs/art/approved/botuo/special/visual-reconfirmation-v1/acceptance.json`，綁定原normal/slow/chain檔案hash；原視覺包receipt、四姿勢、source/prompt/QA/GIF完全不變。**Special動作與GIF視覺核准CLOSED，不再重問或重製。** 不聲稱每檔獨立播放、裝置或Runtime已驗收。

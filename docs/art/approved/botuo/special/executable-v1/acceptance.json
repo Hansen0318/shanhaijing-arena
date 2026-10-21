@@ -1,0 +1,20 @@
+{
+  "status": "EXECUTION CONTRACT AND FAITHFUL PACKING PLAYER APPROVED / INTEGRATION AUTHORIZED",
+  "date": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "號，確認紀錄流程規則後 繼續",
+  "approvalContext": "Direct reply to the explicit question asking whether the owner also approves the Runtime execution contract, including immediate chaining, independent recipient defense and the 32-legacy-texture lossless packing scope.",
+  "reviewedCheckpoint": "64f9d5771368f0137e3a902481e3168ba7a9492e",
+  "contract": {
+    "path": "docs/verification/M5C_P2_BOTUO_SPECIAL_PREFLIGHT.md",
+    "sha256": "da54ad3cbc8bdd710064dfb1632771730105a14dba54855a9ef3b6037eddcc82"
+  },
+  "packingManifest": {
+    "path": "docs/art/candidates/botuo/special/runtime-pack-v1/packing-manifest.json",
+    "sha256": "e1963cebddba3d146a2eeb25a2cde105dad9d9cd53eb3b66baf918216dd79132"
+  },
+  "scope": "Implement the supplied shared observational utility/action/status ownership contract and faithful packing; perform necessary scoped engineering verification in this Work. No real gameplay/timing change is authorized.",
+  "notClaimed": ["Engineering checks already passed", "Deployment authorized or performed", "Player phone/whole-P2 verified", "New art, Awakening, P3 or main merge authorized"],
+  "next": "Execute scoped shared Runtime integration and minimum necessary verification. Do not re-request approval of this contract, packing or the already approved visuals."
+}
