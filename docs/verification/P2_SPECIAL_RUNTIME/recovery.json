@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "repository": "Hansen0318/shanhaijing-arena",
+  "branch": "feat/m0-combat-core-20260927",
+  "recoveredHead": "5775c0bad6a6f8cc0b52c7974c9897ee603f1dd3",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false
+  },
+  "mainInspected": "16f73932a0399979ba79b92f93f5ce1c1d1909b9",
+  "initialTrackedChanges": false,
+  "initialUntracked": [
+    "docs/art/candidates/lushu/special/vfx-review-v1/.target-impact-raw-v1.png.sVpz7q"
+  ],
+  "untrackedUntouched": true,
+  "reusedEvidence": [
+    "local-verification.json",
+    "scoped-tests.txt",
+    "build.txt",
+    "review-regressions-red.txt",
+    "review-regressions-green.txt",
+    "presenter-order-red.txt",
+    "presenter-order-green.txt"
+  ],
+  "priorBrowserRun": {
+    "id": 39552224752,
+    "number": 1086,
+    "commit": "5775c0bad6a6f8cc0b52c7974c9897ee603f1dd3",
+    "build": "PASS",
+    "boundedTests": "PASS",
+    "native": "FAIL",
+    "builtEntry": "PASS",
+    "artifact": 12323938587,
+    "sha256": "3ea107ef778cc372e69a6230d2b926316fd476e4df97cdee8f28df78f54fa406",
+    "pagesConfigure": "SKIPPED",
+    "pagesUpload": "SKIPPED",
+    "deploy": "SKIPPED"
+  },
+  "noDeploymentAuthorized": true
+}

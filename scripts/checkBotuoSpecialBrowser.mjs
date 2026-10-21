@@ -27,7 +27,7 @@ try{
    const b=p.actorSprites.get('a1'),records=['a1','a2','a3'].map(id=>s.statuses.forActor(id,s.elapsedSeconds).map(r=>({id:r.id,magnitude:r.magnitude,duration:r.duration,presentationSource:r.presentationSource,expiryTime:r.expiryTime})));
    return {bytes:p.textureBytes,keys:p.textures.size,renderer:sc.game.renderer.type,hpUnchanged:JSON.stringify(hp)===JSON.stringify(s.actors.map(v=>v.hp)),activation:p.utilitySprites.size,aura:[...p.overlaySprites.keys()].filter(k=>k.startsWith('source-status.')),records,body:{texture:b.texture.key,frame:b.frame.name,width:b.displayWidth,height:b.displayHeight,flipX:b.flipX},contacts:p.stagedImpacts.size};
   },sign);
-  report.current={reduced,sign,initial};assert.equal(initial.bytes,16562336);assert.equal(initial.keys,45);assert.equal(initial.renderer,2);assert.equal(initial.hpUnchanged,true);assert.equal(initial.activation,1);assert.equal(initial.aura.length,2);assert.equal(initial.records[2].length,0);assert.equal(initial.contacts,0);assert.equal(initial.body.width,200);assert.equal(initial.body.height,200);assert.equal(initial.body.flipX,sign<0);assert.equal(initial.body.frame,reduced?'400.0.200.200':'0.0.200.200');
+  report.current={reduced,sign,initial};assert.equal(initial.bytes,16611224);assert.equal(initial.keys,45);assert.equal(initial.renderer,2);assert.equal(initial.hpUnchanged,true);assert.equal(initial.activation,1);assert.equal(initial.aura.length,2);assert.equal(initial.records[2].length,0);assert.equal(initial.contacts,0);assert.equal(initial.body.width,200);assert.equal(initial.body.height,200);assert.equal(initial.body.flipX,sign<0);assert.equal(initial.body.frame,reduced?'400.0.200.200':'0.0.200.200');
   const record={reduced,sign,initial,frames:[]};report.cases.push(record);
   const paused=await page.evaluate(()=>{const sc=window.fixtureScene,p=sc.visualAssets,old=JSON.stringify([sc.session.elapsedSeconds,p.actorSprites.get('a1').frame.name,[...p.utilitySprites.values()].map(v=>[v.x,v.y,v.alpha])]);sc.applyFrame(sc.session.snapshot());sc.game.step(performance.now(),0);return old===JSON.stringify([sc.session.elapsedSeconds,p.actorSprites.get('a1').frame.name,[...p.utilitySprites.values()].map(v=>[v.x,v.y,v.alpha])]);});assert.ok(paused);record.pauseFrozen=paused;
   for(const time of [0,.16,.32,.48,.64]){
@@ -76,6 +76,29 @@ try{
    },entries);
    for(const r of report.trim){assert.deepEqual(r.logical,r.expected);assert.ok(r.maxDelta<=1&&r.meanChannelDelta<.00001,JSON.stringify(r));}assert.equal(report.trim.length,126);
   }
+  const chaining=await page.evaluate(sign=>{
+   const sc=window.fixtureScene,s=sc.session,p=sc.visualAssets,a=s.actorById('a1'),enemy=s.actorById('e1'),results=[];
+   const paint=()=>{sc.renderCastEvents();sc.applyFrame(s.snapshot());sc.game.step(performance.now(),0);};
+   const reset=()=>{s.clearTransientCombat();s.setPlayerMovement(a.instanceId,{x:0,y:0});Object.assign(a,{x:4,y:0});Object.assign(enemy,{x:4+sign*.7,y:0});s.cadence.set(a.instanceId,0);for(const cat of ['basic','heavy','special','awakening'])Object.assign(a.abilityState[cat],{phase:'ready',cooldownRemaining:0});paint();};
+   for(const category of ['basic','heavy','awakening','move']){
+    reset();const at=s.elapsedSeconds,hp=s.actors.map(v=>v.hp);if(!s.executeAbility(a,'special','player'))throw Error('Special rejected');const event=s.castEvents.at(-1);paint();
+    const ids=s.statuses.forActor(a.instanceId,at).map(r=>r.id),noDamage=JSON.stringify(hp)===JSON.stringify(s.actors.map(v=>v.hp)),noContact=p.stagedImpacts.size===0;
+    const accepted=category==='move'?s.setPlayerMovement(a.instanceId,{x:sign,y:0}):s.executeAbility(a,category,'player',enemy),sameClock=s.elapsedSeconds===at;
+    if(category==='move')s.step(.01);paint();const b=p.actorSprites.get(a.instanceId);
+    results.push({category,accepted,sameClock,noDamage,noContact,retainedIds:JSON.stringify(ids)===JSON.stringify(s.statuses.forActor(a.instanceId,s.elapsedSeconds).map(r=>r.id)),gesture:p.utility.gestures.has(a.instanceId),activation:p.utilitySprites.size,aura:[...p.overlaySprites.keys()].filter(k=>k.startsWith('source-status.')).length,body:{texture:b.texture.key,width:b.displayWidth,height:b.displayHeight},moved:category!=='move'||a.x!==4});
+    // A queued old utility or older offensive start cannot steal the new action.
+    p.cast(event,s.characterDefinitions.P2,s.elapsedSeconds);
+    p.cast({...event,presentationId:undefined,category:'heavy',phase:'start',actionId:'stale-browser-heavy',eventAt:at-.1,startedAt:at-.1,dueAt:at+.55,eventSequence:event.eventSequence-1},s.characterDefinitions.P2,s.elapsedSeconds);paint();
+    results.at(-1).staleRejected=p.actorSprites.get(a.instanceId).texture.key===b.texture.key&&!p.utility.gestures.has(a.instanceId);
+   }
+   reset();s.executeAbility(a,'special','player');const queued=[...s.castEvents];paint();s.clearTransientCombat();paint();for(const e of queued)p.cast(e,s.characterDefinitions.P2,s.elapsedSeconds);paint();
+   const staleAfterClear={gestures:p.utility.gestures.size,activation:p.utilitySprites.size,aura:[...p.overlaySprites.keys()].filter(k=>k.startsWith('source-status.')).length};
+   reset();s.executeAbility(a,'special','player');paint();a.damage(a.hp);s.step(.001);paint();const ko={activation:p.utilitySprites.size,aura:[...p.overlaySprites.keys()].filter(k=>k.startsWith('source-status.')).length,texture:p.actorSprites.get(a.instanceId).texture.key};a.heal(a.maxHp);
+   return {results,staleAfterClear,ko};
+  },sign);
+  for(const c of chaining.results){assert.equal(c.accepted,true,JSON.stringify(c));assert.equal(c.sameClock,true);assert.equal(c.noDamage,true);assert.equal(c.noContact,true);assert.equal(c.retainedIds,true);assert.equal(c.gesture,false);assert.equal(c.activation,1);assert.equal(c.aura,2);assert.equal(c.moved,true);assert.equal(c.staleRejected,true);assert.ok(!c.body.texture.endsWith('botuo.specialPoses'));
+   if(c.category==='basic')assert.deepEqual([c.body.width,c.body.height],[177.75,160.875]);if(c.category==='heavy')assert.deepEqual([c.body.width,c.body.height],[175,162]);if(c.category==='move')assert.deepEqual([c.body.width,c.body.height],[144,139.5]);}
+  assert.deepEqual(chaining.staleAfterClear,{gestures:0,activation:0,aura:0});assert.equal(chaining.ko.activation,0);assert.equal(chaining.ko.aura,0);assert.ok(chaining.ko.texture.endsWith('botuo.battleKo'));record.chaining=chaining;
   const cleanup=await page.evaluate(()=>{const sc=window.fixtureScene,s=sc.session,p=sc.visualAssets,a=s.actorById('a1');Object.assign(a.abilityState.special,{phase:'ready',cooldownRemaining:0});s.executeAbility(a,'special','player');sc.renderCastEvents();sc.applyFrame(s.snapshot());s.clearTransientCombat();sc.applyFrame(s.snapshot());sc.game.step(performance.now(),0);const transient={gesture:p.utility.gestures.size,activation:p.utilitySprites.size,aura:[...p.overlaySprites.keys()].filter(k=>k.startsWith('source-status.')).length};sc.game.destroy(true);sc.game.step(performance.now(),0);return {transient,closed:p.closed,bytes:p.textureBytes};});assert.deepEqual(cleanup,{transient:{gesture:0,activation:0,aura:0},closed:true,bytes:0});record.cleanup=cleanup;await context.close();
  }
  assert.deepEqual(report.errors,[]);report.status='PASS';console.log(JSON.stringify({status:'PASS',cases:report.cases.length,trimCases:report.trim.length}));

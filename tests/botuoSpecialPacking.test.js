@@ -34,15 +34,17 @@ test('installed physical adapter restores every legacy logical RGBA frame byte f
  }
  assert.equal(count,57);
 });
-test('installed 45-key envelope retains all required art with reserve and exact candidate bytes',async()=>{
+test('installed 45-key envelope retains required art, reserve and source-exact sampling derivatives',async()=>{
  for(const entry of [...proposal.legacyCandidates,...proposal.newAssets]){
   const record=assetManifest[entry.key];assert.ok(record?.path.startsWith('assets/special-runtime-v1/'),'approved candidate installed: '+entry.key);
-  const bytes=readFileSync('public/'+record.path);assert.equal(createHash('sha256').update(bytes).digest('hex'),entry.sha256);
-  assert.equal(record.width,entry.width);assert.equal(record.height,entry.height);
+  const bytes=readFileSync('public/'+record.path),fix=JSON.parse(readFileSync('docs/verification/P2_SPECIAL_RUNTIME/sampling-fix.json')).entries.find(e=>e.key===entry.key);
+  assert.equal(createHash('sha256').update(readFileSync(entry.path)).digest('hex'),entry.sha256);
+  assert.equal(createHash('sha256').update(bytes).digest('hex'),fix?.runtimeSha256??entry.sha256);
+  assert.equal(record.width,fix?.dimensions[0]??entry.width);assert.equal(record.height,fix?.dimensions[1]??entry.height);
  }
  const scene=assetScene(),p=new AssetPresenter(scene,{cache:createAssetCache({transport:pngTransport})});await p.prepare(Object.values(rosterCatalog));
  p.residency.setPins('new-utility',proposal.newAssets.map(e=>e.key));await p.loadKeys(proposal.newAssets.map(e=>e.key));
- assert.equal(p.textures.size,45);assert.equal(p.textureBytes,16562336);assert.ok(p.textureBytes+131072<=16777216);assert.equal(p.residency.snapshot().failed,0);assert.equal(p.residency.snapshot().evicted,0);
+ assert.equal(p.textures.size,45);assert.equal(p.textureBytes,16611224);assert.ok(p.textureBytes+131072<=16777216);assert.equal(p.residency.snapshot().failed,0);assert.equal(p.residency.snapshot().evicted,0);
  p.destroy();assert.equal(scene.budget().bytes,0);
 });
 test('logical body frame names, scale and origin survive native physical packing in both facings',async()=>{
@@ -59,4 +61,20 @@ test('static effects restore original logical dimensions with native trim rather
  const scene=assetScene(),calls=[];const add=scene.textures.addImage;scene.textures.addImage=(key,im)=>{const t=add(key,im);t.add=(name,...args)=>({setTrim(...trim){calls.push(trim);}});return t;};
  const p=new AssetPresenter(scene,{cache:createAssetCache({transport:pngTransport})});await p.loadKeys(['botuo.specialState']);
  assert.equal(typeof p.effectImage,'function');const im=p.effectImage('botuo.specialState');assert.ok(im.frame);assert.deepEqual(calls[0].slice(0,2),[224,234]);p.destroy();
+});
+
+// Regression from real Chromium run1086/1087: bilinear taps escaped tight regions.
+const samplingKeys=['botuo.battleIdle','jiuweihu.battleIdle','lushu.battleMove','botuo.battleMove','lushu.basicContact','lushu.heavyImpact','lushu.battleSpecial','lushu.awakeningCImpact','botuo.basicPoses'];
+test('browser-affected physical frames retain one source-exact sampling texel on every side',()=>{
+ for(const key of samplingKeys){
+  const e=proposal.legacyCandidates.find(e=>e.key===key),p=specialRuntimePacking[key],original=decodeRgbaPng(readFileSync(e.source)),packed=decodeRgbaPng(readFileSync('public/'+p.record.path));
+  for(let i=0;i<p.frames.length;i++){
+   const f=p.frames[i],logical=p.logicalFrames[i],tx=f.trim[2],ty=f.trim[3],ox=logical.x+tx-(logical.trim?.[2]??0),oy=logical.y+ty-(logical.trim?.[3]??0);
+   assert.ok(f.x>=1&&f.y>=1&&f.x+f.width<packed.width&&f.y+f.height<packed.height,`${key} ${i}: sampling gutter missing`);
+   for(let y=-1;y<=f.height;y++)for(let x=-1;x<=f.width;x++){
+    const sx=Math.max(0,Math.min(original.width-1,ox+x)),sy=Math.max(0,Math.min(original.height-1,oy+y));
+    assert.deepEqual(packed.pixels.subarray(((f.y+y)*packed.width+f.x+x)*4,((f.y+y)*packed.width+f.x+x)*4+4),original.pixels.subarray((sy*original.width+sx)*4,(sy*original.width+sx)*4+4),`${key} ${i}: source sampling (${x},${y})`);
+   }
+  }
+ }
 });

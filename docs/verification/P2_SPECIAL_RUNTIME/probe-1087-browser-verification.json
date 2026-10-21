@@ -1,0 +1,3388 @@
+{
+  "kind": "Controlled Chromium/Phaser WebGL utility/status + native trim equivalence, not physical phone verification",
+  "cases": [
+    {
+      "reduced": false,
+      "sign": -1,
+      "initial": {
+        "bytes": 16562336,
+        "keys": 45,
+        "renderer": 2,
+        "hpUnchanged": true,
+        "activation": 1,
+        "aura": [
+          "source-status.a1.protective-guard",
+          "source-status.a2.protective-guard"
+        ],
+        "records": [
+          [
+            {
+              "id": "status-1",
+              "magnitude": 0.275,
+              "presentationSource": {
+                "abilityId": "P2.special",
+                "category": "special",
+                "effectId": "primary"
+              },
+              "expiryTime": 4.32
+            }
+          ],
+          [
+            {
+              "id": "status-2",
+              "magnitude": 0.165,
+              "presentationSource": {
+                "abilityId": "P2.special",
+                "category": "special",
+                "effectId": "boyi.ally"
+              },
+              "expiryTime": 4.32
+            }
+          ],
+          []
+        ],
+        "body": {
+          "texture": "visual.1.botuo.specialPoses",
+          "frame": "0.0.200.200",
+          "width": 200,
+          "height": 200,
+          "flipX": true
+        },
+        "contacts": 0
+      },
+      "frames": [
+        {
+          "time": 0,
+          "frame": "0.0.200.200",
+          "texture": "visual.1.botuo.specialPoses",
+          "activation": 1,
+          "aura": 2,
+          "file": "special-normal-left-0.png"
+        },
+        {
+          "time": 0.16,
+          "frame": "200.0.200.200",
+          "texture": "visual.1.botuo.specialPoses",
+          "activation": 1,
+          "aura": 2,
+          "file": "special-normal-left-0.16.png"
+        },
+        {
+          "time": 0.32,
+          "frame": "400.0.200.200",
+          "texture": "visual.1.botuo.specialPoses",
+          "activation": 0,
+          "aura": 2,
+          "file": "special-normal-left-0.32.png"
+        },
+        {
+          "time": 0.48,
+          "frame": "600.0.200.200",
+          "texture": "visual.1.botuo.specialPoses",
+          "activation": 0,
+          "aura": 2,
+          "file": "special-normal-left-0.48.png"
+        },
+        {
+          "time": 0.64,
+          "frame": "0.0.160.160",
+          "texture": "visual.1.botuo.battleIdle",
+          "activation": 0,
+          "aura": 2,
+          "file": "special-normal-left-0.64.png"
+        }
+      ],
+      "pauseFrozen": true,
+      "motion": {
+        "texture": "visual.1.botuo.battleMove",
+        "offset": [
+          0,
+          -88
+        ],
+        "width": 224,
+        "height": 234,
+        "flipX": true
+      },
+      "cleanup": {
+        "transient": {
+          "gesture": 0,
+          "activation": 0,
+          "aura": 0
+        },
+        "closed": true,
+        "bytes": 0
+      }
+    },
+    {
+      "reduced": false,
+      "sign": 1,
+      "initial": {
+        "bytes": 16562336,
+        "keys": 45,
+        "renderer": 2,
+        "hpUnchanged": true,
+        "activation": 1,
+        "aura": [
+          "source-status.a1.protective-guard",
+          "source-status.a2.protective-guard"
+        ],
+        "records": [
+          [
+            {
+              "id": "status-1",
+              "magnitude": 0.275,
+              "presentationSource": {
+                "abilityId": "P2.special",
+                "category": "special",
+                "effectId": "primary"
+              },
+              "expiryTime": 4.32
+            }
+          ],
+          [
+            {
+              "id": "status-2",
+              "magnitude": 0.165,
+              "presentationSource": {
+                "abilityId": "P2.special",
+                "category": "special",
+                "effectId": "boyi.ally"
+              },
+              "expiryTime": 4.32
+            }
+          ],
+          []
+        ],
+        "body": {
+          "texture": "visual.1.botuo.specialPoses",
+          "frame": "0.0.200.200",
+          "width": 200,
+          "height": 200,
+          "flipX": false
+        },
+        "contacts": 0
+      },
+      "frames": [
+        {
+          "time": 0,
+          "frame": "0.0.200.200",
+          "texture": "visual.1.botuo.specialPoses",
+          "activation": 1,
+          "aura": 2,
+          "file": "special-normal-right-0.png"
+        },
+        {
+          "time": 0.16,
+          "frame": "200.0.200.200",
+          "texture": "visual.1.botuo.specialPoses",
+          "activation": 1,
+          "aura": 2,
+          "file": "special-normal-right-0.16.png"
+        },
+        {
+          "time": 0.32,
+          "frame": "400.0.200.200",
+          "texture": "visual.1.botuo.specialPoses",
+          "activation": 0,
+          "aura": 2,
+          "file": "special-normal-right-0.32.png"
+        },
+        {
+          "time": 0.48,
+          "frame": "600.0.200.200",
+          "texture": "visual.1.botuo.specialPoses",
+          "activation": 0,
+          "aura": 2,
+          "file": "special-normal-right-0.48.png"
+        },
+        {
+          "time": 0.64,
+          "frame": "0.0.160.160",
+          "texture": "visual.1.botuo.battleIdle",
+          "activation": 0,
+          "aura": 2,
+          "file": "special-normal-right-0.64.png"
+        }
+      ],
+      "pauseFrozen": true,
+      "motion": {
+        "texture": "visual.1.botuo.battleMove",
+        "offset": [
+          0,
+          -88
+        ],
+        "width": 224,
+        "height": 234,
+        "flipX": false
+      }
+    }
+  ],
+  "trim": [
+    {
+      "key": "lushu.battleIdle",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        96,
+        128
+      ],
+      "expected": [
+        96,
+        128
+      ],
+      "width": 108,
+      "height": 144,
+      "origin": [
+        0.5,
+        0.9544198895027625
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000016534391534391535,
+      "changedChannels": 4,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleIdle",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        96,
+        128
+      ],
+      "expected": [
+        96,
+        128
+      ],
+      "width": 108,
+      "height": 144,
+      "origin": [
+        0.5,
+        0.9544198895027625
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.battleIdle",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        160,
+        160
+      ],
+      "expected": [
+        160,
+        160
+      ],
+      "width": 144,
+      "height": 144,
+      "origin": [
+        0.5,
+        0.9875
+      ],
+      "maxDelta": 10,
+      "meanChannelDelta": 0.00022982804232804234,
+      "changedChannels": 181,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 10,
+          "meanChannelDelta": 0.00022982804232804234,
+          "changedChannels": 181
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 8.267195767195768e-7,
+          "changedChannels": 2
+        }
+      }
+    },
+    {
+      "key": "botuo.battleIdle",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        160,
+        160
+      ],
+      "expected": [
+        160,
+        160
+      ],
+      "width": 144,
+      "height": 144,
+      "origin": [
+        0.5,
+        0.9875
+      ],
+      "maxDelta": 10,
+      "meanChannelDelta": 0.0002302414021164021,
+      "changedChannels": 183,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 10,
+          "meanChannelDelta": 0.0002302414021164021,
+          "changedChannels": 183
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 8.267195767195768e-7,
+          "changedChannels": 2
+        }
+      }
+    },
+    {
+      "key": "chiru.battleIdle",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        160,
+        160
+      ],
+      "expected": [
+        160,
+        160
+      ],
+      "width": 144,
+      "height": 144,
+      "origin": [
+        0.5,
+        1
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "chiru.battleIdle",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        160,
+        160
+      ],
+      "expected": [
+        160,
+        160
+      ],
+      "width": 144,
+      "height": 144,
+      "origin": [
+        0.5,
+        1
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 4.133597883597884e-7,
+      "changedChannels": 1,
+      "diagnostic": {}
+    },
+    {
+      "key": "jiuweihu.battleIdle",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        160,
+        137
+      ],
+      "expected": [
+        160,
+        137
+      ],
+      "width": 144,
+      "height": 123.3,
+      "origin": [
+        0.5,
+        0.9927007299270073
+      ],
+      "maxDelta": 6,
+      "meanChannelDelta": 0.000028108465608465607,
+      "changedChannels": 37,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 6,
+          "meanChannelDelta": 0.000028108465608465607,
+          "changedChannels": 37
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 8.267195767195768e-7,
+          "changedChannels": 2
+        }
+      }
+    },
+    {
+      "key": "jiuweihu.battleIdle",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        160,
+        137
+      ],
+      "expected": [
+        160,
+        137
+      ],
+      "width": 144,
+      "height": 123.3,
+      "origin": [
+        0.5,
+        0.9927007299270073
+      ],
+      "maxDelta": 4,
+      "meanChannelDelta": 0.000016947751322751323,
+      "changedChannels": 32,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 4,
+          "meanChannelDelta": 0.000016947751322751323,
+          "changedChannels": 32
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.0000016534391534391535,
+          "changedChannels": 4
+        }
+      }
+    },
+    {
+      "key": "xingxing.battleIdle",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        160,
+        134
+      ],
+      "expected": [
+        160,
+        134
+      ],
+      "width": 144,
+      "height": 120.60000000000001,
+      "origin": [
+        0.5,
+        0.9925373134328358
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "xingxing.battleIdle",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        160,
+        134
+      ],
+      "expected": [
+        160,
+        134
+      ],
+      "width": 144,
+      "height": 120.60000000000001,
+      "origin": [
+        0.5,
+        0.9925373134328358
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000004546957671957672,
+      "changedChannels": 11,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleMove",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        96,
+        91
+      ],
+      "expected": [
+        96,
+        91
+      ],
+      "width": 108,
+      "height": 102.375,
+      "origin": [
+        0.5,
+        0.9578653390808087
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleMove",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        96,
+        91
+      ],
+      "expected": [
+        96,
+        91
+      ],
+      "width": 108,
+      "height": 102.375,
+      "origin": [
+        0.5,
+        0.9578653390808087
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000007027116402116402,
+      "changedChannels": 17,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleMove",
+      "frame": 1,
+      "flipX": false,
+      "logical": [
+        96,
+        91
+      ],
+      "expected": [
+        96,
+        91
+      ],
+      "width": 108,
+      "height": 102.375,
+      "origin": [
+        0.5,
+        0.9578653390808087
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000002066798941798942,
+      "changedChannels": 5,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleMove",
+      "frame": 1,
+      "flipX": true,
+      "logical": [
+        96,
+        91
+      ],
+      "expected": [
+        96,
+        91
+      ],
+      "width": 108,
+      "height": 102.375,
+      "origin": [
+        0.5,
+        0.9578653390808087
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000001240079365079365,
+      "changedChannels": 3,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleMove",
+      "frame": 2,
+      "flipX": false,
+      "logical": [
+        96,
+        91
+      ],
+      "expected": [
+        96,
+        91
+      ],
+      "width": 108,
+      "height": 102.375,
+      "origin": [
+        0.5,
+        0.9578653390808087
+      ],
+      "maxDelta": 32,
+      "meanChannelDelta": 0.00022900132275132276,
+      "changedChannels": 109,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 32,
+          "meanChannelDelta": 0.00016906415343915344,
+          "changedChannels": 64
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.00000248015873015873,
+          "changedChannels": 6
+        }
+      }
+    },
+    {
+      "key": "lushu.battleMove",
+      "frame": 2,
+      "flipX": true,
+      "logical": [
+        96,
+        91
+      ],
+      "expected": [
+        96,
+        91
+      ],
+      "width": 108,
+      "height": 102.375,
+      "origin": [
+        0.5,
+        0.9578653390808087
+      ],
+      "maxDelta": 8,
+      "meanChannelDelta": 0.00010623346560846561,
+      "changedChannels": 79,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 8,
+          "meanChannelDelta": 0.000059523809523809524,
+          "changedChannels": 45
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.000002066798941798942,
+          "changedChannels": 5
+        }
+      }
+    },
+    {
+      "key": "lushu.battleMove",
+      "frame": 3,
+      "flipX": false,
+      "logical": [
+        96,
+        91
+      ],
+      "expected": [
+        96,
+        91
+      ],
+      "width": 108,
+      "height": 102.375,
+      "origin": [
+        0.5,
+        0.9578653390808087
+      ],
+      "maxDelta": 8,
+      "meanChannelDelta": 0.00006200396825396825,
+      "changedChannels": 46,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 8,
+          "meanChannelDelta": 0.00005539021164021164,
+          "changedChannels": 46
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.000002066798941798942,
+          "changedChannels": 5
+        }
+      }
+    },
+    {
+      "key": "lushu.battleMove",
+      "frame": 3,
+      "flipX": true,
+      "logical": [
+        96,
+        91
+      ],
+      "expected": [
+        96,
+        91
+      ],
+      "width": 108,
+      "height": 102.375,
+      "origin": [
+        0.5,
+        0.9578653390808087
+      ],
+      "maxDelta": 8,
+      "meanChannelDelta": 0.000051256613756613754,
+      "changedChannels": 36,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 8,
+          "meanChannelDelta": 0.0000533234126984127,
+          "changedChannels": 39
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 4.133597883597884e-7,
+          "changedChannels": 1
+        }
+      }
+    },
+    {
+      "key": "lushu.battleKo",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        512,
+        472
+      ],
+      "expected": [
+        512,
+        472
+      ],
+      "width": 144,
+      "height": 132.75,
+      "origin": [
+        0.5,
+        0.7944915254237288
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000016534391534391535,
+      "changedChannels": 4,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleKo",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        512,
+        472
+      ],
+      "expected": [
+        512,
+        472
+      ],
+      "width": 144,
+      "height": 132.75,
+      "origin": [
+        0.5,
+        0.7944915254237288
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.battleMove",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        160,
+        155
+      ],
+      "expected": [
+        160,
+        155
+      ],
+      "width": 144,
+      "height": 139.5,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "maxDelta": 16,
+      "meanChannelDelta": 0.00023272156084656084,
+      "changedChannels": 134,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 16,
+          "meanChannelDelta": 0.00022900132275132276,
+          "changedChannels": 131
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.0000016534391534391535,
+          "changedChannels": 4
+        }
+      }
+    },
+    {
+      "key": "botuo.battleMove",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        160,
+        155
+      ],
+      "expected": [
+        160,
+        155
+      ],
+      "width": 144,
+      "height": 139.5,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "maxDelta": 15,
+      "meanChannelDelta": 0.00022734788359788359,
+      "changedChannels": 140,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 11,
+          "meanChannelDelta": 0.0002058531746031746,
+          "changedChannels": 135
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.0000028935185185185184,
+          "changedChannels": 7
+        }
+      }
+    },
+    {
+      "key": "botuo.battleMove",
+      "frame": 1,
+      "flipX": false,
+      "logical": [
+        160,
+        155
+      ],
+      "expected": [
+        160,
+        155
+      ],
+      "width": 144,
+      "height": 139.5,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "maxDelta": 8,
+      "meanChannelDelta": 0.000059110449735449736,
+      "changedChannels": 51,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 12,
+          "meanChannelDelta": 0.00022114748677248678,
+          "changedChannels": 129
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.0000016534391534391535,
+          "changedChannels": 4
+        }
+      }
+    },
+    {
+      "key": "botuo.battleMove",
+      "frame": 1,
+      "flipX": true,
+      "logical": [
+        160,
+        155
+      ],
+      "expected": [
+        160,
+        155
+      ],
+      "width": 144,
+      "height": 139.5,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "maxDelta": 6,
+      "meanChannelDelta": 0.00005828373015873016,
+      "changedChannels": 53,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 11,
+          "meanChannelDelta": 0.00021825396825396825,
+          "changedChannels": 133
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.00000248015873015873,
+          "changedChannels": 6
+        }
+      }
+    },
+    {
+      "key": "botuo.battleMove",
+      "frame": 2,
+      "flipX": false,
+      "logical": [
+        160,
+        155
+      ],
+      "expected": [
+        160,
+        155
+      ],
+      "width": 144,
+      "height": 139.5,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "maxDelta": 12,
+      "meanChannelDelta": 0.00024346891534391535,
+      "changedChannels": 147,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 11,
+          "meanChannelDelta": 0.00018890542328042328,
+          "changedChannels": 114
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.000003306878306878307,
+          "changedChannels": 8
+        }
+      }
+    },
+    {
+      "key": "botuo.battleMove",
+      "frame": 2,
+      "flipX": true,
+      "logical": [
+        160,
+        155
+      ],
+      "expected": [
+        160,
+        155
+      ],
+      "width": 144,
+      "height": 139.5,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "maxDelta": 11,
+      "meanChannelDelta": 0.00023602843915343914,
+      "changedChannels": 139,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 11,
+          "meanChannelDelta": 0.00018725198412698413,
+          "changedChannels": 106
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.0000016534391534391535,
+          "changedChannels": 4
+        }
+      }
+    },
+    {
+      "key": "botuo.battleMove",
+      "frame": 3,
+      "flipX": false,
+      "logical": [
+        160,
+        155
+      ],
+      "expected": [
+        160,
+        155
+      ],
+      "width": 144,
+      "height": 139.5,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "maxDelta": 8,
+      "meanChannelDelta": 0.000177744708994709,
+      "changedChannels": 132,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 14,
+          "meanChannelDelta": 0.00022858796296296296,
+          "changedChannels": 151
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.000004133597883597884,
+          "changedChannels": 10
+        }
+      }
+    },
+    {
+      "key": "botuo.battleMove",
+      "frame": 3,
+      "flipX": true,
+      "logical": [
+        160,
+        155
+      ],
+      "expected": [
+        160,
+        155
+      ],
+      "width": 144,
+      "height": 139.5,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "maxDelta": 8,
+      "meanChannelDelta": 0.00018187830687830687,
+      "changedChannels": 135,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 11,
+          "meanChannelDelta": 0.00022073412698412698,
+          "changedChannels": 154
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.0000037202380952380952,
+          "changedChannels": 9
+        }
+      }
+    },
+    {
+      "key": "botuo.battleKo",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        512,
+        331
+      ],
+      "expected": [
+        512,
+        331
+      ],
+      "width": 144,
+      "height": 93.09375,
+      "origin": [
+        0.5,
+        0.8459214501510574
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.battleKo",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        512,
+        331
+      ],
+      "expected": [
+        512,
+        331
+      ],
+      "width": 144,
+      "height": 93.09375,
+      "origin": [
+        0.5,
+        0.8459214501510574
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "chiru.battleKo",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        1254,
+        1254
+      ],
+      "expected": [
+        1254,
+        1254
+      ],
+      "width": 144,
+      "height": 144,
+      "origin": [
+        0.5,
+        0.7814992025518341
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000016534391534391535,
+      "changedChannels": 4,
+      "diagnostic": {}
+    },
+    {
+      "key": "chiru.battleKo",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        1254,
+        1254
+      ],
+      "expected": [
+        1254,
+        1254
+      ],
+      "width": 144,
+      "height": 144,
+      "origin": [
+        0.5,
+        0.7814992025518341
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000001240079365079365,
+      "changedChannels": 3,
+      "diagnostic": {}
+    },
+    {
+      "key": "jiuweihu.battleKo",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        512,
+        438
+      ],
+      "expected": [
+        512,
+        438
+      ],
+      "width": 144,
+      "height": 123.1875,
+      "origin": [
+        0.5,
+        0.7990867579908676
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "jiuweihu.battleKo",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        512,
+        438
+      ],
+      "expected": [
+        512,
+        438
+      ],
+      "width": 144,
+      "height": 123.1875,
+      "origin": [
+        0.5,
+        0.7990867579908676
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000001240079365079365,
+      "changedChannels": 3,
+      "diagnostic": {}
+    },
+    {
+      "key": "xingxing.battleKo",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        480,
+        279
+      ],
+      "expected": [
+        480,
+        279
+      ],
+      "width": 135,
+      "height": 78.46875,
+      "origin": [
+        0.49166666666666664,
+        0.989247311827957
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 4.133597883597884e-7,
+      "changedChannels": 1,
+      "diagnostic": {}
+    },
+    {
+      "key": "xingxing.battleKo",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        480,
+        279
+      ],
+      "expected": [
+        480,
+        279
+      ],
+      "width": 135,
+      "height": 78.46875,
+      "origin": [
+        0.49166666666666664,
+        0.989247311827957
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000001240079365079365,
+      "changedChannels": 3,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleBasic",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        128,
+        101
+      ],
+      "expected": [
+        128,
+        101
+      ],
+      "width": 178.06451612903226,
+      "height": 140.5040322580645,
+      "origin": [
+        0.5,
+        0.9617231480534553
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleBasic",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        128,
+        101
+      ],
+      "expected": [
+        128,
+        101
+      ],
+      "width": 178.06451612903226,
+      "height": 140.5040322580645,
+      "origin": [
+        0.5,
+        0.9617231480534553
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleBasic",
+      "frame": 1,
+      "flipX": false,
+      "logical": [
+        128,
+        101
+      ],
+      "expected": [
+        128,
+        101
+      ],
+      "width": 178.06451612903226,
+      "height": 140.5040322580645,
+      "origin": [
+        0.5,
+        0.9617231480534553
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000003306878306878307,
+      "changedChannels": 8,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleBasic",
+      "frame": 1,
+      "flipX": true,
+      "logical": [
+        128,
+        101
+      ],
+      "expected": [
+        128,
+        101
+      ],
+      "width": 178.06451612903226,
+      "height": 140.5040322580645,
+      "origin": [
+        0.5,
+        0.9617231480534553
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleBasic",
+      "frame": 2,
+      "flipX": false,
+      "logical": [
+        128,
+        101
+      ],
+      "expected": [
+        128,
+        101
+      ],
+      "width": 178.06451612903226,
+      "height": 140.5040322580645,
+      "origin": [
+        0.5,
+        0.9617231480534553
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleBasic",
+      "frame": 2,
+      "flipX": true,
+      "logical": [
+        128,
+        101
+      ],
+      "expected": [
+        128,
+        101
+      ],
+      "width": 178.06451612903226,
+      "height": 140.5040322580645,
+      "origin": [
+        0.5,
+        0.9617231480534553
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 4.133597883597884e-7,
+      "changedChannels": 1,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleBasic",
+      "frame": 3,
+      "flipX": false,
+      "logical": [
+        128,
+        101
+      ],
+      "expected": [
+        128,
+        101
+      ],
+      "width": 178.06451612903226,
+      "height": 140.5040322580645,
+      "origin": [
+        0.5,
+        0.9617231480534553
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleBasic",
+      "frame": 3,
+      "flipX": true,
+      "logical": [
+        128,
+        101
+      ],
+      "expected": [
+        128,
+        101
+      ],
+      "width": 178.06451612903226,
+      "height": 140.5040322580645,
+      "origin": [
+        0.5,
+        0.9617231480534553
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000003306878306878307,
+      "changedChannels": 8,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.basicBlade",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        97,
+        81
+      ],
+      "expected": [
+        97,
+        81
+      ],
+      "width": 97,
+      "height": 81,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.basicBlade",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        97,
+        81
+      ],
+      "expected": [
+        97,
+        81
+      ],
+      "width": 97,
+      "height": 81,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000002066798941798942,
+      "changedChannels": 5,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.basicContact",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        85,
+        57
+      ],
+      "expected": [
+        85,
+        57
+      ],
+      "width": 85,
+      "height": 57,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 2,
+      "meanChannelDelta": 0.000006200396825396825,
+      "changedChannels": 14,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 2,
+          "meanChannelDelta": 0.000006200396825396825,
+          "changedChannels": 14
+        },
+        "gutter1": {
+          "maxDelta": 0,
+          "meanChannelDelta": 0,
+          "changedChannels": 0
+        }
+      }
+    },
+    {
+      "key": "lushu.basicContact",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        85,
+        57
+      ],
+      "expected": [
+        85,
+        57
+      ],
+      "width": 85,
+      "height": 57,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 2,
+      "meanChannelDelta": 0.000004546957671957672,
+      "changedChannels": 9,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 2,
+          "meanChannelDelta": 0.000004546957671957672,
+          "changedChannels": 9
+        },
+        "gutter1": {
+          "maxDelta": 0,
+          "meanChannelDelta": 0,
+          "changedChannels": 0
+        }
+      }
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        128,
+        85
+      ],
+      "expected": [
+        128,
+        85
+      ],
+      "width": 178.06451612903226,
+      "height": 118.24596774193549,
+      "origin": [
+        0.5,
+        0.9545180935693999
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        128,
+        85
+      ],
+      "expected": [
+        128,
+        85
+      ],
+      "width": 178.06451612903226,
+      "height": 118.24596774193549,
+      "origin": [
+        0.5,
+        0.9545180935693999
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "frame": 1,
+      "flipX": false,
+      "logical": [
+        128,
+        85
+      ],
+      "expected": [
+        128,
+        85
+      ],
+      "width": 178.06451612903226,
+      "height": 118.24596774193549,
+      "origin": [
+        0.5,
+        0.9545180935693999
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "frame": 1,
+      "flipX": true,
+      "logical": [
+        128,
+        85
+      ],
+      "expected": [
+        128,
+        85
+      ],
+      "width": 178.06451612903226,
+      "height": 118.24596774193549,
+      "origin": [
+        0.5,
+        0.9545180935693999
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000003306878306878307,
+      "changedChannels": 8,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "frame": 2,
+      "flipX": false,
+      "logical": [
+        128,
+        85
+      ],
+      "expected": [
+        128,
+        85
+      ],
+      "width": 178.06451612903226,
+      "height": 118.24596774193549,
+      "origin": [
+        0.5,
+        0.9545180935693999
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "frame": 2,
+      "flipX": true,
+      "logical": [
+        128,
+        85
+      ],
+      "expected": [
+        128,
+        85
+      ],
+      "width": 178.06451612903226,
+      "height": 118.24596774193549,
+      "origin": [
+        0.5,
+        0.9545180935693999
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000004133597883597884,
+      "changedChannels": 10,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "frame": 3,
+      "flipX": false,
+      "logical": [
+        128,
+        85
+      ],
+      "expected": [
+        128,
+        85
+      ],
+      "width": 178.06451612903226,
+      "height": 118.24596774193549,
+      "origin": [
+        0.5,
+        0.9545180935693999
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000002066798941798942,
+      "changedChannels": 5,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "frame": 3,
+      "flipX": true,
+      "logical": [
+        128,
+        85
+      ],
+      "expected": [
+        128,
+        85
+      ],
+      "width": 178.06451612903226,
+      "height": 118.24596774193549,
+      "origin": [
+        0.5,
+        0.9545180935693999
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000037202380952380952,
+      "changedChannels": 9,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.heavyWind",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        112,
+        112
+      ],
+      "expected": [
+        112,
+        112
+      ],
+      "width": 112,
+      "height": 112,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000016534391534391535,
+      "changedChannels": 4,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.heavyWind",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        112,
+        112
+      ],
+      "expected": [
+        112,
+        112
+      ],
+      "width": 112,
+      "height": 112,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.heavyImpact",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        128,
+        86
+      ],
+      "expected": [
+        128,
+        86
+      ],
+      "width": 128,
+      "height": 86,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00001240079365079365,
+      "changedChannels": 30,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.00001240079365079365,
+          "changedChannels": 30
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.00000992063492063492,
+          "changedChannels": 24
+        }
+      }
+    },
+    {
+      "key": "lushu.heavyImpact",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        128,
+        86
+      ],
+      "expected": [
+        128,
+        86
+      ],
+      "width": 128,
+      "height": 86,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000014054232804232804,
+      "changedChannels": 34,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.000014054232804232804,
+          "changedChannels": 34
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.000011160714285714286,
+          "changedChannels": 27
+        }
+      }
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        80,
+        59
+      ],
+      "expected": [
+        80,
+        59
+      ],
+      "width": 208.79999999999998,
+      "height": 153.98999999999998,
+      "origin": [
+        0.375,
+        0.9334142742281822
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000008680555555555556,
+      "changedChannels": 21,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        80,
+        59
+      ],
+      "expected": [
+        80,
+        59
+      ],
+      "width": 208.79999999999998,
+      "height": 153.98999999999998,
+      "origin": [
+        0.375,
+        0.9334142742281822
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000010333994708994708,
+      "changedChannels": 25,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.000005373677248677249,
+          "changedChannels": 13
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.000002066798941798942,
+          "changedChannels": 5
+        }
+      }
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "frame": 1,
+      "flipX": false,
+      "logical": [
+        80,
+        59
+      ],
+      "expected": [
+        80,
+        59
+      ],
+      "width": 208.79999999999998,
+      "height": 153.98999999999998,
+      "origin": [
+        0.375,
+        0.9334142742281822
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000008680555555555556,
+      "changedChannels": 21,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "frame": 1,
+      "flipX": true,
+      "logical": [
+        80,
+        59
+      ],
+      "expected": [
+        80,
+        59
+      ],
+      "width": 208.79999999999998,
+      "height": 153.98999999999998,
+      "origin": [
+        0.375,
+        0.9334142742281822
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000004133597883597884,
+      "changedChannels": 10,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "frame": 2,
+      "flipX": false,
+      "logical": [
+        80,
+        59
+      ],
+      "expected": [
+        80,
+        59
+      ],
+      "width": 208.79999999999998,
+      "height": 153.98999999999998,
+      "origin": [
+        0.375,
+        0.9334142742281822
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000074404761904761905,
+      "changedChannels": 18,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "frame": 2,
+      "flipX": true,
+      "logical": [
+        80,
+        59
+      ],
+      "expected": [
+        80,
+        59
+      ],
+      "width": 208.79999999999998,
+      "height": 153.98999999999998,
+      "origin": [
+        0.375,
+        0.9334142742281822
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000007853835978835978,
+      "changedChannels": 19,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "frame": 3,
+      "flipX": false,
+      "logical": [
+        80,
+        59
+      ],
+      "expected": [
+        80,
+        59
+      ],
+      "width": 208.79999999999998,
+      "height": 153.98999999999998,
+      "origin": [
+        0.375,
+        0.9334142742281822
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "frame": 3,
+      "flipX": true,
+      "logical": [
+        80,
+        59
+      ],
+      "expected": [
+        80,
+        59
+      ],
+      "width": 208.79999999999998,
+      "height": 153.98999999999998,
+      "origin": [
+        0.375,
+        0.9334142742281822
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000003306878306878307,
+      "changedChannels": 8,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.specialWind",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        96,
+        80
+      ],
+      "expected": [
+        96,
+        80
+      ],
+      "width": 96,
+      "height": 80,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.specialWind",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        96,
+        80
+      ],
+      "expected": [
+        96,
+        80
+      ],
+      "width": 96,
+      "height": 80,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000001240079365079365,
+      "changedChannels": 3,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.specialImpact",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        112,
+        72
+      ],
+      "expected": [
+        112,
+        72
+      ],
+      "width": 112,
+      "height": 72,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000037202380952380952,
+      "changedChannels": 9,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.specialImpact",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        112,
+        72
+      ],
+      "expected": [
+        112,
+        72
+      ],
+      "width": 112,
+      "height": 72,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000496031746031746,
+      "changedChannels": 12,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000037202380952380952,
+      "changedChannels": 9,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000003306878306878307,
+      "changedChannels": 8,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 1,
+      "flipX": false,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000001240079365079365,
+      "changedChannels": 3,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 1,
+      "flipX": true,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000003306878306878307,
+      "changedChannels": 8,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 2,
+      "flipX": false,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000004546957671957672,
+      "changedChannels": 11,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 2,
+      "flipX": true,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000037202380952380952,
+      "changedChannels": 9,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 3,
+      "flipX": false,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000002066798941798942,
+      "changedChannels": 5,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 3,
+      "flipX": true,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 4,
+      "flipX": false,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000007027116402116402,
+      "changedChannels": 17,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "frame": 4,
+      "flipX": true,
+      "logical": [
+        128,
+        128
+      ],
+      "expected": [
+        128,
+        128
+      ],
+      "width": 167.56363636363636,
+      "height": 167.56363636363636,
+      "origin": [
+        0.5,
+        0.93125
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000008267195767195768,
+      "changedChannels": 20,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningASource",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        96,
+        61
+      ],
+      "expected": [
+        96,
+        61
+      ],
+      "width": 96,
+      "height": 61,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000008267195767195768,
+      "changedChannels": 20,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningASource",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        96,
+        61
+      ],
+      "expected": [
+        96,
+        61
+      ],
+      "width": 96,
+      "height": 61,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000496031746031746,
+      "changedChannels": 12,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningAImpact",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        96,
+        77
+      ],
+      "expected": [
+        96,
+        77
+      ],
+      "width": 96,
+      "height": 77,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000003306878306878307,
+      "changedChannels": 8,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningAImpact",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        96,
+        77
+      ],
+      "expected": [
+        96,
+        77
+      ],
+      "width": 96,
+      "height": 77,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningBSource",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        96,
+        73
+      ],
+      "expected": [
+        96,
+        73
+      ],
+      "width": 96,
+      "height": 73,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 8.267195767195768e-7,
+      "changedChannels": 2,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningBSource",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        96,
+        73
+      ],
+      "expected": [
+        96,
+        73
+      ],
+      "width": 96,
+      "height": 73,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningBImpact",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        96,
+        88
+      ],
+      "expected": [
+        96,
+        88
+      ],
+      "width": 96,
+      "height": 88,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000496031746031746,
+      "changedChannels": 12,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningBImpact",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        96,
+        88
+      ],
+      "expected": [
+        96,
+        88
+      ],
+      "width": 96,
+      "height": 88,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningCSource",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        93,
+        26
+      ],
+      "expected": [
+        93,
+        26
+      ],
+      "width": 93,
+      "height": 26,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000037202380952380952,
+      "changedChannels": 9,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningCSource",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        93,
+        26
+      ],
+      "expected": [
+        93,
+        26
+      ],
+      "width": 93,
+      "height": 26,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000037202380952380952,
+      "changedChannels": 9,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningCImpact",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        96,
+        93
+      ],
+      "expected": [
+        96,
+        93
+      ],
+      "width": 96,
+      "height": 93,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "lushu.awakeningCImpact",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        96,
+        93
+      ],
+      "expected": [
+        96,
+        93
+      ],
+      "width": 96,
+      "height": 93,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 2,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 5,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 2,
+          "meanChannelDelta": 0.0000028935185185185184,
+          "changedChannels": 5
+        },
+        "gutter1": {
+          "maxDelta": 0,
+          "meanChannelDelta": 0,
+          "changedChannels": 0
+        }
+      }
+    },
+    {
+      "key": "botuo.basicPoses",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        158,
+        143
+      ],
+      "expected": [
+        158,
+        143
+      ],
+      "width": 177.75,
+      "height": 160.875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000496031746031746,
+      "changedChannels": 12,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicPoses",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        158,
+        143
+      ],
+      "expected": [
+        158,
+        143
+      ],
+      "width": 177.75,
+      "height": 160.875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000496031746031746,
+      "changedChannels": 12,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicPoses",
+      "frame": 1,
+      "flipX": false,
+      "logical": [
+        158,
+        143
+      ],
+      "expected": [
+        158,
+        143
+      ],
+      "width": 177.75,
+      "height": 160.875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000496031746031746,
+      "changedChannels": 12,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicPoses",
+      "frame": 1,
+      "flipX": true,
+      "logical": [
+        158,
+        143
+      ],
+      "expected": [
+        158,
+        143
+      ],
+      "width": 177.75,
+      "height": 160.875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000005787037037037037,
+      "changedChannels": 14,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicPoses",
+      "frame": 2,
+      "flipX": false,
+      "logical": [
+        158,
+        143
+      ],
+      "expected": [
+        158,
+        143
+      ],
+      "width": 177.75,
+      "height": 160.875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000011574074074074073,
+      "changedChannels": 28,
+      "diagnostic": {
+        "gutter0": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.00000992063492063492,
+          "changedChannels": 24
+        },
+        "gutter1": {
+          "maxDelta": 1,
+          "meanChannelDelta": 0.000009093915343915343,
+          "changedChannels": 22
+        }
+      }
+    },
+    {
+      "key": "botuo.basicPoses",
+      "frame": 2,
+      "flipX": true,
+      "logical": [
+        158,
+        143
+      ],
+      "expected": [
+        158,
+        143
+      ],
+      "width": 177.75,
+      "height": 160.875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000008680555555555556,
+      "changedChannels": 21,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicPoses",
+      "frame": 3,
+      "flipX": false,
+      "logical": [
+        158,
+        143
+      ],
+      "expected": [
+        158,
+        143
+      ],
+      "width": 177.75,
+      "height": 160.875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000074404761904761905,
+      "changedChannels": 18,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicPoses",
+      "frame": 3,
+      "flipX": true,
+      "logical": [
+        158,
+        143
+      ],
+      "expected": [
+        158,
+        143
+      ],
+      "width": 177.75,
+      "height": 160.875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000496031746031746,
+      "changedChannels": 12,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicSource",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        146,
+        114
+      ],
+      "expected": [
+        146,
+        114
+      ],
+      "width": 146,
+      "height": 114,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicSource",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        146,
+        114
+      ],
+      "expected": [
+        146,
+        114
+      ],
+      "width": 146,
+      "height": 114,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000037202380952380952,
+      "changedChannels": 9,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicContact",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        105,
+        115
+      ],
+      "expected": [
+        105,
+        115
+      ],
+      "width": 105,
+      "height": 115,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.basicContact",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        105,
+        115
+      ],
+      "expected": [
+        105,
+        115
+      ],
+      "width": 105,
+      "height": 115,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000016534391534391535,
+      "changedChannels": 4,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        175,
+        162
+      ],
+      "expected": [
+        175,
+        162
+      ],
+      "width": 175,
+      "height": 162,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000003306878306878307,
+      "changedChannels": 8,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        175,
+        162
+      ],
+      "expected": [
+        175,
+        162
+      ],
+      "width": 175,
+      "height": 162,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000016534391534391535,
+      "changedChannels": 4,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "frame": 1,
+      "flipX": false,
+      "logical": [
+        175,
+        162
+      ],
+      "expected": [
+        175,
+        162
+      ],
+      "width": 175,
+      "height": 162,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "frame": 1,
+      "flipX": true,
+      "logical": [
+        175,
+        162
+      ],
+      "expected": [
+        175,
+        162
+      ],
+      "width": 175,
+      "height": 162,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000496031746031746,
+      "changedChannels": 12,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "frame": 2,
+      "flipX": false,
+      "logical": [
+        175,
+        162
+      ],
+      "expected": [
+        175,
+        162
+      ],
+      "width": 175,
+      "height": 162,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "frame": 2,
+      "flipX": true,
+      "logical": [
+        175,
+        162
+      ],
+      "expected": [
+        175,
+        162
+      ],
+      "width": 175,
+      "height": 162,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "frame": 3,
+      "flipX": false,
+      "logical": [
+        175,
+        162
+      ],
+      "expected": [
+        175,
+        162
+      ],
+      "width": 175,
+      "height": 162,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "frame": 3,
+      "flipX": true,
+      "logical": [
+        175,
+        162
+      ],
+      "expected": [
+        175,
+        162
+      ],
+      "width": 175,
+      "height": 162,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000003306878306878307,
+      "changedChannels": 8,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialPoses",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        200,
+        200
+      ],
+      "expected": [
+        200,
+        200
+      ],
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000028935185185185184,
+      "changedChannels": 7,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialPoses",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        200,
+        200
+      ],
+      "expected": [
+        200,
+        200
+      ],
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000016534391534391535,
+      "changedChannels": 4,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialPoses",
+      "frame": 1,
+      "flipX": false,
+      "logical": [
+        200,
+        200
+      ],
+      "expected": [
+        200,
+        200
+      ],
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000496031746031746,
+      "changedChannels": 12,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialPoses",
+      "frame": 1,
+      "flipX": true,
+      "logical": [
+        200,
+        200
+      ],
+      "expected": [
+        200,
+        200
+      ],
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialPoses",
+      "frame": 2,
+      "flipX": false,
+      "logical": [
+        200,
+        200
+      ],
+      "expected": [
+        200,
+        200
+      ],
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000004133597883597884,
+      "changedChannels": 10,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialPoses",
+      "frame": 2,
+      "flipX": true,
+      "logical": [
+        200,
+        200
+      ],
+      "expected": [
+        200,
+        200
+      ],
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000007027116402116402,
+      "changedChannels": 17,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialPoses",
+      "frame": 3,
+      "flipX": false,
+      "logical": [
+        200,
+        200
+      ],
+      "expected": [
+        200,
+        200
+      ],
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialPoses",
+      "frame": 3,
+      "flipX": true,
+      "logical": [
+        200,
+        200
+      ],
+      "expected": [
+        200,
+        200
+      ],
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000004133597883597884,
+      "changedChannels": 10,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialActivation",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        320,
+        260
+      ],
+      "expected": [
+        320,
+        260
+      ],
+      "width": 320,
+      "height": 260,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000004133597883597884,
+      "changedChannels": 10,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialActivation",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        320,
+        260
+      ],
+      "expected": [
+        320,
+        260
+      ],
+      "width": 320,
+      "height": 260,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.000005373677248677249,
+      "changedChannels": 13,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialState",
+      "frame": 0,
+      "flipX": false,
+      "logical": [
+        224,
+        234
+      ],
+      "expected": [
+        224,
+        234
+      ],
+      "width": 224,
+      "height": 234,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.00000248015873015873,
+      "changedChannels": 6,
+      "diagnostic": {}
+    },
+    {
+      "key": "botuo.specialState",
+      "frame": 0,
+      "flipX": true,
+      "logical": [
+        224,
+        234
+      ],
+      "expected": [
+        224,
+        234
+      ],
+      "width": 224,
+      "height": 234,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "maxDelta": 1,
+      "meanChannelDelta": 0.0000037202380952380952,
+      "changedChannels": 9,
+      "diagnostic": {}
+    }
+  ],
+  "errors": [],
+  "current": {
+    "reduced": false,
+    "sign": 1,
+    "sample": {
+      "time": 0.64,
+      "frame": "0.0.160.160",
+      "texture": "visual.1.botuo.battleIdle",
+      "activation": 0,
+      "aura": 2
+    }
+  },
+  "status": "FAIL",
+  "failure": "AssertionError [ERR_ASSERTION]: {\"key\":\"botuo.battleIdle\",\"frame\":0,\"flipX\":false,\"logical\":[160,160],\"expected\":[160,160],\"width\":144,\"height\":144,\"origin\":[0.5,0.9875],\"maxDelta\":10,\"meanChannelDelta\":0.00022982804232804234,\"changedChannels\":181,\"diagnostic\":{\"gutter0\":{\"maxDelta\":10,\"meanChannelDelta\":0.00022982804232804234,\"changedChannels\":181},\"gutter1\":{\"maxDelta\":1,\"meanChannelDelta\":8.267195767195768e-7,\"changedChannels\":2}}}",
+  "serverLog": "\n  \u001b[32m\u001b[1mVITE\u001b[22m v8.3.1\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m191\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m\n\n  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m4173\u001b[22m/shanhaijing-arena/\u001b[39m\n"
+}

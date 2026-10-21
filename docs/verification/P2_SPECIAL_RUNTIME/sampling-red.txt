@@ -1,0 +1,27 @@
+✖ browser-affected physical frames retain one source-exact sampling texel on every side (13.355663ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 121.077728
+
+✖ failing tests:
+
+test at tests/botuoSpecialPacking.test.js:66:1
+✖ browser-affected physical frames retain one source-exact sampling texel on every side (13.355663ms)
+  AssertionError [ERR_ASSERTION]: botuo.battleIdle 0: sampling gutter missing
+      at TestContext.<anonymous> (file:///workspace/scratch/2ec1d3fb53ef/shanhaijing-arena/tests/botuoSpecialPacking.test.js:71:11)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

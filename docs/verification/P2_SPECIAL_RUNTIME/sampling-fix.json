@@ -1,0 +1,177 @@
+{
+  "reason": "Native linear-filter sampling regression: runs1086/1087; immutable source-exact one-texel neighborhoods",
+  "entries": [
+    {
+      "key": "botuo.battleIdle",
+      "source": "public/assets/characters/botuo/battleIdle.png",
+      "sourceSha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+      "candidateSha256": "79e041411ab0d59fe8c44b8ddb66cfd38ad6f970ee63d38176d7459340a09fff",
+      "runtime": "assets/special-runtime-v1/botuo-battleIdle.png",
+      "runtimeSha256": "e04cec55ffe4d467c4d3e86d6cbedb6951a25fe91425e7cdcbe810511d023084",
+      "oldDimensions": [
+        154,
+        152
+      ],
+      "dimensions": [
+        156,
+        154
+      ],
+      "addedDecodedBytes": 2464,
+      "gutter": 1,
+      "policy": "one-source-texel"
+    },
+    {
+      "key": "jiuweihu.battleIdle",
+      "source": "public/assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png",
+      "sourceSha256": "5a4e195ebca765d82672a0023ce990c5f15315ff023e1b24dd93f21ce572ef90",
+      "candidateSha256": "cfd787790f05ab407e18fd921d52cc9942703d506c55fe14195982217839009c",
+      "runtime": "assets/special-runtime-v1/jiuweihu-battleIdle.png",
+      "runtimeSha256": "a670e38d5dfbda7c6715c9326e7271b18d6d51570737690c483dffaab1ddfb55",
+      "oldDimensions": [
+        118,
+        135
+      ],
+      "dimensions": [
+        120,
+        137
+      ],
+      "addedDecodedBytes": 2040,
+      "gutter": 1,
+      "policy": "one-source-texel"
+    },
+    {
+      "key": "lushu.battleMove",
+      "source": "public/assets/characters/lushu/battleMove-trimmed.png",
+      "sourceSha256": "b5c592d570974e2fd03524fc2194d1213f84b31b07e3e1a09177e2af790236f6",
+      "candidateSha256": "a7a734263eb07b1925a2b12838ca50c794c448e899e0d54835aed1a6bbf1cd64",
+      "runtime": "assets/special-runtime-v1/lushu-battleMove.png",
+      "runtimeSha256": "9b4000858f07ec30957812da9fe522ee015ecfc6a33c71231ec577b151a268c7",
+      "oldDimensions": [
+        170,
+        178
+      ],
+      "dimensions": [
+        174,
+        182
+      ],
+      "addedDecodedBytes": 5632,
+      "gutter": 1,
+      "policy": "one-source-texel"
+    },
+    {
+      "key": "botuo.battleMove",
+      "source": "public/assets/botuo-basic-packing-v1/botuo-battleMove.png",
+      "sourceSha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5",
+      "candidateSha256": "ca4d3d7b803845230743d8348010bd6bf01f5efd7924a703e2abeab00eec897c",
+      "runtime": "assets/special-runtime-v1/botuo-battleMove.png",
+      "runtimeSha256": "ec20efdae76ce483ff84740898872e22a880423d2472b8a062327cfed8548a37",
+      "oldDimensions": [
+        551,
+        152
+      ],
+      "dimensions": [
+        559,
+        154
+      ],
+      "addedDecodedBytes": 9336,
+      "gutter": 1,
+      "policy": "one-source-texel"
+    },
+    {
+      "key": "lushu.basicContact",
+      "source": "public/assets/characters/lushu/basic-contact.png",
+      "sourceSha256": "2faada0f95507b0616157338b90a976145a870cb03a354a16c9fe5c6761d46f6",
+      "candidateSha256": "cb08cc0a6765e2428753edc6eb225592abd1641ab6e9cb985cf9c4a5fc547be5",
+      "runtime": "assets/special-runtime-v1/lushu-basicContact.png",
+      "runtimeSha256": "d52cfd9ecf8ed96f6650e0167f4bb963935782b8f9e0d052eccbabd5dbc978f8",
+      "oldDimensions": [
+        38,
+        29
+      ],
+      "dimensions": [
+        40,
+        31
+      ],
+      "addedDecodedBytes": 552,
+      "gutter": 1,
+      "policy": "one-source-texel"
+    },
+    {
+      "key": "lushu.heavyImpact",
+      "source": "public/assets/characters/lushu/heavy-impact.png",
+      "sourceSha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+      "candidateSha256": "cf704ecac7cae35cb98f1c1c02f59f1d0959573fefd80925accf070c586cf715",
+      "runtime": "assets/special-runtime-v1/lushu-heavyImpact.png",
+      "runtimeSha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+      "oldDimensions": [
+        104,
+        69
+      ],
+      "dimensions": [
+        128,
+        86
+      ],
+      "addedDecodedBytes": 15328,
+      "gutter": 1,
+      "policy": "original-texture-layout"
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "source": "public/assets/runtime-packing-v1/lushu-battleSpecial.png",
+      "sourceSha256": "ec19456d1b7d067f0a56ae98ce2b1d83554cef3e5318e7faf2e1b579d81320cd",
+      "candidateSha256": "1052afd4337e382a91021770c0d3ce5c5f9f54cc5824d534390cc0d119996e24",
+      "runtime": "assets/special-runtime-v1/lushu-battleSpecial.png",
+      "runtimeSha256": "b6ba5ee504eb4c54951e05400d3d33af6c2c53460a5ab57ea3231fa78b5ed9e3",
+      "oldDimensions": [
+        227,
+        57
+      ],
+      "dimensions": [
+        235,
+        59
+      ],
+      "addedDecodedBytes": 3704,
+      "gutter": 1,
+      "policy": "one-source-texel"
+    },
+    {
+      "key": "lushu.awakeningCImpact",
+      "source": "public/assets/characters/lushu/awakening-runtime-v1/C-impact.png",
+      "sourceSha256": "5cf93d209a18d05ec0928412f61ad4a066d5007c2062a7550c43a27f277c7744",
+      "candidateSha256": "1c9834cce37a56ffaf0f56fc6db0c3b31bc20033ca156ab38e2a32adbb81f094",
+      "runtime": "assets/special-runtime-v1/lushu-awakeningCImpact.png",
+      "runtimeSha256": "c06432a64ca3fcde16f95fab3ce1cbbadcf394045ac39d2b8b42fea8e36b10db",
+      "oldDimensions": [
+        71,
+        53
+      ],
+      "dimensions": [
+        73,
+        55
+      ],
+      "addedDecodedBytes": 1008,
+      "gutter": 1,
+      "policy": "one-source-texel"
+    },
+    {
+      "key": "botuo.basicPoses",
+      "source": "public/assets/botuo-basic-packing-v1/botuo-basicPoses.png",
+      "sourceSha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de",
+      "candidateSha256": "b14f24aac5a752e4aa28f2d0b3ba6714d464132ddeb7f83b2d953398720ef089",
+      "runtime": "assets/special-runtime-v1/botuo-basicPoses.png",
+      "runtimeSha256": "d6ea5204df99e37ec1bbe5bdf9b165d40a7aa1e6e6992d84e4cd3bcab870be57",
+      "oldDimensions": [
+        563,
+        133
+      ],
+      "dimensions": [
+        571,
+        135
+      ],
+      "addedDecodedBytes": 8824,
+      "gutter": 1,
+      "policy": "one-source-texel"
+    }
+  ],
+  "addedDecodedBytes": 48888
+}

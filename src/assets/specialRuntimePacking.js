@@ -40,9 +40,9 @@ export const specialRuntimePacking={
       "key": "botuo.battleIdle",
       "type": "image",
       "path": "assets/special-runtime-v1/botuo-battleIdle.png",
-      "width": 154,
-      "height": 152,
-      "bytes": 47251,
+      "width": 156,
+      "height": 154,
+      "bytes": 47089,
       "logicalWidth": 160,
       "logicalHeight": 160,
       "fallback": "placeholder.battle"
@@ -57,8 +57,8 @@ export const specialRuntimePacking={
     ],
     "frames": [
       {
-        "x": 0,
-        "y": 0,
+        "x": 1,
+        "y": 1,
         "width": 154,
         "height": 152,
         "trim": [
@@ -110,9 +110,9 @@ export const specialRuntimePacking={
       "key": "jiuweihu.battleIdle",
       "type": "image",
       "path": "assets/special-runtime-v1/jiuweihu-battleIdle.png",
-      "width": 118,
-      "height": 135,
-      "bytes": 31784,
+      "width": 120,
+      "height": 137,
+      "bytes": 31803,
       "logicalWidth": 160,
       "logicalHeight": 137,
       "fallback": "placeholder.battle"
@@ -127,8 +127,8 @@ export const specialRuntimePacking={
     ],
     "frames": [
       {
-        "x": 0,
-        "y": 0,
+        "x": 1,
+        "y": 1,
         "width": 118,
         "height": 135,
         "trim": [
@@ -180,9 +180,9 @@ export const specialRuntimePacking={
       "key": "lushu.battleMove",
       "type": "image",
       "path": "assets/special-runtime-v1/lushu-battleMove.png",
-      "width": 170,
-      "height": 178,
-      "bytes": 54118,
+      "width": 174,
+      "height": 182,
+      "bytes": 54158,
       "logicalWidth": 384,
       "logicalHeight": 91,
       "fallback": "placeholder.battle"
@@ -215,8 +215,8 @@ export const specialRuntimePacking={
     ],
     "frames": [
       {
-        "x": 0,
-        "y": 0,
+        "x": 1,
+        "y": 1,
         "width": 92,
         "height": 89,
         "trim": [
@@ -227,8 +227,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 92,
-        "y": 0,
+        "x": 95,
+        "y": 1,
         "width": 78,
         "height": 85,
         "trim": [
@@ -239,8 +239,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 0,
-        "y": 89,
+        "x": 1,
+        "y": 92,
         "width": 94,
         "height": 89,
         "trim": [
@@ -251,8 +251,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 94,
-        "y": 89,
+        "x": 97,
+        "y": 92,
         "width": 76,
         "height": 89,
         "trim": [
@@ -304,9 +304,9 @@ export const specialRuntimePacking={
       "key": "botuo.battleMove",
       "type": "image",
       "path": "assets/special-runtime-v1/botuo-battleMove.png",
-      "width": 551,
-      "height": 152,
-      "bytes": 157557,
+      "width": 559,
+      "height": 154,
+      "bytes": 157159,
       "logicalWidth": 640,
       "logicalHeight": 155,
       "fallback": "placeholder.battle"
@@ -339,8 +339,8 @@ export const specialRuntimePacking={
     ],
     "frames": [
       {
-        "x": 0,
-        "y": 0,
+        "x": 1,
+        "y": 1,
         "width": 148,
         "height": 152,
         "trim": [
@@ -351,8 +351,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 148,
-        "y": 0,
+        "x": 151,
+        "y": 1,
         "width": 131,
         "height": 146,
         "trim": [
@@ -363,8 +363,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 279,
-        "y": 0,
+        "x": 284,
+        "y": 1,
         "width": 140,
         "height": 152,
         "trim": [
@@ -375,8 +375,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 419,
-        "y": 0,
+        "x": 426,
+        "y": 1,
         "width": 132,
         "height": 152,
         "trim": [
@@ -657,9 +657,9 @@ export const specialRuntimePacking={
       "key": "lushu.basicContact",
       "type": "image",
       "path": "assets/special-runtime-v1/lushu-basicContact.png",
-      "width": 38,
-      "height": 29,
-      "bytes": 2198,
+      "width": 40,
+      "height": 31,
+      "bytes": 2181,
       "logicalWidth": 85,
       "logicalHeight": 57,
       "fallback": "placeholder.vfx"
@@ -674,8 +674,8 @@ export const specialRuntimePacking={
     ],
     "frames": [
       {
-        "x": 0,
-        "y": 0,
+        "x": 1,
+        "y": 1,
         "width": 38,
         "height": 29,
         "trim": [
@@ -816,9 +816,9 @@ export const specialRuntimePacking={
       "key": "lushu.heavyImpact",
       "type": "image",
       "path": "assets/special-runtime-v1/lushu-heavyImpact.png",
-      "width": 104,
-      "height": 69,
-      "bytes": 10241,
+      "width": 128,
+      "height": 86,
+      "bytes": 10339,
       "logicalWidth": 128,
       "logicalHeight": 86,
       "fallback": "placeholder.vfx"
@@ -833,8 +833,8 @@ export const specialRuntimePacking={
     ],
     "frames": [
       {
-        "x": 0,
-        "y": 0,
+        "x": 18,
+        "y": 7,
         "width": 104,
         "height": 69,
         "trim": [
@@ -851,9 +851,9 @@ export const specialRuntimePacking={
       "key": "lushu.battleSpecial",
       "type": "image",
       "path": "assets/special-runtime-v1/lushu-battleSpecial.png",
-      "width": 227,
-      "height": 57,
-      "bytes": 21950,
+      "width": 235,
+      "height": 59,
+      "bytes": 22004,
       "logicalWidth": 320,
       "logicalHeight": 59,
       "fallback": "placeholder.battle"
@@ -886,8 +886,8 @@ export const specialRuntimePacking={
     ],
     "frames": [
       {
-        "x": 0,
-        "y": 0,
+        "x": 1,
+        "y": 1,
         "width": 66,
         "height": 52,
         "trim": [
@@ -898,8 +898,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 66,
-        "y": 0,
+        "x": 69,
+        "y": 1,
         "width": 51,
         "height": 54,
         "trim": [
@@ -910,8 +910,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 117,
-        "y": 0,
+        "x": 122,
+        "y": 1,
         "width": 68,
         "height": 49,
         "trim": [
@@ -922,8 +922,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 185,
-        "y": 0,
+        "x": 192,
+        "y": 1,
         "width": 42,
         "height": 57,
         "trim": [
@@ -1292,9 +1292,9 @@ export const specialRuntimePacking={
       "key": "lushu.awakeningCImpact",
       "type": "image",
       "path": "assets/special-runtime-v1/lushu-awakeningCImpact.png",
-      "width": 71,
-      "height": 53,
-      "bytes": 7180,
+      "width": 73,
+      "height": 55,
+      "bytes": 7125,
       "logicalWidth": 96,
       "logicalHeight": 93,
       "fallback": "placeholder.vfx"
@@ -1309,8 +1309,8 @@ export const specialRuntimePacking={
     ],
     "frames": [
       {
-        "x": 0,
-        "y": 0,
+        "x": 1,
+        "y": 1,
         "width": 71,
         "height": 53,
         "trim": [
@@ -1327,9 +1327,9 @@ export const specialRuntimePacking={
       "key": "botuo.basicPoses",
       "type": "image",
       "path": "assets/special-runtime-v1/botuo-basicPoses.png",
-      "width": 563,
-      "height": 133,
-      "bytes": 122156,
+      "width": 571,
+      "height": 135,
+      "bytes": 122080,
       "logicalWidth": 632,
       "logicalHeight": 143,
       "fallback": "placeholder.battle"
@@ -1362,8 +1362,8 @@ export const specialRuntimePacking={
     ],
     "frames": [
       {
-        "x": 0,
-        "y": 0,
+        "x": 1,
+        "y": 1,
         "width": 139,
         "height": 121,
         "trim": [
@@ -1374,8 +1374,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 139,
-        "y": 0,
+        "x": 142,
+        "y": 1,
         "width": 156,
         "height": 123,
         "trim": [
@@ -1386,8 +1386,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 295,
-        "y": 0,
+        "x": 300,
+        "y": 1,
         "width": 151,
         "height": 128,
         "trim": [
@@ -1398,8 +1398,8 @@ export const specialRuntimePacking={
         ]
       },
       {
-        "x": 446,
-        "y": 0,
+        "x": 453,
+        "y": 1,
         "width": 117,
         "height": 133,
         "trim": [

@@ -1,5 +1,11 @@
 # Project State
 
+## 2026-10-21 — Special Browser sampling defect isolated / fix verification ACTIVE / NO DEPLOY
+
+Recovered5775c0bad6a6f8cc0b52c7974c9897ee603f1dd3; PR1 open/unmerged, samefeature branch. Actions1086/1087 actual built-entry2cases PASS, but native sampling gate FAIL. Original zero-gutter copies reproduce the differences; one source-exact sampling texel removes edge-clamp/neighbor bleed. Smallest correction changes only9 Runtime atlas derivatives/physical mappings and deterministic installer; original art/GIF/receipts/logical canvas/scale/origin/FPS/gameplay untouched. New required45keys16611224decoded+131072reserve leaves34920bytes. Source-neighborhood regression RED→GREEN;53affected checks and build/guard results in `docs/verification/P2_SPECIAL_RUNTIME/`. Browser strict thresholds remain unchanged, next probe verifies126native comparisons plus utility/chaining/ownership/cleanup and actual built entry. NOT BrowserPASS/deployed/phone verified. Prior local161checks remain reusable outside changed sampling/capacity. No main merge/newbranch/Awakening/P3/TD. Release requires separate explicit player authorization.
+
+
+
 ## 2026-10-21 — Special Runtime INTEGRATED / local scoped verification PASS / native browser NEXT
 
 執行契約與32貼圖包裝核准已存 executable-v1/acceptance.json，沿用不重問。共用utility觀察、source/status ownership、logical-region adapter及35份忠實PNG已實作；詳細ledger `docs/verification/P2_SPECIAL_RUNTIME/WORK_LOG.md`，完整required集合/容量與本地證據在同目錄。45required/16562336decoded，131072reserve外83808bytes；原source/Heavy契約與機制不變。獨立審查發現stale事件排序及terminal清理，已加RED→GREEN回歸修正。Native Phaser sampling/actual built entry尚待真瀏覽器證據，不等於手機或玩家Runtime驗收。未部署，Heavy live acf454741757f58efa980fdcd03f028a472e87a3；五個歷史suite failures保持。NEXT僅必要工程/browser verification；禁止自動Pages部署、main merge/替代分支/Awakening/P3/TD。較舊pending視覺/契約條目為歷史。
