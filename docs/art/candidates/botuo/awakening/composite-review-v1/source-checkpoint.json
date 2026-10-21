@@ -1,0 +1,108 @@
+{
+  "status": "VFX SOURCES GENERATED / FULL QA AND GIF ASSEMBLY BLOCKED / NOT PLAYER APPROVED",
+  "date": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "sourceParent": "bcd1a72bff55ce37fb6eea08b75fb9e41dc46e30",
+  "generator": "built-in image_gen.imagegen; three independent standalone raster effects",
+  "sources": [
+    {
+      "name": "radial-release",
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/radial-release-raw.png",
+      "bytes": 2029356,
+      "sha256": "e3dbe690a9205cc51d5b1972493113523ebf87abec4e9f1beb7f11b9c021322a",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "name": "victim-impact",
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/victim-impact-raw.png",
+      "bytes": 1460281,
+      "sha256": "2a5f69904996b03ff4a5077dd8d87b39e5bfd11d45bc6d695345b2053f136c8e",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "name": "team-mitigation",
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/team-mitigation-raw.png",
+      "bytes": 1311225,
+      "sha256": "8ba5f69713c07ff41446c94d6d73f9843cdcd5f872838b5291a78927866ae7c1",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "sourceHashMethod": "SHA256 of exact imagegen data-URL decoded PNG bytes; hash function self-tested against SHA256(abc)",
+  "poseReceipt": "docs/art/approved/botuo/awakening/poses-v1/acceptance.json",
+  "alphaObservedBeforeHostNonresponse": {
+    "radial-release": {
+      "size": [
+        1774,
+        887
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBBox": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "alpha0Fraction": 0.43983558071047535,
+      "centerAlpha": 0
+    },
+    "victim-impact": {
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBBox": [
+        0,
+        6,
+        1236,
+        1234
+      ],
+      "alpha0Fraction": 0.5914343637838979,
+      "centerAlpha": 253
+    },
+    "team-mitigation": {
+      "size": [
+        1536,
+        1024
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBBox": [
+        21,
+        45,
+        1512,
+        1024
+      ],
+      "alpha0Fraction": 0.8550249735514323,
+      "centerAlpha": 0
+    }
+  },
+  "blocker": "Local exec_command and apply_patch did not return; no exit code/error cause known. No successful GIF assembly/full QA is claimed.",
+  "pending": [
+    "Recover local untracked prepare_preview.py if present; write was attempted but not confirmed",
+    "Verify source bytes and inspect full light/dark alpha/edge QA",
+    "Safely package exact accepted poses with one source density and support translations; no pose-height/head-only fit",
+    "Assemble normal/slow/noFX/both-facing/Idle-return/reduced/instant-air/T3 actual-recipient status and Special coexistence studies",
+    "Fully decode GIFs and compare quantized source pixel timeline/durations; then show actual files for review"
+  ],
+  "notExecuted": [
+    "GIF assembly",
+    "full visual QA",
+    "Runtime integration",
+    "build",
+    "Browser",
+    "deployment"
+  ],
+  "approval": null
+}

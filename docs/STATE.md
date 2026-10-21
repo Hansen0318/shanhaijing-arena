@@ -1,5 +1,16 @@
 # Project State
 
+## 2026-10-21 — Awakening VFX sources GENERATED / GIF assembly BLOCKED by host execution
+
+Four-pose art is PLAYER APPROVED at bcd1a72bff55ce37fb6eea08b75fb9e41dc46e30; receipt docs/art/approved/botuo/awakening/poses-v1/acceptance.json. Exact accepted F1/F2/F3/F4 masters/boards/old manifests remain unchanged. New three independent imagegen sources and complete prompts are preserved in docs/art/candidates/botuo/awakening/composite-review-v1/: radial-release-raw.png, victim-impact-raw.png, team-mitigation-raw.png. Source SHA256/dimensions and actual partial alpha observations are in source-checkpoint.json. These are CANDIDATES, no VFX/GIF approval inferred.
+
+ACTUAL BLOCKER: local exec_command stopped returning even for a read-only pwd; a subsequent apply_patch for prepare_preview.py also did not return. Waiting cells were terminated after nonresponse; no exit code/stderr or underlying outage cause established. This is NOT a code/test failure or completed preview. Remote GitHub tools remain available, so generated tool-result bytes/prompts are checkpointed directly without relying on the unavailable host. No source PNGs/GIFs fabricated.
+
+NOT DONE: full light/dark/source-edge QA, equal-cell preview packing and normal/slow/noFX/mirrored/Idle-return/reduced/instant-air/T3-state GIF assembly/complete decode. prepare_preview.py write was attempted but not confirmed; on recovery first search existing local untracked work and reuse it if present, then verify. Do not claim source/VFX/GIF Gate PASS or ask player to approve a nonexistent animation. NEXT ONLY restore executable file processing, recover this source checkpoint plus local script, finish minimum art assembly/QA and show actual GIFs for visual review. No source regeneration or repeated pose approval.
+
+Preserve actual instant0 vs tacticalT0 900ms/T3 819ms, single per-victim hit/caster-locked circle; T3boyi.team only after damage applied, actual nearby living recipients and3.75s own expiry, Special independent/MAX coexistence. Body F1 load cannot create a new universal delay. Candidate outgoing/contact/status are independent. Existing16mechanics and all Special/P1/P2 evidence reused without reruns. No gameplay/runtime/public/workflow change, build/Browser/deploy or full-suite run; five historical failures and16MiB+131072reserve/allrequired remain. Same feature branch/PR1 open-unmerged, no main merge/newbranch/P3/TD; docs/art source checkpoint[skip ci].
+
+
 ## 2026-10-21 — Awakening FOUR POSES PLAYER APPROVED / VFX-GIF NEXT
 
 Player「我確認OK，紀錄規則流程進度，如有必要存下素材，然後繼續」accepts the presented four-pose set at921637d1948783c25621f76069251da9a111d89e. Receipt `docs/art/approved/botuo/awakening/poses-v1/acceptance.json` binds both reviewed boards and exact F1/F2/F3/F4 master hashes. Corrected F3 approval retained; all character masters/prompts/QA/padding/old manifests unchanged. Old pose-pending entries are historical. **FULL FOUR-POSE ART GATE CLOSED**, do not regenerate/reopen it.
