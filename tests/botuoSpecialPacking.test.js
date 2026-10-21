@@ -10,6 +10,13 @@ import {assetScene,pngTransport} from './helpers/assetScene.js';
 import {decodeRgbaPng,cropRgba} from './helpers/pngRgba.js';
 import {specialRuntimePacking} from '../src/assets/specialRuntimePacking.js';
 const proposal=JSON.parse(readFileSync('docs/art/candidates/botuo/special/runtime-pack-v1/packing-manifest.json'));
+test('six new installed frames restore exact independent logical review controls',()=>{
+ const refs=JSON.parse(readFileSync('docs/verification/P2_SPECIAL_RUNTIME/native-reference/manifest.json'));
+ for(const r of refs){const p=specialRuntimePacking[r.key],f=p.frames[r.frame],im=decodeRgbaPng(readFileSync('public/'+p.record.path)),reference=decodeRgbaPng(readFileSync(r.path)),[w,h,x,y]=f.trim,out=Buffer.alloc(w*h*4),bytes=cropRgba(im,[f.x,f.y,f.width,f.height]);
+  for(let j=0;j<f.height;j++)bytes.copy(out,((y+j)*w+x)*4,j*f.width*4,(j+1)*f.width*4);
+  assert.deepEqual(out,reference.pixels,`${r.key} ${r.frame}`);assert.equal(createHash('sha256').update(readFileSync(r.source)).digest('hex'),r.sourceSha256);
+ }assert.equal(refs.length,6);
+});
 test('installed physical adapter restores every legacy logical RGBA frame byte for byte',()=>{
  let count=0;
  for(const e of proposal.legacyCandidates){

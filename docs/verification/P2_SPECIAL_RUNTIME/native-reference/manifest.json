@@ -1,0 +1,92 @@
+[
+  {
+    "key": "botuo.specialPoses",
+    "frame": 0,
+    "path": "docs/verification/P2_SPECIAL_RUNTIME/native-reference/F1.png",
+    "source": "docs/art/candidates/botuo/special/composite-review-v1/F1-safe-cell.png",
+    "sourceSha256": "ba0b456a65883ea7f854eee1081d30df6c07e16be66eea8e7f60683121408225",
+    "sha256": "3d40ff3645d4404bb02ff4d38c5adec499fce3528c48d9907f0eeb9d2f0bcb16",
+    "translationOnly": [
+      -100,
+      -90
+    ],
+    "size": [
+      200,
+      200
+    ]
+  },
+  {
+    "key": "botuo.specialPoses",
+    "frame": 1,
+    "path": "docs/verification/P2_SPECIAL_RUNTIME/native-reference/F2.png",
+    "source": "docs/art/candidates/botuo/special/composite-review-v1/F2-safe-cell.png",
+    "sourceSha256": "8c36b33503d801cd2d568b92a0c20ed885165ad78bd3707ab102f0f54089528e",
+    "sha256": "cde64b83c0cef7eef7f0675e31d4935f44a3b28b7715e5542bb620db1b34065a",
+    "translationOnly": [
+      -100,
+      -90
+    ],
+    "size": [
+      200,
+      200
+    ]
+  },
+  {
+    "key": "botuo.specialPoses",
+    "frame": 2,
+    "path": "docs/verification/P2_SPECIAL_RUNTIME/native-reference/F3.png",
+    "source": "docs/art/candidates/botuo/special/composite-review-v1/F3-safe-cell.png",
+    "sourceSha256": "db1ef88f037cd6acb5de4884bc5007bba9e16135aea6f472220bf46430b39dfd",
+    "sha256": "63c65e1944bb0352b0bce9346b8b2f8d8eabe88cc3029db51fbc2f8bcd67e3da",
+    "translationOnly": [
+      -100,
+      -90
+    ],
+    "size": [
+      200,
+      200
+    ]
+  },
+  {
+    "key": "botuo.specialPoses",
+    "frame": 3,
+    "path": "docs/verification/P2_SPECIAL_RUNTIME/native-reference/F4.png",
+    "source": "docs/art/candidates/botuo/special/composite-review-v1/F4-safe-cell.png",
+    "sourceSha256": "61ce8fd7d3369b087d7e3095bc26566ab0aa8b288ae801353104cbd9bf7ba407",
+    "sha256": "2dd874a20ea75e809cc50d7fecc26548eccaf95008b2bb94bd64980f97da47b1",
+    "translationOnly": [
+      -100,
+      -90
+    ],
+    "size": [
+      200,
+      200
+    ]
+  },
+  {
+    "key": "botuo.specialActivation",
+    "frame": 0,
+    "path": "docs/verification/P2_SPECIAL_RUNTIME/native-reference/specialActivation.png",
+    "source": "docs/art/candidates/botuo/special/composite-review-v1/activation-raw-v1.png",
+    "sourceSha256": "fe58093daa7f1170e521ac8516c0124fb458be2bf1b9de581b3b9365c94ce184",
+    "sha256": "0c83a4501b65257c27420f2646d4c6e33d2bd64d254ac357af7b9fb8308c8ab6",
+    "policy": "Exact existing review resize, not another density reduction",
+    "size": [
+      320,
+      260
+    ]
+  },
+  {
+    "key": "botuo.specialState",
+    "frame": 0,
+    "path": "docs/verification/P2_SPECIAL_RUNTIME/native-reference/specialState.png",
+    "source": "docs/art/candidates/botuo/special/composite-review-v1/mitigation-state-raw-v1.png",
+    "sourceSha256": "137b7c13658312343a67e236c38bb736c2e50861ef4f9abf67b4e2156d4b712b",
+    "sha256": "e1414a449c9557107ace40fe4e0cfbe83940f73838f5611fec3ce9194edf1799",
+    "policy": "Exact existing review resize, not another density reduction",
+    "size": [
+      224,
+      234
+    ]
+  }
+]

@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Test
-        if: "!contains(github.event.head_commit.message, '[botuo heavy') && !contains(github.event.head_commit.message, '[botuo basic release]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[viewport release]')"
+        if: "!contains(github.event.head_commit.message, '[botuo special probe]') && !contains(github.event.head_commit.message, '[botuo heavy') && !contains(github.event.head_commit.message, '[botuo basic release]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[viewport release]')"
         run: npm test
       - name: Test bounded viewport surface
         if: contains(github.event.head_commit.message, '[viewport probe]') || contains(github.event.head_commit.message, '[viewport release]')
@@ -58,6 +58,29 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Test bounded P2 Special shared runtime
+        if: contains(github.event.head_commit.message, '[botuo special probe]')
+        run: node --test tests/botuoSpecialLifecycle.test.js tests/botuoSpecialRuntime.test.js tests/botuoSpecialPacking.test.js tests/botuoSpecialProbe.test.js tests/botuoHeavyLifecycle.test.js tests/botuoHeavyRuntime.test.js tests/botuoHeavyPacking.test.js tests/frameTrim.test.js tests/actionPlayback.test.js tests/assetPresenter.test.js tests/assetResidency.test.js tests/dynamicAssetIntegration.test.js tests/assetGuard.test.js tests/botuoBasicRuntime.test.js tests/botuoBasicPacking.test.js tests/botuoStaticScale.test.js tests/botuoMove.test.js tests/xingxingMove.test.js tests/jiuweihuMove.test.js tests/chiruMove.test.js
+      - name: Probe P2 Special native Phaser and built entry without Pages
+        if: contains(github.event.head_commit.message, '[botuo special probe]')
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/arena-browser-tool
+          ARENA_BROWSER_OUTPUT: ${{ runner.temp }}/botuo-special-browser
+        run: |
+          npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
+          node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+          status=0
+          node scripts/checkBotuoSpecialBrowser.mjs || status=1
+          node scripts/checkBotuoSpecialBuiltEntry.mjs || status=1
+          exit "$status"
+      - name: Preserve P2 Special probe evidence
+        if: always() && contains(github.event.head_commit.message, '[botuo special probe]')
+        uses: actions/upload-artifact@v4
+        with:
+          name: botuo-special-browser-verification
+          path: ${{ runner.temp }}/botuo-special-browser
+          if-no-files-found: warn
 
       - name: Check approved Awakening in real Chromium
         if: contains(github.event.head_commit.message, '[awakening browser]')
@@ -129,16 +152,16 @@ jobs:
           path: ${{ runner.temp }}/botuo-heavy-browser
           if-no-files-found: warn
       - name: Configure Pages
-        if: "!contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
+        if: "!contains(github.event.head_commit.message, '[botuo special probe]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
-        if: "!contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
+        if: "!contains(github.event.head_commit.message, '[botuo special probe]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
-    if: "!contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
+    if: "!contains(github.event.head_commit.message, '[botuo special probe]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
