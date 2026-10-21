@@ -1,0 +1,24 @@
+{
+  "status": "AUTHOR ART QA / PLAYER FOUR-POSE REVIEW PENDING",
+  "inspected": [
+    "four-pose-light.png",
+    "four-pose-dark.png"
+  ],
+  "generation": "Three separate poses from approved identity/battleIdle/F3. No generated four-panel image.",
+  "frames": {
+    "F1": "Raised outward large-bracer load, open torso, two arms/two legs/two hooves, large bracer on viewer-left arm and small bracer viewer-right. Raised guard complete; low-alpha edge pixels padded, no crop.",
+    "F2": "Large guard between load and low F3, body compresses and opposite arm counterbalances; correct anatomical guard sides, two hooves.",
+    "F3": "Exact player-approved master retained; no regeneration or new acceptance requested.",
+    "F4": "Body rises, large bracer relaxes outward at lower side, other arm retracts; two hooves and correct guard ownership. Recovery stance is visually narrower; no runtime foot-lock claim."
+  },
+  "scaleMethod": "ONE source-pixel scale .38 across all board entries; only support translation, no height fit or per-head scale. This is an art review, not runtime size/anchor proof.",
+  "noBakedVfx": true,
+  "paddingChecks": "Each new padded candidate retains source RGBA exactly,48px added; low-alpha noise preserved. Full-source silhouette not cropped.",
+  "reviewBoardSha256": "09b7aa5ac70651e80cbf8afe6baeda91051a37f16c7e3a5e85e23fd5e3d0802e",
+  "limits": [
+    "Only F3 is player-approved",
+    "New F1/F2/F4 pose quality and whole sequence await player review",
+    "No animated timing/foot lock/physical phone/runtime density/residency proof",
+    "Immediate versus tactical damage/protection mechanics remain unchanged; no gameplay delay inferred from F1 load art"
+  ]
+}

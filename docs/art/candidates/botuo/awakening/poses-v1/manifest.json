@@ -1,0 +1,103 @@
+{
+  "status": "F1/F2/F4 CANDIDATES / FULL FOUR-POSE PLAYER REVIEW PENDING",
+  "f3Status": "PLAYER ART APPROVED; exact master/source protected",
+  "approvalReceipt": "docs/art/approved/botuo/awakening/f3-v2/acceptance.json",
+  "approvalCheckpoint": "cddb7047195884a80a07c4a75a1ec492c7baf5fd",
+  "generator": "built-in image_gen.imagegen; three independent single-pose calls, no four-up generation",
+  "references": [
+    {
+      "path": "public/assets/characters/botuo/identity.png",
+      "sha256": "79a210c187745886fb9c1fce3877512b275998bc17c7c537369fdc6f2b8dae5b"
+    },
+    {
+      "path": "public/assets/characters/botuo/battleIdle.png",
+      "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8"
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/key-pose-v2/F3-candidate.png",
+      "sha256": "3122654ff5bfde5a5ecbca0e41269b7ad4f8015a3dcf350cbdb0f8ef886f1eb4"
+    }
+  ],
+  "frames": {
+    "F1": {
+      "master": "docs/art/candidates/botuo/awakening/poses-v1/F1-load-master.png",
+      "sha256": "450d6416c99e87ba16943816be23877e57fc14f121cd642f781d043247b6da4a",
+      "candidate": "docs/art/candidates/botuo/awakening/poses-v1/F1-candidate.png",
+      "playerApproved": false
+    },
+    "F2": {
+      "master": "docs/art/candidates/botuo/awakening/poses-v1/F2-downstroke-master.png",
+      "sha256": "a44a2efbff450625772ed3c13309f60715167125d15f324c3ac69eeba0d73360",
+      "candidate": "docs/art/candidates/botuo/awakening/poses-v1/F2-candidate.png",
+      "playerApproved": false
+    },
+    "F3": {
+      "master": "docs/art/candidates/botuo/awakening/key-pose-v2/F3-downward-master.png",
+      "sha256": "2520b8a7e8d2b480dbb78ada0059a3a999bbdbebb5d6383f3743d416d3aa9d0e",
+      "candidate": "docs/art/candidates/botuo/awakening/key-pose-v2/F3-candidate.png",
+      "playerApproved": true
+    },
+    "F4": {
+      "master": "docs/art/candidates/botuo/awakening/poses-v1/F4-recovery-master.png",
+      "sha256": "3bdeed52c9cda94f42cde5a7e1333e4c9030583d5d827806c902c320655bd788",
+      "candidate": "docs/art/candidates/botuo/awakening/poses-v1/F4-candidate.png",
+      "playerApproved": false
+    }
+  },
+  "files": {
+    "F1-candidate.png": {
+      "sha256": "61eaa0adfea68a7ef6b40077072c619cb28dd8b3735c69c70bec4de6a66c4068",
+      "bytes": 1369437
+    },
+    "F1-load-master.png": {
+      "sha256": "450d6416c99e87ba16943816be23877e57fc14f121cd642f781d043247b6da4a",
+      "bytes": 1391619
+    },
+    "F1-prompt.txt": {
+      "sha256": "08ebc6466d3f2e50fb9e998c96e0c98a888a39fa15f4c2d5797eec8f4b8533a2",
+      "bytes": 2992
+    },
+    "F2-candidate.png": {
+      "sha256": "f41c77cf37372e374ca4a633b4c3f098dc7b68327365a5120f07f59b58d8f08c",
+      "bytes": 1230753
+    },
+    "F2-downstroke-master.png": {
+      "sha256": "a44a2efbff450625772ed3c13309f60715167125d15f324c3ac69eeba0d73360",
+      "bytes": 1251612
+    },
+    "F2-prompt.txt": {
+      "sha256": "1b65dff5e442d94c8bd958c943f27ece857567a0c168e54159420f0225b52697",
+      "bytes": 2830
+    },
+    "F4-candidate.png": {
+      "sha256": "e22d42c55e470b3e5a45e965a5418d46144927220776862521134caa8bec960e",
+      "bytes": 1278071
+    },
+    "F4-prompt.txt": {
+      "sha256": "1dd02ed53769478612f9607816136357962ad0d35acd52e92c6946ac7b2489e9",
+      "bytes": 2910
+    },
+    "F4-recovery-master.png": {
+      "sha256": "3bdeed52c9cda94f42cde5a7e1333e4c9030583d5d827806c902c320655bd788",
+      "bytes": 1301522
+    },
+    "four-pose-dark.png": {
+      "sha256": "f675b079791d7edb87ebe41c7f687021018564f021e912cc25ff242bfe6af6c4",
+      "bytes": 826357
+    },
+    "four-pose-light.png": {
+      "sha256": "09b7aa5ac70651e80cbf8afe6baeda91051a37f16c7e3a5e85e23fd5e3d0802e",
+      "bytes": 863359
+    },
+    "prepare_review.py": {
+      "sha256": "d13015a8d40c1039debed12f077e714a6776fed77c92896ce783baa4671b1a68",
+      "bytes": 4494
+    },
+    "qa.json": {
+      "sha256": "1e0163fbdcaf0ed2ef25afa0dffff2bc1b068cd6e7a4d9d8ce147c0c9f2d5907",
+      "bytes": 4373
+    }
+  },
+  "scope": "Individual body-pose art plus static review only, no VFX/GIF/executable contract/runtime/deploy",
+  "nextGate": "Player review of F1/F2/F4 and complete four-pose design; F3 approval retained"
+}

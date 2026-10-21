@@ -1,5 +1,14 @@
 # AGENTS.md
 
+## 2026-10-21 — Awakening FOUR-POSE ART CANDIDATES / PLAYER REVIEW PENDING
+
+Corrected F3 v2 PLAYER ART APPROVED is durably recorded at cddb7047195884a80a07c4a75a1ec492c7baf5fd and `docs/art/approved/botuo/awakening/f3-v2/acceptance.json`; exact F3 source/master unchanged. New `docs/art/candidates/botuo/awakening/poses-v1/` contains three independent F1 raised-load/F2 downstroke/F4 recovery masters, complete prompts/reference hashes, exact-RGBA48px padding, alpha QA, inspected light/dark full-four review and manifest/reproduction script. No four-up generation, no VFX/GIF. Original F3 reused, rejected v1/extra-hoof draft never used.
+
+Author inspection traces viewer-left shoulder/arm to large beast-face guard and viewer-right arm to small guard; two arms/two legs/two hooves per frame. Common .38 source-pixel board scale with support translations, no pose-height/single-head fit. Static board is not runtime density/ground/pivot/foot-lock proof; F4's authored recovery stance narrows. All new poses are CANDIDATES, not player-approved. New art has not changed existing actor layout or gameplay.
+
+**NEXT ONLY: show full-four review and wait for player acceptance of F1/F2/F4/whole-pose sequence. F3 gate stays CLOSED.** Do not create VFX/GIF/executable timing/Runtime/deploy before that next art approval. F1 load is presentation design only, not a new windup/lock; instant/tactical damage, locked AoE and T3 actual post_cast/resolve-time recipient semantics remain from existing16cases, not rerun. ExistingSpecial164/Browser/deploy/145CI/39public/P1/all approvedP2 unchanged and reused, no build/full-suite/browser/release. Same feature branch/PR1 open/unmerged; no main merge/newbranch/P3/TD, ordinaryHit cancelled,16MiB+131072reserve/allrequired retained and five historicalsuitefailures preserved. Docs/art-only[skip ci].
+
+
 ## 2026-10-21 — Awakening corrected F3 v2 PLAYER APPROVED / remaining poses NEXT
 
 Player「我確認ok，妳紀錄後繼續」accepts the presented corrected F3 at ee5870600543e154902e244f9e6da749cde9f266. Receipt `docs/art/approved/botuo/awakening/f3-v2/acceptance.json` binds exact F3-candidate SHA2563122654ff5bfde5a5ecbca0e41269b7ad4f8015a3dcf350cbdb0f8ef886f1eb4 and original master. **F3 DESIGN / PLAYER ART APPROVED**; do not regenerate it or repeat its approval. Candidate manifest's old pending state is historical, not a competing current status. Rejected v1 and extra-hoof draft remain forbidden references.

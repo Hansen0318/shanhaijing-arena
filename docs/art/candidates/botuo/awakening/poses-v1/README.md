@@ -1,0 +1,9 @@
+# P2 Awakening — remaining poses / full-four art review
+
+F3 v2 is PLAYER ART APPROVED at receipt docs/art/approved/botuo/awakening/f3-v2/acceptance.json, approval checkpoint cddb7047195884a80a07c4a75a1ec492c7baf5fd. Exact F3 PNG/master unchanged. Three new independent imagegen outputs author F1 raised load, F2 downward intermediate, F4 recovery. They are CANDIDATES / NOT PLAYER APPROVED. All use only approved identity, battleIdle and accepted F3 references. Rejected prior drafts never used.
+
+Files: three generated *-master.png, separate prompt.txt per frame, exact-RGBA48px padded F1/F2/F4-candidate.png, four-pose-light.png and four-pose-dark.png, qa.json, visual-review.json, manifest.json and reproducible prepare_review.py. The board is deterministic composition of individual whole figures, not a generated four-up sheet or a runtime atlas. It is allowed only for this full-four review gate. F3 points to protected earlier master, no duplicate regenerated F3.
+
+Reproduce from repository root: python docs/art/candidates/botuo/awakening/poses-v1/prepare_review.py. All four entries use ONE .38 source-pixel scale and recorded support translations. There is no pose-height/head-only fitting or completed animation normalization. F4 recovery is narrower; actual animation foot lock/size/pivot requires later approved-art packaging, not a claim from static board. Original alpha noise is retained, including near-edge F1 faint pixels, and safely padded. Inspect light/dark board and each original; no VFX is baked in.
+
+Current STOP: player reviews new F1/F2/F4 and full-four action design; F3 approval is retained. After that approval, record exact statement/files then proceed only to separately scoped independent VFX/preview work. No GIF, executable timing, runtime, build, Browser or deploy in this art slice. Existing16mechanics cases and Special/P1/P2 evidence reused without reruns, all budgets/protected pixels and current release unchanged.
