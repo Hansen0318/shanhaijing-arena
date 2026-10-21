@@ -1,5 +1,16 @@
 # Development Roadmap — Post-M1
 
+## 2026-10-21 — Awakening VFX/GIF PLAYER APPROVED / execution preflight NEXT
+
+Player「這個我確認OK，你紀錄github流程進度規則」accepts the normal GIF embedded in the preceding response and its linked visual-review package at `e1cdefa22c99aceae149a0a854210da9941c36e9`. Exact wording, primary normal GIF, seven linked GIFs, static reduced cue, three raw VFX and manifest/reference hashes are bound in `docs/art/approved/botuo/awakening/visual-v1/acceptance.json`. **PLAYER VFX/GIF VISUAL GATE CLOSED / APPROVED.** This records the presented package, not invented independent playback/device cases for every link. Old candidate/pending fields in frozen manifests/checkpoint/QA remain historical; authoritative latest approval is this receipt and progress entry. Do not ask again or regenerate accepted F1–F4/VFX/GIF.
+
+NEXT unfinished Gate: Runtime preflight → shared cast/action/VFX/status ownership and timing contract → faithful packing and complete required-set capacity proposal → separate player contract review. None of those engineering proposals is approved by this visual acceptance. This request only records approval/process/progress; no engineering work, Runtime/build/Browser/deploy authorization or phone/whole-P2 acceptance inferred. Source/presentation assets, old receipts/manifests/scripts, gameplay and deployed Special remain unchanged.
+
+Preserve instant0ms vs tacticalT0 900ms/T3 819ms (no universal F1/F2 windup); caster-locked actual damage circle, true-victim contact only, air without fake hit/protection. T3 actual post_cast beneficiaries13.5%/3.75s with independent Special/MAX lifecycle remain. GIF10ms display rounding never modifies gameplay. Keep P1 COMPLETE and all P2 approved art/scale/ground/anchor/mirror, ordinary Hit CANCELLED, Shared Dynamic Asset Residency,16MiB cap/131072reserve/allrequired. Existing45textures16611224decoded/34920extra is inherited evidence, not a new Awakening capacity pass. No main merge/replacement branch/TD/P3.
+
+This approval-only `[skip ci]` slice freshly checks saved package bytes/SHA256, receipt references/JSON and protected diff scope. Reuse8GIF/124frame QA,16mechanics cases and Special164/Browser/release/145CI/39public evidence without reruns; no full-suite/build/Browser/release, five historical full-suite failures remain. Same feature branch and PR#1 open/unmerged; actual fetched HEAD supersedes stale PR connector head snapshots. Canonical successor `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md` is one complete self-contained copy block.
+
+
 ## 2026-10-21 — P2 Special COMPLETE / PLAYER VERIFIED; Awakening key-pose NEXT
 
 Player explicitly approves the presented deployed Special and requests GitHub progress/process/rules plus a seamless new Work handoff. Exact statement/version/scope is in `docs/art/approved/botuo/special/runtime-v1/acceptance.json`, bound to536685401cfa0805b5836b057a27dd0692c46879 and its presented URL. Special runtime/phone Gate CLOSED / PLAYER VERIFIED; no itemized device case matrix/FPS/GPU/hash measurements invented. P1 COMPLETE and P2accepted Idle/Move/KO/scale/Basic/Heavy remain protected. WholeP2 is NOT complete.

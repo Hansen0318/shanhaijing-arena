@@ -1,0 +1,149 @@
+{
+  "status": "AWAKENING VFX / GIF PRESENTED VISUAL PACKAGE — PLAYER APPROVED",
+  "recordedDate": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "這個我確認OK，你紀錄github流程進度規則",
+  "reviewedCheckpoint": "e1cdefa22c99aceae149a0a854210da9941c36e9",
+  "primaryDisplayedGIF": {
+    "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-normal.gif",
+    "sha256": "e6543cf6e79ef6d52a648dfc995da033c18bda3972c145af88e0e46c2a095ac5",
+    "bytes": 1104096,
+    "decodedFrames": 24,
+    "sourceFrames": 118,
+    "totalMs": 4400,
+    "pixelTimelineRoundTrip": "PASS",
+    "durationRoundTrip": "PASS",
+    "disposal": 2,
+    "slowFactor": 1
+  },
+  "linkedReviewGIFs": [
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-slow.gif",
+      "sha256": "cb76e1ff590f487d453b7d95c7ca5c0e03a1b219a749156e9208dcda6a690bb5",
+      "bytes": 1104096,
+      "decodedFrames": 24,
+      "sourceFrames": 118,
+      "totalMs": 13200,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 3
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-noFX.gif",
+      "sha256": "0f73f3da3bd317b6ddab98e4206f7cea2f4dca2af2ae583571fa0732e110dc27",
+      "bytes": 215095,
+      "decodedFrames": 12,
+      "sourceFrames": 118,
+      "totalMs": 4400,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-reduced.gif",
+      "sha256": "a54dde77da25526ba244829d4d54d0e6b00c16a3742f64c4e606d32f1817cc47",
+      "bytes": 540464,
+      "decodedFrames": 14,
+      "sourceFrames": 118,
+      "totalMs": 4400,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-instant.gif",
+      "sha256": "00d9a72d4f2e79fb785ea7adcd548d578adf37d43a57df4ee52e0cef3c92372b",
+      "bytes": 978218,
+      "decodedFrames": 18,
+      "sourceFrames": 78,
+      "totalMs": 3000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-air.gif",
+      "sha256": "84a5185470f5c726fccc3749fd92edeb042015e9b5cebf3adfe35b62f3b7cae6",
+      "bytes": 586765,
+      "decodedFrames": 14,
+      "sourceFrames": 78,
+      "totalMs": 3000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-T3-tactical.gif",
+      "sha256": "a396b3e0858404e69d3e0f989a973f6aa3cb96823c1f24211addeb21cc806b53",
+      "bytes": 452652,
+      "decodedFrames": 10,
+      "sourceFrames": 304,
+      "totalMs": 12000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-T3-instant.gif",
+      "sha256": "c88e3cf3f0f41d3c13047c46d76144e009d85ec850517616cf0634f596b97d88",
+      "bytes": 359705,
+      "decodedFrames": 8,
+      "sourceFrames": 302,
+      "totalMs": 12000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    }
+  ],
+  "linkedStaticCue": {
+    "path": "docs/art/candidates/botuo/awakening/composite-review-v1/reduced-static-cue.png",
+    "sha256": "721fd4d1a0a9164c30ef884f2319e4fbaee0ae642d398d1801808f61dc73b940"
+  },
+  "vfxSources": [
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/radial-release-raw.png",
+      "sha256": "e3dbe690a9205cc51d5b1972493113523ebf87abec4e9f1beb7f11b9c021322a",
+      "bytes": 2029356
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/victim-impact-raw.png",
+      "sha256": "2a5f69904996b03ff4a5077dd8d87b39e5bfd11d45bc6d695345b2053f136c8e",
+      "bytes": 1460281
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/team-mitigation-raw.png",
+      "sha256": "8ba5f69713c07ff41446c94d6d73f9843cdcd5f872838b5291a78927866ae7c1",
+      "bytes": 1311225
+    }
+  ],
+  "reviewManifest": {
+    "path": "docs/art/candidates/botuo/awakening/composite-review-v1/review-manifest.json",
+    "sha256": "b5e04741db98f1895db24a9e12b5126bb20a97b504777732dd8df9f2ce7e161f"
+  },
+  "sourceReferenceHashes": {
+    "path": "docs/art/candidates/botuo/awakening/composite-review-v1/source-reference-hashes.json",
+    "sha256": "85198b644c543cb8579555fe177d53e6fc91e6f3e504bb6e3e2ae366603faa3d"
+  },
+  "poseReceipts": [
+    "docs/art/approved/botuo/awakening/f3-v2/acceptance.json",
+    "docs/art/approved/botuo/awakening/poses-v1/acceptance.json"
+  ],
+  "scope": "Player accepts the presented normal GIF and linked accompanying VFX/GIF visual package. This closes the visual-review gate, preserves accepted body art, separate radial release/real-victim burst/actual-recipient cue, both facings and Idle return. No itemized claim that every linked file was independently played or tested on a device.",
+  "excluded": [
+    "Executable playback/state ownership/packing/capacity contract approval",
+    "Runtime integration or actual game recording",
+    "Browser/build/deployment authorization or acceptance",
+    "Phone acceptance or whole P2 completion",
+    "New gameplay timing/hits/geometry/mitigation/AI/control changes"
+  ],
+  "verification": "Existing 8-GIF/124-decoded-frame pixel/timing/mirror/padding proof reused; this documentation-only slice checks exact saved hashes/bytes and receipt references, no GIF regeneration or engineering rerun.",
+  "nextGate": "Runtime preflight and shared execution/ownership plus source-faithful packaging/capacity proposal for separate player contract review; do not integrate or deploy from this visual approval alone."
+}
