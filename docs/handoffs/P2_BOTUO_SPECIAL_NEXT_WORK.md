@@ -1,25 +1,21 @@
-# P2 Special — EXECUTION CONTRACT REVIEW / 未整合Runtime
+# P2 Special — Browser PASS / Release authorization Gate
 
 ```text
 【角色任務】
-接手Hansen0318/shanhaijing-arena，恢復P2猼訑Special「守群」執行契約審核Gate。先讀最新GitHub，避免重做前檢或已核准視覺。
+接手 Hansen0318/shanhaijing-arena，從最新 GitHub 恢復 P2 猼訑 Special「守群」；只接續第一個未完成 Gate。任何後續新 Chat/Work/Codex 指令都必須單一、完整、自足、可一鍵複製。
 
 【背景資訊】
-GitHub唯一權威；唯一分支feat/m0-combat-core-20260927，PR#1維持open/unmerged。先fetch核對remote HEAD/branch/PR/working tree；9e685823c892843132b53c36ca897cdb625fc76c為本次前檢的恢復起點，不是永遠最新，前檢成果在後續含此指令的commit。
-Special F3、四姿勢、VFX與五GIF視覺包已核准，receipt在docs/art/approved/botuo/special/{f3-v1,poses-v1,composite-v1}/acceptance.json；不重畫、不重問視覺Gate。P1 COMPLETE、P2 Idle/Move/Basic尺度CLOSED、Basic/KO/Heavy PLAYER VERIFIED。Heavy live acf454741757f58efa980fdcd03f028a472e87a3保持。
-追加核准：玩家在確認「這是Special規劃動作」及Heavy接技片段的區別後，回覆「ok 我approved ，紀錄github進度流程規則，繼續繼續」。receipt：docs/art/approved/botuo/special/visual-reconfirmation-v1/acceptance.json，綁定已展示normal/slow/chain的原hash；視覺核准保持CLOSED，不新增視覺審核。此回覆沒有單獨確認32個舊貼圖包裝與執行契約，下一步仍為已備妥的契約/容量審核；不得將這份追加視覺receipt當作Runtime整合/部署核准。
+唯一分支 feat/m0-combat-core-20260927；既有 PR#1 open/unmerged。GitHub 唯一權威。先 fetch，核對完整 remote HEAD、branch、PR、working tree、最新 commits。已測 Runtime 參考 50edd53b69010ad9b5f700c3282cb2e8acb29c6a，僅供定位，不當作永遠最新。最新 docs HEAD 可以較新。
+P1 COMPLETE、P2 尺度/Basic/Heavy PLAYER VERIFIED。Special ART/GIF/EXECUTION CONTRACT APPROVED、RUNTIME INTEGRATED、LOCAL PASS、BROWSER PASS；NOT DEPLOYED、PLAYER PHONE PENDING。當前公開版仍是 Heavy acf454741757f58efa980fdcd03f028a472e87a3，不可要求玩家在它上面測 Special。
 
 【具體指令】
-1. 讀AGENTS.md、WORK_PROGRESS.md最新CURRENT HANDOFF POINTER、docs/STATE.md、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、DEVELOPMENT_ROADMAP、M5C_ART_ANIMATION_VFX、CHARACTER_ACTION_ART_WORKFLOW、M5C_P2_BOTUO_HEAVY_ACTION、M5C_P2_BOTUO_SPECIAL_ACTION及Special三份receipt。
-2. 讀docs/verification/M5C_P2_BOTUO_SPECIAL_PREFLIGHT.md全文，docs/verification/P2_SPECIAL_PREFLIGHT/{source-reuse,current-required,current-descriptors,packing-checks,capacity,candidate-residency,landmarks,transition-measurements,review-status}.json及QA圖；候選docs/art/candidates/botuo/special/runtime-pack-v1/{README.md,packing-manifest.json,SHA256SUMS.json}。原source/prompt/QA/GIF仍在key-pose-v1/poses-v1/composite-review-v1，沿用原hash。
-3. 當前完成：12機制來源hash相同，沿用32direct/8lifecycle/2AI/4paired-damage與Heavy既有136affected/部署/公開fingerprint/玩家證據。47舊inventory hash、6新與57舊logical frame RGBA反貼/雙向座標檢查；42key現況及45key候選各兩種載入次序，真cache/residency guards（decoder/upload double）0fail/0evict/cleanup0。沒有build/full suite/browser/phone或Runtime整合。
-4. 提案守群utility gesture四張160ms可被下一合法技能/Move立即取代；reduced F3最多160ms；獨立activation320ms；持續圖跟真實source/target/status/Tier生命週期，actor root offset(0,-88)，不跟Heavy layout。可選presentationSource和事件觀察metadata解決source-ability ownership；generic資料驅動，沒有P2身份分支。戰鬥時序/機制差異為零。完整精確契約以該preflight文件§3為準。
-5. 忠實候選：同200×200 logical cells、root(100,184)、scale200/72、origin(.5,.92)，完整保存核准review raster，不再降密度。32個舊key只提供零RGBA空白候選，不動正式source；P3/P4/P5已完成Move packs不重做。42原required全保留＋3新key＝45keys16562336bytes，＋131072reserve＝16693408/16777216，額外83808bytes。完整尺寸/集合/cache/upload/reservations見capacity/candidate-residency；無gutter需未來真Phaser native-trim取樣。候選不等於實際renderer或GPU證據。
-6. 若沒有玩家針對此精確契約與packing-manifest的後續明確核准，只交付具體審核文件與QA並停止，不重跑已存前檢、不開始Runtime。若已有後續明確核准，先依最新GitHub receipt確認scope，綁文件/manifest SHA256與玩家原文，再接最小必要共用utility/action/status-provenance/reconciler與logical-region packing整合；不得把本handoff或舊視覺核准當作executable approval。部署仍須另外核對scope，不能直接部署。
+1. 讀最新 AGENTS.md、WORK_PROGRESS.md、docs/STATE.md、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/DEVELOPMENT_ROADMAP.md、docs/M5C_ART_ANIMATION_VFX.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md，最新有效頂部紀錄優先。
+2. 讀 docs/verification/P2_SPECIAL_RUNTIME/{browser-gate,browser-verification,built-entry,ci-jobs,sampling-fix,sampling-review}.json 與 WORK_LOG.md、docs/plans/2026-10-21-p2-special-runtime.md；Special 核准 receipt 在 docs/art/approved/botuo/special/{composite-v1,visual-reconfirmation-v1,executable-v1}/acceptance.json。
+3. 沿用 Actions#1091/run39563136667：164/164 scoped tests、build/87guard PASS，4真WebGL/126native sampling/16立即接技子案例、2實際built app、22截圖、0page errors PASS。45required/16611224decoded、16MiB cap/131072reserve/34920extra、cleanup0。9Runtime sampling包裝修正保留原像素/63logical frames；2BasicF3單色階UV差異與獨立原圖retile完全匹配。原圖/GIF/核准契約、未變來源的舊驗證與玩家接受證據不重做。
+4. 第一個未完成 Gate 是「玩家明確授權 Pages 部署」。若最新 GitHub 或當前玩家指令沒有這項明確授權，到此停止並回報。不得把繼續Browser、契約/美術核准或本handoff當成部署授權。
+5. 只有存在正式 scoped 部署授權，才綁定玩家原文與範圍，再檢查現有工作流程及必要 release checks，部署同一已測Runtime、保存真實CI結果與完整公開檔案fingerprint，給玩家一份精簡手機驗收清單。不得重播未變的美術/契約/Browser工程或整套遊戲。Deployment成功不等於PLAYER VERIFIED。
+6. 最少更新 WORK_PROGRESS.md、docs/STATE.md、Special WORK_LOG 與必要 release evidence，commit並推到原feature branch；文件-only checkpoint用[skip ci]避免自動部署。回報完整HEAD/PR/tree、實際checks、來源/差異、證據路徑與下一Gate。
 
 【約束條件】
-本次停止點是契約審核。T0 self25%4秒CD8、coef0/windup0；T1+真實單一存活隊友、立即生效/立即接ready技能與Move、MAX/refresh/expiry/source及recipient KO/離場/Pause/Restart/scene cleanup照既有語義。hit=true是utility，不是攻擊接觸。160ms不能變前搖/global CD/延後減傷/動作鎖。
-Heavy A原Tier650ms戰術resolve及即時/落空0msF3、傷害/CD/range/AI/控制/命中/取消/FX不改。普通Hit CANCELLED，ordinary damage不打斷。身份/服裝/配色/角/護臂/尺度/接地/Anchor/鏡射保持，不攻擊放大或Move縮小。無全隊防護/吸收盾/無敵/嘲諷/傷害/AoE/假爆炸。
-16MiB+131072reserve/Shared Dynamic Asset Residency保持，不排除required、不提高cap、不擅降清晰度；32個候選只是物理表示，不重做舊核准藝術。保留五個suite failures，不聲稱全suite PASS，不捏造device/FPS/GPU/逐檔玩家驗收。未改程式不重跑build/full suite/P1/Basic/Heavy，docs/art-only checkpoint用[skip ci]。
-禁止main merge、替代分支、TD、P2 Awakening/P3。任何有意更動真實機制/時序或無法保持契約者先列差異回審。所有未來handoff維持單一完整自足可一鍵複製code block。
+本handoff未授權部署；無授權停在Release Gate。禁止main merge/替代分支/TD/P2Awakening開發/P3/新美術/GIF或已完成工程重做。普通Hit永久取消；傷害不打斷普通技能。保留即時防護與立即合法接技/Move、source/status ownership與stale-event ordering、真實受益對象/Tier/防護係數/持續時間/CD/AI/Targeting/KO/expiry/cleanup。動作與狀態生命週期分離；Utility不得產生假傷害/接觸。不得新增P2身份Runtime特例、提高容量、排除required或縮放已核准角色。五個歷史full-suite failures保留，不宣稱未執行完整suite PASS。Browser PASS不是玩家手機/FPS/GPU記憶體驗收。
 ```

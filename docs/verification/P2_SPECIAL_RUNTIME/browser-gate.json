@@ -1,0 +1,106 @@
+{
+  "testedCommit": "50edd53b69010ad9b5f700c3282cb2e8acb29c6a",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": 1,
+  "timezone": "Asia/Taipei",
+  "date": "2026-10-21",
+  "workflow": {
+    "run": 39563136667,
+    "number": 1091,
+    "url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39563136667",
+    "buildJob": 119099124504,
+    "build": "SUCCESS",
+    "configurePages": "SKIPPED",
+    "uploadPages": "SKIPPED",
+    "deployJob": 119099672392,
+    "deploy": "SKIPPED"
+  },
+  "artifact": {
+    "id": 12328207752,
+    "sha256": "e993591c05a3766b4e4ddeace3219290c49f1d5c2d9e959dae1982458819da52",
+    "captures": 22
+  },
+  "verification": {
+    "scopedTests": {
+      "passed": 164,
+      "failed": 0,
+      "report": "sampling-scoped-tests.txt",
+      "ci": "ci-summary.txt"
+    },
+    "assetGuard": {
+      "files": 87,
+      "encodedBytes": 4614620,
+      "status": "PASS"
+    },
+    "nativeWebGL": {
+      "cases": 4,
+      "samplingComparisons": 126,
+      "sameClockChainingSubcases": 16,
+      "pageErrors": 0,
+      "status": "PASS",
+      "report": "browser-verification.json"
+    },
+    "builtApp": {
+      "cases": 2,
+      "pageErrors": 0,
+      "status": "PASS",
+      "report": "built-entry.json"
+    },
+    "samplingControl": {
+      "originalNativeMaxDelta": 1,
+      "controlledCases": 2,
+      "packedVsIndependentSourceRetileMaxDelta": 0
+    },
+    "fullSuiteRun": false,
+    "historicalFullSuiteFailures": "Existing five retained; not rerun or reclassified"
+  },
+  "capacity": {
+    "requiredTextures": 45,
+    "decodedBytes": 16611224,
+    "capBytes": 16777216,
+    "reserveBytes": 131072,
+    "extraBytes": 34920,
+    "cleanupBytes": 0
+  },
+  "change": {
+    "runtimeDefect": "Linear-filter edge clamp / adjacent-frame sampling in tightly cropped physical atlases",
+    "fixed": "Nine exact-source Runtime derivatives and physical region mapping; one effect preserves original UV layout",
+    "sourceModified": [
+      "src/assets/specialRuntimePacking.js"
+    ],
+    "gameplaySourceModified": false,
+    "approvedArtGifReceiptModified": false,
+    "ordinaryHitReintroduced": false,
+    "noRuntimeCharacterIdSpecialCase": true
+  },
+  "review": "sampling-review.json",
+  "gates": {
+    "playerArt": "APPROVED (existing receipts reused)",
+    "playerGif": "APPROVED (existing receipts reused)",
+    "executionContract": "APPROVED (existing receipt reused)",
+    "runtime": "INTEGRATED",
+    "local": "PASS",
+    "browser": "PASS",
+    "deployment": "NOT DEPLOYED",
+    "playerPhone": "PENDING",
+    "next": "Explicit player Pages deployment authorization",
+    "requiresPlayerAuthorization": true
+  },
+  "limitations": [
+    "Controlled simulation-time native WebGL fixture and instrumented actual built-entry callbacks; not physical phone/touch/FPS or GPU-memory measurements",
+    "P2 Awakening is exercised only as an existing legal gameplay skill for chaining; no new art or Awakening milestone started"
+  ],
+  "inspectedScreenshots": [
+    "screenshots/special-normal-left-0.png",
+    "screenshots/special-normal-right-0.32.png",
+    "screenshots/special-reduced-right-0.png",
+    "screenshots/built-special-chain-normal-heavy-contact.png"
+  ],
+  "fileSha256": {
+    "browser-verification.json": "a4d1f6f3f0a3344d2269319aa58cbf0c53388495542f1d0955acfdc3f7a5fd87",
+    "built-entry.json": "c472761702c6518f33a80d2c99b54f51b82e4c065e7960b95a83f6cea9a7afdd",
+    "sampling-fix.json": "6b06c752f565b8625d30a3a60f848acd9aed75428e69c1afbade84c823466e7b",
+    "sampling-scoped-tests.txt": "cb8b0719a8f977c814ad894fb3fe1c953c570a6208482c1a34eb52fe23704fdb",
+    "ci-summary.txt": "3a05ddfcd406c12f3c3d88251b12e8bf5cf4a661af498917757318e8a58d3647"
+  }
+}

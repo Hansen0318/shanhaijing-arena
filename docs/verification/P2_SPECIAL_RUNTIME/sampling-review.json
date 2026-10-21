@@ -18,5 +18,11 @@
   },
   "remainingFindings": [],
   "noFilesChangedByReviewer": true,
-  "noFullSuiteOrBrowserRunByReviewer": true
+  "noFullSuiteOrBrowserRunByReviewer": true,
+  "uvControlReview": {
+    "scope": "Original-source retiling independently isolates one-LSB interpolation for legacy sheets",
+    "assessment": "No blocker for observed legacy Basic F3 cases; exactRGBA remains independent",
+    "scopeGuard": "New individually referenced frames retain original strict bound; full-sheet retile fallback requires !e.references",
+    "noProductionChangesFromReview": true
+  }
 }

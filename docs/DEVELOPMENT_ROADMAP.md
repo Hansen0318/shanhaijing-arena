@@ -1,5 +1,14 @@
 # Development Roadmap — Post-M1
 
+## 2026-10-21 — P2 Special BROWSER PASS / RELEASE AUTHORIZATION NEXT / NOT DEPLOYED
+
+Actual tested feature `50edd53b69010ad9b5f700c3282cb2e8acb29c6a`, Actions #1091 / run39563136667:164/164 scoped tests, build/87-file guard4614620encoded bytes PASS;4controlled Chromium/Phaser WebGL cases(normal/reduced×left/right),126native sampling comparisons,16same-clock Basic/Heavy/other legal skill/Move chaining subcases and2actual built mobile-emulation Campaign→Stage→Team→Arena cases PASS,22captures,0page errors. Reports `docs/verification/P2_SPECIAL_RUNTIME/{browser-gate,browser-verification,built-entry,ci-jobs}.json`; ledger WORK_LOG.md,4inspected screenshots retained, artifact12328207752. Native-original max<=1LSB;2BasicF3UV-rounding cases match independently retiled ORIGINAL pixels exactly(0delta), with strict control mean bound.
+
+Fixed real tight-atlas linear-filter edge clamp/neighbor bleed through9source-exact physical derivatives/mapping, not new art or actor resizing. All63logicalRGBA frames, accepted sources/GIFs/receipts/logical geometry/FPS and combat/Tier/CD/AI remain unchanged.45required textures16611224decoded +131072reserve leaves34920bytes; cleanup0. Independent review resolved fixture's mutable-sprite stale-event assertion and verified exact derivatives; source/status ownership, stale ordering, immediate mitigation/chaining, expiry/KO/clear/Restart remain effective. Prior unaffected local/mechanics/player evidence reused; no full suite rerun and five historical failures unchanged.
+
+**Gates:** PLAYER ART/GIF/EXECUTION CONTRACT APPROVED; RUNTIME INTEGRATED; LOCAL PASS; BROWSER PASS; NOT DEPLOYED; PLAYER PHONE PENDING. Configure Pages/upload/deploy all SKIPPED. **NEXT ONLY explicit player authorization for scoped Pages deployment**, then release/public fingerprint and focused phone acceptance. Current instruction does NOT authorize deployment. Stop at this Release Gate; no repeated browser/art/GIF/contract gates without changed source or genuine defect. No main merge/replacement branch/TD/P2Awakening development/P3. Existing legal Awakening was exercised only for chaining. Latest docs commit may be newer than tested source; fetch remote. Successor `docs/handoffs/P2_BOTUO_SPECIAL_NEXT_WORK.md`, always one complete self-contained copyable block.
+
+
 ## 2026-10-21 — Special MOTION/GIF APPROVAL RECONFIRMED / next unfinished contract gate
 
 玩家在normal GIF展示、slow/instant-chain連結及Special四姿勢／Heavy接技區別說明後，回覆「ok 我approved ，紀錄github進度流程規則，繼續繼續」。已保存追加receipt `docs/art/approved/botuo/special/visual-reconfirmation-v1/acceptance.json`，綁定原normal/slow/chain檔案hash；原視覺包receipt、四姿勢、source/prompt/QA/GIF完全不變。**Special動作與GIF視覺核准CLOSED，不再重問或重製。** 不聲稱每檔獨立播放、裝置或Runtime已驗收。

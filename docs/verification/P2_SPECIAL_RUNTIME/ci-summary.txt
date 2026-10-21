@@ -1,0 +1,8 @@
+2026-10-21T07:37:05.9875689Z ##[group]Run npm run build
+2026-10-21T07:37:06.1576014Z Asset guard PASS { files: 87, bytes: 4614620 }
+2026-10-21T07:37:07.0550453Z ##[group]Run node --test tests/botuoSpecialLifecycle.test.js tests/botuoSpecialRuntime.test.js tests/botuoSpecialPacking.test.js tests/botuoSpecialProbe.test.js tests/botuoHeavyLifecycle.test.js tests/botuoHeavyRuntime.test.js tests/botuoHeavyPacking.test.js tests/frameTrim.test.js tests/actionPlayback.test.js tests/assetPresenter.test.js tests/assetResidency.test.js tests/dynamicAssetIntegration.test.js tests/assetGuard.test.js tests/botuoBasicRuntime.test.js tests/botuoBasicPacking.test.js tests/botuoStaticScale.test.js tests/botuoMove.test.js tests/xingxingMove.test.js tests/jiuweihuMove.test.js tests/chiruMove.test.js
+2026-10-21T07:37:09.1474106Z # tests 164
+2026-10-21T07:37:09.1474512Z # pass 164
+2026-10-21T07:37:09.1474705Z # fail 0
+2026-10-21T07:37:47.0954495Z {"status":"PASS","cases":4,"trimCases":126}
+2026-10-21T07:38:06.2160686Z {"status":"PASS","cases":2}
