@@ -1,0 +1,140 @@
+{
+  "status": "AUTOMATED PACKING / GIF DECODE PASS; AUTHOR VISUAL QA IN visual-review.json",
+  "sourceHashes": true,
+  "allDecodedPixelsMatchQuantizedInputs": true,
+  "allDurationsMatch": true,
+  "clearCellBorders": true,
+  "fullSourcePaddingRoundTrip": true,
+  "wholeActorMirrorRoundTrip": true,
+  "immutableSources": true,
+  "mechanicsNotRerun": true,
+  "sourceEdgeNoise": "max alpha1 at raw outer edge retained, salient core inset; padding added",
+  "powerComparison": [
+    {
+      "skill": "HEAVY",
+      "visiblePixelsAlphaGt64": 15103,
+      "displaySize": [
+        230,
+        154
+      ]
+    },
+    {
+      "skill": "SPECIAL",
+      "visiblePixelsAlphaGt64": 31790,
+      "displaySize": [
+        320,
+        260
+      ]
+    },
+    {
+      "skill": "AWAKENING",
+      "visiblePixelsAlphaGt64": 50042,
+      "displaySize": [
+        523,
+        283
+      ]
+    }
+  ],
+  "contactRatioVsHeavy": 2.096129499005245,
+  "gifs": [
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-normal.gif",
+      "sha256": "e6543cf6e79ef6d52a648dfc995da033c18bda3972c145af88e0e46c2a095ac5",
+      "bytes": 1104096,
+      "decodedFrames": 24,
+      "sourceFrames": 118,
+      "totalMs": 4400,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-slow.gif",
+      "sha256": "cb76e1ff590f487d453b7d95c7ca5c0e03a1b219a749156e9208dcda6a690bb5",
+      "bytes": 1104096,
+      "decodedFrames": 24,
+      "sourceFrames": 118,
+      "totalMs": 13200,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 3
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-noFX.gif",
+      "sha256": "0f73f3da3bd317b6ddab98e4206f7cea2f4dca2af2ae583571fa0732e110dc27",
+      "bytes": 215095,
+      "decodedFrames": 12,
+      "sourceFrames": 118,
+      "totalMs": 4400,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-reduced.gif",
+      "sha256": "a54dde77da25526ba244829d4d54d0e6b00c16a3742f64c4e606d32f1817cc47",
+      "bytes": 540464,
+      "decodedFrames": 14,
+      "sourceFrames": 118,
+      "totalMs": 4400,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-instant.gif",
+      "sha256": "00d9a72d4f2e79fb785ea7adcd548d578adf37d43a57df4ee52e0cef3c92372b",
+      "bytes": 978218,
+      "decodedFrames": 18,
+      "sourceFrames": 78,
+      "totalMs": 3000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-air.gif",
+      "sha256": "84a5185470f5c726fccc3749fd92edeb042015e9b5cebf3adfe35b62f3b7cae6",
+      "bytes": 586765,
+      "decodedFrames": 14,
+      "sourceFrames": 78,
+      "totalMs": 3000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-T3-tactical.gif",
+      "sha256": "a396b3e0858404e69d3e0f989a973f6aa3cb96823c1f24211addeb21cc806b53",
+      "bytes": 452652,
+      "decodedFrames": 10,
+      "sourceFrames": 304,
+      "totalMs": 12000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-T3-instant.gif",
+      "sha256": "c88e3cf3f0f41d3c13047c46d76144e009d85ec850517616cf0634f596b97d88",
+      "bytes": 359705,
+      "decodedFrames": 8,
+      "sourceFrames": 302,
+      "totalMs": 12000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    }
+  ],
+  "pillowVersion": "12.3.0",
+  "independentOnDiskVerification": "independent-verification.json",
+  "testHarnessCorrections": "Initial additional verifier ROIs included unchanged ground line and readable labels. Excluded guide row/text from background/mirror ROI; no source/artwork changed."
+}

@@ -1,0 +1,2902 @@
+{
+  "palette": [
+    255,
+    243,
+    231,
+    253,
+    235,
+    219,
+    247,
+    225,
+    208,
+    250,
+    213,
+    171,
+    247,
+    202,
+    164,
+    234,
+    209,
+    194,
+    217,
+    202,
+    192,
+    243,
+    191,
+    136,
+    220,
+    190,
+    172,
+    225,
+    175,
+    130,
+    193,
+    187,
+    172,
+    190,
+    179,
+    161,
+    189,
+    172,
+    152,
+    230,
+    163,
+    99,
+    227,
+    147,
+    79,
+    201,
+    157,
+    117,
+    182,
+    162,
+    151,
+    179,
+    161,
+    115,
+    176,
+    150,
+    111,
+    157,
+    158,
+    154,
+    152,
+    151,
+    142,
+    159,
+    145,
+    117,
+    137,
+    143,
+    150,
+    212,
+    134,
+    58,
+    185,
+    131,
+    103,
+    202,
+    115,
+    56,
+    183,
+    112,
+    59,
+    163,
+    136,
+    110,
+    164,
+    130,
+    73,
+    161,
+    115,
+    89,
+    136,
+    138,
+    140,
+    146,
+    135,
+    105,
+    142,
+    126,
+    96,
+    138,
+    117,
+    86,
+    139,
+    109,
+    71,
+    127,
+    134,
+    141,
+    122,
+    129,
+    136,
+    118,
+    125,
+    129,
+    113,
+    119,
+    125,
+    125,
+    117,
+    89,
+    106,
+    116,
+    125,
+    122,
+    111,
+    83,
+    121,
+    107,
+    81,
+    110,
+    109,
+    99,
+    100,
+    111,
+    121,
+    99,
+    109,
+    118,
+    95,
+    106,
+    116,
+    183,
+    89,
+    47,
+    160,
+    88,
+    38,
+    150,
+    87,
+    45,
+    131,
+    100,
+    74,
+    135,
+    96,
+    45,
+    134,
+    86,
+    48,
+    135,
+    76,
+    42,
+    114,
+    102,
+    78,
+    108,
+    101,
+    78,
+    116,
+    94,
+    87,
+    117,
+    93,
+    57,
+    114,
+    85,
+    71,
+    118,
+    83,
+    41,
+    113,
+    75,
+    47,
+    91,
+    103,
+    113,
+    91,
+    100,
+    110,
+    100,
+    99,
+    88,
+    102,
+    96,
+    76,
+    97,
+    93,
+    75,
+    97,
+    90,
+    69,
+    92,
+    89,
+    73,
+    96,
+    85,
+    70,
+    98,
+    77,
+    57,
+    98,
+    71,
+    50,
+    86,
+    98,
+    109,
+    83,
+    94,
+    105,
+    80,
+    91,
+    102,
+    81,
+    89,
+    93,
+    76,
+    88,
+    100,
+    81,
+    83,
+    88,
+    75,
+    85,
+    96,
+    86,
+    84,
+    71,
+    82,
+    82,
+    71,
+    72,
+    85,
+    97,
+    72,
+    83,
+    94,
+    70,
+    82,
+    93,
+    79,
+    79,
+    74,
+    81,
+    77,
+    64,
+    72,
+    78,
+    81,
+    83,
+    72,
+    61,
+    74,
+    74,
+    64,
+    70,
+    72,
+    65,
+    66,
+    79,
+    91,
+    64,
+    76,
+    88,
+    62,
+    74,
+    86,
+    65,
+    70,
+    70,
+    59,
+    71,
+    83,
+    57,
+    70,
+    82,
+    186,
+    50,
+    29,
+    146,
+    53,
+    31,
+    125,
+    65,
+    32,
+    124,
+    47,
+    31,
+    106,
+    65,
+    41,
+    96,
+    64,
+    37,
+    101,
+    49,
+    34,
+    84,
+    65,
+    57,
+    86,
+    63,
+    37,
+    83,
+    53,
+    39,
+    86,
+    48,
+    37,
+    83,
+    43,
+    32,
+    68,
+    67,
+    64,
+    62,
+    67,
+    65,
+    60,
+    65,
+    66,
+    69,
+    59,
+    54,
+    72,
+    58,
+    41,
+    58,
+    61,
+    60,
+    71,
+    52,
+    45,
+    71,
+    50,
+    33,
+    61,
+    50,
+    44,
+    74,
+    42,
+    33,
+    66,
+    42,
+    36,
+    60,
+    42,
+    38,
+    55,
+    67,
+    78,
+    52,
+    64,
+    76,
+    52,
+    63,
+    72,
+    49,
+    62,
+    74,
+    53,
+    61,
+    64,
+    53,
+    59,
+    59,
+    47,
+    60,
+    72,
+    52,
+    57,
+    58,
+    47,
+    56,
+    61,
+    44,
+    57,
+    69,
+    42,
+    54,
+    66,
+    49,
+    52,
+    53,
+    43,
+    51,
+    57,
+    40,
+    52,
+    64,
+    41,
+    50,
+    56,
+    40,
+    49,
+    56,
+    38,
+    51,
+    63,
+    38,
+    49,
+    59,
+    52,
+    45,
+    42,
+    53,
+    40,
+    40,
+    39,
+    48,
+    55,
+    40,
+    44,
+    46,
+    36,
+    48,
+    61,
+    36,
+    47,
+    57,
+    34,
+    47,
+    59,
+    33,
+    46,
+    59,
+    32,
+    45,
+    58,
+    34,
+    45,
+    54,
+    34,
+    44,
+    53,
+    32,
+    44,
+    55,
+    31,
+    43,
+    55,
+    30,
+    43,
+    56,
+    29,
+    42,
+    55,
+    29,
+    42,
+    54,
+    28,
+    42,
+    54,
+    33,
+    40,
+    48,
+    29,
+    41,
+    52,
+    28,
+    41,
+    53,
+    28,
+    40,
+    52,
+    28,
+    39,
+    51,
+    27,
+    41,
+    54,
+    27,
+    40,
+    54,
+    27,
+    40,
+    53,
+    27,
+    40,
+    52,
+    27,
+    39,
+    52,
+    27,
+    39,
+    51,
+    26,
+    40,
+    54,
+    26,
+    39,
+    53,
+    26,
+    39,
+    52,
+    26,
+    39,
+    51,
+    21,
+    40,
+    53,
+    69,
+    38,
+    33,
+    32,
+    38,
+    46,
+    26,
+    38,
+    51,
+    26,
+    38,
+    50,
+    25,
+    38,
+    52,
+    25,
+    38,
+    51,
+    25,
+    38,
+    50,
+    24,
+    38,
+    52,
+    24,
+    38,
+    51,
+    24,
+    38,
+    50,
+    22,
+    38,
+    52,
+    222,
+    19,
+    16,
+    181,
+    18,
+    18,
+    132,
+    24,
+    23,
+    138,
+    13,
+    15,
+    95,
+    31,
+    29,
+    78,
+    35,
+    30,
+    68,
+    34,
+    27,
+    108,
+    15,
+    18,
+    77,
+    17,
+    21,
+    56,
+    34,
+    30,
+    51,
+    34,
+    31,
+    46,
+    34,
+    33,
+    39,
+    36,
+    40,
+    33,
+    35,
+    41,
+    38,
+    32,
+    34,
+    48,
+    28,
+    25,
+    36,
+    27,
+    29,
+    41,
+    22,
+    25,
+    46,
+    15,
+    18,
+    26,
+    37,
+    49,
+    24,
+    37,
+    52,
+    24,
+    37,
+    51,
+    24,
+    37,
+    50,
+    24,
+    37,
+    49,
+    23,
+    37,
+    51,
+    23,
+    37,
+    50,
+    23,
+    37,
+    49,
+    25,
+    36,
+    48,
+    23,
+    36,
+    51,
+    23,
+    36,
+    50,
+    23,
+    36,
+    49,
+    23,
+    36,
+    48,
+    27,
+    34,
+    42,
+    26,
+    23,
+    26,
+    22,
+    37,
+    52,
+    21,
+    36,
+    51,
+    22,
+    36,
+    50,
+    22,
+    36,
+    49,
+    22,
+    35,
+    50,
+    21,
+    35,
+    51,
+    21,
+    35,
+    50,
+    22,
+    35,
+    49,
+    22,
+    35,
+    48,
+    21,
+    35,
+    48,
+    22,
+    35,
+    47,
+    21,
+    34,
+    48,
+    22,
+    34,
+    47,
+    21,
+    34,
+    47,
+    21,
+    34,
+    46,
+    21,
+    33,
+    46,
+    20,
+    36,
+    51,
+    20,
+    34,
+    49,
+    20,
+    33,
+    47,
+    20,
+    33,
+    46,
+    20,
+    33,
+    45,
+    19,
+    35,
+    50,
+    19,
+    33,
+    49,
+    18,
+    33,
+    49,
+    19,
+    33,
+    47,
+    15,
+    34,
+    50,
+    21,
+    32,
+    46,
+    19,
+    32,
+    46,
+    19,
+    32,
+    45,
+    19,
+    30,
+    44,
+    18,
+    32,
+    46,
+    18,
+    31,
+    44,
+    17,
+    32,
+    47,
+    17,
+    30,
+    44,
+    15,
+    31,
+    47,
+    12,
+    31,
+    49,
+    17,
+    28,
+    41,
+    13,
+    28,
+    44,
+    10,
+    27,
+    45,
+    12,
+    22,
+    36,
+    11,
+    13,
+    22
+  ],
+  "frames": [
+    {
+      "start": 0,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 40,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 80,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 120,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 160,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 200,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 240,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 280,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 320,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 360,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "0c432b573b4611a2bcfa40600753c92229c71d65483c86f0932441586470c958"
+    },
+    {
+      "start": 400,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 440,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 480,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 520,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 560,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 600,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 640,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 680,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 720,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 760,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 800,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 840,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 880,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 920,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 960,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 1000,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 1040,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 1080,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 1120,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 1160,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 1200,
+      "hold": 20,
+      "mirror": false,
+      "durationMs": 20,
+      "quantizedRGBSha256": "5c7eae4e127250a1694f539954bfb5ff24974c8144b74b6979073f0c785a5f3a"
+    },
+    {
+      "start": 1220,
+      "hold": 20,
+      "mirror": false,
+      "durationMs": 20,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1240,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1280,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1320,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1360,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1400,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1440,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1480,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1520,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1560,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1600,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1640,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1680,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1720,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1760,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1800,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1840,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1880,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1920,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 1960,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2000,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2040,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2080,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2120,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2160,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2200,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2240,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2280,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2320,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2360,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2400,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2440,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2480,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2520,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2560,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2600,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2640,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2680,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2720,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2760,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2800,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2840,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2880,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2920,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 2960,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3000,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3040,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3080,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3120,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3160,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3200,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3240,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3280,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3320,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3360,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3400,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3440,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3480,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3520,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3560,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3600,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3640,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3680,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3720,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3760,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3800,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3840,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3880,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3920,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 3960,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4000,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4040,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4080,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4120,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4160,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4200,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4240,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4280,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4320,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4360,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4400,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4440,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4480,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4520,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4560,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4600,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4640,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4680,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4720,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4760,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4800,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4840,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4880,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4920,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4960,
+      "hold": 10,
+      "mirror": false,
+      "durationMs": 10,
+      "quantizedRGBSha256": "e7234202b127c0dae962f2f42bb772cc3b2878ef6db81488e8149de97408b0cf"
+    },
+    {
+      "start": 4970,
+      "hold": 30,
+      "mirror": false,
+      "durationMs": 30,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5000,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5040,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5080,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5120,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5160,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5200,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5240,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5280,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5320,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5360,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "40a746d01cac443abd501265f4eb61c71aa35309662b1c5319fea25411f85aba"
+    },
+    {
+      "start": 5400,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5440,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5480,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5520,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5560,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5600,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5640,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5680,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5720,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5760,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5800,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5840,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5880,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5920,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 5960,
+      "hold": 40,
+      "mirror": false,
+      "durationMs": 40,
+      "quantizedRGBSha256": "a20da1cbb22be175af5769a04adf5acbbaa60bb336155bcc30d4df5c01b4c022"
+    },
+    {
+      "start": 0,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 40,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 80,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 120,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 160,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 200,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 240,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 280,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 320,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 360,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "52fef655e52bdf8806bd0fe265277afe0d04e5aee5f485641cb204228da62948"
+    },
+    {
+      "start": 400,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 440,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 480,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 520,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 560,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 600,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 640,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 680,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 720,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 760,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 800,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 840,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 880,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 920,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 960,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 1000,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 1040,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 1080,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 1120,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 1160,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 1200,
+      "hold": 20,
+      "mirror": true,
+      "durationMs": 20,
+      "quantizedRGBSha256": "708f03e13e99ee8fdf631c9e59f2a0d6c07d7d64c5445ec93d280d1bfe3e68c6"
+    },
+    {
+      "start": 1220,
+      "hold": 20,
+      "mirror": true,
+      "durationMs": 20,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1240,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1280,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1320,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1360,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1400,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1440,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1480,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1520,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1560,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1600,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1640,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1680,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1720,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1760,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1800,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1840,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1880,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1920,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 1960,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2000,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2040,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2080,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2120,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2160,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2200,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2240,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2280,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2320,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2360,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2400,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2440,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2480,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2520,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2560,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2600,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2640,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2680,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2720,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2760,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2800,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2840,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2880,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2920,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 2960,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3000,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3040,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3080,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3120,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3160,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3200,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3240,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3280,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3320,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3360,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3400,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3440,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3480,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3520,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3560,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3600,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3640,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3680,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3720,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3760,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3800,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3840,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3880,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3920,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 3960,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4000,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4040,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4080,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4120,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4160,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4200,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4240,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4280,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4320,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4360,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4400,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4440,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4480,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4520,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4560,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4600,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4640,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4680,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4720,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4760,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4800,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4840,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4880,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4920,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4960,
+      "hold": 10,
+      "mirror": true,
+      "durationMs": 10,
+      "quantizedRGBSha256": "91f6d0d66d4e563ce94bca796d7065112f68cfdbb41f31fe6f63871308a17fe9"
+    },
+    {
+      "start": 4970,
+      "hold": 30,
+      "mirror": true,
+      "durationMs": 30,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5000,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5040,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5080,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5120,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5160,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5200,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5240,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5280,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5320,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5360,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "da61369a1feaaeb488fa0f62065e107ee6706e637cffcf80385e6d981a0c3329"
+    },
+    {
+      "start": 5400,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5440,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5480,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5520,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5560,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5600,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5640,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5680,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5720,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5760,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5800,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5840,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5880,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5920,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    },
+    {
+      "start": 5960,
+      "hold": 40,
+      "mirror": true,
+      "durationMs": 40,
+      "quantizedRGBSha256": "719a0b25289316b1c267c369a9be82d13aaca62b7ea8d10fb170bf29fd37722a"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "AUTHOR VISUAL QA COMPLETE / PLAYER VFX-GIF REVIEW PENDING",
+  "scope": "Human-model inspection of actual RGBA composites and decoded GIF samples; not Runtime/phone acceptance",
+  "inspected": [
+    "vfx-light-dark-QA.png",
+    "idle-poses-light-dark-QA.png",
+    "decoded-facing-hit-air-T3-QA.png",
+    "heavy-special-awakening-comparison.png",
+    "decoded-T3-independent-expiry-QA.png"
+  ],
+  "observations": {
+    "source": "All three have open negative space, crisp large shapes and no baked character; light/dark motifs readable. Raw edge max alpha1 noise retained; salient core remains inset; no source redraw needed.",
+    "poseIdentity": "F1–F4: viewer-left shoulder through elbow/wrist owns large beast-face bracer, viewer-right arm owns smaller wrist guard in canonical view. Two arms, two legs and two hooves visible. Whole-world mirrored views reverse all equipment together.",
+    "multipleLandmarks": "Compared head/curled horns and face, shoulder/upper-arm thickness, large and small guards, belt/waist skirt and two hooves against approved Idle at common review density. No silhouette-height or head-only fitting. Crouched F3 has broader stance; F4 narrows by authored pose, not animation rescaling.",
+    "bodyContinuity": "NoFX decoded cycle retains each separate pose and returns to exact approved Idle derivative. Posture intentionally changes; this is not final runtime pivot/foot-lock/density calibration.",
+    "effects": "Radial release surrounds caster with empty center. True-hit burst stays on schematic target; air has caster release only. No overlapping character-pose blending or cropped horns/guards/hooves found in inspected boards.",
+    "T3": "Actual evidence recipients a1/a2 receive new cue, a3 none; after 3.75s Awakening cue disappears while Special remains, then Special independently disappears at its 5s expiry. Self mitigation uses MAX33.75%, ally MAX20.25%, not addition.",
+    "reduced": "Fixed low-opacity release/contact cue, no effect scaling motion/strobe; reduced static PNG also supplied."
+  },
+  "limits": [
+    "Author visual review does not equal player approval",
+    "Schematic positions are not damage/radius/targeting proof",
+    "No Runtime, build, Browser, phone, deployment, or capacity test",
+    "GIF centiseconds round T3 onset/expiry up by1ms for display only; model819/4569ms retained",
+    "Five historical full-suite failures remain; full suite not run"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "docs/art/approved/botuo/awakening/f3-v2/acceptance.json": {
+    "sha256": "cd587d78beb78152588aeab4c0d1bf4c62ecc5a2b5d0b6ad7e8dd0224cf8643a",
+    "bytes": 1237
+  },
+  "docs/art/approved/botuo/awakening/poses-v1/acceptance.json": {
+    "sha256": "fe4e1c31d573cc0c9818eb840ee0c1bf2c2ab463c7598624dbb37c3e90484812",
+    "bytes": 2609
+  },
+  "docs/art/candidates/botuo/awakening/composite-review-v1/radial-release-prompt.txt": {
+    "sha256": "dd92779491290ea78e153b40916fa51ba7aa8e1ecd96544827a1de76437ba353",
+    "bytes": 1545
+  },
+  "docs/art/candidates/botuo/awakening/composite-review-v1/source-checkpoint.json": {
+    "sha256": "193ecc990d1d508cd3a30e7b8def748facaabbfee254efd293cf1e97fb12a41f",
+    "bytes": 3159
+  },
+  "docs/art/candidates/botuo/awakening/composite-review-v1/team-mitigation-prompt.txt": {
+    "sha256": "a27844c3b989b9eb1ca933a86afaacd9dfad90411c8ad67caf74906a29bf9945",
+    "bytes": 1365
+  },
+  "docs/art/candidates/botuo/awakening/composite-review-v1/victim-impact-prompt.txt": {
+    "sha256": "49537e881bfa8b401fc7c4b675a7f7f1d8bcd26df3bd29ca0cb62f4242cd0bf7",
+    "bytes": 1117
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/F3-candidate.png": {
+    "sha256": "3122654ff5bfde5a5ecbca0e41269b7ad4f8015a3dcf350cbdb0f8ef886f1eb4",
+    "bytes": 1252226
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/F3-downward-master.png": {
+    "sha256": "2520b8a7e8d2b480dbb78ada0059a3a999bbdbebb5d6383f3743d416d3aa9d0e",
+    "bytes": 1276146
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/README.md": {
+    "sha256": "ff5853d1210fa22cc8dcf7a565c6e495728519388423a6e1039b452cce8230c4",
+    "bytes": 1587
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/cleanup-prompt.txt": {
+    "sha256": "ab994ae2032517afd79e05ddd1be2363104872f1e443c4756671fa87d2952d1a",
+    "bytes": 1484
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/draft-extra-hoof.png": {
+    "sha256": "fa231a8bf110622e39fc422ec2213cd68e3d034f37a7e8a776199c69e8d0ac03",
+    "bytes": 1306879
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/manifest.json": {
+    "sha256": "84e3fd3bcb9a962fbc420f68ba4e0db327f209f05e9cc77f33c5722ae2397b8f",
+    "bytes": 3146
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/prepare_qa.py": {
+    "sha256": "9ac057df53f198b69da900c3257837cd593bd02fa05a12c6664eab8ad6834b55",
+    "bytes": 2478
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/prompt.txt": {
+    "sha256": "2cc1c722d207e35d5b8d876118043c81092e50269700a26876ad196dce078e64",
+    "bytes": 3281
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/qa-dark.png": {
+    "sha256": "63e48d200315b99547c5b017b63dede73cf87d0beb9a8a87a9d96b129da0e566",
+    "bytes": 458313
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/qa-light.png": {
+    "sha256": "4945125065b6f0b7716837a25198106202df5ca232789778b33ae3e70ea85867",
+    "bytes": 477157
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/qa.json": {
+    "sha256": "bc1f424efa200d060b62637cf8f06e26b47be0e0b727062fdc2214a777aff0b3",
+    "bytes": 609
+  },
+  "docs/art/candidates/botuo/awakening/key-pose-v2/visual-review.json": {
+    "sha256": "c92905c7d642bcc4bbfd0d27631d63ab384f5fea2fbb5c9f87ad1cd21a150844",
+    "bytes": 1198
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/F1-candidate.png": {
+    "sha256": "61eaa0adfea68a7ef6b40077072c619cb28dd8b3735c69c70bec4de6a66c4068",
+    "bytes": 1369437
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/F1-load-master.png": {
+    "sha256": "450d6416c99e87ba16943816be23877e57fc14f121cd642f781d043247b6da4a",
+    "bytes": 1391619
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/F1-prompt.txt": {
+    "sha256": "08ebc6466d3f2e50fb9e998c96e0c98a888a39fa15f4c2d5797eec8f4b8533a2",
+    "bytes": 2992
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/F2-candidate.png": {
+    "sha256": "f41c77cf37372e374ca4a633b4c3f098dc7b68327365a5120f07f59b58d8f08c",
+    "bytes": 1230753
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/F2-downstroke-master.png": {
+    "sha256": "a44a2efbff450625772ed3c13309f60715167125d15f324c3ac69eeba0d73360",
+    "bytes": 1251612
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/F2-prompt.txt": {
+    "sha256": "1b65dff5e442d94c8bd958c943f27ece857567a0c168e54159420f0225b52697",
+    "bytes": 2830
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/F4-candidate.png": {
+    "sha256": "e22d42c55e470b3e5a45e965a5418d46144927220776862521134caa8bec960e",
+    "bytes": 1278071
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/F4-prompt.txt": {
+    "sha256": "1dd02ed53769478612f9607816136357962ad0d35acd52e92c6946ac7b2489e9",
+    "bytes": 2910
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/F4-recovery-master.png": {
+    "sha256": "3bdeed52c9cda94f42cde5a7e1333e4c9030583d5d827806c902c320655bd788",
+    "bytes": 1301522
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/README.md": {
+    "sha256": "1d49986cfae57115213dc87b8d22af898b9bb23e5a40a6501faba7d7e22f036b",
+    "bytes": 1959
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/four-pose-dark.png": {
+    "sha256": "f675b079791d7edb87ebe41c7f687021018564f021e912cc25ff242bfe6af6c4",
+    "bytes": 826357
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/four-pose-light.png": {
+    "sha256": "09b7aa5ac70651e80cbf8afe6baeda91051a37f16c7e3a5e85e23fd5e3d0802e",
+    "bytes": 863359
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/manifest.json": {
+    "sha256": "a06e3207fd2783fb28a81783ba5acf1df982f6fcae989f8ceeea629264f52ece",
+    "bytes": 4181
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/prepare_review.py": {
+    "sha256": "d13015a8d40c1039debed12f077e714a6776fed77c92896ce783baa4671b1a68",
+    "bytes": 4494
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/qa.json": {
+    "sha256": "1e0163fbdcaf0ed2ef25afa0dffff2bc1b068cd6e7a4d9d8ce147c0c9f2d5907",
+    "bytes": 4373
+  },
+  "docs/art/candidates/botuo/awakening/poses-v1/visual-review.json": {
+    "sha256": "fa32ba45d4aace4d255f8e79cd16fb745bccaaddc1142dcfa091e2c93a783432",
+    "bytes": 1697
+  },
+  "docs/verification/P2_AWAKENING_PREFLIGHT/mechanics.json": {
+    "sha256": "35e5296b26d464ae6fcb843b40faab3a90ed1fa5e88d579e02c603a6d2bc515a",
+    "bytes": 9441
+  },
+  "docs/verification/P2_AWAKENING_PREFLIGHT/probe.mjs": {
+    "sha256": "20ddaa8ed24329b80fdf59be72d88a82f21abf2a9c30303ffdf9b05569c6656f",
+    "bytes": 7091
+  },
+  "docs/verification/P2_AWAKENING_PREFLIGHT/static-seed.json": {
+    "sha256": "36dfa771c7c616e5a43bb80fbd632b472503a8c10349748cdac01db4b475bb6b",
+    "bytes": 3867
+  },
+  "public/assets/characters/botuo/battleIdle.png": {
+    "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+    "bytes": 47136
+  },
+  "public/assets/characters/botuo/identity.png": {
+    "sha256": "79a210c187745886fb9c1fce3877512b275998bc17c7c537369fdc6f2b8dae5b",
+    "bytes": 14098
+  }
+}

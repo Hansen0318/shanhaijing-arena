@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "kind": "Independent on-disk full decode; no BattleSession rerun or Runtime test",
+  "files": [
+    {
+      "file": "botuo-awakening-normal.gif",
+      "decodedFrames": 24,
+      "totalMs": 4400,
+      "quantizedPixels": "PASS",
+      "timing": "PASS",
+      "worldMirror": "PASS",
+      "disposal": 2
+    },
+    {
+      "file": "botuo-awakening-slow.gif",
+      "decodedFrames": 24,
+      "totalMs": 13200,
+      "quantizedPixels": "PASS",
+      "timing": "PASS",
+      "worldMirror": "PASS",
+      "disposal": 2
+    },
+    {
+      "file": "botuo-awakening-noFX.gif",
+      "decodedFrames": 12,
+      "totalMs": 4400,
+      "quantizedPixels": "PASS",
+      "timing": "PASS",
+      "worldMirror": "PASS",
+      "disposal": 2
+    },
+    {
+      "file": "botuo-awakening-reduced.gif",
+      "decodedFrames": 14,
+      "totalMs": 4400,
+      "quantizedPixels": "PASS",
+      "timing": "PASS",
+      "worldMirror": "PASS",
+      "disposal": 2
+    },
+    {
+      "file": "botuo-awakening-instant.gif",
+      "decodedFrames": 18,
+      "totalMs": 3000,
+      "quantizedPixels": "PASS",
+      "timing": "PASS",
+      "worldMirror": "PASS",
+      "disposal": 2
+    },
+    {
+      "file": "botuo-awakening-air.gif",
+      "decodedFrames": 14,
+      "totalMs": 3000,
+      "quantizedPixels": "PASS",
+      "timing": "PASS",
+      "worldMirror": "PASS",
+      "disposal": 2
+    },
+    {
+      "file": "botuo-awakening-T3-tactical.gif",
+      "decodedFrames": 10,
+      "totalMs": 12000,
+      "quantizedPixels": "PASS",
+      "timing": "PASS",
+      "worldMirror": "PASS",
+      "disposal": 2
+    },
+    {
+      "file": "botuo-awakening-T3-instant.gif",
+      "decodedFrames": 8,
+      "totalMs": 12000,
+      "quantizedPixels": "PASS",
+      "timing": "PASS",
+      "worldMirror": "PASS",
+      "disposal": 2
+    }
+  ],
+  "safeCellIsolation": true,
+  "exactPaddedSources": true,
+  "immutableSources": true,
+  "mechanicsSourcesUnchanged": true
+}

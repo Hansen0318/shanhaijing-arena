@@ -1,0 +1,566 @@
+{
+  "status": "VFX / GIF CANDIDATE — PLAYER REVIEW PENDING",
+  "recoveredHead": "60c1976522b2934fb23e505377f9f55c60d1c817",
+  "poseReceipt": "docs/art/approved/botuo/awakening/poses-v1/acceptance.json",
+  "cell": [
+    400,
+    320
+  ],
+  "poses": [
+    {
+      "frame": "F1",
+      "source": "docs/art/candidates/botuo/awakening/poses-v1/F1-load-master.png",
+      "sha256": "450d6416c99e87ba16943816be23877e57fc14f121cd642f781d043247b6da4a",
+      "sourceSize": [
+        1369,
+        1149
+      ],
+      "scaleXY": [
+        0.126,
+        0.126
+      ],
+      "sourceSupportAnchor": [
+        740,
+        1125
+      ],
+      "xy": [
+        107,
+        132
+      ],
+      "resizedSize": [
+        172,
+        145
+      ],
+      "alphaBBox": [
+        123,
+        132,
+        274,
+        277
+      ],
+      "allResizedRGBARetained": true,
+      "groundResidualPx": 0,
+      "mirrorRoundTrip": true
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/candidates/botuo/awakening/poses-v1/F2-downstroke-master.png",
+      "sha256": "a44a2efbff450625772ed3c13309f60715167125d15f324c3ac69eeba0d73360",
+      "sourceSize": [
+        1369,
+        1149
+      ],
+      "scaleXY": [
+        0.126,
+        0.126
+      ],
+      "sourceSupportAnchor": [
+        710,
+        1111
+      ],
+      "xy": [
+        111,
+        134
+      ],
+      "resizedSize": [
+        172,
+        145
+      ],
+      "alphaBBox": [
+        122,
+        141,
+        279,
+        277
+      ],
+      "allResizedRGBARetained": true,
+      "groundResidualPx": 0,
+      "mirrorRoundTrip": true
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/candidates/botuo/awakening/key-pose-v2/F3-downward-master.png",
+      "sha256": "2520b8a7e8d2b480dbb78ada0059a3a999bbdbebb5d6383f3743d416d3aa9d0e",
+      "sourceSize": [
+        1378,
+        1141
+      ],
+      "scaleXY": [
+        0.126,
+        0.126
+      ],
+      "sourceSupportAnchor": [
+        705,
+        1098
+      ],
+      "xy": [
+        111,
+        136
+      ],
+      "resizedSize": [
+        174,
+        144
+      ],
+      "alphaBBox": [
+        118,
+        140,
+        283,
+        275
+      ],
+      "allResizedRGBARetained": true,
+      "groundResidualPx": 0,
+      "mirrorRoundTrip": true
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/candidates/botuo/awakening/poses-v1/F4-recovery-master.png",
+      "sha256": "3bdeed52c9cda94f42cde5a7e1333e4c9030583d5d827806c902c320655bd788",
+      "sourceSize": [
+        1369,
+        1149
+      ],
+      "scaleXY": [
+        0.126,
+        0.126
+      ],
+      "sourceSupportAnchor": [
+        742,
+        1130
+      ],
+      "xy": [
+        107,
+        132
+      ],
+      "resizedSize": [
+        172,
+        145
+      ],
+      "alphaBBox": [
+        135,
+        133,
+        269,
+        277
+      ],
+      "allResizedRGBARetained": true,
+      "groundResidualPx": 0,
+      "mirrorRoundTrip": true
+    }
+  ],
+  "idle": {
+    "path": "public/assets/characters/botuo/battleIdle.png",
+    "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+    "reviewSize": [
+      144,
+      144
+    ],
+    "xy": [
+      128,
+      132
+    ]
+  },
+  "vfx": [
+    {
+      "name": "radial-release",
+      "source": "docs/art/candidates/botuo/awakening/composite-review-v1/radial-release-raw.png",
+      "sha256": "e3dbe690a9205cc51d5b1972493113523ebf87abec4e9f1beb7f11b9c021322a",
+      "bytes": 2029356,
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "alphaBBox": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "coreBBox": [
+        12,
+        45,
+        1766,
+        874
+      ],
+      "edgeMaxAlpha": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "padding": 80,
+      "paddedSourceRGBARoundTrip": true,
+      "displayScaleXY": [
+        0.2705749718151071,
+        0.2705749718151071
+      ],
+      "displaySize": [
+        523,
+        283
+      ],
+      "transparentCenterAlpha": 0
+    },
+    {
+      "name": "victim-impact",
+      "source": "docs/art/candidates/botuo/awakening/composite-review-v1/victim-impact-raw.png",
+      "sha256": "2a5f69904996b03ff4a5077dd8d87b39e5bfd11d45bc6d695345b2053f136c8e",
+      "bytes": 1460281,
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "alphaBBox": [
+        0,
+        6,
+        1236,
+        1234
+      ],
+      "coreBBox": [
+        88,
+        9,
+        1211,
+        1216
+      ],
+      "edgeMaxAlpha": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "padding": 80,
+      "paddedSourceRGBARoundTrip": true,
+      "displayScaleXY": [
+        0.20733652312599682,
+        0.20733652312599682
+      ],
+      "displaySize": [
+        293,
+        293
+      ],
+      "transparentCenterAlpha": 253
+    },
+    {
+      "name": "team-mitigation",
+      "source": "docs/art/candidates/botuo/awakening/composite-review-v1/team-mitigation-raw.png",
+      "sha256": "8ba5f69713c07ff41446c94d6d73f9843cdcd5f872838b5291a78927866ae7c1",
+      "bytes": 1311225,
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "alphaBBox": [
+        21,
+        45,
+        1512,
+        1024
+      ],
+      "coreBBox": [
+        53,
+        136,
+        1483,
+        911
+      ],
+      "edgeMaxAlpha": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "padding": 80,
+      "paddedSourceRGBARoundTrip": true,
+      "displayScaleXY": [
+        0.13671875,
+        0.13671875
+      ],
+      "displaySize": [
+        232,
+        162
+      ],
+      "transparentCenterAlpha": 0
+    }
+  ],
+  "immutableSourceHashes": {
+    "docs/art/candidates/botuo/awakening/poses-v1/F1-load-master.png": "450d6416c99e87ba16943816be23877e57fc14f121cd642f781d043247b6da4a",
+    "docs/art/candidates/botuo/awakening/poses-v1/F2-downstroke-master.png": "a44a2efbff450625772ed3c13309f60715167125d15f324c3ac69eeba0d73360",
+    "docs/art/candidates/botuo/awakening/key-pose-v2/F3-downward-master.png": "2520b8a7e8d2b480dbb78ada0059a3a999bbdbebb5d6383f3743d416d3aa9d0e",
+    "docs/art/candidates/botuo/awakening/poses-v1/F4-recovery-master.png": "3bdeed52c9cda94f42cde5a7e1333e4c9030583d5d827806c902c320655bd788",
+    "docs/art/approved/botuo/awakening/f3-v2/acceptance.json": "cd587d78beb78152588aeab4c0d1bf4c62ecc5a2b5d0b6ad7e8dd0224cf8643a",
+    "docs/art/approved/botuo/awakening/poses-v1/acceptance.json": "fe4e1c31d573cc0c9818eb840ee0c1bf2c2ab463c7598624dbb37c3e90484812",
+    "public/assets/characters/botuo/battleIdle.png": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+    "docs/art/candidates/botuo/awakening/composite-review-v1/radial-release-raw.png": "e3dbe690a9205cc51d5b1972493113523ebf87abec4e9f1beb7f11b9c021322a",
+    "docs/art/candidates/botuo/awakening/composite-review-v1/victim-impact-raw.png": "2a5f69904996b03ff4a5077dd8d87b39e5bfd11d45bc6d695345b2053f136c8e",
+    "docs/art/candidates/botuo/awakening/composite-review-v1/team-mitigation-raw.png": "8ba5f69713c07ff41446c94d6d73f9843cdcd5f872838b5291a78927866ae7c1",
+    "docs/art/candidates/botuo/special/composite-review-v1/mitigation-state-raw-v1.png": "137b7c13658312343a67e236c38bb736c2e50861ef4f9abf67b4e2156d4b712b",
+    "docs/art/candidates/botuo/special/key-pose-v1/mechanics-snapshot.json": "d97c6f5e6c940a63c8838468d2769f810369eeceaed7ba6f167f765f973044d0"
+  },
+  "mechanicsEvidence": {
+    "path": "docs/verification/P2_AWAKENING_PREFLIGHT/mechanics.json",
+    "sha256": "35e5296b26d464ae6fcb843b40faab3a90ed1fa5e88d579e02c603a6d2bc515a",
+    "caseCount": 16,
+    "reusedNotRerun": true,
+    "sourceHashesChecked": true
+  },
+  "timing": {
+    "castMs": 400,
+    "tacticalT0ResolveRelativeMs": 900,
+    "instantResolveRelativeMs": 0,
+    "airContact": false,
+    "airProtection": false,
+    "normalPoseBoundaries": [
+      400,
+      850,
+      1300,
+      1480,
+      1540,
+      1660
+    ],
+    "T3onsetMs": 1219.0,
+    "T3expiryMs": 4969.0,
+    "T3displayOnsetMs": 1220,
+    "T3displayExpiryMs": 4970,
+    "gifCentisecondRounding": "ceil: model819/4569ms displayed820/4570ms, max1ms late; model unchanged",
+    "slowFactor": 3
+  },
+  "T3": {
+    "tacticalEvidence": {
+      "case": "T3 Special coexistence / resolve-time recipient center / expiry",
+      "onsetSeconds": 0.819,
+      "protection": [
+        {
+          "id": "status-3",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0.819,
+          "expiryTime": 4.569,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-4",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0.819,
+          "expiryTime": 4.569,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "specialIdsPreserved": [
+        "status-1",
+        "status-2"
+      ],
+      "effectiveSelfDamageMultiplier": 0.6625,
+      "expiredAt": 4.569
+    },
+    "instantEvidence": {
+      "case": "T3 Special coexistence / instant / expiry",
+      "onsetSeconds": 0,
+      "protection": [
+        {
+          "id": "status-3",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 3.75,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-4",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 3.75,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "specialIdsPreserved": [
+        "status-1",
+        "status-2"
+      ],
+      "effectiveSelfDamageMultiplier": 0.6625,
+      "expiredAt": 3.75
+    },
+    "specialRaw": "docs/art/candidates/botuo/special/composite-review-v1/mitigation-state-raw-v1.png",
+    "specialMagnitude": 0.3375,
+    "specialActiveAfterAwakeningExpiry": true,
+    "specialEvidence": "docs/art/candidates/botuo/special/key-pose-v1/mechanics-snapshot.json",
+    "specialRecords": [
+      {
+        "id": "status-1",
+        "sourceId": "a1",
+        "targetId": "a1",
+        "areaId": null,
+        "key": "base-mitigation",
+        "type": "mitigation",
+        "magnitude": 0.3375,
+        "data": {},
+        "startTime": 0,
+        "expiryTime": 5,
+        "policy": "replace",
+        "tags": []
+      },
+      {
+        "id": "status-2",
+        "sourceId": "a1",
+        "targetId": "a2",
+        "areaId": null,
+        "key": "boyi.ally",
+        "type": "mitigation",
+        "magnitude": 0.2025,
+        "data": {},
+        "startTime": 0,
+        "expiryTime": 5,
+        "policy": "replace",
+        "tags": []
+      }
+    ],
+    "specialIndependentExpiryMs": 5400,
+    "positions": "schematic layout; actual recipient IDs from saved BattleSession evidence, no new simulation",
+    "maxNotSum": true
+  },
+  "powerComparison": [
+    {
+      "skill": "HEAVY",
+      "visiblePixelsAlphaGt64": 15103,
+      "displaySize": [
+        230,
+        154
+      ]
+    },
+    {
+      "skill": "SPECIAL",
+      "visiblePixelsAlphaGt64": 31790,
+      "displaySize": [
+        320,
+        260
+      ]
+    },
+    {
+      "skill": "AWAKENING",
+      "visiblePixelsAlphaGt64": 50042,
+      "displaySize": [
+        523,
+        283
+      ]
+    }
+  ],
+  "contactVisibleAreaRatioVsHeavy": 2.096129499005245,
+  "gifs": [
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-normal.gif",
+      "sha256": "e6543cf6e79ef6d52a648dfc995da033c18bda3972c145af88e0e46c2a095ac5",
+      "bytes": 1104096,
+      "decodedFrames": 24,
+      "sourceFrames": 118,
+      "totalMs": 4400,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-slow.gif",
+      "sha256": "cb76e1ff590f487d453b7d95c7ca5c0e03a1b219a749156e9208dcda6a690bb5",
+      "bytes": 1104096,
+      "decodedFrames": 24,
+      "sourceFrames": 118,
+      "totalMs": 13200,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 3
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-noFX.gif",
+      "sha256": "0f73f3da3bd317b6ddab98e4206f7cea2f4dca2af2ae583571fa0732e110dc27",
+      "bytes": 215095,
+      "decodedFrames": 12,
+      "sourceFrames": 118,
+      "totalMs": 4400,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-reduced.gif",
+      "sha256": "a54dde77da25526ba244829d4d54d0e6b00c16a3742f64c4e606d32f1817cc47",
+      "bytes": 540464,
+      "decodedFrames": 14,
+      "sourceFrames": 118,
+      "totalMs": 4400,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-instant.gif",
+      "sha256": "00d9a72d4f2e79fb785ea7adcd548d578adf37d43a57df4ee52e0cef3c92372b",
+      "bytes": 978218,
+      "decodedFrames": 18,
+      "sourceFrames": 78,
+      "totalMs": 3000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-air.gif",
+      "sha256": "84a5185470f5c726fccc3749fd92edeb042015e9b5cebf3adfe35b62f3b7cae6",
+      "bytes": 586765,
+      "decodedFrames": 14,
+      "sourceFrames": 78,
+      "totalMs": 3000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-T3-tactical.gif",
+      "sha256": "a396b3e0858404e69d3e0f989a973f6aa3cb96823c1f24211addeb21cc806b53",
+      "bytes": 452652,
+      "decodedFrames": 10,
+      "sourceFrames": 304,
+      "totalMs": 12000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/botuo-awakening-T3-instant.gif",
+      "sha256": "c88e3cf3f0f41d3c13047c46d76144e009d85ec850517616cf0634f596b97d88",
+      "bytes": 359705,
+      "decodedFrames": 8,
+      "sourceFrames": 302,
+      "totalMs": 12000,
+      "pixelTimelineRoundTrip": "PASS",
+      "durationRoundTrip": "PASS",
+      "disposal": 2,
+      "slowFactor": 1
+    }
+  ],
+  "scope": "Art reconstruction only, no Runtime/build/Browser/deploy/new capacity acceptance. Source RGBA preserved separately; no character/effect baking. No added mechanics.",
+  "nextGate": "Show actual normal GIF + slow/other links. STOP for PLAYER VFX/GIF review."
+}

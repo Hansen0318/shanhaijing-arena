@@ -1,0 +1,18 @@
+{
+  "remoteHead": "60c1976522b2934fb23e505377f9f55c60d1c817",
+  "branch": "feat/m0-combat-core-20260927",
+  "PR": {
+    "number": 1,
+    "state": "open",
+    "merged": false,
+    "headSha": "60c1976522b2934fb23e505377f9f55c60d1c817",
+    "source": "GitHub get_pr_info; actual git clone/fetch agrees"
+  },
+  "initialTrackedTreeClean": true,
+  "initialUntrackedPreserved": [
+    "docs/art/candidates/lushu/special/vfx-review-v1/.target-impact-padded-v1.png.JS8JIB"
+  ],
+  "host": "pwd/clone/fetch/Pillow execution return successful exit codes; old host blocker not reproduced",
+  "recoverySearch": "find /workspace for prepare_preview.py and prepare_review.py found existing pose review scripts but no prepare_preview.py; old source directory had three PNGs/prompts only",
+  "mechanics": "16 saved cases reused; production source hashes checked, not rerun"
+}
