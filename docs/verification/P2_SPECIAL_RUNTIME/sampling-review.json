@@ -1,0 +1,22 @@
+{
+  "base": "d515a373709f40936b4b438ff3aaafaeaefa9602",
+  "reviewedFix": "ce32e385d5e484a9c855ddebe9ee69f61b43c374",
+  "reviewer": "Independent read-only code reviewer",
+  "productionChecks": [
+    "Reproduced all nine PNG derivatives byte-for-byte in memory from original sources",
+    "Verified original source SHA256 hashes against manifest",
+    "Confirmed zero-RGBA sampling perimeters"
+  ],
+  "productionBlockers": [],
+  "finding": {
+    "severity": "Important",
+    "scope": "Browser fixture",
+    "description": "Mutable sprite object compared to itself after repaint could falsely accept a stale offensive action",
+    "resolution": "Capture primitive texture key, frame name and active action ID before injection; compare after",
+    "verifiedAt": "6efd8aca0afb3f02f947645cdf0d382993c3277a",
+    "status": "RESOLVED"
+  },
+  "remainingFindings": [],
+  "noFilesChangedByReviewer": true,
+  "noFullSuiteOrBrowserRunByReviewer": true
+}
