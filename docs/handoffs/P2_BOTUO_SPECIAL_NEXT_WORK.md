@@ -1,35 +1,40 @@
-# P2 Special — all four poses approved; VFX/GIF review next
+# P2 Special — VISUAL PACKAGE APPROVED / Runtime 前檢接續
 
 ```text
-接續 Hansen0318/shanhaijing-arena。
-唯一分支 feat/m0-combat-core-20260927；既有 PR#1 維持open/unmerged。
-GitHub是唯一權威；先fetch最新remote/HEAD/PR/working tree。文件所在commit是本次checkpoint，不能當成部署SHA。
-所有後續給玩家的新Chat/Work/Codex指令都必須放在單一完整、自足、可一鍵複製的code block。
-禁止merge main、另開替代分支、TD玩法、P2Awakening或P3。
+【角色任務】
+接手 Hansen0318/shanhaijing-arena 的 P2 猼訑 Special「守群」。完成下一個未完成 Gate：Runtime 前檢、共用可執行 presentation/status ownership 契約、忠實素材包裝與容量方案；提出具體材料，停在契約審核 Gate。
 
-先讀AGENTS.md、WORK_PROGRESS.md、docs/STATE.md、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_ART_ANIMATION_VFX.md、docs/M5C_P2_BOTUO_SPECIAL_ACTION.md與docs/art/candidates/botuo/special/key-pose-v1/{README.md,verification.json,mechanics-snapshot.json,SHA256SUMS.json}。
+【背景資訊】
+GitHub是唯一權威。唯一分支 feat/m0-combat-core-20260927；PR #1維持open/unmerged。先fetch最新remote，確認HEAD/branch/PR/working tree。素材checkpoint d1deccff2e4337af71995bb2901ad99052012fd5；核准與交接是後續commit，恢復SHA不是永遠最新。
+2026-10-21 Asia/Taipei玩家：「目前這個我approved，紀錄流程進度規則在github，我要開新的work，要讓他無縫接軌，要跟他說什麼」。
+Special F3、四姿勢及目前VFX/五GIF視覺包已核准；不重畫、不重問相同Gate。不捏造逐檔播放、實機或裝置驗收。
+權威receipt：docs/art/approved/botuo/special/{f3-v1,poses-v1,composite-v1}/acceptance.json。
+素材在docs/art/candidates/botuo/special/{key-pose-v1,poses-v1,composite-review-v1}/；包含透明PNG、prompt、五GIF、雙向/收勢/接技/到期/T1受益者QA、review-manifest.json、verification-summary.json、SHA256SUMS.json，已保存GitHub。舊pending及候選manifest為歷史，以最新receipt為準。
+P1 COMPLETE / PLAYER VERIFIED；P2 Idle/Move/Basic尺度CLOSED；Basic/KO/Heavy已核准。Heavy COMPLETE / PLAYER VERIFIED，已驗收部署acf454741757f58efa980fdcd03f028a472e87a3：
+https://hansen0318.github.io/shanhaijing-arena/?v=acf454741757f58efa980fdcd03f028a472e87a3
+Special只有docs/art/probe/preview，尚無Runtime整合、部署、手機或整個P2驗收。
 
-保護P1 COMPLETE、P2Idle/Move/Basic尺度CLOSED、Basic/KO/Heavy COMPLETE / PLAYER VERIFIED；Heavy所有核准PNG/GIF/VFX/契約/工程/手機紀錄不重做。Heavy部署acf454741757f58efa980fdcd03f028a472e87a3保持；這次docs/art/probe沒有重新部署。既有136affected/build/WebGL/trim/built入口/public證據沿用；五個已知suite failures不宣稱通過，不重播P1/Basic驗收。
+【具體指令】
+1. 必讀AGENTS.md、WORK_PROGRESS.md、docs/STATE.md、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/DEVELOPMENT_ROADMAP.md、docs/M5C_ART_ANIMATION_VFX.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_P2_BOTUO_HEAVY_ACTION.md、docs/M5C_P2_BOTUO_SPECIAL_ACTION.md、docs/handoffs/P2_BOTUO_SPECIAL_NEXT_WORK.md、上述三份Special receipt與素材manifest。
+讀docs/art/approved/botuo/heavy/runtime-v1/acceptance.json與manifests，及docs/verification/P2_HEAVY_RUNTIME/下release.json、engineering.json、player-acceptance.json、public-fingerprint.json、ci-build-inventory.json；沿用已驗收證據。
 
-已完成：真實Special32組施放、8生命週期、2AI機會、4成對減傷resolver核對；四技能動作差異設計；一張防護成立角色候選、prompt/refs/SHA256/透明padding及明暗QA已存GitHub。只增加docs/art與read-only probe，沒有Runtime改動。
+2. 核對已存mechanics-snapshot及source hash；相同即沿用32direct/8lifecycle/2AI/4paired damage證據，不無故重跑。程式權威：src/roster/{abilities,catalog,tierEffects,tierScalingProfiles}.js、src/combat/{battleSession,statuses}.js、src/runtime/statusPresentation.js及共用action/VFX/AssetPresenter/residency路徑。
+T0 self25%減傷4s/CD8/coef0/windup0；T1/T2/T3 self27.5/30/33.75%、4.32/4.6/5s、CD7.552/7.104/6.432。T1+既有post_cast選附近一名存活隊友16.5/18/20.25%，半徑2.52/2.64/2.832，不能移除或改全隊。
+Special立即生效，可同clock接ready Heavy/其他合法技能及移動，減傷不因接技消失。cast.hit=true代表utility生效，不是攻擊接觸。同source/target/key替換、最強減傷MAX；刷新身份、到期、來源/受益者KO、離場、Restart、clearTransientCombat及場景清理依真實生命週期，保留控制與AI。
 
-已核准F3：docs/art/approved/botuo/special/f3-v1/acceptance.json。
-玩家「好這個我確認ok，紀錄下來後繼續」核准已展示Special防護關鍵姿勢與既有立即接技/持續減傷說明。
-F3 SHA25600dc78f20e09da6f8c55b67497653046cb5c7aa6253df2ffaa3d7b41c7bdf8a6；原圖不可重畫。Early approval checkpointa9ea66955702b0b0b0e6e852f6de00e004d12c40。
+3. 提出共用資料驅動契約：短防護動作可被下一合法動作取代，施放特效與持續受益者特效分開。效果按實際source/target/status身份及Tier受益者建立/刷新/銷毀，跟actor root/world movement，不跟Heavy圖片layout offset。現有status overlay以recipient catalog/type為主，需解決source-ability ownership，禁止P2身份特例。
+GIF各姿勢160ms只是美術節奏，不能變成windup、全域CD、延後生效至F3或鎖攻擊/移動。任何真實機制/時序更動先列差異取得核准。Special存在感以防護形狀/層次/節奏達成。
 
-四姿勢已核准：docs/art/approved/botuo/special/poses-v1/acceptance.json。
-玩家「這個可以，我approved 紀錄規則流程進度 github，有必要存下材料 然後繼續」核准45be0c0展示的四姿勢；early approval e49c3d1ea4151ff5d5aeba5f7643ec6e7a984bda。保護所有選定PNG/hash，不再生成或重問姿勢Gate。
+4. 忠實runtime packing/尺度/容量前檢：review .126raw density、400x320cell、1600x320strip不是最終Runtime證明。用多個身體/護臂/腰/角/蹄/接地標記校準，核對雙向、Idle/Move/攻擊切換、anchor，不用外框高度fit或單一臉標記。沿用核准像素不重新生成，必要派生包裝保留source、邏輯canvas、scale/origin/FPS/鏡射及可追溯manifest。
+16MiB decoded texture/cache cap、131072bytes reserve、Shared Dynamic Asset Residency固定。42required keys16622164bytes，reserve外23980bytes。提出實際尺寸與完整required集合/同時駐留/cache/upload/reserve容量證據；不得提高cap、偷偷排除required或擅降清晰度。
 
-目前唯一玩家Gate：docs/art/candidates/botuo/special/composite-review-v1/。
-先讀README.md、review-manifest.json、verification-summary.json、SHA256SUMS.json。
-已產出獨立activation-raw-v1.png與mitigation-state-raw-v1.png、F1-F4-safe-cell.png/等尺寸strip、正常/慢速/無FX/reduced/立即接技GIF，以及明暗/decoded/Heavy同Idle對照/T1實際受益者圖。五GIF完整解碼和pixel timeline roundtrip PASS；正常/慢速120frame RGB相同、holds3x；核准source未改。腳本scripts/prepareBotuoSpecialReview.py及prepareBotuoSpecialRecipientReview.py可重現。
-新的VFX/GIF仍未獲玩家核准。未有新核准就展示現有正常/慢速/chain/無FX/reduced/T1材料並等待，不重新生成、不整合部署。若玩家核准特定預覽，先依實際展示範圍記錄exact file/hash/statement，不捏造未看過材料核准；接著依規則做executable presentation/status ownership契約與faithful packing，再進後續共用Runtime/必要測試/release/公開指紋/手機Gate。
-預覽T0self狀態在cast400ms立即出現至4400ms；四姿勢各160ms只是美術節奏。即時chain依真實Special→Heavy同clock紀錄，身體動作可被下個合法技能替代、防護狀態不因此結束。Aura只跟實際actor root/位移，不跟Heavy圖片排版offset。T1圖依實際records僅self27.5%+一名隊友16.5%/4.32s，非全隊。不是實機錄影、Runtime或手機驗收。
-姿勢包裝.126共同raw density/400×320cells/1600×320strip完整保留resizedRGBA、有padding/接地QA，但仍非最終Runtime尺度/anchor/容量fit證據。No src/public/workflow變更；既有證據沿用、不重跑P1/Basic/Heavy、不Build/deploy。
+5. 完成具體契約與packing/容量證據、限定必要檢查，更新流程/規則/進度/來源/審核紀錄，commit+push同分支。docs/art-only用[skip ci]；程式未變不重跑build/full suite或P1/Basic/Heavy。停在新可執行契約審核，不先整合Runtime/部署。回報remote HEAD、完成內容/證據、限制、下一Gate及實際審核材料。
 
-機制必須沿用：T0自身25%減傷4秒/CD8/coef0/windup0，所有Tier均即時；T1起已有post_cast護群，選附近一名存活隊友，非全隊。數值/AI/replace/strongest/expiry/KO/clear由Special文件和程式核對；不能新增傷害、吸收護盾、無敵、嘲諷、AoE或前搖，不能移除既有Tier受益者。cast hit=true代表utility生效，不代表傷害命中。
-狀態VFX要獨立於短姿勢、依source/target/status真實生命週期，不鎖移動攻擊；可立即接其他ready技能，減傷不因接技消失；不為播完F1–F4新增等待或延遲減傷到F3。未來共用資料驅動實作，禁止P2-ID分支。
-保持核准身份、配色、護臂、尺度/anchor/ground/mirror；不用外框高度縮放角色或放大角色增加強度。普通Hit CANCELLED、合法控制/KO保留；16MiB cap、131072reserve、Shared Dynamic Asset Residency不變。42required keys16622164bytes，reserve外23980bytes；首張master尚非runtime素材或容量適配證據。
-
-無新核准就展示現有VFX/GIF候選並等待，不重做；有新授權只完成下一既有Gate。必要修改完成coherent slice後commit+push，更新進度/state/來源/審核範圍；docs/art-only用[skip ci]。回報最新remote HEAD、實際材料與下一個未完成Gate，不捏造裝置/測試/玩家驗收。
+【約束條件】
+禁止merge main、另開替代分支、引入shanhaijing-td、開始P2 Awakening/P3或重做核准素材。淘汰稿/JPEG不能替換正式透明PNG。
+Heavy A契約不變：戰術650ms依Tier縮放F1/F2→真resolve→F3/F4；即時命中/落空0ms從F3/source開始；不改傷害/CD/Range/Tier/AI/命中/取消/VFX語義。
+保護身份/配色/服裝/角/護臂/尺度/ground/anchor/鏡射；不放大角色、不重現攻擊放大/移動縮小。普通Hit動作CANCELLED，普通傷害不打斷攻擊/施法/移動，合法控制/KO保留。
+P3/P4/P5 Move無損透明裁切完成，不重做；Portrait/Idle/Move/KO及required資產保護照既有規則。
+不新增全隊防護、吸收盾、無敵、嘲諷、傷害、AoE、前搖或假傷害爆炸。GIF不是實機錄影/Runtime/手機證據。既有五個suite failures照記，不宣稱全suitePASS，不捏造FPS/GPU/device/玩家逐項結果。
+所有未來接手指令維持單一完整、自足、可一鍵複製code block。按最新receipt/條目判歷史，不重開舊pending Gate。
 ```

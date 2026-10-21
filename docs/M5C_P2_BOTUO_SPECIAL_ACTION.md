@@ -1,5 +1,15 @@
 # P2 猼訑 Special「守群」— POSES APPROVED / VFX-GIF REVIEW PENDING
 
+## 2026-10-21 (Asia/Taipei) — Special VISUAL PACKAGE PLAYER APPROVED / ENGINEERING PREFLIGHT NEXT
+
+玩家原文：「目前這個我approved，紀錄流程進度規則在github，我要開新的work，要讓他無縫接軌，要跟他說什麼」。核准綁定已完成的 composite-review-v1 視覺包；receipt：`docs/art/approved/botuo/special/composite-v1/acceptance.json`，素材 checkpoint `d1deccff2e4337af71995bb2901ad99052012fd5`。四姿勢、獨立施放/持續狀態 VFX、五種 GIF 與 QA/來源/prompt/hash 已保存，沿用不重畫、不重問相同視覺 Gate。核准依玩家對目前成果的整體確認；不聲稱逐檔播放、裝置測項或實機驗收。下方舊 PENDING 條目及候選包內當時的狀態為歷史，由此最新 receipt 取代；保留原 manifest/checksums 不改寫歷史。
+
+**下一個未完成 Gate：Runtime 前檢、共用可執行 presentation/status ownership 契約與 faithful packing/容量方案。** 先提出具體可審核契約再進必要共用 Runtime 整合。即時減傷、可立即接 ready 技能/移動、真實 source/recipient/status 生命週期必須保留；160ms 美術 frame hold 不成為前搖、全域 CD 或鎖姿勢。現有 T1+ 單一隊友受益不能改成全隊或被移除。短動作可被合法後續技能取代，狀態 VFX 不因此結束，跟 actor root 而非身體圖片排版 offset。
+
+16MiB decoded texture/cache cap、131072bytes reserve、Shared Dynamic Asset Residency 不變；42 required keys /16622164bytes，reserve 外僅23980bytes。目前 review packing 不是最終尺度/anchor/容量通過證明；需多個解剖/裝備/接地標記、雙向與完整 residency 實測，不可外框高度 fit、放大角色或擅降清晰度。新 Runtime/可執行時序/部署/手機及整個 P2 均未核准。
+
+此次只保存素材、核准與交接文件，無 production/src/public/workflow 或既有核准素材變更，沒有部署。既有機制與 Heavy 測試證據沿用；五個已知 suite failures 保留，不宣稱全 suite PASS。Heavy COMPLETE / PLAYER VERIFIED，live acf454741757f58efa980fdcd03f028a472e87a3 不變。禁止 P2 Awakening/P3、main merge、替代分支、TD。新 Work 唯一自足接手指令：`docs/handoffs/P2_BOTUO_SPECIAL_NEXT_WORK.md`；所有後續接手指令維持單一完整可複製 code block。
+
 ## 2026-10-21 — Special FOUR POSES APPROVED / VFX + FIVE GIFS PLAYER REVIEW
 
 Player「這個可以，我approved 紀錄規則流程進度 github，有必要存下材料 然後繼續」accepts displayed45be0c0four-pose board. Exact PNG/hash receipt `docs/art/approved/botuo/special/poses-v1/acceptance.json`; early approval checkpointe49c3d1ea4151ff5d5aeba5f7643ec6e7a984bda saved before new VFX. F1–F4 masters/prompts/QA/history already durable; none regenerated or overwritten. Previous pose-pending entries below are historical.
