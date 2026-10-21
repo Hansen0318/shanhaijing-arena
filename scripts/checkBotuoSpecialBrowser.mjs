@@ -55,7 +55,22 @@ try{
       const d=e.originalConsumers?.[0]?.animation,origin=d?.origin??[.5,.92],scale=d?72*d.scale/Math.max(lw,lh):1,width=lw*scale,height=lh*scale;
       const control=sc.add.image(500.25,300.125,key,'native').setOrigin(...origin).setDisplaySize(width,height).setFlipX(flipX),before=capture();control.setVisible(false);
       const current=sc.add.image(500.25,300.125,texture.key,currentName).setOrigin(...origin).setDisplaySize(width,height).setFlipX(flipX),after=capture();let max=0,sum=0,changed=0;for(let j=0;j<before.length;j++){const delta=Math.abs(before[j]-after[j]);max=Math.max(max,delta);sum+=delta;if(delta)changed++;}
-      results.push({key:e.key,frame:i,flipX,logical:[current.frame.realWidth,current.frame.realHeight],expected:[lw,lh],width,height,origin,maxDelta:max,meanChannelDelta:sum/before.length,changedChannels:changed});current.destroy();control.destroy();
+      // Independent same-pixel single-frame controls distinguish atlas-edge sampling
+      // from gameplay geometry, source loss, or floating-point UV interpolation.
+      current.setVisible(false);
+      const diagnostic={};
+      if(max>1||sum/before.length>=.00001){
+       for(const gutter of [0,1]){
+        const tile=document.createElement('canvas');tile.width=f.width+2*gutter;tile.height=f.height+2*gutter;
+        tile.getContext('2d').drawImage(image,ox+tx-oldTx,oy+ty-oldTy,f.width,f.height,gutter,gutter,f.width,f.height);
+        const diagnosticKey='qa-isolated';sc.textures.addCanvas(diagnosticKey,tile);
+        sc.textures.get(diagnosticKey).add('native',0,gutter,gutter,f.width,f.height).setTrim(lw,lh,tx,ty,f.width,f.height);
+        const isolated=sc.add.image(500.25,300.125,diagnosticKey,'native').setOrigin(...origin).setDisplaySize(width,height).setFlipX(flipX),pixels=capture();
+        let dm=0,ds=0,dc=0;for(let j=0;j<before.length;j++){const delta=Math.abs(before[j]-pixels[j]);dm=Math.max(dm,delta);ds+=delta;if(delta)dc++;}
+        diagnostic['gutter'+gutter]={maxDelta:dm,meanChannelDelta:ds/before.length,changedChannels:dc};isolated.destroy();sc.textures.remove(diagnosticKey);
+       }
+      }
+      results.push({key:e.key,frame:i,flipX,logical:[current.frame.realWidth,current.frame.realHeight],expected:[lw,lh],width,height,origin,maxDelta:max,meanChannelDelta:sum/before.length,changedChannels:changed,diagnostic});current.destroy();control.destroy();
      }sc.textures.remove(key);
     }for(const [o,v]of hidden)if(o.active)o.setVisible(v);return results;
    },entries);
