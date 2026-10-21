@@ -23,7 +23,7 @@ async function fixture(reducedMotion=false){
 
 test('P2 approved Move resolves and preloads four lossless 160×155 cells at 12fps without changing static idle',async()=>{
  const a=resolveCharacterAsset(rosterCatalog.P2,'battleMove');assert.equal(a.key,'botuo.battleMove');
- assert.equal(a.path,'assets/special-runtime-v1/botuo-battleMove.png');const candidate=JSON.parse(readFileSync('docs/art/candidates/botuo/special/runtime-pack-v1/packing-manifest.json')).legacyCandidates.find(e=>e.key===a.key);assert.deepEqual([a.width,a.height,a.bytes],[candidate.width,candidate.height,candidate.bytes]);assert.deepEqual([a.logicalWidth,a.logicalHeight],[640,155]);assert.equal(a.fallback,'placeholder.battle');
+ assert.equal(a.path,'assets/special-runtime-v1/botuo-battleMove.png');const candidate=JSON.parse(readFileSync('docs/art/candidates/botuo/special/runtime-pack-v1/packing-manifest.json')).legacyCandidates.find(e=>e.key===a.key);const sampling=JSON.parse(readFileSync('docs/verification/P2_SPECIAL_RUNTIME/sampling-fix.json')).entries.find(e=>e.key===a.key);assert.equal(sampling.candidateSha256,candidate.sha256);assert.deepEqual([a.width,a.height],sampling.dimensions);assert.equal(a.bytes,readFileSync('public/'+a.path).length);assert.deepEqual([a.logicalWidth,a.logicalHeight],[640,155]);assert.equal(a.fallback,'placeholder.battle');
  const d=rosterCatalog.P2.animationDescriptors.battleMove;assert.deepEqual(d.frames,[0,160,320,480].map(x=>({x,y:0,width:160,height:155})));
  assert.equal(d.source,a.key);assert.equal(d.fps,12);assert.equal(d.loop,true);assert.equal(d.staticFrame,0);assert.deepEqual(d.origin,[.5,153/155]);assert.equal(d.scale,2);
  assert.equal(rosterCatalog.P2.animationDescriptors.battleIdle.frames.length,1);

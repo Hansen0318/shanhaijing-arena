@@ -84,12 +84,12 @@ try{
     reset();const at=s.elapsedSeconds,hp=s.actors.map(v=>v.hp);if(!s.executeAbility(a,'special','player'))throw Error('Special rejected');const event=s.castEvents.at(-1);paint();
     const ids=s.statuses.forActor(a.instanceId,at).map(r=>r.id),noDamage=JSON.stringify(hp)===JSON.stringify(s.actors.map(v=>v.hp)),noContact=p.stagedImpacts.size===0;
     const accepted=category==='move'?s.setPlayerMovement(a.instanceId,{x:sign,y:0}):s.executeAbility(a,category,'player',enemy),sameClock=s.elapsedSeconds===at;
-    if(category==='move')s.step(.01);paint();const b=p.actorSprites.get(a.instanceId);
+    if(category==='move')s.step(.01);paint();const b=p.actorSprites.get(a.instanceId),beforeTexture=b.texture.key,beforeFrame=b.frame.name,beforeAction=p.actions.active.get(a.instanceId)?.actionId??null;
     results.push({category,accepted,sameClock,noDamage,noContact,retainedIds:JSON.stringify(ids)===JSON.stringify(s.statuses.forActor(a.instanceId,s.elapsedSeconds).map(r=>r.id)),gesture:p.utility.gestures.has(a.instanceId),activation:p.utilitySprites.size,aura:[...p.overlaySprites.keys()].filter(k=>k.startsWith('source-status.')).length,body:{texture:b.texture.key,width:b.displayWidth,height:b.displayHeight},moved:category!=='move'||a.x!==4});
     // A queued old utility or older offensive start cannot steal the new action.
     p.cast(event,s.characterDefinitions.P2,s.elapsedSeconds);
     p.cast({...event,presentationId:undefined,category:'heavy',phase:'start',actionId:'stale-browser-heavy',eventAt:at-.1,startedAt:at-.1,dueAt:at+.55,eventSequence:event.eventSequence-1},s.characterDefinitions.P2,s.elapsedSeconds);paint();
-    results.at(-1).staleRejected=p.actorSprites.get(a.instanceId).texture.key===b.texture.key&&!p.utility.gestures.has(a.instanceId);
+    results.at(-1).staleRejected=p.actorSprites.get(a.instanceId).texture.key===beforeTexture&&p.actorSprites.get(a.instanceId).frame.name===beforeFrame&&(p.actions.active.get(a.instanceId)?.actionId??null)===beforeAction&&!p.utility.gestures.has(a.instanceId);
    }
    reset();s.executeAbility(a,'special','player');const queued=[...s.castEvents];paint();s.clearTransientCombat();paint();for(const e of queued)p.cast(e,s.characterDefinitions.P2,s.elapsedSeconds);paint();
    const staleAfterClear={gestures:p.utility.gestures.size,activation:p.utilitySprites.size,aura:[...p.overlaySprites.keys()].filter(k=>k.startsWith('source-status.')).length};
