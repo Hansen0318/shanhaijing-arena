@@ -4,6 +4,14 @@
 
 Pre-flight: Task1 provenance consumed by Task3 reconciler; field is presentationSource with abilityId/category/effectId. Task2 draw adapter consumed by Task3 source/status images; keep canonical logical descriptors, map regions at draw boundary to avoid changing calibration. This follows the spec's logical-canvas preservation and prevents physical trim dimensions entering Heavy effect scale calculations. No gameplay delta.
 
-Task 1: pending.
-Task 2: pending.
-Task 3: pending.
+Task 1: implemented, RED→GREEN. Optional immutable `presentationSource` identifies ability/category/effect; successful utility events have distinct presentationId plus monotonic shared eventSequence. T0–T3 paired real sessions retain immediate mitigation/ready Heavy/Move, one living ally, HP/CD/Tier semantics. No damage/contact introduced.
+
+Task 2: implemented, RED→GREEN. Deterministic installer copies 35 approved candidate PNGs (32 legacy +3 new) without touching originals. Canonical descriptors/FPS/origin/scale remain unchanged; draw boundary maps to native physical frame/trim. Installed PNGs and adapter reconstruct all 57 legacy logical RGBA frames exactly. Full required45/cache16562336/upload-double16562336, reserve131072, extra83808, cleanup0; exact dimensions/keys in local-verification.json. Native Phaser sampling remains PENDING.
+
+Task 3: shared utility playback/source-status reconciliation implemented, RED→GREEN. Normal/reduced and both factions/facings, immediate skill/Move supersession, independent root-bound activation/status, actual status identity refresh/expiry/KO/leave and pause covered. Generic sprite FX preserve logical footprint. No renderer P2 identity branch.
+
+Independent read-only reviewer found two Important issues: same-clock stale event ordering and surviving utility owners after clearTransientCombat at frozen terminal time. Both reproduced by new failing tests, then fixed using ordered observational metadata plus presentation cleanup epoch. Epoch is presentation-only; cleanup keeps real combat behavior. Old queued observations are rejected after cleanup. Minor style-asset replacement edge was also fixed. Review regression RED/GREEN logs saved here. Follow-up review confirmed cleanup/style fixes, identified presenter still consuming stale offensive starts. Added presenter-level failing regression and start-only stale guard; legitimate later resolve/cancel retained. Regression GREEN45/45 with Heavy.
+
+Latest scoped verification: **161/161 PASS** (command in scoped-tests.txt/report; no full suite), asset guard87 files/4615117encoded bytes and `npm run build` PASS. Existing Vite large-chunk warning retained; five historical full-suite failures unchanged. Build output is local only. Logs and full required inventory saved here.
+
+Browser tooling limitation: host lacks Chromium; the single installer invocation failed with truncated ZIP/end-of-central-directory error. No browser/FPS/phone/GPU-memory result claimed. Next: native Phaser comparisons across all newly packed logical frames plus actual built campaign/control/Pause/Restart/cleanup in a **probe-only CI** path, with Configure Pages, Pages artifact and deploy explicitly disabled. Integration/code checkpoint uses [skip ci]. No deployment authorized.

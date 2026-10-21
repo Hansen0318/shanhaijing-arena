@@ -1,4 +1,5 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
+import {specialRuntimePacking} from './specialRuntimePacking.js';
 const entries=[
  {key:'botuo.heavyContact',type:'image',path:'assets/botuo-heavy-runtime-v1/botuo-heavyContact.png',width:204,height:161,bytes:49350,fallback:'placeholder.vfx'},
  {key:'botuo.heavySource',type:'image',path:'assets/botuo-heavy-runtime-v1/botuo-heavySource.png',width:230,height:144,bytes:55428,fallback:'placeholder.vfx'},
@@ -58,5 +59,6 @@ for(let chapter=1;chapter<=6;chapter++){
  entries.push({key:`chapter.${chapter}.preview`,type:'image',path:`campaign/chapter-${chapter}.svg`,width:640,height:300,bytes:4096,fallback:'placeholder.stage'});
  for(let stage=1;stage<=5;stage++)entries.push({key:`stage.${chapter}-${stage}.preview`,type:'image',path:`campaign/stage-${chapter}-${stage}.svg`,width:640,height:300,bytes:4096,fallback:'placeholder.stage'});
 }
+for(const [key,pack] of Object.entries(specialRuntimePacking)){const index=entries.findIndex(e=>e.key===key);if(index>=0)entries[index]={...entries[index],...pack.record};else entries.push(pack.record);}
 export const assetManifest=createAssetManifest(entries);
 export const defaultCharacterAssets=Object.freeze(Object.fromEntries(CHARACTER_SLOTS.map(slot=>[slot,slot==='portraitSquare'||slot==='collectionArt'?'placeholder.portrait':slot.endsWith('Vfx')?'placeholder.vfx':'placeholder.battle'])));

@@ -33,7 +33,7 @@ export const runtimeRowPacking={
   }
 };
 export const runtimeEffectRowPacking={"lushu.awakeningCSource":{top:36,oldHeight:96,height:26}};
-export function repackActionEffectRows(input){const pack=e=>{const p=runtimeEffectRowPacking[e.assetKey];return p?{...e,offset:[e.offset[0],e.offset[1]+e.size[1]*p.top/p.oldHeight],size:[e.size[0],e.size[1]*p.height/p.oldHeight]}:e;};return input.kind==="staged"?{...input,stages:input.stages.map(s=>({...s,blade:pack(s.blade),contact:pack(s.contact)}))}:{...input,blade:pack(input.blade),contact:pack(input.contact)};}
+export function repackActionEffectRows(input){if(input.kind==='utility')return input;const pack=e=>{const p=runtimeEffectRowPacking[e.assetKey];return p?{...e,offset:[e.offset[0],e.offset[1]+e.size[1]*p.top/p.oldHeight],size:[e.size[0],e.size[1]*p.height/p.oldHeight]}:e;};return input.kind==="staged"?{...input,stages:input.stages.map(s=>({...s,blade:pack(s.blade),contact:pack(s.contact)}))}:{...input,blade:pack(input.blade),contact:pack(input.contact)};}
 export function repackAnimationRows(input){
  const p=runtimeRowPacking[input.source];if(!p)return repackAnimationFrames(input);
  const w=input.frames[0].width;

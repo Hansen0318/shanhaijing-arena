@@ -5,6 +5,9 @@ import {ActionPlayback,releasedBladeOpacity} from '../assets/actionPlayback.js';
 import {VisualPlayback,animationFrame} from '../assets/playback.js';
 import {animationDescriptor,vfxDescriptor} from '../assets/descriptors.js';
 import {AssetResidency} from './assetResidency.js';
+import {physicalRegion} from '../assets/textureRegions.js';
+import {UtilityPlayback} from '../assets/utilityPlayback.js';
+import {statusEffectGroups} from './statusEffects.js';
 let nextPresenter=0;
 // This adapter has no ability execution, mutable actor or persistence capability.
 export class AssetPresenter{
@@ -13,8 +16,15 @@ export class AssetPresenter{
   this.displays=new Map();this.displayKinds=new Map();this.displayTextureKeys=new Map();this.actorSprites=new Map();this.actorTextureKeys=new Map();this.overlaySprites=new Map();this.overlayTextureKeys=new Map();this.hudSprites=new Map();this.states=new Map();this.facings=new Map();this.actionFacings=new Map();this.playback=new VisualPlayback();
   this.residency=new AssetResidency(scene,{...residencyOptions,cache,prefix:this.prefix,onEvict:key=>this.clearOptionalDisplays(key)});this.textures=this.residency.textures;
   this.actions=new ActionPlayback();this.actionEffects=new Map();this.pendingImpactViews=new Map();this.bladeAfterglows=new Map();this.stagedImpacts=new Map();this.stagedImpactSprites=new Map();this.stagedEventKeys=new Map();this.presentationEventKeys=new Set();
+  this.utility=new UtilityPlayback();this.utilitySprites=new Map();
  }
  get textureBytes(){return this.residency.bytes;}
+ textureFrame(texture,logical,name){
+  const region=physicalRegion(texture.asset.key,logical);if(!region)return undefined;
+  const t=this.scene.textures?.get(texture.key);if(!t?.has?.(name)){const added=t?.add(name,0,region.x,region.y,region.width,region.height);if(region.trim)added?.setTrim?.(...region.trim,region.width,region.height);}return name;
+ }
+ effectFrame(key){const texture=this.textures.get(key);if(!texture)return undefined;const region=physicalRegion(key);return region?this.textureFrame(texture,null,'packed-effect.'+key):undefined;}
+ effectImage(key){const texture=this.textures.get(key);if(!texture)throw Error('Required effect texture unavailable: '+key);return this.scene.add.image(0,0,texture.key,this.effectFrame(key));}
  async loadKeys(keys){return Promise.all([...new Set(keys)].map(key=>this.residency.load(key)));}
  clearOptionalDisplays(key){for(const [map,sources] of [[this.displays,this.displayTextureKeys],[this.overlaySprites,this.overlayTextureKeys]])for(const [id,source] of sources)if(source===key){map.get(id)?.destroy();map.delete(id);sources.delete(id);this.displayKinds.delete(id);}}
  demand(keys){for(const key of new Set(keys.filter(Boolean))){if(this.closed||this.textures.has(key)||this.optionalLoads.has(key)||this.optionalFailures.has(key)||this.residency.record(key).type!=='image')continue;const task=this.residency.load(key,{required:false}).catch(()=>{this.optionalFailures.add(key);}).finally(()=>this.optionalLoads.delete(key));this.optionalLoads.set(key,task);}}
@@ -30,7 +40,7 @@ export class AssetPresenter{
   const portraits=definitions.map(d=>d.assets?.portraitSquare??resolveCharacterAsset(d,'portraitSquare').key);
   const idles=definitions.map(d=>d.animationDescriptors?.battleIdle?.source??d.assets?.battleIdle??characterAnimation(d,'battleIdle').source);
   const critical=[...new Set([...portraits,...idles])];
-  const actionKeys=definitions.flatMap(d=>Object.keys(d.actionDescriptors??{}).flatMap(category=>{const a=characterAction(d,category);return a.kind==='staged'?[a.animation.source,...a.stages.flatMap(s=>[s.blade.assetKey,s.contact.assetKey])]:[a.animation.source,a.blade.assetKey,a.contact.assetKey];}));
+  const actionKeys=definitions.flatMap(d=>Object.keys(d.actionDescriptors??{}).flatMap(category=>{const a=characterAction(d,category);return a.kind==='utility'?[a.animation.source,a.activation.assetKey,...Object.values(a.statusVisuals).map(v=>v.assetKey)]:a.kind==='staged'?[a.animation.source,...a.stages.flatMap(s=>[s.blade.assetKey,s.contact.assetKey])]:[a.animation.source,a.blade.assetKey,a.contact.assetKey];}));
   const required=[...new Set([...critical,...definitions.flatMap(d=>['battleMove','battleKo'].map(state=>d.animationDescriptors?.[state]?.source??d.assets?.[state]).filter(Boolean)),...actionKeys])];
   this.residency.setPins('encounter',required);
   await this.loadKeys(critical);if(this.closed)return;
@@ -42,6 +52,13 @@ export class AssetPresenter{
  setState(ownerId,descriptor,now,state){this.states.set(ownerId,{descriptor,start:now,state});}
  cast(event,character,now,ability=null){
   if(this.closed)return;
+  if((!event.phase||event.phase==='start')&&this.utility.staleStart(event,now))return;
+  if(event.presentationOnly&&this.presentationEventKeys.has(event.actorId+'.'+event.actionId+'.'+event.phase))return;
+  const utilityAction=characterAction(character,event.category);
+  const observed=this.utility.observe(event,utilityAction,now,this.facings.get(event.actorId)?.flipX??false);
+  if(utilityAction?.kind==='utility'){
+   if(observed){this.clearAction(event.actorId,{preserveIndependent:true,preserveImpact:false});this.states.delete(event.actorId);}return;
+  }
   if(event.phase){
    const action=characterAction(character,event.category);
    if(action){
@@ -131,7 +148,7 @@ export class AssetPresenter{
    if(age<0)continue;
    const spec=stage.contact,d=r.descriptor,frame=d.animation.frames[0],width=72*d.animation.scale*frame.width/Math.max(frame.width,frame.height),height=72*d.animation.scale*frame.height/Math.max(frame.width,frame.height),sx=width/d.coordinateSize[0],sy=height/d.coordinateSize[1];
    let image=this.stagedImpactSprites.get(key);
-   if(!image){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required staged contact unavailable: '+spec.assetKey);image=this.scene.add.image(0,0,texture.key);this.stagedImpactSprites.set(key,image);}
+   if(!image){image=this.effectImage(spec.assetKey);this.stagedImpactSprites.set(key,image);}
    const anchor=r.targetId?positions.get(r.targetId)??this.project(r.target):this.project(r.target),x=spec.offset[0]+spec.size[0]/2,y=spec.offset[1]+spec.size[1]/2;
    // Event time controls normal expiry. A late first paint retains one confirmed cue;
    // the next distinct paint expires it, so stalls do not replay HP or extend lifetime.
@@ -158,7 +175,7 @@ export class AssetPresenter{
    // Reuse the live action's sweep when present; never draw it twice.
    const live=this.actionEffects.get(id)?.get('blade');
    if(live?.actionId===sample.actionId&&live.visible&&live.alpha>0){record.image?.destroy();record.image=null;continue;}
-   if(!record.image){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required blade texture unavailable: '+spec.assetKey);record.image=this.scene.add.image(0,0,texture.key);}
+   if(!record.image)record.image=this.effectImage(spec.assetKey);
    const [cw,ch]=d.coordinateSize,w=d.animation.frames[0].width,h=d.animation.frames[0].height;
    const sx=72*d.animation.scale*w/Math.max(w,h)/cw,sy=72*d.animation.scale*h/Math.max(w,h)/ch,pos=positions.get(id);
    const x=spec.offset[0]+spec.size[0]/2-d.animation.origin[0]*cw,y=spec.offset[1]+spec.size[1]/2-d.animation.origin[1]*ch;
@@ -171,8 +188,8 @@ export class AssetPresenter{
   if(!effects){effects=new Map();this.actionEffects.set(ownerId,effects);}
   const descriptor=sample.descriptor,d=descriptor.kind==='staged'?{...descriptor,...descriptor.stages[Math.max(0,sample.stageIndex)]}:descriptor,[cw,ch]=d.coordinateSize,sx=displaySize.width/cw,sy=displaySize.height/ch;
   for(const kind of ['blade','contact']){const spec=d[kind],opacity=sample[kind+'Opacity'];let image=effects.get(kind);
-   if(opacity>0&&!image){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required action texture unavailable: '+spec.assetKey);image=this.scene.add.image(0,0,texture.key);effects.set(kind,image);}
-   if(!image)continue;if(opacity>0){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required action texture unavailable: '+spec.assetKey);if(image.texture!==texture.key)image.setTexture(texture.key);}
+   if(opacity>0&&!image){image=this.effectImage(spec.assetKey);effects.set(kind,image);}
+   if(!image)continue;if(opacity>0){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required action texture unavailable: '+spec.assetKey);if(image.texture!==texture.key)image.setTexture(texture.key,this.effectFrame(spec.assetKey));}
    const targetAttached=spec.attach==='target'&&sample.contactTarget;
    const anchor=targetAttached?this.project(sample.contactTarget):position;
    const x=spec.offset[0]+spec.size[0]/2-(targetAttached?0:d.animation.origin[0]*cw),y=spec.offset[1]+spec.size[1]/2-(targetAttached?0:d.animation.origin[1]*ch);
@@ -181,8 +198,8 @@ export class AssetPresenter{
  }
  imageFor(ownerId,descriptor,elapsed,map=this.actorSprites,playbackMode='decorative',frameIndex=null){
   const texture=this.textures.get(descriptor.source);if(!texture)return null;
-  const projection=animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode),region=texture.asset.key===descriptor.source?(frameIndex===null?projection.region:descriptor.frames[frameIndex]):null;const frame=region?`${region.x}.${region.y}.${region.width}.${region.height}`:undefined;
-  if(region){const t=this.scene.textures?.get(texture.key);if(!t?.has?.(frame)){const added=t?.add(frame,0,region.x,region.y,region.width,region.height);if(region.trim)added.setTrim(...region.trim,region.width,region.height);}}
+  const projection=animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode),region=texture.asset.key===descriptor.source?(frameIndex===null?projection.region:descriptor.frames[frameIndex]):null;const frame=region?`${region.x}.${region.y}.${region.width}.${region.height}`:this.effectFrame(descriptor.source);
+  if(region)this.textureFrame(texture,region,frame);
   let sprite=map.get(ownerId);if(!sprite){sprite=this.scene.add.image(0,0,texture.key,frame);map.set(ownerId,sprite);}else sprite.setTexture(texture.key,frame);
   // A state change may start another upload before the next render. Keep the
   // old displayed actor texture pinned until setTexture actually releases it.
@@ -203,11 +220,24 @@ export class AssetPresenter{
   }
  }
  renderOverlays(frame,definitions,statuses,now){
-  if(this.closed)return;const valid=new Set(),keys=[];for(const actor of [...frame.allies,...frame.enemies]){if(actor.hp<=0)continue;const character=definitions[actor.definitionId];
-   for(const status of statuses.forActor(actor.instanceId,now)){const key=character?.assets?.statusOverlays?.[status.type];if(key)keys.push(key);const texture=this.textures.get(key);if(!texture)continue;const id=actor.instanceId+'.'+status.type;valid.add(id);let image=this.overlaySprites.get(id);if(!image){image=this.scene.add.image(0,0,texture.key);this.overlaySprites.set(id,image);this.overlayTextureKeys.set(id,key);}const p=this.project(actor);image.setPosition(p.x,p.y).setDepth(7).setDisplaySize(56,56);}
+  if(this.closed)return;const valid=new Set(),keys=[],groups=statusEffectGroups(frame,definitions,statuses,now),authored=new Set(groups.flatMap(g=>g.records.map(r=>r.record.id)));
+  for(const group of groups){
+   const {id,target,style,recordIds}=group,key=style.assetKey;keys.push(key);if(!this.textures.has(key))continue;valid.add(id);let image=this.overlaySprites.get(id);
+   if(image&&(this.overlayTextureKeys.get(id)!==key||!image.statusRecordIds?.some(k=>recordIds.includes(k)))){image.destroy();this.overlaySprites.delete(id);image=null;}
+   if(!image){image=this.effectImage(key);this.overlaySprites.set(id,image);this.overlayTextureKeys.set(id,key);}
+   image.statusRecordIds=recordIds;this.drawBoundEffect(image,style,this.project(target),this.facings.get(target.instanceId)?.flipX??frame.enemies.includes(target),this.reducedMotion?style.reducedOpacity:style.opacity);
+  }
+  for(const actor of [...frame.allies,...frame.enemies]){if(actor.hp<=0)continue;const character=definitions[actor.definitionId];
+   for(const status of statuses.forActor(actor.instanceId,now)){if(authored.has(status.id))continue;const key=character?.assets?.statusOverlays?.[status.type];if(key)keys.push(key);const texture=this.textures.get(key);if(!texture)continue;const id=actor.instanceId+'.'+status.type;valid.add(id);let image=this.overlaySprites.get(id);if(!image){image=this.effectImage(key);this.overlaySprites.set(id,image);this.overlayTextureKeys.set(id,key);}const p=this.project(actor);image.setPosition(p.x,p.y).setDepth(7).setDisplaySize(56,56);}
   }for(const [id,image] of this.overlaySprites)if(!valid.has(id)){image.destroy();this.overlaySprites.delete(id);this.overlayTextureKeys.delete(id);}this.residency.setPins('overlays',keys);this.demand(keys);
  }
- render(frame,now,definitions){
+ drawBoundEffect(image,spec,pos,flip,alpha){image.setOrigin(.5,.5).setDisplaySize(...spec.size).setPosition(pos.x+(flip?-spec.offset[0]:spec.offset[0]),pos.y+spec.offset[1]).setFlipX(flip).setDepth(spec.layer).setAlpha(alpha).setVisible(true);}
+ renderUtilityActivations(alive,positions,now){
+  const records=this.utility.update(now,alive),valid=new Set(records.map(r=>r.id));for(const [id,image] of this.utilitySprites)if(!valid.has(id)){image.destroy();this.utilitySprites.delete(id);}
+  for(const r of records){const spec=r.descriptor.activation;let image=this.utilitySprites.get(r.id);if(!image){image=this.effectImage(spec.assetKey);this.utilitySprites.set(r.id,image);}const ms=(now-r.startedAt)*1000,alpha=this.reducedMotion?spec.reducedOpacity:spec.opacity*Math.min(1,(spec.durationMs-ms)/spec.fadeMs);this.drawBoundEffect(image,spec,positions.get(r.actorId),this.facings.get(r.actorId)?.flipX??r.flipX,alpha);}
+ }
+ render(frame,now,definitions,statuses=null){
+  this.utility.resetEpoch(frame.presentationEpoch);
   if(this.closed)return;const actors=[...frame.allies,...frame.enemies],alive=new Set(actors.filter(a=>a.hp>0).map(a=>a.instanceId)),positions=new Map(actors.map(a=>[a.instanceId,this.project(a)]));
   const stage=this.textures.get(this.stageAssetKey);if(stage&&!this.stageDisplay)this.stageDisplay=this.scene.add.image(0,0,stage.key).setOrigin(0,0).setDisplaySize(1120,540).setDepth(1);
   for(const actor of actors){const id=actor.instanceId,character=definitions[actor.definitionId];let state=this.states.get(id);
@@ -238,6 +268,8 @@ export class AssetPresenter{
    const displaced=Math.hypot(dx,dy)>1e-6;
    const moving=actor.hp>0&&Boolean(previous)&&(displaced||now===previous.now&&previous.moving);
    this.facings.set(id,{x:actor.x,y:actor.y,now,moving,flipX});
+   if(moving||actor.hp<=0||statuses?.controlled(id,now))this.utility.cancelGesture(id);
+   const utility=actor.hp>0?this.utility.sample(id,now,this.reducedMotion):null;if(utility&&!action)action=utility;
    const idle=characterAnimation(character,'battleIdle');
    const move=character?.animationDescriptors?.battleMove?characterAnimation(character,'battleMove'):null;
    const baseState=moving&&move&&this.textures.has(move.source)?'battleMove':'battleIdle';
@@ -253,10 +285,11 @@ export class AssetPresenter{
    const resolvedState=formalState?state.state:actor.hp>0?baseState:'battleIdle';
    const playbackMode=resolvedState==='battleMove'?'locomotion':'decorative';
    const image=this.imageFor(id,descriptor,elapsed,this.actorSprites,playbackMode,action?.frameIndex??null);
-   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?(action?descriptor.frames[action.frameIndex]:animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode).region):null,w=region?.trim?.[0]??region?.width??asset.width,h=region?.trim?.[1]??region?.height??asset.height,width=72*descriptor.scale*w/Math.max(w,h),height=72*descriptor.scale*h/Math.max(w,h);image.setOrigin(action&&flipX?1-descriptor.origin[0]:descriptor.origin[0],descriptor.origin[1]).setDisplaySize(width,height).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);if(action)this.renderActionEffects(id,action,pos,{width,height});}
+   if(image){const pos=positions.get(id),asset=this.textures.get(descriptor.source).asset,region=asset.key===descriptor.source?(action?descriptor.frames[action.frameIndex]:animationFrame(descriptor,elapsed,this.reducedMotion,playbackMode).region):null,w=region?.trim?.[0]??region?.width??asset.logicalWidth??asset.width,h=region?.trim?.[1]??region?.height??asset.logicalHeight??asset.height,width=72*descriptor.scale*w/Math.max(w,h),height=72*descriptor.scale*h/Math.max(w,h);image.setOrigin(action&&flipX?1-descriptor.origin[0]:descriptor.origin[0],descriptor.origin[1]).setDisplaySize(width,height).setFlipX(flipX).setPosition(pos.x,pos.y).setDepth(5).setAlpha(actor.hp>0?1:.35);if(action&&action.kind!=='utility')this.renderActionEffects(id,action,pos,{width,height});}
    else this.actorSprites.get(id)?.setVisible(false); // Arena's procedural marker remains visible.
   }
   this.renderBladeAfterglows(alive,positions,now);
+  this.renderUtilityActivations(alive,positions,now);
   this.renderStagedImpacts(alive,positions,now);
   const records=this.playback.update(now,alive),ids=new Set(records.map(r=>r.id));
   for(const [id,display] of this.displays)if(!ids.has(id)){display.destroy();this.displays.delete(id);this.displayKinds.delete(id);this.displayTextureKeys.delete(id);}
@@ -267,10 +300,10 @@ export class AssetPresenter{
    let display=this.displays.get(r.id);const texture=this.textures.get(d.animation?.source??d.assetKey);
    const kind=texture?'image':'graphics';if(display&&this.displayKinds.get(r.id)!==kind){display.destroy();this.displays.delete(r.id);display=null;}
    if(texture)this.displayTextureKeys.set(r.id,d.animation?.source??d.assetKey);else this.displayTextureKeys.delete(r.id);
-   if(!display){display=texture?this.scene.add.image(0,0,texture.key):this.scene.add.graphics();this.displays.set(r.id,display);this.displayKinds.set(r.id,kind);}
+   if(!display){display=texture?this.scene.add.image(0,0,texture.key,this.effectFrame(texture.asset.key)):this.scene.add.graphics();this.displays.set(r.id,display);this.displayKinds.set(r.id,kind);}
    display.setPosition(anchor.x,anchor.y).setDepth(d.layer).setAlpha(1-progress).setScale(d.scale);
    const angle=d.rotation==='facing'?Math.atan2(target.y-source.y,target.x-source.x):0;
-   if(texture){display.setRotation(angle).setOrigin(...d.origin);if(d.animation){const proxy=new Map([[r.id,display]]);this.imageFor(r.id,d.animation,elapsed,proxy);}const region=d.animation&&texture.asset.key===d.animation.source?animationFrame(d.animation,elapsed,this.reducedMotion).region:null,w=region?.width??texture.asset.width,h=region?.height??texture.asset.height;display.setDisplaySize(80*d.scale*w/Math.max(w,h),80*d.scale*h/Math.max(w,h));if(d.form==='projectile')display.setPosition(source.x+(target.x-source.x)*progress,source.y+(target.y-source.y)*progress);}
+   if(texture){display.setRotation(angle).setOrigin(...d.origin);if(d.animation){const proxy=new Map([[r.id,display]]);this.imageFor(r.id,d.animation,elapsed,proxy);}const region=d.animation&&texture.asset.key===d.animation.source?animationFrame(d.animation,elapsed,this.reducedMotion).region:null,w=region?.trim?.[0]??region?.width??texture.asset.logicalWidth??texture.asset.width,h=region?.trim?.[1]??region?.height??texture.asset.logicalHeight??texture.asset.height;display.setDisplaySize(80*d.scale*w/Math.max(w,h),80*d.scale*h/Math.max(w,h));if(d.form==='projectile')display.setPosition(source.x+(target.x-source.x)*progress,source.y+(target.y-source.y)*progress);}
    else {display.clear();const color=0xffe894;display.lineStyle(4,color,.95);
     if(['trail','projectile'].includes(d.form)){display.lineBetween(source.x-anchor.x,source.y-anchor.y,target.x-anchor.x,target.y-anchor.y);if(d.form==='projectile')display.fillStyle(0x6adaff,.9).fillCircle(source.x-anchor.x+(target.x-source.x)*progress,source.y-anchor.y+(target.y-source.y)*progress,8);}
     else if(['ring','persistent-area'].includes(d.form))display.strokeCircle(0,0,43);
@@ -279,5 +312,5 @@ export class AssetPresenter{
   }
   this.residency.reclaim();
  }
- destroy(){if(this.closed)return;this.closed=true;this.ready=false;this.stageDisplay?.destroy();for(const id of this.actionEffects.keys())this.clearAction(id);this.actions.clear();this.pendingImpactViews.clear();for(const key of this.stagedImpacts.keys())this.removeStagedImpact(key);this.stagedEventKeys.clear();this.presentationEventKeys.clear();for(const id of this.bladeAfterglows.keys())this.clearBladeAfterglow(id);for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites]){for(const v of map.values())v.destroy();map.clear();}this.residency.destroy();this.optionalLoads.clear();this.optionalFailures.clear();this.displayKinds.clear();this.displayTextureKeys.clear();this.actorTextureKeys.clear();this.overlayTextureKeys.clear();this.states.clear();this.facings.clear();this.actionFacings.clear();this.playback.clear();}
+ destroy(){if(this.closed)return;this.closed=true;this.ready=false;this.utility.clear();this.stageDisplay?.destroy();for(const id of this.actionEffects.keys())this.clearAction(id);this.actions.clear();this.pendingImpactViews.clear();for(const key of this.stagedImpacts.keys())this.removeStagedImpact(key);this.stagedEventKeys.clear();this.presentationEventKeys.clear();for(const id of this.bladeAfterglows.keys())this.clearBladeAfterglow(id);for(const map of [this.displays,this.actorSprites,this.overlaySprites,this.hudSprites,this.utilitySprites]){for(const v of map.values())v.destroy();map.clear();}this.residency.destroy();this.optionalLoads.clear();this.optionalFailures.clear();this.displayKinds.clear();this.displayTextureKeys.clear();this.actorTextureKeys.clear();this.overlayTextureKeys.clear();this.states.clear();this.facings.clear();this.actionFacings.clear();this.playback.clear();}
 }

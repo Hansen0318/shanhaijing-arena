@@ -143,13 +143,13 @@ export class BattleSession {
     this.damageEvents = [];
     this.healEvents = [];
     this.pendingHits = [];
-    this.pendingActions=new Map();this.nextActionId=0;
+    this.pendingActions=new Map();this.nextActionId=0;this.nextPresentationId=0;this.presentationEpoch=0;this.presentationEventSequence=0;
     this.statuses = new BattleStatuses();
     this.areas=new PersistentAreas();this.mobilityEvidence=new Map();this.effects=new TierEffectRuntime(this);
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 
-  clearTransientCombat({preserveEvents=false}={}){for(const id of this.pendingActions.keys())this.cancelAction(id,'battle_end');this.pendingHits=[];for(const hit of this.delayedImpacts.values())this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'battle_end');this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();if(!preserveEvents){this.castEvents=[];this.damageEvents=[];this.healEvents=[];}}
+  clearTransientCombat({preserveEvents=false}={}){this.presentationEpoch++;for(const id of this.pendingActions.keys())this.cancelAction(id,'battle_end');this.pendingHits=[];for(const hit of this.delayedImpacts.values())this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'battle_end');this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();if(!preserveEvents){this.castEvents=[];this.damageEvents=[];this.healEvents=[];}}
 
   // Compatibility view for existing Basic-only diagnostics. One shared engine
   // owns every opted-in action; categories select data, never character IDs.
@@ -231,6 +231,9 @@ export class BattleSession {
 
   recordCast(actor, target, category, source, definition, hit,metadata={}) {
     this.castEvents.push({
+      presentationEpoch:this.presentationEpoch,
+      eventSequence:++this.presentationEventSequence,
+      eventAt:this.elapsedSeconds,
       actorId: actor.instanceId,
       category,
       source,
@@ -240,6 +243,7 @@ export class BattleSession {
       hit,
       minRange: definition.minRange,
       maxRange: definition.maxRange,
+      ...(definition.presentation?.actionLifecycle==='utility-observed'&&hit&&!metadata.phase?{presentationId:`utility.${++this.nextPresentationId}`,eventAt:this.elapsedSeconds,abilityId:definition.id}:{}),
       ...metadata,
     });
   }
@@ -255,6 +259,7 @@ export class BattleSession {
   snapshot() {
     return {
       result: this.result(),
+      presentationEpoch:this.presentationEpoch,
       elapsedSeconds: this.elapsedSeconds,
       allies: snapshotTeam(this.allies),
       enemies: snapshotTeam(this.enemies),
@@ -378,7 +383,8 @@ export class BattleSession {
         victim.heal(baseHp*definition.effect.maxHpFraction*this.tierProjections.get(actor.instanceId).scales.healing*this.effects.multiplier('heal',actor,victim,category));const amount=victim.hp-before;
         if(amount>0){this.healEvents.push({actorId:actor.instanceId,targetId:victim.instanceId,category,source,amount,critical:false,position:{x:victim.x,y:victim.y}});applied=true;}
       }else if(definition.effect.kind==='mitigation'){
-        this.statuses.applyMitigation(victim.instanceId,definition.effect.reduction,definition.effect.duration,this.elapsedSeconds);applied=true;
+        const ownership=definition.presentation?.actionLifecycle==='utility-observed'?{abilityId:definition.id,category,effectId:'primary'}:null;
+        this.statuses.applyMitigation(victim.instanceId,definition.effect.reduction,definition.effect.duration,this.elapsedSeconds,ownership);applied=true;
       }else if(definition.effect.coefficient>0){
         const hits=definition.effect.hits??1,hitDefinition=hits===1?definition:{...definition,effect:{...definition.effect,coefficient:definition.effect.coefficient/hits}};
         applied=this.applyResolvedDamage(actor,victim,actorDefinition,this.definitionForActor(victim),hitDefinition,category,source,{...hitContext,hitIndex:0,totalHits:hits})>0||applied;

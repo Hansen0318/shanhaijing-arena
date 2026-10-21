@@ -594,7 +594,7 @@ export class ArenaScene extends Phaser.Scene {
     // Combat snapshots deliberately omit catalog identity; enrich copies for art only.
     const visualActor=actor=>({...actor,definitionId:this.session.actorById(actor.instanceId)?.definitionId});
     const visualFrame={...frame,allies:frame.allies.map(visualActor),enemies:frame.enemies.map(visualActor)};
-    this.visualAssets.render(visualFrame,this.session.elapsedSeconds,this.session.characterDefinitions);
+    this.visualAssets.render(visualFrame,this.session.elapsedSeconds,this.session.characterDefinitions,this.session.statuses);
     this.visualAssets.renderOverlays(visualFrame,this.session.characterDefinitions,this.session.statuses,this.session.elapsedSeconds);
     this.visualAssets.renderHud(this.portraitViews,this.session.characterDefinitions,this.session);
     this.telegraphs.render(this.session.threats.active(this.session.elapsedSeconds*1000),this.session.elapsedSeconds*1000,[...this.session.areas.records.values()]);

@@ -1,5 +1,10 @@
 # Work Progress
 
+## 2026-10-21 — Special Runtime INTEGRATED / local scoped verification PASS / native browser NEXT
+
+執行契約與32貼圖包裝核准已存 executable-v1/acceptance.json，沿用不重問。共用utility觀察、source/status ownership、logical-region adapter及35份忠實PNG已實作；詳細ledger `docs/verification/P2_SPECIAL_RUNTIME/WORK_LOG.md`，完整required集合/容量與本地證據在同目錄。45required/16562336decoded，131072reserve外83808bytes；原source/Heavy契約與機制不變。獨立審查發現stale事件排序及terminal清理，已加RED→GREEN回歸修正。Native Phaser sampling/actual built entry尚待真瀏覽器證據，不等於手機或玩家Runtime驗收。未部署，Heavy live acf454741757f58efa980fdcd03f028a472e87a3；五個歷史suite failures保持。NEXT僅必要工程/browser verification；禁止自動Pages部署、main merge/替代分支/Awakening/P3/TD。較舊pending視覺/契約條目為歷史。
+
+
 ## 2026-10-21 — Special EXECUTION CONTRACT / PACKING PLAYER APPROVED; shared integration active
 
 玩家直接回覆工程契約及32份舊貼圖無損包裝的確認問題：「號，確認紀錄流程規則後 繼續」。receipt `docs/art/approved/botuo/special/executable-v1/acceptance.json` 綁定既有前檢文件及packing-manifest SHA256；視覺/動作/工程契約/包裝核准均CLOSED，不再重問。NEXT執行 `docs/plans/2026-10-21-p2-special-runtime.md`；進度與測試ledger `docs/verification/P2_SPECIAL_RUNTIME/WORK_LOG.md`。保留立即減傷/接ready技與Move，獨立activation/status ownership、真實source/recipient/Tier、16MiB+131072reserve和全部required；無機制時序變更。僅核准接續共用Runtime整合及必要驗證，未聲稱工程PASS或授權部署/手機/全P2完成。舊pending條目為歷史；不重畫、不merge main/開替代分支/Awakening/P3/TD。

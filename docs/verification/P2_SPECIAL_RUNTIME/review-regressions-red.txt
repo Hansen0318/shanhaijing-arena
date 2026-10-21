@@ -1,0 +1,60 @@
+✖ same-clock sequence rejects stale utility and offensive observations (1.868298ms)
+✖ transient cleanup clears surviving utility owners at frozen clock and rejects queued old events (14.884226ms)
+✔ utility gesture/source/status are independent allies reduced=false facing=-1 (7.895069ms)
+✔ utility gesture/source/status are independent allies reduced=false facing=1 (5.175512ms)
+✔ utility gesture/source/status are independent enemies reduced=false facing=-1 (6.694958ms)
+✔ utility gesture/source/status are independent enemies reduced=false facing=1 (8.965196ms)
+✔ utility gesture/source/status are independent allies reduced=true facing=-1 (3.904525ms)
+✔ utility gesture/source/status are independent allies reduced=true facing=1 (4.486604ms)
+✔ utility gesture/source/status are independent enemies reduced=true facing=-1 (5.813593ms)
+✔ utility gesture/source/status are independent enemies reduced=true facing=1 (4.713663ms)
+✔ same-clock Special→Heavy immediately supersedes gesture, retains defense and only real Heavy contact (4.803566ms)
+✔ T1 actual non-source recipient, refresh identity, source KO, leave/reentry and paused renders reconcile (7.841619ms)
+✔ same observation is idempotent and reduced gesture has no animation lock (4.066847ms)
+✔ generic sprite effects retain pre-pack logical footprint rather than cropped texture aspect (3.79379ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 12
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 203.594422
+
+✖ failing tests:
+
+test at tests/botuoSpecialRuntime.test.js:11:1
+✖ same-clock sequence rejects stale utility and offensive observations (1.868298ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///workspace/scratch/b5b2424e76e5/shanhaijing-arena/tests/botuoSpecialRuntime.test.js:14:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoSpecialRuntime.test.js:30:1
+✖ transient cleanup clears surviving utility owners at frozen clock and rejects queued old events (14.884226ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///workspace/scratch/b5b2424e76e5/shanhaijing-arena/tests/botuoSpecialRuntime.test.js:33:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
