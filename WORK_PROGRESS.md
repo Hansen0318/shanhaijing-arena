@@ -1,5 +1,11 @@
 # Work Progress
 
+## 2026-10-22 — 鎮岳執行前檢提案 / 容量阻擋 / 玩家契約審核 NEXT
+
+已從最新 feature remote `6983ee15fe768874924c28ccd72227e47041ada8` 恢復，PR #1 open/unmerged；玩家先前核准的鎮岳姿勢與 VFX/GIF receipt 保持。新增 `docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md`：對照實際 cast/action、逐人 damage、`boyi.team` status provenance、Special 共存與清理，提出共用純呈現所有權／即時與 tactical 分流契約。這是**未核准提案**，不是 Runtime 整合或新的美術驗收。
+
+讀取現有完整 required 集合重算 45 key / 16611224 decoded / reserve 131072 / headroom 34920；四個新 source-exact display-derivative 裁切候選估計 1145272 bytes，合計 49 key / 17756496 decoded，**超出 cap 1110352 bytes**。候選只是矩形/映射/驗證方案，沒有安裝 PNG、沒有證成 native 採樣或新容量 PASS。必須先提出足額忠實舊貼圖再包裝並驗證全部 required，或另行請求容量設計決策。沿用未變 16 機制案例和 Special 歷史證據；未重跑、未 build/Browser/deploy/full-suite。兩個既有未追蹤暫存檔不觸碰。下一 Gate 僅玩家審閱此契約與容量阻擋；未核准不得進 Runtime。唯一接手指令見 `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`。
+
 ## 2026-10-21 — Awakening VFX/GIF PLAYER APPROVED / execution preflight NEXT
 
 Player「這個我確認OK，你紀錄github流程進度規則」accepts the normal GIF embedded in the preceding response and its linked visual-review package at `e1cdefa22c99aceae149a0a854210da9941c36e9`. Exact wording, primary normal GIF, seven linked GIFs, static reduced cue, three raw VFX and manifest/reference hashes are bound in `docs/art/approved/botuo/awakening/visual-v1/acceptance.json`. **PLAYER VFX/GIF VISUAL GATE CLOSED / APPROVED.** This records the presented package, not invented independent playback/device cases for every link. Old candidate/pending fields in frozen manifests/checkpoint/QA remain historical; authoritative latest approval is this receipt and progress entry. Do not ask again or regenerate accepted F1–F4/VFX/GIF.

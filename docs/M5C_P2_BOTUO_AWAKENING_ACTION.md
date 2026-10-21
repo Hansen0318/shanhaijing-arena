@@ -1,5 +1,11 @@
 # P2 猼訑 Awakening「鎮岳」— VFX/GIF APPROVED / EXECUTION PREFLIGHT NEXT
 
+## 2026-10-22 — Execution preflight proposal / capacity BLOCKED / player contract review NEXT
+
+New `docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md` is a review candidate, **not an approved executable contract**. Actual runtime inspection finds one-target AoE cast presentation cannot prove each real victim, delayed damage events need observational action correlation, and `boyi.team` records currently lack the `presentationSource` used by Special's generic style reconciler. Proposed shared read-only lifecycle keeps instant0ms and tactical900/819ms distinct; damage/status ownership stays with real simulation records, no fake air contact/protection, and independent Special/MAX expiry remains. No src/public/gameplay changes.
+
+Complete current45-key required traversal reproduces16611224 decoded/34920 headroom after131072 reserve. Four source-exact candidate display derivative rectangles would add1145272 bytes and four keys, leaving a **1110352-byte shortfall** under the unchanged16MiB cap. Not actual packed files or a native sampling/capacity pass. First prove reversible legacy savings, full49-key residency and native draw without fidelity/budget concessions; if impossible, stop for separate design choice. Player now reviews the bounded contract and explicitly blocked packing direction, not Runtime/release. Approved VFX/GIF receipt, 16 existing mechanics cases, Special historical verification and five full-suite failures stay as recorded; none rerun here.
+
 ## 2026-10-21 — Awakening VFX/GIF PLAYER APPROVED / execution preflight NEXT
 
 Player「這個我確認OK，你紀錄github流程進度規則」accepts the normal GIF embedded in the preceding response and its linked visual-review package at `e1cdefa22c99aceae149a0a854210da9941c36e9`. Exact wording, primary normal GIF, seven linked GIFs, static reduced cue, three raw VFX and manifest/reference hashes are bound in `docs/art/approved/botuo/awakening/visual-v1/acceptance.json`. **PLAYER VFX/GIF VISUAL GATE CLOSED / APPROVED.** This records the presented package, not invented independent playback/device cases for every link. Old candidate/pending fields in frozen manifests/checkpoint/QA remain historical; authoritative latest approval is this receipt and progress entry. Do not ask again or regenerate accepted F1–F4/VFX/GIF.
