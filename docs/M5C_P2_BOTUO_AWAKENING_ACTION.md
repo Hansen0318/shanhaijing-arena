@@ -1,5 +1,14 @@
 # P2 猼訑 Awakening「鎮岳」— ONE key-pose candidate / PLAYER REVIEW PENDING
 
+## 2026-10-21 — Awakening corrected F3 v2 PLAYER APPROVED / remaining poses NEXT
+
+Player「我確認ok，妳紀錄後繼續」accepts the presented corrected F3 at ee5870600543e154902e244f9e6da749cde9f266. Receipt `docs/art/approved/botuo/awakening/f3-v2/acceptance.json` binds exact F3-candidate SHA2563122654ff5bfde5a5ecbca0e41269b7ad4f8015a3dcf350cbdb0f8ef886f1eb4 and original master. **F3 DESIGN / PLAYER ART APPROVED**; do not regenerate it or repeat its approval. Candidate manifest's old pending state is historical, not a competing current status. Rejected v1 and extra-hoof draft remain forbidden references.
+
+NEXT authorized established pose stage: individual F1 load (large correct-arm bracer lifted outward/up, knees flexed), F2 downward intermediate (bracer descends diagonally, deeper weight compression), exact approved F3 low release, F4 recovery (torso/hips rise, bracer eases toward low guard). These are authored visual candidates, not added windup/lock/damage/displacement or approved unseen art. Keep right-facing identity, viewer-left shoulder -> large bracer / viewer-right arm -> small bracer for these views; trace anatomical ownership, two arms/two legs/two hooves. Use approved identity/battleIdle and this accepted F3 only. No head/bounds-based scale fit.
+
+After remaining poses, inspect each in light/dark and full four-pose review, then STOP for player pose approval. No VFX/GIF/executable contract/Runtime/deploy before later gates. Existing16 mechanics cases/Special evidence/P1/all accepted P2 unchanged and reused; no engineering reruns. Same feature branch/PR1 open/unmerged, no main merge/newbranch/P3/TD;16MiB+131072reserve/all required retained; five historical suite failures remain. Approval-only checkpoint[skip ci] first, before new generation.
+
+
 ## 2026-10-21 — Awakening v1 REJECTED: equipment sides; corrected F3 v2 REVIEW PENDING
 
 Player reports「妳有讀取確認的戰場角色形象呢，因為妳這個圖片和形象的配件左右不分」. Confirmed v1 swaps large/small bracers relative to approved identity/battleIdle. Previous author visual QA was incomplete; alpha/padding checks were never anatomical-laterality proof. V1 is REJECTED / NOT A DOWNSTREAM REFERENCE (`key-pose-v1/rejection.json`), original bytes/manifest preserved. No player approval existed or is inferred.

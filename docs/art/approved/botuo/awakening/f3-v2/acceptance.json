@@ -1,0 +1,20 @@
+{
+  "status": "F3 DESIGN / PLAYER ART APPROVED",
+  "recordedDate": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "我確認ok，妳紀錄後繼續",
+  "reviewedCheckpoint": "ee5870600543e154902e244f9e6da749cde9f266",
+  "source": {
+    "path": "docs/art/candidates/botuo/awakening/key-pose-v2/F3-candidate.png",
+    "sha256": "3122654ff5bfde5a5ecbca0e41269b7ad4f8015a3dcf350cbdb0f8ef886f1eb4",
+    "bytes": 1252226
+  },
+  "master": {
+    "path": "docs/art/candidates/botuo/awakening/key-pose-v2/F3-downward-master.png",
+    "sha256": "2520b8a7e8d2b480dbb78ada0059a3a999bbdbebb5d6383f3743d416d3aa9d0e"
+  },
+  "scope": "Presented corrected F3 v2 goat identity, anatomical asymmetric bracer ownership and wide low downward-release pose only. Continue the established remaining individual F1/F2/F4 pose stage, then show the four poses for player review.",
+  "excluded": "Rejected v1/extra-hoof draft, unseen F1/F2/F4 art, VFX/GIF, executable timing contract, Runtime, deployment and whole P2 acceptance.",
+  "preservation": "Keep exact F3 source/master/prompt/QA/manifest bytes; older candidate pending metadata is historical, this separate receipt closes only the reviewed F3 gate."
+}
