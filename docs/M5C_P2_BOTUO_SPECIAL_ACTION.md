@@ -1,4 +1,16 @@
-# P2 猼訑 Special「守群」— FOUR POSES APPROVED / VFX + GIF NEXT
+# P2 猼訑 Special「守群」— POSES APPROVED / VFX-GIF REVIEW PENDING
+
+## 2026-10-21 — Special FOUR POSES APPROVED / VFX + FIVE GIFS PLAYER REVIEW
+
+Player「這個可以，我approved 紀錄規則流程進度 github，有必要存下材料 然後繼續」accepts displayed45be0c0four-pose board. Exact PNG/hash receipt `docs/art/approved/botuo/special/poses-v1/acceptance.json`; early approval checkpointe49c3d1ea4151ff5d5aeba5f7643ec6e7a984bda saved before new VFX. F1–F4 masters/prompts/QA/history already durable; none regenerated or overwritten. Previous pose-pending entries below are historical.
+
+**CURRENT PLAYER GATE:** `docs/art/candidates/botuo/special/composite-review-v1/` contains normal/slow/character-only/reduced/instant-chain GIFs, independent activation/state PNGs, same-Idle Heavy/Special comparison, T1 actual-recipient study, light/dark/decoded QA, manifests/checksums and preparation scripts under scripts/. All NEW VFX/GIF are CANDIDATES / NOT PLAYER APPROVED. Exact materials and limitations in README.md, review-manifest.json, verification-summary.json. Normal/slow120fully decoded frames exact RGB, all holds3x; all5GIFs fully decoded and pixel timeline roundtrip PASS.4equal400×320cells/1600×320strip; full resizedRGBA retained, generous margins, source hashes unchanged, rounded ground residual0.0.126uniform raw-source density reuses accepted Heavy review policy, NOT final runtime body-density/anchor/budget proof. No height-fitting or new art substituted.
+
+Defense: larger layered gold/ivory horn-shaped transient activation320×260 plus independent calmer segmented open state224×234, compared against Heavy source230×154 with exact same144×144Idle. No enemy damage/contact/absorption/invulnerability/team-AoE invented. T0 self status starts at previewcast400ms, ends4400ms from actual4s record, independent of illustrative160ms pose holds. Separate instant-chain reconstruction uses real SAME-clock Special→Heavy evidence; gesture can be superseded while state persists through Heavy/Move. Aura follows actor root/world movement, never body-picture layout offsets; a preview coupling issue was found/fixed before final review. T1 study reuses actual status records: self27.5% and ONEally16.5% for4.32s; thirdally no aura. P3/P4 static images reused solely for this recipient illustration, no source/character development.
+
+Only docs/art and reproducible preview scripts; no src/public/workflow/oldapproved changes, runtime/residency fit claim/build/browser/deploy/phone acceptance. Prior32direct/8lifecycle/2AI/4paired damage and136Heavyengineering/public evidence reused unchanged; known5suite failures retained, no full-suitePASS. Liveacf4547/16MiB+131072reserve/42keys16622164bytes/23980extra unchanged. New high-resolution review assets are not gameplay-loaded. Checkpoint[skip ci]; latestremote is containing feature commit.
+
+**NEXT ONLY:** player reviews actual supplied VFX/GIF/chain/reduced/recipient material. On explicit visual approval bind exact reviewed hashes/statement; then settle faithful executable observational presentation/source-status ownership and packing before any shared Runtime integration/release/phone gates. Do not infer new timing, forced-pose completion, wholeP2 approval or device results; do not reapprove/regenerate accepted poses. No P2Awakening/P3/main merge/newbranch/TD. Current successor docs/handoffs/P2_BOTUO_SPECIAL_NEXT_WORK.md; future instructions one complete self-contained copyable block.
 
 ## 2026-10-21 — ALL FOUR POSES PLAYER APPROVED / independent VFX + GIF next
 

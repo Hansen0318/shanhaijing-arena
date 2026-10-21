@@ -1,0 +1,56 @@
+{
+  "status": "ART RECIPIENT STUDY / NOT RUNTIME OR PHONE PROOF",
+  "recordedTier": "T1",
+  "sourceEvidence": "docs/art/candidates/botuo/special/key-pose-v1/mechanics-snapshot.json",
+  "sources": [
+    {
+      "actorId": "a1",
+      "source": "public/assets/characters/botuo/battleIdle.png",
+      "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+      "status": {
+        "id": "status-1",
+        "sourceId": "a1",
+        "targetId": "a1",
+        "areaId": null,
+        "key": "base-mitigation",
+        "type": "mitigation",
+        "magnitude": 0.275,
+        "data": {},
+        "startTime": 0,
+        "expiryTime": 4.32,
+        "policy": "replace",
+        "tags": []
+      }
+    },
+    {
+      "actorId": "a2",
+      "source": "public/assets/characters/chiru/battleIdle.png",
+      "sha256": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+      "status": {
+        "id": "status-2",
+        "sourceId": "a1",
+        "targetId": "a2",
+        "areaId": null,
+        "key": "boyi.ally",
+        "type": "mitigation",
+        "magnitude": 0.165,
+        "data": {},
+        "startTime": 0,
+        "expiryTime": 4.32,
+        "policy": "replace",
+        "tags": []
+      }
+    },
+    {
+      "actorId": "a3",
+      "source": "public/assets/characters/jiuweihu/battleIdle.png",
+      "sha256": "394497ffa5314a4559fee10d58d799fab9be59b282a31bb3ffebb02670ed6640",
+      "status": null
+    }
+  ],
+  "rules": [
+    "Only actual source/target status records receive aura. T1 single ally is existing behavior, not a new team shield.",
+    "P3/P4 approved static art only reused for a recipient illustration, no character development or source modification.",
+    "General future status presentation must handle all roster recipients through source/status ownership, no P2 identity branch."
+  ]
+}

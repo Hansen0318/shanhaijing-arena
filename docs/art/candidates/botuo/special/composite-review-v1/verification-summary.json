@@ -1,0 +1,86 @@
+{
+  "status": "PREVIEW PACKAGING / GIF DECODE PASS; PLAYER VFX-GIF REVIEW PENDING",
+  "gifs": [
+    {
+      "path": "docs/art/candidates/botuo/special/composite-review-v1/botuo-special-composite-normal.gif",
+      "sha256": "55a55d588f38aefd2dc7439a147c7447e84e74a0fa917add816cedebd09b9eb7",
+      "bytes": 3645232,
+      "decodedFrames": 120,
+      "samples": 250,
+      "totalMs": 10000,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    },
+    {
+      "path": "docs/art/candidates/botuo/special/composite-review-v1/botuo-special-composite-slow.gif",
+      "sha256": "760557fd76cfcc754df854984d21ad54696150d9e7ab03da093db8e11af18b03",
+      "bytes": 3645232,
+      "decodedFrames": 120,
+      "samples": 250,
+      "totalMs": 30000,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    },
+    {
+      "path": "docs/art/candidates/botuo/special/composite-review-v1/botuo-special-character-only.gif",
+      "sha256": "69241b3a6a0e85fa2818588cb0cbb0fdf4c6ea599825596564d5c27d3b9f49b2",
+      "bytes": 439867,
+      "decodedFrames": 26,
+      "samples": 84,
+      "totalMs": 6720,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    },
+    {
+      "path": "docs/art/candidates/botuo/special/composite-review-v1/botuo-special-reduced-cues.gif",
+      "sha256": "cee2f4ef7901990b30d4458afd6def8459b54333dade20f79c58ca1f9effd1c9",
+      "bytes": 3309191,
+      "decodedFrames": 114,
+      "samples": 250,
+      "totalMs": 10000,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    },
+    {
+      "path": "docs/art/candidates/botuo/special/composite-review-v1/botuo-special-instant-chain.gif",
+      "sha256": "5ec534b6ced791f3ba78a8d62d7df6acbf43233e6ebe0a7ecb6f4223c1775084",
+      "bytes": 4159150,
+      "decodedFrames": 142,
+      "samples": 250,
+      "totalMs": 10000,
+      "pixelTimelineRoundTrip": "PASS",
+      "disposal": 2
+    }
+  ],
+  "normalSlow": {
+    "decodedFrames": 120,
+    "pixelsIdenticalEveryFrame": true,
+    "allHoldsExactly3x": true
+  },
+  "approvedSourcesUnchanged": true,
+  "equalCells": [
+    400,
+    320
+  ],
+  "stripSize": [
+    1600,
+    320
+  ],
+  "groundResidualPixels": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "statusWindow": {
+    "T0OnMs": 400,
+    "T0OffMs": 4400,
+    "immediateChainMs": 400,
+    "source": "recorded real mechanics; art reconstruction only"
+  },
+  "limits": [
+    "Not actual browser recording/runtime integration or phone acceptance",
+    "No final body calibration/residency fit proof",
+    "Existing32direct/8lifecycle/2AI/4damage evidence reused; no unchanged production tests/build/deploy rerun"
+  ]
+}
