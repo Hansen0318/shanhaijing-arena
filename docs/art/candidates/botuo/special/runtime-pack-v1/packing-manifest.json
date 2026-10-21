@@ -1,0 +1,2751 @@
+{
+  "status": "CONTRACT REVIEW CANDIDATES ONLY / NOT INSTALLED",
+  "newAssets": [
+    {
+      "key": "botuo.specialPoses",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/botuo-specialPoses.png",
+      "width": 538,
+      "height": 162,
+      "bytes": 145899,
+      "sha256": "3f7fed1a9b9d6f60aa9cf0522c0245af2d42145079e170ba6942817d894e5e90",
+      "decodedBytes": 348624,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 142,
+          "height": 161,
+          "trim": [
+            200,
+            200,
+            31,
+            26
+          ]
+        },
+        {
+          "x": 142,
+          "y": 0,
+          "width": 140,
+          "height": 162,
+          "trim": [
+            200,
+            200,
+            31,
+            24
+          ]
+        },
+        {
+          "x": 282,
+          "y": 0,
+          "width": 137,
+          "height": 162,
+          "trim": [
+            200,
+            200,
+            30,
+            25
+          ]
+        },
+        {
+          "x": 419,
+          "y": 0,
+          "width": 119,
+          "height": 161,
+          "trim": [
+            200,
+            200,
+            40,
+            26
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 1,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 2,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 3,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "reviewLogicalCanvas": [
+        400,
+        320
+      ],
+      "reviewRoot": [
+        200,
+        274
+      ],
+      "runtimeLogicalCanvas": [
+        200,
+        200
+      ],
+      "reviewToRuntimeTranslation": [
+        -100,
+        -90
+      ],
+      "runtimeRoot": [
+        100,
+        184
+      ],
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "scale": 2.7777777777777777,
+      "worldUnitsPerTexel": 1,
+      "authoringDensity": 0.126,
+      "frameDurationsMs": [
+        160,
+        160,
+        160,
+        160
+      ],
+      "fps": 6.25,
+      "duration": 0.64,
+      "loop": false,
+      "staticFrame": 2,
+      "sourcePoses": [
+        {
+          "frame": "F1",
+          "path": "docs/art/candidates/botuo/special/poses-v1/F1-initiation-master.png",
+          "sha256": "47991e48daf386071438000f888bc75aea7910b859aa7259cca3456beaee9183",
+          "bytes": 1331940,
+          "size": [
+            1222,
+            1287
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "frame": "F2",
+          "path": "docs/art/candidates/botuo/special/poses-v1/F2-inward-master.png",
+          "sha256": "e7325e1a4a2fd1f6215823b6797bc70ed5b7e7ddc9c72ee8420a746b5497dd36",
+          "bytes": 1256554,
+          "size": [
+            1222,
+            1287
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "frame": "F3",
+          "path": "docs/art/candidates/botuo/special/key-pose-v1/F3-protection-master.png",
+          "sha256": "00dc78f20e09da6f8c55b67497653046cb5c7aa6253df2ffaa3d7b41c7bdf8a6",
+          "bytes": 1256843,
+          "size": [
+            1222,
+            1287
+          ],
+          "mode": "RGBA"
+        },
+        {
+          "frame": "F4",
+          "path": "docs/art/candidates/botuo/special/poses-v1/F4-release-master.png",
+          "sha256": "733e950c4c6f5c7fbbbcfbcb7b3a1e939217ef983aac8bbc1f712ffec9ae8df0",
+          "bytes": 1259506,
+          "size": [
+            1222,
+            1287
+          ],
+          "mode": "RGBA"
+        }
+      ]
+    },
+    {
+      "key": "botuo.specialActivation",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/botuo-specialActivation.png",
+      "width": 320,
+      "height": 259,
+      "bytes": 126042,
+      "sha256": "37f6ea67c7ee29a846fa5f8546c19bf5493b9e849659c0c1688da38f8c5d2da7",
+      "decodedBytes": 331520,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 259,
+          "trim": [
+            320,
+            260,
+            0,
+            0
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "docs/art/candidates/botuo/special/composite-review-v1/activation-raw-v1.png",
+      "sourceSha256": "fe58093daa7f1170e521ac8516c0124fb458be2bf1b9de581b3b9365c94ce184",
+      "reviewSize": [
+        320,
+        260
+      ],
+      "worldSize": [
+        320,
+        260
+      ],
+      "rootOffset": [
+        0,
+        -88
+      ],
+      "origin": [
+        0.5,
+        0.5
+      ],
+      "layer": 4,
+      "mirror": "recipient/caster current facing around actor root"
+    },
+    {
+      "key": "botuo.specialState",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/botuo-specialState.png",
+      "width": 224,
+      "height": 231,
+      "bytes": 51745,
+      "sha256": "d86bedae11b9517715c6f5b7cd32ec4c2e2f13d23316e8bb8637c42a7d81302a",
+      "decodedBytes": 206976,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 224,
+          "height": 231,
+          "trim": [
+            224,
+            234,
+            0,
+            3
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "docs/art/candidates/botuo/special/composite-review-v1/mitigation-state-raw-v1.png",
+      "sourceSha256": "137b7c13658312343a67e236c38bb736c2e50861ef4f9abf67b4e2156d4b712b",
+      "reviewSize": [
+        224,
+        234
+      ],
+      "worldSize": [
+        224,
+        234
+      ],
+      "rootOffset": [
+        0,
+        -88
+      ],
+      "origin": [
+        0.5,
+        0.5
+      ],
+      "layer": 4,
+      "mirror": "recipient/caster current facing around actor root"
+    }
+  ],
+  "legacyCandidates": [
+    {
+      "key": "lushu.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleIdle.png",
+      "width": 78,
+      "height": 121,
+      "bytes": 17934,
+      "sha256": "c3fc923e7fefe6f6249c30b6dee6e70f33639a5ffe2a7d5fd9ce749fd011a5df",
+      "decodedBytes": 37752,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 78,
+          "height": 121,
+          "trim": [
+            96,
+            128,
+            6,
+            4
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/battleIdle-static.png",
+      "sourceSha256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2",
+      "oldDimensions": [
+        96,
+        128
+      ],
+      "savedDecodedBytes": 11400,
+      "originalConsumers": [
+        {
+          "definitionId": "P1",
+          "state": "battleIdle",
+          "animation": {
+            "source": "lushu.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 96,
+                "height": 128
+              }
+            ],
+            "fps": 2.5,
+            "duration": 0.4,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9544198895027625
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "botuo.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-battleIdle.png",
+      "width": 154,
+      "height": 152,
+      "bytes": 47251,
+      "sha256": "79e041411ab0d59fe8c44b8ddb66cfd38ad6f970ee63d38176d7459340a09fff",
+      "decodedBytes": 93632,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 154,
+          "height": 152,
+          "trim": [
+            160,
+            160,
+            3,
+            6
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/botuo/battleIdle.png",
+      "sourceSha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+      "oldDimensions": [
+        160,
+        160
+      ],
+      "savedDecodedBytes": 8768,
+      "originalConsumers": [
+        {
+          "definitionId": "P2",
+          "state": "battleIdle",
+          "animation": {
+            "source": "botuo.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 160
+              }
+            ],
+            "fps": 2.5,
+            "duration": 0.4,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "chiru.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/chiru-battleIdle.png",
+      "width": 148,
+      "height": 160,
+      "bytes": 44025,
+      "sha256": "c1f6849c41daadda43f01bcf7bd51875dd5a5125cecf0a10c848a33663c5eae8",
+      "decodedBytes": 94720,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 148,
+          "height": 160,
+          "trim": [
+            160,
+            160,
+            8,
+            0
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/chiru/battleIdle.png",
+      "sourceSha256": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+      "oldDimensions": [
+        160,
+        160
+      ],
+      "savedDecodedBytes": 7680,
+      "originalConsumers": [
+        {
+          "definitionId": "P3",
+          "state": "battleIdle",
+          "animation": {
+            "source": "chiru.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 160
+              }
+            ],
+            "fps": 2.5,
+            "duration": 0.4,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              1
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "jiuweihu.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/jiuweihu-battleIdle.png",
+      "width": 118,
+      "height": 135,
+      "bytes": 31784,
+      "sha256": "cfd787790f05ab407e18fd921d52cc9942703d506c55fe14195982217839009c",
+      "decodedBytes": 63720,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 118,
+          "height": 135,
+          "trim": [
+            160,
+            137,
+            21,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png",
+      "sourceSha256": "5a4e195ebca765d82672a0023ce990c5f15315ff023e1b24dd93f21ce572ef90",
+      "oldDimensions": [
+        160,
+        137
+      ],
+      "savedDecodedBytes": 23960,
+      "originalConsumers": [
+        {
+          "definitionId": "P4",
+          "state": "battleIdle",
+          "animation": {
+            "source": "jiuweihu.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 137
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9927007299270073
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "xingxing.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/xingxing-battleIdle.png",
+      "width": 144,
+      "height": 132,
+      "bytes": 37591,
+      "sha256": "48a43cee2a211140f2868c654afda2b3c1594542f0b2498661585ffbee415a87",
+      "decodedBytes": 76032,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 144,
+          "height": 132,
+          "trim": [
+            160,
+            134,
+            11,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/botuo-basic-packing-v1/xingxing-battleIdle.png",
+      "sourceSha256": "a2154800b7a89de2977e7a81453a961eeffe544c2e5637c5d573346f11809b9c",
+      "oldDimensions": [
+        160,
+        134
+      ],
+      "savedDecodedBytes": 9728,
+      "originalConsumers": [
+        {
+          "definitionId": "P5",
+          "state": "battleIdle",
+          "animation": {
+            "source": "xingxing.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 134
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9925373134328358
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.battleMove",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleMove.png",
+      "width": 170,
+      "height": 178,
+      "bytes": 54118,
+      "sha256": "a7a734263eb07b1925a2b12838ca50c794c448e899e0d54835aed1a6bbf1cd64",
+      "decodedBytes": 121040,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 92,
+          "height": 89,
+          "trim": [
+            96,
+            91,
+            2,
+            1
+          ]
+        },
+        {
+          "x": 92,
+          "y": 0,
+          "width": 78,
+          "height": 85,
+          "trim": [
+            96,
+            91,
+            9,
+            5
+          ]
+        },
+        {
+          "x": 0,
+          "y": 89,
+          "width": 94,
+          "height": 89,
+          "trim": [
+            96,
+            91,
+            1,
+            1
+          ]
+        },
+        {
+          "x": 94,
+          "y": 89,
+          "width": 76,
+          "height": 89,
+          "trim": [
+            96,
+            91,
+            10,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 1,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 2,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 3,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/battleMove-trimmed.png",
+      "sourceSha256": "b5c592d570974e2fd03524fc2194d1213f84b31b07e3e1a09177e2af790236f6",
+      "oldDimensions": [
+        384,
+        91
+      ],
+      "savedDecodedBytes": 18736,
+      "originalConsumers": [
+        {
+          "definitionId": "P1",
+          "state": "battleMove",
+          "animation": {
+            "source": "lushu.battleMove",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 96,
+                "height": 91
+              },
+              {
+                "x": 96,
+                "y": 0,
+                "width": 96,
+                "height": 91
+              },
+              {
+                "x": 192,
+                "y": 0,
+                "width": 96,
+                "height": 91
+              },
+              {
+                "x": 288,
+                "y": 0,
+                "width": 96,
+                "height": 91
+              }
+            ],
+            "fps": 18,
+            "duration": 0.2222222222222222,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9578653390808087
+            ],
+            "scale": 1.5
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleKo.png",
+      "width": 503,
+      "height": 470,
+      "bytes": 151344,
+      "sha256": "29ee68b70174383cf9539a068623b95da4b8dd84643a169db3e1484cfcfdbf01",
+      "decodedBytes": 945640,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 503,
+          "height": 470,
+          "trim": [
+            512,
+            472,
+            8,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/battleKo-trimmed.png",
+      "sourceSha256": "dbd1fc4bb7e2512b26c6b841ab8651765cd5f5324f5d3d08fe1b312e682abf0a",
+      "oldDimensions": [
+        512,
+        472
+      ],
+      "savedDecodedBytes": 21016,
+      "originalConsumers": [
+        {
+          "definitionId": "P1",
+          "state": "battleKo",
+          "animation": {
+            "source": "lushu.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 512,
+                "height": 472
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.7944915254237288
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "botuo.battleMove",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-battleMove.png",
+      "width": 551,
+      "height": 152,
+      "bytes": 157557,
+      "sha256": "ca4d3d7b803845230743d8348010bd6bf01f5efd7924a703e2abeab00eec897c",
+      "decodedBytes": 335008,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 148,
+          "height": 152,
+          "trim": [
+            160,
+            155,
+            6,
+            1
+          ]
+        },
+        {
+          "x": 148,
+          "y": 0,
+          "width": 131,
+          "height": 146,
+          "trim": [
+            160,
+            155,
+            14,
+            7
+          ]
+        },
+        {
+          "x": 279,
+          "y": 0,
+          "width": 140,
+          "height": 152,
+          "trim": [
+            160,
+            155,
+            10,
+            1
+          ]
+        },
+        {
+          "x": 419,
+          "y": 0,
+          "width": 132,
+          "height": 152,
+          "trim": [
+            160,
+            155,
+            14,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 1,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 2,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 3,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/botuo-basic-packing-v1/botuo-battleMove.png",
+      "sourceSha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5",
+      "oldDimensions": [
+        640,
+        155
+      ],
+      "savedDecodedBytes": 61792,
+      "originalConsumers": [
+        {
+          "definitionId": "P2",
+          "state": "battleMove",
+          "animation": {
+            "source": "botuo.battleMove",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 155
+              },
+              {
+                "x": 160,
+                "y": 0,
+                "width": 160,
+                "height": 155
+              },
+              {
+                "x": 320,
+                "y": 0,
+                "width": 160,
+                "height": 155
+              },
+              {
+                "x": 480,
+                "y": 0,
+                "width": 160,
+                "height": 155
+              }
+            ],
+            "fps": 12,
+            "duration": 0.3333333333333333,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9870967741935484
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "botuo.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-battleKo.png",
+      "width": 510,
+      "height": 329,
+      "bytes": 158294,
+      "sha256": "c7676d1034c3907f446e14146b42d03ae520fca99879aad3db99df9c6a368957",
+      "decodedBytes": 671160,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 510,
+          "height": 329,
+          "trim": [
+            512,
+            331,
+            2,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/botuo/battleKo-trimmed.png",
+      "sourceSha256": "4a54caf87303df0eb856d5385748c1a88fb1604534851a536eed16d76b30ebf2",
+      "oldDimensions": [
+        512,
+        331
+      ],
+      "savedDecodedBytes": 6728,
+      "originalConsumers": [
+        {
+          "definitionId": "P2",
+          "state": "battleKo",
+          "animation": {
+            "source": "botuo.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 512,
+                "height": 331
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.8459214501510574
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "chiru.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/chiru-battleKo.png",
+      "width": 1244,
+      "height": 1254,
+      "bytes": 865249,
+      "sha256": "d8af126e055a4d6093c9e587c2303771160d369211f9c825eefaef0aab97f12c",
+      "decodedBytes": 6239904,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 1244,
+          "height": 1254,
+          "trim": [
+            1254,
+            1254,
+            0,
+            0
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/chiru/battleKo.png",
+      "sourceSha256": "f97e369fe2c6ae2d0fff1c51c96e487279b4bbe1e614925a7d1c2c4dc2a2796d",
+      "oldDimensions": [
+        1254,
+        1254
+      ],
+      "savedDecodedBytes": 50160,
+      "originalConsumers": [
+        {
+          "definitionId": "P3",
+          "state": "battleKo",
+          "animation": {
+            "source": "chiru.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1254,
+                "height": 1254
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.7814992025518341
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "jiuweihu.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/jiuweihu-battleKo.png",
+      "width": 468,
+      "height": 436,
+      "bytes": 197208,
+      "sha256": "e735e35f7f78af055c545bc04ab4714a92d2c9c75d6a95bba2da14d936e9196b",
+      "decodedBytes": 816192,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 468,
+          "height": 436,
+          "trim": [
+            512,
+            438,
+            23,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/runtime-packing-v1/jiuweihu-battleKo.png",
+      "sourceSha256": "43f0e143e665eadad03352fd78b4b363f9b072700fbb58498635e8eb705a52a4",
+      "oldDimensions": [
+        512,
+        438
+      ],
+      "savedDecodedBytes": 80832,
+      "originalConsumers": [
+        {
+          "definitionId": "P4",
+          "state": "battleKo",
+          "animation": {
+            "source": "jiuweihu.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 512,
+                "height": 438
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.7990867579908676
+            ],
+            "scale": 2
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "xingxing.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/xingxing-battleKo.png",
+      "width": 474,
+      "height": 277,
+      "bytes": 160640,
+      "sha256": "230931f424948db39c171fad7b2093c485b10483efee07baff77529bab523aef",
+      "decodedBytes": 525192,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 474,
+          "height": 277,
+          "trim": [
+            480,
+            279,
+            2,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/botuo-basic-packing-v1/xingxing-battleKo.png",
+      "sourceSha256": "1f76985f4e39e466919440b99ff62ad3382aec0748a48ad453300ad8851b177f",
+      "oldDimensions": [
+        480,
+        279
+      ],
+      "savedDecodedBytes": 10488,
+      "originalConsumers": [
+        {
+          "definitionId": "P5",
+          "state": "battleKo",
+          "animation": {
+            "source": "xingxing.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 480,
+                "height": 279
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.49166666666666664,
+              0.989247311827957
+            ],
+            "scale": 1.875
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.battleBasic",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleBasic.png",
+      "width": 97,
+      "height": 366,
+      "bytes": 51330,
+      "sha256": "ca24d04ea7d90d663440cf8440e7df4ea62089c23eef9e51d4fd200b6c978a5e",
+      "decodedBytes": 142008,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 94,
+          "height": 93,
+          "trim": [
+            128,
+            101,
+            18,
+            6
+          ]
+        },
+        {
+          "x": 0,
+          "y": 93,
+          "width": 97,
+          "height": 89,
+          "trim": [
+            128,
+            101,
+            19,
+            10
+          ]
+        },
+        {
+          "x": 0,
+          "y": 182,
+          "width": 95,
+          "height": 85,
+          "trim": [
+            128,
+            101,
+            20,
+            15
+          ]
+        },
+        {
+          "x": 0,
+          "y": 267,
+          "width": 80,
+          "height": 99,
+          "trim": [
+            128,
+            101,
+            24,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 1,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 2,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 3,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/runtime-packing-v1/lushu-battleBasic.png",
+      "sourceSha256": "d3920ab4129868f71a3f3a08d29262773cc75ee08da80610fd9e14af904e2ac9",
+      "oldDimensions": [
+        512,
+        101
+      ],
+      "savedDecodedBytes": 64840,
+      "originalConsumers": [
+        {
+          "definitionId": "P1",
+          "category": "basic",
+          "animation": {
+            "source": "lushu.battleBasic",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 128,
+                "height": 101
+              },
+              {
+                "x": 128,
+                "y": 0,
+                "width": 128,
+                "height": 101
+              },
+              {
+                "x": 256,
+                "y": 0,
+                "width": 128,
+                "height": 101
+              },
+              {
+                "x": 384,
+                "y": 0,
+                "width": 128,
+                "height": 101
+              }
+            ],
+            "fps": 10,
+            "duration": 0.4,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.5,
+              0.9617231480534553
+            ],
+            "scale": 2.4731182795698925
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.basicBlade",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-basicBlade.png",
+      "width": 55,
+      "height": 77,
+      "bytes": 4951,
+      "sha256": "8e72c3121d3f95166c8c456fc58f08f49b55234717a88980d1c9100c57cca222",
+      "decodedBytes": 16940,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 55,
+          "height": 77,
+          "trim": [
+            97,
+            81,
+            30,
+            2
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/basic-blade.png",
+      "sourceSha256": "8f90ebfc918dfe1cd77845b1502290dd572f636179edcada0876dae2a32475b1",
+      "oldDimensions": [
+        97,
+        81
+      ],
+      "savedDecodedBytes": 14488,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.basicContact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-basicContact.png",
+      "width": 38,
+      "height": 29,
+      "bytes": 2198,
+      "sha256": "cb08cc0a6765e2428753edc6eb225592abd1641ab6e9cb985cf9c4a5fc547be5",
+      "decodedBytes": 4408,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 38,
+          "height": 29,
+          "trim": [
+            85,
+            57,
+            29,
+            13
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/basic-contact.png",
+      "sourceSha256": "2faada0f95507b0616157338b90a976145a870cb03a354a16c9fe5c6761d46f6",
+      "oldDimensions": [
+        85,
+        57
+      ],
+      "savedDecodedBytes": 14972,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleHeavy.png",
+      "width": 387,
+      "height": 83,
+      "bytes": 52007,
+      "sha256": "37830cb6fafef9d05a7346f5c25b79dc60426b225809fdc6972c31d3e4d536c9",
+      "decodedBytes": 128484,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 91,
+          "height": 83,
+          "trim": [
+            128,
+            85,
+            18,
+            1
+          ]
+        },
+        {
+          "x": 91,
+          "y": 0,
+          "width": 94,
+          "height": 80,
+          "trim": [
+            128,
+            85,
+            17,
+            4
+          ]
+        },
+        {
+          "x": 185,
+          "y": 0,
+          "width": 109,
+          "height": 77,
+          "trim": [
+            128,
+            85,
+            10,
+            7
+          ]
+        },
+        {
+          "x": 294,
+          "y": 0,
+          "width": 93,
+          "height": 76,
+          "trim": [
+            128,
+            85,
+            17,
+            7
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 1,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 2,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 3,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/runtime-packing-v1/lushu-battleHeavy.png",
+      "sourceSha256": "3f9f501520886eed5d2f790e603481575f17ab2196357dd1f5a69ca8d5cc3a9f",
+      "oldDimensions": [
+        512,
+        85
+      ],
+      "savedDecodedBytes": 45596,
+      "originalConsumers": [
+        {
+          "definitionId": "P1",
+          "category": "heavy",
+          "animation": {
+            "source": "lushu.battleHeavy",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 128,
+                "height": 85
+              },
+              {
+                "x": 128,
+                "y": 0,
+                "width": 128,
+                "height": 85
+              },
+              {
+                "x": 256,
+                "y": 0,
+                "width": 128,
+                "height": 85
+              },
+              {
+                "x": 384,
+                "y": 0,
+                "width": 128,
+                "height": 85
+              }
+            ],
+            "fps": 6.666666666666667,
+            "duration": 0.6,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.5,
+              0.9545180935693999
+            ],
+            "scale": 2.4731182795698925
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.heavyWind",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-heavyWind.png",
+      "width": 108,
+      "height": 107,
+      "bytes": 11418,
+      "sha256": "0660b40eeb9d64c7b2c37d92c281e078fdb127b849efdf3a1acd7607496a01df",
+      "decodedBytes": 46224,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 108,
+          "height": 107,
+          "trim": [
+            112,
+            112,
+            3,
+            3
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/heavy-wind.png",
+      "sourceSha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec",
+      "oldDimensions": [
+        112,
+        112
+      ],
+      "savedDecodedBytes": 3952,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.heavyImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-heavyImpact.png",
+      "width": 104,
+      "height": 69,
+      "bytes": 10241,
+      "sha256": "cf704ecac7cae35cb98f1c1c02f59f1d0959573fefd80925accf070c586cf715",
+      "decodedBytes": 28704,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 104,
+          "height": 69,
+          "trim": [
+            128,
+            86,
+            18,
+            7
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/heavy-impact.png",
+      "sourceSha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+      "oldDimensions": [
+        128,
+        86
+      ],
+      "savedDecodedBytes": 15328,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleSpecial.png",
+      "width": 227,
+      "height": 57,
+      "bytes": 21950,
+      "sha256": "1052afd4337e382a91021770c0d3ce5c5f9f54cc5824d534390cc0d119996e24",
+      "decodedBytes": 51756,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 66,
+          "height": 52,
+          "trim": [
+            80,
+            59,
+            6,
+            6
+          ]
+        },
+        {
+          "x": 66,
+          "y": 0,
+          "width": 51,
+          "height": 54,
+          "trim": [
+            80,
+            59,
+            5,
+            4
+          ]
+        },
+        {
+          "x": 117,
+          "y": 0,
+          "width": 68,
+          "height": 49,
+          "trim": [
+            80,
+            59,
+            6,
+            9
+          ]
+        },
+        {
+          "x": 185,
+          "y": 0,
+          "width": 42,
+          "height": 57,
+          "trim": [
+            80,
+            59,
+            14,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 1,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 2,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 3,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/runtime-packing-v1/lushu-battleSpecial.png",
+      "sourceSha256": "ec19456d1b7d067f0a56ae98ce2b1d83554cef3e5318e7faf2e1b579d81320cd",
+      "oldDimensions": [
+        320,
+        59
+      ],
+      "savedDecodedBytes": 23764,
+      "originalConsumers": [
+        {
+          "definitionId": "P1",
+          "category": "special",
+          "animation": {
+            "source": "lushu.battleSpecial",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 80,
+                "height": 59
+              },
+              {
+                "x": 80,
+                "y": 0,
+                "width": 80,
+                "height": 59
+              },
+              {
+                "x": 160,
+                "y": 0,
+                "width": 80,
+                "height": 59
+              },
+              {
+                "x": 240,
+                "y": 0,
+                "width": 80,
+                "height": 59
+              }
+            ],
+            "fps": 5.2631578947368425,
+            "duration": 0.76,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.375,
+              0.9334142742281822
+            ],
+            "scale": 2.9
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.specialWind",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-specialWind.png",
+      "width": 96,
+      "height": 76,
+      "bytes": 11584,
+      "sha256": "bdd7d40b3e18e3660bd89b05209a636e933b4ad7350dc3b3f2d7a266ae47597d",
+      "decodedBytes": 29184,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 96,
+          "height": 76,
+          "trim": [
+            96,
+            80,
+            0,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/special-wind.png",
+      "sourceSha256": "4b787f80490e463db71b6e76cda1efd0a6a86fe9a4fd7a34e233772ad99bb501",
+      "oldDimensions": [
+        96,
+        80
+      ],
+      "savedDecodedBytes": 1536,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.specialImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-specialImpact.png",
+      "width": 100,
+      "height": 64,
+      "bytes": 16162,
+      "sha256": "a402af849601340993955c3d5b067d8b2fb1eaeed36028e069ff07f47f5f8174",
+      "decodedBytes": 25600,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 64,
+          "trim": [
+            112,
+            72,
+            7,
+            3
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/special-impact.png",
+      "sourceSha256": "8d5c695c5c27233ec9525bacba2e56b705d1e68aaf88461414615ff4b8e922ab",
+      "oldDimensions": [
+        112,
+        72
+      ],
+      "savedDecodedBytes": 6656,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleAwakening.png",
+      "width": 106,
+      "height": 378,
+      "bytes": 63389,
+      "sha256": "ef9021316a7983ee77e15d550045e0454ecaa706f8325031c4949d38361f0abe",
+      "decodedBytes": 160272,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 71,
+          "trim": [
+            128,
+            128,
+            3,
+            51
+          ]
+        },
+        {
+          "x": 0,
+          "y": 71,
+          "width": 91,
+          "height": 67,
+          "trim": [
+            128,
+            128,
+            8,
+            55
+          ]
+        },
+        {
+          "x": 0,
+          "y": 138,
+          "width": 80,
+          "height": 71,
+          "trim": [
+            128,
+            128,
+            17,
+            50
+          ]
+        },
+        {
+          "x": 0,
+          "y": 209,
+          "width": 106,
+          "height": 56,
+          "trim": [
+            128,
+            128,
+            6,
+            66
+          ]
+        },
+        {
+          "x": 0,
+          "y": 265,
+          "width": 85,
+          "height": 113,
+          "trim": [
+            128,
+            128,
+            9,
+            9
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 1,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 2,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 3,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 4,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/awakening-runtime-v1/poses-5f.png",
+      "sourceSha256": "7f8a948ab69d8883f5152a0eee86f7e5ff060d183b7d58aef0552360372dfe22",
+      "oldDimensions": [
+        640,
+        128
+      ],
+      "savedDecodedBytes": 167408,
+      "originalConsumers": [
+        {
+          "definitionId": "P1",
+          "category": "awakening",
+          "animation": {
+            "source": "lushu.battleAwakening",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              },
+              {
+                "x": 128,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              },
+              {
+                "x": 256,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              },
+              {
+                "x": 384,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              },
+              {
+                "x": 512,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              }
+            ],
+            "fps": 8.19672131147541,
+            "duration": 0.61,
+            "loop": false,
+            "staticFrame": 3,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "scale": 2.327272727272727
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.awakeningASource",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningASource.png",
+      "width": 67,
+      "height": 28,
+      "bytes": 3565,
+      "sha256": "c6ab35144a8010b1e177fb63e25a7d11a99b8167b3a36eaf96008381df3e5be2",
+      "decodedBytes": 7504,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 67,
+          "height": 28,
+          "trim": [
+            96,
+            61,
+            7,
+            15
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/awakening-runtime-v1/A-source.png",
+      "sourceSha256": "907ded470c53345a78576a9e653517094638103169b0220eeaa8a5da7cf1597d",
+      "oldDimensions": [
+        96,
+        61
+      ],
+      "savedDecodedBytes": 15920,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.awakeningAImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningAImpact.png",
+      "width": 59,
+      "height": 50,
+      "bytes": 4684,
+      "sha256": "000c059dd5e5ba482618e08ab1077cabafbbabd5dbec382c7ff28e2bf756e23a",
+      "decodedBytes": 11800,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 59,
+          "height": 50,
+          "trim": [
+            96,
+            77,
+            28,
+            13
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/awakening-runtime-v1/A-impact.png",
+      "sourceSha256": "9203187e4f0ff2f2d216573232b2011bc92d7deab77a0e19daabf2d414484e0f",
+      "oldDimensions": [
+        96,
+        77
+      ],
+      "savedDecodedBytes": 17768,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.awakeningBSource",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningBSource.png",
+      "width": 75,
+      "height": 56,
+      "bytes": 8091,
+      "sha256": "22114932f165760d7087dbbcfe3a63b26a40cfeec4ce3392e94aaaa3fb0888b1",
+      "decodedBytes": 16800,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 75,
+          "height": 56,
+          "trim": [
+            96,
+            73,
+            8,
+            9
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/awakening-runtime-v1/B-source.png",
+      "sourceSha256": "6e1dfbfd19e44d9fd8c1efff036b85a019427f199d8c4ecd3d0a41c5c351d30c",
+      "oldDimensions": [
+        96,
+        73
+      ],
+      "savedDecodedBytes": 11232,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.awakeningBImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningBImpact.png",
+      "width": 72,
+      "height": 63,
+      "bytes": 11759,
+      "sha256": "09c329d0744a53fd5ab59111ae448d60439a7285fe92adcc265ec0beea023a2a",
+      "decodedBytes": 18144,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 72,
+          "height": 63,
+          "trim": [
+            96,
+            88,
+            16,
+            13
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/awakening-runtime-v1/B-impact.png",
+      "sourceSha256": "2f420d07b9f4dc657f7c03984c4a714a341d3790777cf16bf943d8f545b3e675",
+      "oldDimensions": [
+        96,
+        88
+      ],
+      "savedDecodedBytes": 15648,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.awakeningCSource",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningCSource.png",
+      "width": 51,
+      "height": 24,
+      "bytes": 2698,
+      "sha256": "b446a76c1b32d6810013c3d2f861149e5a6d6e40814a642e0d876b3dcca7eb24",
+      "decodedBytes": 4896,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 51,
+          "height": 24,
+          "trim": [
+            93,
+            26,
+            22,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/botuo-basic-packing-v1/lushu-awakeningCSource.png",
+      "sourceSha256": "c231ff7fe06c68557c766df131223395bc5d5c337fd40ae1144a48ced726820b",
+      "oldDimensions": [
+        93,
+        26
+      ],
+      "savedDecodedBytes": 4776,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "lushu.awakeningCImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningCImpact.png",
+      "width": 71,
+      "height": 53,
+      "bytes": 7180,
+      "sha256": "1c9834cce37a56ffaf0f56fc6db0c3b31bc20033ca156ab38e2a32adbb81f094",
+      "decodedBytes": 15052,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 71,
+          "height": 53,
+          "trim": [
+            96,
+            93,
+            9,
+            23
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/characters/lushu/awakening-runtime-v1/C-impact.png",
+      "sourceSha256": "5cf93d209a18d05ec0928412f61ad4a066d5007c2062a7550c43a27f277c7744",
+      "oldDimensions": [
+        96,
+        93
+      ],
+      "savedDecodedBytes": 20660,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "botuo.basicPoses",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-basicPoses.png",
+      "width": 563,
+      "height": 133,
+      "bytes": 122156,
+      "sha256": "b14f24aac5a752e4aa28f2d0b3ba6714d464132ddeb7f83b2d953398720ef089",
+      "decodedBytes": 299516,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 139,
+          "height": 121,
+          "trim": [
+            158,
+            143,
+            2,
+            7
+          ]
+        },
+        {
+          "x": 139,
+          "y": 0,
+          "width": 156,
+          "height": 123,
+          "trim": [
+            158,
+            143,
+            1,
+            6
+          ]
+        },
+        {
+          "x": 295,
+          "y": 0,
+          "width": 151,
+          "height": 128,
+          "trim": [
+            158,
+            143,
+            2,
+            1
+          ]
+        },
+        {
+          "x": 446,
+          "y": 0,
+          "width": 117,
+          "height": 133,
+          "trim": [
+            158,
+            143,
+            18,
+            3
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 1,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 2,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 3,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/botuo-basic-packing-v1/botuo-basicPoses.png",
+      "sourceSha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de",
+      "oldDimensions": [
+        632,
+        143
+      ],
+      "savedDecodedBytes": 61988,
+      "originalConsumers": [
+        {
+          "definitionId": "P2",
+          "category": "basic",
+          "animation": {
+            "source": "botuo.basicPoses",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 158,
+                "height": 143
+              },
+              {
+                "x": 158,
+                "y": 0,
+                "width": 158,
+                "height": 143
+              },
+              {
+                "x": 316,
+                "y": 0,
+                "width": 158,
+                "height": 143
+              },
+              {
+                "x": 474,
+                "y": 0,
+                "width": 158,
+                "height": 143
+              }
+            ],
+            "fps": 7.017543859649123,
+            "duration": 0.57,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "scale": 2.46875
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "botuo.basicSource",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-basicSource.png",
+      "width": 144,
+      "height": 112,
+      "bytes": 24769,
+      "sha256": "64eedf28ee64795b1348000a5972a53f3514a782a20567865d05c41c049aab52",
+      "decodedBytes": 64512,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 144,
+          "height": 112,
+          "trim": [
+            146,
+            114,
+            1,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/botuo-basic-packing-v1/botuo-basicSource.png",
+      "sourceSha256": "01de21c7d55baf6b35922859d43c12aaf01f05dfa21809af34b85f3a7ff7dc86",
+      "oldDimensions": [
+        146,
+        114
+      ],
+      "savedDecodedBytes": 2064,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "botuo.basicContact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-basicContact.png",
+      "width": 103,
+      "height": 113,
+      "bytes": 23921,
+      "sha256": "2c86503c0b5ef1f4572651942e9b22103837ba3fda7c8ebd4f3e4cd95faf44bb",
+      "decodedBytes": 46556,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 103,
+          "height": 113,
+          "trim": [
+            105,
+            115,
+            1,
+            1
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/botuo-basic-packing-v1/botuo-basicContact.png",
+      "sourceSha256": "9fa8dc4ff29f5b6741e972670a4344df0805e3ab43e7c1007741adfc5e4bf513",
+      "oldDimensions": [
+        105,
+        115
+      ],
+      "savedDecodedBytes": 1744,
+      "originalConsumers": [],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-heavyPoses.png",
+      "width": 290,
+      "height": 283,
+      "bytes": 135047,
+      "sha256": "bdc06bd7d550f969cca551b15bb6de42bbcaa2255e84b7a9ab062b6564f5f429",
+      "decodedBytes": 328280,
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 147,
+          "height": 137,
+          "trim": [
+            175,
+            162,
+            17,
+            16
+          ]
+        },
+        {
+          "x": 147,
+          "y": 0,
+          "width": 143,
+          "height": 136,
+          "trim": [
+            175,
+            162,
+            16,
+            18
+          ]
+        },
+        {
+          "x": 0,
+          "y": 137,
+          "width": 159,
+          "height": 131,
+          "trim": [
+            175,
+            162,
+            8,
+            22
+          ]
+        },
+        {
+          "x": 159,
+          "y": 137,
+          "width": 124,
+          "height": 146,
+          "trim": [
+            175,
+            162,
+            16,
+            8
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "frame": 0,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 1,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 2,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        },
+        {
+          "frame": 3,
+          "logicalRGBAExact": true,
+          "mirrorExact": true,
+          "translationOnly": true,
+          "allChannelsZeroOutsideCrop": true
+        }
+      ],
+      "gutterPixels": 0,
+      "rotation": false,
+      "source": "public/assets/botuo-heavy-runtime-v1/botuo-heavyPoses.png",
+      "sourceSha256": "1a9622806ace2a9e6bb5b5b0b88bc5e1b5a0800f17b4f97b83462e1da74d20dc",
+      "oldDimensions": [
+        700,
+        162
+      ],
+      "savedDecodedBytes": 125320,
+      "originalConsumers": [
+        {
+          "definitionId": "P2",
+          "category": "heavy",
+          "animation": {
+            "source": "botuo.heavyPoses",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 175,
+                "height": 162
+              },
+              {
+                "x": 175,
+                "y": 0,
+                "width": 175,
+                "height": 162
+              },
+              {
+                "x": 350,
+                "y": 0,
+                "width": 175,
+                "height": 162
+              },
+              {
+                "x": 525,
+                "y": 0,
+                "width": 175,
+                "height": 162
+              }
+            ],
+            "fps": 6.25,
+            "duration": 0.64,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.24,
+              0.9320987654320988
+            ],
+            "scale": 2.4305555555555554
+          }
+        }
+      ],
+      "runtimeDescriptorChange": "frame region/trim only; original logical canvas, scale/origin/FPS/duration/loop/staticFrame unchanged"
+    }
+  ],
+  "excludedCompletedMovePacks": [
+    "chiru.battleMove",
+    "jiuweihu.battleMove",
+    "xingxing.battleMove"
+  ],
+  "provenance": "Exact approved review raster; no new resampling below review density; no RGB/alpha edits; every discarded byte zero in all four channels.",
+  "limitations": [
+    "CPU RGBA/coordinates only, not Phaser raster/GPU proof",
+    "No-gutter native frame sampling requires actual browser regression before installation",
+    "Static effect/Idle/KO regions require generic logical-frame metadata support; not yet integrated"
+  ]
+}

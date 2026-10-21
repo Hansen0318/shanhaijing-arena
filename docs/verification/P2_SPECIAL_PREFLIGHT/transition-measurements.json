@@ -1,0 +1,492 @@
+{
+  "status": "OFFLINE DESCRIPTOR PROJECTION ONLY",
+  "samples": [
+    {
+      "label": "Idle",
+      "source": "botuo.battleIdle",
+      "frameIndex": 0,
+      "logicalSize": [
+        160,
+        160
+      ],
+      "scale": 2,
+      "origin": [
+        0.5,
+        0.9875
+      ],
+      "density": 0.9,
+      "logicalDisplaySize": [
+        144.0,
+        144.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        128,
+        132
+      ]
+    },
+    {
+      "label": "Move1",
+      "source": "botuo.battleMove",
+      "frameIndex": 0,
+      "logicalSize": [
+        160,
+        155
+      ],
+      "scale": 2,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "density": 0.9,
+      "logicalDisplaySize": [
+        144.0,
+        139.5
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        128,
+        136
+      ]
+    },
+    {
+      "label": "Move2",
+      "source": "botuo.battleMove",
+      "frameIndex": 1,
+      "logicalSize": [
+        160,
+        155
+      ],
+      "scale": 2,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "density": 0.9,
+      "logicalDisplaySize": [
+        144.0,
+        139.5
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        128,
+        136
+      ]
+    },
+    {
+      "label": "Move3",
+      "source": "botuo.battleMove",
+      "frameIndex": 2,
+      "logicalSize": [
+        160,
+        155
+      ],
+      "scale": 2,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "density": 0.9,
+      "logicalDisplaySize": [
+        144.0,
+        139.5
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        128,
+        136
+      ]
+    },
+    {
+      "label": "Move4",
+      "source": "botuo.battleMove",
+      "frameIndex": 3,
+      "logicalSize": [
+        160,
+        155
+      ],
+      "scale": 2,
+      "origin": [
+        0.5,
+        0.9870967741935484
+      ],
+      "density": 0.9,
+      "logicalDisplaySize": [
+        144.0,
+        139.5
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        128,
+        136
+      ]
+    },
+    {
+      "label": "Basic1",
+      "source": "botuo.basicPoses",
+      "frameIndex": 0,
+      "logicalSize": [
+        158,
+        143
+      ],
+      "scale": 2.46875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "density": 1.125,
+      "logicalDisplaySize": [
+        177.75,
+        160.875
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        161,
+        132
+      ]
+    },
+    {
+      "label": "Basic2",
+      "source": "botuo.basicPoses",
+      "frameIndex": 1,
+      "logicalSize": [
+        158,
+        143
+      ],
+      "scale": 2.46875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "density": 1.125,
+      "logicalDisplaySize": [
+        177.75,
+        160.875
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        161,
+        132
+      ]
+    },
+    {
+      "label": "Basic3",
+      "source": "botuo.basicPoses",
+      "frameIndex": 2,
+      "logicalSize": [
+        158,
+        143
+      ],
+      "scale": 2.46875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "density": 1.125,
+      "logicalDisplaySize": [
+        177.75,
+        160.875
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        161,
+        132
+      ]
+    },
+    {
+      "label": "Basic4",
+      "source": "botuo.basicPoses",
+      "frameIndex": 3,
+      "logicalSize": [
+        158,
+        143
+      ],
+      "scale": 2.46875,
+      "origin": [
+        0.22151898734177214,
+        0.8811188811188811
+      ],
+      "density": 1.125,
+      "logicalDisplaySize": [
+        177.75,
+        160.875
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        161,
+        132
+      ]
+    },
+    {
+      "label": "Heavy1",
+      "source": "botuo.heavyPoses",
+      "frameIndex": 0,
+      "logicalSize": [
+        175,
+        162
+      ],
+      "scale": 2.4305555555555554,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "density": 1.0,
+      "logicalDisplaySize": [
+        175.0,
+        162.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        158,
+        123
+      ]
+    },
+    {
+      "label": "Heavy2",
+      "source": "botuo.heavyPoses",
+      "frameIndex": 1,
+      "logicalSize": [
+        175,
+        162
+      ],
+      "scale": 2.4305555555555554,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "density": 1.0,
+      "logicalDisplaySize": [
+        175.0,
+        162.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        158,
+        123
+      ]
+    },
+    {
+      "label": "Heavy3",
+      "source": "botuo.heavyPoses",
+      "frameIndex": 2,
+      "logicalSize": [
+        175,
+        162
+      ],
+      "scale": 2.4305555555555554,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "density": 1.0,
+      "logicalDisplaySize": [
+        175.0,
+        162.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        158,
+        123
+      ]
+    },
+    {
+      "label": "Heavy4",
+      "source": "botuo.heavyPoses",
+      "frameIndex": 3,
+      "logicalSize": [
+        175,
+        162
+      ],
+      "scale": 2.4305555555555554,
+      "origin": [
+        0.24,
+        0.9320987654320988
+      ],
+      "density": 1.0,
+      "logicalDisplaySize": [
+        175.0,
+        162.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        158,
+        123
+      ]
+    },
+    {
+      "label": "Special1",
+      "source": "botuo.specialPoses",
+      "frameIndex": 0,
+      "logicalSize": [
+        200,
+        200
+      ],
+      "scale": 2.7777777777777777,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "density": 1.0,
+      "logicalDisplaySize": [
+        200.0,
+        200.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        100,
+        90
+      ]
+    },
+    {
+      "label": "Special2",
+      "source": "botuo.specialPoses",
+      "frameIndex": 1,
+      "logicalSize": [
+        200,
+        200
+      ],
+      "scale": 2.7777777777777777,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "density": 1.0,
+      "logicalDisplaySize": [
+        200.0,
+        200.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        100,
+        90
+      ]
+    },
+    {
+      "label": "Special3",
+      "source": "botuo.specialPoses",
+      "frameIndex": 2,
+      "logicalSize": [
+        200,
+        200
+      ],
+      "scale": 2.7777777777777777,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "density": 1.0,
+      "logicalDisplaySize": [
+        200.0,
+        200.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        100,
+        90
+      ]
+    },
+    {
+      "label": "Special4",
+      "source": "botuo.specialPoses",
+      "frameIndex": 3,
+      "logicalSize": [
+        200,
+        200
+      ],
+      "scale": 2.7777777777777777,
+      "origin": [
+        0.5,
+        0.92
+      ],
+      "density": 1.0,
+      "logicalDisplaySize": [
+        200.0,
+        200.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        100,
+        90
+      ]
+    },
+    {
+      "label": "Idle return",
+      "source": "botuo.battleIdle",
+      "frameIndex": 0,
+      "logicalSize": [
+        160,
+        160
+      ],
+      "scale": 2,
+      "origin": [
+        0.5,
+        0.9875
+      ],
+      "density": 0.9,
+      "logicalDisplaySize": [
+        144.0,
+        144.0
+      ],
+      "root": [
+        200,
+        274
+      ],
+      "roundedPaste": [
+        128,
+        132
+      ]
+    }
+  ],
+  "limits": "No game timing or animation selection was executed. Fractional placement is rounded for this board; actual Phaser sampling/transition/Pause/KO/browser proof remains required."
+}

@@ -1,0 +1,1508 @@
+{
+  "reverse": false,
+  "snapshot": {
+    "requested": 42,
+    "loaded": 42,
+    "evicted": 0,
+    "failed": 0,
+    "highWaterBytes": 16622164,
+    "loadOrder": [
+      "lushu.portrait",
+      "botuo.portrait",
+      "chiru.portrait",
+      "jiuweihu.portrait",
+      "xingxing.portrait",
+      "lushu.battleIdle",
+      "botuo.battleIdle",
+      "chiru.battleIdle",
+      "jiuweihu.battleIdle",
+      "xingxing.battleIdle",
+      "lushu.battleMove",
+      "lushu.battleKo",
+      "botuo.battleMove",
+      "botuo.battleKo",
+      "chiru.battleMove",
+      "chiru.battleKo",
+      "jiuweihu.battleMove",
+      "jiuweihu.battleKo",
+      "xingxing.battleMove",
+      "xingxing.battleKo",
+      "lushu.battleBasic",
+      "lushu.basicBlade",
+      "lushu.basicContact",
+      "lushu.battleHeavy",
+      "lushu.heavyWind",
+      "lushu.heavyImpact",
+      "lushu.battleSpecial",
+      "lushu.specialWind",
+      "lushu.specialImpact",
+      "lushu.battleAwakening",
+      "lushu.awakeningASource",
+      "lushu.awakeningAImpact",
+      "lushu.awakeningBSource",
+      "lushu.awakeningBImpact",
+      "lushu.awakeningCSource",
+      "lushu.awakeningCImpact",
+      "botuo.basicPoses",
+      "botuo.basicSource",
+      "botuo.basicContact",
+      "botuo.heavyPoses",
+      "botuo.heavySource",
+      "botuo.heavyContact"
+    ],
+    "highWaterReservedBytes": 16622164,
+    "estimatedLiveBytes": 16622164,
+    "reservedBytes": 0,
+    "pending": 0,
+    "pinned": 42,
+    "softBytes": 12582912,
+    "hardBytes": 16777216,
+    "optionalReserveBytes": 131072,
+    "closed": false
+  },
+  "cache": {
+    "estimatedLiveBytes": 16622164,
+    "highWaterBytes": 16622164,
+    "loaded": 42,
+    "failed": 0,
+    "pending": 0,
+    "active": 0,
+    "queued": 0
+  },
+  "allocationDouble": {
+    "bytes": 16622164,
+    "peak": 16622164
+  },
+  "records": [
+    {
+      "key": "lushu.portrait",
+      "type": "image",
+      "path": "assets/characters/lushu/portrait-face.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 35172,
+      "fallback": "placeholder.portrait",
+      "sha256": "beb57539d9b115517cf3fea07ec1fb60abb46c52f4bc53b14676406092952351",
+      "consumers": []
+    },
+    {
+      "key": "botuo.portrait",
+      "type": "image",
+      "path": "assets/characters/botuo/portrait.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 32501,
+      "fallback": "placeholder.portrait",
+      "sha256": "f7ceff655ab04902b434069bb5862d3211b3353c997e4e535743c2ff92bca864",
+      "consumers": []
+    },
+    {
+      "key": "chiru.portrait",
+      "type": "image",
+      "path": "assets/characters/chiru/portrait.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 39490,
+      "fallback": "placeholder.portrait",
+      "sha256": "bc2568ddf8b6d80c3f3f818dce646b66515dd7f0c130fa4bd02249333e44b245",
+      "consumers": []
+    },
+    {
+      "key": "jiuweihu.portrait",
+      "type": "image",
+      "path": "assets/characters/jiuweihu/portrait.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 38601,
+      "fallback": "placeholder.portrait",
+      "sha256": "b2df8fab63cd71a538622914b0c0d8eabcfc104bc245fd316beaf5e24ff573ef",
+      "consumers": []
+    },
+    {
+      "key": "xingxing.portrait",
+      "type": "image",
+      "path": "assets/characters/xingxing/portrait.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 45021,
+      "fallback": "placeholder.portrait",
+      "sha256": "ae9c7a38628bca93a419335d8c59e6ba583176a966d85a74571eae53b4f54651",
+      "consumers": []
+    },
+    {
+      "key": "lushu.battleIdle",
+      "type": "image",
+      "path": "assets/characters/lushu/battleIdle-static.png",
+      "width": 96,
+      "height": 128,
+      "bytes": 18033,
+      "fallback": "placeholder.battle",
+      "sha256": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2",
+      "consumers": [
+        {
+          "definitionId": "P1",
+          "state": "battleIdle",
+          "animation": {
+            "source": "lushu.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 96,
+                "height": 128
+              }
+            ],
+            "fps": 2.5,
+            "duration": 0.4,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9544198895027625
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "botuo.battleIdle",
+      "type": "image",
+      "path": "assets/characters/botuo/battleIdle.png",
+      "width": 160,
+      "height": 160,
+      "bytes": 47136,
+      "fallback": "placeholder.battle",
+      "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+      "consumers": [
+        {
+          "definitionId": "P2",
+          "state": "battleIdle",
+          "animation": {
+            "source": "botuo.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 160
+              }
+            ],
+            "fps": 2.5,
+            "duration": 0.4,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "chiru.battleIdle",
+      "type": "image",
+      "path": "assets/characters/chiru/battleIdle.png",
+      "width": 160,
+      "height": 160,
+      "bytes": 44131,
+      "fallback": "placeholder.battle",
+      "sha256": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+      "consumers": [
+        {
+          "definitionId": "P3",
+          "state": "battleIdle",
+          "animation": {
+            "source": "chiru.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 160
+              }
+            ],
+            "fps": 2.5,
+            "duration": 0.4,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              1
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "jiuweihu.battleIdle",
+      "type": "image",
+      "path": "assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png",
+      "width": 160,
+      "height": 137,
+      "bytes": 32104,
+      "fallback": "placeholder.battle",
+      "sha256": "5a4e195ebca765d82672a0023ce990c5f15315ff023e1b24dd93f21ce572ef90",
+      "consumers": [
+        {
+          "definitionId": "P4",
+          "state": "battleIdle",
+          "animation": {
+            "source": "jiuweihu.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 137
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9927007299270073
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "xingxing.battleIdle",
+      "type": "image",
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleIdle.png",
+      "width": 160,
+      "height": 134,
+      "bytes": 37752,
+      "fallback": "placeholder.battle",
+      "sha256": "a2154800b7a89de2977e7a81453a961eeffe544c2e5637c5d573346f11809b9c",
+      "consumers": [
+        {
+          "definitionId": "P5",
+          "state": "battleIdle",
+          "animation": {
+            "source": "xingxing.battleIdle",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 134
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9925373134328358
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "lushu.battleMove",
+      "type": "image",
+      "path": "assets/characters/lushu/battleMove-trimmed.png",
+      "width": 384,
+      "height": 91,
+      "bytes": 54173,
+      "fallback": "placeholder.battle",
+      "sha256": "b5c592d570974e2fd03524fc2194d1213f84b31b07e3e1a09177e2af790236f6",
+      "consumers": [
+        {
+          "definitionId": "P1",
+          "state": "battleMove",
+          "animation": {
+            "source": "lushu.battleMove",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 96,
+                "height": 91
+              },
+              {
+                "x": 96,
+                "y": 0,
+                "width": 96,
+                "height": 91
+              },
+              {
+                "x": 192,
+                "y": 0,
+                "width": 96,
+                "height": 91
+              },
+              {
+                "x": 288,
+                "y": 0,
+                "width": 96,
+                "height": 91
+              }
+            ],
+            "fps": 18,
+            "duration": 0.2222222222222222,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9578653390808087
+            ],
+            "scale": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "key": "lushu.battleKo",
+      "type": "image",
+      "path": "assets/characters/lushu/battleKo-trimmed.png",
+      "width": 512,
+      "height": 472,
+      "bytes": 151575,
+      "fallback": "placeholder.battle",
+      "sha256": "dbd1fc4bb7e2512b26c6b841ab8651765cd5f5324f5d3d08fe1b312e682abf0a",
+      "consumers": [
+        {
+          "definitionId": "P1",
+          "state": "battleKo",
+          "animation": {
+            "source": "lushu.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 512,
+                "height": 472
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.7944915254237288
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "botuo.battleMove",
+      "type": "image",
+      "path": "assets/botuo-basic-packing-v1/botuo-battleMove.png",
+      "width": 640,
+      "height": 155,
+      "bytes": 158226,
+      "fallback": "placeholder.battle",
+      "sha256": "766a76478553430d7b47a1d82fa7f14bafa99bc74c83b0608c011ac74dddb5d5",
+      "consumers": [
+        {
+          "definitionId": "P2",
+          "state": "battleMove",
+          "animation": {
+            "source": "botuo.battleMove",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 160,
+                "height": 155
+              },
+              {
+                "x": 160,
+                "y": 0,
+                "width": 160,
+                "height": 155
+              },
+              {
+                "x": 320,
+                "y": 0,
+                "width": 160,
+                "height": 155
+              },
+              {
+                "x": 480,
+                "y": 0,
+                "width": 160,
+                "height": 155
+              }
+            ],
+            "fps": 12,
+            "duration": 0.3333333333333333,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9870967741935484
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "botuo.battleKo",
+      "type": "image",
+      "path": "assets/characters/botuo/battleKo-trimmed.png",
+      "width": 512,
+      "height": 331,
+      "bytes": 158388,
+      "fallback": "placeholder.battle",
+      "sha256": "4a54caf87303df0eb856d5385748c1a88fb1604534851a536eed16d76b30ebf2",
+      "consumers": [
+        {
+          "definitionId": "P2",
+          "state": "battleKo",
+          "animation": {
+            "source": "botuo.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 512,
+                "height": 331
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.8459214501510574
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "chiru.battleMove",
+      "type": "image",
+      "path": "assets/botuo-heavy-runtime-v1/chiru-battleMove.png",
+      "width": 481,
+      "height": 115,
+      "bytes": 111694,
+      "fallback": "placeholder.battle",
+      "sha256": "a47cf90429ee2dc729dfd17042d9c2335a2f267f4334fa23d31b99435d335336",
+      "consumers": [
+        {
+          "definitionId": "P3",
+          "state": "battleMove",
+          "animation": {
+            "source": "chiru.battleMove",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 109,
+                "height": 115,
+                "trim": [
+                  160,
+                  118,
+                  25,
+                  0
+                ]
+              },
+              {
+                "x": 109,
+                "y": 0,
+                "width": 130,
+                "height": 108,
+                "trim": [
+                  160,
+                  118,
+                  15,
+                  7
+                ]
+              },
+              {
+                "x": 239,
+                "y": 0,
+                "width": 138,
+                "height": 103,
+                "trim": [
+                  160,
+                  118,
+                  11,
+                  12
+                ]
+              },
+              {
+                "x": 377,
+                "y": 0,
+                "width": 104,
+                "height": 115,
+                "trim": [
+                  160,
+                  118,
+                  28,
+                  0
+                ]
+              }
+            ],
+            "fps": 10,
+            "duration": 0.4,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              1
+            ],
+            "scale": 2.7
+          }
+        }
+      ]
+    },
+    {
+      "key": "chiru.battleKo",
+      "type": "image",
+      "path": "assets/characters/chiru/battleKo.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 905147,
+      "fallback": "placeholder.battle",
+      "sha256": "f97e369fe2c6ae2d0fff1c51c96e487279b4bbe1e614925a7d1c2c4dc2a2796d",
+      "consumers": [
+        {
+          "definitionId": "P3",
+          "state": "battleKo",
+          "animation": {
+            "source": "chiru.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1254,
+                "height": 1254
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.7814992025518341
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "jiuweihu.battleMove",
+      "type": "image",
+      "path": "assets/botuo-heavy-runtime-v1/jiuweihu-battleMove.png",
+      "width": 475,
+      "height": 133,
+      "bytes": 126786,
+      "fallback": "placeholder.battle",
+      "sha256": "d247724edd204b97e94439ff5fa6143e0280f9ec5c021fa5de6386e1e234f927",
+      "consumers": [
+        {
+          "definitionId": "P4",
+          "state": "battleMove",
+          "animation": {
+            "source": "jiuweihu.battleMove",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 120,
+                "height": 131,
+                "trim": [
+                  160,
+                  133,
+                  20,
+                  2
+                ]
+              },
+              {
+                "x": 120,
+                "y": 0,
+                "width": 114,
+                "height": 133,
+                "trim": [
+                  160,
+                  133,
+                  23,
+                  0
+                ]
+              },
+              {
+                "x": 234,
+                "y": 0,
+                "width": 124,
+                "height": 133,
+                "trim": [
+                  160,
+                  133,
+                  18,
+                  0
+                ]
+              },
+              {
+                "x": 358,
+                "y": 0,
+                "width": 117,
+                "height": 131,
+                "trim": [
+                  160,
+                  133,
+                  21,
+                  2
+                ]
+              }
+            ],
+            "fps": 10,
+            "duration": 0.4,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9924812030075187
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "jiuweihu.battleKo",
+      "type": "image",
+      "path": "assets/runtime-packing-v1/jiuweihu-battleKo.png",
+      "width": 512,
+      "height": 438,
+      "bytes": 197980,
+      "fallback": "placeholder.battle",
+      "sha256": "43f0e143e665eadad03352fd78b4b363f9b072700fbb58498635e8eb705a52a4",
+      "consumers": [
+        {
+          "definitionId": "P4",
+          "state": "battleKo",
+          "animation": {
+            "source": "jiuweihu.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 512,
+                "height": 438
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.7990867579908676
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    },
+    {
+      "key": "xingxing.battleMove",
+      "type": "image",
+      "path": "assets/botuo-heavy-runtime-v1/xingxing-battleMove.png",
+      "width": 1898,
+      "height": 414,
+      "bytes": 1014025,
+      "fallback": "placeholder.battle",
+      "sha256": "8d396f0fb1f73383e5951e97b7b246158b7c1c97dd33fcebccfc6ef6dbc99edd",
+      "consumers": [
+        {
+          "definitionId": "P5",
+          "state": "battleMove",
+          "animation": {
+            "source": "xingxing.battleMove",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 550,
+                "height": 414,
+                "trim": [
+                  560,
+                  414,
+                  5,
+                  0
+                ]
+              },
+              {
+                "x": 550,
+                "y": 0,
+                "width": 437,
+                "height": 403,
+                "trim": [
+                  560,
+                  414,
+                  61,
+                  11
+                ]
+              },
+              {
+                "x": 987,
+                "y": 0,
+                "width": 479,
+                "height": 411,
+                "trim": [
+                  560,
+                  414,
+                  40,
+                  3
+                ]
+              },
+              {
+                "x": 1466,
+                "y": 0,
+                "width": 432,
+                "height": 413,
+                "trim": [
+                  560,
+                  414,
+                  64,
+                  1
+                ]
+              }
+            ],
+            "fps": 10,
+            "duration": 0.4,
+            "loop": true,
+            "staticFrame": 0,
+            "origin": [
+              0.5,
+              0.9975845410628019
+            ],
+            "scale": 2.25
+          }
+        }
+      ]
+    },
+    {
+      "key": "xingxing.battleKo",
+      "type": "image",
+      "path": "assets/botuo-basic-packing-v1/xingxing-battleKo.png",
+      "width": 480,
+      "height": 279,
+      "bytes": 160775,
+      "fallback": "placeholder.battle",
+      "sha256": "1f76985f4e39e466919440b99ff62ad3382aec0748a48ad453300ad8851b177f",
+      "consumers": [
+        {
+          "definitionId": "P5",
+          "state": "battleKo",
+          "animation": {
+            "source": "xingxing.battleKo",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 480,
+                "height": 279
+              }
+            ],
+            "fps": 1,
+            "duration": 1,
+            "loop": false,
+            "staticFrame": 0,
+            "origin": [
+              0.49166666666666664,
+              0.989247311827957
+            ],
+            "scale": 1.875
+          }
+        }
+      ]
+    },
+    {
+      "key": "lushu.battleBasic",
+      "type": "image",
+      "path": "assets/runtime-packing-v1/lushu-battleBasic.png",
+      "width": 512,
+      "height": 101,
+      "bytes": 51449,
+      "fallback": "placeholder.battle",
+      "sha256": "d3920ab4129868f71a3f3a08d29262773cc75ee08da80610fd9e14af904e2ac9",
+      "consumers": [
+        {
+          "definitionId": "P1",
+          "category": "basic",
+          "animation": {
+            "source": "lushu.battleBasic",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 128,
+                "height": 101
+              },
+              {
+                "x": 128,
+                "y": 0,
+                "width": 128,
+                "height": 101
+              },
+              {
+                "x": 256,
+                "y": 0,
+                "width": 128,
+                "height": 101
+              },
+              {
+                "x": 384,
+                "y": 0,
+                "width": 128,
+                "height": 101
+              }
+            ],
+            "fps": 10,
+            "duration": 0.4,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.5,
+              0.9617231480534553
+            ],
+            "scale": 2.4731182795698925
+          }
+        }
+      ]
+    },
+    {
+      "key": "lushu.basicBlade",
+      "type": "image",
+      "path": "assets/characters/lushu/basic-blade.png",
+      "width": 97,
+      "height": 81,
+      "bytes": 5050,
+      "fallback": "placeholder.vfx",
+      "sha256": "8f90ebfc918dfe1cd77845b1502290dd572f636179edcada0876dae2a32475b1",
+      "consumers": []
+    },
+    {
+      "key": "lushu.basicContact",
+      "type": "image",
+      "path": "assets/characters/lushu/basic-contact.png",
+      "width": 85,
+      "height": 57,
+      "bytes": 2300,
+      "fallback": "placeholder.vfx",
+      "sha256": "2faada0f95507b0616157338b90a976145a870cb03a354a16c9fe5c6761d46f6",
+      "consumers": []
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "type": "image",
+      "path": "assets/runtime-packing-v1/lushu-battleHeavy.png",
+      "width": 512,
+      "height": 85,
+      "bytes": 51992,
+      "fallback": "placeholder.battle",
+      "sha256": "3f9f501520886eed5d2f790e603481575f17ab2196357dd1f5a69ca8d5cc3a9f",
+      "consumers": [
+        {
+          "definitionId": "P1",
+          "category": "heavy",
+          "animation": {
+            "source": "lushu.battleHeavy",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 128,
+                "height": 85
+              },
+              {
+                "x": 128,
+                "y": 0,
+                "width": 128,
+                "height": 85
+              },
+              {
+                "x": 256,
+                "y": 0,
+                "width": 128,
+                "height": 85
+              },
+              {
+                "x": 384,
+                "y": 0,
+                "width": 128,
+                "height": 85
+              }
+            ],
+            "fps": 6.666666666666667,
+            "duration": 0.6,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.5,
+              0.9545180935693999
+            ],
+            "scale": 2.4731182795698925
+          }
+        }
+      ]
+    },
+    {
+      "key": "lushu.heavyWind",
+      "type": "image",
+      "path": "assets/characters/lushu/heavy-wind.png",
+      "width": 112,
+      "height": 112,
+      "bytes": 11447,
+      "fallback": "placeholder.vfx",
+      "sha256": "daa03717ba5409b641492c381a88f3622ef915ce2fc8b631aa57095ad037d6ec",
+      "consumers": []
+    },
+    {
+      "key": "lushu.heavyImpact",
+      "type": "image",
+      "path": "assets/characters/lushu/heavy-impact.png",
+      "width": 128,
+      "height": 86,
+      "bytes": 10339,
+      "fallback": "placeholder.vfx",
+      "sha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+      "consumers": []
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "type": "image",
+      "path": "assets/runtime-packing-v1/lushu-battleSpecial.png",
+      "width": 320,
+      "height": 59,
+      "bytes": 21979,
+      "fallback": "placeholder.battle",
+      "sha256": "ec19456d1b7d067f0a56ae98ce2b1d83554cef3e5318e7faf2e1b579d81320cd",
+      "consumers": [
+        {
+          "definitionId": "P1",
+          "category": "special",
+          "animation": {
+            "source": "lushu.battleSpecial",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 80,
+                "height": 59
+              },
+              {
+                "x": 80,
+                "y": 0,
+                "width": 80,
+                "height": 59
+              },
+              {
+                "x": 160,
+                "y": 0,
+                "width": 80,
+                "height": 59
+              },
+              {
+                "x": 240,
+                "y": 0,
+                "width": 80,
+                "height": 59
+              }
+            ],
+            "fps": 5.2631578947368425,
+            "duration": 0.76,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.375,
+              0.9334142742281822
+            ],
+            "scale": 2.9
+          }
+        }
+      ]
+    },
+    {
+      "key": "lushu.specialWind",
+      "type": "image",
+      "path": "assets/characters/lushu/special-wind.png",
+      "width": 96,
+      "height": 80,
+      "bytes": 11593,
+      "fallback": "placeholder.vfx",
+      "sha256": "4b787f80490e463db71b6e76cda1efd0a6a86fe9a4fd7a34e233772ad99bb501",
+      "consumers": []
+    },
+    {
+      "key": "lushu.specialImpact",
+      "type": "image",
+      "path": "assets/characters/lushu/special-impact.png",
+      "width": 112,
+      "height": 72,
+      "bytes": 16246,
+      "fallback": "placeholder.vfx",
+      "sha256": "8d5c695c5c27233ec9525bacba2e56b705d1e68aaf88461414615ff4b8e922ab",
+      "consumers": []
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "type": "image",
+      "path": "assets/characters/lushu/awakening-runtime-v1/poses-5f.png",
+      "width": 640,
+      "height": 128,
+      "bytes": 64019,
+      "fallback": "placeholder.battle",
+      "sha256": "7f8a948ab69d8883f5152a0eee86f7e5ff060d183b7d58aef0552360372dfe22",
+      "consumers": [
+        {
+          "definitionId": "P1",
+          "category": "awakening",
+          "animation": {
+            "source": "lushu.battleAwakening",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              },
+              {
+                "x": 128,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              },
+              {
+                "x": 256,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              },
+              {
+                "x": 384,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              },
+              {
+                "x": 512,
+                "y": 0,
+                "width": 128,
+                "height": 128
+              }
+            ],
+            "fps": 8.19672131147541,
+            "duration": 0.61,
+            "loop": false,
+            "staticFrame": 3,
+            "origin": [
+              0.5,
+              0.93125
+            ],
+            "scale": 2.327272727272727
+          }
+        }
+      ]
+    },
+    {
+      "key": "lushu.awakeningASource",
+      "type": "image",
+      "path": "assets/characters/lushu/awakening-runtime-v1/A-source.png",
+      "width": 96,
+      "height": 61,
+      "bytes": 3674,
+      "fallback": "placeholder.vfx",
+      "sha256": "907ded470c53345a78576a9e653517094638103169b0220eeaa8a5da7cf1597d",
+      "consumers": []
+    },
+    {
+      "key": "lushu.awakeningAImpact",
+      "type": "image",
+      "path": "assets/characters/lushu/awakening-runtime-v1/A-impact.png",
+      "width": 96,
+      "height": 77,
+      "bytes": 4816,
+      "fallback": "placeholder.vfx",
+      "sha256": "9203187e4f0ff2f2d216573232b2011bc92d7deab77a0e19daabf2d414484e0f",
+      "consumers": []
+    },
+    {
+      "key": "lushu.awakeningBSource",
+      "type": "image",
+      "path": "assets/characters/lushu/awakening-runtime-v1/B-source.png",
+      "width": 96,
+      "height": 73,
+      "bytes": 8187,
+      "fallback": "placeholder.vfx",
+      "sha256": "6e1dfbfd19e44d9fd8c1efff036b85a019427f199d8c4ecd3d0a41c5c351d30c",
+      "consumers": []
+    },
+    {
+      "key": "lushu.awakeningBImpact",
+      "type": "image",
+      "path": "assets/characters/lushu/awakening-runtime-v1/B-impact.png",
+      "width": 96,
+      "height": 88,
+      "bytes": 11880,
+      "fallback": "placeholder.vfx",
+      "sha256": "2f420d07b9f4dc657f7c03984c4a714a341d3790777cf16bf943d8f545b3e675",
+      "consumers": []
+    },
+    {
+      "key": "lushu.awakeningCSource",
+      "type": "image",
+      "path": "assets/botuo-basic-packing-v1/lushu-awakeningCSource.png",
+      "width": 93,
+      "height": 26,
+      "bytes": 2754,
+      "fallback": "placeholder.vfx",
+      "sha256": "c231ff7fe06c68557c766df131223395bc5d5c337fd40ae1144a48ced726820b",
+      "consumers": []
+    },
+    {
+      "key": "lushu.awakeningCImpact",
+      "type": "image",
+      "path": "assets/characters/lushu/awakening-runtime-v1/C-impact.png",
+      "width": 96,
+      "height": 93,
+      "bytes": 7312,
+      "fallback": "placeholder.vfx",
+      "sha256": "5cf93d209a18d05ec0928412f61ad4a066d5007c2062a7550c43a27f277c7744",
+      "consumers": []
+    },
+    {
+      "key": "botuo.basicPoses",
+      "type": "image",
+      "path": "assets/botuo-basic-packing-v1/botuo-basicPoses.png",
+      "width": 632,
+      "height": 143,
+      "bytes": 122498,
+      "fallback": "placeholder.battle",
+      "sha256": "bd013766c38093d2047408df267b93f2626e89160b012e29d55643972833a6de",
+      "consumers": [
+        {
+          "definitionId": "P2",
+          "category": "basic",
+          "animation": {
+            "source": "botuo.basicPoses",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 158,
+                "height": 143
+              },
+              {
+                "x": 158,
+                "y": 0,
+                "width": 158,
+                "height": 143
+              },
+              {
+                "x": 316,
+                "y": 0,
+                "width": 158,
+                "height": 143
+              },
+              {
+                "x": 474,
+                "y": 0,
+                "width": 158,
+                "height": 143
+              }
+            ],
+            "fps": 7.017543859649123,
+            "duration": 0.57,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.22151898734177214,
+              0.8811188811188811
+            ],
+            "scale": 2.46875
+          }
+        }
+      ]
+    },
+    {
+      "key": "botuo.basicSource",
+      "type": "image",
+      "path": "assets/botuo-basic-packing-v1/botuo-basicSource.png",
+      "width": 146,
+      "height": 114,
+      "bytes": 24791,
+      "fallback": "placeholder.vfx",
+      "sha256": "01de21c7d55baf6b35922859d43c12aaf01f05dfa21809af34b85f3a7ff7dc86",
+      "consumers": []
+    },
+    {
+      "key": "botuo.basicContact",
+      "type": "image",
+      "path": "assets/botuo-basic-packing-v1/botuo-basicContact.png",
+      "width": 105,
+      "height": 115,
+      "bytes": 23940,
+      "fallback": "placeholder.vfx",
+      "sha256": "9fa8dc4ff29f5b6741e972670a4344df0805e3ab43e7c1007741adfc5e4bf513",
+      "consumers": []
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "type": "image",
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavyPoses.png",
+      "width": 700,
+      "height": 162,
+      "bytes": 135352,
+      "fallback": "placeholder.battle",
+      "sha256": "1a9622806ace2a9e6bb5b5b0b88bc5e1b5a0800f17b4f97b83462e1da74d20dc",
+      "consumers": [
+        {
+          "definitionId": "P2",
+          "category": "heavy",
+          "animation": {
+            "source": "botuo.heavyPoses",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 175,
+                "height": 162
+              },
+              {
+                "x": 175,
+                "y": 0,
+                "width": 175,
+                "height": 162
+              },
+              {
+                "x": 350,
+                "y": 0,
+                "width": 175,
+                "height": 162
+              },
+              {
+                "x": 525,
+                "y": 0,
+                "width": 175,
+                "height": 162
+              }
+            ],
+            "fps": 6.25,
+            "duration": 0.64,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.24,
+              0.9320987654320988
+            ],
+            "scale": 2.4305555555555554
+          }
+        }
+      ]
+    },
+    {
+      "key": "botuo.heavySource",
+      "type": "image",
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavySource.png",
+      "width": 230,
+      "height": 144,
+      "bytes": 55428,
+      "fallback": "placeholder.vfx",
+      "sha256": "4c17e65aee4fed9942914c0558f8dd2d32e921fed391fb34040c5d63a9284132",
+      "consumers": []
+    },
+    {
+      "key": "botuo.heavyContact",
+      "type": "image",
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavyContact.png",
+      "width": 204,
+      "height": 161,
+      "bytes": 49350,
+      "fallback": "placeholder.vfx",
+      "sha256": "cc4496ce23ab43f3ecf89ab9410caa287c7c267d0da43f424cdcc7fe3cb1b92b",
+      "consumers": []
+    }
+  ],
+  "cleanup": {
+    "bytes": 0,
+    "peak": 16622164
+  },
+  "runs": [
+    {
+      "reverse": false,
+      "snapshot": {
+        "requested": 42,
+        "loaded": 42,
+        "evicted": 0,
+        "failed": 0,
+        "highWaterBytes": 16622164,
+        "loadOrder": [
+          "lushu.portrait",
+          "botuo.portrait",
+          "chiru.portrait",
+          "jiuweihu.portrait",
+          "xingxing.portrait",
+          "lushu.battleIdle",
+          "botuo.battleIdle",
+          "chiru.battleIdle",
+          "jiuweihu.battleIdle",
+          "xingxing.battleIdle",
+          "lushu.battleMove",
+          "lushu.battleKo",
+          "botuo.battleMove",
+          "botuo.battleKo",
+          "chiru.battleMove",
+          "chiru.battleKo",
+          "jiuweihu.battleMove",
+          "jiuweihu.battleKo",
+          "xingxing.battleMove",
+          "xingxing.battleKo",
+          "lushu.battleBasic",
+          "lushu.basicBlade",
+          "lushu.basicContact",
+          "lushu.battleHeavy",
+          "lushu.heavyWind",
+          "lushu.heavyImpact",
+          "lushu.battleSpecial",
+          "lushu.specialWind",
+          "lushu.specialImpact",
+          "lushu.battleAwakening",
+          "lushu.awakeningASource",
+          "lushu.awakeningAImpact",
+          "lushu.awakeningBSource",
+          "lushu.awakeningBImpact",
+          "lushu.awakeningCSource",
+          "lushu.awakeningCImpact",
+          "botuo.basicPoses",
+          "botuo.basicSource",
+          "botuo.basicContact",
+          "botuo.heavyPoses",
+          "botuo.heavySource",
+          "botuo.heavyContact"
+        ],
+        "highWaterReservedBytes": 16622164,
+        "estimatedLiveBytes": 16622164,
+        "reservedBytes": 0,
+        "pending": 0,
+        "pinned": 42,
+        "softBytes": 12582912,
+        "hardBytes": 16777216,
+        "optionalReserveBytes": 131072,
+        "closed": false
+      },
+      "cache": {
+        "estimatedLiveBytes": 16622164,
+        "highWaterBytes": 16622164,
+        "loaded": 42,
+        "failed": 0,
+        "pending": 0,
+        "active": 0,
+        "queued": 0
+      },
+      "allocationDouble": {
+        "bytes": 16622164,
+        "peak": 16622164
+      },
+      "cleanup": {
+        "bytes": 0,
+        "peak": 16622164
+      }
+    },
+    {
+      "reverse": true,
+      "snapshot": {
+        "requested": 42,
+        "loaded": 42,
+        "evicted": 0,
+        "failed": 0,
+        "highWaterBytes": 16622164,
+        "loadOrder": [
+          "xingxing.portrait",
+          "jiuweihu.portrait",
+          "chiru.portrait",
+          "botuo.portrait",
+          "lushu.portrait",
+          "xingxing.battleIdle",
+          "jiuweihu.battleIdle",
+          "chiru.battleIdle",
+          "botuo.battleIdle",
+          "lushu.battleIdle",
+          "xingxing.battleMove",
+          "xingxing.battleKo",
+          "jiuweihu.battleMove",
+          "jiuweihu.battleKo",
+          "chiru.battleMove",
+          "chiru.battleKo",
+          "botuo.battleMove",
+          "botuo.battleKo",
+          "lushu.battleMove",
+          "lushu.battleKo",
+          "botuo.basicPoses",
+          "botuo.basicSource",
+          "botuo.basicContact",
+          "botuo.heavyPoses",
+          "botuo.heavySource",
+          "botuo.heavyContact",
+          "lushu.battleBasic",
+          "lushu.basicBlade",
+          "lushu.basicContact",
+          "lushu.battleHeavy",
+          "lushu.heavyWind",
+          "lushu.heavyImpact",
+          "lushu.battleSpecial",
+          "lushu.specialWind",
+          "lushu.specialImpact",
+          "lushu.battleAwakening",
+          "lushu.awakeningASource",
+          "lushu.awakeningAImpact",
+          "lushu.awakeningBSource",
+          "lushu.awakeningBImpact",
+          "lushu.awakeningCSource",
+          "lushu.awakeningCImpact"
+        ],
+        "highWaterReservedBytes": 16622164,
+        "estimatedLiveBytes": 16622164,
+        "reservedBytes": 0,
+        "pending": 0,
+        "pinned": 42,
+        "softBytes": 12582912,
+        "hardBytes": 16777216,
+        "optionalReserveBytes": 131072,
+        "closed": false
+      },
+      "cache": {
+        "estimatedLiveBytes": 16622164,
+        "highWaterBytes": 16622164,
+        "loaded": 42,
+        "failed": 0,
+        "pending": 0,
+        "active": 0,
+        "queued": 0
+      },
+      "allocationDouble": {
+        "bytes": 16622164,
+        "peak": 16622164
+      },
+      "cleanup": {
+        "bytes": 0,
+        "peak": 16622164
+      }
+    }
+  ],
+  "scope": "Actual cache/residency/prepare with actual PNG headers; image decoder and Phaser upload are doubled. Not GPU/browser proof."
+}

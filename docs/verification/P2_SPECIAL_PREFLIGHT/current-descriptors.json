@@ -1,0 +1,1037 @@
+{
+  "P1": {
+    "animations": {
+      "battleIdle": {
+        "source": "lushu.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 128
+          }
+        ],
+        "fps": 2.5,
+        "duration": 0.4,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9544198895027625
+        ],
+        "scale": 2
+      },
+      "battleMove": {
+        "source": "lushu.battleMove",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 91
+          },
+          {
+            "x": 96,
+            "y": 0,
+            "width": 96,
+            "height": 91
+          },
+          {
+            "x": 192,
+            "y": 0,
+            "width": 96,
+            "height": 91
+          },
+          {
+            "x": 288,
+            "y": 0,
+            "width": 96,
+            "height": 91
+          }
+        ],
+        "fps": 18,
+        "duration": 0.2222222222222222,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9578653390808087
+        ],
+        "scale": 1.5
+      },
+      "battleKo": {
+        "source": "lushu.battleKo",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 512,
+            "height": 472
+          }
+        ],
+        "fps": 1,
+        "duration": 1,
+        "loop": false,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.7944915254237288
+        ],
+        "scale": 2
+      }
+    },
+    "actions": {
+      "basic": {
+        "animation": {
+          "source": "lushu.battleBasic",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 101
+            },
+            {
+              "x": 128,
+              "y": 0,
+              "width": 128,
+              "height": 101
+            },
+            {
+              "x": 256,
+              "y": 0,
+              "width": 128,
+              "height": 101
+            },
+            {
+              "x": 384,
+              "y": 0,
+              "width": 128,
+              "height": 101
+            }
+          ],
+          "fps": 10,
+          "duration": 0.4,
+          "loop": false,
+          "staticFrame": 2,
+          "origin": [
+            0.5,
+            0.9617231480534553
+          ],
+          "scale": 2.4731182795698925
+        },
+        "frameDurationsMs": [
+          120,
+          60,
+          100,
+          120
+        ],
+        "impactFrame": 2,
+        "coordinateSize": [
+          384,
+          303
+        ],
+        "blade": {
+          "assetKey": "lushu.basicBlade",
+          "offset": [
+            176,
+            35
+          ],
+          "size": [
+            192,
+            160
+          ],
+          "layer": 4
+        },
+        "contact": {
+          "assetKey": "lushu.basicContact",
+          "offset": [
+            262,
+            61
+          ],
+          "size": [
+            169,
+            113
+          ],
+          "layer": 6
+        }
+      },
+      "heavy": {
+        "animation": {
+          "source": "lushu.battleHeavy",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 85
+            },
+            {
+              "x": 128,
+              "y": 0,
+              "width": 128,
+              "height": 85
+            },
+            {
+              "x": 256,
+              "y": 0,
+              "width": 128,
+              "height": 85
+            },
+            {
+              "x": 384,
+              "y": 0,
+              "width": 128,
+              "height": 85
+            }
+          ],
+          "fps": 6.666666666666667,
+          "duration": 0.6,
+          "loop": false,
+          "staticFrame": 2,
+          "origin": [
+            0.5,
+            0.9545180935693999
+          ],
+          "scale": 2.4731182795698925
+        },
+        "frameDurationsMs": [
+          200,
+          80,
+          140,
+          180
+        ],
+        "impactFrame": 2,
+        "coordinateSize": [
+          256,
+          170
+        ],
+        "blade": {
+          "assetKey": "lushu.heavyWind",
+          "offset": [
+            42.5,
+            -84.5
+          ],
+          "size": [
+            345,
+            345
+          ],
+          "layer": 6,
+          "holdAfterResolveMs": 260
+        },
+        "contact": {
+          "assetKey": "lushu.heavyImpact",
+          "offset": [
+            -183.75,
+            -197.5
+          ],
+          "size": [
+            367.5,
+            245
+          ],
+          "layer": 7,
+          "attach": "target",
+          "retainOnNextCast": true
+        }
+      },
+      "special": {
+        "animation": {
+          "source": "lushu.battleSpecial",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 80,
+              "height": 59
+            },
+            {
+              "x": 80,
+              "y": 0,
+              "width": 80,
+              "height": 59
+            },
+            {
+              "x": 160,
+              "y": 0,
+              "width": 80,
+              "height": 59
+            },
+            {
+              "x": 240,
+              "y": 0,
+              "width": 80,
+              "height": 59
+            }
+          ],
+          "fps": 5.2631578947368425,
+          "duration": 0.76,
+          "loop": false,
+          "staticFrame": 2,
+          "origin": [
+            0.375,
+            0.9334142742281822
+          ],
+          "scale": 2.9
+        },
+        "frameDurationsMs": [
+          200,
+          120,
+          200,
+          240
+        ],
+        "impactFrame": 2,
+        "coordinateSize": [
+          80,
+          59
+        ],
+        "blade": {
+          "assetKey": "lushu.specialWind",
+          "offset": [
+            -16.367816091954026,
+            -38.568404563832274
+          ],
+          "size": [
+            128.73563218390805,
+            107.27969348659005
+          ],
+          "layer": 6,
+          "holdAfterResolveMs": 280
+        },
+        "contact": {
+          "assetKey": "lushu.specialImpact",
+          "offset": [
+            -67.04980842911878,
+            -66.85823754789273
+          ],
+          "size": [
+            134.09961685823757,
+            93.86973180076629
+          ],
+          "layer": 7,
+          "attach": "target",
+          "retainOnNextCast": true
+        }
+      },
+      "awakening": {
+        "kind": "staged",
+        "animation": {
+          "source": "lushu.battleAwakening",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            {
+              "x": 128,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            {
+              "x": 256,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            {
+              "x": 384,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            },
+            {
+              "x": 512,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "fps": 8.19672131147541,
+          "duration": 0.61,
+          "loop": false,
+          "staticFrame": 3,
+          "origin": [
+            0.5,
+            0.93125
+          ],
+          "scale": 2.327272727272727
+        },
+        "coordinateSize": [
+          320,
+          320
+        ],
+        "durationMs": 610,
+        "recoveryStartMs": 470,
+        "phaseFrames": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "stages": [
+          {
+            "startMs": 80,
+            "endMs": 135,
+            "contactHoldMs": 80,
+            "blade": {
+              "opacity": 0.85,
+              "assetKey": "lushu.awakeningASource",
+              "offset": [
+                -155.25559105431307,
+                61.26411075612356
+              ],
+              "size": [
+                520,
+                329
+              ],
+              "layer": 6
+            },
+            "contact": {
+              "assetKey": "lushu.awakeningAImpact",
+              "offset": [
+                -188.00312012480498,
+                -235.94383775351014
+              ],
+              "size": [
+                308,
+                248
+              ],
+              "layer": 7,
+              "attach": "target"
+            }
+          },
+          {
+            "startMs": 135,
+            "endMs": 280,
+            "contactHoldMs": 90,
+            "blade": {
+              "opacity": 0.85,
+              "assetKey": "lushu.awakeningBSource",
+              "offset": [
+                -104.62043795620437,
+                85
+              ],
+              "size": [
+                349,
+                264
+              ],
+              "layer": 6
+            },
+            "contact": {
+              "assetKey": "lushu.awakeningBImpact",
+              "offset": [
+                -208.4016393442623,
+                -284.8360655737705
+              ],
+              "size": [
+                385,
+                352
+              ],
+              "layer": 7,
+              "attach": "target"
+            }
+          },
+          {
+            "startMs": 280,
+            "endMs": 470,
+            "contactHoldMs": 130,
+            "blade": {
+              "opacity": 0.85,
+              "assetKey": "lushu.awakeningCSource",
+              "offset": [
+                -363.97388059701495,
+                100.14365671641787
+              ],
+              "size": [
+                847,
+                238.0625
+              ],
+              "layer": 6
+            },
+            "contact": {
+              "assetKey": "lushu.awakeningCImpact",
+              "offset": [
+                -348.125,
+                -436.25
+              ],
+              "size": [
+                678,
+                654
+              ],
+              "layer": 7,
+              "attach": "target"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "P2": {
+    "animations": {
+      "battleIdle": {
+        "source": "botuo.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 160,
+            "height": 160
+          }
+        ],
+        "fps": 2.5,
+        "duration": 0.4,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9875
+        ],
+        "scale": 2
+      },
+      "battleMove": {
+        "source": "botuo.battleMove",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 160,
+            "height": 155
+          },
+          {
+            "x": 160,
+            "y": 0,
+            "width": 160,
+            "height": 155
+          },
+          {
+            "x": 320,
+            "y": 0,
+            "width": 160,
+            "height": 155
+          },
+          {
+            "x": 480,
+            "y": 0,
+            "width": 160,
+            "height": 155
+          }
+        ],
+        "fps": 12,
+        "duration": 0.3333333333333333,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9870967741935484
+        ],
+        "scale": 2
+      },
+      "battleKo": {
+        "source": "botuo.battleKo",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 512,
+            "height": 331
+          }
+        ],
+        "fps": 1,
+        "duration": 1,
+        "loop": false,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.8459214501510574
+        ],
+        "scale": 2
+      }
+    },
+    "actions": {
+      "basic": {
+        "animation": {
+          "source": "botuo.basicPoses",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 158,
+              "height": 143
+            },
+            {
+              "x": 158,
+              "y": 0,
+              "width": 158,
+              "height": 143
+            },
+            {
+              "x": 316,
+              "y": 0,
+              "width": 158,
+              "height": 143
+            },
+            {
+              "x": 474,
+              "y": 0,
+              "width": 158,
+              "height": 143
+            }
+          ],
+          "fps": 7.017543859649123,
+          "duration": 0.57,
+          "loop": false,
+          "staticFrame": 2,
+          "origin": [
+            0.22151898734177214,
+            0.8811188811188811
+          ],
+          "scale": 2.46875
+        },
+        "frameDurationsMs": [
+          160,
+          90,
+          160,
+          160
+        ],
+        "impactFrame": 2,
+        "coordinateSize": [
+          177.75,
+          160.875
+        ],
+        "blade": {
+          "startMs": 160,
+          "assetKey": "botuo.basicSource",
+          "offset": [
+            51.375,
+            -10.449999999999989
+          ],
+          "size": [
+            146,
+            114
+          ],
+          "layer": 4,
+          "holdAfterResolveMs": 200
+        },
+        "contact": {
+          "durationMs": 200,
+          "assetKey": "botuo.basicContact",
+          "offset": [
+            -52,
+            -144.2
+          ],
+          "size": [
+            105,
+            115
+          ],
+          "layer": 6,
+          "attach": "target",
+          "retainOnNextCast": true
+        }
+      },
+      "heavy": {
+        "animation": {
+          "source": "botuo.heavyPoses",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 175,
+              "height": 162
+            },
+            {
+              "x": 175,
+              "y": 0,
+              "width": 175,
+              "height": 162
+            },
+            {
+              "x": 350,
+              "y": 0,
+              "width": 175,
+              "height": 162
+            },
+            {
+              "x": 525,
+              "y": 0,
+              "width": 175,
+              "height": 162
+            }
+          ],
+          "fps": 6.25,
+          "duration": 0.64,
+          "loop": false,
+          "staticFrame": 2,
+          "origin": [
+            0.24,
+            0.9320987654320988
+          ],
+          "scale": 2.4305555555555554
+        },
+        "frameDurationsMs": [
+          160,
+          160,
+          160,
+          160
+        ],
+        "impactFrame": 2,
+        "coordinateSize": [
+          175,
+          162
+        ],
+        "blade": {
+          "startMs": 160,
+          "assetKey": "botuo.heavySource",
+          "offset": [
+            30,
+            1
+          ],
+          "size": [
+            230,
+            144
+          ],
+          "layer": 4,
+          "holdAfterResolveMs": 280
+        },
+        "contact": {
+          "durationMs": 280,
+          "assetKey": "botuo.heavyContact",
+          "offset": [
+            -102,
+            -152
+          ],
+          "size": [
+            204,
+            161
+          ],
+          "layer": 6,
+          "attach": "target",
+          "retainOnNextCast": true
+        }
+      }
+    }
+  },
+  "P3": {
+    "animations": {
+      "battleIdle": {
+        "source": "chiru.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 160,
+            "height": 160
+          }
+        ],
+        "fps": 2.5,
+        "duration": 0.4,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          1
+        ],
+        "scale": 2
+      },
+      "battleMove": {
+        "source": "chiru.battleMove",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 109,
+            "height": 115,
+            "trim": [
+              160,
+              118,
+              25,
+              0
+            ]
+          },
+          {
+            "x": 109,
+            "y": 0,
+            "width": 130,
+            "height": 108,
+            "trim": [
+              160,
+              118,
+              15,
+              7
+            ]
+          },
+          {
+            "x": 239,
+            "y": 0,
+            "width": 138,
+            "height": 103,
+            "trim": [
+              160,
+              118,
+              11,
+              12
+            ]
+          },
+          {
+            "x": 377,
+            "y": 0,
+            "width": 104,
+            "height": 115,
+            "trim": [
+              160,
+              118,
+              28,
+              0
+            ]
+          }
+        ],
+        "fps": 10,
+        "duration": 0.4,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          1
+        ],
+        "scale": 2.7
+      },
+      "battleKo": {
+        "source": "chiru.battleKo",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "fps": 1,
+        "duration": 1,
+        "loop": false,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.7814992025518341
+        ],
+        "scale": 2
+      }
+    },
+    "actions": {}
+  },
+  "P4": {
+    "animations": {
+      "battleIdle": {
+        "source": "jiuweihu.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 160,
+            "height": 137
+          }
+        ],
+        "fps": 1,
+        "duration": 1,
+        "loop": false,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9927007299270073
+        ],
+        "scale": 2
+      },
+      "battleMove": {
+        "source": "jiuweihu.battleMove",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 120,
+            "height": 131,
+            "trim": [
+              160,
+              133,
+              20,
+              2
+            ]
+          },
+          {
+            "x": 120,
+            "y": 0,
+            "width": 114,
+            "height": 133,
+            "trim": [
+              160,
+              133,
+              23,
+              0
+            ]
+          },
+          {
+            "x": 234,
+            "y": 0,
+            "width": 124,
+            "height": 133,
+            "trim": [
+              160,
+              133,
+              18,
+              0
+            ]
+          },
+          {
+            "x": 358,
+            "y": 0,
+            "width": 117,
+            "height": 131,
+            "trim": [
+              160,
+              133,
+              21,
+              2
+            ]
+          }
+        ],
+        "fps": 10,
+        "duration": 0.4,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9924812030075187
+        ],
+        "scale": 2
+      },
+      "battleKo": {
+        "source": "jiuweihu.battleKo",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 512,
+            "height": 438
+          }
+        ],
+        "fps": 1,
+        "duration": 1,
+        "loop": false,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.7990867579908676
+        ],
+        "scale": 2
+      }
+    },
+    "actions": {}
+  },
+  "P5": {
+    "animations": {
+      "battleIdle": {
+        "source": "xingxing.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 160,
+            "height": 134
+          }
+        ],
+        "fps": 1,
+        "duration": 1,
+        "loop": false,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9925373134328358
+        ],
+        "scale": 2
+      },
+      "battleMove": {
+        "source": "xingxing.battleMove",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 550,
+            "height": 414,
+            "trim": [
+              560,
+              414,
+              5,
+              0
+            ]
+          },
+          {
+            "x": 550,
+            "y": 0,
+            "width": 437,
+            "height": 403,
+            "trim": [
+              560,
+              414,
+              61,
+              11
+            ]
+          },
+          {
+            "x": 987,
+            "y": 0,
+            "width": 479,
+            "height": 411,
+            "trim": [
+              560,
+              414,
+              40,
+              3
+            ]
+          },
+          {
+            "x": 1466,
+            "y": 0,
+            "width": 432,
+            "height": 413,
+            "trim": [
+              560,
+              414,
+              64,
+              1
+            ]
+          }
+        ],
+        "fps": 10,
+        "duration": 0.4,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9975845410628019
+        ],
+        "scale": 2.25
+      },
+      "battleKo": {
+        "source": "xingxing.battleKo",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 480,
+            "height": 279
+          }
+        ],
+        "fps": 1,
+        "duration": 1,
+        "loop": false,
+        "staticFrame": 0,
+        "origin": [
+          0.49166666666666664,
+          0.989247311827957
+        ],
+        "scale": 1.875
+      }
+    },
+    "actions": {}
+  }
+}

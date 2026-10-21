@@ -1,4 +1,17 @@
-# P2 猼訑 Special「守群」— POSES APPROVED / VFX-GIF REVIEW PENDING
+# P2 猼訑 Special「守群」— EXECUTION CONTRACT REVIEW / VISUAL PACKAGE APPROVED
+
+## CURRENT HANDOFF POINTER — 2026-10-21 — Special EXECUTION CONTRACT REVIEW / Runtime NOT INTEGRATED
+
+已從 remote `9e685823c892843132b53c36ca897cdb625fc76c` 恢復，PR#1 open/unmerged，初始工作目錄乾淨；同分支，未merge main。**下一個未完成 Gate 已推進至共用utility/status ownership執行契約審核**：`docs/verification/M5C_P2_BOTUO_SPECIAL_PREFLIGHT.md`。玩家核准前停在此處，沒有executable acceptance，沒有Runtime整合或部署。Special F3/四姿勢/視覺包與P1 COMPLETE、P2尺寸CLOSED、Basic/KO/Heavy已核准紀錄保持；下方舊preflight-next/art-pending是歷史。
+
+提案：成功Special同clock減傷並可立即接ready技能/Move；四張160ms短gesture可被下一合法動作取代，獨立320ms activation與真實recipient-status圖不因此消失。新增可選ability/effect來源metadata，generic reconciler按session/status/source/target身份管理，跟actor root而非Heavy layout offset；不把utility hit=true當攻擊命中，不改傷害/CD/range/Tier/AI/控制/KO/刷新MAX/到期。禁止P2身份特例。新metadata/schema/呈現窗口全為提案，不能視為已安裝或已核准。
+
+實物候選`docs/art/candidates/botuo/special/runtime-pack-v1/packing-manifest.json`，QA/量測/完整required集合在`docs/verification/P2_SPECIAL_PREFLIGHT/`。保留核准review raster，不再降密度；共用200×200邏輯格/root(100,184)/origin(.5,.92)，只裁四通道皆零空白，原400×320 review與source不變。32個舊key提供零RGBA候選pack（不改正式素材、不重做美術），不重做P3/P4/P5既有Move packs。42required全保留＋3新key，回收946948bytes、新增887120bytes，候選45key16562336bytes＋131072reserve＝16693408/16777216，reserve外83808bytes。無gutter取樣須在核准後做真Phaser native-trim比較；不能僅換PNG或將CPU投影稱為實機尺度證明。
+
+實際檢查：12來源hash完全相同，沿用32direct/8lifecycle/2AI/4paired-damage與Heavy既有工程/公開/玩家證據；47舊inventory檔hash、6新與57舊logical-frame RGBA反貼/鏡向/座標檢查；目前42key及候選45key各兩種載入次序，真cache/residency guards、decoder/upload double，0fail/0evict、cleanup0。沒有build/full suite/browser/phone；五個舊suite failures保留。候選完整cache/upload/reservations/reserve證據見candidate-residency.json；不宣稱GPU記憶體。Heavy live `acf454741757f58efa980fdcd03f028a472e87a3` 不變。
+
+本次僅docs/art，使用[skip ci]。最新checkpoint是含本條目的feature commit（提交後fetch remote取得完整SHA），不是新部署。**NEXT ONLY：玩家審核前檢文件§1/§3契約與§4–5包裝容量；核准後先綁定文件/manifest hash與玩家原文，再必要共用Runtime整合。** 不重問視覺、不開始Awakening/P3、main merge/替代分支/TD。唯一後續指令`docs/handoffs/P2_BOTUO_SPECIAL_NEXT_WORK.md`，維持單一完整自足code block。
+
 
 ## 2026-10-21 (Asia/Taipei) — Special VISUAL PACKAGE PLAYER APPROVED / ENGINEERING PREFLIGHT NEXT
 

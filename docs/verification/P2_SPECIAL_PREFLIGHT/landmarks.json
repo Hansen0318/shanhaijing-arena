@@ -1,0 +1,261 @@
+{
+  "status": "PROJECTED MULTI-LANDMARK REVIEW / NOT ANATOMICAL CERTIFICATION",
+  "root": [
+    200,
+    274
+  ],
+  "proposedWorldUnitsPerReviewTexel": 1,
+  "records": [
+    {
+      "label": "Idle",
+      "points": {
+        "hornTop": [
+          207,
+          139
+        ],
+        "muzzle": [
+          211,
+          175
+        ],
+        "shoulder": [
+          174,
+          174
+        ],
+        "waist": [
+          209,
+          206
+        ],
+        "tabardBottom": [
+          210,
+          252
+        ],
+        "leftSupport": [
+          163,
+          273
+        ],
+        "rightSupport": [
+          245,
+          272
+        ],
+        "bracerA": [
+          144,
+          187
+        ],
+        "bracerB": [
+          177,
+          222
+        ]
+      },
+      "spans": {
+        "hornToMuzzle": 36.22,
+        "shoulderToWaist": 47.42,
+        "waistToTabard": 46.01,
+        "bracerDiagonal": 48.1,
+        "supportSpread": 82.01
+      },
+      "uncertaintyPx": 2,
+      "kind": "Manually annotated projected illustration; pose/perspective dependent; NOT exact anatomy invariant"
+    },
+    {
+      "label": "F1",
+      "points": {
+        "hornTop": [
+          208,
+          123
+        ],
+        "muzzle": [
+          213,
+          159
+        ],
+        "shoulder": [
+          176,
+          160
+        ],
+        "waist": [
+          215,
+          193
+        ],
+        "tabardBottom": [
+          215,
+          235
+        ],
+        "leftSupport": [
+          162,
+          274
+        ],
+        "rightSupport": [
+          252,
+          271
+        ],
+        "bracerA": [
+          152,
+          178
+        ],
+        "bracerB": [
+          185,
+          202
+        ]
+      },
+      "spans": {
+        "hornToMuzzle": 36.35,
+        "shoulderToWaist": 51.09,
+        "waistToTabard": 42.0,
+        "bracerDiagonal": 40.8,
+        "supportSpread": 90.05
+      },
+      "uncertaintyPx": 2,
+      "kind": "Manually annotated projected illustration; pose/perspective dependent; NOT exact anatomy invariant"
+    },
+    {
+      "label": "F2",
+      "points": {
+        "hornTop": [
+          208,
+          121
+        ],
+        "muzzle": [
+          212,
+          159
+        ],
+        "shoulder": [
+          176,
+          158
+        ],
+        "waist": [
+          209,
+          193
+        ],
+        "tabardBottom": [
+          210,
+          235
+        ],
+        "leftSupport": [
+          157,
+          274
+        ],
+        "rightSupport": [
+          252,
+          272
+        ],
+        "bracerA": [
+          180,
+          156
+        ],
+        "bracerB": [
+          209,
+          184
+        ]
+      },
+      "spans": {
+        "hornToMuzzle": 38.21,
+        "shoulderToWaist": 48.1,
+        "waistToTabard": 42.01,
+        "bracerDiagonal": 40.31,
+        "supportSpread": 95.02
+      },
+      "uncertaintyPx": 2,
+      "kind": "Manually annotated projected illustration; pose/perspective dependent; NOT exact anatomy invariant"
+    },
+    {
+      "label": "F3",
+      "points": {
+        "hornTop": [
+          208,
+          122
+        ],
+        "muzzle": [
+          212,
+          159
+        ],
+        "shoulder": [
+          176,
+          160
+        ],
+        "waist": [
+          207,
+          193
+        ],
+        "tabardBottom": [
+          207,
+          235
+        ],
+        "leftSupport": [
+          150,
+          274
+        ],
+        "rightSupport": [
+          242,
+          272
+        ],
+        "bracerA": [
+          206,
+          156
+        ],
+        "bracerB": [
+          239,
+          188
+        ]
+      },
+      "spans": {
+        "hornToMuzzle": 37.22,
+        "shoulderToWaist": 45.28,
+        "waistToTabard": 42.0,
+        "bracerDiagonal": 45.97,
+        "supportSpread": 92.02
+      },
+      "uncertaintyPx": 2,
+      "kind": "Manually annotated projected illustration; pose/perspective dependent; NOT exact anatomy invariant"
+    },
+    {
+      "label": "F4",
+      "points": {
+        "hornTop": [
+          208,
+          123
+        ],
+        "muzzle": [
+          212,
+          159
+        ],
+        "shoulder": [
+          176,
+          160
+        ],
+        "waist": [
+          210,
+          193
+        ],
+        "tabardBottom": [
+          210,
+          235
+        ],
+        "leftSupport": [
+          158,
+          274
+        ],
+        "rightSupport": [
+          239,
+          272
+        ],
+        "bracerA": [
+          149,
+          183
+        ],
+        "bracerB": [
+          176,
+          217
+        ]
+      },
+      "spans": {
+        "hornToMuzzle": 36.22,
+        "shoulderToWaist": 47.38,
+        "waistToTabard": 42.0,
+        "bracerDiagonal": 43.42,
+        "supportSpread": 81.02
+      },
+      "uncertaintyPx": 2,
+      "kind": "Manually annotated projected illustration; pose/perspective dependent; NOT exact anatomy invariant"
+    }
+  ],
+  "assessment": "Horn/muzzle, shoulder/waist, waist/tabard and bracer spans jointly inspected; stable clothing/head dimensions support retaining reviewed raw density. Upright stance changes leg extension and support spread. Do not derive a uniform correction from silhouette height or any one span. Existing Move/Basic/Heavy transforms remain unchanged. Actual transition raster and player size review remain later gates."
+}

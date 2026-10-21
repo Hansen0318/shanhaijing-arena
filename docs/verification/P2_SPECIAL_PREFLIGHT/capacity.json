@@ -1,0 +1,475 @@
+{
+  "status": "MEASURED OFFLINE CANDIDATE FIT / RUNTIME NOT VERIFIED",
+  "baselineRequiredKeys": 42,
+  "baselineDecodedBytes": 16622164,
+  "hardBytes": 16777216,
+  "reserveBytes": 131072,
+  "baselineExtraAfterReserve": 23980,
+  "legacySavedDecodedBytes": 946948,
+  "newDecodedBytes": 887120,
+  "requiredKeys": 45,
+  "requiredDecodedBytes": 16562336,
+  "includingReserve": 16693408,
+  "extraAfterReserve": 83808,
+  "fullRequired": [
+    {
+      "key": "lushu.portrait",
+      "path": "assets/characters/lushu/portrait-face.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 35172,
+      "sha256": "beb57539d9b115517cf3fea07ec1fb60abb46c52f4bc53b14676406092952351",
+      "decodedBytes": 65536,
+      "candidateChanged": false
+    },
+    {
+      "key": "botuo.portrait",
+      "path": "assets/characters/botuo/portrait.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 32501,
+      "sha256": "f7ceff655ab04902b434069bb5862d3211b3353c997e4e535743c2ff92bca864",
+      "decodedBytes": 65536,
+      "candidateChanged": false
+    },
+    {
+      "key": "chiru.portrait",
+      "path": "assets/characters/chiru/portrait.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 39490,
+      "sha256": "bc2568ddf8b6d80c3f3f818dce646b66515dd7f0c130fa4bd02249333e44b245",
+      "decodedBytes": 65536,
+      "candidateChanged": false
+    },
+    {
+      "key": "jiuweihu.portrait",
+      "path": "assets/characters/jiuweihu/portrait.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 38601,
+      "sha256": "b2df8fab63cd71a538622914b0c0d8eabcfc104bc245fd316beaf5e24ff573ef",
+      "decodedBytes": 65536,
+      "candidateChanged": false
+    },
+    {
+      "key": "xingxing.portrait",
+      "path": "assets/characters/xingxing/portrait.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 45021,
+      "sha256": "ae9c7a38628bca93a419335d8c59e6ba583176a966d85a74571eae53b4f54651",
+      "decodedBytes": 65536,
+      "candidateChanged": false
+    },
+    {
+      "key": "lushu.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleIdle.png",
+      "width": 78,
+      "height": 121,
+      "bytes": 17934,
+      "sha256": "c3fc923e7fefe6f6249c30b6dee6e70f33639a5ffe2a7d5fd9ce749fd011a5df",
+      "decodedBytes": 37752,
+      "candidateChanged": true
+    },
+    {
+      "key": "botuo.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-battleIdle.png",
+      "width": 154,
+      "height": 152,
+      "bytes": 47251,
+      "sha256": "79e041411ab0d59fe8c44b8ddb66cfd38ad6f970ee63d38176d7459340a09fff",
+      "decodedBytes": 93632,
+      "candidateChanged": true
+    },
+    {
+      "key": "chiru.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/chiru-battleIdle.png",
+      "width": 148,
+      "height": 160,
+      "bytes": 44025,
+      "sha256": "c1f6849c41daadda43f01bcf7bd51875dd5a5125cecf0a10c848a33663c5eae8",
+      "decodedBytes": 94720,
+      "candidateChanged": true
+    },
+    {
+      "key": "jiuweihu.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/jiuweihu-battleIdle.png",
+      "width": 118,
+      "height": 135,
+      "bytes": 31784,
+      "sha256": "cfd787790f05ab407e18fd921d52cc9942703d506c55fe14195982217839009c",
+      "decodedBytes": 63720,
+      "candidateChanged": true
+    },
+    {
+      "key": "xingxing.battleIdle",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/xingxing-battleIdle.png",
+      "width": 144,
+      "height": 132,
+      "bytes": 37591,
+      "sha256": "48a43cee2a211140f2868c654afda2b3c1594542f0b2498661585ffbee415a87",
+      "decodedBytes": 76032,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.battleMove",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleMove.png",
+      "width": 170,
+      "height": 178,
+      "bytes": 54118,
+      "sha256": "a7a734263eb07b1925a2b12838ca50c794c448e899e0d54835aed1a6bbf1cd64",
+      "decodedBytes": 121040,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleKo.png",
+      "width": 503,
+      "height": 470,
+      "bytes": 151344,
+      "sha256": "29ee68b70174383cf9539a068623b95da4b8dd84643a169db3e1484cfcfdbf01",
+      "decodedBytes": 945640,
+      "candidateChanged": true
+    },
+    {
+      "key": "botuo.battleMove",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-battleMove.png",
+      "width": 551,
+      "height": 152,
+      "bytes": 157557,
+      "sha256": "ca4d3d7b803845230743d8348010bd6bf01f5efd7924a703e2abeab00eec897c",
+      "decodedBytes": 335008,
+      "candidateChanged": true
+    },
+    {
+      "key": "botuo.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-battleKo.png",
+      "width": 510,
+      "height": 329,
+      "bytes": 158294,
+      "sha256": "c7676d1034c3907f446e14146b42d03ae520fca99879aad3db99df9c6a368957",
+      "decodedBytes": 671160,
+      "candidateChanged": true
+    },
+    {
+      "key": "chiru.battleMove",
+      "path": "assets/botuo-heavy-runtime-v1/chiru-battleMove.png",
+      "width": 481,
+      "height": 115,
+      "bytes": 111694,
+      "sha256": "a47cf90429ee2dc729dfd17042d9c2335a2f267f4334fa23d31b99435d335336",
+      "decodedBytes": 221260,
+      "candidateChanged": false
+    },
+    {
+      "key": "chiru.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/chiru-battleKo.png",
+      "width": 1244,
+      "height": 1254,
+      "bytes": 865249,
+      "sha256": "d8af126e055a4d6093c9e587c2303771160d369211f9c825eefaef0aab97f12c",
+      "decodedBytes": 6239904,
+      "candidateChanged": true
+    },
+    {
+      "key": "jiuweihu.battleMove",
+      "path": "assets/botuo-heavy-runtime-v1/jiuweihu-battleMove.png",
+      "width": 475,
+      "height": 133,
+      "bytes": 126786,
+      "sha256": "d247724edd204b97e94439ff5fa6143e0280f9ec5c021fa5de6386e1e234f927",
+      "decodedBytes": 252700,
+      "candidateChanged": false
+    },
+    {
+      "key": "jiuweihu.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/jiuweihu-battleKo.png",
+      "width": 468,
+      "height": 436,
+      "bytes": 197208,
+      "sha256": "e735e35f7f78af055c545bc04ab4714a92d2c9c75d6a95bba2da14d936e9196b",
+      "decodedBytes": 816192,
+      "candidateChanged": true
+    },
+    {
+      "key": "xingxing.battleMove",
+      "path": "assets/botuo-heavy-runtime-v1/xingxing-battleMove.png",
+      "width": 1898,
+      "height": 414,
+      "bytes": 1014025,
+      "sha256": "8d396f0fb1f73383e5951e97b7b246158b7c1c97dd33fcebccfc6ef6dbc99edd",
+      "decodedBytes": 3143088,
+      "candidateChanged": false
+    },
+    {
+      "key": "xingxing.battleKo",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/xingxing-battleKo.png",
+      "width": 474,
+      "height": 277,
+      "bytes": 160640,
+      "sha256": "230931f424948db39c171fad7b2093c485b10483efee07baff77529bab523aef",
+      "decodedBytes": 525192,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.battleBasic",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleBasic.png",
+      "width": 97,
+      "height": 366,
+      "bytes": 51330,
+      "sha256": "ca24d04ea7d90d663440cf8440e7df4ea62089c23eef9e51d4fd200b6c978a5e",
+      "decodedBytes": 142008,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.basicBlade",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-basicBlade.png",
+      "width": 55,
+      "height": 77,
+      "bytes": 4951,
+      "sha256": "8e72c3121d3f95166c8c456fc58f08f49b55234717a88980d1c9100c57cca222",
+      "decodedBytes": 16940,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.basicContact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-basicContact.png",
+      "width": 38,
+      "height": 29,
+      "bytes": 2198,
+      "sha256": "cb08cc0a6765e2428753edc6eb225592abd1641ab6e9cb985cf9c4a5fc547be5",
+      "decodedBytes": 4408,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.battleHeavy",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleHeavy.png",
+      "width": 387,
+      "height": 83,
+      "bytes": 52007,
+      "sha256": "37830cb6fafef9d05a7346f5c25b79dc60426b225809fdc6972c31d3e4d536c9",
+      "decodedBytes": 128484,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.heavyWind",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-heavyWind.png",
+      "width": 108,
+      "height": 107,
+      "bytes": 11418,
+      "sha256": "0660b40eeb9d64c7b2c37d92c281e078fdb127b849efdf3a1acd7607496a01df",
+      "decodedBytes": 46224,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.heavyImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-heavyImpact.png",
+      "width": 104,
+      "height": 69,
+      "bytes": 10241,
+      "sha256": "cf704ecac7cae35cb98f1c1c02f59f1d0959573fefd80925accf070c586cf715",
+      "decodedBytes": 28704,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.battleSpecial",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleSpecial.png",
+      "width": 227,
+      "height": 57,
+      "bytes": 21950,
+      "sha256": "1052afd4337e382a91021770c0d3ce5c5f9f54cc5824d534390cc0d119996e24",
+      "decodedBytes": 51756,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.specialWind",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-specialWind.png",
+      "width": 96,
+      "height": 76,
+      "bytes": 11584,
+      "sha256": "bdd7d40b3e18e3660bd89b05209a636e933b4ad7350dc3b3f2d7a266ae47597d",
+      "decodedBytes": 29184,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.specialImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-specialImpact.png",
+      "width": 100,
+      "height": 64,
+      "bytes": 16162,
+      "sha256": "a402af849601340993955c3d5b067d8b2fb1eaeed36028e069ff07f47f5f8174",
+      "decodedBytes": 25600,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.battleAwakening",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-battleAwakening.png",
+      "width": 106,
+      "height": 378,
+      "bytes": 63389,
+      "sha256": "ef9021316a7983ee77e15d550045e0454ecaa706f8325031c4949d38361f0abe",
+      "decodedBytes": 160272,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.awakeningASource",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningASource.png",
+      "width": 67,
+      "height": 28,
+      "bytes": 3565,
+      "sha256": "c6ab35144a8010b1e177fb63e25a7d11a99b8167b3a36eaf96008381df3e5be2",
+      "decodedBytes": 7504,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.awakeningAImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningAImpact.png",
+      "width": 59,
+      "height": 50,
+      "bytes": 4684,
+      "sha256": "000c059dd5e5ba482618e08ab1077cabafbbabd5dbec382c7ff28e2bf756e23a",
+      "decodedBytes": 11800,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.awakeningBSource",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningBSource.png",
+      "width": 75,
+      "height": 56,
+      "bytes": 8091,
+      "sha256": "22114932f165760d7087dbbcfe3a63b26a40cfeec4ce3392e94aaaa3fb0888b1",
+      "decodedBytes": 16800,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.awakeningBImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningBImpact.png",
+      "width": 72,
+      "height": 63,
+      "bytes": 11759,
+      "sha256": "09c329d0744a53fd5ab59111ae448d60439a7285fe92adcc265ec0beea023a2a",
+      "decodedBytes": 18144,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.awakeningCSource",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningCSource.png",
+      "width": 51,
+      "height": 24,
+      "bytes": 2698,
+      "sha256": "b446a76c1b32d6810013c3d2f861149e5a6d6e40814a642e0d876b3dcca7eb24",
+      "decodedBytes": 4896,
+      "candidateChanged": true
+    },
+    {
+      "key": "lushu.awakeningCImpact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/lushu-awakeningCImpact.png",
+      "width": 71,
+      "height": 53,
+      "bytes": 7180,
+      "sha256": "1c9834cce37a56ffaf0f56fc6db0c3b31bc20033ca156ab38e2a32adbb81f094",
+      "decodedBytes": 15052,
+      "candidateChanged": true
+    },
+    {
+      "key": "botuo.basicPoses",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-basicPoses.png",
+      "width": 563,
+      "height": 133,
+      "bytes": 122156,
+      "sha256": "b14f24aac5a752e4aa28f2d0b3ba6714d464132ddeb7f83b2d953398720ef089",
+      "decodedBytes": 299516,
+      "candidateChanged": true
+    },
+    {
+      "key": "botuo.basicSource",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-basicSource.png",
+      "width": 144,
+      "height": 112,
+      "bytes": 24769,
+      "sha256": "64eedf28ee64795b1348000a5972a53f3514a782a20567865d05c41c049aab52",
+      "decodedBytes": 64512,
+      "candidateChanged": true
+    },
+    {
+      "key": "botuo.basicContact",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-basicContact.png",
+      "width": 103,
+      "height": 113,
+      "bytes": 23921,
+      "sha256": "2c86503c0b5ef1f4572651942e9b22103837ba3fda7c8ebd4f3e4cd95faf44bb",
+      "decodedBytes": 46556,
+      "candidateChanged": true
+    },
+    {
+      "key": "botuo.heavyPoses",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/legacy/botuo-heavyPoses.png",
+      "width": 290,
+      "height": 283,
+      "bytes": 135047,
+      "sha256": "bdc06bd7d550f969cca551b15bb6de42bbcaa2255e84b7a9ab062b6564f5f429",
+      "decodedBytes": 328280,
+      "candidateChanged": true
+    },
+    {
+      "key": "botuo.heavySource",
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavySource.png",
+      "width": 230,
+      "height": 144,
+      "bytes": 55428,
+      "sha256": "4c17e65aee4fed9942914c0558f8dd2d32e921fed391fb34040c5d63a9284132",
+      "decodedBytes": 132480,
+      "candidateChanged": false
+    },
+    {
+      "key": "botuo.heavyContact",
+      "path": "assets/botuo-heavy-runtime-v1/botuo-heavyContact.png",
+      "width": 204,
+      "height": 161,
+      "bytes": 49350,
+      "sha256": "cc4496ce23ab43f3ecf89ab9410caa287c7c267d0da43f424cdcc7fe3cb1b92b",
+      "decodedBytes": 131376,
+      "candidateChanged": false
+    },
+    {
+      "key": "botuo.specialPoses",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/botuo-specialPoses.png",
+      "width": 538,
+      "height": 162,
+      "bytes": 145899,
+      "sha256": "3f7fed1a9b9d6f60aa9cf0522c0245af2d42145079e170ba6942817d894e5e90",
+      "decodedBytes": 348624
+    },
+    {
+      "key": "botuo.specialActivation",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/botuo-specialActivation.png",
+      "width": 320,
+      "height": 259,
+      "bytes": 126042,
+      "sha256": "37f6ea67c7ee29a846fa5f8546c19bf5493b9e849659c0c1688da38f8c5d2da7",
+      "decodedBytes": 331520
+    },
+    {
+      "key": "botuo.specialState",
+      "path": "docs/art/candidates/botuo/special/runtime-pack-v1/botuo-specialState.png",
+      "width": 224,
+      "height": 231,
+      "bytes": 51745,
+      "sha256": "d86bedae11b9517715c6f5b7cd32ec4c2e2f13d23316e8bb8637c42a7d81302a",
+      "decodedBytes": 206976
+    }
+  ],
+  "legacyCandidateCount": 32,
+  "noRequiredKeysRemoved": true,
+  "noCapIncrease": true,
+  "noResolutionReduction": true,
+  "completedMovePacksUnchanged": [
+    "chiru.battleMove",
+    "jiuweihu.battleMove",
+    "xingxing.battleMove"
+  ],
+  "uploadPolicy": "Cold new scene only; dispose old presenter/texture ownership then cache.trim(0); replacements reuse same 42 logical keys. Never upload old+new representation simultaneously.",
+  "cachePolicy": "16MiB separately for decoded cache and scene. Concurrent request reservations include all 45 assets; their sum is <=cap-reserve. Max transport concurrency2. Reject failed required key; no fallback acceptance.",
+  "limits": "Not combined browser RAM/GPU memory. Decoders, driver allocations, backbuffers and temporary decode working memory unmeasured. Existing runtime not modified."
+}

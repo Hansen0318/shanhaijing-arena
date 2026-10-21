@@ -1,0 +1,11 @@
+{
+  "approvedInventoryHashesChecked": 47,
+  "newLogicalFrameRoundTrips": 6,
+  "legacyLogicalFrameRoundTrips": 57,
+  "bothFacingExact": true,
+  "sourcePNGsUnmodified": true,
+  "phaserBrowserRaster": "NOT RUN / REQUIRED LATER",
+  "runtimeIntegration": false,
+  "build": false,
+  "deployment": false
+}

@@ -1,0 +1,33 @@
+{
+  "status": "DOCS-ART PREFLIGHT CHECKS PASS / EXECUTION CONTRACT REVIEW PENDING",
+  "baseline": "9e685823c892843132b53c36ca897cdb625fc76c",
+  "contractSha256": "da54ad3cbc8bdd710064dfb1632771730105a14dba54855a9ef3b6037eddcc82",
+  "packingManifestSha256": "e1963cebddba3d146a2eeb25a2cde105dad9d9cd53eb3b66baf918216dd79132",
+  "mechanicsSourcesUnchanged": 12,
+  "protectedPathsUnchanged": [
+    "src",
+    "public",
+    "tests",
+    "scripts",
+    ".github",
+    "docs/art/approved"
+  ],
+  "requiredKeys": 45,
+  "requiredBytes": 16562336,
+  "reserveBytes": 131072,
+  "includingReserve": 16693408,
+  "extraBytes": 83808,
+  "roundTrips": {
+    "approvedInventoryHashesChecked": 47,
+    "newLogicalFrameRoundTrips": 6,
+    "legacyLogicalFrameRoundTrips": 57,
+    "bothFacingExact": true,
+    "sourcePNGsUnmodified": true,
+    "phaserBrowserRaster": "NOT RUN / REQUIRED LATER",
+    "runtimeIntegration": false,
+    "build": false,
+    "deployment": false
+  },
+  "productionIntegrated": false,
+  "deployed": false
+}

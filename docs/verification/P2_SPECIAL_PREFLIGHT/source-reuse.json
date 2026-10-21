@@ -1,0 +1,87 @@
+{
+  "recoveredHead": "9e685823c892843132b53c36ca897cdb625fc76c",
+  "mechanicsSnapshot": "docs/art/candidates/botuo/special/key-pose-v1/mechanics-snapshot.json",
+  "snapshotSha256": "d97c6f5e6c940a63c8838468d2769f810369eeceaed7ba6f167f765f973044d0",
+  "sources": [
+    {
+      "path": "src/roster/abilities.js",
+      "sha256": "a6fada12cf25571148e0f54d86083aab7fd4123c5770ba510c07f620f57f2084",
+      "currentSha256": "a6fada12cf25571148e0f54d86083aab7fd4123c5770ba510c07f620f57f2084",
+      "unchanged": true
+    },
+    {
+      "path": "src/roster/catalog.js",
+      "sha256": "e8fdacd217d2f7b34b46c62f83e9abe6ff287e05a00da9adac8f4626d9007108",
+      "currentSha256": "e8fdacd217d2f7b34b46c62f83e9abe6ff287e05a00da9adac8f4626d9007108",
+      "unchanged": true
+    },
+    {
+      "path": "src/roster/tierEffects.js",
+      "sha256": "2f157c7edb1df0873a9c906212c9459699a34ac947489c5b4bb4d11585c026fa",
+      "currentSha256": "2f157c7edb1df0873a9c906212c9459699a34ac947489c5b4bb4d11585c026fa",
+      "unchanged": true
+    },
+    {
+      "path": "src/roster/tierScalingProfiles.js",
+      "sha256": "7c1c597c7e0906d14b2b72844a71d5d6d522ae17988d1d2eabba9074852f735b",
+      "currentSha256": "7c1c597c7e0906d14b2b72844a71d5d6d522ae17988d1d2eabba9074852f735b",
+      "unchanged": true
+    },
+    {
+      "path": "src/combat/battleSession.js",
+      "sha256": "5995fc3a16f0421740637d86b2d87f93ccd3007da29c4a047ddaa4764b928ec0",
+      "currentSha256": "5995fc3a16f0421740637d86b2d87f93ccd3007da29c4a047ddaa4764b928ec0",
+      "unchanged": true
+    },
+    {
+      "path": "src/combat/statuses.js",
+      "sha256": "332520e1666ad334594e814970089ec0587a3c3a123abae52d5d995948037e47",
+      "currentSha256": "332520e1666ad334594e814970089ec0587a3c3a123abae52d5d995948037e47",
+      "unchanged": true
+    },
+    {
+      "path": "src/combat/tierEffects.js",
+      "sha256": "7c79798c6ba726095fb062130d8fb8a9319c6468f6993e372533967b28afacfc",
+      "currentSha256": "7c79798c6ba726095fb062130d8fb8a9319c6468f6993e372533967b28afacfc",
+      "unchanged": true
+    },
+    {
+      "path": "src/combat/tierEffectRuntime.js",
+      "sha256": "eb9df2f6a1fd17de9485e782402a4812bc9a707b7e820355d2e0c01b4862bdf4",
+      "currentSha256": "eb9df2f6a1fd17de9485e782402a4812bc9a707b7e820355d2e0c01b4862bdf4",
+      "unchanged": true
+    },
+    {
+      "path": "src/combat/ai.js",
+      "sha256": "d09305a2299ec4cd944365046a483b6bcb255bcf1f5244356ee7cd4a4cc3dea2",
+      "currentSha256": "d09305a2299ec4cd944365046a483b6bcb255bcf1f5244356ee7cd4a4cc3dea2",
+      "unchanged": true
+    },
+    {
+      "path": "src/runtime/statusPresentation.js",
+      "sha256": "e0b97fa9d60c324fe0e26d59eb28625e047697484e86f53de74367ffb1b75465",
+      "currentSha256": "e0b97fa9d60c324fe0e26d59eb28625e047697484e86f53de74367ffb1b75465",
+      "unchanged": true
+    },
+    {
+      "path": "src/runtime/ArenaScene.js",
+      "sha256": "f03df38839177122cc1a5dbe4c0c4627c9efdabb1786e44f1cd7b486c87b49c3",
+      "currentSha256": "f03df38839177122cc1a5dbe4c0c4627c9efdabb1786e44f1cd7b486c87b49c3",
+      "unchanged": true
+    },
+    {
+      "path": "src/runtime/assetPresenter.js",
+      "sha256": "bcd920eec4ad3119133d2ec0841b91abcd911ae55c6f5f18d091cd1bc93d7f28",
+      "currentSha256": "bcd920eec4ad3119133d2ec0841b91abcd911ae55c6f5f18d091cd1bc93d7f28",
+      "unchanged": true
+    }
+  ],
+  "reused": {
+    "direct": 32,
+    "lifecycle": 8,
+    "ai": 2,
+    "pairedDamage": 4
+  },
+  "mechanicsRerun": false,
+  "heavyEvidenceReused": true
+}
