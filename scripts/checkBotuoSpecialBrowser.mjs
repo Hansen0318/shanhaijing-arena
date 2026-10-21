@@ -71,7 +71,7 @@ try{
        }
       }
       let sourceLayoutControl=null;
-      if(max<=1&&sum/before.length>=.00001){
+      if(!e.references&&max<=1&&sum/before.length>=.00001){
        // Independent original-image retiling with the same UV layout isolates
        // one-LSB interpolation quantization from source loss or gutter bleed.
        const tile=document.createElement('canvas');tile.width=e.pack.record.width;tile.height=e.pack.record.height;
