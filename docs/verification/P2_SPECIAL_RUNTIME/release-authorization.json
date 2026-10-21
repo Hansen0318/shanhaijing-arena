@@ -1,0 +1,19 @@
+{
+  "status": "PLAYER SCOPED DEPLOYMENT AUTHORIZED / RELEASE PENDING",
+  "date": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "授權部署",
+  "context": "Direct response to the explicit question requesting Pages deployment authorization for the Browser-passed P2 Special 守群, followed by public fingerprint verification and phone-review link.",
+  "scope": "P2 Special Pages deployment and public verification only",
+  "recoveredHead": "169f1059c3b199132cdb2f109ab326cdec613367",
+  "testedCommit": "50edd53b69010ad9b5f700c3282cb2e8acb29c6a",
+  "browserRun": 39563136667,
+  "browserEvidence": "docs/verification/P2_SPECIAL_RUNTIME/browser-gate.json",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": 1,
+  "releaseSelector": "[botuo special release]",
+  "allowedDelta": "Release-only workflow selector, machine-checked exact tested source reuse, build inventory and authorization/progress evidence; no gameplay or asset change.",
+  "notAuthorized": ["Merge main", "Alternative branch", "New art/GIF", "P2 Awakening or P3 development", "Player phone acceptance claim"],
+  "next": "Run bounded release checks, deploy Pages, verify actual CI artifact and complete public-file hashes, then stop for player phone review."
+}

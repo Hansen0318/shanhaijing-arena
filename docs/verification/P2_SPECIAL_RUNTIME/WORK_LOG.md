@@ -1,5 +1,11 @@
 # P2 Special Runtime ledger — plan docs/plans/2026-10-21-p2-special-runtime.md
 
+## Scoped release authorization — 2026-10-21
+
+Player 「授權部署」 explicitly authorizes Special Pages deployment and public verification; receipt `release-authorization.json`. Recovery169f1059c3b199132cdb2f109ab326cdec613367, PR1open/unmerged, tracked tree clean; two existing unrelated untracked transfer temporary files left untouched. Reuse BrowserPASS50edd53b69010ad9b5f700c3282cb2e8acb29c6a/Actions1091 because runtime/assets/scripts/tests/root build inputs are unchanged. Small workflow delta adds `[botuo special release]`: bounded164tests/build plus exact-source/evidence-hash reuse proof and build inventory, then existing Pages stages. No Browser replay or five historical full-suite-failure reclassification. Next inspect actual Actions/release artifacts and all necessary complete public-file hashes. No deployment or player-phone PASS until actual evidence.
+
+Pre-release local checks: existing probe safety test1/1PASS; exact Browser-tested source diff and receipt/report hashes PASS using the already local tested commit; build/87-file guard4614620bytesPASS. The redundant local history fetch could not complete because its network approval was cancelled; no retry/escalation/alternate fetch was used, and the existing local commit object sufficed for offline equality validation. CI's normal configured checkout/history fetch remains its independent source proof. Production/runtime/art/GIF changes remain zero.
+
 2026-10-21 Asia/Taipei. Base64f9d5771368f0137e3a902481e3168ba7a9492e. Player explicitly confirms execution-contract and 32-texture packing scope; receipt executable-v1/acceptance.json. Inline execution authorized. Deployment not included. Unrelated pre-existing untracked transfer temporary files left alone.
 
 Pre-flight: Task1 provenance consumed by Task3 reconciler; field is presentationSource with abilityId/category/effectId. Task2 draw adapter consumed by Task3 source/status images; keep canonical logical descriptors, map regions at draw boundary to avoid changing calibration. This follows the spec's logical-canvas preservation and prevents physical trim dimensions entering Heavy effect scale calculations. No gameplay delta.

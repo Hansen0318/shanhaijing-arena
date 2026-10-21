@@ -1,5 +1,9 @@
 # Project State
 
+## 2026-10-21 — P2 Special DEPLOYMENT AUTHORIZED / RELEASE PENDING
+
+Player explicitly replies 「授權部署」 to the scoped Special Pages release question. Receipt `docs/verification/P2_SPECIAL_RUNTIME/release-authorization.json` binds recovered169f1059c3b199132cdb2f109ab326cdec613367 and Browser-tested50edd53b69010ad9b5f700c3282cb2e8acb29c6a / Actions1091. This supersedes the older no-authorization stop for this exact release only; no deployment/phone PASS claimed yet. Production/runtime/art/GIF/accepted receipts remain unchanged. One-shot `[botuo special release]` runs the existing164bounded checks/build, checks exact tested runtime sources and evidence hashes, preserves actual build inventory, then permits existing Pages stages. Browser results reused without replay. NEXT release Actions/artifact/public fingerprints then focused phone review. No main merge/newbranch/Awakening/P3/TD. Older Browser Gate evidence remains valid.
+
 ## 2026-10-21 — P2 Special BROWSER PASS / RELEASE AUTHORIZATION NEXT / NOT DEPLOYED
 
 Actual tested feature `50edd53b69010ad9b5f700c3282cb2e8acb29c6a`, Actions #1091 / run39563136667:164/164 scoped tests, build/87-file guard4614620encoded bytes PASS;4controlled Chromium/Phaser WebGL cases(normal/reduced×left/right),126native sampling comparisons,16same-clock Basic/Heavy/other legal skill/Move chaining subcases and2actual built mobile-emulation Campaign→Stage→Team→Arena cases PASS,22captures,0page errors. Reports `docs/verification/P2_SPECIAL_RUNTIME/{browser-gate,browser-verification,built-entry,ci-jobs}.json`; ledger WORK_LOG.md,4inspected screenshots retained, artifact12328207752. Native-original max<=1LSB;2BasicF3UV-rounding cases match independently retiled ORIGINAL pixels exactly(0delta), with strict control mean bound.
