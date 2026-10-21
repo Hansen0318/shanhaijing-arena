@@ -1,5 +1,14 @@
 # AGENTS.md
 
+## 2026-10-21 — Awakening v1 REJECTED: equipment sides; corrected F3 v2 REVIEW PENDING
+
+Player reports「妳有讀取確認的戰場角色形象呢，因為妳這個圖片和形象的配件左右不分」. Confirmed v1 swaps large/small bracers relative to approved identity/battleIdle. Previous author visual QA was incomplete; alpha/padding checks were never anatomical-laterality proof. V1 is REJECTED / NOT A DOWNSTREAM REFERENCE (`key-pose-v1/rejection.json`), original bytes/manifest preserved. No player approval existed or is inferred.
+
+Corrected ONE F3 candidate: `docs/art/candidates/botuo/awakening/key-pose-v2/F3-candidate.png`, SHA256 `3122654ff5bfde5a5ecbca0e41269b7ad4f8015a3dcf350cbdb0f8ef886f1eb4`. Uses only approved identity.png/battleIdle.png for side authority. Traced viewer-left shoulder/arm -> large beast-face bracer; viewer-right arm -> small wrist bracer, head still faces right (not flipped). A rejected intermediate had a third center hoof; preserved as draft-extra-hoof.png and removed by a separate generative edit. Final light/dark visuals inspected: two arms, two legs/two hooves, no VFX. Prompts/source/history/reference hashes/alpha/padding/visual-review.json preserved in v2; generative cleanup is not pixel-exact preservation of draft.
+
+**NEXT ONLY player review of v2 identity/equipment/downward pose.** V1 and rejected intermediate must not seed later art. Trace asymmetrical equipment from shoulder through elbow to wrist, count limbs and check facing on light/dark backgrounds before calling a candidate visually ready. Screen-left/right mapping describes this pose only; preserve anatomical arm ownership across all future poses and whole-actor runtime mirrors. No prior approved Heavy/Special/P1 art changed or reopened. Existing16 mechanics cases and all Special evidence reused without reruns. No new gameplay/other frames/VFX/GIF/Runtime/build/Browser/deploy. Same feature branch/PR1, no main merge/new branch/P3/TD, budgets and five historical suite failures retained. Docs/art correction uses[skip ci].
+
+
 ## 2026-10-21 — P2 Awakening ONE F3 CANDIDATE / PLAYER REVIEW PENDING
 
 Recovered remote `8d7fb0b863e45e8a247780632ab79955eb361ae8`, same `feat/m0-combat-core-20260927`, PR #1 open/unmerged, initial tracked/untracked tree clean. Special COMPLETE / PLAYER VERIFIED and all P1/P2 accepted materials remain protected. No newer Awakening art or acceptance existed at recovery.

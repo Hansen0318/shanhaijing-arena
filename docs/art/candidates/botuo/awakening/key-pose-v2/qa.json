@@ -1,0 +1,32 @@
+{
+  "sourceSize": [
+    1378,
+    1141
+  ],
+  "candidateSize": [
+    1474,
+    1237
+  ],
+  "sourceAlphaBBox": [
+    0,
+    31,
+    1342,
+    1111
+  ],
+  "candidateAlphaBBox": [
+    48,
+    79,
+    1390,
+    1159
+  ],
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "padding": 48,
+  "allSourceRgbaRetained": true,
+  "candidateResize": false,
+  "qaBackgroundsOnlyDownsampled": true,
+  "visualInspection": "Required after rendering: trace viewer-left shoulder/elbow/large beast bracer and viewer-right shoulder/elbow/small wrist bracer; exactly two legs and two hooves.",
+  "runtimeScaleAnchorBudgetVerified": false
+}

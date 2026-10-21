@@ -1,0 +1,100 @@
+{
+  "status": "CORRECTED CANDIDATE / PLAYER REVIEW PENDING",
+  "replaces": "key-pose-v1 rejected for swapped arm equipment; v1 files remain historical only",
+  "sourceCommit": "2fe062fbc288c71dd5c365c1adc5c1306282be89",
+  "playerFeedback": "\u59b3\u6709\u8b80\u53d6\u78ba\u8a8d\u7684\u6230\u5834\u89d2\u8272\u5f62\u8c61\u5462\uff0c\u56e0\u70ba\u59b3\u9019\u500b\u5716\u7247\u548c\u5f62\u8c61\u7684\u914d\u4ef6\u5de6\u53f3\u4e0d\u5206",
+  "generator": "built-in image_gen.imagegen",
+  "calls": 2,
+  "history": [
+    {
+      "file": "draft-extra-hoof.png",
+      "status": "REJECTED / extra third central hoof, never use as downstream reference"
+    },
+    {
+      "file": "F3-downward-master.png",
+      "status": "Selected corrected generation; generative cleanup is not pixel-exact preservation of draft"
+    }
+  ],
+  "selectedCandidate": "F3-candidate.png",
+  "references": [
+    {
+      "path": "public/assets/characters/botuo/identity.png",
+      "sha256": "79a210c187745886fb9c1fce3877512b275998bc17c7c537369fdc6f2b8dae5b"
+    },
+    {
+      "path": "public/assets/characters/botuo/battleIdle.png",
+      "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8"
+    }
+  ],
+  "files": {
+    "F3-candidate.png": {
+      "sha256": "3122654ff5bfde5a5ecbca0e41269b7ad4f8015a3dcf350cbdb0f8ef886f1eb4",
+      "bytes": 1252226
+    },
+    "F3-downward-master.png": {
+      "sha256": "2520b8a7e8d2b480dbb78ada0059a3a999bbdbebb5d6383f3743d416d3aa9d0e",
+      "bytes": 1276146
+    },
+    "cleanup-prompt.txt": {
+      "sha256": "ab994ae2032517afd79e05ddd1be2363104872f1e443c4756671fa87d2952d1a",
+      "bytes": 1484
+    },
+    "draft-extra-hoof.png": {
+      "sha256": "fa231a8bf110622e39fc422ec2213cd68e3d034f37a7e8a776199c69e8d0ac03",
+      "bytes": 1306879
+    },
+    "prepare_qa.py": {
+      "sha256": "9ac057df53f198b69da900c3257837cd593bd02fa05a12c6664eab8ad6834b55",
+      "bytes": 2478
+    },
+    "prompt.txt": {
+      "sha256": "2cc1c722d207e35d5b8d876118043c81092e50269700a26876ad196dce078e64",
+      "bytes": 3281
+    },
+    "qa-dark.png": {
+      "sha256": "63e48d200315b99547c5b017b63dede73cf87d0beb9a8a87a9d96b129da0e566",
+      "bytes": 458313
+    },
+    "qa-light.png": {
+      "sha256": "4945125065b6f0b7716837a25198106202df5ca232789778b33ae3e70ea85867",
+      "bytes": 477157
+    },
+    "qa.json": {
+      "sha256": "bc1f424efa200d060b62637cf8f06e26b47be0e0b727062fdc2214a777aff0b3",
+      "bytes": 609
+    }
+  },
+  "qa": {
+    "sourceSize": [
+      1378,
+      1141
+    ],
+    "candidateSize": [
+      1474,
+      1237
+    ],
+    "sourceAlphaBBox": [
+      0,
+      31,
+      1342,
+      1111
+    ],
+    "candidateAlphaBBox": [
+      48,
+      79,
+      1390,
+      1159
+    ],
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "padding": 48,
+    "allSourceRgbaRetained": true,
+    "candidateResize": false,
+    "qaBackgroundsOnlyDownsampled": true,
+    "visualInspection": "Required after rendering: trace viewer-left shoulder/elbow/large beast bracer and viewer-right shoulder/elbow/small wrist bracer; exactly two legs and two hooves.",
+    "runtimeScaleAnchorBudgetVerified": false
+  },
+  "approval": null
+}

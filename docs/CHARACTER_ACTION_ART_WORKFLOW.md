@@ -1,5 +1,10 @@
 # Character action art, VFX and animation review workflow
 
+## 2026-10-21 — Asymmetric equipment ownership QA correction
+
+Awakening v1 was rejected by player for swapping bracer sides despite prior author visual QA. Alpha/border/hash checks do not verify anatomy. Before presenting a new pose, trace each approved asymmetric accessory from its shoulder through elbow/wrist, verify exactly two arms/legs for this humanoid and actual facing, and compare light/dark views with approved identity/battleIdle. Screen position alone is insufficient when limbs cross or viewpoint changes. Preserve anatomical accessory ownership; runtime whole-actor mirroring is not swapping accessories between arms. Prior approved art is not reopened by this correction. See current action/progress and key-pose-v1/rejection.json; corrected v2 is still PLAYER REVIEW PENDING, not accepted.
+
+
 ## 2026-10-21 — P2 Special COMPLETE / PLAYER VERIFIED; Awakening key-pose NEXT
 
 Player explicitly approves the presented deployed Special and requests GitHub progress/process/rules plus a seamless new Work handoff. Exact statement/version/scope is in `docs/art/approved/botuo/special/runtime-v1/acceptance.json`, bound to536685401cfa0805b5836b057a27dd0692c46879 and its presented URL. Special runtime/phone Gate CLOSED / PLAYER VERIFIED; no itemized device case matrix/FPS/GPU/hash measurements invented. P1 COMPLETE and P2accepted Idle/Move/KO/scale/Basic/Heavy remain protected. WholeP2 is NOT complete.

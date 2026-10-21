@@ -1,0 +1,9 @@
+{
+  "status": "REJECTED / EQUIPMENT SIDES SWAPPED / DO NOT USE AS DOWNSTREAM REFERENCE",
+  "playerStatement": "妳有讀取確認的戰場角色形象呢，因為妳這個圖片和形象的配件左右不分",
+  "date": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "supersededBy": "docs/art/candidates/botuo/awakening/key-pose-v2/manifest.json",
+  "priorQaCorrection": "Prior visual QA did not verify bracer-to-arm attachment. Alpha/padding proof remains valid but is not equipment/identity proof.",
+  "originalFilesPreserved": true
+}

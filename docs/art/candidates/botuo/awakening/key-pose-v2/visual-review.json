@@ -1,0 +1,25 @@
+{
+  "status": "AUTHOR VISUAL QA / PLAYER REVIEW PENDING",
+  "reviewed": [
+    "qa-light.png",
+    "qa-dark.png"
+  ],
+  "referenceAuthority": [
+    "public/assets/characters/botuo/identity.png",
+    "public/assets/characters/botuo/battleIdle.png"
+  ],
+  "findings": {
+    "largeBracer": "Viewer-left shoulder -> upper arm/elbow -> one descending gold beast-face bracer; matches approved idle side",
+    "smallBracer": "Viewer-right shoulder -> other arm -> one small brown/gold wrist bracer and white fist",
+    "anatomy": "Two arms, two planted legs, two cloven hooves; erroneous center hoof from draft removed",
+    "facing": "Right-facing; not a whole-image mirror correction",
+    "otherIdentity": "White goat face, gold-banded brown curled horns, brown mantle, red sash, hanging cream tabard retained",
+    "effects": "No VFX/floor/ground shadow authored"
+  },
+  "limits": [
+    "Generative edit, not pixel-exact identity to draft or approved references",
+    "Player must review likeness, equipment and pose; this is not player acceptance",
+    "No runtime scale/anchor/ground/mirror/budget claim"
+  ],
+  "candidateSha256": "3122654ff5bfde5a5ecbca0e41269b7ad4f8015a3dcf350cbdb0f8ef886f1eb4"
+}
