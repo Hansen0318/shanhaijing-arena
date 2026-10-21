@@ -1,4 +1,36 @@
-# P2 猼訑 Awakening「鎮岳」— static recovery / first key-pose Gate NEXT
+# P2 猼訑 Awakening「鎮岳」— ONE key-pose candidate / PLAYER REVIEW PENDING
+
+## 2026-10-21 — P2 Awakening ONE F3 CANDIDATE / PLAYER REVIEW PENDING
+
+Recovered remote `8d7fb0b863e45e8a247780632ab79955eb361ae8`, same `feat/m0-combat-core-20260927`, PR #1 open/unmerged, initial tracked/untracked tree clean. Special COMPLETE / PLAYER VERIFIED and all P1/P2 accepted materials remain protected. No newer Awakening art or acceptance existed at recovery.
+
+NEW: `docs/verification/P2_AWAKENING_PREFLIGHT/probe.mjs` runs real BattleSession representative cases; `mechanics.json` records **16 cases PASS**, with unchanged static-seed source hashes. Player/AI shared entry, instant/tactical T0 damage, locked cast center with moved/escaping/entering actors, air cast and AI rejection, T3 hit-conditioned protection, resolve-time recipients, Special coexistence/MAX mitigation, expiry and source/recipient KO covered. Controlled actors/explicit AI execution are not a free-running AI policy or Browser/device test. No gameplay source modified.
+
+ONE generated character-only downward-release F3 master and exact-RGBA 48px padded candidate saved in `docs/art/candidates/botuo/awakening/key-pose-v1/` with prompt, four reference hashes, alpha data, inspected light/dark QA and reproducible preparation. Candidate SHA256 `c80951a05975ff765b60e6a82736ad09f5b19c08360e2ab8d86f37f004821652`. **CANDIDATE ONLY / NOT PLAYER APPROVED**. Wide low base, flexed knees, downward beast-bracer and rear counterbalance distinguish Basic horn strike, Heavy forward bash and Special upright inward guard without VFX. Raw source alpha1 edge noise is retained; no source cleaning/redraw or pose-height fitting. This is not final runtime density/anchor/residency proof.
+
+**STOP / NEXT ONLY: player review of this exact F3 design/identity/equipment/downward pose.** No F1/F2/F4, VFX, GIF, executable contract, Runtime or deploy. After approval, record the exact statement/hash before the next separately authorized art stage. No acceptance inferred from engineering success. Reuse unchanged Special164/Browser/release/145CI/39public and45required16611224decoded/16MiB+131072reserve+34920extra evidence, not rerun. Five historical full-suite failures retained; no full suite/build/Browser run or release in this docs/art-only `[skip ci]` slice. No main merge/new branch/P3/TD/ordinary Hit reaction. Latest containing commit is a docs/art checkpoint, not a new public release. Canonical successor remains `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`, with one self-contained copy block.
+
+## Actual mechanics findings — bounded evidence, no balance changes
+
+Command: `node docs/verification/P2_AWAKENING_PREFLIGHT/probe.mjs`. Assertions execute imported real production BattleSession through the isolated Lab factory with deterministic inputs; all non-probed actors held and other skills on cooldown. AI cases invoke the shared AI execution entry explicitly; they do not test autonomous selection policy. No duplicate catalog/Tier preparation or Special regression.
+
+- T0 player and AI: instant path damages eligible e1/e2 at clock0; tactical path no damage through899ms, then one damage event per eligible victim at900ms. No secondary hits/movement/T0 protection. CD consumed at cast.
+- Tactical circle locks caster position at cast. Moving caster fromx3 tox7 and original target out of circle leaves old centerx3; a different living enemy entering before resolve receives damage. Original target KO does not cancel damage to remaining eligible victims. Caster KO cancels pending impact.
+- Player out-of-range casts consume CD immediately without threat/damage/T3 protection. AI out-of-range entry rejects the cast. All tactical victims escaping gives no post_cast protection. No delayed acquisition on air cast.
+- T3 actual tactical impact at819ms (floating representation retained in JSON): no protection on press or just before resolve. Once damage applies, `boyi.team` searches living allies around the **current caster** at resolve, including self. Radius2.832, magnitude0.135, lifetime3.75s. Case moves caster and nearby ally before resolve, excludes far third ally. Thus damage center and protection center can differ; future VFX must follow their actual owners, not conflate them.
+- Existing Special self and threatened-ally records retain exact IDs/records while Awakening protection adds independent `boyi.team` records. Effective mitigation uses existing MAX, not addition. Awakening protection expires at its own3.75s while longer Special remains; source KO removes all source-owned protection, recipient KO removes only that recipient's record.
+
+## Proposed key-pose differentiation — now drawn, still unapproved
+
+| Skill | Protected or proposed body signature |
+| --- | --- |
+| Basic 角擊 | Accepted low head/horn-led forward attack |
+| Heavy 震嶺 | Accepted forward horizontal oversized-bracer bash |
+| Special 守群 | Accepted upright centered inward arm closure |
+| Awakening 鎮岳 | Candidate wide bent-leg low base; shoulders/torso press downward; oversized beast bracer low near ground, smaller arm extends back for balance; face/horns readable |
+
+The candidate is one release pose, not a universal windup or added ground strike. Future motion must map both existing instant and tactical paths without postponing real damage or automatically granting T3 protection at press. Later radial spectacle is reserved for the VFX gate, not baked into this PNG. No new gameplay contract is proposed here.
+
 
 ## 2026-10-21 — Special CLOSED, next Work preparation only
 

@@ -1,0 +1,39 @@
+{
+  "mode": "RGBA",
+  "sourceSize": [
+    1446,
+    1088
+  ],
+  "candidateSize": [
+    1542,
+    1184
+  ],
+  "paddingPixels": 48,
+  "allSourceRgbaPreserved": true,
+  "resizeOrRecolor": false,
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "sourceAlphaBBox": [
+    0,
+    57,
+    1418,
+    1088
+  ],
+  "candidateAlphaBBox": [
+    48,
+    105,
+    1466,
+    1136
+  ],
+  "sourceEdgeNote": "Source contains alpha=1 pixels on left/bottom outer edges. Preserved, not cleaned or called clipping-free runtime evidence. Opaque silhouette inspected separately on light/dark backgrounds.",
+  "opaqueAlphaBBox": [
+    105,
+    70,
+    1416,
+    1042
+  ],
+  "outerBorderTransparent": true,
+  "runtimeScaleAnchorBudgetVerified": false
+}

@@ -1,0 +1,99 @@
+{
+  "status": "CANDIDATE / PLAYER REVIEW PENDING",
+  "generatedDate": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "generator": "built-in image_gen.imagegen",
+  "generationCount": 1,
+  "sourceCommit": "8d7fb0b863e45e8a247780632ab79955eb361ae8",
+  "scope": "ONE character-only Awakening F3 downward-release key pose; no other frames/VFX/GIF/runtime/deployment",
+  "source": "F3-downward-master.png",
+  "selectedCandidate": "F3-candidate.png",
+  "references": [
+    {
+      "path": "public/assets/characters/botuo/identity.png",
+      "sha256": "79a210c187745886fb9c1fce3877512b275998bc17c7c537369fdc6f2b8dae5b"
+    },
+    {
+      "path": "public/assets/characters/botuo/battleIdle.png",
+      "sha256": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8"
+    },
+    {
+      "path": "docs/art/candidates/botuo/heavy/key-pose-v1/F3-contact-master.png",
+      "sha256": "0049d9610e46b0d3ad5cffff6e54a94190786992999b282eef2253c8c019b206"
+    },
+    {
+      "path": "docs/art/candidates/botuo/special/key-pose-v1/F3-protection-master.png",
+      "sha256": "00dc78f20e09da6f8c55b67497653046cb5c7aa6253df2ffaa3d7b41c7bdf8a6"
+    }
+  ],
+  "files": {
+    "F3-candidate.png": {
+      "sha256": "c80951a05975ff765b60e6a82736ad09f5b19c08360e2ab8d86f37f004821652",
+      "bytes": 1273005
+    },
+    "F3-downward-master.png": {
+      "sha256": "646e01c4c6fa3a428b6a0da3c640374687fff82030f17f3c51e2473822556b75",
+      "bytes": 1295783
+    },
+    "prepare_qa.py": {
+      "sha256": "e6b13e18c7d4f26daba0aeac965e55355c41439c19bef9fd077564bedfe6c018",
+      "bytes": 2648
+    },
+    "prompt.txt": {
+      "sha256": "7a6b06f7082fa8392de2f608b15937352b1bc96d27686947f2d55bef70603285",
+      "bytes": 3090
+    },
+    "qa-dark.png": {
+      "sha256": "62c72e0963f6f50ba4bb2aa8f23349cbcf6b76dc1e3dc4d983e7467167d0dc31",
+      "bytes": 1049207
+    },
+    "qa-light.png": {
+      "sha256": "56b955f18918d329c5f890137286c8506c4d5d861670da706efd52a1a045eeb2",
+      "bytes": 1087342
+    },
+    "qa.json": {
+      "sha256": "a40313c126ca6e3c02a85ef96d17e6c7161b5172d82b5703173a300956cac99f",
+      "bytes": 718
+    }
+  },
+  "qa": {
+    "mode": "RGBA",
+    "sourceSize": [
+      1446,
+      1088
+    ],
+    "candidateSize": [
+      1542,
+      1184
+    ],
+    "paddingPixels": 48,
+    "allSourceRgbaPreserved": true,
+    "resizeOrRecolor": false,
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "sourceAlphaBBox": [
+      0,
+      57,
+      1418,
+      1088
+    ],
+    "candidateAlphaBBox": [
+      48,
+      105,
+      1466,
+      1136
+    ],
+    "sourceEdgeNote": "Source contains alpha=1 pixels on left/bottom outer edges. Preserved, not cleaned or called clipping-free runtime evidence. Opaque silhouette inspected separately on light/dark backgrounds.",
+    "opaqueAlphaBBox": [
+      105,
+      70,
+      1416,
+      1042
+    ],
+    "outerBorderTransparent": true,
+    "runtimeScaleAnchorBudgetVerified": false
+  },
+  "approval": null
+}

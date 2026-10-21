@@ -1,0 +1,369 @@
+{
+  "status": "PASS",
+  "kind": "Representative real BattleSession mechanics probe; not full regression, Browser, runtime art or player acceptance",
+  "sourceCommit": "8d7fb0b863e45e8a247780632ab79955eb361ae8",
+  "command": "node docs/verification/P2_AWAKENING_PREFLIGHT/probe.mjs",
+  "staticSourceHashesUnchanged": true,
+  "sourceSha256": {
+    "src/roster/abilities.js": "4538a5179f7d9e824f9780bd70d1018baa397bf63da3f203eeb650d7106e2065",
+    "src/roster/catalog.js": "c6c2c18f8bc02bbbf113a193e7f52568ddd11c83f918144b632560ba98795ab4",
+    "src/roster/tierEffects.js": "2f157c7edb1df0873a9c906212c9459699a34ac947489c5b4bb4d11585c026fa",
+    "src/combat/tierEffects.js": "7c79798c6ba726095fb062130d8fb8a9319c6468f6993e372533967b28afacfc",
+    "src/combat/tierEffectRuntime.js": "c0200834c9aae7fc18ee26a5cdb7519188dff0825dfa9240d00aeaddb9d7f4ba",
+    "src/combat/battleSession.js": "5237fe9946692e2c16a31511925070a30f078abcb94a5fdc3d3098ec0b6500f9",
+    "src/combat/effectTargeting.js": "5238691b4c22dfbe72906b79c5b2588be9b67d48666d221e10d7d5f207a91d90",
+    "src/combat/threats.js": "1d1568171a94fd52fdc2fd8a75d4e35ae5ff9eb1bc1dae4b050cf2d62609200c",
+    "src/combat/statuses.js": "b9857e25d253029c0efe2e2bbdbc6f162e542d5f8c040831dcf56b6376cf9382",
+    "src/combat/ability.js": "63283096c116f1e43e32d4d52979832de12c591597b3901d83d098ecdfdf091f"
+  },
+  "caseCount": 16,
+  "cases": [
+    {
+      "case": "T0 player instant",
+      "damageClockSeconds": 0,
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "awakening",
+          "source": "player",
+          "amount": 14.8,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 4,
+            "y": 0
+          }
+        },
+        {
+          "actorId": "a1",
+          "targetId": "e2",
+          "category": "awakening",
+          "source": "player",
+          "amount": 16.8,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        }
+      ],
+      "cooldownRemaining": 14,
+      "protection": 0
+    },
+    {
+      "case": "T0 ai instant",
+      "damageClockSeconds": 0,
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "awakening",
+          "source": "ai",
+          "amount": 14.8,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 4,
+            "y": 0
+          }
+        },
+        {
+          "actorId": "a1",
+          "targetId": "e2",
+          "category": "awakening",
+          "source": "ai",
+          "amount": 16.8,
+          "critical": false,
+          "eventAt": 0,
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        }
+      ],
+      "cooldownRemaining": 14,
+      "protection": 0
+    },
+    {
+      "case": "T0 player tactical",
+      "damageClockSeconds": 0.9,
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "awakening",
+          "source": "player",
+          "amount": 14.8,
+          "critical": false,
+          "eventAt": 0.9,
+          "position": {
+            "x": 4,
+            "y": 0
+          }
+        },
+        {
+          "actorId": "a1",
+          "targetId": "e2",
+          "category": "awakening",
+          "source": "player",
+          "amount": 16.8,
+          "critical": false,
+          "eventAt": 0.9,
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        }
+      ],
+      "cooldownRemaining": 13.1,
+      "protection": 0
+    },
+    {
+      "case": "T0 ai tactical",
+      "damageClockSeconds": 0.9,
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e1",
+          "category": "awakening",
+          "source": "ai",
+          "amount": 14.8,
+          "critical": false,
+          "eventAt": 0.9,
+          "position": {
+            "x": 4,
+            "y": 0
+          }
+        },
+        {
+          "actorId": "a1",
+          "targetId": "e2",
+          "category": "awakening",
+          "source": "ai",
+          "amount": 16.8,
+          "critical": false,
+          "eventAt": 0.9,
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        }
+      ],
+      "cooldownRemaining": 13.1,
+      "protection": 0
+    },
+    {
+      "case": "locked center / escaping target / entering enemy",
+      "geometry": {
+        "shape": "circle",
+        "origin": {
+          "x": 3,
+          "y": 0
+        },
+        "center": {
+          "x": 3,
+          "y": 0
+        },
+        "radius": 2.2
+      },
+      "casterAtResolve": {
+        "x": 7,
+        "y": 0
+      },
+      "damageEvents": [
+        {
+          "actorId": "a1",
+          "targetId": "e2",
+          "category": "awakening",
+          "source": "player",
+          "amount": 16.8,
+          "critical": false,
+          "eventAt": 0.9,
+          "position": {
+            "x": 2,
+            "y": 0
+          }
+        },
+        {
+          "actorId": "a1",
+          "targetId": "e3",
+          "category": "awakening",
+          "source": "player",
+          "amount": 15.23,
+          "critical": false,
+          "eventAt": 0.9,
+          "position": {
+            "x": 3.5,
+            "y": 0
+          }
+        }
+      ]
+    },
+    {
+      "case": "T3 player air / out of range instant",
+      "cooldownConsumed": true,
+      "damageEvents": [],
+      "protection": 0
+    },
+    {
+      "case": "AI out-of-range instant",
+      "castAccepted": false
+    },
+    {
+      "case": "T3 player air / out of range tactical",
+      "cooldownConsumed": true,
+      "damageEvents": [],
+      "protection": 0
+    },
+    {
+      "case": "AI out-of-range tactical",
+      "castAccepted": false
+    },
+    {
+      "case": "T3 tactical all escape => no post_cast protection",
+      "impactAtMs": 818.9999999999999,
+      "protection": 0
+    },
+    {
+      "case": "locked target KO does not cancel surviving AoE victim",
+      "protected": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0.8189999999999998,
+          "expiryTime": 4.569,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-2",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0.8189999999999998,
+          "expiryTime": 4.569,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "case": "T3 Special coexistence / instant / expiry",
+      "onsetSeconds": 0,
+      "protection": [
+        {
+          "id": "status-3",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 3.75,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-4",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 3.75,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "specialIdsPreserved": [
+        "status-1",
+        "status-2"
+      ],
+      "effectiveSelfDamageMultiplier": 0.6625,
+      "expiredAt": 3.75
+    },
+    {
+      "case": "T3 Special coexistence / resolve-time recipient center / expiry",
+      "onsetSeconds": 0.819,
+      "protection": [
+        {
+          "id": "status-3",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0.819,
+          "expiryTime": 4.569,
+          "policy": "replace",
+          "tags": []
+        },
+        {
+          "id": "status-4",
+          "sourceId": "a1",
+          "targetId": "a2",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0.819,
+          "expiryTime": 4.569,
+          "policy": "replace",
+          "tags": []
+        }
+      ],
+      "specialIdsPreserved": [
+        "status-1",
+        "status-2"
+      ],
+      "effectiveSelfDamageMultiplier": 0.6625,
+      "expiredAt": 4.569
+    },
+    {
+      "case": "T3 source KO cleanup",
+      "remaining": []
+    },
+    {
+      "case": "T3 recipient KO cleanup",
+      "remaining": [
+        {
+          "id": "status-1",
+          "sourceId": "a1",
+          "targetId": "a1",
+          "areaId": null,
+          "key": "boyi.team",
+          "type": "mitigation",
+          "magnitude": 0.135,
+          "data": {},
+          "startTime": 0,
+          "expiryTime": 3.75,
+          "policy": "replace",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "case": "source KO before tactical resolve cancels damage and protection"
+    }
+  ]
+}

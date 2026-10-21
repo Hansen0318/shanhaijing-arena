@@ -1,5 +1,16 @@
 # AGENTS.md
 
+## 2026-10-21 — P2 Awakening ONE F3 CANDIDATE / PLAYER REVIEW PENDING
+
+Recovered remote `8d7fb0b863e45e8a247780632ab79955eb361ae8`, same `feat/m0-combat-core-20260927`, PR #1 open/unmerged, initial tracked/untracked tree clean. Special COMPLETE / PLAYER VERIFIED and all P1/P2 accepted materials remain protected. No newer Awakening art or acceptance existed at recovery.
+
+NEW: `docs/verification/P2_AWAKENING_PREFLIGHT/probe.mjs` runs real BattleSession representative cases; `mechanics.json` records **16 cases PASS**, with unchanged static-seed source hashes. Player/AI shared entry, instant/tactical T0 damage, locked cast center with moved/escaping/entering actors, air cast and AI rejection, T3 hit-conditioned protection, resolve-time recipients, Special coexistence/MAX mitigation, expiry and source/recipient KO covered. Controlled actors/explicit AI execution are not a free-running AI policy or Browser/device test. No gameplay source modified.
+
+ONE generated character-only downward-release F3 master and exact-RGBA 48px padded candidate saved in `docs/art/candidates/botuo/awakening/key-pose-v1/` with prompt, four reference hashes, alpha data, inspected light/dark QA and reproducible preparation. Candidate SHA256 `c80951a05975ff765b60e6a82736ad09f5b19c08360e2ab8d86f37f004821652`. **CANDIDATE ONLY / NOT PLAYER APPROVED**. Wide low base, flexed knees, downward beast-bracer and rear counterbalance distinguish Basic horn strike, Heavy forward bash and Special upright inward guard without VFX. Raw source alpha1 edge noise is retained; no source cleaning/redraw or pose-height fitting. This is not final runtime density/anchor/residency proof.
+
+**STOP / NEXT ONLY: player review of this exact F3 design/identity/equipment/downward pose.** No F1/F2/F4, VFX, GIF, executable contract, Runtime or deploy. After approval, record the exact statement/hash before the next separately authorized art stage. No acceptance inferred from engineering success. Reuse unchanged Special164/Browser/release/145CI/39public and45required16611224decoded/16MiB+131072reserve+34920extra evidence, not rerun. Five historical full-suite failures retained; no full suite/build/Browser run or release in this docs/art-only `[skip ci]` slice. No main merge/new branch/P3/TD/ordinary Hit reaction. Latest containing commit is a docs/art checkpoint, not a new public release. Canonical successor remains `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`, with one self-contained copy block.
+
+
 ## 2026-10-21 — P2 Special COMPLETE / PLAYER VERIFIED; Awakening key-pose NEXT
 
 Player explicitly approves the presented deployed Special and requests GitHub progress/process/rules plus a seamless new Work handoff. Exact statement/version/scope is in `docs/art/approved/botuo/special/runtime-v1/acceptance.json`, bound to536685401cfa0805b5836b057a27dd0692c46879 and its presented URL. Special runtime/phone Gate CLOSED / PLAYER VERIFIED; no itemized device case matrix/FPS/GPU/hash measurements invented. P1 COMPLETE and P2accepted Idle/Move/KO/scale/Basic/Heavy remain protected. WholeP2 is NOT complete.
