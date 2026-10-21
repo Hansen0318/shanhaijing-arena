@@ -1,5 +1,14 @@
 # Project State
 
+## 2026-10-21 — Special MOTION/GIF APPROVAL RECONFIRMED / next unfinished contract gate
+
+玩家在normal GIF展示、slow/instant-chain連結及Special四姿勢／Heavy接技區別說明後，回覆「ok 我approved ，紀錄github進度流程規則，繼續繼續」。已保存追加receipt `docs/art/approved/botuo/special/visual-reconfirmation-v1/acceptance.json`，綁定原normal/slow/chain檔案hash；原視覺包receipt、四姿勢、source/prompt/QA/GIF完全不變。**Special動作與GIF視覺核准CLOSED，不再重問或重製。** 不聲稱每檔獨立播放、裝置或Runtime已驗收。
+
+按實際展示範圍記錄此次視覺核准；目前獨立未完成Gate仍是 `docs/verification/M5C_P2_BOTUO_SPECIAL_PREFLIGHT.md` §1/§3共用utility/status契約與§4–5無損packing/容量方案。文件SHA256 da54ad3cbc8bdd710064dfb1632771730105a14dba54855a9ef3b6037eddcc82，packing-manifest SHA256 e1963cebddba3d146a2eeb25a2cde105dad9d9cd53eb3b66baf918216dd79132。不得把對動作/GIF的同意擴大為32個舊貼圖候選與工程契約已核准；確認該獨立範圍後才能建立executable receipt、進必要共用Runtime整合。現成前檢不重做，下一步不是再次做GIF。
+
+本次只做核准/規則/進度文件，[skip ci]，無src/public/tests/scripts/workflow/既有核准素材修改、build/full-suite/browser/部署；沿用既有來源與機制證據，五個suite failures保持。Heavy live acf454741757f58efa980fdcd03f028a472e87a3、16MiB/131072reserve/Shared Dynamic Asset Residency及P1/P2既有驗收保持。只核對本次receipt的GIF/契約/manifest hash、JSON、受保護路徑與diff，不重跑工程檢查。恢復來源d02d22bb0382b4c21bad083a3af96094be346dd2；最新checkpoint為含本條目的feature commit，重新fetch。唯一後續指令仍為docs/handoffs/P2_BOTUO_SPECIAL_NEXT_WORK.md，保持單一完整自足code block。
+
+
 ## CURRENT HANDOFF POINTER — 2026-10-21 — Special EXECUTION CONTRACT REVIEW / Runtime NOT INTEGRATED
 
 已從 remote `9e685823c892843132b53c36ca897cdb625fc76c` 恢復，PR#1 open/unmerged，初始工作目錄乾淨；同分支，未merge main。**下一個未完成 Gate 已推進至共用utility/status ownership執行契約審核**：`docs/verification/M5C_P2_BOTUO_SPECIAL_PREFLIGHT.md`。玩家核准前停在此處，沒有executable acceptance，沒有Runtime整合或部署。Special F3/四姿勢/視覺包與P1 COMPLETE、P2尺寸CLOSED、Basic/KO/Heavy已核准紀錄保持；下方舊preflight-next/art-pending是歷史。

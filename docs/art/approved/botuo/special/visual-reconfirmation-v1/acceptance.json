@@ -1,0 +1,46 @@
+{
+  "status": "SPECIAL MOTION / PRESENTED GIF VISUAL APPROVAL RECONFIRMED",
+  "recordedDate": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "reviewedCheckpoint": "d02d22bb0382b4c21bad083a3af96094be346dd2",
+  "playerStatement": "ok 我approved ，紀錄github進度流程規則，繼續繼續",
+  "immediatelyPrecedingQuestion": "妳用的動作是special規劃的動作嗎",
+  "presentationContext": "Normal GIF displayed with slow and instant-chain GIF links; assistant then confirmed Special F1 initiation, F2 inward lift, F3 supported high guard, F4 release. Heavy in the separate chain study was explained as a subsequent Heavy action, not Special motion.",
+  "originalVisualAcceptance": "docs/art/approved/botuo/special/composite-v1/acceptance.json",
+  "approvedScope": [
+    "The presented Special protective motion and existing visual GIF package",
+    "F1 low/open initiation, F2 inward/lifting guard, F3 high supported brace, F4 reopening/lowering recovery",
+    "The distinction between Special motion and the following Heavy in the instant-chain study",
+    "Preserve approved art and continue to the next unfinished gate without repeating visual approval"
+  ],
+  "presentedFiles": [
+    {
+      "path": "docs/art/candidates/botuo/special/composite-review-v1/botuo-special-composite-normal.gif",
+      "sha256": "55a55d588f38aefd2dc7439a147c7447e84e74a0fa917add816cedebd09b9eb7"
+    },
+    {
+      "path": "docs/art/candidates/botuo/special/composite-review-v1/botuo-special-composite-slow.gif",
+      "sha256": "760557fd76cfcc754df854984d21ad54696150d9e7ab03da093db8e11af18b03"
+    },
+    {
+      "path": "docs/art/candidates/botuo/special/composite-review-v1/botuo-special-instant-chain.gif",
+      "sha256": "5ec534b6ced791f3ba78a8d62d7df6acbf43233e6ebe0a7ecb6f4223c1775084"
+    }
+  ],
+  "notClaimed": [
+    "Independent playback or itemized approval of every file or device case",
+    "Approval of the separate exact execution contract and 32-legacy-texture packing plan",
+    "Runtime integration, build, deployment, phone or whole-P2 acceptance"
+  ],
+  "nextGate": "Review the already prepared execution contract and faithful packing/capacity proposal; no new visual/art gate.",
+  "contract": {
+    "path": "docs/verification/M5C_P2_BOTUO_SPECIAL_PREFLIGHT.md",
+    "sha256": "da54ad3cbc8bdd710064dfb1632771730105a14dba54855a9ef3b6037eddcc82"
+  },
+  "packingManifest": {
+    "path": "docs/art/candidates/botuo/special/runtime-pack-v1/packing-manifest.json",
+    "sha256": "e1963cebddba3d146a2eeb25a2cde105dad9d9cd53eb3b66baf918216dd79132"
+  },
+  "currentSlice": "Approval/progress/process documentation only; no original acceptance or source art overwritten, no source/public/workflow changes, no repeated mechanics/build/full-suite/browser/deployment checks."
+}

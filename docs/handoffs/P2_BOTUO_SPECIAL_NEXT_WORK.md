@@ -7,6 +7,7 @@
 【背景資訊】
 GitHub唯一權威；唯一分支feat/m0-combat-core-20260927，PR#1維持open/unmerged。先fetch核對remote HEAD/branch/PR/working tree；9e685823c892843132b53c36ca897cdb625fc76c為本次前檢的恢復起點，不是永遠最新，前檢成果在後續含此指令的commit。
 Special F3、四姿勢、VFX與五GIF視覺包已核准，receipt在docs/art/approved/botuo/special/{f3-v1,poses-v1,composite-v1}/acceptance.json；不重畫、不重問視覺Gate。P1 COMPLETE、P2 Idle/Move/Basic尺度CLOSED、Basic/KO/Heavy PLAYER VERIFIED。Heavy live acf454741757f58efa980fdcd03f028a472e87a3保持。
+追加核准：玩家在確認「這是Special規劃動作」及Heavy接技片段的區別後，回覆「ok 我approved ，紀錄github進度流程規則，繼續繼續」。receipt：docs/art/approved/botuo/special/visual-reconfirmation-v1/acceptance.json，綁定已展示normal/slow/chain的原hash；視覺核准保持CLOSED，不新增視覺審核。此回覆沒有單獨確認32個舊貼圖包裝與執行契約，下一步仍為已備妥的契約/容量審核；不得將這份追加視覺receipt當作Runtime整合/部署核准。
 
 【具體指令】
 1. 讀AGENTS.md、WORK_PROGRESS.md最新CURRENT HANDOFF POINTER、docs/STATE.md、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、DEVELOPMENT_ROADMAP、M5C_ART_ANIMATION_VFX、CHARACTER_ACTION_ART_WORKFLOW、M5C_P2_BOTUO_HEAVY_ACTION、M5C_P2_BOTUO_SPECIAL_ACTION及Special三份receipt。
