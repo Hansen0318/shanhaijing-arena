@@ -1,0 +1,8 @@
+{
+  "status": "PLAYER DIRECT EXECUTION REQUEST / NEW VALUES IMPLEMENTER SELECTED / PLAYER ACCEPTANCE PENDING",
+  "recordedDate": "2026-10-23",
+  "playerStatement": "被動的文字不要出現，很怪，還有剛剛說的比例或增益要變更大，目前沒有感覺，還有跟隨T等級增加也要有，且要夠大的變化，確認就直接進行執行",
+  "decision": "docs/decisions/2026-10-23-passive-visibility-tier-revision.md",
+  "baseHead": "a787cf1d15ba07f337e2ac196e98a99433ab2ce9",
+  "scope": "Remove battlefield passive text; substantial real movement gain with distinct Tier progression; necessary verification and normal release; preserve four active skills and approved art"
+}

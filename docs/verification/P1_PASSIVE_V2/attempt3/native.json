@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "physicalPhone": false,
+  "built": false,
+  "errors": [],
+  "cases": [],
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    false,\n+   false\n-   true\n  ]\n\n    at file:///workspace/scratch/a27ced089488/shanhaijing-arena/scripts/checkLushuPassiveV2Browser.mjs:44:358"
+}

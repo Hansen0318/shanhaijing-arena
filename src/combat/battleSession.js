@@ -151,7 +151,7 @@ export class BattleSession {
     this.pendingActions=new Map();this.nextActionId=0;this.nextPresentationId=0;this.presentationEpoch=0;this.presentationEventSequence=0;
     this.statuses = new BattleStatuses();
     this.areas=new PersistentAreas();this.mobilityEvidence=new Map();this.effects=new TierEffectRuntime(this);
-    this.passives=new PassiveRuntime({actors:this.actors,characterForActor:actor=>this.definitionForActor(actor),abilityDefinitions:this.abilityDefinitions,statuses:this.statuses});
+    this.passives=new PassiveRuntime({actors:this.actors,characterForActor:actor=>this.definitionForActor(actor),tierForActor:actor=>this.tierProjections.get(actor.instanceId).tier,abilityDefinitions:this.abilityDefinitions,statuses:this.statuses});
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 

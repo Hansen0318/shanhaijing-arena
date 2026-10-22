@@ -1,0 +1,38 @@
+{
+  "status": "ENGINEERING PASS / NORMAL RELEASE PENDING / PLAYER ACCEPTANCE PENDING",
+  "tests": {
+    "total": 1047,
+    "pass": 1047,
+    "fail": 0
+  },
+  "build": "PASS",
+  "native": 16,
+  "built": 8,
+  "compatibility": "native4/built2/scale10 PASS",
+  "tiers": {
+    "T0": {
+      "gain": 0.35,
+      "base": 2.05,
+      "active": 2.7675
+    },
+    "T1": {
+      "gain": 0.5,
+      "base": 2.214,
+      "active": 3.321
+    },
+    "T2": {
+      "gain": 0.65,
+      "base": 2.378,
+      "active": 3.9237
+    },
+    "T3": {
+      "gain": 0.8,
+      "base": 2.624,
+      "active": 4.7232
+    }
+  },
+  "duration": 3,
+  "cooldownFromTrigger": 6,
+  "noBattlefieldPassiveText": true,
+  "physicalPhone": false
+}

@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "physicalPhone": false,
+  "built": true,
+  "errors": [],
+  "cases": [
+    {
+      "tier": "T0",
+      "side": "ally",
+      "gain": 0.35,
+      "baseSpeed": 2.05,
+      "activeSpeed": 2.7675,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 5.535,
+      "baselineDistance": 4.1,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.5,
+      "independentExpiry": 1.35,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": true,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": false,
+      "screenshot": "built-T0-ally-normal.png"
+    }
+  ],
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///workspace/scratch/a27ced089488/shanhaijing-arena/scripts/checkLushuPassiveV2Browser.mjs:44:540"
+}

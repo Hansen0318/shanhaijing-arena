@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "physicalPhone": false,
+  "built": false,
+  "errors": [],
+  "cases": [],
+  "status": "FAIL",
+  "error": "page.evaluate: TypeError: Cannot read properties of null (reading 'expiryTime')\n    at eval (eval at evaluate (:311:30), <anonymous>:17:104)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /workspace/scratch/a27ced089488/shanhaijing-arena/scripts/checkLushuPassiveV2Browser.mjs:26:28"
+}

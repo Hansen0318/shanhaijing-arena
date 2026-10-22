@@ -9,9 +9,9 @@ function distanceAt(samples,now,window,readyAt){
  return samples.reduce((sum,s)=>{const lo=Math.max(s.start,now-window,readyAt),hi=Math.min(s.end,now);return sum+(hi>lo?length(s)*(hi-lo)/(s.end-s.start):0);},0);
 }
 export class PassiveRuntime{
- constructor({actors,characterForActor,abilityDefinitions,statuses}){
+ constructor({actors,characterForActor,abilityDefinitions,statuses,tierForActor=()=> 'T0'}){
   this.actors=actors;this.characterForActor=characterForActor;this.statuses=statuses;this.entries=new Map();this.now=0;
-  for(const actor of actors){const defs=[];for(const id of characterForActor(actor).abilities.passives??[]){const input=abilityDefinitions[id];if(!input?.implemented)continue;const definition=createPassiveDefinition(input);defs.push({actor,definition,samples:[],readyAt:0,statusId:null,lastEnd:0});}if(defs.length)this.entries.set(actor.instanceId,defs);}
+  for(const actor of actors){const defs=[];for(const id of characterForActor(actor).abilities.passives??[]){const input=abilityDefinitions[id];if(!input?.implemented)continue;const base=createPassiveDefinition(input),tier=tierForActor(actor);if(base.tierMagnitudes&&!Object.hasOwn(base.tierMagnitudes,tier))throw new TypeError('Invalid passive Tier');const definition=createPassiveDefinition({...base,effect:{...base.effect,magnitude:base.tierMagnitudes?.[tier]??base.effect.magnitude}});defs.push({actor,definition,samples:[],readyAt:0,statusId:null,lastEnd:0});}if(defs.length)this.entries.set(actor.instanceId,defs);}
  }
  enabled(){return this.entries.size>0;}
  nextBoundary(instanceId,segment){
@@ -50,7 +50,7 @@ export class PassiveRuntime{
     if(now+EPS<e.readyAt)continue;
     if(distanceAt(e.samples,now,d.trigger.windowSeconds,e.readyAt)<d.trigger.distance-EPS)continue;
     if(this.statuses.controlled(id,now)){e.samples=[];continue;}
-    const record=this.statuses.apply({sourceId:id,targetId:id,key:`passive:${d.id}`,type:d.effect.type,magnitude:d.effect.magnitude,duration:d.effect.duration},now);
+    const record=this.statuses.apply({sourceId:id,targetId:id,key:`passive:${d.id}`,type:d.effect.type,magnitude:d.effect.magnitude,duration:d.effect.duration,...(d.effect.data?{data:d.effect.data}:{})},now);
     e.statusId=record.id;e.readyAt=now+d.cooldownSeconds;e.samples=[];activations.push(freezeEffectData({instanceId:id,definitionId:d.id,at:now,statusId:record.id}));
    }
   }
@@ -60,7 +60,7 @@ export class PassiveRuntime{
   if(!Number.isFinite(now)||now<0)throw new RangeError('Invalid passive snapshot clock');const views=[];
   for(const [id,entries]of this.entries)for(const e of entries){
    if(e.actor.hp<=0)continue;const d=e.definition,records=this.statuses.forActor(id,now),record=records.find(s=>s.id===e.statusId),multiplier=this.statuses.movementMultiplier(id,now);
-   views.push(freezeEffectData({instanceId:id,definitionId:d.id,label:d.presentation.label,implemented:true,progressDistance:now+EPS<e.readyAt?0:Math.min(d.trigger.distance,distanceAt(e.samples,now,d.trigger.windowSeconds,e.readyAt)),threshold:d.trigger.distance,readyAt:e.readyAt,active:record?{statusId:record.id,startTime:record.startTime,expiryTime:record.expiryTime,contribution:d.effect.magnitude-1}:null,effectiveMoveSpeed:this.characterForActor(e.actor).stats.moveSpeed*multiplier,movementCapReached:multiplier>=1.15-1e-9}));
+   views.push(freezeEffectData({instanceId:id,definitionId:d.id,label:d.presentation.label,implemented:true,progressDistance:now+EPS<e.readyAt?0:Math.min(d.trigger.distance,distanceAt(e.samples,now,d.trigger.windowSeconds,e.readyAt)),threshold:d.trigger.distance,readyAt:e.readyAt,active:record?{statusId:record.id,startTime:record.startTime,expiryTime:record.expiryTime,contribution:d.effect.magnitude-1}:null,effectiveMoveSpeed:this.characterForActor(e.actor).stats.moveSpeed*multiplier,movementCapReached:multiplier>=1+this.statuses.movementBonusCap(id,now)-1e-9}));
   }
   return Object.freeze(views);
  }

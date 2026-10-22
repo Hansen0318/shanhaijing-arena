@@ -79,3 +79,7 @@ If a developer/agent notices a TD rule appearing in an Arena task or implementat
 
 ## Naming rule
 Avoid TD-specific terminology in Arena code/specs unless describing an explicit non-runtime comparison. Prefer Arena-native terms such as character, team, arena, encounter, ability, target, camera, roster, chapter.
+
+## 2026-10-23 — 被動呈現與Tier成長修訂
+
+玩家明確要求戰場被動文字不要出現：不使用被動文字牌、被動HUD數字或指向連線。Collection角色說明保留。後續獨立被動須明示T0–T3實際機制/增益成長，不能以基礎Tier數值成長代替；數值依角色方案，不直接複製P1。被動需有可辨識的實際效果，不能僅靠文字證明。P1本次實作值35/50/65/80%、3秒/CD6秒，仍待新版玩家驗收。一般移速buff/outgoing上限15%保持，明確資料驅動movementBonusCap可提供較高移速額度，上限須驗證，無角色ID判斷；參見2026-10-23-passive-visibility-tier-revision decision。

@@ -25,7 +25,13 @@ export class BattleStatuses {
  clear(){this.records.clear();this.mitigation.clear();}
  damageMultiplier(id,now){return 1-Math.max(0,...this.forActor(id,now).filter(s=>['mitigation','incoming'].includes(s.type)).map(s=>s.magnitude));}
  multiplier(id,now,type){return 1+Math.min(.15,this.forActor(id,now).filter(s=>s.type===type).reduce((n,s)=>n+s.magnitude-1,0));}
- movementMultiplier(id,now){return this.multiplier(id,now,'movement');}
+ movementBonusCap(id,now){return Math.max(.15,...this.forActor(id,now).filter(s=>s.type==='movement').map(s=>s.data.movementBonusCap??.15));}
+ movementMultiplier(id,now){
+  const records=this.forActor(id,now).filter(s=>s.type==='movement');
+  const ordinary=Math.min(.15,records.filter(s=>s.data.movementBonusCap==null).reduce((n,s)=>n+s.magnitude-1,0));
+  const explicit=records.filter(s=>s.data.movementBonusCap!=null).reduce((n,s)=>n+s.magnitude-1,0);
+  return 1+Math.min(this.movementBonusCap(id,now),ordinary+explicit);
+ }
  outgoingMultiplier(id,now){return this.multiplier(id,now,'outgoing');}
  controlled(id,now){return this.forActor(id,now).some(s=>s.type==='control');}
  avoids(id,now,dodgeable){return this.forActor(id,now).some(s=>s.type==='avoidance'&&(!s.data.dodgeableOnly||dodgeable));}
