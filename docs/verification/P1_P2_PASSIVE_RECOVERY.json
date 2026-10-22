@@ -1,5 +1,5 @@
 {
-  "status": "P1 PASSIVE ENGINEERING AND NORMAL CI PASS / PAGES QUEUED / PLAYER PENDING / P2 QUEUED",
+  "status": "P1 PASSIVE ENGINEERING AND NORMAL CI PASS / PAGES ENVIRONMENT WAITING / PLAYER PENDING / P2 QUEUED",
   "recordedDate": "2026-10-22",
   "timezone": "Asia/Taipei",
   "playerStatement": "那開發的角色技能順序應該要有被動技能，所以在P1 P2目前的狀態，要進行P1的被動技能，完成後做P2的被動技能，這算是彌補，以後的角色技能應該要有basic heavy special awakening 被動技能，這樣的順序，你把規則流程進度github，更新，並繼續P1 P2的被動技能，然後才能開發P3的角色技能，確認OK我說的沒錯，就執行",
@@ -51,7 +51,7 @@
     ]
   },
   "approvalLimits": "Original order decision does not itself approve mechanics. Subsequent genuine spec/plan acceptance receipts in P1_PASSIVE_DESIGN authorize approved P1 implementation, verification and normal release; physical-phone acceptance remains pending.",
-  "nextGate": "Existing Pages deploy job119883988676 completion; then public equality; then P1 passive physical-player acceptance only.",
+  "nextGate": "Authorized GitHub environment owner resolves waiting github-pages deployment: current connection cannot approve. Then existing deploy completes, public equality, P1 passive physical-player acceptance.",
   "proposalStatus": "SPEC AND PLAN PLAYER APPROVED / IMPLEMENTED",
   "decision": "docs/decisions/2026-10-22-passive-character-completion.md",
   "preservedHistoricalAudit": "docs/verification/P2_CHARACTER_CLOSURE.json",

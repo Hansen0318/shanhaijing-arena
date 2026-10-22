@@ -1,5 +1,10 @@
 # P1 鹿蜀被動「疾行」— 機制前檢與方案討論
 
+## 2026-10-22 — 最新外部Gate：Pages github-pages environment WAITING
+
+取代上條QUEUED/無pending判斷：GitHub最新deploy job119883988676為 **waiting**；已取得 `docs/verification/P1_PASSIVE_RUNTIME/pending-deployments.json`，environment github-pages/id22885191201，wait_timer0、reviewers[]、**current_user_can_approve:false**。目前連線無法放行此環境Gate，沒有可用的部署核准寫入工具；不繞過環境保護、不另開發布或重跑測試。需有權限者查看 https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39796107767 的Review deployments／環境保護原因並放行或排除阻擋。未從空reviewers推定具體保護規則，玩家開發/正常發布授權始終有效，無須重新核准計畫。build1042/1042、Build、guard549、驗證workflowSUCCESS及CI/local149/149保持；部署/public/實機PLAYER仍未完成。外部Gate完成後接續原job與完整公開比對，再P1被動驗收→P2厚甲→P3技能。既有四招/素材/普通Hit取消/單分支PR#1open-unmerged保持。
+
+
 ## 2026-10-22 — 疾行已實裝／工程PASS／正常發布進行中
 
 核准的規格與計畫原檔保持，所有舊proposal/pending文字為歷史。現已實作共用資料驅動被動：2秒內一般實際走位1單位，移速+8%維持2秒，觸發起CD4秒；技能位移不計、CD不累積，總移速增益上限15%。獨立狀態牌/倒數、HUD實際速度與進度/CD、Collection真實已實裝狀態完成。1042/1042、Build、真native4/built2、受影響P2相容native4/built2/scale10 PASS；實測2.05→2.214及距離+8%，手機尺寸實際截圖文字可辨識。發布與玩家狀態以 `docs/verification/P1_PASSIVE_RUNTIME/REPORT.md` 最新條目為準；玩家實機驗收尚未收到，不宣稱整角色完整。

@@ -38,3 +38,7 @@ Task4 release ACTIVE: normal workflow now requires new receipt549 bindings, immu
 
 Normal release82257f9ea2fc6ad88e2ab3afe8241f270c550a1b/treeb63489cfb9dbf334bdf0956559e3747b36113c10: Actions39796107767 buildSUCCESS1042/1042, BuildPASS, guard549PASS. Verification39796107824SUCCESS. Pages artifact12432129680 CI/local149/149 exact bytes. Deployment7254931808/job119883988676 QUEUED, no pending approvals, public newbundle404. Task4 engineeringcomplete, release/public/player pending. Do not rerun unchanged sources or ask player to accept old public version. Observe existingjob then publiccompare.
 Ruling: finishing-a-development-branch menu overridden by user's explicit samebranch/PR#1open/unmerged; no merge/newbranch/worktreecleanup. Cost if wrong: none from integration because explicit instruction retained. Native self-review limitation remains recorded.
+
+## 2026-10-22 — 最新外部Gate：Pages github-pages environment WAITING
+
+取代上條QUEUED/無pending判斷：GitHub最新deploy job119883988676為 **waiting**；已取得 `docs/verification/P1_PASSIVE_RUNTIME/pending-deployments.json`，environment github-pages/id22885191201，wait_timer0、reviewers[]、**current_user_can_approve:false**。目前連線無法放行此環境Gate，沒有可用的部署核准寫入工具；不繞過環境保護、不另開發布或重跑測試。需有權限者查看 https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39796107767 的Review deployments／環境保護原因並放行或排除阻擋。未從空reviewers推定具體保護規則，玩家開發/正常發布授權始終有效，無須重新核准計畫。build1042/1042、Build、guard549、驗證workflowSUCCESS及CI/local149/149保持；部署/public/實機PLAYER仍未完成。外部Gate完成後接續原job與完整公開比對，再P1被動驗收→P2厚甲→P3技能。既有四招/素材/普通Hit取消/單分支PR#1open-unmerged保持。

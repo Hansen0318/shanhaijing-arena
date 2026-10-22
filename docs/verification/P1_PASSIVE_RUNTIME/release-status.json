@@ -16,7 +16,7 @@
     {
       "id": 119883988676,
       "name": "deploy",
-      "status": "queued",
+      "status": "waiting",
       "conclusion": null,
       "started_at": "2026-10-22T14:30:23Z",
       "completed_at": null
@@ -31,6 +31,8 @@
   "sourceBindings": 549,
   "ciLocalFiles": 149,
   "deploymentId": 7254931808,
-  "status": "NORMAL BUILD PASS / PAGES QUEUED / PUBLIC PENDING",
-  "observedAt": "2026-10-22T14:36:28Z"
+  "status": "NORMAL BUILD PASS / PAGES ENVIRONMENT WAITING / PUBLIC PENDING",
+  "observedAt": "2026-10-22T14:36:28Z",
+  "pendingDeploymentEvidence": "pending-deployments.json",
+  "currentConnectionCanApprove": false
 }
