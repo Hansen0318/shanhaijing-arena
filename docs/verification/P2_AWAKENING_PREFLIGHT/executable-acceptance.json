@@ -1,0 +1,15 @@
+{
+  "status": "PLAYER OBSERVATIONAL CONTRACT APPROVED; ENGINEERING PENDING",
+  "recordedDate": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "要接觸全部16mib限制，並紀錄，繼續，我確認妳繼續",
+  "interpretation": "Remove all remaining16MiB restrictions, record the decision and continue the just-presented Awakening observational/faithful-installation contract.",
+  "precedingPresentedCommit": "42880e7eb1b9fe668bcbc4362817ff4eaed06e04",
+  "approvedContract": {
+    "path": "docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md",
+    "sha256": "de03b507cbea609da767c9518530c921925a349f9c27a4dde8e55f9ca522324d",
+    "scope": "Current review addendum and observational event/status + faithful installation requirements; old fixed-cap savings proposal is superseded."
+  },
+  "additionalCapacityScope": "Remove even the default16MiB inactive-cache retention target and all active16MiB success/failure gates. Preserve per-file guards and inactive LRU reclamation. Historical measurements/art receipts remain unchanged, not operational gates.",
+  "notEstablished": ["Runtime PASS", "native browser or mobile verification", "deployment", "PLAYER VERIFIED"]
+}

@@ -42,3 +42,8 @@ test('retention targets above former limits are accepted without weakening indiv
  assert.equal((await cache.load('a')).key,'p','actual encoded bytes still obey record metadata');
  for(const maxBytes of [NaN,Infinity,-1])assert.throws(()=>api.createAssetCache({maxBytes}),RangeError);
 });
+test('default cache retains a complete32MiB working set without a16MiB byte target',async()=>{
+ const manifest=createAssetManifest(['one','two'].map(key=>({key,type:'image',path:key+'.png',width:2048,height:2048,bytes:50})));
+ const cache=api.createAssetCache({manifest,transport:async()=>({image:{width:2048,height:2048},bytes:50})});
+ await cache.load('one');await cache.load('two');assert.equal(cache.size,2);assert.equal(cache.bytes,33554432);cache.trim();assert.equal(cache.bytes,0);
+});
