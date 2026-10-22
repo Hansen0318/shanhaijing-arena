@@ -3,10 +3,9 @@ import {resolveAsset} from '../assets/resolver.js';
 
 // One owner per scene. Pins describe presentation consumers, never combat state.
 export class AssetResidency {
- constructor(scene,{cache,prefix='',softBytes=RESIDENCY_LIMITS.softBytes,hardBytes=RESIDENCY_LIMITS.hardBytes,maxEntries=RESIDENCY_LIMITS.maxEntries,optionalReserveBytes=hardBytes===RESIDENCY_LIMITS.hardBytes?131072:0,onEvict=()=>{}}={}){
-  if(!Number.isInteger(hardBytes)||hardBytes<1||hardBytes>RESIDENCY_LIMITS.hardBytes||!Number.isInteger(softBytes)||softBytes<0||softBytes>hardBytes||!Number.isInteger(maxEntries)||maxEntries<1||maxEntries>RESIDENCY_LIMITS.maxEntries)throw new RangeError('Invalid residency budget');
-  if(!Number.isInteger(optionalReserveBytes)||optionalReserveBytes<0||optionalReserveBytes>hardBytes)throw new RangeError('Invalid optional reserve');
-  Object.assign(this,{scene,cache,prefix,softBytes,hardBytes,maxEntries,optionalReserveBytes,onEvict});
+ constructor(scene,{cache,prefix='',softBytes=RESIDENCY_LIMITS.softBytes,onEvict=()=>{}}={}){
+  if(!Number.isSafeInteger(softBytes)||softBytes<0)throw new RangeError('Invalid residency soft target');
+  Object.assign(this,{scene,cache,prefix,softBytes,onEvict});
   this.textures=new Map();this.pins=new Map();this.pending=new Map();this.closed=false;this.bytes=0;this.reservedBytes=0;
   this.counters={requested:0,loaded:0,evicted:0,failed:0,highWaterBytes:0,loadOrder:[]};
  }
@@ -26,12 +25,12 @@ export class AssetResidency {
   const record=this.record(key);
   if(record.key!==key){this.counters.failed++;return Promise.reject(Error('Unknown asset key: '+key));}
   if(record.type!=='image')return Promise.resolve(null);
-  const size=record.width*record.height*4,limit=this.hardBytes-(required?0:this.optionalReserveBytes);
+  const size=record.width*record.height*4;
   const task=(async()=>{
    let reserved=false;
    try{
-    while((this.bytes+this.reservedBytes+size>limit||this.textures.size+this.pending.size>=this.maxEntries)&&this.evictOne()){}
-    if(this.bytes+this.reservedBytes+size>limit||this.textures.size+this.pending.size>=this.maxEntries)throw Error('Scene texture safety budget exceeded: '+key);
+    // Reclaim inactive textures before allocation, never reject or evict pins.
+    while(this.bytes+this.reservedBytes+size>this.softBytes&&this.evictOne()){}
     this.reservedBytes+=size;reserved=true;
     this.counters.highWaterReservedBytes=Math.max(this.counters.highWaterReservedBytes??0,this.bytes+this.reservedBytes);
     const asset=await this.cache.load(key);
@@ -48,10 +47,10 @@ export class AssetResidency {
    finally{if(reserved)this.reservedBytes-=size;this.pending.delete(key);}
   })();
   this.pending.set(key,task);
-  // A synchronous budget rejection still needs to release the dedupe entry.
+  // A synchronous allocation failure still needs to release the dedupe entry.
   task.finally(()=>{if(this.pending.get(key)===task)this.pending.delete(key);}).catch(()=>{});
   return task;
  }
- snapshot(){return {...this.counters,loadOrder:[...this.counters.loadOrder],estimatedLiveBytes:this.bytes,reservedBytes:this.reservedBytes,pending:this.pending.size,pinned:[...this.textures.keys()].filter(k=>this.pinned(k)).length,softBytes:this.softBytes,hardBytes:this.hardBytes,optionalReserveBytes:this.optionalReserveBytes,closed:this.closed};}
+ snapshot(){return {...this.counters,loadOrder:[...this.counters.loadOrder],estimatedLiveBytes:this.bytes,reservedBytes:this.reservedBytes,pending:this.pending.size,pinned:[...this.textures.keys()].filter(k=>this.pinned(k)).length,softBytes:this.softBytes,closed:this.closed};}
  destroy(){if(this.closed)return;this.closed=true;this.pins.clear();for(const key of [...this.textures.keys()])this.remove(key);}
 }
