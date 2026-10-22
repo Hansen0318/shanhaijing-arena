@@ -1,5 +1,12 @@
 # Work Progress
 
+## 2026-10-22 — 疾行正常CI工程PASS／Pages deploy QUEUED
+
+發布提交 `82257f9ea2fc6ad88e2ab3afe8241f270c550a1b`／tree `b63489cfb9dbf334bdf0956559e3747b36113c10`。正常Actions39796107767 build SUCCESS：完整1042/1042、Build、549項來源guard PASS；獨立驗證workflow39796107824 SUCCESS並嚴格沿用來源相同Browser證據。CI Pages artifact12432129680的149/149檔案與本機dist逐bytes一致。Pages deploy job119883988676仍QUEUED，deployment7254931808尚無success；pending_deployments空，沒有人工核准待辦。正式站新JS目前404，不能宣稱發布或公開指紋PASS，不要求玩家驗收舊版。原始CI完整log、CI/local inventory與 `release-status.json` 已保留。
+
+下一合法步驟：觀察既有deploy工作完成；不重跑正常CI/Browser、不新增發布、不改來源。成功後才做149檔完整公開比對、docs-only更新，並請玩家只驗P1疾行badge/實際移速/倒數；實機核准後記收據才啟動P2厚甲。P3技能仍BLOCKED，既有四招與所有素材核准保持，PR#1 open/unmerged。這是外部發布等待，非缺少玩家執行授權。
+
+
 ## 2026-10-22 — 疾行工程驗證 PASS／正常發布 ACTIVE
 
 完整測試1042/1042、Build、真Chromium native4/built2、852×393實際搖桿入口、實際速度與距離+8%、>=12CSSpx字體、6牌避碰及生命週期均PASS。P2共用路徑native4/built2/scale10使用Actions39793433740相同src/public證據，沒有重驗已核准技能。失敗觀測腳本與完整log保留；實際截圖可見疾行+8%、2.214及倒數。新完整來源綁定guard通過，篡改來源負向檢查拒絕後恢復原bytes再PASS；normal fullsuite/Build/Pages流程正進行，尚不宣稱部署或玩家驗收。詳見 `docs/verification/P1_PASSIVE_RUNTIME/WORK_LOG.md` 與release-evidence.json。P1被動PLAYER PENDING，之後才P2厚甲，再P3技能；不重問規格/計畫/執行核准。既有保護與單分支PR#1 open/unmerged保持。

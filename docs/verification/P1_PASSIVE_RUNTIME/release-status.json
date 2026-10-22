@@ -1,0 +1,36 @@
+{
+  "releaseCommit": "82257f9ea2fc6ad88e2ab3afe8241f270c550a1b",
+  "releaseTree": "b63489cfb9dbf334bdf0956559e3747b36113c10",
+  "normalRun": 39796107767,
+  "verificationRun": 39796107824,
+  "verificationConclusion": "success",
+  "jobs": [
+    {
+      "id": 119883645064,
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-22T14:29:37Z",
+      "completed_at": "2026-10-22T14:30:23Z"
+    },
+    {
+      "id": 119883988676,
+      "name": "deploy",
+      "status": "queued",
+      "conclusion": null,
+      "started_at": "2026-10-22T14:30:23Z",
+      "completed_at": null
+    }
+  ],
+  "tests": {
+    "total": 1042,
+    "pass": 1042,
+    "fail": 0
+  },
+  "build": "PASS",
+  "sourceBindings": 549,
+  "ciLocalFiles": 149,
+  "deploymentId": 7254931808,
+  "status": "NORMAL BUILD PASS / PAGES QUEUED / PUBLIC PENDING",
+  "observedAt": "2026-10-22T14:36:28Z"
+}

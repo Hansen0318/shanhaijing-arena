@@ -1,5 +1,5 @@
 {
-  "status": "ORDER PLAYER DECIDED / P1 PASSIVE DESIGN PROPOSED / P1 P2 FULL CHARACTER INCOMPLETE",
+  "status": "P1 PASSIVE ENGINEERING AND NORMAL CI PASS / PAGES QUEUED / PLAYER PENDING / P2 QUEUED",
   "recordedDate": "2026-10-22",
   "timezone": "Asia/Taipei",
   "playerStatement": "那開發的角色技能順序應該要有被動技能，所以在P1 P2目前的狀態，要進行P1的被動技能，完成後做P2的被動技能，這算是彌補，以後的角色技能應該要有basic heavy special awakening 被動技能，這樣的順序，你把規則流程進度github，更新，並繼續P1 P2的被動技能，然後才能開發P3的角色技能，確認OK我說的沒錯，就執行",
@@ -38,30 +38,34 @@
     "P3 character skills may then proceed within granted scope"
   ],
   "current": {
-    "P1": "Four active skills/base accepted; passive design proposal pending; full character incomplete",
+    "P1": "Four active skills/base accepted; passive implemented and engineering verified; normal release active; player passive acceptance pending; full character incomplete",
     "P2": "Four active skills/base accepted; passive queued until P1 passive accepted; full character incomplete",
     "P3": "Skill work blocked until both catch-up passives completed; existing accepted base retained"
   },
   "passiveFacts": {
     "allFiveIndependentPassivesImplemented": false,
-    "allFivePassiveEffectsEmpty": true,
-    "existingTierEffectsAreSeparate": true
+    "allFivePassiveEffectsEmpty": false,
+    "existingTierEffectsAreSeparate": true,
+    "implementedPassives": [
+      "P1.passive"
+    ]
   },
-  "approvalLimits": "Player approved rule/order and continuing catch-up work; no approval of newly proposed trigger,8percent,2seconds,4seconds,1unit,2second window, future written spec or implementation plan is inferred.",
-  "nextGate": "Review concrete P1 proposal A in docs/M5C_P1_LUSHU_PASSIVE.md, then written design spec according to the project design workflow.",
-  "proposalStatus": "NOT PLAYER APPROVED / NOT IMPLEMENTED",
+  "approvalLimits": "Original order decision does not itself approve mechanics. Subsequent genuine spec/plan acceptance receipts in P1_PASSIVE_DESIGN authorize approved P1 implementation, verification and normal release; physical-phone acceptance remains pending.",
+  "nextGate": "Existing Pages deploy job119883988676 completion; then public equality; then P1 passive physical-player acceptance only.",
+  "proposalStatus": "SPEC AND PLAN PLAYER APPROVED / IMPLEMENTED",
   "decision": "docs/decisions/2026-10-22-passive-character-completion.md",
   "preservedHistoricalAudit": "docs/verification/P2_CHARACTER_CLOSURE.json",
   "supersedes": "Old P1/P2 whole-character COMPLETE/no remaining Gate only; prior base/four-skill acceptances remain valid.",
   "currentSlice": {
-    "docsOnly": true,
-    "runtimeChanged": false,
-    "testsRerun": false,
-    "buildRerun": false,
-    "browserRerun": false,
+    "docsOnly": false,
+    "runtimeChanged": true,
+    "testsRerun": true,
+    "buildRerun": true,
+    "browserRerun": true,
     "redeployed": false
   },
   "untrackedPreservedSha256": {
     "docs/art/candidates/lushu/special/vfx-review-v1/.target-impact-padded-v1.png.TrNzGq": "f0dffa432964655abac834272a155b0b62179cac8a65ffd0fc51ecfc96f00964"
-  }
+  },
+  "latestRuntimeReport": "docs/verification/P1_PASSIVE_RUNTIME/REPORT.md"
 }

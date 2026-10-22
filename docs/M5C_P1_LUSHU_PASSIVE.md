@@ -1,5 +1,10 @@
 # P1 鹿蜀被動「疾行」— 機制前檢與方案討論
 
+## 2026-10-22 — 疾行已實裝／工程PASS／正常發布進行中
+
+核准的規格與計畫原檔保持，所有舊proposal/pending文字為歷史。現已實作共用資料驅動被動：2秒內一般實際走位1單位，移速+8%維持2秒，觸發起CD4秒；技能位移不計、CD不累積，總移速增益上限15%。獨立狀態牌/倒數、HUD實際速度與進度/CD、Collection真實已實裝狀態完成。1042/1042、Build、真native4/built2、受影響P2相容native4/built2/scale10 PASS；實測2.05→2.214及距離+8%，手機尺寸實際截圖文字可辨識。發布與玩家狀態以 `docs/verification/P1_PASSIVE_RUNTIME/REPORT.md` 最新條目為準；玩家實機驗收尚未收到，不宣稱整角色完整。
+
+
 ## 2026-10-22 — 疾行實作計畫 PLAYER APPROVED／原生單人實作 ACTIVE
 
 玩家「好我確認繼續」核准已呈交計畫，精確SHA256與原文見 `docs/verification/P1_PASSIVE_DESIGN/plan-acceptance.json`。正式規格與計畫皆已核准，**不再重問規格/計畫/執行方式/既定驗證後發布意願**。同branch/PR#1 open未merge，原生單人依四任務執行；驗證後正常Pages發布供P1被動玩家審核，玩家驗收本身仍待實際確認。
