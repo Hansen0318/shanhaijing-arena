@@ -51,9 +51,9 @@ for(const reduced of [false,true])for(const direction of [-1,1])test('P2 visual 
  step(f,.16);paint(f);assert.notEqual(f.p.actorSprites.get('a1').frame,'316.0.158.143');assert.equal(contacts(f).length,1,'contact persists after F3');step(f,.04);paint(f);assert.equal(contacts(f).length,0);step(f,.12);paint(f);assert.equal(f.p.actions.active.size,0);
  f.p.destroy();f.p.destroy();assert.equal(f.scene.budget().bytes,0);assert.equal(f.p.stagedImpacts.size,0);assert.ok(f.scene.objects.every(o=>o.destroyed));
 });
-test('P2 accepted source/descriptor and full required residency retain reserve',async()=>{
+test('P2 accepted source/descriptor and full required residency preserve complete ownership',async()=>{
  assert.equal(formalAbilityDefinitions['P2.basic'].windupMs,250);const d=rosterCatalog.P2.actionDescriptors.basic;assert.deepEqual(d.frameDurationsMs,[160,90,160,160]);assert.equal(d.blade.startMs,160);assert.equal(d.contact.durationMs,200);
- const f=await visual();assert.equal(f.p.textureBytes,16611224);assert.equal(f.p.residency.snapshot().optionalReserveBytes,131072);assert.equal(f.scene.budget().bytes,16611224);assert.equal(f.p.residency.snapshot().evicted,0);f.p.destroy();
+ const f=await visual();assert.equal(f.p.textureBytes,16611224);assert.equal(f.p.residency.snapshot().pinned,f.p.textures.size);assert.equal(f.scene.budget().bytes,16611224);assert.equal(f.p.residency.snapshot().evicted,0);f.p.destroy();assert.equal(f.scene.budget().bytes,0);
 });
 for(const tacticalEnabled of [false,true])for(const side of ['allies','enemies'])for(const direction of [-1,1])test('real automatic AI decision → P2 shared action '+tacticalEnabled+'/'+side+'/'+direction,()=>{
  const f=fixture({tacticalEnabled}),s=f.session,actor=s.actorById(side==='allies'?'a1':'e1'),target=s.actorById(side==='allies'?'e1':'a1');

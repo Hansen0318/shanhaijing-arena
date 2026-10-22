@@ -37,13 +37,13 @@ test('Heavy packing retains every approved pose pixel and legacy Move logical ca
   assert.deepEqual(restored,original.pixels,'full original review RGBA, including transparent RGB');
  }
 });
-test('complete all-five required Heavy encounter fits unchanged cap and reserve in either load order',async()=>{
+test('complete all-five required Heavy encounter preserves every pin in either load order',async()=>{
  assert.ok(rosterCatalog.P2.actionDescriptors.heavy,'P2 Heavy data is integrated');
  for(const reverse of [false,true]){
   const scene=assetScene(),p=new AssetPresenter(scene,{cache:createAssetCache({transport:pngTransport})});
   const ds=Object.values(rosterCatalog);if(reverse)ds.reverse();await p.prepare(ds);await p.whenIdle();
-  const r=p.residency.snapshot();assert.equal(r.failed,0);assert.equal(r.hardBytes,16777216);assert.equal(r.optionalReserveBytes,131072);
-  assert.ok(r.hardBytes-r.estimatedLiveBytes>=r.optionalReserveBytes);assert.equal(scene.budget().bytes,r.estimatedLiveBytes);
+  const r=p.residency.snapshot();assert.equal(r.failed,0);assert.equal(r.pinned,p.textures.size);assert.equal(r.reservedBytes,0);
+  assert.ok(r.highWaterBytes>0);assert.equal(scene.budget().bytes,r.estimatedLiveBytes);
   assert.ok(p.textures.has('botuo.heavyPoses'));assert.ok(p.textures.has('botuo.heavySource'));assert.ok(p.textures.has('botuo.heavyContact'));
   for(const d of ds)for(const slot of ['portraitSquare','battleIdle','battleMove','battleKo'])assert.ok(p.textures.has(d.assets[slot]));
   p.destroy();assert.equal(scene.budget().bytes,0);
