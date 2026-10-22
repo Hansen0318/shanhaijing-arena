@@ -1,5 +1,9 @@
 # 2026-10-22 — deployment continuation ledger
 
+## Closed engineering/deployment — player review next
+
+Normal Actions1097/run39779770526 full1014/1014+Build+guard+Pages SUCCESS at66e6c3c640c546ec90dbd5a79da06814db15d02f/tree5a818dac7b2596a0379ebe4240a422125b7d314f. Public149/149 built-file SHA256 match, errors0. URL https://hansen0318.github.io/shanhaijing-arena/ . Full rawrelease logs and public.json retained; verify-public.mjs reproduces this newly released output comparison only. All original source/gameplay/art constraints preserved, no main merge or newbranch. Phone remains PENDING; no further autonomous replays absent a reported defect.
+
 ## Release candidate verification
 
 Native scale run39778996130/job119825109975 SUCCESS at9f631dc235016bdf3b0563948a4755e7b75df7f4: 10 Idle/F1–F4×mirror cases, 50 real-pixel anatomical/accessory marker regions; every source-native max<=1LSB and mean<0.00001. Idle native logical144×144 vs four poses200×200 preserves accepted review density/ground, no silhouette fitting. First full160-transparent-quad reference differs max7 (scale-first.json retained); original source cropped with exact native logical setTrim contract, already used in126-case Special proof, yields max1/mean8.2672e-7. This changes reference primitive to the actual production contract, NOT source pixels, body scale, sampling tolerance or runtime code. All four poses retain full-cell direct controls. First probe's failure is not erased or called a runtime defect. Ten PNGs/report downloaded; artifact12425653464 ZIP4601437893162be3a9181223d31d5889f5d07936526a951fce25d7c204ef1e7d matches digest.

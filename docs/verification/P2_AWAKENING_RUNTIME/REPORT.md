@@ -1,4 +1,10 @@
-# 鎮岳 Runtime checkpoint — NOT DEPLOYED
+# 鎮岳 — DEPLOYED / ENGINEERING PASS / PLAYER PHONE PENDING
+
+## Final release closure — 2026-10-22 Asia/Taipei
+
+[Game](https://hansen0318.github.io/shanhaijing-arena/) released at66e6c3c640c546ec90dbd5a79da06814db15d02f/tree5a818dac7b2596a0379ebe4240a422125b7d314f through normal [Actions1097](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39779770526). Complete1014/1014 tests, Build, full258-file source/evidence guard and Pages build/deploy SUCCESS. No bounded/skip bypass. Public149/149 SHA256 match actual local built files, including new4PNG/index/CSS/runtime JS; zero errors. Raw complete releaseCI logs/public.json/closure.json in continuation/. Timestamp20:37:39+08:00. Earlier25-failure/blocked/pending headings below are historical retained measurements; current1014 PASS follows explicit source-proven test migrations, not blanket failure waiver.
+
+Native4 combat + built mobile2 + added native scale10/50 marker region results saved and bound to unchanged runtime source. Physical phone/player acceptance remains PENDING; no PLAYER VERIFIED claim. Await only focused player review, not repeated engineering/old deployments. Every approved master/receipt/GIF/oldpublic texture preserved; no main merge or alternate branch. Containing docs-only commit may be later than actualrelease, with unchanged Runtime source.
 
 ## Current release candidate — 2026-10-22
 

@@ -1,5 +1,13 @@
 # Work Progress
 
+## 2026-10-22 — 鎮岳 DEPLOYED／ENGINEERING PASS／PLAYER PHONE PENDING
+
+已依玩家「確認進度紀錄後繼續做到部署」完成正常Pages發布。Release HEAD `66e6c3c640c546ec90dbd5a79da06814db15d02f`／tree `5a818dac7b2596a0379ebe4240a422125b7d314f`；Actions#1097/run39779770526 build/job119827727902與deploy/job119828053592皆SUCCESS：完整1014/1014、Build、258檔source/evidence guard、Pages configure/upload/deploy全通過，沒有bounded bypass。台灣時間2026-10-22 20:37:39部署success。URL https://hansen0318.github.io/shanhaijing-arena/ 。發布後實抓本次149個built檔案，149/149 SHA256與本機built輸出一致（含index/CSS/runtime JS/鎮岳4PNG及全部public檔案），errors0。精確public.json、CIlogs與closure.json在docs/verification/P2_AWAKENING_RUNTIME/continuation/。
+
+工程完成：全局無固定16MiB/required數量/reserve拒絕；49required18,336,992 decoded；保留單檔安全驗證、兩下載、完整pins/ready、真失敗/回收/destroy。鎮岳來源保真、實際正damage victims與status來源、instant0/F3及tactical900/819、T3真受益者/MAX/獨立到期，未改玩法數值或核准美術。Native4/built-mobile2、native scale10/50標記與雙向採樣證據已保存；Runtime來源未變的舊證據沿用。25舊失敗以來源重建明示遷移，原歷史TAP不改寫；最新全套1014真PASS。此docs-only checkpoint [skip ci]不改已部署Runtime。
+
+下一個唯一玩家Gate：手機審核鎮岳招式、Idle/Move/施放比例、真命中爆破與對空、可用T3的真保護。未收到玩家實際確認，不寫PLAYER VERIFIED，不標整個P2完成。不主動重跑已通過Browser/CI/部署/149公開比對、不重做已核准素材；有具體新缺陷才定位必要受影響範圍。PR#1 open/unmerged，原feature分支，禁止main merge/替代分支/TD/P3；三個未追蹤暫存檔保持排除。下方歷史blocked/pending由本條取代。
+
 ## 2026-10-22 — 鎮岳工程驗證通過／正常 Pages 發布 NEXT
 
 最新本機完整1014/1014 PASS、Build/91assetguard PASS；遠端normal preflight run39778334056也1014/1014+Build PASS，只因刻意缺release-evidence而阻擋Pages。新增scale run39778996130 SUCCESS，Idle/F1–F4×兩面10組、50個頭角/肩身/大護臂/腰帶/蹄部native標記有真像素、全部maxDelta<=1/mean<0.00001；Idle144、姿勢200logical canvas與核准密度/共同接地保持，沒有外框fit或角色放大。Idle整張160透明quad的max7差值保留為diagnostic；採用先前126case相同的原圖native-trim控制後max1、mean8.27e-7，未放寬閾值，F1–F4仍與原整cell直接比對。10截圖與JSON/artifact12425653464已保存，ZIPSHA2564601437893162be3a9181223d31d5889f5d07936526a951fce25d7c204ef1e7d已核對。F3/Idle/F1雙向截圖已目視檢查；完整對比見CONTINUATION.md。
