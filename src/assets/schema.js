@@ -1,5 +1,7 @@
 export const CHARACTER_SLOTS=Object.freeze(['portraitSquare','collectionArt','battleIdle','battleHit','battleKo','basicVfx','heavyVfx','specialVfx','awakeningVfx']);
-export const ASSET_LIMITS=Object.freeze({bytes:4*1024*1024,dimension:2048,pixels:4194304,cacheBytes:16*1024*1024,cacheEntries:64});
+export const ASSET_LIMITS=Object.freeze({bytes:4*1024*1024,dimension:2048,pixels:4194304});
+// Inactive decoded references only. These targets never reject a valid image.
+export const CACHE_RETENTION_DEFAULTS=Object.freeze({bytes:16*1024*1024,entries:64});
 // Decoded RGBA estimates only: neither layer measures total browser RAM/GPU.
 export const RESIDENCY_LIMITS=Object.freeze({softBytes:12*1024*1024,hardBytes:16*1024*1024,maxEntries:64});
 export function immutable(value){const copy=structuredClone(value);function freeze(v){if(v&&typeof v==='object'){Object.values(v).forEach(freeze);Object.freeze(v);}return v;}return freeze(copy);}

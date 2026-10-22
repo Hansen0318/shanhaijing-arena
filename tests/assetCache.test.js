@@ -23,3 +23,22 @@ test('image fallback chain actually loads and caches the valid secondary image',
  const cache=api.createAssetCache({manifest,transport:async r=>{calls.push(r.key);if(r.key==='a')throw Error('missing');return {image:{width:8,height:8},bytes:50};}});
  const value=await cache.load('a');assert.ok(value.image);assert.equal(value.key,'b');assert.deepEqual(calls,['a','b']);await cache.load('b');assert.deepEqual(calls,['a','b']);
 });
+test('a valid decoded image larger than retention target still resolves as its image',async()=>{
+ const cache=api.createAssetCache({manifest:m,maxBytes:1,transport:async()=>({image:{width:8,height:8},bytes:50})});
+ const value=await cache.load('a');assert.equal(value.key,'a');assert.ok(value.image);assert.equal(value.residentBytes,256);
+ assert.equal(cache.bytes,0,'inactive decoded image is not retained above target');assert.equal(cache.diagnostics().failed,0);
+});
+test('more than64 distinct pending requests all resolve with only two transports',async()=>{
+ const manifest=createAssetManifest([{key:'p',type:'procedural'},...Array.from({length:70},(_,i)=>({key:'image'+i,type:'image',path:'image'+i+'.png',width:8,height:8,bytes:50,fallback:'p'}))]);
+ let running=0,peak=0,calls=0;
+ const cache=api.createAssetCache({manifest,transport:async()=>{calls++;running++;peak=Math.max(peak,running);await new Promise(r=>setImmediate(r));running--;return {image:{width:8,height:8},bytes:50};}});
+ const values=await Promise.all(Array.from({length:70},(_,i)=>cache.load('image'+i)));
+ for(let i=0;i<70;i++){assert.equal(values[i].key,'image'+i);assert.ok(values[i].image);}
+ assert.equal(calls,70);assert.equal(peak,2);assert.equal(cache.diagnostics().pending,0);assert.equal(cache.diagnostics().failed,0);
+ for(let i=0;i<70;i++)assert.equal((await cache.load('image'+i)).key,'image'+i);
+});
+test('retention targets above former limits are accepted without weakening individual guards',async()=>{
+ const cache=api.createAssetCache({manifest:m,maxEntries:70,maxBytes:20*1024*1024,transport:async()=>({image:{width:8,height:8},bytes:51})});
+ assert.equal((await cache.load('a')).key,'p','actual encoded bytes still obey record metadata');
+ for(const maxBytes of [NaN,Infinity,-1])assert.throws(()=>api.createAssetCache({maxBytes}),RangeError);
+});
