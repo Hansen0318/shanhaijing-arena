@@ -1,5 +1,12 @@
 # SDD ledger — plan: docs/superpowers/plans/2026-10-22-lushu-passive.md
 
+## 2026-10-22 — 疾行正常部署／公開149／149 PASS；唯一Gate：P1被動玩家驗收
+
+Pages正常run39796107767 **completed/success**，deploy log明確Reported success；版本 `82257f9ea2fc6ad88e2ab3afe8241f270c550a1b`／tree `b63489cfb9dbf334bdf0956559e3747b36113c10`。CI/local/public全部149檔逐bytes及SHA256一致，證據 `docs/verification/P1_PASSIVE_RUNTIME/{run-final.json,release-deploy.log.gz,ci-build-inventory.json,public-fingerprints.json,release-status.json}`。之前QUEUED/WAITING/404為已解除歷史，不能再要求部署放行。完整1042/1042、Build、guard549、真P1native4/built2及P2相同來源native4/built2/scale10沿用，不重跑。新版本 https://hansen0318.github.io/shanhaijing-arena/?passive=82257f9 。
+
+當前只請玩家驗P1鹿蜀「疾行」：一般持續走位觸發獨立「疾行+8%」牌及倒數，HUD移速2.05→2.214，2秒效果到期回原速/CD4秒；依實際Tier及其他增益顯示，總增益15%上限。視覺/數值已由實際Browser與截圖核對，但**尚未收到本次被動實機核准**。P1標DEPLOYED/ENGINEERING PASS/PLAYER PENDING，整角色不冒稱完整；玩家明確確認後保存新被動收據才開始P2厚甲，P2完成前P3技能BLOCKED。既有四招/base/美術核准不重開，普通Hit取消、全部保護/素材政策/單分支PR#1open-unmerged保持。最新handoff已重寫為唯一正確Gate。此切片純文件[skip ci]，沒有新Runtime、重跑測試/Browser或再次發布。
+
+
 Base:7497b3545cd618b0f349393f5b88a0707b4a6f13. Spec and plan approved; native single-agent. Tasks1–4 pending.
 
 Pre-flight Task1→Task2: PassiveRuntime.characterForActor supplies Tier-projected instance definitions, ordinary segments only. Task2→Task3: immutable PassiveView snapshot, no UI clocks. Task3→Task4: actual renderer independent formal-art badge and real CSSfont metrics. Task4: normal source-bound release guard must block unverified source.

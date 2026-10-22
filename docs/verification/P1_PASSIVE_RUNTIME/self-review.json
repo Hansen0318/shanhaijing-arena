@@ -1,5 +1,5 @@
 {
-  "status": "AUTHOR SELF-REVIEW COMPLETE / BROWSER PASS / RELEASE PENDING",
+  "status": "AUTHOR SELF-REVIEW COMPLETE / ENGINEERING AND RELEASE PASS / PHYSICAL PLAYER PENDING",
   "range": {
     "base": "7497b3545cd618b0f349393f5b88a0707b4a6f13",
     "head": "1faa4036f6921535c0cdee4fa8fd1761fac0c0d6"
@@ -14,7 +14,7 @@
   ],
   "findings": [],
   "notJudgedAsPassed": [
-    "Normal CI/Pages/public fingerprints or physical-phone acceptance"
+    "Physical-phone player acceptance"
   ],
   "protectedArtAndPublicDiff": [],
   "tests": {

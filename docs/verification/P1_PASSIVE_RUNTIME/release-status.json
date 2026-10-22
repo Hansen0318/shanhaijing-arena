@@ -16,10 +16,11 @@
     {
       "id": 119883988676,
       "name": "deploy",
-      "status": "waiting",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "started_at": "2026-10-22T14:30:23Z",
-      "completed_at": null
+      "completed_at": null,
+      "successReportedAt": "2026-10-22T14:38:27Z"
     }
   ],
   "tests": {
@@ -31,8 +32,10 @@
   "sourceBindings": 549,
   "ciLocalFiles": 149,
   "deploymentId": 7254931808,
-  "status": "NORMAL BUILD PASS / PAGES ENVIRONMENT WAITING / PUBLIC PENDING",
-  "observedAt": "2026-10-22T14:36:28Z",
-  "pendingDeploymentEvidence": "pending-deployments.json",
-  "currentConnectionCanApprove": false
+  "status": "DEPLOYED / PUBLIC149 OF149 PASS / P1 PASSIVE PLAYER PENDING",
+  "observedAt": "2026-10-22T14:55:05Z",
+  "pendingDeploymentEvidence": "pending-deployments.json is historical; run-final.json and release-deploy.log.gz supersede waiting",
+  "currentConnectionCanApprove": false,
+  "publicEvidence": "public-fingerprints.json",
+  "remainingGate": "P1 passive physical-player acceptance only"
 }
