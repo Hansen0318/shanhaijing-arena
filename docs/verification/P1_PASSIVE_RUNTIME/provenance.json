@@ -1,0 +1,22 @@
+{
+  "status": "ACTUAL BROWSER PASS / PHYSICAL PHONE PENDING",
+  "productSourceTestedHead": "1faa4036f6921535c0cdee4fa8fd1761fac0c0d6",
+  "p1": {
+    "native": 4,
+    "built": 2,
+    "browser": "Chrome for Testing151.0.7922.34 / Playwright1.62.1",
+    "browserArchiveSha256": "3cfc2bd00d1bafcf8a68dc74c9c92bb7150ddc8d26ade948a776316e1cec4f14",
+    "speedRatio": 1.08,
+    "distanceRatio": 1.08,
+    "builtCssFontSize": 12.372195870535714,
+    "scriptFix": "Use real badge.layout.anchor.rect; Phaser4 Graphics has no getBounds. Failed attempt retained, no product change."
+  },
+  "p2": "compatibility/source-binding.json: native4/built2/scale10 exact source reuse",
+  "visualInspection": [
+    "native-ally-normal-active.png: badge above unobscured HP",
+    "built-ally-normal-active.png: 疾行 +8%, remaining2.0s, actual2.214/CD4.0s readable",
+    "built-ally-reduced-overlap.png: six separate badges, no clipping/control obstruction"
+  ],
+  "physicalPhone": false,
+  "normalRelease": "PENDING"
+}

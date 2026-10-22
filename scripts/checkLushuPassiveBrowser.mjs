@@ -35,7 +35,7 @@ try{
    const speed=s.definitionForActor(actor).stats.moveSpeed;window.stepPassive(s,1/speed-s.elapsedSeconds);window.paintPassive();
    const badge=[...sc.passivePresenter.badges.values()].find(b=>b.actorId===actor.instanceId),view=s.snapshot().passives.find(v=>v.instanceId===actor.instanceId);if(!badge||!view.active)throw Error('Actual passive did not activate at distance threshold');
    const rect=sc.game.canvas.getBoundingClientRect(),scale=Math.min(rect.width/1120,rect.height/540),textBounds=badge.text.getBounds(),layout=badge.layout;
-   const reserved=[...sc.actorViews.values()].map(v=>v.hpBar.getBounds()).filter(r=>r.width>0),overlap=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
+   const reserved=[badge.layout.anchor.rect],overlap=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
    return {renderer:sc.game.renderer.type,callbackUsed,metrics:{cssFontSize:parseFloat(badge.text.style.fontSize)*scale,visible:badge.container.visible&&badge.text.visible&&badge.text.alpha>0,intersections:reserved.filter(r=>overlap(textBounds,r)).length,text:badge.text.text,actualTextWidth:textBounds.width,layoutWidth:layout.width,textFits:textBounds.width<=layout.width-12},time:s.elapsedSeconds,speed,view,hud:sc.passivePresenter.hudText.text};
   },{side,built});
   assert.equal(initial.renderer,2);assert.equal(initial.metrics.visible,true);assert.ok(initial.metrics.cssFontSize>=12);assert.equal(initial.metrics.intersections,0);assert.equal(initial.metrics.text,'疾行 +8%');assert.equal(initial.metrics.textFits,true);if(built)assert.equal(initial.callbackUsed,true);

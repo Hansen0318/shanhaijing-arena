@@ -1,0 +1,194 @@
+{
+  "kind": "Actual built Campaign route, real joystick callback and controlled precise follow-up",
+  "physicalPhone": false,
+  "errors": [],
+  "cases": [
+    {
+      "side": "ally",
+      "reduced": false,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "facings": [
+        true,
+        false
+      ],
+      "metrics": {
+        "cssFontSize": 12.372195870535714,
+        "visible": true,
+        "intersections": 0,
+        "text": "疾行 +8%",
+        "actualTextWidth": 84,
+        "layoutWidth": 101,
+        "textFits": true
+      },
+      "numeric": {
+        "baseSpeed": 2.05,
+        "activeSpeed": 2.214,
+        "baseDistance": 4.1,
+        "activeDistance": 4.428
+      },
+      "expiry": true,
+      "pause": true,
+      "cap": {
+        "text": "疾行 · 移速上限15%",
+        "ratio": 1.15
+      },
+      "overlap": {
+        "count": 6,
+        "intersections": 0,
+        "minCssFontSize": 12.372195870535714,
+        "fits": true,
+        "boxes": [
+          {
+            "type": 5,
+            "x": 448.5,
+            "y": 175.53125,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 342.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 554.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 236.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 660.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 766.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          }
+        ]
+      },
+      "cleanup": {
+        "oldClosed": true,
+        "newClean": true,
+        "koCleared": true
+      },
+      "callbackUsed": true,
+      "screenshots": [
+        "built-ally-normal-active.png",
+        "built-ally-normal-overlap.png"
+      ]
+    },
+    {
+      "side": "ally",
+      "reduced": true,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "facings": [
+        true,
+        false
+      ],
+      "metrics": {
+        "cssFontSize": 12.372195870535714,
+        "visible": true,
+        "intersections": 0,
+        "text": "疾行 +8%",
+        "actualTextWidth": 84,
+        "layoutWidth": 101,
+        "textFits": true
+      },
+      "numeric": {
+        "baseSpeed": 2.05,
+        "activeSpeed": 2.214,
+        "baseDistance": 4.1,
+        "activeDistance": 4.428
+      },
+      "expiry": true,
+      "pause": true,
+      "cap": {
+        "text": "疾行 · 移速上限15%",
+        "ratio": 1.15
+      },
+      "overlap": {
+        "count": 6,
+        "intersections": 0,
+        "minCssFontSize": 12.372195870535714,
+        "fits": true,
+        "boxes": [
+          {
+            "type": 5,
+            "x": 448.5,
+            "y": 175.53125,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 342.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 554.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 236.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 660.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          },
+          {
+            "type": 5,
+            "x": 766.5,
+            "y": 182.93853759765625,
+            "width": 84,
+            "height": 22
+          }
+        ]
+      },
+      "cleanup": {
+        "oldClosed": true,
+        "newClean": true,
+        "koCleared": true
+      },
+      "callbackUsed": true,
+      "screenshots": [
+        "built-ally-reduced-active.png",
+        "built-ally-reduced-overlap.png"
+      ]
+    }
+  ],
+  "status": "PASS"
+}

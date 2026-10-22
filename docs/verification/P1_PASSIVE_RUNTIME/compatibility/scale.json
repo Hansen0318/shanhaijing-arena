@@ -1,0 +1,438 @@
+{
+  "physicalPhone": false,
+  "cases": [
+    {
+      "flip": false,
+      "cases": [
+        {
+          "pose": "Idle",
+          "body": {
+            "frame": "0.0.160.160",
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": false
+          },
+          "maxDelta": 1,
+          "meanDelta": 8.267195767195768e-7,
+          "fullCanvasDiagnostic": {
+            "maxDelta": 7,
+            "meanDelta": 0.006560019841269841
+          },
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 2843
+            },
+            "shoulderTorso": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3319
+            },
+            "largeBeastBracer": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 4997
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3750
+            },
+            "hooves": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 2588
+            }
+          },
+          "file": "Idle-right.png"
+        },
+        {
+          "pose": "F1",
+          "body": {
+            "frame": "0.0.200.200",
+            "width": 200,
+            "height": 200,
+            "origin": [
+              0.5,
+              0.97
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": false
+          },
+          "maxDelta": 1,
+          "meanDelta": 0.00000496031746031746,
+          "fullCanvasDiagnostic": null,
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 2814
+            },
+            "shoulderTorso": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3237
+            },
+            "largeBeastBracer": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 4821
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3671
+            },
+            "hooves": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 1764
+            }
+          },
+          "file": "F1-right.png"
+        },
+        {
+          "pose": "F2",
+          "body": {
+            "frame": "200.0.200.200",
+            "width": 200,
+            "height": 200,
+            "origin": [
+              0.5,
+              0.97
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": false
+          },
+          "maxDelta": 1,
+          "meanDelta": 0.0000028935185185185184,
+          "fullCanvasDiagnostic": null,
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 2669
+            },
+            "shoulderTorso": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3228
+            },
+            "largeBeastBracer": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 3729
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3617
+            },
+            "hooves": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 1618
+            }
+          },
+          "file": "F2-right.png"
+        },
+        {
+          "pose": "F3",
+          "body": {
+            "frame": "400.0.200.200",
+            "width": 200,
+            "height": 200,
+            "origin": [
+              0.5,
+              0.97
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": false
+          },
+          "maxDelta": 1,
+          "meanDelta": 0.000004133597883597884,
+          "fullCanvasDiagnostic": null,
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 2676
+            },
+            "shoulderTorso": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3179
+            },
+            "largeBeastBracer": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3565
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3720
+            },
+            "hooves": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 1652
+            }
+          },
+          "file": "F3-right.png"
+        },
+        {
+          "pose": "F4",
+          "body": {
+            "frame": "600.0.200.200",
+            "width": 200,
+            "height": 200,
+            "origin": [
+              0.5,
+              0.97
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": false
+          },
+          "maxDelta": 1,
+          "meanDelta": 0.00000496031746031746,
+          "fullCanvasDiagnostic": null,
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 3131
+            },
+            "shoulderTorso": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3334
+            },
+            "largeBeastBracer": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 4513
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3694
+            },
+            "hooves": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 1551
+            }
+          },
+          "file": "F4-right.png"
+        }
+      ],
+      "closed": true,
+      "bytes": 0
+    },
+    {
+      "flip": true,
+      "cases": [
+        {
+          "pose": "Idle",
+          "body": {
+            "frame": "0.0.160.160",
+            "width": 144,
+            "height": 144,
+            "origin": [
+              0.5,
+              0.9875
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": true
+          },
+          "maxDelta": 1,
+          "meanDelta": 8.267195767195768e-7,
+          "fullCanvasDiagnostic": {
+            "maxDelta": 7,
+            "meanDelta": 0.006550512566137566
+          },
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 2827
+            },
+            "shoulderTorso": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 3312
+            },
+            "largeBeastBracer": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 5038
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3742
+            },
+            "hooves": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 2594
+            }
+          },
+          "file": "Idle-left.png"
+        },
+        {
+          "pose": "F1",
+          "body": {
+            "frame": "0.0.200.200",
+            "width": 200,
+            "height": 200,
+            "origin": [
+              0.5,
+              0.97
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": true
+          },
+          "maxDelta": 1,
+          "meanDelta": 0.0000037202380952380952,
+          "fullCanvasDiagnostic": null,
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 2804
+            },
+            "shoulderTorso": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3236
+            },
+            "largeBeastBracer": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 4839
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3662
+            },
+            "hooves": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 1761
+            }
+          },
+          "file": "F1-left.png"
+        },
+        {
+          "pose": "F2",
+          "body": {
+            "frame": "200.0.200.200",
+            "width": 200,
+            "height": 200,
+            "origin": [
+              0.5,
+              0.97
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": true
+          },
+          "maxDelta": 1,
+          "meanDelta": 8.267195767195768e-7,
+          "fullCanvasDiagnostic": null,
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 2670
+            },
+            "shoulderTorso": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3233
+            },
+            "largeBeastBracer": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3763
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3613
+            },
+            "hooves": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 1622
+            }
+          },
+          "file": "F2-left.png"
+        },
+        {
+          "pose": "F3",
+          "body": {
+            "frame": "400.0.200.200",
+            "width": 200,
+            "height": 200,
+            "origin": [
+              0.5,
+              0.97
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": true
+          },
+          "maxDelta": 1,
+          "meanDelta": 0.000005787037037037037,
+          "fullCanvasDiagnostic": null,
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 2677
+            },
+            "shoulderTorso": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3189
+            },
+            "largeBeastBracer": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3586
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3716
+            },
+            "hooves": {
+              "maxDelta": 0,
+              "nonBackgroundPixels": 1647
+            }
+          },
+          "file": "F3-left.png"
+        },
+        {
+          "pose": "F4",
+          "body": {
+            "frame": "600.0.200.200",
+            "width": 200,
+            "height": 200,
+            "origin": [
+              0.5,
+              0.97
+            ],
+            "x": 500.25,
+            "y": 380.125,
+            "flipX": true
+          },
+          "maxDelta": 1,
+          "meanDelta": 0.000004546957671957672,
+          "fullCanvasDiagnostic": null,
+          "landmarks": {
+            "hornsFace": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3128
+            },
+            "shoulderTorso": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3328
+            },
+            "largeBeastBracer": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 4557
+            },
+            "beltWaist": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 3688
+            },
+            "hooves": {
+              "maxDelta": 1,
+              "nonBackgroundPixels": 1543
+            }
+          },
+          "file": "F4-left.png"
+        }
+      ],
+      "closed": true,
+      "bytes": 0
+    }
+  ],
+  "errors": [],
+  "scope": "Additional real native Idle + F1–F4 multiple anatomy/accessory marker and ground calibration; no new art or combat probe replay",
+  "status": "PASS"
+}

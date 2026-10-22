@@ -18,7 +18,15 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - name: Reuse complete source-identical browser evidence
+        run: |
+          if node scripts/verifyLushuPassiveRelease.mjs; then
+            mkdir -p "${{ runner.temp }}/passive-evidence"
+            cp -R docs/verification/P1_PASSIVE_RUNTIME/. "${{ runner.temp }}/passive-evidence/"
+            echo 'PASSIVE_EVIDENCE_REUSED=true' >> "$GITHUB_ENV"
+          fi
       - name: Real passive and affected shared presentation checks
+        if: env.PASSIVE_EVIDENCE_REUSED != 'true'
         env:
           ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/passive-browser-tool
           ARENA_BROWSER_OUTPUT: ${{ runner.temp }}/passive-evidence

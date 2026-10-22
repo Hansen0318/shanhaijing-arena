@@ -1,0 +1,9 @@
+{
+  "kind": "Actual built Campaign route, real joystick callback and controlled precise follow-up",
+  "physicalPhone": false,
+  "errors": [],
+  "cases": [],
+  "status": "FAIL",
+  "failure": "Error: page.evaluate: TypeError: v.hpBar.getBounds is not a function\n    at eval (eval at evaluate (:311:30), <anonymous>:18:62)\n    at Array.map (<anonymous>)\n    at eval (eval at evaluate (:311:30), <anonymous>:18:47)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+  "serverLog": "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m4182\u001b[22m/shanhaijing-arena/\u001b[39m\n"
+}

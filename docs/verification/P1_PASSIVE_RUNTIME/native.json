@@ -1,0 +1,380 @@
+{
+  "kind": "Actual native Phaser WebGL with real session fixtures",
+  "physicalPhone": false,
+  "errors": [],
+  "cases": [
+    {
+      "side": "ally",
+      "reduced": false,
+      "viewport": {
+        "width": 1120,
+        "height": 540
+      },
+      "facings": [
+        true,
+        false
+      ],
+      "metrics": {
+        "cssFontSize": 12,
+        "visible": true,
+        "intersections": 0,
+        "text": "疾行 +8%",
+        "actualTextWidth": 59,
+        "layoutWidth": 78,
+        "textFits": true
+      },
+      "numeric": {
+        "baseSpeed": 2.05,
+        "activeSpeed": 2.214,
+        "baseDistance": 4.1,
+        "activeDistance": 4.428
+      },
+      "expiry": true,
+      "pause": true,
+      "cap": {
+        "text": "疾行 · 移速上限15%",
+        "ratio": 1.15
+      },
+      "overlap": {
+        "count": 6,
+        "intersections": 0,
+        "minCssFontSize": 12,
+        "fits": true,
+        "boxes": [
+          {
+            "type": 5,
+            "x": 460,
+            "y": 181.53125,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 377,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 543,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 294,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 626,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 211,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          }
+        ]
+      },
+      "cleanup": {
+        "oldClosed": true,
+        "newClean": true,
+        "koCleared": true
+      },
+      "callbackUsed": false,
+      "screenshots": [
+        "native-ally-normal-active.png",
+        "native-ally-normal-overlap.png"
+      ]
+    },
+    {
+      "side": "enemy",
+      "reduced": false,
+      "viewport": {
+        "width": 1120,
+        "height": 540
+      },
+      "facings": [
+        true,
+        false
+      ],
+      "metrics": {
+        "cssFontSize": 12,
+        "visible": true,
+        "intersections": 0,
+        "text": "疾行 +8%",
+        "actualTextWidth": 59,
+        "layoutWidth": 78,
+        "textFits": true
+      },
+      "numeric": {
+        "baseSpeed": 2.05,
+        "activeSpeed": 2.214,
+        "baseDistance": 4.1,
+        "activeDistance": 4.428
+      },
+      "expiry": true,
+      "pause": true,
+      "cap": {
+        "text": "疾行 · 移速上限15%",
+        "ratio": 1.15
+      },
+      "overlap": {
+        "count": 6,
+        "intersections": 0,
+        "minCssFontSize": 12,
+        "fits": true,
+        "boxes": [
+          {
+            "type": 5,
+            "x": 377,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 543,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 294,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 460,
+            "y": 181.53125,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 626,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 211,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          }
+        ]
+      },
+      "cleanup": {
+        "oldClosed": true,
+        "newClean": true,
+        "koCleared": true
+      },
+      "callbackUsed": false,
+      "screenshots": [
+        "native-enemy-normal-active.png",
+        "native-enemy-normal-overlap.png"
+      ]
+    },
+    {
+      "side": "ally",
+      "reduced": true,
+      "viewport": {
+        "width": 1120,
+        "height": 540
+      },
+      "facings": [
+        true,
+        false
+      ],
+      "metrics": {
+        "cssFontSize": 12,
+        "visible": true,
+        "intersections": 0,
+        "text": "疾行 +8%",
+        "actualTextWidth": 59,
+        "layoutWidth": 78,
+        "textFits": true
+      },
+      "numeric": {
+        "baseSpeed": 2.05,
+        "activeSpeed": 2.214,
+        "baseDistance": 4.1,
+        "activeDistance": 4.428
+      },
+      "expiry": true,
+      "pause": true,
+      "cap": {
+        "text": "疾行 · 移速上限15%",
+        "ratio": 1.15
+      },
+      "overlap": {
+        "count": 6,
+        "intersections": 0,
+        "minCssFontSize": 12,
+        "fits": true,
+        "boxes": [
+          {
+            "type": 5,
+            "x": 460,
+            "y": 181.53125,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 377,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 543,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 294,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 626,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 211,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          }
+        ]
+      },
+      "cleanup": {
+        "oldClosed": true,
+        "newClean": true,
+        "koCleared": true
+      },
+      "callbackUsed": false,
+      "screenshots": [
+        "native-ally-reduced-active.png",
+        "native-ally-reduced-overlap.png"
+      ]
+    },
+    {
+      "side": "enemy",
+      "reduced": true,
+      "viewport": {
+        "width": 1120,
+        "height": 540
+      },
+      "facings": [
+        true,
+        false
+      ],
+      "metrics": {
+        "cssFontSize": 12,
+        "visible": true,
+        "intersections": 0,
+        "text": "疾行 +8%",
+        "actualTextWidth": 59,
+        "layoutWidth": 78,
+        "textFits": true
+      },
+      "numeric": {
+        "baseSpeed": 2.05,
+        "activeSpeed": 2.214,
+        "baseDistance": 4.1,
+        "activeDistance": 4.428
+      },
+      "expiry": true,
+      "pause": true,
+      "cap": {
+        "text": "疾行 · 移速上限15%",
+        "ratio": 1.15
+      },
+      "overlap": {
+        "count": 6,
+        "intersections": 0,
+        "minCssFontSize": 12,
+        "fits": true,
+        "boxes": [
+          {
+            "type": 5,
+            "x": 377,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 543,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 294,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 460,
+            "y": 181.53125,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 626,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          },
+          {
+            "type": 5,
+            "x": 211,
+            "y": 188.93853759765625,
+            "width": 59,
+            "height": 15
+          }
+        ]
+      },
+      "cleanup": {
+        "oldClosed": true,
+        "newClean": true,
+        "koCleared": true
+      },
+      "callbackUsed": false,
+      "screenshots": [
+        "native-enemy-reduced-active.png",
+        "native-enemy-reduced-overlap.png"
+      ]
+    }
+  ],
+  "status": "PASS"
+}

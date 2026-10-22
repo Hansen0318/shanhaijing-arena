@@ -1,5 +1,10 @@
 # Work Progress
 
+## 2026-10-22 — 疾行工程驗證 PASS／正常發布 ACTIVE
+
+完整測試1042/1042、Build、真Chromium native4/built2、852×393實際搖桿入口、實際速度與距離+8%、>=12CSSpx字體、6牌避碰及生命週期均PASS。P2共用路徑native4/built2/scale10使用Actions39793433740相同src/public證據，沒有重驗已核准技能。失敗觀測腳本與完整log保留；實際截圖可見疾行+8%、2.214及倒數。新完整來源綁定guard通過，篡改來源負向檢查拒絕後恢復原bytes再PASS；normal fullsuite/Build/Pages流程正進行，尚不宣稱部署或玩家驗收。詳見 `docs/verification/P1_PASSIVE_RUNTIME/WORK_LOG.md` 與release-evidence.json。P1被動PLAYER PENDING，之後才P2厚甲，再P3技能；不重問規格/計畫/執行核准。既有保護與單分支PR#1 open/unmerged保持。
+
+
 ## 2026-10-22 — 疾行Task1–3工程完成／Task4真驗證與發布 ACTIVE
 
 已依核准計畫完成generic core、精確一般移動整合、P1data opt-in及獨立badge/HUD/Collection。Task2相關146/146PASS，Task3相關43/43與場景fixture遷移27/27PASS；BuildPASS。初次完整1039/1025/14fail已逐項定位為新增presenter/Canvas fixture及P1metadata斷言，原TAP與修正證據保留於 `docs/verification/P1_PASSIVE_RUNTIME/`；尚待Task4最終完整suite，不將局部通過冒稱完整PASS。本機Chromium下載失敗，保存完整log，下一步走同分支真Actions Browser及當前來源綁定normalCI/Pages；沒有部署或玩家可讀性PASS。

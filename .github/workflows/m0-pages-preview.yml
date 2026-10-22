@@ -178,8 +178,8 @@ jobs:
           name: botuo-heavy-browser-verification
           path: ${{ runner.temp }}/botuo-heavy-browser
           if-no-files-found: warn
-      - name: Verify current Awakening release evidence
-        run: node scripts/verifyBotuoAwakeningRelease.mjs
+      - name: Verify current passive release evidence
+        run: node scripts/verifyLushuPassiveRelease.mjs
       - name: Configure Pages
         if: "!contains(github.event.head_commit.message, '[botuo special probe]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
         uses: actions/configure-pages@v5

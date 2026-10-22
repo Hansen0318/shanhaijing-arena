@@ -1,0 +1,9 @@
+{
+  "run": 39793433740,
+  "head": "1faa4036f6921535c0cdee4fa8fd1761fac0c0d6",
+  "artifact": 12432042493,
+  "archiveSha256": "31b9e73da45a17f892d00801221538f1007e6db1af16cf5768acbcc804090252",
+  "checksumAndCrc": "PASS",
+  "p1": "FAIL: test script used nonexistent Graphics.getBounds",
+  "compatibility": "PASS: native4/built2/scale10; unchanged production source may reuse"
+}
