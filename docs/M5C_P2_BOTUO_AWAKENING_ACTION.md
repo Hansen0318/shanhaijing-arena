@@ -1,5 +1,9 @@
 # P2 猼訑 Awakening「鎮岳」— COMPLETE / PLAYER VERIFIED
 
+## 2026-10-22 — Latest player scope: full character requires Passive
+
+The latest player decision `decisions/2026-10-22-passive-character-completion.md` supersedes the older whole-character COMPLETE/no remaining Gate below. Existing base/scale/four active-skill acceptances including Awakening remain closed and protected. **P2 full character INCOMPLETE: 厚甲 passive queued after P1疾行 player verification.** P1 is active at concrete passive-design proposal review; P3 skills blocked until both passives complete. No new runtime/art/receipt/test/build/Browser/deployment result in this slice. Current pointer: docs/handoffs/P1_P2_PASSIVE_NEXT_WORK.md; prior closure JSON is retained historical four-skill evidence, not current full-character status.
+
 ## 2026-10-22 — P2 猼訑整角色結案 CLOSED／既有玩家驗收彙整
 
 **P2 COMPLETE BY EXISTING PLAYER ACCEPTANCE EVIDENCE AND CURRENT SCOPE。** 已完成 `docs/verification/P2_CHARACTER_CLOSURE.md` 整角色義務核對；機器可讀證據 `docs/verification/P2_CHARACTER_CLOSURE.json`。恢復HEAD `84e53ff3b7cd8dd60d9e5cdb97b7169d048f22b9`／tree `924e25a4b39249b62145ba682df0bcaaffe6e193`，原feature分支、PR#1 open/unmerged。Identity/static/Idle/Move/KO已驗收基線、尺度收據與Basic角擊／Heavy震嶺／Special守群／Awakening鎮岳四份Runtime玩家收據均有依據；未發現真正缺少的非Hit義務。普通Hit永久取消。依本次玩家「若證據已齊，整理結案」指令及既有P1行政結案方式彙整，不新造整角實機核准、不要求重驗技能。

@@ -1,5 +1,9 @@
 # Project Boundaries — Shanhaijing Arena
 
+## 2026-10-22 — Latest scope: independent passive catch-up
+
+Player decision `decisions/2026-10-22-passive-character-completion.md` supersedes the older P1/P2 full-character closure: preserve accepted base/four skills, but P1疾行 is active at design review, P2厚甲 is queued until P1 passive player acceptance; P3 skills blocked until both complete. Permanent order is Basic→Heavy→Special→Awakening→Passive→whole-character closure. Shared data-driven passives only, never character-ID runtime exceptions; existing Tier effects do not substitute for independent passives. Current pointer `handoffs/P1_P2_PASSIVE_NEXT_WORK.md`. This slice is docs-only; all existing asset policy and accepted gameplay/art contracts remain protected.
+
 ## 2026-10-22 — Current policy / P2 closure
 
 P2 current character scope is CLOSED by the existing accepted base/scale/four-skill evidence; see `verification/P2_CHARACTER_CLOSURE.md` and `.json`. No P3/TD scope is authorized. Current global asset policy has no fixed total decoded-byte/required-count/131072-reserve admission gate; cache maxBytes is null. Keep per-file safety, two concurrent downloads, complete required pins/readiness, ownership/reclamation/actual failures/scene destruction. The older28-failure/Browser-blocked/design-only entries below are historical, superseded by the accepted66e6c3c release and current closure; do not restore their pending gates or caps. No runtime changes in this docs-only audit.

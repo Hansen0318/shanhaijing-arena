@@ -1,0 +1,67 @@
+{
+  "status": "ORDER PLAYER DECIDED / P1 PASSIVE DESIGN PROPOSED / P1 P2 FULL CHARACTER INCOMPLETE",
+  "recordedDate": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "那開發的角色技能順序應該要有被動技能，所以在P1 P2目前的狀態，要進行P1的被動技能，完成後做P2的被動技能，這算是彌補，以後的角色技能應該要有basic heavy special awakening 被動技能，這樣的順序，你把規則流程進度github，更新，並繼續P1 P2的被動技能，然後才能開發P3的角色技能，確認OK我說的沒錯，就執行",
+  "sourceHead": "dd9f2d68115d9f29c25d202e4557a4484f73a520",
+  "sourceTree": "2aaec9b933cf2caaecd48106a295f241936ffcd7",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false
+  },
+  "sourceSha256": {
+    "src/roster/abilities.js": "78a8d7db99b3739f16522950832d8204242fbaebe1fd620e4a8a336c3c9bc82b",
+    "src/roster/catalog.js": "c9cc9794270137db3d4a9ebfe19226e8d2ec8d406b7c1c936ccf568c9a082cf7",
+    "src/roster/tierEffects.js": "2f157c7edb1df0873a9c906212c9459699a34ac947489c5b4bb4d11585c026fa",
+    "src/combat/battleSession.js": "91f18c5c2c98d07d6383beb5bcdcdcb771ee164c60e81e5c173bdbc1e7faa9cd",
+    "src/combat/statuses.js": "b9857e25d253029c0efe2e2bbdbc6f162e542d5f8c040831dcf56b6376cf9382",
+    "src/combat/statusSchema.js": "5ee343fd5867b052bec0163f9aecb922dec335f84f7e6222ade6ca853347c46d",
+    "src/combat/tierEffectRuntime.js": "116625cdc02a94cd1120c4a000e3dea3beb03fd0ac2f365371ba7c5414b7b0fc",
+    "src/combat/tierEffects.js": "7c79798c6ba726095fb062130d8fb8a9319c6468f6993e372533967b28afacfc",
+    "src/collection/model.js": "59e81594a9c940b2548a853df91e0310cc9fcfa308ec8679fcd12c40c995edc9",
+    "src/collection/view.js": "6ad86a3bad63a99c41e654c4b1a4093d7511a6e8a28a546ba5e3e37f8876ec1d",
+    "src/runtime/statusPresentation.js": "e0b97fa9d60c324fe0e26d59eb28625e047697484e86f53de74367ffb1b75465"
+  },
+  "productionOrder": [
+    "basic",
+    "heavy",
+    "special",
+    "awakening",
+    "passive",
+    "whole-character closure"
+  ],
+  "catchupOrder": [
+    "P1.passive PLAYER VERIFIED",
+    "P2.passive PLAYER VERIFIED",
+    "P3 character skills may then proceed within granted scope"
+  ],
+  "current": {
+    "P1": "Four active skills/base accepted; passive design proposal pending; full character incomplete",
+    "P2": "Four active skills/base accepted; passive queued until P1 passive accepted; full character incomplete",
+    "P3": "Skill work blocked until both catch-up passives completed; existing accepted base retained"
+  },
+  "passiveFacts": {
+    "allFiveIndependentPassivesImplemented": false,
+    "allFivePassiveEffectsEmpty": true,
+    "existingTierEffectsAreSeparate": true
+  },
+  "approvalLimits": "Player approved rule/order and continuing catch-up work; no approval of newly proposed trigger,8percent,2seconds,4seconds,1unit,2second window, future written spec or implementation plan is inferred.",
+  "nextGate": "Review concrete P1 proposal A in docs/M5C_P1_LUSHU_PASSIVE.md, then written design spec according to the project design workflow.",
+  "proposalStatus": "NOT PLAYER APPROVED / NOT IMPLEMENTED",
+  "decision": "docs/decisions/2026-10-22-passive-character-completion.md",
+  "preservedHistoricalAudit": "docs/verification/P2_CHARACTER_CLOSURE.json",
+  "supersedes": "Old P1/P2 whole-character COMPLETE/no remaining Gate only; prior base/four-skill acceptances remain valid.",
+  "currentSlice": {
+    "docsOnly": true,
+    "runtimeChanged": false,
+    "testsRerun": false,
+    "buildRerun": false,
+    "browserRerun": false,
+    "redeployed": false
+  },
+  "untrackedPreservedSha256": {
+    "docs/art/candidates/lushu/special/vfx-review-v1/.target-impact-padded-v1.png.TrNzGq": "f0dffa432964655abac834272a155b0b62179cac8a65ffd0fc51ecfc96f00964"
+  }
+}

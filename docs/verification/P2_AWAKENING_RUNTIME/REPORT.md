@@ -1,5 +1,9 @@
 # 鎮岳 — COMPLETE / PLAYER VERIFIED
 
+## 2026-10-22 — Latest player scope: full character requires Passive
+
+The latest player decision `../../decisions/2026-10-22-passive-character-completion.md` supersedes the older whole-character COMPLETE/no remaining Gate below. Existing base/scale/four active-skill acceptances including Awakening remain closed and protected. **P2 full character INCOMPLETE: 厚甲 passive queued after P1疾行 player verification.** P1 is active at concrete passive-design proposal review; P3 skills blocked until both passives complete. No new runtime/art/receipt/test/build/Browser/deployment result in this slice. Current pointer: docs/handoffs/P1_P2_PASSIVE_NEXT_WORK.md; prior closure JSON is retained historical four-skill evidence, not current full-character status.
+
 ## Whole-character audit closed — 2026-10-22 Asia/Taipei
 
 P2 current character scope is now CLOSED by aggregation of existing player acceptance, not by a new device smoke run. Audit and exact source/hash checks: `../P2_CHARACTER_CLOSURE.md` and `../P2_CHARACTER_CLOSURE.json`. No missing non-Hit obligation identified; no separate duplicate sign-off requested. Awakening acceptance remains its immutable runtime-v1 receipt. Reuse unchanged release/native/built/scale evidence; do not reopen historical pending entries below. P3 needs a new explicit scope; none started.
