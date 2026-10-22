@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## 2026-10-22 — Global residency implementation plan PLAYER APPROVED / TDD active
+
+Player「核准，繼續」approves the concrete four-task plan linked at50dcd3a; exact SHA25616d36b5a209dc6c83fb240dad51f1fab17d0646f60a31cea7de4786e3d1ed067 and scope in `docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-plan-acceptance.json`. Plan review CLOSED; execute shared-policy TDD on the same branch. Old pending entries below are historical. Do not infer engineering/contract/Pages/phone PASS. Preserve current986/957/29 baseline and accepted artwork/gameplay; later Awakening observational-contract Gate remains separate.
+
 ## 2026-10-22 — Recovery baseline reproduced: 986 / 957 PASS / 29 FAIL; plan review NEXT
 
 Fresh fetch confirms source HEAD `bd9caac3509f1219dd5e23a517cc01eb0ba1b2e9`, tree `87767a5b6496dfc9b9c50c9fc5f4a92ec24e4cc3`, same feature branch; PR#1 open/unmerged. Fresh clone initially clean. Parallel and sequential full suites both exit1 with **986 tests /957 pass /29 fail**, identical failure names/order. Shared cache/residency/dynamic integration **23/23 PASS**. Full per-failure diagnosis, exact TAP, checksums and limitations: `docs/verification/P2_AWAKENING_PREFLIGHT/recovery-2026-10-22/{REPORT.md,baseline.json}`. This is the current baseline; older five-failure statements below are historical, not current results. One of29 is `lushuHeavyAssets.test.js` worker SIGKILL in both runs; kill cause unconfirmed, unexecuted assertions not PASS. Other failures include obsolete physical packing/path/count expectations, P2 Basic250ms, event metadata and invalid synthetic logical frames; no blanket harmlessness or release clearance.
