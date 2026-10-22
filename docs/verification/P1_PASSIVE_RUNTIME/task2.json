@@ -1,0 +1,21 @@
+{
+  "status": "TASK2 PASS / TASK3 NEXT / NOT DEPLOYED",
+  "tests": {
+    "total": 146,
+    "pass": 146,
+    "fail": 0,
+    "log": "task2-final.tap.gz"
+  },
+  "sourceSha256": {
+    "src/combat/passiveDefinition.js": "d5d5c97f68134b76ed5d816bf69b8e1a1c8d36b52f538f9914dd51235a6d92c4",
+    "src/combat/passiveRuntime.js": "4790df179f33efa7735decd8b770e99fd37f65eee4a0f4d229118091aa24b243",
+    "src/combat/passiveMotion.js": "7f19853a4dd7b4efba31fc3b4c50fc945b8a75509574f22bd8782f4cb9230b4f",
+    "src/combat/battleSession.js": "afcd8f3fa4d2ed19e50c728436567c945fe6f2dd100836799c58dc36b6839806",
+    "src/roster/abilities.js": "240e3135b8c856c56dcc4531a029fcb3a7bd170058d74be824d14ff823ae33e6",
+    "src/roster/catalog.js": "c5540b3896ec30884a42e46cec179617eef71313a78da96d2ab19f87192b0bab"
+  },
+  "p1Enabled": true,
+  "p2ToP5Enabled": false,
+  "browserRun": false,
+  "deployed": false
+}

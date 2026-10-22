@@ -14,3 +14,11 @@ Task1: ACTIVE. Read task brief and approved spec; tests first.
 Task1: complete — new schema/runtime10/10 PASS after10 intendedRED missing-feature failures; command node --test tests/passiveDefinition.test.js tests/passiveRuntime.test.js. Production roster stilldisabled. npmci exit0, Node24.19.0 satisfies>=22.12.0; normalCI willuse22.12.0. Exact RED/GREEN logs saved besideWORK_LOG.
 Task2: ACTIVE — motion/session tests first.
 Ruling: optional writing-good-tests reference is unavailable from cloud package; main TDD instructions read and applied, actual feature-missing RED and real status behavior tested. Cost if wrong: missing supplemental testing advice; no gate bypass.
+
+Task2 Ruling: first integration failure traced to testfixture failing to reassert existing0ms manual override before each externalstep; the realUI holds control eachtick. Add stepHeld fixture only, preserve productioncontrol timing. Cost if wrong: manual-input regression could be masked, covered separately by existing handoff tests and built-input check. Diagnostic debug-motion.log shows AI resume after firststep.
+
+Task2 Ruling: retain advanceStagedMotion as staged-only public entry while moving its single shared resolver to advancePlannedMotion for passive-only paths. Two existing stagedActionClock failures measured staged-entry calls, not elapsedtime; preserve that interface without changing assertions or introducing a second engine. Cost if wrong: caller instrumentation ambiguity, now explicit by method.
+Task2 fix: rolling solver omitted candidate.start+window breakpoint for a prospective6second leg; separate regression1.5 vs0.5 RED, include candidate knots GREEN.
+
+Task2: complete —146/146 pass (new core/motion/session plus10 existing directlyaffected testfiles), aftertask2 missing-featureRED and recorded core/staged-interfacefixes. Source general movement only; P1dataenabled, P2–P5disabled; no Browser/deploymentyet. Logs exactgzip besideWORK_LOG.
+Task3: ACTIVE — real visible badge/HUD/Collection tests first.

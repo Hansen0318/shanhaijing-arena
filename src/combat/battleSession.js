@@ -1,3 +1,5 @@
+import {PassiveRuntime} from './passiveRuntime.js';
+import {ordinaryMotionSegments,clipOrdinarySegment,pointOnOrdinaryPath} from './passiveMotion.js';
 import {beginLeg,legPosition,relativeSweep} from './stagedAction.js';
 import {PersistentAreas} from './persistentAreas.js';
 import {TierEffectRuntime} from './tierEffectRuntime.js';
@@ -49,19 +51,20 @@ function clamp(value, min, max) {
 }
 
 function moveToward(actor, target, speed, dt, bounds, stopDistance = AI_ENGAGE_DISTANCE) {
-  actor=motionPlans.get(actor)??actor;
+  const plan=motionPlans.get(actor);actor=plan??actor;
   const dx = target.x - actor.x;
   const dy = target.y - actor.y;
   const distance = Math.hypot(dx, dy);
   if (distance <= stopDistance) return;
   const remaining = distance - stopDistance;
+  if(plan)actor.motion={goal:{x:actor.x+dx/distance*remaining,y:actor.y+dy/distance*remaining},bounds};
   const step = Math.min(remaining, speed * dt);
   actor.x = clamp(actor.x + (dx / distance) * step, bounds.xMin, bounds.xMax);
   actor.y = clamp(actor.y + (dy / distance) * step, bounds.yMin, bounds.yMax);
 }
 
 function moveAway(actor, target, speed, dt, bounds, desiredDistance) {
-  actor=motionPlans.get(actor)??actor;
+  const plan=motionPlans.get(actor);actor=plan??actor;
   const dx = actor.x - target.x;
   const dy = actor.y - target.y;
   const distance = Math.hypot(dx, dy);
@@ -70,6 +73,7 @@ function moveAway(actor, target, speed, dt, bounds, desiredDistance) {
   const nx = distance > 0.0001 ? dx / distance : (actor.teamId === target.teamId ? 0 : 1);
   const ny = distance > 0.0001 ? dy / distance : 0;
   const remaining = desiredDistance - distance;
+  if(plan)actor.motion={goal:{x:actor.x+nx*remaining,y:actor.y+ny*remaining},bounds};
   const step = Math.min(remaining, speed * dt);
 
   actor.x = clamp(actor.x + nx * step, bounds.xMin, bounds.xMax);
@@ -77,10 +81,11 @@ function moveAway(actor, target, speed, dt, bounds, desiredDistance) {
 }
 
 function moveByVector(actor, vector, speed, dt, bounds) {
-  actor=motionPlans.get(actor)??actor;
+  const plan=motionPlans.get(actor);actor=plan??actor;
   const magnitude = Math.hypot(vector.x, vector.y);
   if (magnitude <= 0) return;
   const scale = magnitude > 1 ? 1 / magnitude : 1;
+  if(plan)actor.motion={vector:{...vector},bounds};
   actor.x = clamp(actor.x + vector.x * scale * speed * dt, bounds.xMin, bounds.xMax);
   actor.y = clamp(actor.y + vector.y * scale * speed * dt, bounds.yMin, bounds.yMax);
 }
@@ -146,10 +151,11 @@ export class BattleSession {
     this.pendingActions=new Map();this.nextActionId=0;this.nextPresentationId=0;this.presentationEpoch=0;this.presentationEventSequence=0;
     this.statuses = new BattleStatuses();
     this.areas=new PersistentAreas();this.mobilityEvidence=new Map();this.effects=new TierEffectRuntime(this);
+    this.passives=new PassiveRuntime({actors:this.actors,characterForActor:actor=>this.definitionForActor(actor),abilityDefinitions:this.abilityDefinitions,statuses:this.statuses});
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 
-  clearTransientCombat({preserveEvents=false}={}){this.presentationEpoch++;for(const id of this.pendingActions.keys())this.cancelAction(id,'battle_end');this.pendingHits=[];for(const hit of this.delayedImpacts.values())this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'battle_end');this.threats.clear();this.delayedImpacts.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();if(!preserveEvents){this.castEvents=[];this.damageEvents=[];this.healEvents=[];}}
+  clearTransientCombat({preserveEvents=false}={}){this.presentationEpoch++;for(const id of this.pendingActions.keys())this.cancelAction(id,'battle_end');this.pendingHits=[];for(const hit of this.delayedImpacts.values())this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'battle_end');this.threats.clear();this.delayedImpacts.clear();this.passives?.clear();this.statuses.clear();this.areas.clear();this.mobilityEvidence.clear();this.tacticalStates.clear();this.aiPreparation.clear();if(!preserveEvents){this.castEvents=[];this.damageEvents=[];this.healEvents=[];}}
 
   // Compatibility view for existing Basic-only diagnostics. One shared engine
   // owns every opted-in action; categories select data, never character IDs.
@@ -263,6 +269,7 @@ export class BattleSession {
       result: this.result(),
       presentationEpoch:this.presentationEpoch,
       elapsedSeconds: this.elapsedSeconds,
+      passives:this.passives.snapshot(this.elapsedSeconds),
       allies: snapshotTeam(this.allies),
       enemies: snapshotTeam(this.enemies),
     };
@@ -444,34 +451,61 @@ export class BattleSession {
     if(area.spec.status)this.statuses.apply({...area.spec.status,sourceId:actor.instanceId,targetId:victim.instanceId,areaId:area.id,key:area.id},this.elapsedSeconds);
   }
 
-  advanceStagedMotion(dt){
-    const begin=this.elapsedSeconds,end=begin+dt;
-    const paths=new Map(this.actors.map(a=>[a.instanceId,{from:{x:a.x,y:a.y},to:canCharacterAct(a)&&!this.statuses.controlled(a.instanceId,begin)?motionPlans.get(a)??{x:a.x,y:a.y}:{x:a.x,y:a.y},start:0}]));
+  advanceStagedMotion(dt){return this.advancePlannedMotion(dt);}
+
+  advancePlannedMotion(dt){
+    const begin=this.elapsedSeconds,end=begin+dt,passiveMode=this.passives.enabled();
+    if(passiveMode)this.passives.settle(begin);
+    const paths=new Map(this.actors.map(a=>[a.instanceId,{from:{x:a.x,y:a.y},to:canCharacterAct(a)&&!this.statuses.controlled(a.instanceId,begin)?motionPlans.get(a)??{x:a.x,y:a.y}:{x:a.x,y:a.y},start:0,motion:motionPlans.get(a)?.motion??null,ordinary:null,lastTime:begin}]));
     for(const r of this.pendingActions.values())if(r.staged){const p=paths.get(r.actorId);p.to=r.hitIndex<0?p.from:legPosition(r,end);}
     for(const a of this.actors)motionPlans.delete(a);
-    const point=(id,u)=>{const p=paths.get(id),f=p.start>=1?0:Math.max(0,(u-p.start)/(1-p.start));return {x:p.from.x+(p.to.x-p.from.x)*f,y:p.from.y+(p.to.y-p.from.y)*f};};
-    const place=u=>{for(const a of this.actors)Object.assign(a,point(a.instanceId,u));};
+    const rebuild=(u)=>{
+      const now=begin+u*dt;
+      for(const a of this.actors){const p=paths.get(a.instanceId);p.from={x:a.x,y:a.y};p.start=u;p.lastTime=now;
+        const staged=this.pendingActions.get(a.instanceId)?.staged;
+        if(staged){p.motion=null;p.ordinary=null;p.to=legPosition(this.pendingActions.get(a.instanceId),end);continue;}
+        if(!canCharacterAct(a)||this.statuses.controlled(a.instanceId,now))p.motion=null;
+        p.ordinary=ordinaryMotionSegments({from:p.from,motion:p.motion,start:now,end,speed:this.definitionForActor(a).stats.moveSpeed*this.statuses.movementMultiplier(a.instanceId,now)});
+        p.to=p.ordinary.at(-1)?.to??p.from;
+      }
+    };
+    if(passiveMode)rebuild(0);
+    const point=(id,u)=>{const p=paths.get(id);if(p.ordinary)return pointOnOrdinaryPath(p.ordinary,begin+u*dt)??p.from;const f=p.start>=1?0:Math.max(0,(u-p.start)/(1-p.start));return {x:p.from.x+(p.to.x-p.from.x)*f,y:p.from.y+(p.to.y-p.from.y)*f};};
+    const place=u=>{const now=begin+u*dt;for(const a of this.actors){const p=paths.get(a.instanceId);
+      if(passiveMode&&p.ordinary&&now>p.lastTime+1e-12){for(const leg of p.ordinary){const lo=Math.max(leg.start,p.lastTime),hi=Math.min(leg.end,now);if(hi>lo+1e-12)this.passives.appendOrdinary(a.instanceId,clipOrdinarySegment(leg,hi,lo));}p.lastTime=now;}
+      Object.assign(a,point(a.instanceId,u));}};
     let cursor=0;
     while(cursor<=1){
       const contacts=[];
+      let horizon=1;
+      if(passiveMode){const now=begin+cursor*dt;let next=end;
+        for(const [id,p]of paths){if(!p.ordinary)continue;const leg=p.ordinary.find(s=>s.end>now+1e-10);if(!leg)continue;
+          const clipped=clipOrdinarySegment(leg,leg.end,Math.max(leg.start,now));next=Math.min(next,leg.end);
+          const boundary=this.passives.nextBoundary(id,clipped);if(boundary!==null)next=Math.min(next,boundary);
+        }
+        for(const record of this.statuses.records.values())if(record.expiryTime>now+1e-10)next=Math.min(next,record.expiryTime);
+        horizon=Math.max(cursor,Math.min(1,(next-begin)/dt));
+        contacts.push({r:{actorId:'',hitIndex:0},u:horizon,passiveTick:true});
+      }
       for(const r of this.pendingActions.values()){
-        if(!r.staged){if(r.dueAt<=end+1e-9)contacts.push({r,u:Math.max(cursor,(r.dueAt-begin)/dt),legacy:true});continue;}
+        if(!r.staged){if(r.dueAt<=begin+horizon*dt+1e-9)contacts.push({r,u:Math.max(cursor,(r.dueAt-begin)/dt),legacy:true});continue;}
         if(r.hitIndex<0||r.settled[r.hitIndex])continue;
         const leg=r.definition.stagedAction.segments[r.hitIndex];if(begin>=r.startedAt+leg.endMs/1000-1e-9)continue;
         const target=this.actorById(r.targetId);if(!target||!canCharacterAct(target))continue;
-        const spec=r.definition.stagedAction,u=relativeSweep(point(r.actorId,cursor),paths.get(r.actorId).to,point(r.targetId,cursor),paths.get(r.targetId).to,spec.sourceRadius+spec.targetRadius);
-        if(u!==null)contacts.push({r,u:cursor+(1-cursor)*u});
+        const spec=r.definition.stagedAction,u=relativeSweep(point(r.actorId,cursor),point(r.actorId,horizon),point(r.targetId,cursor),point(r.targetId,horizon),spec.sourceRadius+spec.targetRadius);
+        if(u!==null)contacts.push({r,u:cursor+(horizon-cursor)*u});
       }
       // All discrete damage at this interval's boundary joins the swept TOI
       // queue, so an earlier identity can KO/cancel a later same-time source.
-      for(const hit of this.pendingHits)if(hit.due<=end+1e-9)contacts.push({r:hit,u:Math.max(cursor,(hit.due-begin)/dt),queued:true});
-      for(const [id,hit] of this.delayedImpacts)if(hit.threat.impactAtMs/1000<=end+1e-9)contacts.push({r:hit,u:Math.max(cursor,(hit.threat.impactAtMs/1000-begin)/dt),delayed:id});
+      for(const hit of this.pendingHits)if(hit.due<=begin+horizon*dt+1e-9)contacts.push({r:hit,u:Math.max(cursor,(hit.due-begin)/dt),queued:true});
+      for(const [id,hit] of this.delayedImpacts)if(hit.threat.impactAtMs/1000<=begin+horizon*dt+1e-9)contacts.push({r:hit,u:Math.max(cursor,(hit.threat.impactAtMs/1000-begin)/dt),delayed:id});
       for(const area of this.areas.records.values()){
-        const due=this.areas.nextTicks.get(area.id);if(due<=end+1e-9&&due<area.expiryTime-1e-9)contacts.push({r:{actorId:area.sourceId,hitIndex:0},u:Math.max(cursor,(due-begin)/dt),area});
+        const due=this.areas.nextTicks.get(area.id);if(due<=begin+horizon*dt+1e-9&&due<area.expiryTime-1e-9)contacts.push({r:{actorId:area.sourceId,hitIndex:0},u:Math.max(cursor,(due-begin)/dt),area});
       }
-      contacts.sort((a,b)=>(Math.abs(a.u-b.u)*dt>1e-9?a.u-b.u:0)||a.r.actorId.localeCompare(b.r.actorId)||(a.r.hitIndex??0)-(b.r.hitIndex??0));
+      contacts.sort((a,b)=>(Math.abs(a.u-b.u)*dt>1e-9?a.u-b.u:0)||Number(!!a.passiveTick)-Number(!!b.passiveTick)||a.r.actorId.localeCompare(b.r.actorId)||(a.r.hitIndex??0)-(b.r.hitIndex??0));
       if(!contacts.length)break;
-      const {r,u,legacy,queued,delayed,area}=contacts[0];cursor=u;place(u);this.elapsedSeconds=begin+u*dt;
+      const {r,u,legacy,queued,delayed,area,passiveTick}=contacts[0];cursor=u;place(u);this.elapsedSeconds=begin+u*dt;
+      if(passiveTick){this.passives.settle(this.elapsedSeconds);if(u>=1-1e-12)break;rebuild(u);continue;}
       const actor=this.actorById(r.actorId),target=this.actorById(r.targetId);
       if(area){
         this.areas.tick(this.elapsedSeconds,this.actors,(record,victim)=>this.applyAreaPulse(record,victim),area.id);
@@ -488,7 +522,7 @@ export class BattleSession {
       }else if(legacy){
         this.resolveActions(r.actorId);
         // Repositions happen at a point in time, never along a fictitious swept path.
-        for(const a of this.actors){const prior=point(a.instanceId,u);if(Math.hypot(a.x-prior.x,a.y-prior.y)>1e-9){const p=paths.get(a.instanceId);p.from={x:a.x,y:a.y};p.to={x:a.x,y:a.y};p.start=u;}}
+        for(const a of this.actors){const prior=point(a.instanceId,u);if(Math.hypot(a.x-prior.x,a.y-prior.y)>1e-9){const p=paths.get(a.instanceId);p.from={x:a.x,y:a.y};p.to={x:a.x,y:a.y};p.start=u;p.motion=null;p.ordinary=null;p.lastTime=this.elapsedSeconds;}}
       }else{
         r.settled[r.hitIndex]=true;const coefficient=r.definition.stagedAction.segments[r.hitIndex].coefficient;
         const definition={...r.definition,effect:{...r.definition.effect,coefficient,hits:1}};
@@ -497,12 +531,12 @@ export class BattleSession {
         if(amount>0)this.effects.trigger('post_cast',actor,target,r.category,{definition,source:r.source});
       }
       for(const a of this.actors)if(!canCharacterAct(a)||this.statuses.controlled(a.instanceId,this.elapsedSeconds)){
-        const p=paths.get(a.instanceId);p.to={x:a.x,y:a.y};p.from={x:a.x,y:a.y};p.start=u;
+        const p=paths.get(a.instanceId);p.to={x:a.x,y:a.y};p.from={x:a.x,y:a.y};p.start=u;p.motion=null;p.ordinary=null;p.lastTime=this.elapsedSeconds;
         if(this.pendingActions.get(a.instanceId)?.staged)this.cancelAction(a.instanceId,!canCharacterAct(a)?'source_ko':'control');
       }
       if(this.result()!=='running'){this.clearTransientCombat({preserveEvents:true});return;}
     }
-    place(1);this.elapsedSeconds=begin;
+    place(1);if(passiveMode)this.passives.settle(end);this.elapsedSeconds=begin;
   }
 
   stepInterval(deltaSeconds) {
@@ -512,6 +546,7 @@ export class BattleSession {
     for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'source_ko');this.delayedImpacts.delete(id);this.threats.remove(id);}
 
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
+    for(const a of this.actors)if(!canCharacterAct(a))this.passives.clearActor(a.instanceId);
     // Preserve the legacy cooldown-before-intent evaluation. If a real staged
     // start shortens this interval, unrelated clocks consume only that duration.
     const clocks=this.actors.map(actor=>({actor,cadence:this.cadence.get(actor.instanceId),slots:ACTIVE_CATEGORIES.map(category=>[actor.abilityState[category],{...actor.abilityState[category]}])}));
@@ -574,7 +609,7 @@ export class BattleSession {
       const definition=this.actorAbilityDefinitions.get(actor.instanceId)[intent.definitionId];
       if(definition?.stagedAction&&this.executeAbility(actor,intent.category,'ai',this.actorById(intent.targetId)))startedSlots.add(actor.abilityState[intent.category]);
     }
-    const planning=this.hasStagedAction();
+    const planning=this.hasStagedAction()||this.passives.enabled();
     if(planning){
       const requested=deltaSeconds;deltaSeconds=this.stagedIntervalSeconds(deltaSeconds);
       if(deltaSeconds<requested){
@@ -650,7 +685,7 @@ export class BattleSession {
       this.executeAbility(actor,intent.category,'ai',target);
     }
 
-    if(planning){this.advanceStagedMotion(deltaSeconds);if(this.result()!=='running')return this.snapshot();}
+    if(planning){if(this.hasStagedAction())this.advanceStagedMotion(deltaSeconds);else this.advancePlannedMotion(deltaSeconds);if(this.result()!=='running')return this.snapshot();}
     this.elapsedSeconds = Math.min(this.maxSeconds, this.elapsedSeconds + deltaSeconds);
     this.statuses.expire(this.elapsedSeconds);
     for(const threat of this.threats.takeDue(this.elapsedSeconds*1000)){
@@ -672,6 +707,7 @@ export class BattleSession {
     this.pendingHits=this.result()==='running'?remaining:[];
     this.resolveActions();
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));
+    for(const a of this.actors)if(!canCharacterAct(a))this.passives.clearActor(a.instanceId);
     if(this.result()!=='running')this.clearTransientCombat({preserveEvents:true});
     return this.snapshot();
   }

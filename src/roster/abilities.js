@@ -1,3 +1,4 @@
+import {createPassiveDefinition} from '../combat/passiveDefinition.js';
 import { createAbilityDefinition } from '../combat/ability.js';
 const categories=['basic','heavy','special','awakening'];
 const names=[['踏角','逐風衝','迴蹄','南山奔襲','疾行'],['角擊','震嶺','守群','鎮岳','厚甲'],['水矢','湧浪','回瀾','潤澤','游息'],['靈火','狐焰','九焰散華','青丘幻火','惑心'],['裂爪','撼地','追獵','狂鬥','鬥性']];
@@ -33,6 +34,6 @@ for(let i=0;i<5;i++) {
   const crit=j===0?[true,.1,1.5]:j===1?[true,.2,1.75]:j===2&&effect.coefficient>0?[true,.15,1.75]:[false,0,1];
   entries.push([id,createAbilityDefinition({id,name:names[i][j],description:descriptions[i][j],category,...(i===1&&j===1?{presentation:{actionLifecycle:'existing-impact'}}:i===1&&j===2?{presentation:{actionLifecycle:'utility-observed'}}:i===1&&j===3?{presentation:{actionLifecycle:'area-observed'}}:{}),...(i===0&&j===3?{stagedAction:{segments:[{startMs:80,centerMs:110,endMs:135,coefficient:.4,overrun:.65},{startMs:135,centerMs:260,endMs:280,coefficient:.7,overrun:1.10},{startMs:280,centerMs:420,endMs:470,coefficient:1.1,overrun:.65}],recoveryMs:610,maxDistance:4,emptyDistance:1,sourceRadius:.30,targetRadius:.25}}:{}),windupMs:i===1&&j===0?250:i===0?(j===0?180:j===1?280:j===2?320:0):0,tierScaling:{aoe:effect.areaRadius!=null||telegraphs[id]?.dangerShape==='lane',mobility:effect.movement!=null,status:effect.kind==='mitigation',windup:telegraphs[id]!=null},telegraph:telegraphs[id]?{dodgeable:true,dangerShape:'circle',commitment:'locked',interruptible:false,...telegraphs[id]}:null,cooldown:cooldowns[i][j],minRange,preferredRange,maxRange,targetingRule,effect,ai,canCrit:crit[0],critChance:crit[1],critMultiplier:crit[2]})]);
  }
- const id=`${characterId}.passive`;entries.push([id,Object.freeze({id,name:names[i][4],category:'passive',description:descriptions[i][4],effect:Object.freeze({}),implemented:false})]);
+ const id=`${characterId}.passive`;entries.push([id,i===0?createPassiveDefinition({id,name:names[i][4],category:'passive',implemented:true,description:'一般走位在 2 秒內累積 1 單位，移速 +8% 持續 2 秒；觸發起冷卻 4 秒，冷卻期間不累積。與其他移速增益合計上限 +15%。技能位移不計入。',trigger:{kind:'ordinary-distance',distance:1,windowSeconds:2},cooldownSeconds:4,effect:{kind:'status',type:'movement',magnitude:1.08,duration:2},presentation:{label:names[i][4]}}):Object.freeze({id,name:names[i][4],category:'passive',description:descriptions[i][4],effect:Object.freeze({}),implemented:false})]);
 }
 export const formalAbilityDefinitions=Object.freeze(Object.fromEntries(entries));

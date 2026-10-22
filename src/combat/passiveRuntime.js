@@ -22,7 +22,7 @@ export class PassiveRuntime{
    const status=this.statuses.forActor(instanceId,start).find(s=>s.id===e.statusId);
    if(status&&status.expiryTime>start+EPS&&status.expiryTime<=end+EPS)times.push(status.expiryTime);
    if(e.readyAt>start+EPS){if(e.readyAt<=end+EPS)times.push(e.readyAt);continue;}
-   const samples=[...e.samples,segment],knots=[start,end,...e.samples.flatMap(s=>[s.start+d.trigger.windowSeconds,s.end+d.trigger.windowSeconds])].filter(t=>t>=start&&t<=end).sort((a,b)=>a-b);
+   const samples=[...e.samples,segment],knots=[start,end,...samples.flatMap(s=>[s.start+d.trigger.windowSeconds,s.end+d.trigger.windowSeconds])].filter(t=>t>=start&&t<=end).sort((a,b)=>a-b);
    const value=t=>distanceAt(samples,t,d.trigger.windowSeconds,e.readyAt);
    for(let i=0;i<knots.length-1;i++){
     const a=knots[i],b=knots[i+1],v=value(a),w=value(b);

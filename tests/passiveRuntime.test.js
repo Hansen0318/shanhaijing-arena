@@ -57,3 +57,6 @@ test('same-time control or KO prevents activation and disabled passives leave no
  assert.equal(r.settle(.8).length,0);actors[0].hp=0;r.settle(.8);assert.deepEqual(r.snapshot(.8),[]);
  const disabled=fixture({enabled:false}).runtime;assert.equal(disabled.enabled(),false);assert.deepEqual(disabled.snapshot(0),[]);
 });
+test('a long prospective segment includes its own rolling-window breakpoint before solving the threshold',()=>{
+ const {runtime:r}=fixture();near(r.nextBoundary('unit-x',segment(0,6,0,12)),.5);
+});

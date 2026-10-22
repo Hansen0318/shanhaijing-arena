@@ -1,3 +1,4 @@
+import {formalAbilityDefinitions} from './abilities.js';
 import {botuoHeavyAction} from '../assets/botuoHeavyRuntime.js';
 import {botuoSpecialAction} from '../assets/botuoSpecialRuntime.js';
 import {botuoAwakeningAction} from '../assets/botuoAwakeningRuntime.js';
@@ -110,6 +111,6 @@ const characters=[
 export const rosterCatalog=Object.freeze(Object.fromEntries(characters.map(([id,name,type,role,maxHp,atk,def,moveSpeed,attackSpeed,color,combatSummary,lore,profile])=>[id,Object.freeze({
  ...createCharacterDefinition({id,name,type,role,stats:{maxHp,atk,def,moveSpeed,attackSpeed},abilities:{basic:`${id}.basic`,heavy:`${id}.heavy`,special:`${id}.special`,awakening:`${id}.awakening`,passives:[`${id}.passive`]}}),
  assets:defaultCharacterAssets,...presentation[id],tierEffects:formalTierEffects[id],tierScalingProfile:formalTierScalingProfiles[profile],portrait:Object.freeze({label:name,color}),combatSummary,lore,aiProfile:formalAIProfiles[profile],
- passiveMetadata:Object.freeze({definitionId:`${id}.passive`,implemented:false}),
+ passiveMetadata:Object.freeze({definitionId:`${id}.passive`,implemented:formalAbilityDefinitions[`${id}.passive`]?.implemented===true}),
 })])));
 export const prototypeOwnership=()=>({characterIds:Object.keys(rosterCatalog)});
