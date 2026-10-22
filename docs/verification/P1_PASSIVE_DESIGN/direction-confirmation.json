@@ -1,0 +1,28 @@
+{
+  "status": "DIRECTION A CONFIRMED WITH READABILITY CONDITION / WRITTEN SPEC REVIEW PENDING",
+  "recordedDate": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "exactTimeProvided": false,
+  "playerStatement": "確認視覺和數值有明顯可看得出來，若確認沒錯，就記錄繼續",
+  "presentedCheckpoint": "9ce4fae96102971d35f193b85272ddf68a4f9975",
+  "presentedProposal": "docs/M5C_P1_LUSHU_PASSIVE.md",
+  "presentedProposalSha256": "7840dfd0ba8ea34720ebf774e99e8e9fa5f0fca1372c440f17c34877d604fd6c",
+  "scope": "Continue proposal A into written specification, with explicit requirement that actual effect and numeric state be clearly perceptible. No unconditional visual/numeric readability PASS asserted.",
+  "retainedParameters": {
+    "windowSeconds": 2,
+    "ordinaryDistance": 1,
+    "movementGain": 0.08,
+    "durationSeconds": 2,
+    "cooldownSeconds": 4
+  },
+  "newWrittenSpec": "docs/superpowers/specs/2026-10-22-lushu-passive-design.md",
+  "newWrittenSpecSha256": "40d6820bd6a3705a5a044cb59c4de8663bb9efce78e4fc6c1c833e01c31298fa",
+  "writtenSpecStatus": "PENDING INDEPENDENT PLAYER REVIEW; new badge/HUD details were not previously shown",
+  "numericalProjection": "docs/verification/P1_PASSIVE_DESIGN/numerical-projection.json",
+  "notClaimed": [
+    "Written spec/implementation plan approval",
+    "Actual runtime/Browser/device readability",
+    "Player verification, implemented passive, release or full P1/P2 completion"
+  ],
+  "nextGate": "Review written spec; then implementation planning according to existing architectural workflow."
+}

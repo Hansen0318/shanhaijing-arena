@@ -1,0 +1,31 @@
+{
+  "status": "STATIC REVIEW AND NUMERIC PROJECTION CHECKED / WRITTEN SPEC REVIEW PENDING",
+  "sourceHead": "9ce4fae96102971d35f193b85272ddf68a4f9975",
+  "sourceSha256": {
+    "src/roster/catalog.js": "c9cc9794270137db3d4a9ebfe19226e8d2ec8d406b7c1c936ccf568c9a082cf7",
+    "src/roster/abilities.js": "78a8d7db99b3739f16522950832d8204242fbaebe1fd620e4a8a336c3c9bc82b",
+    "src/combat/tierScaling.js": "794d631373e7cd8e7d4848101e49f39a6df48e43cd0157dcf4ea7071d788ec5f",
+    "src/combat/statuses.js": "b9857e25d253029c0efe2e2bbdbc6f162e542d5f8c040831dcf56b6376cf9382",
+    "src/runtime/statusPresentation.js": "e0b97fa9d60c324fe0e26d59eb28625e047697484e86f53de74367ffb1b75465",
+    "src/runtime/ArenaScene.js": "0d322ca0ae17ef63d1f070c0eda779a18940ff319a1285af57ea34e8ce302341"
+  },
+  "spec": {
+    "path": "docs/superpowers/specs/2026-10-22-lushu-passive-design.md",
+    "sha256": "40d6820bd6a3705a5a044cb59c4de8663bb9efce78e4fc6c1c833e01c31298fa"
+  },
+  "projectionSha256": "de36fb8ed25c1d3715e0995427826c19faa6102d321213c8639ed7156a2ee51e",
+  "directionReceiptSha256": "3f7ffaa38f8eb35b5c4e47a93830750e9d093a04ea18368ea773fc5d962dfe22",
+  "staticReview": [
+    "Rolling distance, cooldown, expiry, pause and reset explicitly defined",
+    "Skill displacement exclusion and shared instance-owned runtime required",
+    "No new Tier growth or changed15percent movement cap",
+    "Formal-art MOB-hidden issue identified from source, not Browser reproduction",
+    "New visible status/HUD explicitly marked written-spec proposal",
+    "Projection does not establish perceptual visibility; actual renderer/player gate required",
+    "P2 queued/P3 blocked and accepted sources protected"
+  ],
+  "runtimeVerified": false,
+  "visualVerified": false,
+  "testsRerun": false,
+  "redeployed": false
+}

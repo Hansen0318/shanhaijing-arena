@@ -1,0 +1,54 @@
+{
+  "status": "EXACT DATA PROJECTION / NOT RUNTIME OR VISUAL VERIFICATION",
+  "sourceHead": "9ce4fae96102971d35f193b85272ddf68a4f9975",
+  "formula": "speed = projectedTierMoveSpeed * 1.08; distance = speed * 2",
+  "assumptions": [
+    "Straight unrestricted ordinary movement for full active two seconds",
+    "No other movement statuses or control",
+    "No skill displacement, wall, target stop distance, Pause or battle end",
+    "Existing summed movement-buff cap15percent; other buffs can limit incremental gain"
+  ],
+  "rows": [
+    {
+      "tier": "T0",
+      "baseSpeed": 2.05,
+      "passiveOnlySpeed": 2.214,
+      "relativeGain": 0.08,
+      "activeDurationSeconds": 2,
+      "baseDistanceIn2s": 4.1,
+      "passiveOnlyDistanceIn2s": 4.428,
+      "extraDistanceIn2s": 0.3280000000000003
+    },
+    {
+      "tier": "T1",
+      "baseSpeed": 2.214,
+      "passiveOnlySpeed": 2.39112,
+      "relativeGain": 0.08,
+      "activeDurationSeconds": 2,
+      "baseDistanceIn2s": 4.428,
+      "passiveOnlyDistanceIn2s": 4.78224,
+      "extraDistanceIn2s": 0.3542399999999999
+    },
+    {
+      "tier": "T2",
+      "baseSpeed": 2.3779999999999997,
+      "passiveOnlySpeed": 2.56824,
+      "relativeGain": 0.08,
+      "activeDurationSeconds": 2,
+      "baseDistanceIn2s": 4.755999999999999,
+      "passiveOnlyDistanceIn2s": 5.13648,
+      "extraDistanceIn2s": 0.3804800000000004
+    },
+    {
+      "tier": "T3",
+      "baseSpeed": 2.6239999999999997,
+      "passiveOnlySpeed": 2.83392,
+      "relativeGain": 0.08,
+      "activeDurationSeconds": 2,
+      "baseDistanceIn2s": 5.247999999999999,
+      "passiveOnlyDistanceIn2s": 5.66784,
+      "extraDistanceIn2s": 0.41984000000000066
+    }
+  ],
+  "visualReadability": "NOT YET VERIFIED"
+}
