@@ -1,4 +1,8 @@
-# 鎮岳 — DEPLOYED / ENGINEERING PASS / PLAYER PHONE PENDING
+# 鎮岳 — COMPLETE / PLAYER VERIFIED
+
+## Player acceptance — 2026-10-22 Asia/Taipei
+
+Player「好確認OK核准，紀錄GITHUB規則流程進度，我要開新的work，要讓他無縫接軌，給我prompts我要跟他說的」accepts the presented deployed66e6c3c runtime. Exact receipt: docs/art/approved/botuo/awakening/runtime-v1/acceptance.json. Overall scoped player review CLOSED, not itemized physical-device/Tier/FPS/GPU measurements. Prior PHONE PENDING statements/closure.json remain historical release-time records. This acceptance-only slice reuses1014 tests/native/built/scale/Pages149-file fingerprint evidence without rerunning/redeploying or changing approved sources. Next: read-only whole-P2 closure audit, docs/verification/P2_CHARACTER_CLOSURE.md; no duplicate Awakening review, ordinary Hit or automaticP3.
 
 ## Final release closure — 2026-10-22 Asia/Taipei
 

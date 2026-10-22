@@ -1,5 +1,13 @@
 # Character action art, VFX and animation review workflow
 
+## 2026-10-22 — 鎮岳 COMPLETE／PLAYER VERIFIED／P2 整角結案核對 NEXT
+
+玩家「好確認OK核准，紀錄GITHUB規則流程進度，我要開新的work，要讓他無縫接軌，給我prompts我要跟他說的」直接接受上一則已部署鎮岳URL與聚焦審核交付。精確範圍/原文/版本見 `docs/art/approved/botuo/awakening/runtime-v1/acceptance.json`，接受release66e6c3c640c546ec90dbd5a79da06814db15d02f，呈交docs89ca19bf80eaf7de31e5a440d61e6948db8ae7be。鎮岳玩家審核Gate CLOSED，不再要求同一手機/姿勢/VFX/GIF/契約核准。不捏造逐項T3、全部面向、實體裝置/FPS/GPU結果，也不把此次整體確認冒充所有遊戲驗收。
+
+P1 COMPLETE；P2既有Idle/Move/KO/尺度與Basic/Heavy/Special核准保持，現在四招皆有runtime玩家收據。下一個最小工作為 `docs/verification/P2_CHARACTER_CLOSURE.md` 的整角色結案核對：沿用既有證據，只識別真正缺少的非Hit義務；沒有缺口就整理結案，不重做招式/美術或新造測試矩陣。普通Hit永久取消，絕不是下一任務。全角色結案不由本次單招核准自動推定；若需獨立整角sign-off只提一次具體範圍。未另獲範圍前禁止P3/TD/新角色工程。
+
+沿用既有1014/1014、Build、native4/built2、scale10/50標記、Actions1097/run39779770526及149/149公開指紋，不因換Work重跑。全局無固定16MiB/required數量/reserve拒絕已生效，單檔4MiB/2048/4194304、兩下載、完整pins/ready/實際失敗/回收/destroy保持。此次僅docs/新receipt [skip ci]，不改Runtime/public/測試/已核准素材，不重新部署。原發布closure.json裡當時的PHONE PENDING保留為歷史，最新核准以新receipt為準。原feature分支/PR#1 open未merge，三個untracked暫存檔排除。唯一交接 `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`，單一完整自足code block。
+
 ## 2026-10-21 — Awakening VFX/GIF PLAYER APPROVED / execution preflight NEXT
 
 Player「這個我確認OK，你紀錄github流程進度規則」accepts the normal GIF embedded in the preceding response and its linked visual-review package at `e1cdefa22c99aceae149a0a854210da9941c36e9`. Exact wording, primary normal GIF, seven linked GIFs, static reduced cue, three raw VFX and manifest/reference hashes are bound in `docs/art/approved/botuo/awakening/visual-v1/acceptance.json`. **PLAYER VFX/GIF VISUAL GATE CLOSED / APPROVED.** This records the presented package, not invented independent playback/device cases for every link. Old candidate/pending fields in frozen manifests/checkpoint/QA remain historical; authoritative latest approval is this receipt and progress entry. Do not ask again or regenerate accepted F1–F4/VFX/GIF.

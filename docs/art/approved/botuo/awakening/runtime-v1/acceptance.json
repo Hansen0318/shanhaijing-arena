@@ -1,0 +1,51 @@
+{
+  "status": "PASS / PLAYER VERIFIED / P2 AWAKENING COMPLETE",
+  "recordedDate": "2026-10-22",
+  "recordedTimezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "好確認OK核准，紀錄GITHUB規則流程進度，我要開新的work，要讓他無縫接軌，給我prompts我要跟他說的",
+  "skill": {"character": "P2 猼訑", "category": "awakening", "name": "鎮岳"},
+  "reviewedDocumentationCheckpoint": "89ca19bf80eaf7de31e5a440d61e6948db8ae7be",
+  "acceptedReleaseSha": "66e6c3c640c546ec90dbd5a79da06814db15d02f",
+  "acceptedReleaseTree": "5a818dac7b2596a0379ebe4240a422125b7d314f",
+  "presentedTestUrl": "https://hansen0318.github.io/shanhaijing-arena/?awakening=66e6c3c",
+  "versionBinding": "Direct overall approval responding to the supplied deployed Awakening URL and scoped Idle/Move/Awakening size, hit burst and air-cast review request. No independently captured device bundle hash was supplied.",
+  "scope": "Overall player acceptance of the deployed P2 Awakening 鎮岳; closes its pending player review Gate. Reuses all approved art/GIF/executable and engineering/release evidence, without replacing old receipts.",
+  "notClaimed": [
+    "Itemized physical-device results for all Tiers, both facings, reduced motion, Pause/Restart, air casts or every status coexistence scenario",
+    "Device/browser identity, independent device-loaded hash, exact approval time, FPS or GPU-memory measurement",
+    "Whole P2 character audit already completed, whole-game acceptance or authorization to start P3/TD"
+  ],
+  "evidence": {
+    "release": "docs/verification/P2_AWAKENING_RUNTIME/continuation/closure.json",
+    "publicFingerprint": "docs/verification/P2_AWAKENING_RUNTIME/continuation/public.json",
+    "sourceBinding": "docs/verification/P2_AWAKENING_RUNTIME/release-evidence.json",
+    "report": "docs/verification/P2_AWAKENING_RUNTIME/REPORT.md",
+    "actionsRun": 39779770526,
+    "actionsNumber": 1097
+  },
+  "evidenceSha256": {
+    "docs/verification/P2_AWAKENING_RUNTIME/continuation/closure.json": "d2434f742bf74e581029b6c58ffafd6ce3eb130af77dddafe2b7ea19d3777f45",
+    "docs/verification/P2_AWAKENING_RUNTIME/continuation/public.json": "2fc9e1ba7742032eaedb9b373a656289b09d3eebf31482e980c1630fa14105f3",
+    "docs/verification/P2_AWAKENING_RUNTIME/release-evidence.json": "f4f94c9e091c3a3ff42a4917a1f9c173394230d1ed6269dd6a533aea133da28a",
+    "docs/art/approved/botuo/basic/runtime-v1/acceptance.json": "fbc6063d2b03da101291905fc312cba3c43f5f449b4dfdcab158812fc7297a48",
+    "docs/art/approved/botuo/heavy/runtime-v1/acceptance.json": "cdfdfcd5e0b1b18782c2624c496a25047a537c35aa4e27bf2225457d547174cb",
+    "docs/art/approved/botuo/special/runtime-v1/acceptance.json": "d9b9eb8fc95dcb85a575cf7b375f22c1b7b97df2d4bded1c210062c969785667",
+    "docs/verification/P2_MOVE_BODY/player-acceptance.json": "e4b4bc1b8e4703df750c38737fafa5c3fca6c04a04ad2933d96e339954856848"
+  },
+  "currentSlice": {
+    "type": "Player acceptance/process/progress/handoff documentation only",
+    "productionSourceChanged": false,
+    "approvedArtChanged": false,
+    "testsRerun": false,
+    "buildRerun": false,
+    "browserRerun": false,
+    "redeployed": false
+  },
+  "continuation": {
+    "nextGate": "Read-only whole-P2 character closure audit using existing approval/verification matrix; identify only genuine non-Hit omissions, without replaying already accepted gates.",
+    "handoff": "docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md",
+    "closureMatrix": "docs/verification/P2_CHARACTER_CLOSURE.md",
+    "scope": "No unseen future art/mechanics or P3 development authorization. Keep same feature branch/PR open/unmerged."
+  }
+}
