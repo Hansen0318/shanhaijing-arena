@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false
+  },
+  "pushedRuntimeCheckpoint": "5e792de874b9c71f619e64f03f3260599ac9280e",
+  "pushedTree": "9dd98eb03b37e80c9536f8f907b3f6b560a6d2e1",
+  "commitMapping": [
+    {
+      "local": "39a222df802fe04cdae06ab36d89afeb539d5263",
+      "remote": "a78736107a200ab5319e784ec3ee6fd93ce0669f",
+      "tree": "89653dc18b36118fa90a823ab35f21d5ab37a644"
+    },
+    {
+      "local": "91c26866e67715c13ff9efd7ba39ecc0c93baf2e",
+      "remote": "b539374f80f6353501c66e4181b24ce55a654277",
+      "tree": "dad1b978eaa710c9b2b4e016fbc1c90dfe35f7ba"
+    },
+    {
+      "local": "33912570264d52b9c794668c20c623c9212d636e",
+      "remote": "85ca04181d7b3c755aecf56c745763e6abe67381",
+      "tree": "8a86bf3fe755af34f4f5edc4cebf2c366161dcc7"
+    },
+    {
+      "local": "e0d0371e4b9026e4af41e40e38937acc3f8e2d62",
+      "remote": "5e792de874b9c71f619e64f03f3260599ac9280e",
+      "tree": "9dd98eb03b37e80c9536f8f907b3f6b560a6d2e1"
+    }
+  ],
+  "actions": {
+    "runId": 39707213728,
+    "url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39707213728",
+    "status": "in_progress",
+    "conclusion": null,
+    "head": "5e792de874b9c71f619e64f03f3260599ac9280e"
+  },
+  "actionsObservation": "Snapshot only; in_progress is not PASS/FAIL. Recheck this exact runtime run, not the later docs-only checkpoint.",
+  "localVerification": {
+    "shared": "30/30 PASS",
+    "affected": "120 tests /113pass /7existingfail",
+    "full": "993 tests /965pass /28existingfail",
+    "build": "PASS /87assetguard"
+  },
+  "browser": "BLOCKED: missing Chromium and invalid ZIP install, full log saved",
+  "deployment": "NOT DONE; no new playable Awakening URL or public fingerprint",
+  "nextGate": "Separate Awakening observational contract review; no acceptance receipt for that contract."
+}
