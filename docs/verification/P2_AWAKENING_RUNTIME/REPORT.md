@@ -1,5 +1,9 @@
 # 鎮岳 — COMPLETE / PLAYER VERIFIED
 
+## Whole-character audit closed — 2026-10-22 Asia/Taipei
+
+P2 current character scope is now CLOSED by aggregation of existing player acceptance, not by a new device smoke run. Audit and exact source/hash checks: `../P2_CHARACTER_CLOSURE.md` and `../P2_CHARACTER_CLOSURE.json`. No missing non-Hit obligation identified; no separate duplicate sign-off requested. Awakening acceptance remains its immutable runtime-v1 receipt. Reuse unchanged release/native/built/scale evidence; do not reopen historical pending entries below. P3 needs a new explicit scope; none started.
+
 ## Player acceptance — 2026-10-22 Asia/Taipei
 
 Player「好確認OK核准，紀錄GITHUB規則流程進度，我要開新的work，要讓他無縫接軌，給我prompts我要跟他說的」accepts the presented deployed66e6c3c runtime. Exact receipt: docs/art/approved/botuo/awakening/runtime-v1/acceptance.json. Overall scoped player review CLOSED, not itemized physical-device/Tier/FPS/GPU measurements. Prior PHONE PENDING statements/closure.json remain historical release-time records. This acceptance-only slice reuses1014 tests/native/built/scale/Pages149-file fingerprint evidence without rerunning/redeploying or changing approved sources. Next: read-only whole-P2 closure audit, docs/verification/P2_CHARACTER_CLOSURE.md; no duplicate Awakening review, ordinary Hit or automaticP3.

@@ -1,5 +1,13 @@
 # M5C — Art / Animation / VFX Integration
 
+## 2026-10-22 — P2 猼訑整角色結案 CLOSED／既有玩家驗收彙整
+
+**P2 COMPLETE BY EXISTING PLAYER ACCEPTANCE EVIDENCE AND CURRENT SCOPE。** 已完成 `docs/verification/P2_CHARACTER_CLOSURE.md` 整角色義務核對；機器可讀證據 `docs/verification/P2_CHARACTER_CLOSURE.json`。恢復HEAD `84e53ff3b7cd8dd60d9e5cdb97b7169d048f22b9`／tree `924e25a4b39249b62145ba682df0bcaaffe6e193`，原feature分支、PR#1 open/unmerged。Identity/static/Idle/Move/KO已驗收基線、尺度收據與Basic角擊／Heavy震嶺／Special守群／Awakening鎮岳四份Runtime玩家收據均有依據；未發現真正缺少的非Hit義務。普通Hit永久取消。依本次玩家「若證據已齊，整理結案」指令及既有P1行政結案方式彙整，不新造整角實機核准、不要求重驗技能。
+
+本次fresh static audit：鎮岳收據7/7綁定雜湊、release-evidence完整258/258來源/報告雜湊一致；已接受release `66e6c3c640c546ec90dbd5a79da06814db15d02f`至恢復HEAD的src/public/tests/scripts/.github/package檔案差異為空；保存的149/149公開指紋紀錄內部一致。既有1014/1014、Build、native4/built2、scale10/50與正常Pages沿用，非本次重跑。舊PHONE PENDING及29/28/25失敗是保留歷史。全局無固定16MiB總量/required數量/131072reserve拒絕；保留逐檔安全、兩並行下載、完整required、所有權/回收/真實失敗/destroy，以及鎮岳既有時序/MAX/真傷害真狀態契約。
+
+P1與P2當前角色範圍皆CLOSED；**P2無剩餘Gate，下一合法步驟是回報結案後等待新明確範圍。** 路線圖下一角色為P3赤鱬，僅標示順序，未啟動其恢復/設計/素材/Runtime工作。禁止自動展開P3/TD、main merge、替代分支、角色ID特例或來源未變的重測/重部署。此次純文件 `[skip ci]`，保護全部masters/收據/GIF/尺度/anchor/ground/mirror與實際觀測到的無關untracked檔；diff自審，非獨立審查。唯一後續交接索引維持 `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`，內文已改為結案後待範圍，不再安排本次已完成核對；所有交接仍單一自足可複製code block。含本條目的commit才是新checkpoint，fetch分支取得完整HEAD/tree。
+
 ## 2026-10-21 — P2 Special COMPLETE / PLAYER VERIFIED; Awakening key-pose NEXT
 
 Player explicitly approves the presented deployed Special and requests GitHub progress/process/rules plus a seamless new Work handoff. Exact statement/version/scope is in `docs/art/approved/botuo/special/runtime-v1/acceptance.json`, bound to536685401cfa0805b5836b057a27dd0692c46879 and its presented URL. Special runtime/phone Gate CLOSED / PLAYER VERIFIED; no itemized device case matrix/FPS/GPU/hash measurements invented. P1 COMPLETE and P2accepted Idle/Move/KO/scale/Basic/Heavy remain protected. WholeP2 is NOT complete.

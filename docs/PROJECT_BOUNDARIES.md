@@ -1,5 +1,9 @@
 # Project Boundaries — Shanhaijing Arena
 
+## 2026-10-22 — Current policy / P2 closure
+
+P2 current character scope is CLOSED by the existing accepted base/scale/four-skill evidence; see `verification/P2_CHARACTER_CLOSURE.md` and `.json`. No P3/TD scope is authorized. Current global asset policy has no fixed total decoded-byte/required-count/131072-reserve admission gate; cache maxBytes is null. Keep per-file safety, two concurrent downloads, complete required pins/readiness, ownership/reclamation/actual failures/scene destruction. The older28-failure/Browser-blocked/design-only entries below are historical, superseded by the accepted66e6c3c release and current closure; do not restore their pending gates or caps. No runtime changes in this docs-only audit.
+
 ## 2026-10-22 — Global dynamic policy implementation checkpoint
 
 The approved shared policy is now implemented in schema/cache/residency: no fixed total decoded-byte or required-count admission ceiling, no131072reserve gate. Existing cache16MiB/64 defaults are only inactive retention targets; scene12MiB is soft unpinned reclamation. Per-file4MiB/2048/4194304 and every required image, real failure handling and teardown stay mandatory. Do not restore old caps from history, create per-character exceptions or revive Chiru KO splitting. Evidence and current28full-suite failures/Browser blocker are in `verification/P2_AWAKENING_PREFLIGHT/global-residency-runtime/REPORT.md`; this is not Awakening integration, native/mobile acceptance or deployment. Preserve branch/PR and all approved artwork/gameplay.

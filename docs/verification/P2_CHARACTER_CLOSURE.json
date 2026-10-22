@@ -1,0 +1,80 @@
+{
+  "status": "P2 COMPLETE BY EXISTING PLAYER ACCEPTANCE EVIDENCE AND CURRENT SCOPE",
+  "recordedDate": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "auditSourceHead": "84e53ff3b7cd8dd60d9e5cdb97b7169d048f22b9",
+  "auditSourceTree": "924e25a4b39249b62145ba682df0bcaaffe6e193",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false
+  },
+  "acceptedReleaseHead": "66e6c3c640c546ec90dbd5a79da06814db15d02f",
+  "acceptedReleaseTree": "5a818dac7b2596a0379ebe4240a422125b7d314f",
+  "receiptSha256": {
+    "docs/art/approved/botuo/basic/runtime-v1/acceptance.json": "fbc6063d2b03da101291905fc312cba3c43f5f449b4dfdcab158812fc7297a48",
+    "docs/art/approved/botuo/heavy/runtime-v1/acceptance.json": "cdfdfcd5e0b1b18782c2624c496a25047a537c35aa4e27bf2225457d547174cb",
+    "docs/art/approved/botuo/special/runtime-v1/acceptance.json": "d9b9eb8fc95dcb85a575cf7b375f22c1b7b97df2d4bded1c210062c969785667",
+    "docs/art/approved/botuo/awakening/runtime-v1/acceptance.json": "0f20de8f0181dcf5deb5daed293c7e32eb79c0291a712caa95e357e63c870f3d",
+    "docs/verification/P2_MOVE_BODY/player-acceptance.json": "e4b4bc1b8e4703df750c38737fafa5c3fca6c04a04ad2933d96e339954856848"
+  },
+  "baseAuthoritySha256": {
+    "docs/verification/M5C_B_LUSHU_BOTUO_KO.md": "1242c4732881dfaab6a2518662a7596bd335208c339eb209b53589f593c13cbd",
+    "docs/verification/M5C_B_BOTUO_STATIC_RUNTIME.md": "90cf2db06f1f293a46626062671fca38e2f9970994fa7ac6747cf60b7022225a",
+    "docs/verification/M5C_B_BOTUO_LOCOMOTION.md": "101c05feffd82b5818f7facf699968bc960b391374e1d7f106d5edc66b412e4d"
+  },
+  "freshAudit": {
+    "acceptanceBoundHashesMatched": 7,
+    "releaseBoundHashesMatched": 258,
+    "releasePayloadDiff": [],
+    "savedPublicFingerprintRecordsChecked": 149,
+    "savedPublicFingerprintMismatches": 0,
+    "untrackedPreservedSha256": {
+      "docs/art/candidates/lushu/special/vfx-review-v1/.target-impact-padded-v1.png.TrNzGq": "f0dffa432964655abac834272a155b0b62179cac8a65ffd0fc51ecfc96f00964"
+    }
+  },
+  "existingEngineeringReused": {
+    "tests": {
+      "total": 1014,
+      "pass": 1014,
+      "fail": 0
+    },
+    "build": "PASS",
+    "native": {
+      "combatCases": 4,
+      "builtMobileCases": 2,
+      "scaleCases": 10,
+      "markerRegions": 50
+    },
+    "workflow": {
+      "run": 39779770526,
+      "number": 1097,
+      "buildJob": 119827727902,
+      "deployJob": 119828053592,
+      "build": "success",
+      "deploy": "success"
+    },
+    "public": {
+      "files": 149,
+      "matched": 149,
+      "errors": []
+    }
+  },
+  "conclusion": {
+    "missingNonHitObligations": [],
+    "ordinaryHit": "PERMANENTLY CANCELLED / NOT REQUIRED",
+    "separatePlayerSignoffRequired": false,
+    "rationale": "Current player instruction authorizes evidence-based closure if complete. Latest closure matrix and the documented P1 administrative-closure precedent allow aggregation of already accepted base/scale/four-skill evidence. No new whole-character device approval is asserted.",
+    "remainingP2Gate": null,
+    "nextLegalStep": "Report P2 closure and wait for a new explicit scope before P3 work. P3 is only the next roadmap character; no P3 recovery/design/art/runtime work started."
+  },
+  "notPerformed": [
+    "New player/device smoke or new approval receipt",
+    "Tests/build/Browser/native-scale rerun",
+    "Redeployment or new public network comparison",
+    "Runtime/gameplay/approved source/receipt/GIF modifications",
+    "P3/TD/new-branch/main-merge work"
+  ],
+  "evidencePolicy": "Saved source/evidence hashes checked freshly;1014/1014 and149/149 are reused release evidence, not newly executed results. Historical PHONE PENDING and29/28/25 failures retained unchanged."
+}
