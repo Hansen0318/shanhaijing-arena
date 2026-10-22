@@ -1,0 +1,40 @@
+{
+  "status": "PLAN SELF-REVIEWED / PLAYER PLAN REVIEW PENDING",
+  "sourceHead": "3115179886111804964fea565e93805d66c8225c",
+  "approvedSpecSha256": "40d6820bd6a3705a5a044cb59c4de8663bb9efce78e4fc6c1c833e01c31298fa",
+  "specAcceptanceSha256": "a734f816349c730964e3fb706a9ef3d04dcfc2c74e19720e4f960a2f49b94b19",
+  "plan": "docs/superpowers/plans/2026-10-22-lushu-passive.md",
+  "planSha256": "bc2f601ed022e6527ee856b63becbed6acc31691397acf5bd402056143b0614c",
+  "tasks": 4,
+  "executionMethod": "Native single-agent (already selected)",
+  "specCoverage": {
+    "scope": "Tasks1–4",
+    "timingStatusAndTier": "Tasks1–2",
+    "visiblePresentationAndCollection": "Tasks3–4",
+    "genericInterfacesAndLifecycle": "Tasks1–3",
+    "actualVerificationAndRelease": "Task4"
+  },
+  "reviewFocusCoverage": {
+    "midStepBoundary": "Task2",
+    "sameTimeKoControl": "Task2",
+    "externalStatusRemoval": "Tasks1,3",
+    "formalArtViewportOverlap": "Tasks3,4",
+    "tierBuffCapIndependentExpiry": "Tasks2,3"
+  },
+  "reviewed": [
+    "Each new interface has explicit producer and consumer; Tier-resolved definitions supplied through characterForActor callback",
+    "Tests distinguish generic core, real session, pure UI and actual renderer",
+    "AI/cooldown resampling forbidden inside passive movement subevents",
+    "Old release guard cannot be bypassed; fresh source-bound normal release proof required",
+    "No optional subagent execution; preserve native single-agent",
+    "Spec remains immutable; approval does not claim new plan approval or runtime PASS"
+  ],
+  "currentSlice": {
+    "docsOnly": true,
+    "productSourceChanged": false,
+    "testsRun": false,
+    "buildRun": false,
+    "browserRun": false,
+    "deployed": false
+  }
+}
