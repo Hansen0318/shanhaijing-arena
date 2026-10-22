@@ -1,3 +1,4 @@
+import {approvedRuntimeAsset} from './helpers/approvedRuntimeAsset.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {rosterCatalog} from '../src/roster/catalog.js';
@@ -18,7 +19,7 @@ async function fixture({missingMove=false,reducedMotion=false}={}){
  return {p,actor,frame,loaded,sprites,preparationError,render:now=>p.render(frame,now,rosterCatalog)};
 }
 test('approved move slot is encounter-loaded with four isolated canonical cells and static idle preserved',async()=>{
- const asset=resolveCharacterAsset(rosterCatalog.P1,'battleMove');assert.equal(asset.key,'lushu.battleMove');assert.equal(asset.path,'assets/characters/lushu/battleMove-trimmed.png');assert.deepEqual([asset.width,asset.height],[384,91]);
+ const asset=approvedRuntimeAsset(resolveCharacterAsset(rosterCatalog.P1,'battleMove'));assert.equal(asset.key,'lushu.battleMove');assert.equal(asset.path,'assets/characters/lushu/battleMove-trimmed.png');assert.deepEqual([asset.width,asset.height],[384,91]);
  const d=rosterCatalog.P1.animationDescriptors.battleMove;assert.deepEqual(d.frames,[0,96,192,288].map(x=>({x,y:0,width:96,height:91})));
  assert.equal(d.fps,18);
  assert.deepEqual([0,.056,.112,.167,.223].map(t=>animationFrame(d,t).index),[0,1,2,3,0]);

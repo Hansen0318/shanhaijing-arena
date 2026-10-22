@@ -1,3 +1,4 @@
+import {approvedRuntimeAsset} from './helpers/approvedRuntimeAsset.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { rosterCatalog } from '../src/roster/catalog.js';
@@ -20,7 +21,7 @@ test('P3 approved static pack resolves all surfaces without breathing or extra f
   ['collectionArt','chiru.identity',160,192,53023],
   ['battleIdle','chiru.battleIdle',160,160,44131],
  ]){
-  const asset=resolveCharacterAsset(p3,slot);
+  const asset=approvedRuntimeAsset(resolveCharacterAsset(p3,slot));
   assert.equal(asset.key,key);assert.equal(asset.type,'image');
   assert.deepEqual([asset.width,asset.height,asset.bytes],[width,height,bytes]);
  }

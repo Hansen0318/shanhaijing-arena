@@ -1,0 +1,232 @@
+✔ lossless row packing preserves every visible pixel world position including asymmetric mirror pivot (1.23661ms)
+✔ all required assets reserve and upload without a global byte ceiling or optional reserve rejection (6.039953ms)
+✔ legacy source and target effect sizes and world anchors survive packing (0.464458ms)
+✔ Basic windup validates finite integer opt-in and preserves default immediate abilities (1.960538ms)
+✔ P1 damage waits until .18 exactly once with no early RNG or duplicate start (8.422126ms)
+✔ windup is fixed at all Tiers and cadence remains charged at start, not impact (6.455938ms)
+✖ other characters retain immediate Basic resolution (2.147048ms)
+✔ locked target leaves range: miss, no retarget or cadence refund (2.236914ms)
+✔ source KO/control cancels without late damage or refund (1.158422ms)
+✔ target KO/control cancels without late damage or refund (0.688645ms)
+✔ control KO/control cancels without late damage or refund (1.047656ms)
+✔ successful different ability cancels once; failed ability does not cancel (0.953614ms)
+✔ ordinary damage and manual movement do not cancel or root windup (1.246124ms)
+✔ no simulation step freezes windup; coarse step resolves only once (1.085613ms)
+✔ clear and new session discard old pending damage (0.789567ms)
+✔ two Basic sources keep independent action tokens and resolve once each (15.487144ms)
+✔ terminal killing hit retains real feedback while clearing all pending actions (1.002788ms)
+✔ valid player movement immediately owns selected actor movement (8.639963ms)
+✔ player movement is clamped to Arena bounds (16.260413ms)
+✔ zero/dead-zone movement does not refresh player ownership (0.845441ms)
+✔ releasing player movement immediately returns ownership to AI (1.158212ms)
+✔ expanded Arena bounds are shared by all six actors (2.228531ms)
+✔ enemy AI movement uses the same expanded Arena bounds (7.280368ms)
+✔ player Heavy uses shared ability pipeline and starts cooldown (0.887614ms)
+✔ player ability cannot fire while cooling down (0.466552ms)
+✔ player ability can air-cast immediately when target is outside hit range (2.421742ms)
+✔ manual air-cast emits visible cast intent without remote damage (0.872161ms)
+✔ AI emits a cast event when it attacks through the shared pipeline (0.440663ms)
+✔ holding joystick ownership suppresses AI even with zero movement vector (0.316596ms)
+✔ cooldowns are independent per allied actor (0.226991ms)
+✔ finished cooldown stays ready while player holds control until manually used (1.70213ms)
+✔ AI resumes full automatic ability use after player control is released (4.027406ms)
+✔ manual targeted ability can air-cast with no living opponent (0.569386ms)
+✔ enemy AI keeps pursuing while one ally is under player control (2.654491ms)
+✔ uncontrolled allied AI keeps pursuing enemies while selected ally is manual (1.344542ms)
+✔ AI resumes pursuit as soon as its nearest target leaves attack range (3.765603ms)
+✔ AI can move toward nearest target on the same step it uses a ranged skill (1.167286ms)
+✔ AI continues closing distance even while Basic is available (0.741726ms)
+✔ enemy follows a manually moving nearest ally until close engage distance (0.374283ms)
+✔ multiple enemy AI actors can simultaneously pursue the same nearest ally (0.760924ms)
+✔ multiple allied AI actors can simultaneously pursue the same nearest enemy (0.504669ms)
+✔ AI continues pursuit until actor centers are nearly overlapping (0.389646ms)
+✔ AI range profile can retreat away from a too-close opponent (0.829708ms)
+✔ all cooldown skills do not make AI idle; actor keeps closing for Basic (1.15029ms)
+✖ formal idle presentation is intentionally static F1 while keeping runtime frame architecture (5.197907ms)
+✔ Lushu and Botuo formal idle descriptors are both static F1 in the current presentation phase (0.247773ms)
+✔ approved P3 KO resolves, preloads inside the shared budget and is one static grounded frame (239.582124ms)
+✔ KO freezes last right facing, alpha/anchor and static state (reduced=false) (8.492411ms)
+✔ KO freezes last left facing, alpha/anchor and static state (reduced=false) (3.07855ms)
+✔ KO freezes last right facing, alpha/anchor and static state (reduced=true) (2.124324ms)
+✔ KO freezes last left facing, alpha/anchor and static state (reduced=true) (2.25426ms)
+✔ real dead BattleSession actor remains gameplay-owned while actual presenter selects static KO (14.940708ms)
+✔ approved KO PNG bytes are untouched; visible ground contact aligns without cropping the source (145.840004ms)
+✔ P1–P5 remain the complete stable save identities (2.936707ms)
+✔ P1 approved identity and exact T0 stats (2.360059ms)
+✔ P1 unique immutable kit with exact names and cooldowns (0.580443ms)
+✔ P2 approved identity and exact T0 stats (0.107352ms)
+✔ P2 unique immutable kit with exact names and cooldowns (0.152009ms)
+✔ P3 approved identity and exact T0 stats (0.084146ms)
+✔ P3 unique immutable kit with exact names and cooldowns (0.102634ms)
+✔ P4 approved identity and exact T0 stats (0.531399ms)
+✔ P4 unique immutable kit with exact names and cooldowns (0.430778ms)
+✔ P5 approved identity and exact T0 stats (0.284588ms)
+✔ P5 unique immutable kit with exact names and cooldowns (0.147782ms)
+✔ P3 approved static pack resolves all surfaces without breathing or extra frames (31.942435ms)
+✔ formal 1-1 exact lineup/rewards and independent duplicate spawn slots (4.137162ms)
+✔ formal 1-2 exact lineup/rewards and independent duplicate spawn slots (0.805431ms)
+✔ formal 1-3 exact lineup/rewards and independent duplicate spawn slots (0.557007ms)
+✔ formal 1-4 exact lineup/rewards and independent duplicate spawn slots (0.331448ms)
+✔ formal 1-5 exact lineup/rewards and independent duplicate spawn slots (0.2859ms)
+✔ formal reward journey recruits fox after cumulative5, bruiser finale and replay only repeatable (1.67597ms)
+✔ all formal Collection details and both battle teams resolve catalog identity (1.029077ms)
+✔ existing version3 earned/spent/Tier/team/stages and both receipt ledgers reload unchanged (1.204411ms)
+✔ Approved campaign layout and Chapter2–6 rewards/schema retain their respective baselines (2.44037ms)
+✔ Heavy opts into280ms at every Tier without altering Basic or other skills (7.072786ms)
+✔ Heavy player facing1 has no early move/HP/RNG, resolves once with matching actionId (5.936978ms)
+✔ Heavy player facing-1 has no early move/HP/RNG, resolves once with matching actionId (1.382929ms)
+✔ Heavy ai facing1 has no early move/HP/RNG, resolves once with matching actionId (1.935641ms)
+✔ Heavy ai facing-1 has no early move/HP/RNG, resolves once with matching actionId (1.130079ms)
+✔ AI/automatic Basic cannot overwrite a committed Heavy; failed manual skill cannot cancel it (0.703128ms)
+✔ successful other manual skill cancels Heavy once without refund or late hit (3.385591ms)
+✔ range escape produces locked miss without damage, RNG, movement or retarget (0.708676ms)
+✔ Heavy source cancellation removes pending damage and keeps spent cooldown (0.959853ms)
+✔ Heavy target cancellation removes pending damage and keeps spent cooldown (0.644099ms)
+✔ Heavy control cancellation removes pending damage and keeps spent cooldown (0.919373ms)
+✔ Heavy clear cancellation removes pending damage and keeps spent cooldown (0.400132ms)
+✔ movement and ordinary incoming damage do not root or cancel Heavy (2.097474ms)
+✔ air cast keeps spent cooldown, phased swing and no fabricated hit (0.456426ms)
+✔ Pause/no step freezes pending Heavy; coarse step and terminal kill clear exactly once (0.727414ms)
+✔ two Heavy casters keep independent tokens, each hit resolves once (11.148696ms)
+✔ P4 runtime KO manifest/descriptor is a single static grounded 512 frame (51.846922ms)
+✔ P4 HP0 keeps static KO / saved right facing (reduced=false) (15.186913ms)
+✔ P4 HP0 keeps static KO / saved left facing (reduced=false) (16.998392ms)
+✔ P4 HP0 keeps static KO / saved right facing (reduced=true) (5.844118ms)
+✔ P4 HP0 keeps static KO / saved left facing (reduced=true) (6.432123ms)
+✔ P4 actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned (23.949525ms)
+✔ P4 exact approved derivative pixels ground the silhouette without source edits (56.739875ms)
+✔ P1/P2/P3/P4 actual cache and scene preload every KO with complete required ownership regardless of order (21.130846ms)
+ℹ P1/P2/P3/P4 cache peak=14527144; scene peak=14527144
+ℹ P4/P3/P2/P1 cache peak=14527144; scene peak=14527144
+ℹ P2/P4/P3/P1 cache peak=14527144; scene peak=14527144
+ℹ P1/P2/P3/P4/P1/P2/P3/P4 cache peak=14527144; scene peak=14527144
+✔ P4 all three approved slots resolve actual byte-identical runtime PNGs (26.899561ms)
+✔ P4 single-frame grounded static idle has no authored action/breathing (1.032303ms)
+✔ P4 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=false) (24.20481ms)
+✔ P4 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=true) (12.97383ms)
+✔ P1-P4 actual cache/scene retain every accepted asset with complete required ownership regardless of order (21.507653ms)
+ℹ cache peak=15006376; scene peak=15006376
+ℹ cache peak=15006376; scene peak=15006376
+✔ P4 exact stats and real BattleSession snapshot remain gameplay-owned (14.729099ms)
+✔ runtime Idle is exact old F1, not a regenerated idle (47.681713ms)
+✔ action is four padded independent RGBA cells and effects have bounded canvases (21.798124ms)
+✔ all approved masters and GIFs retain accepted exact hashes (10.684267ms)
+✔ five-roster required art plus new action/effects fit actual cache and scene across restarts (24.052957ms)
+✔ asset guard follows authored action references rather than ignoring orphan new keys (6.017099ms)
+✔ each failed required Basic texture rejects instead of silently accepting a fallback (1.508088ms)
+✔ Basic image completion after shutdown does not allocate a stale texture (7.284324ms)
+✔ P1 runtime KO manifest/descriptor is a single static grounded 512 frame (82.873561ms)
+✔ P1 HP0 keeps static KO / saved right facing (reduced=false) (31.405127ms)
+✔ P1 HP0 keeps static KO / saved left facing (reduced=false) (6.798654ms)
+✔ P1 HP0 keeps static KO / saved right facing (reduced=true) (6.566014ms)
+✔ P1 HP0 keeps static KO / saved left facing (reduced=true) (6.41669ms)
+✔ P1 actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned (22.478162ms)
+✔ P1 exact approved derivative pixels ground the silhouette without source edits (60.310114ms)
+✔ P2 runtime KO manifest/descriptor is a single static grounded 512 frame (28.343087ms)
+✔ P2 HP0 keeps static KO / saved right facing (reduced=false) (4.586327ms)
+✔ P2 HP0 keeps static KO / saved left facing (reduced=false) (4.771555ms)
+✔ P2 HP0 keeps static KO / saved right facing (reduced=true) (8.256176ms)
+✔ P2 HP0 keeps static KO / saved left facing (reduced=true) (6.83596ms)
+✔ P2 actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned (8.809137ms)
+✔ P2 exact approved derivative pixels ground the silhouette without source edits (34.778927ms)
+✔ P1/P2/P3 actual cache and scene preload every KO regardless of order (18.718098ms)
+ℹ P1/P2/P3 cache peak=13326956; scene peak=13326956
+ℹ P3/P2/P1 cache peak=13326956; scene peak=13326956
+ℹ P2/P3/P1 cache peak=13326956; scene peak=13326956
+ℹ P1/P2/P3/P1/P2/P3 cache peak=13326956; scene peak=13326956
+✔ Heavy uses exact prepared padded cells with independent approved VFX (78.804837ms)
+✔ Botuo KO optimized derivative preserves every nonzero pixel and both facing/ground transforms exactly (81.019948ms)
+✔ all five characters plus Basic/Heavy remain loaded across repeated scenes with complete required ownership (28.982654ms)
+✔ protected Basic pixels and action descriptor remain unchanged (0.697679ms)
+✔ approved idle resolves static F1 with a fixed ground origin and static fallback (2.202943ms)
+✔ runtime PNG is RGBA, bounded and encounter-only, never a menu image (27.683751ms)
+✔ real presenter loop freezes on battle time, resumes, exits hit/KO safely and releases textures (7.863005ms)
+✔ Lab idle inspection resolves approved descriptor rather than hiding it under graybox (0.604219ms)
+✔ actual Arena enriches presentation copies with identity without modifying battle snapshot (21.470067ms)
+✔ approved move slot is encounter-loaded with four isolated canonical cells and static idle preserved (31.364326ms)
+✔ actual presenter switches on XY displacement, loops, freezes duplicate time, stops immediately and mirrors (5.962737ms)
+✔ missing required Move blocks readiness and diagnostic rendering safely retains Idle (4.624704ms)
+✔ forced reduced-motion presenter loops all Move frames slower, preserves geometry and immediately stops (3.3179ms)
+✔ real BattleSession motion/stop playback leaves authoritative snapshots and moveSpeed untouched in both modes (51.042067ms)
+✔ Special loads four safe authored frames and distinct approved independent effects (47.843797ms)
+✔ P1 transparent-row Move/KO derivatives retain all original pixels and exact display transforms (98.270869ms)
+✔ all-five Basic Heavy Special required textures remain fully resident across scenes (13.802956ms)
+✔ five-pose descriptor accepts staged effects and rejects malformed lifecycle data (1.787738ms)
+✔ staged body/source follows real segment events, reverses at B and ends at610ms (1.46335ms)
+✔ staged reduced motion retains static phase cues and misses never create contact opacity (1.959056ms)
+✔ three confirmed impacts survive batched paint with distinct identity, follow target, then expire (10.908835ms)
+✔ staged whiff creates source cue only; cancel clears owner impacts and KO removes target impacts (3.543728ms)
+✔ retained legacy contact cannot replace the next staged body or hide its first30ms rush (4.232145ms)
+✔ real approved staged descriptor changes source texture for every phase in both directions (10.064275ms)
+✔ P5 approved lossless KO resolves exact RGBA PNG and a single static crop-corrected descriptor (41.460669ms)
+✔ P5 HP0 preserves static grounded KO and last facing left=false, reduced=false (22.619154ms)
+✔ P5 HP0 preserves static grounded KO and last facing left=true, reduced=false (7.595211ms)
+✔ P5 HP0 preserves static grounded KO and last facing left=false, reduced=true (7.466568ms)
+✔ P5 HP0 preserves static grounded KO and last facing left=true, reduced=true (8.61209ms)
+✔ all five Portrait/Idle/Move/KO textures remain present in real cache and scene with complete pins (11.707255ms)
+ℹ P1,P2,P3,P4,P5: cache=18336992, scene=18336992
+ℹ P5,P4,P3,P2,P1: cache=18336992, scene=18336992
+✔ real P5 BattleSession KO freezes gameplay coordinates and presenter leaves snapshots unchanged (10.516735ms)
+✔ P5 all three approved slots resolve actual byte-identical runtime PNGs (17.279194ms)
+✔ P5 single-frame grounded static idle has no authored action/breathing (1.666135ms)
+✔ P5 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=false) (18.91518ms)
+✔ P5 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=true) (10.846872ms)
+✔ P1-P4 plus P5 actual cache/scene retain every accepted asset with complete required ownership regardless of order (17.665025ms)
+ℹ cache peak=18336992; scene peak=18336992
+ℹ cache peak=18336992; scene peak=18336992
+✔ P5 exact stats and real BattleSession snapshot remain gameplay-owned (6.351511ms)
+✔ Collection full-body images remain real independently validated menu assets, not Arena textures (6.871073ms)
+ℹ tests 164
+ℹ suites 0
+ℹ pass 162
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 846.675695
+
+✖ failing tests:
+
+test at tests/basicWindup.test.js:6:1
+✖ other characters retain immediate Basic resolution (2.147048ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/basicWindup.test.js:6:209)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoIdleRuntime.test.js:20:1
+✖ formal idle presentation is intentionally static F1 while keeping runtime frame architecture (5.197907ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   154,
+  +   152
+  -   160,
+  -   160
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoIdleRuntime.test.js:33:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 154, 152 ],
+    expected: [ 160, 160 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

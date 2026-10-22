@@ -1,0 +1,168 @@
+{
+  "base": "7a62eeed4398b5ae44a8583fac913c7ee2a7a690",
+  "full": {
+    "tests": 1014,
+    "pass": 1014,
+    "fail": 0,
+    "exitCode": 0
+  },
+  "build": "PASS",
+  "runtimeChanged": false,
+  "migrations": [
+    {
+      "name": "lossless row packing preserves every visible pixel world position including asymmetric mirror pivot",
+      "priorDiagnosis": "Test assumes Chiru Move first logical frame height118; current catalog is115. Row-only packing expectation predates current packing.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "Basic windup validates finite integer opt-in and preserves default immediate abilities",
+      "priorDiagnosis": "Global expectation omits approved P2.basic windup250ms; actual250 vs expected0.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "other characters retain immediate Basic resolution",
+      "priorDiagnosis": "Fixture target e1 is P2; it now starts a250ms Basic action, while the test expects immediate damage.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "manual air-cast emits visible cast intent without remote damage",
+      "priorDiagnosis": "Deep exact event comparison omits current eventAt,eventSequence,presentationEpoch metadata; actual event retains those fields.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "formal idle presentation is intentionally static F1 while keeping runtime frame architecture",
+      "priorDiagnosis": "Test expects old160x160 physical Idle crop at0,0; native packed current crop is1,1,154,152. Not a new actor-size finding.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "approved P3 KO resolves, preloads inside the shared budget and is one static grounded frame",
+      "priorDiagnosis": "Manifest selects special-runtime-v1/chiru-battleKo.png; test hardcodes characters/chiru/battleKo.png.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "P3 approved static pack resolves all surfaces without breathing or extra frames",
+      "priorDiagnosis": "Test assumes Chiru Idle physical160x160/44131bytes; current physical148x160/44025bytes. Logical geometry and physical storage are distinct.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "Approved campaign layout and Chapter2–6 rewards/schema retain their respective baselines",
+      "priorDiagnosis": "CSS hash changed in prior viewport release5d9b4f8d48251d29b2c060c3120c356e8e998125. Baseline asserts earlier entire-file hash before comparing Chapter2-6 data; later assertions not established by this failed test.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "Heavy opts into280ms at every Tier without altering Basic or other skills",
+      "priorDiagnosis": "Global windup expectation omits approved P2.basic250ms, as in basicWindup test.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "P4 runtime KO manifest/descriptor is a single static grounded 512 frame",
+      "priorDiagnosis": "P4 KO manifest selects special-runtime-v1; test hardcodes runtime-packing-v1.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "P4 all three approved slots resolve actual byte-identical runtime PNGs",
+      "priorDiagnosis": "P4 Idle manifest selects special-runtime-v1; test hardcodes botuo-basic-packing-v1.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "runtime Idle is exact old F1, not a regenerated idle",
+      "priorDiagnosis": "P1 Idle manifest selects special-runtime-v1; test hardcodes characters/lushu/battleIdle-static.png.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "five-roster required art plus new action/effects fit actual cache and scene across restarts",
+      "priorDiagnosis": "Test historical subset sum expects15632136; current subset14148100. This subset is not the full current required inventory.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "P1 runtime KO manifest/descriptor is a single static grounded 512 frame",
+      "priorDiagnosis": "P1 KO manifest selects special-runtime-v1; test hardcodes characters/lushu/battleKo-trimmed.png.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "P2 runtime KO manifest/descriptor is a single static grounded 512 frame",
+      "priorDiagnosis": "P2 KO manifest selects special-runtime-v1; test hardcodes characters/botuo/battleKo-trimmed.png.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "tests/lushuHeavyAssets.test.js",
+      "priorDiagnosis": "Test file worker receives SIGKILL in both full runs. Separate bounded hash/length inspection confirms its first assertion compares current387x83/128484 RGBA bytes with old512x85/174080bytes. SIGKILL root cause is NOT established; do not call this an OOM diagnosis or claim its remaining tests passed.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "runtime PNG is RGBA, bounded and encounter-only, never a menu image",
+      "priorDiagnosis": "P1 Idle current physical width78 vs old96; test assumes old physical storage.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "approved move slot is encounter-loaded with four isolated canonical cells and static idle preserved",
+      "priorDiagnosis": "P1 Move manifest selects special-runtime-v1; test hardcodes characters/lushu/battleMove-trimmed.png.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "Special loads four safe authored frames and distinct approved independent effects",
+      "priorDiagnosis": "P1 Special atlas current physical235x59 vs old320x59 row-strip expectation.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "P1 transparent-row Move/KO derivatives retain all original pixels and exact display transforms",
+      "priorDiagnosis": "P1 Move current physical atlas height182 vs old row-only91 expectation; native multi-row packing is not row-only cropping.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "three confirmed impacts survive batched paint with distinct identity, follow target, then expire",
+      "priorDiagnosis": "Synthetic staged fixture borrows packed lushu.battleBasic source but invents80x80 logical frames not listed in specialRuntimePacking. physicalRegion explicitly rejects unsupported logical frame before impact assertions.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "staged whiff creates source cue only; cancel clears owner impacts and KO removes target impacts",
+      "priorDiagnosis": "Same invalid synthetic80x80 frame/source fixture; not proof that whiff/cancel behavior itself is broken or passing.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "retained legacy contact cannot replace the next staged body or hide its first30ms rush",
+      "priorDiagnosis": "Same invalid synthetic80x80 frame/source fixture; not proof that staged30ms/contact-retention behavior itself is broken or passing.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "P5 approved lossless KO resolves exact RGBA PNG and a single static crop-corrected descriptor",
+      "priorDiagnosis": "P5 KO manifest selects special-runtime-v1; test hardcodes botuo-basic-packing-v1.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    },
+    {
+      "name": "P5 all three approved slots resolve actual byte-identical runtime PNGs",
+      "priorDiagnosis": "P5 Idle manifest selects special-runtime-v1; test hardcodes botuo-basic-packing-v1.",
+      "status": "PASS in full1014",
+      "change": "Explicit logical/source preserving migration; inspect recorded test diff. Original frozen prior TAP retained."
+    }
+  ],
+  "logs": {
+    "full.tap": "7e381e1eab9baf377486625845a08c6259c6e9aa0ed94cf5b8debf364b3bf560",
+    "build.log": "3f7005f79ab6fe670cd7c3dd5dfc72d5e809aca872ff2c7a7e9948939055f850",
+    "migration-first.log": "8bc46874d1598025e738eee0498321f0ceb446ad7327981aaab275e7564ad305"
+  }
+}

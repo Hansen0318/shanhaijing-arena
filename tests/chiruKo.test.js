@@ -1,3 +1,4 @@
+import {approvedRuntimeAsset} from './helpers/approvedRuntimeAsset.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -24,7 +25,7 @@ async function fixture(reducedMotion=false){
 }
 
 test('approved P3 KO resolves, preloads inside the shared budget and is one static grounded frame',async()=>{
- const a=resolveCharacterAsset(rosterCatalog.P3,'battleKo');assert.equal(a.key,'chiru.battleKo');assert.equal(a.path,'assets/characters/chiru/battleKo.png');assert.deepEqual([a.width,a.height,a.bytes],[1254,1254,905147]);assert.equal(a.fallback,'placeholder.battle');
+ const a=approvedRuntimeAsset(resolveCharacterAsset(rosterCatalog.P3,'battleKo'));assert.equal(a.key,'chiru.battleKo');assert.equal(a.path,'assets/characters/chiru/battleKo.png');assert.deepEqual([a.width,a.height,a.bytes],[1254,1254,905147]);assert.equal(a.fallback,'placeholder.battle');
  const d=characterAnimation(rosterCatalog.P3,'battleKo');assert.equal(d.source,a.key);assert.deepEqual(d.frames,[{x:0,y:0,width:1254,height:1254}]);assert.equal(d.duration,1);assert.equal(d.loop,false);assert.equal(d.staticFrame,0);assert.deepEqual(d.origin,[.5,980/1254]);assert.equal(d.scale,2);
  for(const reduced of [false,true])for(const elapsed of [0,.1,1,10])assert.equal(animationFrame(d,elapsed,reduced).index,0);
  const f=await fixture();assert.ok(f.loaded.includes(a.key));assert.ok(f.p.textures.has(a.key));assert.ok(Number.isFinite(f.p.textureBytes)&&f.p.textureBytes>0);f.p.destroy();assert.equal(f.p.textureBytes,0);

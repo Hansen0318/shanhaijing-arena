@@ -1,3 +1,4 @@
+import {approvedRuntimeAsset} from './helpers/approvedRuntimeAsset.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -32,7 +33,7 @@ async function fixture(id='P4',reducedMotion=false,order=['P1','P2','P3','P4']){
 
 for(const c of cases){
  test(`${c.id} runtime KO manifest/descriptor is a single static grounded 512 frame`,()=>{
-  const a=resolveCharacterAsset(rosterCatalog[c.id],'battleKo');assert.equal(a.key,c.name+'.battleKo');assert.equal(a.path,`assets/runtime-packing-v1/${c.name}-battleKo.png`);assert.deepEqual([a.width,a.height,a.bytes],[512,438,197980]);assert.equal(a.fallback,'placeholder.battle');
+  const a=approvedRuntimeAsset(resolveCharacterAsset(rosterCatalog[c.id],'battleKo'));assert.equal(a.key,c.name+'.battleKo');assert.equal(a.path,`assets/runtime-packing-v1/${c.name}-battleKo.png`);assert.deepEqual([a.width,a.height,a.bytes],[512,438,197980]);assert.equal(a.fallback,'placeholder.battle');
   const d=characterAnimation(rosterCatalog[c.id],'battleKo');assert.equal(d.source,a.key);assert.deepEqual(d.frames,[{x:0,y:0,width:512,height:438}]);assert.deepEqual(d.origin,[.5,(c.bottom-47)/438]);assert.equal(d.scale,2);assert.equal(d.duration,1);assert.equal(d.loop,false);assert.equal(d.staticFrame,0);
   for(const reduced of [false,true])for(const now of [0,.5,1,100])assert.equal(animationFrame(d,now,reduced).index,0);
  });

@@ -1,5 +1,11 @@
 # AGENTS.md
 
+## 2026-10-22 — 部署續行／既有25失敗明示遷移／本機1014 PASS
+
+玩家「確認進度紀錄後繼續做到部署」已記錄。恢復7a62eeed4398b5ae44a8583fac913c7ee2a7a690後完成來源像素重建前置：32legacy資產57frames與原來源RGBA一致，3utility沿用原6frame證據。19個舊測試檔依已核准logical/physical分層、Basic250ms、既有事件metadata、真Frame回傳與正確敵對fixture遷移；不改src/public/核准原圖，不暗刪美術或玩法斷言。舊25失敗保留，詳細CONTINUATION.md及continuation/migration.json。
+
+完整測試1014/1014 PASS、Build PASS；原SIGKILL worker現在4項均執行，總數+3，另+2驗證adapter測試。SIGKILL原根因仍不宣稱OOM。已成功native4/built2與8雙向採樣因Runtime未改而沿用；新增只做Idle/F1–F4多身體/配件標記的native校準workflow，待執行。正常full-suite不跳過；Pages前新增來源綁定證據guard，缺scale證據時明確阻擋，不提前部署。PR#1 open/unmerged、唯一feature分支；接著完成scale→真CI全通過→Pages→公開指紋，玩家手機仍PENDING。
+
 ## 2026-10-22 — 遠端真Browser PASS／正常CI25 FAIL／發布 Gate BLOCKED
 
 Tested remote HEAD `06585e8c2ef7a7b0adc6fc5fe87f3ab11091bf2c`，tree `16eb15394ff45b77cb8210a5abba0b08ca08afd2`，PR#1 open/unmerged。正常Pages CI#1094/run39726905249實測1009/984pass/25fail，與本機25名稱完全相同，Test exit1、未到Pages，沒有部署。原生驗證run39726905423/job119652782291 SUCCESS：真Chromium WebGL4cases、真built campaign mobile-emulated2cases，正常/reduced、T3真victims/status、T0實際技能callback、Pause/destroy/restart PASS。四姿勢雙向共8native採樣maxDelta1/mean<0.00001。artifact12402494599 ZIP SHA2565eeddb2e197b22be9b998a8b334bdae83ba71dac616cdf089edc1cb1177d0e58，下載核對並保存JSON/截圖和CIlogs。

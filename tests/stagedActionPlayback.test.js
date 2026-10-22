@@ -7,7 +7,7 @@ import {AssetPresenter} from '../src/runtime/assetPresenter.js';
 import {createAssetCache} from '../src/runtime/assetCache.js';
 import {assetScene,pngTransport} from './helpers/assetScene.js';
 const legacy=rosterCatalog.P1.actionDescriptors.basic;
-function input(){return {kind:'staged',animation:{...legacy.animation,frames:[0,80,160,240,320].map(x=>({x,y:0,width:80,height:80})),duration:.61},coordinateSize:[320,320],durationMs:610,recoveryStartMs:470,phaseFrames:[0,1,2,3,4],stages:[80,90,130].map((contactHoldMs,i)=>({startMs:[80,135,280][i],endMs:[135,280,470][i],blade:legacy.blade,contact:{...legacy.contact,attach:'target',offset:legacy.contact.size.map(n=>-n/2)},contactHoldMs}))};}
+function input(){return {kind:'staged',animation:{...legacy.animation,source:'lushu.battleAwakening',frames:[0,128,256,384,512].map(x=>({x,y:0,width:128,height:128})),duration:.61},coordinateSize:[320,320],durationMs:610,recoveryStartMs:470,phaseFrames:[0,1,2,3,4],stages:[80,90,130].map((contactHoldMs,i)=>({startMs:[80,135,280][i],endMs:[135,280,470][i],blade:legacy.blade,contact:{...legacy.contact,attach:'target',offset:legacy.contact.size.map(n=>-n/2)},contactHoldMs}))};}
 const start={staged:true,actorId:'a1',actionId:'rush1',category:'awakening',phase:'start',startedAt:0,eventAt:0,attackOrigin:{x:4,y:0},attackTarget:{x:6,y:0}};
 const segment=(hitIndex,eventAt,direction={x:1,y:0})=>({...start,phase:'segment',hitIndex,eventAt,direction,origin:{x:6,y:0}});
 const resolve=(hitIndex,eventAt,hit=true)=>({...start,phase:'resolve',hitIndex,eventAt,resolvedAt:eventAt,hit,targetId:'e1',target:{x:6,y:0},direction:{x:hitIndex===1?-1:1,y:0}});
@@ -45,7 +45,7 @@ test('retained legacy contact cannot replace the next staged body or hide its fi
  f.p.cast({...start,actionId:'heavy',category:'heavy',phase:'resolve',resolvedAt:.28,hit:true,target:{x:6,y:0}},character,.28);
  f.p.cast({...start,startedAt:.3,eventAt:.3},character,.3);
  f.p.cast({...segment(0,.38),startedAt:.3},character,.38);
- paint(f,.39);assert.equal(f.p.actorSprites.get('a1').frame,'80.0.80.80');assert.ok(f.p.actionEffects.get('a1').get('blade').visible);
+ paint(f,.39);assert.equal(f.p.actorSprites.get('a1').frame,'128.0.128.128');assert.ok(f.p.actionEffects.get('a1').get('blade').visible);
  assert.ok([...f.p.stagedImpactSprites.values()].some(x=>x.actionId==='heavy'&&x.visible));f.p.destroy();
 });
 test('real approved staged descriptor changes source texture for every phase in both directions',async()=>{

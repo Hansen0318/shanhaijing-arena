@@ -1,0 +1,31 @@
+name: P2 Awakening Native Scale
+on:
+  push:
+    branches: [feat/m0-combat-core-20260927]
+    paths: ['scripts/checkBotuoAwakeningScale.mjs', '.github/workflows/p2-awakening-scale.yml']
+permissions:
+  contents: read
+jobs:
+  scale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+          cache: npm
+      - run: npm ci
+      - name: Additional anatomy and ground native calibration only
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/scale-browser
+          ARENA_BROWSER_OUTPUT: ${{ runner.temp }}/scale-evidence
+        run: |
+          npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
+          node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+          node scripts/checkBotuoAwakeningScale.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p2-awakening-native-scale
+          path: ${{ runner.temp }}/scale-evidence

@@ -4,12 +4,13 @@ import {createRequire} from 'node:module';
 import {rosterCatalog} from '../src/roster/catalog.js';
 import {assetManifest} from '../src/assets/manifest.js';
 import {AssetPresenter} from '../src/runtime/assetPresenter.js';
+import {specialRuntimePacking} from '../src/assets/specialRuntimePacking.js';
 import {characterAnimation} from '../src/assets/battleDescriptors.js';
 const Frame=createRequire(import.meta.url)('../node_modules/phaser/src/textures/Frame.js');
 
 function runtimeScene(){
  const textures=new Map();
- return {textures:{addImage(key,image){const t={source:[image],frames:new Map(),has(name){return this.frames.has(name);},add(name,...region){this.frames.set(name,new Frame(this,name,...region));}};textures.set(key,t);},get:key=>textures.get(key),remove:key=>textures.delete(key)},add:{image(x,y,key,name){
+ return {textures:{addImage(key,image){const t={source:[image],frames:new Map(),has(name){return this.frames.has(name);},add(name,...region){const frame=new Frame(this,name,...region);this.frames.set(name,frame);return frame;}};textures.set(key,t);},get:key=>textures.get(key),remove:key=>textures.delete(key)},add:{image(x,y,key,name){
   const sprite={x,y,setTexture(key,name){this.frame=textures.get(key).frames.get(name);return this;},setOrigin(x,y){this.origin=[x,y];return this;},setDisplaySize(w,h){this.size=[w,h];return this;},setPosition(x,y){this.x=x;this.y=y;return this;},destroy(){}};
   for(const method of ['setScale','setVisible','setFlipX','setDepth','setAlpha'])sprite[method]=()=>sprite;
   return sprite.setTexture(key,name);
@@ -28,7 +29,8 @@ test('formal idle presentation is intentionally static F1 while keeping runtime 
  for(const t of [0,.4,.8,1.2,3]){
   presenter.render(snapshot,t,rosterCatalog);
   const s=presenter.actorSprites.get('a2');
-  assert.deepEqual([s.frame.cutX,s.frame.cutY,s.frame.cutWidth,s.frame.cutHeight],[0,0,160,160]);
+  assert.deepEqual([s.frame.cutX,s.frame.cutY,s.frame.cutWidth,s.frame.cutHeight],Object.values(specialRuntimePacking[asset.key].frames[0]).slice(0,4));
+  assert.deepEqual([s.frame.realWidth,s.frame.realHeight],[160,160]);
   assert.deepEqual(s.origin,[.5,158/160]);
   assert.deepEqual([s.x,s.y],[314,275]);
  }

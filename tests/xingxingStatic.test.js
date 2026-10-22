@@ -1,3 +1,4 @@
+import {approvedRuntimeAsset} from './helpers/approvedRuntimeAsset.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -25,7 +26,7 @@ async function fixture(order=['P1','P2','P3','P4','P5'],reducedMotion=false){
  const p=new AssetPresenter(s,{reducedMotion,cache:{async load(k){const a=await cache.load(k);peak=Math.max(peak,cache.bytes);return a;}}});await p.prepare(order.map(id=>rosterCatalog[id]));return {p,s,cache,peak:()=>peak};
 }
 test('P5 all three approved slots resolve actual byte-identical runtime PNGs',()=>{
- for(const [slot,name,w,h,bytes,sha] of assets){const a=resolveCharacterAsset(rosterCatalog.P5,slot);assert.equal(a.key,'xingxing.'+name);assert.equal(a.path,slot==='battleIdle'?`assets/botuo-basic-packing-v1/xingxing-battleIdle.png`:`assets/characters/xingxing/${name}.png`);assert.deepEqual([a.width,a.height],[w,slot==='battleIdle'?134:h]);const b=readFileSync(new URL(`../public/assets/characters/xingxing/${name}.png`,import.meta.url));assert.equal(b.length,bytes);assert.equal(createHash('sha256').update(b).digest('hex'),sha);assert.equal(b.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.deepEqual([b.readUInt32BE(16),b.readUInt32BE(20),b[24],b[25]],[w,h,8,6]);}
+ for(const [slot,name,w,h,bytes,sha] of assets){const a=approvedRuntimeAsset(resolveCharacterAsset(rosterCatalog.P5,slot));assert.equal(a.key,'xingxing.'+name);assert.equal(a.path,slot==='battleIdle'?`assets/botuo-basic-packing-v1/xingxing-battleIdle.png`:`assets/characters/xingxing/${name}.png`);assert.deepEqual([a.width,a.height],[w,slot==='battleIdle'?134:h]);const b=readFileSync(new URL(`../public/assets/characters/xingxing/${name}.png`,import.meta.url));assert.equal(b.length,bytes);assert.equal(createHash('sha256').update(b).digest('hex'),sha);assert.equal(b.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.deepEqual([b.readUInt32BE(16),b.readUInt32BE(20),b[24],b[25]],[w,h,8,6]);}
 });
 test('P5 single-frame grounded static idle has no authored action/breathing',()=>{
  const d=characterAnimation(rosterCatalog.P5,'battleIdle');assert.equal(d.source,'xingxing.battleIdle');assert.deepEqual(d.frames,[{x:0,y:0,width:160,height:134}]);assert.deepEqual(d.origin,[.5,133/134]);assert.equal(d.scale,2);assert.equal(d.duration,1);assert.equal(d.loop,false);assert.equal(d.staticFrame,0);

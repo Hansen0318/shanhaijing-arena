@@ -1,3 +1,4 @@
+import {approvedRuntimeAsset} from './helpers/approvedRuntimeAsset.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -22,7 +23,7 @@ async function fixture(reducedMotion=false,order=['P1','P2','P3','P4','P5']){
  return {p,cache,budget:()=>({resident,scenePeak,cachePeak})};
 }
 test('P5 approved lossless KO resolves exact RGBA PNG and a single static crop-corrected descriptor',()=>{
- const a=resolveCharacterAsset(rosterCatalog.P5,'battleKo');assert.equal(a.key,'xingxing.battleKo');assert.equal(a.path,'assets/botuo-basic-packing-v1/xingxing-battleKo.png');assert.deepEqual([a.width,a.height],[480,279]);
+ const a=approvedRuntimeAsset(resolveCharacterAsset(rosterCatalog.P5,'battleKo'));assert.equal(a.key,'xingxing.battleKo');assert.equal(a.path,'assets/botuo-basic-packing-v1/xingxing-battleKo.png');assert.deepEqual([a.width,a.height],[480,279]);
  const b=readFileSync('public/assets/characters/xingxing/battleKo.png');assert.equal(createHash('sha256').update(b).digest('hex'),sha);assert.deepEqual(b,readFileSync('docs/art/approved/xingxing/battleKo-480x288.png'));assert.deepEqual([b.readUInt32BE(16),b.readUInt32BE(20),b[24],b[25]],[480,288,8,6]);
  const d=characterAnimation(rosterCatalog.P5,'battleKo');assert.equal(d.source,a.key);assert.deepEqual(d.frames,[{x:0,y:0,width:480,height:279}]);assert.deepEqual(d.origin,[236/480,276/279]);assert.equal(d.scale,1.875);assert.equal(d.duration,1);assert.equal(d.loop,false);assert.equal(d.staticFrame,0);
  for(const reduced of [false,true])for(const now of [0,.1,1,100])assert.equal(animationFrame(d,now,reduced).index,0);
