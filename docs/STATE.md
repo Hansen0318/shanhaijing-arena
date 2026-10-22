@@ -1,5 +1,11 @@
 # Project State
 
+## 2026-10-22 — 遠端真Browser PASS／正常CI25 FAIL／發布 Gate BLOCKED
+
+Tested remote HEAD `06585e8c2ef7a7b0adc6fc5fe87f3ab11091bf2c`，tree `16eb15394ff45b77cb8210a5abba0b08ca08afd2`，PR#1 open/unmerged。正常Pages CI#1094/run39726905249實測1009/984pass/25fail，與本機25名稱完全相同，Test exit1、未到Pages，沒有部署。原生驗證run39726905423/job119652782291 SUCCESS：真Chromium WebGL4cases、真built campaign mobile-emulated2cases，正常/reduced、T3真victims/status、T0實際技能callback、Pause/destroy/restart PASS。四姿勢雙向共8native採樣maxDelta1/mean<0.00001。artifact12402494599 ZIP SHA2565eeddb2e197b22be9b998a8b334bdae83ba71dac616cdf089edc1cb1177d0e58，下載核對並保存JSON/截圖和CIlogs。
+
+這不是整案完成、實體手機或PLAYER VERIFIED。F3戰場截圖已目視查看，但完整Idle多身體/配件標記native比例校準尚待完成，不能用source-exact或GIF替代。安全發布停在正常full-suite25項既有失敗Gate；沒有繞過CI、main merge或新分支。下一步處理有證據的必要測試遷移/真失敗與剩餘比例驗證，然後才評估Pages；不重跑已成功的來源未變Browser。詳細 `docs/verification/P2_AWAKENING_RUNTIME/REPORT.md` 和result.json。舊「Browser未跑／workflow待執行」已由本條取代，無需重問契約核准。
+
 ## 2026-10-22 — 鎮岳 Runtime 安裝／119 scoped PASS／全套25 FAIL／未部署
 
 玩家「要接觸全部16mib限制，並紀錄，繼續，我確認妳繼續」已記錄於 `docs/verification/P2_AWAKENING_PREFLIGHT/executable-acceptance.json`；觀測／保真安裝契約 Gate CLOSED，不再要求重審。cache 預設 byte target 現為 null，移除最後16MiB閒置保留限制；scene無總量／required數量／optional reserve拒絕，64僅未使用cache entry回收目標，12MiB僅未pin scene回收目標。安全單檔驗證、兩下載、完整required、真失敗、destroy保留。

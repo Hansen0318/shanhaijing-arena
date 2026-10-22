@@ -190,7 +190,29 @@
       "reason": "Explicitly migrated obsolete required inventory/global capacity contract; original art/geometry assertions remain."
     }
   ],
-  "browser": "NOT RUN LOCALLY; Chromium absent; separate same-branch verification workflow prepared, not deployment",
+  "browser": {
+    "status": "PASS in real remote Chromium; scope bounded, physical phone false",
+    "runId": 39726905423,
+    "jobId": 119652782291,
+    "head": "06585e8c2ef7a7b0adc6fc5fe87f3ab11091bf2c",
+    "nativeCases": 4,
+    "builtMobileCases": 2,
+    "nativeSamples": 8,
+    "maxDelta": 1,
+    "meanDeltaUpper": 0.000005787037037037037,
+    "artifactId": 12402494599,
+    "archiveSha256": "5eeddb2e197b22be9b998a8b334bdae83ba71dac616cdf089edc1cb1177d0e58",
+    "files": {
+      "built-entry.json": "af819533847c356d460ed012566040db154646d8e571f2d724bd85ba1cefba98",
+      "built-mobile-normal-1.png": "062dee00be135d1d9ba19c75379f2a58bffda6d6f8fede03f86c5de7ab12d2a1",
+      "built-mobile-reduced-1.png": "062dee00be135d1d9ba19c75379f2a58bffda6d6f8fede03f86c5de7ab12d2a1",
+      "native-normal--1.png": "aae784d02b0cc098b76c27bbc3f213cc82f07658f686e902eb18f8760745f908",
+      "native-normal-1.png": "cc1b1a48b950a78e877aa609934e82a1885a47e516dcb8a852145f7a5fadad46",
+      "native-reduced--1.png": "4b29c1d0f0b01e835b1182062e3de1699e3a0f826c5580a56305930d3c13d2d2",
+      "native-reduced-1.png": "16c6473cb148d64e687594f033911d7bc19d48d4328312468a7d3d7d2861be41",
+      "native.json": "9031e9af8ff225553ea05ea4186dfc1b22062f6b132dbdb8a0c068476b865928"
+    }
+  },
   "deployment": "NOT DEPLOYED; normal full-suite release gate remains failed",
   "physicalPhone": "PENDING",
   "protectedTrackedArtDiff": "empty against sourceBase; four new runtime PNGs only",
@@ -200,6 +222,28 @@
     "build.log": "04f35fe94ff9c6dc75eeebb40c37e0ceec8eb0370a65528deac123c561aafa3b",
     "lifecycle-red.log": "136bbc82718b88b6e7aa76eb835c1c2b4478447e8a1cdd6b63fc02fd858ef11a",
     "runtime-red.log": "1fc3ed6b2c0155ff32869d0c55e24139a19ba4c123a7d0fe10d79a39288ee6f3",
-    "center-red.log": "64057b2dad22603a1c179370e3a58de52e824e0373789668370c5dd69c798997"
-  }
+    "center-red.log": "64057b2dad22603a1c179370e3a58de52e824e0373789668370c5dd69c798997",
+    "native-ci-1.log": "9add862eac9d2a2905e8a34deaea783998f13768e17ec7d94ba75cbef7f79d13"
+  },
+  "normalCI": {
+    "runId": 39726905249,
+    "runNumber": 1094,
+    "jobId": 119652782480,
+    "head": "06585e8c2ef7a7b0adc6fc5fe87f3ab11091bf2c",
+    "tree": "16eb15394ff45b77cb8210a5abba0b08ca08afd2",
+    "url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39726905249",
+    "conclusion": "failure",
+    "tests": 1009,
+    "pass": 984,
+    "fail": 25,
+    "log": "normal-ci-1094.log",
+    "sha256": "d919899a5fedf5598228a3f3ec482210259b30bfac80c574d03974ecb2761f0a",
+    "newFailureNames": []
+  },
+  "remainingGates": [
+    "Normal full suite25 failures, release blocked",
+    "Native multiple Idle body/accessory marker scale calibration",
+    "Pages deployment/public fingerprint verification if release-safe",
+    "Actual player phone review"
+  ]
 }

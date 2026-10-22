@@ -1,5 +1,13 @@
 # 鎮岳 Runtime checkpoint — NOT DEPLOYED
 
+## Remote verification addendum — release BLOCKED
+
+Tested HEAD06585e8c2ef7a7b0adc6fc5fe87f3ab11091bf2c/tree16eb15394ff45b77cb8210a5abba0b08ca08afd2. PR#1 open/unmerged. Normal Pages [run1094](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39726905249) FAILED at Test:1009/984pass/25fail, exactly same25 names as local, exit1; deploy skipped. normal-ci-1094.log is the decoded complete job log.
+
+[Native verification run1](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39726905423) SUCCESS: Chromium realWebGL4 native cases, actual built campaign route/mobile-emulated852×393 two cases, no pageerrors. Native49required/18,336,992decoded, tacticalT3 actual819ms/actualtwo-victim impacts/two real13.5%/3.75s statuses; builtT0 actual900ms/real buttoncallback/two damage victims/noT3aura. Both reduced preferences, Pause unchanged frame, old presenterclosed/bytes0/newscene ready. Fourposes×bothmirrors8 native source-vs-atlas samples maxDelta1, meanDelta0.0000008267–0.0000057871 (<0.00001). Full JSON and screenshots in browser/. native-ci-1.log preserves installer and actual command results.
+
+Artifact12402494599 archive download SHA2565eeddb2e197b22be9b998a8b334bdae83ba71dac616cdf089edc1cb1177d0e58 matches GitHub digest. Native and built screenshots were opened and inspected: real battlefield F3, source release, target impacts and HUD are present, not a GIF or blank framebuffer. Contacts/overlays obscure parts of body; this screenshot is NOT a complete anatomical calibration. No physicalphone/PLAYER VERIFIED, no deployment/public-fingerprint PASS. Multiple Idle body/accessory marker native calibration remains pending. Normal full-suite failure blocks release; no alternate workflow deploy or bypass. Later “prepared/not run” passages below are the earlier local checkpoint, superseded only in the precise remote scope above.
+
 Source base: 42880e7eb1b9fe668bcbc4362817ff4eaed06e04; containing commit supplies exact final source/tree. Approval receipt: ../P2_AWAKENING_PREFLIGHT/executable-acceptance.json.
 
 ## Actual verification
