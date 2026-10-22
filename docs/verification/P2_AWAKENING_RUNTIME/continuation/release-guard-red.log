@@ -1,0 +1,18 @@
+node:fs:622
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open 'docs/verification/P2_AWAKENING_RUNTIME/release-evidence.json'
+    at Object.openSync (node:fs:622:18)
+    at readFileSync (node:fs:488:35)
+    at file:///workspace/scratch/372fc6752092/shanhaijing-arena/scripts/verifyBotuoAwakeningRelease.mjs:4:20
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'docs/verification/P2_AWAKENING_RUNTIME/release-evidence.json'
+}
+
+Node.js v24.19.0

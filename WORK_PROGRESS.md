@@ -1,5 +1,11 @@
 # Work Progress
 
+## 2026-10-22 — 鎮岳工程驗證通過／正常 Pages 發布 NEXT
+
+最新本機完整1014/1014 PASS、Build/91assetguard PASS；遠端normal preflight run39778334056也1014/1014+Build PASS，只因刻意缺release-evidence而阻擋Pages。新增scale run39778996130 SUCCESS，Idle/F1–F4×兩面10組、50個頭角/肩身/大護臂/腰帶/蹄部native標記有真像素、全部maxDelta<=1/mean<0.00001；Idle144、姿勢200logical canvas與核准密度/共同接地保持，沒有外框fit或角色放大。Idle整張160透明quad的max7差值保留為diagnostic；採用先前126case相同的原圖native-trim控制後max1、mean8.27e-7，未放寬閾值，F1–F4仍與原整cell直接比對。10截圖與JSON/artifact12425653464已保存，ZIPSHA2564601437893162be3a9181223d31d5889f5d07936526a951fce25d7c204ef1e7d已核對。F3/Idle/F1雙向截圖已目視檢查；完整對比見CONTINUATION.md。
+
+release-evidence.json綁定258個完整src/public、驗證腳本及native/built/scale報告SHA256，guard本機PASS且強制完整清單及真報告case數；既有Browser4native/2built因Runtime未變沿用。依單人專案規則完成diff自審（非獨立審查），沒有src/public/核准原圖變更。下一步同feature分支正常完整CI→Pages→新公開指紋，不用bounded/skip繞過發布。玩家手機仍PENDING，P1/P2已核准範圍保護；下面25fail/比例待跑為歷史，不再重開。
+
 ## 2026-10-22 — 部署續行／既有25失敗明示遷移／本機1014 PASS
 
 玩家「確認進度紀錄後繼續做到部署」已記錄。恢復7a62eeed4398b5ae44a8583fac913c7ee2a7a690後完成來源像素重建前置：32legacy資產57frames與原來源RGBA一致，3utility沿用原6frame證據。19個舊測試檔依已核准logical/physical分層、Basic250ms、既有事件metadata、真Frame回傳與正確敵對fixture遷移；不改src/public/核准原圖，不暗刪美術或玩法斷言。舊25失敗保留，詳細CONTINUATION.md及continuation/migration.json。

@@ -1,5 +1,9 @@
 # 鎮岳 Runtime checkpoint — NOT DEPLOYED
 
+## Current release candidate — 2026-10-22
+
+Previous25 failures are now explicitly migrated with immutable source reconstruction and retained assertions, not waived. Full1014/1014 and Build PASS locally and normal remote preflight Test/Build PASS. Additional native scale10 cases/50 marker regions PASS inrun39778996130. See CONTINUATION.md, continuation/{migration.json,scale/scale.json,normal-ci-preflight.log,scale-ci.log} and release-evidence.json for source-bound current evidence. Old25-failure records below remain original historical measurements. Native/built source unchanged; prior4+2 evidence reused. Pages/public/phone still pending until actual release Actions; no claim of deployment here.
+
 ## Remote verification addendum — release BLOCKED
 
 Tested HEAD06585e8c2ef7a7b0adc6fc5fe87f3ab11091bf2c/tree16eb15394ff45b77cb8210a5abba0b08ca08afd2. PR#1 open/unmerged. Normal Pages [run1094](https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39726905249) FAILED at Test:1009/984pass/25fail, exactly same25 names as local, exit1; deploy skipped. normal-ci-1094.log is the decoded complete job log.

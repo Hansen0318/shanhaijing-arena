@@ -1,8 +1,14 @@
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,readdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const r=JSON.parse(readFileSync('docs/verification/P2_AWAKENING_RUNTIME/release-evidence.json'));
 assert.equal(r.scale,'PASS');assert.equal(r.native,'PASS');assert.equal(r.builtMobile,'PASS');
 assert.equal(r.authorization,'確認進度紀錄後繼續做到部署');
+const walk=p=>readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(p+'/'+e.name):[p+'/'+e.name]);
+assert.deepEqual(Object.keys(r.sourceSha256).filter(p=>p.startsWith('src/')||p.startsWith('public/')).sort(),[...walk('src'),...walk('public')].sort(),'receipt must cover every runtime source and public file, not an empty/partial map');
+const root='docs/verification/P2_AWAKENING_RUNTIME/';
+const native=JSON.parse(readFileSync(root+'browser/native.json')),built=JSON.parse(readFileSync(root+'browser/built-entry.json')),scale=JSON.parse(readFileSync(root+'continuation/scale/scale.json'));
+for(const evidence of [native,built,scale])assert.equal(evidence.status,'PASS');
+assert.equal(native.cases.length,4);assert.equal(built.cases.length,2);assert.equal(scale.cases.length,2);assert.ok(scale.cases.every(c=>c.cases.length===5));
 for(const [p,sha]of Object.entries(r.sourceSha256))assert.equal(createHash('sha256').update(readFileSync(p)).digest('hex'),sha,p);
 console.log('Awakening native/built/scale evidence matches unchanged approved runtime sources. Normal full-suite still required.');

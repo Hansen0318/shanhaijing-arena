@@ -6,6 +6,7 @@
 從最新GitHub接續鎮岳工程，取得真native/built/mobile驗證與正常CI證據；驗證支持發布才部署Pages供玩家手機審核。不重問已核准契約，不把準備好的browser腳本當PASS。遇實際阻擋保存證據停該Gate。
 
 [背景資訊]
+最新工程：full1014/1014、Build及native scale10case/50多標記PASS（run39778996130），同源前次native4/built2沿用。完整release-evidence.json綁258源/報告hash，guard本機PASS；normal preflight Test/Build PASS，缺receipt時正常阻擋Pages。接續最新正常發布CI/Pages與公開指紋，不重跑源未變Browser/已遷移25項；手機仍PENDING。CONTINUATION.md頂部比下方歷史狀態新；最新containing checkpoint/Actions優先。
 玩家已再授權「確認進度紀錄後繼續做到部署」。最新continuation/CONTINUATION.md記錄25既有失敗逐項來源重建後遷移，本機full1014/1014+Build PASS；Runtime/原圖未改，所以前次Browser證據沿用。新增p2-awakening-scale純校準workflow待取得多標記native結果，normal Pages在新來源證據guard檢查前仍完整npm test、不繞過；缺release-evidence.json會阻擋，不等於新Runtime失敗。完成校準/receipt後才正常CI發布及公開指紋。下面舊25fail狀態是歷史；不要重做已完成遷移，先核對最新Actions及containing commit。
 最新遠端測試HEAD06585e8c2ef7a7b0adc6fc5fe87f3ab11091bf2c/tree16eb15394ff45b77cb8210a5abba0b08ca08afd2；containing docs checkpoint可能更新HEAD但不改tested Runtime。正常CI#1094/run39726905249完成FAIL，1009/984/25、25名稱與本機一致、未部署。真Browser run39726905423 SUCCESS：native4/built-mobile2/8雙向RGBA採樣PASS，artifact12402494599下載SHA2565eeddb2e197b22be9b998a8b334bdae83ba71dac616cdf089edc1cb1177d0e58；CIlogs/JSON/截圖已保存。下方舊workflow待跑/本機無Browser描述僅指本機，已由此遠端證據取代。不要重跑源未變Browser。Idle多身體/配件native比例標記校準尚未完成，完整suite25失敗仍是發布阻擋；不可說PLAYER VERIFIED或提供舊URL假稱鎮岳已部署。
 Repo Hansen0318/shanhaijing-arena，唯一branch feat/m0-combat-core-20260927；PR#1 open/unmerged。GitHub唯一權威，先fetch核對完整HEAD/tree/branch/PR/working tree/commits。base42880e7eb1b9fe668bcbc4362817ff4eaed06e04僅定位，最新containing checkpoint優先。
