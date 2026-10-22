@@ -1,0 +1,31 @@
+✔ cache is idle until requested and shares decode across concurrent/retry loads (1.560399ms)
+✔ failed downloads/unsafe decoded dimensions fall back and can retry (0.508666ms)
+✔ cache bounds resident images and handles unknown keys without crashing (0.335715ms)
+✔ resident memory budget counts decoded pixels and bounds parallel decode (5.646139ms)
+✔ image fallback chain actually loads and caches the valid secondary image (1.146576ms)
+✔ unpinned LRU is reclaimed while pinned actor art survives pressure (3.162902ms)
+✔ concurrent dedupe and reservations prevent overcommit of pinned textures (1.924397ms)
+✔ failed required loads are observable and retry succeeds without treating fallback as image (0.579052ms)
+✔ shutdown during pending upload never installs late texture; warm cache can be reused (0.466302ms)
+✔ eviction callback destroys display references before removing scene texture (3.87573ms)
+✔ unsafe budgets are rejected and diagnostics snapshots cannot mutate owner (0.440433ms)
+✔ decoded cache remains independent of live textures and reports finite peaks (0.474254ms)
+✔ unknown requested image and actual renderer allocation failures are explicit, retriable failures (0.878402ms)
+✔ parallel loads reserve decoded bytes before decode and release failed reservations (0.771011ms)
+✔ only this encounter loads; optional effects remain demand-driven and pinned while displayed (36.307933ms)
+✔ five unique characters, six actors, reduced motion and repeated warm restarts keep all required art (22.825307ms)
+✔ missing approved KO rejects encounter readiness explicitly and retry preserves actor pins (2.004047ms)
+✔ critical art exceeding hard safety cap refuses entry with no silent drop or cap increase (0.538961ms)
+✔ rapid scene shutdown during essential load never updates a replacement scene (5.474116ms)
+✔ unknown required portrait cannot masquerade as successful procedural readiness (0.603849ms)
+✔ optional allocation failure keeps deterministic graphics fallback and all pinned actor textures (1.095239ms)
+✔ invalid essential Idle descriptor cannot hide its missing approved source under procedural fallback (0.241944ms)
+✔ optional Hit actor texture stays pinned until display retargets under Cast allocation pressure (0.651752ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 174.613967
