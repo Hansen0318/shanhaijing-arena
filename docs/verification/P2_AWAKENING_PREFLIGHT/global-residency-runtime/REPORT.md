@@ -67,6 +67,8 @@ Playwright is installed but local Chromium/headless-shell executable is absent. 
 
 Runtime checkpoint uses normal CI, not [skip ci] or a bounded release/probe bypass. Existing workflow full-suite step is expected to stop on existing failures; inspect actual Actions after push. No new Pages delivery, public fingerprint or phone acceptance is established. No main merge, replacement branch, TD or P3.
 
+**CI closure:** normal Actions#1093/run39707213728 at remote5e792de874b9c71f619e64f03f3260599ac9280e completed FAILURE at Test. CI reproduced993tests/965pass/28fail, all28 names match local recorded failures; no new name. CI Build and deploy were skipped. Local Build PASS is separate. Exact CI names and run linkage are in `ci-result.json`; this supersedes the earlier in-progress observation in `github-checkpoint.json`. No workflow or release bypass was added.
+
 ## Review and rulings
 
 Self-review only because the project requires single-agent execution. Read full runtime diff and surrounding prepare/destroy, fallback and transport queue paths; examined all five plan Review Focus cases. No new critical/important finding in the scoped shared-policy delta. This is not an independent review or release clearance.
