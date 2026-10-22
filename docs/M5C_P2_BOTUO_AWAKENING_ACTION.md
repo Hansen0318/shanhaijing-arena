@@ -1,5 +1,15 @@
 # P2 猼訑 Awakening「鎮岳」— VFX/GIF APPROVED / EXECUTION PREFLIGHT NEXT
 
+## 2026-10-22 — 鎮岳 Runtime 安裝／119 scoped PASS／全套25 FAIL／未部署
+
+玩家「要接觸全部16mib限制，並紀錄，繼續，我確認妳繼續」已記錄於 `docs/verification/P2_AWAKENING_PREFLIGHT/executable-acceptance.json`；觀測／保真安裝契約 Gate CLOSED，不再要求重審。cache 預設 byte target 現為 null，移除最後16MiB閒置保留限制；scene無總量／required數量／optional reserve拒絕，64僅未使用cache entry回收目標，12MiB僅未pin scene回收目標。安全單檔驗證、兩下載、完整required、真失敗、destroy保留。
+
+鎮岳 opt-in `area-observed` 共用事件：實際damage正值victims、action/epoch身份、實際boyi.team provenance；instant0→F3、tactical900/819，守群獨立到期/MAX，不改玩法數值。四份新來源精確PNG，49required／18,336,992 decoded。已核准400×320 cell的真實GROUND274，裁切(100,80)後root(100,194)、origin(.5,.97)，修正舊提案184，沒有改原圖／尺度；native/Idle多標記驗證仍待完成。
+
+最新受影響119/119 PASS；全套1009/984 PASS/25 FAIL（exit1），Build/91assetguard PASS。25項均對應先前28項；本次明示遷移3項過時required容量／inventory斷言，不代表舊美術斷言通過。每項名稱、原因、完整TAP和RED在 `docs/verification/P2_AWAKENING_RUNTIME/{REPORT.md,result.json,full.tap}`；SIGKILL原因未知。原核准美術tracked diff為空，舊public素材未改。
+
+本機無Chromium；新增同feature分支純驗證workflow取得真native/built/mobile證據，尚待遠端執行。它不部署、不替代正常full-suite；正常CI仍有發布阻擋，沒有Pages／公開指紋／手機PASS。下一步取得Actions證據；若有實際阻擋保存並停Gate，不繞過。PR#1保持open/unmerged，單人執行，不重做已核准美術或歷史Special164。此條取代下方舊contract待審／cache16MiB狀態。
+
 ## 2026-10-22 — Shared global residency IMPLEMENTED / scoped PASS / Browser BLOCKED
 Player「核准，繼續」approved exact four-task plan; receipt `docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-plan-acceptance.json`. Cache/scene no longer reject valid encounter images on16MiB/64-entry/131072reserve gates. Cache16MiB/64 are only inactive retention defaults; scene12MiB only reclaims unpinned textures. Per-image4MiB/2048/4194304, two transports, complete required pins/readiness, actual failures and scene teardown preserved. No character exception, Chiru split or approved-art/gameplay changes.
 Tests: cache8/8, residency12/12, shared30/30; affected120/113pass/7existingfail; full993/965pass/28existingfail. Prior29→28 is the explicitly migrated all-five capacity assertion, not silently rewritten art acceptance; seven new tests account for total993. Exact names, reasons, TAP and RED evidence: `docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-runtime/{REPORT.md,result.json}`. Build/87assetguard PASS. SIGKILL cause remains unknown.

@@ -1,0 +1,98 @@
+✖ Awakening true-victim contacts, same-clock F3, air and cleanup reduced=false (8.726435ms)
+✖ Awakening true-victim contacts, same-clock F3, air and cleanup reduced=true (2.5904ms)
+✖ Awakening old resolve retains true contacts without replacing a newer same-clock action (2.511794ms)
+✖ Awakening Move replaces body, epoch clear removes old effects and rejects stale replay (2.663617ms)
+✖ Awakening installed atlas reconstructs exact approved display crops with common ground (52.113922ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 198.027022
+
+✖ failing tests:
+
+test at tests/botuoAwakeningRuntime.test.js:6:35
+✖ Awakening true-victim contacts, same-clock F3, air and cleanup reduced=false (8.726435ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '0.0.160.160'
+  - '400.0.200.200'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningRuntime.test.js:6:255)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '0.0.160.160',
+    expected: '400.0.200.200',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoAwakeningRuntime.test.js:6:35
+✖ Awakening true-victim contacts, same-clock F3, air and cleanup reduced=true (2.5904ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '0.0.160.160'
+  - '400.0.200.200'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningRuntime.test.js:6:255)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '0.0.160.160',
+    expected: '400.0.200.200',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoAwakeningRuntime.test.js:7:1
+✖ Awakening old resolve retains true contacts without replacing a newer same-clock action (2.511794ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningRuntime.test.js:7:359)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoAwakeningRuntime.test.js:8:1
+✖ Awakening Move replaces body, epoch clear removes old effects and rejects stale replay (2.663617ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningRuntime.test.js:8:331)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoAwakeningRuntime.test.js:9:1
+✖ Awakening installed atlas reconstructs exact approved display crops with common ground (52.113922ms)
+  TypeError: Cannot read properties of undefined (reading 'animation')
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningRuntime.test.js:9:491)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

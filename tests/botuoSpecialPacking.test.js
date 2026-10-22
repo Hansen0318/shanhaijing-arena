@@ -34,7 +34,7 @@ test('installed physical adapter restores every legacy logical RGBA frame byte f
  }
  assert.equal(count,57);
 });
-test('installed 45-key envelope retains required art, reserve and source-exact sampling derivatives',async()=>{
+test('installed49-key envelope retains required art, reserve and source-exact sampling derivatives',async()=>{
  for(const entry of [...proposal.legacyCandidates,...proposal.newAssets]){
   const record=assetManifest[entry.key];assert.ok(record?.path.startsWith('assets/special-runtime-v1/'),'approved candidate installed: '+entry.key);
   const bytes=readFileSync('public/'+record.path),fix=JSON.parse(readFileSync('docs/verification/P2_SPECIAL_RUNTIME/sampling-fix.json')).entries.find(e=>e.key===entry.key);
@@ -44,7 +44,7 @@ test('installed 45-key envelope retains required art, reserve and source-exact s
  }
  const scene=assetScene(),p=new AssetPresenter(scene,{cache:createAssetCache({transport:pngTransport})});await p.prepare(Object.values(rosterCatalog));
  p.residency.setPins('new-utility',proposal.newAssets.map(e=>e.key));await p.loadKeys(proposal.newAssets.map(e=>e.key));
- assert.equal(p.textures.size,45);assert.equal(p.textureBytes,16611224);assert.ok(Number.isFinite(p.textureBytes));assert.equal(p.residency.snapshot().failed,0);assert.equal(p.residency.snapshot().evicted,0);
+ assert.equal(p.textures.size,49);assert.equal(p.textureBytes,18336992);assert.ok(Number.isFinite(p.textureBytes));assert.equal(p.residency.snapshot().failed,0);assert.equal(p.residency.snapshot().evicted,0);
  p.destroy();assert.equal(scene.budget().bytes,0);
 });
 test('logical body frame names, scale and origin survive native physical packing in both facings',async()=>{

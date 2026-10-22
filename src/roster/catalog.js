@@ -1,5 +1,6 @@
 import {botuoHeavyAction} from '../assets/botuoHeavyRuntime.js';
 import {botuoSpecialAction} from '../assets/botuoSpecialRuntime.js';
+import {botuoAwakeningAction} from '../assets/botuoAwakeningRuntime.js';
 import {repackAnimationRows,repackActionEffectRows} from '../assets/runtimePacking.js';
 import {calibrateActionBody,calibrateAnimationBody} from '../assets/actionCalibration.js';
 import {animationDescriptor as validateAnimationDescriptor,actionDescriptor as validateActionDescriptor} from '../assets/descriptors.js';
@@ -47,7 +48,7 @@ const presentation={
    frameDurationsMs:[160,90,160,160],impactFrame:2,coordinateSize:[158,143],
    blade:{assetKey:'botuo.basicSource',offset:[47,-10],size:[146,114],layer:4,startMs:160,holdAfterResolveMs:200},
    contact:{assetKey:'botuo.basicContact',offset:[-52,-144.2],size:[105,115],layer:6,attach:'target',retainOnNextCast:true,durationMs:200},
-  },{reference:botuoIdleAnimation,referenceSpan:25,actionSpan:20,referenceFoot:158,actionFoot:126})),heavy:actionDescriptor(botuoHeavyAction),special:actionDescriptor(botuoSpecialAction)}),
+  },{reference:botuoIdleAnimation,referenceSpan:25,actionSpan:20,referenceFoot:158,actionFoot:126})),heavy:actionDescriptor(botuoHeavyAction),special:actionDescriptor(botuoSpecialAction),awakening:actionDescriptor(botuoAwakeningAction)}),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'botuo.portrait',collectionArt:'botuo.identity',battleIdle:'botuo.battleIdle',battleMove:'botuo.battleMove',battleKo:'botuo.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:botuoIdleAnimation,battleMove:animationDescriptor(calibrateAnimationBody({
    // Approved Move and static body share the 160-unit authoring grid.

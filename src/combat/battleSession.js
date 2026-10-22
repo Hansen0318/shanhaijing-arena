@@ -211,6 +211,7 @@ export class BattleSession {
       actorId:actor.instanceId, targetId:target.instanceId, category, source, amount, critical,eventAt:this.elapsedSeconds,
       position:{x:target.x,y:target.y},
       ...(hitContext.actionId?{actionId:hitContext.actionId}:{}),
+      ...(hitContext.presentationEpoch!=null?{presentationEpoch:hitContext.presentationEpoch}:{}),
       ...(hitContext.eventAt!=null?{eventAt:hitContext.eventAt,hitIndex:hitContext.hitIndex}:{}),
     });
     if(amount>0&&!hitContext.residual)this.effects.trigger('hit',actor,target,category,{definition,source});
@@ -226,7 +227,8 @@ export class BattleSession {
     if(!record)return;
     const actor=this.actorById(record.actorId);if(!actor)return;
     const target=phase==='resolve'&&hit?this.actorById(record.targetId):record.target;
-    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,presentationOnly:true,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,eventAt:this.elapsedSeconds,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...record.origin},attackTarget:{...record.target}});
+    const victims=record.definition.presentation?.actionLifecycle==='area-observed'&&phase==='resolve'?this.damageEvents.filter(e=>e.actionId===record.actionId&&e.presentationEpoch===record.presentationEpoch&&e.amount>0).map(e=>({targetId:e.targetId,amount:e.amount,position:{...e.position},eventAt:e.eventAt})):null;
+    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,presentationOnly:true,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,eventAt:this.elapsedSeconds,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(victims?{victims}:{}),...(reason?{reason}:{}),attackOrigin:{...record.origin},attackTarget:{...record.target}});
   }
 
   recordCast(actor, target, category, source, definition, hit,metadata={}) {
@@ -359,18 +361,20 @@ export class BattleSession {
     let applied=false;
     const delay=this.tacticalEnabled&&definition.telegraph&&definition.effect.coefficient>0&&canHit
       ?this.threats.create(actor,target,definition,this.elapsedSeconds*1000):null;
-    const impactPresentation=definition.presentation?.actionLifecycle==='existing-impact'?{
-      actionId:`presentation.${++this.nextActionId}`,actorId:actor.instanceId,targetId:canHit?target.instanceId:null,definition,category,source,startedAt:this.elapsedSeconds,dueAt:delay?delay.impactAtMs/1000:this.elapsedSeconds,origin:{x:actor.x,y:actor.y},target:canHit?{x:target.x,y:target.y}:{x:actor.x+(aim.facingX===-1?-1:aim.facingX===1?1:(Math.sign(this.playerMovement.get(actor.instanceId)?.x)||(actor.teamId===this.allies[0].teamId?1:-1))),y:actor.y}
+    const impactPresentation=['existing-impact','area-observed'].includes(definition.presentation?.actionLifecycle)?{
+      actionId:`presentation.${++this.nextActionId}`,presentationEpoch:this.presentationEpoch,actorId:actor.instanceId,targetId:canHit?target.instanceId:null,definition,category,source,startedAt:this.elapsedSeconds,dueAt:delay?delay.impactAtMs/1000:this.elapsedSeconds,origin:{x:actor.x,y:actor.y},target:canHit?{x:target.x,y:target.y}:{x:actor.x+(aim.facingX===-1?-1:aim.facingX===1?1:(Math.sign(this.playerMovement.get(actor.instanceId)?.x)||(actor.teamId===this.allies[0].teamId?1:-1))),y:actor.y}
     }:null;
     this.recordImpactPresentation(impactPresentation,'start');
     finishAbility({caster:actor,slot,definition,applyEffect:()=>{
       if(delay)this.delayedImpacts.set(delay.id,{actorId:actor.instanceId,targetId:target.instanceId,definition,category,source,threat:delay,...(impactPresentation?{impactPresentation}:{})});
-      else if(canHit)applied=this.applyAbilityEffects(actor,target,definition,category,source,context);
+      else if(canHit)applied=this.applyAbilityEffects(actor,target,definition,category,source,context,null,this.observedHitContext(impactPresentation));
     }});
     if(target?.teamId!==actor.teamId&&target)this.targetIds.set(actor.instanceId,target.instanceId);
     if(!delay){if(impactPresentation)this.recordImpactPresentation(impactPresentation,'resolve',applied);else this.recordCast(actor,target,category,source,definition,applied);}
     return true;
   }
+
+  observedHitContext(record){return record?.definition.presentation?.actionLifecycle==='area-observed'?{actionId:record.actionId,presentationEpoch:record.presentationEpoch}:{};}
 
   applyAbilityEffects(actor,target,definition,category,source,context,geometry=null,hitContext={}) {
     const actorDefinition=this.definitionForActor(actor);let applied=false;
@@ -479,7 +483,7 @@ export class BattleSession {
       else if(queued){
         if(target&&canCharacterAct(target)&&isTargetInRange(actor,target,r.definition.range))this.applyResolvedDamage(actor,target,this.definitionForActor(actor),this.definitionForActor(target),r.definition,r.category,r.source,{hitIndex:r.hitIndex,totalHits:r.totalHits,eventAt:this.elapsedSeconds});
       }else if(delayed){
-        const applied=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),r.threat.geometry);
+        const applied=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),r.threat.geometry,this.observedHitContext(r.impactPresentation));
         if(r.impactPresentation)this.recordImpactPresentation(r.impactPresentation,'resolve',applied);else this.recordCast(actor,{...r.threat.geometry.center},r.category,r.source,r.definition,applied,{eventAt:this.elapsedSeconds});
       }else if(legacy){
         this.resolveActions(r.actorId);
@@ -653,7 +657,7 @@ export class BattleSession {
       const hit=this.delayedImpacts.get(threat.id);this.delayedImpacts.delete(threat.id);if(!hit)continue;
       const actor=this.actorById(hit.actorId),target=this.actorById(hit.targetId);
       if(!actor||!canCharacterAct(actor)){this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'source_ko');continue;}
-      const applied=this.applyAbilityEffects(actor,target,hit.definition,hit.category,hit.source,this.teamContext(actor),threat.geometry);
+      const applied=this.applyAbilityEffects(actor,target,hit.definition,hit.category,hit.source,this.teamContext(actor),threat.geometry,this.observedHitContext(hit.impactPresentation));
       if(hit.impactPresentation)this.recordImpactPresentation(hit.impactPresentation,'resolve',applied);else this.recordCast(actor,{...threat.geometry.center},hit.category,hit.source,hit.definition,applied);
     }
     this.areas.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));

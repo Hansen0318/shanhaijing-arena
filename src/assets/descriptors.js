@@ -1,6 +1,12 @@
 import {immutable} from './schema.js';
 import {assetManifest} from './manifest.js';
 const finite=(n,min,max)=>Number.isFinite(n)&&n>=min&&n<=max;
+function statusVisualRules(rules,manifest){
+ if(!rules||typeof rules!=='object'||Array.isArray(rules))throw new TypeError('Invalid status rules');
+ return Object.fromEntries(Object.entries(rules).map(([id,e])=>{
+  if(!/^[-\w.]{1,96}$/.test(id)||!e||manifest[e.assetKey]?.type!=='image'||!Array.isArray(e.size)||e.size.length!==2||e.size.some(n=>!finite(n,1,2048))||!Array.isArray(e.offset)||e.offset.length!==2||e.offset.some(n=>!finite(n,-2048,2048))||!Number.isInteger(e.layer)||!finite(e.layer,1,19)||!finite(e.opacity,0,1)||!finite(e.reducedOpacity,0,1)||!/^[-\w.]{1,96}$/.test(e.styleId??'')||!['mitigation','incoming','outgoing','movement','avoidance','control','steadfast'].includes(e.type)||!Number.isInteger(e.priority))throw new TypeError('Invalid status visual ownership');return [id,{...e}];
+ }));
+}
 function common(input){
  const origin=input.origin??[.5,.5],scale=input.scale??1;
  if(!Array.isArray(origin)||origin.length!==2||origin.some(n=>!finite(n,0,1))||!finite(scale,.05,4))throw new TypeError('Invalid origin/scale');return {origin,scale};
@@ -34,7 +40,7 @@ export function actionDescriptor(input,{manifest=assetManifest}={}){
   return immutable({kind:'utility',animation,frameDurationsMs,reducedGestureMs:input.reducedGestureMs,activation,statusVisuals});
  }
  if(input.kind!=='staged'&&(animation.loop||animation.frames.length!==4||!Array.isArray(frameDurationsMs)||frameDurationsMs.length!==4||frameDurationsMs.some(n=>!Number.isInteger(n)||n<1||n>1000)||impactFrame!==2||!Array.isArray(coordinateSize)||coordinateSize.length!==2||coordinateSize.some(n=>!finite(n,1,2048))))throw new TypeError('Invalid action timing/coordinates');
- const effect=(e)=>{if(!e||e.opacity!==undefined&&!finite(e.opacity,0,1)||manifest[e.assetKey]?.type!=='image'||!Array.isArray(e.offset)||!Array.isArray(e.size)||e.offset.length!==2||e.size.length!==2||e.offset.some(n=>!finite(n,-2048,2048))||e.size.some(n=>!finite(n,1,2048))||!Number.isInteger(e.layer)||e.layer<1||e.layer>19||e.attach!=null&&!['source','target'].includes(e.attach)||e.retainOnNextCast!==undefined&&typeof e.retainOnNextCast!=='boolean'||e.startMs!==undefined&&(!Number.isInteger(e.startMs)||!finite(e.startMs,0,1000))||e.durationMs!==undefined&&(!Number.isInteger(e.durationMs)||!finite(e.durationMs,1,1000))||e.holdAfterResolveMs!==undefined&&(!Number.isInteger(e.holdAfterResolveMs)||!finite(e.holdAfterResolveMs,1,1000)))throw new TypeError('Invalid action effect');return {...(e.startMs!==undefined?{startMs:e.startMs}:{}),...(e.durationMs!==undefined?{durationMs:e.durationMs}:{}),...(e.opacity!==undefined?{opacity:e.opacity}:{}),assetKey:e.assetKey,offset:e.offset,size:e.size,layer:e.layer,...(e.attach?{attach:e.attach}:{}),...(e.retainOnNextCast!==undefined?{retainOnNextCast:e.retainOnNextCast}:{}),...(e.holdAfterResolveMs!==undefined?{holdAfterResolveMs:e.holdAfterResolveMs}:{})};};
+ const effect=(e)=>{if(!e||e.opacity!==undefined&&!finite(e.opacity,0,1)||manifest[e.assetKey]?.type!=='image'||!Array.isArray(e.offset)||!Array.isArray(e.size)||e.offset.length!==2||e.size.length!==2||e.offset.some(n=>!finite(n,-2048,2048))||e.size.some(n=>!finite(n,1,2048))||!Number.isInteger(e.layer)||e.layer<1||e.layer>19||e.attach!=null&&!['source','target','fixed'].includes(e.attach)||e.retainOnNextCast!==undefined&&typeof e.retainOnNextCast!=='boolean'||e.startMs!==undefined&&(!Number.isInteger(e.startMs)||!finite(e.startMs,0,1000))||e.durationMs!==undefined&&(!Number.isInteger(e.durationMs)||!finite(e.durationMs,1,1000))||e.holdAfterResolveMs!==undefined&&(!Number.isInteger(e.holdAfterResolveMs)||!finite(e.holdAfterResolveMs,1,1000)))throw new TypeError('Invalid action effect');return {...(e.startMs!==undefined?{startMs:e.startMs}:{}),...(e.durationMs!==undefined?{durationMs:e.durationMs}:{}),...(e.opacity!==undefined?{opacity:e.opacity}:{}),assetKey:e.assetKey,offset:e.offset,size:e.size,layer:e.layer,...(e.attach?{attach:e.attach}:{}),...(e.retainOnNextCast!==undefined?{retainOnNextCast:e.retainOnNextCast}:{}),...(e.holdAfterResolveMs!==undefined?{holdAfterResolveMs:e.holdAfterResolveMs}:{})};};
  if(input.kind==='staged'){
   const {durationMs,recoveryStartMs,phaseFrames,stages}=input;
   if(animation.loop||animation.frames.length!==5||!Number.isInteger(durationMs)||!finite(durationMs,1,3000)||!Number.isInteger(recoveryStartMs)||!finite(recoveryStartMs,1,durationMs-1)||!Array.isArray(coordinateSize)||coordinateSize.length!==2||coordinateSize.some(n=>!finite(n,1,2048))||!Array.isArray(phaseFrames)||phaseFrames.length!==5||phaseFrames.some(n=>!Number.isInteger(n)||n<0||n>=5)||new Set(phaseFrames).size!==5||!Array.isArray(stages)||stages.length!==3)throw new TypeError('Invalid staged action lifecycle');
@@ -45,5 +51,5 @@ export function actionDescriptor(input,{manifest=assetManifest}={}){
   if(parsed.at(-1).endMs!==recoveryStartMs)throw new TypeError('Invalid staged recovery');
   return immutable({kind:'staged',animation,coordinateSize,durationMs,recoveryStartMs,phaseFrames,stages:parsed});
  }
- return immutable({animation,frameDurationsMs,impactFrame,coordinateSize,blade:effect(input.blade),contact:effect(input.contact)});
+ return immutable({...(input.kind==='area-observed'?{kind:'area-observed',statusVisuals:statusVisualRules(input.statusVisuals,manifest)}:{}),animation,frameDurationsMs,impactFrame,coordinateSize,blade:effect(input.blade),contact:effect(input.contact)});
 }

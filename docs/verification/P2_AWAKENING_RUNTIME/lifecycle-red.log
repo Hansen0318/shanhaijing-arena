@@ -1,0 +1,158 @@
+✖ Awakening observed T0 tactical=false preserves real gameplay and emits actual victims (5.051211ms)
+✖ Awakening observed T3 tactical=false preserves real gameplay and emits actual victims (2.270169ms)
+✖ Awakening observed T0 tactical=true preserves real gameplay and emits actual victims (0.977899ms)
+✖ Awakening observed T3 tactical=true preserves real gameplay and emits actual victims (1.109582ms)
+✖ Awakening locked original target escapes while entrant gets sole true contact provenance (2.029355ms)
+✖ Awakening air tactical=false emits immediate release without fake contact or protection (1.496421ms)
+✖ Awakening air tactical=true emits immediate release without fake contact or protection (0.595436ms)
+✖ Awakening source KO cancels pending presentation and damage (0.627993ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 0
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120.536943
+
+✖ failing tests:
+
+test at tests/botuoAwakeningLifecycle.test.js:13:66
+✖ Awakening observed T0 tactical=false preserves real gameplay and emits actual victims (5.051211ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'start'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningLifecycle.test.js:16:44)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'start',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoAwakeningLifecycle.test.js:13:66
+✖ Awakening observed T3 tactical=false preserves real gameplay and emits actual victims (2.270169ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'start'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningLifecycle.test.js:16:44)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'start',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoAwakeningLifecycle.test.js:13:66
+✖ Awakening observed T0 tactical=true preserves real gameplay and emits actual victims (0.977899ms)
+  TypeError: Cannot read properties of undefined (reading 'phase')
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningLifecycle.test.js:16:60)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/botuoAwakeningLifecycle.test.js:13:66
+✖ Awakening observed T3 tactical=true preserves real gameplay and emits actual victims (1.109582ms)
+  TypeError: Cannot read properties of undefined (reading 'phase')
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningLifecycle.test.js:16:60)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/botuoAwakeningLifecycle.test.js:24:1
+✖ Awakening locked original target escapes while entrant gets sole true contact provenance (2.029355ms)
+  TypeError: Cannot read properties of undefined (reading 'map')
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningLifecycle.test.js:24:343)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/botuoAwakeningLifecycle.test.js:25:36
+✖ Awakening air tactical=false emits immediate release without fake contact or protection (1.496421ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningLifecycle.test.js:25:311)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoAwakeningLifecycle.test.js:25:36
+✖ Awakening air tactical=true emits immediate release without fake contact or protection (0.595436ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningLifecycle.test.js:25:311)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/botuoAwakeningLifecycle.test.js:26:1
+✖ Awakening source KO cancels pending presentation and damage (0.627993ms)
+  TypeError: Cannot read properties of undefined (reading 'actionId')
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningLifecycle.test.js:26:348)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

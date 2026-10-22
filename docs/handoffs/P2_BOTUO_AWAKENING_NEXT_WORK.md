@@ -1,27 +1,26 @@
-# P2 鎮岳 — 共用政策已實作／觀測契約審閱 NEXT
+# P2 鎮岳 — Runtime 已安裝／驗證與發布 Gate 尚未完成
 
 ```text
 【山海經聯盟 — P2 猼訑 Awakening「鎮岳」無縫接手】
 [角色任務]
-從最新GitHub恢復；共用無固定總容量政策已完成程式與局部驗證。第一個未完成Gate是鎮岳觀測事件／狀態／保真安裝契約獨立審閱。先讀最新receipt與玩家回覆；若已核准，直接接續必要工程，不重問已關閉Gate。尚未核准時，呈交已完成具體契約材料，依實際範圍處理。
+從最新GitHub接續鎮岳工程，取得真native/built/mobile驗證與正常CI證據；驗證支持發布才部署Pages供玩家手機審核。不重問已核准契約，不把準備好的browser腳本當PASS。遇實際阻擋保存證據停該Gate。
 
 [背景資訊]
-Repo Hansen0318/shanhaijing-arena；唯一branch feat/m0-combat-core-20260927；PR#1 open/unmerged。禁止main merge、替代分支、TD、P3。GitHub唯一權威；先fetch核對完整HEAD/tree/branch/PR/working tree/recent commits，不能把舊checkpoint當最新。
-讀AGENTS.md、WORK_PROGRESS.md、docs/STATE.md、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/DEVELOPMENT_ROADMAP.md、docs/M5C_ART_ANIMATION_VFX.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_P2_BOTUO_AWAKENING_ACTION.md、docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md（頂部新addendum優先）、docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-runtime/{REPORT.md,result.json}及本交接。
-全局規格SHA256 c47019288e6b6ceaf15b8c87872c5eb156518847fec3922eadab72df69e2141b已核准；實作計畫SHA25616d36b5a209dc6c83fb240dad51f1fab17d0646f60a31cea7de4786e3d1ed067於玩家「核准，繼續」後已核准，receipt global-residency-plan-acceptance.json。不可重開這兩Gate。
-src/assets/schema.js、src/runtime/assetCache.js、src/runtime/assetResidency.js已移除總decoded-byte/required-count拒絕門檻。cache16MiB/64僅閒置引用保留目標；scene12MiB僅回收未pin貼圖。無131072reserve門檻，無單角色例外，禁止實作被取代的赤鱬KO十一片。原圖未動。
-局部30/30；affected120/113pass/7既有fail；完整993/965pass/28既有fail；Build/87assetguard PASS。先前986/957/29的29→28，來自明示遷移一項過時容量斷言；其餘28與原基線名稱一致。所有名稱原因與原始TAP/RED紀錄保存，不以歷史五項或局部PASS取代全套。SIGKILL原因未知，未執行斷言不可說PASS。來源未變就沿用，不因換Work重跑。
-Browser阻擋：本機Playwright沒有Chromium執行檔；standard install chromium --only-shell下載invalid/truncatedZIP，exit1，browser-install.log已保存。真Phaser/built-app/mobile未跑；沒有鎮岳安裝／部署／公開指紋或手機驗收。CI正常full-suite，不用skip ci或既有bounded release/probe繞過全局變更。
-P1 COMPLETE；P2Idle/Move/KO/Basic/Heavy與Special PLAYER VERIFIED皆保護。鎮岳F3/F1–F4/三VFX八GIF已核准，receipts docs/art/approved/botuo/awakening/{f3-v2,poses-v1,visual-v1}/acceptance.json；素材prompt/manifest/QA/GIF/script位於docs/art/candidates/botuo/awakening/composite-review-v1/，不重畫不重問。
+Repo Hansen0318/shanhaijing-arena，唯一branch feat/m0-combat-core-20260927；PR#1 open/unmerged。GitHub唯一權威，先fetch核對完整HEAD/tree/branch/PR/working tree/commits。base42880e7eb1b9fe668bcbc4362817ff4eaed06e04僅定位，最新containing checkpoint優先。
+先讀AGENTS.md、WORK_PROGRESS.md、docs/STATE.md、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/DEVELOPMENT_ROADMAP.md、docs/M5C_ART_ANIMATION_VFX.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_P2_BOTUO_AWAKENING_ACTION.md、docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md、docs/verification/P2_AWAKENING_PREFLIGHT/executable-acceptance.json、docs/superpowers/plans/2026-10-22-p2-awakening-runtime.md、docs/verification/P2_AWAKENING_RUNTIME/{REPORT.md,result.json,packing.json}。
+玩家「要接觸全部16mib限制，並紀錄，繼續，我確認妳繼續」已核准所呈觀測/保真安裝契約SHA256 de03b507cbea609da767c9518530c921925a349f9c27a4dde8e55f9ca522324d並要求連cache預設16MiB閒置保留target取消；receipt executable-acceptance.json。全局規格/計畫先前已核准，別重開Gate。現在cache maxBytes null、無總decoded/required數量/reserve拒絕；64僅未使用cache entry回收，scene12MiB僅回收未pin。單檔4MiB/2048/4194304、兩下載、完整required/ready、實際失敗與destroy保留。赤鱬KO十一片superseded，不實作。
+鎮岳4新source-exactPNG已安裝，49required/18,336,992 decoded。原400×320 cell真GROUND274，crop(100,80)後root(100,194)/origin(.5,.97)，修正舊提案184而未改原圖。共用area-observed metadata攜action/epoch/實際正damage victims/真boyi.team來源，無角色ID例外。instant0直接F3，tacticalT0 900/T3 819；T3 radius2.832/13.5%/3.75s、守群獨立MAX；T0 coefficient1.70/radius2.2/CD14/windup0不改。普通Hit永久取消。
+最新affected119/119 PASS；full1009/984pass/25fail(exit1)，Build91assetguard PASS。先前993/965/28到25，來自明示遷移3項過時required容量/inventory斷言，非舊美術全通過。25項名稱/原因/TAP/checksum及RED保存REPORT/result；SIGKILL原因未知。保留最初986/957/29，不用歷史五失敗代替；禁止改數字/skip ci/bounded workflow繞過normal full-suite發布Gate。
+本機無Chromium，standard install invalid/truncatedZIP證據在先前global報告。新.github/workflows/p2-awakening-verification.yml只做同feature分支驗證：真Chromium執行scripts/checkBotuoAwakeningBrowser.mjs和--built，產物p2-awakening-browser-evidence；不部署、不替代normal CI。實際Actions狀態以最新remote為準。
+P1 COMPLETE/P2Idle/Move/KO/Basic/Heavy與Special PLAYER VERIFIED保護。鎮岳F3/F1–F4/三VFX八GIFreceipt docs/art/approved/botuo/awakening/{f3-v2,poses-v1,visual-v1}/acceptance.json；來源/manifest/prompt/GIF docs/art/candidates/botuo/awakening/composite-review-v1/。tracked核准來源與舊public diff空；GIF非Runtime/手機證據。
 
 [具體指令]
-1. 保存實際後續核准範圍。全局計畫已關閉；獨立鎮岳契約尚無核准receipt時，先呈交頂部更新後preflight契約，不再要求容量節省或重做已核准美術。Native single-agent執行，不自行啟用子代理。
-2. 契約核准後，TDD共享觀測lifecycle／action身份與真實damage victim關聯、boyi.team來源metadata及按真status管理VFX；不重推碰撞受益者或假HP。instant0ms直接F3；tacticalT0 900ms/T3 819ms，不加統一前搖。對空可釋放但無假命中/保護；T3正傷害後才以實際附近存活受益者radius2.832/13.5%/3.75s，與守群獨立到期、MAX不相加。T0coeff1.70/radius2.2/CD14/windup0不改；普通Hit永久取消。
-3. 安裝已核准姿勢／三獨立VFX之來源精確衍生貼圖，原master/receipt/display/GIF保持；驗證RGBA（含透明RGB）、logical/physical座標、gutter/native採樣、共同接地、Idle多個身體/裝備標記、兩側鏡射與招式不變比例。所有49required完整pin與ready；每檔4MiB/2048/4194304、兩並行下載、真失敗、閒置回收及destroy不可退步。
-4. 補受影響單元／完整測試逐項結果、Build及真built-app/native/mobile viewport驗證。先取得可用Browser環境，保存失敗；別用GIF或Node renderer double冒充。源未變之16機制及Special164/歷史Browser/部署/公開比對沿用。
-5. 驗證支持發布才按玩家既有驗證後部署意圖，在同feature branch經Pages Actions與公開檔案指紋核對，交付實際URL等待手機審核；未回覆不可PLAYER VERIFIED。實際阻擋保存證據停相應Gate。
-6. 每完整切片更新WORK_PROGRESS/STATE/AGENTS/鎮岳規格/驗證/handoff，同分支commit/push；docs/art-only skip ci，Runtime正常CI。回報完整remote HEAD/tree/PR、測試失敗、Browser/部署/下一Gate。不要合併main。
+1. 核對最新remote/Actions後沿用已有證據。Native single-agent，不開子代理。不重跑無關Special164/歷史Browser/部署/公開比對。舊16機制probe有sourcehash約束，源改後不冒稱覆蓋新程式；新9真session案例已驗snapshot parity/timing/air/目標逃離新進/KO/MAX/獨立到期。
+2. 取得真Browser/native/built/mobile結果，失敗先定位，不降低採樣閾值。核對RGBA/dimensions/ground/mirror、Phaser native採樣、Idle多個身體/裝備標記與一致密度；packing非此驗收。覆蓋真cast/damage/status、兩面/reduced/Pause/Move/old resolve/new action/KO/clear epoch/restart/destroy。腳本未執行不能寫PASS。
+3. 本次回歸要修正；25既有失敗逐項保留對照。必要遷移須獨立機制/像素證據，不暗改為PASS。normal CI full-suite仍發布Gate，verification工作不是旁路。若阻擋，保存HEAD/tree/Actions/log原因並停Gate。
+4. 驗證支持發布才依玩家既有部署意圖於同feature分支Pages發布，核對Actions/公開指紋，給實際URL等待手機審核。未實測不PLAYER VERIFIED，不把舊網站說成已含鎮岳。
+5. 每完整切片更新WORK_PROGRESS/STATE/AGENTS/鎮岳spec/report/handoff，commit/push同分支；runtime正常CI，docs/art-only skip ci。回報完整HEAD/tree/PR/測試/部署/剩餘Gate。
 
 [約束條件]
-保護所有既有核准P1/P2尺度/anchor/ground/mirror/pixels/receipts。兩指定歷史未追蹤暫存.F1-initiation-master.png.cC3cw2及.target-impact-padded-v1.png.JS8JIB不加不刪；本機另有docs/art/candidates/lushu/awakening/vfx-review-v1/.C-pair-raw.png.0ssrYD，亦保留不加入。不能繞過真失敗、人工改數字假PASS。所有後續Chat/Work/Codex接手指令完整放在單一、自足、可一鍵複製的code block。
+禁止merge main/替代分支/TD/P3/重畫重問核准美術。保護P1/P2尺度/anchor/ground/mirror/master/receipt/GIF。歷史指定.F1-initiation-master.png.cC3cw2與.target-impact-padded-v1.png.JS8JIB不加不刪；本機另有docs/art/candidates/lushu/awakening/vfx-review-v1/.C-pair-raw.png.0ssrYD及docs/art/candidates/lushu/awakening/composite-review-v1/.lushu-awakening-character-only.gif.5SQmfQ亦保留排除。所有後續Chat/Work/Codex接手指令完整置於單一自足可一鍵複製code block。
 ```

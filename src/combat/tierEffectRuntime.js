@@ -19,7 +19,7 @@ export class TierEffectRuntime {
  }
  trigger(trigger,actor,target,category,{definition=null,source='ai'}={}){
   for(const e of this.effects(actor,category,trigger))if(matchesTierCondition(e.condition,this.session,actor,target)){
-   const ownership=definition?.presentation?.actionLifecycle==='utility-observed'?{presentationSource:{abilityId:definition.id,category,effectId:e.id}}:{};
+   const ownership=['utility-observed','area-observed'].includes(definition?.presentation?.actionLifecycle)?{presentationSource:{abilityId:definition.id,category,effectId:e.id}}:{};
    if(e.kind==='protect'){const context=this.session.teamContext(actor);const recipients=e.recipient==='team'?areaTargets(actor,context.allies,e.radius):[mostThreatenedAlly(actor,context.allies,context.enemies,e.radius,this.session.targetIds,this.session.threats.active(this.session.elapsedSeconds*1000))].filter(Boolean);for(const victim of recipients)this.session.statuses.apply({...e.status,sourceId:actor.instanceId,targetId:victim.instanceId,key:e.id,...ownership},this.session.elapsedSeconds);}
    if(e.kind==='area'&&target)this.session.areas.create({sourceId:actor.instanceId,sourceTeamId:actor.teamId,center:target,spec:e.area,definition,category,source},this.session.elapsedSeconds);
    if(e.kind==='status'){const victim=e.recipient==='target'?target:actor;if(victim&&canCharacterAct(victim))this.session.statuses.apply({...e.status,sourceId:actor.instanceId,targetId:victim.instanceId,key:e.id,...ownership},this.session.elapsedSeconds);}

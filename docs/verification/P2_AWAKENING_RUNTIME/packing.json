@@ -1,0 +1,163 @@
+{
+  "status": "RGBA PACKING PASS / NATIVE SCALE AND SAMPLING PENDING",
+  "sources": [
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/F1-safe-cell.png",
+      "sha256": "58b73f19946e7b5ec4d09d0014fceaa7eea065fad7b46882b5c12d497874da5d",
+      "crop": [
+        100,
+        80,
+        300,
+        280
+      ],
+      "atlas": [
+        0,
+        0,
+        200,
+        200
+      ],
+      "rgbaRoundTrip": true,
+      "mirrorRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/F2-safe-cell.png",
+      "sha256": "c743a48592f88b6df12ca9fd43bf2894fb3ff0ebf2946fd7d1e604ef956171c1",
+      "crop": [
+        100,
+        80,
+        300,
+        280
+      ],
+      "atlas": [
+        200,
+        0,
+        200,
+        200
+      ],
+      "rgbaRoundTrip": true,
+      "mirrorRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/F3-safe-cell.png",
+      "sha256": "574fc80a6eba1af7d6fd75677646c02ad7e8532a79120f5a4c6299831770655e",
+      "crop": [
+        100,
+        80,
+        300,
+        280
+      ],
+      "atlas": [
+        400,
+        0,
+        200,
+        200
+      ],
+      "rgbaRoundTrip": true,
+      "mirrorRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/F4-safe-cell.png",
+      "sha256": "5f68be60a12f4eb71f76c180f2ee9b79d17645056be00e5a8206fe3d38da45a7",
+      "crop": [
+        100,
+        80,
+        300,
+        280
+      ],
+      "atlas": [
+        600,
+        0,
+        200,
+        200
+      ],
+      "rgbaRoundTrip": true,
+      "mirrorRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/radial-release-display.png",
+      "sha256": "04f8121658a04fcbdc12ee9bfe04549dbc7b5ac6e0b2029972853f881d3241df",
+      "output": "public/assets/botuo-awakening-runtime-v1/radial-release.png",
+      "rgbaRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/victim-impact-display.png",
+      "sha256": "5566cca7c0bf30cc899741806205654c3b0ea1834daf77b634f7b71ab07e6390",
+      "output": "public/assets/botuo-awakening-runtime-v1/victim-impact.png",
+      "rgbaRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/botuo/awakening/composite-review-v1/team-mitigation-display.png",
+      "sha256": "d5a807d08c3a67509da34ebe817fcdf7f7d15490dd16cb3b893b62cfc438c1f6",
+      "output": "public/assets/botuo-awakening-runtime-v1/team-mitigation.png",
+      "rgbaRoundTrip": true
+    }
+  ],
+  "entries": [
+    {
+      "key": "botuo.awakeningPoses",
+      "type": "image",
+      "path": "assets/botuo-awakening-runtime-v1/poses.png",
+      "width": 800,
+      "height": 200,
+      "bytes": 148411,
+      "fallback": "placeholder.battle"
+    },
+    {
+      "key": "botuo.awakeningRelease",
+      "type": "image",
+      "path": "assets/botuo-awakening-runtime-v1/radial-release.png",
+      "width": 523,
+      "height": 283,
+      "bytes": 197835,
+      "fallback": "placeholder.vfx"
+    },
+    {
+      "key": "botuo.awakeningImpact",
+      "type": "image",
+      "path": "assets/botuo-awakening-runtime-v1/victim-impact.png",
+      "width": 293,
+      "height": 293,
+      "bytes": 101915,
+      "fallback": "placeholder.vfx"
+    },
+    {
+      "key": "botuo.awakeningState",
+      "type": "image",
+      "path": "assets/botuo-awakening-runtime-v1/team-mitigation.png",
+      "width": 232,
+      "height": 162,
+      "bytes": 18968,
+      "fallback": "placeholder.vfx"
+    }
+  ],
+  "ground": {
+    "originalCell": [
+      400,
+      320
+    ],
+    "commonCrop": [
+      100,
+      80,
+      300,
+      280
+    ],
+    "root": [
+      100,
+      194
+    ],
+    "scale": 2.7777777777777777,
+    "method": "Accepted preview GROUND274 minus crop80 =194; correct earlier proposed184. Common authoring density/support anchors, no pose-bounds fitting"
+  },
+  "newDecodedBytes": 1725768,
+  "outputSha256": {
+    "assets/botuo-awakening-runtime-v1/poses.png": "0c174a764a4d3a880fbf5d2e45a504cc786d62e5d9d1e41c78f5c567bc4490c6",
+    "assets/botuo-awakening-runtime-v1/radial-release.png": "c9b326fe0f87974d3ae30396745941ad96ea4683d3ad8d3f56107fe3af78e8b6",
+    "assets/botuo-awakening-runtime-v1/victim-impact.png": "c045ea121bd06632b0a384bccb2b3acc1d897c949af3f9c2e8f9ff18336a5aa0",
+    "assets/botuo-awakening-runtime-v1/team-mitigation.png": "65c55118804fa2f4a7c856901795eabe1551ccba951a41d52577c669215fe65d"
+  },
+  "notEstablished": [
+    "native Phaser sampling",
+    "multi-landmark native scale",
+    "browser/mobile or player acceptance"
+  ]
+}

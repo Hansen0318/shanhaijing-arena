@@ -5,7 +5,7 @@ export function statusEffectGroups(frame,definitions,statuses,now){
  for(const target of byId.values())for(const record of statuses.forActor(target.instanceId,now)){
   const provenance=record.presentationSource,source=byId.get(record.sourceId);if(!source||!provenance)continue;
   const definition=definitions[source.definitionId];if(definition?.abilities?.[provenance.category]!==provenance.abilityId)continue;
-  const action=characterAction(definition,provenance.category),style=action?.kind==='utility'?action.statusVisuals[provenance.effectId]:null;if(!style||style.type!==record.type)continue;
+  const action=characterAction(definition,provenance.category),style=action?.statusVisuals?.[provenance.effectId];if(!style||style.type!==record.type)continue;
   const id='source-status.'+target.instanceId+'.'+style.styleId,identity=record.sourceId+'.'+record.targetId+'.'+record.id+'.'+provenance.abilityId+'.'+provenance.effectId;
   let group=groups.get(id);if(!group){group={id,target,style,records:[]};groups.set(id,group);}group.records.push({record,identity,style});
  }

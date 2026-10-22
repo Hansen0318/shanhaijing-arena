@@ -77,7 +77,7 @@ try{
     }
    }
    const before=result.samples.find(x=>x.label==='idle-before'),after=result.samples.find(x=>x.label==='idle-away');
-   assert.deepEqual(after.display,before.display);assert.equal(after.texture,before.texture);assert.deepEqual(after.origin,before.origin);assert.equal(result.reserve,131072);
+   assert.deepEqual(after.display,before.display);assert.equal(after.texture,before.texture);assert.deepEqual(after.origin,before.origin);assert.equal(result.reserve??0,0,'global policy has no optional byte reserve');
    for(const [label,url]of Object.entries(result.images))await writeFile(path.join(out,`${stage}-${reduced?'reduced':'normal'}-${result.characterId}-${sign}-${label}.png`),Buffer.from(url.split(',')[1],'base64'));
    delete result.images;record.actors.push(result);
    await page.screenshot({path:path.join(out,`${stage}-${reduced?'reduced':'normal'}-${result.characterId}-${sign}-end.png`)});

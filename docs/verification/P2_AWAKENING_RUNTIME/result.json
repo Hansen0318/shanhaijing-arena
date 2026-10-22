@@ -1,0 +1,205 @@
+{
+  "sourceBase": "42880e7eb1b9fe668bcbc4362817ff4eaed06e04",
+  "full": {
+    "tests": 1009,
+    "pass": 984,
+    "fail": 25,
+    "exitCode": 1
+  },
+  "affected": {
+    "tests": 119,
+    "pass": 119,
+    "fail": 0,
+    "exitCode": 0
+  },
+  "build": {
+    "exitCode": 0,
+    "assets": 91,
+    "encodedBytes": 5081749
+  },
+  "required": {
+    "keys": 49,
+    "decodedBytes": 18336992
+  },
+  "failures": [
+    {
+      "name": "lossless row packing preserves every visible pixel world position including asymmetric mirror pivot",
+      "category": "geometry",
+      "diagnosis": "Test assumes Chiru Move first logical frame height118; current catalog is115. Row-only packing expectation predates current packing.",
+      "tapExcerpt": "not ok 176 - lossless row packing preserves every visible pixel world position including asymmetric mirror pivot\n  ---\n  duration_ms: 2.205606\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/awakeningRuntimePacking.test.js:9:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    115 !== 118\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 118\n  actual: 115\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/awakeningRuntimePacking.test.js:10:200)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: all required assets reserve and upload without a global byte ceiling or optional reserve rejection\n"
+    },
+    {
+      "name": "Basic windup validates finite integer opt-in and preserves default immediate abilities",
+      "category": "timing",
+      "diagnosis": "Global expectation omits approved P2.basic windup250ms; actual250 vs expected0.",
+      "tapExcerpt": "not ok 196 - Basic windup validates finite integer opt-in and preserves default immediate abilities\n  ---\n  duration_ms: 2.781355\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/basicWindup.test.js:3:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    250 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 250\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/basicWindup.test.js:3:649)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: P1 damage waits until .18 exactly once with no early RNG or duplicate start\n"
+    },
+    {
+      "name": "other characters retain immediate Basic resolution",
+      "category": "timing",
+      "diagnosis": "Fixture target e1 is P2; it now starts a250ms Basic action, while the test expects immediate damage.",
+      "tapExcerpt": "not ok 199 - other characters retain immediate Basic resolution\n  ---\n  duration_ms: 5.919777\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/basicWindup.test.js:6:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    The expression evaluated to a falsy value:\n    \n      assert.ok(t.hp<hp)\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: true\n  actual: false\n  operator: '=='\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/basicWindup.test.js:6:224)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n    Test.postRun (node:internal/test_runner/test:1522:19)\n    Test.run (node:internal/test_runner/test:1447:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n  ...\n# Subtest: locked target leaves range: miss, no retarget or cadence refund\n"
+    },
+    {
+      "name": "manual air-cast emits visible cast intent without remote damage",
+      "category": "event-metadata",
+      "diagnosis": "Deep exact event comparison omits current eventAt,eventSequence,presentationEpoch metadata; actual event retains those fields.",
+      "tapExcerpt": "not ok 257 - manual air-cast emits visible cast intent without remote damage\n  ---\n  duration_ms: 2.163093\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/battleSession.test.js:176:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly deep-equal:\n    + actual - expected\n    \n      [\n        {\n          actorId: 'a2',\n          category: 'special',\n    +     eventAt: 0,\n    +     eventSequence: 1,\n          hit: false,\n          maxRange: 2.5,\n          minRange: 0,\n          origin: {\n            x: 0,\n            y: 0\n          },\n    +     presentationEpoch: 0,\n          source: 'player',\n          target: {\n            x: 10,\n            y: 0\n          },\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected:\n    0:\n      actorId: 'a2'\n      category: 'special'\n      source: 'player'\n      origin:\n        x: 0\n        y: 0\n      target:\n        x: 10\n        y: 0\n      targetId: 'e2'\n      hit: false\n      minRange: 0\n      maxRange: 2.5\n  actual:\n    0:\n      presentationEpoch: 0\n      eventSequence: 1\n      eventAt: 0\n      actorId: 'a2'\n      category: 'special'\n      source: 'player'\n      origin:\n        x: 0\n        y: 0\n      target:\n        x: 10\n        y: 0\n      targetId: 'e2'\n      hit: false\n      minRange: 0\n      maxRange: 2.5\n  operator: 'deepStrictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/battleSession.test.js:183:10)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n    Test.postRun (node:internal/test_runner/test:1522:19)\n    Test.run (node:internal/test_runner/test:1447:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n  ...\n# Subtest: AI emits a cast event when it attacks through the shared pipeline\n"
+    },
+    {
+      "name": "formal idle presentation is intentionally static F1 while keeping runtime frame architecture",
+      "category": "physical-logical",
+      "diagnosis": "Test expects old160x160 physical Idle crop at0,0; native packed current crop is1,1,154,152. Not a new actor-size finding.",
+      "tapExcerpt": "not ok 365 - formal idle presentation is intentionally static F1 while keeping runtime frame architecture\n  ---\n  duration_ms: 8.443803\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoIdleRuntime.test.js:19:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly deep-equal:\n    + actual - expected\n    \n      [\n    +   1,\n    +   1,\n    +   154,\n    +   152\n    -   0,\n    -   0,\n    -   160,\n    -   160\n      ]\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected:\n    0: 0\n    1: 0\n    2: 160\n    3: 160\n  actual:\n    0: 1\n    1: 1\n    2: 154\n    3: 152\n  operator: 'deepStrictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoIdleRuntime.test.js:31:10)\n    async Test.run (node:internal/test_runner/test:1389:7)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)\n  ...\n# Subtest: Lushu and Botuo formal idle descriptors are both static F1 in the current presentation phase\n"
+    },
+    {
+      "name": "approved P3 KO resolves, preloads inside the shared budget and is one static grounded frame",
+      "category": "packed-path",
+      "diagnosis": "Manifest selects special-runtime-v1/chiru-battleKo.png; test hardcodes characters/chiru/battleKo.png.",
+      "tapExcerpt": "not ok 460 - approved P3 KO resolves, preloads inside the shared budget and is one static grounded frame\n  ---\n  duration_ms: 3.079936\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/chiruKo.test.js:26:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'assets/special-runtime-v1/chiru-battleKo.png'\n    - 'assets/characters/chiru/battleKo.png'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'assets/characters/chiru/battleKo.png'\n  actual: 'assets/special-runtime-v1/chiru-battleKo.png'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/chiruKo.test.js:27:105)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: KO freezes last right facing, alpha/anchor and static state (reduced=false)\n"
+    },
+    {
+      "name": "P3 approved static pack resolves all surfaces without breathing or extra frames",
+      "category": "packed-metadata",
+      "diagnosis": "Test assumes Chiru Idle physical160x160/44131bytes; current physical148x160/44025bytes. Logical geometry and physical storage are distinct.",
+      "tapExcerpt": "not ok 553 - P3 approved static pack resolves all surfaces without breathing or extra frames\n  ---\n  duration_ms: 7.253325\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/formalCatalog.test.js:13:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly deep-equal:\n    + actual - expected\n    \n      [\n    +   148,\n        160,\n    +   44025\n    -   160,\n    -   44131\n      ]\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected:\n    0: 160\n    1: 160\n    2: 44131\n  actual:\n    0: 148\n    1: 160\n    2: 44025\n  operator: 'deepStrictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/formalCatalog.test.js:25:10)\n    async Test.run (node:internal/test_runner/test:1389:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n  ...\n# Subtest: formal 1-1 exact lineup/rewards and independent duplicate spawn slots\n"
+    },
+    {
+      "name": "Approved campaign layout and Chapter2–6 rewards/schema retain their respective baselines",
+      "category": "source-hash",
+      "diagnosis": "CSS hash changed in prior viewport release5d9b4f8d48251d29b2c060c3120c356e8e998125. Baseline asserts earlier entire-file hash before comparing Chapter2-6 data; later assertions not established by this failed test.",
+      "tapExcerpt": "not ok 562 - Approved campaign layout and Chapter2–6 rewards/schema retain their respective baselines\n  ---\n  duration_ms: 1.561094\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/formalChapter.test.js:10:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'e086314ccffbf4e7dca89cd2ecdffea4e8feed91adefa8f57d0cc5e906bbfbbf'\n    - 'de910c63c0cba3333a914ef2a73d596ff9512ea71e6b0b2aa4a3cc12684b4198'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'de910c63c0cba3333a914ef2a73d596ff9512ea71e6b0b2aa4a3cc12684b4198'\n  actual: 'e086314ccffbf4e7dca89cd2ecdffea4e8feed91adefa8f57d0cc5e906bbfbbf'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/formalChapter.test.js:10:266)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n    Test.postRun (node:internal/test_runner/test:1522:19)\n    Test.run (node:internal/test_runner/test:1447:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n  ...\n# Subtest: lowest HP percentage ally deterministic tie-break, ignores KO and duplicates\n"
+    },
+    {
+      "name": "Heavy opts into280ms at every Tier without altering Basic or other skills",
+      "category": "timing",
+      "diagnosis": "Global windup expectation omits approved P2.basic250ms, as in basicWindup test.",
+      "tapExcerpt": "not ok 622 - Heavy opts into280ms at every Tier without altering Basic or other skills\n  ---\n  duration_ms: 11.361178\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/heavyWindup.test.js:13:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    250 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 250\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/heavyWindup.test.js:19:97)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: Heavy player facing1 has no early move/HP/RNG, resolves once with matching actionId\n"
+    },
+    {
+      "name": "P4 runtime KO manifest/descriptor is a single static grounded 512 frame",
+      "category": "packed-path",
+      "diagnosis": "P4 KO manifest selects special-runtime-v1; test hardcodes runtime-packing-v1.",
+      "tapExcerpt": "not ok 647 - P4 runtime KO manifest/descriptor is a single static grounded 512 frame\n  ---\n  duration_ms: 2.015665\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/jiuweihuKo.test.js:34:2'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'assets/special-runtime-v1/jiuweihu-battleKo.png'\n    - 'assets/runtime-packing-v1/jiuweihu-battleKo.png'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'assets/runtime-packing-v1/jiuweihu-battleKo.png'\n  actual: 'assets/special-runtime-v1/jiuweihu-battleKo.png'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/jiuweihuKo.test.js:35:111)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: P4 HP0 keeps static KO / saved right facing (reduced=false)\n"
+    },
+    {
+      "name": "P4 all three approved slots resolve actual byte-identical runtime PNGs",
+      "category": "packed-path",
+      "diagnosis": "P4 Idle manifest selects special-runtime-v1; test hardcodes botuo-basic-packing-v1.",
+      "tapExcerpt": "not ok 658 - P4 all three approved slots resolve actual byte-identical runtime PNGs\n  ---\n  duration_ms: 3.44857\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/jiuweihuStatic.test.js:27:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'assets/special-runtime-v1/jiuweihu-battleIdle.png'\n    - 'assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png'\n  actual: 'assets/special-runtime-v1/jiuweihu-battleIdle.png'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/jiuweihuStatic.test.js:28:146)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: P4 single-frame grounded static idle has no authored action/breathing\n"
+    },
+    {
+      "name": "runtime Idle is exact old F1, not a regenerated idle",
+      "category": "packed-path",
+      "diagnosis": "P1 Idle manifest selects special-runtime-v1; test hardcodes characters/lushu/battleIdle-static.png.",
+      "tapExcerpt": "not ok 672 - runtime Idle is exact old F1, not a regenerated idle\n  ---\n  duration_ms: 40.028288\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBasicAssets.test.js:5:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'assets/special-runtime-v1/lushu-battleIdle.png'\n    - 'assets/characters/lushu/battleIdle-static.png'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'assets/characters/lushu/battleIdle-static.png'\n  actual: 'assets/special-runtime-v1/lushu-battleIdle.png'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBasicAssets.test.js:5:245)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: action is four padded independent RGBA cells and effects have bounded canvases\n"
+    },
+    {
+      "name": "five-roster required art plus new action/effects fit actual cache and scene across restarts",
+      "category": "inventory",
+      "diagnosis": "Test historical subset sum expects15632136; current subset14148100. This subset is not the full current required inventory.",
+      "tapExcerpt": "not ok 675 - five-roster required art plus new action/effects fit actual cache and scene across restarts\n  ---\n  duration_ms: 0.778169\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBasicAssets.test.js:8:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 14148100\n    - 15632136\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 15632136\n  actual: 14148100\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBasicAssets.test.js:8:377)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n    Test.postRun (node:internal/test_runner/test:1522:19)\n    Test.run (node:internal/test_runner/test:1447:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n  ...\n# Subtest: asset guard follows authored action references rather than ignoring orphan new keys\n"
+    },
+    {
+      "name": "P1 runtime KO manifest/descriptor is a single static grounded 512 frame",
+      "category": "packed-path",
+      "diagnosis": "P1 KO manifest selects special-runtime-v1; test hardcodes characters/lushu/battleKo-trimmed.png.",
+      "tapExcerpt": "not ok 679 - P1 runtime KO manifest/descriptor is a single static grounded 512 frame\n  ---\n  duration_ms: 1.950399\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBotuoKo.test.js:38:2'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'assets/special-runtime-v1/lushu-battleKo.png'\n    - 'assets/characters/lushu/battleKo-trimmed.png'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'assets/characters/lushu/battleKo-trimmed.png'\n  actual: 'assets/special-runtime-v1/lushu-battleKo.png'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBotuoKo.test.js:39:111)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: P1 HP0 keeps static KO / saved right facing (reduced=false)\n"
+    },
+    {
+      "name": "P2 runtime KO manifest/descriptor is a single static grounded 512 frame",
+      "category": "packed-path",
+      "diagnosis": "P2 KO manifest selects special-runtime-v1; test hardcodes characters/botuo/battleKo-trimmed.png.",
+      "tapExcerpt": "not ok 686 - P2 runtime KO manifest/descriptor is a single static grounded 512 frame\n  ---\n  duration_ms: 1.617778\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBotuoKo.test.js:38:2'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'assets/special-runtime-v1/botuo-battleKo.png'\n    - 'assets/characters/botuo/battleKo-trimmed.png'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'assets/characters/botuo/battleKo-trimmed.png'\n  actual: 'assets/special-runtime-v1/botuo-battleKo.png'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBotuoKo.test.js:39:111)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n    Test.postRun (node:internal/test_runner/test:1522:19)\n    Test.run (node:internal/test_runner/test:1447:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n  ...\n# Subtest: P2 HP0 keeps static KO / saved right facing (reduced=false)\n"
+    },
+    {
+      "name": "tests/lushuHeavyAssets.test.js",
+      "category": "process-signal",
+      "diagnosis": "Test file worker receives SIGKILL in both full runs. Separate bounded hash/length inspection confirms its first assertion compares current387x83/128484 RGBA bytes with old512x85/174080bytes. SIGKILL root cause is NOT established; do not call this an OOM diagnosis or claim its remaining tests passed.",
+      "tapExcerpt": "not ok 92 - tests/lushuHeavyAssets.test.js\n  ---\n  duration_ms: 3880.208775\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuHeavyAssets.test.js:1:1'\n  failureType: 'testCodeFailure'\n  exitCode: ~\n  signal: 'SIGKILL'\n  error: 'test failed'\n  code: 'ERR_TEST_FAILURE'\n  ...\n# Subtest: approved idle resolves static F1 with a fixed ground origin and static fallback\n"
+    },
+    {
+      "name": "runtime PNG is RGBA, bounded and encounter-only, never a menu image",
+      "category": "physical-logical",
+      "diagnosis": "P1 Idle current physical width78 vs old96; test assumes old physical storage.",
+      "tapExcerpt": "not ok 696 - runtime PNG is RGBA, bounded and encounter-only, never a menu image\n  ---\n  duration_ms: 1.269834\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuIdle.test.js:29:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    78 !== 96\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 96\n  actual: 78\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuIdle.test.js:31:48)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n    Test.postRun (node:internal/test_runner/test:1522:19)\n    Test.run (node:internal/test_runner/test:1447:12)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)\n  ...\n# Subtest: real presenter loop freezes on battle time, resumes, exits hit/KO safely and releases textures\n"
+    },
+    {
+      "name": "approved move slot is encounter-loaded with four isolated canonical cells and static idle preserved",
+      "category": "packed-path",
+      "diagnosis": "P1 Move manifest selects special-runtime-v1; test hardcodes characters/lushu/battleMove-trimmed.png.",
+      "tapExcerpt": "not ok 700 - approved move slot is encounter-loaded with four isolated canonical cells and static idle preserved\n  ---\n  duration_ms: 2.278312\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuMove.test.js:20:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'assets/special-runtime-v1/lushu-battleMove.png'\n    - 'assets/characters/lushu/battleMove-trimmed.png'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'assets/characters/lushu/battleMove-trimmed.png'\n  actual: 'assets/special-runtime-v1/lushu-battleMove.png'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuMove.test.js:21:117)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: actual presenter switches on XY displacement, loops, freezes duplicate time, stops immediately and mirrors\n"
+    },
+    {
+      "name": "Special loads four safe authored frames and distinct approved independent effects",
+      "category": "physical-logical",
+      "diagnosis": "P1 Special atlas current physical235x59 vs old320x59 row-strip expectation.",
+      "tapExcerpt": "not ok 713 - Special loads four safe authored frames and distinct approved independent effects\n  ---\n  duration_ms: 9.998937\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuSpecialAssets.test.js:5:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly deep-equal:\n    + actual - expected\n    \n      [\n    +   235,\n    -   320,\n        59\n      ]\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected:\n    0: 320\n    1: 59\n  actual:\n    0: 235\n    1: 59\n  operator: 'deepStrictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuSpecialAssets.test.js:7:76)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: P1 transparent-row Move/KO derivatives retain all original pixels and exact display transforms\n"
+    },
+    {
+      "name": "P1 transparent-row Move/KO derivatives retain all original pixels and exact display transforms",
+      "category": "physical-logical",
+      "diagnosis": "P1 Move current physical atlas height182 vs old row-only91 expectation; native multi-row packing is not row-only cropping.",
+      "tapExcerpt": "not ok 714 - P1 transparent-row Move/KO derivatives retain all original pixels and exact display transforms\n  ---\n  duration_ms: 18.55418\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuSpecialAssets.test.js:13:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    182 !== 91\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 91\n  actual: 182\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuSpecialAssets.test.js:16:10)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n    Test.postRun (node:internal/test_runner/test:1522:19)\n    Test.run (node:internal/test_runner/test:1447:12)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)\n  ...\n# Subtest: all-five Basic Heavy Special required textures remain fully resident across scenes\n"
+    },
+    {
+      "name": "three confirmed impacts survive batched paint with distinct identity, follow target, then expire",
+      "category": "fixture-frame",
+      "diagnosis": "Synthetic staged fixture borrows packed lushu.battleBasic source but invents80x80 logical frames not listed in specialRuntimePacking. physicalRegion explicitly rejects unsupported logical frame before impact assertions.",
+      "tapExcerpt": "not ok 813 - three confirmed impacts survive batched paint with distinct identity, follow target, then expire\n  ---\n  duration_ms: 5.090043\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/stagedActionPlayback.test.js:30:1'\n  failureType: 'testCodeFailure'\n  error: 'Unsupported logical packed frame: lushu.battleBasic'\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    physicalRegion (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/assets/textureRegions.js:7:19)\n    AssetPresenter.textureFrame (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetPresenter.js:23:16)\n    AssetPresenter.imageFor (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetPresenter.js:228:18)\n    AssetPresenter.render (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetPresenter.js:315:21)\n    paint (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/stagedActionPlayback.test.js:29:44)\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/stagedActionPlayback.test.js:32:2)\n    async Test.run (node:internal/test_runner/test:1389:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n  ...\n# Subtest: staged whiff creates source cue only; cancel clears owner impacts and KO removes target impacts\n"
+    },
+    {
+      "name": "staged whiff creates source cue only; cancel clears owner impacts and KO removes target impacts",
+      "category": "fixture-frame",
+      "diagnosis": "Same invalid synthetic80x80 frame/source fixture; not proof that whiff/cancel behavior itself is broken or passing.",
+      "tapExcerpt": "not ok 814 - staged whiff creates source cue only; cancel clears owner impacts and KO removes target impacts\n  ---\n  duration_ms: 3.503331\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/stagedActionPlayback.test.js:36:1'\n  failureType: 'testCodeFailure'\n  error: 'Unsupported logical packed frame: lushu.battleBasic'\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    physicalRegion (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/assets/textureRegions.js:7:19)\n    AssetPresenter.textureFrame (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetPresenter.js:23:16)\n    AssetPresenter.imageFor (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetPresenter.js:228:18)\n    AssetPresenter.render (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetPresenter.js:315:21)\n    paint (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/stagedActionPlayback.test.js:29:44)\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/stagedActionPlayback.test.js:37:141)\n    async Test.run (node:internal/test_runner/test:1389:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n  ...\n# Subtest: retained legacy contact cannot replace the next staged body or hide its first30ms rush\n"
+    },
+    {
+      "name": "retained legacy contact cannot replace the next staged body or hide its first30ms rush",
+      "category": "fixture-frame",
+      "diagnosis": "Same invalid synthetic80x80 frame/source fixture; not proof that staged30ms/contact-retention behavior itself is broken or passing.",
+      "tapExcerpt": "not ok 815 - retained legacy contact cannot replace the next staged body or hide its first30ms rush\n  ---\n  duration_ms: 2.308147\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/stagedActionPlayback.test.js:41:1'\n  failureType: 'testCodeFailure'\n  error: 'Unsupported logical packed frame: lushu.battleBasic'\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    physicalRegion (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/assets/textureRegions.js:7:19)\n    AssetPresenter.textureFrame (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetPresenter.js:23:16)\n    AssetPresenter.imageFor (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetPresenter.js:228:18)\n    AssetPresenter.render (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetPresenter.js:315:21)\n    paint (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/stagedActionPlayback.test.js:29:44)\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/stagedActionPlayback.test.js:48:2)\n    async Test.run (node:internal/test_runner/test:1389:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n  ...\n# Subtest: real approved staged descriptor changes source texture for every phase in both directions\n"
+    },
+    {
+      "name": "P5 approved lossless KO resolves exact RGBA PNG and a single static crop-corrected descriptor",
+      "category": "packed-path",
+      "diagnosis": "P5 KO manifest selects special-runtime-v1; test hardcodes botuo-basic-packing-v1.",
+      "tapExcerpt": "not ok 992 - P5 approved lossless KO resolves exact RGBA PNG and a single static crop-corrected descriptor\n  ---\n  duration_ms: 2.510505\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/xingxingKo.test.js:24:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'assets/special-runtime-v1/xingxing-battleKo.png'\n    - 'assets/botuo-basic-packing-v1/xingxing-battleKo.png'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'assets/botuo-basic-packing-v1/xingxing-battleKo.png'\n  actual: 'assets/special-runtime-v1/xingxing-battleKo.png'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/xingxingKo.test.js:25:108)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: P5 HP0 preserves static grounded KO and last facing left=false, reduced=false\n"
+    },
+    {
+      "name": "P5 all three approved slots resolve actual byte-identical runtime PNGs",
+      "category": "packed-path",
+      "diagnosis": "P5 Idle manifest selects special-runtime-v1; test hardcodes botuo-basic-packing-v1.",
+      "tapExcerpt": "not ok 1003 - P5 all three approved slots resolve actual byte-identical runtime PNGs\n  ---\n  duration_ms: 5.643384\n  type: 'test'\n  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/xingxingStatic.test.js:27:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + 'assets/special-runtime-v1/xingxing-battleIdle.png'\n    - 'assets/botuo-basic-packing-v1/xingxing-battleIdle.png'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 'assets/botuo-basic-packing-v1/xingxing-battleIdle.png'\n  actual: 'assets/special-runtime-v1/xingxing-battleIdle.png'\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/xingxingStatic.test.js:28:146)\n    Test.runInAsyncScope (node:async_hooks:227:14)\n    Test.run (node:internal/test_runner/test:1382:25)\n    Test.start (node:internal/test_runner/test:1242:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: P5 single-frame grounded static idle has no authored action/breathing\n"
+    }
+  ],
+  "migratedBaselineTests": [
+    {
+      "name": "all required assets reserve and upload concurrently below cap while optional loads retain 128KiB",
+      "priorDiagnosis": "Required-key enumerator assumes every action/stage has blade and contact; approved utility Special does not. Access to undefined.assetKey fails before residency loading.",
+      "reason": "Explicitly migrated obsolete required inventory/global capacity contract; original art/geometry assertions remain."
+    },
+    {
+      "name": "twenty five-roster Restart/scene transitions retain all action art within finite caps",
+      "priorDiagnosis": "Hardcoded required decoded total16639660 differs from current16611224.",
+      "reason": "Explicitly migrated obsolete required inventory/global capacity contract; original art/geometry assertions remain."
+    },
+    {
+      "name": "all-five Basic Heavy Special required textures fit unchanged16MiB across scenes",
+      "priorDiagnosis": "Hardcoded required decoded total16639660 differs from current16611224.",
+      "reason": "Explicitly migrated obsolete required inventory/global capacity contract; original art/geometry assertions remain."
+    }
+  ],
+  "browser": "NOT RUN LOCALLY; Chromium absent; separate same-branch verification workflow prepared, not deployment",
+  "deployment": "NOT DEPLOYED; normal full-suite release gate remains failed",
+  "physicalPhone": "PENDING",
+  "protectedTrackedArtDiff": "empty against sourceBase; four new runtime PNGs only",
+  "logs": {
+    "full.tap": "d95392a9d2ac67326ad27c1aa4992e38e66fd52aa079b123c904211437eee117",
+    "affected.log": "4609f4953a8cc9b6d2ef8caf1cd06e6d8dad65b6c68beb48d3b35379d96cc3c7",
+    "build.log": "04f35fe94ff9c6dc75eeebb40c37e0ceec8eb0370a65528deac123c561aafa3b",
+    "lifecycle-red.log": "136bbc82718b88b6e7aa76eb835c1c2b4478447e8a1cdd6b63fc02fd858ef11a",
+    "runtime-red.log": "1fc3ed6b2c0155ff32869d0c55e24139a19ba4c123a7d0fe10d79a39288ee6f3",
+    "center-red.log": "64057b2dad22603a1c179370e3a58de52e824e0373789668370c5dd69c798997"
+  }
+}

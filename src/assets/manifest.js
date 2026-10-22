@@ -1,6 +1,10 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 import {specialRuntimePacking} from './specialRuntimePacking.js';
 const entries=[
+ {key:'botuo.awakeningPoses',type:'image',path:'assets/botuo-awakening-runtime-v1/poses.png',width:800,height:200,bytes:148411,fallback:'placeholder.battle'},
+ {key:'botuo.awakeningRelease',type:'image',path:'assets/botuo-awakening-runtime-v1/radial-release.png',width:523,height:283,bytes:197835,fallback:'placeholder.vfx'},
+ {key:'botuo.awakeningImpact',type:'image',path:'assets/botuo-awakening-runtime-v1/victim-impact.png',width:293,height:293,bytes:101915,fallback:'placeholder.vfx'},
+ {key:'botuo.awakeningState',type:'image',path:'assets/botuo-awakening-runtime-v1/team-mitigation.png',width:232,height:162,bytes:18968,fallback:'placeholder.vfx'},
  {key:'botuo.heavyContact',type:'image',path:'assets/botuo-heavy-runtime-v1/botuo-heavyContact.png',width:204,height:161,bytes:49350,fallback:'placeholder.vfx'},
  {key:'botuo.heavySource',type:'image',path:'assets/botuo-heavy-runtime-v1/botuo-heavySource.png',width:230,height:144,bytes:55428,fallback:'placeholder.vfx'},
  {key:'botuo.heavyPoses',type:'image',path:'assets/botuo-heavy-runtime-v1/botuo-heavyPoses.png',width:700,height:162,bytes:135352,fallback:'placeholder.battle'},

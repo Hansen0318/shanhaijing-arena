@@ -40,7 +40,7 @@ export class AssetPresenter{
   const portraits=definitions.map(d=>d.assets?.portraitSquare??resolveCharacterAsset(d,'portraitSquare').key);
   const idles=definitions.map(d=>d.animationDescriptors?.battleIdle?.source??d.assets?.battleIdle??characterAnimation(d,'battleIdle').source);
   const critical=[...new Set([...portraits,...idles])];
-  const actionKeys=definitions.flatMap(d=>Object.keys(d.actionDescriptors??{}).flatMap(category=>{const a=characterAction(d,category);return a.kind==='utility'?[a.animation.source,a.activation.assetKey,...Object.values(a.statusVisuals).map(v=>v.assetKey)]:a.kind==='staged'?[a.animation.source,...a.stages.flatMap(s=>[s.blade.assetKey,s.contact.assetKey])]:[a.animation.source,a.blade.assetKey,a.contact.assetKey];}));
+  const actionKeys=definitions.flatMap(d=>Object.keys(d.actionDescriptors??{}).flatMap(category=>{const a=characterAction(d,category);return a.kind==='utility'?[a.animation.source,a.activation.assetKey,...Object.values(a.statusVisuals).map(v=>v.assetKey)]:a.kind==='staged'?[a.animation.source,...a.stages.flatMap(s=>[s.blade.assetKey,s.contact.assetKey])]:[a.animation.source,a.blade.assetKey,a.contact.assetKey,...Object.values(a.statusVisuals??{}).map(v=>v.assetKey)];}));
   const required=[...new Set([...critical,...definitions.flatMap(d=>['battleMove','battleKo'].map(state=>d.animationDescriptors?.[state]?.source??d.assets?.[state]).filter(Boolean)),...actionKeys])];
   this.residency.setPins('encounter',required);
   await this.loadKeys(critical);if(this.closed)return;
@@ -55,6 +55,7 @@ export class AssetPresenter{
   if((!event.phase||event.phase==='start')&&this.utility.staleStart(event,now))return;
   if(event.presentationOnly&&this.presentationEventKeys.has(event.actorId+'.'+event.actionId+'.'+event.phase))return;
   const utilityAction=characterAction(character,event.category);
+  if(utilityAction?.kind==='area-observed'){this.castObservedArea(event,utilityAction,now);return;}
   const observed=this.utility.observe(event,utilityAction,now,this.facings.get(event.actorId)?.flipX??false);
   if(utilityAction?.kind==='utility'){
    if(observed){this.clearAction(event.actorId,{preserveIndependent:true,preserveImpact:false});this.states.delete(event.actorId);}return;
@@ -106,6 +107,31 @@ export class AssetPresenter{
   const overlay=character?.assets?.skillOverlays?.[event.category];if(overlay)try{this.playback.play(event.actorId,vfxDescriptor({form:'sprite',assetKey:overlay,duration:descriptor.duration}),event.origin,now,{target});}catch{/* optional invalid art falls back to existing cast */}
   if(character?.animationDescriptors?.battleCast)this.setState(event.actorId,characterAnimation(character,'battleCast'),now,'battleCast');
   this.syncEffectPins();
+ }
+ resetPresentationEpoch(epoch){
+  if(!Number.isInteger(epoch)||epoch<=this.utility.epoch)return;
+  for(const [id,r] of [...this.actions.active])if(r.descriptor.kind==='area-observed')this.clearAction(id);
+  for(const [key,r] of [...this.stagedImpacts])if(r.descriptor.kind==='area-observed')this.removeStagedImpact(key);
+  for(const [id,r] of [...this.bladeAfterglows])if(r.sample.descriptor.kind==='area-observed')this.clearBladeAfterglow(id);
+  this.presentationEventKeys.clear();this.utility.resetEpoch(epoch);
+ }
+ castObservedArea(event,descriptor,now){
+  if((event.presentationEpoch??0)<this.utility.epoch)return;this.resetPresentationEpoch(event.presentationEpoch);
+  const identity=[event.presentationEpoch??0,event.actorId,event.actionId,event.phase].join('.');if(this.presentationEventKeys.has(identity))return;
+  const stale=this.utility.staleStart(event,now),active=this.actions.active.get(event.actorId);
+  if(event.phase==='start'){
+   if(stale)return;this.clearAction(event.actorId,{preserveIndependent:true});this.states.delete(event.actorId);this.utility.observe(event,descriptor,now);this.actions.handle(event,descriptor);
+  }else if(event.phase==='resolve'){
+   const display=new ActionPlayback();display.handle({...event,phase:'start'},descriptor);display.handle(event,descriptor);const sample=display.sample(event.actorId,event.resolvedAt,this.reducedMotion);if(!sample)return;
+   const newer=active?.actionId!==event.actionId&&(stale||active&&active.startedAt>event.startedAt||this.facings.get(event.actorId)?.moving);
+   if(!newer){this.utility.observe(event,descriptor,now);if(active?.actionId!==event.actionId)this.actions.handle({...event,phase:'start'},descriptor);this.actions.handle(event,descriptor);}
+   this.clearBladeAfterglow(event.actorId);this.bladeAfterglows.set(event.actorId,{sample,resolvedAt:event.resolvedAt,image:null});
+   for(const victim of event.victims??[]){if(!(victim.amount>0)||!victim.targetId||!victim.position)continue;
+    const key=identity+'.'+victim.targetId;
+    this.stagedImpacts.set(key,{independent:true,actionId:event.actionId,ownerId:event.actorId,targetId:victim.targetId,hitIndex:0,descriptor,eventAt:event.resolvedAt,target:{...victim.position},flipX:sample.flipX,paintedAt:null});
+   }
+  }else if(event.phase==='cancel'&&active?.actionId===event.actionId)this.clearAction(event.actorId,{preserveIndependent:true});
+  this.presentationEventKeys.add(identity);while(this.presentationEventKeys.size>512)this.presentationEventKeys.delete(this.presentationEventKeys.values().next().value);
  }
  castStaged(event,descriptor){
   const before=this.actions.active.get(event.actorId);
@@ -177,7 +203,7 @@ export class AssetPresenter{
    if(live?.actionId===sample.actionId&&live.visible&&live.alpha>0){record.image?.destroy();record.image=null;continue;}
    if(!record.image)record.image=this.effectImage(spec.assetKey);
    const [cw,ch]=d.coordinateSize,w=d.animation.frames[0].width,h=d.animation.frames[0].height;
-   const sx=72*d.animation.scale*w/Math.max(w,h)/cw,sy=72*d.animation.scale*h/Math.max(w,h)/ch,pos=positions.get(id);
+   const sx=72*d.animation.scale*w/Math.max(w,h)/cw,sy=72*d.animation.scale*h/Math.max(w,h)/ch,pos=spec.attach==='fixed'&&sample.sourceOrigin?this.project(sample.sourceOrigin):positions.get(id);
    const x=spec.offset[0]+spec.size[0]/2-d.animation.origin[0]*cw,y=spec.offset[1]+spec.size[1]/2-d.animation.origin[1]*ch;
    record.image.setOrigin(.5,.5).setDisplaySize(spec.size[0]*sx,spec.size[1]*sy).setFlipX(sample.flipX).setPosition(pos.x+(sample.flipX?-x:x)*sx,pos.y+y*sy).setDepth(spec.layer).setAlpha(opacity).setVisible(true);
   }
@@ -191,7 +217,7 @@ export class AssetPresenter{
    if(opacity>0&&!image){image=this.effectImage(spec.assetKey);effects.set(kind,image);}
    if(!image)continue;if(opacity>0){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required action texture unavailable: '+spec.assetKey);if(image.texture!==texture.key)image.setTexture(texture.key,this.effectFrame(spec.assetKey));}
    const targetAttached=spec.attach==='target'&&sample.contactTarget;
-   const anchor=targetAttached?this.project(sample.contactTarget):position;
+   const anchor=targetAttached?this.project(sample.contactTarget):spec.attach==='fixed'&&sample.sourceOrigin?this.project(sample.sourceOrigin):position;
    const x=spec.offset[0]+spec.size[0]/2-(targetAttached?0:d.animation.origin[0]*cw),y=spec.offset[1]+spec.size[1]/2-(targetAttached?0:d.animation.origin[1]*ch);
    image.actionId=sample.actionId;image.setOrigin(.5,.5).setDisplaySize(spec.size[0]*sx,spec.size[1]*sy).setFlipX(sample.flipX).setPosition(anchor.x+(sample.flipX?-x:x)*sx,anchor.y+y*sy).setDepth(spec.layer).setAlpha(opacity).setVisible(opacity>0);
   }
@@ -237,6 +263,7 @@ export class AssetPresenter{
   for(const r of records){const spec=r.descriptor.activation;let image=this.utilitySprites.get(r.id);if(!image){image=this.effectImage(spec.assetKey);this.utilitySprites.set(r.id,image);}const ms=(now-r.startedAt)*1000,alpha=this.reducedMotion?spec.reducedOpacity:spec.opacity*Math.min(1,(spec.durationMs-ms)/spec.fadeMs);this.drawBoundEffect(image,spec,positions.get(r.actorId),this.facings.get(r.actorId)?.flipX??r.flipX,alpha);}
  }
  render(frame,now,definitions,statuses=null){
+  this.resetPresentationEpoch(frame.presentationEpoch);
   this.utility.resetEpoch(frame.presentationEpoch);
   if(this.closed)return;const actors=[...frame.allies,...frame.enemies],alive=new Set(actors.filter(a=>a.hp>0).map(a=>a.instanceId)),positions=new Map(actors.map(a=>[a.instanceId,this.project(a)]));
   const stage=this.textures.get(this.stageAssetKey);if(stage&&!this.stageDisplay)this.stageDisplay=this.scene.add.image(0,0,stage.key).setOrigin(0,0).setDisplaySize(1120,540).setDepth(1);
@@ -267,6 +294,7 @@ export class AssetPresenter{
    // Duplicate simulation time (Pause/countdown/sub-step render) must not reset a stride.
    const displaced=Math.hypot(dx,dy)>1e-6;
    const moving=actor.hp>0&&Boolean(previous)&&(displaced||now===previous.now&&previous.moving);
+   if(moving&&action?.descriptor.kind==='area-observed'){this.clearAction(id,{preserveIndependent:true});this.states.delete(id);state=undefined;action=null;}
    this.facings.set(id,{x:actor.x,y:actor.y,now,moving,flipX});
    if(moving||actor.hp<=0||statuses?.controlled(id,now))this.utility.cancelGesture(id);
    const utility=actor.hp>0?this.utility.sample(id,now,this.reducedMotion):null;if(utility&&!action)action=utility;

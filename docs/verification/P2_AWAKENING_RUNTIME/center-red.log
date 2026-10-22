@@ -1,0 +1,28 @@
+✖ Awakening radial release stays at locked cast origin when caster moves before resolve (11.398278ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120.615428
+
+✖ failing tests:
+
+test at tests/botuoAwakeningRuntime.test.js:10:1
+✖ Awakening radial release stays at locked cast origin when caster moves before resolve (11.398278ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  7 !== 3
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/botuoAwakeningRuntime.test.js:10:431)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 7,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
