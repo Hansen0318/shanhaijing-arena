@@ -1,5 +1,9 @@
 # Project Boundaries — Shanhaijing Arena
 
+## 2026-10-22 — Global dynamic policy implementation checkpoint
+
+The approved shared policy is now implemented in schema/cache/residency: no fixed total decoded-byte or required-count admission ceiling, no131072reserve gate. Existing cache16MiB/64 defaults are only inactive retention targets; scene12MiB is soft unpinned reclamation. Per-file4MiB/2048/4194304 and every required image, real failure handling and teardown stay mandatory. Do not restore old caps from history, create per-character exceptions or revive Chiru KO splitting. Evidence and current28full-suite failures/Browser blocker are in `verification/P2_AWAKENING_PREFLIGHT/global-residency-runtime/REPORT.md`; this is not Awakening integration, native/mobile acceptance or deployment. Preserve branch/PR and all approved artwork/gameplay.
+
 ## 2026-10-22 — Global decoded-byte limit direction (design only)
 
 Player explicitly selected a game-wide shared dynamic-residency policy without a fixed **total decoded-byte hard ceiling**, superseding the character-specific Chiru KO split proposal, and wants a verified deployment for in-game skill review. Written design `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md` awaits independent review. Existing 16MiB/cache/scene/64-entry/131072-reserve code remains unchanged until an approved plan and tested implementation; earlier fixed-cap rules below document historical releases, not the new policy. Preserve per-asset limits, all required presentation keys, error handling, scene cleanup, approved art/gameplay and the same feature branch/PR. No immediate deployment or phone acceptance is inferred.

@@ -1,5 +1,15 @@
 # P2 猼訑「鎮岳」— execution preflight / contract review candidate
 
+## Current review addendum — 2026-10-22, after shared global-policy implementation
+
+**OBSERVATIONAL CONTRACT / FAITHFUL INSTALLATION REVIEW PENDING; NOT INSTALLED OR DEPLOYED.** Shared global residency implementation and scoped verification are in `P2_AWAKENING_PREFLIGHT/global-residency-runtime/REPORT.md`. The former16MiB/64-entry/131072reserve rejection and the old1110352byte capacity shortfall below are **historical and superseded**, not a current prerequisite. No Chiru KO split/repack is authorized. Preserve approved master/display bytes; all49 proposed required keys must load, each file must still pass4MiB/2048/4194304 guard, and actual allocation failure remains explicit.
+
+The review now concerns sections1–2 observational cast/damage/status ownership plus source-exact installation in section3, without old-cap savings work: instant0ms beginsF3; tacticalT0 900ms/T3 819ms uses actual pending/resolve; each positive real victim owns its contact; air has no fake contact/protection; boyi.team visual provenance follows actual positive-damage-triggered nearby living status recipients, radius2.832/13.5%/3.75s, independent Special expiry and MAX mitigation. Keep T0coefficient1.70/radius2.2/CD14/windup0 and existing Tier/AI/targeting/control/movement. Ordinary Hit remains permanently canceled. Shared metadata must never alter combat outcomes.
+
+Four proposed required textures remain a packing proposal, not installed files: source-exact logical reconstruction, full RGBA/transparent RGB/gutter/native sampling, common ground and multiple Idle body/equipment landmarks, both mirrors, real render footprint are still mandatory. Existing accepted eight GIFs are art reconstructions, not Runtime proof. New integration tests must cover per-victim identity, stale/duplicate events, same-clock next cast, missing required image/allocation, actual status lifecycle and cleanup. Reuse unchanged16mechanics/Special evidence instead of repeating it.
+
+Current tests993/965pass/28fail (all remaining failures named in runtime report); full-suite is not PASS. Local Chromium missing and download invalidZIP; no actual browser/mobile result. After separate scoped contract approval and implementation, native/built/mobile verification and CI failures must be resolved or explicitly evaluated before publishing. No new contract-acceptance receipt exists; this addendum is the concrete next review material. Historical sections below remain evidence of the earlier cap-constrained proposal only where superseded here.
+
 Status: **PROPOSED, NOT PLAYER-APPROVED, NOT INTEGRATED** (2026-10-22). Source of truth is fetched feature HEAD `6983ee15fe768874924c28ccd72227e47041ada8` before this document. PR #1 remains open/unmerged. This is an engineering proposal for a separate player decision, not an extension of the approved art/GIF receipt. No source, public asset, combat rule, test, build, Browser or deployment was changed for this preflight.
 
 ## 1. Observed entry points and non-negotiable ownership

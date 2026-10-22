@@ -1,0 +1,97 @@
+✔ unpinned LRU is reclaimed while pinned actor art survives pressure (2.24219ms)
+✖ concurrent dedupe keeps all pinned textures above the soft reclamation target (1.221089ms)
+✔ failed required loads are observable and retry succeeds without treating fallback as image (0.680848ms)
+✔ shutdown during pending upload never installs late texture; warm cache can be reused (0.312533ms)
+✔ eviction callback destroys display references before removing scene texture (0.504307ms)
+✖ unsafe soft targets are rejected and diagnostics snapshots cannot mutate owner (0.354946ms)
+✔ decoded cache remains independent of live textures and reports finite peaks (0.390949ms)
+✔ unknown requested image and actual renderer allocation failures are explicit, retriable failures (0.46652ms)
+✖ parallel loads account reservations beyond the old budget and release actual failures (1.174159ms)
+✖ 65 required pinned textures exceed16MiB without entry or total-byte rejection (1.539831ms)
+✔ optional unpinned image above a soft target loads and is reclaimable (1.752535ms)
+✖ decoded total above16MiB loads even with only two pinned textures (0.468284ms)
+ℹ Error: Test "parallel loads account reservations beyond the old budget and release actual failures" at tests/assetResidency.test.js:16:1 generated asynchronous activity after the test ended. This activity created the error "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /load/i. Input:
+
+'Error: Scene texture safety budget exceeded: c'
+" and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ tests 12
+ℹ suites 0
+ℹ pass 7
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102.666347
+
+✖ failing tests:
+
+test at tests/assetResidency.test.js:9:1
+✖ concurrent dedupe keeps all pinned textures above the soft reclamation target (1.221089ms)
+  Error: Scene texture safety budget exceeded: c
+      at file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetResidency.js:34:110
+      at AssetResidency.load (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetResidency.js:49:5)
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetResidency.test.js:9:257)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/assetResidency.test.js:13:1
+✖ unsafe soft targets are rejected and diagnostics snapshots cannot mutate owner (0.354946ms)
+  RangeError: Invalid residency budget
+      at new AssetResidency (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetResidency.js:7:241)
+      at fixture (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetResidency.test.js:7:351)
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetResidency.test.js:13:250)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/assetResidency.test.js:16:1
+✖ parallel loads account reservations beyond the old budget and release actual failures (1.174159ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  512 !== 768
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetResidency.test.js:16:447)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 512,
+    expected: 768,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/assetResidency.test.js:17:1
+✖ 65 required pinned textures exceed16MiB without entry or total-byte rejection (1.539831ms)
+  Error: Scene texture safety budget exceeded: large64
+      at file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetResidency.js:34:110
+      at AssetResidency.load (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetResidency.js:49:5)
+      at file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetResidency.test.js:20:126
+      at Array.map (<anonymous>)
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetResidency.test.js:20:117)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+
+test at tests/assetResidency.test.js:25:1
+✖ decoded total above16MiB loads even with only two pinned textures (0.468284ms)
+  Error: Scene texture safety budget exceeded: bigB
+      at file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetResidency.js:34:110
+      at AssetResidency.load (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetResidency.js:49:5)
+      at file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetResidency.test.js:28:84
+      at Array.map (<anonymous>)
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetResidency.test.js:28:75)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)

@@ -1,5 +1,9 @@
 # Development Playbook
 
+## 2026-10-22 — Global policy implemented; separate Awakening contract NEXT
+
+Plan approved by「核准，繼續」and implementation checkpoint recorded in `verification/P2_AWAKENING_PREFLIGHT/global-residency-runtime/REPORT.md`. Total decoded-byte/required-count/reserve admission gates are removed globally; keep individual guards, two transports, full required ownership and real failure handling. Cache defaults are soft inactive-reference retention only. Shared30/30 and Build PASS; full993/965/28 remains FAIL, Browser blocked by missing Chromium/invalidZIP installation. No release or phone acceptance. Later fixed-cap/plan-pending text is historical; original plan/spec/art receipts remain frozen. Next independent contract is the current addendum of `verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md`; no new art/KO split or repeated approved Gates.
+
 ## 2026-10-22 — Written global policy APPROVED / plan review
 
 Player expressly approved the linked written global decoded-byte residency specification (SHA256 c47019288e6b6ceaf15b8c87872c5eb156518847fec3922eadab72df69e2141b); scope and exact quote `docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-spec-acceptance.json`. A separate TDD implementation plan now exists at `docs/superpowers/plans/2026-10-22-global-dynamic-asset-residency.md` and must be shown to the player before runtime execution. Native single-agent Work handoff is `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`; current code and public build remain unchanged. Do not misread historical fixed-cap rules below as the newly approved policy being installed, nor infer plan/contract/phone acceptance. Docs-only [skip ci].

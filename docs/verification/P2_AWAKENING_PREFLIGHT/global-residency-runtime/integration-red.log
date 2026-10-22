@@ -1,0 +1,25 @@
+✖ 65 required images above16MiB remain ready and pinned above soft targets in two scenes (4.204767ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 101.932055
+
+✖ failing tests:
+
+test at ../../../../tmp/shanhai-policy-red.P7AHs7/tests/dynamicAssetIntegration.test.js:20:1
+✖ 65 required images above16MiB remain ready and pinned above soft targets in two scenes (4.204767ms)
+  Error: Scene texture safety budget exceeded: required64
+      at file:///tmp/shanhai-policy-red.P7AHs7/src/runtime/assetResidency.js:34:110
+      at AssetResidency.load (file:///tmp/shanhai-policy-red.P7AHs7/src/runtime/assetResidency.js:49:5)
+      at file:///tmp/shanhai-policy-red.P7AHs7/src/runtime/assetPresenter.js:28:85
+      at Array.map (<anonymous>)
+      at AssetPresenter.loadKeys (file:///tmp/shanhai-policy-red.P7AHs7/src/runtime/assetPresenter.js:28:61)
+      at AssetPresenter.prepare (file:///tmp/shanhai-policy-red.P7AHs7/src/runtime/assetPresenter.js:46:14)
+      at TestContext.<anonymous> (file:///tmp/shanhai-policy-red.P7AHs7/tests/dynamicAssetIntegration.test.js:24:29)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)

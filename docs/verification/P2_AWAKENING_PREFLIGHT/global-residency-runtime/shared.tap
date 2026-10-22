@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: cache is idle until requested and shares decode across concurrent/retry loads
+ok 1 - cache is idle until requested and shares decode across concurrent/retry loads
+  ---
+  duration_ms: 1.186087
+  type: 'test'
+  ...
+# Subtest: failed downloads/unsafe decoded dimensions fall back and can retry
+ok 2 - failed downloads/unsafe decoded dimensions fall back and can retry
+  ---
+  duration_ms: 0.320685
+  type: 'test'
+  ...
+# Subtest: cache bounds resident images and handles unknown keys without crashing
+ok 3 - cache bounds resident images and handles unknown keys without crashing
+  ---
+  duration_ms: 0.24996
+  type: 'test'
+  ...
+# Subtest: resident memory budget counts decoded pixels and bounds parallel decode
+ok 4 - resident memory budget counts decoded pixels and bounds parallel decode
+  ---
+  duration_ms: 5.566614
+  type: 'test'
+  ...
+# Subtest: image fallback chain actually loads and caches the valid secondary image
+ok 5 - image fallback chain actually loads and caches the valid secondary image
+  ---
+  duration_ms: 1.33651
+  type: 'test'
+  ...
+# Subtest: a valid decoded image larger than retention target still resolves as its image
+ok 6 - a valid decoded image larger than retention target still resolves as its image
+  ---
+  duration_ms: 0.248277
+  type: 'test'
+  ...
+# Subtest: more than64 distinct pending requests all resolve with only two transports
+ok 7 - more than64 distinct pending requests all resolve with only two transports
+  ---
+  duration_ms: 4.713381
+  type: 'test'
+  ...
+# Subtest: retention targets above former limits are accepted without weakening individual guards
+ok 8 - retention targets above former limits are accepted without weakening individual guards
+  ---
+  duration_ms: 0.644064
+  type: 'test'
+  ...
+# Subtest: unpinned LRU is reclaimed while pinned actor art survives pressure
+ok 9 - unpinned LRU is reclaimed while pinned actor art survives pressure
+  ---
+  duration_ms: 3.116015
+  type: 'test'
+  ...
+# Subtest: concurrent dedupe keeps all pinned textures above the soft reclamation target
+ok 10 - concurrent dedupe keeps all pinned textures above the soft reclamation target
+  ---
+  duration_ms: 1.522735
+  type: 'test'
+  ...
+# Subtest: failed required loads are observable and retry succeeds without treating fallback as image
+ok 11 - failed required loads are observable and retry succeeds without treating fallback as image
+  ---
+  duration_ms: 0.993271
+  type: 'test'
+  ...
+# Subtest: shutdown during pending upload never installs late texture; warm cache can be reused
+ok 12 - shutdown during pending upload never installs late texture; warm cache can be reused
+  ---
+  duration_ms: 0.534712
+  type: 'test'
+  ...
+# Subtest: eviction callback destroys display references before removing scene texture
+ok 13 - eviction callback destroys display references before removing scene texture
+  ---
+  duration_ms: 0.393143
+  type: 'test'
+  ...
+# Subtest: unsafe soft targets are rejected and diagnostics snapshots cannot mutate owner
+ok 14 - unsafe soft targets are rejected and diagnostics snapshots cannot mutate owner
+  ---
+  duration_ms: 0.4526
+  type: 'test'
+  ...
+# Subtest: decoded cache remains independent of live textures and reports finite peaks
+ok 15 - decoded cache remains independent of live textures and reports finite peaks
+  ---
+  duration_ms: 0.420492
+  type: 'test'
+  ...
+# Subtest: unknown requested image and actual renderer allocation failures are explicit, retriable failures
+ok 16 - unknown requested image and actual renderer allocation failures are explicit, retriable failures
+  ---
+  duration_ms: 0.50615
+  type: 'test'
+  ...
+# Subtest: parallel loads account reservations beyond the old budget and release actual failures
+ok 17 - parallel loads account reservations beyond the old budget and release actual failures
+  ---
+  duration_ms: 7.561619
+  type: 'test'
+  ...
+# Subtest: 65 required pinned textures exceed16MiB without entry or total-byte rejection
+ok 18 - 65 required pinned textures exceed16MiB without entry or total-byte rejection
+  ---
+  duration_ms: 2.783593
+  type: 'test'
+  ...
+# Subtest: optional unpinned image above a soft target loads and is reclaimable
+ok 19 - optional unpinned image above a soft target loads and is reclaimable
+  ---
+  duration_ms: 0.233056
+  type: 'test'
+  ...
+# Subtest: decoded total above16MiB loads even with only two pinned textures
+ok 20 - decoded total above16MiB loads even with only two pinned textures
+  ---
+  duration_ms: 0.321045
+  type: 'test'
+  ...
+# Subtest: only this encounter loads; optional effects remain demand-driven and pinned while displayed
+ok 21 - only this encounter loads; optional effects remain demand-driven and pinned while displayed
+  ---
+  duration_ms: 8.420421
+  type: 'test'
+  ...
+# Subtest: five unique characters, six actors, reduced motion and repeated warm restarts keep all required art
+ok 22 - five unique characters, six actors, reduced motion and repeated warm restarts keep all required art
+  ---
+  duration_ms: 24.033115
+  type: 'test'
+  ...
+# Subtest: missing approved KO rejects encounter readiness explicitly and retry preserves actor pins
+ok 23 - missing approved KO rejects encounter readiness explicitly and retry preserves actor pins
+  ---
+  duration_ms: 1.452972
+  type: 'test'
+  ...
+# Subtest: 65 required images above16MiB remain ready and pinned above soft targets in two scenes
+ok 24 - 65 required images above16MiB remain ready and pinned above soft targets in two scenes
+  ---
+  duration_ms: 2.798625
+  type: 'test'
+  ...
+# Subtest: required renderer allocation failure keeps ready false and retry loads the complete encounter
+ok 25 - required renderer allocation failure keeps ready false and retry loads the complete encounter
+  ---
+  duration_ms: 0.746155
+  type: 'test'
+  ...
+# Subtest: rapid scene shutdown during essential load never updates a replacement scene
+ok 26 - rapid scene shutdown during essential load never updates a replacement scene
+  ---
+  duration_ms: 3.597839
+  type: 'test'
+  ...
+# Subtest: unknown required portrait cannot masquerade as successful procedural readiness
+ok 27 - unknown required portrait cannot masquerade as successful procedural readiness
+  ---
+  duration_ms: 0.424439
+  type: 'test'
+  ...
+# Subtest: optional allocation failure keeps deterministic graphics fallback and all pinned actor textures
+ok 28 - optional allocation failure keeps deterministic graphics fallback and all pinned actor textures
+  ---
+  duration_ms: 1.218194
+  type: 'test'
+  ...
+# Subtest: invalid essential Idle descriptor cannot hide its missing approved source under procedural fallback
+ok 29 - invalid essential Idle descriptor cannot hide its missing approved source under procedural fallback
+  ---
+  duration_ms: 0.274707
+  type: 'test'
+  ...
+# Subtest: optional Hit actor texture stays pinned until display retargets under Cast allocation pressure
+ok 30 - optional Hit actor texture stays pinned until display retargets under Cast allocation pressure
+  ---
+  duration_ms: 0.703773
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 167.926628

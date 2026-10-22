@@ -1,0 +1,886 @@
+TAP version 13
+# Subtest: cache is idle until requested and shares decode across concurrent/retry loads
+ok 1 - cache is idle until requested and shares decode across concurrent/retry loads
+  ---
+  duration_ms: 1.780277
+  type: 'test'
+  ...
+# Subtest: failed downloads/unsafe decoded dimensions fall back and can retry
+ok 2 - failed downloads/unsafe decoded dimensions fall back and can retry
+  ---
+  duration_ms: 0.522804
+  type: 'test'
+  ...
+# Subtest: cache bounds resident images and handles unknown keys without crashing
+ok 3 - cache bounds resident images and handles unknown keys without crashing
+  ---
+  duration_ms: 0.39822
+  type: 'test'
+  ...
+# Subtest: resident memory budget counts decoded pixels and bounds parallel decode
+ok 4 - resident memory budget counts decoded pixels and bounds parallel decode
+  ---
+  duration_ms: 6.206882
+  type: 'test'
+  ...
+# Subtest: image fallback chain actually loads and caches the valid secondary image
+ok 5 - image fallback chain actually loads and caches the valid secondary image
+  ---
+  duration_ms: 1.210873
+  type: 'test'
+  ...
+# Subtest: a valid decoded image larger than retention target still resolves as its image
+ok 6 - a valid decoded image larger than retention target still resolves as its image
+  ---
+  duration_ms: 0.257902
+  type: 'test'
+  ...
+# Subtest: more than64 distinct pending requests all resolve with only two transports
+ok 7 - more than64 distinct pending requests all resolve with only two transports
+  ---
+  duration_ms: 10.430659
+  type: 'test'
+  ...
+# Subtest: retention targets above former limits are accepted without weakening individual guards
+ok 8 - retention targets above former limits are accepted without weakening individual guards
+  ---
+  duration_ms: 0.762329
+  type: 'test'
+  ...
+# Subtest: unpinned LRU is reclaimed while pinned actor art survives pressure
+ok 9 - unpinned LRU is reclaimed while pinned actor art survives pressure
+  ---
+  duration_ms: 3.000254
+  type: 'test'
+  ...
+# Subtest: concurrent dedupe keeps all pinned textures above the soft reclamation target
+ok 10 - concurrent dedupe keeps all pinned textures above the soft reclamation target
+  ---
+  duration_ms: 1.75519
+  type: 'test'
+  ...
+# Subtest: failed required loads are observable and retry succeeds without treating fallback as image
+ok 11 - failed required loads are observable and retry succeeds without treating fallback as image
+  ---
+  duration_ms: 1.143774
+  type: 'test'
+  ...
+# Subtest: shutdown during pending upload never installs late texture; warm cache can be reused
+ok 12 - shutdown during pending upload never installs late texture; warm cache can be reused
+  ---
+  duration_ms: 0.537346
+  type: 'test'
+  ...
+# Subtest: eviction callback destroys display references before removing scene texture
+ok 13 - eviction callback destroys display references before removing scene texture
+  ---
+  duration_ms: 0.477477
+  type: 'test'
+  ...
+# Subtest: unsafe soft targets are rejected and diagnostics snapshots cannot mutate owner
+ok 14 - unsafe soft targets are rejected and diagnostics snapshots cannot mutate owner
+  ---
+  duration_ms: 0.477367
+  type: 'test'
+  ...
+# Subtest: decoded cache remains independent of live textures and reports finite peaks
+ok 15 - decoded cache remains independent of live textures and reports finite peaks
+  ---
+  duration_ms: 0.616273
+  type: 'test'
+  ...
+# Subtest: unknown requested image and actual renderer allocation failures are explicit, retriable failures
+ok 16 - unknown requested image and actual renderer allocation failures are explicit, retriable failures
+  ---
+  duration_ms: 0.676632
+  type: 'test'
+  ...
+# Subtest: parallel loads account reservations beyond the old budget and release actual failures
+ok 17 - parallel loads account reservations beyond the old budget and release actual failures
+  ---
+  duration_ms: 8.05487
+  type: 'test'
+  ...
+# Subtest: 65 required pinned textures exceed16MiB without entry or total-byte rejection
+ok 18 - 65 required pinned textures exceed16MiB without entry or total-byte rejection
+  ---
+  duration_ms: 3.046953
+  type: 'test'
+  ...
+# Subtest: optional unpinned image above a soft target loads and is reclaimable
+ok 19 - optional unpinned image above a soft target loads and is reclaimable
+  ---
+  duration_ms: 0.248147
+  type: 'test'
+  ...
+# Subtest: decoded total above16MiB loads even with only two pinned textures
+ok 20 - decoded total above16MiB loads even with only two pinned textures
+  ---
+  duration_ms: 0.574761
+  type: 'test'
+  ...
+# Subtest: P2 Basic retains Idle skull density, planted foot and approved independent FX false/-1
+ok 21 - P2 Basic retains Idle skull density, planted foot and approved independent FX false/-1
+  ---
+  duration_ms: 29.16135
+  type: 'test'
+  ...
+# Subtest: P2 Basic retains Idle skull density, planted foot and approved independent FX false/1
+ok 22 - P2 Basic retains Idle skull density, planted foot and approved independent FX false/1
+  ---
+  duration_ms: 17.385944
+  type: 'test'
+  ...
+# Subtest: P2 Basic retains Idle skull density, planted foot and approved independent FX true/-1
+ok 23 - P2 Basic retains Idle skull density, planted foot and approved independent FX true/-1
+  ---
+  duration_ms: 7.408593
+  type: 'test'
+  ...
+# Subtest: P2 Basic retains Idle skull density, planted foot and approved independent FX true/1
+ok 24 - P2 Basic retains Idle skull density, planted foot and approved independent FX true/1
+  ---
+  duration_ms: 24.311146
+  type: 'test'
+  ...
+# Subtest: P2 T0 locked 250ms real windup; one damage/resolve and cadence at start
+ok 25 - P2 T0 locked 250ms real windup; one damage/resolve and cadence at start
+  ---
+  duration_ms: 0.858191
+  type: 'test'
+  ...
+# Subtest: P2 T1 locked 250ms real windup; one damage/resolve and cadence at start
+ok 26 - P2 T1 locked 250ms real windup; one damage/resolve and cadence at start
+  ---
+  duration_ms: 1.226606
+  type: 'test'
+  ...
+# Subtest: P2 T2 locked 250ms real windup; one damage/resolve and cadence at start
+ok 27 - P2 T2 locked 250ms real windup; one damage/resolve and cadence at start
+  ---
+  duration_ms: 5.876984
+  type: 'test'
+  ...
+# Subtest: P2 T3 locked 250ms real windup; one damage/resolve and cadence at start
+ok 28 - P2 T3 locked 250ms real windup; one damage/resolve and cadence at start
+  ---
+  duration_ms: 0.873384
+  type: 'test'
+  ...
+# Subtest: P2 actual escape preserves hit/cancel contract
+ok 29 - P2 actual escape preserves hit/cancel contract
+  ---
+  duration_ms: 0.75627
+  type: 'test'
+  ...
+# Subtest: P2 actual ordinary preserves hit/cancel contract
+ok 30 - P2 actual ordinary preserves hit/cancel contract
+  ---
+  duration_ms: 1.698615
+  type: 'test'
+  ...
+# Subtest: P2 actual sourceKO preserves hit/cancel contract
+ok 31 - P2 actual sourceKO preserves hit/cancel contract
+  ---
+  duration_ms: 0.515964
+  type: 'test'
+  ...
+# Subtest: P2 actual targetKO preserves hit/cancel contract
+ok 32 - P2 actual targetKO preserves hit/cancel contract
+  ---
+  duration_ms: 0.45238
+  type: 'test'
+  ...
+# Subtest: P2 actual control preserves hit/cancel contract
+ok 33 - P2 actual control preserves hit/cancel contract
+  ---
+  duration_ms: 0.454393
+  type: 'test'
+  ...
+# Subtest: P2 actual newSkill preserves hit/cancel contract
+ok 34 - P2 actual newSkill preserves hit/cancel contract
+  ---
+  duration_ms: 0.946902
+  type: 'test'
+  ...
+# Subtest: P2 visual real hit, independent contact/body, Pause/cleanup false/-1
+ok 35 - P2 visual real hit, independent contact/body, Pause/cleanup false/-1
+  ---
+  duration_ms: 6.976813
+  type: 'test'
+  ...
+# Subtest: P2 visual real hit, independent contact/body, Pause/cleanup false/1
+ok 36 - P2 visual real hit, independent contact/body, Pause/cleanup false/1
+  ---
+  duration_ms: 5.239249
+  type: 'test'
+  ...
+# Subtest: P2 visual real hit, independent contact/body, Pause/cleanup true/-1
+ok 37 - P2 visual real hit, independent contact/body, Pause/cleanup true/-1
+  ---
+  duration_ms: 10.651445
+  type: 'test'
+  ...
+# Subtest: P2 visual real hit, independent contact/body, Pause/cleanup true/1
+ok 38 - P2 visual real hit, independent contact/body, Pause/cleanup true/1
+  ---
+  duration_ms: 5.348582
+  type: 'test'
+  ...
+# Subtest: P2 accepted source/descriptor and full required residency preserve complete ownership
+ok 39 - P2 accepted source/descriptor and full required residency preserve complete ownership
+  ---
+  duration_ms: 6.81953
+  type: 'test'
+  ...
+# Subtest: real automatic AI decision → P2 shared action false/allies/-1
+ok 40 - real automatic AI decision → P2 shared action false/allies/-1
+  ---
+  duration_ms: 1.446673
+  type: 'test'
+  ...
+# Subtest: real automatic AI decision → P2 shared action false/allies/1
+ok 41 - real automatic AI decision → P2 shared action false/allies/1
+  ---
+  duration_ms: 3.211667
+  type: 'test'
+  ...
+# Subtest: real automatic AI decision → P2 shared action false/enemies/-1
+ok 42 - real automatic AI decision → P2 shared action false/enemies/-1
+  ---
+  duration_ms: 0.862998
+  type: 'test'
+  ...
+# Subtest: real automatic AI decision → P2 shared action false/enemies/1
+ok 43 - real automatic AI decision → P2 shared action false/enemies/1
+  ---
+  duration_ms: 0.710382
+  type: 'test'
+  ...
+# Subtest: real automatic AI decision → P2 shared action true/allies/-1
+ok 44 - real automatic AI decision → P2 shared action true/allies/-1
+  ---
+  duration_ms: 3.293497
+  type: 'test'
+  ...
+# Subtest: real automatic AI decision → P2 shared action true/allies/1
+ok 45 - real automatic AI decision → P2 shared action true/allies/1
+  ---
+  duration_ms: 0.89799
+  type: 'test'
+  ...
+# Subtest: real automatic AI decision → P2 shared action true/enemies/-1
+ok 46 - real automatic AI decision → P2 shared action true/enemies/-1
+  ---
+  duration_ms: 1.831302
+  type: 'test'
+  ...
+# Subtest: real automatic AI decision → P2 shared action true/enemies/1
+ok 47 - real automatic AI decision → P2 shared action true/enemies/1
+  ---
+  duration_ms: 0.859323
+  type: 'test'
+  ...
+# Subtest: real player skill API cancels automatic pending Basic; movement remains engine owned
+ok 48 - real player skill API cancels automatic pending Basic; movement remains engine owned
+  ---
+  duration_ms: 0.528373
+  type: 'test'
+  ...
+# Subtest: range recheck keeps original target and consumes no miss RNG
+ok 49 - range recheck keeps original target and consumes no miss RNG
+  ---
+  duration_ms: 0.297831
+  type: 'test'
+  ...
+# Subtest: actual status control cancels pending Basic without cadence refund
+ok 50 - actual status control cancels pending Basic without cadence refund
+  ---
+  duration_ms: 0.446011
+  type: 'test'
+  ...
+# Subtest: confirmed 200ms contact survives next non-phased skill without taking over body
+ok 51 - confirmed 200ms contact survives next non-phased skill without taking over body
+  ---
+  duration_ms: 5.486547
+  type: 'test'
+  ...
+# Subtest: critical text consumes same real Arena resolve as HP and contact
+ok 52 - critical text consumes same real Arena resolve as HP and contact
+  ---
+  duration_ms: 8.810449
+  type: 'test'
+  ...
+# Subtest: automatic repeated P2 casts retain projected cadence and one hit per action T0
+ok 53 - automatic repeated P2 casts retain projected cadence and one hit per action T0
+  ---
+  duration_ms: 8.893953
+  type: 'test'
+  ...
+# Subtest: automatic repeated P2 casts retain projected cadence and one hit per action T3
+ok 54 - automatic repeated P2 casts retain projected cadence and one hit per action T3
+  ---
+  duration_ms: 7.282886
+  type: 'test'
+  ...
+# Subtest: P2 returns to current Move after body recovery and source KO cleans every owned cue
+ok 55 - P2 returns to current Move after body recovery and source KO cleans every owned cue
+  ---
+  duration_ms: 8.097874
+  type: 'test'
+  ...
+# Subtest: opt-in source/contact schema is bounded and old P1 defaults stay absent
+ok 56 - opt-in source/contact schema is bounded and old P1 defaults stay absent
+  ---
+  duration_ms: 1.140319
+  type: 'test'
+  ...
+# Subtest: actual rendered noncentral action pivot retains approved skull density/foot and mirror -1
+ok 57 - actual rendered noncentral action pivot retains approved skull density/foot and mirror -1
+  ---
+  duration_ms: 6.260322
+  type: 'test'
+  ...
+# Subtest: actual rendered noncentral action pivot retains approved skull density/foot and mirror 1
+ok 58 - actual rendered noncentral action pivot retains approved skull density/foot and mirror 1
+  ---
+  duration_ms: 4.154984
+  type: 'test'
+  ...
+# Subtest: Heavy packing retains every approved pose pixel and legacy Move logical canvas in both directions
+ok 59 - Heavy packing retains every approved pose pixel and legacy Move logical canvas in both directions
+  ---
+  duration_ms: 225.648285
+  type: 'test'
+  ...
+# Subtest: complete all-five required Heavy encounter preserves every pin in either load order
+ok 60 - complete all-five required Heavy encounter preserves every pin in either load order
+  ---
+  duration_ms: 10.741689
+  type: 'test'
+  ...
+# Subtest: approved P3 KO resolves, preloads inside the shared budget and is one static grounded frame
+not ok 61 - approved P3 KO resolves, preloads inside the shared budget and is one static grounded frame
+  ---
+  duration_ms: 2.137375
+  type: 'test'
+  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/chiruKo.test.js:26:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'assets/special-runtime-v1/chiru-battleKo.png'
+    - 'assets/characters/chiru/battleKo.png'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'assets/characters/chiru/battleKo.png'
+  actual: 'assets/special-runtime-v1/chiru-battleKo.png'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/chiruKo.test.js:27:105)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: KO freezes last right facing, alpha/anchor and static state (reduced=false)
+ok 62 - KO freezes last right facing, alpha/anchor and static state (reduced=false)
+  ---
+  duration_ms: 7.086816
+  type: 'test'
+  ...
+# Subtest: KO freezes last left facing, alpha/anchor and static state (reduced=false)
+ok 63 - KO freezes last left facing, alpha/anchor and static state (reduced=false)
+  ---
+  duration_ms: 3.155844
+  type: 'test'
+  ...
+# Subtest: KO freezes last right facing, alpha/anchor and static state (reduced=true)
+ok 64 - KO freezes last right facing, alpha/anchor and static state (reduced=true)
+  ---
+  duration_ms: 1.9709
+  type: 'test'
+  ...
+# Subtest: KO freezes last left facing, alpha/anchor and static state (reduced=true)
+ok 65 - KO freezes last left facing, alpha/anchor and static state (reduced=true)
+  ---
+  duration_ms: 1.911441
+  type: 'test'
+  ...
+# Subtest: real dead BattleSession actor remains gameplay-owned while actual presenter selects static KO
+ok 66 - real dead BattleSession actor remains gameplay-owned while actual presenter selects static KO
+  ---
+  duration_ms: 12.526142
+  type: 'test'
+  ...
+# Subtest: approved KO PNG bytes are untouched; visible ground contact aligns without cropping the source
+ok 67 - approved KO PNG bytes are untouched; visible ground contact aligns without cropping the source
+  ---
+  duration_ms: 157.21095
+  type: 'test'
+  ...
+# Subtest: only this encounter loads; optional effects remain demand-driven and pinned while displayed
+ok 68 - only this encounter loads; optional effects remain demand-driven and pinned while displayed
+  ---
+  duration_ms: 11.303761
+  type: 'test'
+  ...
+# Subtest: five unique characters, six actors, reduced motion and repeated warm restarts keep all required art
+ok 69 - five unique characters, six actors, reduced motion and repeated warm restarts keep all required art
+  ---
+  duration_ms: 28.713096
+  type: 'test'
+  ...
+# Subtest: missing approved KO rejects encounter readiness explicitly and retry preserves actor pins
+ok 70 - missing approved KO rejects encounter readiness explicitly and retry preserves actor pins
+  ---
+  duration_ms: 2.196423
+  type: 'test'
+  ...
+# Subtest: 65 required images above16MiB remain ready and pinned above soft targets in two scenes
+ok 71 - 65 required images above16MiB remain ready and pinned above soft targets in two scenes
+  ---
+  duration_ms: 5.151169
+  type: 'test'
+  ...
+# Subtest: required renderer allocation failure keeps ready false and retry loads the complete encounter
+ok 72 - required renderer allocation failure keeps ready false and retry loads the complete encounter
+  ---
+  duration_ms: 1.294027
+  type: 'test'
+  ...
+# Subtest: rapid scene shutdown during essential load never updates a replacement scene
+ok 73 - rapid scene shutdown during essential load never updates a replacement scene
+  ---
+  duration_ms: 18.800705
+  type: 'test'
+  ...
+# Subtest: unknown required portrait cannot masquerade as successful procedural readiness
+ok 74 - unknown required portrait cannot masquerade as successful procedural readiness
+  ---
+  duration_ms: 0.584115
+  type: 'test'
+  ...
+# Subtest: optional allocation failure keeps deterministic graphics fallback and all pinned actor textures
+ok 75 - optional allocation failure keeps deterministic graphics fallback and all pinned actor textures
+  ---
+  duration_ms: 4.12591
+  type: 'test'
+  ...
+# Subtest: invalid essential Idle descriptor cannot hide its missing approved source under procedural fallback
+ok 76 - invalid essential Idle descriptor cannot hide its missing approved source under procedural fallback
+  ---
+  duration_ms: 0.280816
+  type: 'test'
+  ...
+# Subtest: optional Hit actor texture stays pinned until display retargets under Cast allocation pressure
+ok 77 - optional Hit actor texture stays pinned until display retargets under Cast allocation pressure
+  ---
+  duration_ms: 0.71591
+  type: 'test'
+  ...
+# Subtest: P4 runtime KO manifest/descriptor is a single static grounded 512 frame
+not ok 78 - P4 runtime KO manifest/descriptor is a single static grounded 512 frame
+  ---
+  duration_ms: 1.626659
+  type: 'test'
+  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/jiuweihuKo.test.js:34:2'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'assets/special-runtime-v1/jiuweihu-battleKo.png'
+    - 'assets/runtime-packing-v1/jiuweihu-battleKo.png'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'assets/runtime-packing-v1/jiuweihu-battleKo.png'
+  actual: 'assets/special-runtime-v1/jiuweihu-battleKo.png'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/jiuweihuKo.test.js:35:111)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: P4 HP0 keeps static KO / saved right facing (reduced=false)
+ok 79 - P4 HP0 keeps static KO / saved right facing (reduced=false)
+  ---
+  duration_ms: 11.333657
+  type: 'test'
+  ...
+# Subtest: P4 HP0 keeps static KO / saved left facing (reduced=false)
+ok 80 - P4 HP0 keeps static KO / saved left facing (reduced=false)
+  ---
+  duration_ms: 6.632253
+  type: 'test'
+  ...
+# Subtest: P4 HP0 keeps static KO / saved right facing (reduced=true)
+ok 81 - P4 HP0 keeps static KO / saved right facing (reduced=true)
+  ---
+  duration_ms: 16.061528
+  type: 'test'
+  ...
+# Subtest: P4 HP0 keeps static KO / saved left facing (reduced=true)
+ok 82 - P4 HP0 keeps static KO / saved left facing (reduced=true)
+  ---
+  duration_ms: 3.354478
+  type: 'test'
+  ...
+# Subtest: P4 actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned
+ok 83 - P4 actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned
+  ---
+  duration_ms: 16.513548
+  type: 'test'
+  ...
+# Subtest: P4 exact approved derivative pixels ground the silhouette without source edits
+ok 84 - P4 exact approved derivative pixels ground the silhouette without source edits
+  ---
+  duration_ms: 50.730925
+  type: 'test'
+  ...
+# Subtest: P1/P2/P3/P4 actual cache and scene preload every KO within unchanged 16MiB regardless of order
+ok 85 - P1/P2/P3/P4 actual cache and scene preload every KO within unchanged 16MiB regardless of order
+  ---
+  duration_ms: 13.324104
+  type: 'test'
+  ...
+# P1/P2/P3/P4 cache peak=12801376; scene peak=12801376
+# P4/P3/P2/P1 cache peak=12801376; scene peak=12801376
+# P2/P4/P3/P1 cache peak=12801376; scene peak=12801376
+# P1/P2/P3/P4/P1/P2/P3/P4 cache peak=12801376; scene peak=12801376
+# Subtest: P4 all three approved slots resolve actual byte-identical runtime PNGs
+not ok 86 - P4 all three approved slots resolve actual byte-identical runtime PNGs
+  ---
+  duration_ms: 3.045891
+  type: 'test'
+  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/jiuweihuStatic.test.js:27:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'assets/special-runtime-v1/jiuweihu-battleIdle.png'
+    - 'assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png'
+  actual: 'assets/special-runtime-v1/jiuweihu-battleIdle.png'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/jiuweihuStatic.test.js:28:146)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: P4 single-frame grounded static idle has no authored action/breathing
+ok 87 - P4 single-frame grounded static idle has no authored action/breathing
+  ---
+  duration_ms: 1.236331
+  type: 'test'
+  ...
+# Subtest: P4 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=false)
+ok 88 - P4 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=false)
+  ---
+  duration_ms: 10.45505
+  type: 'test'
+  ...
+# Subtest: P4 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=true)
+ok 89 - P4 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=true)
+  ---
+  duration_ms: 4.457072
+  type: 'test'
+  ...
+# Subtest: P1-P4 actual cache/scene retain every accepted asset within unchanged16MiB regardless of order
+ok 90 - P1-P4 actual cache/scene retain every accepted asset within unchanged16MiB regardless of order
+  ---
+  duration_ms: 8.780594
+  type: 'test'
+  ...
+# cache peak=13280608; scene peak=13280608
+# cache peak=13280608; scene peak=13280608
+# Subtest: P4 exact stats and real BattleSession snapshot remain gameplay-owned
+ok 91 - P4 exact stats and real BattleSession snapshot remain gameplay-owned
+  ---
+  duration_ms: 5.148115
+  type: 'test'
+  ...
+# Subtest: P1 runtime KO manifest/descriptor is a single static grounded 512 frame
+not ok 92 - P1 runtime KO manifest/descriptor is a single static grounded 512 frame
+  ---
+  duration_ms: 1.922318
+  type: 'test'
+  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBotuoKo.test.js:38:2'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'assets/special-runtime-v1/lushu-battleKo.png'
+    - 'assets/characters/lushu/battleKo-trimmed.png'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'assets/characters/lushu/battleKo-trimmed.png'
+  actual: 'assets/special-runtime-v1/lushu-battleKo.png'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBotuoKo.test.js:39:111)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: P1 HP0 keeps static KO / saved right facing (reduced=false)
+ok 93 - P1 HP0 keeps static KO / saved right facing (reduced=false)
+  ---
+  duration_ms: 14.675045
+  type: 'test'
+  ...
+# Subtest: P1 HP0 keeps static KO / saved left facing (reduced=false)
+ok 94 - P1 HP0 keeps static KO / saved left facing (reduced=false)
+  ---
+  duration_ms: 4.093292
+  type: 'test'
+  ...
+# Subtest: P1 HP0 keeps static KO / saved right facing (reduced=true)
+ok 95 - P1 HP0 keeps static KO / saved right facing (reduced=true)
+  ---
+  duration_ms: 5.187152
+  type: 'test'
+  ...
+# Subtest: P1 HP0 keeps static KO / saved left facing (reduced=true)
+ok 96 - P1 HP0 keeps static KO / saved left facing (reduced=true)
+  ---
+  duration_ms: 4.673643
+  type: 'test'
+  ...
+# Subtest: P1 actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned
+ok 97 - P1 actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned
+  ---
+  duration_ms: 10.621261
+  type: 'test'
+  ...
+# Subtest: P1 exact approved derivative pixels ground the silhouette without source edits
+ok 98 - P1 exact approved derivative pixels ground the silhouette without source edits
+  ---
+  duration_ms: 51.737066
+  type: 'test'
+  ...
+# Subtest: P2 runtime KO manifest/descriptor is a single static grounded 512 frame
+not ok 99 - P2 runtime KO manifest/descriptor is a single static grounded 512 frame
+  ---
+  duration_ms: 0.408485
+  type: 'test'
+  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBotuoKo.test.js:38:2'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'assets/special-runtime-v1/botuo-battleKo.png'
+    - 'assets/characters/botuo/battleKo-trimmed.png'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'assets/characters/botuo/battleKo-trimmed.png'
+  actual: 'assets/special-runtime-v1/botuo-battleKo.png'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/lushuBotuoKo.test.js:39:111)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: P2 HP0 keeps static KO / saved right facing (reduced=false)
+ok 100 - P2 HP0 keeps static KO / saved right facing (reduced=false)
+  ---
+  duration_ms: 6.511795
+  type: 'test'
+  ...
+# Subtest: P2 HP0 keeps static KO / saved left facing (reduced=false)
+ok 101 - P2 HP0 keeps static KO / saved left facing (reduced=false)
+  ---
+  duration_ms: 3.221952
+  type: 'test'
+  ...
+# Subtest: P2 HP0 keeps static KO / saved right facing (reduced=true)
+ok 102 - P2 HP0 keeps static KO / saved right facing (reduced=true)
+  ---
+  duration_ms: 3.393206
+  type: 'test'
+  ...
+# Subtest: P2 HP0 keeps static KO / saved left facing (reduced=true)
+ok 103 - P2 HP0 keeps static KO / saved left facing (reduced=true)
+  ---
+  duration_ms: 2.340366
+  type: 'test'
+  ...
+# Subtest: P2 actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned
+ok 104 - P2 actual BattleSession dead coordinates/snapshot/moveSpeed remain gameplay-owned
+  ---
+  duration_ms: 8.701328
+  type: 'test'
+  ...
+# Subtest: P2 exact approved derivative pixels ground the silhouette without source edits
+ok 105 - P2 exact approved derivative pixels ground the silhouette without source edits
+  ---
+  duration_ms: 23.354009
+  type: 'test'
+  ...
+# Subtest: P1/P2/P3 actual cache and scene preload every KO regardless of order
+ok 106 - P1/P2/P3 actual cache and scene preload every KO regardless of order
+  ---
+  duration_ms: 8.626587
+  type: 'test'
+  ...
+# P1/P2/P3 cache peak=11601188; scene peak=11601188
+# P3/P2/P1 cache peak=11601188; scene peak=11601188
+# P2/P3/P1 cache peak=11601188; scene peak=11601188
+# P1/P2/P3/P1/P2/P3 cache peak=11601188; scene peak=11601188
+# Subtest: P5 approved lossless KO resolves exact RGBA PNG and a single static crop-corrected descriptor
+not ok 107 - P5 approved lossless KO resolves exact RGBA PNG and a single static crop-corrected descriptor
+  ---
+  duration_ms: 2.000363
+  type: 'test'
+  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/xingxingKo.test.js:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'assets/special-runtime-v1/xingxing-battleKo.png'
+    - 'assets/botuo-basic-packing-v1/xingxing-battleKo.png'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'assets/botuo-basic-packing-v1/xingxing-battleKo.png'
+  actual: 'assets/special-runtime-v1/xingxing-battleKo.png'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/xingxingKo.test.js:25:108)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: P5 HP0 preserves static grounded KO and last facing left=false, reduced=false
+ok 108 - P5 HP0 preserves static grounded KO and last facing left=false, reduced=false
+  ---
+  duration_ms: 13.214497
+  type: 'test'
+  ...
+# Subtest: P5 HP0 preserves static grounded KO and last facing left=true, reduced=false
+ok 109 - P5 HP0 preserves static grounded KO and last facing left=true, reduced=false
+  ---
+  duration_ms: 5.271197
+  type: 'test'
+  ...
+# Subtest: P5 HP0 preserves static grounded KO and last facing left=false, reduced=true
+ok 110 - P5 HP0 preserves static grounded KO and last facing left=false, reduced=true
+  ---
+  duration_ms: 7.9879
+  type: 'test'
+  ...
+# Subtest: P5 HP0 preserves static grounded KO and last facing left=true, reduced=true
+ok 111 - P5 HP0 preserves static grounded KO and last facing left=true, reduced=true
+  ---
+  duration_ms: 3.63899
+  type: 'test'
+  ...
+# Subtest: all five Portrait/Idle/Move/KO textures remain present in real cache and scene with complete pins
+ok 112 - all five Portrait/Idle/Move/KO textures remain present in real cache and scene with complete pins
+  ---
+  duration_ms: 9.226585
+  type: 'test'
+  ...
+# P1,P2,P3,P4,P5: cache=16611224, scene=16611224
+# P5,P4,P3,P2,P1: cache=16611224, scene=16611224
+# Subtest: real P5 BattleSession KO freezes gameplay coordinates and presenter leaves snapshots unchanged
+ok 113 - real P5 BattleSession KO freezes gameplay coordinates and presenter leaves snapshots unchanged
+  ---
+  duration_ms: 18.227857
+  type: 'test'
+  ...
+# Subtest: P5 all three approved slots resolve actual byte-identical runtime PNGs
+not ok 114 - P5 all three approved slots resolve actual byte-identical runtime PNGs
+  ---
+  duration_ms: 2.706208
+  type: 'test'
+  location: '/workspace/scratch/372fc6752092/shanhaijing-arena/tests/xingxingStatic.test.js:27:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'assets/special-runtime-v1/xingxing-battleIdle.png'
+    - 'assets/botuo-basic-packing-v1/xingxing-battleIdle.png'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'assets/botuo-basic-packing-v1/xingxing-battleIdle.png'
+  actual: 'assets/special-runtime-v1/xingxing-battleIdle.png'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/xingxingStatic.test.js:28:146)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: P5 single-frame grounded static idle has no authored action/breathing
+ok 115 - P5 single-frame grounded static idle has no authored action/breathing
+  ---
+  duration_ms: 0.453422
+  type: 'test'
+  ...
+# Subtest: P5 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=false)
+ok 116 - P5 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=false)
+  ---
+  duration_ms: 10.79632
+  type: 'test'
+  ...
+# Subtest: P5 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=true)
+ok 117 - P5 shared presenter keeps same static frame while stopped, mirrors actor/HUD without mutation (reduced=true)
+  ---
+  duration_ms: 4.629026
+  type: 'test'
+  ...
+# Subtest: P1-P4 plus P5 actual cache/scene retain every accepted asset within unchanged16MiB regardless of order
+ok 118 - P1-P4 plus P5 actual cache/scene retain every accepted asset within unchanged16MiB regardless of order
+  ---
+  duration_ms: 8.189008
+  type: 'test'
+  ...
+# cache peak=16611224; scene peak=16611224
+# cache peak=16611224; scene peak=16611224
+# Subtest: P5 exact stats and real BattleSession snapshot remain gameplay-owned
+ok 119 - P5 exact stats and real BattleSession snapshot remain gameplay-owned
+  ---
+  duration_ms: 4.841471
+  type: 'test'
+  ...
+# Subtest: Collection full-body images remain real independently validated menu assets, not Arena textures
+ok 120 - Collection full-body images remain real independently validated menu assets, not Arena textures
+  ---
+  duration_ms: 4.790274
+  type: 'test'
+  ...
+1..120
+# tests 120
+# suites 0
+# pass 113
+# fail 7
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 447.234474

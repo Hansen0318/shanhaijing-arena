@@ -1,0 +1,64 @@
+✔ cache is idle until requested and shares decode across concurrent/retry loads (1.18784ms)
+✔ failed downloads/unsafe decoded dimensions fall back and can retry (0.474604ms)
+✔ cache bounds resident images and handles unknown keys without crashing (0.276249ms)
+✔ resident memory budget counts decoded pixels and bounds parallel decode (4.290396ms)
+✔ image fallback chain actually loads and caches the valid secondary image (1.137945ms)
+✖ a valid decoded image larger than retention target still resolves as its image (0.951019ms)
+✖ more than64 distinct pending requests all resolve with only two transports (4.676007ms)
+✖ retention targets above former limits are accepted without weakening individual guards (0.349137ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 5
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 98.213334
+
+✖ failing tests:
+
+test at tests/assetCache.test.js:26:1
+✖ a valid decoded image larger than retention target still resolves as its image (0.951019ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'p' !== 'a'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetCache.test.js:28:43)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'p',
+    expected: 'a',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/assetCache.test.js:31:1
+✖ more than64 distinct pending requests all resolve with only two transports (4.676007ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'p' !== 'image64'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetCache.test.js:36:31)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'p',
+    expected: 'image64',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/assetCache.test.js:40:1
+✖ retention targets above former limits are accepted without weakening individual guards (0.349137ms)
+  RangeError: Invalid cache budget
+      at Module.createAssetCache (file:///workspace/scratch/372fc6752092/shanhaijing-arena/src/runtime/assetCache.js:5:168)
+      at TestContext.<anonymous> (file:///workspace/scratch/372fc6752092/shanhaijing-arena/tests/assetCache.test.js:41:18)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
