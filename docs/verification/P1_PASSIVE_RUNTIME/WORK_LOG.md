@@ -27,3 +27,7 @@ Task3 Ruling: fullsuite1039/1025/14 failures traced to threeVMscene harnesses st
 
 Task3: complete — declared UI/Collectionimpacted43/43PASS plus migratedsceneharness27/27PASS, existingart/HP/identity assertions retained. Initialfull1039/1025/14fail exactTAP retained, fixturemigrations verified; finalfullsuite dueTask4afterverifiercode. BuildPASS91assetguard, no newart. LocalChromium standardinstallfailed(download), completebrowser-installlog retained; useactualActions verification ratherthan claimlocalBrowserPASS.
 Task4: ACTIVE — sourceboundreleaseverifier RED, actualremoteBrowser/compatibility and normalreleaseproof. PublicGitHub API confirmsTask2 P2nativeAction39791130497SUCCESS, normal39791130502FAIL; these are not newP1UIproof.
+
+Task4 Ruling: old P2browserfixture clears allsessiontransients beforecase, which now intentionally clears passive registration. Reinitialize a freshgenericPassiveRuntime afterthatclear in thetestscript, so compatibility actuallyexercisesnewsharedmotion; don't alterproductreset or oldreports. Cost if wrong: testfixture differsfromnewsessioninitialization, constructorinputs matchrealSession.
+
+Task4 engineering: full1042/1042PASS andBuildPASS; verifier3/3RED→GREEN. Newverification-onlyworkflow runsactualP1native4/built2 plusnewsourceP2native4/built2/scale10. ExistingPagesguardstillblocksnewsource untilsourceboundfreshreceipt; notbypassed. CurrentBrowsernotyetexecutedfornewscript.

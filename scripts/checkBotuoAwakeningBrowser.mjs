@@ -20,7 +20,7 @@ try{
    await page.waitForFunction(()=>window.__awakeningScene?.assetGate?.ready,null,{timeout:60000});
   }
   const initial=await page.evaluate(sign=>{
-   const sc=window.__awakeningScene,s=sc.session,p=sc.visualAssets;sc.paused=true;sc.game.loop.sleep();s.clearTransientCombat();
+   const sc=window.__awakeningScene,s=sc.session,p=sc.visualAssets;sc.paused=true;sc.game.loop.sleep();s.clearTransientCombat();s.passives=new s.passives.constructor({actors:s.actors,characterForActor:a=>s.definitionForActor(a),abilityDefinitions:s.abilityDefinitions,statuses:s.statuses});
    for(const a of s.actors){a.heal(a.maxHp);Object.assign(a,{x:10,y:1});s.holdPlayerControl(a.instanceId);s.setPlayerMovement(a.instanceId,{x:0,y:0});s.cadence.set(a.instanceId,99);for(const c of ['heavy','special','awakening'])Object.assign(a.abilityState[c],{phase:'cooldown',cooldownRemaining:99});}
    const a=s.allies.find(a=>a.definitionId==='P2'),target=s.enemies[0];Object.assign(a,{x:4,y:0});Object.assign(s.allies.find(x=>x!==a),{x:4.5,y:0});Object.assign(target,{x:4+sign*.7,y:0});Object.assign(s.enemies[1],{x:4+sign*1.5,y:0});
    Object.assign(a.abilityState.awakening,{phase:'ready',cooldownRemaining:0});sc.applyFrame(s.snapshot());p.facings.set(a.instanceId,{x:a.x,y:a.y,now:s.elapsedSeconds,moving:false,flipX:sign<0});s.targetIds.set(a.instanceId,target.instanceId);sc.paused=false;if(!sc.selectAlly(a.instanceId,s.snapshot())||sc.selectedId!==a.instanceId)throw Error('Real caster selection failed');window.awakeningProbe={actorId:a.instanceId,targetId:target.instanceId,hp:target.hp,start:s.elapsedSeconds};

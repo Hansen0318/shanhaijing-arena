@@ -1,0 +1,41 @@
+name: P1 Passive Native Verification
+on:
+  push:
+    branches: [feat/m0-combat-core-20260927]
+    paths: ['src/**', 'scripts/checkLushuPassiveBrowser.mjs', 'scripts/verifyLushuPassiveRelease.mjs', 'tests/passive*.test.js', '.github/workflows/p1-passive-verification.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Real passive and affected shared presentation checks
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/passive-browser-tool
+          ARENA_BROWSER_OUTPUT: ${{ runner.temp }}/passive-evidence
+        run: |
+          npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
+          node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+          status=0
+          node scripts/checkLushuPassiveBrowser.mjs || status=1
+          node scripts/checkLushuPassiveBrowser.mjs --built || status=1
+          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/compatibility" node scripts/checkBotuoAwakeningBrowser.mjs || status=1
+          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/compatibility" node scripts/checkBotuoAwakeningBrowser.mjs --built || status=1
+          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/compatibility" node scripts/checkBotuoAwakeningScale.mjs || status=1
+          exit "$status"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p1-passive-browser-evidence
+          path: ${{ runner.temp }}/passive-evidence
+          if-no-files-found: error
+# Verification only. Normal source-bound full-suite Pages workflow remains the release path.

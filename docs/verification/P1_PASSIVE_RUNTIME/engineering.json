@@ -1,0 +1,21 @@
+{
+  "status": "LOCAL ENGINEERING PASS / TRUE BROWSER PENDING / NOT DEPLOYED",
+  "tests": {
+    "total": 1042,
+    "pass": 1042,
+    "fail": 0,
+    "log": "full-final.tap.gz"
+  },
+  "build": {
+    "status": "PASS",
+    "log": "build-final.log.gz"
+  },
+  "verifierTests": {
+    "total": 3,
+    "pass": 3,
+    "fail": 0
+  },
+  "browser": "PENDING ACTIONS",
+  "phone": "PENDING",
+  "deployed": false
+}
