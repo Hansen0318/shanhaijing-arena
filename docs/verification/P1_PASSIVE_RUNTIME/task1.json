@@ -1,0 +1,21 @@
+{
+  "status": "TASK1 PASS / TASK2 NEXT / NOT DEPLOYED",
+  "tests": {
+    "command": "node --test tests/passiveDefinition.test.js tests/passiveRuntime.test.js",
+    "total": 10,
+    "pass": 10,
+    "fail": 0
+  },
+  "red": "task1-red.tap.gz",
+  "green": "task1-green.tap.gz",
+  "sourceSha256": {
+    "src/combat/passiveDefinition.js": "d5d5c97f68134b76ed5d816bf69b8e1a1c8d36b52f538f9914dd51235a6d92c4",
+    "src/combat/passiveRuntime.js": "6236e70e49744118f6bd5e290329ba9c265b88043aab0954eb2e66a3b79821c7",
+    "tests/passiveDefinition.test.js": "325ea77235303c2d83a1c8a2052ea50ce8dcbd9b6401f1df24153776966f0ab0",
+    "tests/passiveRuntime.test.js": "1b1ddbc099bc366cd32814bcf73551ade9ef2c11645d02b172d16758c65c5572"
+  },
+  "rosterEnabled": false,
+  "browserRun": false,
+  "deployed": false,
+  "logs": "gzip contains exact raw runner output, including whitespace"
+}

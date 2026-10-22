@@ -1,5 +1,11 @@
 # P1 鹿蜀被動「疾行」— 機制前檢與方案討論
 
+## 2026-10-22 — 疾行實作計畫 PLAYER APPROVED／原生單人實作 ACTIVE
+
+玩家「好我確認繼續」核准已呈交計畫，精確SHA256與原文見 `docs/verification/P1_PASSIVE_DESIGN/plan-acceptance.json`。正式規格與計畫皆已核准，**不再重問規格/計畫/執行方式/既定驗證後發布意願**。同branch/PR#1 open未merge，原生單人依四任務執行；驗證後正常Pages發布供P1被動玩家審核，玩家驗收本身仍待實際確認。
+
+現在開始Task1不可變被動定義/rolling-distance與status核心的RED→GREEN，進度與裁決持續寫入 `docs/verification/P1_PASSIVE_RUNTIME/WORK_LOG.md`。本條目只記錄執行授權，不宣稱Runtime/Browser/Build/部署PASS。P1四招及美術尺度保護；P1被動驗收後才做P2厚甲，兩者完成前P3技能BLOCKED。普通Hit取消、共用資料驅動/全局素材政策與所有無關untracked保持；不main merge/替代分支/TD/角色ID特例。最新狀態以WORK_LOG及後續同分支checkpoint為準。
+
 ## 2026-10-22 — 疾行書面規格 PLAYER APPROVED／實作計畫待審
 
 玩家「好繼續」直接回覆已呈交的正式規格，精確核准收據 `docs/verification/P1_PASSIVE_DESIGN/spec-acceptance.json` 綁定 `docs/superpowers/specs/2026-10-22-lushu-passive-design.md` 原SHA256；書面規格Gate CLOSED，不再重問。規格原檔/舊direction receipt保留不改，其舊REVIEW PENDING是歷史狀態。已完成 `docs/superpowers/plans/2026-10-22-lushu-passive.md` 四切片計畫及靜態自審；**下一唯一Gate：玩家審閱實作計畫**，不是再審規格。

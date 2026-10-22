@@ -1,0 +1,18 @@
+{
+  "status": "IMPLEMENTATION PLAN PLAYER APPROVED / NATIVE EXECUTION AUTHORIZED",
+  "recordedDate": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "exactTimeProvided": false,
+  "playerStatement": "好我確認繼續",
+  "presentedCheckpoint": "7497b3545cd618b0f349393f5b88a0707b4a6f13",
+  "approvedPlan": "docs/superpowers/plans/2026-10-22-lushu-passive.md",
+  "approvedPlanSha256": "bc2f601ed022e6527ee856b63becbed6acc31691397acf5bd402056143b0614c",
+  "approvedSpec": "docs/superpowers/specs/2026-10-22-lushu-passive-design.md",
+  "approvedSpecSha256": "40d6820bd6a3705a5a044cb59c4de8663bb9efce78e4fc6c1c833e01c31298fa",
+  "scope": "Execute approved P1 passive plan in this Work, native single-agent, including required checks and normal verified release for player acceptance. No further repeat approval of spec/plan/execution/release intent. P1 player acceptance remains separate.",
+  "notAuthorized": [
+    "P2 passive before P1 passive player acceptance",
+    "P3 skills before both P1/P2 passives accepted",
+    "Main merge, replacement branch, TD or character-ID exceptions"
+  ]
+}
