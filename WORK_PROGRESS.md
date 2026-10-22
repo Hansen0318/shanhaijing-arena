@@ -1,5 +1,9 @@
 # Work Progress
 
+## 2026-10-22 — 全局動態素材書面規格核准／實作計畫待審
+
+玩家「我核准，確認紀錄github流程規則進度，在給我新的work要跟他說的，我要新的work無縫接軌接手後續」核准上一則連結之正式規格SHA256 c47019288e6b6ceaf15b8c87872c5eb156518847fec3922eadab72df69e2141b；receipt `docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-spec-acceptance.json`，基底remote f2b79112b5c79cc841e80daa9dff12380aff8623。寫出新 `docs/superpowers/plans/2026-10-22-global-dynamic-asset-residency.md` 分拆共用cache、scene residency、required整合及驗證，**此計畫尚未獨立核准、未實作**；新 Work 第一Gate呈交計畫供審，再按批准方式逐步TDD。此次僅docs [skip ci]，沒有src/public/test/build/browser/Pages變動；五個舊suite失敗保留，舊KO拆圖不做。驗證後部署意圖已有，但需真實證據。手續及一鍵交接在 `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`。
+
 ## 2026-10-22 — 全局動態素材政策確認／書面規格待審
 
 玩家明示全遊戲不限定固定總容量、不是特定角色拆圖，要求驗證後部署以在遊戲中審招式，並對提出的共用策略答「確認，繼續」。精確新決定與舊 Chiru KO 方案的取代關係寫於 `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md`。目前實際 `schema.js`／`assetCache.js`／`assetResidency.js` 仍施加16MiB、64entry與131072 reserve；新政策**尚未實作或測試**，不能稱為現況。文件等待玩家獨立審閱，再寫需審閱的實作計畫；驗證後的部署方向已明確，但現階段沒有 Pages 動作。保留逐檔驗證、完整 required、真實載入失敗及回收、全部美術／機制與 PR#1；舊45/49key容量算術只作歷史證據，舊KO分塊規格不實作。此次 docs-only [skip ci]，沒有 src/public/tests/build/Browser/deploy 或 full-suite 重跑，五個歷史失敗不宣稱已解決。

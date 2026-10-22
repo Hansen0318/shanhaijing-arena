@@ -1,0 +1,21 @@
+{
+  "status": "GLOBAL DYNAMIC RESIDENCY WRITTEN SPEC PLAYER APPROVED; IMPLEMENTATION PLAN REVIEW PENDING",
+  "recordedDate": "2026-10-22",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "我核准，確認紀錄github流程規則進度，在給我新的work要跟他說的，我要新的work無縫接軌接手後續",
+  "precedingReviewRequest": "請審閱連結中的規格並確認是否核准；核准後我會接續實作計畫、工程整合與驗證，再依你已表明的意願部署，讓你在遊戲裡檢查招式。",
+  "approvedWrittenSpec": {
+    "path": "docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md",
+    "sha256": "c47019288e6b6ceaf15b8c87872c5eb156518847fec3922eadab72df69e2141b",
+    "containingRemoteCommit": "f2b79112b5c79cc841e80daa9dff12380aff8623"
+  },
+  "scope": "Whole-game shared dynamic residency without a fixed total decoded-byte hard cap; preserve per-image guards, encounter required readiness, inactivity reclamation, actual load/allocation failures and teardown; supersede the unimplemented Chiru KO split design.",
+  "deploymentIntent": "Player explicitly requests deployment after verified integration to review Awakening in the actual game, not an unchecked immediate release.",
+  "notApprovedByThisReceipt": [
+    "the implementation plan written after this approval",
+    "any source or runtime implementation",
+    "the separately proposed Awakening observational execution contract",
+    "asset installation, tests, build, browser verification, Pages success or phone acceptance"
+  ]
+}

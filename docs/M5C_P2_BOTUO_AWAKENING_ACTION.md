@@ -1,5 +1,9 @@
 # P2 猼訑 Awakening「鎮岳」— VFX/GIF APPROVED / EXECUTION PREFLIGHT NEXT
 
+## 2026-10-22 — Global residency written spec approved; implementation plan review next
+
+Player「我核准，確認紀錄github流程規則進度，在給我新的work要跟他說的，我要新的work無縫接軌接手後續」specifically approves the previously linked global-policy written design at SHA256 c47019288e6b6ceaf15b8c87872c5eb156518847fec3922eadab72df69e2141b; receipt `docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-spec-acceptance.json`. New `docs/superpowers/plans/2026-10-22-global-dynamic-asset-residency.md` awaits its own review in the next Work; no capacity code or Awakening runtime/art installation has happened. Old Chiru KO split is superseded. Player requested eventual validated deployment to inspect live skill, not an unchecked release. Preserve instant0/tactical900/819, true victims/T3 beneficiaries and approved art; separate observational contract remains for later review.
+
 ## 2026-10-22 — Global dynamic capacity supersedes Chiru KO split
 
 Player wants **no fixed decoded-byte total limit game-wide**, not a single-character KO repack, and explicitly wants a verified deployment to inspect the skill in the game. They confirmed the presented shared design with 「確認，繼續」. New written specification: `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md`, awaiting its own review before an implementation plan. Prior 11-piece Chiru KO proposal is superseded and must not be installed. Current code still has the former 16MiB/64-entry/reserve guards, so historical 49-key shortfall is not a new Runtime pass. Accepted F1–F4/VFX/GIF are protected; event/true-victim/T3 status observational contract remains a separate engineering gate, with instant0 and tactical900/819ms unchanged. No src/public/tests/build/Browser/Pages changed in this docs checkpoint. Next is the written spec review, not another art review or an unchecked deployment.

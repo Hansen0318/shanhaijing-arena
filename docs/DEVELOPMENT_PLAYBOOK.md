@@ -1,5 +1,9 @@
 # Development Playbook
 
+## 2026-10-22 — Written global policy APPROVED / plan review
+
+Player expressly approved the linked written global decoded-byte residency specification (SHA256 c47019288e6b6ceaf15b8c87872c5eb156518847fec3922eadab72df69e2141b); scope and exact quote `docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-spec-acceptance.json`. A separate TDD implementation plan now exists at `docs/superpowers/plans/2026-10-22-global-dynamic-asset-residency.md` and must be shown to the player before runtime execution. Native single-agent Work handoff is `docs/handoffs/P2_BOTUO_AWAKENING_NEXT_WORK.md`; current code and public build remain unchanged. Do not misread historical fixed-cap rules below as the newly approved policy being installed, nor infer plan/contract/phone acceptance. Docs-only [skip ci].
+
 ## 2026-10-22 — 全局容量新方向／書面審核
 
 玩家明確要求全遊戲無固定總decoded-byte上限，非單一角色赤鱬KO拆圖，並要求完成驗證後部署供遊戲內確認；對共用策略回覆「確認，繼續」。新 `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md` 是待獨立書面審閱的規格；下方舊16MiB硬規則、KO拆圖NEXT等是當時程式與決策的歷史紀錄，不能覆蓋此新方向，也不能反過來宣稱現有程式已移除硬上限。新政策須經規格審閱→計畫審閱→TDD共用實作，保留單檔guard、按場全required、真失敗處理／釋放，並在鎮岳契約與真瀏覽器／Build驗證後才Pages及公開指紋。舊方案不實作；核准來源／機制／PR仍受保護。此次docs-only[skip ci]，沒有Runtime或部署。

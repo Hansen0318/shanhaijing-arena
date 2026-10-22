@@ -1,22 +1,24 @@
-# P2 鎮岳 — 全局動態素材書面規格待審
+# P2 鎮岳 — 新 Work 交接／全局素材實作計畫待審
 
 ```text
-【山海經聯盟 — P2 猼訑「鎮岳」無縫接手】
+【山海經聯盟 — 新 Work：P2 猼訑「鎮岳」全局動態素材→整合→部署接手】
 [角色任務]
-從最新 GitHub 恢復；呈交全遊戲動態素材管理書面規格供玩家獨立審閱。玩家核准文件後才寫實作計畫並另行審閱；完成必要共用 Runtime、忠實鎮岳整合、驗證後部署，交玩家實際遊戲審核。不可把先前對話設計核准當成尚未展示的書面規格／計畫核准。
+從最新 GitHub 無縫恢復。第一個未完成 Gate 是向玩家呈交「全遊戲無固定總 decoded-byte 上限」的實作計畫，取得獨立核准；其後依計畫TDD共用素材管理，審定鎮岳觀測契約、保真整合與必要驗證，通過後部署 Pages，給玩家在真遊戲中審招。不要將書面規格核准推成計畫／程式／部署核准。
 
 [背景資訊]
-Repository Hansen0318/shanhaijing-arena；唯一分支 feat/m0-combat-core-20260927；PR #1 open/unmerged；GitHub 唯一權威。參考基底6fd6fcffebe10a38061b89b0b2f2b70626d3eaa1，必須 fetch 最新 remote HEAD、branch/PR/tree/status/commits。讀 AGENTS.md、WORK_PROGRESS.md、docs/STATE.md、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/DEVELOPMENT_ROADMAP.md、docs/M5C_ART_ANIMATION_VFX.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_P2_BOTUO_AWAKENING_ACTION.md、本檔；最新頂部有效紀錄優先。
-玩家先說「應該要整體不限定容量，不是針對單一角色，妳繼續做到部署，我才能確認遊戲裡的招式是否ok」，對提出的全局無固定總decoded-byte硬上限、保留單檔驗證／按場載入／回收／失敗處理，答「確認，繼續」。正式規格 docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md 尚待獨立審閱。舊 docs/superpowers/specs/2026-10-22-p2-awakening-capacity-design.md 赤鱬 KO 十一片方案已被明確取代、未實作；保護原素材，不拆。程式仍是16MiB/64entry及131072reserve，這是當前現實而非新政策已落地。先前45 required16611224、四張候選1145272、49 required17756496的算術是舊規則的歷史量測，不是新容量／實機通過。
-P1 COMPLETE；P2 Idle/Move/KO/Basic/Heavy 已核准，Special COMPLETE/PLAYER VERIFIED。鎮岳F3及四姿勢、三獨立VFX／八GIF視覺已玩家核准，receipts docs/art/approved/botuo/awakening/{f3-v2,poses-v1,visual-v1}/acceptance.json；source/prompt/manifest/QA/GIF/scripts 保護於 docs/art/candidates/botuo/awakening/composite-review-v1/。不重畫、不重問。執行前檢 docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md 的觀測契約尚未獨立核准；其固定容量阻擋由新容量方向取代。舊16真實機制案例及source hashes見 docs/verification/P2_AWAKENING_PREFLIGHT/{static-seed.json,mechanics.json,probe.mjs}。
+Repo Hansen0318/shanhaijing-arena；唯一branch feat/m0-combat-core-20260927；PR#1 open/unmerged，禁止合併main／另開替代分支。GitHub唯一權威。接手參考remote f2b79112b5c79cc841e80daa9dff12380aff8623；這不是最新保證。修改前 git fetch、核對完整remote HEAD、branch、PR、tree、working tree、最近commits，頂部最新有效紀錄優先。
+讀 AGENTS.md、WORK_PROGRESS.md、docs/STATE.md、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/DEVELOPMENT_ROADMAP.md、docs/M5C_ART_ANIMATION_VFX.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_P2_BOTUO_AWAKENING_ACTION.md、docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md、docs/superpowers/plans/2026-10-22-global-dynamic-asset-residency.md、docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-spec-acceptance.json、docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md、本交接。
+玩家原文「應該要整體不限定容量，不是針對單一角色，妳繼續做到部署，我才能確認遊戲裡的招式是否ok」確立全局方向及驗證後部署意圖；玩家在正式書面規格連結後「我核准，確認紀錄github流程規則進度，在給我新的work要跟他說的，我要新的work無縫接軌接手後續」核准全局書面規格 SHA256 c47019288e6b6ceaf15b8c87872c5eb156518847fec3922eadab72df69e2141b。核准收據如上。剛寫的實作計畫尚未獨立給玩家審閱，下一Gate先呈交並取得核准。使用單人原生執行方式；不自行啟用子代理。
+目前 src/assets/schema.js、src/runtime/assetCache.js、src/runtime/assetResidency.js 仍有16MiB固定hard cap／64entry及131072 optional reserve。新政策未實作；不得宣稱已取消。赤鱬KO十一片規格是被新方向取代的歷史方案，不要安裝、不要改核准KO。既有45required16611224與預估49required17756496屬舊上限算術，不是設備RAM量測。
+P1 COMPLETE；P2 Idle/Move/KO/Basic/Heavy核准，Special COMPLETE/PLAYER VERIFIED。鎮岳 F3、F1–F4、三VFX／八GIF 已玩家核准，收據 docs/art/approved/botuo/awakening/{f3-v2,poses-v1,visual-v1}/acceptance.json。素材、完整prompt/hash/QA/scripts在 docs/art/candidates/botuo/awakening/composite-review-v1/。不要重畫/重問，不用錯誤v1或extra-hoof草稿。機制證據 docs/verification/P2_AWAKENING_PREFLIGHT/{static-seed.json,mechanics.json,probe.mjs} 的16案例沿用未變來源；Special歷史164/Browser/部署/145CI/39public不因換Work重跑。
 
 [具體指令]
-1. 讓玩家審閱新全局書面規格；如核准，綁定文件SHA、玩家原文和範圍，才按寫計畫流程製作可審閱實作計畫。這次「確認，繼續」核准的是前一則聊天展示的架構方向，不是這份後寫文件。若修訂先保存再審。驗證後部署意圖已獲玩家明示，但不能部署未驗證程式。
-2. 計畫獲核准後 TDD 更改共用schema/cache/scene residency/presenter：移除固定全局decoded-byte硬門檻而非換較大常數，保留單檔驗證、全部required完整ready、兩請求併發、按場所有權、可回收inactive、failure/teardown/diagnostics。不得以procedural fallback偽稱required成功或以單一角色特例解決。原Chiru KO及全部核准像素不改。
-3. 獨立審核鎮岳共享 cast/action/真受擊逐人 VFX/T3真實狀態契約並安裝忠實衍生包，校驗RGBA/尺寸/座標/原檔hash/Phaser native鏡射與Idle尺度。T0係數1.70/半徑2.2/CD14/風起0；instant0不等F1/F2，tacticalT0 900ms/T3 819ms；對空無假命中／假保護。T3boyi.team僅正傷害後真附近存活受益者13.5%/3.75s/radius2.832，與守群獨立/MAX不相加。普通Hit永久取消，普通傷害不斷技能；不改傷害/CD/Tier/AI/targeting/控制。
-4. 測新全局超舊16MiB／64entry、guard/failed load、兩場切換及teardown；鎮岳instant/tactical/air/多目標/KO/重啟/reduced/雙向，完整required、源像素、Build及真瀏覽器。全suite若執行，逐項報告既有五個失敗而不偽稱PASS。原Special164/Browser/部署/145CI/39public及鎮岳16案例沿用未變來源證據，受影響才局部重跑。
-5. 測試及原生瀏覽器證據確立後，依玩家已明示的部署意圖在同 feature branch 觸發Pages、確認Actions及公開指紋與測試版一致，提供實際URL讓玩家手機審招；未經玩家實際回覆不得寫PLAYER VERIFIED。更新WORK_PROGRESS/STATE/AGENTS/行動規格/handoff，code commit遵照CI流程；docs-only [skip ci]。回報完整HEAD、PR/tree、測試、部署與未完成Gate。
+1. 首先呈交已保存的全局計畫，說清楚共用cache/scene residency/required整合、真載入失敗與測試範圍；等待玩家獨立審核。若修訂，先更新計畫再確認。不要在計畫核准前更動產品程式。
+2. 核准計畫後按單人TDD順序執行：失敗測試→看見預期RED→最小實作→GREEN。移除全遊戲固定總decoded-byte及required count硬門檻，保留每檔4MiB encoded/2048 dimension/4194304 pixels、兩同時下載、完整required pin/readiness、Inactive LRU、場景解構/重啟、cache與scene估算診斷。真實network/decode/Phaser allocation失敗不能當ready。不能換成32MiB或單一角色特例，不丟原required。
+3. 全局策略有證據後獨立審定 docs/verification/M5C_P2_BOTUO_AWAKENING_PREFLIGHT.md 的共享 cast/action/true-victim/T3 status觀測契約，安裝鎮岳來源精確的姿勢及三獨立VFX衍生貼圖，驗證RGBA/座標/共同接地/Idle多標記尺度/雙向鏡射/Phaser native。T0 coefficient1.70、caster-radius2.2、CD14、windup0；instant0從F3，tactical T0 900ms/T3 819ms，不增加統一前搖。逐個真實正傷害victim才命中爆破；對空無假命中/假保護。T3 boyi.team只在實際傷害後依附近存活真受益者radius2.832、13.5%/3.75s；與守群狀態獨立到期、MAX不相加。普通Hit永久取消，不改傷害/CD/Tier/AI/targeting/位移/控制。
+4. 按受影響測試、全suite逐項報告五個歷史失敗、Build與真built-app Chromium/native/移動viewport驗證，不把動畫GIF當遊戲錄影或手機證據。若明確阻擋，保護scope，紀錄原因並停在相應Gate；不得強行部署。若驗證足夠，玩家已明示驗證後部署意圖：在同feature branch按Pages workflow發布，確認Actions及公開檔案指紋與測試版一致，提供URL待玩家真機視覺審核。未經玩家回覆不可記PLAYER VERIFIED。
+5. 各coherent slice更新 WORK_PROGRESS.md、docs/STATE.md、AGENTS.md、docs/M5C_P2_BOTUO_AWAKENING_ACTION.md、handoff及驗證報告，commit/push同一feature分支；docs/art-only [skip ci]，Runtime提交遵照CI。回報完整HEAD、PR/tree、實際測試與未完成Gate。
 
 [約束條件]
-唯一feature branch，PR#1保持open/unmerged；禁main merge、新替代分支、TD/P3。保護P1/P2核准素材、masters、receipts、比例/anchor/ground/mirror與遊戲機制；勿重跑無關Special164、舊部署與公開比對。兩個歷史未追蹤暫存 docs/art/candidates/botuo/special/poses-v1/.F1-initiation-master.png.cC3cw2、docs/art/candidates/lushu/special/vfx-review-v1/.target-impact-padded-v1.png.JS8JIB 不加不刪。任何後續 Chat／Work／Codex 接手指令，完整置於單一自足、可一鍵複製的 code block。
+保護P1及所有已核准P2 masters/receipts/GIF/尺度/anchor/ground/mirror；不重跑無關Special證據，不聲稱未跑全suite PASS。五個歷史full-suite failures需保留並逐項說明新跑結果。禁止main merge、替代branch、TD、P3。兩個現有未追蹤暫存 docs/art/candidates/botuo/special/poses-v1/.F1-initiation-master.png.cC3cw2 及 docs/art/candidates/lushu/special/vfx-review-v1/.target-impact-padded-v1.png.JS8JIB 不加不刪。所有下一份 Chat／Work／Codex 接手指令，完整放在單一、自足、可一鍵複製的 code block。
 ```

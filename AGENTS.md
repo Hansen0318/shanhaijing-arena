@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## 2026-10-22 — 全局動態素材書面規格 PLAYER APPROVED／新計畫待審
+
+玩家在規格連結與「請審閱連結中的規格並確認是否核准」後明確回覆「我核准，確認紀錄github流程規則進度，在給我新的work要跟他說的，我要新的work無縫接軌接手後續」。核准綁定 `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md` SHA256 c47019288e6b6ceaf15b8c87872c5eb156518847fec3922eadab72df69e2141b，精確receipt `docs/verification/P2_AWAKENING_PREFLIGHT/global-residency-spec-acceptance.json`。**規格審核 CLOSED；後寫的實作計畫 `docs/superpowers/plans/2026-10-22-global-dynamic-asset-residency.md` 待獨立玩家審核。** 玩家要求新Work接手，按單人執行方向交接，並未授權跳過計畫審閱；目前無Runtime、Build、Browser、Pages或手機驗收。舊赤鱬KO拆圖方案superseded，當前程式仍有16MiB硬上限；玩家要的是全局動態政策及驗證後部署。保護全部既有已核准成果、PR#1 open/unmerged與唯一feature branch；下方歷史「書面規格待審」已由本條取代。
+
 ## 2026-10-22 — 全遊戲無固定總容量方向確認／新書面規格待審
 
 玩家「應該要整體不限定容量，不是針對單一角色，妳繼續做到部署，我才能確認遊戲裡的招式是否ok」明確取代先前赤鱬 KO 分塊方向，對提出的共用動態 residency 無固定 decoded-byte 硬上限、保留單檔安全驗證／按場載入／閒置回收／失敗處理回覆「確認，繼續」。正式規格 `docs/superpowers/specs/2026-10-22-global-dynamic-asset-residency-design.md` **待玩家獨立書面審閱**；只確認對話設計，不代表文件／實作計畫／Runtime PASS。當前程式仍有16MiB cache/scene硬上限與64-entry、131072 reserve；本次未改 src/public/tests/已核准素材，沒有建置、Browser或部署。玩家授權的終點是驗證後部署供實際遊戲審核，不是立即發布。先前 KO 規格保留為 superseded 歷史，禁止實作其11片方案當前置條件。下一 Gate：書面規格審閱→實作計畫審閱→共用策略與鎮岳契約/忠實素材整合及驗證→Pages公開核對→玩家手機審核。PR#1維持 open/unmerged，唯一 feature 分支、GitHub權威；所有交接指令單一自足 code block。保護 P1/P2、取消普通 Hit、機制時序與五個歷史 full-suite failures。
