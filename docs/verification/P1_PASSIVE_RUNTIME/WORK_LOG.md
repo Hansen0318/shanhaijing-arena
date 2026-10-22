@@ -22,3 +22,8 @@ Task2 fix: rolling solver omitted candidate.start+window breakpoint for a prospe
 
 Task2: complete —146/146 pass (new core/motion/session plus10 existing directlyaffected testfiles), aftertask2 missing-featureRED and recorded core/staged-interfacefixes. Source general movement only; P1dataenabled, P2–P5disabled; no Browser/deploymentyet. Logs exactgzip besideWORK_LOG.
 Task3: ACTIVE — real visible badge/HUD/Collection tests first.
+
+Task3 Ruling: fullsuite1039/1025/14 failures traced to threeVMscene harnesses stripping imports without injectingnewPassivePresenter, two directapplyFrame doubles lacking presenter/canvas, and rosterTeam assertingallpassivesfalse. InjectrealpresenterintoVMcontexts with renderercontainerdouble; add neutralnewUIboundary toHP/identity-onlydoubles; updateexpectedmetadataP1only. Preserve all existing assertions and add passivepresenter shutdownassertion. Cost if wrong: doubles could missrendererfault, realBrowser remains mandatory. Full firstTAP retained.
+
+Task3: complete — declared UI/Collectionimpacted43/43PASS plus migratedsceneharness27/27PASS, existingart/HP/identity assertions retained. Initialfull1039/1025/14fail exactTAP retained, fixturemigrations verified; finalfullsuite dueTask4afterverifiercode. BuildPASS91assetguard, no newart. LocalChromium standardinstallfailed(download), completebrowser-installlog retained; useactualActions verification ratherthan claimlocalBrowserPASS.
+Task4: ACTIVE — sourceboundreleaseverifier RED, actualremoteBrowser/compatibility and normalreleaseproof. PublicGitHub API confirmsTask2 P2nativeAction39791130497SUCCESS, normal39791130502FAIL; these are not newP1UIproof.

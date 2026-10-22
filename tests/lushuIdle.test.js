@@ -83,6 +83,7 @@ test('actual Arena enriches presentation copies with identity without modifying 
  const labelPositions=new Map(),fills=new Map(),strokes=new Map(),visibility=new Map(),labelVisibility=new Map();
  const s=new Arena();s.session=session;s.actorViews=new Map([...frame.allies,...frame.enemies].map(a=>[a.instanceId,{hpBar:{...hpBar},allied:a.instanceId.startsWith('a'),marker:{...visual,setVisible(value){visibility.set(a.instanceId,value);return this;},setStrokeStyle(width,color){strokes.set(a.instanceId,[width,color]);return this;},setFillStyle(color,alpha){fills.set(a.instanceId,alpha);return this;}},markerColor:0x112233,label:{...visual,setVisible(value){labelVisibility.set(a.instanceId,value);return this;},setPosition(x,y){labelPositions.set(a.instanceId,[x,y]);return this;}}}]));
  s.visualAssets={actorSprites:new Map([['a1',{displayHeight:144,originY:691/724,visible:true}],['e2',{displayHeight:144,originY:691/724,visible:true}]]),render(f){presented=f;},renderOverlays(){},renderHud(){}};s.telegraphs={render(){}};
+ s.game={canvas:{getBoundingClientRect:()=>({width:1120,height:540})}};s.passivePresenter={render(){}};
  s.selectedId='a1';for(const m of ['ensureLivingSelection','refreshSkillButtons','refreshHud','showResult'])s[m]=()=>{};
  s.applyFrame(frame);
  for(const a of [...presented.allies,...presented.enemies])assert.equal(a.definitionId,session.actorById(a.instanceId).definitionId);

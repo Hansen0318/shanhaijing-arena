@@ -1,5 +1,11 @@
 # Work Progress
 
+## 2026-10-22 — 疾行Task1–3工程完成／Task4真驗證與發布 ACTIVE
+
+已依核准計畫完成generic core、精確一般移動整合、P1data opt-in及獨立badge/HUD/Collection。Task2相關146/146PASS，Task3相關43/43與場景fixture遷移27/27PASS；BuildPASS。初次完整1039/1025/14fail已逐項定位為新增presenter/Canvas fixture及P1metadata斷言，原TAP與修正證據保留於 `docs/verification/P1_PASSIVE_RUNTIME/`；尚待Task4最終完整suite，不將局部通過冒稱完整PASS。本機Chromium下載失敗，保存完整log，下一步走同分支真Actions Browser及當前來源綁定normalCI/Pages；沒有部署或玩家可讀性PASS。
+
+執行授權不再重問。已核准規格/計畫不改；P1仍待被動實測/發布/玩家驗收，P2厚甲與P3技能順序保持。全部master/receipt/GIF/尺度/anchor/ground/mirror及無關untracked保留；原branch/PR#1 open未merge，普通Hit取消，素材政策保持。恢復以WORK_LOG與最新HEAD優先，不重做Task1–3。只有真新缺陷才修正受影響範圍。
+
 ## 2026-10-22 — 疾行實作計畫 PLAYER APPROVED／原生單人實作 ACTIVE
 
 玩家「好我確認繼續」核准已呈交計畫，精確SHA256與原文見 `docs/verification/P1_PASSIVE_DESIGN/plan-acceptance.json`。正式規格與計畫皆已核准，**不再重問規格/計畫/執行方式/既定驗證後發布意願**。同branch/PR#1 open未merge，原生單人依四任務執行；驗證後正常Pages發布供P1被動玩家審核，玩家驗收本身仍待實際確認。

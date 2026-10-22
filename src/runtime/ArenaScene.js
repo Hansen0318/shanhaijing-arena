@@ -1,3 +1,4 @@
+import {PassivePresenter} from './passivePresenter.js';
 import {AssetPresenter} from './assetPresenter.js';
 import {SceneAssetGate} from './sceneAssetGate.js';
 import {TelegraphPresenter,statusMarks} from './telegraphs.js';
@@ -76,6 +77,8 @@ export class ArenaScene extends Phaser.Scene {
     const battleSession=this.session;this.ownCleanup(()=>battleSession.clearTransientCombat());
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
+    this.passivePresenter=new PassivePresenter(this,{project:arenaToStage});
+    const passivePresenter=this.passivePresenter;this.ownCleanup(()=>passivePresenter.destroy());
     this.damageNumbers = new DamageNumbers(this,arenaToStage);
     this.visualAssets=new AssetPresenter(this,{project:arenaToStage,reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});
     const visualAssets=this.visualAssets;this.ownCleanup(()=>visualAssets.destroy());
@@ -598,6 +601,7 @@ export class ArenaScene extends Phaser.Scene {
     this.visualAssets.renderOverlays(visualFrame,this.session.characterDefinitions,this.session.statuses,this.session.elapsedSeconds);
     this.visualAssets.renderHud(this.portraitViews,this.session.characterDefinitions,this.session);
     this.telegraphs.render(this.session.threats.active(this.session.elapsedSeconds*1000),this.session.elapsedSeconds*1000,[...this.session.areas.records.values()]);
+    const passiveHpAnchors=new Map(),passiveFaceRects=[];
     for (const actor of [...frame.allies, ...frame.enemies]) {
       const view = this.actorViews.get(actor.instanceId);
       const position = arenaToStage(actor);
@@ -611,6 +615,9 @@ export class ArenaScene extends Phaser.Scene {
       const visibleTop=(art?.displayHeight??ACTOR_VISUAL_RADIUS*2)*(art?.originY??.5);
       const hpOffset=Math.max(34,visibleTop+10),hpWidth=Math.max(54,Math.min(78,(art?.displayWidth??54)*.62)),hpHeight=8;
       const hpX=position.x-hpWidth/2,hpY=position.y-hpOffset;
+      if(actor.hp>0){passiveHpAnchors.set(actor.instanceId,{x:position.x,y:hpY-5,rect:{x:hpX-4,y:hpY-4,width:hpWidth+8,height:hpHeight+8}});
+        const body=art?.getBounds?.();if(body)passiveFaceRects.push({x:body.x+body.width*.2,y:body.y,width:body.width*.6,height:body.height*.42});
+      }
       view.hpBar.clear();
       view.hpBar.fillStyle(0x111820,.9);view.hpBar.fillRect(hpX-2,hpY-2,hpWidth+4,hpHeight+4);
       const hpGradient=view.allied?[0x69cbff,0x2875d8]:[0xff8178,0xb82a38];
@@ -641,6 +648,7 @@ export class ArenaScene extends Phaser.Scene {
     this.refreshSelectionVisuals();
     this.refreshSkillButtons();
     this.refreshHud(frame);
+    this.passivePresenter.render({views:frame.passives??[],actors:[...frame.allies,...frame.enemies],hpAnchors:passiveHpAnchors,faceRects:passiveFaceRects,canvasRect:this.game.canvas.getBoundingClientRect(),reservedRects:[{x:0,y:0,width:125,height:340},{x:995,y:0,width:125,height:340},{x:420,y:0,width:280,height:70},{x:0,y:350,width:165,height:190},{x:875,y:390,width:245,height:150},{x:245,y:458,width:580,height:68}],selectedId:this.selectedId,now:frame.elapsedSeconds});
     this.showResult(frame.result);
 
     const selected = this.selectedId ? this.session.actorById(this.selectedId) : null;

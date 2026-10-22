@@ -1,0 +1,15 @@
+{
+  "status": "TASK3 SCOPED PASS / TASK4 ACTIVE / NOT DEPLOYED",
+  "scoped": 43,
+  "migrationChecks": 27,
+  "initialFull": {
+    "total": 1039,
+    "pass": 1025,
+    "fail": 14,
+    "log": "full-first.tap.gz",
+    "treatment": "14 fixture/metadata migration failures verified in27scoped; finalfullpending"
+  },
+  "build": "PASS",
+  "localBrowser": "BLOCKED / standard Chromium download failed; use Actions",
+  "newArt": false
+}
