@@ -1,3 +1,7 @@
+## 2026-10-24 — Heavy 整體遊戲招式 PLAYER APPROVED；清晰度修正 ACTIVE
+
+玩家「整體招式效果我approved，紀錄，另外解決發射和擊中的效果不夠清楚，看起來像半透明，是圖片關係還是什麼，確認後直接改然後紀錄」核准release4b85526整體Heavy並直接授權修正發射/命中清晰度。收據 docs/art/approved/chiru/heavy/runtime-v1/acceptance.json 保留精確範圍與hash；不撤回整體核准，也不冒稱新清晰版已被看過。先完成此修正，不開始Special。診斷與執行ledger docs/verification/P3_HEAVY_CLARITY/WORK_LOG.md：PNG柔邊透明＋程式flight.75/reduced.35、hit立即fade/reduced.65造成偏淡；保留全部核准圖片bytes與尺度，只修共用launched-line播放alpha/hold，reduced減動不再額外降透明。傷害/真命中350ms延遲/有限lane/miss規則不變。必要新來源驗證、正常部署與新紀錄直接執行。舊「唯一玩家遊戲核准待回覆」已由本節及收據覆蓋。原生單人、同分支PR#1open/unmerged、不新branch/worktree/委派/TD/main merge；純記錄checkpoint[skip ci]。
+
 ## 2026-10-24 — Heavy 湧浪已正常部署；唯一下一Gate＝玩家遊戲驗收
 
 Release `4b8552650798a5bc5a23c6b411a40ef86abadcaf` / tree `a726b44da2cb27875c19e88e4dabe07aaa1a55d7`；正常Pages#1110/run40037402312、build120700424740與deploy120701557955 SUCCESS。完整1124/1124、Build、99素材guard、588來源guard PASS；Heavy真native32/built4、Basic相容native32/built4 PASS。CI/local157逐bytes一致，公開157/157（7fresh＋150同path/bytes/hash沿用）PASS；3份artifact SHA256與ZIP CRC PASS。P1相容workflow40037402283 SUCCESS，涵蓋P1/P2被動、P2覺醒native4/built2/尺度與Collection；獨立P2workflow40037402354亦已SUCCESS；所有必要流程完成，相同來源的驗證不重跑。完整證據 docs/verification/P3_HEAVY_RUNTIME/{release.json,release-jobs.json,release-evidence.json,browser/,basic-compatibility/,p1p2-compatibility/,ci-local-build.json,public-fingerprints.json}。

@@ -1,0 +1,20 @@
+{
+  "status": "HEAVY OVERALL GAME EFFECT PLAYER APPROVED / CLARITY FOLLOW-UP AUTHORIZED",
+  "recordedDate": "2026-10-24",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "整體招式效果我approved，紀錄，另外解決發射和擊中的效果不夠清楚，看起來像半透明，是圖片關係還是什麼，確認後直接改然後紀錄",
+  "acceptedRelease": "4b8552650798a5bc5a23c6b411a40ef86abadcaf",
+  "recordCheckpoint": "b7414902da1cf34b35dfb210c968a5965fd50e38",
+  "scope": "Player approves overall deployed Heavy move. Preserve that acceptance; directly diagnose and correct faint release/impact presentation, verify and deploy. New clarity revision not yet player-reviewed.",
+  "notClaimed": [
+    "Unreported phone model/FPS/Tier matrix",
+    "Player acceptance of unseen clarity revision",
+    "Special authorization"
+  ],
+  "evidenceSha256": {
+    "docs/verification/P3_HEAVY_RUNTIME/release.json": "8a20bdcf18932173ece74feed31930a1bc8ab34cce5a2e288ce83381560cbd92",
+    "docs/verification/P3_HEAVY_RUNTIME/release-evidence.json": "3fc506d034b500dd8330357b9f75707878b1a18b7197b909e099fedf0eadee3b",
+    "docs/verification/P3_HEAVY_RUNTIME/public-fingerprints.json": "d9d58f20ebfd593412376e0dbd0a275f6550d036e7a8cced36c9cee6c124220f",
+    "docs/art/approved/chiru/heavy/composite-review-v1/acceptance.json": "0bce688d2389f1f387b13c405549c91e87824b2f46c53cc6b6d3ec7c75018454"
+  }
+}
