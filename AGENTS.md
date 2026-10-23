@@ -1,3 +1,7 @@
+## 2026-10-23 — Basic整合GIF PLAYER APPROVED；Runtime ACTIVE
+
+玩家「我確認 紀錄 繼續」核准2f37959之水矢動作/VFX/GIF。精確收據docs/art/approved/chiru/basic/composite-review-v1/acceptance.json綁定完整素材與預覽hash；不重畫/重審。執行ledger docs/verification/P3_BASIC_RUNTIME/WORK_LOG.md。下一步只做Basic共用資料驅動180ms有限線命中與來源保真Runtime包/實際驗證/正常Pages，未見Runtime不可假稱已驗收。Basic遊戲玩家核准前不進Heavy。
+
 ## 2026-10-23 — 最新：P3 Basic F3 v2已PLAYER APPROVED；單招GIF審核待回覆
 
 F3收據docs/art/approved/chiru/basic/f3-v2/acceptance.json不可改。動作/FX/GIF候選docs/art/candidates/chiru/basic/composite-review-v1/REVIEW.md，先呈交GIF，未獲玩家核准不得Runtime或Heavy。舊batch basic圖及original均受損保留為歷史；不再使用。其餘逐招全局規則保持，以WORK_PROGRESS最新節及2026-10-23-restore-sequential-skill-workflow決策為準。
