@@ -1,0 +1,32 @@
+{
+  "status": "CANDIDATE / PLAYER REVIEW PENDING",
+  "source": "heavy-f3.png",
+  "sha256": "8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "decode": "PASS",
+  "alphaRange": [
+    0,
+    255
+  ],
+  "alphaBounds": [
+    0,
+    31,
+    1239,
+    1244
+  ],
+  "visibleAlpha16Bounds": [
+    77,
+    35,
+    1236,
+    1240
+  ],
+  "review": "Author self-review, not player approval. Bent arms at different heights cup right-side cyan ring; torso counter-rotates and fins trail left. Body gesture differs from Basic single palm thrust; actual animation release readability remains later GIF gate.",
+  "references": {
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "public/assets/characters/chiru/identity.png": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a"
+  }
+}

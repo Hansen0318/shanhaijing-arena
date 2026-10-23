@@ -1,3 +1,9 @@
+## 2026-10-23 — Heavy F3 v2 未通過動作區別；玩家授權直接重新設計 v3
+
+玩家指出「動作和basic有點像」，隨後明確指示「要重新設計Heavy的F3設定的話，你就直接開始」。f3-v2不是approved，保留原圖與manifest作歷史，不整合Runtime。依全局無FX也能辨招與Basic<Heavy<Special<Awakening視覺層級，v3改為明顯軀幹扭轉、雙臂高低錯位彎曲、跨身弧形壓送水環；下身/鰭尾反向後甩，避免沿用Basic直線推掌。只是本體釋放動作改案，攻擊仍向前有限lane，數值/範圍/時間/目標不變，不新增地面砸擊或AoE。
+
+v3來源與完整生成prompt/manifest在 docs/art/candidates/chiru/heavy/f3-v3/；只呈交單張F3，仍需玩家美術核准。下一Gate=玩家審核v3，再其餘姿勢/獨立FX/GIF；不得把直接重新設計授權當作新圖核准。Basic已核准、P1/P2與全部masters/尺度/anchor/ground保持；產品來源未改，不重測/Build/部署。單分支PR#1 open/unmerged，逐招流程保持。
+
 ## 2026-10-23 — 玩家核准 Basic 發布；接續 Heavy 湧浪 F3 單招審核
 
 玩家本次原文「妳確認目前這個github的進度流程規則的所有相關文件，要從妳開始繼續開發，我應該approve basic，確認接下來是做heavy，是的話繼續」。依此保存 Basic release266114c46406e39c8501ccad370ce69bfe34f236 的直接核准與接續指示，收據 docs/art/approved/chiru/basic/runtime-v1/acceptance.json；不推稱未回報的實機型號或逐Tier量測。Basic已核准範圍結案，P3整角尚未完成。
