@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "recordedDate": "2026-10-23",
+  "method": "Fresh static receipt/source audit; no tests/build/browser/deploy/public requests rerun",
+  "receipt": "docs/art/approved/lushu/passive/runtime-v2/acceptance.json",
+  "receiptSha256": "c1605bc9085efdc6cc2157a97b16955d323519f5143b3fbb3c1bcdf5b1978b1f",
+  "boundEvidence": 6,
+  "sourceBindings": 549,
+  "acceptedRelease": "d1a39397562f2345bec0243ede82b6376f89684d",
+  "acceptedTree": "981276199ebe572d0481decfaff76349c8bb9a3d",
+  "runtimeDiffFromPresentedCheckpoint": "EMPTY",
+  "unrelatedUntracked": "BOTH PRESERVED",
+  "p1": "COMPLETE / PLAYER VERIFIED",
+  "next": "P2 passive mechanism preflight / concrete Tier design"
+}

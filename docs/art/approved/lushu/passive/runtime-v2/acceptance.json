@@ -1,0 +1,41 @@
+{
+  "status": "PASS / PLAYER VERIFIED / P1 PASSIVE V2 COMPLETE",
+  "recordedDate": "2026-10-23",
+  "recordedTimezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "好我approved 紀錄github進度規則流程後。我創新的work 給我我要給新的work的prompts，讓她確認進度流程規則後 直接讓她繼續往下執行下一步 讓她無縫接軌開發，",
+  "skill": {
+    "character": "P1 鹿蜀",
+    "category": "passive",
+    "name": "疾行",
+    "version": 2
+  },
+  "reviewedDocumentationCheckpoint": "feb3c1182f0fd76c28c211aef232da21cf022511",
+  "acceptedReleaseSha": "d1a39397562f2345bec0243ede82b6376f89684d",
+  "acceptedReleaseTree": "981276199ebe572d0481decfaff76349c8bb9a3d",
+  "presentedTestUrl": "https://hansen0318.github.io/shanhaijing-arena/?passive=d1a3939",
+  "versionBinding": "Direct overall approval replying to the presented deployed P1 passive v2, its no-text battlefield and Tier gains35/50/65/80 percent, duration3seconds/CD6seconds delivery. No independent player-device bundle hash supplied.",
+  "scope": "Closes the P1 passive v2 player-review Gate. Prior accepted P1 base and four active skills remain accepted. Continue catch-up order with P2 passive 厚甲; do not reopen approved P1/P2 art or active skills.",
+  "notClaimed": [
+    "Itemized physical-device results for every Tier, facing, reduced-motion or cleanup case",
+    "Player device/browser identity, exact approval time, independent loaded bundle hash, FPS or GPU-memory measurements",
+    "P2 passive mechanism/numerical design already approved or implemented, P2 whole character complete, or authorization to start P3 skills"
+  ],
+  "evidence": {
+    "sourceBinding": "docs/verification/P1_PASSIVE_V2/release-evidence.json",
+    "publicFingerprint": "docs/verification/P1_PASSIVE_V2/public-fingerprints.json",
+    "ciBuildInventory": "docs/verification/P1_PASSIVE_V2/ci-build-inventory.json",
+    "normalRun": "docs/verification/P1_PASSIVE_V2/run-final.json",
+    "native": "docs/verification/P1_PASSIVE_V2/native.json",
+    "built": "docs/verification/P1_PASSIVE_V2/built-entry.json",
+    "actionsRun": 39875078049
+  },
+  "evidenceSha256": {
+    "docs/verification/P1_PASSIVE_V2/release-evidence.json": "d89c29a84f3f48de0d3666ff9d2ff6f890c9a882e4055dbb8ee7d8b2c5db1a5a",
+    "docs/verification/P1_PASSIVE_V2/public-fingerprints.json": "f31015f31fbe62b18aa3bd122be5313d95c0e33d8f2e1ed6eea08222eea7ff30",
+    "docs/verification/P1_PASSIVE_V2/ci-build-inventory.json": "cd875e7b845521c6e6d9e71b3bdc67a940a4a5683bd634fc84901005ac932f60",
+    "docs/verification/P1_PASSIVE_V2/run-final.json": "554cdc01767bdb644dac7948b2ded34bd0bd4fc96f1590658d576f0cd672765a",
+    "docs/verification/P1_PASSIVE_V2/native.json": "6ecc5649bcc8cfa1d4777afbf0266d74872dec14607198597990fa291c8c7833",
+    "docs/verification/P1_PASSIVE_V2/built-entry.json": "f4875110ab76a635b3940fb53fcd85d741b98cb218353514296e3d2d1a0685d2"
+  }
+}

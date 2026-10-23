@@ -1,5 +1,5 @@
 {
-  "status": "DEPLOYED / ENGINEERING AND PUBLIC PASS / PLAYER ACCEPTANCE PENDING",
+  "status": "COMPLETE / PLAYER VERIFIED / P1 PASSIVE V2 ACCEPTED",
   "tests": {
     "total": 1047,
     "pass": 1047,
@@ -46,5 +46,11 @@
     "reused": 146
   },
   "url": "https://hansen0318.github.io/shanhaijing-arena/?passive=d1a3939",
-  "remainingGate": "P1 passive physical-player acceptance only"
+  "remainingGate": "No P1 passive Gate; next P2 passive mechanism preflight and Tier design",
+  "playerAcceptance": {
+    "status": "PASS",
+    "receipt": "docs/art/approved/lushu/passive/runtime-v2/acceptance.json",
+    "reviewedDocumentationCheckpoint": "feb3c1182f0fd76c28c211aef232da21cf022511",
+    "acceptedReleaseSha": "d1a39397562f2345bec0243ede82b6376f89684d"
+  }
 }

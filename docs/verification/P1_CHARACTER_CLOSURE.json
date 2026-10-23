@@ -1,0 +1,21 @@
+{
+  "status": "P1 COMPLETE / PLAYER VERIFIED / PASSIVE CATCH-UP CLOSED",
+  "recordedDate": "2026-10-23",
+  "method": "Administrative evidence aggregation: prior accepted base/four-active-skills scope plus new explicit passive v2 player acceptance; no invented whole-character device test",
+  "inheritedBaseAndActiveSkills": {
+    "checkpoint": "feb3c1182f0fd76c28c211aef232da21cf022511",
+    "sources": [
+      "WORK_PROGRESS.md",
+      "docs/STATE.md",
+      "docs/decisions/2026-10-22-passive-character-completion.md"
+    ],
+    "scope": "Existing accepted identity/static/Idle/Move/KO/scale and four active skills retained; passive was the identified catch-up obligation"
+  },
+  "passiveAcceptance": "docs/art/approved/lushu/passive/runtime-v2/acceptance.json",
+  "passiveRelease": "d1a39397562f2345bec0243ede82b6376f89684d",
+  "ordinaryHit": "PERMANENTLY CANCELLED",
+  "remainingP1Gate": null,
+  "next": "P2 passive 厚甲 mechanism preflight and concrete Tier design; original four active skills stay accepted",
+  "p3Skills": "BLOCKED UNTIL P2 PASSIVE PLAYER VERIFIED; no new P3 authorization inferred",
+  "passiveAcceptanceSha256": "c1605bc9085efdc6cc2157a97b16955d323519f5143b3fbb3c1bcdf5b1978b1f"
+}
