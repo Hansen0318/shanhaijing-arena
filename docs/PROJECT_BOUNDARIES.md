@@ -1,5 +1,17 @@
 # Project Boundaries — Shanhaijing Arena
 
+## 2026-10-23 — 全未來角色改整包流程；P3整角色規格v1待整表審閱
+
+玩家「好，紀錄進度流程和修改流程讓未來角色開發可一樣的方式開發 後，繼續」已核准整角色規格一次審→整包四招F3/被動樣式→整包GIF→整包實作驗證→一次正常部署/整角驗收。全局權威docs/decisions/2026-10-23-whole-character-batch-workflow.md，流程收據docs/verification/CHARACTER_BATCH_WORKFLOW/acceptance.json，共用模板docs/templates/CHARACTER_SPEC_TEMPLATE.md。內部仍Basic→Heavy→Special→Awakening→Passive切片/commit，不逐招重複發布/玩家遊戲驗收。此決定取代舊分招排隊/部署節點，保留F3先於其餘姿勢、素材品質與已核准保護；P1/P2 COMPLETE不重做。
+
+已繼續完成P3全角色真機制前檢32個既有headless Session PASS與完整spec：docs/superpowers/specs/2026-10-23-chiru-whole-character-design.md，數據docs/verification/P3_CHARACTER_PREFLIGHT/{baseline.json,proposal.json,REPORT.md}。五招/四Tier/素材/文案一次定義，計畫16本體pose+12獨立FX組；既有赤鱬identity/Idle已檢視、Move/KO/尺度沿用。發現現行治療基數非當前maxHp、T2與被動同名、Heavy兩模式時間不同及T3cast即護盾；提案明示變更：回瀾25/30/35/40%、潤澤16/20/24/30%按目標當前maxHp；獨立游息後排≥2、4.2內HP≤60%最低者（含自己）8/12/16/20%即時治療/CD8；新時序與共用能力擴充詳spec。
+
+**當前唯一Gate=玩家一次審整張赤鱬規格。流程已核准，新數值/時序/素材尚未核准、未實作。** 不重問能否開始或執行方式，不只停在流程紀錄；未審表前不產新F3/GIF/Runtime/Pages。Collection正式文案已納入同表，現有P3被動仍尚未開放，未來真實作同版本同步介紹，不先冒寫效果生效；不能拿同名Tier modifier當被動。全現有/未來被動VFX/Tier/真事件/完整清理及玩家介面純玩法文案硬規則保持。
+
+原生單人自審非獨立review；純文件/前檢[skip ci]，src/public/scripts/tests/依賴/workflows不變、guard585靜態PASS，沿用1070/Build/真Browser/Pages39902216798/公開149，不重測/重部署/下載未變來源。保護全部masters/收據/GIF/尺度/anchor/ground/canonical/mirror、P1/P2數值/時序/MAX、普通15%/疾行顯式95%與素材無固定總量/數量/reserve門檻及逐檔/兩下載/required/回收/destroy。原分支PR#1open/unmerged、無main merge/新分支/TD/角色ID特例、保留無關untracked。最新handoff docs/handoffs/P3_CHIRU_WHOLE_CHARACTER_NEXT_WORK.md；所有交接單一完整自足code block。
+
+
+
 ## 2026-10-23 — 玩家確認VFX／Collection OK，P1與P2整角完成
 
 玩家最新原文「好我確認OK繼續是什麼」「我確認OK，紀錄進度流程規則 接下來是什麼」直接驗收release32424075b5c91844187fc80a566a9140c7e955d6/treeab0a6733ff312d48fef3979e1e0697aaaf74a6de之新增疾行風痕與Collection修正文案；新收據docs/art/approved/lushu/passive/runtime-v3-vfx/acceptance.json，10項證據hash綁定，原收據不改。最新決定docs/decisions/2026-10-23-passive-vfx-copy-player-acceptance.md，整合結案docs/verification/P1_P2_PASSIVE_VFX_CLOSURE.json。P1/P2 COMPLETE／PLAYER VERIFIED，新增呈現Gate CLOSED，不重問同版本風痕/文案/厚甲或已核准四招。下方PENDING/須確認風痕為歷史。

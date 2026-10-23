@@ -1,0 +1,13 @@
+{
+  "status": "PLAYER APPROVED WORKFLOW ONLY",
+  "recordedDate": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "好，紀錄進度流程和修改流程讓未來角色開發可一樣的方式開發 後，繼續",
+  "scope": "Applies whole-character specification, batched key-pose/style and animation review, one normal deployment and whole-character acceptance to P3 and future characters; continue preparing P3 full proposal",
+  "notClaimed": [
+    "Unseen P3 numbers/timing/passive design approved",
+    "Unseen art/GIF/runtime approved or implemented"
+  ],
+  "decision": "docs/decisions/2026-10-23-whole-character-batch-workflow.md",
+  "decisionSha256": "f2d3e2386339707b998f857abb7f75f763e44f203c5b66ed189b799c995b0ea3"
+}

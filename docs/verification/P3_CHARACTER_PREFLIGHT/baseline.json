@@ -1,0 +1,2402 @@
+{
+  "status": "PASS",
+  "scope": "Existing P3 real headless Session, four Tiers × instant/tactical × four skills; not Browser/art/new-design validation",
+  "sourceHead": "56c6e3f9454c4394d82dbaeda2f101d69f4973c4",
+  "runtimeChanged": false,
+  "physicalPhone": false,
+  "cases": 32,
+  "rows": [
+    {
+      "tier": "T0",
+      "tacticalEnabled": false,
+      "cases": [
+        {
+          "category": "basic",
+          "definition": {
+            "id": "P3.basic",
+            "name": "水矢",
+            "description": "中距水矢。",
+            "category": "basic",
+            "cooldown": 0,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.1,
+            "critMultiplier": 1.5,
+            "range": 3.8,
+            "minRange": 0.6,
+            "preferredRange": 2.4,
+            "maxRange": 3.8,
+            "targetingRule": "enemy",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 1
+            },
+            "ai": {
+              "priority": 0
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 235,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6,
+            "attackSpeed": 0.95
+          },
+          "scales": {
+            "hp": 1,
+            "damage": 1,
+            "healing": 1,
+            "moveSpeed": 1,
+            "attackSpeed": 1,
+            "cooldown": 1,
+            "windup": 1,
+            "attackRange": 1,
+            "aoe": 1,
+            "mobilityDistance": 1,
+            "buffDuration": 1,
+            "defenseEffect": 1,
+            "controlDuration": 1,
+            "supportRange": 1,
+            "persistentMagnitude": 1
+          },
+          "patientMaxHp": 245,
+          "immediate": {
+            "heal": 0,
+            "damage": 6.050000000000011
+          },
+          "final": {
+            "heal": 0,
+            "damage": 6.050000000000011
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "heavy",
+          "definition": {
+            "id": "P3.heavy",
+            "name": "湧浪",
+            "description": "中距水流重擊。",
+            "category": "heavy",
+            "cooldown": 4,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.2,
+            "critMultiplier": 1.75,
+            "range": 4.2,
+            "minRange": 0.8,
+            "preferredRange": 2.8,
+            "maxRange": 4.2,
+            "targetingRule": "enemy",
+            "telegraph": {
+              "telegraphMs": 350,
+              "projectileTravelMs": 350,
+              "dodgeable": true,
+              "dangerShape": "lane",
+              "dangerRadius": 0.45,
+              "commitment": "locked",
+              "interruptible": false
+            },
+            "effect": {
+              "coefficient": 1.25
+            },
+            "ai": {
+              "priority": 20
+            },
+            "tierScaling": {
+              "aoe": true,
+              "mobility": false,
+              "status": false,
+              "windup": true
+            }
+          },
+          "stats": {
+            "maxHp": 235,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6,
+            "attackSpeed": 0.95
+          },
+          "scales": {
+            "hp": 1,
+            "damage": 1,
+            "healing": 1,
+            "moveSpeed": 1,
+            "attackSpeed": 1,
+            "cooldown": 1,
+            "windup": 1,
+            "attackRange": 1,
+            "aoe": 1,
+            "mobilityDistance": 1,
+            "buffDuration": 1,
+            "defenseEffect": 1,
+            "controlDuration": 1,
+            "supportRange": 1,
+            "persistentMagnitude": 1
+          },
+          "patientMaxHp": 245,
+          "immediate": {
+            "heal": 0,
+            "damage": 8.8125
+          },
+          "final": {
+            "heal": 0,
+            "damage": 8.8125
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "special",
+          "definition": {
+            "id": "P3.special",
+            "name": "回瀾",
+            "description": "治療最低 HP 比例存活隊友，恢復其最大 HP 的 25%。",
+            "category": "special",
+            "cooldown": 7,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "lowest_hp_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.25
+            },
+            "ai": {
+              "priority": 30,
+              "hpThreshold": 0.65
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 235,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6,
+            "attackSpeed": 0.95
+          },
+          "scales": {
+            "hp": 1,
+            "damage": 1,
+            "healing": 1,
+            "moveSpeed": 1,
+            "attackSpeed": 1,
+            "cooldown": 1,
+            "windup": 1,
+            "attackRange": 1,
+            "aoe": 1,
+            "mobilityDistance": 1,
+            "buffDuration": 1,
+            "defenseEffect": 1,
+            "controlDuration": 1,
+            "supportRange": 1,
+            "persistentMagnitude": 1
+          },
+          "patientMaxHp": 245,
+          "immediate": {
+            "heal": 61.25,
+            "damage": 0
+          },
+          "final": {
+            "heal": 61.25,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "awakening",
+          "definition": {
+            "id": "P3.awakening",
+            "name": "潤澤",
+            "description": "全體存活隊友各恢復最大 HP 的 16%；不復活。",
+            "category": "awakening",
+            "cooldown": 14,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "team_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.16
+            },
+            "ai": {
+              "priority": 40,
+              "hpThreshold": 0.8,
+              "minTargets": 2
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 235,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6,
+            "attackSpeed": 0.95
+          },
+          "scales": {
+            "hp": 1,
+            "damage": 1,
+            "healing": 1,
+            "moveSpeed": 1,
+            "attackSpeed": 1,
+            "cooldown": 1,
+            "windup": 1,
+            "attackRange": 1,
+            "aoe": 1,
+            "mobilityDistance": 1,
+            "buffDuration": 1,
+            "defenseEffect": 1,
+            "controlDuration": 1,
+            "supportRange": 1,
+            "persistentMagnitude": 1
+          },
+          "patientMaxHp": 245,
+          "immediate": {
+            "heal": 39.2,
+            "damage": 0
+          },
+          "final": {
+            "heal": 39.2,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        }
+      ]
+    },
+    {
+      "tier": "T0",
+      "tacticalEnabled": true,
+      "cases": [
+        {
+          "category": "basic",
+          "definition": {
+            "id": "P3.basic",
+            "name": "水矢",
+            "description": "中距水矢。",
+            "category": "basic",
+            "cooldown": 0,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.1,
+            "critMultiplier": 1.5,
+            "range": 3.8,
+            "minRange": 0.6,
+            "preferredRange": 2.4,
+            "maxRange": 3.8,
+            "targetingRule": "enemy",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 1
+            },
+            "ai": {
+              "priority": 0
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 235,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6,
+            "attackSpeed": 0.95
+          },
+          "scales": {
+            "hp": 1,
+            "damage": 1,
+            "healing": 1,
+            "moveSpeed": 1,
+            "attackSpeed": 1,
+            "cooldown": 1,
+            "windup": 1,
+            "attackRange": 1,
+            "aoe": 1,
+            "mobilityDistance": 1,
+            "buffDuration": 1,
+            "defenseEffect": 1,
+            "controlDuration": 1,
+            "supportRange": 1,
+            "persistentMagnitude": 1
+          },
+          "patientMaxHp": 245,
+          "immediate": {
+            "heal": 0,
+            "damage": 6.050000000000011
+          },
+          "final": {
+            "heal": 0,
+            "damage": 6.050000000000011
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "heavy",
+          "definition": {
+            "id": "P3.heavy",
+            "name": "湧浪",
+            "description": "中距水流重擊。",
+            "category": "heavy",
+            "cooldown": 4,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.2,
+            "critMultiplier": 1.75,
+            "range": 4.2,
+            "minRange": 0.8,
+            "preferredRange": 2.8,
+            "maxRange": 4.2,
+            "targetingRule": "enemy",
+            "telegraph": {
+              "telegraphMs": 350,
+              "projectileTravelMs": 350,
+              "dodgeable": true,
+              "dangerShape": "lane",
+              "dangerRadius": 0.45,
+              "commitment": "locked",
+              "interruptible": false
+            },
+            "effect": {
+              "coefficient": 1.25
+            },
+            "ai": {
+              "priority": 20
+            },
+            "tierScaling": {
+              "aoe": true,
+              "mobility": false,
+              "status": false,
+              "windup": true
+            }
+          },
+          "stats": {
+            "maxHp": 235,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6,
+            "attackSpeed": 0.95
+          },
+          "scales": {
+            "hp": 1,
+            "damage": 1,
+            "healing": 1,
+            "moveSpeed": 1,
+            "attackSpeed": 1,
+            "cooldown": 1,
+            "windup": 1,
+            "attackRange": 1,
+            "aoe": 1,
+            "mobilityDistance": 1,
+            "buffDuration": 1,
+            "defenseEffect": 1,
+            "controlDuration": 1,
+            "supportRange": 1,
+            "persistentMagnitude": 1
+          },
+          "patientMaxHp": 245,
+          "immediate": {
+            "heal": 0,
+            "damage": 0
+          },
+          "final": {
+            "heal": 0,
+            "damage": 8.8125
+          },
+          "due": [
+            0.7
+          ],
+          "mitigation": []
+        },
+        {
+          "category": "special",
+          "definition": {
+            "id": "P3.special",
+            "name": "回瀾",
+            "description": "治療最低 HP 比例存活隊友，恢復其最大 HP 的 25%。",
+            "category": "special",
+            "cooldown": 7,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "lowest_hp_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.25
+            },
+            "ai": {
+              "priority": 30,
+              "hpThreshold": 0.65
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 235,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6,
+            "attackSpeed": 0.95
+          },
+          "scales": {
+            "hp": 1,
+            "damage": 1,
+            "healing": 1,
+            "moveSpeed": 1,
+            "attackSpeed": 1,
+            "cooldown": 1,
+            "windup": 1,
+            "attackRange": 1,
+            "aoe": 1,
+            "mobilityDistance": 1,
+            "buffDuration": 1,
+            "defenseEffect": 1,
+            "controlDuration": 1,
+            "supportRange": 1,
+            "persistentMagnitude": 1
+          },
+          "patientMaxHp": 245,
+          "immediate": {
+            "heal": 61.25,
+            "damage": 0
+          },
+          "final": {
+            "heal": 61.25,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "awakening",
+          "definition": {
+            "id": "P3.awakening",
+            "name": "潤澤",
+            "description": "全體存活隊友各恢復最大 HP 的 16%；不復活。",
+            "category": "awakening",
+            "cooldown": 14,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "team_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.16
+            },
+            "ai": {
+              "priority": 40,
+              "hpThreshold": 0.8,
+              "minTargets": 2
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 235,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6,
+            "attackSpeed": 0.95
+          },
+          "scales": {
+            "hp": 1,
+            "damage": 1,
+            "healing": 1,
+            "moveSpeed": 1,
+            "attackSpeed": 1,
+            "cooldown": 1,
+            "windup": 1,
+            "attackRange": 1,
+            "aoe": 1,
+            "mobilityDistance": 1,
+            "buffDuration": 1,
+            "defenseEffect": 1,
+            "controlDuration": 1,
+            "supportRange": 1,
+            "persistentMagnitude": 1
+          },
+          "patientMaxHp": 245,
+          "immediate": {
+            "heal": 39.2,
+            "damage": 0
+          },
+          "final": {
+            "heal": 39.2,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": false,
+      "cases": [
+        {
+          "category": "basic",
+          "definition": {
+            "id": "P3.basic",
+            "name": "水矢",
+            "description": "中距水矢。",
+            "category": "basic",
+            "cooldown": 0,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.1,
+            "critMultiplier": 1.5,
+            "range": 3.952,
+            "minRange": 0.624,
+            "preferredRange": 2.496,
+            "maxRange": 3.952,
+            "targetingRule": "enemy",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 1
+            },
+            "ai": {
+              "priority": 0
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 352.5,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6960000000000002,
+            "attackSpeed": 1.007
+          },
+          "scales": {
+            "hp": 1.5,
+            "damage": 1.2925,
+            "healing": 1.45,
+            "moveSpeed": 1.06,
+            "attackSpeed": 1.06,
+            "cooldown": 0.92,
+            "windup": 0.965,
+            "attackRange": 1.04,
+            "aoe": 1.024,
+            "mobilityDistance": 1.042,
+            "buffDuration": 1.08,
+            "defenseEffect": 1.1,
+            "controlDuration": 1.04,
+            "supportRange": 1.05,
+            "persistentMagnitude": 1.3375
+          },
+          "patientMaxHp": 367.5,
+          "immediate": {
+            "heal": 0,
+            "damage": 9.282125000000008
+          },
+          "final": {
+            "heal": 0,
+            "damage": 9.282125000000008
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "heavy",
+          "definition": {
+            "id": "P3.heavy",
+            "name": "湧浪",
+            "description": "中距水流重擊。",
+            "category": "heavy",
+            "cooldown": 3.68,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.2,
+            "critMultiplier": 1.75,
+            "range": 4.368,
+            "minRange": 0.8320000000000001,
+            "preferredRange": 2.912,
+            "maxRange": 4.368,
+            "targetingRule": "enemy",
+            "telegraph": {
+              "telegraphMs": 337.75,
+              "projectileTravelMs": 350,
+              "dodgeable": true,
+              "dangerShape": "lane",
+              "dangerRadius": 0.46080000000000004,
+              "commitment": "locked",
+              "interruptible": false
+            },
+            "effect": {
+              "coefficient": 1.25
+            },
+            "ai": {
+              "priority": 20
+            },
+            "tierScaling": {
+              "aoe": true,
+              "mobility": false,
+              "status": false,
+              "windup": true
+            }
+          },
+          "stats": {
+            "maxHp": 352.5,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6960000000000002,
+            "attackSpeed": 1.007
+          },
+          "scales": {
+            "hp": 1.5,
+            "damage": 1.2925,
+            "healing": 1.45,
+            "moveSpeed": 1.06,
+            "attackSpeed": 1.06,
+            "cooldown": 0.92,
+            "windup": 0.965,
+            "attackRange": 1.04,
+            "aoe": 1.024,
+            "mobilityDistance": 1.042,
+            "buffDuration": 1.08,
+            "defenseEffect": 1.1,
+            "controlDuration": 1.04,
+            "supportRange": 1.05,
+            "persistentMagnitude": 1.3375
+          },
+          "patientMaxHp": 367.5,
+          "immediate": {
+            "heal": 0,
+            "damage": 12.852656249999995
+          },
+          "final": {
+            "heal": 0,
+            "damage": 12.852656249999995
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "special",
+          "definition": {
+            "id": "P3.special",
+            "name": "回瀾",
+            "description": "治療最低 HP 比例存活隊友，恢復其最大 HP 的 25%。",
+            "category": "special",
+            "cooldown": 6.44,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "lowest_hp_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.25
+            },
+            "ai": {
+              "priority": 30,
+              "hpThreshold": 0.65
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 352.5,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6960000000000002,
+            "attackSpeed": 1.007
+          },
+          "scales": {
+            "hp": 1.5,
+            "damage": 1.2925,
+            "healing": 1.45,
+            "moveSpeed": 1.06,
+            "attackSpeed": 1.06,
+            "cooldown": 0.92,
+            "windup": 0.965,
+            "attackRange": 1.04,
+            "aoe": 1.024,
+            "mobilityDistance": 1.042,
+            "buffDuration": 1.08,
+            "defenseEffect": 1.1,
+            "controlDuration": 1.04,
+            "supportRange": 1.05,
+            "persistentMagnitude": 1.3375
+          },
+          "patientMaxHp": 367.5,
+          "immediate": {
+            "heal": 97.69375000000002,
+            "damage": 0
+          },
+          "final": {
+            "heal": 97.69375000000002,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "awakening",
+          "definition": {
+            "id": "P3.awakening",
+            "name": "潤澤",
+            "description": "全體存活隊友各恢復最大 HP 的 16%；不復活。",
+            "category": "awakening",
+            "cooldown": 12.88,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "team_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.16
+            },
+            "ai": {
+              "priority": 40,
+              "hpThreshold": 0.8,
+              "minTargets": 2
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 352.5,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6960000000000002,
+            "attackSpeed": 1.007
+          },
+          "scales": {
+            "hp": 1.5,
+            "damage": 1.2925,
+            "healing": 1.45,
+            "moveSpeed": 1.06,
+            "attackSpeed": 1.06,
+            "cooldown": 0.92,
+            "windup": 0.965,
+            "attackRange": 1.04,
+            "aoe": 1.024,
+            "mobilityDistance": 1.042,
+            "buffDuration": 1.08,
+            "defenseEffect": 1.1,
+            "controlDuration": 1.04,
+            "supportRange": 1.05,
+            "persistentMagnitude": 1.3375
+          },
+          "patientMaxHp": 367.5,
+          "immediate": {
+            "heal": 56.84,
+            "damage": 0
+          },
+          "final": {
+            "heal": 56.84,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        }
+      ]
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": true,
+      "cases": [
+        {
+          "category": "basic",
+          "definition": {
+            "id": "P3.basic",
+            "name": "水矢",
+            "description": "中距水矢。",
+            "category": "basic",
+            "cooldown": 0,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.1,
+            "critMultiplier": 1.5,
+            "range": 3.952,
+            "minRange": 0.624,
+            "preferredRange": 2.496,
+            "maxRange": 3.952,
+            "targetingRule": "enemy",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 1
+            },
+            "ai": {
+              "priority": 0
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 352.5,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6960000000000002,
+            "attackSpeed": 1.007
+          },
+          "scales": {
+            "hp": 1.5,
+            "damage": 1.2925,
+            "healing": 1.45,
+            "moveSpeed": 1.06,
+            "attackSpeed": 1.06,
+            "cooldown": 0.92,
+            "windup": 0.965,
+            "attackRange": 1.04,
+            "aoe": 1.024,
+            "mobilityDistance": 1.042,
+            "buffDuration": 1.08,
+            "defenseEffect": 1.1,
+            "controlDuration": 1.04,
+            "supportRange": 1.05,
+            "persistentMagnitude": 1.3375
+          },
+          "patientMaxHp": 367.5,
+          "immediate": {
+            "heal": 0,
+            "damage": 9.282125000000008
+          },
+          "final": {
+            "heal": 0,
+            "damage": 9.282125000000008
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "heavy",
+          "definition": {
+            "id": "P3.heavy",
+            "name": "湧浪",
+            "description": "中距水流重擊。",
+            "category": "heavy",
+            "cooldown": 3.68,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.2,
+            "critMultiplier": 1.75,
+            "range": 4.368,
+            "minRange": 0.8320000000000001,
+            "preferredRange": 2.912,
+            "maxRange": 4.368,
+            "targetingRule": "enemy",
+            "telegraph": {
+              "telegraphMs": 337.75,
+              "projectileTravelMs": 350,
+              "dodgeable": true,
+              "dangerShape": "lane",
+              "dangerRadius": 0.46080000000000004,
+              "commitment": "locked",
+              "interruptible": false
+            },
+            "effect": {
+              "coefficient": 1.25
+            },
+            "ai": {
+              "priority": 20
+            },
+            "tierScaling": {
+              "aoe": true,
+              "mobility": false,
+              "status": false,
+              "windup": true
+            }
+          },
+          "stats": {
+            "maxHp": 352.5,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6960000000000002,
+            "attackSpeed": 1.007
+          },
+          "scales": {
+            "hp": 1.5,
+            "damage": 1.2925,
+            "healing": 1.45,
+            "moveSpeed": 1.06,
+            "attackSpeed": 1.06,
+            "cooldown": 0.92,
+            "windup": 0.965,
+            "attackRange": 1.04,
+            "aoe": 1.024,
+            "mobilityDistance": 1.042,
+            "buffDuration": 1.08,
+            "defenseEffect": 1.1,
+            "controlDuration": 1.04,
+            "supportRange": 1.05,
+            "persistentMagnitude": 1.3375
+          },
+          "patientMaxHp": 367.5,
+          "immediate": {
+            "heal": 0,
+            "damage": 0
+          },
+          "final": {
+            "heal": 0,
+            "damage": 12.852656249999995
+          },
+          "due": [
+            0.68775
+          ],
+          "mitigation": []
+        },
+        {
+          "category": "special",
+          "definition": {
+            "id": "P3.special",
+            "name": "回瀾",
+            "description": "治療最低 HP 比例存活隊友，恢復其最大 HP 的 25%。",
+            "category": "special",
+            "cooldown": 6.44,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "lowest_hp_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.25
+            },
+            "ai": {
+              "priority": 30,
+              "hpThreshold": 0.65
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 352.5,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6960000000000002,
+            "attackSpeed": 1.007
+          },
+          "scales": {
+            "hp": 1.5,
+            "damage": 1.2925,
+            "healing": 1.45,
+            "moveSpeed": 1.06,
+            "attackSpeed": 1.06,
+            "cooldown": 0.92,
+            "windup": 0.965,
+            "attackRange": 1.04,
+            "aoe": 1.024,
+            "mobilityDistance": 1.042,
+            "buffDuration": 1.08,
+            "defenseEffect": 1.1,
+            "controlDuration": 1.04,
+            "supportRange": 1.05,
+            "persistentMagnitude": 1.3375
+          },
+          "patientMaxHp": 367.5,
+          "immediate": {
+            "heal": 97.69375000000002,
+            "damage": 0
+          },
+          "final": {
+            "heal": 97.69375000000002,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "awakening",
+          "definition": {
+            "id": "P3.awakening",
+            "name": "潤澤",
+            "description": "全體存活隊友各恢復最大 HP 的 16%；不復活。",
+            "category": "awakening",
+            "cooldown": 12.88,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "team_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.16
+            },
+            "ai": {
+              "priority": 40,
+              "hpThreshold": 0.8,
+              "minTargets": 2
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 352.5,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.6960000000000002,
+            "attackSpeed": 1.007
+          },
+          "scales": {
+            "hp": 1.5,
+            "damage": 1.2925,
+            "healing": 1.45,
+            "moveSpeed": 1.06,
+            "attackSpeed": 1.06,
+            "cooldown": 0.92,
+            "windup": 0.965,
+            "attackRange": 1.04,
+            "aoe": 1.024,
+            "mobilityDistance": 1.042,
+            "buffDuration": 1.08,
+            "defenseEffect": 1.1,
+            "controlDuration": 1.04,
+            "supportRange": 1.05,
+            "persistentMagnitude": 1.3375
+          },
+          "patientMaxHp": 367.5,
+          "immediate": {
+            "heal": 56.84,
+            "damage": 0
+          },
+          "final": {
+            "heal": 56.84,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": false,
+      "cases": [
+        {
+          "category": "basic",
+          "definition": {
+            "id": "P3.basic",
+            "name": "水矢",
+            "description": "中距水矢。",
+            "category": "basic",
+            "cooldown": 0,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.1,
+            "critMultiplier": 1.5,
+            "range": 4.104,
+            "minRange": 0.648,
+            "preferredRange": 2.592,
+            "maxRange": 4.104,
+            "targetingRule": "enemy",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 1
+            },
+            "ai": {
+              "priority": 0
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 528.75,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.7919999999999998,
+            "attackSpeed": 1.0754
+          },
+          "scales": {
+            "hp": 2.25,
+            "damage": 1.6824999999999999,
+            "healing": 2.05,
+            "moveSpeed": 1.1199999999999999,
+            "attackSpeed": 1.132,
+            "cooldown": 0.84,
+            "windup": 0.93,
+            "attackRange": 1.08,
+            "aoe": 1.048,
+            "mobilityDistance": 1.084,
+            "buffDuration": 1.15,
+            "defenseEffect": 1.2,
+            "controlDuration": 1.075,
+            "supportRange": 1.1,
+            "persistentMagnitude": 1.7874999999999999
+          },
+          "patientMaxHp": 551.25,
+          "immediate": {
+            "heal": 0,
+            "damage": 13.591625000000022
+          },
+          "final": {
+            "heal": 0,
+            "damage": 13.591625000000022
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "heavy",
+          "definition": {
+            "id": "P3.heavy",
+            "name": "湧浪",
+            "description": "中距水流重擊。",
+            "category": "heavy",
+            "cooldown": 3.36,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.2,
+            "critMultiplier": 1.75,
+            "range": 4.5360000000000005,
+            "minRange": 0.8640000000000001,
+            "preferredRange": 3.024,
+            "maxRange": 4.5360000000000005,
+            "targetingRule": "enemy",
+            "telegraph": {
+              "telegraphMs": 325.5,
+              "projectileTravelMs": 350,
+              "dodgeable": true,
+              "dangerShape": "lane",
+              "dangerRadius": 0.4716,
+              "commitment": "locked",
+              "interruptible": false
+            },
+            "effect": {
+              "coefficient": 1.25
+            },
+            "ai": {
+              "priority": 20
+            },
+            "tierScaling": {
+              "aoe": true,
+              "mobility": false,
+              "status": false,
+              "windup": true
+            }
+          },
+          "stats": {
+            "maxHp": 528.75,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.7919999999999998,
+            "attackSpeed": 1.0754
+          },
+          "scales": {
+            "hp": 2.25,
+            "damage": 1.6824999999999999,
+            "healing": 2.05,
+            "moveSpeed": 1.1199999999999999,
+            "attackSpeed": 1.132,
+            "cooldown": 0.84,
+            "windup": 0.93,
+            "attackRange": 1.08,
+            "aoe": 1.048,
+            "mobilityDistance": 1.084,
+            "buffDuration": 1.15,
+            "defenseEffect": 1.2,
+            "controlDuration": 1.075,
+            "supportRange": 1.1,
+            "persistentMagnitude": 1.7874999999999999
+          },
+          "patientMaxHp": 551.25,
+          "immediate": {
+            "heal": 0,
+            "damage": 18.239531250000027
+          },
+          "final": {
+            "heal": 0,
+            "damage": 18.239531250000027
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "special",
+          "definition": {
+            "id": "P3.special",
+            "name": "回瀾",
+            "description": "治療最低 HP 比例存活隊友，恢復其最大 HP 的 25%。",
+            "category": "special",
+            "cooldown": 5.88,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "lowest_hp_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.25
+            },
+            "ai": {
+              "priority": 30,
+              "hpThreshold": 0.65
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 528.75,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.7919999999999998,
+            "attackSpeed": 1.0754
+          },
+          "scales": {
+            "hp": 2.25,
+            "damage": 1.6824999999999999,
+            "healing": 2.05,
+            "moveSpeed": 1.1199999999999999,
+            "attackSpeed": 1.132,
+            "cooldown": 0.84,
+            "windup": 0.93,
+            "attackRange": 1.08,
+            "aoe": 1.048,
+            "mobilityDistance": 1.084,
+            "buffDuration": 1.15,
+            "defenseEffect": 1.2,
+            "controlDuration": 1.075,
+            "supportRange": 1.1,
+            "persistentMagnitude": 1.7874999999999999
+          },
+          "patientMaxHp": 551.25,
+          "immediate": {
+            "heal": 144.39687499999997,
+            "damage": 0
+          },
+          "final": {
+            "heal": 144.39687499999997,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "awakening",
+          "definition": {
+            "id": "P3.awakening",
+            "name": "潤澤",
+            "description": "全體存活隊友各恢復最大 HP 的 16%；不復活。",
+            "category": "awakening",
+            "cooldown": 11.76,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "team_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.16
+            },
+            "ai": {
+              "priority": 40,
+              "hpThreshold": 0.8,
+              "minTargets": 2
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 528.75,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.7919999999999998,
+            "attackSpeed": 1.0754
+          },
+          "scales": {
+            "hp": 2.25,
+            "damage": 1.6824999999999999,
+            "healing": 2.05,
+            "moveSpeed": 1.1199999999999999,
+            "attackSpeed": 1.132,
+            "cooldown": 0.84,
+            "windup": 0.93,
+            "attackRange": 1.08,
+            "aoe": 1.048,
+            "mobilityDistance": 1.084,
+            "buffDuration": 1.15,
+            "defenseEffect": 1.2,
+            "controlDuration": 1.075,
+            "supportRange": 1.1,
+            "persistentMagnitude": 1.7874999999999999
+          },
+          "patientMaxHp": 551.25,
+          "immediate": {
+            "heal": 84.37799999999999,
+            "damage": 0
+          },
+          "final": {
+            "heal": 84.37799999999999,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": true,
+      "cases": [
+        {
+          "category": "basic",
+          "definition": {
+            "id": "P3.basic",
+            "name": "水矢",
+            "description": "中距水矢。",
+            "category": "basic",
+            "cooldown": 0,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.1,
+            "critMultiplier": 1.5,
+            "range": 4.104,
+            "minRange": 0.648,
+            "preferredRange": 2.592,
+            "maxRange": 4.104,
+            "targetingRule": "enemy",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 1
+            },
+            "ai": {
+              "priority": 0
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 528.75,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.7919999999999998,
+            "attackSpeed": 1.0754
+          },
+          "scales": {
+            "hp": 2.25,
+            "damage": 1.6824999999999999,
+            "healing": 2.05,
+            "moveSpeed": 1.1199999999999999,
+            "attackSpeed": 1.132,
+            "cooldown": 0.84,
+            "windup": 0.93,
+            "attackRange": 1.08,
+            "aoe": 1.048,
+            "mobilityDistance": 1.084,
+            "buffDuration": 1.15,
+            "defenseEffect": 1.2,
+            "controlDuration": 1.075,
+            "supportRange": 1.1,
+            "persistentMagnitude": 1.7874999999999999
+          },
+          "patientMaxHp": 551.25,
+          "immediate": {
+            "heal": 0,
+            "damage": 13.591625000000022
+          },
+          "final": {
+            "heal": 0,
+            "damage": 13.591625000000022
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "heavy",
+          "definition": {
+            "id": "P3.heavy",
+            "name": "湧浪",
+            "description": "中距水流重擊。",
+            "category": "heavy",
+            "cooldown": 3.36,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.2,
+            "critMultiplier": 1.75,
+            "range": 4.5360000000000005,
+            "minRange": 0.8640000000000001,
+            "preferredRange": 3.024,
+            "maxRange": 4.5360000000000005,
+            "targetingRule": "enemy",
+            "telegraph": {
+              "telegraphMs": 325.5,
+              "projectileTravelMs": 350,
+              "dodgeable": true,
+              "dangerShape": "lane",
+              "dangerRadius": 0.4716,
+              "commitment": "locked",
+              "interruptible": false
+            },
+            "effect": {
+              "coefficient": 1.25
+            },
+            "ai": {
+              "priority": 20
+            },
+            "tierScaling": {
+              "aoe": true,
+              "mobility": false,
+              "status": false,
+              "windup": true
+            }
+          },
+          "stats": {
+            "maxHp": 528.75,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.7919999999999998,
+            "attackSpeed": 1.0754
+          },
+          "scales": {
+            "hp": 2.25,
+            "damage": 1.6824999999999999,
+            "healing": 2.05,
+            "moveSpeed": 1.1199999999999999,
+            "attackSpeed": 1.132,
+            "cooldown": 0.84,
+            "windup": 0.93,
+            "attackRange": 1.08,
+            "aoe": 1.048,
+            "mobilityDistance": 1.084,
+            "buffDuration": 1.15,
+            "defenseEffect": 1.2,
+            "controlDuration": 1.075,
+            "supportRange": 1.1,
+            "persistentMagnitude": 1.7874999999999999
+          },
+          "patientMaxHp": 551.25,
+          "immediate": {
+            "heal": 0,
+            "damage": 0
+          },
+          "final": {
+            "heal": 0,
+            "damage": 18.239531250000027
+          },
+          "due": [
+            0.6755
+          ],
+          "mitigation": []
+        },
+        {
+          "category": "special",
+          "definition": {
+            "id": "P3.special",
+            "name": "回瀾",
+            "description": "治療最低 HP 比例存活隊友，恢復其最大 HP 的 25%。",
+            "category": "special",
+            "cooldown": 5.88,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "lowest_hp_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.25
+            },
+            "ai": {
+              "priority": 30,
+              "hpThreshold": 0.65
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 528.75,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.7919999999999998,
+            "attackSpeed": 1.0754
+          },
+          "scales": {
+            "hp": 2.25,
+            "damage": 1.6824999999999999,
+            "healing": 2.05,
+            "moveSpeed": 1.1199999999999999,
+            "attackSpeed": 1.132,
+            "cooldown": 0.84,
+            "windup": 0.93,
+            "attackRange": 1.08,
+            "aoe": 1.048,
+            "mobilityDistance": 1.084,
+            "buffDuration": 1.15,
+            "defenseEffect": 1.2,
+            "controlDuration": 1.075,
+            "supportRange": 1.1,
+            "persistentMagnitude": 1.7874999999999999
+          },
+          "patientMaxHp": 551.25,
+          "immediate": {
+            "heal": 144.39687499999997,
+            "damage": 0
+          },
+          "final": {
+            "heal": 144.39687499999997,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "awakening",
+          "definition": {
+            "id": "P3.awakening",
+            "name": "潤澤",
+            "description": "全體存活隊友各恢復最大 HP 的 16%；不復活。",
+            "category": "awakening",
+            "cooldown": 11.76,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "team_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.16
+            },
+            "ai": {
+              "priority": 40,
+              "hpThreshold": 0.8,
+              "minTargets": 2
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 528.75,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.7919999999999998,
+            "attackSpeed": 1.0754
+          },
+          "scales": {
+            "hp": 2.25,
+            "damage": 1.6824999999999999,
+            "healing": 2.05,
+            "moveSpeed": 1.1199999999999999,
+            "attackSpeed": 1.132,
+            "cooldown": 0.84,
+            "windup": 0.93,
+            "attackRange": 1.08,
+            "aoe": 1.048,
+            "mobilityDistance": 1.084,
+            "buffDuration": 1.15,
+            "defenseEffect": 1.2,
+            "controlDuration": 1.075,
+            "supportRange": 1.1,
+            "persistentMagnitude": 1.7874999999999999
+          },
+          "patientMaxHp": 551.25,
+          "immediate": {
+            "heal": 84.37799999999999,
+            "damage": 0
+          },
+          "final": {
+            "heal": 84.37799999999999,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": false,
+      "cases": [
+        {
+          "category": "basic",
+          "definition": {
+            "id": "P3.basic",
+            "name": "水矢",
+            "description": "中距水矢。",
+            "category": "basic",
+            "cooldown": 0,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.1,
+            "critMultiplier": 1.5,
+            "range": 4.347199999999999,
+            "minRange": 0.6863999999999999,
+            "preferredRange": 2.7455999999999996,
+            "maxRange": 4.347199999999999,
+            "targetingRule": "enemy",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 1
+            },
+            "ai": {
+              "priority": 0
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 881.25,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.936,
+            "attackSpeed": 1.178
+          },
+          "scales": {
+            "hp": 3.75,
+            "damage": 2.43,
+            "healing": 3.2,
+            "moveSpeed": 1.21,
+            "attackSpeed": 1.24,
+            "cooldown": 0.72,
+            "windup": 0.874,
+            "attackRange": 1.144,
+            "aoe": 1.0899999999999999,
+            "mobilityDistance": 1.14,
+            "buffDuration": 1.25,
+            "defenseEffect": 1.35,
+            "controlDuration": 1.125,
+            "supportRange": 1.18,
+            "persistentMagnitude": 2.6500000000000004
+          },
+          "patientMaxHp": 918.75,
+          "immediate": {
+            "heal": 0,
+            "damage": 21.851499999999987
+          },
+          "final": {
+            "heal": 0,
+            "damage": 21.851499999999987
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "heavy",
+          "definition": {
+            "id": "P3.heavy",
+            "name": "湧浪",
+            "description": "中距水流重擊。",
+            "category": "heavy",
+            "cooldown": 2.88,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.2,
+            "critMultiplier": 1.75,
+            "range": 4.8048,
+            "minRange": 0.9152,
+            "preferredRange": 3.2031999999999994,
+            "maxRange": 4.8048,
+            "targetingRule": "enemy",
+            "telegraph": {
+              "telegraphMs": 305.9,
+              "projectileTravelMs": 350,
+              "dodgeable": true,
+              "dangerShape": "lane",
+              "dangerRadius": 0.49049999999999994,
+              "commitment": "locked",
+              "interruptible": false
+            },
+            "effect": {
+              "coefficient": 1.25
+            },
+            "ai": {
+              "priority": 20
+            },
+            "tierScaling": {
+              "aoe": true,
+              "mobility": false,
+              "status": false,
+              "windup": true
+            }
+          },
+          "stats": {
+            "maxHp": 881.25,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.936,
+            "attackSpeed": 1.178
+          },
+          "scales": {
+            "hp": 3.75,
+            "damage": 2.43,
+            "healing": 3.2,
+            "moveSpeed": 1.21,
+            "attackSpeed": 1.24,
+            "cooldown": 0.72,
+            "windup": 0.874,
+            "attackRange": 1.144,
+            "aoe": 1.0899999999999999,
+            "mobilityDistance": 1.14,
+            "buffDuration": 1.25,
+            "defenseEffect": 1.35,
+            "controlDuration": 1.125,
+            "supportRange": 1.18,
+            "persistentMagnitude": 2.6500000000000004
+          },
+          "patientMaxHp": 918.75,
+          "immediate": {
+            "heal": 0,
+            "damage": 28.56437500000004
+          },
+          "final": {
+            "heal": 0,
+            "damage": 28.56437500000004
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "special",
+          "definition": {
+            "id": "P3.special",
+            "name": "回瀾",
+            "description": "治療最低 HP 比例存活隊友，恢復其最大 HP 的 25%。",
+            "category": "special",
+            "cooldown": 5.04,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "lowest_hp_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.25
+            },
+            "ai": {
+              "priority": 30,
+              "hpThreshold": 0.65
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 881.25,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.936,
+            "attackSpeed": 1.178
+          },
+          "scales": {
+            "hp": 3.75,
+            "damage": 2.43,
+            "healing": 3.2,
+            "moveSpeed": 1.21,
+            "attackSpeed": 1.24,
+            "cooldown": 0.72,
+            "windup": 0.874,
+            "attackRange": 1.144,
+            "aoe": 1.0899999999999999,
+            "mobilityDistance": 1.14,
+            "buffDuration": 1.25,
+            "defenseEffect": 1.35,
+            "controlDuration": 1.125,
+            "supportRange": 1.18,
+            "persistentMagnitude": 2.6500000000000004
+          },
+          "patientMaxHp": 918.75,
+          "immediate": {
+            "heal": 225.39999999999998,
+            "damage": 0
+          },
+          "final": {
+            "heal": 225.39999999999998,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "awakening",
+          "definition": {
+            "id": "P3.awakening",
+            "name": "潤澤",
+            "description": "全體存活隊友各恢復最大 HP 的 16%；不復活。",
+            "category": "awakening",
+            "cooldown": 10.08,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "team_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.16
+            },
+            "ai": {
+              "priority": 40,
+              "hpThreshold": 0.8,
+              "minTargets": 2
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 881.25,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.936,
+            "attackSpeed": 1.178
+          },
+          "scales": {
+            "hp": 3.75,
+            "damage": 2.43,
+            "healing": 3.2,
+            "moveSpeed": 1.21,
+            "attackSpeed": 1.24,
+            "cooldown": 0.72,
+            "windup": 0.874,
+            "attackRange": 1.144,
+            "aoe": 1.0899999999999999,
+            "mobilityDistance": 1.14,
+            "buffDuration": 1.25,
+            "defenseEffect": 1.35,
+            "controlDuration": 1.125,
+            "supportRange": 1.18,
+            "persistentMagnitude": 2.6500000000000004
+          },
+          "patientMaxHp": 918.75,
+          "immediate": {
+            "heal": 131.71200000000002,
+            "damage": 0
+          },
+          "final": {
+            "heal": 131.71200000000002,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": [
+            {
+              "magnitude": 0.10800000000000001,
+              "duration": 2.5
+            },
+            {
+              "magnitude": 0.10800000000000001,
+              "duration": 2.5
+            },
+            {
+              "magnitude": 0.10800000000000001,
+              "duration": 2.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": true,
+      "cases": [
+        {
+          "category": "basic",
+          "definition": {
+            "id": "P3.basic",
+            "name": "水矢",
+            "description": "中距水矢。",
+            "category": "basic",
+            "cooldown": 0,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.1,
+            "critMultiplier": 1.5,
+            "range": 4.347199999999999,
+            "minRange": 0.6863999999999999,
+            "preferredRange": 2.7455999999999996,
+            "maxRange": 4.347199999999999,
+            "targetingRule": "enemy",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 1
+            },
+            "ai": {
+              "priority": 0
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 881.25,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.936,
+            "attackSpeed": 1.178
+          },
+          "scales": {
+            "hp": 3.75,
+            "damage": 2.43,
+            "healing": 3.2,
+            "moveSpeed": 1.21,
+            "attackSpeed": 1.24,
+            "cooldown": 0.72,
+            "windup": 0.874,
+            "attackRange": 1.144,
+            "aoe": 1.0899999999999999,
+            "mobilityDistance": 1.14,
+            "buffDuration": 1.25,
+            "defenseEffect": 1.35,
+            "controlDuration": 1.125,
+            "supportRange": 1.18,
+            "persistentMagnitude": 2.6500000000000004
+          },
+          "patientMaxHp": 918.75,
+          "immediate": {
+            "heal": 0,
+            "damage": 21.851499999999987
+          },
+          "final": {
+            "heal": 0,
+            "damage": 21.851499999999987
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "heavy",
+          "definition": {
+            "id": "P3.heavy",
+            "name": "湧浪",
+            "description": "中距水流重擊。",
+            "category": "heavy",
+            "cooldown": 2.88,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": true,
+            "critChance": 0.2,
+            "critMultiplier": 1.75,
+            "range": 4.8048,
+            "minRange": 0.9152,
+            "preferredRange": 3.2031999999999994,
+            "maxRange": 4.8048,
+            "targetingRule": "enemy",
+            "telegraph": {
+              "telegraphMs": 305.9,
+              "projectileTravelMs": 350,
+              "dodgeable": true,
+              "dangerShape": "lane",
+              "dangerRadius": 0.49049999999999994,
+              "commitment": "locked",
+              "interruptible": false
+            },
+            "effect": {
+              "coefficient": 1.25
+            },
+            "ai": {
+              "priority": 20
+            },
+            "tierScaling": {
+              "aoe": true,
+              "mobility": false,
+              "status": false,
+              "windup": true
+            }
+          },
+          "stats": {
+            "maxHp": 881.25,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.936,
+            "attackSpeed": 1.178
+          },
+          "scales": {
+            "hp": 3.75,
+            "damage": 2.43,
+            "healing": 3.2,
+            "moveSpeed": 1.21,
+            "attackSpeed": 1.24,
+            "cooldown": 0.72,
+            "windup": 0.874,
+            "attackRange": 1.144,
+            "aoe": 1.0899999999999999,
+            "mobilityDistance": 1.14,
+            "buffDuration": 1.25,
+            "defenseEffect": 1.35,
+            "controlDuration": 1.125,
+            "supportRange": 1.18,
+            "persistentMagnitude": 2.6500000000000004
+          },
+          "patientMaxHp": 918.75,
+          "immediate": {
+            "heal": 0,
+            "damage": 0
+          },
+          "final": {
+            "heal": 0,
+            "damage": 28.56437500000004
+          },
+          "due": [
+            0.6558999999999999
+          ],
+          "mitigation": []
+        },
+        {
+          "category": "special",
+          "definition": {
+            "id": "P3.special",
+            "name": "回瀾",
+            "description": "治療最低 HP 比例存活隊友，恢復其最大 HP 的 25%。",
+            "category": "special",
+            "cooldown": 5.04,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "lowest_hp_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.25
+            },
+            "ai": {
+              "priority": 30,
+              "hpThreshold": 0.65
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 881.25,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.936,
+            "attackSpeed": 1.178
+          },
+          "scales": {
+            "hp": 3.75,
+            "damage": 2.43,
+            "healing": 3.2,
+            "moveSpeed": 1.21,
+            "attackSpeed": 1.24,
+            "cooldown": 0.72,
+            "windup": 0.874,
+            "attackRange": 1.144,
+            "aoe": 1.0899999999999999,
+            "mobilityDistance": 1.14,
+            "buffDuration": 1.25,
+            "defenseEffect": 1.35,
+            "controlDuration": 1.125,
+            "supportRange": 1.18,
+            "persistentMagnitude": 2.6500000000000004
+          },
+          "patientMaxHp": 918.75,
+          "immediate": {
+            "heal": 225.39999999999998,
+            "damage": 0
+          },
+          "final": {
+            "heal": 225.39999999999998,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": []
+        },
+        {
+          "category": "awakening",
+          "definition": {
+            "id": "P3.awakening",
+            "name": "潤澤",
+            "description": "全體存活隊友各恢復最大 HP 的 16%；不復活。",
+            "category": "awakening",
+            "cooldown": 10.08,
+            "windupMs": 0,
+            "unlockTier": 0,
+            "canCrit": false,
+            "critChance": 0,
+            "critMultiplier": 1,
+            "range": 20,
+            "minRange": 0,
+            "preferredRange": 0,
+            "maxRange": 20,
+            "targetingRule": "team_ally",
+            "telegraph": null,
+            "effect": {
+              "coefficient": 0,
+              "kind": "heal",
+              "maxHpFraction": 0.16
+            },
+            "ai": {
+              "priority": 40,
+              "hpThreshold": 0.8,
+              "minTargets": 2
+            },
+            "tierScaling": {
+              "aoe": false,
+              "mobility": false,
+              "status": false,
+              "windup": false
+            }
+          },
+          "stats": {
+            "maxHp": 881.25,
+            "atk": 13,
+            "def": 5,
+            "moveSpeed": 1.936,
+            "attackSpeed": 1.178
+          },
+          "scales": {
+            "hp": 3.75,
+            "damage": 2.43,
+            "healing": 3.2,
+            "moveSpeed": 1.21,
+            "attackSpeed": 1.24,
+            "cooldown": 0.72,
+            "windup": 0.874,
+            "attackRange": 1.144,
+            "aoe": 1.0899999999999999,
+            "mobilityDistance": 1.14,
+            "buffDuration": 1.25,
+            "defenseEffect": 1.35,
+            "controlDuration": 1.125,
+            "supportRange": 1.18,
+            "persistentMagnitude": 2.6500000000000004
+          },
+          "patientMaxHp": 918.75,
+          "immediate": {
+            "heal": 131.71200000000002,
+            "damage": 0
+          },
+          "final": {
+            "heal": 131.71200000000002,
+            "damage": 0
+          },
+          "due": [],
+          "mitigation": [
+            {
+              "magnitude": 0.10800000000000001,
+              "duration": 2.5
+            },
+            {
+              "magnitude": 0.10800000000000001,
+              "duration": 2.5
+            },
+            {
+              "magnitude": 0.10800000000000001,
+              "duration": 2.5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceSha256": {
+    "src/roster/catalog.js": "c5540b3896ec30884a42e46cec179617eef71313a78da96d2ab19f87192b0bab",
+    "src/roster/abilities.js": "8aebe3009fd2e88a5b5dbf605f3bb1993287d5afe8cac4d5745acb09f47f5603",
+    "src/roster/tierEffects.js": "2f157c7edb1df0873a9c906212c9459699a34ac947489c5b4bb4d11585c026fa",
+    "src/roster/tierScalingProfiles.js": "7c1c597c7e0906d14b2b72844a71d5d6d522ae17988d1d2eabba9074852f735b",
+    "src/combat/tierEffects.js": "7c79798c6ba726095fb062130d8fb8a9319c6468f6993e372533967b28afacfc",
+    "src/combat/tierScaling.js": "794d631373e7cd8e7d4848101e49f39a6df48e43cd0157dcf4ea7071d788ec5f",
+    "src/combat/tierEffectRuntime.js": "116625cdc02a94cd1120c4a000e3dea3beb03fd0ac2f365371ba7c5414b7b0fc",
+    "src/combat/battleSession.js": "f97da6ee412035b464fea951f09978ee1da1d671de15d05d7205f91cb1ce9ad4",
+    "src/combat/effectTargeting.js": "5238691b4c22dfbe72906b79c5b2588be9b67d48666d221e10d7d5f207a91d90",
+    "src/combat/passiveDefinition.js": "b0e579705d4c40110ddf280496990baa5a345bc7fd3d6880a2fec768fcdb55e5",
+    "src/combat/passiveRuntime.js": "11eace57a043804750163c8e9a827c3be059fc02ea6951e5cead69d1973ea8ad",
+    "src/collection/model.js": "b17f5e3690f6a51532627caf1175d6f211cdfa4b777dbe7cc116eec5ca5beca4"
+  }
+}
