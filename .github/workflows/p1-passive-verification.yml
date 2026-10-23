@@ -2,7 +2,7 @@ name: P1 Passive Native Verification
 on:
   push:
     branches: [feat/m0-combat-core-20260927]
-    paths: ['src/**', 'scripts/checkLushuPassive*Browser.mjs', 'scripts/verifyLushuPassive*Release.mjs', 'tests/passive*.test.js', 'tests/botuoPassive*.test.js', 'scripts/checkBotuoPassiveBrowser.mjs', 'scripts/verifyBotuoPassiveRelease.mjs', 'scripts/verifyPassiveVfxRelease.mjs', 'scripts/checkPlayerCollectionCopy.mjs', '.github/workflows/p1-passive-verification.yml']
+    paths: ['src/**', 'scripts/checkLushuPassive*Browser.mjs', 'scripts/verifyLushuPassive*Release.mjs', 'tests/passive*.test.js', 'tests/botuoPassive*.test.js', 'scripts/checkBotuoPassiveBrowser.mjs', 'scripts/verifyBotuoPassiveRelease.mjs', 'scripts/verifyPassiveVfxRelease.mjs', 'scripts/checkPlayerCollectionCopy.mjs', 'scripts/checkBotuoAwakeningBrowser.mjs', '.github/workflows/p1-passive-verification.yml']
 permissions:
   contents: read
 jobs:

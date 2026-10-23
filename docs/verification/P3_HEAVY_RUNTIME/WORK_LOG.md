@@ -20,3 +20,6 @@ Plan: shared opt-in release/frozen finite lane/resolve → source-preserving pac
 - f50e93c/run40036858444 diagnostic artifact12536384673 SHA25625ebce9e8ce1766b91f2a09bf765b03b1f261bc7e6e6ca3b3cfb52b735749412/CRC PASS proved HP unchanged/no target burst but normal lineProgress NaN/column hidden. Without passive/staged planner the coarse step released at contact, producing zero flight denominator.
 - New real Session regression clears transient/passive state, starts at.95 and takes.7 coarse step; observed RED release1.65 then GREEN separate release1.3/contact1.65. Common scheduler now honors launched-action boundaries even without other planners. No visual timing fallback masks the bug. Source art unchanged.
 - Latest targeted27/27, full1124/1124 and Build PASS. Mandatory normal CI native/built/Basic compatibility/guard/Pages still pending for corrected source.
+
+## Compatibility inventory fixture
+P2 native probe still asserted53 required textures/19000920decoded bytes from pre-Heavy inventory. New source legitimately has57/20054764; update only these exact expectations, not P2 timings/HP/scale/VFX. P1 verification invokes this P2 probe, so its path trigger now lists that actual dependency. Old script/workflow bytes added to separate historical snapshot; old accepted receipts/guards unchanged. No product source/art delta after ea674de.
