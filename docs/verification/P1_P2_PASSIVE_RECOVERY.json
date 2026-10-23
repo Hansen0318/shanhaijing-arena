@@ -1,5 +1,5 @@
 {
-  "status": "P1 PASSIVE DEPLOYED / ENGINEERING AND PUBLIC PASS / PLAYER PENDING / P2 QUEUED",
+  "status": "P1 PASSIVE V2 DEPLOYED / ENGINEERING AND PUBLIC PASS / PLAYER PENDING / P2 QUEUED",
   "recordedDate": "2026-10-22",
   "timezone": "Asia/Taipei",
   "playerStatement": "那開發的角色技能順序應該要有被動技能，所以在P1 P2目前的狀態，要進行P1的被動技能，完成後做P2的被動技能，這算是彌補，以後的角色技能應該要有basic heavy special awakening 被動技能，這樣的順序，你把規則流程進度github，更新，並繼續P1 P2的被動技能，然後才能開發P3的角色技能，確認OK我說的沒錯，就執行",
@@ -38,7 +38,7 @@
     "P3 character skills may then proceed within granted scope"
   ],
   "current": {
-    "P1": "Four active skills/base accepted; passive implemented, verified and deployed; passive player acceptance pending; full character incomplete",
+    "P1": "Four active skills/base accepted; revised passive without battlefield text, Tier gains35/50/65/80 implemented, verified and deployed; new passive player acceptance pending",
     "P2": "Four active skills/base accepted; passive queued until P1 passive accepted; full character incomplete",
     "P3": "Skill work blocked until both catch-up passives completed; existing accepted base retained"
   },
@@ -51,7 +51,7 @@
     ]
   },
   "approvalLimits": "Original order decision does not itself approve mechanics. Subsequent genuine spec/plan acceptance receipts in P1_PASSIVE_DESIGN authorize approved P1 implementation, verification and normal release; physical-phone acceptance remains pending.",
-  "nextGate": "P1 passive physical-player acceptance only; record genuine new receipt then start P2 passive design.",
+  "nextGate": "P1 revised passive physical-player acceptance only; then new acceptance receipt and P2 passive design",
   "proposalStatus": "SPEC AND PLAN PLAYER APPROVED / IMPLEMENTED",
   "decision": "docs/decisions/2026-10-22-passive-character-completion.md",
   "preservedHistoricalAudit": "docs/verification/P2_CHARACTER_CLOSURE.json",
@@ -67,6 +67,7 @@
   "untrackedPreservedSha256": {
     "docs/art/candidates/lushu/special/vfx-review-v1/.target-impact-padded-v1.png.TrNzGq": "f0dffa432964655abac834272a155b0b62179cac8a65ffd0fc51ecfc96f00964"
   },
-  "latestRuntimeReport": "docs/verification/P1_PASSIVE_RUNTIME/REPORT.md",
-  "deployedCommit": "82257f9ea2fc6ad88e2ab3afe8241f270c550a1b"
+  "latestRuntimeReport": "docs/verification/P1_PASSIVE_V2/REPORT.md",
+  "deployedCommit": "d1a39397562f2345bec0243ede82b6376f89684d",
+  "passiveRevisionDecision": "docs/decisions/2026-10-23-passive-visibility-tier-revision.md"
 }

@@ -1,5 +1,5 @@
 {
-  "status": "ENGINEERING PASS / NORMAL RELEASE PENDING / PLAYER ACCEPTANCE PENDING",
+  "status": "DEPLOYED / ENGINEERING AND PUBLIC PASS / PLAYER ACCEPTANCE PENDING",
   "tests": {
     "total": 1047,
     "pass": 1047,
@@ -34,5 +34,17 @@
   "duration": 3,
   "cooldownFromTrigger": 6,
   "noBattlefieldPassiveText": true,
-  "physicalPhone": false
+  "physicalPhone": false,
+  "releaseCommit": "d1a39397562f2345bec0243ede82b6376f89684d",
+  "releaseTree": "981276199ebe572d0481decfaff76349c8bb9a3d",
+  "normalRun": 39875078049,
+  "normalConclusion": "success",
+  "ciLocalFiles": 149,
+  "public": {
+    "total": 149,
+    "fresh": 3,
+    "reused": 146
+  },
+  "url": "https://hansen0318.github.io/shanhaijing-arena/?passive=d1a3939",
+  "remainingGate": "P1 passive physical-player acceptance only"
 }
