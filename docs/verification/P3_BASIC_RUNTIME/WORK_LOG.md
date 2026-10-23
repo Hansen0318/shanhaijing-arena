@@ -24,3 +24,16 @@ Task1 receipt saved, Runtime not yet implemented.
 - Final review: native author self-review required by AGENTS no-delegation; not independent review. Checked locked-point/moving-source geometry, opt-in defaults/P1-P2, three required VFX pins/cleanup, frame preservation/ground/mirror and normal CI publication gate. No merge/main/new branch.
 
 NEXT: commit normal Runtime candidate, inspect real CI Browser/source guard/Build/Pages, fix actual findings, retrieve exact artifacts and compare public build. Player actual Basic acceptance still PENDING; no Heavy.
+
+## Normal CI / release completion
+
+## 2026-10-23 — Basic 水矢已正常部署；唯一剩餘Gate=玩家遊戲驗收
+
+Release266114c46406e39c8501ccad370ce69bfe34f236/treeb6289ff292bd6de351ada7260c3bc8ae54963bf4，正常Pages#1106/run39942845654 build120378242516＋deploy120379282819 SUCCESS。完整1096/1096、Build、95素材guard、新555來源guard、CI真native32/built4 PASS；P1被動39942845637/P2覺醒39942845643相容workflow SUCCESS。CI artifact SHA256/ZIP CRC通過，CI/local153逐bytes一致；公開153/153（7新下載＋146相同path/bytes/hash沿用）PASS。證據docs/verification/P3_BASIC_RUNTIME/{REPORT.md,release.json,release-jobs.json,release-evidence.json,browser/,public-fingerprints.json}。
+
+水矢180ms真有限線命中/落空與凝水/水矢/真命中水花已在正常遊戲；核准F3/姿勢/FX/GIF原圖、尺度/anchor/ground及P1/P2保持。此為工程/發布PASS，**Basic尚未PLAYER VERIFIED，不是整角COMPLETE**。唯一下一步：呈交 https://hansen0318.github.io/shanhaijing-arena/?basic=266114c （隔離Lab：https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&basic=266114c ）供玩家實際驗收；未收到本版本明確核准，不存Runtime acceptance、不開始Heavy。來源未改不重跑本次已通過驗證或部署。
+
+已核准美術精確收據docs/art/approved/chiru/basic/composite-review-v1/acceptance.json（玩家「我確認 紀錄 繼續」）只覆蓋GIF/動作/FX，不能取代遊戲驗收。全局逐招Basic→Heavy→Special→Awakening→Passive保持，不恢復整包。PR#1 open/unmerged、同分支，不merge/新branch/worktree/TD/角色ID特例、普通Hit取消、無16MiB固定上限與逐檔安全/兩下載/required/回收/destroy保持。此次只補發布證據與最新進度[skip ci]，不改產品來源。
+
+
+No further product change after266114c; all final additions are evidence/docs. Native author visual inspection of two exact CI screenshots passed. Player actual game gate remains pending.

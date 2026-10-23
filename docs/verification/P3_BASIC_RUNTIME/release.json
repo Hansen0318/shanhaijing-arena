@@ -1,0 +1,43 @@
+{
+  "status": "ENGINEERING / CI / PAGES / PUBLIC PASS; PLAYER BASIC GAME ACCEPTANCE PENDING",
+  "releaseCommit": "266114c46406e39c8501ccad370ce69bfe34f236",
+  "releaseTree": "b6289ff292bd6de351ada7260c3bc8ae54963bf4",
+  "pagesRun": 39942845654,
+  "buildJob": 120378242516,
+  "deployJob": 120379282819,
+  "compatibilityRuns": {
+    "P1Passive": 39942845637,
+    "P2Awakening": 39942845643
+  },
+  "tests": {
+    "total": 1096,
+    "pass": 1096,
+    "fail": 0
+  },
+  "nativeBrowserCases": 32,
+  "builtEntryCases": 4,
+  "sourceGuardFiles": 555,
+  "ciLocalPublicFiles": 153,
+  "freshPublic": 7,
+  "reusedExactPublic": 146,
+  "artifacts": [
+    {
+      "id": 12496882406,
+      "name": "chiru-basic-runtime-evidence",
+      "sha256": "62b7800637ee3bd2ada80d848a60cd555fa31e01b2cbb331d397d0c92d4ba6c7"
+    },
+    {
+      "id": 12496683178,
+      "name": "github-pages",
+      "sha256": "1649342f43b23add8fcd18694b5fc1b69063f7a6fcf1788e58ce5274a4b827f6"
+    }
+  ],
+  "url": "https://hansen0318.github.io/shanhaijing-arena/?basic=266114c",
+  "labUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&basic=266114c",
+  "playerReceipt": "docs/art/approved/chiru/basic/composite-review-v1/acceptance.json",
+  "approvedArtUnchanged": true,
+  "heavyStarted": false,
+  "physicalPhone": false,
+  "review": "Native author self-review; not independent review",
+  "next": "Player actual Basic game acceptance. If defects, fix affected Basic only. Save exact release acceptance receipt before Heavy."
+}
