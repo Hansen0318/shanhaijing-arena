@@ -1,0 +1,16 @@
+{
+  "status": "BASIC RELEASE PLAYER APPROVED; HEAVY F3 REVIEW NEXT",
+  "recordedDate": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "妳確認目前這個github的進度流程規則的所有相關文件，要從妳開始繼續開發，我應該approve basic，確認接下來是做heavy，是的話繼續",
+  "interpretation": "Player instruction approves the currently published Basic and authorizes continuing to Heavy. No physical-device or individual Tier measurements are asserted.",
+  "releaseCommit": "266114c46406e39c8501ccad370ce69bfe34f236",
+  "releaseTree": "b6289ff292bd6de351ada7260c3bc8ae54963bf4",
+  "recoveredHead": "0b989d97607c3b7bcffc96e05de301b91fd5ab75",
+  "scope": "Basic runtime release only. Existing art/GIF receipts remain immutable. Heavy art/GIF/runtime are not approved.",
+  "evidenceSha256": {
+    "docs/verification/P3_BASIC_RUNTIME/release.json": "f22ee50697c88029e28807183b40bb14f423e63877a45c2526f59601864e3df3",
+    "docs/verification/P3_BASIC_RUNTIME/REPORT.md": "9b3975740f99e776d87949f8728bd3699bfb76c3238c09d97b4703ad64da9c75",
+    "docs/art/approved/chiru/basic/composite-review-v1/acceptance.json": "ce553fa39bbd76cf68d23ff0b5d178710269b59b2b36d8f344b9865f7e6943d5"
+  }
+}

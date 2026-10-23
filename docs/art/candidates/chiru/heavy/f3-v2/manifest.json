@@ -1,0 +1,48 @@
+{
+  "status": "CANDIDATE / PLAYER REVIEW PENDING",
+  "source": "heavy-f3.png",
+  "sha256": "bf5cb878e26a857b8dc6465e04132f325e94285949f0545ed4625fec7079dfad",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "alphaBounds": [
+    43,
+    20,
+    1448,
+    1086
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "decode": "PASS",
+  "review": "Author self-review only. Two forward hands, canonical right facing, cyan water ring image right; red/cream/teal identity retained. No runtime scale or anchor proof.",
+  "oldSources": [
+    {
+      "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/heavy-f3.png",
+      "sha256": "4c9ea32a9f3de0519db363241525d5c4e0df949f56926541d4702b01a16be833",
+      "decodeError": "broken PNG file (chunk b'\\xc6\\xf4D\\x8b')"
+    },
+    {
+      "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/originals/heavy-f3.png",
+      "sha256": "6c8614c4e07dbf8947b5d15a56b2a4738db7091bdb90b443e5834d811bd20b66",
+      "decodeError": "broken data stream when reading image file"
+    }
+  ],
+  "visibleAlpha16Bounds": [
+    116,
+    23,
+    1392,
+    1067
+  ],
+  "edgeNote": "Raw low-alpha pixels reach right/bottom boundary; no pixels removed. Padded review derivative retains source in full.",
+  "paddedReview": {
+    "path": "heavy-f3-padded.png",
+    "offset": [
+      128,
+      128
+    ],
+    "sha256": "b120c586126de00705bd4d580832fcb92e60555458790f5a315a306017ba4baa"
+  }
+}
