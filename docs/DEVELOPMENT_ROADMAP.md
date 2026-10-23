@@ -1,5 +1,14 @@
 # Development Roadmap — Post-M1
 
+## 2026-10-23 — 厚甲已部署／CI與公開149核對PASS／只待厚甲玩家驗收
+
+Release1f6b47b4e30a867b1b8d294c69fdeaedc51f0b98／tree33fb1eab6d61b3f419e812de97b38fd19e651aa8，正常Pages#1104/run39881533879 build+deploySUCCESS，CI完整1065/1065、Build、599guard PASS；verification39881533921SUCCESS、來源完全相同Browser證據沿用。artifact12470144586 SHA25627f047b593a84a0e0de67729e7742fc4692c1f1f6c37e3d44e4faa1de7b0dc4e/ZIPCRC及CI/local149檔逐bytes一致；公開149/149（3新取+146相同指紋沿用）PASS。全部證據docs/verification/P2_PASSIVE_RUNTIME/。
+
+厚甲真實自身減傷T0/T1/T2/T3=20/30/40/50%、4秒/CD8秒；敵人≤2.2，或隊友≤2.4且其敵人≤2.2；MAX不加算、各自到期，無文字護甲1/2/3/4組。匿名/重新命名角色與被動真Session已證明通用資料驅動，不看P2 ID。未來角色仍需自己的真效果/Tier/清理/來源驗證/發布/玩家驗收才完整，不得只新增文案或假稱未知效果已支援。
+
+遊戲https://hansen0318.github.io/shanhaijing-arena/?passive=1f6b47b 。**唯一剩餘Gate：厚甲玩家驗收**，只看接敵護甲/耐打感與Tier成長；未收到本版本核准，不寫PLAYER VERIFIED或P2整角色COMPLETE。P1已結案與P2四招/所有已核准美術尺度/時序/MAX/素材政策保持，不重驗；普通Hit取消，P3技能仍BLOCKED。原分支/PR#1open-unmerged、原生單人自審、無main merge/新分支/TD/角色ID特例。此次純發布紀錄[skip ci]、Runtime來源未變，不重跑測試/Build/Browser/部署/公開下載。
+
+
 ## 2026-10-23 — 厚甲本機工程PASS／正常發布ACTIVE
 
 完整1065/1065、Build/149檔、厚甲真native16/built8、P1新來源native16/built8、P2受影響native4/built2/scale10與新來源guard599/真篡改負向/恢復均PASS。共用空間減傷/四Tier/無文字護甲真實生效，future-guardian與重新命名被動的真Session仍減HP20%，無角色ID特例。未來每角仍需自己真效果/Tier/清理/發布/玩家驗收，不能只靠文案或基礎數值。

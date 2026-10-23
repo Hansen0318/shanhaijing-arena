@@ -1,0 +1,13 @@
+{
+  "id": 39881533879,
+  "name": "M0 Pages Preview",
+  "head_sha": "1f6b47b4e30a867b1b8d294c69fdeaedc51f0b98",
+  "head_branch": "feat/m0-combat-core-20260927",
+  "run_number": 1104,
+  "event": "push",
+  "status": "completed",
+  "conclusion": "success",
+  "created_at": "2026-10-23T01:00:55Z",
+  "updated_at": "2026-10-23T01:02:03Z",
+  "html_url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39881533879"
+}

@@ -1,5 +1,5 @@
 {
-  "status": "LOCAL ENGINEERING PASS / NORMAL RELEASE NEXT / PLAYER PENDING",
+  "status": "DEPLOYED / ENGINEERING PASS / PLAYER PENDING",
   "tests": {
     "total": 1065,
     "pass": 1065,
@@ -13,5 +13,19 @@
   "sourceGuard": 599,
   "physicalPhone": false,
   "playerAccepted": false,
-  "next": "Normal CI/Build/guard/Pages/public comparison"
+  "next": "Player acceptance of P2 passive armor only; then receipt and whole-character closure",
+  "releaseCommit": "1f6b47b4e30a867b1b8d294c69fdeaedc51f0b98",
+  "releaseTree": "33fb1eab6d61b3f419e812de97b38fd19e651aa8",
+  "normalRun": 39881533879,
+  "normalConclusion": "success",
+  "verificationRun": 39881533921,
+  "verificationConclusion": "success",
+  "ciLocalFiles": 149,
+  "public": {
+    "total": 149,
+    "fresh": 3,
+    "reused": 146,
+    "matched": 149
+  },
+  "url": "https://hansen0318.github.io/shanhaijing-arena/?passive=1f6b47b"
 }

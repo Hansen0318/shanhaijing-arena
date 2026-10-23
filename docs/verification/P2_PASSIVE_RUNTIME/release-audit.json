@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "releaseCommit": "1f6b47b4e30a867b1b8d294c69fdeaedc51f0b98",
+  "releaseTree": "33fb1eab6d61b3f419e812de97b38fd19e651aa8",
+  "normalRun": 39881533879,
+  "verificationRun": 39881533921,
+  "ciTests": 1065,
+  "sourceGuard": 599,
+  "ciLocalFiles": 149,
+  "publicTotal": 149,
+  "publicFresh": 3,
+  "publicReused": 146,
+  "runtimeDiffFromRelease": "EMPTY",
+  "approvedArtAndReceiptsDiff": "EMPTY",
+  "playerAccepted": false,
+  "remainingGate": "P2 passive player acceptance only",
+  "review": "Native single-agent self-review; no independent reviewer"
+}

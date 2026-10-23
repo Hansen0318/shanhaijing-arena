@@ -1,4 +1,13 @@
-# 厚甲 — LOCAL ENGINEERING PASS / NORMAL RELEASE NEXT / PLAYER PENDING
+# 厚甲 — DEPLOYED / ENGINEERING PASS / PLAYER PENDING
+
+## 正常發布已完成 — 2026-10-23
+
+**DEPLOYED / ENGINEERING PASS / PLAYER PENDING。** Release1f6b47b4e30a867b1b8d294c69fdeaedc51f0b98／tree33fb1eab6d61b3f419e812de97b38fd19e651aa8。正常Pages#1104/run39881533879 completed/success，build120179783427與deploy120180004165皆SUCCESS：CI完整1065/1065、Build、599guard PASS，deploy log Reported success。獨立驗證workflow39881533921 SUCCESS、依新guard精確沿用本次Browser證據。原始完整CI/build/deploy logs.gz、run-final/verification-run/release-jobs.json保存。
+
+Artifact12470144586 ZIP SHA25627f047b593a84a0e0de67729e7742fc4692c1f1f6c37e3d44e4faa1de7b0dc4e與GitHub digest相同、ZIP CRC PASS、tar中149/149檔案與本機dist逐bytes相同。公開核對149/149 PASS：3個新index/JS重新下載，146個相同path/bytes/hash素材沿用P1已驗證指紋；不重取未變來源。ci-build-inventory/public-fingerprints.json保留精確清單。
+
+遊戲 https://hansen0318.github.io/shanhaijing-arena/?passive=1f6b47b 。唯一剩餘Gate：玩家只驗厚甲接敵後無文字琥珀護甲/耐打感與Tier成長；尚未收到此已部署版本核准。P1 COMPLETE、P2四招核准不重開；P2整角色仍待本被動驗收，P3技能BLOCKED。下方LOCAL/RELEASE NEXT為發布前歷史，由本節取代；本行政切片不改Runtime/美術、不重跑測試/Build/Browser/部署/公開下載。
+
 
 2026-10-23 Asia/Taipei。恢復基線2f855f7721d787c43636b8f34fd633db345e71c2，原生單人，同feature分支/PR#1open-unmerged。玩家直接實作授權見authorization.json與decision。工程checkpoint d3604926385e1f57bfd001f11f145bb6feb6df6f已保存，後續本提交為新驗證/發布候選；最終完整HEAD/tree由含本檔commit取得。
 
