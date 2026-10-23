@@ -9,3 +9,5 @@ Ruling: user已選原生單人、原branch與整包流程，故沿原workspace�
 Pre-flight interfaces: Task3 timeline emits castId/epoch/recipient events → Task4 passive uses positive-heal recipient/event identity → Task5 presentation/Collection consumes accepted data and events → Task6 exact-source proof. Field names and generation/settlement ownership一致。Task1/2 accepted image hashes gate Task5 asset ingestion; candidate art cannot be consumed as accepted runtime art.
 
 Unrelated untracked files remain excluded: botuo heavy .source-pressure-raw-v1.png.szUcob SHA2561ed6b424b70657e2ff050094f38c979bff070a31d09cd2c459221d9c99b70521；lushu basic .lushu-basic-vfx-review-v1-slow.gif.jOfvwS SHA25654f89ee99958c49872ea9b081863665d1a33425b7c3cd8863cee8ecb17bb34ac。No delete/stage/alter.
+
+Task1 recovery: db85a1c29e7e32e7f803c78f4f1883f05f68a340/tree771ab35f49e890e5144990a7528151c4e5a7440b, PR1 open/unmerged; fresh clone clean. Receipt four bound hashes verified; identity/Idle visually inspected; no candidate directory exists. Saved task1-checkpoint.json before generation. Historical untracked mentioned above belong to predecessor workspace; absent here, nothing removed. No preflight/runtime suite repeated.
