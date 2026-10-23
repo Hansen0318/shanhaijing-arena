@@ -1,5 +1,8 @@
 # 整角色規格表（全未來角色共用）
 
+> **流程更新（2026-10-23）：** 本模板仍可用於記錄整角技能規格，但玩家已撤回整包技能開發/一次發布；見 `docs/decisions/2026-10-23-restore-sequential-skill-workflow.md`，須按Basic→Heavy→Special→Awakening→Passive逐招完成、部署及玩家驗收。
+
+
 流程權威：docs/decisions/2026-10-23-whole-character-batch-workflow.md。建立角色專用spec與machine-readable proposal，填完整張表後一次供審，不能只交第一招；欄位未完成不得寫READY/PLAYER APPROVED。數值寫明current／proposed／approved／implemented及版本來源。
 
 | 區段 | 必填資料 |
