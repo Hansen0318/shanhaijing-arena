@@ -1,0 +1,38 @@
+[
+  {
+    "tier": 0,
+    "F1ms": 200.0,
+    "F2ms": 150.0,
+    "releaseMs": 350,
+    "resolveMs": 700,
+    "F3ms": 400,
+    "F4ms": 200
+  },
+  {
+    "tier": 1,
+    "F1ms": 193.0,
+    "F2ms": 144.75,
+    "releaseMs": 337.75,
+    "resolveMs": 687.75,
+    "F3ms": 400,
+    "F4ms": 200
+  },
+  {
+    "tier": 2,
+    "F1ms": 186.0,
+    "F2ms": 139.5,
+    "releaseMs": 325.5,
+    "resolveMs": 675.5,
+    "F3ms": 400,
+    "F4ms": 200
+  },
+  {
+    "tier": 3,
+    "F1ms": 174.79999999999998,
+    "F2ms": 131.1,
+    "releaseMs": 305.9,
+    "resolveMs": 655.9,
+    "F3ms": 400,
+    "F4ms": 200
+  }
+]

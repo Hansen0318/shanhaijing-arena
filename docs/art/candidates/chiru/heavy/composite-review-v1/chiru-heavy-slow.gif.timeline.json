@@ -1,0 +1,114 @@
+[
+  {
+    "castOffsetMs": -500,
+    "phase": "IDLE",
+    "logicalHoldMs": 500,
+    "playbackHoldMs": 500,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 0,
+    "phase": "F1",
+    "logicalHoldMs": 200,
+    "playbackHoldMs": 600,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 200,
+    "phase": "F2",
+    "logicalHoldMs": 150,
+    "playbackHoldMs": 450,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 350,
+    "phase": "F3",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 400,
+    "phase": "F3",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 450,
+    "phase": "F3",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 500,
+    "phase": "F3",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 550,
+    "phase": "F3",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 600,
+    "phase": "F3",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 650,
+    "phase": "F3",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": false
+  },
+  {
+    "castOffsetMs": 700,
+    "phase": "F3",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": true
+  },
+  {
+    "castOffsetMs": 750,
+    "phase": "F4",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": true
+  },
+  {
+    "castOffsetMs": 800,
+    "phase": "F4",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": true
+  },
+  {
+    "castOffsetMs": 850,
+    "phase": "F4",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": true
+  },
+  {
+    "castOffsetMs": 900,
+    "phase": "F4",
+    "logicalHoldMs": 50,
+    "playbackHoldMs": 150,
+    "targetImpact": true
+  },
+  {
+    "castOffsetMs": 950,
+    "phase": "IDLE",
+    "logicalHoldMs": 650,
+    "playbackHoldMs": 650,
+    "targetImpact": false
+  }
+]

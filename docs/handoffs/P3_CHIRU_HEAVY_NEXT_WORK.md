@@ -1,3 +1,22 @@
+## 2026-10-23 — Heavy 湧浪動作／獨立VFX／9種GIF已保存；玩家GIF審核NEXT
+
+沿用已核准F3 v3，完整解碼/hash通過，原檔及收據未改。新F1/F2/F4、壓縮水環/粗浪柱/單target爆浪、normal/slow/noFX/miss/mirror/Idle-return/reduced及兩種Basic等尺度對照位於 docs/art/candidates/chiru/heavy/composite-review-v1/REVIEW.md。原圖/prompts/manifest/tier timeline/重建script/明暗底QA/逐GIF時序與checksums齊備；共同.13尺度/chestX158/hoverY203、安全邊界及RGBA/鏡像/strip反貼、9GIF解碼/hash/播放時長/像素時序核對通過。作者視覺自審，非Runtime或實機證明。
+
+T0 350ms發射、再350ms後700ms contact；F3 400ms、F4 200ms，miss無target爆浪；T1-T3精確小數時序另存JSON，不宣稱GIF可表示小數ms。noFX保留核准本體原有持環像素，只關閉獨立FX。全角色視覺層級/動作辨識與前向有限lane單target契約保持。
+
+**唯一下一Gate：呈交已完成Heavy GIF，等待玩家明確核准。** 玩家最新「完成的話然後紀錄 我要開新的work接手」是保存/交接指示，不是尚未展示GIF的核准；不得存新美術acceptance、整合Heavy Runtime/部署/開始Special。接手先讀 docs/handoffs/P3_CHIRU_HEAVY_NEXT_WORK.md 與REVIEW，不重畫F3/新姿勢/FX或重跑已完成檢查。收到明確GIF核准後才存精確收據並接Heavy Runtime。
+
+P1/P2/Basic及全部approved masters/收據/尺度/anchor/ground保持，普通Hit取消、無固定16MiB上限與逐檔安全/required/回收保持。原生單人，同feat/m0-combat-core-20260927、PR#1 open/unmerged，不委派/新branch/worktree/merge main/TD。此次僅文件與候選美術[skip ci]；無產品變更，不重跑suite/Build/Browser/Pages。原圖保存checkpoint d739b922c10a0eb580f4a64654e6434518fcf8e0；完整成果checkpoint為包含本節之最新remote commit，接手必須fetch。
+
+# 新 Work 接續入口
+
+Repository Hansen0318/shanhaijing-arena；branch feat/m0-combat-core-20260927；PR #1 open/unmerged。
+先fetch最新remote並讀AGENTS.md、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、WORK_PROGRESS/STATE最新段落、本文件、逐招decision、CHARACTER_ACTION_ART_WORKFLOW、M5C_ART_ANIMATION_VFX、原角色spec/spec acceptance、Heavy F3 v3 receipt和composite-review-v1/REVIEW.md、manifest.json、checksums.json。
+第一未完成Gate是玩家GIF審核，不是重新生成素材。直接展示既存GIF，未獲明確核准不得Runtime/部署/Special。若玩家另有明確對本包核准，記錄精確範圍收據後依逐招流程接Heavy Runtime；不可由F3核准或交接指令推定GIF通過。所有硬規則與保護範圍遵循上節及最新GitHub；歷史F3下一姿勢待辦已完成，由本節覆蓋。
+
+---
+歷史（保留）：
+
 # P3 赤鱬 Heavy 湧浪 — F3 approved / next poses and GIF
 
 ## 2026-10-23 — Heavy 湧浪 F3 v3 PLAYER APPROVED；新 Work 接續其餘姿勢與獨立 VFX/GIF

@@ -1,0 +1,377 @@
+{
+  "status": "F3 APPROVED / NEW POSES FX GIF PLAYER REVIEW PENDING",
+  "baseline": "2477a1b41c9b7060093dba3be33fd4f190c5fe9b",
+  "sources": {
+    "docs/art/approved/chiru/heavy/f3-v3/acceptance.json": "c4c23e5020f90995e4919f306d9774b2e0bbef02ee4da447c638f8211166de38",
+    "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F1.png": "f4e440af16e32ed745b44a091a4c77c8426f117c44c89a66cc21156aa84382a9",
+    "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F2.png": "8cd0da4da82e76892515e245c51d5c52f39636ba44eec0fa0281fd99b5555f02",
+    "docs/art/candidates/chiru/heavy/f3-v3/heavy-f3.png": "8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6",
+    "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F4.png": "211486c178da48c58b3cc8f7acfb8fba189724d621ec62f1ed37ccdf46666410",
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "docs/art/candidates/chiru/heavy/composite-review-v1/originals/charge.png": "2a0f11be62c1b24a6de3c92eba343748b59bfabe638081f857ef091e64b3c13e",
+    "docs/art/candidates/chiru/heavy/composite-review-v1/originals/column.png": "e7105c43de59a83d1dce94cafdb00e3071358a4ca2b1a2f705d1e994b367db72",
+    "docs/art/candidates/chiru/heavy/composite-review-v1/originals/impact.png": "504f97c058d5716400da4367895402665eb14c81bcdc16774c733d5af1030e60"
+  },
+  "poses": [
+    {
+      "frame": "F1",
+      "source": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F1.png",
+      "sha256": "f4e440af16e32ed745b44a091a4c77c8426f117c44c89a66cc21156aa84382a9",
+      "scale": 0.13,
+      "landmarks": {
+        "chest": [
+          570,
+          600
+        ],
+        "eye": [
+          633,
+          361
+        ],
+        "hover": [
+          620,
+          1210
+        ],
+        "orb": [
+          280,
+          630
+        ]
+      },
+      "translation": [
+        84,
+        46
+      ],
+      "alphaBounds": [
+        95,
+        50,
+        244,
+        208
+      ],
+      "margins": [
+        95,
+        50,
+        76,
+        52
+      ],
+      "fullSourceRoundTrip": true,
+      "scaledRoundTrip": true,
+      "mirrorRoundTrip": true
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F2.png",
+      "sha256": "8cd0da4da82e76892515e245c51d5c52f39636ba44eec0fa0281fd99b5555f02",
+      "scale": 0.13,
+      "landmarks": {
+        "chest": [
+          670,
+          510
+        ],
+        "eye": [
+          758,
+          332
+        ],
+        "hover": [
+          620,
+          1210
+        ],
+        "orb": [
+          340,
+          500
+        ]
+      },
+      "translation": [
+        71,
+        46
+      ],
+      "alphaBounds": [
+        71,
+        47,
+        229,
+        209
+      ],
+      "margins": [
+        71,
+        47,
+        91,
+        51
+      ],
+      "fullSourceRoundTrip": true,
+      "scaledRoundTrip": true,
+      "mirrorRoundTrip": true
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/candidates/chiru/heavy/f3-v3/heavy-f3.png",
+      "sha256": "8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6",
+      "scale": 0.13,
+      "landmarks": {
+        "chest": [
+          785,
+          550
+        ],
+        "eye": [
+          830,
+          350
+        ],
+        "hover": [
+          755,
+          1238
+        ],
+        "orb": [
+          1095,
+          650
+        ]
+      },
+      "translation": [
+        56,
+        42
+      ],
+      "alphaBounds": [
+        63,
+        44,
+        219,
+        205
+      ],
+      "margins": [
+        63,
+        44,
+        101,
+        55
+      ],
+      "fullSourceRoundTrip": true,
+      "scaledRoundTrip": true,
+      "mirrorRoundTrip": true
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F4.png",
+      "sha256": "211486c178da48c58b3cc8f7acfb8fba189724d621ec62f1ed37ccdf46666410",
+      "scale": 0.13,
+      "landmarks": {
+        "chest": [
+          780,
+          550
+        ],
+        "eye": [
+          850,
+          325
+        ],
+        "hover": [
+          760,
+          1220
+        ],
+        "orb": [
+          970,
+          610
+        ]
+      },
+      "translation": [
+        57,
+        44
+      ],
+      "alphaBounds": [
+        68,
+        46,
+        210,
+        207
+      ],
+      "margins": [
+        68,
+        46,
+        110,
+        53
+      ],
+      "fullSourceRoundTrip": true,
+      "scaledRoundTrip": true,
+      "mirrorRoundTrip": true
+    }
+  ],
+  "effects": [
+    {
+      "name": "charge",
+      "source": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/charge.png",
+      "sha256": "2a0f11be62c1b24a6de3c92eba343748b59bfabe638081f857ef091e64b3c13e",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceAlpha": [
+        25,
+        23,
+        1516,
+        1024
+      ],
+      "displaySize": [
+        98,
+        68
+      ],
+      "displayScale": 0.05859375,
+      "paddedRGBARoundTrip": true
+    },
+    {
+      "name": "column",
+      "source": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/column.png",
+      "sha256": "e7105c43de59a83d1dce94cafdb00e3071358a4ca2b1a2f705d1e994b367db72",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceAlpha": [
+        0,
+        13,
+        2162,
+        724
+      ],
+      "displaySize": [
+        381,
+        141
+      ],
+      "displayScale": 0.16574585635359115,
+      "paddedRGBARoundTrip": true
+    },
+    {
+      "name": "impact",
+      "source": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/impact.png",
+      "sha256": "504f97c058d5716400da4367895402665eb14c81bcdc16774c733d5af1030e60",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceAlpha": [
+        39,
+        19,
+        1504,
+        996
+      ],
+      "displaySize": [
+        206,
+        142
+      ],
+      "displayScale": 0.12369791666666667,
+      "paddedRGBARoundTrip": true
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-normal.gif",
+      "sha256": "b169c974a761e850fac53549414da3267cc9d0adcba359e806c6ffcfd750165a",
+      "bytes": 568310,
+      "decodedFrames": 16,
+      "durationMs": 2100,
+      "pixelTimingRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-slow.gif",
+      "sha256": "8b3aa17becb03dc58989b1e35fbc6d61f42d22486af18f8b3c9a0c7a481f08d0",
+      "bytes": 568310,
+      "decodedFrames": 16,
+      "durationMs": 4000,
+      "pixelTimingRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-noFX.gif",
+      "sha256": "7c05eeba0212b29b32c968213e0d6a98fd8f2a4741ad2c8d8598667a3bffc0cf",
+      "bytes": 388594,
+      "decodedFrames": 16,
+      "durationMs": 2100,
+      "pixelTimingRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-miss.gif",
+      "sha256": "b617d45b44950b6cd704335ebe6171366cd08ebb041593c25c8fb8dec438b774",
+      "bytes": 504451,
+      "decodedFrames": 16,
+      "durationMs": 2100,
+      "pixelTimingRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-mirror.gif",
+      "sha256": "5c8a85c06ab1499c75ae159aa87905f241093b7ae88a822ff345ca8870cadc95",
+      "bytes": 564982,
+      "decodedFrames": 16,
+      "durationMs": 2100,
+      "pixelTimingRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-idle-return.gif",
+      "sha256": "7c05eeba0212b29b32c968213e0d6a98fd8f2a4741ad2c8d8598667a3bffc0cf",
+      "bytes": 388594,
+      "decodedFrames": 16,
+      "durationMs": 2100,
+      "pixelTimingRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-reduced.gif",
+      "sha256": "c7974536baf787fb3227693487a762fc48abd9619d8d4cdcc3ebb066e4dbd42c",
+      "bytes": 624168,
+      "decodedFrames": 16,
+      "durationMs": 2100,
+      "pixelTimingRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic.gif",
+      "sha256": "d68c8ebed28b9b3006e4aad9af7774ca3565ed0f31024baa099425a0984a9d94",
+      "bytes": 756778,
+      "decodedFrames": 19,
+      "durationMs": 2100,
+      "pixelTimingRoundTrip": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic-noFX.gif",
+      "sha256": "7f109657d9c32e39d4d9eea866defcce62294c4e10b3bce5a24404e51e6cff93",
+      "bytes": 319666,
+      "decodedFrames": 10,
+      "durationMs": 2100,
+      "pixelTimingRoundTrip": true
+    }
+  ],
+  "tiers": [
+    {
+      "tier": 0,
+      "F1ms": 200.0,
+      "F2ms": 150.0,
+      "releaseMs": 350,
+      "resolveMs": 700,
+      "F3ms": 400,
+      "F4ms": 200
+    },
+    {
+      "tier": 1,
+      "F1ms": 193.0,
+      "F2ms": 144.75,
+      "releaseMs": 337.75,
+      "resolveMs": 687.75,
+      "F3ms": 400,
+      "F4ms": 200
+    },
+    {
+      "tier": 2,
+      "F1ms": 186.0,
+      "F2ms": 139.5,
+      "releaseMs": 325.5,
+      "resolveMs": 675.5,
+      "F3ms": 400,
+      "F4ms": 200
+    },
+    {
+      "tier": 3,
+      "F1ms": 174.79999999999998,
+      "F2ms": 131.1,
+      "releaseMs": 305.9,
+      "resolveMs": 655.9,
+      "F3ms": 400,
+      "F4ms": 200
+    }
+  ],
+  "commonScale": 0.13,
+  "hoverBaseline": 203,
+  "chestX": 158,
+  "approvedSourceUnchanged": true,
+  "limitations": [
+    "Author visual anatomy QA, not runtime or physical phone verification",
+    "GIF uses exact T0 centiseconds; fractional T1-T3 preserved in tier-timeline.json, not represented as exact GIF clocks",
+    "noFX removes external VFX only; approved held water ring pixels remain",
+    "Source edge alpha includes faint pixels; all source pixels retained, padded rather than trimmed",
+    "Reduced uses stationary lane with lower opacity and no expanding column; impact remains tied to 700ms"
+  ]
+}

@@ -32,3 +32,12 @@ Next: present the valid F3 candidate for player review; stop before further pose
 - Read player-required recovery documents, receipt and references. Approved Heavy F3 v3 fully decoded RGBA 1254x1254; SHA256 matches 8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6.
 - Execution plan docs/superpowers/plans/2026-10-23-chiru-heavy-art-gif.md; native author only, no new approval gate, no runtime/CI/build/deploy.
 - Generating one separate master per F1/F2/F4 and independent charge/column/impact. Pending inspection, normalization and GIF; no new approval claimed.
+
+## Composite review v1 completed / player GIF gate pending
+- Source checkpoint d739b922c10a0eb580f4a64654e6434518fcf8e0; six original blob hashes matched local git hash-object. CLI push lacked auth; used connected GitHub blob/tree/commit/ref API with expected-head lease, no force.
+- Rebuild script passed full RGBA padding/resize/cell/strip/double-mirror checks; all 9 GIF indexed-pixel/timing round trips plus independent decode/hash/duration inspection passed.
+- Inspected light/dark pose and FX boards, decoded normal contact sheet: bent asymmetric arms/torso coil distinguish Heavy from Basic, correct visible earring side, isolated source charge/column/contact; no target burst before700ms or on miss. Basic comparison includes180ms breakpoint, no sampling shift.
+- Full source F3 hash/receipt preserved; candidate original faint edge pixels retained rather than cut. Native padded intermediate omitted from checkpoint because reconstructible, source and normalized cells preserved.
+- Source scale common.13, chest X158 and hover Y203; author anatomy inspection only, not runtime anchor/physical-phone acceptance.
+- Current player message authorizes record/handoff, not unseen GIF approval. Stop after presentation. No runtime/product/test suite/build/browser/deploy/Special.
+- Author self-review, not independent review (player explicitly requires no delegation).

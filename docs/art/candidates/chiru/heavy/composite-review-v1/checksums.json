@@ -1,0 +1,254 @@
+[
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/F1-safe-cell.png",
+    "bytes": 43711,
+    "sha256": "8a1ea89405c406b724a75d5bc05d123687af895e2e84c211ae3f43e90a584d71",
+    "gitBlob": "89cfb454a71479750906880c68e7938850d93e4f"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/F2-safe-cell.png",
+    "bytes": 45397,
+    "sha256": "fb8da13ef8a925df7b3148e55cfa2f5ae1270d7f7d9ea79fb5b3369b2a6c203e",
+    "gitBlob": "ba27bfc465583b6131164b6d77efe9a821da1cc1"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/F3-safe-cell.png",
+    "bytes": 46752,
+    "sha256": "b13552025f7b7b7d57ad85a1cadf6e8345241fab2a9d3280c123da67c2032881",
+    "gitBlob": "2190bb58b9278c88772c1565d94faea04dd4855f"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/F4-safe-cell.png",
+    "bytes": 42183,
+    "sha256": "e215fdb0e2667442239ad636474fb96533706c40f0e5d4bb6f0249b23059a01e",
+    "gitBlob": "88e49c6d4ab8d8f8e3f97959795a119a71618a94"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/REVIEW.md",
+    "bytes": 3174,
+    "sha256": "d656dbd8a4787bec2bac6329666b1332bc12ff20e040c49f9e32acc68774ab7c",
+    "gitBlob": "5441cce1120754e7f120b602ba107c2c60b6f8fd"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/approved-idle-return-cell.png",
+    "bytes": 45176,
+    "sha256": "e0e00ad64ca81187b2e9e4115d02ca55cafd440a481b38cdc7c64044f80ec314",
+    "gitBlob": "4f062e0043f92f387ac6a9df2e6ca0853bae289f"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/charge-display.png",
+    "bytes": 11493,
+    "sha256": "76d38fadbc5d0a4307f1a489c517d3ab1930c8b321a56d6107c2ac1280b8656d",
+    "gitBlob": "c2f92b416c821c677a530f0eda5a240507f60ebe"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-idle-return.gif",
+    "bytes": 388594,
+    "sha256": "7c05eeba0212b29b32c968213e0d6a98fd8f2a4741ad2c8d8598667a3bffc0cf",
+    "gitBlob": "8059c7dd2579e64ecee530045f5ba66d8737567c"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-idle-return.gif.timeline.json",
+    "bytes": 2094,
+    "sha256": "03b17bfd4c59b46a550e4811ead896622ff55d744ed7d3b9f23d161fa1b64b31",
+    "gitBlob": "39ba420f649a58f2c9acc2040cf65e071a935dd5"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-mirror.gif",
+    "bytes": 564982,
+    "sha256": "5c8a85c06ab1499c75ae159aa87905f241093b7ae88a822ff345ca8870cadc95",
+    "gitBlob": "9509ac7716afe4ecf9bb1bcb3d32ef4e9ef97142"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-mirror.gif.timeline.json",
+    "bytes": 2089,
+    "sha256": "9cdbbfb923c88f265fdcb1969495ec62f3bf02aba0ce517ed90cd89316de4eee",
+    "gitBlob": "068f7ebd0c378bf5a9ce568c4b638eaffe6898dd"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-miss.gif",
+    "bytes": 504451,
+    "sha256": "b617d45b44950b6cd704335ebe6171366cd08ebb041593c25c8fb8dec438b774",
+    "gitBlob": "1b8c3363dcc8e447e6733a71444ba3fb0ad1f810"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-miss.gif.timeline.json",
+    "bytes": 2094,
+    "sha256": "03b17bfd4c59b46a550e4811ead896622ff55d744ed7d3b9f23d161fa1b64b31",
+    "gitBlob": "39ba420f649a58f2c9acc2040cf65e071a935dd5"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-noFX.gif",
+    "bytes": 388594,
+    "sha256": "7c05eeba0212b29b32c968213e0d6a98fd8f2a4741ad2c8d8598667a3bffc0cf",
+    "gitBlob": "8059c7dd2579e64ecee530045f5ba66d8737567c"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-noFX.gif.timeline.json",
+    "bytes": 2094,
+    "sha256": "03b17bfd4c59b46a550e4811ead896622ff55d744ed7d3b9f23d161fa1b64b31",
+    "gitBlob": "39ba420f649a58f2c9acc2040cf65e071a935dd5"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-normal.gif",
+    "bytes": 568310,
+    "sha256": "b169c974a761e850fac53549414da3267cc9d0adcba359e806c6ffcfd750165a",
+    "gitBlob": "61882cdb0b646664aa593aadbd117a7113c7a1b8"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-normal.gif.timeline.json",
+    "bytes": 2089,
+    "sha256": "9cdbbfb923c88f265fdcb1969495ec62f3bf02aba0ce517ed90cd89316de4eee",
+    "gitBlob": "068f7ebd0c378bf5a9ce568c4b638eaffe6898dd"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-reduced.gif",
+    "bytes": 624168,
+    "sha256": "c7974536baf787fb3227693487a762fc48abd9619d8d4cdcc3ebb066e4dbd42c",
+    "gitBlob": "1fc6a9fed35512f17996846cc6175587b274f7d2"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-reduced.gif.timeline.json",
+    "bytes": 2089,
+    "sha256": "9cdbbfb923c88f265fdcb1969495ec62f3bf02aba0ce517ed90cd89316de4eee",
+    "gitBlob": "068f7ebd0c378bf5a9ce568c4b638eaffe6898dd"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-slow.gif",
+    "bytes": 568310,
+    "sha256": "8b3aa17becb03dc58989b1e35fbc6d61f42d22486af18f8b3c9a0c7a481f08d0",
+    "gitBlob": "7e5064a61674fea99042e52429dfe40c57535f31"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-slow.gif.timeline.json",
+    "bytes": 2101,
+    "sha256": "804ed62669cc81d80cf0dd3b863741770085c0d97e1fdd23274fe52d74ee54b7",
+    "gitBlob": "4fcda3908e05b0c277e30d4bd1e9f9a5541c41ee"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/column-display.png",
+    "bytes": 65537,
+    "sha256": "aba1f5324d377e7c24256d2f99b588d9a80cb1406727cf1d0e8f32da9b2353db",
+    "gitBlob": "23908740e85fc39d78350295815b4ffbd327db64"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/contact-preview.png",
+    "bytes": 160047,
+    "sha256": "b35fcdbda708fddd4571601837db5461d37a153f6bf434e99eac5a6c36be4cc5",
+    "gitBlob": "50294ec63f69ac360eb189baaa8a60d60dc04f2f"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/four-equal-cells.png",
+    "bytes": 176981,
+    "sha256": "0511f250c0c891867d0c940b2b162dea56c032b7ded09924ee984659c57d4355",
+    "gitBlob": "267c7d1d890325f7c27c75abfd2bc8c830794948"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/fx-light-dark-QA.png",
+    "bytes": 197280,
+    "sha256": "54184744d5790762e51bf1ad8e38ec065e3de3ea8bc74ce44c3a638756543ac4",
+    "gitBlob": "5dff0266879e0343386ae8de34ea7f9e9f85f854"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic-noFX.gif",
+    "bytes": 319666,
+    "sha256": "7f109657d9c32e39d4d9eea866defcce62294c4e10b3bce5a24404e51e6cff93",
+    "gitBlob": "d29b026eb96073eeb95b7329b34fa6922c25a68a"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic-noFX.gif.timeline.json",
+    "bytes": 2482,
+    "sha256": "1d49a0c7f4f8dc206a4685773a158de565981360ee8254d66c25d57e06f41044",
+    "gitBlob": "09504b70122be153fd978672f7e2a5b7c78be8ba"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic.gif",
+    "bytes": 756778,
+    "sha256": "d68c8ebed28b9b3006e4aad9af7774ca3565ed0f31024baa099425a0984a9d94",
+    "gitBlob": "0a2fbe5d2ec7cd024a84653145dbfb142e7a73a0"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic.gif.timeline.json",
+    "bytes": 2477,
+    "sha256": "6029420207dd091a57ddacc569ec6d06d54dc04697989270c876dbfe05b51973",
+    "gitBlob": "264c29807847ec393a2e43d72f0b0b4c970b4b64"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/impact-display.png",
+    "bytes": 39852,
+    "sha256": "8093e1130da9065563ddab38818885f454c6d9ad03924c1d125a829f39919d6b",
+    "gitBlob": "22d476f06d065f8dafa311c33f2ba1d9331550ad"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/manifest.json",
+    "bytes": 10054,
+    "sha256": "c24b8970d432b720d8b4cf9b8c7d25646a8fbe024c2b6e54c323e04e0a5b54fd",
+    "gitBlob": "ce46f416477d862ea69e5a73a5e59b0a9f1256f0"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/normal-contact-sheet.png",
+    "bytes": 361648,
+    "sha256": "b21c858f6ac2beebe67d987da95ef64365ba3c886fcebf79c5c5aefc6843ab66",
+    "gitBlob": "6ea0bc1f6bdfe32117188f5f311a67ce6aa62e1b"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F1.png",
+    "bytes": 1316220,
+    "sha256": "f4e440af16e32ed745b44a091a4c77c8426f117c44c89a66cc21156aa84382a9",
+    "gitBlob": "3a94ddabf57803c240fcb83a4bd15cfffbd05564"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F2.png",
+    "bytes": 1413752,
+    "sha256": "8cd0da4da82e76892515e245c51d5c52f39636ba44eec0fa0281fd99b5555f02",
+    "gitBlob": "a7594706ad8c7057e406ab301250275e678a87b9"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F4.png",
+    "bytes": 1271147,
+    "sha256": "211486c178da48c58b3cc8f7acfb8fba189724d621ec62f1ed37ccdf46666410",
+    "gitBlob": "87ee0573356c5c85948ffb153233307d14b37a7d"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/charge.png",
+    "bytes": 1970869,
+    "sha256": "2a0f11be62c1b24a6de3c92eba343748b59bfabe638081f857ef091e64b3c13e",
+    "gitBlob": "e8cb4e11f14b18faec46bac35da29b00b13dad4c"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/column.png",
+    "bytes": 1481607,
+    "sha256": "e7105c43de59a83d1dce94cafdb00e3071358a4ca2b1a2f705d1e994b367db72",
+    "gitBlob": "3f32f65379cd05ca44bc42bfeaf6762d86bd50e7"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/impact.png",
+    "bytes": 1957205,
+    "sha256": "504f97c058d5716400da4367895402665eb14c81bcdc16774c733d5af1030e60",
+    "gitBlob": "671021844f8ae535cdee2a3e499549157a0aae3e"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/poses-light-dark-QA.png",
+    "bytes": 361337,
+    "sha256": "d66e98980ecf6e5bc846fbaaaea7c62960a8a71c1b0c9ee93f3c471158341786",
+    "gitBlob": "7cf4c31048d7564ba9f28806a4931c37cab6ef81"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/prepare_preview.py",
+    "bytes": 11356,
+    "sha256": "d2b0fd57885f0d817d1916f1e2c5b8b20ccbc6a624b867cec48a0eaba9dc3083",
+    "gitBlob": "5af96d1487df5e57b2c754a1722ca2ec4cee6586"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/prompts.json",
+    "bytes": 5242,
+    "sha256": "2fb550542f0f741fbc33499acf87c30485e47f4416b804fcdd3af8f162d4a871",
+    "gitBlob": "2f661a7b7c977c394ee6eb2f70af79e371458052"
+  },
+  {
+    "path": "docs/art/candidates/chiru/heavy/composite-review-v1/tier-timeline.json",
+    "bytes": 587,
+    "sha256": "53c60205f7e2d296fee9801223c1a597036a65c992bfdd1e81715762253a956c",
+    "gitBlob": "ce7ddfee04c9bfacd248b4cbc4b3325d9ba4b0de"
+  }
+]
