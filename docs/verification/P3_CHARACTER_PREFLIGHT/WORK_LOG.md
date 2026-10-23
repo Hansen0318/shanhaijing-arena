@@ -1,3 +1,13 @@
+## 2026-10-23 — Basic 水矢 F3 v2 玩家核准；其餘姿勢與單招GIF ACTIVE
+
+玩家原文「確認，紀錄，繼續」核准上次展示F3 v2；精確收據 docs/art/approved/chiru/basic/f3-v2/acceptance.json，source SHA256 503eec8bb7f959aa26b07a8076eeb8f686f4d4698bead83b28ed8392d109e4d5。F3 Gate CLOSED，不重問或重生此圖。接續F1/F2/F4與獨立起手凝水／短水矢／命中水花，再400ms動作GIF（120/60/100/120，180ms F3生效）供玩家審核；新姿勢/GIF/Runtime尚未核准。Basic未驗收不得Heavy。Git CLI push缺少憑證，改用GitHub連接器保存，待遠端讀回驗證才宣稱已同步。
+
+## 2026-10-23 — Basic 水矢 F3 v2：受損候選重建，單招玩家審核待回覆
+
+恢復982e21ab59bd1701c5796d55d9bda7e477f736a2，PR#1 open/unmerged。舊batch basic-f3.png及originals/basic-f3.png皆完整解碼失敗，Git object與checkout一致，且不符舊manifest hash；不能以舊自審當成合格素材。保留全部舊檔。使用核准Idle/identity經imagegen重建單招候選 docs/art/candidates/chiru/basic/f3-v2/basic-f3.png，manifest記錄錯誤、hash、RGBA/完整解碼與視覺自審。新圖可完整解碼，右向、畫面右側水環、單手前推；這是作者自審，非玩家核准。尚未runtime尺度/anchor正規化。
+
+唯一下一Gate：玩家審核Basic F3 v2；核准才存精確收據並進Basic其餘姿勢/獨立VFX/GIF。不開始Heavy或其他技能，不改approved master/receipt/src/public，不部署。spec/proposal/baseline hash仍一致；舊流程decision被525d46e加歷史標記，原呈交commit的decision hash與規格收據一致，原收據保留不改。沿用最新逐招決策。
+
 # SDD ledger — plan: docs/superpowers/plans/2026-10-23-chiru-whole-character.md
 
 ## 2026-10-23 — 最新玩家指令：撤銷整包開發，恢復逐招完整流程（最高優先）

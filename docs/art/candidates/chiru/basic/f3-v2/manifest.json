@@ -1,0 +1,33 @@
+{
+  "status": "CANDIDATE / PLAYER REVIEW PENDING",
+  "recoveredHead": "982e21ab59bd1701c5796d55d9bda7e477f736a2",
+  "reason": "Previous tracked basic candidate and original fail full PNG decode; checked-out bytes match Git object. Candidate sha256 differs from old manifest. Original files retained unchanged.",
+  "previousActualSha256": "a3e746022b9841fdd768c964ecd5a204f2fe50299f0131acd5a841ae15f8119f",
+  "previousManifestSha256": "66b5484bdadbef21043bbbfdd022d70911512d172411d45f9bf47ca20787b166",
+  "path": "docs/art/candidates/chiru/basic/f3-v2/basic-f3.png",
+  "sha256": "503eec8bb7f959aa26b07a8076eeb8f686f4d4698bead83b28ed8392d109e4d5",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alphaBounds": [
+    47,
+    19,
+    1225,
+    1230
+  ],
+  "fullDecode": "PASS",
+  "references": {
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "public/assets/characters/chiru/identity.png": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a"
+  },
+  "visualInspection": "Right-facing; orb/ring on screen-right; single forward open hand, rear hand drawn in; red/cream/cyan fins and hover anatomy retained. Author inspection only; player identity/pose approval pending. Not runtime-normalized; scale/anchor validation remains later Gate.",
+  "runtimeChanged": false,
+  "deployed": false,
+  "specReceiptNote": "Spec/proposal/baseline hashes match. Old workflow decision changed by historical banner commit525d46e; original decision at presentedCheckpoint2d7730c matches receipt. Receipt preserved."
+}

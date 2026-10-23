@@ -1,0 +1,15 @@
+{
+  "status": "BASIC F3 v2 / PLAYER ART APPROVED",
+  "recordedDate": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "確認，紀錄，繼續",
+  "source": "docs/art/candidates/chiru/basic/f3-v2/basic-f3.png",
+  "sha256": "503eec8bb7f959aa26b07a8076eeb8f686f4d4698bead83b28ed8392d109e4d5",
+  "scope": "Player approved displayed Basic 水矢 F3 v2 appearance, screen-right water ring and single palm thrust; proceed to remaining Basic poses, independent VFX and composite GIF.",
+  "notApproved": [
+    "Unseen F1/F2/F4",
+    "Unseen VFX or GIF",
+    "Runtime or deployed game"
+  ],
+  "protectedMaster": "Keep source bytes immutable; runtime packing uses derivatives only."
+}
