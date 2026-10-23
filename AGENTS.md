@@ -1,3 +1,7 @@
+## 2026-10-24 — Heavy GIF PLAYER APPROVED；Runtime / 部署 ACTIVE
+
+玩家明確「我確認了heavy動畫，我核准，繼續部署讓我測試遊戲嗎，是的話就開始」，後續「未完成就繼續」。精確收據 docs/art/approved/chiru/heavy/composite-review-v1/acceptance.json 綁定 b5ba0bc 的既有姿勢/FX/9GIF。GIF Gate CLOSED，直接Heavy Runtime/必要驗證/正常部署；遊戲玩家驗收尚未完成，不開始Special。單target有限lane、鎖定aim、發射後350ms真結算、miss無target爆浪與所有既有保護保持。前次本機未push內容被暫存清理，此次恢復並用連線API checkpoint。
+
 ## 2026-10-23 — Heavy 湧浪動作／獨立VFX／9種GIF已保存；玩家GIF審核NEXT
 
 沿用已核准F3 v3，完整解碼/hash通過，原檔及收據未改。新F1/F2/F4、壓縮水環/粗浪柱/單target爆浪、normal/slow/noFX/miss/mirror/Idle-return/reduced及兩種Basic等尺度對照位於 docs/art/candidates/chiru/heavy/composite-review-v1/REVIEW.md。原圖/prompts/manifest/tier timeline/重建script/明暗底QA/逐GIF時序與checksums齊備；共同.13尺度/chestX158/hoverY203、安全邊界及RGBA/鏡像/strip反貼、9GIF解碼/hash/播放時長/像素時序核對通過。作者視覺自審，非Runtime或實機證明。
