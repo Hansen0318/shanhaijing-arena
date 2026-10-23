@@ -1,0 +1,34 @@
+{
+  "tool": "built-in image_gen",
+  "prompts": [
+    [
+      "F1",
+      "Use case: identity-preserve. Game animation F1 anticipation, ONE full-body transparent character only, no panels no text. Input 1 is the APPROVED Heavy F3 reference: preserve exactly its species face, crimson/cream fins, cyan markings, turquoise drop earring on visible left side, proportions and flat cel-shaded line style. Input 2 is approved battleIdle for identity. Create the earlier Heavy wind-up: torso coils back toward screen LEFT while face looks RIGHT, BOTH elbows deeply bent at different heights, hands gathering the existing small cyan water orb low near left side of waist for a later cross-body sweeping release. Upper hand above orb, lower hand cupping below, strong visible negative spaces. Counter-curve long fin tails toward screen RIGHT in anticipation, body hovering with no feet/ground. This must differ strongly from Basic single straight palm push. Keep head, torso and hover-bottom at same relative scale as reference. Full silhouette comfortably within canvas with at least 6% transparent padding all sides, no cut tips. Only existing small held orb; NO added VFX, no attack beam, no impact. Facing canonical RIGHT. No redesign, no clothing or accessories added."
+    ],
+    [
+      "F2",
+      "Use case: identity-preserve. ONE full-body game character pose F2 on transparent background. Match input approved Heavy F3 exactly: same crimson cream cyan aquatic humanoid, species face, visible turquoise drop earring, fin silhouette and cel shading. Pre-release strongest compression pose: face RIGHT, torso twisted LEFT, shoulders wound back, both elbows bent at DIFFERENT heights, upper hand just above tightly held small cyan orb and lower hand below at waist center, ready to sweep diagonally across body to the RIGHT as approved F3. Torso compressed, counter-curved tails flowing RIGHT behind anticipation; NO straight single-arm thrust. Keep same head/torso proportions, full hovering fin bottom, no feet. Six percent clear transparent safety margin every side. No added VFX outside held orb, no beam, no text, no panels, no new equipment."
+    ],
+    [
+      "F4",
+      "Use case: identity-preserve. ONE full-body game character recovery pose F4 on transparent background. Match input approved Heavy F3 exactly: crimson/cream/cyan aquatic humanoid, same species face, turquoise drop earring on visible side, fin count identity and crisp cel shading. AFTER cross-body Heavy water-ring release toward RIGHT: torso unwinds toward neutral, BOTH arms retract in rounded bent positions at differing heights, one hand near chest and other near waist, small existing held cyan orb settling between hands. Head looks RIGHT. Long fins and tail have gentle LEFT follow-through, suspended hovering no feet. Visibly quieter than F3 and compatible with input battleIdle return. Same head and body scale/proportions. Complete silhouette, 6 percent transparent padding on all sides. No beams, no impact, no added VFX, no panels no text no new accessories."
+    ],
+    [
+      "charge",
+      "Game standalone VFX master, transparent background, ONE compact compressed cyan water ring seen obliquely from side, facing RIGHT. NO character. A thick elliptical liquid torus with two inward-curving crescent streams and a small dark turquoise central hole, white sharp foam accents. Stylized crisp anime cel shading, broad clean shapes, few droplets, cyan/teal/white. Heavy attack charge visual, circular compression rather than Basic tiny bead. No radial explosion, no long beam, no glow haze or background. All droplets within generous 12 percent transparent padding. No panels, no text."
+    ],
+    [
+      "column",
+      "Game standalone VFX master, transparent background, ONE horizontal broad heavy surging water COLUMN directed LEFT TO RIGHT. No character. Thick turquoise liquid core braided with 2 broad cyan spiral ribbons, white foam crest at blunt rounded RIGHT front, tapered short rear at LEFT. Strong clean anime cel-shaded chunky shapes and black-teal crisp outlines, compact few droplets, legible small. This is a finite straight lane attack, NOT a cone, not a radial blast or ocean scene. Entire water column and spray inside 12% transparent margin. Width about 3 times height. No target explosion, no characters, no text, no panels, no background."
+    ],
+    [
+      "impact",
+      "Game standalone VFX master, transparent background. ONE localized Heavy water-hit explosion, NO character. A bold cyan/turquoise breaking-wave crown erupting around a single central contact, three chunky outward curling wave lobes, white sharp foam wedges and a few large cyan droplets. Strong central bright white contact notch, stylized anime cel shading broad flat shape blocks crisp outline. Heavier and broader than a small arrow splash, but localized ONE target, not full-screen, no circular shockwave, no terrain, no ocean. All tips and droplets comfortably within 12% transparent padding, no clipped edge. No text, no panels, no beam."
+    ]
+  ],
+  "referenceRoles": {
+    "F3": "approved exact pose, immutable; reference only for new poses",
+    "Idle": "approved identity / return"
+  },
+  "status": "new F1/F2/F4/FX unapproved candidates"
+}
