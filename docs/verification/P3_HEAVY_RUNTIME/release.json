@@ -1,0 +1,60 @@
+{
+  "releaseCommit": "4b8552650798a5bc5a23c6b411a40ef86abadcaf",
+  "releaseTree": "a726b44da2cb27875c19e88e4dabe07aaa1a55d7",
+  "pagesRun": 40037402312,
+  "buildJob": 120700424740,
+  "deployJob": 120701557955,
+  "p2": {
+    "id": 40037402354,
+    "status": "in_progress",
+    "conclusion": null
+  },
+  "status": "ENGINEERING / NORMAL PAGES / PUBLIC PASS; PLAYER HEAVY GAME ACCEPTANCE PENDING",
+  "tests": {
+    "total": 1124,
+    "pass": 1124,
+    "fail": 0
+  },
+  "nativeHeavyCases": 32,
+  "builtHeavyCases": 4,
+  "basicCompatibilityNativeCases": 32,
+  "basicCompatibilityBuiltCases": 4,
+  "sourceGuardFiles": 588,
+  "ciLocalPublicFiles": 157,
+  "freshPublicFiles": 7,
+  "reusedExactPublicFiles": 150,
+  "p1p2Compatibility": {
+    "run": 40037402283,
+    "status": "SUCCESS",
+    "P2PassiveNative": 16,
+    "P2PassiveBuilt": 8,
+    "P1PassiveNative": 16,
+    "P1PassiveBuilt": 8,
+    "P2AwakeningNative": 4,
+    "P2AwakeningBuilt": 2,
+    "P2ScaleCases": 2,
+    "CollectionNative": 5,
+    "CollectionBuilt": 5
+  },
+  "standaloneP2Note": "Separate run40037402354 still active at last read; not claimed PASS. Same P2 native4/built2/scale2 source verified PASS in successful P1 compatibility run; no duplicate rerun needed.",
+  "artifacts": [
+    {
+      "id": 12537319052,
+      "sha256": "17d31d397e9931e8700fa00d63384ff695c360ab8d28f34706edf00e64cb3f47",
+      "crc": "PASS"
+    },
+    {
+      "id": 12538235932,
+      "sha256": "967fac2cbc94db86514b085b73d8f111fe4597aeb8fd5242c16923dd09e8c649",
+      "crc": "PASS"
+    },
+    {
+      "id": 12537996094,
+      "sha256": "59867161ea4c676aeea35112b330de88ed275bbdca67736a798284cb35494557",
+      "crc": "PASS"
+    }
+  ],
+  "physicalPhone": false,
+  "playerRuntimeAccepted": false,
+  "nextGate": "Present deployed Heavy to player; do not start Special before explicit game acceptance."
+}

@@ -1,0 +1,382 @@
+{
+  "kind": "Native WebGL observed AoE/status/scale/cleanup",
+  "physicalPhone": false,
+  "cases": [
+    {
+      "reduced": false,
+      "sign": -1,
+      "initial": {
+        "renderer": 2,
+        "ready": true,
+        "keys": 57,
+        "bytes": 20054764,
+        "hp": 245,
+        "before": 245,
+        "delay": 0.8189999999999998,
+        "newKeys": true
+      },
+      "hit": {
+        "frame": "400.0.200.200",
+        "width": 200,
+        "height": 200,
+        "origin": [
+          0.5,
+          0.97
+        ],
+        "flipX": true,
+        "hp": 171.4481,
+        "contacts": [
+          "e1",
+          "e2"
+        ],
+        "bodyTexture": "visual.1.botuo.awakeningPoses",
+        "statuses": [
+          {
+            "targetId": "a1",
+            "magnitude": 0.135,
+            "lifetime": 3.75,
+            "presentationSource": {
+              "abilityId": "P2.awakening",
+              "category": "awakening",
+              "effectId": "boyi.team"
+            }
+          },
+          {
+            "targetId": "a2",
+            "magnitude": 0.135,
+            "lifetime": 3.75,
+            "presentationSource": {
+              "abilityId": "P2.awakening",
+              "category": "awakening",
+              "effectId": "boyi.team"
+            }
+          }
+        ],
+        "auras": [
+          "source-status.a1.earth-mitigation",
+          "source-status.a2.earth-mitigation"
+        ],
+        "release": 523
+      },
+      "file": "native-normal--1.png",
+      "pause": true,
+      "expiry": 0,
+      "restart": {
+        "oldClosed": true,
+        "oldBytes": 0,
+        "newReady": true,
+        "newBytes": 20054764
+      },
+      "sampling": []
+    },
+    {
+      "reduced": false,
+      "sign": 1,
+      "initial": {
+        "renderer": 2,
+        "ready": true,
+        "keys": 57,
+        "bytes": 20054764,
+        "hp": 245,
+        "before": 245,
+        "delay": 0.8189999999999998,
+        "newKeys": true
+      },
+      "hit": {
+        "frame": "400.0.200.200",
+        "width": 200,
+        "height": 200,
+        "origin": [
+          0.5,
+          0.97
+        ],
+        "flipX": false,
+        "hp": 171.4481,
+        "contacts": [
+          "e1",
+          "e2"
+        ],
+        "bodyTexture": "visual.1.botuo.awakeningPoses",
+        "statuses": [
+          {
+            "targetId": "a1",
+            "magnitude": 0.135,
+            "lifetime": 3.75,
+            "presentationSource": {
+              "abilityId": "P2.awakening",
+              "category": "awakening",
+              "effectId": "boyi.team"
+            }
+          },
+          {
+            "targetId": "a2",
+            "magnitude": 0.135,
+            "lifetime": 3.75,
+            "presentationSource": {
+              "abilityId": "P2.awakening",
+              "category": "awakening",
+              "effectId": "boyi.team"
+            }
+          }
+        ],
+        "auras": [
+          "source-status.a1.earth-mitigation",
+          "source-status.a2.earth-mitigation"
+        ],
+        "release": 523
+      },
+      "file": "native-normal-1.png",
+      "pause": true,
+      "expiry": 0,
+      "restart": {
+        "oldClosed": true,
+        "oldBytes": 0,
+        "newReady": true,
+        "newBytes": 20054764
+      },
+      "sampling": [
+        {
+          "frame": 0,
+          "flip": false,
+          "maxDelta": 1,
+          "meanDelta": 0.00000496031746031746
+        },
+        {
+          "frame": 0,
+          "flip": true,
+          "maxDelta": 1,
+          "meanDelta": 0.0000037202380952380952
+        },
+        {
+          "frame": 1,
+          "flip": false,
+          "maxDelta": 1,
+          "meanDelta": 0.0000028935185185185184
+        },
+        {
+          "frame": 1,
+          "flip": true,
+          "maxDelta": 1,
+          "meanDelta": 8.267195767195768e-7
+        },
+        {
+          "frame": 2,
+          "flip": false,
+          "maxDelta": 1,
+          "meanDelta": 0.000004133597883597884
+        },
+        {
+          "frame": 2,
+          "flip": true,
+          "maxDelta": 1,
+          "meanDelta": 0.000005787037037037037
+        },
+        {
+          "frame": 3,
+          "flip": false,
+          "maxDelta": 1,
+          "meanDelta": 0.00000496031746031746
+        },
+        {
+          "frame": 3,
+          "flip": true,
+          "maxDelta": 1,
+          "meanDelta": 0.000004546957671957672
+        }
+      ]
+    },
+    {
+      "reduced": true,
+      "sign": -1,
+      "initial": {
+        "renderer": 2,
+        "ready": true,
+        "keys": 57,
+        "bytes": 20054764,
+        "hp": 245,
+        "before": 245,
+        "delay": 0.8189999999999998,
+        "newKeys": true
+      },
+      "hit": {
+        "frame": "400.0.200.200",
+        "width": 200,
+        "height": 200,
+        "origin": [
+          0.5,
+          0.97
+        ],
+        "flipX": true,
+        "hp": 171.4481,
+        "contacts": [
+          "e1",
+          "e2"
+        ],
+        "bodyTexture": "visual.1.botuo.awakeningPoses",
+        "statuses": [
+          {
+            "targetId": "a1",
+            "magnitude": 0.135,
+            "lifetime": 3.75,
+            "presentationSource": {
+              "abilityId": "P2.awakening",
+              "category": "awakening",
+              "effectId": "boyi.team"
+            }
+          },
+          {
+            "targetId": "a2",
+            "magnitude": 0.135,
+            "lifetime": 3.75,
+            "presentationSource": {
+              "abilityId": "P2.awakening",
+              "category": "awakening",
+              "effectId": "boyi.team"
+            }
+          }
+        ],
+        "auras": [
+          "source-status.a1.earth-mitigation",
+          "source-status.a2.earth-mitigation"
+        ],
+        "release": 523
+      },
+      "file": "native-reduced--1.png",
+      "pause": true,
+      "expiry": 0,
+      "restart": {
+        "oldClosed": true,
+        "oldBytes": 0,
+        "newReady": true,
+        "newBytes": 20054764
+      },
+      "sampling": []
+    },
+    {
+      "reduced": true,
+      "sign": 1,
+      "initial": {
+        "renderer": 2,
+        "ready": true,
+        "keys": 57,
+        "bytes": 20054764,
+        "hp": 245,
+        "before": 245,
+        "delay": 0.8189999999999998,
+        "newKeys": true
+      },
+      "hit": {
+        "frame": "400.0.200.200",
+        "width": 200,
+        "height": 200,
+        "origin": [
+          0.5,
+          0.97
+        ],
+        "flipX": false,
+        "hp": 171.4481,
+        "contacts": [
+          "e1",
+          "e2"
+        ],
+        "bodyTexture": "visual.1.botuo.awakeningPoses",
+        "statuses": [
+          {
+            "targetId": "a1",
+            "magnitude": 0.135,
+            "lifetime": 3.75,
+            "presentationSource": {
+              "abilityId": "P2.awakening",
+              "category": "awakening",
+              "effectId": "boyi.team"
+            }
+          },
+          {
+            "targetId": "a2",
+            "magnitude": 0.135,
+            "lifetime": 3.75,
+            "presentationSource": {
+              "abilityId": "P2.awakening",
+              "category": "awakening",
+              "effectId": "boyi.team"
+            }
+          }
+        ],
+        "auras": [
+          "source-status.a1.earth-mitigation",
+          "source-status.a2.earth-mitigation"
+        ],
+        "release": 523
+      },
+      "file": "native-reduced-1.png",
+      "pause": true,
+      "expiry": 0,
+      "restart": {
+        "oldClosed": true,
+        "oldBytes": 0,
+        "newReady": true,
+        "newBytes": 20054764
+      },
+      "sampling": []
+    }
+  ],
+  "errors": [],
+  "current": {
+    "reduced": true,
+    "sign": 1,
+    "initial": {
+      "renderer": 2,
+      "ready": true,
+      "keys": 57,
+      "bytes": 20054764,
+      "hp": 245,
+      "before": 245,
+      "delay": 0.8189999999999998,
+      "newKeys": true
+    },
+    "hit": {
+      "frame": "400.0.200.200",
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.97
+      ],
+      "flipX": false,
+      "hp": 171.4481,
+      "contacts": [
+        "e1",
+        "e2"
+      ],
+      "bodyTexture": "visual.1.botuo.awakeningPoses",
+      "statuses": [
+        {
+          "targetId": "a1",
+          "magnitude": 0.135,
+          "lifetime": 3.75,
+          "presentationSource": {
+            "abilityId": "P2.awakening",
+            "category": "awakening",
+            "effectId": "boyi.team"
+          }
+        },
+        {
+          "targetId": "a2",
+          "magnitude": 0.135,
+          "lifetime": 3.75,
+          "presentationSource": {
+            "abilityId": "P2.awakening",
+            "category": "awakening",
+            "effectId": "boyi.team"
+          }
+        }
+      ],
+      "auras": [
+        "source-status.a1.earth-mitigation",
+        "source-status.a2.earth-mitigation"
+      ],
+      "release": 523
+    }
+  },
+  "status": "PASS"
+}
