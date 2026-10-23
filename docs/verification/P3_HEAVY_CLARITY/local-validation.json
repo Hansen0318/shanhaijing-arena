@@ -1,0 +1,28 @@
+{
+  "status": "LOCAL PASS / REAL BROWSER AND DEPLOYMENT PENDING",
+  "releaseCommit": "30423cccd448971ce0948dfefaaead1406762248",
+  "tests": {
+    "total": 1129,
+    "passCount": 1129,
+    "fail": 0
+  },
+  "build": "PASS",
+  "diffCheck": "PASS",
+  "approvedImages": "UNCHANGED",
+  "opacity": {
+    "charge": [
+      0.85,
+      1
+    ],
+    "flight": 1,
+    "impact": 1,
+    "holdMs": 120,
+    "fadeMs": 130
+  },
+  "scope": "Shared launched-line playback and optional independent impact plateau; no gameplay/geometry/source-art changes",
+  "notClaimed": [
+    "Local Browser",
+    "Physical phone",
+    "Unseen clarity player acceptance"
+  ]
+}

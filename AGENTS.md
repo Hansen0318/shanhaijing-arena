@@ -1,3 +1,11 @@
+## 2026-10-24 — Heavy整體核准已記錄；發射／命中清晰度修正已部署
+
+玩家整體Heavy核准收據 docs/art/approved/chiru/heavy/runtime-v1/acceptance.json 保持；本次直接授權的清晰度修正release30423cccd448971ce0948dfefaaead1406762248已正常部署。主要原因是程式額外alpha（flight.75/reduced.35、reduced hit.65）與命中立即淡出，核准PNG柔邊保留。現在flight與真hit主體alpha1，hit保持120ms後130ms淡出、獨立250ms生命週期可跨接續Basic；減動保持固定lane但不再變淡。四張Runtime PNG及全部核准masters/收據bytes、尺度/anchor/ground/左右鏡像保持；350ms真結算/單target有限lane/miss無爆浪/傷害時序保持。
+
+正常Pages40039766197 build120707823374/deploy120708921318 SUCCESS；1129/1129、Build、596來源guard、Heavy native32/built4與Basic native32/built4 PASS；P1相容40039766198及獨立P240039766209 SUCCESS。CI/local157逐bytes與公開157/157（3fresh＋154同path/bytes/hash沿用）PASS，三artifact SHA256/ZIP CRC PASS。證據 docs/verification/P3_HEAVY_CLARITY/{REPORT.md,release.json,release-jobs.json,release-evidence.json,browser/,basic-compatibility/,p1p2-compatibility/,ci-local-build.json,public-fingerprints.json}；舊P3_HEAVY_RUNTIME證據不改。
+
+本次工作已完成，呈交清晰版 https://hansen0318.github.io/shanhaijing-arena/?clarity=30423cc （Lab加battleLab=1），赤鱬H重擊。整體Heavy已核准，不重問；新清晰版未冒稱玩家看過，先等此版觀察回饋，未開始Special。來源未變不重跑suite/Build/Browser/Pages。原生單人、原分支PR#1 open/unmerged，不委派/新branch/worktree/TD/main merge；本次純紀錄checkpoint[skip ci]。下方ACTIVE及舊玩家遊戲核准待回覆屬歷史，由本節覆蓋。
+
 ## 2026-10-24 — Heavy 整體遊戲招式 PLAYER APPROVED；清晰度修正 ACTIVE
 
 玩家「整體招式效果我approved，紀錄，另外解決發射和擊中的效果不夠清楚，看起來像半透明，是圖片關係還是什麼，確認後直接改然後紀錄」核准release4b85526整體Heavy並直接授權修正發射/命中清晰度。收據 docs/art/approved/chiru/heavy/runtime-v1/acceptance.json 保留精確範圍與hash；不撤回整體核准，也不冒稱新清晰版已被看過。先完成此修正，不開始Special。診斷與執行ledger docs/verification/P3_HEAVY_CLARITY/WORK_LOG.md：PNG柔邊透明＋程式flight.75/reduced.35、hit立即fade/reduced.65造成偏淡；保留全部核准圖片bytes與尺度，只修共用launched-line播放alpha/hold，reduced減動不再額外降透明。傷害/真命中350ms延遲/有限lane/miss規則不變。必要新來源驗證、正常部署與新紀錄直接執行。舊「唯一玩家遊戲核准待回覆」已由本節及收據覆蓋。原生單人、同分支PR#1open/unmerged、不新branch/worktree/委派/TD/main merge；純記錄checkpoint[skip ci]。
