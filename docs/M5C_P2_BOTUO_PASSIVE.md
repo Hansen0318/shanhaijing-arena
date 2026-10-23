@@ -1,8 +1,14 @@
 # P2 猼訑獨立被動「厚甲」— 接續入口
 
-2026-10-23：ACTIVE / MECHANISM PREFLIGHT NEXT / NUMERICAL DESIGN NOT YET APPROVED。
+2026-10-23：MECHANISM PREFLIGHT COMPLETE / NEW DESIGN REVIEW PENDING / NOT IMPLEMENTED。
 
 P1疾行v2已PLAYER VERIFIED，見 `docs/art/approved/lushu/passive/runtime-v2/acceptance.json`。玩家要求新Work確認最新GitHub後直接續行P2厚甲，不重問既有授權、不停在純恢復報告。
+
+## 最新已完成切片：厚甲A候選待審
+
+真實來源核對與具體候選：`verification/P2_PASSIVE_PREFLIGHT/REPORT.md`；來源指紋 `status.json`、既有resolver純數值投影 `numerical-projection.json`。A建議：敵人≤2.2單位，或隊友≤2.4且該隊友有敵人≤2.2時，自身獲得T0/T1/T2/T3減傷20/30/40/50%，4秒、觸發起CD8秒。保留MAX與各自到期，無隊友被動減傷。無文字琥珀護甲短弧片，1/2/3/4組、不放大角色。尚未核准/實作/Browser/發布，不冒寫PLAYER APPROVED。
+
+**目前唯一Gate是上述新設計審核，機制前檢已完成，不重做。** 通過後依既有正式規格/計畫/原生單人共用實作流程續行。下方原入口任務保留為恢復歷史，不能把「前檢NEXT」當現況。
 
 ## 已核對事實與下一個具體產出
 

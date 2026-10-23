@@ -1,0 +1,133 @@
+{
+  "status": "PURE NUMERICAL PROJECTION / NOT NEW PASSIVE RUNTIME OR BROWSER EVIDENCE",
+  "method": "Existing CharacterState, BattleStatuses and resolveDamage; equal type, non-critical ATK109 minus DEF9 = 100. Hypothetical self-only statuses inserted for projection; P2.passive remains unimplemented. No session trigger or rendered cue tested.",
+  "rows": [
+    {
+      "tier": "T0",
+      "passiveReduction": 0.2,
+      "duration": 4,
+      "cooldown": 8,
+      "normalizedUnmitigatedDamage": 100,
+      "passiveOnlyDamage": 80,
+      "specialReduction": 0.25,
+      "specialDuration": 4,
+      "specialOnlyDamage": 75,
+      "combinedDamage": 75,
+      "existingProtection": []
+    },
+    {
+      "tier": "T1",
+      "passiveReduction": 0.3,
+      "duration": 4,
+      "cooldown": 8,
+      "normalizedUnmitigatedDamage": 100,
+      "passiveOnlyDamage": 70,
+      "specialReduction": 0.275,
+      "specialDuration": 4.32,
+      "specialOnlyDamage": 72.5,
+      "combinedDamage": 70,
+      "existingProtection": [
+        {
+          "id": "boyi.ally",
+          "name": "護群",
+          "kind": "protect",
+          "category": "special",
+          "recipient": "threatened",
+          "radius": 2.52,
+          "status": {
+            "type": "mitigation",
+            "magnitude": 0.165,
+            "duration": 4.32,
+            "tierScaling": {
+              "duration": true,
+              "strength": true
+            }
+          },
+          "trigger": "post_cast"
+        }
+      ]
+    },
+    {
+      "tier": "T2",
+      "passiveReduction": 0.4,
+      "duration": 4,
+      "cooldown": 8,
+      "normalizedUnmitigatedDamage": 100,
+      "passiveOnlyDamage": 60,
+      "specialReduction": 0.3,
+      "specialDuration": 4.6,
+      "specialOnlyDamage": 70,
+      "combinedDamage": 60,
+      "existingProtection": [
+        {
+          "id": "boyi.ally",
+          "name": "護群",
+          "kind": "protect",
+          "category": "special",
+          "recipient": "threatened",
+          "radius": 2.64,
+          "status": {
+            "type": "mitigation",
+            "magnitude": 0.18,
+            "duration": 4.6,
+            "tierScaling": {
+              "duration": true,
+              "strength": true
+            }
+          },
+          "trigger": "post_cast"
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "passiveReduction": 0.5,
+      "duration": 4,
+      "cooldown": 8,
+      "normalizedUnmitigatedDamage": 100,
+      "passiveOnlyDamage": 50,
+      "specialReduction": 0.3375,
+      "specialDuration": 5,
+      "specialOnlyDamage": 66.25,
+      "combinedDamage": 50,
+      "existingProtection": [
+        {
+          "id": "boyi.ally",
+          "name": "護群",
+          "kind": "protect",
+          "category": "special",
+          "recipient": "threatened",
+          "radius": 2.832,
+          "status": {
+            "type": "mitigation",
+            "magnitude": 0.2025,
+            "duration": 5,
+            "tierScaling": {
+              "duration": true,
+              "strength": true
+            }
+          },
+          "trigger": "post_cast"
+        },
+        {
+          "id": "boyi.team",
+          "name": "鎮守",
+          "kind": "protect",
+          "category": "awakening",
+          "recipient": "team",
+          "radius": 2.832,
+          "status": {
+            "type": "mitigation",
+            "magnitude": 0.135,
+            "duration": 3.75,
+            "tierScaling": {
+              "duration": true,
+              "strength": true
+            }
+          },
+          "trigger": "post_cast"
+        }
+      ]
+    }
+  ]
+}

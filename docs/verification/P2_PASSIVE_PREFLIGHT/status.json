@@ -1,0 +1,64 @@
+{
+  "status": "MECHANISM PREFLIGHT COMPLETE / PROPOSAL REVIEW PENDING",
+  "date": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "recoveredHead": "d6c18d8280adba78962eadb21e38dcb5e6e49962",
+  "recoveredTree": "c6209eb16fe5e7aa9ac9a7ee9294e3477a3d202c",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false,
+    "observedWith": "GitHub get_pr_info"
+  },
+  "initialWorkingTree": "CLEAN (confirmed before this slice; no unrelated untracked files observed)",
+  "sourceSha256": {
+    "src/roster/abilities.js": "54ac34f3a540dd57203901dae797a160392a1f26daa1e23166827754b2e62c62",
+    "src/roster/tierEffects.js": "2f157c7edb1df0873a9c906212c9459699a34ac947489c5b4bb4d11585c026fa",
+    "src/roster/tierScalingProfiles.js": "7c1c597c7e0906d14b2b72844a71d5d6d522ae17988d1d2eabba9074852f735b",
+    "src/combat/passiveDefinition.js": "b51f086eadb049b8a6a1c009f1a4bddad697cdd4bfc292c66f3339a1aa0739d2",
+    "src/combat/passiveRuntime.js": "a80b2e2a2cd9b1099c73045fe6849c22d957de29bc77d8298eafa3559557550c",
+    "src/combat/statuses.js": "5de68368df8246c80f172309c98f94583f443d2e94f69b1aaafddfc1b889585f",
+    "src/combat/statusSchema.js": "21b6b321e67a8bccf1db87763c1630286af745dbb36c176f961cc578bf05e45c",
+    "src/combat/tierEffectRuntime.js": "116625cdc02a94cd1120c4a000e3dea3beb03fd0ac2f365371ba7c5414b7b0fc",
+    "src/combat/combatResolver.js": "7863d6f4361fbcd3b5bcbcf5c0e9cd1f4a45cdd99e07434415a9b66c6a3abb05",
+    "src/combat/battleSession.js": "a71fc53b9bef54288ef1e667287d941882d4bea9d9a7a23d3a561a81dad63cdf",
+    "src/combat/tierEffects.js": "7c79798c6ba726095fb062130d8fb8a9319c6468f6993e372533967b28afacfc",
+    "src/combat/tierScaling.js": "794d631373e7cd8e7d4848101e49f39a6df48e43cd0157dcf4ea7071d788ec5f",
+    "src/collection/model.js": "765ea5a670ad425ddab4326f50a32b0bfb33def0ce9fe1465ba2f4694d8cf67a",
+    "src/collection/view.js": "3fe6dfc33f35af36d5a43196390260fba8f4008f3d19d91b3dfb2919d8d3b6ac",
+    "src/runtime/passivePresenter.js": "b600921e1aaee06c9f995be43bb3dbead6ef99e2e93c38785462b7bda7ab2025",
+    "src/runtime/statusEffects.js": "078190c310d72b60bba4a4f14adce31ecc6165e0cb6e40d4a2c3ae8244d51b77",
+    "src/runtime/assetPresenter.js": "09eb042a820e4e5bca8b3aab32742caad4fdf43876da7bd4c2892f39dea97759"
+  },
+  "proposal": {
+    "playerApproved": false,
+    "implemented": false,
+    "trigger": {
+      "anyOf": [
+        {
+          "kind": "living-enemy-within",
+          "radius": 2.2
+        },
+        {
+          "kind": "living-other-ally-within-with-living-enemy-near-ally",
+          "allyRadius": 2.4,
+          "enemyRadius": 2.2
+        }
+      ]
+    },
+    "recipient": "self",
+    "tierReduction": {
+      "T0": 0.2,
+      "T1": 0.3,
+      "T2": 0.4,
+      "T3": 0.5
+    },
+    "durationSeconds": 4,
+    "cooldownFromTriggerSeconds": 8,
+    "stacking": "MAX, separate passive status key, no refresh during cooldown",
+    "newArtRequired": false
+  },
+  "verificationScope": "Static source review and pure numerical projection using existing resolver only; no new passive Runtime, test/build/browser/deploy/public requests",
+  "remainingGate": "Player review of new trigger/numerical/non-text presentation proposal; not renewed permission to begin P2"
+}
