@@ -20,7 +20,7 @@ test('telegraph delays shared AoE impact; leaving locked danger dodges without d
  const t=s.threats.active(0)[0];s.enemies[0].y=2;s.enemies[0].x=10;
  hold(s);s.step((t.impactAtMs-1)/1000);assert.equal(s.enemies[1].hp,s.enemies[1].maxHp);
  hold(s);s.step(.001);assert.equal(s.enemies[0].hp,before);assert.deepEqual(s.drainDamageEvents().map(e=>e.targetId),['e2','e3']);assert.equal(s.threats.active(s.elapsedSeconds*1000).length,0);
- assert.equal(s.allies[1].abilityState.special.cooldownRemaining,formalAbilityDefinitions['P4.special'].cooldown-t.impactAtMs/1000);
+ assert.ok(Math.abs(s.allies[1].abilityState.special.cooldownRemaining-(formalAbilityDefinitions['P4.special'].cooldown-t.impactAtMs/1000))<1e-9);
 });
 test('AI/player use identical telegraphed execution, KO cancels, air casts never create damaging area',()=>{
  const s=make(),m=make();assert.ok(s.executeAbility(s.allies[1],'special','ai',s.enemies[1]));assert.ok(m.usePlayerAbility('a2','special'));

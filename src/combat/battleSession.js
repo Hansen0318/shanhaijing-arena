@@ -411,7 +411,7 @@ export class BattleSession {
   simulationStepSeconds(){return this.hasStagedAction()?.01:.05;}
 
   stagedIntervalSeconds(limit){
-    if(!this.hasStagedAction())return limit;
+    if(!this.hasStagedAction())return this.passives.hasSpatial()?Math.min(limit,.05):limit;
     let dt=Math.min(limit,.01);
     const deadlines=[...this.pendingActions.values()].flatMap(r=>r.staged?[...r.definition.stagedAction.segments.flatMap(l=>[l.startMs,l.centerMs,l.endMs]),r.definition.stagedAction.recoveryMs].map(ms=>r.startedAt+ms/1000):[r.dueAt]);
     deadlines.push(...[...this.statuses.records.values()].map(v=>v.expiryTime),...this.pendingHits.map(v=>v.due),...[...this.delayedImpacts.values()].map(v=>v.threat.impactAtMs/1000),...this.areas.nextTicks.values(),...[...this.areas.records.values()].map(v=>v.expiryTime));
@@ -455,7 +455,7 @@ export class BattleSession {
 
   advancePlannedMotion(dt){
     const begin=this.elapsedSeconds,end=begin+dt,passiveMode=this.passives.enabled();
-    if(passiveMode)this.passives.settle(begin);
+    if(passiveMode)this.passives.settle(begin,{spatial:false});
     const paths=new Map(this.actors.map(a=>[a.instanceId,{from:{x:a.x,y:a.y},to:canCharacterAct(a)&&!this.statuses.controlled(a.instanceId,begin)?motionPlans.get(a)??{x:a.x,y:a.y}:{x:a.x,y:a.y},start:0,motion:motionPlans.get(a)?.motion??null,ordinary:null,lastTime:begin}]));
     for(const r of this.pendingActions.values())if(r.staged){const p=paths.get(r.actorId);p.to=r.hitIndex<0?p.from:legPosition(r,end);}
     for(const a of this.actors)motionPlans.delete(a);
@@ -479,6 +479,7 @@ export class BattleSession {
       const contacts=[];
       let horizon=1;
       if(passiveMode){const now=begin+cursor*dt;let next=end;
+        const spatialBoundary=this.passives.nextSpatialBoundary(now,end);if(spatialBoundary!==null)next=Math.min(next,spatialBoundary);
         for(const [id,p]of paths){if(!p.ordinary)continue;const leg=p.ordinary.find(s=>s.end>now+1e-10);if(!leg)continue;
           const clipped=clipOrdinarySegment(leg,leg.end,Math.max(leg.start,now));next=Math.min(next,leg.end);
           const boundary=this.passives.nextBoundary(id,clipped);if(boundary!==null)next=Math.min(next,boundary);
