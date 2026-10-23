@@ -21,6 +21,6 @@ export function createPassiveDefinition(input){
  if(cooldownSeconds<effect.duration)throw new RangeError('Passive cooldown must cover the active duration');
  const label=input.presentation?.label??input.name,style=input.presentation?.style;
  if(typeof label!=='string'||!label.trim())throw new TypeError('Invalid passive label');
- if(style!=null&&(!spatial||style!=='guard-plates'))throw new TypeError('Unsupported passive presentation');
+ if(style!=null&&style!==(spatial?'guard-plates':'speed-streaks'))throw new TypeError('Unsupported passive presentation');
  return freezeEffectData({id:input.id,name:input.name,category:'passive',implemented:true,...(typeof input.description==='string'?{description:input.description}:{}),...(input.tierMagnitudes?{tierMagnitudes:{...input.tierMagnitudes}}:{}),trigger:{kind:trigger.kind,...Object.fromEntries(fields.map(key=>[key,trigger[key]]))},cooldownSeconds,effect:{kind:'status',type:effect.type,magnitude:effect.magnitude,duration:effect.duration,...(effect.data?{data:structuredClone(effect.data)}:{})},presentation:{label,...(style?{style}:{})}});
 }

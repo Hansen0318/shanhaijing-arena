@@ -1,0 +1,78 @@
+✖ every implemented roster passive declares its matching VFX; unsupported style/type pairs reject (1.419675ms)
+✖ all player-facing skills omit engineering wording and unavailable skills remain honest (0.520394ms)
+✖ real active movement snapshot supplies VFX identity, Tier strength and expiry (12.510393ms)
+✖ movement VFX follows true state and facing, draws no text, and clears after expiry or destroy (0.602228ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 150.590965
+
+✖ failing tests:
+
+test at tests/passivePlayerCopyVfx.test.js:8:1
+✖ every implemented roster passive declares its matching VFX; unsupported style/type pairs reject (1.419675ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'speed-streaks'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/53f42728ab46/shanhaijing-arena/tests/passivePlayerCopyVfx.test.js:9:98)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'speed-streaks',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/passivePlayerCopyVfx.test.js:12:1
+✖ all player-facing skills omit engineering wording and unavailable skills remain honest (0.520394ms)
+  AssertionError [ERR_ASSERTION]: The input was expected to not match the regular expression /實裝|保留設計|保留後續|開發|無文字|不顯示|安全|額度|Runtime|VFX|上限 \+95%|一般移速增益上限/. Input:
+  
+  '一般走位在 2 秒內累積 1 單位，疾行依 T0／T1／T2／T3 增加移速 +35%／+50%／+65%／+80%，持續 3 秒；觸發起冷卻 6 秒，冷卻期間不累積。一般移速增益上限 +15%；疾行生效時合計上限 +95%。技能位移不計入，戰場不顯示被動文字。'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/53f42728ab46/shanhaijing-arena/tests/passivePlayerCopyVfx.test.js:13:98)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '一般走位在 2 秒內累積 1 單位，疾行依 T0／T1／T2／T3 增加移速 +35%／+50%／+65%／+80%，持續 3 秒；觸發起冷卻 6 秒，冷卻期間不累積。一般移速增益上限 +15%；疾行生效時合計上限 +95%。技能位移不計入，戰場不顯示被動文字。',
+    expected: /實裝|保留設計|保留後續|開發|無文字|不顯示|安全|額度|Runtime|VFX|上限 \+95%|一般移速增益上限/,
+    operator: 'doesNotMatch',
+    diff: 'simple'
+  }
+
+test at tests/passivePlayerCopyVfx.test.js:17:1
+✖ real active movement snapshot supplies VFX identity, Tier strength and expiry (12.510393ms)
+  TypeError: Cannot read properties of undefined (reading 'style')
+      at TestContext.<anonymous> (file:///workspace/scratch/53f42728ab46/shanhaijing-arena/tests/passivePlayerCopyVfx.test.js:18:245)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/passivePlayerCopyVfx.test.js:20:1
+✖ movement VFX follows true state and facing, draws no text, and clears after expiry or destroy (0.602228ms)
+  TypeError: Cannot read properties of undefined (reading 'size')
+      at TestContext.<anonymous> (file:///workspace/scratch/53f42728ab46/shanhaijing-arena/tests/passivePlayerCopyVfx.test.js:23:98)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

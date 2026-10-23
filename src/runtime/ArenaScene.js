@@ -648,7 +648,7 @@ export class ArenaScene extends Phaser.Scene {
     this.refreshSelectionVisuals();
     this.refreshSkillButtons();
     this.refreshHud(frame);
-    this.passivePresenter.render({views:frame.passives??[],actors:[...frame.allies,...frame.enemies],hpAnchors:passiveHpAnchors,faceRects:passiveFaceRects,canvasRect:this.game.canvas.getBoundingClientRect(),reservedRects:[{x:0,y:0,width:125,height:340},{x:995,y:0,width:125,height:340},{x:420,y:0,width:280,height:70},{x:0,y:350,width:165,height:190},{x:875,y:390,width:245,height:150},{x:245,y:458,width:580,height:68}],selectedId:this.selectedId,now:frame.elapsedSeconds});
+    this.passivePresenter.render({facings:this.visualAssets?.facings,views:frame.passives??[],actors:[...frame.allies,...frame.enemies],hpAnchors:passiveHpAnchors,faceRects:passiveFaceRects,canvasRect:this.game.canvas.getBoundingClientRect(),reservedRects:[{x:0,y:0,width:125,height:340},{x:995,y:0,width:125,height:340},{x:420,y:0,width:280,height:70},{x:0,y:350,width:165,height:190},{x:875,y:390,width:245,height:150},{x:245,y:458,width:580,height:68}],selectedId:this.selectedId,now:frame.elapsedSeconds});
     this.showResult(frame.result);
 
     const selected = this.selectedId ? this.session.actorById(this.selectedId) : null;

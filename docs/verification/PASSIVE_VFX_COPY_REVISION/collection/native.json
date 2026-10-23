@@ -1,0 +1,49 @@
+{
+  "physicalPhone": false,
+  "built": false,
+  "errors": [],
+  "cases": [
+    {
+      "id": "P1",
+      "clean": true,
+      "labels": [],
+      "text": "BACK\nCHARACTER DETAIL\n鹿蜀\n\nSpeed\n\nRole: attacker\n\nOWNED\n\n0 / 5\n\nT0\n\nNext: T1 · Requires 5 shards\n\nUPGRADE\n\n快速近戰切入與移位攻擊。\n\nHP 245 · ATK 18 · DEF 5 · Move 2.05 · Attack 1.15\n\nAbilities\n\n踏角 · basic\n\n近距角蹄攻擊。\n\n逐風衝 · heavy\n\n短距切入後重擊。\n\n迴蹄 · special\n\n斜向移位後攻擊。\n\n南山奔襲 · awakening\n\n三段奔襲，總係數 2.20。\n\n疾行 · passive\n\n2 秒內移動 1 單位，觸發疾行。移動速度依 T0／T1／T2／T3 提升 +35%／+50%／+65%／+80%，持續 3 秒，冷卻 6 秒。\n\nLore\n\n南山異獸，以迅捷與靈動著稱；戰場上善於快速切入與改變攻擊角度。",
+      "screenshot": "native-P1.png"
+    },
+    {
+      "id": "P2",
+      "clean": true,
+      "labels": [],
+      "text": "BACK\nCHARACTER DETAIL\n猼訑\n\nPower\n\nRole: tank\n\nOWNED\n\n0 / 5\n\nT0\n\nNext: T1 · Requires 5 shards\n\nUPGRADE\n\n前線承壓、自身減傷與近距範圍攻擊。\n\nHP 320 · ATK 14 · DEF 9 · Move 1.45 · Attack 0.85\n\nAbilities\n\n角擊 · basic\n\n近距角擊。\n\n震嶺 · heavy\n\n近距重擊；升至 T2 後可短暫震退敵人。\n\n守群 · special\n\n自身獲得 25% 減傷，持續 4 秒。\n\n鎮岳 · awakening\n\n自身周圍範圍傷害，係數 1.70。\n\n厚甲 · passive\n\n接近敵人，或靠近正在接敵的隊友時，獲得厚甲。自身受到的傷害依 T0／T1／T2／T3 降低 20%／30%／40%／50%，持續 4 秒，冷卻 8 秒。同時有多種減傷效果時，取最高值。\n\nLore\n\n南山異獸，形象厚重而堅韌；在隊伍中擔任承受壓力、守護同伴的前線角色。",
+      "screenshot": "native-P2.png"
+    },
+    {
+      "id": "P3",
+      "clean": true,
+      "labels": [
+        "尚未開放"
+      ],
+      "text": "BACK\nCHARACTER DETAIL\n赤鱬\n\nBlast\n\nRole: support\n\nOWNED\n\n0 / 5\n\nT0\n\nNext: T1 · Requires 5 shards\n\nUPGRADE\n\n中距攻擊、低血量隊友治療與全隊回血。\n\nHP 235 · ATK 13 · DEF 5 · Move 1.6 · Attack 0.95\n\nAbilities\n\n水矢 · basic\n\n中距水矢。\n\n湧浪 · heavy\n\n中距水流重擊。\n\n回瀾 · special\n\n治療最低 HP 比例存活隊友，恢復其最大 HP 的 25%。\n\n潤澤 · awakening\n\n全體存活隊友各恢復最大 HP 的 16%；不復活。\n\n游息 · passive\n\n尚未開放\n\nLore\n\n水中異獸，以水流之力支援同伴；擅長在後方維持隊伍續戰能力。",
+      "screenshot": "native-P3.png"
+    },
+    {
+      "id": "P4",
+      "clean": true,
+      "labels": [
+        "尚未開放"
+      ],
+      "text": "BACK\nCHARACTER DETAIL\n九尾狐\n\nBlast\n\nRole: attacker\n\nLOCKED\n\n0 / 5\n\n中遠距爆發與目標區域傷害。\n\nHP 230 · ATK 19 · DEF 4 · Move 1.7 · Attack 1.05\n\nAbilities\n\n靈火 · basic\n\n中遠距靈火。\n\n狐焰 · heavy\n\n集中火焰重擊。\n\n九焰散華 · special\n\n目標周圍範圍傷害，各目標係數 1.35。\n\n青丘幻火 · awakening\n\n遠距單體爆發，係數 2.50。\n\n惑心 · passive\n\n尚未開放\n\nLore\n\n青丘代表性的異獸之一；在本作中定位為操使靈火、擅長遠距爆發的攻擊者。",
+      "screenshot": "native-P4.png"
+    },
+    {
+      "id": "P5",
+      "clean": true,
+      "labels": [
+        "尚未開放"
+      ],
+      "text": "BACK\nCHARACTER DETAIL\n狌狌\n\nPower\n\nRole: attacker\n\nLOCKED\n\n0 / 5\n\n近戰追擊與持續連擊。\n\nHP 285 · ATK 17 · DEF 7 · Move 1.85 · Attack 1\n\nAbilities\n\n裂爪 · basic\n\n近距爪擊。\n\n撼地 · heavy\n\n近距重擊。\n\n追獵 · special\n\n短距追擊後攻擊。\n\n狂鬥 · awakening\n\n四段近戰攻擊，總係數 2.30。\n\n鬥性 · passive\n\n尚未開放\n\nLore\n\n具強烈獸性與追擊感的異獸；在本作中定位為持續貼身施壓的近戰鬥士。",
+      "screenshot": "native-P5.png"
+    }
+  ],
+  "status": "PASS"
+}

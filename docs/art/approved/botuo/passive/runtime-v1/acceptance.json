@@ -1,0 +1,26 @@
+{
+  "status": "PLAYER APPROVED EXISTING P2 PASSIVE MECHANIC AND ARMOR VFX; COPY CORRECTION REQUIRED",
+  "recordedDate": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatement": "被動會有vfx嗎？如果有就要所有包含未來角色遵守有的規則，確認好我就approved目前，還有妳在collection的敘述很怪，妳不能傻傻的什麼開發的文字限制也寫 正常人都知道只要寫效果介紹就好 不用說什麼不出現文字之類的開發規則，別人是玩遊戲，不是看你怎麼開發，妳修正好紀錄硬規則和進度流程",
+  "acceptedReleaseSha": "1f6b47b4e30a867b1b8d294c69fdeaedc51f0b98",
+  "acceptedReleaseTree": "33fb1eab6d61b3f419e812de97b38fd19e651aa8",
+  "presentedUrl": "https://hansen0318.github.io/shanhaijing-arena/?passive=1f6b47b",
+  "condition": "User says 確認好我就approved目前 after confirming passive VFX and applying the rule to all existing/future characters. Existing P2 guard-plates are verified actual VFX; global rule recorded in the bound decision. Player also requires Collection copy cleanup, still owned by this revision.",
+  "scope": "Existing deployed P2 thick armor mechanics and guard-plates VFX accepted at current scope. Preserve original acceptance; finish required copy cleanup and normal release before administrative whole-P2 closure.",
+  "notClaimed": [
+    "New P1 speed-streaks visual approval",
+    "Unseen revised Collection copy already reviewed",
+    "Itemized physical device or all Tier measurements",
+    "All future passives implemented or P3 development authorization"
+  ],
+  "evidenceSha256": {
+    "docs/verification/P2_PASSIVE_RUNTIME/release-evidence.json": "5e4a84d75906b9afe5665df477d4bdafcda1e9fcb0a2c393fc8c9425b6a49538",
+    "docs/verification/P2_PASSIVE_RUNTIME/public-fingerprints.json": "7c62530787e1fef1856df5d016170a0cb31ce6acdadbc84fb5b9e4af54be83f6",
+    "docs/verification/P2_PASSIVE_RUNTIME/status.json": "7fa50476bb0ed36ccaf2b9f7a6db730bff87051942471ee1c12c97d79f295e1a",
+    "docs/decisions/2026-10-23-passive-vfx-player-copy.md": "f20bcf279e4c6be4f6ccecd41833fe7a2267d208672b09b849ed149f1c7a8ee6",
+    "docs/verification/PASSIVE_VFX_COPY_REVISION/player-feedback/IMG_2777.png": "15de6d87c9aa40788f63307107cc5be739e0ef49573dd0d1f4dbc680a1b2b540",
+    "docs/verification/PASSIVE_VFX_COPY_REVISION/player-feedback/IMG_2778.png": "a6f6bdae84a16e6580cf252d6a398b41c46be382dba495c5428efca619f46685"
+  }
+}

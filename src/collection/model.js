@@ -16,6 +16,6 @@ export function characterDetail(definition,abilityCatalog=formalAbilityDefinitio
  return {name:definition.name,combatSummary:definition.combatSummary ?? null,stats:definition.stats,type:definition.type,role:definition.role,lore:typeof definition.lore==='string'?definition.lore:null,
   abilities:refs.filter(([,id])=>typeof id==='string').map(([category,id])=>{
    const ability=abilityCatalog[id];
-   return {id,name:ability?.name ?? title(id),category:ability?.category ?? category,...(category==='passive'?{implemented:ability?.implemented===true,statusLabel:ability?.implemented===true?'已實裝':'尚未實裝'}:{}),description:typeof ability?.description==='string'?ability.description:null};
+   return {id,name:ability?.name ?? title(id),category:ability?.category ?? category,...(category==='passive'?{implemented:ability?.implemented===true,statusLabel:ability?.implemented===true?null:'尚未開放'}:{}),description:category==='passive'&&ability?.implemented!==true?null:typeof ability?.description==='string'?ability.description:null};
   })};
 }

@@ -1,0 +1,20 @@
+✔ Collection identifies implemented P1/P2 and all still-unimplemented independent passives honestly (1.329123ms)
+✔ Collection describes real defense Tier growth, trigger, duration and MAX honestly (0.20641ms)
+✔ every implemented roster passive declares its matching VFX; unsupported style/type pairs reject (1.692188ms)
+✔ all player-facing skills omit engineering wording and unavailable skills remain honest (1.101572ms)
+✔ real active movement snapshot supplies VFX identity, Tier strength and expiry (82.211794ms)
+✔ movement VFX follows true state and facing, draws no text, and clears after expiry or destroy (1.321251ms)
+✔ P1 passive has substantial distinct Tier gains, exact expiry and cooldown (96.695061ms)
+✔ strong movement is explicitly bounded; ordinary and outgoing caps retain 15 percent (0.859859ms)
+✔ Tier tables reject incomplete, unsupported or out of bounds values and preserve immutable data (0.38032ms)
+✔ passive presentation creates no battlefield text, badges, HUD or leader lines (1.34001ms)
+✔ real Tier views create static one to four armor pairs with fixed body bounds and no HUD or text (1.849193ms)
+✔ suppression, expiry, KO and empty frame remove true-status-owned graphics; destroy is final (0.339239ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 274.849714
