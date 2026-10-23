@@ -1,5 +1,14 @@
 # Development Playbook
 
+## 2026-10-23 — 厚甲本機工程PASS／正常發布ACTIVE
+
+完整1065/1065、Build/149檔、厚甲真native16/built8、P1新來源native16/built8、P2受影響native4/built2/scale10與新來源guard599/真篡改負向/恢復均PASS。共用空間減傷/四Tier/無文字護甲真實生效，future-guardian與重新命名被動的真Session仍減HP20%，無角色ID特例。未來每角仍需自己真效果/Tier/清理/發布/玩家驗收，不能只靠文案或基礎數值。
+
+工程報告docs/verification/P2_PASSIVE_RUNTIME/REPORT.md及WORK_LOG.md保留7項初始失敗的來源遷移與Browser fixture修正，最新全PASS；原生單人自審非獨立review。已核准四招/美術/尺度/ground/anchor/mirror、P1疾行/既有MAX與素材政策保持，普通Hit取消。正常發布採新guard，不拿舊P1來源證據覆蓋厚甲。
+
+目前CI/Pages/public尚待實際完成，玩家厚甲驗收PENDING、P2整角色未完整、P3技能BLOCKED。下一合法步驟：原分支正常CI/Build/Pages與149公開比對，不重跑來源未變的本機測試/Browser或重審美術。PR#1保持open/unmerged；不merge main/新分支/TD。此Runtime發布候選走正常CI，非skip/bounded繞過。
+
+
 ## 2026-10-23 — 厚甲方向確認／共用防禦被動已實作，真Browser與發布NEXT
 
 玩家「確認其他未來整體角色開發真的會有效果，就繼續實作」確認厚甲方向並直接授權實作，精確原文/範圍見docs/decisions/2026-10-23-botuo-passive-execution.md、P2_PASSIVE_RUNTIME/authorization.json；不重問開始/執行方式或額外流程核准，不冒稱未展示文件逐項獲准。正式spec/原生單人plan已補齊。

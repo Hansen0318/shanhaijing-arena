@@ -2,7 +2,7 @@ name: P1 Passive Native Verification
 on:
   push:
     branches: [feat/m0-combat-core-20260927]
-    paths: ['src/**', 'scripts/checkLushuPassive*Browser.mjs', 'scripts/verifyLushuPassive*Release.mjs', 'tests/passive*.test.js', '.github/workflows/p1-passive-verification.yml']
+    paths: ['src/**', 'scripts/checkLushuPassive*Browser.mjs', 'scripts/verifyLushuPassive*Release.mjs', 'tests/passive*.test.js', 'tests/botuoPassive*.test.js', 'scripts/checkBotuoPassiveBrowser.mjs', 'scripts/verifyBotuoPassiveRelease.mjs', '.github/workflows/p1-passive-verification.yml']
 permissions:
   contents: read
 jobs:
@@ -20,9 +20,9 @@ jobs:
       - run: npm run build
       - name: Reuse complete source-identical browser evidence
         run: |
-          if node scripts/verifyLushuPassiveV2Release.mjs; then
+          if node scripts/verifyBotuoPassiveRelease.mjs; then
             mkdir -p "${{ runner.temp }}/passive-evidence"
-            cp -R docs/verification/P1_PASSIVE_V2/. "${{ runner.temp }}/passive-evidence/"
+            cp -R docs/verification/P2_PASSIVE_RUNTIME/. "${{ runner.temp }}/passive-evidence/"
             echo 'PASSIVE_EVIDENCE_REUSED=true' >> "$GITHUB_ENV"
           fi
       - name: Real passive and affected shared presentation checks
@@ -34,11 +34,13 @@ jobs:
           npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
           node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
           status=0
-          node scripts/checkLushuPassiveV2Browser.mjs || status=1
-          node scripts/checkLushuPassiveV2Browser.mjs --built || status=1
-          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/compatibility" node scripts/checkBotuoAwakeningBrowser.mjs || status=1
-          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/compatibility" node scripts/checkBotuoAwakeningBrowser.mjs --built || status=1
-          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/compatibility" node scripts/checkBotuoAwakeningScale.mjs || status=1
+          node scripts/checkBotuoPassiveBrowser.mjs || status=1
+          node scripts/checkBotuoPassiveBrowser.mjs --built || status=1
+          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/p1-compatibility" node scripts/checkLushuPassiveV2Browser.mjs || status=1
+          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/p1-compatibility" node scripts/checkLushuPassiveV2Browser.mjs --built || status=1
+          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/p2-compatibility" node scripts/checkBotuoAwakeningBrowser.mjs || status=1
+          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/p2-compatibility" node scripts/checkBotuoAwakeningBrowser.mjs --built || status=1
+          ARENA_BROWSER_OUTPUT="$ARENA_BROWSER_OUTPUT/p2-compatibility" node scripts/checkBotuoAwakeningScale.mjs || status=1
           exit "$status"
       - uses: actions/upload-artifact@v4
         if: always()

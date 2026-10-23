@@ -1,0 +1,8 @@
+{
+  "physicalPhone": false,
+  "built": false,
+  "errors": [],
+  "cases": [],
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: stableGeometry\n\nfalse !== true\n\n    at file:///workspace/scratch/53f42728ab46/shanhaijing-arena/scripts/checkBotuoPassiveBrowser.mjs:50:244"
+}

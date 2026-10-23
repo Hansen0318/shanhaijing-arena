@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "tamperedSourceRejected": true,
+  "message": "AssertionError [ERR_ASSERTION]: src/combat/passiveDefinition.js\n+ actual - expected\n\n+ '5830bb8fb5a1a5fe83518dacc412f079299c8a5f9356a57a837163dd8f702045'\n- '0e37c60720bc48e9eb30a41b2e204f7158b94ef2273a5bbc5ba1430d2ff47128'",
+  "sourceRestored": true,
+  "restoredResult": {
+    "status": "PASS",
+    "files": 599
+  }
+}

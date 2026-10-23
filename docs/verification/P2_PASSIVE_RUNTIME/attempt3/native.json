@@ -1,0 +1,48 @@
+{
+  "physicalPhone": false,
+  "built": false,
+  "errors": [],
+  "cases": [],
+  "current": {
+    "tier": "T0",
+    "side": "ally",
+    "reduction": 0.2,
+    "actualDamage": 10.279999999999973,
+    "baselineDamage": 12.850000000000023,
+    "damageRatio": 0.7999999999999965,
+    "duration": 4,
+    "cooldown": 8,
+    "segments": 1,
+    "plates": true,
+    "stableGeometry": false,
+    "geometryBefore": [
+      144,
+      139.5,
+      0.5,
+      0.9870967741935484
+    ],
+    "geometryAfter": [
+      144,
+      93.09375,
+      0.5,
+      0.8459214501510574
+    ],
+    "noText": true,
+    "suppressed": true,
+    "resumed": true,
+    "combined": 0.75,
+    "expiry": true,
+    "repeat": 7.999999999999986,
+    "pause": true,
+    "koCleared": true,
+    "endCleared": true,
+    "callbackUsed": false,
+    "renderer": 2,
+    "viewport": {
+      "width": 852,
+      "height": 393
+    }
+  },
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: stableGeometry\n\nfalse !== true\n\n    at file:///workspace/scratch/53f42728ab46/shanhaijing-arena/scripts/checkBotuoPassiveBrowser.mjs:50:362"
+}

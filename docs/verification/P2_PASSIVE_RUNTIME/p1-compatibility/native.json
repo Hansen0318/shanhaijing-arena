@@ -1,0 +1,505 @@
+{
+  "version": 2,
+  "physicalPhone": false,
+  "built": false,
+  "errors": [],
+  "cases": [
+    {
+      "tier": "T0",
+      "side": "ally",
+      "gain": 0.35,
+      "baseSpeed": 2.05,
+      "activeSpeed": 2.7675,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 5.534999999999998,
+      "baselineDistance": 4.099999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.5,
+      "independentExpiry": 1.35,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": false,
+      "screenshot": "native-T0-ally-normal.png"
+    },
+    {
+      "tier": "T0",
+      "side": "enemy",
+      "gain": 0.35,
+      "baseSpeed": 2.05,
+      "activeSpeed": 2.7675,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 5.534999999999998,
+      "baselineDistance": 4.099999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.5,
+      "independentExpiry": 1.35,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": false,
+      "screenshot": "native-T0-enemy-normal.png"
+    },
+    {
+      "tier": "T1",
+      "side": "ally",
+      "gain": 0.5,
+      "baseSpeed": 2.214,
+      "activeSpeed": 3.3209999999999997,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 6.642,
+      "baselineDistance": 4.427999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.65,
+      "independentExpiry": 1.5,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": false,
+      "screenshot": "native-T1-ally-normal.png"
+    },
+    {
+      "tier": "T1",
+      "side": "enemy",
+      "gain": 0.5,
+      "baseSpeed": 2.214,
+      "activeSpeed": 3.3209999999999997,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 6.642,
+      "baselineDistance": 4.427999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.65,
+      "independentExpiry": 1.5,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": false,
+      "screenshot": "native-T1-enemy-normal.png"
+    },
+    {
+      "tier": "T2",
+      "side": "ally",
+      "gain": 0.65,
+      "baseSpeed": 2.3779999999999997,
+      "activeSpeed": 3.9236999999999993,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 7.847399999999994,
+      "baselineDistance": 4.755999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.7999999999999998,
+      "independentExpiry": 1.65,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": false,
+      "screenshot": "native-T2-ally-normal.png"
+    },
+    {
+      "tier": "T2",
+      "side": "enemy",
+      "gain": 0.65,
+      "baseSpeed": 2.3779999999999997,
+      "activeSpeed": 3.9236999999999993,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 7.847399999999994,
+      "baselineDistance": 4.755999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.7999999999999998,
+      "independentExpiry": 1.65,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": false,
+      "screenshot": "native-T2-enemy-normal.png"
+    },
+    {
+      "tier": "T3",
+      "side": "ally",
+      "gain": 0.8,
+      "baseSpeed": 2.6239999999999997,
+      "activeSpeed": 4.723199999999999,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 9.446399999999997,
+      "baselineDistance": 5.247999999999999,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.95,
+      "independentExpiry": 1.8,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": false,
+      "screenshot": "native-T3-ally-normal.png"
+    },
+    {
+      "tier": "T3",
+      "side": "enemy",
+      "gain": 0.8,
+      "baseSpeed": 2.6239999999999997,
+      "activeSpeed": 4.723199999999999,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 9.446399999999997,
+      "baselineDistance": 5.247999999999999,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.95,
+      "independentExpiry": 1.8,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": false,
+      "screenshot": "native-T3-enemy-normal.png"
+    },
+    {
+      "tier": "T0",
+      "side": "ally",
+      "gain": 0.35,
+      "baseSpeed": 2.05,
+      "activeSpeed": 2.7675,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 5.534999999999998,
+      "baselineDistance": 4.099999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.5,
+      "independentExpiry": 1.35,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": true,
+      "screenshot": "native-T0-ally-reduced.png"
+    },
+    {
+      "tier": "T0",
+      "side": "enemy",
+      "gain": 0.35,
+      "baseSpeed": 2.05,
+      "activeSpeed": 2.7675,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 5.534999999999998,
+      "baselineDistance": 4.099999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.5,
+      "independentExpiry": 1.35,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": true,
+      "screenshot": "native-T0-enemy-reduced.png"
+    },
+    {
+      "tier": "T1",
+      "side": "ally",
+      "gain": 0.5,
+      "baseSpeed": 2.214,
+      "activeSpeed": 3.3209999999999997,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 6.642,
+      "baselineDistance": 4.427999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.65,
+      "independentExpiry": 1.5,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": true,
+      "screenshot": "native-T1-ally-reduced.png"
+    },
+    {
+      "tier": "T1",
+      "side": "enemy",
+      "gain": 0.5,
+      "baseSpeed": 2.214,
+      "activeSpeed": 3.3209999999999997,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 6.642,
+      "baselineDistance": 4.427999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.65,
+      "independentExpiry": 1.5,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": true,
+      "screenshot": "native-T1-enemy-reduced.png"
+    },
+    {
+      "tier": "T2",
+      "side": "ally",
+      "gain": 0.65,
+      "baseSpeed": 2.3779999999999997,
+      "activeSpeed": 3.9236999999999993,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 7.847399999999994,
+      "baselineDistance": 4.755999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.7999999999999998,
+      "independentExpiry": 1.65,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": true,
+      "screenshot": "native-T2-ally-reduced.png"
+    },
+    {
+      "tier": "T2",
+      "side": "enemy",
+      "gain": 0.65,
+      "baseSpeed": 2.3779999999999997,
+      "activeSpeed": 3.9236999999999993,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 7.847399999999994,
+      "baselineDistance": 4.755999999999998,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.7999999999999998,
+      "independentExpiry": 1.65,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": true,
+      "screenshot": "native-T2-enemy-reduced.png"
+    },
+    {
+      "tier": "T3",
+      "side": "ally",
+      "gain": 0.8,
+      "baseSpeed": 2.6239999999999997,
+      "activeSpeed": 4.723199999999999,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 9.446399999999997,
+      "baselineDistance": 5.247999999999999,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.95,
+      "independentExpiry": 1.8,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": true,
+      "screenshot": "native-T3-ally-reduced.png"
+    },
+    {
+      "tier": "T3",
+      "side": "enemy",
+      "gain": 0.8,
+      "baseSpeed": 2.6239999999999997,
+      "activeSpeed": 4.723199999999999,
+      "duration": 3,
+      "cooldown": 6,
+      "distance": 9.446399999999997,
+      "baselineDistance": 5.247999999999999,
+      "noText": true,
+      "expiry": true,
+      "pause": true,
+      "combined": 1.95,
+      "independentExpiry": 1.8,
+      "koCleared": true,
+      "endCleared": true,
+      "facings": [
+        true,
+        false
+      ],
+      "callbackUsed": false,
+      "renderer": 2,
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "restart": true,
+      "reduced": true,
+      "screenshot": "native-T3-enemy-reduced.png"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "LOCAL ENGINEERING PASS / NORMAL RELEASE NEXT / PLAYER PENDING",
+  "tests": {
+    "total": 1065,
+    "pass": 1065,
+    "fail": 0
+  },
+  "build": "PASS",
+  "native": 16,
+  "built": 8,
+  "p1Compatibility": "native16/built8 PASS",
+  "p2Compatibility": "native4/built2/scale10 PASS",
+  "sourceGuard": 599,
+  "physicalPhone": false,
+  "playerAccepted": false,
+  "next": "Normal CI/Build/guard/Pages/public comparison"
+}

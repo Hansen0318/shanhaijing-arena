@@ -28,3 +28,10 @@ test('exact expiry damage has no stale mitigation and live control does not canc
 test('coarse/fine input partitions, KO/end and recreated session remain bounded and clean',()=>{
  const a=fixture(),b=fixture();a.enemy.x=b.enemy.x=1;step(a.s,8.2);for(let i=0;i<164;i++)step(b.s,.05);near(view(a.s,a.a).readyAt,view(b.s,b.a).readyAt);a.a.damage(a.a.hp);step(a.s,.01);assert.equal(view(a.s,a.a),undefined);b.s.clearTransientCombat();assert.equal(b.s.statuses.records.size,0);assert.deepEqual(b.s.snapshot().passives,[]);const fresh=fixture();assert.equal(view(fresh.s,fresh.a).readyAt,0);assert.equal(view(fresh.s,fresh.a).active,null);
 });
+test('renamed future character and passive references produce real HP mitigation without P2 runtime identity',()=>{
+ const f=fixture(),base=f.s.characterDefinitions.P2,alias={...base,id:'future-guardian',name:'未來角色測試',abilities:{...base.abilities,passives:['future-guardian.shell']}},definitions={...f.s.characterDefinitions,'future-guardian':alias},abilityDefinitions={...f.s.abilityDefinitions,'future-guardian.shell':{...f.s.abilityDefinitions['P2.passive'],id:'future-guardian.shell',name:'獨立護甲測試'}};
+ const actors=f.s.actors.map(a=>new a.constructor(a.instanceId===f.a.instanceId?alias:definitions[a.definitionId],{instanceId:a.instanceId,teamId:a.teamId,x:a.x,y:a.y}));
+ const s=new f.s.constructor({allies:actors.slice(0,3),enemies:actors.slice(3),characterDefinitions:definitions,abilityDefinitions,rng:()=>.99,tacticalEnabled:false});
+ for(const a of actors){s.holdPlayerControl(a.instanceId);s.setPlayerMovement(a.instanceId,{x:0,y:0});s.cadence.set(a.instanceId,99);for(const c of ['heavy','special','awakening'])Object.assign(a.abilityState[c],{phase:'cooldown',cooldownRemaining:99});}
+ const a=s.actorById(f.a.instanceId),enemy=s.actorById(f.enemy.instanceId);enemy.x=1;enemy.y=0;step(s,.01);assert.equal(a.definitionId,'future-guardian');assert.equal(view(s,a).definitionId,'future-guardian.shell');const control=fixture(),baseline=hit(control.s,control.a,control.enemy);near(hit(s,a,enemy)/baseline,.8);
+});
