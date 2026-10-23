@@ -6,8 +6,8 @@
   "deployJob": 120701557955,
   "p2": {
     "id": 40037402354,
-    "status": "in_progress",
-    "conclusion": null
+    "status": "completed",
+    "conclusion": "success"
   },
   "status": "ENGINEERING / NORMAL PAGES / PUBLIC PASS; PLAYER HEAVY GAME ACCEPTANCE PENDING",
   "tests": {
@@ -36,7 +36,7 @@
     "CollectionNative": 5,
     "CollectionBuilt": 5
   },
-  "standaloneP2Note": "Separate run40037402354 still active at last read; not claimed PASS. Same P2 native4/built2/scale2 source verified PASS in successful P1 compatibility run; no duplicate rerun needed.",
+  "standaloneP2Note": "Separate P2 workflow40037402354 subsequently completed SUCCESS. Same-source P2 native/built checks also remain preserved in successful P1 compatibility artifact.",
   "artifacts": [
     {
       "id": 12537319052,
