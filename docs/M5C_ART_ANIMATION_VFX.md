@@ -1,3 +1,11 @@
+## 2026-10-24 — Heavy清晰版 PLAYER APPROVED／COMPLETE；新Work直接接Special回瀾
+
+玩家「確認ok，紀錄，接下來我要開新的work無縫接軌接手下面的，確認好進度規則流程，就給我prompts，我要他讀取後直接做下面的」明確核准已呈交release30423cc清晰版。精確hash收據 docs/art/approved/chiru/heavy/clarity-v1/acceptance.json；原整體Heavy/runtime-v1與所有美術收據保持。Basic及Heavy已PLAYER VERIFIED；P3整角未完成。新Work直接執行Special「回瀾」第一未完Gate：沿核准spec做必要差異核對→一張F3角色關鍵姿勢候選→呈交停待玩家核准。獨立接手入口 docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md。
+
+本次首次輪到Special，完整解碼發現 whole-character/f3-batch-v1/special-f3.png 與 originals/special-f3.png 均損壞；原檔/manifest不動，證據 docs/verification/P3_SPECIAL_PREFLIGHT/WORK_LOG.md。新Work可依approved identity/Idle與核准spec重建單張Special F3，不能用截斷解碼假通過；沒有有效既有候選則不要求玩家審壞圖。不得重畫已核准Basic/Heavy或重跑已完成Heavy測試/Build/Browser/Pages。
+
+最新全局逐招Basic→Heavy→Special→Awakening→Passive，單招F3→其餘動作/獨立VFX→GIF核准→Runtime/真驗證→正常Pages→玩家核准保持。全角色無FX可辨動作、Basic<Heavy<Special<Awakening視覺層級；治療用真受益者/泉花回流語言，不能套攻擊爆浪。保護approved masters/收據/尺度/anchor/懸浮下緣/右canonical左mirror與P1/P2；無固定16MiB限制，逐檔安全/required/回收保持。原生單人、同分支PR#1open/unmerged，不委派/新branch/worktree/TD/main merge。本次只有收據/文件[skip ci]，不改產品來源、不重跑已通過檢查。下方Heavy待觀察/不開始Special屬歷史，由本節覆蓋。
+
 ## 2026-10-23 — Heavy 湧浪 F3 v3 PLAYER APPROVED；新 Work 接續其餘姿勢與獨立 VFX/GIF
 
 玩家原文：「我核准，紀錄規則進度流程，我會開新的work接手」。明確核准呈交checkpoint 5c555d9586a71ea6b0aa1e471c871dc4fd1144f2 的單張 Heavy F3 v3。精確收據 docs/art/approved/chiru/heavy/f3-v3/acceptance.json，圖源 docs/art/candidates/chiru/heavy/f3-v3/heavy-f3.png，SHA256 8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6。F3 Gate CLOSED，不重畫、不重問；v2與舊batch不採用但保留。候選manifest的舊PENDING為呈交歷史，由新收據覆蓋，原檔/manifest不改。
