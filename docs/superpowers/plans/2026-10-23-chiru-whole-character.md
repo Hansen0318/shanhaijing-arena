@@ -1,5 +1,8 @@
 # P3 Chiru Whole-character Implementation Plan
 
+> **SUPERSEDED 2026-10-23:** Latest authority: `docs/decisions/2026-10-23-restore-sequential-skill-workflow.md`. Whole-character batch execution and single release revoked. P3 approved spec retained; execute Basic → Heavy → Special → Awakening → Passive, one skill through F3/animation/VFX/GIF/runtime/verification/deployment/player acceptance before next. Existing Basic F3 is the next review Gate. This document remains historical.
+
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans natively, task by task. User explicitly forbids delegation/new branches and has already authorized continuation. Do not add a separate execution-method or ceremonial plan-approval Gate. Unseen F3/style and GIF batches still require the agreed player review.
 
 **Goal:** Complete the accepted P3 five-skill design through batched art review, shared runtime, one normal deployment and whole-character acceptance.
