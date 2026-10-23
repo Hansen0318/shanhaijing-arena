@@ -1,0 +1,21 @@
+{
+  "status": "HEAVY F3 v3 PLAYER APPROVED",
+  "recordedDate": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "我核准，紀錄規則進度流程，我會開新的work接手",
+  "presentedCheckpoint": "5c555d9586a71ea6b0aa1e471c871dc4fd1144f2",
+  "source": "docs/art/candidates/chiru/heavy/f3-v3/heavy-f3.png",
+  "sourceSha256": "8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6",
+  "sourceGitBlob": "c36b4644bb12615fcc61552fd4fd3be8bc221f17",
+  "scope": "Only the presented Heavy F3 v3 image and its cross-body bent-arm ring-release pose. Continue F1/F2/F4 and independent VFX/composite GIF for review.",
+  "notClaimed": [
+    "Unseen F1/F2/F4 approval",
+    "VFX/GIF approval",
+    "Heavy Runtime or deployment acceptance",
+    "Physical-device or Tier measurements"
+  ],
+  "references": {
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "public/assets/characters/chiru/identity.png": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a"
+  }
+}
