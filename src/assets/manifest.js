@@ -1,6 +1,11 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 import {specialRuntimePacking} from './specialRuntimePacking.js';
 const entries=[
+ {"key":"chiru.heavyPoses","type":"image","path":"assets/chiru-heavy-runtime-v1/poses.png","width":896,"height":194,"bytes":176171,"fallback":"placeholder.battle"},
+ {"key":"chiru.heavyCharge","type":"image","path":"assets/chiru-heavy-runtime-v1/charge.png","width":98,"height":68,"bytes":11460,"fallback":"placeholder.vfx"},
+ {"key":"chiru.heavyColumn","type":"image","path":"assets/chiru-heavy-runtime-v1/column.png","width":381,"height":141,"bytes":65738,"fallback":"placeholder.vfx"},
+ {"key":"chiru.heavyImpact","type":"image","path":"assets/chiru-heavy-runtime-v1/impact.png","width":206,"height":142,"bytes":39577,"fallback":"placeholder.vfx"},
+
  {"key":"chiru.basicPoses","type":"image","path":"assets/chiru-basic-runtime-v1/poses.png","width":672,"height":168,"bytes":162606,"fallback":"placeholder.battle"},
  {"key":"chiru.basicCharge","type":"image","path":"assets/chiru-basic-runtime-v1/charge.png","width":69,"height":48,"bytes":3589,"fallback":"placeholder.vfx"},
  {"key":"chiru.basicArrow","type":"image","path":"assets/chiru-basic-runtime-v1/arrow.png","width":328,"height":122,"bytes":16832,"fallback":"placeholder.vfx"},

@@ -44,7 +44,7 @@ test('installed49-key envelope retains required art, reserve and source-exact sa
  }
  const scene=assetScene(),p=new AssetPresenter(scene,{cache:createAssetCache({transport:pngTransport})});await p.prepare(Object.values(rosterCatalog));
  p.residency.setPins('new-utility',proposal.newAssets.map(e=>e.key));await p.loadKeys(proposal.newAssets.map(e=>e.key));
- assert.equal(p.textures.size,53);assert.equal(p.textureBytes,19000920);assert.ok(Number.isFinite(p.textureBytes));assert.equal(p.residency.snapshot().failed,0);assert.equal(p.residency.snapshot().evicted,0);
+ assert.equal(p.textures.size,57);assert.equal(p.textureBytes,20054764);assert.ok(Number.isFinite(p.textureBytes));assert.equal(p.residency.snapshot().failed,0);assert.equal(p.residency.snapshot().evicted,0);
  p.destroy();assert.equal(scene.budget().bytes,0);
 });
 test('logical body frame names, scale and origin survive native physical packing in both facings',async()=>{

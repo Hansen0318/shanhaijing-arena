@@ -62,7 +62,7 @@ export function resolveTierAbilities(projection,definitions){
   }
   table[id]=freezeEffectData({...base,cooldown:category==='basic'?0:Math.max(TIER_SAFETY.cooldown,base.cooldown*s.cooldown),range,maxRange:range,
    minRange:Math.min(range,base.minRange*rangeGain),preferredRange:base.preferredRange==null?null:Math.min(range,base.preferredRange*rangeGain),
-   telegraph,effect});
+   ...(base.resolveGeometry?.travelMs?{windupMs:telegraph.telegraphMs,resolveGeometry:{...base.resolveGeometry,halfWidth:telegraph.dangerRadius}}:{}),telegraph,effect});
  }
  return Object.freeze(table);
 }

@@ -24,7 +24,7 @@ export function createAbilityDefinition(input) {
   if (!ACTIVE_CATEGORIES.has(input?.category)) throw new TypeError('Unknown ability category');
   const cooldown = nonnegativeFinite(input.cooldown, 'cooldown');
   const windupMs=input.windupMs??0;
-  if(!Number.isInteger(windupMs)||windupMs<0||windupMs>1000||windupMs>0&&(!['basic','heavy','special'].includes(input.category)||input.telegraph!=null))throw new RangeError('Invalid action windup');
+  if(!Number.isInteger(windupMs)||windupMs<0||windupMs>1000||windupMs>0&&(!['basic','heavy','special'].includes(input.category)||input.telegraph!=null&&!input.resolveGeometry?.travelMs))throw new RangeError('Invalid action windup');
   const unlockTier = nonnegativeFinite(input.unlockTier ?? 0, 'unlockTier');
   const canCrit = input.canCrit === undefined ? false : input.canCrit;
   if (typeof canCrit !== 'boolean') throw new TypeError('canCrit must be boolean');
@@ -49,6 +49,7 @@ export function createAbilityDefinition(input) {
 
   const stagedAction=createStagedAction(input.stagedAction);
   const geometry=input.resolveGeometry;
+  if(geometry?.travelMs!==undefined&&(!Number.isFinite(geometry.travelMs)||geometry.travelMs<350||geometry.travelMs>1000||input.category!=='heavy'||!input.telegraph))throw new RangeError('Invalid line travel');
   if(geometry&&(geometry.kind!=='locked-line'||!Number.isFinite(geometry.halfWidth)||geometry.halfWidth<=0||geometry.halfWidth>4||windupMs<=0||input.targetingRule!=='enemy'||stagedAction))throw new RangeError('Invalid resolve geometry');
   if(stagedAction&&(windupMs!==0||input.telegraph!=null||input.targetingRule!=='enemy'||Math.abs(stagedAction.segments.reduce((n,l)=>n+l.coefficient,0)-(input.effect?.coefficient??0))>1e-9))throw new RangeError('Invalid staged ability contract');
   return Object.freeze({

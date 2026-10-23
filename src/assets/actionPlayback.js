@@ -16,9 +16,10 @@ export class ActionPlayback{
    const origin=event.attackOrigin??event.origin,target=event.attackTarget??event.target??origin;
    if(!origin||!target)return;
    this.active.delete(actorId);while(this.active.size>=64)this.active.delete(this.active.keys().next().value);
-   this.active.set(actorId,{actionId,descriptor,startedAt:event.startedAt,flipX:target.x<origin.x,resolvedAt:null,hit:false,...(descriptor.kind==='area-observed'?{sourceOrigin:{...origin}}:{}),...(descriptor.blade.attach==='line'?{lineOrigin:{...origin},lineTarget:{...target}}:{})});
+   this.active.set(actorId,{actionId,descriptor,startedAt:event.startedAt,flipX:target.x<origin.x,resolvedAt:null,hit:false,...(descriptor.kind==='launched-line'?{releaseAt:null,dueAt:event.dueAt,windupMs:event.windupMs}:{}),...(descriptor.kind==='area-observed'?{sourceOrigin:{...origin}}:{}),...(descriptor.blade.attach==='line'?{lineOrigin:{...origin},lineTarget:{...target}}:{})});
   }else if(old?.actionId===actionId){
    if(phase==='cancel')this.remove(actorId);
+   else if(phase==='release'&&descriptor.kind==='launched-line'&&old.releaseAt===null&&Number.isFinite(event.eventAt)){old.releaseAt=event.eventAt;old.lineOrigin={...event.attackOrigin};old.lineTarget={...event.attackTarget};old.flipX=old.lineTarget.x<old.lineOrigin.x;}
    else if(phase==='resolve'&&old.resolvedAt===null&&Number.isFinite(event.resolvedAt)&&event.resolvedAt>=old.startedAt){old.resolvedAt=event.resolvedAt;old.hit=event.hit===true;if(descriptor.blade.attach==='line'){old.lineOrigin={...(event.attackOrigin??old.lineOrigin)};old.lineTarget={...(event.attackTarget??old.lineTarget)};}if(event.target)old.contactTarget={x:event.target.x,y:event.target.y};}
   }
  }
@@ -41,9 +42,16 @@ export class ActionPlayback{
   const recovering=elapsed+1e-7>=d.recoveryStartMs,stage=r.stageIndex>=0?d.stages[r.stageIndex]:null;
   return {kind:'staged',actionId:r.actionId,descriptor:d,frameIndex:recovering?d.phaseFrames[4]:r.stageIndex<0?d.phaseFrames[0]:d.phaseFrames[r.stageIndex+1],stageIndex:recovering?-1:r.stageIndex,flipX:r.flipX,bladeOpacity:!recovering&&stage&&elapsed+1e-7>=stage.startMs&&elapsed<stage.endMs?(stage.blade.opacity??1):0,contactOpacity:0};
  }
+ sampleLaunched(ownerId,r,now,reducedMotion){
+  const d=r.descriptor,elapsed=Math.max(0,now-r.startedAt),released=r.releaseAt!==null,after=released?Math.max(0,now-r.releaseAt):0,resolved=r.resolvedAt!==null,contactAge=resolved?Math.max(0,now-r.resolvedAt):0;
+  if(released&&after+1e-9>=(d.frameDurationsMs[2]+d.frameDurationsMs[3])/1000){this.remove(ownerId);return null;}
+  const frameIndex=released?(after+1e-9<d.frameDurationsMs[2]/1000?2:3):elapsed+1e-9<(r.windupMs??350)/1000*4/7?0:1;
+  return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,lineOrigin:{...r.lineOrigin},lineTarget:{...r.lineTarget},lineProgress:released?(reducedMotion?1:Math.min(1,after/(Number.isFinite(r.dueAt)?r.dueAt-r.releaseAt:.35))):0,anticipationOpacity:released?0:reducedMotion?.35:frameIndex===0?.35:.8,bladeOpacity:released&&after<.5?(reducedMotion?.35:resolved?Math.max(.15,1-contactAge/.18):.75):0,contactOpacity:resolved&&r.hit?Math.max(0,1-contactAge/.25)*(reducedMotion?.65:1):0,...(r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
+ }
  sample(ownerId,now,reducedMotion=false){
   const r=this.active.get(ownerId);if(!r||!Number.isFinite(now))return null;
   if(r.descriptor.kind==='staged')return this.sampleStaged(ownerId,r,now);
+  if(r.descriptor.kind==='launched-line')return this.sampleLaunched(ownerId,r,now,reducedMotion);
   const d=r.descriptor,elapsed=Math.max(0,now-r.startedAt),resolved=r.resolvedAt!==null,after=resolved?Math.max(0,now-r.resolvedAt):0,hold=d.frameDurationsMs[2]/1000,recovery=d.frameDurationsMs[3]/1000;
   if(resolved&&after+1e-9>=(reducedMotion?hold:hold+recovery)){this.remove(ownerId);return null;}
   const frameIndex=resolved?(after+1e-9<hold?2:3):reducedMotion||elapsed+1e-9<d.frameDurationsMs[0]/1000?0:1;

@@ -164,7 +164,7 @@ export class BattleSession {
 
   actionEvent(record,phase,hit=false,reason=null){
     const actor=this.actorById(record.actorId),target=this.actorById(record.targetId);
-    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,eventAt:this.elapsedSeconds,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...(record.resolvedLine?.origin??record.origin)},attackTarget:{...(record.resolvedLine?.end??record.target)}});
+    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,eventAt:this.elapsedSeconds,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(record.definition.resolveGeometry?.travelMs?{releaseAt:record.startedAt+record.definition.windupMs/1000}:{}),...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...(record.resolvedLine?.origin??record.releasedLine?.origin??record.origin)},attackTarget:{...(record.resolvedLine?.end??record.releasedLine?.end??record.target)}});
   }
 
   cancelBasicAction(actorId,reason){
@@ -173,7 +173,7 @@ export class BattleSession {
 
   cancelAction(actorId,reason){
     const record=this.pendingActions.get(actorId);if(!record)return false;
-    this.pendingActions.delete(actorId);
+    this.pendingActions.delete(actorId);if(record.threatId)this.threats.remove(record.threatId);
     // Basic spends cadence; active skills spend cooldown at start. Cancelling
     // either kind must never refund the resource already spent.
     if(record.category==='basic')cancelAbility(this.actorById(actorId).abilityState.basic);
@@ -187,11 +187,17 @@ export class BattleSession {
       if(r.staged){this.resolveStagedBoundary(r);continue;}
       const reason=!actor||!canCharacterAct(actor)?'source_ko':r.targetId!==null&&(!target||!canCharacterAct(target))?'target_ko':this.statuses.controlled(id,this.elapsedSeconds)?'control':null;
       if(reason){this.cancelAction(id,reason);continue;}
+      if(r.definition.resolveGeometry?.travelMs&&!r.releasedLine&&r.startedAt+r.definition.windupMs/1000<=this.elapsedSeconds+1e-9){
+        r.releasedLine=lockedLine(actor,r.target,r.definition.range,r.definition.resolveGeometry.halfWidth,null);
+        if(r.threatId){const old=this.threats.records.get(r.threatId);if(old)this.threats.records.set(r.threatId,Object.freeze({...old,geometry:Object.freeze({...old.geometry,origin:Object.freeze({...r.releasedLine.origin}),center:Object.freeze({...r.releasedLine.end})})}));}
+        this.actionEvent(r,'release');
+      }
       if(r.dueAt>this.elapsedSeconds+1e-9)continue;
       this.pendingActions.delete(id);let hit=false;
-      if(r.definition.resolveGeometry)r.resolvedLine=lockedLine(actor,r.target,r.definition.range,r.definition.resolveGeometry.halfWidth,target);
+      if(r.definition.resolveGeometry)r.resolvedLine=r.releasedLine?lockedLine(r.releasedLine.origin,r.releasedLine.end,r.definition.range,r.definition.resolveGeometry.halfWidth,target):lockedLine(actor,r.target,r.definition.range,r.definition.resolveGeometry.halfWidth,target);
+      if(r.threatId)this.threats.remove(r.threatId);
       const applyEffect=()=>{
-        if(target&&target.teamId!==actor.teamId&&isTargetInRange(actor,target,r.definition.range)&&(!r.resolvedLine||r.resolvedLine.hit))hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
+        if(target&&target.teamId!==actor.teamId&&(r.releasedLine||isTargetInRange(actor,target,r.definition.range))&&(!r.resolvedLine||r.resolvedLine.hit))hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
       };
       if(r.category==='basic')finishAbility({caster:actor,slot:actor.abilityState.basic,definition:r.definition,applyEffect});
       else applyEffect();
@@ -363,8 +369,9 @@ export class BattleSession {
       // A whiff owns an aim point, never a damage target. No acquisition at resolve.
       const facingX=aim.facingX===-1?-1:aim.facingX===1?1:(Math.sign(this.playerMovement.get(actor.instanceId)?.x)|| (actor.teamId===this.allies[0].teamId?1:-1));
       const attackTarget=canHit?{x:target.x,y:target.y}:{x:actor.x+facingX,y:actor.y};
-      const r={actionId:`${category}.${++this.nextActionId}`,category,actorId:actor.instanceId,targetId:canHit?target.instanceId:null,source,definition,startedAt:this.elapsedSeconds,dueAt:this.elapsedSeconds+definition.windupMs/1000,origin:{x:actor.x,y:actor.y},target:attackTarget};
+      const r={actionId:`${category}.${++this.nextActionId}`,category,actorId:actor.instanceId,targetId:canHit?target.instanceId:null,source,definition,startedAt:this.elapsedSeconds,dueAt:this.elapsedSeconds+(definition.windupMs+(definition.resolveGeometry?.travelMs??0))/1000,origin:{x:actor.x,y:actor.y},target:attackTarget};
       if(category!=='basic')finishAbility({caster:actor,slot,definition});
+      if(this.tacticalEnabled&&definition.resolveGeometry?.travelMs&&canHit)r.threatId=this.threats.create(actor,target,definition,this.elapsedSeconds*1000)?.id;
       this.pendingActions.set(actor.instanceId,r);if(canHit)this.targetIds.set(actor.instanceId,target.instanceId);this.actionEvent(r,'start');return true;
     }
     let applied=false;
@@ -415,7 +422,7 @@ export class BattleSession {
   stagedIntervalSeconds(limit){
     if(!this.hasStagedAction())return this.passives.hasSpatial()?Math.min(limit,.05):limit;
     let dt=Math.min(limit,.01);
-    const deadlines=[...this.pendingActions.values()].flatMap(r=>r.staged?[...r.definition.stagedAction.segments.flatMap(l=>[l.startMs,l.centerMs,l.endMs]),r.definition.stagedAction.recoveryMs].map(ms=>r.startedAt+ms/1000):[r.dueAt]);
+    const deadlines=[...this.pendingActions.values()].flatMap(r=>r.staged?[...r.definition.stagedAction.segments.flatMap(l=>[l.startMs,l.centerMs,l.endMs]),r.definition.stagedAction.recoveryMs].map(ms=>r.startedAt+ms/1000):[r.dueAt,...(r.definition.resolveGeometry?.travelMs&&!r.releasedLine?[r.startedAt+r.definition.windupMs/1000]:[])]);
     deadlines.push(...[...this.statuses.records.values()].map(v=>v.expiryTime),...this.pendingHits.map(v=>v.due),...[...this.delayedImpacts.values()].map(v=>v.threat.impactAtMs/1000),...this.areas.nextTicks.values(),...[...this.areas.records.values()].map(v=>v.expiryTime));
     for(const t of deadlines)if(t>this.elapsedSeconds+1e-9)dt=Math.min(dt,t-this.elapsedSeconds);
     return dt;
@@ -492,7 +499,7 @@ export class BattleSession {
         contacts.push({r:{actorId:'',hitIndex:0},u:horizon,passiveTick:true});
       }
       for(const r of this.pendingActions.values()){
-        if(!r.staged){if(r.dueAt<=begin+horizon*dt+1e-9)contacts.push({r,u:Math.max(cursor,(r.dueAt-begin)/dt),legacy:true});continue;}
+        if(!r.staged){const due=r.definition.resolveGeometry?.travelMs&&!r.releasedLine?r.startedAt+r.definition.windupMs/1000:r.dueAt;if(due<=begin+horizon*dt+1e-9)contacts.push({r,u:Math.max(cursor,(due-begin)/dt),legacy:true});continue;}
         if(r.hitIndex<0||r.settled[r.hitIndex])continue;
         const leg=r.definition.stagedAction.segments[r.hitIndex];if(begin>=r.startedAt+leg.endMs/1000-1e-9)continue;
         const target=this.actorById(r.targetId);if(!target||!canCharacterAct(target))continue;

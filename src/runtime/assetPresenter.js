@@ -220,6 +220,7 @@ export class AssetPresenter{
     if(!sample.lineOrigin||!sample.lineTarget){image.setVisible(false);continue;}
     const source=this.project(sample.lineOrigin),end=this.project(sample.lineTarget),ox=spec.offset[0]-d.animation.origin[0]*cw,oy=spec.offset[1]-d.animation.origin[1]*ch;
     const start={x:source.x+(sample.flipX?-ox:ox)*sx,y:source.y+oy*sy},target={x:end.x+(sample.flipX?-spec.targetOffset[0]:spec.targetOffset[0])*sx,y:end.y+spec.targetOffset[1]*sy};
+    if(sample.lineProgress!==undefined){target.x=start.x+(target.x-start.x)*sample.lineProgress;target.y=start.y+(target.y-start.y)*sample.lineProgress;}
     const dx=target.x-start.x,dy=target.y-start.y,distance=Math.hypot(dx,dy),[tail,tip]=spec.lineRange,width=distance/(tip-tail),flipX=dx<0;
     const along=(.5-tail)*width/Math.max(distance,1e-9);
     image.actionId=sample.actionId;image.setOrigin(.5,.5).setDisplaySize(width,spec.size[1]*sy).setPosition(start.x+dx*along,start.y+dy*along).setFlipX(flipX).setRotation(Math.atan2(dy,dx)-(flipX?Math.PI:0)).setDepth(spec.layer).setAlpha(opacity).setVisible(opacity>0&&distance>1e-6);continue;
