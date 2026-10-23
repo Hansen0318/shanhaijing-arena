@@ -1,4 +1,4 @@
-# P3 赤鱬 — 整角色規格v1待審
+# P3 赤鱬 — 規格已核准／整包F3與被動樣式ACTIVE
 
 ```text
 接續Hansen0318/shanhaijing-arena。GitHub唯一權威；先fetch最新feat/m0-combat-core-20260927，核對完整HEAD/tree/branch/PR#1open-unmerged/working tree/最近commits。保留無關untracked。原生單人，不委派、不main merge/另開分支/TD/角色ID特例。所有後續Chat/Work/Codex交接必須一個完整、自足、可一鍵複製code block。
@@ -6,7 +6,7 @@
 P1/P2 COMPLETE／PLAYER VERIFIED；docs/verification/P1_P2_PASSIVE_VFX_CLOSURE.json與P1/P2所有收據保留，新增疾行風痕/Collection亦已玩家確認。release32424075b5c91844187fc80a566a9140c7e955d6/treeab0a6733ff312d48fef3979e1e0697aaaf74a6de、1070/1070/Build/guard585、正常Pages39902216798與CI/local/public149PASS，來源未變沿用不重跑/重發/重下載。
 已完成P3全角色前檢32個既有真headless Session（四Tier×instant/tactical×四招），結果docs/verification/P3_CHARACTER_PREFLIGHT/{REPORT.md,baseline.json,probe.mjs}。已檢視核准chiru identity/Idle、原Move/KO/尺度沿用。現有P3.passive=false；只有同名T2後排heal modifier，不等於獨立被動。來源guard585仍PASS，產品src/public/scripts/tests/依賴/workflow未變。
 完整提案docs/superpowers/specs/2026-10-23-chiru-whole-character-design.md與docs/verification/P3_CHARACTER_PREFLIGHT/proposal.json，DESIGN PROPOSAL/PLAYER REVIEW PENDING。涵蓋屬性/四招/獨立被動/四Tier/真時序/CD/對象/VFX/素材/清理/AI/Collection。明示提案變更：回瀾25/30/35/40%、潤澤16/20/24/30%按目標當前maxHp、不另乘舊healing scale；游息後排距敵≥2、4.2內HP≤60%最低隊員（含自己）即時heal8/12/16/20%、CD8；T2同名modifier改顯示清流但ID/加成不變；水矢180ms、回瀾320ms、潤澤600ms真生效；Heavy兩模式350/337.75/325.5/305.9ms蓄勢+350ms延遲；T3保護改600ms結算才10.8%/2.5秒。這些是尚未核准契約，不是假稱保留現況。素材規劃16本體pose+12FX組，不是全局容量/required數量門檻。
-當前唯一真正Gate=玩家一次審整張角色規格（含新百分比、時序、游息、素材與文案）。未審前不生成F3/GIF、不寫新Runtime/部署。若玩家接受本具體表，保存精確範圍原文/hash收據，再寫原生單人整包實作計畫及依整包F3→其餘姿勢/FX→GIF→共用整合/必要驗證→一次正常發布/整角玩家驗收推進。內部依Basic→Heavy→Special→Awakening→Passive切片並commit，不逐招Pages/重複玩家遊戲驗收，不讓未展示的新美術自動變已核准。
+玩家最新已回覆整角規格「紀錄進度流程規則就繼續」。新收據docs/verification/P3_CHARACTER_PREFLIGHT/spec-acceptance.json綁定原spec/proposal/baseline/流程4hash，設計Gate CLOSED；原提案舊PENDING字樣保留但由新收據取代，不重問規格或原生執行。原生單人計畫docs/superpowers/plans/2026-10-23-chiru-whole-character.md，ledger docs/verification/P3_CHARACTER_PREFLIGHT/WORK_LOG.md。現在第一未完成Task1=四招各自透明右向本體F3候選＋被動雙魚回流樣式，使用核准identity/Idle作reference、獨立source與原圖不可改，集中一包展示待審。先看最新ledger/候選manifest，不重做已完成生成/檢查。未展示素材不能冒稱PLAYER APPROVED，不先產其餘12姿勢/整包GIF或Runtime/Pages。素材Gate通過後按整包姿勢FX/GIF→共用整合/必要驗證→一次正常發布/整角驗收，內部Basic→Heavy→Special→Awakening→Passive，不逐招部署，不新增plan/execution確認。
 被動與Collection須在同一實作版本完成；提案審閱期間產品保持P3尚未開放，不先寫成已生效。所有現有/未來被動須真效果、獨立Tier、相符真事件/recipient VFX、reduced-motion提示與KO/end/Pause/Restart/destroy清理，不用同名Tier/基礎HP DEF/文案冒充；不在戰場放被動文字/HUD數字/角色間連線或放大角色。玩家介面只寫玩法/必要數字/世界觀，工程規則放docs/測試。
 保護全部核准masters/收據/GIF/scale/anchor/ground/canonical右向/左向mirror、P1疾行35/50/65/80%、3秒/CD6秒與95%顯式額度；普通movement/outgoing15%不動，不套移速額度到減傷或明確heal基礎比例。P2厚甲/守群/鎮岳真傷害/真狀態/instant/tactical/MAX與各自到期不變。普通Hit永久取消。素材無固定16MiB總量/required數量/reserve拒絕門檻，逐檔安全/兩下載/完整required/所有權/回收/真失敗/destroy保持。新類型須擴充共用schema/條件/效果、匿名角色可用，不能加P3分支。每切片更新進度規則報告handoff並同分支commit/push，純文件[skip ci]。
 ```

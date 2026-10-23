@@ -1,0 +1,19 @@
+{
+  "status": "PLAYER APPROVED PRESENTED WHOLE-CHARACTER SPECIFICATION; ART NOT YET REVIEWED",
+  "recordedDate": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "紀錄進度流程規則就繼續",
+  "presentedCheckpoint": "2d7730cb12587269bd43f69166d4b24554b724a2",
+  "scope": "Direct continue reply to presented complete P3 specification, including current-maxHp healing, timing, passive growth and candidate asset plan. Existing whole-character workflow/native execution retained; unseen art/GIF/runtime not approved.",
+  "notClaimed": [
+    "Itemized restatement by player of each numeric field",
+    "Unseen F3/style/GIF acceptance",
+    "Product runtime already implemented"
+  ],
+  "evidenceSha256": {
+    "docs/superpowers/specs/2026-10-23-chiru-whole-character-design.md": "59eca3f8f3bf143be6ce08496bdff87ad0dc2e8c01577d2ce263e3aa4cca2e29",
+    "docs/verification/P3_CHARACTER_PREFLIGHT/proposal.json": "87b9b1f9e262ca1f8729fb79c56ae6e97b80bf8a11d8bfbd5fabb2be7f8ec517",
+    "docs/verification/P3_CHARACTER_PREFLIGHT/baseline.json": "d39e70572e778d4f5c2691c692eb76b2cee71bd775909a83db59c83d7b4665d9",
+    "docs/decisions/2026-10-23-whole-character-batch-workflow.md": "f2d3e2386339707b998f857abb7f75f763e44f203c5b66ed189b799c995b0ea3"
+  }
+}

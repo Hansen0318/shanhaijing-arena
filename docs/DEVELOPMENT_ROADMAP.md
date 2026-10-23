@@ -1,5 +1,17 @@
 # Development Roadmap — Post-M1
 
+## 2026-10-23 — 赤鱬整角規格已核准；整包F3／被動樣式ACTIVE
+
+玩家直接回覆已呈交整角規格「紀錄進度流程規則就繼續」。已保存精確範圍收據docs/verification/P3_CHARACTER_PREFLIGHT/spec-acceptance.json，綁定spec/proposal/baseline/流程decision四項hash與呈交checkpoint2d7730cb12587269bd43f69166d4b24554b724a2；規格設計Gate CLOSED，不重問同一張表/數值/時序/原生執行方式。原spec/proposal bytes保留，其舊DESIGN PENDING文字為審核前歷史，由新收據取代；未展示F3/被動樣式/GIF/Runtime仍未核准。
+
+原生單人整包計畫docs/superpowers/plans/2026-10-23-chiru-whole-character.md與WORK_LOG已建立/自審，按已核准流程直接進Task1：四招獨立透明右向本體F3候選＋游息雙魚回流效果樣式→集中整包審核。先保存核准checkpoint，再依已核准identity/Idle生成候選，不改approved masters或P3產品資料。計畫是既定規格的執行分解，不插額外plan批准Gate、不委派或另開branch/worktree；自審非獨立review。
+
+全局後續固定整角規格一次審→四招F3/被動樣式整包審→其餘姿勢/獨立VFX/整包GIF審→Basic/Heavy/Special/Awakening/Passive內部整合→必要驗證→一次正常CI/Pages/public發布→整角驗收，不逐招重發。Collection被動介紹與真實實作同版本就緒；未實作前仍尚未開放，介紹只寫玩法效果。所有現有/未來被動VFX/Tier/真受益者/完整清理、原P1/P2 COMPLETE及全部美術/尺度/時序/MAX/素材/15%/疾行顯式95%/Hit取消保護保持。
+
+此為收據/計畫/進度checkpoint[skip ci]，未生新素材、未寫Runtime或部署；guard585來源靜態及收據hash核對，既有1070/Build/Browser/Pages/public149來源未變沿用，不重跑。原分支PR#1open/unmerged，保留全部無關untracked不提交/修改，無main merge/新分支/TD/角色ID特例。最新Task1 ledger與handoff接續第一個真正未完成素材，不重做32案前檢或重審規格。
+
+
+
 ## 2026-10-23 — 全未來角色改整包流程；P3整角色規格v1待整表審閱
 
 玩家「好，紀錄進度流程和修改流程讓未來角色開發可一樣的方式開發 後，繼續」已核准整角色規格一次審→整包四招F3/被動樣式→整包GIF→整包實作驗證→一次正常部署/整角驗收。全局權威docs/decisions/2026-10-23-whole-character-batch-workflow.md，流程收據docs/verification/CHARACTER_BATCH_WORKFLOW/acceptance.json，共用模板docs/templates/CHARACTER_SPEC_TEMPLATE.md。內部仍Basic→Heavy→Special→Awakening→Passive切片/commit，不逐招重複發布/玩家遊戲驗收。此決定取代舊分招排隊/部署節點，保留F3先於其餘姿勢、素材品質與已核准保護；P1/P2 COMPLETE不重做。
