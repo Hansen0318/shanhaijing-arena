@@ -1,5 +1,14 @@
 # Project State
 
+## 2026-10-23 — 最新玩家指令：撤銷整包開發，恢復逐招完整流程（最高優先）
+
+**權威最新決策：** `docs/decisions/2026-10-23-restore-sequential-skill-workflow.md`。玩家明確撤銷2026-10-23舊整角「同時四招F3＋被動樣式／整包GIF／整包Runtime／一次發布」要求，因Work容量與對話長度限制，恢復 **Basic → Heavy → Special → Awakening → Passive**；每一招各自完成F3審核→其他動作/獨立VFX→GIF審核→Runtime/真驗證→正常Pages部署→玩家實機核准→保存收據與GitHub checkpoint，**才繼續下一招**。可跨多個短Work，不能等五招才發布。過去同日整包計畫、handoff、decision為歷史，與本新決策衝突處以本節和新decision為準。
+
+**現在的唯一未完成Gate：P3 赤鱬 Basic「水矢」現有F3候選的單招玩家審核。** GitHub `docs/art/candidates/chiru/whole-character/f3-batch-v1/basic-f3.png` 已存在（連同manifest/original/prompts/review），候選尚未PLAYER APPROVED；先讀來源並對比核准identity/Idle後**只展示水矢F3**，不得再要求四招與被動同批審核。Heavy/回瀾/潤澤/游息四項已生成候選保持不動，待該招輪到時再個別審核，不重生。P3完整spec數值/Tier/時序/Collection已由玩家核准，其原收據保持有效，不因流程改動要求重審；尚無P3 GIF/Runtime/新部署。P1/P2 COMPLETE／PLAYER VERIFIED，不重做。
+
+同一分支 `feat/m0-combat-core-20260927`、PR#1 open/unmerged、不合main、不新分支/TD、GitHub latest HEAD優先；保護所有approved masters/收據/GIF/scale/anchor/ground/canonical右向、左向mirror、普通Hit永久取消，保持全局被動真效果/Tier/VFX/正確清理、Collection純玩法、P1/P2數值/MAX、無固定16MiB容量限額與逐檔安全/required/回收規則。每招結束寫入STATE/WORK_PROGRESS/ledger/handoff、同分支commit/push；純文件[skip ci]；交接指令一個完整自足可複製code block。此次僅改規則與進度，**沒有**新增核准、產品程式/素材變更、Runtime測試或Pages部署。
+
+
 ## 2026-10-23 — P3 四招F3／游息候選已保存，待集中玩家審核
 
 恢復HEAD eb0ed0b50c97914cb434b7e9c5a48439adedeb3c；PR#1 open/unmerged。Task1五張候選與原檔、prompts、manifest、review.html/REVIEW.md在docs/art/candidates/chiru/whole-character/f3-batch-v1/。四張右向本體：水矢單手前推、湧浪雙手重推、回瀾托掌、潤澤高展；游息獨立雙魚效果。只增加透明畫布邊距，原始像素/檔案保留。作者自審不是玩家PASS；候選尚未核准，無GIF/Runtime/部署。
