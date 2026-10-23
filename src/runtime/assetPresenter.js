@@ -40,7 +40,7 @@ export class AssetPresenter{
   const portraits=definitions.map(d=>d.assets?.portraitSquare??resolveCharacterAsset(d,'portraitSquare').key);
   const idles=definitions.map(d=>d.animationDescriptors?.battleIdle?.source??d.assets?.battleIdle??characterAnimation(d,'battleIdle').source);
   const critical=[...new Set([...portraits,...idles])];
-  const actionKeys=definitions.flatMap(d=>Object.keys(d.actionDescriptors??{}).flatMap(category=>{const a=characterAction(d,category);return a.kind==='utility'?[a.animation.source,a.activation.assetKey,...Object.values(a.statusVisuals).map(v=>v.assetKey)]:a.kind==='staged'?[a.animation.source,...a.stages.flatMap(s=>[s.blade.assetKey,s.contact.assetKey])]:[a.animation.source,a.blade.assetKey,a.contact.assetKey,...Object.values(a.statusVisuals??{}).map(v=>v.assetKey)];}));
+  const actionKeys=definitions.flatMap(d=>Object.keys(d.actionDescriptors??{}).flatMap(category=>{const a=characterAction(d,category);return a.kind==='utility'?[a.animation.source,a.activation.assetKey,...Object.values(a.statusVisuals).map(v=>v.assetKey)]:a.kind==='staged'?[a.animation.source,...a.stages.flatMap(s=>[s.blade.assetKey,s.contact.assetKey])]:[a.animation.source,a.blade.assetKey,a.contact.assetKey,...(a.anticipation?[a.anticipation.assetKey]:[]),...Object.values(a.statusVisuals??{}).map(v=>v.assetKey)];}));
   const required=[...new Set([...critical,...definitions.flatMap(d=>['battleMove','battleKo'].map(state=>d.animationDescriptors?.[state]?.source??d.assets?.[state]).filter(Boolean)),...actionKeys])];
   this.residency.setPins('encounter',required);
   await this.loadKeys(critical);if(this.closed)return;
@@ -213,9 +213,17 @@ export class AssetPresenter{
   if(effects&&[...effects.values()].some(image=>image.actionId!==sample.actionId)){this.clearActionEffects(ownerId);effects=null;}
   if(!effects){effects=new Map();this.actionEffects.set(ownerId,effects);}
   const descriptor=sample.descriptor,d=descriptor.kind==='staged'?{...descriptor,...descriptor.stages[Math.max(0,sample.stageIndex)]}:descriptor,[cw,ch]=d.coordinateSize,sx=displaySize.width/cw,sy=displaySize.height/ch;
-  for(const kind of ['blade','contact']){const spec=d[kind],opacity=sample[kind+'Opacity'];let image=effects.get(kind);
+  for(const kind of ['anticipation','blade','contact']){const base=d[kind];if(!base)continue;const spec={...base,offset:base.frameOffsets?.[sample.frameIndex]??base.offset},opacity=sample[kind+'Opacity'];let image=effects.get(kind);
    if(opacity>0&&!image){image=this.effectImage(spec.assetKey);effects.set(kind,image);}
    if(!image)continue;if(opacity>0){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required action texture unavailable: '+spec.assetKey);if(image.texture!==texture.key)image.setTexture(texture.key,this.effectFrame(spec.assetKey));}
+   if(spec.attach==='line'){
+    if(!sample.lineOrigin||!sample.lineTarget){image.setVisible(false);continue;}
+    const source=this.project(sample.lineOrigin),end=this.project(sample.lineTarget),ox=spec.offset[0]-d.animation.origin[0]*cw,oy=spec.offset[1]-d.animation.origin[1]*ch;
+    const start={x:source.x+(sample.flipX?-ox:ox)*sx,y:source.y+oy*sy},target={x:end.x+(sample.flipX?-spec.targetOffset[0]:spec.targetOffset[0])*sx,y:end.y+spec.targetOffset[1]*sy};
+    const dx=target.x-start.x,dy=target.y-start.y,distance=Math.hypot(dx,dy),[tail,tip]=spec.lineRange,width=distance/(tip-tail),flipX=dx<0;
+    const along=(.5-tail)*width/Math.max(distance,1e-9);
+    image.actionId=sample.actionId;image.setOrigin(.5,.5).setDisplaySize(width,spec.size[1]*sy).setPosition(start.x+dx*along,start.y+dy*along).setFlipX(flipX).setRotation(Math.atan2(dy,dx)-(flipX?Math.PI:0)).setDepth(spec.layer).setAlpha(opacity).setVisible(opacity>0&&distance>1e-6);continue;
+   }
    const targetAttached=spec.attach==='target'&&sample.contactTarget;
    const anchor=targetAttached?this.project(sample.contactTarget):spec.attach==='fixed'&&sample.sourceOrigin?this.project(sample.sourceOrigin):position;
    const x=spec.offset[0]+spec.size[0]/2-(targetAttached?0:d.animation.origin[0]*cw),y=spec.offset[1]+spec.size[1]/2-(targetAttached?0:d.animation.origin[1]*ch);

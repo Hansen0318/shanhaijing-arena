@@ -48,6 +48,8 @@ export function createAbilityDefinition(input) {
   }
 
   const stagedAction=createStagedAction(input.stagedAction);
+  const geometry=input.resolveGeometry;
+  if(geometry&&(geometry.kind!=='locked-line'||!Number.isFinite(geometry.halfWidth)||geometry.halfWidth<=0||geometry.halfWidth>4||windupMs<=0||input.targetingRule!=='enemy'||stagedAction))throw new RangeError('Invalid resolve geometry');
   if(stagedAction&&(windupMs!==0||input.telegraph!=null||input.targetingRule!=='enemy'||Math.abs(stagedAction.segments.reduce((n,l)=>n+l.coefficient,0)-(input.effect?.coefficient??0))>1e-9))throw new RangeError('Invalid staged ability contract');
   return Object.freeze({
     id: input.id,
@@ -56,6 +58,7 @@ export function createAbilityDefinition(input) {
     category: input.category,
     cooldown,
     windupMs,
+    ...(geometry?{resolveGeometry:Object.freeze({...geometry})}:{}),
     ...(stagedAction?{stagedAction}:{}),
     unlockTier,
     canCrit,

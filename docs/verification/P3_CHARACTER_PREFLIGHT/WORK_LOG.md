@@ -1,3 +1,9 @@
+## 2026-10-23 — Basic Runtime本機1096/1096／Build PASS；正常CI真Browser與發布ACTIVE
+
+水矢已整合資料驅動180ms固定瞄準有限線／半寬.12、四姿勢與獨立凝水/水矢/真命中水花；共用程式不判角色ID。來源保真封裝、25個新機制/呈現案＋新發布guard負向測試，完整1096/1096、Build、95檔素材guard PASS。舊容量/瞬發fixture已按新來源更新；舊核准receipt/guard與所有masters不改。新ledger/packing/local-validation在docs/verification/P3_BASIC_RUNTIME/。
+
+本機Chromium下載得到Site Unavailable HTML，未冒稱真Browser通過。正常M0 CI現在執行完整測試→Build→Chiru native32/built4真WebGL→新來源綁定guard→正常Pages；任一失敗阻止發布。P1/P2既有verification workflows保留。下一步核對CI及必要修正、下載CI證據與公開版本逐檔比較；玩家實際Basic驗收仍PENDING，不能Heavy。原分支PR#1open/unmerged、不新分支/TD、普通Hit取消、無16MiB上限及既有美術尺度/清理保護保持。
+
 ## 2026-10-23 — Basic整合GIF PLAYER APPROVED；Runtime ACTIVE
 
 玩家「我確認 紀錄 繼續」核准2f37959之水矢動作/VFX/GIF。精確收據docs/art/approved/chiru/basic/composite-review-v1/acceptance.json綁定完整素材與預覽hash；不重畫/重審。執行ledger docs/verification/P3_BASIC_RUNTIME/WORK_LOG.md。下一步只做Basic共用資料驅動180ms有限線命中與來源保真Runtime包/實際驗證/正常Pages，未見Runtime不可假稱已驗收。Basic遊戲玩家核准前不進Heavy。

@@ -33,7 +33,7 @@ jobs:
 
       - name: Test
         if: "!contains(github.event.head_commit.message, '[botuo special probe]') && !contains(github.event.head_commit.message, '[botuo special release]') && !contains(github.event.head_commit.message, '[botuo heavy') && !contains(github.event.head_commit.message, '[botuo basic release]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[viewport release]')"
-        run: npm test
+        run: npm test -- --test-reporter=tap | tee .git/chiru-tests.tap
       - name: Test bounded viewport surface
         if: contains(github.event.head_commit.message, '[viewport probe]') || contains(github.event.head_commit.message, '[viewport release]')
         run: node --test tests/viewportSync.test.js tests/landingView.test.js tests/routeOwnership.test.js tests/campaignNavigation.test.js tests/appRouteReset.test.js tests/lazyBattleRuntime.test.js
@@ -178,8 +178,24 @@ jobs:
           name: botuo-heavy-browser-verification
           path: ${{ runner.temp }}/botuo-heavy-browser
           if-no-files-found: warn
-      - name: Verify current passive release evidence
-        run: node scripts/verifyPassiveVfxRelease.mjs
+      - name: Real Chiru Basic native and built-entry verification
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/chiru-browser-tool
+          ARENA_BROWSER_OUTPUT: docs/verification/P3_BASIC_RUNTIME/browser
+        run: |
+          npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
+          node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+          node scripts/checkChiruBasicBrowser.mjs
+          node scripts/checkChiruBasicBrowser.mjs --built
+      - name: Verify new source-bound Chiru Basic release evidence
+        run: node scripts/verifyChiruBasicRelease.mjs --record
+      - name: Preserve Chiru Basic source and Browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chiru-basic-runtime-evidence
+          path: docs/verification/P3_BASIC_RUNTIME/
+          if-no-files-found: error
       - name: Configure Pages
         if: "!contains(github.event.head_commit.message, '[botuo special probe]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
         uses: actions/configure-pages@v5

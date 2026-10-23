@@ -16,10 +16,10 @@ export class ActionPlayback{
    const origin=event.attackOrigin??event.origin,target=event.attackTarget??event.target??origin;
    if(!origin||!target)return;
    this.active.delete(actorId);while(this.active.size>=64)this.active.delete(this.active.keys().next().value);
-   this.active.set(actorId,{actionId,descriptor,startedAt:event.startedAt,flipX:target.x<origin.x,resolvedAt:null,hit:false,...(descriptor.kind==='area-observed'?{sourceOrigin:{...origin}}:{})});
+   this.active.set(actorId,{actionId,descriptor,startedAt:event.startedAt,flipX:target.x<origin.x,resolvedAt:null,hit:false,...(descriptor.kind==='area-observed'?{sourceOrigin:{...origin}}:{}),...(descriptor.blade.attach==='line'?{lineOrigin:{...origin},lineTarget:{...target}}:{})});
   }else if(old?.actionId===actionId){
    if(phase==='cancel')this.remove(actorId);
-   else if(phase==='resolve'&&old.resolvedAt===null&&Number.isFinite(event.resolvedAt)&&event.resolvedAt>=old.startedAt){old.resolvedAt=event.resolvedAt;old.hit=event.hit===true;if(event.target)old.contactTarget={x:event.target.x,y:event.target.y};}
+   else if(phase==='resolve'&&old.resolvedAt===null&&Number.isFinite(event.resolvedAt)&&event.resolvedAt>=old.startedAt){old.resolvedAt=event.resolvedAt;old.hit=event.hit===true;if(descriptor.blade.attach==='line'){old.lineOrigin={...(event.attackOrigin??old.lineOrigin)};old.lineTarget={...(event.attackTarget??old.lineTarget)};}if(event.target)old.contactTarget={x:event.target.x,y:event.target.y};}
   }
  }
  handleStaged(event,descriptor,old){
@@ -48,7 +48,7 @@ export class ActionPlayback{
   if(resolved&&after+1e-9>=(reducedMotion?hold:hold+recovery)){this.remove(ownerId);return null;}
   const frameIndex=resolved?(after+1e-9<hold?2:3):reducedMotion||elapsed+1e-9<d.frameDurationsMs[0]/1000?0:1;
   const fade=resolved?Math.max(0,1-after/hold):0;
-  return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,...(r.sourceOrigin?{sourceOrigin:{...r.sourceOrigin}}:{}),bladeOpacity:d.kind==='area-observed'&&!resolved?0:d.blade.holdAfterResolveMs?(resolved?releasedBladeOpacity(d,after,reducedMotion):d.blade.startMs!==undefined?elapsed+1e-9>=d.blade.startMs/1000?1:0:!reducedMotion&&frameIndex===1?1:0):reducedMotion||frameIndex===0||frameIndex===3?0:resolved?fade:.55,contactOpacity:resolved&&r.hit&&!d.contact.durationMs?fade:0,...(d.contact.attach==='target'&&r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
+  return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,...(r.sourceOrigin?{sourceOrigin:{...r.sourceOrigin}}:{}),...(r.lineTarget?{lineOrigin:{...r.lineOrigin},lineTarget:{...r.lineTarget}}:{}),anticipationOpacity:d.anticipation&&!resolved?(reducedMotion?.45:frameIndex===0?.45:.85):0,bladeOpacity:d.blade.attach==='line'?(resolved?reducedMotion?.65:fade:0):d.kind==='area-observed'&&!resolved?0:d.blade.holdAfterResolveMs?(resolved?releasedBladeOpacity(d,after,reducedMotion):d.blade.startMs!==undefined?elapsed+1e-9>=d.blade.startMs/1000?1:0:!reducedMotion&&frameIndex===1?1:0):reducedMotion||frameIndex===0||frameIndex===3?0:resolved?fade:.55,contactOpacity:resolved&&r.hit&&!d.contact.durationMs?fade:0,...(d.contact.attach==='target'&&r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
  }
  remove(ownerId){this.active.delete(ownerId);}
  clear(){this.active.clear();}

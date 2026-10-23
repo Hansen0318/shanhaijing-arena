@@ -1,3 +1,4 @@
+import {chiruBasicAction} from '../assets/chiruBasicRuntime.js';
 import {formalAbilityDefinitions} from './abilities.js';
 import {botuoHeavyAction} from '../assets/botuoHeavyRuntime.js';
 import {botuoSpecialAction} from '../assets/botuoSpecialRuntime.js';
@@ -62,6 +63,7 @@ const presentation={
   })}),
  },
  P3:{
+  actionDescriptors:Object.freeze({basic:actionDescriptor(chiruBasicAction)}),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'chiru.portrait',collectionArt:'chiru.identity',battleIdle:'chiru.battleIdle',battleMove:'chiru.battleMove',battleKo:'chiru.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'chiru.battleIdle',frames:[{x:0,y:0,width:160,height:160}],

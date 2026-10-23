@@ -1,6 +1,11 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 import {specialRuntimePacking} from './specialRuntimePacking.js';
 const entries=[
+ {"key":"chiru.basicPoses","type":"image","path":"assets/chiru-basic-runtime-v1/poses.png","width":672,"height":168,"bytes":162606,"fallback":"placeholder.battle"},
+ {"key":"chiru.basicCharge","type":"image","path":"assets/chiru-basic-runtime-v1/charge.png","width":69,"height":48,"bytes":3589,"fallback":"placeholder.vfx"},
+ {"key":"chiru.basicArrow","type":"image","path":"assets/chiru-basic-runtime-v1/arrow.png","width":328,"height":122,"bytes":16832,"fallback":"placeholder.vfx"},
+ {"key":"chiru.basicImpact","type":"image","path":"assets/chiru-basic-runtime-v1/impact.png","width":119,"height":82,"bytes":9711,"fallback":"placeholder.vfx"},
+
  {key:'botuo.awakeningPoses',type:'image',path:'assets/botuo-awakening-runtime-v1/poses.png',width:800,height:200,bytes:148411,fallback:'placeholder.battle'},
  {key:'botuo.awakeningRelease',type:'image',path:'assets/botuo-awakening-runtime-v1/radial-release.png',width:523,height:283,bytes:197835,fallback:'placeholder.vfx'},
  {key:'botuo.awakeningImpact',type:'image',path:'assets/botuo-awakening-runtime-v1/victim-impact.png',width:293,height:293,bytes:101915,fallback:'placeholder.vfx'},

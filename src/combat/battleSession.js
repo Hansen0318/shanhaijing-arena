@@ -1,4 +1,5 @@
 import {PassiveRuntime} from './passiveRuntime.js';
+import {lockedLine} from './lockedLine.js';
 import {ordinaryMotionSegments,clipOrdinarySegment,pointOnOrdinaryPath} from './passiveMotion.js';
 import {beginLeg,legPosition,relativeSweep} from './stagedAction.js';
 import {PersistentAreas} from './persistentAreas.js';
@@ -163,7 +164,7 @@ export class BattleSession {
 
   actionEvent(record,phase,hit=false,reason=null){
     const actor=this.actorById(record.actorId),target=this.actorById(record.targetId);
-    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,eventAt:this.elapsedSeconds,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...record.origin},attackTarget:{...record.target}});
+    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,eventAt:this.elapsedSeconds,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...(record.resolvedLine?.origin??record.origin)},attackTarget:{...(record.resolvedLine?.end??record.target)}});
   }
 
   cancelBasicAction(actorId,reason){
@@ -188,8 +189,9 @@ export class BattleSession {
       if(reason){this.cancelAction(id,reason);continue;}
       if(r.dueAt>this.elapsedSeconds+1e-9)continue;
       this.pendingActions.delete(id);let hit=false;
+      if(r.definition.resolveGeometry)r.resolvedLine=lockedLine(actor,r.target,r.definition.range,r.definition.resolveGeometry.halfWidth,target);
       const applyEffect=()=>{
-        if(target&&target.teamId!==actor.teamId&&isTargetInRange(actor,target,r.definition.range))hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
+        if(target&&target.teamId!==actor.teamId&&isTargetInRange(actor,target,r.definition.range)&&(!r.resolvedLine||r.resolvedLine.hit))hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
       };
       if(r.category==='basic')finishAbility({caster:actor,slot:actor.abilityState.basic,definition:r.definition,applyEffect});
       else applyEffect();
@@ -441,6 +443,7 @@ export class BattleSession {
       this.resolveActions();const dt=this.stagedIntervalSeconds(until-this.elapsedSeconds);
       this.stepInterval(dt);
     }
+    if(until===this.maxSeconds&&this.maxSeconds-this.elapsedSeconds<=1e-10)this.elapsedSeconds=this.maxSeconds;
     for(const [a,last] of held)a.controlHandoff.lastPlayerInputAt=last;
     if(this.result()!=='running')this.clearTransientCombat({preserveEvents:true});return this.snapshot();
   }

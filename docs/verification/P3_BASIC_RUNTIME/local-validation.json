@@ -1,0 +1,12 @@
+{
+  "status": "LOCAL ENGINEERING PASS / REAL CI BROWSER PENDING",
+  "tests": {
+    "total": 1096,
+    "pass": 1096,
+    "fail": 0
+  },
+  "build": "PASS",
+  "physicalPhone": false,
+  "nativeBrowser": "NOT RUN: Chromium download returned HTML Site Unavailable",
+  "next": "Normal CI full tests/Build/native32+built4/source guard/Pages; player Basic acceptance remains pending"
+}
