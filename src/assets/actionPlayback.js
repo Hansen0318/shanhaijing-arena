@@ -46,7 +46,7 @@ export class ActionPlayback{
   const d=r.descriptor,elapsed=Math.max(0,now-r.startedAt),released=r.releaseAt!==null,after=released?Math.max(0,now-r.releaseAt):0,resolved=r.resolvedAt!==null,contactAge=resolved?Math.max(0,now-r.resolvedAt):0;
   if(released&&after+1e-9>=(d.frameDurationsMs[2]+d.frameDurationsMs[3])/1000){this.remove(ownerId);return null;}
   const frameIndex=released?(after+1e-9<d.frameDurationsMs[2]/1000?2:3):elapsed+1e-9<(r.windupMs??350)/1000*4/7?0:1;
-  return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,lineOrigin:{...r.lineOrigin},lineTarget:{...r.lineTarget},lineProgress:released?(reducedMotion?1:Math.min(1,after/(Number.isFinite(r.dueAt)?r.dueAt-r.releaseAt:.35))):0,anticipationOpacity:released?0:reducedMotion?.35:frameIndex===0?.35:.8,bladeOpacity:released&&after<.5?(reducedMotion?.35:resolved?Math.max(.15,1-contactAge/.18):.75):0,contactOpacity:resolved&&r.hit?Math.max(0,1-contactAge/.25)*(reducedMotion?.65:1):0,...(r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
+  return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,lineOrigin:{...r.lineOrigin},lineTarget:{...r.lineTarget},lineProgress:released?(reducedMotion?1:Math.min(1,after/(Number.isFinite(r.dueAt)?r.dueAt-r.releaseAt:.35))):0,anticipationOpacity:released?0:frameIndex===0?.85:1,bladeOpacity:released&&after<.5?(resolved?Math.max(0,Math.min(1,(.15-contactAge)/.05)):1):0,contactOpacity:resolved&&r.hit&&!d.contact.durationMs?Math.max(0,Math.min(1,(.25-contactAge)/.13)):0,...(r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
  }
  sample(ownerId,now,reducedMotion=false){
   const r=this.active.get(ownerId);if(!r||!Number.isFinite(now))return null;

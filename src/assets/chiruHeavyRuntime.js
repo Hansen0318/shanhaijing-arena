@@ -111,6 +111,8 @@ export const chiruHeavyAction={
       206,
       142
     ],
-    "layer": 6
+    "layer": 6,
+    "durationMs": 250,
+    "fullOpacityMs": 120
   }
 };

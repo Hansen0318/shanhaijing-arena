@@ -19,7 +19,7 @@ for(const sign of [-1,1])for(const reduced of [false,true])test(`real Session br
  assert.equal(t.hp,hp);assert.equal(f.p.actionEffects.get(a.instanceId).get('anticipation').visible,true);
  assert.ok(!f.p.actionEffects.get(a.instanceId).get('blade')?.visible);assert.ok(!f.p.actionEffects.get(a.instanceId).get('contact')?.visible);
  s.step(.35);paint(f);assert.equal(t.hp,hp);s.step(.35);paint(f);assert.ok(t.hp<hp);const map=f.p.actionEffects.get(a.instanceId),line=map.get('blade');
- assert.equal(line.visible,true);assert.ok(line.displayWidth>0);assert.equal(line.flipX,sign<0);assert.equal(map.get('anticipation').visible,false);assert.equal(map.get('contact').visible,true);
+ assert.equal(line.visible,true);assert.ok(line.displayWidth>0);assert.equal(line.flipX,sign<0);assert.equal(map.get('anticipation').visible,false);assert.equal([...f.p.stagedImpactSprites.values()][0]?.visible,true);
  assert.equal(f.p.actorSprites.get(a.instanceId).flipX,sign<0);assert.equal(s.drainDamageEvents().length,1);
  const frozen=[line.x,line.y,line.alpha];paint(f);assert.deepEqual([line.x,line.y,line.alpha],frozen);
  s.step(.25);paint(f);assert.equal(f.p.actions.active.size,0);assert.ok(f.p.actorSprites.get(a.instanceId).texture.endsWith('chiru.battleIdle'));

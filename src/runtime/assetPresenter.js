@@ -178,7 +178,7 @@ export class AssetPresenter{
    const anchor=r.targetId?positions.get(r.targetId)??this.project(r.target):this.project(r.target),x=spec.offset[0]+spec.size[0]/2,y=spec.offset[1]+spec.size[1]/2;
    // Event time controls normal expiry. A late first paint retains one confirmed cue;
    // the next distinct paint expires it, so stalls do not replay HP or extend lifetime.
-   if(r.paintedAt!==now)r.opacity=r.paintedAt===null&&age>=hold?1:this.reducedMotion&&(d.kind==='staged'||r.independent)?1:Math.max(0,1-age/hold);
+   if(r.paintedAt!==now)r.opacity=r.paintedAt===null&&age>=hold?1:spec.fullOpacityMs!==undefined?Math.max(0,Math.min(1,(hold-age)/(hold-spec.fullOpacityMs/1000))):this.reducedMotion&&(d.kind==='staged'||r.independent)?1:Math.max(0,1-age/hold);
    image.actionId=r.actionId;image.hitIndex=r.hitIndex;image.eventAt=r.eventAt;
    image.setOrigin(.5,.5).setDisplaySize(spec.size[0]*sx,spec.size[1]*sy).setPosition(anchor.x+(r.flipX?-x:x)*sx,anchor.y+y*sy).setFlipX(r.flipX).setDepth(spec.layer).setAlpha(r.opacity).setVisible(true);r.paintedAt=now;
   }
