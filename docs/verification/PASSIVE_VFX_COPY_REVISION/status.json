@@ -1,5 +1,5 @@
 {
-  "status": "DEPLOYED / ENGINEERING PASS / P2 ACCEPTED; NEW P1 VFX PLAYER REVIEW PENDING",
+  "status": "DEPLOYED / PLAYER VERIFIED / P1 AND P2 COMPLETE",
   "releaseCommit": "32424075b5c91844187fc80a566a9140c7e955d6",
   "releaseTree": "ab0a6733ff312d48fef3979e1e0697aaaf74a6de",
   "url": "https://hansen0318.github.io/shanhaijing-arena/?passive=3242407",
@@ -35,7 +35,7 @@
   },
   "playerGate": {
     "P2": "Existing thick armor and armor VFX condition accepted; required copy correction deployed and verified",
-    "P1": "New cyan speed-streak VFX only awaits player observation; existing accepted mechanics/art/four active skills remain accepted",
-    "P3": "BLOCKED; no P3 or TD development started"
+    "P1": "New cyan speed-streak VFX and Collection copy now PLAYER VERIFIED: docs/art/approved/lushu/passive/runtime-v3-vfx/acceptance.json; existing approvals retained",
+    "P3": "P1/P2 prerequisite closed; roadmap next P3 Basic. No unseen P3 design or implementation authorization inferred from a status question"
   }
 }

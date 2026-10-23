@@ -1,0 +1,28 @@
+{
+  "status": "P1 AND P2 COMPLETE / PLAYER VERIFIED / PASSIVE VFX CATCH-UP CLOSED",
+  "recordedDate": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "method": "Aggregate existing accepted character scope, P2 passive approval and newly accepted P1 VFX/Collection presentation; no invented new whole-character device test",
+  "P1": {
+    "existingClosure": "docs/verification/P1_CHARACTER_CLOSURE.json",
+    "newPresentationAcceptance": "docs/art/approved/lushu/passive/runtime-v3-vfx/acceptance.json",
+    "newPresentationAcceptanceSha256": "4e46ec8cbfa216513313967451288e8e7ac66e71c660497a758eb554ce300dd1",
+    "remainingGate": null
+  },
+  "P2": {
+    "existingClosure": "docs/verification/P2_CHARACTER_CLOSURE_WITH_PASSIVE.json",
+    "passiveAcceptance": "docs/art/approved/botuo/passive/runtime-v1/acceptance.json",
+    "remainingGate": null
+  },
+  "releaseCommit": "32424075b5c91844187fc80a566a9140c7e955d6",
+  "releaseTree": "ab0a6733ff312d48fef3979e1e0697aaaf74a6de",
+  "next": "Roadmap next: P3 赤鱬 Basic. P1/P2 prerequisite gate is closed. Record proposed mechanism preflight → differentiated action/F3 review sequence; no P3 implementation or unseen design approval inferred from a status question.",
+  "ordinaryHit": "PERMANENTLY CANCELLED",
+  "runtimeChanged": false,
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS / PLAYER VERIFIED / P1 PASSIVE VFX AND PLAYER COPY ACCEPTED",
+  "recordedDate": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "exactApprovalTimeProvided": false,
+  "playerStatements": [
+    "好我確認OK繼續是什麼",
+    "我確認OK，紀錄進度流程規則 接下來是什麼"
+  ],
+  "acceptedReleaseSha": "32424075b5c91844187fc80a566a9140c7e955d6",
+  "acceptedReleaseTree": "ab0a6733ff312d48fef3979e1e0697aaaf74a6de",
+  "presentedDocumentationCheckpoint": "0a5972308098a6e2de9d0332fd046ac1f950a667",
+  "presentedUrl": "https://hansen0318.github.io/shanhaijing-arena/?passive=3242407",
+  "scope": "Direct confirmation replying to presented new P1 cyan speed-streak VFX and revised Collection copy; closes this additional presentation Gate. Previous P1 mechanics/four skills/art and P2 armor/four skills approvals remain accepted.",
+  "notClaimed": [
+    "Itemized physical-device or every-Tier measurements",
+    "Player approval of an unseen P3 design/art/runtime",
+    "Runtime or art changes in this documentation-only slice"
+  ],
+  "evidenceSha256": {
+    "docs/verification/PASSIVE_VFX_COPY_REVISION/release-evidence.json": "9c0f1b275098034ee596c7ee9a2b5c7d82479962d0a34531bcd8df0d984ac02a",
+    "docs/verification/PASSIVE_VFX_COPY_REVISION/public-fingerprints.json": "f802edf5debf33c70f084d15a8caac183562ce63bf8cb2daf8be8aa182c2cd4f",
+    "docs/verification/PASSIVE_VFX_COPY_REVISION/ci-build-inventory.json": "ef0d5967c85e089d165a1685839b151fabc30f385fa4f003131fb216adda422e",
+    "docs/verification/PASSIVE_VFX_COPY_REVISION/p1-compatibility/native.json": "eca69294913856cee56508b5af888d5e8ee11788e9ed20a1dbb90039e72e6bfa",
+    "docs/verification/PASSIVE_VFX_COPY_REVISION/p1-compatibility/built-entry.json": "f175ba121105ec1706640fd5bd5b18ffe3f48ee31c7010f35d4c70790dc07e88",
+    "docs/verification/PASSIVE_VFX_COPY_REVISION/collection/native.json": "9a3fe385e445dc5b7533b2da92fd87e9d28a18c035b10f406a2e3378d3684c5e",
+    "docs/verification/PASSIVE_VFX_COPY_REVISION/collection/built-entry.json": "14f4f90cdff53aaf6f87a039de8c86f556341b1b120d72f85ada708bd43c3b08",
+    "docs/art/approved/lushu/passive/runtime-v2/acceptance.json": "c1605bc9085efdc6cc2157a97b16955d323519f5143b3fbb3c1bcdf5b1978b1f",
+    "docs/art/approved/botuo/passive/runtime-v1/acceptance.json": "0d07c66d85000d039a6360516ce5d036eacb0892629bf2f5817b9d55387a5c60",
+    "docs/decisions/2026-10-23-passive-vfx-player-copy.md": "f20bcf279e4c6be4f6ccecd41833fe7a2267d208672b09b849ed149f1c7a8ee6"
+  }
+}
