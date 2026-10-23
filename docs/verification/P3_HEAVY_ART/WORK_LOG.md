@@ -26,3 +26,9 @@ v3來源與完整生成prompt/manifest在 docs/art/candidates/chiru/heavy/f3-v3/
 
 
 Next: present the valid F3 candidate for player review; stop before further poses or Runtime.
+
+## 2026-10-23 — successor native art/GIF execution ACTIVE
+- Refreshed remote exact HEAD 2477a1b41c9b7060093dba3be33fd4f190c5fe9b; no newer remote change.
+- Read player-required recovery documents, receipt and references. Approved Heavy F3 v3 fully decoded RGBA 1254x1254; SHA256 matches 8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6.
+- Execution plan docs/superpowers/plans/2026-10-23-chiru-heavy-art-gif.md; native author only, no new approval gate, no runtime/CI/build/deploy.
+- Generating one separate master per F1/F2/F4 and independent charge/column/impact. Pending inspection, normalization and GIF; no new approval claimed.
