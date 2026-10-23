@@ -1,0 +1,145 @@
+{
+  "status": "CANDIDATE / PLAYER REVIEW PENDING",
+  "recoveredHead": "eb0ed0b50c97914cb434b7e9c5a48439adedeb3c",
+  "images": [
+    {
+      "name": "basic",
+      "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/basic-f3.png",
+      "sha256": "66b5484bdadbef21043bbbfdd022d70911512d172411d45f9bf47ca20787b166",
+      "originalSha256": "9338d1577de59bab660a57ca132086d34d687abecb88c85c801d3bc2cfe4b793",
+      "dimensions": [
+        1510,
+        1510
+      ],
+      "originalAlphaBounds": [
+        0,
+        48,
+        1240,
+        1236
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "paddingOnlyOffset": [
+        128,
+        128
+      ],
+      "status": "CANDIDATE / PLAYER REVIEW PENDING"
+    },
+    {
+      "name": "heavy",
+      "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/heavy-f3.png",
+      "sha256": "bbfcf69d4a60ea757bb1496c56daedeaad816e6b706a4ae131878685ce63d861",
+      "originalSha256": "f0f55fd892d0f0ed4810fbc389dc4f53b1da43245b854d4b39713d09c3da96e4",
+      "dimensions": [
+        1510,
+        1510
+      ],
+      "originalAlphaBounds": [
+        0,
+        25,
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "paddingOnlyOffset": [
+        128,
+        128
+      ],
+      "status": "CANDIDATE / PLAYER REVIEW PENDING"
+    },
+    {
+      "name": "special",
+      "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/special-f3.png",
+      "sha256": "c16b8876078f1c36215aeae8494a4ce9f788064f95e77b319fccd4c22c034cd4",
+      "originalSha256": "a8b5daa6c0e2db7877d0203149405863a10c53d47264176c23f4dd96de1436ac",
+      "dimensions": [
+        1510,
+        1510
+      ],
+      "originalAlphaBounds": [
+        21,
+        5,
+        1242,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "paddingOnlyOffset": [
+        128,
+        128
+      ],
+      "status": "CANDIDATE / PLAYER REVIEW PENDING"
+    },
+    {
+      "name": "awakening",
+      "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/awakening-f3.png",
+      "sha256": "49c434676c16c25735c590d3637cf7bfecd7e5ce7596e81b38f1604427a678ec",
+      "originalSha256": "56d8dd45aa330266bdac55a9f4a16a65f81661796ae46816e64b137433dd176c",
+      "dimensions": [
+        1510,
+        1510
+      ],
+      "originalAlphaBounds": [
+        0,
+        1,
+        1250,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "paddingOnlyOffset": [
+        128,
+        128
+      ],
+      "status": "CANDIDATE / PLAYER REVIEW PENDING"
+    },
+    {
+      "name": "passive",
+      "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/passive-style.png",
+      "sha256": "ebcd708d648ffc95830b0db17a01df40b4cbf628b0e746a650f1a65335b860d0",
+      "originalSha256": "b347b7bb4ec016e4a8e14feca4a9d8e82a5f9236fcde1a99127f963073a76857",
+      "dimensions": [
+        1510,
+        1510
+      ],
+      "originalAlphaBounds": [
+        49,
+        81,
+        1184,
+        1232
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "paddingOnlyOffset": [
+        128,
+        128
+      ],
+      "status": "CANDIDATE / PLAYER REVIEW PENDING"
+    }
+  ],
+  "referenceHashes": {
+    "public/assets/characters/chiru/identity.png": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a",
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d"
+  },
+  "approvedEvidenceHashesVerified": true,
+  "productionChanged": false,
+  "runtimeIntegrated": false,
+  "deployed": false,
+  "visualReview": "Author self-inspection: right-facing; cyan accessory on screen-right; four different arm silhouettes; two arms each; no emitted combat FX baked into body; passive has two fish and empty center. Candidate resemblance is for player approval, not pixel-identical identity proof.",
+  "limitations": [
+    "Not runtime-ready normalized frames",
+    "No animation or Tier/reduced-motion preview at this Gate",
+    "Full runtime scale and anchor validation belongs to later accepted-pose packing"
+  ]
+}

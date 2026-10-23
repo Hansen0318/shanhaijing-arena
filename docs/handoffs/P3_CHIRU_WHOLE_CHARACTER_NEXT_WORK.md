@@ -1,3 +1,7 @@
+# 最新Checkpoint：五項候選已完成，玩家美術審核待回覆
+
+候選入口 docs/art/candidates/chiru/whole-character/f3-batch-v1/review.html；manifest/prompts/REVIEW及originals均已保存。不得重生現有候選。先確認最新玩家對五項候選的回覆；未核准停在集中審核，核准後記錄精確hash收據再Task2。下方歷史「未有候選」已由此狀態取代。
+
 # P3 赤鱬 — 規格已核准／整包F3與被動樣式ACTIVE
 
 ```text

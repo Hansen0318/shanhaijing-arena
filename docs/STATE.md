@@ -1,5 +1,14 @@
 # Project State
 
+## 2026-10-23 — P3 四招F3／游息候選已保存，待集中玩家審核
+
+恢復HEAD eb0ed0b50c97914cb434b7e9c5a48439adedeb3c；PR#1 open/unmerged。Task1五張候選與原檔、prompts、manifest、review.html/REVIEW.md在docs/art/candidates/chiru/whole-character/f3-batch-v1/。四張右向本體：水矢單手前推、湧浪雙手重推、回瀾托掌、潤澤高展；游息獨立雙魚效果。只增加透明畫布邊距，原始像素/檔案保留。作者自審不是玩家PASS；候選尚未核准，無GIF/Runtime/部署。
+
+規格核准收據四hash與identity/Idle兩hash核對PASS；production來源相對恢復HEAD保持不變，既有P1/P2/Move/KO/尺度/Hit取消與素材安全政策不變。無關untracked不提交。未重跑前檢/測試/Build/Browser/CI/Pages。
+
+唯一下一Gate：呈交五項候選供玩家集中審核；未獲核准不進Task2其餘姿勢/VFX/GIF。GitHub最新commit即本紀錄所在checkpoint，後續fetch取完整SHA；原branch不merge/不新branch/不委派。
+
+
 ## 2026-10-23 — 赤鱬整角規格已核准；整包F3／被動樣式ACTIVE
 
 玩家直接回覆已呈交整角規格「紀錄進度流程規則就繼續」。已保存精確範圍收據docs/verification/P3_CHARACTER_PREFLIGHT/spec-acceptance.json，綁定spec/proposal/baseline/流程decision四項hash與呈交checkpoint2d7730cb12587269bd43f69166d4b24554b724a2；規格設計Gate CLOSED，不重問同一張表/數值/時序/原生執行方式。原spec/proposal bytes保留，其舊DESIGN PENDING文字為審核前歷史，由新收據取代；未展示F3/被動樣式/GIF/Runtime仍未核准。
