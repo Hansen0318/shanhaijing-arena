@@ -1,0 +1,340 @@
+{
+  "status": "BASIC F3 APPROVED; OTHER POSES / VFX / GIF PLAYER REVIEW PENDING",
+  "purpose": "Art reconstruction only; no runtime gameplay or phone acceptance claimed.",
+  "sourceSha256": {
+    "docs/art/approved/chiru/basic/f3-v2/acceptance.json": "40984cd971c94b544f9f9f4dea032977ffef9618978307116e38df7c934409a3",
+    "docs/art/candidates/chiru/basic/composite-review-v1/originals/F1.png": "4cf1440a570ed1e9d6f42747d3ad124d3dba3d6839c55696a1823860a26bf934",
+    "docs/art/candidates/chiru/basic/composite-review-v1/originals/F2.png": "dd237e0f19e084a677f8a8f01d4894ece8b79bc6ef63e2f8d55fb5fe7cd6fe74",
+    "docs/art/candidates/chiru/basic/f3-v2/basic-f3.png": "503eec8bb7f959aa26b07a8076eeb8f686f4d4698bead83b28ed8392d109e4d5",
+    "docs/art/candidates/chiru/basic/composite-review-v1/originals/F4.png": "49378158cc3736063e0c4a2682184be1b0a87f1c32227e479011be8b4e97e7b8",
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "docs/art/candidates/chiru/basic/composite-review-v1/originals/charge.png": "9ad55ab47a95aa8af9874b48acb10e16cd760c18f00c924c6cc7db221c5c5615",
+    "docs/art/candidates/chiru/basic/composite-review-v1/originals/arrow.png": "0a8480cd1246658774637e7636b4e0216597996be92b6d27bebea1ce0c56d31b",
+    "docs/art/candidates/chiru/basic/composite-review-v1/originals/impact.png": "4df301c6cc36910d834aa707f370486a2e80ab80e3de63c8aec7ce0144fa805d"
+  },
+  "poses": [
+    {
+      "frame": "F1",
+      "source": "docs/art/candidates/chiru/basic/composite-review-v1/originals/F1.png",
+      "sha256": "4cf1440a570ed1e9d6f42747d3ad124d3dba3d6839c55696a1823860a26bf934",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.13,
+      "landmarks": {
+        "chest": [
+          732,
+          527
+        ],
+        "eye": [
+          682,
+          321
+        ],
+        "support": [
+          848,
+          1180
+        ],
+        "orb": [
+          957,
+          490
+        ]
+      },
+      "translation": [
+        63,
+        41
+      ],
+      "alphaBounds": [
+        70,
+        43,
+        210,
+        203
+      ],
+      "margins": [
+        70,
+        43,
+        110,
+        57
+      ],
+      "resizedRGBARoundTrip": true,
+      "mirrorRoundTrip": true,
+      "orbWorld": [
+        267,
+        165
+      ]
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/candidates/chiru/basic/composite-review-v1/originals/F2.png",
+      "sha256": "dd237e0f19e084a677f8a8f01d4894ece8b79bc6ef63e2f8d55fb5fe7cd6fe74",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.13,
+      "landmarks": {
+        "chest": [
+          761,
+          520
+        ],
+        "eye": [
+          700,
+          326
+        ],
+        "support": [
+          859,
+          1180
+        ],
+        "orb": [
+          941,
+          480
+        ]
+      },
+      "translation": [
+        59,
+        42
+      ],
+      "alphaBounds": [
+        71,
+        45,
+        202,
+        203
+      ],
+      "margins": [
+        71,
+        45,
+        118,
+        57
+      ],
+      "resizedRGBARoundTrip": true,
+      "mirrorRoundTrip": true,
+      "orbWorld": [
+        261,
+        164
+      ]
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/candidates/chiru/basic/f3-v2/basic-f3.png",
+      "sha256": "503eec8bb7f959aa26b07a8076eeb8f686f4d4698bead83b28ed8392d109e4d5",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.13,
+      "landmarks": {
+        "chest": [
+          720,
+          525
+        ],
+        "eye": [
+          677,
+          326
+        ],
+        "support": [
+          840,
+          1175
+        ],
+        "orb": [
+          1090,
+          510
+        ]
+      },
+      "translation": [
+        64,
+        42
+      ],
+      "alphaBounds": [
+        71,
+        46,
+        225,
+        203
+      ],
+      "margins": [
+        71,
+        46,
+        95,
+        57
+      ],
+      "resizedRGBARoundTrip": true,
+      "mirrorRoundTrip": true,
+      "orbWorld": [
+        286,
+        168
+      ]
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/candidates/chiru/basic/composite-review-v1/originals/F4.png",
+      "sha256": "49378158cc3736063e0c4a2682184be1b0a87f1c32227e479011be8b4e97e7b8",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.13,
+      "landmarks": {
+        "chest": [
+          736,
+          523
+        ],
+        "eye": [
+          693,
+          324
+        ],
+        "support": [
+          850,
+          1177
+        ],
+        "orb": [
+          955,
+          484
+        ]
+      },
+      "translation": [
+        62,
+        42
+      ],
+      "alphaBounds": [
+        72,
+        45,
+        207,
+        203
+      ],
+      "margins": [
+        72,
+        45,
+        113,
+        57
+      ],
+      "resizedRGBARoundTrip": true,
+      "mirrorRoundTrip": true,
+      "orbWorld": [
+        266,
+        165
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "name": "charge",
+      "source": "docs/art/candidates/chiru/basic/composite-review-v1/originals/charge.png",
+      "sha256": "9ad55ab47a95aa8af9874b48acb10e16cd760c18f00c924c6cc7db221c5c5615",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "originalAlpha": [
+        0,
+        23,
+        1498,
+        1024
+      ],
+      "padding": 64,
+      "sourceRGBARoundTrip": true,
+      "displayScale": 0.041666666666666664,
+      "displaySize": [
+        69,
+        48
+      ]
+    },
+    {
+      "name": "arrow",
+      "source": "docs/art/candidates/chiru/basic/composite-review-v1/originals/arrow.png",
+      "sha256": "0a8480cd1246658774637e7636b4e0216597996be92b6d27bebea1ce0c56d31b",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "originalAlpha": [
+        80,
+        18,
+        2152,
+        636
+      ],
+      "padding": 64,
+      "sourceRGBARoundTrip": true,
+      "displayScale": 0.1427255985267035,
+      "displaySize": [
+        328,
+        122
+      ]
+    },
+    {
+      "name": "impact",
+      "source": "docs/art/candidates/chiru/basic/composite-review-v1/originals/impact.png",
+      "sha256": "4df301c6cc36910d834aa707f370486a2e80ab80e3de63c8aec7ce0144fa805d",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "originalAlpha": [
+        39,
+        69,
+        1504,
+        998
+      ],
+      "padding": 64,
+      "sourceRGBARoundTrip": true,
+      "displayScale": 0.07161458333333333,
+      "displaySize": [
+        119,
+        82
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-normal.gif",
+      "sha256": "76e4f7db26a8f23b1c917209aa6cfcd1b1b23dc38b95cc5186929abfe0979f3c",
+      "bytes": 415936,
+      "decodedFrames": 16,
+      "durationMs": 3100,
+      "pixelAndTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-slow.gif",
+      "sha256": "caabd9bcd5293525319c87dd63a2a01568e8a89e40ed182266fb0fa348663e33",
+      "bytes": 415936,
+      "decodedFrames": 16,
+      "durationMs": 4700,
+      "pixelAndTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-noFX.gif",
+      "sha256": "6d48e083401b67525472577ee167f309966276f3c821dda0f3c8ef1c65161dd1",
+      "bytes": 279339,
+      "decodedFrames": 12,
+      "durationMs": 3100,
+      "pixelAndTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-miss.gif",
+      "sha256": "005d60eac36094c85eddb9032819e6e5cd4710db03619736f5e9b543f6e222db",
+      "bytes": 402561,
+      "decodedFrames": 16,
+      "durationMs": 3100,
+      "pixelAndTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-reduced.gif",
+      "sha256": "d6da37341357a879c6db9fd12a783b203a2206b50e1e539903ff2c93a9dc3099",
+      "bytes": 409729,
+      "decodedFrames": 16,
+      "durationMs": 3100,
+      "pixelAndTimingRoundTrip": "PASS"
+    }
+  ],
+  "actionMs": [
+    120,
+    60,
+    100,
+    120
+  ],
+  "resolveMs": 180,
+  "approvedMasterUnchanged": true,
+  "limitations": [
+    "Visual landmarks are author-inspected, not runtime anchor validation",
+    "New F1/F2/F4 and VFX/GIF require player approval",
+    "New sources use generated cyan glow around flat water shapes; player style approval pending"
+  ]
+}

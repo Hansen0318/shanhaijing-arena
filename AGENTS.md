@@ -1,3 +1,7 @@
+## 2026-10-23 — 最新：P3 Basic F3 v2已PLAYER APPROVED；單招GIF審核待回覆
+
+F3收據docs/art/approved/chiru/basic/f3-v2/acceptance.json不可改。動作/FX/GIF候選docs/art/candidates/chiru/basic/composite-review-v1/REVIEW.md，先呈交GIF，未獲玩家核准不得Runtime或Heavy。舊batch basic圖及original均受損保留為歷史；不再使用。其餘逐招全局規則保持，以WORK_PROGRESS最新節及2026-10-23-restore-sequential-skill-workflow決策為準。
+
 # AGENTS.md
 
 ## 2026-10-23 — 最新玩家指令：撤銷整包開發，恢復逐招完整流程（最高優先）

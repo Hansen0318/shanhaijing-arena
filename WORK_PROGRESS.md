@@ -1,3 +1,11 @@
+## 2026-10-23 — 水矢動作＋獨立VFX GIF完成；玩家單招GIF審核PENDING
+
+F3 v2玩家核准已同步遠端4f12b837a58ff52edf284c4e4c3ed772c3abb972，讀回原圖完整解碼且SHA256與503eec8…完全一致，原收據保存。新增F1/F2/F4和凝水/短水矢/單點水花三個獨立來源，完整原檔與prompts、可重建script、正常/三倍慢速/無FX/落空/reduced五個GIF及明暗底QA在docs/art/candidates/chiru/basic/composite-review-v1/。
+
+正常動作120/60/100/120ms=400ms，180ms F3同步短水矢與命中水花；落空無target水花，左向為整體mirror。原圖未裁切/刪像素；四張來源相同.13縮放，地標與safe-cell記錄於manifest。腳本已驗證完整解碼、量化後每幀像素/時間往返、透明邊界與F3/Idle hash；初次script ROOT多一層已修正並完整重跑PASS。作者檢視明暗底與接觸圖：外觀/配件側別保持、角色不因特效放大；新VFX有淡青光暈，樣式待玩家審核，不宣稱新圖已PLAYER APPROVED。
+
+唯一下一Gate：呈交Basic整合GIF供玩家審核；核准後保存新姿勢/FX/GIF精確hash收據，才進Basic Runtime、必要來源驗證與正常Pages發布。不做Heavy、不部署。這是美術重建，非遊戲實錄/HP命中或Runtime手機/anchor證明，舊測試不替代新來源。全部approved/P1/P2/src/public保持。Git CLI無寫入憑證，使用GitHub連接器分段讀取後建立blob並逐一核對Git SHA，避免大輸出截斷導致二進位受損；遠端checkpoint以最新branch為準。
+
 ## 2026-10-23 — Basic 水矢 F3 v2 玩家核准；其餘姿勢與單招GIF ACTIVE
 
 玩家原文「確認，紀錄，繼續」核准上次展示F3 v2；精確收據 docs/art/approved/chiru/basic/f3-v2/acceptance.json，source SHA256 503eec8bb7f959aa26b07a8076eeb8f686f4d4698bead83b28ed8392d109e4d5。F3 Gate CLOSED，不重問或重生此圖。接續F1/F2/F4與獨立起手凝水／短水矢／命中水花，再400ms動作GIF（120/60/100/120，180ms F3生效）供玩家審核；新姿勢/GIF/Runtime尚未核准。Basic未驗收不得Heavy。Git CLI push缺少憑證，改用GitHub連接器保存，待遠端讀回驗證才宣稱已同步。

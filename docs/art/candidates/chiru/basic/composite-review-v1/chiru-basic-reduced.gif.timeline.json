@@ -1,0 +1,114 @@
+[
+  {
+    "mirror": false,
+    "phase": "IDLE",
+    "logicalStartMs": 0,
+    "logicalHoldMs": 500,
+    "playbackHoldMs": 500
+  },
+  {
+    "mirror": false,
+    "phase": "F1",
+    "logicalStartMs": 500,
+    "logicalHoldMs": 120,
+    "playbackHoldMs": 120
+  },
+  {
+    "mirror": false,
+    "phase": "F2",
+    "logicalStartMs": 620,
+    "logicalHoldMs": 60,
+    "playbackHoldMs": 60
+  },
+  {
+    "mirror": false,
+    "phase": "F3",
+    "logicalStartMs": 680,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40
+  },
+  {
+    "mirror": false,
+    "phase": "F3",
+    "logicalStartMs": 720,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40
+  },
+  {
+    "mirror": false,
+    "phase": "F3",
+    "logicalStartMs": 760,
+    "logicalHoldMs": 20,
+    "playbackHoldMs": 20
+  },
+  {
+    "mirror": false,
+    "phase": "F4",
+    "logicalStartMs": 780,
+    "logicalHoldMs": 120,
+    "playbackHoldMs": 120
+  },
+  {
+    "mirror": false,
+    "phase": "IDLE",
+    "logicalStartMs": 900,
+    "logicalHoldMs": 650,
+    "playbackHoldMs": 650
+  },
+  {
+    "mirror": true,
+    "phase": "IDLE",
+    "logicalStartMs": 0,
+    "logicalHoldMs": 500,
+    "playbackHoldMs": 500
+  },
+  {
+    "mirror": true,
+    "phase": "F1",
+    "logicalStartMs": 500,
+    "logicalHoldMs": 120,
+    "playbackHoldMs": 120
+  },
+  {
+    "mirror": true,
+    "phase": "F2",
+    "logicalStartMs": 620,
+    "logicalHoldMs": 60,
+    "playbackHoldMs": 60
+  },
+  {
+    "mirror": true,
+    "phase": "F3",
+    "logicalStartMs": 680,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40
+  },
+  {
+    "mirror": true,
+    "phase": "F3",
+    "logicalStartMs": 720,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40
+  },
+  {
+    "mirror": true,
+    "phase": "F3",
+    "logicalStartMs": 760,
+    "logicalHoldMs": 20,
+    "playbackHoldMs": 20
+  },
+  {
+    "mirror": true,
+    "phase": "F4",
+    "logicalStartMs": 780,
+    "logicalHoldMs": 120,
+    "playbackHoldMs": 120
+  },
+  {
+    "mirror": true,
+    "phase": "IDLE",
+    "logicalStartMs": 900,
+    "logicalHoldMs": 650,
+    "playbackHoldMs": 650
+  }
+]
