@@ -49,11 +49,11 @@ try{
   const cleanup=await page.evaluate(()=>{
    const sc=window.__chiruScene,s=sc.session,p=sc.visualAssets,r=window.chiruProbe,a=s.actorById(r.actorId),t=s.actorById(r.targetId),paint=()=>{sc.renderCastEvents();sc.applyFrame(s.snapshot());sc.game.step(performance.now(),0);},advance=dt=>{for(const x of s.actors)s.holdPlayerControl(x.instanceId);s.step(dt);};
    advance(.25);paint();const idle=p.actorSprites.get(a.instanceId).texture.key.endsWith('chiru.battleIdle');
-   Object.assign(a.abilityState.heavy,{phase:'ready',cooldownRemaining:0});s.executeAbility(a,'heavy','player',t);paint();const hp=t.hp;t.y=.6;advance(.7);paint();const miss=t.hp===hp&&p.actionEffects.get(a.instanceId)?.get('blade')?.visible===true&&!p.actionEffects.get(a.instanceId)?.get('contact')?.visible;
+   Object.assign(a.abilityState.heavy,{phase:'ready',cooldownRemaining:0});s.executeAbility(a,'heavy','player',t);paint();const hp=t.hp;t.y=.6;advance(.7);paint();const missDetails={hpBefore:hp,hpAfter:t.hp,time:s.elapsedSeconds,active:!!p.actions.active.get(a.instanceId),pending:!!s.pendingActions.get(a.instanceId),effects:[...(p.actionEffects.get(a.instanceId)??[])].map(([key,v])=>({key,visible:v.visible,alpha:v.alpha,width:v.displayWidth})),sample:p.actions.sample(a.instanceId,s.elapsedSeconds,p.reducedMotion)};const miss=t.hp===hp&&p.actionEffects.get(a.instanceId)?.get('blade')?.visible===true&&!p.actionEffects.get(a.instanceId)?.get('contact')?.visible;
    advance(.25);paint();t.y=0;Object.assign(a.abilityState.heavy,{phase:'ready',cooldownRemaining:0});s.executeAbility(a,'heavy','player',t);paint();s.cancelAction(a.instanceId,'control');paint();const cancel=!p.actions.active.has(a.instanceId)&&!p.actionEffects.has(a.instanceId);
    Object.assign(a.abilityState.heavy,{phase:'ready',cooldownRemaining:0});s.executeAbility(a,'heavy','player',t);paint();a.damage(a.hp);paint();const ko=!p.actions.active.has(a.instanceId)&&!p.actionEffects.has(a.instanceId);
    s.clearTransientCombat();paint();const end=s.pendingActions.size===0&&p.actionEffects.size===0;
-   window.previousChiruPresenter=p;sc.scene.restart();sc.game.loop.wake();return {idle,miss,cancel,ko,end};
+   window.previousChiruPresenter=p;sc.scene.restart();sc.game.loop.wake();return {idle,miss,missDetails,cancel,ko,end};
   });Object.assign(c,cleanup);
   await page.waitForFunction(()=>window.__chiruScene?.visualAssets!==window.previousChiruPresenter&&window.__chiruScene?.assetGate?.ready,null,{timeout:60000});
   c.restart=await page.evaluate(()=>{const sc=window.__chiruScene;sc.paused=true;sc.game.loop.sleep();return window.previousChiruPresenter.closed&&window.previousChiruPresenter.textureBytes===0&&sc.assetGate.ready;});

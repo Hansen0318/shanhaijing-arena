@@ -30,3 +30,8 @@ test('water miss has visible line and no target splash; cancel clears all three 
  assert.equal(f.target.hp,hp);assert.equal(f.p.actionEffects.get('a1').get('blade').visible,true);assert.ok(!f.p.actionEffects.get('a1').get('contact')?.visible);
  f.p.destroy();const c=await fixture();Object.assign(c.actor.abilityState.heavy,{phase:'ready',cooldownRemaining:0});c.session.executeAbility(c.actor,'heavy','player',c.target);paint(c);c.session.cancelAction('a1','control');paint(c);assert.equal(c.p.actions.active.size,0);assert.equal(c.p.actionEffects.size,0);c.p.destroy();
 });
+for(const reduced of [false,true])test('hit then idle then miss leaves only column '+reduced,async()=>{
+ const f=await fixture(1,reduced),s=f.session,a=f.actor,t=f.target;
+ Object.assign(a.abilityState.heavy,{phase:'ready',cooldownRemaining:0});s.executeAbility(a,'heavy','player',t);paint(f);s.step(.35);paint(f);s.step(.349);paint(f);s.step(.001);paint(f);s.step(.25);paint(f);
+ Object.assign(a.abilityState.heavy,{phase:'ready',cooldownRemaining:0});assert.ok(s.executeAbility(a,'heavy','player',t));paint(f);const hp=t.hp;t.y=.6;s.step(.7);paint(f);assert.equal(t.hp,hp,'HP changed on miss');assert.equal(f.p.actionEffects.get(a.instanceId)?.get('blade')?.visible,true,'column absent');assert.ok(!f.p.actionEffects.get(a.instanceId)?.get('contact')?.visible,'splash visible');f.p.destroy();
+});
