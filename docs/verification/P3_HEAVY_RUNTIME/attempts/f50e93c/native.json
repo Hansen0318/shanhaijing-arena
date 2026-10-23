@@ -1,0 +1,6317 @@
+{
+  "kind": "Native real Phaser/WebGL Session and actor/VFX bridge",
+  "physicalPhone": false,
+  "cases": [
+    {
+      "tier": "T0",
+      "tactical": false,
+      "reduced": false,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 230,
+      "before": 230,
+      "delay": 0.7,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.7,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 217.75,
+        "hpAfter": 217.75,
+        "time": 1.65,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": null
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": null,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T0",
+      "tactical": false,
+      "reduced": false,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 230,
+      "before": 230,
+      "delay": 0.7,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.7,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 217.75,
+        "hpAfter": 217.75,
+        "time": 1.65,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": null
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": null,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T0",
+      "tactical": false,
+      "reduced": true,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 230,
+      "before": 230,
+      "delay": 0.7,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.7,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 217.75,
+        "hpAfter": 217.75,
+        "time": 1.65,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.67134420755866
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T0",
+      "tactical": false,
+      "reduced": true,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 230,
+      "before": 230,
+      "delay": 0.7,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.7,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 217.75,
+        "hpAfter": 217.75,
+        "time": 1.65,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.6713442075586
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T0",
+      "tactical": true,
+      "reduced": false,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 230,
+      "before": 230,
+      "delay": 0.7,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.7,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 217.75,
+        "hpAfter": 217.75,
+        "time": 1.65,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": null
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": null,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T0",
+      "tactical": true,
+      "reduced": false,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 230,
+      "before": 230,
+      "delay": 0.7,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.7,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "screenshot": "native-T0-normal-1.png",
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 217.75,
+        "hpAfter": 217.75,
+        "time": 1.65,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": null
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": null,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T0",
+      "tactical": true,
+      "reduced": true,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 230,
+      "before": 230,
+      "delay": 0.7,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.7,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 217.75,
+        "hpAfter": 217.75,
+        "time": 1.65,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.67134420755866
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T0",
+      "tactical": true,
+      "reduced": true,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 230,
+      "before": 230,
+      "delay": 0.7,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.7,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 217.75,
+        "hpAfter": 217.75,
+        "time": 1.65,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.6713442075586
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T1",
+      "tactical": false,
+      "reduced": false,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 345,
+      "before": 345,
+      "delay": 0.68775,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.68775,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 327.996875,
+        "hpAfter": 327.996875,
+        "time": 1.63775,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T1",
+      "tactical": false,
+      "reduced": false,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 345,
+      "before": 345,
+      "delay": 0.68775,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.68775,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 327.996875,
+        "hpAfter": 327.996875,
+        "time": 1.63775,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T1",
+      "tactical": false,
+      "reduced": true,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 345,
+      "before": 345,
+      "delay": 0.68775,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.68775,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 327.996875,
+        "hpAfter": 327.996875,
+        "time": 1.63775,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.67134420755866
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T1",
+      "tactical": false,
+      "reduced": true,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 345,
+      "before": 345,
+      "delay": 0.68775,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.68775,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 327.996875,
+        "hpAfter": 327.996875,
+        "time": 1.63775,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.6713442075586
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T1",
+      "tactical": true,
+      "reduced": false,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 345,
+      "before": 345,
+      "delay": 0.68775,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.68775,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 327.996875,
+        "hpAfter": 327.996875,
+        "time": 1.63775,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T1",
+      "tactical": true,
+      "reduced": false,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 345,
+      "before": 345,
+      "delay": 0.68775,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.68775,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "screenshot": "native-T1-normal-1.png",
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 327.996875,
+        "hpAfter": 327.996875,
+        "time": 1.63775,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T1",
+      "tactical": true,
+      "reduced": true,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 345,
+      "before": 345,
+      "delay": 0.68775,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.68775,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 327.996875,
+        "hpAfter": 327.996875,
+        "time": 1.63775,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.67134420755866
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T1",
+      "tactical": true,
+      "reduced": true,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 345,
+      "before": 345,
+      "delay": 0.68775,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.68775,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 327.996875,
+        "hpAfter": 327.996875,
+        "time": 1.63775,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.6713442075586
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T2",
+      "tactical": false,
+      "reduced": false,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 517.5,
+      "before": 517.5,
+      "delay": 0.6755,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6755,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 494.159375,
+        "hpAfter": 494.159375,
+        "time": 1.6255,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T2",
+      "tactical": false,
+      "reduced": false,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 517.5,
+      "before": 517.5,
+      "delay": 0.6755,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6755,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 494.159375,
+        "hpAfter": 494.159375,
+        "time": 1.6255,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T2",
+      "tactical": false,
+      "reduced": true,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 517.5,
+      "before": 517.5,
+      "delay": 0.6755,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6755,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 494.159375,
+        "hpAfter": 494.159375,
+        "time": 1.6255,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.67134420755866
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T2",
+      "tactical": false,
+      "reduced": true,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 517.5,
+      "before": 517.5,
+      "delay": 0.6755,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6755,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 494.159375,
+        "hpAfter": 494.159375,
+        "time": 1.6255,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.6713442075586
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T2",
+      "tactical": true,
+      "reduced": false,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 517.5,
+      "before": 517.5,
+      "delay": 0.6755,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6755,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 494.159375,
+        "hpAfter": 494.159375,
+        "time": 1.6255,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T2",
+      "tactical": true,
+      "reduced": false,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 517.5,
+      "before": 517.5,
+      "delay": 0.6755,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6755,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "screenshot": "native-T2-normal-1.png",
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 494.159375,
+        "hpAfter": 494.159375,
+        "time": 1.6255,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T2",
+      "tactical": true,
+      "reduced": true,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 517.5,
+      "before": 517.5,
+      "delay": 0.6755,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6755,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 494.159375,
+        "hpAfter": 494.159375,
+        "time": 1.6255,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.67134420755866
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T2",
+      "tactical": true,
+      "reduced": true,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 517.5,
+      "before": 517.5,
+      "delay": 0.6755,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6755,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 494.159375,
+        "hpAfter": 494.159375,
+        "time": 1.6255,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.6713442075586
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T3",
+      "tactical": false,
+      "reduced": false,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 862.5,
+      "before": 862.5,
+      "delay": 0.6558999999999999,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6558999999999999,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 827.0125,
+        "hpAfter": 827.0125,
+        "time": 1.6058999999999999,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T3",
+      "tactical": false,
+      "reduced": false,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 862.5,
+      "before": 862.5,
+      "delay": 0.6558999999999999,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6558999999999999,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 827.0125,
+        "hpAfter": 827.0125,
+        "time": 1.6058999999999999,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T3",
+      "tactical": false,
+      "reduced": true,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 862.5,
+      "before": 862.5,
+      "delay": 0.6558999999999999,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6558999999999999,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 827.0125,
+        "hpAfter": 827.0125,
+        "time": 1.6058999999999999,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.67134420755866
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T3",
+      "tactical": false,
+      "reduced": true,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 862.5,
+      "before": 862.5,
+      "delay": 0.6558999999999999,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6558999999999999,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 827.0125,
+        "hpAfter": 827.0125,
+        "time": 1.6058999999999999,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.6713442075586
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T3",
+      "tactical": true,
+      "reduced": false,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 862.5,
+      "before": 862.5,
+      "delay": 0.6558999999999999,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6558999999999999,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 827.0125,
+        "hpAfter": 827.0125,
+        "time": 1.6058999999999999,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T3",
+      "tactical": true,
+      "reduced": false,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 862.5,
+      "before": 862.5,
+      "delay": 0.6558999999999999,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6558999999999999,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "screenshot": "native-T3-normal-1.png",
+      "idle": true,
+      "miss": false,
+      "missDetails": {
+        "hpBefore": 827.0125,
+        "hpAfter": 827.0125,
+        "time": 1.6058999999999999,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": false,
+            "alpha": 1,
+            "width": 0
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 0,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 1,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T3",
+      "tactical": true,
+      "reduced": true,
+      "sign": -1,
+      "renderer": 2,
+      "hp": 862.5,
+      "before": 862.5,
+      "delay": 0.6558999999999999,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6558999999999999,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 469.9999999996727,
+        "y": 255.25,
+        "width": 117.67134420755866,
+        "rotation": 0.17324566645133554
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 827.0125,
+        "hpAfter": 827.0125,
+        "time": 1.6058999999999999,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.67134420755866
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": true,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 3,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 3,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    },
+    {
+      "tier": "T3",
+      "tactical": true,
+      "reduced": true,
+      "sign": 1,
+      "renderer": 2,
+      "hp": 862.5,
+      "before": 862.5,
+      "delay": 0.6558999999999999,
+      "charge": true,
+      "callbackUsed": true,
+      "noEarlyDamage": true,
+      "hitAt": 0.6558999999999999,
+      "hitCount": 1,
+      "line": true,
+      "impact": true,
+      "scale": true,
+      "frame": "448.0.224.194",
+      "arrow": {
+        "x": 650.0000000003272,
+        "y": 255.25,
+        "width": 117.6713442075586,
+        "rotation": -0.17324566645133643
+      },
+      "mirror": true,
+      "pause": true,
+      "idle": true,
+      "miss": true,
+      "missDetails": {
+        "hpBefore": 827.0125,
+        "hpAfter": 827.0125,
+        "time": 1.6058999999999999,
+        "active": true,
+        "pending": false,
+        "effects": [
+          {
+            "key": "anticipation",
+            "visible": false,
+            "alpha": 0,
+            "width": 88.2
+          },
+          {
+            "key": "blade",
+            "visible": true,
+            "alpha": 0.35,
+            "width": 117.6713442075586
+          }
+        ],
+        "sample": {
+          "actionId": "heavy.2",
+          "descriptor": {
+            "kind": "launched-line",
+            "animation": {
+              "source": "chiru.heavyPoses",
+              "frames": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 224,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 448,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                },
+                {
+                  "x": 672,
+                  "y": 0,
+                  "width": 224,
+                  "height": 194
+                }
+              ],
+              "fps": 4.2105263157894735,
+              "duration": 0.95,
+              "loop": false,
+              "staticFrame": 2,
+              "origin": [
+                0.5267857142857143,
+                0.8917525773195877
+              ],
+              "scale": 2.8
+            },
+            "frameDurationsMs": [
+              200,
+              150,
+              400,
+              200
+            ],
+            "impactFrame": 2,
+            "coordinateSize": [
+              224,
+              194
+            ],
+            "anticipation": {
+              "frameOffsets": [
+                [
+                  31,
+                  64
+                ],
+                [
+                  26,
+                  47
+                ],
+                [
+                  109,
+                  62
+                ],
+                [
+                  94,
+                  59
+                ]
+              ],
+              "assetKey": "chiru.heavyCharge",
+              "offset": [
+                31,
+                64
+              ],
+              "size": [
+                98,
+                68
+              ],
+              "layer": 4
+            },
+            "blade": {
+              "targetOffset": [
+                0,
+                -98
+              ],
+              "lineRange": [
+                0.03412073490813648,
+                0.9658792650918635
+              ],
+              "assetKey": "chiru.heavyColumn",
+              "offset": [
+                158,
+                96
+              ],
+              "size": [
+                381,
+                141
+              ],
+              "layer": 4,
+              "attach": "line"
+            },
+            "contact": {
+              "assetKey": "chiru.heavyImpact",
+              "offset": [
+                -107.12,
+                -218.7
+              ],
+              "size": [
+                206,
+                142
+              ],
+              "layer": 6,
+              "attach": "target"
+            }
+          },
+          "frameIndex": 2,
+          "flipX": false,
+          "lineOrigin": {
+            "x": 5,
+            "y": 0
+          },
+          "lineTarget": {
+            "x": 7,
+            "y": 0
+          },
+          "lineProgress": 1,
+          "anticipationOpacity": 0,
+          "bladeOpacity": 0.35,
+          "contactOpacity": 0,
+          "contactTarget": {
+            "x": 7,
+            "y": 0.6
+          }
+        }
+      },
+      "cancel": true,
+      "ko": true,
+      "end": true,
+      "restart": true
+    }
+  ],
+  "errors": [],
+  "current": {
+    "tier": "T3",
+    "tactical": true,
+    "reduced": true,
+    "sign": 1,
+    "renderer": 2,
+    "hp": 862.5,
+    "before": 862.5,
+    "delay": 0.6558999999999999,
+    "charge": true,
+    "callbackUsed": true,
+    "noEarlyDamage": true,
+    "hitAt": 0.6558999999999999,
+    "hitCount": 1,
+    "line": true,
+    "impact": true,
+    "scale": true,
+    "frame": "448.0.224.194",
+    "arrow": {
+      "x": 650.0000000003272,
+      "y": 255.25,
+      "width": 117.6713442075586,
+      "rotation": -0.17324566645133643
+    },
+    "mirror": true,
+    "pause": true,
+    "idle": true,
+    "miss": true,
+    "missDetails": {
+      "hpBefore": 827.0125,
+      "hpAfter": 827.0125,
+      "time": 1.6058999999999999,
+      "active": true,
+      "pending": false,
+      "effects": [
+        {
+          "key": "anticipation",
+          "visible": false,
+          "alpha": 0,
+          "width": 88.2
+        },
+        {
+          "key": "blade",
+          "visible": true,
+          "alpha": 0.35,
+          "width": 117.6713442075586
+        }
+      ],
+      "sample": {
+        "actionId": "heavy.2",
+        "descriptor": {
+          "kind": "launched-line",
+          "animation": {
+            "source": "chiru.heavyPoses",
+            "frames": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 224,
+                "height": 194
+              },
+              {
+                "x": 224,
+                "y": 0,
+                "width": 224,
+                "height": 194
+              },
+              {
+                "x": 448,
+                "y": 0,
+                "width": 224,
+                "height": 194
+              },
+              {
+                "x": 672,
+                "y": 0,
+                "width": 224,
+                "height": 194
+              }
+            ],
+            "fps": 4.2105263157894735,
+            "duration": 0.95,
+            "loop": false,
+            "staticFrame": 2,
+            "origin": [
+              0.5267857142857143,
+              0.8917525773195877
+            ],
+            "scale": 2.8
+          },
+          "frameDurationsMs": [
+            200,
+            150,
+            400,
+            200
+          ],
+          "impactFrame": 2,
+          "coordinateSize": [
+            224,
+            194
+          ],
+          "anticipation": {
+            "frameOffsets": [
+              [
+                31,
+                64
+              ],
+              [
+                26,
+                47
+              ],
+              [
+                109,
+                62
+              ],
+              [
+                94,
+                59
+              ]
+            ],
+            "assetKey": "chiru.heavyCharge",
+            "offset": [
+              31,
+              64
+            ],
+            "size": [
+              98,
+              68
+            ],
+            "layer": 4
+          },
+          "blade": {
+            "targetOffset": [
+              0,
+              -98
+            ],
+            "lineRange": [
+              0.03412073490813648,
+              0.9658792650918635
+            ],
+            "assetKey": "chiru.heavyColumn",
+            "offset": [
+              158,
+              96
+            ],
+            "size": [
+              381,
+              141
+            ],
+            "layer": 4,
+            "attach": "line"
+          },
+          "contact": {
+            "assetKey": "chiru.heavyImpact",
+            "offset": [
+              -107.12,
+              -218.7
+            ],
+            "size": [
+              206,
+              142
+            ],
+            "layer": 6,
+            "attach": "target"
+          }
+        },
+        "frameIndex": 2,
+        "flipX": false,
+        "lineOrigin": {
+          "x": 5,
+          "y": 0
+        },
+        "lineTarget": {
+          "x": 7,
+          "y": 0
+        },
+        "lineProgress": 1,
+        "anticipationOpacity": 0,
+        "bladeOpacity": 0.35,
+        "contactOpacity": 0,
+        "contactTarget": {
+          "x": 7,
+          "y": 0.6
+        }
+      }
+    },
+    "cancel": true,
+    "ko": true,
+    "end": true,
+    "restart": true
+  },
+  "status": "FAIL",
+  "failure": "AssertionError [ERR_ASSERTION]: miss\n\nfalse !== true\n",
+  "serverLog": "\n  \u001b[32m\u001b[1mVITE\u001b[22m v8.3.1\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m185\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m\n\n  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m4185\u001b[22m/shanhaijing-arena/\u001b[39m\n"
+}

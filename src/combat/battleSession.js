@@ -420,8 +420,9 @@ export class BattleSession {
   simulationStepSeconds(){return this.hasStagedAction()?.01:.05;}
 
   stagedIntervalSeconds(limit){
-    if(!this.hasStagedAction())return this.passives.hasSpatial()?Math.min(limit,.05):limit;
-    let dt=Math.min(limit,.01);
+    const staged=this.hasStagedAction(),launched=[...this.pendingActions.values()].some(r=>r.definition.resolveGeometry?.travelMs);
+    if(!staged&&!launched)return this.passives.hasSpatial()?Math.min(limit,.05):limit;
+    let dt=staged?Math.min(limit,.01):this.passives.hasSpatial()?Math.min(limit,.05):limit;
     const deadlines=[...this.pendingActions.values()].flatMap(r=>r.staged?[...r.definition.stagedAction.segments.flatMap(l=>[l.startMs,l.centerMs,l.endMs]),r.definition.stagedAction.recoveryMs].map(ms=>r.startedAt+ms/1000):[r.dueAt,...(r.definition.resolveGeometry?.travelMs&&!r.releasedLine?[r.startedAt+r.definition.windupMs/1000]:[])]);
     deadlines.push(...[...this.statuses.records.values()].map(v=>v.expiryTime),...this.pendingHits.map(v=>v.due),...[...this.delayedImpacts.values()].map(v=>v.threat.impactAtMs/1000),...this.areas.nextTicks.values(),...[...this.areas.records.values()].map(v=>v.expiryTime));
     for(const t of deadlines)if(t>this.elapsedSeconds+1e-9)dt=Math.min(dt,t-this.elapsedSeconds);

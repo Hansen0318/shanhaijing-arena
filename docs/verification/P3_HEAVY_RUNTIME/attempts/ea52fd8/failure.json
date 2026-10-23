@@ -1,0 +1,11 @@
+{
+  "run": 40036444515,
+  "job": 120696982751,
+  "artifact": 12536744672,
+  "artifactSha256": "435968f5a02ef7004c4bd22d76ef8124312e884b67f830a0a08f9107dc145ccc",
+  "tests": 1121,
+  "build": "PASS",
+  "browser": "FAIL:16 normal-motion miss flags; reduced16 pass; other recorded checks pass",
+  "pages": "BLOCKED",
+  "crc": "PASS"
+}

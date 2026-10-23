@@ -14,3 +14,9 @@ Plan: shared opt-in release/frozen finite lane/resolve → source-preserving pac
 - Added5 real Session edge cases: source motion clamps finite range, manual whiff, KO/end clean threats, concurrent ally/enemy Heavy. Guard-negative case rejects premature contact, false miss, duplicate matrix and physical-phone claim. Full1121/1121 PASS; latest Build PASS.
 - Author source review only (player forbids delegation). No character-ID branches in shared engine/presenter, approved source area unchanged, no Special/TD/main merge.
 - Engineering checkpoint7a711b5 saved via GitHub API and fetched. Next normal CI: Heavy32+4 and Basic32+4, source guard, Pages. Local Chromium network blocker recorded; no Browser PASS fabricated.
+
+## True Browser failure and correction
+- ea52fd8/run40036444515:1121 tests/Build PASS, native32 recorded;16 normal misses FAIL while reduced16 pass, Pages blocked. Artifact12536744672 SHA256435968f5a02ef7004c4bd22d76ef8124312e884b67f830a0a08f9107dc145ccc/ZIP CRC PASS.
+- f50e93c/run40036858444 diagnostic artifact12536384673 SHA25625ebce9e8ce1766b91f2a09bf765b03b1f261bc7e6e6ca3b3cfb52b735749412/CRC PASS proved HP unchanged/no target burst but normal lineProgress NaN/column hidden. Without passive/staged planner the coarse step released at contact, producing zero flight denominator.
+- New real Session regression clears transient/passive state, starts at.95 and takes.7 coarse step; observed RED release1.65 then GREEN separate release1.3/contact1.65. Common scheduler now honors launched-action boundaries even without other planners. No visual timing fallback masks the bug. Source art unchanged.
+- Latest targeted27/27, full1124/1124 and Build PASS. Mandatory normal CI native/built/Basic compatibility/guard/Pages still pending for corrected source.
