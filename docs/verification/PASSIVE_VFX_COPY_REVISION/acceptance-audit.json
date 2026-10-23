@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "source": "Existing accepted base/four-skills plus conditional acceptance of presented P2 passive; no invented device or Tier measurements",
+  "passiveReceipt": {
+    "path": "docs/art/approved/botuo/passive/runtime-v1/acceptance.json",
+    "sha256": "0d07c66d85000d039a6360516ce5d036eacb0892629bf2f5817b9d55387a5c60",
+    "acceptedReleaseSha": "1f6b47b4e30a867b1b8d294c69fdeaedc51f0b98"
+  },
+  "rows": [
+    {
+      "path": "docs/art/approved/botuo/basic/runtime-v1/acceptance.json",
+      "expected": "fbc6063d2b03da101291905fc312cba3c43f5f449b4dfdcab158812fc7297a48",
+      "actual": "fbc6063d2b03da101291905fc312cba3c43f5f449b4dfdcab158812fc7297a48",
+      "match": true
+    },
+    {
+      "path": "docs/art/approved/botuo/heavy/runtime-v1/acceptance.json",
+      "expected": "cdfdfcd5e0b1b18782c2624c496a25047a537c35aa4e27bf2225457d547174cb",
+      "actual": "cdfdfcd5e0b1b18782c2624c496a25047a537c35aa4e27bf2225457d547174cb",
+      "match": true
+    },
+    {
+      "path": "docs/art/approved/botuo/special/runtime-v1/acceptance.json",
+      "expected": "d9b9eb8fc95dcb85a575cf7b375f22c1b7b97df2d4bded1c210062c969785667",
+      "actual": "d9b9eb8fc95dcb85a575cf7b375f22c1b7b97df2d4bded1c210062c969785667",
+      "match": true
+    },
+    {
+      "path": "docs/art/approved/botuo/awakening/runtime-v1/acceptance.json",
+      "expected": "0f20de8f0181dcf5deb5daed293c7e32eb79c0291a712caa95e357e63c870f3d",
+      "actual": "0f20de8f0181dcf5deb5daed293c7e32eb79c0291a712caa95e357e63c870f3d",
+      "match": true
+    },
+    {
+      "path": "docs/verification/P2_MOVE_BODY/player-acceptance.json",
+      "expected": "e4b4bc1b8e4703df750c38737fafa5c3fca6c04a04ad2933d96e339954856848",
+      "actual": "e4b4bc1b8e4703df750c38737fafa5c3fca6c04a04ad2933d96e339954856848",
+      "match": true
+    },
+    {
+      "path": "docs/verification/M5C_B_LUSHU_BOTUO_KO.md",
+      "expected": "1242c4732881dfaab6a2518662a7596bd335208c339eb209b53589f593c13cbd",
+      "actual": "1242c4732881dfaab6a2518662a7596bd335208c339eb209b53589f593c13cbd",
+      "match": true
+    },
+    {
+      "path": "docs/verification/M5C_B_BOTUO_STATIC_RUNTIME.md",
+      "expected": "90cf2db06f1f293a46626062671fca38e2f9970994fa7ac6747cf60b7022225a",
+      "actual": "90cf2db06f1f293a46626062671fca38e2f9970994fa7ac6747cf60b7022225a",
+      "match": true
+    },
+    {
+      "path": "docs/verification/M5C_B_BOTUO_LOCOMOTION.md",
+      "expected": "101c05feffd82b5818f7facf699968bc960b391374e1d7f106d5edc66b412e4d",
+      "actual": "101c05feffd82b5818f7facf699968bc960b391374e1d7f106d5edc66b412e4d",
+      "match": true
+    },
+    {
+      "path": "docs/verification/P2_PASSIVE_RUNTIME/release-evidence.json",
+      "expected": "5e4a84d75906b9afe5665df477d4bdafcda1e9fcb0a2c393fc8c9425b6a49538",
+      "actual": "5e4a84d75906b9afe5665df477d4bdafcda1e9fcb0a2c393fc8c9425b6a49538",
+      "match": true
+    },
+    {
+      "path": "docs/verification/P2_PASSIVE_RUNTIME/public-fingerprints.json",
+      "expected": "7c62530787e1fef1856df5d016170a0cb31ce6acdadbc84fb5b9e4af54be83f6",
+      "actual": "7c62530787e1fef1856df5d016170a0cb31ce6acdadbc84fb5b9e4af54be83f6",
+      "match": true
+    },
+    {
+      "path": "docs/verification/P2_PASSIVE_RUNTIME/status.json",
+      "expected": "7fa50476bb0ed36ccaf2b9f7a6db730bff87051942471ee1c12c97d79f295e1a",
+      "actual": "7fa50476bb0ed36ccaf2b9f7a6db730bff87051942471ee1c12c97d79f295e1a",
+      "match": true
+    },
+    {
+      "path": "docs/decisions/2026-10-23-passive-vfx-player-copy.md",
+      "expected": "f20bcf279e4c6be4f6ccecd41833fe7a2267d208672b09b849ed149f1c7a8ee6",
+      "actual": "f20bcf279e4c6be4f6ccecd41833fe7a2267d208672b09b849ed149f1c7a8ee6",
+      "match": true
+    },
+    {
+      "path": "docs/verification/PASSIVE_VFX_COPY_REVISION/player-feedback/IMG_2777.png",
+      "expected": "15de6d87c9aa40788f63307107cc5be739e0ef49573dd0d1f4dbc680a1b2b540",
+      "actual": "15de6d87c9aa40788f63307107cc5be739e0ef49573dd0d1f4dbc680a1b2b540",
+      "match": true
+    },
+    {
+      "path": "docs/verification/PASSIVE_VFX_COPY_REVISION/player-feedback/IMG_2778.png",
+      "expected": "a6f6bdae84a16e6580cf252d6a398b41c46be382dba495c5428efca619f46685",
+      "actual": "a6f6bdae84a16e6580cf252d6a398b41c46be382dba495c5428efca619f46685",
+      "match": true
+    }
+  ],
+  "newP1VfxPlayerApproval": false
+}

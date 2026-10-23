@@ -1,0 +1,29 @@
+{
+  "status": "P2 COMPLETE / PLAYER VERIFIED BY EXISTING ACCEPTANCES PLUS PASSIVE",
+  "recordedDate": "2026-10-23",
+  "timezone": "Asia/Taipei",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false
+  },
+  "historicalBaseAndFourSkillClosure": "docs/verification/P2_CHARACTER_CLOSURE.json",
+  "passiveReceipt": "docs/art/approved/botuo/passive/runtime-v1/acceptance.json",
+  "acceptedPassiveRelease": "1f6b47b4e30a867b1b8d294c69fdeaedc51f0b98",
+  "requiredCopyCorrectionRelease": "32424075b5c91844187fc80a566a9140c7e955d6",
+  "requiredCopyCorrectionTree": "ab0a6733ff312d48fef3979e1e0697aaaf74a6de",
+  "evidence": {
+    "acceptanceAudit": "docs/verification/PASSIVE_VFX_COPY_REVISION/acceptance-audit.json",
+    "receiptAndBaseHashesMatched": 14,
+    "report": "docs/verification/PASSIVE_VFX_COPY_REVISION/REPORT.md",
+    "status": "docs/verification/PASSIVE_VFX_COPY_REVISION/status.json",
+    "public": "docs/verification/PASSIVE_VFX_COPY_REVISION/public-fingerprints.json",
+    "ci": "docs/verification/PASSIVE_VFX_COPY_REVISION/ci-build-inventory.json"
+  },
+  "scope": "Administrative aggregation of previously accepted Identity/static/Idle/Move/KO/scale/four skills plus conditional accepted passive; player-requested copy correction is now deployed. No fresh whole-character device test or unreported Tier measurements claimed.",
+  "remainingP2Gate": [],
+  "separateNewP1VfxGate": "PLAYER REVIEW PENDING; existing P1 numerical/active skill/art approvals retained",
+  "ordinaryHit": "PERMANENTLY CANCELLED",
+  "P3": "BLOCKED; no automatic implementation"
+}

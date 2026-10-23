@@ -1,0 +1,309 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 120246115913,
+      "run_id": 39902216798,
+      "workflow_name": "M0 Pages Preview",
+      "head_branch": "feat/m0-combat-core-20260927",
+      "run_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/runs/39902216798",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOUuQwjs8AAAAb_zoeSQ",
+      "head_sha": "32424075b5c91844187fc80a566a9140c7e955d6",
+      "url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/jobs/120246115913",
+      "html_url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39902216798/job/120246115913",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T04:47:40Z",
+      "started_at": "2026-10-23T04:47:42Z",
+      "completed_at": "2026-10-23T04:48:29Z",
+      "name": "build",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-23T04:47:43Z",
+          "completed_at": "2026-10-23T04:47:45Z"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-23T04:47:45Z",
+          "completed_at": "2026-10-23T04:47:57Z"
+        },
+        {
+          "name": "Setup Node",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-23T04:47:57Z",
+          "completed_at": "2026-10-23T04:48:05Z"
+        },
+        {
+          "name": "Install",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-23T04:48:05Z",
+          "completed_at": "2026-10-23T04:48:08Z"
+        },
+        {
+          "name": "Test",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-23T04:48:08Z",
+          "completed_at": "2026-10-23T04:48:22Z"
+        },
+        {
+          "name": "Test bounded viewport surface",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 6,
+          "started_at": "2026-10-23T04:48:22Z",
+          "completed_at": "2026-10-23T04:48:22Z"
+        },
+        {
+          "name": "Test bounded P2 Basic release surface",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 7,
+          "started_at": "2026-10-23T04:48:22Z",
+          "completed_at": "2026-10-23T04:48:22Z"
+        },
+        {
+          "name": "Test bounded P2 Heavy shared presentation and lossless packing",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-10-23T04:48:22Z",
+          "completed_at": "2026-10-23T04:48:22Z"
+        },
+        {
+          "name": "Build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-23T04:48:22Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Test bounded P2 Special shared runtime",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 10,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Verify authorized Special release reuses exact Browser-tested sources",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 11,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Preserve Special release source proof and build inventory",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 12,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Probe P2 Special native Phaser and built entry without Pages",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 13,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Preserve P2 Special probe evidence",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 14,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Check approved Awakening in real Chromium",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 15,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Preserve Awakening browser evidence",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 16,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Check approved P2 Basic in real Chromium",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 17,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Preserve P2 Basic browser evidence",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 18,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Check mobile viewport in Chromium and WebKit",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 19,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Preserve mobile viewport evidence",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 20,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Check P2 Heavy and lossless trim in real Chromium and built entry",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 21,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Preserve P2 Heavy browser evidence",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 22,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Verify current passive release evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Configure Pages",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:23Z"
+        },
+        {
+          "name": "Upload Pages artifact",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-10-23T04:48:23Z",
+          "completed_at": "2026-10-23T04:48:26Z"
+        },
+        {
+          "name": "Post Setup Node",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 49,
+          "started_at": "2026-10-23T04:48:26Z",
+          "completed_at": "2026-10-23T04:48:26Z"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 50,
+          "started_at": "2026-10-23T04:48:26Z",
+          "completed_at": "2026-10-23T04:48:26Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 51,
+          "started_at": "2026-10-23T04:48:26Z",
+          "completed_at": "2026-10-23T04:48:26Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/check-runs/120246115913",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000002658,
+      "runner_name": "GitHub Actions 1000002658",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 120246346745,
+      "run_id": 39902216798,
+      "workflow_name": "M0 Pages Preview",
+      "head_branch": "feat/m0-combat-core-20260927",
+      "run_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/runs/39902216798",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOUuQwjs8AAAAb_z2j-Q",
+      "head_sha": "32424075b5c91844187fc80a566a9140c7e955d6",
+      "url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/jobs/120246346745",
+      "html_url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/39902216798/job/120246346745",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T04:48:29Z",
+      "started_at": "2026-10-23T04:48:32Z",
+      "completed_at": "2026-10-23T04:48:42Z",
+      "name": "deploy",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-23T04:48:33Z",
+          "completed_at": "2026-10-23T04:48:34Z"
+        },
+        {
+          "name": "Deploy Pages",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-23T04:48:34Z",
+          "completed_at": "2026-10-23T04:48:40Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-23T04:48:40Z",
+          "completed_at": "2026-10-23T04:48:40Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/check-runs/120246346745",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000002660,
+      "runner_name": "GitHub Actions 1000002660",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "status": "DEPLOYED / ENGINEERING PASS / P2 ACCEPTED; NEW P1 VFX PLAYER REVIEW PENDING",
+  "releaseCommit": "32424075b5c91844187fc80a566a9140c7e955d6",
+  "releaseTree": "ab0a6733ff312d48fef3979e1e0697aaaf74a6de",
+  "url": "https://hansen0318.github.io/shanhaijing-arena/?passive=3242407",
+  "workflow": {
+    "run": 39902216798,
+    "number": 1105,
+    "build": "success",
+    "deploy": "success",
+    "tests": 1070,
+    "guardBoundFiles": 585
+  },
+  "verificationRun": {
+    "id": 39902216942,
+    "conclusion": "success",
+    "sourceIdenticalEvidenceReuse": true
+  },
+  "additionalExistingWorkflow": {
+    "id": 39902216764,
+    "conclusion": "success",
+    "note": "Existing src/** trigger ran unchanged P2 Awakening workflow automatically; no manual rerun requested."
+  },
+  "ciLocal": {
+    "files": 149,
+    "matched": 149,
+    "artifactId": 12479621205,
+    "artifactZipSha256": "b5c8ed9085784394daa83a9ebc42d1c41dbdaed3dcd95028efb696a28e9df058"
+  },
+  "public": {
+    "files": 149,
+    "matched": 149,
+    "fresh": 3,
+    "reused": 146
+  },
+  "playerGate": {
+    "P2": "Existing thick armor and armor VFX condition accepted; required copy correction deployed and verified",
+    "P1": "New cyan speed-streak VFX only awaits player observation; existing accepted mechanics/art/four active skills remain accepted",
+    "P3": "BLOCKED; no P3 or TD development started"
+  }
+}
