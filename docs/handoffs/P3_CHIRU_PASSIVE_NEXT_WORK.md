@@ -1,3 +1,7 @@
+# 最新工作checkpoint：2026-10-25 pre-art ACTIVE
+
+恢復紀錄見docs/verification/P3_PASSIVE_RUNTIME/readability-revision/recovery.json；尚未新素材/GIF，直接接以下指令的來源盤點及修正版預覽。產品不變，不重跑原測試。
+
 # 2026-10-25 修正方向已核准；新Work接續
 
 ```text

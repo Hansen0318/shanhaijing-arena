@@ -43,3 +43,8 @@ Public168/168 fresh HTTP PASS, matching exact current CI/local bytes and SHA256.
 全角色共用規則：正式招式素材成功解析後，取代同招同階段/狀態的舊示意VFX，不能疊加；尚無正式來源才保留fallback。逐來源辨識施法/命中/狀態/預警/場地輔助，不能憑截圖誤刪正式盾或必要遊戲預警；若幾何承擔正式素材未表達的命中資訊，記錄證據並讓正式呈現完整承接後退場，不以示意層長期共存。固定褐色橢圓是場地輔助，與技能分開盤點，不擴大成場地重設計。
 
 規則/進度/精確下一步見docs/verification/P3_PASSIVE_RUNTIME/player-feedback-2026-10-25.md與docs/handoffs/P3_CHIRU_PASSIVE_NEXT_WORK.md。同分支PR1open/unmerged，單人不委派、不新branch/worktree、不動TD/main/存檔；逐招流程及全部既有硬規則維持。
+
+## 2026-10-25 — 游息可讀性修正 pre-art checkpoint
+
+已fetch核對remote 3d156f62f75bdf8d6a8105d736ecb4a9cb1d4d16，PR#1 open/unmerged；本工作區fresh checkout且無未push成果。依玩家明確授權採原生單人、同分支，直接盤點正式/示意來源並沿核准PNG準備薄荷綠亮邊＋亮白雙魚預覽。現有Runtime/核准素材/舊收據不改，沿用原範圍證據，不重跑suite/Build/Browser/Pages。修正版預覽未核准，P3未COMPLETE；下一步＝完成來源盤點及同尺度混戰對照/必要GIF，呈交後停待玩家視覺核准。恢復紀錄：docs/verification/P3_PASSIVE_RUNTIME/readability-revision/recovery.json。
+

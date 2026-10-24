@@ -1,3 +1,7 @@
+## 2026-10-25 — 游息可讀性修正 pre-art checkpoint
+
+已fetch核對remote 3d156f62f75bdf8d6a8105d736ecb4a9cb1d4d16，PR#1 open/unmerged；本工作區fresh checkout且無未push成果。依玩家明確授權採原生單人、同分支，直接盤點正式/示意來源並沿核准PNG準備薄荷綠亮邊＋亮白雙魚預覽。現有Runtime/核准素材/舊收據不改，沿用原範圍證據，不重跑suite/Build/Browser/Pages。修正版預覽未核准，P3未COMPLETE；下一步＝完成來源盤點及同尺度混戰對照/必要GIF，呈交後停待玩家視覺核准。恢復紀錄：docs/verification/P3_PASSIVE_RUNTIME/readability-revision/recovery.json。
+
 ## 2026-10-25 — 玩家核准游息辨識方向；新Work接視覺修正與正式VFX取代示意層
 
 玩家明確選定「薄荷綠亮邊＋亮白雙魚」，並要求已開發招式的對應示意VFX由正式VFX取代。這是修正方向及接續工作的授權，不是尚未呈交的新素材/GIF或Runtime玩家驗收。P3未COMPLETE，不建立Runtime玩家acceptance。
