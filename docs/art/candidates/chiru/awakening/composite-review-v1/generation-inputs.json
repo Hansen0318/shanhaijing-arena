@@ -1,0 +1,23 @@
+{
+  "mode": "built-in imagegen",
+  "references": {
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "public/assets/characters/chiru/identity.png": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a",
+    "docs/art/candidates/chiru/awakening/f3-v2/originals/awakening-f3.png": "a822aa2e918472ade44d1432ff71f1d4d493df22c28a1455fd123ea0d47c561a"
+  },
+  "poseReferenceRoles": [
+    "approved battleIdle identity",
+    "approved high-V Awakening F3 endpoint"
+  ],
+  "fxReferenceRole": "approved cyan focus palette only",
+  "F2Correction": "One targeted correction of hand height; attempt1 retained, unused",
+  "newSources": {
+    "F2-attempt1.png": "adc3b085f0e4b216184921be7f8eab2274bd78bf9ceb05e4b1f543c72f339fa7",
+    "F2.png": "472dd9a6a5725929217e5b8a7d6280e269158219d5cee78fb6c4c51e58f07ae8",
+    "recipient.png": "a5ea9530bc30c5caa0fde33d23e03ad898172a19032a9be84a21c24426ef5b2e",
+    "protection.png": "f4db86fed3c394fec62b88b03f840a36df2e5cc25733212a0cc8b74cb5b4ae62",
+    "F4.png": "7f29fd1f01b16c268a19924a7aaebf1d8fcf852b5abaa7c3a3402f9d20ddc892",
+    "caster.png": "366376f72c3c8c1e900711635cb1262ba4028b5d1844e43e18244fadf8a13b12",
+    "F1.png": "3df9ece9c9641417e2d70c1bed94691dfe22f3c23cfad62c8a0968e4ed666d84"
+  }
+}

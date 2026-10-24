@@ -1,3 +1,23 @@
+## 2026-10-24 — 新 Work 恢復未推送潤澤審核包；GIF 玩家審核 NEXT
+
+fetch 確認遠端4807dc08d40aa978565ef3379ebf307875f4b4f1與PR#1 open/unmerged。找到本機7fb361a（含d83ebb8、93ba99f）完整動作／三類獨立VFX／13 GIF，合併遠端唯一新增ACTIVE_CHECKPOINT，不重生素材。重新嚴格解碼44圖／472幀全部成功，67 checksums與245 protected hashes全部一致；本次是恢復完整性查核，未重跑已完成產品suite/Build/Browser/Pages。Git HTTPS push無認證，改用已連線GitHub API逐blob SHA核對後保存原分支，確切遠端checkpoint以包含本節之commit為準。
+
+唯一下一步：呈交docs/art/candidates/chiru/awakening/composite-review-v1/REVIEW.md現成GIF，等玩家明確核准或修正。玩家本次「確認github進度…直接開始下一步」是恢復與接續授權，不是假定未見GIF已核准；未建立acceptance，未Runtime／部署／Passive。全部approved、src/public bytes保持。原生單人、原分支、PR#1 open/unmerged、不main merge、不新branch/worktree、不委派。下方生成待辦與ACTIVE checkpoint為歷史，本節優先。[skip ci]
+
+## 2026-10-24 — 潤澤動作／三類獨立VFX／13 GIF READY；唯一下一Gate＝玩家GIF審核
+
+完成F1低位雙開掌、F2肩高托舉、原核准雙臂高V F3、F4下降回收；內建imagegen三類獨立caster完整水冠扇幕、正治療泉花、T3保護水膜。F2首稿過近F3，保留未採用，僅一次肩高手勢修正。原圖/完整prompts/來源hash/可重建script/manifest/QA/逐段timeline皆在 docs/art/candidates/chiru/awakening/composite-review-v1/；審核入口 REVIEW.md。
+
+13 GIF：normal/slow/noFX/left mirror/Idle-return/reduced/T3正治療/滿血僅T3保護/500ms取消/與Special同尺度FX-on/off/390全景/FX-only。嚴格全解碼、RGBA128padding原像素與縮放反貼、共同320×260/chestX158/hoverY203、F3 .13基準頭身地標等比正規化、四cell無鄰幀污染、mirror、明暗底與Idle返回核對完成；245 protected hashes不變。GIF壓縮後逐解碼像素/區間hold對照PASS，最短20ms，slow60ms；不是實機播放證明。生成原圖微弱alpha邊緣全部保留，可見alpha16輪廓無裁切。形象/配件/尺度/場面僅作者自審，玩家GIF核准仍PENDING。
+
+明示ART SIMULATION：F1/F2/F3/F4=360/240/300/300ms；T0/T3於600ms對示範三位存活同隊含自身各一次正治療；滿血無泉花、T3可有真保護，600–3100ms保護持續至回Idle後才到期；500ms取消無任何受益效果。沒有Runtime/新遊戲效果/部署/Passive/acceptance；契約數值及後續流程保持。產品與所有核准檔案bytes未改，未重跑suite/Build/Browser/Pages。單人原分支PR#1 open/unmerged，不委派/新branch/worktree/TD/main merge/重置存檔。
+
+唯一下一步：呈交現成GIF供玩家明確核准或修正。未核准不可Runtime/部署；GIF核准後才接必要generic data opt-in Runtime與真驗證/正常Pages，再遊戲核准，再Passive。不重生現成素材、不重審F3/原表。生成前remote4807dc08d40aa978565ef3379ebf307875f4b4f1；HTTPS push缺認證，使用連線GitHub工具保存同分支。含本節與完整審核包的遠端commit為新交接checkpoint，fetch最新取得。所有交接單一自足code block。[skip ci]
+
+## 2026-10-24 — 潤澤動作／VFX／GIF製作 ACTIVE（生成前checkpoint）
+
+恢復乾淨原工程；fetch後HEAD與origin均6ae4c26。F3 v2收據有效；本次只新增F1/F2/F4與caster/recipient/protection三類獨立imagegen素材、同尺度QA及GIF，不改產品或核准檔案。動作沿雙臂高V：低位兩側開掌起勢→雙肘側抬托冠→原核准F3→雙臂下降收鰭。保留右側水珠與可見側耳飾。600ms正治療/保護以明示ART SIMULATION示範；滿血無泉花。下一步：依已核准詳細指令製作並保存原圖/prompts/hashes及可重建包；完成後等待GIF玩家核准。無Runtime/部署/Passive/新acceptance，單人原分支、不委派/新worktree/main merge。[skip ci]
+
 ## 2026-10-24 — Awakening 潤澤 F3 v2 PLAYER APPROVED；新Work直接接其餘動作／獨立VFX／GIF
 
 玩家：「我核准，紀錄，我要給新的work往下進行開發，妳提供prompts，要他無縫接軌直接往下開發」。明確核准已呈交checkpoint351cbe303f94a6a6a61611281be0cfdf9a2f2a81的潤澤雙臂高V F3 v2；精確收據 docs/art/approved/chiru/awakening/f3-v2/acceptance.json。候選SHA256 7f23b33b22196ef59e0e996b4a901db5134280a0731f17f17d0e9ab511d3d340，原圖SHA256 a822aa2e918472ade44d1432ff71f1d4d493df22c28a1455fd123ea0d47c561a。F3 Gate CLOSED，原圖/padding/manifest/prompt/QA/hash與舊損壞batch均原封保留；舊PENDING僅呈交歷史，不重畫、不重審F3或原數值表。

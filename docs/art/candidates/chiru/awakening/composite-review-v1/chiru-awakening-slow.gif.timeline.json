@@ -1,0 +1,1017 @@
+[
+  {
+    "castOffsetMs": -500,
+    "logicalHoldMs": 500,
+    "playbackHoldMs": 500,
+    "phase": "IDLE",
+    "casterFx": false,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 0,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F1",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 40,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F1",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 80,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F1",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 120,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F1",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 160,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F1",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 200,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F1",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 240,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F1",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 280,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F1",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 320,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F1",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 360,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F2",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 400,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F2",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 440,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F2",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 480,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F2",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 520,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F2",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 560,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F2",
+    "casterFx": true,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      0,
+      0,
+      0
+    ],
+    "hp": [
+      650,
+      400,
+      700
+    ],
+    "settled": false,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 600,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F3",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 640,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F3",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 680,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F3",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 720,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F3",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 760,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F3",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 800,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F3",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 840,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F3",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 880,
+    "logicalHoldMs": 20,
+    "playbackHoldMs": 60,
+    "phase": "F3",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 900,
+    "logicalHoldMs": 20,
+    "playbackHoldMs": 60,
+    "phase": "F4",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 920,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F4",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 960,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F4",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 1000,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F4",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 1040,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F4",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 1080,
+    "logicalHoldMs": 20,
+    "playbackHoldMs": 60,
+    "phase": "F4",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 1100,
+    "logicalHoldMs": 20,
+    "playbackHoldMs": 60,
+    "phase": "F4",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 1120,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F4",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 1160,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 120,
+    "phase": "F4",
+    "casterFx": true,
+    "recipientBlossoms": [
+      true,
+      true,
+      true
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 1200,
+    "logicalHoldMs": 200,
+    "playbackHoldMs": 600,
+    "phase": "IDLE",
+    "casterFx": false,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  },
+  {
+    "castOffsetMs": 1400,
+    "logicalHoldMs": 700,
+    "playbackHoldMs": 700,
+    "phase": "IDLE",
+    "casterFx": false,
+    "recipientBlossoms": [
+      false,
+      false,
+      false
+    ],
+    "protectiveMembranes": [
+      false,
+      false,
+      false
+    ],
+    "healAmounts": [
+      160.0,
+      160.0,
+      160.0
+    ],
+    "hp": [
+      810.0,
+      560.0,
+      860.0
+    ],
+    "settled": true,
+    "scenarioTier": 0
+  }
+]

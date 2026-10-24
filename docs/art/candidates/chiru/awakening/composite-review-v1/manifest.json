@@ -1,0 +1,1404 @@
+{
+  "status": "F3 PLAYER APPROVED / NEW POSES VFX GIF PLAYER REVIEW PENDING",
+  "baseline": "6ae4c26c62714ea4c934a273b0dba85177926c87",
+  "remotePreGenerationCheckpoint": "4807dc08d40aa978565ef3379ebf307875f4b4f1",
+  "mode": "built-in imagegen + deterministic Pillow packaging",
+  "productionChanged": false,
+  "runtimeIntegrated": false,
+  "deployed": false,
+  "originals": [
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F1.png",
+      "sha256": "3df9ece9c9641417e2d70c1bed94691dfe22f3c23cfad62c8a0968e4ed666d84",
+      "strictFullDecode": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        33,
+        36,
+        1238,
+        1254
+      ],
+      "visibleAlpha16Bounds": [
+        79,
+        39,
+        1200,
+        1202
+      ],
+      "margins": [
+        33,
+        36,
+        16,
+        0
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F2-attempt1.png",
+      "sha256": "adc3b085f0e4b216184921be7f8eab2274bd78bf9ceb05e4b1f543c72f339fa7",
+      "strictFullDecode": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        33,
+        1223,
+        1232
+      ],
+      "visibleAlpha16Bounds": [
+        138,
+        49,
+        1220,
+        1215
+      ],
+      "margins": [
+        0,
+        33,
+        31,
+        22
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F2.png",
+      "sha256": "472dd9a6a5725929217e5b8a7d6280e269158219d5cee78fb6c4c51e58f07ae8",
+      "strictFullDecode": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        27,
+        1240,
+        1228
+      ],
+      "visibleAlpha16Bounds": [
+        112,
+        81,
+        1195,
+        1204
+      ],
+      "margins": [
+        0,
+        27,
+        14,
+        26
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F4.png",
+      "sha256": "7f29fd1f01b16c268a19924a7aaebf1d8fcf852b5abaa7c3a3402f9d20ddc892",
+      "strictFullDecode": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        38,
+        1216,
+        1220
+      ],
+      "visibleAlpha16Bounds": [
+        134,
+        100,
+        1157,
+        1185
+      ],
+      "margins": [
+        0,
+        38,
+        38,
+        34
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/caster.png",
+      "sha256": "366376f72c3c8c1e900711635cb1262ba4028b5d1844e43e18244fadf8a13b12",
+      "strictFullDecode": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        22,
+        1253,
+        1254
+      ],
+      "visibleAlpha16Bounds": [
+        15,
+        49,
+        1239,
+        1206
+      ],
+      "margins": [
+        0,
+        22,
+        1,
+        0
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/protection.png",
+      "sha256": "f4db86fed3c394fec62b88b03f840a36df2e5cc25733212a0cc8b74cb5b4ae62",
+      "strictFullDecode": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        14,
+        1240,
+        1238
+      ],
+      "visibleAlpha16Bounds": [
+        90,
+        17,
+        1172,
+        1233
+      ],
+      "margins": [
+        0,
+        14,
+        14,
+        16
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/recipient.png",
+      "sha256": "a5ea9530bc30c5caa0fde33d23e03ad898172a19032a9be84a21c24426ef5b2e",
+      "strictFullDecode": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        0,
+        27,
+        1238,
+        1254
+      ],
+      "visibleAlpha16Bounds": [
+        41,
+        192,
+        1217,
+        1097
+      ],
+      "margins": [
+        0,
+        27,
+        16,
+        0
+      ]
+    }
+  ],
+  "poses": [
+    {
+      "frame": "F1",
+      "source": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F1.png",
+      "sha256": "3df9ece9c9641417e2d70c1bed94691dfe22f3c23cfad62c8a0968e4ed666d84",
+      "landmarks": {
+        "chest": [
+          790,
+          440
+        ],
+        "eye": [
+          735,
+          257
+        ],
+        "hover": [
+          755,
+          1200
+        ],
+        "palmLeft": [
+          350,
+          550
+        ],
+        "palmRight": [
+          1070,
+          555
+        ],
+        "scale": 0.122
+      },
+      "canonicalDensity": 0.13,
+      "anatomyNormalization": 0.9384615384615385,
+      "translation": [
+        62,
+        57
+      ],
+      "eyeInCell": [
+        152,
+        88
+      ],
+      "RGBAAndScaleRoundTrips": true,
+      "size": [
+        320,
+        260
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        69,
+        59,
+        211,
+        206
+      ],
+      "visibleAlpha16Bounds": [
+        71,
+        61,
+        209,
+        204
+      ],
+      "margins": [
+        69,
+        59,
+        109,
+        54
+      ]
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F2.png",
+      "sha256": "472dd9a6a5725929217e5b8a7d6280e269158219d5cee78fb6c4c51e58f07ae8",
+      "landmarks": {
+        "chest": [
+          785,
+          482
+        ],
+        "eye": [
+          725,
+          288
+        ],
+        "hover": [
+          780,
+          1200
+        ],
+        "palmLeft": [
+          410,
+          443
+        ],
+        "palmRight": [
+          1070,
+          460
+        ],
+        "scale": 0.125
+      },
+      "canonicalDensity": 0.13,
+      "anatomyNormalization": 0.9615384615384615,
+      "translation": [
+        60,
+        53
+      ],
+      "eyeInCell": [
+        151,
+        89
+      ],
+      "RGBAAndScaleRoundTrips": true,
+      "size": [
+        320,
+        260
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        71,
+        61,
+        212,
+        206
+      ],
+      "visibleAlpha16Bounds": [
+        74,
+        63,
+        210,
+        204
+      ],
+      "margins": [
+        71,
+        61,
+        108,
+        54
+      ]
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/candidates/chiru/awakening/f3-v2/originals/awakening-f3.png",
+      "sha256": "a822aa2e918472ade44d1432ff71f1d4d493df22c28a1455fd123ea0d47c561a",
+      "landmarks": {
+        "chest": [
+          770,
+          565
+        ],
+        "eye": [
+          690,
+          385
+        ],
+        "hover": [
+          745,
+          1230
+        ],
+        "palmLeft": [
+          322,
+          225
+        ],
+        "palmRight": [
+          1035,
+          290
+        ],
+        "scale": 0.13
+      },
+      "canonicalDensity": 0.13,
+      "anatomyNormalization": 1.0,
+      "translation": [
+        58,
+        43
+      ],
+      "eyeInCell": [
+        148,
+        93
+      ],
+      "RGBAAndScaleRoundTrips": true,
+      "size": [
+        320,
+        260
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        72,
+        47,
+        214,
+        205
+      ],
+      "visibleAlpha16Bounds": [
+        74,
+        49,
+        211,
+        203
+      ],
+      "margins": [
+        72,
+        47,
+        106,
+        55
+      ]
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F4.png",
+      "sha256": "7f29fd1f01b16c268a19924a7aaebf1d8fcf852b5abaa7c3a3402f9d20ddc892",
+      "landmarks": {
+        "chest": [
+          800,
+          480
+        ],
+        "eye": [
+          750,
+          300
+        ],
+        "hover": [
+          820,
+          1183
+        ],
+        "palmLeft": [
+          685,
+          600
+        ],
+        "palmRight": [
+          1035,
+          565
+        ],
+        "scale": 0.126
+      },
+      "canonicalDensity": 0.13,
+      "anatomyNormalization": 0.9692307692307692,
+      "translation": [
+        57,
+        54
+      ],
+      "eyeInCell": [
+        151,
+        92
+      ],
+      "RGBAAndScaleRoundTrips": true,
+      "size": [
+        320,
+        260
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        71,
+        64,
+        205,
+        206
+      ],
+      "visibleAlpha16Bounds": [
+        73,
+        66,
+        203,
+        204
+      ],
+      "margins": [
+        71,
+        64,
+        115,
+        54
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "name": "caster",
+      "source": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/caster.png",
+      "sha256": "366376f72c3c8c1e900711635cb1262ba4028b5d1844e43e18244fadf8a13b12",
+      "sourceInfo": {
+        "size": [
+          1254,
+          1254
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds": [
+          0,
+          22,
+          1253,
+          1254
+        ],
+        "visibleAlpha16Bounds": [
+          15,
+          49,
+          1239,
+          1206
+        ],
+        "margins": [
+          0,
+          22,
+          1,
+          0
+        ]
+      },
+      "paddedInfo": {
+        "size": [
+          1510,
+          1510
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds": [
+          128,
+          150,
+          1381,
+          1382
+        ],
+        "visibleAlpha16Bounds": [
+          143,
+          177,
+          1367,
+          1334
+        ],
+        "margins": [
+          128,
+          150,
+          129,
+          128
+        ]
+      },
+      "displayInfo": {
+        "size": [
+          340,
+          340
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds": [
+          2,
+          9,
+          338,
+          331
+        ],
+        "visibleAlpha16Bounds": [
+          4,
+          13,
+          336,
+          327
+        ],
+        "margins": [
+          2,
+          9,
+          2,
+          9
+        ]
+      },
+      "RGBARoundTrip": true
+    },
+    {
+      "name": "recipient",
+      "source": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/recipient.png",
+      "sha256": "a5ea9530bc30c5caa0fde33d23e03ad898172a19032a9be84a21c24426ef5b2e",
+      "sourceInfo": {
+        "size": [
+          1254,
+          1254
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds": [
+          0,
+          27,
+          1238,
+          1254
+        ],
+        "visibleAlpha16Bounds": [
+          41,
+          192,
+          1217,
+          1097
+        ],
+        "margins": [
+          0,
+          27,
+          16,
+          0
+        ]
+      },
+      "paddedInfo": {
+        "size": [
+          1510,
+          1510
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds": [
+          128,
+          155,
+          1366,
+          1382
+        ],
+        "visibleAlpha16Bounds": [
+          169,
+          320,
+          1345,
+          1225
+        ],
+        "margins": [
+          128,
+          155,
+          144,
+          128
+        ]
+      },
+      "displayInfo": {
+        "size": [
+          250,
+          250
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds": [
+          4,
+          20,
+          245,
+          237
+        ],
+        "visibleAlpha16Bounds": [
+          8,
+          38,
+          243,
+          219
+        ],
+        "margins": [
+          4,
+          20,
+          5,
+          13
+        ]
+      },
+      "RGBARoundTrip": true
+    },
+    {
+      "name": "protection",
+      "source": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/protection.png",
+      "sha256": "f4db86fed3c394fec62b88b03f840a36df2e5cc25733212a0cc8b74cb5b4ae62",
+      "sourceInfo": {
+        "size": [
+          1254,
+          1254
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds": [
+          0,
+          14,
+          1240,
+          1238
+        ],
+        "visibleAlpha16Bounds": [
+          90,
+          17,
+          1172,
+          1233
+        ],
+        "margins": [
+          0,
+          14,
+          14,
+          16
+        ]
+      },
+      "paddedInfo": {
+        "size": [
+          1510,
+          1510
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds": [
+          128,
+          142,
+          1368,
+          1366
+        ],
+        "visibleAlpha16Bounds": [
+          218,
+          145,
+          1300,
+          1361
+        ],
+        "margins": [
+          128,
+          142,
+          142,
+          144
+        ]
+      },
+      "displayInfo": {
+        "size": [
+          190,
+          190
+        ],
+        "alphaRange": [
+          0,
+          255
+        ],
+        "alphaBounds": [
+          10,
+          0,
+          182,
+          189
+        ],
+        "visibleAlpha16Bounds": [
+          13,
+          2,
+          178,
+          187
+        ],
+        "margins": [
+          10,
+          0,
+          8,
+          1
+        ]
+      },
+      "RGBARoundTrip": true
+    }
+  ],
+  "gifs": [
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-normal.gif",
+      "sha256": "1ff3cf75f49d02a316f4ac766f14cb6fec4f5d3f2b5686d7befd6da14a5224ce",
+      "bytes": 1021306,
+      "decodedFrames": 35,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        200,
+        700
+      ],
+      "totalDurationMs": 2600,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-slow.gif",
+      "sha256": "835f2de15d519b2afb436f2f6a4d7344c8d8c21da72ee7d9864e4faceadd23bd",
+      "bytes": 1021306,
+      "decodedFrames": 35,
+      "decodedHoldsMs": [
+        500,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        120,
+        60,
+        60,
+        120,
+        120,
+        120,
+        120,
+        60,
+        60,
+        120,
+        120,
+        600,
+        700
+      ],
+      "totalDurationMs": 5400,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 60
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-noFX.gif",
+      "sha256": "3d7616b901205c95392bf3415731a30d897a7c51492d847b60d121371a9638b1",
+      "bytes": 136495,
+      "decodedFrames": 35,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        200,
+        700
+      ],
+      "totalDurationMs": 2600,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-left-mirror.gif",
+      "sha256": "dd50a4606205f51298d2d7980dc75ce59c03a4efdd9f1020fdeb650540e980c7",
+      "bytes": 1045632,
+      "decodedFrames": 35,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        200,
+        700
+      ],
+      "totalDurationMs": 2600,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-idle-return.gif",
+      "sha256": "7051231baaee179ef2b58b2672096084001d3469ee71f7bbd4d836dee7785f93",
+      "bytes": 1021306,
+      "decodedFrames": 35,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        200,
+        1500
+      ],
+      "totalDurationMs": 3400,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-reduced.gif",
+      "sha256": "34b20f8470c4a9b1b1f34dfbb339d258781ab880bb3bd313f866883b0c94783c",
+      "bytes": 428584,
+      "decodedFrames": 40,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        400,
+        500,
+        500,
+        460,
+        40,
+        100,
+        700
+      ],
+      "totalDurationMs": 4400,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-full-hp-protection.gif",
+      "sha256": "58cb597382f30672281fc87c2f7ac19ab5d620c705901355dd0a95b1756a65a2",
+      "bytes": 793322,
+      "decodedFrames": 40,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        400,
+        500,
+        500,
+        460,
+        40,
+        100,
+        700
+      ],
+      "totalDurationMs": 4400,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-t3-positive.gif",
+      "sha256": "c2084567dee4f7906da548be4ff4e59a58acc486de60c8af7baa5767e02b8c02",
+      "bytes": 1048498,
+      "decodedFrames": 40,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        400,
+        500,
+        500,
+        460,
+        40,
+        100,
+        700
+      ],
+      "totalDurationMs": 4400,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-cancel-before600.gif",
+      "sha256": "b6e158cf67274673edb193ea2ab8a139974b0e2869608da058162299d9e44acd",
+      "bytes": 447220,
+      "decodedFrames": 36,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        200,
+        700
+      ],
+      "totalDurationMs": 2600,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/awakening-vs-special.gif",
+      "sha256": "e83bd207f09da4bc5032a8050601b8a583c36ac52c7277b2029007f14d23ad76",
+      "bytes": 1295893,
+      "decodedFrames": 25,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        140,
+        220,
+        40,
+        40,
+        900
+      ],
+      "totalDurationMs": 2600,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 40
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/awakening-vs-special-noFX.gif",
+      "sha256": "b28caca67b45f09e37e952f590d54b585fd058b44a4f2d0ae0c1cb7c6bb93e93",
+      "bytes": 189555,
+      "decodedFrames": 10,
+      "decodedHoldsMs": [
+        500,
+        200,
+        120,
+        40,
+        160,
+        80,
+        160,
+        140,
+        300,
+        900
+      ],
+      "totalDurationMs": 2600,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 40
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-phone-390.gif",
+      "sha256": "d96daf8eb71b67a244fbe8bd980818ed5e06da605a2af75a96178ad4cf551de9",
+      "bytes": 231800,
+      "decodedFrames": 35,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        200,
+        700
+      ],
+      "totalDurationMs": 2600,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    },
+    {
+      "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-fx-only.gif",
+      "sha256": "c995f34b5a931f2d0ac98b19ca5d19f5d3f426d5fb0c8a6f307565012812915a",
+      "bytes": 1110280,
+      "decodedFrames": 40,
+      "decodedHoldsMs": [
+        500,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        40,
+        40,
+        20,
+        20,
+        40,
+        40,
+        400,
+        500,
+        500,
+        460,
+        40,
+        100,
+        700
+      ],
+      "totalDurationMs": 4400,
+      "pixelTimingRoundTrip": true,
+      "minDecodedHoldMs": 20
+    }
+  ],
+  "commonCell": [
+    320,
+    260
+  ],
+  "chestX": 158,
+  "hoverY": 203,
+  "canonicalF3Density": 0.13,
+  "timing": {
+    "F1": 360,
+    "F2": 240,
+    "F3": 300,
+    "F4": 300,
+    "settlement": 600,
+    "returnIdle": 1200,
+    "T3ProtectionExpiry": 3100
+  },
+  "scenario": {
+    "kind": "ART SIMULATION",
+    "livingTeamIncludingSelf": 3,
+    "currentMaxHp": 1000,
+    "beforeHp": [
+      650,
+      400,
+      700
+    ],
+    "T0Fraction": 0.16,
+    "T3Fraction": 0.3,
+    "T2RearBonus": "not enabled in illustrated fixture",
+    "fullHpHasNoFlower": true,
+    "shieldMitigation": 0.108,
+    "shieldDurationMs": 2500
+  },
+  "protectedFiles": 245,
+  "checks": {
+    "strictFullDecode": true,
+    "RGBAAndScaledRoundTrips": true,
+    "F3OriginalPaddingSafeCellUnchanged": true,
+    "safeCellsAndStrip": true,
+    "mirrorRoundTrip": true,
+    "decodedGifPixelsAndTiming": true,
+    "noEarlyRecipientEffect": true,
+    "noFakeFullHpFlower": true,
+    "cancelBefore600NoBenefit": true,
+    "T3ExpiryAt3100": true
+  },
+  "limitations": [
+    "All new assets remain player review pending; landmark/identity/mirror/scale checks are author visual review, not independent review.",
+    "Generated originals may contain faint alpha at native edges. All source pixels retained; transparent128px padding added; visible silhouettes inspected on light/dark backgrounds.",
+    "F2-attempt1 too close to high-V F3; retained, unused. F2 has one targeted shoulder-height correction.",
+    "NoFX hides independent VFX, retains canonical held orb.",
+    "Reduced holds static full authored cues, only terminal caster/blossom fade; T3 protective rim remains static until exact scripted expiry.",
+    "GIF decode timing is verified, NOT browser/runtime/physical-device playback evidence.",
+    "Special comparison reconstructs previously approved poses/FX at same anchors/timing; no approved file written.",
+    "T3 shield expiry shown on Idle after action return, no repeated healing.",
+    "No suite/Build/Browser/Pages run: product untouched."
+  ]
+}
