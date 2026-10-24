@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "physicalPhone": false,
+  "built": true,
+  "errors": [],
+  "cases": [],
+  "status": "FAIL",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///home/runner/work/shanhaijing-arena/shanhaijing-arena/scripts/checkLushuPassiveV2Browser.mjs:47:409"
+}

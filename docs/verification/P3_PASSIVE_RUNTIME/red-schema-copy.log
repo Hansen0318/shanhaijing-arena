@@ -1,0 +1,29 @@
+✔ anonymous T0: stable ratio recipient/current maxHp/one event/independent CD (2.347639ms)
+✔ anonymous T1: stable ratio recipient/current maxHp/one event/independent CD (0.394201ms)
+✔ anonymous T2: stable ratio recipient/current maxHp/one event/independent CD (0.243288ms)
+✔ anonymous T3: stable ratio recipient/current maxHp/one event/independent CD (0.19646ms)
+✔ distance, health and living-enemy boundaries; self included; no zero event or cooldown (1.560529ms)
+✔ control/KO/expiry clear token, preserve healed HP, isolated owners/enemy team; no missed queue (1.302219ms)
+✔ schema rejects invalid heal ratios, incomplete tiers, unsafe ranges, unsupported assets (0.62438ms)
+✖ rear-support schema owns its data without freezing or retaining caller arrays/Tier map (0.655356ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.662203
+
+✖ failing tests:
+
+test at tests/rearSupportPassive.test.js:9:1
+✖ rear-support schema owns its data without freezing or retaining caller arrays/Tier map (0.655356ms)
+  TypeError [Error]: Cannot assign to read only property 'T0' of object '#<Object>'
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:9:181)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

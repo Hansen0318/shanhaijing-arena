@@ -1,0 +1,15 @@
+{
+  "status": "EXACT PRODUCT SOURCE EQUALITY",
+  "localBuiltCommit": "e3fbba9",
+  "releaseCandidate": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
+  "paths": [
+    "src",
+    "public",
+    "package.json",
+    "package-lock.json",
+    "index.html",
+    "vite.config.js"
+  ],
+  "changedProductPaths": [],
+  "note": "Later commits correct browser fixtures/assertions only; CI still builds current release fresh. Local inventory is reused only for identical product bytes."
+}

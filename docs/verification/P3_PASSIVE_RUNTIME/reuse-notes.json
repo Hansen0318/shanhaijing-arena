@@ -1,0 +1,18 @@
+{
+  "status": "UNCHANGED CORE MECHANISM REUSE; NEW SUPPORT STILL REQUIRES REAL CURRENT-SOURCE CHECKS",
+  "mechanisms": {
+    "src/combat/character.js": "current maxHp and heal missing-HP cap/no resurrection; unchanged implementation",
+    "src/runtime/assetCache.js": "shared two-download queue, per-file safety and actual failure handling unchanged",
+    "src/runtime/assetResidency.js": "required encounter pins and ownership disposal unchanged"
+  },
+  "sha256": {
+    "src/combat/character.js": "fc27b4d1dfcf9cf61d3728ead59ebc9b3fc259c27e272c1d42ce2e0f0d52907a",
+    "src/combat/statuses.js": "5de68368df8246c80f172309c98f94583f443d2e94f69b1aaafddfc1b889585f",
+    "src/runtime/assetCache.js": "962d2bd9ec9a8728b9bd2f48ac5b7d97a74aa5138c6a1ef37432f329a6849b7d",
+    "src/runtime/assetResidency.js": "02dd68698c3610b6bf5c49eefbf25dd77d1944abed8e45986cb0e612527dc22d",
+    "tests/formalEffects.test.js": "39d3bb7088e9e956d10674f46650b12b05a830cd1d2a5b572b86a985c165593d",
+    "tests/assetResidency.test.js": "d7e641409d57b925f35fc96a8453e339e8702980f7dcaf7386b9b949e28be4b9"
+  },
+  "browserReuse": false,
+  "reason": "Shared support runtime/presenter sources changed; fresh affected four-active/P1/P2 browser evidence required"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "baseline": "04aaac705f6c239c6c6bb83f642c92a8f4921288",
+  "protectedFiles": 842,
+  "changedPaths": [],
+  "method": "git complete path/blob equality for approved receipts, all candidate assets, art/source"
+}

@@ -1,0 +1,21 @@
+{
+  "nativeFixture": {
+    "run": 40104598716,
+    "source": "e6b56d0a0b5de22136ed4f0266e0311e6ed22ccb",
+    "cases": 32,
+    "failed": [
+      "mirror fixture did not set stationary last-facing",
+      "setup teleport selected move instead of Idle"
+    ],
+    "passing": "actual heal, exact approved PNG, opacity, scale, normal/reduced fade, pause, expiry, self/zero, both KO cleanup, end/restart/destroy",
+    "fix": "Seed stationary shared facing from declared test direction; reset prior action/motion setup state. No product change.",
+    "artifact": 12564152723,
+    "sha256": "7242e7a031142a95b93a06009dcb738eec1f978c8692abde3309284aa5ef72c7"
+  },
+  "p2": {
+    "run": 40104598705,
+    "failure": "2026-10-24T14:55:40.5933955Z {\"status\":\"FAIL\",\"built\":false,\"cases\":0,\"failure\":\"AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\\n\\n68 !== 64\\n\"}",
+    "cause": "New required four Tier PNGs add 4 textures / 512000 decoded bytes.",
+    "fix": "Exact encounter inventory expected 68 / 23095244; numerical/action assertions unchanged."
+  }
+}

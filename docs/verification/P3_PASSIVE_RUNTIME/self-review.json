@@ -1,0 +1,35 @@
+{
+  "method": "native author self-review; explicit player single-worker/no delegation constraint",
+  "base": "04aaac705f6c239c6c6bb83f642c92a8f4921288",
+  "head": "850fa1b4232171c31290744484978f167b92e1e7",
+  "findings": [
+    {
+      "severity": "important",
+      "finding": "Opening same-time queued KO could follow active healing",
+      "resolution": "data-opted opening damage settlement; witnessed RED to GREEN"
+    },
+    {
+      "severity": "important",
+      "finding": "Schema froze caller-owned input arrays and Tier map",
+      "resolution": "clone before deep freeze; witnessed RED to GREEN"
+    },
+    {
+      "severity": "important",
+      "finding": "Probe setup teleport selected Move/default team facing",
+      "resolution": "stationary facing setup only, real image/body assertions retained; fresh native/built PASS"
+    },
+    {
+      "severity": "minor",
+      "finding": "P2 exact inventory assertion needs four new required textures",
+      "resolution": "count/decoded-byte expected inventory updated; independent P2 workflow PASS"
+    }
+  ],
+  "unresolvedImportant": [],
+  "deferredMinor": [],
+  "protectedBytes": "842 files unchanged",
+  "notClaimed": [
+    "independent review",
+    "physical iPhone/FPS testing",
+    "player gameplay approval"
+  ]
+}

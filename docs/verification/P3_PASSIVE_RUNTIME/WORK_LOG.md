@@ -18,3 +18,10 @@ Base 04aaac705f6c239c6c6bb83f642c92a8f4921288. STYLE/GIF receipt hashes verified
 
 ## Interval-start ordering follow-up
 Self-review found opening resolveActions could precede a queued same-time KO. A new test reproduced this before fix; resolveOpeningActions now settles due damage first only in support-opted encounters, then active effects; original P1/P2-only ordering stays intact. RED→GREEN; 1219/1219 PASS. Browser Collection availability assertion updated for now-implemented P3.
+
+## Real CI failures and fixes (no product change)
+- First 32-case Passive native run: actual heal/PNG/Tier/scale/pause/expiry/self/zero/recipientKO/casterKO/end/restart/destroy passed; mirror/body checks exposed setup teleport being treated as Move and default team-facing. Seed stationary last-facing and clear pre-probe actions; retain real image/body assertions. Subsequent native+built step PASS at run40104953766.
+- P2 independent CI failed only exact encounter inventory 64 vs68. Four required Tier PNGs add512000 decoded bytes; expected68/23095244. Independent P2 workflow40104953768 SUCCESS after correction; move/action/math assertions unchanged.
+- P1 compatibility restart predicate assumed every passive has ordinary-distance progress or spatial-pressure type. Rear-support readiness is now explicit; all speed/duration/CD/geometry/cleanup assertions unchanged. Failures saved underfailures/.
+- Full suite1221/1221 PASS. Latest remote b414e9f079a985e4bf23283ffa5067abf5af9ac3; all later changes since e3fbba9 are validation-only. Mandatory normal CI still runs source-bound real browser and fresh Build. Do not claim final CI/Pages/player acceptance yet.
+- Ruling: preserve original branch/local history with merge; no reset. No new product design, numeric or art decisions. Self-review only per explicit native single-worker constraint; no deferred finding.
