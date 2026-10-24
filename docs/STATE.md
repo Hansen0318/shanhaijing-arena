@@ -1,3 +1,13 @@
+## 2026-10-24 — Special 回瀾 F3 v2 已保存；唯一下一Gate＝玩家F3審核
+
+已從最新remote `7c72f4c73f47df866b562c9167e7f110b22360e1` 恢復，同分支 feat/m0-combat-core-20260927、PR#1 open/unmerged。P1/P2 COMPLETE，Basic/Heavy及Heavy清晰版核准保持。完成本招必要spec/真Runtime差異與核准Idle/identity/Basic/Heavy實際影像核對；原始Special prompt含undefined前綴，本次補齊identity-preserve前文，保留舊prompt/損壞PNG/manifest未改、不反覆解碼。
+
+使用built-in imagegen重建單張Special F3：直立懸浮、前肘深彎掌心向上托起畫面右側青色珠環，另一手收胸前；可見側耳飾/右canonical/原配色與懸浮形態保持，與Basic水平前射及Heavy雙手推環不同。新候選與原圖/prompt/manifest/hash/可重建QA：`docs/art/candidates/chiru/special/f3-v2/REVIEW.md`。原圖SHA256 ef464c46993491ebd913e65a90e4f7253c0f5dedd1912e758191f6acc64053b5；透明padding候選SHA256 f301c9a1e8ed67f6e3b481063d9f6841e826f608f4f523fc3d9d243bd8277290。
+
+嚴格完整PNG解碼/RGBA/alpha/像素反貼/雙mirror/四reference hash通過；原圖淡alpha至左界，候選僅四邊128px透明padding保留全像素。深淺底、.13等尺度/chestX158/hoverY203及390px靜態48px主體高度已作者自審；不是動畫/Runtime/手機驗證。真Runtime仍為舊instant治療/基準maxHP與healing scale；核准320ms與新Tier百分比尚未實作，本次只記差異。
+
+**唯一下一步：呈交Special F3 v2後停待玩家明確核准或修正。** 不生成其餘姿勢/VFX/GIF、不整合Runtime/部署、不存未獲核准的acceptance、不進Awakening/Passive。保護所有approved masters/收據/P1/P2/Basic/Heavy/尺度/anchor/懸浮下緣/左右鏡像。原生單人、不委派/新branch/worktree/TD/main merge；本次美術/文件checkpoint [skip ci]，產品未變，不重跑suite/Build/Browser/Pages。新Work先讀Special handoff及REVIEW，禁止重生已保存候選。下方舊「重建Special」待辦由本節覆蓋。
+
 ## 2026-10-24 — Heavy清晰版 PLAYER APPROVED／COMPLETE；新Work直接接Special回瀾
 
 玩家「確認ok，紀錄，接下來我要開新的work無縫接軌接手下面的，確認好進度規則流程，就給我prompts，我要他讀取後直接做下面的」明確核准已呈交release30423cc清晰版。精確hash收據 docs/art/approved/chiru/heavy/clarity-v1/acceptance.json；原整體Heavy/runtime-v1與所有美術收據保持。Basic及Heavy已PLAYER VERIFIED；P3整角未完成。新Work直接執行Special「回瀾」第一未完Gate：沿核准spec做必要差異核對→一張F3角色關鍵姿勢候選→呈交停待玩家核准。獨立接手入口 docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md。

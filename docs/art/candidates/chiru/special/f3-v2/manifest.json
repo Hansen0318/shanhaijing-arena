@@ -1,0 +1,148 @@
+{
+  "status": "CANDIDATE / PLAYER F3 REVIEW PENDING",
+  "recoveredHead": "7c72f4c73f47df866b562c9167e7f110b22360e1",
+  "mode": "built-in imagegen",
+  "original": {
+    "path": "docs/art/candidates/chiru/special/f3-v2/originals/special-f3.png",
+    "sha256": "ef464c46993491ebd913e65a90e4f7253c0f5dedd1912e758191f6acc64053b5",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "fullDecode": "PASS",
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      0,
+      46,
+      1214,
+      1228
+    ],
+    "visibleAlpha16Bounds": [
+      143,
+      49,
+      1138,
+      1224
+    ],
+    "margins": [
+      0,
+      46,
+      40,
+      26
+    ]
+  },
+  "candidate": {
+    "path": "docs/art/candidates/chiru/special/f3-v2/special-f3.png",
+    "sha256": "f301c9a1e8ed67f6e3b481063d9f6841e826f608f4f523fc3d9d243bd8277290",
+    "dimensions": [
+      1510,
+      1510
+    ],
+    "mode": "RGBA",
+    "fullDecode": "PASS",
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      128,
+      174,
+      1342,
+      1356
+    ],
+    "visibleAlpha16Bounds": [
+      271,
+      177,
+      1266,
+      1352
+    ],
+    "margins": [
+      128,
+      174,
+      168,
+      154
+    ]
+  },
+  "paddingOnlyOffset": [
+    128,
+    128
+  ],
+  "originalRGBARoundTrip": true,
+  "mirrorRoundTrip": true,
+  "references": {
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "public/assets/characters/chiru/identity.png": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a",
+    "docs/art/candidates/chiru/basic/f3-v2/basic-f3.png": "503eec8bb7f959aa26b07a8076eeb8f686f4d4698bead83b28ed8392d109e4d5",
+    "docs/art/candidates/chiru/heavy/f3-v3/heavy-f3.png": "8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6"
+  },
+  "promptSha256": "a40e28a8d51c0c3b739e9aacc91e42275d5db4b7aa90c5e81ae1f63ec21386c3",
+  "staticScaleCheck": {
+    "scale": 0.13,
+    "landmarks": {
+      "chest": [
+        750,
+        540
+      ],
+      "eye": [
+        711,
+        337
+      ],
+      "hover": [
+        770,
+        1223
+      ],
+      "orb": [
+        1008,
+        373
+      ]
+    },
+    "translation": [
+      60,
+      44
+    ],
+    "chestX": 158,
+    "hoverBaseline": 203,
+    "dimensions": [
+      320,
+      260
+    ],
+    "mode": "RGBA",
+    "fullDecode": "PASS",
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      76,
+      48,
+      210,
+      206
+    ],
+    "visibleAlpha16Bounds": [
+      78,
+      50,
+      208,
+      203
+    ],
+    "margins": [
+      76,
+      48,
+      110,
+      54
+    ]
+  },
+  "visualSelfReview": "Right-facing; orb/ring screen-right over upturned palm; visible-side turquoise earring screen-left; rear hand over chest; bent vertical forearm, upright inward-curved hover body. Different from Basic horizontal shot and Heavy two-hand push. No independent spell VFX. Author inspection only; player approval pending.",
+  "limitations": [
+    "Source faint nonzero-alpha fringe reaches left canvas edge; preserved intact, candidate adds 128px clear padding on every side. Visible alpha>16 silhouette fully inside original.",
+    "Prompt requested 8% native padding; generator did not meet it. Packaging padding only, no silhouette repaint/removal.",
+    "Landmarks are author-inspected review coordinates; final accepted-pose animation normalization remains later Gate.",
+    "Static comparisons are not runtime/device proof, no full VFX or spectacle comparison at this Gate."
+  ],
+  "productionChanged": false,
+  "runtimeIntegrated": false,
+  "deployed": false,
+  "nextGate": "Present this single F3; wait for explicit player approval before any other poses/VFX/GIF/runtime/deploy."
+}

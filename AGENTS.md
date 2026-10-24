@@ -1,3 +1,7 @@
+## 2026-10-24 — Special F3 v2 candidate ready / PLAYER REVIEW NEXT
+
+Single Special F3 rebuilt and saved at docs/art/candidates/chiru/special/f3-v2/REVIEW.md. See latest WORK_PROGRESS/STATE and docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md. Do not regenerate the existing candidate or reopen Basic/Heavy; present Special F3 then wait for explicit player approval. No other poses/VFX/GIF/runtime/deploy yet. Lower rebuild instructions are historical; all protected assets/rules remain.
+
 ## 2026-10-24 — Heavy清晰版 PLAYER APPROVED／COMPLETE；新Work直接接Special回瀾
 
 玩家「確認ok，紀錄，接下來我要開新的work無縫接軌接手下面的，確認好進度規則流程，就給我prompts，我要他讀取後直接做下面的」明確核准已呈交release30423cc清晰版。精確hash收據 docs/art/approved/chiru/heavy/clarity-v1/acceptance.json；原整體Heavy/runtime-v1與所有美術收據保持。Basic及Heavy已PLAYER VERIFIED；P3整角未完成。新Work直接執行Special「回瀾」第一未完Gate：沿核准spec做必要差異核對→一張F3角色關鍵姿勢候選→呈交停待玩家核准。獨立接手入口 docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md。
