@@ -1,3 +1,13 @@
+## 2026-10-24 — F3 recovery active / pre-generation checkpoint
+
+Fetched origin at 3ae6d679940bcfa90e8ca9359db5385a8aeeb53c; recovered clean existing local checkout on the same branch, PR1 open/unmerged confirmed through GitHub. No later Awakening candidate exists. Reuse recorded strict-decode failures without reopening broken PNGs. Viewed approved identity/Idle and receipt-bound Basic F3v2/Heavy F3v3/Special F3v3.
+
+Read-only source review confirms abilities.js Awakening is windup0/legacy .16/team_ally; current-max-hp/Tier basis exists for Special in battleSession.js, ability.js restricts delayed reselect to lowest_hp_ally; tierEffects.js T3 protection still triggers cast. Reuse previous runtime-readonly evidence, no new combat test or implementation.
+
+Authorized design: BOTH arms high V, palms up above shoulders, original orb screen RIGHT over forward hand, opposite hand also high with open negative space; upright fish hover body, original fins fan laterally, tail left, right-facing face/visible-side cyan earring. Keep original skull/body size; no new crown/water curtain/spring/protective FX baked into body. Original batch prompt has undefined prefix, preserved unchanged; new complete identity-preserve prompt will replace only the missing scaffolding, retaining intended high-V action. One built-in imagegen candidate only, then strict decode/alpha/padding roundtrip and common landmark scale QA before player review. No runtime/other poses/VFX/GIF/deploy/Passive or acceptance.
+
+Next: generate and preserve one new F3 under docs/art/candidates/chiru/awakening/f3-v2/ then QA/present/wait. All masters/receipts/product sources protected; single-person/original branch/no worktree/TD/main merge.
+
 # P3 Awakening 潤澤 — next single-skill F3 gate
 
 2026-10-24: player explicitly approved deployed Special de1b442 and authorized successor Work to continue development. Special closure receipt docs/art/approved/chiru/special/runtime-v1/acceptance.json. P1/P2 COMPLETE; P3 Basic/Heavy/Special PLAYER VERIFIED. P3 whole character not complete.
