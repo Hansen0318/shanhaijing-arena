@@ -1,12 +1,12 @@
 {
-  "status": "RUNTIME / TRUE VERIFICATION / NORMAL PAGES / PUBLIC FINGERPRINT PASS; PLAYER GAMEPLAY PENDING",
+  "status": "PLAYER FEEDBACK / VISUAL READABILITY REVISION PENDING; NOT APPROVED",
   "sourceCommit": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
   "normalPagesRun": 40105519923,
   "p1Run": 40105520061,
   "p2ExactSourceRun": 40104953768,
   "tests": 1221,
   "build": "PASS / 110 assets / 6391136 encoded bytes",
-  "next": "Present actual deployed game and minimal HEAL TEST/Tier steps; wait for explicit player gameplay approval. Do not repeat source-identical checks/deployment or begin another character before approval.",
+  "next": "Discuss and select recipient visual readability proposal; audit schematic/field/telegraph layers against formal VFX retirement rule. Do not create player acceptance or modify approved source art.",
   "playerRuntimeAcceptance": false,
   "p3Complete": false,
   "buildJob": 120906364692,
@@ -14,5 +14,6 @@
   "ciLocalFiles": 168,
   "publicFiles": 168,
   "publicStatus": "PASS",
-  "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&passive=b414e9f"
+  "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&passive=b414e9f",
+  "playerFeedback": "docs/verification/P3_PASSIVE_RUNTIME/player-feedback-2026-10-25.md"
 }
