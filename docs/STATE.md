@@ -1,3 +1,13 @@
+## 2026-10-24 — Awakening 潤澤單張 F3 v2 READY；唯一下一 Gate＝玩家美術審核
+
+從最新remote3ae6d679940bcfa90e8ca9359db5385a8aeeb53c恢復原本乾淨工程；PR#1 open/unmerged。生成前checkpoint b4a1ef2999a5c87f60d3c756a92021afaa591945已遠端保存。沿用已保存損壞證據，不重測壞圖；實際查看核准identity/Idle/Basic F3v2/Heavy F3v3/Special F3v3。內建imagegen只重建一張潤澤雙臂高V本體候選，右側珠環/可見側耳飾/右canonical保持，與Basic水平前射、Heavy屈肘前推、Special單高托單低展區分。
+
+入口 docs/art/candidates/chiru/awakening/f3-v2/REVIEW.md。原圖SHA256 a822aa2e918472ade44d1432ff71f1d4d493df22c28a1455fd123ea0d47c561a，透明padding候選SHA256 7f23b33b22196ef59e0e996b4a901db5134280a0731f17f17d0e9ab511d3d340。原圖/完整prompt/來源hash/manifest/可重建QA/checksums保存；1254原圖僅四邊128px透明padding，1510候選完整解碼。PNG verify/load、alpha安全邊界、原像素與縮放反貼、雙mirror、5核准reference hash PASS；深淺底/左右配件/共同.13尺度及chestX158/hoverY203作者自審。靜態圖不是GIF/Runtime/實機驗證，完整Awakening大場面仍留後續獨立VFX。
+
+必要差異核對重用runtime-readonly並讀實際來源：Awakening仍windup0/legacy .16、T3 cast即保護；Special共用current-maxHp/Tier治療基礎已存在，後續只補team utility600ms/結算時保護等generic opt-in差異，不重建回瀾能力。核准600ms、16/20/24/30%、CD14/12.88/11.76/10.08、T2條件+5%、T3 10.8%/2.5s及360/240/300/300ms契約未改、本次未實作。
+
+**唯一下一步：呈交現成單張F3，停待玩家明確美術核准或修正。不重生已保存候選；未核准不得做其餘姿勢/獨立VFX/GIF/Runtime/部署/Passive，不建立acceptance。** 核准後逐Gate其餘動作/獨立VFX→GIF核准→Runtime/必要真驗證/正常Pages→遊戲核准→Passive。Special已結案/P1/P2/Basic/Heavy與全部approved masters/收據保持；產品來源未改，無suite/Build/Browser/Pages重跑。單人同分支PR#1 open/unmerged、不委派/新branch/worktree/TD/main merge/重置存檔，普通Hit取消、無固定16MiB總額與逐檔安全/兩下載/required/回收/destroy保持。所有交接單一完整自足code block。[skip ci]。下方「重建單張F3」為歷史，由本節現成候選待審覆蓋。
+
 ## 2026-10-24 — Special 回瀾 PLAYER APPROVED／COMPLETE；新Work直接接 Awakening 潤澤 F3
 
 玩家：「我確定approved，妳紀錄，我要給新的work往下進行開發，妳提供prompts，要他無縫接軌直接往下開發」。直接核准已呈交release de1b442414e09307dfc36c509bb533f0059f055d，精確收據 docs/art/approved/chiru/special/runtime-v1/acceptance.json，綁定原發布／626來源／公開160／packing及既有美術收據hash。Special 遊戲Gate CLOSED／PLAYER VERIFIED，不重畫、不重審、不重跑相同來源測試或部署；不推稱未回報實機型號/FPS/全Tier實測。P1/P2 COMPLETE、P3 Basic/Heavy/Special已核准；P3整角仍未完成。

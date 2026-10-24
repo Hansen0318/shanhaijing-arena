@@ -1,0 +1,170 @@
+{
+  "status": "CANDIDATE / PLAYER F3 REVIEW PENDING",
+  "mode": "built-in imagegen",
+  "recoveredHead": "3ae6d679940bcfa90e8ca9359db5385a8aeeb53c",
+  "preGenerationCheckpoint": "b4a1ef2999a5c87f60d3c756a92021afaa591945",
+  "original": {
+    "path": "docs/art/candidates/chiru/awakening/f3-v2/originals/awakening-f3.png",
+    "sha256": "a822aa2e918472ade44d1432ff71f1d4d493df22c28a1455fd123ea0d47c561a",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "strictFullDecode": true,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      69,
+      47,
+      1230,
+      1236
+    ],
+    "visibleAlpha16Bounds": [
+      125,
+      49,
+      1177,
+      1229
+    ],
+    "margins": [
+      69,
+      47,
+      24,
+      18
+    ]
+  },
+  "candidate": {
+    "path": "docs/art/candidates/chiru/awakening/f3-v2/awakening-f3.png",
+    "sha256": "7f23b33b22196ef59e0e996b4a901db5134280a0731f17f17d0e9ab511d3d340",
+    "size": [
+      1510,
+      1510
+    ],
+    "mode": "RGBA",
+    "strictFullDecode": true,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      197,
+      175,
+      1358,
+      1364
+    ],
+    "visibleAlpha16Bounds": [
+      253,
+      177,
+      1305,
+      1357
+    ],
+    "margins": [
+      197,
+      175,
+      152,
+      146
+    ]
+  },
+  "paddingOffset": [
+    128,
+    128
+  ],
+  "fullRGBARoundTrip": true,
+  "mirrorRoundTrip": true,
+  "references": {
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "public/assets/characters/chiru/identity.png": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a",
+    "docs/art/candidates/chiru/basic/f3-v2/basic-f3.png": "503eec8bb7f959aa26b07a8076eeb8f686f4d4698bead83b28ed8392d109e4d5",
+    "docs/art/candidates/chiru/heavy/f3-v3/heavy-f3.png": "8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6",
+    "docs/art/candidates/chiru/special/f3-v3/special-f3.png": "1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8"
+  },
+  "generationReferences": [
+    "public/assets/characters/chiru/battleIdle.png",
+    "public/assets/characters/chiru/identity.png",
+    "docs/art/candidates/chiru/special/f3-v3/special-f3.png"
+  ],
+  "comparisonCells": {
+    "docs/art/candidates/chiru/heavy/composite-review-v1/approved-idle-return-cell.png": "e0e00ad64ca81187b2e9e4115d02ca55cafd440a481b38cdc7c64044f80ec314",
+    "docs/art/candidates/chiru/basic/composite-review-v1/F3-safe-cell.png": "115349f6eed44a7f6d4c33269dbe6d7fdc572a34fa6dc32607312fa0e73f661f",
+    "docs/art/candidates/chiru/heavy/composite-review-v1/F3-safe-cell.png": "b13552025f7b7b7d57ad85a1cadf6e8345241fab2a9d3280c123da67c2032881",
+    "docs/art/candidates/chiru/special/composite-review-v1/F3-safe-cell.png": "8547d1aeff74761b531d2989f40a5768b03b116829fa4dd232737160b4ff7947"
+  },
+  "promptSha256": "400a56c8ba73b1dc6b09ba7b1f124cfbb5b9ed557ef65169a877366fbcb01686",
+  "staticScaleCheck": {
+    "scale": 0.13,
+    "landmarks": {
+      "chest": [
+        770,
+        565
+      ],
+      "eye": [
+        690,
+        385
+      ],
+      "hover": [
+        745,
+        1230
+      ],
+      "orb": [
+        1045,
+        175
+      ],
+      "leftPalm": [
+        322,
+        225
+      ],
+      "rightPalm": [
+        1035,
+        290
+      ]
+    },
+    "translation": [
+      58,
+      43
+    ],
+    "chestX": 158,
+    "hoverBaseline": 203,
+    "scaledRGBARoundTrip": true,
+    "size": [
+      320,
+      260
+    ],
+    "mode": "RGBA",
+    "strictFullDecode": true,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaBounds": [
+      72,
+      47,
+      214,
+      205
+    ],
+    "visibleAlpha16Bounds": [
+      74,
+      49,
+      211,
+      203
+    ],
+    "margins": [
+      72,
+      47,
+      106,
+      55
+    ]
+  },
+  "limitations": [
+    "Native requested12% padding not achieved; added transparent128px only, preserving EVERY original pixel.",
+    "Landmarks and likeness/accessory/scale are author visual self-review, not independent review/player approval.",
+    "Static comparison only; not GIF/runtime/phone testing or completed VFX spectacle escalation.",
+    "Original tiny faint pixels retained; no alpha removal or recoloring."
+  ],
+  "visualSelfReview": "Both arms high V; palms on opposite sides above eyes, forward orb screen RIGHT; visible-side cyan earring retained; head faces RIGHT. Body-only distinct from Basic horizontal thrust, Heavy bent forward push, Special one high/one low. Same .13 anatomical review scale and common chest/hover placement; broad original fins, no new VFX.",
+  "productionChanged": false,
+  "runtimeIntegrated": false,
+  "deployed": false,
+  "nextGate": "Present this ONE F3 and wait for explicit player art approval. No later poses/VFX/GIF/runtime/deploy/Passive or new acceptance."
+}
