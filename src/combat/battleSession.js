@@ -447,11 +447,33 @@ export class BattleSession {
     if(ms+1e-6>=spec.recoveryMs){this.pendingActions.delete(r.actorId);this.stagedEvent(r,'end');}
   }
 
+  resolveOpeningActions(){
+    if(!this.passives.hasSupport()){this.resolveActions();return;}
+    const now=this.elapsedSeconds,contacts=[];
+    for(const r of this.pendingActions.values())if(!r.staged&&r.dueAt<=now+1e-9&&r.definition.effect?.coefficient>0)contacts.push({r,kind:'action'});
+    for(const r of this.pendingHits)if(r.due<=now+1e-9)contacts.push({r,kind:'queued'});
+    for(const [id,r]of this.delayedImpacts)if(r.threat.impactAtMs/1000<=now+1e-9&&r.definition.effect?.coefficient>0)contacts.push({r,kind:'delayed',id});
+    for(const area of this.areas.records.values())if(this.areas.nextTicks.get(area.id)<=now+1e-9&&area.spec.coefficient>0)contacts.push({r:{actorId:area.sourceId},kind:'area',area});
+    contacts.sort((a,b)=>a.r.actorId.localeCompare(b.r.actorId)||(a.r.hitIndex??0)-(b.r.hitIndex??0));
+    for(const {r,kind,id,area}of contacts){
+      if(kind==='action'){this.resolveActions(r.actorId);continue;}
+      if(kind==='area'){this.areas.tick(now,this.actors,(record,victim)=>this.applyAreaPulse(record,victim),area.id);continue;}
+      if(kind==='queued')this.pendingHits=this.pendingHits.filter(x=>x!==r);
+      else{this.delayedImpacts.delete(id);this.threats.remove(id);}
+      const actor=this.actorById(r.actorId),target=this.actorById(r.targetId);
+      if(!actor||!canCharacterAct(actor)||this.statuses.controlled(r.actorId,now)){if(kind==='delayed')this.recordImpactPresentation(r.impactPresentation,'cancel',false,'source_interrupted');continue;}
+      if(kind==='queued'){if(target&&canCharacterAct(target)&&isTargetInRange(actor,target,r.definition.range))this.applyResolvedDamage(actor,target,this.definitionForActor(actor),this.definitionForActor(target),r.definition,r.category,r.source,{hitIndex:r.hitIndex,totalHits:r.totalHits,eventAt:now});}
+      else{const hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),r.threat.geometry,this.observedHitContext(r.impactPresentation));if(r.impactPresentation)this.recordImpactPresentation(r.impactPresentation,'resolve',hit);else this.recordCast(actor,{...r.threat.geometry.center},r.category,r.source,r.definition,hit,{eventAt:now});}
+    }
+    if(this.result()!=='running'){this.clearTransientCombat({preserveEvents:true});return;}
+    this.resolveActions();
+  }
+
   step(deltaSeconds){
     positiveFinite(deltaSeconds,'deltaSeconds');const held=this.actors.filter(a=>a.controlHandoff.controlSource(this.elapsedSeconds*1000)==='player').map(a=>[a,a.controlHandoff.lastPlayerInputAt]);const until=Math.min(this.maxSeconds,this.elapsedSeconds+deltaSeconds);
     while(this.elapsedSeconds<until-1e-10&&this.result()==='running'){
       for(const [a] of held)a.controlHandoff.registerPlayerInput(this.elapsedSeconds*1000);
-      this.resolveActions();const dt=this.stagedIntervalSeconds(until-this.elapsedSeconds);
+      this.resolveOpeningActions();if(this.result()!=='running')break;const dt=this.stagedIntervalSeconds(until-this.elapsedSeconds);
       this.stepInterval(dt);
     }
     if(until===this.maxSeconds&&this.maxSeconds-this.elapsedSeconds<=1e-10)this.elapsedSeconds=this.maxSeconds;
@@ -558,7 +580,7 @@ export class BattleSession {
   stepInterval(deltaSeconds) {
     positiveFinite(deltaSeconds, 'deltaSeconds');
     if (this.result() !== 'running') { this.clearTransientCombat(); return this.snapshot(); }
-    this.resolveActions();
+    this.resolveOpeningActions();if(this.result()!=='running')return this.snapshot();
     for(const [id,hit] of this.delayedImpacts)if(!canCharacterAct(this.actorById(hit.actorId))){this.recordImpactPresentation(hit.impactPresentation,'cancel',false,'source_ko');this.delayedImpacts.delete(id);this.threats.remove(id);}
 
     this.statuses.cleanupKO(new Set(this.actors.filter(a=>!canCharacterAct(a)).map(a=>a.instanceId)));

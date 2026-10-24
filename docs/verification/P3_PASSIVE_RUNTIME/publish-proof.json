@@ -1,0 +1,12 @@
+{
+  "remoteCommit": "27333a87620321b9a258af2e04c25ba3709edd0a",
+  "tree": "de8a365240b06a679480bfed4f1e5a005106e001",
+  "recursiveEntries": 2724,
+  "blobEntries": 2450,
+  "truncated": false,
+  "completeTreeEqualsLocal": true,
+  "blobVerification": "43 changed blobs individually matched local Git SHA",
+  "cliPushError": "could not read Username",
+  "localHistory": "original local checkpoint and implementation preserved via merge, no reset",
+  "next": "normal CI real browser then Pages and public fingerprint"
+}

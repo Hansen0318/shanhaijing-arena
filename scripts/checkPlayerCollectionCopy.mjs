@@ -17,7 +17,7 @@ try{
  for(const id of ['P1','P2','P3','P4','P5']){
   await page.locator(`.collection-card[data-character-id="${id}"]`).click();
   const dialog=page.getByRole('dialog'),text=await dialog.innerText();assert.doesNotMatch(text,/已實裝|保留設計|保留後續|無文字|不顯示|安全額度|Runtime|VFX|一般移速增益上限|合計上限/);
-  const labels=await dialog.locator('.collection-passive-status').allTextContents();assert.deepEqual(labels,['P1','P2'].includes(id)?[]:['尚未開放']);
+  const labels=await dialog.locator('.collection-passive-status').allTextContents();assert.deepEqual(labels,['P1','P2','P3'].includes(id)?[]:['尚未開放']);
   if(id==='P1')assert.match(text,/35%.*50%.*65%.*80%/);if(id==='P2')assert.match(text,/20%.*30%.*40%.*50%/);
   await dialog.locator('.collection-ability').last().scrollIntoViewIfNeeded();
   const screenshot=`${built?'built':'native'}-${id}.png`;await page.screenshot({path:path.join(out,screenshot)});

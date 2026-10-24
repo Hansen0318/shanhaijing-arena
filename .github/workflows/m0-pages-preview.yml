@@ -186,6 +186,12 @@ jobs:
           node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
           if node scripts/reuseChiruBrowser.mjs special; then echo 'CHIRU_SPECIAL_REUSED=true' >> "$GITHUB_ENV"; fi
           if node scripts/reuseChiruBrowser.mjs awakening; then echo 'CHIRU_AWAKENING_REUSED=true' >> "$GITHUB_ENV"; fi
+      - name: Real Chiru Passive native and built verification
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/chiru-browser-tool
+        run: |
+          node scripts/checkChiruPassiveBrowser.mjs
+          node scripts/checkChiruPassiveBrowser.mjs --built
       - name: Real Chiru Special and affected Basic Heavy verification
         if: env.CHIRU_SPECIAL_REUSED != 'true'
         env:
@@ -230,12 +236,6 @@ jobs:
           name: chiru-awakening-evidence
           path: docs/verification/P3_AWAKENING_RUNTIME/
           if-no-files-found: error
-      - name: Real Chiru Passive native and built verification
-        env:
-          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/chiru-browser-tool
-        run: |
-          node scripts/checkChiruPassiveBrowser.mjs
-          node scripts/checkChiruPassiveBrowser.mjs --built
       - name: Verify source-bound Chiru Passive release evidence
         run: node scripts/verifyChiruPassiveRelease.mjs --record
       - name: Preserve Chiru Passive source and Browser evidence

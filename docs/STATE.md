@@ -1,3 +1,9 @@
+## 2026-10-24 — 游息 Runtime checkpoint；正常 CI 真 Browser／Pages NEXT
+
+核准STYLE／9GIF原bytes保持，已沿PNG接入共用rear-support選人／instant-heal正amount／獨立8秒CD／真受益者雙魚與四Tier650ms/reduced／所有權清理；無P3 ID特例。Collection同版本玩法文案，T2僅改顯示名清流。1219/1219、Build/110素材guard PASS；新增同刻KO→主動→被動與區間起點排序RED→GREEN，歷史主動測試明確隔離新被動且原斷言不變。
+
+已保存遠端27333a8完整tree核對、逐blob SHA及本機Chromium下載失敗。正常CI40103936048正在驗證當前產品，後續排序修正須使用新來源CI；尚未Browser／Pages／玩家遊戲PASS、不建立Runtime acceptance、不標P3 COMPLETE。唯一下一工作：正常CI真native/built及受影響P1/P2/四主動，修真失敗，再Pages／公開fingerprint後呈交遊戲網址。入口docs/verification/P3_PASSIVE_RUNTIME/WORK_LOG.md；同分支PR1open/unmerged、單人，其他硬規則不變。
+
 ## 2026-10-24 — 游息9 GIF PLAYER APPROVED；新Work直接接Runtime／部署
 
 玩家：「我確認OK，確認有紀錄的話，我要開新的WORK接手，你提供PROMPTS」。明確核准已呈交7b61fec5e84f478b0d3cc1572c0c1cadfb9a93ce之9GIF及游息視覺；精確hash收據docs/art/approved/chiru/passive/composite-review-v1/acceptance.json。GIF Gate CLOSED，授權新Work整合本招Runtime、必要真驗證與正常Pages部署供玩家遊戲驗收。不重生/重審STYLE/GIF/原數值；原manifest/REVIEW的PENDING是呈交歷史，原檔不改。腳本清理不是Runtime證據，玩家GIF核准不是遊戲核准；本次僅核准紀錄與交接，尚未Runtime/Collection/部署，P3整角未完成。

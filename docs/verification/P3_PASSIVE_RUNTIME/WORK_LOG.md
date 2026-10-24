@@ -15,3 +15,6 @@ Single next step: CI real browser validation, fix true failures then normal Page
 
 ## Retained remote checkpoint note
 Base 04aaac705f6c239c6c6bb83f642c92a8f4921288. STYLE/GIF receipt hashes verified. Local prior work inspected; no missing product delta. Original branch, native single worker. Runtime implementation and real tests next; player gameplay acceptance pending.
+
+## Interval-start ordering follow-up
+Self-review found opening resolveActions could precede a queued same-time KO. A new test reproduced this before fix; resolveOpeningActions now settles due damage first only in support-opted encounters, then active effects; original P1/P2-only ordering stays intact. RED→GREEN; 1219/1219 PASS. Browser Collection availability assertion updated for now-implemented P3.
