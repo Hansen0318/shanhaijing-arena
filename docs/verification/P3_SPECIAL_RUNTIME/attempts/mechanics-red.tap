@@ -1,0 +1,466 @@
+✖ anonymous heal T0/false: 319/320ms/current maxHp/CD/event (6.053141ms)
+✖ anonymous heal T0/true: 319/320ms/current maxHp/CD/event (1.080865ms)
+✖ anonymous heal T1/false: 319/320ms/current maxHp/CD/event (2.15492ms)
+✖ anonymous heal T1/true: 319/320ms/current maxHp/CD/event (1.40995ms)
+✖ anonymous heal T2/false: 319/320ms/current maxHp/CD/event (1.787157ms)
+✖ anonymous heal T2/true: 319/320ms/current maxHp/CD/event (1.465022ms)
+✖ anonymous heal T3/false: 319/320ms/current maxHp/CD/event (1.180045ms)
+✖ anonymous heal T3/true: 319/320ms/current maxHp/CD/event (1.678244ms)
+✖ settlement reselects newly lowest recipient and ignores initial recipient KO (6.06501ms)
+✔ settlement uses current range including boundary, living team and stable instance ID; self legal (3.679652ms)
+✖ target moving out before settlement is excluded; missing HP cap and full-health zero (2.468952ms)
+✖ additive modifiers before heal 0.35/2 (2.778227ms)
+✖ additive modifiers before heal 0.35001/2 (1.924894ms)
+✖ additive modifiers before heal 0.2/4.2 (1.904213ms)
+✖ additive modifiers before heal 0.2/4.201 (1.211041ms)
+✖ additive modifiers before heal 0.4/1.999 (1.358743ms)
+✖ cancel ko no ghost heal/CD refund (2.385957ms)
+✖ cancel control no ghost heal/CD refund (2.609503ms)
+✖ cancel end no ghost heal/CD refund (1.023269ms)
+✖ cancel new-ability no ghost heal/CD refund (2.632999ms)
+✖ coarse step resolves at .32; ordinary movement does not lock/cancel (1.425062ms)
+✔ AI threshold <=65% and no attempt above threshold (1.314907ms)
+✖ opt-in schema rejects unsupported heal contracts and preserves default (0.276506ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 2
+ℹ fail 21
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 168.710901
+
+✖ failing tests:
+
+test at tests/chiruSpecialMechanics.test.js:13:89
+✖ anonymous heal T0/false: 319/320ms/current maxHp/CD/event (6.053141ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  159.25 !== 98
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:13:368)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 159.25,
+    expected: 98,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:13:89
+✖ anonymous heal T0/true: 319/320ms/current maxHp/CD/event (1.080865ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  159.25 !== 98
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:13:368)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 159.25,
+    expected: 98,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:13:89
+✖ anonymous heal T1/false: 319/320ms/current maxHp/CD/event (2.15492ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  235.8125 !== 147
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:13:368)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 235.8125,
+    expected: 147,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:13:89
+✖ anonymous heal T1/true: 319/320ms/current maxHp/CD/event (1.40995ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  235.8125 !== 147
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:13:368)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 235.8125,
+    expected: 147,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:13:89
+✖ anonymous heal T2/false: 319/320ms/current maxHp/CD/event (1.787157ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 346.0625
+  - 220.5
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:13:368)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 346.0625,
+    expected: 220.5,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:13:89
+✖ anonymous heal T2/true: 319/320ms/current maxHp/CD/event (1.465022ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 346.0625
+  - 220.5
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:13:368)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 346.0625,
+    expected: 220.5,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:13:89
+✖ anonymous heal T3/false: 319/320ms/current maxHp/CD/event (1.180045ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  563.5 !== 367.5
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:13:368)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 563.5,
+    expected: 367.5,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:13:89
+✖ anonymous heal T3/true: 319/320ms/current maxHp/CD/event (1.678244ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  563.5 !== 367.5
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:13:368)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 563.5,
+    expected: 367.5,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:14:1
+✖ settlement reselects newly lowest recipient and ignores initial recipient KO (6.06501ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'a2' !== 'a3'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:14:288)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'a2',
+    expected: 'a3',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:16:1
+✖ target moving out before settlement is excluded; missing HP cap and full-health zero (2.468952ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  61.25 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:16:222)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 61.25,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:17:106
+✖ additive modifiers before heal 0.35/2 (2.778227ms)
+  AssertionError [ERR_ASSERTION]: 225.39999999999998 != 422.62499999999994
+      at near (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:6:26)
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:17:315)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:17:106
+✖ additive modifiers before heal 0.35001/2 (1.924894ms)
+  AssertionError [ERR_ASSERTION]: 205.80000000000007 != 385.875
+      at near (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:6:26)
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:17:315)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:17:106
+✖ additive modifiers before heal 0.2/4.2 (1.904213ms)
+  AssertionError [ERR_ASSERTION]: 225.39999999999998 != 422.62499999999994
+      at near (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:6:26)
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:17:315)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:17:106
+✖ additive modifiers before heal 0.2/4.201 (1.211041ms)
+  AssertionError [ERR_ASSERTION]: 215.60000000000002 != 404.25000000000006
+      at near (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:6:26)
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:17:315)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:17:106
+✖ additive modifiers before heal 0.4/1.999 (1.358743ms)
+  AssertionError [ERR_ASSERTION]: 196 != 367.5
+      at near (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:6:26)
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:17:315)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:18:56
+✖ cancel ko no ghost heal/CD refund (2.385957ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  134.75 !== 73.5
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:18:555)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 134.75,
+    expected: 73.5,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:18:56
+✖ cancel control no ghost heal/CD refund (2.609503ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  134.75 !== 73.5
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:18:555)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 134.75,
+    expected: 73.5,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:18:56
+✖ cancel end no ghost heal/CD refund (1.023269ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  134.75 !== 73.5
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:18:555)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 134.75,
+    expected: 73.5,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:18:56
+✖ cancel new-ability no ghost heal/CD refund (2.632999ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  134.75 !== 73.5
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:18:555)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 134.75,
+    expected: 73.5,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:19:1
+✖ coarse step resolves at .32; ordinary movement does not lock/cancel (1.425062ms)
+  AssertionError [ERR_ASSERTION]: undefined != 0.32
+      at near (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:6:26)
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:19:237)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/chiruSpecialMechanics.test.js:21:1
+✖ opt-in schema rejects unsupported heal contracts and preserves default (0.276506ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'reselect-allies'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialMechanics.test.js:21:346)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'reselect-allies',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

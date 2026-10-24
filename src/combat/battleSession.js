@@ -164,7 +164,7 @@ export class BattleSession {
 
   actionEvent(record,phase,hit=false,reason=null){
     const actor=this.actorById(record.actorId),target=this.actorById(record.targetId);
-    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,eventAt:this.elapsedSeconds,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(record.definition.resolveGeometry?.travelMs?{releaseAt:record.startedAt+record.definition.windupMs/1000}:{}),...(phase==='resolve'?{resolvedAt:this.elapsedSeconds}:{}),...(reason?{reason}:{}),attackOrigin:{...(record.resolvedLine?.origin??record.releasedLine?.origin??record.origin)},attackTarget:{...(record.resolvedLine?.end??record.releasedLine?.end??record.target)}});
+    this.recordCast(actor,target,record.category,record.source,record.definition,hit,{phase,eventAt:this.elapsedSeconds,actionId:record.actionId,startedAt:record.startedAt,dueAt:record.dueAt,windupMs:record.definition.windupMs,...(record.definition.resolveGeometry?.travelMs?{releaseAt:record.startedAt+record.definition.windupMs/1000}:{}),...(phase==='resolve'?{resolvedAt:this.elapsedSeconds,...(record.definition.resolvePolicy==='reselect-allies'?{recipients:this.healEvents.filter(e=>e.actionId===record.actionId&&e.presentationEpoch===this.presentationEpoch&&e.amount>0).map(e=>({targetId:e.targetId,amount:e.amount,position:{...e.position}}))}:{})}:{}),...(reason?{reason}:{}),attackOrigin:{...(record.resolvedLine?.origin??record.releasedLine?.origin??record.origin)},attackTarget:{...(record.resolvedLine?.end??record.releasedLine?.end??record.target)}});
   }
 
   cancelBasicAction(actorId,reason){
@@ -183,9 +183,10 @@ export class BattleSession {
   resolveActions(onlyId=null){
     for(const [id,r] of [...this.pendingActions].sort(([a],[b])=>a.localeCompare(b))){
       if(onlyId!==null&&id!==onlyId)continue;
-      const actor=this.actorById(id),target=this.actorById(r.targetId);
+      const actor=this.actorById(id);let target=this.actorById(r.targetId);
+      const reselect=r.definition.resolvePolicy==='reselect-allies';
       if(r.staged){this.resolveStagedBoundary(r);continue;}
-      const reason=!actor||!canCharacterAct(actor)?'source_ko':r.targetId!==null&&(!target||!canCharacterAct(target))?'target_ko':this.statuses.controlled(id,this.elapsedSeconds)?'control':null;
+      const reason=!actor||!canCharacterAct(actor)?'source_ko':!reselect&&r.targetId!==null&&(!target||!canCharacterAct(target))?'target_ko':this.statuses.controlled(id,this.elapsedSeconds)?'control':null;
       if(reason){this.cancelAction(id,reason);continue;}
       if(r.definition.resolveGeometry?.travelMs&&!r.releasedLine&&r.startedAt+r.definition.windupMs/1000<=this.elapsedSeconds+1e-9){
         r.releasedLine=lockedLine(actor,r.target,r.definition.range,r.definition.resolveGeometry.halfWidth,null);
@@ -194,10 +195,11 @@ export class BattleSession {
       }
       if(r.dueAt>this.elapsedSeconds+1e-9)continue;
       this.pendingActions.delete(id);let hit=false;
+      if(reselect){target=resolveAbilityTarget(actor,r.definition,this.teamContext(actor));r.targetId=target?.instanceId??null;}
       if(r.definition.resolveGeometry)r.resolvedLine=r.releasedLine?lockedLine(r.releasedLine.origin,r.releasedLine.end,r.definition.range,r.definition.resolveGeometry.halfWidth,target):lockedLine(actor,r.target,r.definition.range,r.definition.resolveGeometry.halfWidth,target);
       if(r.threatId)this.threats.remove(r.threatId);
       const applyEffect=()=>{
-        if(target&&target.teamId!==actor.teamId&&(r.releasedLine||isTargetInRange(actor,target,r.definition.range))&&(!r.resolvedLine||r.resolvedLine.hit))hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),null,{actionId:r.actionId})===true;
+        if(target&&(reselect?target.teamId===actor.teamId:target.teamId!==actor.teamId)&&(r.releasedLine||isTargetInRange(actor,target,r.definition.range))&&(!r.resolvedLine||r.resolvedLine.hit))hit=this.applyAbilityEffects(actor,target,r.definition,r.category,r.source,this.teamContext(actor),null,{actionId:r.actionId,presentationEpoch:this.presentationEpoch})===true;
       };
       if(r.category==='basic')finishAbility({caster:actor,slot:actor.abilityState.basic,definition:r.definition,applyEffect});
       else applyEffect();
@@ -368,11 +370,11 @@ export class BattleSession {
     if(definition.windupMs>0&&(canHit||source==='player'&&category!=='basic')){
       // A whiff owns an aim point, never a damage target. No acquisition at resolve.
       const facingX=aim.facingX===-1?-1:aim.facingX===1?1:(Math.sign(this.playerMovement.get(actor.instanceId)?.x)|| (actor.teamId===this.allies[0].teamId?1:-1));
-      const attackTarget=canHit?{x:target.x,y:target.y}:{x:actor.x+facingX,y:actor.y};
+      const attackTarget=canHit&&definition.resolvePolicy!=='reselect-allies'?{x:target.x,y:target.y}:{x:actor.x+facingX,y:actor.y};
       const r={actionId:`${category}.${++this.nextActionId}`,category,actorId:actor.instanceId,targetId:canHit?target.instanceId:null,source,definition,startedAt:this.elapsedSeconds,dueAt:this.elapsedSeconds+(definition.windupMs+(definition.resolveGeometry?.travelMs??0))/1000,origin:{x:actor.x,y:actor.y},target:attackTarget};
       if(category!=='basic')finishAbility({caster:actor,slot,definition});
       if(this.tacticalEnabled&&definition.resolveGeometry?.travelMs&&canHit)r.threatId=this.threats.create(actor,target,definition,this.elapsedSeconds*1000)?.id;
-      this.pendingActions.set(actor.instanceId,r);if(canHit)this.targetIds.set(actor.instanceId,target.instanceId);this.actionEvent(r,'start');return true;
+      this.pendingActions.set(actor.instanceId,r);if(canHit&&target.teamId!==actor.teamId)this.targetIds.set(actor.instanceId,target.instanceId);this.actionEvent(r,'start');return true;
     }
     let applied=false;
     const delay=this.tacticalEnabled&&definition.telegraph&&definition.effect.coefficient>0&&canHit
@@ -399,9 +401,9 @@ export class BattleSession {
     const victims=geometry?(definition.effect.areaRadius!=null?context.enemies.filter(v=>canCharacterAct(v)&&containsDanger(v,geometry)):[target].filter(v=>v&&canCharacterAct(v)&&containsDanger(v,geometry))):resolveEffectTargets(actor,target,definition,context);
     for(const victim of victims) {
       if(definition.effect.kind==='heal'){
-        const before=victim.hp;const baseHp=this.characterDefinitions[victim.definitionId].stats.maxHp;
-        victim.heal(baseHp*definition.effect.maxHpFraction*this.tierProjections.get(actor.instanceId).scales.healing*this.effects.multiplier('heal',actor,victim,category));const amount=victim.hp-before;
-        if(amount>0){this.healEvents.push({actorId:actor.instanceId,targetId:victim.instanceId,category,source,amount,critical:false,position:{x:victim.x,y:victim.y}});applied=true;}
+        const before=victim.hp,current=definition.effect.healBasis==='current-max-hp';const baseHp=current?victim.maxHp:this.characterDefinitions[victim.definitionId].stats.maxHp;
+        victim.heal(baseHp*definition.effect.maxHpFraction*(current?1:this.tierProjections.get(actor.instanceId).scales.healing)*this.effects.multiplier('heal',actor,victim,category));const amount=victim.hp-before;
+        if(amount>0){this.healEvents.push({actorId:actor.instanceId,targetId:victim.instanceId,category,source,amount,critical:false,position:{x:victim.x,y:victim.y},...(definition.resolvePolicy?{...hitContext,abilityId:definition.id,eventAt:this.elapsedSeconds,presentationEpoch:this.presentationEpoch}:{})});applied=true;}
       }else if(definition.effect.kind==='mitigation'){
         const ownership=definition.presentation?.actionLifecycle==='utility-observed'?{abilityId:definition.id,category,effectId:'primary'}:null;
         this.statuses.applyMitigation(victim.instanceId,definition.effect.reduction,definition.effect.duration,this.elapsedSeconds,ownership);applied=true;
@@ -420,7 +422,7 @@ export class BattleSession {
   simulationStepSeconds(){return this.hasStagedAction()?.01:.05;}
 
   stagedIntervalSeconds(limit){
-    const staged=this.hasStagedAction(),launched=[...this.pendingActions.values()].some(r=>r.definition.resolveGeometry?.travelMs);
+    const staged=this.hasStagedAction(),launched=[...this.pendingActions.values()].some(r=>r.definition.resolveGeometry?.travelMs||r.definition.resolvePolicy==='reselect-allies');
     if(!staged&&!launched)return this.passives.hasSpatial()?Math.min(limit,.05):limit;
     let dt=staged?Math.min(limit,.01):this.passives.hasSpatial()?Math.min(limit,.05):limit;
     const deadlines=[...this.pendingActions.values()].flatMap(r=>r.staged?[...r.definition.stagedAction.segments.flatMap(l=>[l.startMs,l.centerMs,l.endMs]),r.definition.stagedAction.recoveryMs].map(ms=>r.startedAt+ms/1000):[r.dueAt,...(r.definition.resolveGeometry?.travelMs&&!r.releasedLine?[r.startedAt+r.definition.windupMs/1000]:[])]);

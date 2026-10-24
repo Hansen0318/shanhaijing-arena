@@ -47,6 +47,10 @@ export function createAbilityDefinition(input) {
     throw new RangeError('Basic ability cooldown must be 0');
   }
 
+  const heal=input.effect;
+  if(input.resolvePolicy!==undefined&&(input.resolvePolicy!=='reselect-allies'||input.targetingRule!=='lowest_hp_ally'||heal?.kind!=='heal'||windupMs<=0))throw new TypeError('Invalid utility resolution policy');
+  if(heal?.healBasis!==undefined&&heal.healBasis!=='current-max-hp')throw new TypeError('Invalid heal basis');
+  if(heal?.tierMaxHpFractions!==undefined&&(heal.kind!=='heal'||heal.healBasis!=='current-max-hp'||Object.keys(heal.tierMaxHpFractions).length!==4||['T0','T1','T2','T3'].some(t=>!Number.isFinite(heal.tierMaxHpFractions[t])||heal.tierMaxHpFractions[t]<=0||heal.tierMaxHpFractions[t]>1)))throw new TypeError('Invalid Tier heal fractions');
   const stagedAction=createStagedAction(input.stagedAction);
   const geometry=input.resolveGeometry;
   if(geometry?.travelMs!==undefined&&(!Number.isFinite(geometry.travelMs)||geometry.travelMs<350||geometry.travelMs>1000||input.category!=='heavy'||!input.telegraph))throw new RangeError('Invalid line travel');
@@ -59,6 +63,7 @@ export function createAbilityDefinition(input) {
     category: input.category,
     cooldown,
     windupMs,
+    ...(input.resolvePolicy?{resolvePolicy:input.resolvePolicy}:{}),
     ...(geometry?{resolveGeometry:Object.freeze({...geometry})}:{}),
     ...(stagedAction?{stagedAction}:{}),
     unlockTier,
@@ -71,7 +76,7 @@ export function createAbilityDefinition(input) {
     maxRange,
     targetingRule,
     telegraph: createTelegraph(input.telegraph),
-    effect: Object.freeze({ ...(input.effect ?? {}) }),
+    effect: immutable({ ...(input.effect ?? {}) }),
     ai: Object.freeze({ ...(input.ai ?? {}) }),
     ...(input.tierScaling?{tierScaling:createScalingOptIn(input.tierScaling,['attackRange','aoe','mobility','windup','status'])}:{}),
     ...(input.presentation?{presentation:immutable(input.presentation)}:{}),

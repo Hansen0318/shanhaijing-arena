@@ -56,6 +56,7 @@ export class AssetPresenter{
   if(event.presentationOnly&&this.presentationEventKeys.has(event.actorId+'.'+event.actionId+'.'+event.phase))return;
   const utilityAction=characterAction(character,event.category);
   if(utilityAction?.kind==='area-observed'){this.castObservedArea(event,utilityAction,now);return;}
+  if(utilityAction?.kind==='healing'){if((event.presentationEpoch??0)<this.utility.epoch)return;this.resetPresentationEpoch(event.presentationEpoch);}
   const observed=this.utility.observe(event,utilityAction,now,this.facings.get(event.actorId)?.flipX??false);
   if(utilityAction?.kind==='utility'){
    if(observed){this.clearAction(event.actorId,{preserveIndependent:true,preserveImpact:false});this.states.delete(event.actorId);}return;
@@ -87,7 +88,7 @@ export class AssetPresenter{
       this.bladeAfterglows.set(event.actorId,{sample,resolvedAt:current.resolvedAt,image:null});
      }
      // Opt-in confirmed contacts own their lifetime; never hold the body in F3.
-     if(sample&&event.hit===true&&action.contact.durationMs&&sample.contactTarget){
+     if(sample&&event.hit===true&&action.contact.durationMs&&sample.contactTarget&&(action.kind!=='healing'||event.recipients?.some(r=>r.targetId===event.targetId&&r.amount>0))){
       const key=event.actorId+'.'+event.actionId+'.independent';
       while(this.stagedImpacts.size>=192)this.removeStagedImpact(this.stagedImpacts.keys().next().value);
       this.stagedImpacts.set(key,{independent:true,actionId:event.actionId,ownerId:event.actorId,targetId:event.targetId??null,hitIndex:0,descriptor:action,eventAt:current.resolvedAt,target:{...sample.contactTarget},flipX:sample.flipX,paintedAt:null});
@@ -110,9 +111,9 @@ export class AssetPresenter{
  }
  resetPresentationEpoch(epoch){
   if(!Number.isInteger(epoch)||epoch<=this.utility.epoch)return;
-  for(const [id,r] of [...this.actions.active])if(r.descriptor.kind==='area-observed')this.clearAction(id);
-  for(const [key,r] of [...this.stagedImpacts])if(r.descriptor.kind==='area-observed')this.removeStagedImpact(key);
-  for(const [id,r] of [...this.bladeAfterglows])if(r.sample.descriptor.kind==='area-observed')this.clearBladeAfterglow(id);
+  for(const [id,r] of [...this.actions.active])if(['area-observed','healing'].includes(r.descriptor.kind))this.clearAction(id);
+  for(const [key,r] of [...this.stagedImpacts])if(['area-observed','healing'].includes(r.descriptor.kind))this.removeStagedImpact(key);
+  for(const [id,r] of [...this.bladeAfterglows])if(['area-observed','healing'].includes(r.sample.descriptor.kind))this.clearBladeAfterglow(id);
   this.presentationEventKeys.clear();this.utility.resetEpoch(epoch);
  }
  castObservedArea(event,descriptor,now){
@@ -170,9 +171,9 @@ export class AssetPresenter{
  renderStagedImpacts(alive,positions,now){
   for(const [key,r] of this.stagedImpacts){
    const stage=r.descriptor.kind==='staged'?r.descriptor.stages[r.hitIndex]:{contact:r.descriptor.contact,contactHoldMs:r.descriptor.contact.durationMs??r.descriptor.frameDurationsMs[2]},hold=stage.contactHoldMs/1000,age=now-r.eventAt;
-   if(!alive.has(r.ownerId)||r.targetId&&!r.independent&&!alive.has(r.targetId)||r.paintedAt!==null&&r.paintedAt!==now&&age+1e-9>=hold){this.removeStagedImpact(key);continue;}
+   if(!alive.has(r.ownerId)||r.targetId&&(!r.independent||r.descriptor.kind==='healing')&&!alive.has(r.targetId)||r.paintedAt!==null&&r.paintedAt!==now&&age+1e-9>=hold){this.removeStagedImpact(key);continue;}
    if(age<0)continue;
-   const spec=stage.contact,d=r.descriptor,frame=d.animation.frames[0],width=72*d.animation.scale*frame.width/Math.max(frame.width,frame.height),height=72*d.animation.scale*frame.height/Math.max(frame.width,frame.height),sx=width/d.coordinateSize[0],sy=height/d.coordinateSize[1];
+   const base=stage.contact,d=r.descriptor,growth=d.kind==='healing'&&!this.reducedMotion?Math.min(1,.84+.16*age/.08):1,spec=growth===1?base:{...base,size:base.size.map(n=>n*growth),offset:base.offset.map(n=>n*growth)},frame=d.animation.frames[0],width=72*d.animation.scale*frame.width/Math.max(frame.width,frame.height),height=72*d.animation.scale*frame.height/Math.max(frame.width,frame.height),sx=width/d.coordinateSize[0],sy=height/d.coordinateSize[1];
    let image=this.stagedImpactSprites.get(key);
    if(!image){image=this.effectImage(spec.assetKey);this.stagedImpactSprites.set(key,image);}
    const anchor=r.targetId?positions.get(r.targetId)??this.project(r.target):this.project(r.target),x=spec.offset[0]+spec.size[0]/2,y=spec.offset[1]+spec.size[1]/2;
@@ -213,7 +214,7 @@ export class AssetPresenter{
   if(effects&&[...effects.values()].some(image=>image.actionId!==sample.actionId)){this.clearActionEffects(ownerId);effects=null;}
   if(!effects){effects=new Map();this.actionEffects.set(ownerId,effects);}
   const descriptor=sample.descriptor,d=descriptor.kind==='staged'?{...descriptor,...descriptor.stages[Math.max(0,sample.stageIndex)]}:descriptor,[cw,ch]=d.coordinateSize,sx=displaySize.width/cw,sy=displaySize.height/ch;
-  for(const kind of ['anticipation','blade','contact']){const base=d[kind];if(!base)continue;const spec={...base,offset:base.frameOffsets?.[sample.frameIndex]??base.offset},opacity=sample[kind+'Opacity'];let image=effects.get(kind);
+  for(const kind of ['anticipation','blade','contact']){const base=d[kind];if(!base)continue;const spec={...base,offset:base.frameOffsets?.[sample.frameIndex]??base.offset,...(sample[kind+'Geometry']??{})},opacity=sample[kind+'Opacity'];let image=effects.get(kind);
    if(opacity>0&&!image){image=this.effectImage(spec.assetKey);effects.set(kind,image);}
    if(!image)continue;if(opacity>0){const texture=this.textures.get(spec.assetKey);if(!texture)throw Error('Required action texture unavailable: '+spec.assetKey);if(image.texture!==texture.key)image.setTexture(texture.key,this.effectFrame(spec.assetKey));}
    if(spec.attach==='line'){

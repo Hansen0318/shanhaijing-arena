@@ -48,8 +48,17 @@ export class ActionPlayback{
   const frameIndex=released?(after+1e-9<d.frameDurationsMs[2]/1000?2:3):elapsed+1e-9<(r.windupMs??350)/1000*4/7?0:1;
   return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,lineOrigin:{...r.lineOrigin},lineTarget:{...r.lineTarget},lineProgress:released?(reducedMotion?1:Math.min(1,after/(Number.isFinite(r.dueAt)?r.dueAt-r.releaseAt:.35))):0,anticipationOpacity:released?0:frameIndex===0?.85:1,bladeOpacity:released&&after<.5?(resolved?Math.max(0,Math.min(1,(.15-contactAge)/.05)):1):0,contactOpacity:resolved&&r.hit&&!d.contact.durationMs?Math.max(0,Math.min(1,(.25-contactAge)/.13)):0,...(r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
  }
+ sampleHealing(ownerId,r,now,reducedMotion){
+  const d=r.descriptor,ms=Math.max(0,now-r.startedAt)*1000,total=d.frameDurationsMs.reduce((a,b)=>a+b,0);
+  if(ms+1e-7>=total){this.remove(ownerId);return null;}
+  let end=0;const frameIndex=d.frameDurationsMs.findIndex(n=>(end+=n)>ms+1e-7);
+  let w=d.blade.size[0],h=d.blade.size[1];
+  if(!reducedMotion){if(ms<200){w=275-65*ms/200;h=75+25*ms/200;}else if(ms<320){w=210+40*(ms-200)/120;h=100+(d.blade.size[1]-100)*(ms-200)/120;}}
+  return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,bladeOpacity:Math.min(1,(total-ms)/80),contactOpacity:0,bladeGeometry:{size:[w,h],offset:[d.animation.origin[0]*d.coordinateSize[0]-w/2,d.animation.origin[1]*d.coordinateSize[1]-.875*h]},...(r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
+ }
  sample(ownerId,now,reducedMotion=false){
   const r=this.active.get(ownerId);if(!r||!Number.isFinite(now))return null;
+  if(r.descriptor.kind==='healing')return this.sampleHealing(ownerId,r,now,reducedMotion);
   if(r.descriptor.kind==='staged')return this.sampleStaged(ownerId,r,now);
   if(r.descriptor.kind==='launched-line')return this.sampleLaunched(ownerId,r,now,reducedMotion);
   const d=r.descriptor,elapsed=Math.max(0,now-r.startedAt),resolved=r.resolvedAt!==null,after=resolved?Math.max(0,now-r.resolvedAt):0,hold=d.frameDurationsMs[2]/1000,recovery=d.frameDurationsMs[3]/1000;

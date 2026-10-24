@@ -1,0 +1,119 @@
+{
+  "status": "LOSSLESS PACK PASS",
+  "assets": [
+    {
+      "key": "chiru.specialPoses",
+      "type": "image",
+      "path": "assets/chiru-special-runtime-v1/poses.png",
+      "width": 896,
+      "height": 194,
+      "bytes": 132061,
+      "fallback": "placeholder.battle"
+    },
+    {
+      "key": "chiru.specialCaster",
+      "type": "image",
+      "path": "assets/chiru-special-runtime-v1/caster.png",
+      "width": 250,
+      "height": 274,
+      "bytes": 91248,
+      "fallback": "placeholder.vfx"
+    },
+    {
+      "key": "chiru.specialRecipient",
+      "type": "image",
+      "path": "assets/chiru-special-runtime-v1/recipient.png",
+      "width": 310,
+      "height": 194,
+      "bytes": 85462,
+      "fallback": "placeholder.vfx"
+    }
+  ],
+  "commonCrop": [
+    40,
+    30,
+    224,
+    194
+  ],
+  "logicalGround": 173,
+  "bodyDensity": 0.9,
+  "decodedBytes": 1209856,
+  "action": {
+    "kind": "healing",
+    "animation": {
+      "source": "chiru.specialPoses",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 224,
+          "height": 194
+        },
+        {
+          "x": 224,
+          "y": 0,
+          "width": 224,
+          "height": 194
+        },
+        {
+          "x": 448,
+          "y": 0,
+          "width": 224,
+          "height": 194
+        },
+        {
+          "x": 672,
+          "y": 0,
+          "width": 224,
+          "height": 194
+        }
+      ],
+      "duration": 0.76,
+      "loop": false,
+      "staticFrame": 2,
+      "origin": [
+        0.5267857142857143,
+        0.8917525773195877
+      ],
+      "scale": 2.8
+    },
+    "frameDurationsMs": [
+      200,
+      120,
+      200,
+      240
+    ],
+    "impactFrame": 2,
+    "coordinateSize": [
+      224,
+      194
+    ],
+    "blade": {
+      "assetKey": "chiru.specialCaster",
+      "offset": [
+        -7,
+        -66.75
+      ],
+      "size": [
+        250,
+        274
+      ],
+      "layer": 4
+    },
+    "contact": {
+      "assetKey": "chiru.specialRecipient",
+      "attach": "target",
+      "offset": [
+        -155,
+        -159.07999999999998
+      ],
+      "size": [
+        310,
+        194
+      ],
+      "layer": 4,
+      "durationMs": 440,
+      "fullOpacityMs": 360
+    }
+  }
+}

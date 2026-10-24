@@ -51,5 +51,5 @@ export function actionDescriptor(input,{manifest=assetManifest}={}){
   if(parsed.at(-1).endMs!==recoveryStartMs)throw new TypeError('Invalid staged recovery');
   return immutable({kind:'staged',animation,coordinateSize,durationMs,recoveryStartMs,phaseFrames,stages:parsed});
  }
- return immutable({...(input.kind==='launched-line'?{kind:'launched-line'}:{}),...(input.kind==='area-observed'?{kind:'area-observed',statusVisuals:statusVisualRules(input.statusVisuals,manifest)}:{}),animation,frameDurationsMs,impactFrame,coordinateSize,...(input.anticipation?{anticipation:effect(input.anticipation)}:{}),blade:effect(input.blade),contact:effect(input.contact)});
+ return immutable({...(['launched-line','healing'].includes(input.kind)?{kind:input.kind}:{}),...(input.kind==='area-observed'?{kind:'area-observed',statusVisuals:statusVisualRules(input.statusVisuals,manifest)}:{}),animation,frameDurationsMs,impactFrame,coordinateSize,...(input.anticipation?{anticipation:effect(input.anticipation)}:{}),blade:effect(input.blade),contact:effect(input.contact)});
 }

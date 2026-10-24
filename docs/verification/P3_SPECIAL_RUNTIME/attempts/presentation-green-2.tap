@@ -1,0 +1,19 @@
+✔ healing descriptor preserves four safe cells/timing and separate required rasters (1.319913ms)
+✔ healing normal/reduced keep full source opacity and return Idle at760ms (0.556336ms)
+✔ Session true recipient/lower edge/full opacity/mirror/pause/Idle false/-1 (17.396432ms)
+✔ Session true recipient/lower edge/full opacity/mirror/pause/Idle false/1 (8.815688ms)
+✔ Session true recipient/lower edge/full opacity/mirror/pause/Idle true/-1 (5.85611ms)
+✔ Session true recipient/lower edge/full opacity/mirror/pause/Idle true/1 (5.877242ms)
+✔ healing cleanup zero (3.402082ms)
+✔ healing cleanup cancel (2.714018ms)
+✔ healing cleanup recipient-ko (5.866275ms)
+✔ healing cleanup caster-ko (3.231396ms)
+✔ healing cleanup epoch (3.738017ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 172.439575

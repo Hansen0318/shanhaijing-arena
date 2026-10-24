@@ -16,7 +16,7 @@ test('Heavy opts into280ms at every Tier without altering Basic or other skills'
  assert.throws(()=>createAbilityDefinition({...d,category:'awakening'}));
  assert.throws(()=>createAbilityDefinition({...d,telegraph:{telegraphMs:500,dangerRadius:1}}));
  for(const tier of ['T0','T1','T2','T3']){const {session:s}=fixture({tier});assert.equal(s.actorAbilityDefinitions.get('a1')['P1.heavy'].windupMs,280);}
- for(const [key,d] of Object.entries(formalAbilityDefinitions))if(d.category!=='passive')assert.equal(d.windupMs,key==='P1.basic'?180:key==='P1.heavy'?280:key==='P1.special'?320:key==='P2.basic'?250:key==='P3.basic'?180:key==='P3.heavy'?350:0);
+ for(const [key,d] of Object.entries(formalAbilityDefinitions))if(d.category!=='passive')assert.equal(d.windupMs,key==='P1.basic'?180:key==='P1.heavy'?280:key==='P1.special'?320:key==='P2.basic'?250:key==='P3.basic'?180:key==='P3.heavy'?350:key==='P3.special'?320:0);
 });
 for(const source of ['player','ai'])for(const sign of [1,-1])test(`Heavy ${source} facing${sign} has no early move/HP/RNG, resolves once with matching actionId`,()=>{
  let draws=0;const f=fixture({rng:()=>{draws++;return .99;}}),{session:s,actor:a,target:t}=f;t.x=sign*2;

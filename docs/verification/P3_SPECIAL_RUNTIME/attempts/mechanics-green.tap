@@ -1,0 +1,31 @@
+✔ anonymous heal T0/false: 319/320ms/current maxHp/CD/event (12.487584ms)
+✔ anonymous heal T0/true: 319/320ms/current maxHp/CD/event (4.145743ms)
+✔ anonymous heal T1/false: 319/320ms/current maxHp/CD/event (4.18335ms)
+✔ anonymous heal T1/true: 319/320ms/current maxHp/CD/event (4.010209ms)
+✔ anonymous heal T2/false: 319/320ms/current maxHp/CD/event (2.425928ms)
+✔ anonymous heal T2/true: 319/320ms/current maxHp/CD/event (2.143533ms)
+✔ anonymous heal T3/false: 319/320ms/current maxHp/CD/event (2.756244ms)
+✔ anonymous heal T3/true: 319/320ms/current maxHp/CD/event (1.921188ms)
+✔ settlement reselects newly lowest recipient and ignores initial recipient KO (2.978838ms)
+✔ settlement uses current range including boundary, living team and stable instance ID; self legal (1.929691ms)
+✔ target moving out before settlement is excluded; missing HP cap and full-health zero (1.833867ms)
+✔ additive modifiers before heal 0.35/2 (2.609013ms)
+✔ additive modifiers before heal 0.35001/2 (1.683912ms)
+✔ additive modifiers before heal 0.2/4.2 (1.418092ms)
+✔ additive modifiers before heal 0.2/4.201 (1.556119ms)
+✔ additive modifiers before heal 0.4/1.999 (1.325082ms)
+✔ cancel ko no ghost heal/CD refund (1.340346ms)
+✔ cancel control no ghost heal/CD refund (1.488808ms)
+✔ cancel end no ghost heal/CD refund (0.971931ms)
+✔ cancel new-ability no ghost heal/CD refund (1.621718ms)
+✔ coarse step resolves at .32; ordinary movement does not lock/cancel (2.276192ms)
+✔ AI threshold <=65% and no attempt above threshold (1.467206ms)
+✔ opt-in schema rejects unsupported heal contracts and preserves default (0.446591ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 176.983159

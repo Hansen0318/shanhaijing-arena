@@ -1,0 +1,111 @@
+✔ healing descriptor preserves four safe cells/timing and separate required rasters (1.374056ms)
+✔ healing normal/reduced keep full source opacity and return Idle at760ms (0.559822ms)
+✖ Session true recipient/lower edge/full opacity/mirror/pause/Idle false/-1 (9.270478ms)
+✖ Session true recipient/lower edge/full opacity/mirror/pause/Idle false/1 (3.812151ms)
+✖ Session true recipient/lower edge/full opacity/mirror/pause/Idle true/-1 (3.088354ms)
+✖ Session true recipient/lower edge/full opacity/mirror/pause/Idle true/1 (3.280032ms)
+✖ healing cleanup zero (2.232507ms)
+✖ healing cleanup cancel (3.355936ms)
+✖ healing cleanup recipient-ko (3.121684ms)
+✖ healing cleanup caster-ko (3.035564ms)
+✖ healing cleanup epoch (4.146213ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 2
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 148.370413
+
+✖ failing tests:
+
+test at tests/chiruSpecialRuntime.test.js:9:60
+✖ Session true recipient/lower edge/full opacity/mirror/pause/Idle false/-1 (9.270478ms)
+  TypeError: statuses?.controlled is not a function
+      at AssetPresenter.render (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/src/runtime/assetPresenter.js:309:38)
+      at paint (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:5:313)
+      at fixture (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:6:648)
+      at async TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:9:169)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/chiruSpecialRuntime.test.js:9:60
+✖ Session true recipient/lower edge/full opacity/mirror/pause/Idle false/1 (3.812151ms)
+  TypeError: statuses?.controlled is not a function
+      at AssetPresenter.render (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/src/runtime/assetPresenter.js:309:38)
+      at paint (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:5:313)
+      at fixture (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:6:648)
+      at async TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:9:169)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/chiruSpecialRuntime.test.js:9:60
+✖ Session true recipient/lower edge/full opacity/mirror/pause/Idle true/-1 (3.088354ms)
+  TypeError: statuses?.controlled is not a function
+      at AssetPresenter.render (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/src/runtime/assetPresenter.js:309:38)
+      at paint (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:5:313)
+      at fixture (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:6:648)
+      at async TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:9:169)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/chiruSpecialRuntime.test.js:9:60
+✖ Session true recipient/lower edge/full opacity/mirror/pause/Idle true/1 (3.280032ms)
+  TypeError: statuses?.controlled is not a function
+      at AssetPresenter.render (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/src/runtime/assetPresenter.js:309:38)
+      at paint (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:5:313)
+      at fixture (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:6:648)
+      at async TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:9:169)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/chiruSpecialRuntime.test.js:10:72
+✖ healing cleanup zero (2.232507ms)
+  TypeError: statuses?.controlled is not a function
+      at AssetPresenter.render (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/src/runtime/assetPresenter.js:309:38)
+      at paint (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:5:313)
+      at fixture (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:6:648)
+      at async TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:10:121)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/chiruSpecialRuntime.test.js:10:72
+✖ healing cleanup cancel (3.355936ms)
+  TypeError: statuses?.controlled is not a function
+      at AssetPresenter.render (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/src/runtime/assetPresenter.js:309:38)
+      at paint (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:5:313)
+      at fixture (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:6:648)
+      at async TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:10:121)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/chiruSpecialRuntime.test.js:10:72
+✖ healing cleanup recipient-ko (3.121684ms)
+  TypeError: statuses?.controlled is not a function
+      at AssetPresenter.render (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/src/runtime/assetPresenter.js:309:38)
+      at paint (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:5:313)
+      at fixture (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:6:648)
+      at async TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:10:121)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/chiruSpecialRuntime.test.js:10:72
+✖ healing cleanup caster-ko (3.035564ms)
+  TypeError: statuses?.controlled is not a function
+      at AssetPresenter.render (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/src/runtime/assetPresenter.js:309:38)
+      at paint (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:5:313)
+      at fixture (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:6:648)
+      at async TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:10:121)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/chiruSpecialRuntime.test.js:10:72
+✖ healing cleanup epoch (4.146213ms)
+  TypeError: statuses?.controlled is not a function
+      at AssetPresenter.render (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/src/runtime/assetPresenter.js:309:38)
+      at paint (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:5:313)
+      at fixture (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:6:648)
+      at async TestContext.<anonymous> (file:///workspace/scratch/08e6b9e55a12/shanhaijing-arena/tests/chiruSpecialRuntime.test.js:10:121)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

@@ -42,13 +42,14 @@ export function resolveTierAbilities(projection,definitions){
  const table={...definitions},s=projection.scales;
  for(const category of ['basic','heavy','special','awakening']){
   const id=projection.definition.abilities[category],base=definitions[id];if(!base)continue;
-  const effects=projection.effects.filter(e=>(!e.category||e.category===category)&&['range','approach'].includes(e.kind));if(!effects.length&&projection.tier==='T0')continue;
+  const effects=projection.effects.filter(e=>(!e.category||e.category===category)&&['range','approach'].includes(e.kind));if(!effects.length&&projection.tier==='T0'&&!base.effect.tierMaxHpFractions)continue;
   const gain=kind=>1+Math.min(.15,effects.filter(e=>e.kind===kind).reduce((n,e)=>n+e.magnitude-1,0));
   const mechanicRange=gain('range'),approachGain=gain('approach');
   const support=base.targetingRule!=='enemy',rangeGain=(base.tierScaling?.attackRange===false?1:support?s.supportRange:s.attackRange)*mechanicRange;
   const range=capTierGrowth(base.range,rangeGain,support?TIER_SAFETY.supportRange:Infinity);
   const aoeGain=base.tierScaling?.aoe?s.aoe:1;
   const effect={...base.effect};
+  if(effect.tierMaxHpFractions)effect.maxHpFraction=effect.tierMaxHpFractions[projection.tier];
   if(effect.areaRadius!=null)effect.areaRadius=capTierGrowth(effect.areaRadius,aoeGain*mechanicRange,TIER_SAFETY.aoeRadius);
   if(effect.movement)effect.movement=Object.freeze({...effect.movement,distance:capTierGrowth(effect.movement.distance,(base.tierScaling?.mobility?s.mobilityDistance:1)*approachGain,TIER_SAFETY.mobilityDistance)});
   if(base.tierScaling?.status&&effect.kind==='mitigation'){

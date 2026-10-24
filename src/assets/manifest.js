@@ -1,6 +1,10 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 import {specialRuntimePacking} from './specialRuntimePacking.js';
 const entries=[
+ {"key": "chiru.specialPoses", "type": "image", "path": "assets/chiru-special-runtime-v1/poses.png", "width": 896, "height": 194, "bytes": 132061, "fallback": "placeholder.battle"},
+ {"key": "chiru.specialCaster", "type": "image", "path": "assets/chiru-special-runtime-v1/caster.png", "width": 250, "height": 274, "bytes": 91248, "fallback": "placeholder.vfx"},
+ {"key": "chiru.specialRecipient", "type": "image", "path": "assets/chiru-special-runtime-v1/recipient.png", "width": 310, "height": 194, "bytes": 85462, "fallback": "placeholder.vfx"},
+
  {"key":"chiru.heavyPoses","type":"image","path":"assets/chiru-heavy-runtime-v1/poses.png","width":896,"height":194,"bytes":176171,"fallback":"placeholder.battle"},
  {"key":"chiru.heavyCharge","type":"image","path":"assets/chiru-heavy-runtime-v1/charge.png","width":98,"height":68,"bytes":11460,"fallback":"placeholder.vfx"},
  {"key":"chiru.heavyColumn","type":"image","path":"assets/chiru-heavy-runtime-v1/column.png","width":381,"height":141,"bytes":65738,"fallback":"placeholder.vfx"},
