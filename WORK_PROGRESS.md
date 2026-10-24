@@ -1,3 +1,11 @@
+## 2026-10-24 — Passive 游息雙魚STYLE候選已就緒；等待玩家美術核准
+
+本次明確授權開發已完成首個未完成Gate的可審成果：docs/art/candidates/chiru/passive/style-v2/REVIEW.md、tier-style-review.png與recipient-placement-review.png。內建imagegen一張必要替代雙魚；舊candidate/original均嚴格解碼失敗，原檔與失敗證據不變。新13PNG嚴格verify+load、透明中心/原RGBA padding還原通過；四Tier1/2/3/4組短紋同尺度，核准Idle原封使用。細節manifest及docs/verification/P3_PASSIVE_PREFLIGHT/WORK_LOG.md。
+
+**唯一下一Gate＝玩家STYLE美術核准。** 靜態預覽不是真Runtime；未獲樣式/GIF/Runtime核准、未整合或部署，P3整角未完成。核准STYLE後才做四Tier/normal-reduced/左右/受益者/zero/650ms視覺到期GIF並另審，不能直接跳Runtime。沿核准spec8/12/16/20%/CD8/後排≥2/範圍4.2/HP≤60%，不重審數值。下方STYLE ACTIVE是本次早期checkpoint，由本節更新為待玩家審核。
+
+P1/P2及P3四主動/approved masters與收據bytes/尺度anchor/懸浮下緣/mirror保持；產品與Collection不變，無測試/Build/Browser/Pages重跑。pre-art已推24356a96e05b6e00a8f8f57508ee8f3860a70f17，完整成果checkpoint為本節所在最新remote commit。同分支PR1open/unmerged，原生單人、不委派/新branch/worktree/TD/main merge/重置存檔，其他硬規則保持。接手入口docs/handoffs/P3_CHIRU_PASSIVE_NEXT_WORK.md；所有交接單一自足code block。[skip ci]
+
 ## 2026-10-24 — Passive 游息正式接續；STYLE Gate ACTIVE
 
 本次玩家明確授權繼續Passive，上一階段「只記錄核准、不開始Passive」不再限制本次。潤澤及P1/P2/P3四主動核准保持；P3整角未完成。已恢復本機f2e0cb2（與remote80408c4完整tree一致），API重新核對HEAD/PR1open-unmerged/full tree，保留未push歷史及無關untracked。

@@ -1,0 +1,13 @@
+{
+  "status": "STATIC STYLE SOURCE AND DECODE CHECKS PASS / PLAYER REVIEW PENDING",
+  "protectedFilesUnchanged": 630,
+  "protectedVsRemote": "80408c41547a50e7bba25c7211608894d7227c54",
+  "newPngsStrictDecoded": 13,
+  "paddingRGBAIdentical": true,
+  "transparentCenter": true,
+  "reviewer": "native self-review, no independent reviewer",
+  "runtimeTestsRun": false,
+  "buildRun": false,
+  "deployed": false,
+  "reason": "unchanged product; current Gate static art only"
+}

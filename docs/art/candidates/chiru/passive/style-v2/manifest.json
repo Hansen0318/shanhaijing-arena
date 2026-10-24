@@ -1,0 +1,357 @@
+{
+  "status": "STYLE CANDIDATE / PLAYER REVIEW PENDING",
+  "baseline": "80408c41547a50e7bba25c7211608894d7227c54",
+  "preArtRemoteCheckpoint": "24356a96e05b6e00a8f8f57508ee8f3860a70f17",
+  "mode": "built-in imagegen original + deterministic static Pillow composition",
+  "original": {
+    "path": "docs/art/candidates/chiru/passive/style-v2/originals/paired-fish.png",
+    "sha256": "c674da1b061fe8c978c7721fb9b0a8746fdbcfc62a796709d9bc8bca9be41892",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "strictFullDecode": true,
+    "bytes": 1538288,
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaBounds": [
+      89,
+      54,
+      1454,
+      988
+    ]
+  },
+  "idleReference": {
+    "path": "docs/art/candidates/chiru/awakening/composite-review-v1/approved-idle-return-cell.png",
+    "sha256": "e0e00ad64ca81187b2e9e4115d02ca55cafd440a481b38cdc7c64044f80ec314",
+    "unchanged": true,
+    "cell": [
+      320,
+      260
+    ],
+    "chestX": 158,
+    "hoverY": 203
+  },
+  "tiers": [
+    {
+      "tier": "T0",
+      "fraction": 0.08,
+      "strokeGroups": 1,
+      "strokesPerGroup": 2,
+      "fishCount": 2,
+      "displaySize": [
+        200,
+        160
+      ]
+    },
+    {
+      "tier": "T1",
+      "fraction": 0.12,
+      "strokeGroups": 2,
+      "strokesPerGroup": 2,
+      "fishCount": 2,
+      "displaySize": [
+        200,
+        160
+      ]
+    },
+    {
+      "tier": "T2",
+      "fraction": 0.16,
+      "strokeGroups": 3,
+      "strokesPerGroup": 2,
+      "fishCount": 2,
+      "displaySize": [
+        200,
+        160
+      ]
+    },
+    {
+      "tier": "T3",
+      "fraction": 0.2,
+      "strokeGroups": 4,
+      "strokesPerGroup": 2,
+      "fishCount": 2,
+      "displaySize": [
+        200,
+        160
+      ]
+    }
+  ],
+  "pixelPreservingPadding": [
+    256,
+    256
+  ],
+  "paddingRoundTrip": true,
+  "transparentCenter": true,
+  "files": [
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/T0-strokes.png",
+      "sha256": "6e5303d0a6ae0da3b48ffab7bbd349aad49770175905a005d53c8bf2a675ddd6",
+      "size": [
+        200,
+        160
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 380,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        121,
+        125,
+        159,
+        138
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/T0-style.png",
+      "sha256": "878b6400cdf2954969299e49480c16fdc0326a83d0978a1e61c91ad9130039d5",
+      "size": [
+        200,
+        160
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 17121,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/T1-strokes.png",
+      "sha256": "265f300653f7532eb7fbe08ca512273315eb3ab2aeac564ea055d4b6942d5776",
+      "size": [
+        200,
+        160
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 581,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        48,
+        120,
+        159,
+        143
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/T1-style.png",
+      "sha256": "73aa45f913a155a8d3616a45864c28e74fe4f4f7213c29294a3055ebc75f39b0",
+      "size": [
+        200,
+        160
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 17360,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/T2-strokes.png",
+      "sha256": "55a74d5a5aadc5fe158039884dcc777cecf236d0680493a6d401b3cf28a18aac",
+      "size": [
+        200,
+        160
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 825,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        48,
+        65,
+        191,
+        143
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/T2-style.png",
+      "sha256": "b3f14c57239bac1cb7927926c32cdc408df762261fed516af26665069a630194",
+      "size": [
+        200,
+        160
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 17587,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/T3-strokes.png",
+      "sha256": "87161c62c3497b30c0ff8e7abd17e7d579dcfa99bed4ff48f86c776bfbf00aa2",
+      "size": [
+        200,
+        160
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 953,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        9,
+        65,
+        191,
+        143
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/T3-style.png",
+      "sha256": "87fe93096fe5b5ecb2ceaee5f2ee66a18f998d717b7f4ed9ccdee47ebe3d1ddf",
+      "size": [
+        200,
+        160
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 17788,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/originals/paired-fish.png",
+      "sha256": "c674da1b061fe8c978c7721fb9b0a8746fdbcfc62a796709d9bc8bca9be41892",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 1538288,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds": [
+        89,
+        54,
+        1454,
+        988
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/paired-fish-display.png",
+      "sha256": "d849cf74b81412a35774d8480f27b96dfe062f804308c13b16139de5091e9d43",
+      "size": [
+        200,
+        160
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 16959,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        125
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/paired-fish-padded.png",
+      "sha256": "06ea55291442af0251b4d5c16f75e3b39c642baf7d89f3095fce3e4012ba1c75",
+      "size": [
+        2048,
+        1536
+      ],
+      "mode": "RGBA",
+      "strictFullDecode": true,
+      "bytes": 1557220,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "alphaBounds": [
+        345,
+        310,
+        1710,
+        1244
+      ]
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/recipient-placement-review.png",
+      "sha256": "69127f40188d53205f8d3752e5dfc3af41b3f4473439c0f0263701412395209e",
+      "size": [
+        880,
+        420
+      ],
+      "mode": "RGB",
+      "strictFullDecode": true,
+      "bytes": 60960
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/style-v2/tier-style-review.png",
+      "sha256": "a52c4903cba06acb9d6f69605ce4468566a52f543293bfbdbd385782b30d2981",
+      "size": [
+        1280,
+        970
+      ],
+      "mode": "RGB",
+      "strictFullDecode": true,
+      "bytes": 121964
+    }
+  ],
+  "runtimeIntegrated": false,
+  "productionChanged": false,
+  "deployed": false,
+  "gifGatePassed": false,
+  "artAccepted": false,
+  "limitations": [
+    "STATIC ART SIMULATION, not Runtime healing/event/lifecycle evidence.",
+    "Source soft fringe and alpha maximum254 retained, no alpha threshold/delete/repaint. Original requested15% padding not achieved; 256px lossless padding added.",
+    "Review cue size/anchor and Tier strokes are proposals, not approved runtime descriptors.",
+    "650ms inward return + static reduced fade will be demonstrated at GIF gate only AFTER style approval.",
+    "Mirrors, moving actors, expiry/KO/casterKO/end/Restart/destroy require later GIF/runtime gates."
+  ]
+}
