@@ -4,7 +4,7 @@ const BASE='docs/verification/P3_SPECIAL_RUNTIME/';
 export function validateChiruSpecialBrowserReport(r,built=false){
  assert.equal(r.status,'PASS');assert.equal(r.physicalPhone,false);assert.deepEqual(r.errors,[]);assert.equal(r.cases.length,built?4:32);assert.equal(new Set(r.cases.map(c=>[c.tier,c.tactical,c.reduced,c.sign].join(':'))).size,r.cases.length);
  for(const c of r.cases){assert.equal(c.renderer,2);assert.equal(c.sourceAlpha,1);assert.equal(c.flowerAlpha,1);assert.ok(Math.abs(c.healAt-.32)<1e-8);assert.ok(Math.abs(c.amount-c.expected)<1e-8);assert.equal(c.frame,'448.0.224.194');for(const k of ['noEarlyHeal','f2','targetAnchor','mirror','scale','pause','expanded','f4','idle','expired','zero','reselect','recipientKo','movement','cancel','ko','end','restart'])assert.equal(c[k],true,k);if(built)assert.equal(c.callbackUsed,true);}
- assert.deepEqual(r.collection,{width:390,percentages:true,cooldowns:true});return true;
+ assert.deepEqual(r.collection,{width:852,height:393,portraitGate:true,percentages:true,cooldowns:true});return true;
 }
 export function verifyChiruSpecialRelease(root=process.cwd(),{record=false}={}){
  const read=p=>readFileSync(path.join(root,p)),json=p=>JSON.parse(read(p)),sha=b=>createHash('sha256').update(b).digest('hex'),walk=p=>readdirSync(path.join(root,p),{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(p+'/'+e.name):[p+'/'+e.name]);
