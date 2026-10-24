@@ -1,0 +1,34 @@
+{
+  "status": "AWAKENING F3 v2 PLAYER ART APPROVED",
+  "recordedDate": "2026-10-24",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "我核准，紀錄，我要給新的work往下進行開發，妳提供prompts，要他無縫接軌直接往下開發",
+  "presentedCheckpoint": "351cbe303f94a6a6a61611281be0cfdf9a2f2a81",
+  "source": "docs/art/candidates/chiru/awakening/f3-v2/awakening-f3.png",
+  "sourceSha256": "7f23b33b22196ef59e0e996b4a901db5134280a0731f17f17d0e9ab511d3d340",
+  "sourceGitBlob": "6c025c6581a6d7a96764a7ac5f71afd25e7597a8",
+  "generatedOriginal": "docs/art/candidates/chiru/awakening/f3-v2/originals/awakening-f3.png",
+  "generatedOriginalSha256": "a822aa2e918472ade44d1432ff71f1d4d493df22c28a1455fd123ea0d47c561a",
+  "scope": "Accepts the presented single Awakening high-V F3 v2, both arms raised, original screen-right orb/ring and visible-side earring, immutable original and padding-only derivative. Authorizes successor Work to continue remaining F1/F2/F4, independent VFX and composite GIF review.",
+  "notClaimed": [
+    "Unseen F1/F2/F4 acceptance",
+    "Independent VFX or GIF acceptance",
+    "Awakening Runtime/deploy/player game verification",
+    "P3 whole-character completion"
+  ],
+  "evidenceSha256": {
+    "docs/art/candidates/chiru/awakening/f3-v2/manifest.json": "61299b81e6d0a9a13a0e4374c7adc91aae7d0f98e86294e158dfec60e6bc5d2e",
+    "docs/art/candidates/chiru/awakening/f3-v2/prompt.txt": "400a56c8ba73b1dc6b09ba7b1f124cfbb5b9ed557ef65169a877366fbcb01686",
+    "docs/art/candidates/chiru/awakening/f3-v2/REVIEW.md": "ff7f6d3035938be9906e59ce9051d7339838c15051e950eb23814701869614c1",
+    "docs/art/candidates/chiru/awakening/f3-v2/prepare_qa.py": "c98e5a9b54a64f97c37da1f6e5c3573726302215d55f7f4188b3e0fe4c4d9347",
+    "docs/art/candidates/chiru/awakening/f3-v2/checksums.sha256": "c9041440a3be504b11ba6b8196ac56830782d179cc2ca76a7d2690d6e569f320"
+  },
+  "references": {
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "public/assets/characters/chiru/identity.png": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a",
+    "docs/art/candidates/chiru/basic/f3-v2/basic-f3.png": "503eec8bb7f959aa26b07a8076eeb8f686f4d4698bead83b28ed8392d109e4d5",
+    "docs/art/candidates/chiru/heavy/f3-v3/heavy-f3.png": "8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6",
+    "docs/art/candidates/chiru/special/f3-v3/special-f3.png": "1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8"
+  },
+  "supersedes": "Immutable candidate manifest/REVIEW PENDING is presentation history, superseded only by this explicit receipt; old broken batch remains unapproved history."
+}

@@ -1,3 +1,13 @@
+## 2026-10-24 — Awakening 潤澤 F3 v2 PLAYER APPROVED；新Work直接接其餘動作／獨立VFX／GIF
+
+玩家：「我核准，紀錄，我要給新的work往下進行開發，妳提供prompts，要他無縫接軌直接往下開發」。明確核准已呈交checkpoint351cbe303f94a6a6a61611281be0cfdf9a2f2a81的潤澤雙臂高V F3 v2；精確收據 docs/art/approved/chiru/awakening/f3-v2/acceptance.json。候選SHA256 7f23b33b22196ef59e0e996b4a901db5134280a0731f17f17d0e9ab511d3d340，原圖SHA256 a822aa2e918472ade44d1432ff71f1d4d493df22c28a1455fd123ea0d47c561a。F3 Gate CLOSED，原圖/padding/manifest/prompt/QA/hash與舊損壞batch均原封保留；舊PENDING僅呈交歷史，不重畫、不重審F3或原數值表。
+
+唯一下一工作：沿核准雙臂高V F3，內建imagegen製作潤澤F1/F2/F4，獨立caster水冠扇幕、正治療recipient泉花與真T3澤被保護水膜；保護形象/右canonical左mirror/.13基準解剖尺度/chestX158/hoverY203，按頭身地標等比正規化、不按最高水冠fit或放大角色。完成normal/slow/noFX/左右mirror/Idle-return/reduced、正治療與滿血僅保護情境、Special等尺度FX-on/off比較GIF後呈交，停待玩家GIF核准。無FX可辨四招、Basic<Heavy<Special<Awakening同尺度場面逐級增強保持，不能只換特效冒充動作差異。
+
+核准時序360/240/300/300ms，600ms真結算設計；預覽明示情境，不假稱已實作。兩模式當時全體存活同隊含自身當前maxHp×16/20/24/30%、缺血封頂/不舊scale/復活/暴擊、CD14/12.88/11.76/10.08；T2後排2.0–4.2條件+5%、T1低血+10%僅Special；T3於600ms範圍20存活同隊10.8%減傷2.5秒、MAX/各自到期；AI至少兩位HP≤80%。正治療才泉花，滿血可有真保護無治療花，取消不得提前給效果。必要差異與既有共用Special能力沿用P3_AWAKENING_PREFLIGHT/runtime-readonly，後續Runtime才補generic team opt-in等差異。
+
+本次核准僅F3，不含未見動作/VFX/GIF/Runtime/部署；不進Passive、不存未核准acceptance。下一入口 docs/handoffs/P3_CHIRU_AWAKENING_NEXT_WORK.md。P1/P2 COMPLETE與P3 Basic/Heavy/Special遊戲核准保持，P3整角未完成。原生單人/原分支PR#1 open/unmerged、不委派/新branch/worktree/TD/main merge/重置存檔；全部approved masters/收據/尺度anchor懸浮下緣/mirror、普通Hit取消、無固定16MiB總門檻與逐檔安全/兩下載/required/回收/destroy保持。Collection只寫實際玩法。純收據文件[skip ci]，產品/美術bytes未改、不重跑suite/Build/Browser/Pages；所有交接單一完整自足可複製code block。下方F3待審與禁止其餘姿勢文字由本節覆蓋。
+
 ## 2026-10-24 — Awakening 潤澤單張 F3 v2 READY；唯一下一 Gate＝玩家美術審核
 
 從最新remote3ae6d679940bcfa90e8ca9359db5385a8aeeb53c恢復原本乾淨工程；PR#1 open/unmerged。生成前checkpoint b4a1ef2999a5c87f60d3c756a92021afaa591945已遠端保存。沿用已保存損壞證據，不重測壞圖；實際查看核准identity/Idle/Basic F3v2/Heavy F3v3/Special F3v3。內建imagegen只重建一張潤澤雙臂高V本體候選，右側珠環/可見側耳飾/右canonical保持，與Basic水平前射、Heavy屈肘前推、Special單高托單低展區分。
