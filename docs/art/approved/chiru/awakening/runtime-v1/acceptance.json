@@ -1,0 +1,27 @@
+{
+  "status": "AWAKENING RUNTIME PLAYER APPROVED / AWAKENING COMPLETE / PASSIVE NEXT",
+  "recordedDate": "2026-10-24",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "我核准，妳確認好就紀錄",
+  "acceptedRelease": "f886207aeaba1f12f6598ffc8fc54b03c8c46646",
+  "presentedCheckpoint": "982f8fc7e3a64b1096c954fa4a6408280ea7e457",
+  "scope": "Direct player approval of the presented deployed Awakening 潤澤 runtime. Closes its player-game gate. This turn records approval only; Passive is next in the sequential workflow and is not started. Earlier art/GIF/runtime evidence stays immutable.",
+  "notClaimed": [
+    "Unreported physical-device model, FPS or exhaustive device/Tier measurements",
+    "Unseen Passive art/GIF/runtime approval or implementation",
+    "P3 whole-character completion"
+  ],
+  "evidenceSha256": {
+    "docs/verification/P3_AWAKENING_RUNTIME/release.json": "b383c3db34108846775b11f069107f08e1952868c8731891a126e6b54d5794c8",
+    "docs/verification/P3_AWAKENING_RUNTIME/REPORT.md": "f6cd227111e7616b506b1b96072003c30352f5c4f0eb761721262a6949d6d888",
+    "docs/verification/P3_AWAKENING_RUNTIME/release-evidence.json": "53ab9c07952b772c52fe01828f3e68aa8526cb74e8b0cf403953da104d8c0aaf",
+    "docs/verification/P3_AWAKENING_RUNTIME/public-fingerprints.json": "6ccc62b548a229a6fac2fff483cd5cf1024dab36e32e039b5b047085e02d5db8",
+    "docs/verification/P3_AWAKENING_RUNTIME/ci-build-inventory.json": "dee383597621ac1d34da0775165c47fc14a173d9f8a54fcd7444af528ac1609c",
+    "docs/verification/P3_AWAKENING_RUNTIME/packing.json": "4295c680da3fee6e0e01e97b735c7bd08ee26d4fad255df1a517dbc62d6a7e9b",
+    "docs/verification/P3_AWAKENING_RUNTIME/browser/reuse-proof.json": "d700d945feefd83d120ba4dc4209bf7d655a1129a77812522745e69614f6978f",
+    "docs/verification/P3_AWAKENING_RUNTIME/browser/native.json": "6eb3c7fb92cf42c0d1aa47d59b62ac8a3c92c518a197620e9167f12f816ae379",
+    "docs/verification/P3_AWAKENING_RUNTIME/browser/built-entry.json": "78e0d910204588369d907c7e0e6fb369d852666e3991ecb370e17d4322edf5f2",
+    "docs/art/approved/chiru/awakening/composite-review-v1/acceptance.json": "7a00de446f0ebc5b9b5b571b81c09bcf0e361a4103509c9d679d1f1017ffdef0",
+    "docs/art/approved/chiru/awakening/f3-v2/acceptance.json": "ae5e05432e047faf674083280bd78c098568a890eba79c0ced1aaef290d2ca7f"
+  }
+}

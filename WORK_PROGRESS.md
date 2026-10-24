@@ -1,3 +1,9 @@
+## 2026-10-24 — 潤澤 PLAYER APPROVED／COMPLETE；Passive NEXT（尚未開始）
+
+玩家原文：「我核准，妳確認好就紀錄」。直接核准已呈交release f886207aeaba1f12f6598ffc8fc54b03c8c46646；精確收據 docs/art/approved/chiru/awakening/runtime-v1/acceptance.json，綁定原發布、1198測試／來源664、CI/local/public164、packing與既有美術收據hash。潤澤玩家遊戲Gate CLOSED／PLAYER VERIFIED，不重畫、不重審、不重跑相同來源測試或部署；release.json／REPORT原PENDING是呈交歷史，由本收據覆蓋，原證據bytes保持。
+
+P1/P2 COMPLETE、P3 Basic/Heavy/Special/Awakening均已玩家核准；P3整角仍未完成。下一開發項目＝Passive「游息」第一個未完成Gate，依核准spec核對現況與現成候選有效性，再依逐招流程接續。本次只記錄核准，未開始Passive，未核准未見Passive素材或Runtime；不推稱未回報實機／FPS／全Tier量測。更新handoff；同分支PR#1open/unmerged、單人不委派／新branch/worktree／TD／main merge／重置存檔，全部既有硬規則與approved bytes保持。本次純收據／文件[skip ci]，不重跑已通過工程或Pages。下方待潤澤遊戲核准文字屬歷史，由本節覆蓋。
+
 ## 2026-10-24 — 潤澤 Runtime／正常 Pages COMPLETE；唯一下一 Gate＝玩家遊戲驗收
 
 Release f886207aeaba1f12f6598ffc8fc54b03c8c46646；正常 Pages40088794102 build120857037423/deploy120857587430 SUCCESS。1198/1198、Build/106素材guard、來源664 PASS；潤澤真native32/built4及Basic/Heavy/Special各native32/built4有精確same-source reuse proof，發布freshP1 native16/built8、P2 native4/built2 PASS，獨立P1/P2 workflow亦SUCCESS。CI/local164逐bytes一致，公開164/164全部新下載核對PASS；完整證據 docs/verification/P3_AWAKENING_RUNTIME/REPORT.md。
