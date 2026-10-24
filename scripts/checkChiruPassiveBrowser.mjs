@@ -22,6 +22,10 @@ try{
    for(const x of s.actors){x.heal(x.maxHp);x.controlHandoff.resumeAfterMs=Infinity;s.holdPlayerControl(x.instanceId);s.setPlayerMovement(x.instanceId,{x:0,y:0});s.cadence.set(x.instanceId,99);for(const k of ['heavy','special','awakening'])Object.assign(x.abilityState[k],{phase:'cooldown',cooldownRemaining:99});}
    const team=enemy?s.enemies:s.allies,foes=enemy?s.allies:s.enemies,a=team.find(x=>x.definitionId==='P3'),b=team.find(x=>x!==a),other=team.find(x=>x!==a&&x!==b);
    for(const x of team)Object.assign(x,{x:5,y:1.5});Object.assign(a,{x:5,y:0});Object.assign(b,{x:5+sign*2,y:0});for(const x of foes)Object.assign(x,{x:5+sign*5,y:0});
+   // Stationary left/right fixtures seed the shared last-facing state. Repositioning
+   // the probe is not a real movement command and must not select battleMove.
+   for(const id of [...s.pendingActions.keys()])s.cancelAction(id,'probe_setup');s.pendingHits=[];s.delayedImpacts.clear();s.drainCastEvents();s.drainDamageEvents();s.drainHealEvents();
+   p.facings.clear();p.actionFacings.clear();for(const x of s.actors){p.clearAction(x.instanceId);p.states.delete(x.instanceId);p.facings.set(x.instanceId,{x:x.x,y:x.y,now:0,moving:false,flipX:sign<0});}
    for(const entries of s.passives.entries.values())for(const e of entries){e.readyAt=0;e.visual=null;e.lastSupportCheck=undefined;}
    const paint=()=>{sc.renderCastEvents();sc.applyFrame(s.snapshot());sc.game.step(performance.now(),0);},advance=dt=>{s.step(dt);paint();};paint();const idle=p.actorSprites.get(a.instanceId),idleBefore=[idle.texture.key,idle.displayWidth,idle.displayHeight,idle.originX,idle.originY];
    b.damage(b.maxHp*.6);const before=b.hp;advance(.001);const view=s.passives.snapshot(s.elapsedSeconds).find(v=>v.instanceId===a.instanceId),image=[...fx.fish.values()][0],texture=p.textures.get(view.presentation.assetKeys[Number(tier.slice(1))]),position=sc.actorViews.get(b.instanceId).hpBar;
