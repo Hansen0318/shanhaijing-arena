@@ -1,3 +1,9 @@
+## 2026-10-24 — Special 回瀾 GIF PLAYER APPROVED；新Work接Runtime／驗證／部署
+
+玩家：「我確定approved，妳紀錄，我要給新的work部署讓我測試，妳提供prompts，要他無縫接軌至部署」。明確核准呈交12bb3e839a0fdba793c390124cc99315a1f9288a的Special動作／兩類獨立VFX／11GIF；精確hash收據 docs/art/approved/chiru/special/composite-review-v1/acceptance.json。GIF Gate CLOSED，直接授權新Work完成Special Runtime、必要真驗證、正常CI/Pages部署，供玩家測試。未把GIF核准當成遊戲PLAYER VERIFIED；P3整角未完成，不開始Awakening/Passive。
+
+唯一下一工作：依核准spec做資料opt-in共用延遲治療／真受益者事件與核准本體/VFX整合；兩模式320ms重選最低合法HP比例受益者、當前maxHp Tier比例／CD／modifier／AI契約保持。先讀 docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md。核准素材與原manifest/REVIEW歷史原封保留，舊PENDING由新收據覆蓋，不重畫或重問動畫核准。本次只收據/文件[skip ci]，未改產品、不重跑suite/Build/Browser/Pages；新來源工程需必要驗證。原分支、單人、PR#1open/unmerged，無main merge/新branch/worktree/委派/TD；全部既有保護與逐招流程保持。
+
 ## 2026-10-24 — Special 回瀾 F3 v3 PLAYER APPROVED；新Work直接接其餘動作／獨立VFX／GIF
 
 玩家原文：「我確認ok，紀錄，我會開新的work無縫接軌接續，確認紀錄規則流程進度後給我prompts給新的work接續後，直接往下進行」。明確核准已呈交checkpoint777eeda1ea66f06ef9fde26abd8ef3f232b86082的Special F3 v3高托/低展姿勢。精確收據 `docs/art/approved/chiru/special/f3-v3/acceptance.json`；候選SHA256 1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8，imagegen原圖SHA256 47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41。F3 Gate CLOSED，保護原圖/透明padding圖/manifest/QA，不重畫、不重問核准；原manifest/REVIEW的PENDING是呈交歷史，由此收據覆蓋。v2與舊batch仍不採用、原封保留。

@@ -77,3 +77,10 @@ normal/slow/noFX/左mirror/Idle-return/reduced/滿血零治療/Heavy等尺度FX-
 
 新驗證：54檔hash、所有PNG/GIF完整逐幀解碼、11GIF逐像素時序往返與protected sources hash PASS。核准F3／原圖／收據與產品來源完全保持；無suite/Build/Browser/Pages。原分支、單人、無main merge。唯一下一Gate仍是呈交Special GIF等待玩家核准；不把本次接手授權當成未看過GIF的核准，不Runtime/部署/下一招。
 
+
+## 2026-10-24 — Special 回瀾 GIF PLAYER APPROVED；新Work接Runtime／驗證／部署
+
+玩家：「我確定approved，妳紀錄，我要給新的work部署讓我測試，妳提供prompts，要他無縫接軌至部署」。明確核准呈交12bb3e839a0fdba793c390124cc99315a1f9288a的Special動作／兩類獨立VFX／11GIF；精確hash收據 docs/art/approved/chiru/special/composite-review-v1/acceptance.json。GIF Gate CLOSED，直接授權新Work完成Special Runtime、必要真驗證、正常CI/Pages部署，供玩家測試。未把GIF核准當成遊戲PLAYER VERIFIED；P3整角未完成，不開始Awakening/Passive。
+
+唯一下一工作：依核准spec做資料opt-in共用延遲治療／真受益者事件與核准本體/VFX整合；兩模式320ms重選最低合法HP比例受益者、當前maxHp Tier比例／CD／modifier／AI契約保持。先讀 docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md。核准素材與原manifest/REVIEW歷史原封保留，舊PENDING由新收據覆蓋，不重畫或重問動畫核准。本次只收據/文件[skip ci]，未改產品、不重跑suite/Build/Browser/Pages；新來源工程需必要驗證。原分支、單人、PR#1open/unmerged，無main merge/新branch/worktree/委派/TD；全部既有保護與逐招流程保持。
+

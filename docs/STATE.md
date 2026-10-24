@@ -1,3 +1,9 @@
+## 2026-10-24 — Special 回瀾 GIF PLAYER APPROVED；新Work接Runtime／驗證／部署
+
+玩家：「我確定approved，妳紀錄，我要給新的work部署讓我測試，妳提供prompts，要他無縫接軌至部署」。明確核准呈交12bb3e839a0fdba793c390124cc99315a1f9288a的Special動作／兩類獨立VFX／11GIF；精確hash收據 docs/art/approved/chiru/special/composite-review-v1/acceptance.json。GIF Gate CLOSED，直接授權新Work完成Special Runtime、必要真驗證、正常CI/Pages部署，供玩家測試。未把GIF核准當成遊戲PLAYER VERIFIED；P3整角未完成，不開始Awakening/Passive。
+
+唯一下一工作：依核准spec做資料opt-in共用延遲治療／真受益者事件與核准本體/VFX整合；兩模式320ms重選最低合法HP比例受益者、當前maxHp Tier比例／CD／modifier／AI契約保持。先讀 docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md。核准素材與原manifest/REVIEW歷史原封保留，舊PENDING由新收據覆蓋，不重畫或重問動畫核准。本次只收據/文件[skip ci]，未改產品、不重跑suite/Build/Browser/Pages；新來源工程需必要驗證。原分支、單人、PR#1open/unmerged，無main merge/新branch/worktree/委派/TD；全部既有保護與逐招流程保持。
+
 ## 2026-10-24 — 新 Work 恢復本機完整成果；修復兩個截斷衍生檔
 
 先fetch確認remote9c222a24f06c0a01b65ad5dd041b6e7e009afc38與PR#1 open/unmerged；找到上一Work本機未push提交fb64842，採fast-forward恢復51檔，未重生任何姿勢或FX。嚴格解碼發現recipient-padded-master.png與special-vs-heavy.gif已在該commit內截斷（hash符合舊checksums，故僅hash不足以證明可解碼）。完整originals與核准F3均可嚴格解碼，依既有prepare_preview.py確定性重建，修復兩個衍生檔並更新checksums；原提交保留於本機歷史，遠端保存有效最終樹。
