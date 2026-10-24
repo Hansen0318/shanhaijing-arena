@@ -1,3 +1,13 @@
+## 2026-10-24 — Special F3 v2動作差異不足，玩家要求修正；v3候選待審
+
+玩家指出Special動作與先前技能太像，並要求「確認硬規則有寫技能的動作要夠差異化和明顯大場面，繼續修改f3」。此為修改授權，不是v2或未看過v3的美術核准。已讀最新remote b240818132f5f1f39ed360e5b6dc0a98353f3a87，確認既有硬規則：無FX可辨四招，Basic<Heavy<Special<Awakening的同尺度視覺場面逐級加強；在AGENTS/動作workflow/M5C加上本次重申與修正指向，不變更玩法/數值。
+
+built-in imagegen新候選 docs/art/candidates/chiru/special/f3-v3/REVIEW.md：單臂大幅高托至額頭以上、另一臂向下後展，S形軀幹/內捲尾鰭；保留右向、右側青珠環與可見側耳飾，與Basic水平前射、Heavy雙手推環及舊v2肩高托珠區分。原圖SHA256 47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41；padding候選SHA256 1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8。原圖/prompt/manifest/可重建QA/hash齊備；舊v2/舊batch/approved masters與收據完全保留。
+
+完整PNG verify/load、RGBA/透明安全邊界、原像素反貼/雙鏡像及五input reference hash通過；深淺底、與Idle/Basic/Heavy/v2的.13共同審核尺度、chestX158/hoverY203與390px靜態48px高度作者自審已完成。角色形象/姿勢仍待玩家判斷；這些不是Runtime或手機實測，也不等同完整場面已完成。完整治療施法/真受益者泉花大場面留在F3核准後的獨立FX/GIF Gate；不以額外半透明/放大角色代替。
+
+唯一下一Gate：呈交Special F3 v3後停待玩家明確核准或修正；未存Special acceptance、不做其他姿勢/VFX/GIF/Runtime/Pages。P1/P2/Basic/Heavy保持已核准；全局逐招、同分支/PR#1open/unmerged、單人不委派/新branch/worktree/TD/main merge保持。僅美術/文件[skip ci]，產品未變，不重跑suite/Build/Browser/Pages。下方v2待審由本節覆蓋，v2不是approved。
+
 ## 2026-10-24 — Special 回瀾 F3 v2 已保存；唯一下一Gate＝玩家F3審核
 
 已從最新remote `7c72f4c73f47df866b562c9167e7f110b22360e1` 恢復，同分支 feat/m0-combat-core-20260927、PR#1 open/unmerged。P1/P2 COMPLETE，Basic/Heavy及Heavy清晰版核准保持。完成本招必要spec/真Runtime差異與核准Idle/identity/Basic/Heavy實際影像核對；原始Special prompt含undefined前綴，本次補齊identity-preserve前文，保留舊prompt/損壞PNG/manifest未改、不反覆解碼。

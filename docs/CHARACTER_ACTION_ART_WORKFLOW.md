@@ -1,3 +1,9 @@
+## 2026-10-24 — 再確認：動作差異與大場面必須同時成立
+
+玩家「special的嗎？動作和之前技能差別不大，是蓄力一樣，打出技能不同？」及「確認硬規則有寫技能的動作要夠差異化和明顯大場面，繼續修改f3」。既有全局硬規則明文要求四招在無獨立FX時也能立即辨認本體動作、輪廓、施力方向與節奏；不能共用相似持珠蓄力姿勢，再只換出手效果。Basic<Heavy<Special<Awakening同手機等尺度逐級擴大視覺場面，施法/真命中或真受益者效果須分別清楚、強烈且具招式特徵；治療/防禦用正確非傷害語言，不造假爆浪/受益事件、不放大角色/數值/判定。具體原條款：CHARACTER_ACTION_ART_WORKFLOW.md的Mandatory within-character attack motion differentiation與Mandatory action-power visual escalation；M5C_ART_ANIMATION_VFX.md的Large, unmistakable cast and impact VFX。規則已存在，本節是玩家再次強調與執行修正，非新玩法。
+
+Special v2未獲美術核准、依玩家意見修正，原檔/manifest不改。v3單臂由下向上高托至額頭上方，另一臂向下後展至腹/髖側，形成上下對角輪廓；本體S曲線與尾鰭內捲，與Basic水平前射、Heavy雙手推環分開，亦保留Awakening雙臂高V的差異。v3仍是CANDIDATE，先審F3；完整治療泉花/施法大場面與同尺度FX比較是F3核准後的獨立VFX/GIF義務，不能用本張角色圖冒稱已完成。入口 docs/art/candidates/chiru/special/f3-v3/REVIEW.md；玩家核准前不做其餘姿勢/FX/GIF/Runtime/部署。
+
 ## 2026-10-24 — Heavy清晰版 PLAYER APPROVED／COMPLETE；新Work直接接Special回瀾
 
 玩家「確認ok，紀錄，接下來我要開新的work無縫接軌接手下面的，確認好進度規則流程，就給我prompts，我要他讀取後直接做下面的」明確核准已呈交release30423cc清晰版。精確hash收據 docs/art/approved/chiru/heavy/clarity-v1/acceptance.json；原整體Heavy/runtime-v1與所有美術收據保持。Basic及Heavy已PLAYER VERIFIED；P3整角未完成。新Work直接執行Special「回瀾」第一未完Gate：沿核准spec做必要差異核對→一張F3角色關鍵姿勢候選→呈交停待玩家核准。獨立接手入口 docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md。

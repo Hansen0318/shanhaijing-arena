@@ -27,3 +27,20 @@ Approved contract reference: heal lowest HP-ratio alive ally including self, leg
 - Required later opt-in shared runtime work (not this gate): 320ms legal recipient reselect, current-maxHP Tier fractions, actual positive-heal VFX and cancellation/lifecycle. Approved spec not reopened.
 
 Candidate remains PLAYER REVIEW PENDING. No player acceptance claimed. Verification Level A only.
+
+## 2026-10-24 — Special F3 v2動作差異不足，玩家要求修正；v3候選待審
+
+玩家指出Special動作與先前技能太像，並要求「確認硬規則有寫技能的動作要夠差異化和明顯大場面，繼續修改f3」。此為修改授權，不是v2或未看過v3的美術核准。已讀最新remote b240818132f5f1f39ed360e5b6dc0a98353f3a87，確認既有硬規則：無FX可辨四招，Basic<Heavy<Special<Awakening的同尺度視覺場面逐級加強；在AGENTS/動作workflow/M5C加上本次重申與修正指向，不變更玩法/數值。
+
+built-in imagegen新候選 docs/art/candidates/chiru/special/f3-v3/REVIEW.md：單臂大幅高托至額頭以上、另一臂向下後展，S形軀幹/內捲尾鰭；保留右向、右側青珠環與可見側耳飾，與Basic水平前射、Heavy雙手推環及舊v2肩高托珠區分。原圖SHA256 47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41；padding候選SHA256 1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8。原圖/prompt/manifest/可重建QA/hash齊備；舊v2/舊batch/approved masters與收據完全保留。
+
+完整PNG verify/load、RGBA/透明安全邊界、原像素反貼/雙鏡像及五input reference hash通過；深淺底、與Idle/Basic/Heavy/v2的.13共同審核尺度、chestX158/hoverY203與390px靜態48px高度作者自審已完成。角色形象/姿勢仍待玩家判斷；這些不是Runtime或手機實測，也不等同完整場面已完成。完整治療施法/真受益者泉花大場面留在F3核准後的獨立FX/GIF Gate；不以額外半透明/放大角色代替。
+
+唯一下一Gate：呈交Special F3 v3後停待玩家明確核准或修正；未存Special acceptance、不做其他姿勢/VFX/GIF/Runtime/Pages。P1/P2/Basic/Heavy保持已核准；全局逐招、同分支/PR#1open/unmerged、單人不委派/新branch/worktree/TD/main merge保持。僅美術/文件[skip ci]，產品未變，不重跑suite/Build/Browser/Pages。下方v2待審由本節覆蓋，v2不是approved。
+
+
+## 2026-10-24 — 再確認：動作差異與大場面必須同時成立
+
+玩家「special的嗎？動作和之前技能差別不大，是蓄力一樣，打出技能不同？」及「確認硬規則有寫技能的動作要夠差異化和明顯大場面，繼續修改f3」。既有全局硬規則明文要求四招在無獨立FX時也能立即辨認本體動作、輪廓、施力方向與節奏；不能共用相似持珠蓄力姿勢，再只換出手效果。Basic<Heavy<Special<Awakening同手機等尺度逐級擴大視覺場面，施法/真命中或真受益者效果須分別清楚、強烈且具招式特徵；治療/防禦用正確非傷害語言，不造假爆浪/受益事件、不放大角色/數值/判定。具體原條款：CHARACTER_ACTION_ART_WORKFLOW.md的Mandatory within-character attack motion differentiation與Mandatory action-power visual escalation；M5C_ART_ANIMATION_VFX.md的Large, unmistakable cast and impact VFX。規則已存在，本節是玩家再次強調與執行修正，非新玩法。
+
+Special v2未獲美術核准、依玩家意見修正，原檔/manifest不改。v3單臂由下向上高托至額頭上方，另一臂向下後展至腹/髖側，形成上下對角輪廓；本體S曲線與尾鰭內捲，與Basic水平前射、Heavy雙手推環分開，亦保留Awakening雙臂高V的差異。v3仍是CANDIDATE，先審F3；完整治療泉花/施法大場面與同尺度FX比較是F3核准後的獨立VFX/GIF義務，不能用本張角色圖冒稱已完成。入口 docs/art/candidates/chiru/special/f3-v3/REVIEW.md；玩家核准前不做其餘姿勢/FX/GIF/Runtime/部署。
