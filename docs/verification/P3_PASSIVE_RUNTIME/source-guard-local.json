@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "method": "Read-only artifact staging root with exact current product/source links; previous accepted verification files preserved",
+  "tests": {
+    "total": 1221,
+    "passCount": 1221,
+    "fail": 0
+  },
+  "guards": {
+    "specialBasicHeavy": 650,
+    "awakeningP1P2": 685,
+    "passive": 574
+  }
+}

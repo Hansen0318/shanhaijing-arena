@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "method": "Exact full-suite and affected real browser workflows; artifact digests retained",
+  "p1": {
+    "run": 40105520061,
+    "source": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
+    "artifacts": [
+      {
+        "id": 12564627317,
+        "name": "p1-passive-browser-evidence",
+        "digest": "sha256:c16eaf05b0093769bf9fc8b33311d5169689e85e4c6d03d05c7ff58d79df8696",
+        "bytes": 11304879
+      }
+    ]
+  },
+  "p2": {
+    "run": 40104953768,
+    "source": "850fa1b4232171c31290744484978f167b92e1e7",
+    "exactSourceReuse": "Only P1 verification driver and historical test snapshots changed afterwards; P2 driver/product identical.",
+    "artifacts": [
+      {
+        "id": 12564322394,
+        "name": "p2-awakening-browser-evidence",
+        "digest": "sha256:77bcf05e8baa2517b5231578ce2a4b17261ab4dbe92f01da9e7f761eeb35a14e",
+        "bytes": 1691705
+      }
+    ]
+  }
+}

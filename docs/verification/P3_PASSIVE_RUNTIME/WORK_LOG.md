@@ -25,3 +25,11 @@ Self-review found opening resolveActions could precede a queued same-time KO. A 
 - P1 compatibility restart predicate assumed every passive has ordinary-distance progress or spatial-pressure type. Rear-support readiness is now explicit; all speed/duration/CD/geometry/cleanup assertions unchanged. Failures saved underfailures/.
 - Full suite1221/1221 PASS. Latest remote b414e9f079a985e4bf23283ffa5067abf5af9ac3; all later changes since e3fbba9 are validation-only. Mandatory normal CI still runs source-bound real browser and fresh Build. Do not claim final CI/Pages/player acceptance yet.
 - Ruling: preserve original branch/local history with merge; no reset. No new product design, numeric or art decisions. Self-review only per explicit native single-worker constraint; no deferred finding.
+
+## Normal CI / Pages SUCCESS
+Source b414e9f079a985e4bf23283ffa5067abf5af9ac3; normal workflow40105519923 build120906364692/deploy120909116317 SUCCESS; full1221/1221, Build110 assets. Passive native32/built4, four active skills each native32/built4, P1native16/built8 and P2native4/built2 current-source matrices PASS. Independent P1 workflow40105520061 SUCCESS; independent P2 exact-source40104953768 SUCCESS.
+All current artifact ZIP SHA256 and CRC PASS. CI/local168/168 bytes+SHA256 equal. Read-only staging source guards: Special+Basic+Heavy650, Awakening+P1/P2685, Passive574 PASS. Current reports saved separately below Passive to protect previous accepted canonical evidence paths.
+Only public all168 fresh downloads in progress; homepage HTTP200 confirmed. Do not claim public/player acceptance before actual result. No further product/source changes.
+
+## Release closure / only player Gate remains
+Public168/168 fresh HTTP PASS, matching exact current CI/local bytes and SHA256. Releaseb414e9f079a985e4bf23283ffa5067abf5af9ac3; normalPages40105519923 SUCCESS. Full REPORT/CURRENT, all true browser reports, artifact inventories and source proofs saved. Player gameplay approval remains PENDING; no acceptance/P3 COMPLETE. Final action: present https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&passive=b414e9f and minimal HEAL TEST/T0-T3 steps; wait. No source change after successful checks, no further suite/build/deploy.

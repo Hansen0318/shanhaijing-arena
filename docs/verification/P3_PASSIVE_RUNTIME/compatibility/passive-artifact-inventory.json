@@ -1,0 +1,120 @@
+{
+  "source": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
+  "files": [
+    {
+      "path": "WORK_LOG.md",
+      "bytes": 3031,
+      "sha256": "89cf52d955430824d984f4195a990b06d9e4c379d9beda31c85b1f65c7af8738"
+    },
+    {
+      "path": "browser/built-T0-normal--1.png",
+      "bytes": 145399,
+      "sha256": "66e4a43437c7355476137606ed39b395e178776d0c5c8c82e7e07c83cc1744b9"
+    },
+    {
+      "path": "browser/built-T0-normal-1.png",
+      "bytes": 144301,
+      "sha256": "7b28c20a9e20df9c027b3289eebc30cbd1153c33cc3a58c0e6436dffcf4a1b7d"
+    },
+    {
+      "path": "browser/built-T0-reduced--1.png",
+      "bytes": 146405,
+      "sha256": "1d6fb4b1cfba1fa7dca7a316373787381950c3fd3737331915c9ca24b3009b24"
+    },
+    {
+      "path": "browser/built-T0-reduced-1.png",
+      "bytes": 145264,
+      "sha256": "382bf5b2ad7ea91afe2eeb3bc2563b28cd07d7dbeddd94205d82c34abbfc4d76"
+    },
+    {
+      "path": "browser/built-collection-phone.png",
+      "bytes": 59507,
+      "sha256": "e2c47444ec27a1cc0224e6217a1fb18f4f5db08092086eb068a9434a117a0138"
+    },
+    {
+      "path": "browser/built-entry.json",
+      "bytes": 3572,
+      "sha256": "855c9b44ed9faf0a0e7189d180f1b61fd3c0f0f6913fb43d9fc463bea930be25"
+    },
+    {
+      "path": "browser/native-T0-normal-1.png",
+      "bytes": 224165,
+      "sha256": "d01fdd47a01e9386f92dbe60ef7df82249ea5cff68b6ca5f9672e54ee93579be"
+    },
+    {
+      "path": "browser/native-T1-normal-1.png",
+      "bytes": 223690,
+      "sha256": "f6f5784c6a1bfe0e4d8f05555566db8806c13c45cce278dc5c5d98dc39697304"
+    },
+    {
+      "path": "browser/native-T2-normal-1.png",
+      "bytes": 225637,
+      "sha256": "db05ef5581ec0daa771a468426afb60bad63b713251caf7afaa48f840b784b0d"
+    },
+    {
+      "path": "browser/native-T3-normal-1.png",
+      "bytes": 226078,
+      "sha256": "f2121356030b33b42296d4a146ec403806e760056238aeb29e96e3d0ac866285"
+    },
+    {
+      "path": "browser/native-collection-phone.png",
+      "bytes": 59507,
+      "sha256": "e2c47444ec27a1cc0224e6217a1fb18f4f5db08092086eb068a9434a117a0138"
+    },
+    {
+      "path": "browser/native.json",
+      "bytes": 20982,
+      "sha256": "11cc5bac4c183ae29140a9ff54a9b93e744ed045cda578ad801de0c1255b19fa"
+    },
+    {
+      "path": "local-browser-install-failure.log",
+      "bytes": 4752,
+      "sha256": "9fd675cc7c99299509f246324a824a787a92ab01c73affbe73e2513a458dcdae"
+    },
+    {
+      "path": "packing.json",
+      "bytes": 1955,
+      "sha256": "8f9b6b096c2eeaa8f7a38b5576dd37ff4f549ffc0f190887a97076ee64af47c4"
+    },
+    {
+      "path": "previous-test-sources.json",
+      "bytes": 310349,
+      "sha256": "01b8b7b54b6f9fe8ac530fab7612d6f354d7297d19d3e3f6ba37bc288c9ee488"
+    },
+    {
+      "path": "publish-proof.json",
+      "bytes": 515,
+      "sha256": "0f01c449d1f1b349b3a6a0c839b96476c16343d14da96b1f2bb25a0e1b3916fe"
+    },
+    {
+      "path": "red-order-start.log",
+      "bytes": 2410,
+      "sha256": "baa1969b8756a4c70510b4a32cd80cc65589cf2d58e15afbffb8f72e9d8ec3cd"
+    },
+    {
+      "path": "red-order.log",
+      "bytes": 2297,
+      "sha256": "1bec82586d711c524bd9e4f9e65880df6c082483c089d394cb0afde05ca4f8b5"
+    },
+    {
+      "path": "red-presentation.log",
+      "bytes": 923,
+      "sha256": "796b665d42e2fbb48b474ec965701e5bd8c88a34a7b7dc460e7b59270291a6f2"
+    },
+    {
+      "path": "red-timing.log",
+      "bytes": 2163,
+      "sha256": "92863acb6d00efd8c1d0a82030eaf2149d8d44760faa2aa1e5f719772d12499a"
+    },
+    {
+      "path": "red-unit.log",
+      "bytes": 8065,
+      "sha256": "9c8f99e7d3e394078af77cad9a5b48b8e89813e3fadc600302a4899968210679"
+    },
+    {
+      "path": "release-evidence.json",
+      "bytes": 64354,
+      "sha256": "9725e6d4dfc164dfe86a2c8d74ecdbbed0a12b186627291fcf0312a8ca25cc3c"
+    }
+  ]
+}

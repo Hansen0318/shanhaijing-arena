@@ -1,7 +1,7 @@
 {
   "method": "native author self-review; explicit player single-worker/no delegation constraint",
   "base": "04aaac705f6c239c6c6bb83f642c92a8f4921288",
-  "head": "850fa1b4232171c31290744484978f167b92e1e7",
+  "head": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
   "findings": [
     {
       "severity": "important",
@@ -31,5 +31,8 @@
     "independent review",
     "physical iPhone/FPS testing",
     "player gameplay approval"
-  ]
+  ],
+  "deployed": true,
+  "publicFiles": 168,
+  "reviewOutcome": "No unresolved important/minor findings; important fixes have RED to GREEN evidence. Native author review only."
 }

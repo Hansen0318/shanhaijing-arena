@@ -1,0 +1,27 @@
+{
+  "run": 40105519923,
+  "source": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
+  "artifacts": [
+    {
+      "name": "chiru-passive-evidence",
+      "id": 12565250024,
+      "files": 23,
+      "sha256": "846e8cff55632861828eea42c2ce0fb401843904d87f3b4b209d9553ae888e12",
+      "crc": "PASS"
+    },
+    {
+      "name": "github-pages",
+      "id": 12565055529,
+      "files": 1,
+      "sha256": "f6d1ef457071082bcf950589d381b157a58fdbdf62c9ce9f2120e7a0d1b9c0be",
+      "crc": "PASS"
+    },
+    {
+      "name": "chiru-awakening-evidence",
+      "id": 12563849512,
+      "files": 57,
+      "sha256": "ce7eb11b03f85432ab7b0cba4396dbb75b0c543ac0ce62b7a64069eeddc62fcc",
+      "crc": "PASS"
+    }
+  ]
+}

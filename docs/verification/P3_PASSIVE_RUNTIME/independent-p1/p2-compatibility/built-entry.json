@@ -1,0 +1,127 @@
+{
+  "kind": "Actual built mobile-emulated entry and callback",
+  "physicalPhone": false,
+  "cases": [
+    {
+      "reduced": false,
+      "sign": 1,
+      "initial": {
+        "renderer": 2,
+        "ready": true,
+        "keys": 64,
+        "bytes": 19285396,
+        "hp": 230,
+        "before": 230,
+        "delay": 0.9,
+        "newKeys": true
+      },
+      "hit": {
+        "frame": "400.0.200.200",
+        "width": 200,
+        "height": 200,
+        "origin": [
+          0.5,
+          0.97
+        ],
+        "flipX": false,
+        "hp": 213.77,
+        "contacts": [
+          "e1",
+          "e2"
+        ],
+        "bodyTexture": "visual.1.botuo.awakeningPoses",
+        "statuses": [],
+        "auras": [],
+        "release": 523
+      },
+      "file": "built-mobile-normal-1.png",
+      "pause": true,
+      "expiry": 0,
+      "restart": {
+        "oldClosed": true,
+        "oldBytes": 0,
+        "newReady": true,
+        "newBytes": 19285396
+      },
+      "sampling": []
+    },
+    {
+      "reduced": true,
+      "sign": 1,
+      "initial": {
+        "renderer": 2,
+        "ready": true,
+        "keys": 64,
+        "bytes": 19285396,
+        "hp": 230,
+        "before": 230,
+        "delay": 0.9,
+        "newKeys": true
+      },
+      "hit": {
+        "frame": "400.0.200.200",
+        "width": 200,
+        "height": 200,
+        "origin": [
+          0.5,
+          0.97
+        ],
+        "flipX": false,
+        "hp": 213.77,
+        "contacts": [
+          "e1",
+          "e2"
+        ],
+        "bodyTexture": "visual.1.botuo.awakeningPoses",
+        "statuses": [],
+        "auras": [],
+        "release": 523
+      },
+      "file": "built-mobile-reduced-1.png",
+      "pause": true,
+      "expiry": 0,
+      "restart": {
+        "oldClosed": true,
+        "oldBytes": 0,
+        "newReady": true,
+        "newBytes": 19285396
+      },
+      "sampling": []
+    }
+  ],
+  "errors": [],
+  "current": {
+    "reduced": true,
+    "sign": 1,
+    "initial": {
+      "renderer": 2,
+      "ready": true,
+      "keys": 64,
+      "bytes": 19285396,
+      "hp": 230,
+      "before": 230,
+      "delay": 0.9,
+      "newKeys": true
+    },
+    "hit": {
+      "frame": "400.0.200.200",
+      "width": 200,
+      "height": 200,
+      "origin": [
+        0.5,
+        0.97
+      ],
+      "flipX": false,
+      "hp": 213.77,
+      "contacts": [
+        "e1",
+        "e2"
+      ],
+      "bodyTexture": "visual.1.botuo.awakeningPoses",
+      "statuses": [],
+      "auras": [],
+      "release": 523
+    }
+  },
+  "status": "PASS"
+}

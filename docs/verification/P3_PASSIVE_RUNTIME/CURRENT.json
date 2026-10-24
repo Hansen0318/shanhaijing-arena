@@ -1,12 +1,18 @@
 {
-  "status": "RUNTIME IMPLEMENTED / REAL CI IN PROGRESS / PLAYER GAMEPLAY PENDING",
+  "status": "RUNTIME / TRUE VERIFICATION / NORMAL PAGES / PUBLIC FINGERPRINT PASS; PLAYER GAMEPLAY PENDING",
   "sourceCommit": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
   "normalPagesRun": 40105519923,
   "p1Run": 40105520061,
   "p2ExactSourceRun": 40104953768,
   "tests": 1221,
   "build": "PASS / 110 assets / 6391136 encoded bytes",
-  "next": "Read current job status, fix any true failure, complete normal Pages, download source-bound artifacts, compare local/CI/public 168 fingerprints, present game URL and wait for player approval.",
+  "next": "Present actual deployed game and minimal HEAL TEST/Tier steps; wait for explicit player gameplay approval. Do not repeat source-identical checks/deployment or begin another character before approval.",
   "playerRuntimeAcceptance": false,
-  "p3Complete": false
+  "p3Complete": false,
+  "buildJob": 120906364692,
+  "deployJob": 120909116317,
+  "ciLocalFiles": 168,
+  "publicFiles": 168,
+  "publicStatus": "PASS",
+  "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&passive=b414e9f"
 }

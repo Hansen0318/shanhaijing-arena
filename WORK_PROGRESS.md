@@ -1,3 +1,11 @@
+## 2026-10-24 — 游息 Runtime／正常 Pages／公開核對 PASS；唯一下一Gate＝玩家遊戲驗收
+
+Release b414e9f079a985e4bf23283ffa5067abf5af9ac3；正常Pages40105519923 build120906364692/deploy120909116317 SUCCESS。1221/1221、Build/110素材guard PASS；游息真native32/built4、P3四主動各native32/built4、P1native16/built8與P2native4/built2 PASS；獨立P1完整被動/Collection40105520061 SUCCESS。來源guard650/685/574本機重驗PASS；所有artifact ZIP hash/CRC通過。CI/local/public168/168逐bytes+SHA256一致，公開168全部fresh下載。完整證據docs/verification/P3_PASSIVE_RUNTIME/REPORT.md。
+
+完成共用rear-support/instant-heal正amount獨立CD8、最低比例穩定選人、當前maxHp四Tier、真受益者雙魚/Tier/reduced與650ms/KO/end/Restart/destroy清理；同刻傷害KO→主動→被動（含區間起點）。Collection同版本純玩法及清流顯示名；核准842份美術/收據bytes、P1/P2/P3四主動保持。無P3 ID特例/普通Hit/16MiB固定額度/被動文字牌/連線。
+
+唯一下一步：呈交 https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&passive=b414e9f，橫向→HEAL TEST→Ally Tier T3→START，不按主動看自動治療與真受益者雙魚；Restart/T0比較。玩家遊戲驗收PENDING，未建立Runtime acceptance、未標P3 COMPLETE、不開始下一角色。來源未改不重跑相同工程/部署。原分支PR#1open/unmerged，原生單人、不新branch/worktree/委派/TD/main merge/重置存檔。下方Runtime待辦屬歷史，由本節覆蓋。本次純證據/文件[skip ci]。
+
 ## 2026-10-24 — 游息 Runtime checkpoint；正常 CI 真 Browser／Pages NEXT
 
 核准STYLE／9GIF原bytes保持，已沿PNG接入共用rear-support選人／instant-heal正amount／獨立8秒CD／真受益者雙魚與四Tier650ms/reduced／所有權清理；無P3 ID特例。Collection同版本玩法文案，T2僅改顯示名清流。1219/1219、Build/110素材guard PASS；新增同刻KO→主動→被動與區間起點排序RED→GREEN，歷史主動測試明確隔離新被動且原斷言不變。
