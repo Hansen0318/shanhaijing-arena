@@ -1,3 +1,13 @@
+## 2026-10-24 — Special 回瀾 F3 v3 PLAYER APPROVED；新Work直接接其餘動作／獨立VFX／GIF
+
+玩家原文：「我確認ok，紀錄，我會開新的work無縫接軌接續，確認紀錄規則流程進度後給我prompts給新的work接續後，直接往下進行」。明確核准已呈交checkpoint777eeda1ea66f06ef9fde26abd8ef3f232b86082的Special F3 v3高托/低展姿勢。精確收據 `docs/art/approved/chiru/special/f3-v3/acceptance.json`；候選SHA256 1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8，imagegen原圖SHA256 47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41。F3 Gate CLOSED，保護原圖/透明padding圖/manifest/QA，不重畫、不重問核准；原manifest/REVIEW的PENDING是呈交歷史，由此收據覆蓋。v2與舊batch仍不採用、原封保留。
+
+唯一下一工作：新Work沿已核准F3製作回瀾F1/F2/F4與兩類獨立VFX（caster內收抬升水環、真受益者腳下/懸浮下緣泉環/泉花），安全同尺度/共同anchor/懸浮下緣正規化，完成normal/slow/noFX/左右mirror/Idle-return/reduced及Heavy等尺度對照GIF。F1/F2/F3/F4=200/120/200/240ms，320ms是核准治療真結算設計；GIF以明示的正治療/零治療情境示範，真amount>0才有recipient泉花，不能冒稱已在Runtime實作。呈交單招GIF後停待玩家核准；本次F3核准不含未見姿勢/VFX/GIF/Runtime/部署，不開始Awakening/Passive。
+
+既有無FX可辨動作及Basic<Heavy<Special<Awakening大場面硬規則維持；施法與受益者效果分別清楚，治療使用非傷害視覺語言，不能靠放大角色/假爆破/額外半透明。核准Special數值/Tier/320ms重選最低合法受益者契約不重審；Runtime差異已記錄於Special WORK_LOG，不重做前檢。
+
+P1/P2 COMPLETE、Basic/Heavy及清晰版PLAYER VERIFIED保持，P3整角未完成。單人、原分支feat/m0-combat-core-20260927、PR#1open/unmerged；不委派/新branch/worktree/TD/main merge。全部approved masters/收據/scale/anchor/懸浮下緣/右canonical左mirror保持，普通Hit取消、無固定16MiB總門檻/逐檔安全/required就緒/所有權回收destroy保持，Collection只寫玩法。本次純收據/文件[skip ci]，未改產品，不重跑suite/Build/Browser/Pages。新Work入口 `docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md`，直接開始下一未完Gate。下方F3待審與禁止其餘姿勢為歷史，由本節覆蓋。
+
 ## 2026-10-24 — Special F3 v2動作差異不足，玩家要求修正；v3候選待審
 
 玩家指出Special動作與先前技能太像，並要求「確認硬規則有寫技能的動作要夠差異化和明顯大場面，繼續修改f3」。此為修改授權，不是v2或未看過v3的美術核准。已讀最新remote b240818132f5f1f39ed360e5b6dc0a98353f3a87，確認既有硬規則：無FX可辨四招，Basic<Heavy<Special<Awakening的同尺度視覺場面逐級加強；在AGENTS/動作workflow/M5C加上本次重申與修正指向，不變更玩法/數值。

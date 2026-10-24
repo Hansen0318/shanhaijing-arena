@@ -1,0 +1,29 @@
+{
+  "status": "SPECIAL F3 v3 PLAYER APPROVED",
+  "recordedDate": "2026-10-24",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "我確認ok，紀錄，我會開新的work無縫接軌接續，確認紀錄規則流程進度後給我prompts給新的work接續後，直接往下進行",
+  "presentedCheckpoint": "777eeda1ea66f06ef9fde26abd8ef3f232b86082",
+  "source": "docs/art/candidates/chiru/special/f3-v3/special-f3.png",
+  "sourceSha256": "1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8",
+  "sourceGitBlob": "d5fbaf93d36a742bb07d2bc4f0ad38b5bd64e902",
+  "generatedOriginal": "docs/art/candidates/chiru/special/f3-v3/originals/special-f3.png",
+  "generatedOriginalSha256": "47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41",
+  "scope": "Accepts the presented Special healing-lift F3 v3: forward arm high above forehead with original right-side orb/ring, opposite arm low/back, extended S-curve hover pose. Includes unchanged-pixel transparent-padding derivative. New Work continues F1/F2/F4 plus independent caster/actual-beneficiary healing VFX and composite GIF review.",
+  "notClaimed": [
+    "Unseen F1/F2/F4 approval",
+    "Independent VFX or GIF acceptance",
+    "Special Runtime/deployment/phone/Tier validation",
+    "P3 whole-character completion"
+  ],
+  "evidenceSha256": {
+    "docs/art/candidates/chiru/special/f3-v3/manifest.json": "1222c3f1072835036b8a860225c654b4c55c00c4e3a6e98ce57d58101ecab7b3",
+    "docs/art/candidates/chiru/special/f3-v3/prompt.txt": "d4e224bb743a46e0f30feeb87526773ddfd37b3a7f16e71e0ba3302d3b94453c",
+    "docs/art/candidates/chiru/special/f3-v3/REVIEW.md": "83afabf4927802d134b81e67a0a30aed3cf07aa32da70a95ea1cc52deb2c335e"
+  },
+  "references": {
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "public/assets/characters/chiru/identity.png": "304a96ea0e9a215ad387708935e80bbd915722d5743ab2d8d4422e2963496a0a"
+  },
+  "supersedes": "Candidate PENDING in immutable manifest/REVIEW is presentation history, superseded only by this explicit acceptance. v2 and batch remain unapproved history."
+}
