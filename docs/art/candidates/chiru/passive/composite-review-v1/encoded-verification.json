@@ -1,0 +1,193 @@
+{
+  "status": "ENCODED REVIEW PIXEL CHECKS PASS / NOT RUNTIME",
+  "checks": [
+    {
+      "check": "tiers-normal.gif Idle at exact expiry / 20,124",
+      "pass": true
+    },
+    {
+      "check": "tiers-normal.gif Idle at exact expiry / 380,124",
+      "pass": true
+    },
+    {
+      "check": "tiers-normal.gif Idle at exact expiry / 20,494",
+      "pass": true
+    },
+    {
+      "check": "tiers-normal.gif Idle at exact expiry / 380,494",
+      "pass": true
+    },
+    {
+      "check": "tiers-reduced.gif Idle at exact expiry / 20,124",
+      "pass": true
+    },
+    {
+      "check": "tiers-reduced.gif Idle at exact expiry / 380,124",
+      "pass": true
+    },
+    {
+      "check": "tiers-reduced.gif Idle at exact expiry / 20,494",
+      "pass": true
+    },
+    {
+      "check": "tiers-reduced.gif Idle at exact expiry / 380,494",
+      "pass": true
+    },
+    {
+      "check": "directions-idle.gif return Idle / 20",
+      "pass": true
+    },
+    {
+      "check": "directions-idle.gif return Idle / 380",
+      "pass": true
+    },
+    {
+      "check": "self-zero.gif return Idle / 20",
+      "pass": true
+    },
+    {
+      "check": "self-zero.gif return Idle / 380",
+      "pass": true
+    },
+    {
+      "check": "zero-heal field unchanged at every visual sample",
+      "pass": true
+    },
+    {
+      "check": "other-recipient.gif recipient clear at expected time",
+      "pass": true
+    },
+    {
+      "check": "caster-ko.gif recipient clear at expected time",
+      "pass": true
+    },
+    {
+      "check": "other-recipient caster never owns mark",
+      "pass": true
+    },
+    {
+      "check": "end removes scene actors and VFX in scripted field",
+      "pass": true
+    },
+    {
+      "check": "Restart clears mark and returns clean Idle",
+      "pass": true
+    },
+    {
+      "check": "destroy removes scene actors and VFX in scripted field",
+      "pass": true
+    },
+    {
+      "check": "expiry clears mark and returns clean Idle",
+      "pass": true
+    },
+    {
+      "check": "scripted repeated destroy remains empty",
+      "pass": true
+    },
+    {
+      "check": "recipient-ko.gif removes correct mock actor and its mark",
+      "pass": true
+    },
+    {
+      "check": "caster-ko.gif removes correct mock actor and its mark",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/REVIEW.md",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/T0-strokes.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/T0-style.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/T1-strokes.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/T1-style.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/T2-strokes.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/T2-style.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/T3-strokes.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/T3-style.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/manifest.json",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/originals/paired-fish.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/paired-fish-display.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/paired-fish-padded.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/prepare_preview.py",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/prompt.txt",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/recipient-placement-review.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/passive/style-v2/tier-style-review.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/candidates/chiru/awakening/composite-review-v1/approved-idle-return-cell.png",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/verification/P3_PASSIVE_PREFLIGHT/candidate-recovery.json",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/verification/P3_PASSIVE_PREFLIGHT/runtime-readonly.json",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/verification/P3_PASSIVE_PREFLIGHT/style-verification.json",
+      "pass": true
+    },
+    {
+      "check": "immutable docs/art/approved/chiru/passive/style-v2/acceptance.json",
+      "pass": true
+    },
+    {
+      "check": "product source unchanged",
+      "pass": true
+    }
+  ],
+  "notClaimed": [
+    "Actual healing, cooldown, controls, target selection, lifecycle cleanup or deployment.",
+    "Player GIF acceptance or phone viewport readability."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "cliPush": {
+    "exitCode": 128,
+    "stderr": "fatal: could not read Username for 'https://github.com': No such device or address"
+  },
+  "fallback": "connected GitHub API create_blob -> create_tree -> create_commit -> expected_sha update_ref",
+  "verification": "each created blob must equal local git hash-object; final recursive tree must be complete, not truncated and equal local tree",
+  "preArtRemote": "cfa700133fb19f0f2a7ef8d291cbe509c35472c5"
+}
