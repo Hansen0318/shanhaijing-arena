@@ -1,3 +1,9 @@
+## 2026-10-24 — 潤澤動作／三類獨立VFX／13 GIF PLAYER APPROVED；新Work接Runtime／部署
+
+玩家：「我確認ok，妳確認是否有紀錄，我要開新的work部署，提供work的prompts，讓她無縫接軌」。明確核准已呈交a9fc973418c68e1e808d81d998e529cb81e13b6e之潤澤動作／獨立VFX／13GIF；精確hash收據docs/art/approved/chiru/awakening/composite-review-v1/acceptance.json。GIF Gate CLOSED，直接授權新Work進Runtime、必要真驗證、正常CI/Pages部署供玩家測試。原manifest/REVIEW的PENDING僅歷史；不重畫、不重審F3或GIF、原數值表。全部核准原圖/衍生/舊收據bytes不變。
+
+唯一下一工作：依核准spec及既有回瀾共用能力補generic team opt-in600ms真治療/結算時T3保護與動作/三類VFX Runtime，必要驗證後正常Pages並核對公開版本；入口docs/handoffs/P3_CHIRU_AWAKENING_NEXT_WORK.md。玩家GIF核准不是Runtime玩家驗收；尚未遊戲整合或部署，不開始Passive、不建立Runtime acceptance。P1/P2與Basic/Heavy/Special遊戲核准保持。原分支PR#1 open/unmerged，原生單人、不委派/新branch/worktree/TD/main merge/重置存檔；其他全局硬規則保持。本次純收據文件[skip ci]，不重跑相同來源suite/Build/Browser/Pages。下方待GIF審核與禁止Runtime/部署由本節及收據覆蓋。
+
 ## 2026-10-24 — Awakening 潤澤 F3 v2 PLAYER APPROVED；新Work直接接其餘動作／獨立VFX／GIF
 
 玩家：「我核准，紀錄，我要給新的work往下進行開發，妳提供prompts，要他無縫接軌直接往下開發」。明確核准已呈交checkpoint351cbe303f94a6a6a61611281be0cfdf9a2f2a81的潤澤雙臂高V F3 v2；精確收據 docs/art/approved/chiru/awakening/f3-v2/acceptance.json。候選SHA256 7f23b33b22196ef59e0e996b4a901db5134280a0731f17f17d0e9ab511d3d340，原圖SHA256 a822aa2e918472ade44d1432ff71f1d4d493df22c28a1455fd123ea0d47c561a。F3 Gate CLOSED，原圖/padding/manifest/prompt/QA/hash與舊損壞batch均原封保留；舊PENDING僅呈交歷史，不重畫、不重審F3或原數值表。

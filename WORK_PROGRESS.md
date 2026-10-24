@@ -1,3 +1,9 @@
+## 2026-10-24 — 潤澤動作／三類獨立VFX／13 GIF PLAYER APPROVED；新Work接Runtime／部署
+
+玩家：「我確認ok，妳確認是否有紀錄，我要開新的work部署，提供work的prompts，讓她無縫接軌」。明確核准已呈交a9fc973418c68e1e808d81d998e529cb81e13b6e之潤澤動作／獨立VFX／13GIF；精確hash收據docs/art/approved/chiru/awakening/composite-review-v1/acceptance.json。GIF Gate CLOSED，直接授權新Work進Runtime、必要真驗證、正常CI/Pages部署供玩家測試。原manifest/REVIEW的PENDING僅歷史；不重畫、不重審F3或GIF、原數值表。全部核准原圖/衍生/舊收據bytes不變。
+
+唯一下一工作：依核准spec及既有回瀾共用能力補generic team opt-in600ms真治療/結算時T3保護與動作/三類VFX Runtime，必要驗證後正常Pages並核對公開版本；入口docs/handoffs/P3_CHIRU_AWAKENING_NEXT_WORK.md。玩家GIF核准不是Runtime玩家驗收；尚未遊戲整合或部署，不開始Passive、不建立Runtime acceptance。P1/P2與Basic/Heavy/Special遊戲核准保持。原分支PR#1 open/unmerged，原生單人、不委派/新branch/worktree/TD/main merge/重置存檔；其他全局硬規則保持。本次純收據文件[skip ci]，不重跑相同來源suite/Build/Browser/Pages。下方待GIF審核與禁止Runtime/部署由本節及收據覆蓋。
+
 ## 2026-10-24 — 新 Work 恢復未推送潤澤審核包；GIF 玩家審核 NEXT
 
 fetch 確認遠端4807dc08d40aa978565ef3379ebf307875f4b4f1與PR#1 open/unmerged。找到本機7fb361a（含d83ebb8、93ba99f）完整動作／三類獨立VFX／13 GIF，合併遠端唯一新增ACTIVE_CHECKPOINT，不重生素材。重新嚴格解碼44圖／472幀全部成功，67 checksums與245 protected hashes全部一致；本次是恢復完整性查核，未重跑已完成產品suite/Build/Browser/Pages。Git HTTPS push無認證，改用已連線GitHub API逐blob SHA核對後保存原分支，確切遠端checkpoint以包含本節之commit為準。
