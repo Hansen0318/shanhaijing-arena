@@ -9,3 +9,4 @@ test('Collection identifies implemented P1/P2/P3 and all still-unimplemented ind
 });
 
 test('Collection describes real defense Tier growth, trigger, duration and MAX honestly',()=>{const p=characterDetail(rosterCatalog.P2).abilities.find(a=>a.category==='passive');for(const text of ['20%','30%','40%','50%','4 秒','8 秒','最高值'])assert.ok(p.description.includes(text),text);});
+test('P3 Collection distinguishes automatic 游息 from T2 清流 while retaining active percentages',()=>{const d=characterDetail(rosterCatalog.P3);assert.match(d.abilities.find(a=>a.category==='passive').description,/8%／12%／16%／20%/);for(const category of ['special','awakening'])assert.match(d.abilities.find(a=>a.category===category).description,/清流/);});
