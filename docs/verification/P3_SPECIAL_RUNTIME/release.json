@@ -1,0 +1,79 @@
+{
+  "releaseCommit": "de1b442414e09307dfc36c509bb533f0059f055d",
+  "releaseTree": "1d5b6952cae815ecb966e0645274410316946e81",
+  "pagesRun": 40066641696,
+  "buildJob": 120791187136,
+  "deployJob": 120792434168,
+  "status": "ENGINEERING / NORMAL CI / PAGES / PUBLIC PASS; PLAYER RUNTIME ACCEPTANCE PENDING",
+  "tests": {
+    "total": 1166,
+    "passed": 1166,
+    "failed": 0
+  },
+  "p1p2Compatibility": {
+    "runs": [
+      {
+        "run": 40066299488,
+        "artifacts": [
+          {
+            "id": 12549134519,
+            "name": "p1-passive-browser-evidence",
+            "size_in_bytes": 11248028,
+            "url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12549134519",
+            "archive_download_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12549134519/zip",
+            "expired": false,
+            "created_at": "2026-10-24T05:30:46Z",
+            "expires_at": "2027-01-22T05:27:06Z",
+            "updated_at": "2026-10-24T05:30:46Z",
+            "digest": "sha256:242232a5a407b29aac38fc3217eb93ceb2bed66f047cd592d9ef9bc1b91b3c11",
+            "workflow_run": {
+              "id": 40066299488,
+              "repository_id": 1390686350,
+              "head_repository_id": 1390686350,
+              "head_branch": "feat/m0-combat-core-20260927",
+              "head_sha": "536db53a32744c827c3c00e341bf7f1f4e2294cb"
+            }
+          }
+        ]
+      },
+      {
+        "run": 40066299263,
+        "artifacts": [
+          {
+            "id": 12549213785,
+            "name": "p2-awakening-browser-evidence",
+            "size_in_bytes": 1691704,
+            "url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12549213785",
+            "archive_download_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12549213785/zip",
+            "expired": false,
+            "created_at": "2026-10-24T05:28:35Z",
+            "expires_at": "2027-01-22T05:27:06Z",
+            "updated_at": "2026-10-24T05:28:35Z",
+            "digest": "sha256:501821a2ca05ffaa5e03478daae62da6d7a39108a84ced942c60f83d69e52ea9",
+            "workflow_run": {
+              "id": 40066299263,
+              "repository_id": 1390686350,
+              "head_repository_id": 1390686350,
+              "head_branch": "feat/m0-combat-core-20260927",
+              "head_sha": "536db53a32744c827c3c00e341bf7f1f4e2294cb"
+            }
+          }
+        ]
+      }
+    ],
+    "source": "536db53a32744c827c3c00e341bf7f1f4e2294cb",
+    "status": "SUCCESS"
+  },
+  "nativeSpecialCases": 32,
+  "builtSpecialCases": 4,
+  "nativeBasicCompatibility": 32,
+  "builtBasicCompatibility": 4,
+  "nativeHeavyCompatibility": 32,
+  "builtHeavyCompatibility": 4,
+  "sourceGuardFiles": 626,
+  "ciLocalPublicFiles": 160,
+  "freshPublicFiles": 6,
+  "reusedExactPublicFiles": 154,
+  "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?special=de1b442",
+  "labUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&special=de1b442"
+}

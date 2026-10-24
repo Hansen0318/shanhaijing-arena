@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "testedCommit": "536db53a32744c827c3c00e341bf7f1f4e2294cb",
+  "releaseCommit": "de1b442414e09307dfc36c509bb533f0059f055d",
+  "scope": "Entire src/public/workflows and relevant compatibility scripts unchanged; only Special Browser fixture and docs changed.",
+  "gitDiffPaths": [
+    "src",
+    "public",
+    ".github/workflows",
+    "scripts/checkBotuoAwakeningBrowser.mjs",
+    "scripts/checkBotuoAwakeningScale.mjs",
+    "scripts/checkLushuPassiveV2Browser.mjs",
+    "scripts/checkBotuoPassiveBrowser.mjs",
+    "scripts/checkPlayerCollectionCopy.mjs"
+  ],
+  "unchangedInputSha256": {
+    "src/combat/battleSession.js": "6bf831f0e1e6c074698bee1684e04725ec84cc5a8f6a203ded498fca73490522",
+    "src/combat/tierEffectRuntime.js": "116625cdc02a94cd1120c4a000e3dea3beb03fd0ac2f365371ba7c5414b7b0fc",
+    "src/combat/passiveRuntime.js": "11eace57a043804750163c8e9a827c3be059fc02ea6951e5cead69d1973ea8ad",
+    "src/combat/statuses.js": "5de68368df8246c80f172309c98f94583f443d2e94f69b1aaafddfc1b889585f",
+    "src/runtime/assetPresenter.js": "d0faa54ce528f3beb7891f06f9300e4949538a02bf3a250e90521b9808600cba",
+    "src/runtime/passivePresenter.js": "33a29e79cc51389f32c4923689117ddd6d3c68ca7801cc09daaedb71095577de",
+    "scripts/checkBotuoAwakeningBrowser.mjs": "6cbe5a8fe8bc5611d719e575a7e5f7f14d570b3f5715ce4d8d4488ae6bda569f",
+    "scripts/checkBotuoAwakeningScale.mjs": "2dd6c4b1d849d1028edd457669c74c156ea6edc4c9a8a570c14b070d47574f98",
+    "scripts/checkLushuPassiveV2Browser.mjs": "0aa41376aad389ae6b1a9eff07357174a9385131b92ec4cd5799d221ea0ea0b5",
+    "scripts/checkBotuoPassiveBrowser.mjs": "3221a449b18448502a8f70af69f77cbd64d7f9e014a0a235b9b259fee2f66b0f",
+    "scripts/checkPlayerCollectionCopy.mjs": "297abb6217515fb4cb1e5cefb687dee83f780921d43df4f5f18ccd7f3aab576a"
+  }
+}

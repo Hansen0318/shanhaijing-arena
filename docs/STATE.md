@@ -1,3 +1,11 @@
+## 2026-10-24 — Special 回瀾正常部署／公開160核對PASS；唯一下一Gate＝玩家遊戲驗收
+
+Release de1b442414e09307dfc36c509bb533f0059f055d；正常Pages40066641696 build120791187136/deploy120792434168 SUCCESS。1166/1166、Build/102素材guard、626新來源guard PASS；Special真native32/built4、Basic與Heavy清晰版各native32/built4 PASS。P1/P2相容40066299488與獨立P240066299263 SUCCESS，相關產品來源完全相同沿用（有精確reuse proof）。CI/local160逐bytes一致，公開160/160（6fresh＋154相同path/bytes/hash沿用）PASS；發布及相容artifacts SHA256/ZIP CRC通過。完整證據 docs/verification/P3_SPECIAL_RUNTIME/REPORT.md。
+
+已核准姿勢／獨立水環與泉花接入遊戲；兩模式320ms重選合法最低HP比例隊員（含自己），當前maxHp×25/30/35/40%，CD／modifier／AI契約保持；真amount>0才有受益者泉花，滿血手控可耗CD。左右／normal-reduced／走位／760ms回Idle／Pause／取消／KO／Restart／destroy與手機橫向Collection已驗證。未改全部approved masters/收據/P1/P2/Basic/Heavy，未開始Awakening/Passive。
+
+**唯一下一步：呈交 https://hansen0318.github.io/shanhaijing-arena/?special=de1b442 （隔離Lab加battleLab=1），玩家橫向開啟→HEAL TEST→START→選赤鱬→S施放回瀾。** Special遊戲玩家驗收PENDING，沒有Runtime acceptance，不把工程PASS當PLAYER VERIFIED。原分支PR#1open/unmerged，單人、不委派/新branch/worktree/TD/main merge、不重置存檔；所有保護與逐招流程保持。此為發布證據/進度[skip ci]；產品來源未改，不重跑已通過驗證/部署。
+
 ## 2026-10-24 — Special Runtime工程完成；正常CI真Browser／Pages驗證ACTIVE
 
 回瀾已沿核准收據做共用資料opt-in：兩模式320ms重選範圍20內最低HP比例存活同隊（含自己），穩定instanceId；目標當前maxHp×25/30/35/40%，不用舊healing scale，既有條件modifier加算上限15%，CD與AI契約保持。真正amount>0事件才附著recipient泉花；caster水環獨立，200/120/200/240ms及760ms回Idle，左右/共同尺度/懸浮下緣保持。全部approved像素與收據未改，Awakening/Passive未開始。

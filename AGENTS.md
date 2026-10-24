@@ -1,3 +1,11 @@
+## 2026-10-24 — Special 回瀾正常部署／公開160核對PASS；唯一下一Gate＝玩家遊戲驗收
+
+Release de1b442414e09307dfc36c509bb533f0059f055d；正常Pages40066641696 build120791187136/deploy120792434168 SUCCESS。1166/1166、Build/102素材guard、626新來源guard PASS；Special真native32/built4、Basic與Heavy清晰版各native32/built4 PASS。P1/P2相容40066299488與獨立P240066299263 SUCCESS，相關產品來源完全相同沿用（有精確reuse proof）。CI/local160逐bytes一致，公開160/160（6fresh＋154相同path/bytes/hash沿用）PASS；發布及相容artifacts SHA256/ZIP CRC通過。完整證據 docs/verification/P3_SPECIAL_RUNTIME/REPORT.md。
+
+已核准姿勢／獨立水環與泉花接入遊戲；兩模式320ms重選合法最低HP比例隊員（含自己），當前maxHp×25/30/35/40%，CD／modifier／AI契約保持；真amount>0才有受益者泉花，滿血手控可耗CD。左右／normal-reduced／走位／760ms回Idle／Pause／取消／KO／Restart／destroy與手機橫向Collection已驗證。未改全部approved masters/收據/P1/P2/Basic/Heavy，未開始Awakening/Passive。
+
+**唯一下一步：呈交 https://hansen0318.github.io/shanhaijing-arena/?special=de1b442 （隔離Lab加battleLab=1），玩家橫向開啟→HEAL TEST→START→選赤鱬→S施放回瀾。** Special遊戲玩家驗收PENDING，沒有Runtime acceptance，不把工程PASS當PLAYER VERIFIED。原分支PR#1open/unmerged，單人、不委派/新branch/worktree/TD/main merge、不重置存檔；所有保護與逐招流程保持。此為發布證據/進度[skip ci]；產品來源未改，不重跑已通過驗證/部署。
+
 ## 2026-10-24 — Special 回瀾 GIF PLAYER APPROVED；新Work接Runtime／驗證／部署
 
 玩家：「我確定approved，妳紀錄，我要給新的work部署讓我測試，妳提供prompts，要他無縫接軌至部署」。明確核准呈交12bb3e839a0fdba793c390124cc99315a1f9288a的Special動作／兩類獨立VFX／11GIF；精確hash收據 docs/art/approved/chiru/special/composite-review-v1/acceptance.json。GIF Gate CLOSED，直接授權新Work完成Special Runtime、必要真驗證、正常CI/Pages部署，供玩家測試。未把GIF核准當成遊戲PLAYER VERIFIED；P3整角未完成，不開始Awakening/Passive。
