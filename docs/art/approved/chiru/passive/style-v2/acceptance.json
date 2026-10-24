@@ -1,0 +1,39 @@
+{
+  "status": "PASSIVE STYLE PLAYER APPROVED / GIF NEXT",
+  "recordedDate": "2026-10-24",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "我核准OK，確認是否有紀錄，我要開新的 work接續開發，提供prompts",
+  "presentedCheckpoint": "aeff9d6c075b150814914bc55a8fefa33f77e72a",
+  "scope": "Explicit approval of presented paired-fish recipient style, same-scale T0-T3 stroke groups and static beneficiary placement. Authorizes successor Work to create remaining animation/GIF review using these exact assets.",
+  "source": "docs/art/candidates/chiru/passive/style-v2/originals/paired-fish.png",
+  "sourceSha256": "c674da1b061fe8c978c7721fb9b0a8746fdbcfc62a796709d9bc8bca9be41892",
+  "notClaimed": [
+    "Unseen animation/GIF approval",
+    "Runtime integration or engineering PASS",
+    "Pages deployment or player gameplay acceptance",
+    "P3 whole-character completion"
+  ],
+  "evidenceSha256": {
+    "docs/art/candidates/chiru/passive/style-v2/REVIEW.md": "b0495bb7fdaef2f5dde58a5e4d8d65b6a240ae8f180ceff2e51b4f0991822f31",
+    "docs/art/candidates/chiru/passive/style-v2/T0-strokes.png": "6e5303d0a6ae0da3b48ffab7bbd349aad49770175905a005d53c8bf2a675ddd6",
+    "docs/art/candidates/chiru/passive/style-v2/T0-style.png": "878b6400cdf2954969299e49480c16fdc0326a83d0978a1e61c91ad9130039d5",
+    "docs/art/candidates/chiru/passive/style-v2/T1-strokes.png": "265f300653f7532eb7fbe08ca512273315eb3ab2aeac564ea055d4b6942d5776",
+    "docs/art/candidates/chiru/passive/style-v2/T1-style.png": "73aa45f913a155a8d3616a45864c28e74fe4f4f7213c29294a3055ebc75f39b0",
+    "docs/art/candidates/chiru/passive/style-v2/T2-strokes.png": "55a74d5a5aadc5fe158039884dcc777cecf236d0680493a6d401b3cf28a18aac",
+    "docs/art/candidates/chiru/passive/style-v2/T2-style.png": "b3f14c57239bac1cb7927926c32cdc408df762261fed516af26665069a630194",
+    "docs/art/candidates/chiru/passive/style-v2/T3-strokes.png": "87161c62c3497b30c0ff8e7abd17e7d579dcfa99bed4ff48f86c776bfbf00aa2",
+    "docs/art/candidates/chiru/passive/style-v2/T3-style.png": "87fe93096fe5b5ecb2ceaee5f2ee66a18f998d717b7f4ed9ccdee47ebe3d1ddf",
+    "docs/art/candidates/chiru/passive/style-v2/manifest.json": "8ecdac9eab4dabc063356e7971d84a9e2ea63b4c412fd960da60f73ebccffb4f",
+    "docs/art/candidates/chiru/passive/style-v2/originals/paired-fish.png": "c674da1b061fe8c978c7721fb9b0a8746fdbcfc62a796709d9bc8bca9be41892",
+    "docs/art/candidates/chiru/passive/style-v2/paired-fish-display.png": "d849cf74b81412a35774d8480f27b96dfe062f804308c13b16139de5091e9d43",
+    "docs/art/candidates/chiru/passive/style-v2/paired-fish-padded.png": "06ea55291442af0251b4d5c16f75e3b39c642baf7d89f3095fce3e4012ba1c75",
+    "docs/art/candidates/chiru/passive/style-v2/prepare_preview.py": "2bb3e58c5d632f425b1c3250fc2588da94d6f964baa66d2af38a5fefc29a4245",
+    "docs/art/candidates/chiru/passive/style-v2/prompt.txt": "0beae3200053ab4f25493ab8ba2caf02b19ef8812010af2865e34c672d19dc80",
+    "docs/art/candidates/chiru/passive/style-v2/recipient-placement-review.png": "69127f40188d53205f8d3752e5dfc3af41b3f4473439c0f0263701412395209e",
+    "docs/art/candidates/chiru/passive/style-v2/tier-style-review.png": "a52c4903cba06acb9d6f69605ce4468566a52f543293bfbdbd385782b30d2981",
+    "docs/art/candidates/chiru/awakening/composite-review-v1/approved-idle-return-cell.png": "e0e00ad64ca81187b2e9e4115d02ca55cafd440a481b38cdc7c64044f80ec314",
+    "docs/verification/P3_PASSIVE_PREFLIGHT/candidate-recovery.json": "2d07a10eb8d9a9c189edebb85b272a55c2eaf44ecee595f981fcf8e34c213103",
+    "docs/verification/P3_PASSIVE_PREFLIGHT/runtime-readonly.json": "f3f06eca091d07a7e1186d62b84b922f3b92bff382f95793fe8b37f9e31079ea",
+    "docs/verification/P3_PASSIVE_PREFLIGHT/style-verification.json": "391ffe0c30c59ef6c5e2554faea77734bcfbe6b504c2b5626e09fa621eefbb03"
+  }
+}
