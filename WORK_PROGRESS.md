@@ -1,3 +1,9 @@
+## 2026-10-25 — 游息修正版11GIF PLAYER APPROVED；新Work接Runtime／正式VFX退示意／部署
+
+玩家：「我核准，我要給新的work做，妳確認有紀錄，提供prompts，讓她接手修改被動的vfx和已開發多於的vfx到部署」。精確收據 docs/art/approved/chiru/passive/readability-review-v1/acceptance.json，綁定已呈交e750c6e的11GIF、同尺度混戰對照及SHA256SUMS。修正版視覺Gate CLOSED；新Work直接做游息Runtime亮邊＋亮白雙魚，以及已開發招式同招同階段正式VFX成功解析時取代多餘示意、缺來源fallback，再做必要真驗證與正常CI/Pages/public指紋。方向／原STYLE／原9GIF與本次新11GIF不重審、不重生。
+
+這次僅記錄核准與交接，未改產品/Runtime或部署。舊release b414e9f、1221測試、原native/built與168公開檔只對未改來源有效，不可冒稱新修正PASS。P1/P2 COMPLETE與P3四主動玩家核准保持；P3仍未COMPLETE，沒有新Runtime玩家acceptance。核准後部署已授權，不再問部署；提供實際遊戲網址與最小測試後停待玩家遊戲核准。詳 docs/handoffs/P3_CHIRU_PASSIVE_NEXT_WORK.md；同分支PR#1 open/unmerged、單人、不委派、不新branch/worktree、不動TD/main/存檔；保存checkpoint。
+
 ## 2026-10-25 — 游息薄荷綠／亮白修正版11GIF READY；唯一下一Gate＝玩家修正版視覺核准
 
 已完成正式/示意來源唯讀盤點：20招中P1/P2/P3共12招有正式action，引用PNG均存在；P4/P5無正式來源保留fallback。TelegraphPresenter仍無正式來源替代判斷，須在修正版視覺核准後讓正式呈現完整承接真預警再退對應幾何；固定褐色橢圓是場地輔助，正式狀態盾與P1/P2程式化被動不可誤刪。來源及55檔hash見docs/verification/P3_PASSIVE_RUNTIME/readability-revision/SOURCE_AUDIT.md與source-audit.json。

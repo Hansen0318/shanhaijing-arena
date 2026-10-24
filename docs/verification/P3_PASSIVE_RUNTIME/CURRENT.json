@@ -1,12 +1,12 @@
 {
-  "status": "REVISED VISUAL/GIF READY / PLAYER REVIEW PENDING; RUNTIME REVISION NOT INTEGRATED",
+  "status": "REVISED VISUAL/GIF PLAYER APPROVED; RUNTIME AND FORMAL VFX REPLACEMENT NEXT",
   "sourceCommit": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
   "normalPagesRun": 40105519923,
   "p1Run": 40105520061,
   "p2ExactSourceRun": 40104953768,
   "tests": 1221,
   "build": "PASS / 110 assets / 6391136 encoded bytes",
-  "next": "Present readability-review-v1/REVIEW.md and wait for explicit revised visual/GIF approval; only then implement current-frame beneficiary rim, white fish and shared loaded-source formal/schematic replacement, impacted true verification and authorized normal Pages/public fingerprint. Then await gameplay acceptance.",
+  "next": "Successor implements revised beneficiary VFX and generic formal-versus-schematic phase replacement, true impacted verification, normal CI/Pages/public fingerprint; then wait for player gameplay acceptance.",
   "playerRuntimeAcceptance": false,
   "p3Complete": false,
   "buildJob": 120906364692,
@@ -29,5 +29,6 @@
     "decodedFrames": 119,
     "runtimeEvidence": false,
     "deployed": false
-  }
+  },
+  "revisionApproval": "docs/art/approved/chiru/passive/readability-review-v1/acceptance.json"
 }

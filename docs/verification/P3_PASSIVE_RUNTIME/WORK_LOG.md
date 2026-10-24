@@ -57,3 +57,10 @@ Public168/168 fresh HTTP PASS, matching exact current CI/local bytes and SHA256.
 
 本Gate未改產品/既有approved來源、未Build/Browser/CI/Pages；舊證據僅按精確未改來源沿用，見readability-revision/reuse-proof.json，不拿舊1221/32+4/168宣稱新行為PASS。P3未COMPLETE，未建立Runtime玩家acceptance。唯一下一步：呈交並停待玩家核准本次修正版視覺/GIF；核准後才最小Runtime＋正式VFX退示意、必要真驗證與已授權正常部署，再待玩家遊戲核准。
 
+
+## 2026-10-25 — 游息修正版11GIF PLAYER APPROVED；新Work接Runtime／正式VFX退示意／部署
+
+玩家：「我核准，我要給新的work做，妳確認有紀錄，提供prompts，讓她接手修改被動的vfx和已開發多於的vfx到部署」。精確收據 docs/art/approved/chiru/passive/readability-review-v1/acceptance.json，綁定已呈交e750c6e的11GIF、同尺度混戰對照及SHA256SUMS。修正版視覺Gate CLOSED；新Work直接做游息Runtime亮邊＋亮白雙魚，以及已開發招式同招同階段正式VFX成功解析時取代多餘示意、缺來源fallback，再做必要真驗證與正常CI/Pages/public指紋。方向／原STYLE／原9GIF與本次新11GIF不重審、不重生。
+
+這次僅記錄核准與交接，未改產品/Runtime或部署。舊release b414e9f、1221測試、原native/built與168公開檔只對未改來源有效，不可冒稱新修正PASS。P1/P2 COMPLETE與P3四主動玩家核准保持；P3仍未COMPLETE，沒有新Runtime玩家acceptance。核准後部署已授權，不再問部署；提供實際遊戲網址與最小測試後停待玩家遊戲核准。詳 docs/handoffs/P3_CHIRU_PASSIVE_NEXT_WORK.md；同分支PR#1 open/unmerged、單人、不委派、不新branch/worktree、不動TD/main/存檔；保存checkpoint。
+
