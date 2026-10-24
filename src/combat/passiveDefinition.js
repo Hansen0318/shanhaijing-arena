@@ -15,7 +15,7 @@ export function createPassiveDefinition(input){
   const v=input.presentation;
   if(v?.style!=='paired-fish'||!Array.isArray(v.assetKeys)||v.assetKeys.length!==4||v.assetKeys.some(k=>typeof k!=='string'||!k.trim()))throw new TypeError('Invalid recipient presentation');
   positive(v.duration,'visual duration');if(v.duration>1||!Array.isArray(v.size)||v.size.length!==2||v.size.some(n=>!Number.isFinite(n)||n<=0)||!Array.isArray(v.offset)||v.offset.length!==2||!v.offset.every(Number.isFinite))throw new TypeError('Invalid visual geometry');
-  return freezeEffectData({...input,trigger:{...trigger},effect:{kind:'instant-heal',magnitude:effect.magnitude},presentation:{...v,label:v.label??input.name}});
+  return freezeEffectData(structuredClone({...input,trigger:{...trigger},effect:{kind:'instant-heal',magnitude:effect.magnitude},presentation:{...v,label:v.label??input.name}}));
  }
  const spatial=trigger?.kind==='spatial-pressure';
  if(!spatial&&trigger?.kind!=='ordinary-distance')throw new TypeError('Unsupported passive trigger');
