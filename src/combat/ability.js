@@ -24,7 +24,7 @@ export function createAbilityDefinition(input) {
   if (!ACTIVE_CATEGORIES.has(input?.category)) throw new TypeError('Unknown ability category');
   const cooldown = nonnegativeFinite(input.cooldown, 'cooldown');
   const windupMs=input.windupMs??0;
-  if(!Number.isInteger(windupMs)||windupMs<0||windupMs>1000||windupMs>0&&(!['basic','heavy','special'].includes(input.category)||input.telegraph!=null&&!input.resolveGeometry?.travelMs))throw new RangeError('Invalid action windup');
+  if(!Number.isInteger(windupMs)||windupMs<0||windupMs>1000||windupMs>0&&((!['basic','heavy','special'].includes(input.category)&&!(input.category==='awakening'&&input.resolvePolicy==='reselect-allies'))||input.telegraph!=null&&!input.resolveGeometry?.travelMs))throw new RangeError('Invalid action windup');
   const unlockTier = nonnegativeFinite(input.unlockTier ?? 0, 'unlockTier');
   const canCrit = input.canCrit === undefined ? false : input.canCrit;
   if (typeof canCrit !== 'boolean') throw new TypeError('canCrit must be boolean');
@@ -48,7 +48,7 @@ export function createAbilityDefinition(input) {
   }
 
   const heal=input.effect;
-  if(input.resolvePolicy!==undefined&&(input.resolvePolicy!=='reselect-allies'||input.targetingRule!=='lowest_hp_ally'||heal?.kind!=='heal'||windupMs<=0))throw new TypeError('Invalid utility resolution policy');
+  if(input.resolvePolicy!==undefined&&(input.resolvePolicy!=='reselect-allies'||!['lowest_hp_ally','team_ally'].includes(input.targetingRule)||heal?.kind!=='heal'||windupMs<=0))throw new TypeError('Invalid utility resolution policy');
   if(heal?.healBasis!==undefined&&heal.healBasis!=='current-max-hp')throw new TypeError('Invalid heal basis');
   if(heal?.tierMaxHpFractions!==undefined&&(heal.kind!=='heal'||heal.healBasis!=='current-max-hp'||Object.keys(heal.tierMaxHpFractions).length!==4||['T0','T1','T2','T3'].some(t=>!Number.isFinite(heal.tierMaxHpFractions[t])||heal.tierMaxHpFractions[t]<=0||heal.tierMaxHpFractions[t]>1)))throw new TypeError('Invalid Tier heal fractions');
   const stagedAction=createStagedAction(input.stagedAction);

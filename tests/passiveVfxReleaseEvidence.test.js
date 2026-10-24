@@ -8,7 +8,7 @@ import {verifyPassiveVfxRelease} from '../scripts/verifyPassiveVfxRelease.mjs';
 test('historical accepted VFX release guard rejects changed sources and forged clean-copy or true-status VFX evidence',()=>{
  const root=mkdtempSync(path.join(tmpdir(),'vfx-release-')),base='docs/verification/PASSIVE_VFX_COPY_REVISION/',receiptPath=base+'release-evidence.json';
  const receipt=JSON.parse(readFileSync(receiptPath)),put=(p,b)=>{mkdirSync(path.dirname(path.join(root,p)),{recursive:true});writeFileSync(path.join(root,p),b);};
- const historical={...JSON.parse(readFileSync('docs/verification/P3_SPECIAL_RUNTIME/previous-passive-test-sources.json')),...JSON.parse(readFileSync('docs/verification/P3_HEAVY_RUNTIME/previous-release-sources.json')),...JSON.parse(readFileSync('docs/verification/P3_BASIC_RUNTIME/previous-passive-release-sources.json'))};
+ const historical={...JSON.parse(readFileSync('docs/verification/P3_AWAKENING_RUNTIME/previous-passive-test-sources.json')),...JSON.parse(readFileSync('docs/verification/P3_SPECIAL_RUNTIME/previous-passive-test-sources.json')),...JSON.parse(readFileSync('docs/verification/P3_HEAVY_RUNTIME/previous-release-sources.json')),...JSON.parse(readFileSync('docs/verification/P3_BASIC_RUNTIME/previous-passive-release-sources.json'))};
  const refresh=()=>put(receiptPath,JSON.stringify(receipt));
  try{
   assert.throws(()=>verifyPassiveVfxRelease(root));

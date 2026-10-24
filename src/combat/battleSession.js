@@ -203,6 +203,7 @@ export class BattleSession {
       };
       if(r.category==='basic')finishAbility({caster:actor,slot:actor.abilityState.basic,definition:r.definition,applyEffect});
       else applyEffect();
+      this.effects.trigger('resolve',actor,target,r.category,{definition:r.definition,source:r.source});
       this.actionEvent(r,'resolve',hit);
     }
   }

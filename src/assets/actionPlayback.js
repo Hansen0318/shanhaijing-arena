@@ -53,8 +53,8 @@ export class ActionPlayback{
   if(ms+1e-7>=total){this.remove(ownerId);return null;}
   let end=0;const frameIndex=d.frameDurationsMs.findIndex(n=>(end+=n)>ms+1e-7);
   let w=d.blade.size[0],h=d.blade.size[1];
-  if(!reducedMotion){if(ms<200){w=275-65*ms/200;h=75+25*ms/200;}else if(ms<320){w=210+40*(ms-200)/120;h=100+(d.blade.size[1]-100)*(ms-200)/120;}}
-  return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,bladeOpacity:Math.min(1,(total-ms)/80),contactOpacity:0,bladeGeometry:{size:[w,h],offset:[d.animation.origin[0]*d.coordinateSize[0]-w/2,d.animation.origin[1]*d.coordinateSize[1]-.875*h]},...(r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
+  if(d.blade.unfurlMs){const q=reducedMotion?1:Math.min(1,.32+.68*ms/d.blade.unfurlMs);w=d.blade.size[0]*(.72+.28*q);h=d.blade.size[1]*q;}else if(!reducedMotion){if(ms<200){w=275-65*ms/200;h=75+25*ms/200;}else if(ms<320){w=210+40*(ms-200)/120;h=100+(d.blade.size[1]-100)*(ms-200)/120;}}
+  return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,bladeOpacity:Math.min(1,(total-ms)/80),contactOpacity:0,bladeGeometry:{size:[w,h],offset:[d.animation.origin[0]*d.coordinateSize[0]-w/2,d.animation.origin[1]*d.coordinateSize[1]-(d.blade.unfurlMs?.88:.875)*h]},...(r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
  }
  sample(ownerId,now,reducedMotion=false){
   const r=this.active.get(ownerId);if(!r||!Number.isFinite(now))return null;

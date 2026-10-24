@@ -37,7 +37,7 @@ test('seeded tactics and simulation repeat while new sessions clear transient th
  assert.ok(a.tacticalEvaluations<=a.actors.length*25+6);
 });
 test('formal healer heals while retreating and ranged/backstep avoids tank/bruiser inheritance',()=>{
- const h=make('healer-retreat');h.step(.05);assert.ok(h.drainHealEvents().some(e=>e.actorId==='a3'));assert.ok(['retreat','recover/support','regroup'].includes(h.tacticalStates.get('a3').phase));
+ const h=make('healer-retreat');h.step(.65);assert.ok(h.drainHealEvents().some(e=>e.actorId==='a3'));assert.ok(['retreat','recover/support','regroup'].includes(h.tacticalStates.get('a3').phase));
  const r=make('ranged-kite');r.step(.05);assert.equal(r.tacticalStates.get('a2').phase,'kite');assert.notEqual(r.tacticalStates.get('a1').phase,'kite');assert.notEqual(r.tacticalStates.get('e1').phase,'kite');
 });
 test('four Lab scenarios naturally exercise tactics within bounded work and complete without perpetual retreat',()=>{

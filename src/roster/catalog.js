@@ -1,3 +1,4 @@
+import {chiruAwakeningAction} from '../assets/chiruAwakeningRuntime.js';
 import {chiruSpecialAction} from '../assets/chiruSpecialRuntime.js';
 import {chiruHeavyAction} from '../assets/chiruHeavyRuntime.js';
 import {chiruBasicAction} from '../assets/chiruBasicRuntime.js';
@@ -65,7 +66,7 @@ const presentation={
   })}),
  },
  P3:{
-  actionDescriptors:Object.freeze({basic:actionDescriptor(chiruBasicAction),heavy:actionDescriptor(chiruHeavyAction),special:actionDescriptor(chiruSpecialAction)}),
+  actionDescriptors:Object.freeze({basic:actionDescriptor(chiruBasicAction),heavy:actionDescriptor(chiruHeavyAction),special:actionDescriptor(chiruSpecialAction),awakening:actionDescriptor(chiruAwakeningAction)}),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'chiru.portrait',collectionArt:'chiru.identity',battleIdle:'chiru.battleIdle',battleMove:'chiru.battleMove',battleKo:'chiru.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'chiru.battleIdle',frames:[{x:0,y:0,width:160,height:160}],

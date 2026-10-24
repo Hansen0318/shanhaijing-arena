@@ -1,0 +1,19 @@
+import assert from 'node:assert/strict';
+export function validateChiruAwakeningBrowserReport(r,built=false){
+ assert.equal(r.status,'PASS');assert.equal(r.physicalPhone,false);assert.deepEqual(r.errors,[]);assert.equal(r.cases.length,built?4:32);assert.equal(new Set(r.cases.map(c=>[c.tier,c.tactical,c.reduced,c.sign].join(':'))).size,r.cases.length);
+ for(const c of r.cases){assert.equal(c.renderer,2);assert.equal(c.sourceAlpha,1);assert.equal(c.flowerAlpha,1);assert.equal(c.frame,'328.0.164.176');for(const k of ['noEarlyHeal','f2','amount','healAt','trueRecipients','protection','scale','mirror','pause','f4','idle','expired','protectionAfterIdle','protectionBeforeExpiry','protectionExpired','fullHealth','livingSettlement','recipientKo','movement','cancel','ko','end','restart'])assert.equal(c[k],true,k+' '+JSON.stringify(c));if(built)assert.equal(c.callbackUsed,true);}
+ assert.deepEqual(r.collection,{width:852,height:393,portraitGate:true,percentages:true,cooldowns:true});return true;
+}
+import {readFileSync,readdirSync,writeFileSync} from 'node:fs';import {createHash} from 'node:crypto';import path from 'node:path';import {fileURLToPath} from 'node:url';
+const BASE='docs/verification/P3_AWAKENING_RUNTIME/';
+export function verifyChiruAwakeningRelease(root=process.cwd(),{record=false}={}){
+ const read=p=>readFileSync(path.join(root,p)),json=p=>JSON.parse(read(p)),sha=b=>createHash('sha256').update(b).digest('hex'),walk=p=>readdirSync(path.join(root,p),{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(p+'/'+e.name):[p+'/'+e.name]);
+ const current=[...walk('src'),...walk('public'),...walk('scripts'),...walk('tests'),...walk('.github/workflows'),'package.json','package-lock.json','index.html','vite.config.js'];
+ const receipts=['docs/art/approved/chiru/awakening/composite-review-v1/acceptance.json','docs/art/approved/chiru/awakening/f3-v2/acceptance.json'];
+ for(const built of [false,true])validateChiruAwakeningBrowserReport(json(BASE+'browser/'+(built?'built-entry':'native')+'.json'),built);
+ for(const p of receipts)for(const [file,h]of Object.entries(json(p).evidenceSha256))assert.equal(sha(read(file)),h,file);
+ const packing=json(BASE+'packing.json');for(const [p,h]of Object.entries(packing.sourceSha256))assert.equal(sha(read(p)),h,p);for(const a of packing.assets)assert.equal(sha(read('public/'+a.path)),a.sha256,a.path);
+ let evidence;if(record){const tap=read('.git/chiru-tests.tap').toString(),n=k=>Number(tap.match(new RegExp('^# '+k+' (\\d+)','m'))?.[1]);assert.ok(n('tests')>=1192);assert.equal(n('tests'),n('pass'));assert.equal(n('fail'),0);const bound=[...current,...receipts,...receipts.flatMap(p=>Object.keys(json(p).evidenceSha256)),BASE+'packing.json',...walk(BASE+'browser')];evidence={status:'READY FOR NORMAL RELEASE',tests:{total:n('tests'),pass:n('pass'),fail:0},build:'PASS',sourceSha256:Object.fromEntries([...new Set(bound)].sort().map(p=>[p,sha(read(p))]))};writeFileSync(path.join(root,BASE+'release-evidence.json'),JSON.stringify(evidence,null,2)+'\n');}else evidence=json(BASE+'release-evidence.json');
+ assert.equal(evidence.status,'READY FOR NORMAL RELEASE');for(const p of current)assert.ok(evidence.sourceSha256[p],p);for(const [p,h]of Object.entries(evidence.sourceSha256))assert.equal(sha(read(p)),h,p);return {status:'PASS',files:Object.keys(evidence.sourceSha256).length,tests:evidence.tests};
+}
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){try{console.log(JSON.stringify(verifyChiruAwakeningRelease(process.cwd(),{record:process.argv.includes('--record')})));}catch(e){console.error(e);process.exitCode=1;}}

@@ -1,6 +1,10 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 import {specialRuntimePacking} from './specialRuntimePacking.js';
 const entries=[
+ {"key": "chiru.awakeningPoses", "type": "image", "path": "assets/chiru-awakening-runtime-v1/poses.png", "width": 656, "height": 176, "bytes": 147450, "fallback": "placeholder.battle"},
+ {"key": "chiru.awakeningCaster", "type": "image", "path": "assets/chiru-awakening-runtime-v1/caster.png", "width": 340, "height": 340, "bytes": 181548, "fallback": "placeholder.vfx"},
+ {"key": "chiru.awakeningRecipient", "type": "image", "path": "assets/chiru-awakening-runtime-v1/recipient.png", "width": 250, "height": 250, "bytes": 77829, "fallback": "placeholder.vfx"},
+ {"key": "chiru.awakeningProtection", "type": "image", "path": "assets/chiru-awakening-runtime-v1/protection.png", "width": 190, "height": 190, "bytes": 38976, "fallback": "placeholder.vfx"},
  {"key": "chiru.specialPoses", "type": "image", "path": "assets/chiru-special-runtime-v1/poses.png", "width": 896, "height": 194, "bytes": 132061, "fallback": "placeholder.battle"},
  {"key": "chiru.specialCaster", "type": "image", "path": "assets/chiru-special-runtime-v1/caster.png", "width": 250, "height": 274, "bytes": 91248, "fallback": "placeholder.vfx"},
  {"key": "chiru.specialRecipient", "type": "image", "path": "assets/chiru-special-runtime-v1/recipient.png", "width": 310, "height": 194, "bytes": 85462, "fallback": "placeholder.vfx"},

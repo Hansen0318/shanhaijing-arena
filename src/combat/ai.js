@@ -152,7 +152,7 @@ export function decideAIIntent({
     const context={allies,enemies,enemyTarget:null};
     const target=resolveAbilityTarget(actor,c.definition,context);
     const targets=resolveEffectTargets(actor,target,c.definition,context);
-    if(c.definition.effect.kind==='heal' && targets.filter(a=>a.hp/a.maxHp<=(profile?.allyHealHpThreshold??c.definition.ai.hpThreshold)).length<(c.definition.ai.minTargets??1))continue;
+    if(c.definition.effect.kind==='heal' && targets.filter(a=>a.hp/a.maxHp<=(c.definition.resolvePolicy==='reselect-allies'?c.definition.ai.hpThreshold:(profile?.allyHealHpThreshold??c.definition.ai.hpThreshold))).length<(c.definition.ai.minTargets??1))continue;
     if(c.definition.effect.kind==='mitigation' && !enemies.some(e=>canCharacterAct(e)&&distance(actor,e)<=c.definition.range))continue;
     if(canStartAbility({caster:actor,slot:c.slot,definition:c.definition,target})) {
       clearPreparation(preparationState);

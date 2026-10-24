@@ -1,3 +1,7 @@
+## 2026-10-24 — 潤澤 Runtime checkpoint；正常 CI／真 Browser／Pages NEXT
+
+已恢復原工程與核准紀錄；以0e4dd71為基線完成generic600ms全隊治療、結算時T3保護、核准F1–F4／三類獨立VFX接入及Collection玩法文案。1197/1197與Build/106素材guard PASS；新增貼圖完整無損保留核准像素。尚未真Browser PASS／部署／玩家遊戲核准。本機缺Chromium且下載失敗證據已存，接既有正常CI的真native32/built4及相容/source gate，禁止略過。詳docs/verification/P3_AWAKENING_RUNTIME/WORK_LOG.md。全部approved bytes、P1/P2與前三招保持，PR#1open/unmerged，同分支單人，不Passive／新acceptance。下一唯一工作：正常CI真驗證，修實際失敗後Pages並核公開指紋，供玩家驗收。
+
 ## 2026-10-24 — 潤澤動作／三類獨立VFX／13 GIF PLAYER APPROVED；新Work接Runtime／部署
 
 玩家：「我確認ok，妳確認是否有紀錄，我要開新的work部署，提供work的prompts，讓她無縫接軌」。明確核准已呈交a9fc973418c68e1e808d81d998e529cb81e13b6e之潤澤動作／獨立VFX／13GIF；精確hash收據docs/art/approved/chiru/awakening/composite-review-v1/acceptance.json。GIF Gate CLOSED，直接授權新Work進Runtime、必要真驗證、正常CI/Pages部署供玩家測試。原manifest/REVIEW的PENDING僅歷史；不重畫、不重審F3或GIF、原數值表。全部核准原圖/衍生/舊收據bytes不變。

@@ -88,10 +88,13 @@ export class AssetPresenter{
       this.bladeAfterglows.set(event.actorId,{sample,resolvedAt:current.resolvedAt,image:null});
      }
      // Opt-in confirmed contacts own their lifetime; never hold the body in F3.
-     if(sample&&event.hit===true&&action.contact.durationMs&&sample.contactTarget&&(action.kind!=='healing'||event.recipients?.some(r=>r.targetId===event.targetId&&r.amount>0))){
-      const key=event.actorId+'.'+event.actionId+'.independent';
-      while(this.stagedImpacts.size>=192)this.removeStagedImpact(this.stagedImpacts.keys().next().value);
-      this.stagedImpacts.set(key,{independent:true,actionId:event.actionId,ownerId:event.actorId,targetId:event.targetId??null,hitIndex:0,descriptor:action,eventAt:current.resolvedAt,target:{...sample.contactTarget},flipX:sample.flipX,paintedAt:null});
+     if(sample&&event.hit===true&&action.contact.durationMs){
+      const recipients=action.kind==='healing'?(event.recipients??[]).filter(r=>r.amount>0&&r.targetId&&r.position):sample.contactTarget?[{targetId:event.targetId,position:sample.contactTarget}]:[];
+      for(const recipient of recipients){
+       const key=event.actorId+'.'+event.actionId+'.independent.'+recipient.targetId;
+       while(this.stagedImpacts.size>=192&&!this.stagedImpacts.has(key))this.removeStagedImpact(this.stagedImpacts.keys().next().value);
+       this.stagedImpacts.set(key,{independent:true,actionId:event.actionId,ownerId:event.actorId,targetId:recipient.targetId??null,hitIndex:0,descriptor:action,eventAt:current.resolvedAt,target:{...recipient.position},flipX:sample.flipX,paintedAt:null});
+      }
      }
      if(sample&&event.hit===true&&!action.contact.durationMs){while(this.pendingImpactViews.size>=64&&!this.pendingImpactViews.has(event.actorId))this.pendingImpactViews.delete(this.pendingImpactViews.keys().next().value);this.pendingImpactViews.set(event.actorId,{sample,resolvedAt:current.resolvedAt,paintedAt:null,displaySample:null});}
     }
