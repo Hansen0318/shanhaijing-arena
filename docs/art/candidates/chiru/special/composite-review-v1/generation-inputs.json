@@ -1,0 +1,80 @@
+{
+  "F1": {
+    "tool": "built-in imagegen",
+    "transparent_background": true,
+    "inputRoles": "pose/style references, not F3 edit target",
+    "references": {
+      "docs/art/candidates/chiru/special/f3-v3/originals/special-f3.png": "47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41",
+      "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d"
+    },
+    "output": "docs/art/candidates/chiru/special/composite-review-v1/originals/F1.png",
+    "outputSha256": "1d1980d29b1a5aadc9642d59829e2e016ee13d17788b5a2018a4cb176d1d845a",
+    "promptKey": "F1",
+    "promptFile": "docs/art/candidates/chiru/special/composite-review-v1/prompts.json",
+    "selected": true
+  },
+  "F2-attempt1": {
+    "tool": "built-in imagegen",
+    "transparent_background": true,
+    "inputRoles": "pose/style references, not F3 edit target",
+    "references": {
+      "docs/art/candidates/chiru/special/f3-v3/originals/special-f3.png": "47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41",
+      "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d"
+    },
+    "output": "docs/art/candidates/chiru/special/composite-review-v1/originals/F2-attempt1.png",
+    "outputSha256": "66caa31aa4a7459599f88e7144f02e8cf769a56b34aed8f01097e74f39706bf7",
+    "promptKey": "F2_attempt1",
+    "promptFile": "docs/art/candidates/chiru/special/composite-review-v1/prompts.json",
+    "selected": false
+  },
+  "F4": {
+    "tool": "built-in imagegen",
+    "transparent_background": true,
+    "inputRoles": "pose/style references, not F3 edit target",
+    "references": {
+      "docs/art/candidates/chiru/special/f3-v3/originals/special-f3.png": "47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41",
+      "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d"
+    },
+    "output": "docs/art/candidates/chiru/special/composite-review-v1/originals/F4.png",
+    "outputSha256": "33238f4b306b83c244d9d24981e0ed322f45deb8ccf8a3048c42b7c24cced980",
+    "promptKey": "F4",
+    "promptFile": "docs/art/candidates/chiru/special/composite-review-v1/prompts.json",
+    "selected": true
+  },
+  "F2": {
+    "tool": "built-in imagegen",
+    "transparent_background": true,
+    "inputRoles": "pose/style references, not F3 edit target",
+    "references": {
+      "docs/art/candidates/chiru/special/composite-review-v1/originals/F1.png": "1d1980d29b1a5aadc9642d59829e2e016ee13d17788b5a2018a4cb176d1d845a",
+      "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d"
+    },
+    "output": "docs/art/candidates/chiru/special/composite-review-v1/originals/F2.png",
+    "outputSha256": "03be00e86a53af37d2351fb8cfa1ab30640e98109f5a57f9d36b216a1d8073e8",
+    "promptKey": "F2",
+    "promptFile": "docs/art/candidates/chiru/special/composite-review-v1/prompts.json",
+    "selected": true
+  },
+  "caster": {
+    "tool": "built-in imagegen",
+    "transparent_background": true,
+    "inputRoles": "brand new independent VFX",
+    "references": {},
+    "output": "docs/art/candidates/chiru/special/composite-review-v1/originals/caster.png",
+    "outputSha256": "64f3bd6c0b5875882d1075d0e6295b2d2e1daf63c3de5bf85ec59598bca0fc42",
+    "promptKey": "caster",
+    "promptFile": "docs/art/candidates/chiru/special/composite-review-v1/prompts.json",
+    "selected": true
+  },
+  "recipient": {
+    "tool": "built-in imagegen",
+    "transparent_background": true,
+    "inputRoles": "brand new independent VFX",
+    "references": {},
+    "output": "docs/art/candidates/chiru/special/composite-review-v1/originals/recipient.png",
+    "outputSha256": "cd3caa7c377b28e4eeccb42ee470825252f048f8b1aeaafffcfded87d8090093",
+    "promptKey": "recipient",
+    "promptFile": "docs/art/candidates/chiru/special/composite-review-v1/prompts.json",
+    "selected": true
+  }
+}

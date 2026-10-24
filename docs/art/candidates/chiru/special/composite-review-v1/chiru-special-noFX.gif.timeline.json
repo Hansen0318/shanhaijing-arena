@@ -1,0 +1,212 @@
+[
+  {
+    "castOffsetMs": -500,
+    "logicalHoldMs": 500,
+    "playbackHoldMs": 500,
+    "phase": "IDLE",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 0,
+    "recipientHp": 400
+  },
+  {
+    "castOffsetMs": 0,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F1",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 0,
+    "recipientHp": 400
+  },
+  {
+    "castOffsetMs": 40,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F1",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 0,
+    "recipientHp": 400
+  },
+  {
+    "castOffsetMs": 80,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F1",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 0,
+    "recipientHp": 400
+  },
+  {
+    "castOffsetMs": 120,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F1",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 0,
+    "recipientHp": 400
+  },
+  {
+    "castOffsetMs": 160,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F1",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 0,
+    "recipientHp": 400
+  },
+  {
+    "castOffsetMs": 200,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F2",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 0,
+    "recipientHp": 400
+  },
+  {
+    "castOffsetMs": 240,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F2",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 0,
+    "recipientHp": 400
+  },
+  {
+    "castOffsetMs": 280,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F2",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 0,
+    "recipientHp": 400
+  },
+  {
+    "castOffsetMs": 320,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F3",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 360,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F3",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 400,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F3",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 440,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F3",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 480,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F3",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 520,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F4",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 560,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F4",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 600,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F4",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 640,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F4",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 680,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F4",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 720,
+    "logicalHoldMs": 40,
+    "playbackHoldMs": 40,
+    "phase": "F4",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  },
+  {
+    "castOffsetMs": 760,
+    "logicalHoldMs": 600,
+    "playbackHoldMs": 600,
+    "phase": "IDLE",
+    "casterFx": false,
+    "recipientFx": false,
+    "recipientAmount": 250,
+    "recipientHp": 650
+  }
+]

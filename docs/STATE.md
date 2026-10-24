@@ -1,3 +1,19 @@
+## 2026-10-24 — 新 Work 恢復本機完整成果；修復兩個截斷衍生檔
+
+先fetch確認remote9c222a24f06c0a01b65ad5dd041b6e7e009afc38與PR#1 open/unmerged；找到上一Work本機未push提交fb64842，採fast-forward恢復51檔，未重生任何姿勢或FX。嚴格解碼發現recipient-padded-master.png與special-vs-heavy.gif已在該commit內截斷（hash符合舊checksums，故僅hash不足以證明可解碼）。完整originals與核准F3均可嚴格解碼，依既有prepare_preview.py確定性重建，修復兩個衍生檔並更新checksums；原提交保留於本機歷史，遠端保存有效最終樹。
+
+新驗證：54檔hash、所有PNG/GIF完整逐幀解碼、11GIF逐像素時序往返與protected sources hash PASS。核准F3／原圖／收據與產品來源完全保持；無suite/Build/Browser/Pages。原分支、單人、無main merge。唯一下一Gate仍是呈交Special GIF等待玩家核准；不把本次接手授權當成未看過GIF的核准，不Runtime/部署/下一招。
+
+## 2026-10-24 — Special 回瀾動作／獨立VFX／11GIF READY；玩家GIF審核NEXT
+
+從remote8776d44恢復，原圖/VFX保存checkpoint9c222a24f06c0a01b65ad5dd041b6e7e009afc38（本機push缺認證後以GitHub連線API保存；PR#1open/unmerged已確認）。沿核准F3 v3完成F1低位內收、F2屈肘抬升、F4單臂下收與caster內收抬升水環／recipient泉花。F2初版過近F3不採用，原檔/prompt保留。入口 docs/art/candidates/chiru/special/composite-review-v1/REVIEW.md。
+
+normal/slow/noFX/左mirror/Idle-return/reduced/滿血零治療/Heavy等尺度FX-on與off/390px/FX-only共11GIF齊備；原圖/prompts/manifest/hash/逐GIF時序與重建script保存。200/120/200/240ms；正治療示例在320ms對B400→650/1000（T0 amount250）出泉花，滿血amount0無recipient泉花。此為明示美術情境，不是真Runtime；既有產品仍舊instant／基準maxHp×caster scale，後續Runtime Gate才改。
+
+必要QA：嚴格PNG全解碼、RGBA透明安全cell、全部來源像素padding反貼、strip反貼、雙mirror、11GIF解碼逐像素時段與總時長比對、F3核准source/原圖/收據hash保持PASS；明暗底/配件側別/尺度為作者自審。固定320×260／chestX158／hoverY203；F3 .13，其他生成姿勢按頭身地標等比正規化，有效倍率F1 .112/F2 .108/F4 .12，不依整張畫布/最高水環fit，完整地標/限制記manifest。Special獨立施法環250px/泉花310px與Heavy同尺度比較為待玩家視覺判定，非Runtime或實機證明。
+
+**唯一下一Gate：呈交本招GIF，停待玩家明確核准或修正。** 未存新GIF acceptance、不Runtime/部署/Awakening/Passive。保護全部approved masters/收據/P1/P2/Basic/Heavy/右canonical左mirror/尺度anchor懸浮下緣，普通Hit取消、無固定16MiB門檻與required/逐檔安全/所有權回收destroy保持。原生單人，同feat/m0-combat-core-20260927，不新branch/worktree/委派/TD/main merge；純美術文件[skip ci]，產品未改不重跑suite/Build/Browser/Pages。下方「生成其餘姿勢/VFX/GIF」為歷史，不重做已保存成果。
+
 ## 2026-10-24 — Special 其餘動作原圖 checkpoint；獨立VFX與GIF ACTIVE
 
 恢復remote8776d44，已核對F3 v3收據/候選與原圖hash。built-in imagegen製作F1低位單手內收、F2單臂抬升、F4單臂下收；原圖/prompts/嚴格PNG完整decode與alpha/hash保存 docs/art/candidates/chiru/special/composite-review-v1/。F2初版過於接近F3高托，保留F2-attempt1.png且不採用，修正版F2.png作下一步正規化來源。核准F3完全未改；新圖尚未玩家核准。下一步：製作caster水環與真recipient泉花獨立VFX，再按頭身地標/共同anchor/懸浮下緣做安全cell及全套單招GIF。原生單人、原分支PR#1open/unmerged；無產品來源修改、不跑suite/Build/Browser/Pages、不Runtime/部署/下一招。此checkpoint只確認原圖已保存，不冒稱GIF/最終尺度QA完成。
