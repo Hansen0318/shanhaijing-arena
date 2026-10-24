@@ -1,3 +1,11 @@
+## 2026-10-24 — Special Runtime工程完成；正常CI真Browser／Pages驗證ACTIVE
+
+回瀾已沿核准收據做共用資料opt-in：兩模式320ms重選範圍20內最低HP比例存活同隊（含自己），穩定instanceId；目標當前maxHp×25/30/35/40%，不用舊healing scale，既有條件modifier加算上限15%，CD與AI契約保持。真正amount>0事件才附著recipient泉花；caster水環獨立，200/120/200/240ms及760ms回Idle，左右/共同尺度/懸浮下緣保持。全部approved像素與收據未改，Awakening/Passive未開始。
+
+本機1166/1166、Build/102素材guard PASS；23+2機制與11呈現/清理測試、新來源guard負向測試與原生單人自審已保存docs/verification/P3_SPECIAL_RUNTIME/。checkpoint db41c65已遠端保存。一般git push無認證，改用已連線GitHub API相同tree保存；本機Chromium下載截斷，真native32/built4與受影響Basic/Heavy及P1/P2相容交由正常CI部署前關卡，不能冒稱已PASS。現在直接完成正常CI/Pages與公開指紋核對，授權已存在，不重問部署。
+
+PR#1仍open/unmerged，同分支單人，不新branch/worktree/委派/TD/main merge；P1/P2/Basic/Heavy玩家核准保護。Special遊戲玩家驗收仍PENDING，不存未核准Runtime acceptance。唯一下一步＝取得正常CI真Browser／Build／Pages結果，修實際失敗後核對公開版本並呈交。
+
 # Special GIF approved — Runtime to deployment
 
 ## 2026-10-24 — Special 回瀾 GIF PLAYER APPROVED；新Work接Runtime／驗證／部署

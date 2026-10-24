@@ -178,24 +178,26 @@ jobs:
           name: botuo-heavy-browser-verification
           path: ${{ runner.temp }}/botuo-heavy-browser
           if-no-files-found: warn
-      - name: Real Chiru Heavy clarity and Basic compatibility verification
+      - name: Real Chiru Special and affected Basic Heavy verification
         env:
           ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/chiru-browser-tool
         run: |
           npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
           node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
-          ARENA_BROWSER_OUTPUT=docs/verification/P3_HEAVY_CLARITY/browser node scripts/checkChiruHeavyClarityBrowser.mjs
-          ARENA_BROWSER_OUTPUT=docs/verification/P3_HEAVY_CLARITY/browser node scripts/checkChiruHeavyClarityBrowser.mjs --built
-          ARENA_BROWSER_OUTPUT=docs/verification/P3_HEAVY_CLARITY/basic-compatibility node scripts/checkChiruBasicBrowser.mjs
-          ARENA_BROWSER_OUTPUT=docs/verification/P3_HEAVY_CLARITY/basic-compatibility node scripts/checkChiruBasicBrowser.mjs --built
-      - name: Verify source-bound Chiru Heavy clarity release evidence
-        run: node scripts/verifyChiruHeavyClarityRelease.mjs --record
-      - name: Preserve Chiru Heavy clarity source and Browser evidence
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_SPECIAL_RUNTIME/browser node scripts/checkChiruSpecialBrowser.mjs
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_SPECIAL_RUNTIME/browser node scripts/checkChiruSpecialBrowser.mjs --built
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_SPECIAL_RUNTIME/heavy-compatibility node scripts/checkChiruHeavyClarityBrowser.mjs
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_SPECIAL_RUNTIME/heavy-compatibility node scripts/checkChiruHeavyClarityBrowser.mjs --built
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_SPECIAL_RUNTIME/basic-compatibility node scripts/checkChiruBasicBrowser.mjs
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_SPECIAL_RUNTIME/basic-compatibility node scripts/checkChiruBasicBrowser.mjs --built
+      - name: Verify source-bound Chiru Special release evidence
+        run: node scripts/verifyChiruSpecialRelease.mjs --record
+      - name: Preserve Chiru Special source and Browser evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: chiru-heavy-clarity-evidence
-          path: docs/verification/P3_HEAVY_CLARITY/
+          name: chiru-special-evidence
+          path: docs/verification/P3_SPECIAL_RUNTIME/
           if-no-files-found: error
       - name: Configure Pages
         if: "!contains(github.event.head_commit.message, '[botuo special probe]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
