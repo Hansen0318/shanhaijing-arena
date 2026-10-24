@@ -205,6 +205,14 @@ jobs:
         run: |
           node scripts/checkChiruAwakeningBrowser.mjs
           node scripts/checkChiruAwakeningBrowser.mjs --built
+      - name: Current-source P1 P2 compatibility for shared utility and status rendering
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/chiru-browser-tool
+        run: |
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_AWAKENING_RUNTIME/p1-compatibility node scripts/checkLushuPassiveV2Browser.mjs
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_AWAKENING_RUNTIME/p1-compatibility node scripts/checkLushuPassiveV2Browser.mjs --built
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_AWAKENING_RUNTIME/p2-compatibility node scripts/checkBotuoAwakeningBrowser.mjs
+          ARENA_BROWSER_OUTPUT=docs/verification/P3_AWAKENING_RUNTIME/p2-compatibility node scripts/checkBotuoAwakeningBrowser.mjs --built
       - name: Verify source-bound Chiru Awakening release evidence
         run: node scripts/verifyChiruAwakeningRelease.mjs --record
       - name: Preserve Chiru Awakening source and Browser evidence
