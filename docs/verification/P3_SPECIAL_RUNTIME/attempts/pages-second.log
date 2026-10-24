@@ -1,0 +1,91 @@
+# Exact terminal log excerpt; full Actions logs retained.
+2026-10-24T05:28:05.3017706Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-24T05:28:05.3865917Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-24T05:28:05.4278748Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-24T05:28:05.7672888Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-24T05:28:05.7695777Z Not building database; man-db/auto-update is not 'true'.
+2026-10-24T05:28:05.7708481Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-10-24T05:28:06.5926898Z 
+2026-10-24T05:28:06.5927745Z Running kernel seems to be up-to-date.
+2026-10-24T05:28:06.5928126Z 
+2026-10-24T05:28:06.5928320Z Restarting services...
+2026-10-24T05:28:06.6429909Z  systemctl restart packagekit.service php8.3-fpm.service polkit.service udisks2.service
+2026-10-24T05:28:06.7806635Z 
+2026-10-24T05:28:06.7807590Z Service restarts being deferred:
+2026-10-24T05:28:06.7808450Z  systemctl restart ModemManager.service
+2026-10-24T05:28:06.7809261Z  systemctl restart networkd-dispatcher.service
+2026-10-24T05:28:06.7809890Z 
+2026-10-24T05:28:06.7810178Z No containers need to be restarted.
+2026-10-24T05:28:06.7810507Z 
+2026-10-24T05:28:06.7810823Z No user sessions are running outdated binaries.
+2026-10-24T05:28:06.7811188Z 
+2026-10-24T05:28:06.7811701Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-24T05:28:08.1235699Z Downloading Chrome Headless Shell 151.0.7922.34 (playwright chromium-headless-shell v1234) from https://cdn.playwright.dev/builds/cft/151.0.7922.34/linux64/chrome-headless-shell-linux64.zip
+2026-10-24T05:28:09.1358020Z |                                                                                |   0% of 114.7 MiB
+2026-10-24T05:28:09.2571913Z |■■■■■■■■                                                                        |  10% of 114.7 MiB
+2026-10-24T05:28:09.3171360Z |■■■■■■■■■■■■■■■■                                                                |  20% of 114.7 MiB
+2026-10-24T05:28:09.3667406Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 114.7 MiB
+2026-10-24T05:28:09.4166543Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 114.7 MiB
+2026-10-24T05:28:09.4575873Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 114.7 MiB
+2026-10-24T05:28:09.4973625Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 114.7 MiB
+2026-10-24T05:28:09.5382228Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 114.7 MiB
+2026-10-24T05:28:09.5750152Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 114.7 MiB
+2026-10-24T05:28:09.6169797Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 114.7 MiB
+2026-10-24T05:28:09.6564155Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 114.7 MiB
+2026-10-24T05:28:11.6774048Z Chrome Headless Shell 151.0.7922.34 (playwright chromium-headless-shell v1234) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1234
+2026-10-24T05:28:11.6777565Z Downloading FFmpeg (playwright ffmpeg v1011) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-10-24T05:28:12.6817977Z |                                                                                |   0% of 2.3 MiB
+2026-10-24T05:28:12.7029144Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-10-24T05:28:12.7130233Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-10-24T05:28:12.7184991Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-10-24T05:28:12.7251037Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-10-24T05:28:12.7284265Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-10-24T05:28:12.7334225Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-10-24T05:28:12.7353272Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-10-24T05:28:12.7368979Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-10-24T05:28:12.7540735Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-10-24T05:28:12.7552746Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-10-24T05:28:12.8389785Z FFmpeg (playwright ffmpeg v1011) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-10-24T05:29:23.5292774Z {"status":"PASS","built":false,"cases":32}
+2026-10-24T05:30:07.6058835Z {"status":"FAIL","built":true,"cases":4,"failure":"AssertionError [ERR_ASSERTION]: mirror\n\nfalse !== true\n"}
+2026-10-24T05:30:07.6276459Z ##[error]Process completed with exit code 1.
+2026-10-24T05:30:07.6363300Z ##[group]Run actions/upload-artifact@v4
+2026-10-24T05:30:07.6363623Z with:
+2026-10-24T05:30:07.6363844Z   name: chiru-special-evidence
+2026-10-24T05:30:07.6364136Z   path: docs/verification/P3_SPECIAL_RUNTIME/
+2026-10-24T05:30:07.6364446Z   if-no-files-found: error
+2026-10-24T05:30:07.6364688Z   compression-level: 6
+2026-10-24T05:30:07.6364910Z   overwrite: false
+2026-10-24T05:30:07.6365128Z   include-hidden-files: false
+2026-10-24T05:30:07.6365687Z ##[endgroup]
+2026-10-24T05:30:07.8046249Z (node:5923) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-24T05:30:07.8047767Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-24T05:30:07.8199242Z With the provided path, there will be 27 files uploaded
+2026-10-24T05:30:07.8206251Z Artifact name is valid!
+2026-10-24T05:30:07.8207223Z Root directory input is valid!
+2026-10-24T05:30:08.0227974Z Beginning upload of artifact content to blob storage
+2026-10-24T05:30:08.1491351Z (node:5923) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-24T05:30:08.2712264Z Uploaded bytes 2064236
+2026-10-24T05:30:08.2904000Z Finished uploading artifact content to blob storage!
+2026-10-24T05:30:08.2905561Z SHA256 digest of uploaded artifact zip is 4b7973aabe7284722ab57c4bfee8ee527d85584e13a250f622cb3421ae85293d
+2026-10-24T05:30:08.2906944Z Finalizing artifact upload
+2026-10-24T05:30:08.6763717Z Artifact chiru-special-evidence.zip successfully finalized. Artifact ID 12549522408
+2026-10-24T05:30:08.6766013Z Artifact chiru-special-evidence has been successfully uploaded! Final size is 2064236 bytes. Artifact ID is 12549522408
+2026-10-24T05:30:08.6771433Z Artifact download URL: https://github.com/Hansen0318/shanhaijing-arena/actions/runs/40066299370/artifacts/12549522408
+2026-10-24T05:30:08.7000631Z Post job cleanup.
+2026-10-24T05:30:08.7896889Z [command]/usr/bin/git version
+2026-10-24T05:30:08.7946374Z git version 2.55.0
+2026-10-24T05:30:08.7993945Z Temporarily overriding HOME='/home/runner/work/_temp/731445c7-2be6-485f-ad2e-9a687d510ccc' before making global git config changes
+2026-10-24T05:30:08.7995583Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-24T05:30:08.8001171Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/shanhaijing-arena/shanhaijing-arena
+2026-10-24T05:30:08.8048991Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T05:30:08.8087906Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T05:30:08.8355190Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T05:30:08.8384653Z http.https://github.com/.extraheader
+2026-10-24T05:30:08.8397949Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-24T05:30:08.8440342Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T05:30:08.8727072Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T05:30:08.8776543Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T05:30:08.9223310Z Cleaning up orphan processes
+2026-10-24T05:30:08.9655030Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
