@@ -1,3 +1,7 @@
+## Current checkpoint — remaining poses generated, VFX/GIF ACTIVE
+
+Originals/prompts/source QA in `docs/art/candidates/chiru/special/composite-review-v1/`; F2-attempt1 retained but excluded. F3 v3 remains immutable and approved. Continue separate caster/recipient VFX, landmark normalization and requested single-skill GIFs. No runtime/deploy. Lower original launch instructions remain context; do not regenerate saved poses.
+
 # P3 Special F3 approved — remaining poses / VFX / GIF next
 
 ```text

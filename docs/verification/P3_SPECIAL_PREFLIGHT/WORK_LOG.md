@@ -54,3 +54,8 @@ Special v2未獲美術核准、依玩家意見修正，原檔/manifest不改。v
 既有無FX可辨動作及Basic<Heavy<Special<Awakening大場面硬規則維持；施法與受益者效果分別清楚，治療使用非傷害視覺語言，不能靠放大角色/假爆破/額外半透明。核准Special數值/Tier/320ms重選最低合法受益者契約不重審；Runtime差異已記錄於Special WORK_LOG，不重做前檢。
 
 P1/P2 COMPLETE、Basic/Heavy及清晰版PLAYER VERIFIED保持，P3整角未完成。單人、原分支feat/m0-combat-core-20260927、PR#1open/unmerged；不委派/新branch/worktree/TD/main merge。全部approved masters/收據/scale/anchor/懸浮下緣/右canonical左mirror保持，普通Hit取消、無固定16MiB總門檻/逐檔安全/required就緒/所有權回收destroy保持，Collection只寫玩法。本次純收據/文件[skip ci]，未改產品，不重跑suite/Build/Browser/Pages。新Work入口 `docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md`，直接開始下一未完Gate。下方F3待審與禁止其餘姿勢為歷史，由本節覆蓋。
+
+## 2026-10-24 — Special 其餘動作原圖 checkpoint；獨立VFX與GIF ACTIVE
+
+恢復remote8776d44，已核對F3 v3收據/候選與原圖hash。built-in imagegen製作F1低位單手內收、F2單臂抬升、F4單臂下收；原圖/prompts/嚴格PNG完整decode與alpha/hash保存 docs/art/candidates/chiru/special/composite-review-v1/。F2初版過於接近F3高托，保留F2-attempt1.png且不採用，修正版F2.png作下一步正規化來源。核准F3完全未改；新圖尚未玩家核准。下一步：製作caster水環與真recipient泉花獨立VFX，再按頭身地標/共同anchor/懸浮下緣做安全cell及全套單招GIF。原生單人、原分支PR#1open/unmerged；無產品來源修改、不跑suite/Build/Browser/Pages、不Runtime/部署/下一招。此checkpoint只確認原圖已保存，不冒稱GIF/最終尺度QA完成。
+

@@ -1,0 +1,54 @@
+{
+  "F1.png": {
+    "sha256": "1d1980d29b1a5aadc9642d59829e2e016ee13d17788b5a2018a4cb176d1d845a",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      59,
+      1204,
+      1254
+    ]
+  },
+  "F2-attempt1.png": {
+    "sha256": "66caa31aa4a7459599f88e7144f02e8cf769a56b34aed8f01097e74f39706bf7",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      33,
+      45,
+      1230,
+      1254
+    ]
+  },
+  "F2.png": {
+    "sha256": "03be00e86a53af37d2351fb8cfa1ab30640e98109f5a57f9d36b216a1d8073e8",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      53,
+      1211,
+      1254
+    ]
+  },
+  "F4.png": {
+    "sha256": "33238f4b306b83c244d9d24981e0ed322f45deb8ccf8a3048c42b7c24cced980",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      19,
+      1240,
+      1238
+    ]
+  }
+}

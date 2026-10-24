@@ -1,3 +1,7 @@
+## 2026-10-24 — Special 其餘動作原圖 checkpoint；獨立VFX與GIF ACTIVE
+
+恢復remote8776d44，已核對F3 v3收據/候選與原圖hash。built-in imagegen製作F1低位單手內收、F2單臂抬升、F4單臂下收；原圖/prompts/嚴格PNG完整decode與alpha/hash保存 docs/art/candidates/chiru/special/composite-review-v1/。F2初版過於接近F3高托，保留F2-attempt1.png且不採用，修正版F2.png作下一步正規化來源。核准F3完全未改；新圖尚未玩家核准。下一步：製作caster水環與真recipient泉花獨立VFX，再按頭身地標/共同anchor/懸浮下緣做安全cell及全套單招GIF。原生單人、原分支PR#1open/unmerged；無產品來源修改、不跑suite/Build/Browser/Pages、不Runtime/部署/下一招。此checkpoint只確認原圖已保存，不冒稱GIF/最終尺度QA完成。
+
 ## 2026-10-24 — Special 回瀾 F3 v3 PLAYER APPROVED；新Work直接接其餘動作／獨立VFX／GIF
 
 玩家原文：「我確認ok，紀錄，我會開新的work無縫接軌接續，確認紀錄規則流程進度後給我prompts給新的work接續後，直接往下進行」。明確核准已呈交checkpoint777eeda1ea66f06ef9fde26abd8ef3f232b86082的Special F3 v3高托/低展姿勢。精確收據 `docs/art/approved/chiru/special/f3-v3/acceptance.json`；候選SHA256 1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8，imagegen原圖SHA256 47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41。F3 Gate CLOSED，保護原圖/透明padding圖/manifest/QA，不重畫、不重問核准；原manifest/REVIEW的PENDING是呈交歷史，由此收據覆蓋。v2與舊batch仍不採用、原封保留。
