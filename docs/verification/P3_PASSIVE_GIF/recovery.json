@@ -1,0 +1,10 @@
+{
+  "baseline": "d3cf58c0cb4078d911fd4039129234d4bbd16cbe",
+  "styleReceiptHashesVerified": 21,
+  "oldLocalTree": "6af71f75bbde194c546cb91a42c59be6edc4ca12",
+  "remoteTree": "6af71f75bbde194c546cb91a42c59be6edc4ca12",
+  "oldLocalTreeIdentical": true,
+  "unrelatedUntracked": "preserved in original workspace",
+  "scope": "scripted art simulation only, no Runtime/build/browser/Pages",
+  "next": "derive GIFs from immutable accepted STYLE and Idle; stop for GIF acceptance"
+}

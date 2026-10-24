@@ -1,3 +1,7 @@
+## 2026-10-24 — 游息 GIF Gate ACTIVE／pre-art checkpoint
+
+已核對最新remote d3cf58c、PR1 open/unmerged、STYLE收據全部hash；本機舊Work tree對照見docs/verification/P3_PASSIVE_GIF/recovery.json，無關untracked原封保留。現在只沿核准STYLE／Idle製作四Tier normal/reduced、左右、自療/他療/zero/650ms及中斷清理的腳本美術GIF，不改Runtime/Collection、不Build/Browser/Pages、不委派。完成呈交後停待GIF明確核准；P3未完成。
+
 ## 2026-10-24 — Passive 游息STYLE PLAYER APPROVED；新Work接GIF Gate
 
 玩家：「我核准OK，確認是否有紀錄，我要開新的 work接續開發，提供prompts」。明確核准已呈交aeff9d6c075b150814914bc55a8fefa33f77e72a雙魚受益者樣式、四Tier同尺度1/2/3/4組短回流紋及靜態位置；精確hash收據docs/art/approved/chiru/passive/style-v2/acceptance.json。STYLE Gate CLOSED；候選manifest/REVIEW原PENDING僅歷史，不改原檔，不重生/重審核准雙魚或原數值。
