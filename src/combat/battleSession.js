@@ -152,7 +152,7 @@ export class BattleSession {
     this.pendingActions=new Map();this.nextActionId=0;this.nextPresentationId=0;this.presentationEpoch=0;this.presentationEventSequence=0;
     this.statuses = new BattleStatuses();
     this.areas=new PersistentAreas();this.mobilityEvidence=new Map();this.effects=new TierEffectRuntime(this);
-    this.passives=new PassiveRuntime({actors:this.actors,characterForActor:actor=>this.definitionForActor(actor),tierForActor:actor=>this.tierProjections.get(actor.instanceId).tier,abilityDefinitions:this.abilityDefinitions,statuses:this.statuses});
+    this.passives=new PassiveRuntime({actors:this.actors,characterForActor:actor=>this.definitionForActor(actor),tierForActor:actor=>this.tierProjections.get(actor.instanceId).tier,abilityDefinitions:this.abilityDefinitions,statuses:this.statuses,onHeal:event=>this.healEvents.push({...event,presentationEpoch:this.presentationEpoch})});
     this.aiPreparation = new Map(this.actors.map(actor => [actor.instanceId, {}]));
   }
 
@@ -469,7 +469,7 @@ export class BattleSession {
 
   advancePlannedMotion(dt){
     const begin=this.elapsedSeconds,end=begin+dt,passiveMode=this.passives.enabled();
-    if(passiveMode)this.passives.settle(begin,{spatial:false});
+    if(passiveMode)this.passives.settle(begin,{spatial:false,support:false});
     const paths=new Map(this.actors.map(a=>[a.instanceId,{from:{x:a.x,y:a.y},to:canCharacterAct(a)&&!this.statuses.controlled(a.instanceId,begin)?motionPlans.get(a)??{x:a.x,y:a.y}:{x:a.x,y:a.y},start:0,motion:motionPlans.get(a)?.motion??null,ordinary:null,lastTime:begin}]));
     for(const r of this.pendingActions.values())if(r.staged){const p=paths.get(r.actorId);p.to=r.hitIndex<0?p.from:legPosition(r,end);}
     for(const a of this.actors)motionPlans.delete(a);
@@ -517,7 +517,8 @@ export class BattleSession {
       for(const area of this.areas.records.values()){
         const due=this.areas.nextTicks.get(area.id);if(due<=begin+horizon*dt+1e-9&&due<area.expiryTime-1e-9)contacts.push({r:{actorId:area.sourceId,hitIndex:0},u:Math.max(cursor,(due-begin)/dt),area});
       }
-      contacts.sort((a,b)=>(Math.abs(a.u-b.u)*dt>1e-9?a.u-b.u:0)||Number(!!a.passiveTick)-Number(!!b.passiveTick)||a.r.actorId.localeCompare(b.r.actorId)||(a.r.hitIndex??0)-(b.r.hitIndex??0));
+      const effectOrder=c=>c.passiveTick?2:(c.area?c.area.spec.coefficient:c.r.definition?.effect?.coefficient)>0?0:1;
+      contacts.sort((a,b)=>(Math.abs(a.u-b.u)*dt>1e-9?a.u-b.u:0)||Number(!!a.passiveTick)-Number(!!b.passiveTick)||(this.passives.hasSupport()?effectOrder(a)-effectOrder(b):0)||a.r.actorId.localeCompare(b.r.actorId)||(a.r.hitIndex??0)-(b.r.hitIndex??0));
       if(!contacts.length)break;
       const {r,u,legacy,queued,delayed,area,passiveTick}=contacts[0];cursor=u;place(u);this.elapsedSeconds=begin+u*dt;
       if(passiveTick){this.passives.settle(this.elapsedSeconds);if(u>=1-1e-12)break;rebuild(u);continue;}

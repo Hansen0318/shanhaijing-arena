@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {characterDetail} from '../src/collection/model.js';import {rosterCatalog} from '../src/roster/catalog.js';import {formalAbilityDefinitions} from '../src/roster/abilities.js';
-test('Collection identifies implemented P1/P2 and all still-unimplemented independent passives honestly',()=>{
+test('Collection identifies implemented P1/P2/P3 and all still-unimplemented independent passives honestly',()=>{
  for(const [id,d]of Object.entries(rosterCatalog)){
-  const detail=characterDetail(d),passive=detail.abilities.find(a=>a.category==='passive');assert.equal(passive.implemented,['P1','P2'].includes(id));assert.equal(passive.statusLabel,['P1','P2'].includes(id)?null:'尚未開放');assert.equal(d.passiveMetadata.implemented,formalAbilityDefinitions[passive.id].implemented);
+  const detail=characterDetail(d),passive=detail.abilities.find(a=>a.category==='passive');assert.equal(passive.implemented,['P1','P2','P3'].includes(id));assert.equal(passive.statusLabel,['P1','P2','P3'].includes(id)?null:'尚未開放');assert.equal(d.passiveMetadata.implemented,formalAbilityDefinitions[passive.id].implemented);
   assert.equal(detail.abilities.filter(a=>a.category!=='passive').every(a=>!Object.hasOwn(a,'statusLabel')),true);
  }
  const p=characterDetail(rosterCatalog.P1).abilities.find(a=>a.category==='passive');for(const text of ['2 秒','1 單位','+35%','+50%','+65%','+80%','3 秒','6 秒'])assert.ok(p.description.includes(text));

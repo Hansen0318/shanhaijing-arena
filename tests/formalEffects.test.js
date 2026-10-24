@@ -1,8 +1,9 @@
+import {disableSupport} from './helpers/disableSupport.js';
 import test from 'node:test';import assert from 'node:assert/strict';
 import { createStageBattleSession } from '../src/campaign/battleFactory.js';import { findStage } from '../src/campaign/data.js';
 import * as effects from '../src/combat/effectTargeting.js';
 import { resolveDamage } from '../src/combat/combatResolver.js';
-const session=()=>createStageBattleSession({...findStage('1-1'),selectedTeam:['P1','P2','P3'],enemyLineup:['P1','P2','P3']},{rng:()=>.99});
+const session=()=>disableSupport(createStageBattleSession({...findStage('1-1'),selectedTeam:['P1','P2','P3'],enemyLineup:['P1','P2','P3']},{rng:()=>.99}));
 function hold(s){s.actors.forEach(a=>s.holdPlayerControl(a.instanceId));}
 test('lowest HP percentage ally deterministic tie-break, ignores KO and duplicates',()=>{const s=session(),[a,b,c]=s.allies;a.damage(a.maxHp*.5);b.damage(b.maxHp*.5);c.damage(c.maxHp);assert.equal(effects.lowestHpAlly([b,c,a,b]).instanceId,'a1');});
 test('single heal clamps, no crit/RNG, event is actual recovered HP',()=>{const s=session(),a=s.allies[0];a.damage(10);assert.equal(s.usePlayerAbility('a3','special'),true);assert.equal(s.drainHealEvents().length,0);hold(s);s.step(.32);assert.equal(a.hp,a.maxHp);assert.equal(s.drainHealEvents()[0].amount,10);assert.equal(s.drainDamageEvents().length,0);});

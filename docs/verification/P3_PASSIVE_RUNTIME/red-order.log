@@ -1,0 +1,43 @@
+✔ real session T0/false: correct amount/event/no active modifiers or cooldown (7.287464ms)
+✔ real session T0/true: correct amount/event/no active modifiers or cooldown (1.528969ms)
+✔ real session T1/false: correct amount/event/no active modifiers or cooldown (1.595158ms)
+✔ real session T1/true: correct amount/event/no active modifiers or cooldown (1.230161ms)
+✔ real session T2/false: correct amount/event/no active modifiers or cooldown (1.39987ms)
+✔ real session T2/true: correct amount/event/no active modifiers or cooldown (2.856103ms)
+✔ real session T3/false: correct amount/event/no active modifiers or cooldown (0.979051ms)
+✔ real session T3/true: correct amount/event/no active modifiers or cooldown (1.562274ms)
+✔ same-time active heal resolves before passive reselect; 8s independent cooldown, no queue, end and fresh ready (27.624431ms)
+✔ multiple instances settle serially with fresh eligibility, recipient/caster KO and control (2.941078ms)
+✔ ready support settles at the first legal instant; same-time damage/KO precedes active heal and passive (0.961315ms)
+✖ same tick lethal queued damage KO precedes active heal and support re-evaluation (14.639162ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 11
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 183.989541
+
+✖ failing tests:
+
+test at tests/rearSupportSession.test.js:7:1
+✖ same tick lethal queued damage KO precedes active heal and support re-evaluation (14.639162ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(s.drainHealEvents().every(e=>e.targetId!==b.instanceId))
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportSession.test.js:7:633)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

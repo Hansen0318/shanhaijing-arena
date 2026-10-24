@@ -1,3 +1,4 @@
+import {disableSupport} from './helpers/disableSupport.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createLabConfig} from '../src/dev/battleLab/config.js';
@@ -24,8 +25,8 @@ test('ready override remains session-local and never mutates formal cooldowns',(
  assert.equal(JSON.stringify(formalAbilityDefinitions),before);assert.equal(s.allies[0].hp/s.allies[0].maxHp,.5);
 });
 test('HEAL/LOW HP presets exercise delayed single heal and delayed team heal',()=>{
- const heal=createLabBattleSession(createLabConfig({scenarioId:'heal'}));assert.ok(heal.usePlayerAbility('a3','special'));assert.equal(heal.drainHealEvents().length,0);heal.actors.forEach(a=>heal.holdPlayerControl(a.instanceId));heal.step(.32);assert.deepEqual(heal.drainHealEvents().map(e=>e.targetId),['a1']);
- const low=createLabBattleSession(createLabConfig({scenarioId:'low-hp'}));assert.ok(low.usePlayerAbility('a3','awakening'));assert.equal(low.drainHealEvents().length,0);low.actors.forEach(a=>low.holdPlayerControl(a.instanceId));low.step(.6);assert.deepEqual(low.drainHealEvents().map(e=>e.targetId),['a1','a2','a3']);
+ const heal=createLabBattleSession(createLabConfig({scenarioId:'heal'}));disableSupport(heal);assert.ok(heal.usePlayerAbility('a3','special'));assert.equal(heal.drainHealEvents().length,0);heal.actors.forEach(a=>heal.holdPlayerControl(a.instanceId));heal.step(.32);assert.deepEqual(heal.drainHealEvents().map(e=>e.targetId),['a1']);
+ const low=createLabBattleSession(createLabConfig({scenarioId:'low-hp'}));disableSupport(low);assert.ok(low.usePlayerAbility('a3','awakening'));assert.equal(low.drainHealEvents().length,0);low.actors.forEach(a=>low.holdPlayerControl(a.instanceId));low.step(.6);assert.deepEqual(low.drainHealEvents().map(e=>e.targetId),['a1','a2','a3']);
 });
 test('AOE and MITIGATION presets exercise formal effects without position adjustments',()=>{
  const aoe=createLabBattleSession(createLabConfig({scenarioId:'aoe'}));assert.ok(aoe.usePlayerAbility('a2','special'));assert.equal(aoe.drainDamageEvents().length,0);aoe.actors.forEach(a=>aoe.holdPlayerControl(a.instanceId));aoe.step(.9);assert.deepEqual(aoe.drainDamageEvents().map(e=>e.targetId),['e1','e2','e3']);

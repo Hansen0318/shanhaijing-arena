@@ -77,7 +77,7 @@ export class ArenaScene extends Phaser.Scene {
     const battleSession=this.session;this.ownCleanup(()=>battleSession.clearTransientCombat());
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
-    this.passivePresenter=new PassivePresenter(this,{project:arenaToStage});
+    this.passivePresenter=new PassivePresenter(this,{project:arenaToStage,effectImage:key=>this.visualAssets.effectImage(key),reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});
     const passivePresenter=this.passivePresenter;this.ownCleanup(()=>passivePresenter.destroy());
     this.damageNumbers = new DamageNumbers(this,arenaToStage);
     this.visualAssets=new AssetPresenter(this,{project:arenaToStage,reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});

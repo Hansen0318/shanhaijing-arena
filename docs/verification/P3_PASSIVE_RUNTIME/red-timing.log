@@ -1,0 +1,42 @@
+✔ real session T0/false: correct amount/event/no active modifiers or cooldown (7.929718ms)
+✔ real session T0/true: correct amount/event/no active modifiers or cooldown (1.517133ms)
+✔ real session T1/false: correct amount/event/no active modifiers or cooldown (1.802853ms)
+✔ real session T1/true: correct amount/event/no active modifiers or cooldown (1.219324ms)
+✔ real session T2/false: correct amount/event/no active modifiers or cooldown (1.299703ms)
+✔ real session T2/true: correct amount/event/no active modifiers or cooldown (1.37308ms)
+✔ real session T3/false: correct amount/event/no active modifiers or cooldown (1.906055ms)
+✔ real session T3/true: correct amount/event/no active modifiers or cooldown (1.219094ms)
+✔ same-time active heal resolves before passive reselect; 8s independent cooldown, no queue, end and fresh ready (22.246345ms)
+✔ multiple instances settle serially with fresh eligibility, recipient/caster KO and control (1.398538ms)
+✖ ready support settles at the first legal instant; same-time damage/KO precedes active heal and passive (1.506987ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 10
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 172.967204
+
+✖ failing tests:
+
+test at tests/rearSupportSession.test.js:6:1
+✖ ready support settles at the first legal instant; same-time damage/KO precedes active heal and passive (1.506987ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0.001 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportSession.test.js:6:181)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0.001,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -230,6 +230,21 @@ jobs:
           name: chiru-awakening-evidence
           path: docs/verification/P3_AWAKENING_RUNTIME/
           if-no-files-found: error
+      - name: Real Chiru Passive native and built verification
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/chiru-browser-tool
+        run: |
+          node scripts/checkChiruPassiveBrowser.mjs
+          node scripts/checkChiruPassiveBrowser.mjs --built
+      - name: Verify source-bound Chiru Passive release evidence
+        run: node scripts/verifyChiruPassiveRelease.mjs --record
+      - name: Preserve Chiru Passive source and Browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chiru-passive-evidence
+          path: docs/verification/P3_PASSIVE_RUNTIME/
+          if-no-files-found: error
       - name: Configure Pages
         if: "!contains(github.event.head_commit.message, '[botuo special probe]') && !contains(github.event.head_commit.message, '[viewport probe]') && !contains(github.event.head_commit.message, '[botuo heavy probe]')"
         uses: actions/configure-pages@v5

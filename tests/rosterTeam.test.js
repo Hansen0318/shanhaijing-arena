@@ -8,7 +8,7 @@ test('five stable independent immutable definitions fulfill the existing contrac
  assert.deepEqual(Object.keys(rosterCatalog),['P1','P2','P3','P4','P5']);
  for(const [id,definition] of Object.entries(rosterCatalog)) {
   assert.equal(definition.id,id);assert.deepEqual(createCharacterDefinition(definition).stats,definition.stats);
-  assert.ok(Object.isFrozen(definition));assert.ok(definition.portrait.color);assert.equal(definition.passiveMetadata.implemented,new Set(['P1','P2']).has(id));
+  assert.ok(Object.isFrozen(definition));assert.ok(definition.portrait.color);assert.equal(definition.passiveMetadata.implemented,new Set(['P1','P2','P3']).has(id));
  }
  assert.notEqual(rosterCatalog.P1.stats,rosterCatalog.P2.stats);
  const owned=prototypeOwnership();owned.characterIds.pop();assert.equal(Object.keys(rosterCatalog).length,5);assert.equal(prototypeOwnership().characterIds.length,5);

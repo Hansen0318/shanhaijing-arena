@@ -1,0 +1,111 @@
+✖ anonymous T0: stable ratio recipient/current maxHp/one event/independent CD (1.341304ms)
+✖ anonymous T1: stable ratio recipient/current maxHp/one event/independent CD (0.125905ms)
+✖ anonymous T2: stable ratio recipient/current maxHp/one event/independent CD (0.10844ms)
+✖ anonymous T3: stable ratio recipient/current maxHp/one event/independent CD (0.077955ms)
+✖ distance, health and living-enemy boundaries; self included; no zero event or cooldown (0.19026ms)
+✖ control/KO/expiry clear token, preserve healed HP, isolated owners/enemy team; no missed queue (0.179304ms)
+✖ schema rejects invalid heal ratios, incomplete tiers, unsafe ranges, unsupported assets (0.12231ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 0
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 107.331573
+
+✖ failing tests:
+
+test at tests/rearSupportPassive.test.js:5:51
+✖ anonymous T0: stable ratio recipient/current maxHp/one event/independent CD (1.341304ms)
+  TypeError [Error]: Unsupported passive trigger
+      at createPassiveDefinition (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveDefinition.js:8:57)
+      at new PassiveRuntime (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveRuntime.js:14:187)
+      at fixture (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:4:416)
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:5:149)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tests/rearSupportPassive.test.js:5:51
+✖ anonymous T1: stable ratio recipient/current maxHp/one event/independent CD (0.125905ms)
+  TypeError [Error]: Unsupported passive trigger
+      at createPassiveDefinition (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveDefinition.js:8:57)
+      at new PassiveRuntime (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveRuntime.js:14:187)
+      at fixture (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:4:416)
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:5:149)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/rearSupportPassive.test.js:5:51
+✖ anonymous T2: stable ratio recipient/current maxHp/one event/independent CD (0.10844ms)
+  TypeError [Error]: Unsupported passive trigger
+      at createPassiveDefinition (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveDefinition.js:8:57)
+      at new PassiveRuntime (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveRuntime.js:14:187)
+      at fixture (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:4:416)
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:5:149)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/rearSupportPassive.test.js:5:51
+✖ anonymous T3: stable ratio recipient/current maxHp/one event/independent CD (0.077955ms)
+  TypeError [Error]: Unsupported passive trigger
+      at createPassiveDefinition (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveDefinition.js:8:57)
+      at new PassiveRuntime (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveRuntime.js:14:187)
+      at fixture (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:4:416)
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:5:149)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/rearSupportPassive.test.js:6:1
+✖ distance, health and living-enemy boundaries; self included; no zero event or cooldown (0.19026ms)
+  TypeError [Error]: Unsupported passive trigger
+      at createPassiveDefinition (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveDefinition.js:8:57)
+      at new PassiveRuntime (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveRuntime.js:14:187)
+      at fixture (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:4:416)
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:6:179)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/rearSupportPassive.test.js:7:1
+✖ control/KO/expiry clear token, preserve healed HP, isolated owners/enemy team; no missed queue (0.179304ms)
+  TypeError [Error]: Unsupported passive trigger
+      at createPassiveDefinition (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveDefinition.js:8:57)
+      at new PassiveRuntime (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveRuntime.js:14:187)
+      at fixture (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:4:416)
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:7:116)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/rearSupportPassive.test.js:8:1
+✖ schema rejects invalid heal ratios, incomplete tiers, unsafe ranges, unsupported assets (0.12231ms)
+  TypeError [Error]: Unsupported passive trigger
+      at createPassiveDefinition (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/src/combat/passiveDefinition.js:8:57)
+      at TestContext.<anonymous> (file:///workspace/scratch/485f4b351b2e/shanhaijing-arena/tests/rearSupportPassive.test.js:8:127)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

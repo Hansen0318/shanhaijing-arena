@@ -1,3 +1,4 @@
+import {disableSupport} from './helpers/disableSupport.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createLabConfig} from '../src/dev/battleLab/config.js';
@@ -6,7 +7,7 @@ import {rosterCatalog} from '../src/roster/catalog.js';
 import {formalAbilityDefinitions} from '../src/roster/abilities.js';
 import {resolveTierProjection,resolveTierAbilities} from '../src/combat/tierEffects.js';
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,`${a} != ${b}`);
-const session=(tier='T0',input={})=>createLabBattleSession(createLabConfig({allyTier:tier,allyTeam:['P1','P2','P3'],enemyTeam:['P1','P2','P3'],...input}),{tacticalEnabled:false,rng:()=>.99});
+const session=(tier='T0',input={})=>disableSupport(createLabBattleSession(createLabConfig({allyTier:tier,allyTeam:['P1','P2','P3'],enemyTeam:['P1','P2','P3'],...input}),{tacticalEnabled:false,rng:()=>.99}));
 test('session initializes scaled maxHP with Lab percentage and independent enemy Tier; DEF/ATK base',()=>{for(const [t,g] of [['T0',1],['T1',1.5],['T2',2.25],['T3',3.75]]){const s=session(t,{hpRatio:.25});for(const a of s.allies){const b=rosterCatalog[a.definitionId];near(a.maxHp,b.stats.maxHp*g);near(a.hp,a.maxHp*.25);assert.equal(s.definitionForActor(a).stats.def,b.stats.def);assert.equal(s.definitionForActor(a).stats.atk,b.stats.atk);}assert.equal(s.enemies[0].maxHp,245);}});
 test('direct damage applies Tier once before Type/DEF, crit and incoming mitigation',()=>{const s=session('T3'),a=s.allies[0],e=s.enemies[0];a.x=e.x=4;a.y=e.y=0;s.statuses.applyMitigation(e.instanceId,.25,2,0);s.executeAbility(a,'basic','player',e);assert.equal(s.drainDamageEvents().length,0);for(const actor of s.actors){s.cadence.set(actor.instanceId,99);for(const k of ['heavy','special','awakening'])Object.assign(actor.abilityState[k],{phase:'cooldown',cooldownRemaining:99});}s.step(.18);near(s.drainDamageEvents().find(hit=>hit.actorId===a.instanceId&&hit.category==='basic').amount,(18*3.2-5)*.75);});
 test('same-ID allies/enemies use independent damage/tempo projection without base mutation',()=>{const before=JSON.stringify(rosterCatalog);const s=session('T3'),a=s.allies[0],e=s.enemies[0];a.x=e.x=4;a.y=e.y=0;s.executeAbility(a,'heavy','player',e);near(a.abilityState.heavy.cooldownRemaining,3*.72);s.executeAbility(e,'heavy','ai',a);near(e.abilityState.heavy.cooldownRemaining,3);near(s.definitionForActor(a).stats.moveSpeed,2.05*1.28);near(s.definitionForActor(a).stats.attackSpeed,1.15*1.4);assert.equal(JSON.stringify(rosterCatalog),before);});

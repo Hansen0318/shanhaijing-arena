@@ -1,3 +1,4 @@
+import {disableSupport} from './helpers/disableSupport.js';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {makeWindupFixture} from './helpers/basicWindup.js';
 import {BattleSession} from '../src/combat/battleSession.js';
@@ -7,6 +8,7 @@ const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} != ${b}`);
 function fixture(tier='T0',tacticalEnabled=false,anonymous=true){
  let {session:s}=makeWindupFixture({tier,tacticalEnabled,allyTeam:['P3','P1','P4']});
  if(anonymous){const definitions={},abilities={...s.abilityDefinitions};for(const [id,d]of Object.entries(s.characterDefinitions)){const renamed='anonymous-'+id,refs={...d.abilities};for(const c of ['basic','heavy','special','awakening']){const old=refs[c],key='fixture-'+old;abilities[key]={...abilities[old],id:key};refs[c]=key;}definitions[renamed]={...d,id:renamed,abilities:refs};}for(const a of s.actors){a.definitionId='anonymous-'+a.definitionId;for(const c of ['basic','heavy','special','awakening'])a.abilityState[c].definitionId='fixture-'+a.abilityState[c].definitionId;}s=new BattleSession({allies:s.allies,enemies:s.enemies,characterDefinitions:definitions,abilityDefinitions:abilities,tierByActorId:Object.fromEntries(s.allies.map(a=>[a.instanceId,tier])),tacticalEnabled,rng:()=>.99});}
+ disableSupport(s);
  for(const a of s.actors){a.controlHandoff.resumeAfterMs=Infinity;s.holdPlayerControl(a.instanceId);s.setPlayerMovement(a.instanceId,{x:0,y:0});s.cadence.set(a.instanceId,99);for(const c of ['heavy','special','awakening'])Object.assign(a.abilityState[c],{phase:'cooldown',cooldownRemaining:99});a.heal(a.maxHp);Object.assign(a,{x:0,y:0});}for(const e of s.enemies)e.x=10;
  const a=s.allies[0],b=s.allies[1],c=s.allies[2];Object.assign(a.abilityState.special,{phase:'ready',cooldownRemaining:0});return {s,a,b,c};
 }

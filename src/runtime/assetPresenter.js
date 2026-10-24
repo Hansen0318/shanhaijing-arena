@@ -41,7 +41,7 @@ export class AssetPresenter{
   const idles=definitions.map(d=>d.animationDescriptors?.battleIdle?.source??d.assets?.battleIdle??characterAnimation(d,'battleIdle').source);
   const critical=[...new Set([...portraits,...idles])];
   const actionKeys=definitions.flatMap(d=>Object.keys(d.actionDescriptors??{}).flatMap(category=>{const a=characterAction(d,category);return a.kind==='utility'?[a.animation.source,a.activation.assetKey,...Object.values(a.statusVisuals).map(v=>v.assetKey)]:a.kind==='staged'?[a.animation.source,...a.stages.flatMap(s=>[s.blade.assetKey,s.contact.assetKey])]:[a.animation.source,a.blade.assetKey,a.contact.assetKey,...(a.anticipation?[a.anticipation.assetKey]:[]),...Object.values(a.statusVisuals??{}).map(v=>v.assetKey)];}));
-  const required=[...new Set([...critical,...definitions.flatMap(d=>['battleMove','battleKo'].map(state=>d.animationDescriptors?.[state]?.source??d.assets?.[state]).filter(Boolean)),...actionKeys])];
+  const required=[...new Set([...critical,...definitions.flatMap(d=>['battleMove','battleKo'].map(state=>d.animationDescriptors?.[state]?.source??d.assets?.[state]).filter(Boolean)),...actionKeys,...definitions.flatMap(d=>(d.abilities?.passives??[]).flatMap(id=>abilities[id]?.implemented?abilities[id]?.presentation?.assetKeys??[]:[]))])];
   this.residency.setPins('encounter',required);
   await this.loadKeys(critical);if(this.closed)return;
   onCriticalReady?.();

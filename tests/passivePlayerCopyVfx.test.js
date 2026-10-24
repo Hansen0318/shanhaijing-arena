@@ -6,7 +6,7 @@ import {PassivePresenter} from '../src/runtime/passivePresenter.js';
 import {createPassiveDefinition} from '../src/combat/passiveDefinition.js';
 import {passiveFixture,stepHeld} from './helpers/passiveFixture.js';
 test('every implemented roster passive declares its matching VFX; unsupported style/type pairs reject',()=>{
- for(const a of Object.values(abilities).filter(a=>a.category==='passive'&&a.implemented))assert.equal(a.presentation.style,{movement:'speed-streaks',mitigation:'guard-plates'}[a.effect.type]);
+ for(const a of Object.values(abilities).filter(a=>a.category==='passive'&&a.implemented))assert.equal(a.presentation.style,{movement:'speed-streaks',mitigation:'guard-plates','instant-heal':'paired-fish'}[a.effect.type??a.effect.kind]);
  assert.throws(()=>createPassiveDefinition({...abilities['P1.passive'],presentation:{style:'guard-plates'}}));assert.throws(()=>createPassiveDefinition({...abilities['P2.passive'],presentation:{style:'speed-streaks'}}));
 });
 test('all player-facing skills omit engineering wording and unavailable skills remain honest',()=>{

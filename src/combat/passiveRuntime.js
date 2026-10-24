@@ -9,22 +9,29 @@ function distanceAt(samples,now,window,readyAt){
  return samples.reduce((sum,s)=>{const lo=Math.max(s.start,now-window,readyAt),hi=Math.min(s.end,now);return sum+(hi>lo?length(s)*(hi-lo)/(s.end-s.start):0);},0);
 }
 export class PassiveRuntime{
- constructor({actors,characterForActor,abilityDefinitions,statuses,tierForActor=()=> 'T0'}){
-  this.actors=actors;this.characterForActor=characterForActor;this.statuses=statuses;this.entries=new Map();this.now=0;
+ constructor({actors,characterForActor,abilityDefinitions,statuses,tierForActor=()=> 'T0',onHeal=()=>{}}){
+  this.actors=actors;this.characterForActor=characterForActor;this.statuses=statuses;this.entries=new Map();this.now=0;this.onHeal=onHeal;this.nextToken=0;
   for(const actor of actors){const defs=[];for(const id of characterForActor(actor).abilities.passives??[]){const input=abilityDefinitions[id];if(!input?.implemented)continue;const base=createPassiveDefinition(input),tier=tierForActor(actor);if(base.tierMagnitudes&&!Object.hasOwn(base.tierMagnitudes,tier))throw new TypeError('Invalid passive Tier');const definition=createPassiveDefinition({...base,effect:{...base.effect,magnitude:base.tierMagnitudes?.[tier]??base.effect.magnitude}});defs.push({actor,definition,tier,samples:[],readyAt:0,statusId:null,lastEnd:0});}if(defs.length)this.entries.set(actor.instanceId,defs);}
  }
  enabled(){return this.entries.size>0;}
- hasSpatial(){return [...this.entries.values()].some(entries=>entries.some(e=>e.definition.trigger.kind==='spatial-pressure'));}
+ hasSupport(){return [...this.entries.values()].some(entries=>entries.some(e=>e.definition.trigger.kind==='rear-support'));}
+ hasSpatial(){return [...this.entries.values()].some(entries=>entries.some(e=>['spatial-pressure','rear-support'].includes(e.definition.trigger.kind)));}
  spatialCondition(entry){
   const {actor:a,definition:{trigger:t}}=entry,within=(x,y,r)=>Math.hypot(x.x-y.x,x.y-y.y)<=r+EPS;
   const enemies=this.actors.filter(b=>b.hp>0&&b.teamId!==a.teamId);
   return enemies.some(b=>within(a,b,t.enemyRadius))||this.actors.some(b=>b.hp>0&&b.instanceId!==a.instanceId&&b.teamId===a.teamId&&within(a,b,t.allyRadius)&&enemies.some(c=>within(b,c,t.allyEnemyRadius)));
  }
+ supportRecipient(e){
+  const a=e.actor,t=e.definition.trigger,enemies=this.actors.filter(b=>b.hp>0&&b.teamId!==a.teamId);
+  if(!enemies.length||Math.min(...enemies.map(b=>Math.hypot(b.x-a.x,b.y-a.y)))+EPS<t.enemyMinDistance)return null;
+  return this.actors.filter(b=>b.hp>0&&b.maxHp>0&&b.teamId===a.teamId&&b.hp/b.maxHp<=t.recipientMaxHpRatio+EPS&&Math.hypot(b.x-a.x,b.y-a.y)<=t.recipientRange+EPS).sort((a,b)=>a.hp/a.maxHp-b.hp/b.maxHp||(a.instanceId<b.instanceId?-1:a.instanceId>b.instanceId?1:0))[0]??null;
+ }
  nextSpatialBoundary(start,end){
   const times=[];
-  for(const entries of this.entries.values())for(const e of entries){if(e.definition.trigger.kind!=='spatial-pressure'||e.actor.hp<=0)continue;
+  for(const entries of this.entries.values())for(const e of entries){if(!['spatial-pressure','rear-support'].includes(e.definition.trigger.kind)||e.actor.hp<=0)continue;
    if(e.readyAt>start+EPS){if(e.readyAt<=end+EPS)times.push(e.readyAt);}
-   else if(!this.statuses.controlled(e.actor.instanceId,start)&&this.spatialCondition(e))times.push(start);
+   else if(e.definition.trigger.kind==='rear-support'&&e.lastSupportCheck!==start&&!this.statuses.controlled(e.actor.instanceId,start)&&this.supportRecipient(e))times.push(start);
+   else if(e.definition.trigger.kind==='spatial-pressure'&&!this.statuses.controlled(e.actor.instanceId,start)&&this.spatialCondition(e))times.push(start);
   }
   return times.length?Math.min(...times):null;
  }
@@ -56,12 +63,23 @@ export class PassiveRuntime{
    if(start<segment.end&&length(segment)>0){const f=(start-segment.start)/(segment.end-segment.start);e.samples.push({kind:'ordinary',start,end:segment.end,from:{x:segment.from.x+(segment.to.x-segment.from.x)*f,y:segment.from.y+(segment.to.y-segment.from.y)*f},to:{...segment.to}});}
   }
  }
- settle(now,{spatial=true,distance=true}={}){
+ settle(now,{spatial=true,distance=true,support=true}={}){
   if(!Number.isFinite(now)||now<this.now-EPS)throw new RangeError('Invalid passive simulation clock');this.now=now;const activations=[];
   for(const [id,entries]of this.entries){
    if(entries[0].actor.hp<=0){this.clearActor(id);continue;}
    for(const e of entries){
     const d=e.definition,isSpatial=d.trigger.kind==='spatial-pressure';
+    if(d.trigger.kind==='rear-support'){
+     if(!support||now+EPS<e.readyAt||this.statuses.controlled(id,now))continue;
+     e.lastSupportCheck=now;
+     const target=this.supportRecipient(e);if(!target)continue;
+     const before=target.hp;target.heal(target.maxHp*d.effect.magnitude);const amount=target.hp-before;
+     if(!(amount>0))continue;
+     const token=`passive.${++this.nextToken}`;e.readyAt=now+d.cooldownSeconds;
+     e.visual={statusId:token,targetId:target.instanceId,startTime:now,expiryTime:now+d.presentation.duration,effective:true};
+     const event=freezeEffectData({actorId:id,targetId:target.instanceId,abilityId:d.id,category:'passive',source:'passive',amount,critical:false,eventAt:now,actionId:token,position:{x:target.x,y:target.y}});
+     this.onHeal(event);activations.push(event);continue;
+    }
     if(isSpatial?!spatial:!distance)continue;
     if(!isSpatial)e.samples=e.samples.filter(s=>s.end>now-d.trigger.windowSeconds);
     if(now+EPS<e.readyAt)continue;
@@ -77,6 +95,10 @@ export class PassiveRuntime{
   if(!Number.isFinite(now)||now<0)throw new RangeError('Invalid passive snapshot clock');const views=[];
   for(const [id,entries]of this.entries)for(const e of entries){
    if(e.actor.hp<=0)continue;const d=e.definition,records=this.statuses.forActor(id,now),record=records.find(s=>s.id===e.statusId),multiplier=this.statuses.movementMultiplier(id,now);
+   if(d.trigger.kind==='rear-support'){
+    const active=e.visual&&now<e.visual.expiryTime-EPS&&this.actors.some(a=>a.instanceId===e.visual.targetId&&a.hp>0)?e.visual:null;
+    views.push(freezeEffectData({instanceId:id,definitionId:d.id,implemented:true,label:d.presentation.label,effectType:d.effect.kind,triggerKind:d.trigger.kind,readyAt:e.readyAt,presentation:{...d.presentation,segments:['T0','T1','T2','T3'].indexOf(e.tier)+1},active}));continue;
+   }
    if(d.trigger.kind==='spatial-pressure'){
     views.push(freezeEffectData({instanceId:id,definitionId:d.id,label:d.presentation.label,implemented:true,effectType:d.effect.type,triggerKind:d.trigger.kind,readyAt:e.readyAt,presentation:{...d.presentation,segments:['T0','T1','T2','T3'].indexOf(e.tier)+1},active:record?{statusId:record.id,startTime:record.startTime,expiryTime:record.expiryTime,contribution:d.effect.magnitude,effective:d.effect.magnitude+EPS>=1-this.statuses.damageMultiplier(id,now)}:null}));continue;
    }

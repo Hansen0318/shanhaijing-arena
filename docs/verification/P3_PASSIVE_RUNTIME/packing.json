@@ -1,0 +1,61 @@
+{
+  "status": "LOSSLESS PASS",
+  "sourceSha256": {
+    "docs/art/candidates/chiru/passive/style-v2/T0-style.png": "878b6400cdf2954969299e49480c16fdc0326a83d0978a1e61c91ad9130039d5",
+    "docs/art/candidates/chiru/passive/style-v2/T1-style.png": "73aa45f913a155a8d3616a45864c28e74fe4f4f7213c29294a3055ebc75f39b0",
+    "docs/art/candidates/chiru/passive/style-v2/T2-style.png": "b3f14c57239bac1cb7927926c32cdc408df762261fed516af26665069a630194",
+    "docs/art/candidates/chiru/passive/style-v2/T3-style.png": "87fe93096fe5b5ecb2ceaee5f2ee66a18f998d717b7f4ed9ccdee47ebe3d1ddf"
+  },
+  "assets": [
+    {
+      "key": "chiru.passiveT0",
+      "type": "image",
+      "path": "assets/chiru-passive-runtime-v1/T0.png",
+      "width": 200,
+      "height": 160,
+      "bytes": 16945,
+      "fallback": "placeholder.vfx",
+      "sha256": "a89d9611c4dfa256e207a1deaa65c37c4e52ed9a502e34192b321a3afe4ea959"
+    },
+    {
+      "key": "chiru.passiveT1",
+      "type": "image",
+      "path": "assets/chiru-passive-runtime-v1/T1.png",
+      "width": 200,
+      "height": 160,
+      "bytes": 17170,
+      "fallback": "placeholder.vfx",
+      "sha256": "034660c96569691601e09f924a4583a3f000be7f44e0d46fd224c90978213a06"
+    },
+    {
+      "key": "chiru.passiveT2",
+      "type": "image",
+      "path": "assets/chiru-passive-runtime-v1/T2.png",
+      "width": 200,
+      "height": 160,
+      "bytes": 17411,
+      "fallback": "placeholder.vfx",
+      "sha256": "1cd3fc33b0627372b50d9a399c4a7839de08f149ec6f7abaffb8192ba894b63e"
+    },
+    {
+      "key": "chiru.passiveT3",
+      "type": "image",
+      "path": "assets/chiru-passive-runtime-v1/T3.png",
+      "width": 200,
+      "height": 160,
+      "bytes": 17603,
+      "fallback": "placeholder.vfx",
+      "sha256": "f902c57ae29ff46e3b4d602b0673d144455b9eac4e8d230badb8150e7fb461b3"
+    }
+  ],
+  "sourcePivot": [
+    158,
+    203
+  ],
+  "sourcePlacement": [
+    58,
+    123
+  ],
+  "density": 0.9,
+  "decodedBytes": 512000
+}
