@@ -1,0 +1,12 @@
+{
+  "payloadCommit": "105a8e8b8585159f49631c604b5c49d9d7ecd7b9",
+  "payloadTree": "2cd0567dcce82438fa9d97d785b75d6bce6da7a8",
+  "recursiveTreeTruncated": false,
+  "remoteEntries": 2700,
+  "uploadedBlobsVerified": 28,
+  "completeTreeMatchesLocal": true,
+  "pr": "open/unmerged",
+  "runtimeIntegrated": false,
+  "deployed": false,
+  "playerGifApproved": false
+}
