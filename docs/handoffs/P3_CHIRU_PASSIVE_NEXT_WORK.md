@@ -1,9 +1,3 @@
-# 最新工作checkpoint：2026-10-25 pre-art ACTIVE
-
-恢復紀錄見docs/verification/P3_PASSIVE_RUNTIME/readability-revision/recovery.json；尚未新素材/GIF，直接接以下指令的來源盤點及修正版預覽。產品不變，不重跑原測試。
-
-# 2026-10-25 修正方向已核准；新Work接續
-
 ```text
 【山海經聯盟｜P3 游息可讀性修正＋正式VFX取代示意｜無縫接手】
 [角色任務]
@@ -25,7 +19,11 @@ Repository：Hansen0318/shanhaijing-arena
 P1/P2 COMPLETE；P3四主動已核准。游息原STYLE/9GIF已核准，Runtime已實作並部署；release b414e9f079a985e4bf23283ffa5067abf5af9ac3僅供定位。正常Pages40105519923 SUCCESS；1221測試、游息native32/built4、四主動及P1/P2相容、source guard與CI/local/public168檔一致都有真證據。沿用精確相同來源證據，不重做整套前檢。
 最新玩家認為混戰中游息不明顯；本次核准僅是修正方向，未核准尚未呈交的修正版素材/GIF或實際遊戲。P3未COMPLETE，禁止提前建Runtime玩家acceptance。
 
-[執行順序]
+[最新Gate／不要重做]
+修正版視覺/GIF已完成，尚待玩家核准：docs/art/candidates/chiru/passive/readability-review-v1/REVIEW.md。11GIF/119幀/313 art checks PASS（非Runtime），SHA256SUMS/manifest/encoded-verification完整。原版與修正版手機混戰、四Tier normal/reduced/左右/自療他療zero/650ms及清理腳本已呈交；不可重生或重做已完成來源盤點。
+正式來源盤點見docs/verification/P3_PASSIVE_RUNTIME/readability-revision/{SOURCE_AUDIT.md,source-audit.json,reuse-proof.json}，20招/12正式/55來源hash；src/public/tests/scripts/workflows/approved bytes與3d156f6完全相同。固定場地橢圓保留；正式盾與P1/P2程式化被動是正式呈現，不刪。下一唯一Gate＝等待本次修正版視覺/GIF明確核准。收到核准後先保存綁定實際呈交hash的新receipt，不改舊receipt，再直接接以下第5步；不要重做1–4。
+Runtime候選方案：真受益者目前frame的外輪廓3 logical px薄荷綠亮邊＋亮白雙魚，魚印depth6低於warning8/HP12；原650ms/200ms內收/reduced靜態淡出保持。idle-rim-reference-only.png只是預覽參考，不可當作固定Runtime貼圖替換Move/Action，須以共用目前frame/texture解析跟隨，無角色ID特例。正式預警必須承接circle/lane capsule範圍/端點/敵我/impact進度再退幾何，缺正式來源保留fallback。不得僅因有blade/contact就刪必要預警。
+[原執行順序／1–4本次已完成]
 1. 保存coherent checkpoint。沿用P3_PASSIVE_PREFLIGHT、P3_PASSIVE_GIF、P3_PASSIVE_RUNTIME紀錄，只確認最新差異。
 2. 盤點已開發技能的施法/命中/狀態/預警及場地輔助來源。正式VFX成功解析時，必須取代同招同階段的示意VFX，不疊加；沒有正式來源才保留fallback。採共用資料/來源判斷，不加角色ID特例。ArenaScene固定褐色橢圓屬場地輔助；TelegraphPresenter幾何與正式狀態盾須逐來源辨識，不能憑截圖一律刪除。必要命中預警資訊由正式呈現完整承接後退掉對應示意層，不擴大為場地重設計。
 3. 沿核准PNG做可追溯新衍生/顯示方案：真受益者短暫薄荷綠亮邊＋亮白雙魚，保留水系感；避免全身染色被誤認持續護盾。保存來源/hash/腳本，不覆寫原approved masters或收據、不重生整套、不從合成GIF擷取Runtime素材。

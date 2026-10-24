@@ -1,0 +1,30 @@
+{
+  "status": "UNCHANGED-SOURCE REUSE ONLY",
+  "baseline": "3d156f62f75bdf8d6a8105d736ecb4a9cb1d4d16",
+  "protectedScopes": [
+    "src",
+    "public",
+    "tests",
+    "scripts",
+    ".github",
+    "package.json",
+    "package-lock.json",
+    "docs/art/approved"
+  ],
+  "gitDiff": "",
+  "oldEvidence": "docs/verification/P3_PASSIVE_RUNTIME/REPORT.md",
+  "oldEvidenceSha256": "7577445e767f8d32999fab0ebdb8ca4f5f4b094a7bbccdb74b566315f1178afd",
+  "newRuntimeEvidence": false,
+  "reusedFiles": {
+    "src/runtime/assetPresenter.js": "dcb417ed975a2a00c8ec02fbd9609ea555ac6a650137a15bd86f0bd954503bc2",
+    "src/runtime/passivePresenter.js": "7fcffa15e8b3c5fb8b51613e1f1a5b8cfea1ab0a7ce113fe0ffd44d0c0fa36dc",
+    "src/runtime/telegraphs.js": "0345e70c1ef491b15b6ff1cd431e1080dee7c7ec9d721bbb4eb09793c894fae1",
+    "src/runtime/ArenaScene.js": "c3269a772177c4b4e56721129416a2d826f98d0814e4de3e216e2a37fcb1232d",
+    "src/combat/passiveRuntime.js": "35d0609538ee2060e155988e43ad02f47971dacc9ac306e6af2a6bc68ef2cb56",
+    "src/roster/catalog.js": "cc7cfa6c13d55d5bbe80b2b8a798364a57202374f2a4856e07b523a3602b621b",
+    "src/roster/abilities.js": "1dd3f36147aa88c732e168333ed2179dd3078c22960902e2e9aeb4a363f3c7ec",
+    "docs/verification/P3_PASSIVE_RUNTIME/browser/native.json": "11cc5bac4c183ae29140a9ff54a9b93e744ed045cda578ad801de0c1255b19fa",
+    "docs/verification/P3_PASSIVE_RUNTIME/browser/built-entry.json": "855c9b44ed9faf0a0e7189d180f1b61fd3c0f0f6913fb43d9fc463bea930be25",
+    "docs/verification/P3_PASSIVE_RUNTIME/public-fingerprint.json": "410ee3d2663df8c4f23cf0abfb4d67d9244bf8bbf6c9d205c69eac952009ae6d"
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "status": "REVISED VISUAL/GIF PLAYER REVIEW PENDING",
+  "baseline": "3d156f62f75bdf8d6a8105d736ecb4a9cb1d4d16",
+  "preArtCheckpoint": "cfa700133fb19f0f2a7ef8d291cbe509c35472c5",
+  "sourcesSha256": {
+    "docs/art/candidates/chiru/passive/style-v2/REVIEW.md": "b0495bb7fdaef2f5dde58a5e4d8d65b6a240ae8f180ceff2e51b4f0991822f31",
+    "docs/art/candidates/chiru/passive/style-v2/T0-strokes.png": "6e5303d0a6ae0da3b48ffab7bbd349aad49770175905a005d53c8bf2a675ddd6",
+    "docs/art/candidates/chiru/passive/style-v2/T0-style.png": "878b6400cdf2954969299e49480c16fdc0326a83d0978a1e61c91ad9130039d5",
+    "docs/art/candidates/chiru/passive/style-v2/T1-strokes.png": "265f300653f7532eb7fbe08ca512273315eb3ab2aeac564ea055d4b6942d5776",
+    "docs/art/candidates/chiru/passive/style-v2/T1-style.png": "73aa45f913a155a8d3616a45864c28e74fe4f4f7213c29294a3055ebc75f39b0",
+    "docs/art/candidates/chiru/passive/style-v2/T2-strokes.png": "55a74d5a5aadc5fe158039884dcc777cecf236d0680493a6d401b3cf28a18aac",
+    "docs/art/candidates/chiru/passive/style-v2/T2-style.png": "b3f14c57239bac1cb7927926c32cdc408df762261fed516af26665069a630194",
+    "docs/art/candidates/chiru/passive/style-v2/T3-strokes.png": "87161c62c3497b30c0ff8e7abd17e7d579dcfa99bed4ff48f86c776bfbf00aa2",
+    "docs/art/candidates/chiru/passive/style-v2/T3-style.png": "87fe93096fe5b5ecb2ceaee5f2ee66a18f998d717b7f4ed9ccdee47ebe3d1ddf",
+    "docs/art/candidates/chiru/passive/style-v2/manifest.json": "8ecdac9eab4dabc063356e7971d84a9e2ea63b4c412fd960da60f73ebccffb4f",
+    "docs/art/candidates/chiru/passive/style-v2/originals/paired-fish.png": "c674da1b061fe8c978c7721fb9b0a8746fdbcfc62a796709d9bc8bca9be41892",
+    "docs/art/candidates/chiru/passive/style-v2/paired-fish-display.png": "d849cf74b81412a35774d8480f27b96dfe062f804308c13b16139de5091e9d43",
+    "docs/art/candidates/chiru/passive/style-v2/paired-fish-padded.png": "06ea55291442af0251b4d5c16f75e3b39c642baf7d89f3095fce3e4012ba1c75",
+    "docs/art/candidates/chiru/passive/style-v2/prepare_preview.py": "2bb3e58c5d632f425b1c3250fc2588da94d6f964baa66d2af38a5fefc29a4245",
+    "docs/art/candidates/chiru/passive/style-v2/prompt.txt": "0beae3200053ab4f25493ab8ba2caf02b19ef8812010af2865e34c672d19dc80",
+    "docs/art/candidates/chiru/passive/style-v2/recipient-placement-review.png": "69127f40188d53205f8d3752e5dfc3af41b3f4473439c0f0263701412395209e",
+    "docs/art/candidates/chiru/passive/style-v2/tier-style-review.png": "a52c4903cba06acb9d6f69605ce4468566a52f543293bfbdbd385782b30d2981",
+    "docs/art/candidates/chiru/awakening/composite-review-v1/approved-idle-return-cell.png": "e0e00ad64ca81187b2e9e4115d02ca55cafd440a481b38cdc7c64044f80ec314",
+    "docs/verification/P3_PASSIVE_PREFLIGHT/candidate-recovery.json": "2d07a10eb8d9a9c189edebb85b272a55c2eaf44ecee595f981fcf8e34c213103",
+    "docs/verification/P3_PASSIVE_PREFLIGHT/runtime-readonly.json": "f3f06eca091d07a7e1186d62b84b922f3b92bff382f95793fe8b37f9e31079ea",
+    "docs/verification/P3_PASSIVE_PREFLIGHT/style-verification.json": "391ffe0c30c59ef6c5e2554faea77734bcfbe6b504c2b5626e09fa621eefbb03",
+    "docs/art/approved/chiru/passive/style-v2/acceptance.json": "0cef71ddfd9f2d761ab32c0be5a5547d0ab0fe4d75ae4213649779af97f1b9d0",
+    "docs/verification/P3_PASSIVE_RUNTIME/readability-revision/source-audit.json": "e72383a3b4c8af72ee1970112ee5a6565728b8d11a00912758f51dc92935f1fb",
+    "public/assets/characters/lushu/battleIdle-static.png": "bbd7a2a576cf741c19203d1ed49ffaba50aabf86bfd75499999d4afa587df3f2",
+    "public/assets/characters/botuo/battleIdle.png": "27c65e3f1633f4e5959e62b2fbb72df7bf47e6e8324425af24943b53d8a0d2b8",
+    "public/assets/characters/chiru/battleIdle.png": "a965600f0b9e873e652a6d6048a89d38a0d078d92cb8c2622cdc003ae4646d5d",
+    "public/assets/chiru-heavy-runtime-v1/column.png": "e039089c03bf48af302e372372f9711011288322752f130953a153db8a59d7da",
+    "public/assets/chiru-heavy-runtime-v1/impact.png": "adfc132b32dc0c161edb063eb32f3276777d5bc78dd05310515cfdb33ae23ed4"
+  },
+  "sourceTreatment": "Requested deterministic white/mint color mapping, outside-alpha recipient rim, foreground fish. Immutable accepted sources. No regeneration or GIF extraction.",
+  "runtimeIntegrated": false,
+  "deployed": false,
+  "playerGifApproved": false,
+  "files": [
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-normal.gif",
+      "sha256": "b14f9d79db4cc98dc557d58f20078d157efba8d04f79d09f92b7233cac5191a2",
+      "bytes": 817165,
+      "dimensions": [
+        720,
+        850
+      ],
+      "decodedFrames": 15,
+      "decodedDurationsMs": [
+        400,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-reduced.gif",
+      "sha256": "ec4a5b477c2bc7021e887ee38a79900e3b41ccef0148255bbd625b853d5490cb",
+      "bytes": 814626,
+      "dimensions": [
+        720,
+        850
+      ],
+      "decodedFrames": 15,
+      "decodedDurationsMs": [
+        400,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/vfx-only.gif",
+      "sha256": "cdf61b5b4c5872cefaf7a440df5d82faf146b355ffd76f66c28def5d642755e1",
+      "bytes": 400339,
+      "dimensions": [
+        720,
+        850
+      ],
+      "decodedFrames": 15,
+      "decodedDurationsMs": [
+        400,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/directions-idle.gif",
+      "sha256": "086e1ec9bda6dabde1b595a072f58c3c5c25fec26c0b523a5d4343d7a501dd1a",
+      "bytes": 372014,
+      "dimensions": [
+        720,
+        490
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/other-recipient.gif",
+      "sha256": "da3561cef5fc1b2ae060fc82515186bf264c34b62822c411470898a172d44e39",
+      "bytes": 227944,
+      "dimensions": [
+        880,
+        490
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/self-zero.gif",
+      "sha256": "289909ce1a00837f2926a6bfae0a8e75b8e9be7e468639dc9d1695bb941bcb8a",
+      "bytes": 205365,
+      "dimensions": [
+        720,
+        490
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/recipient-ko.gif",
+      "sha256": "5e9bb8c1d86fe0f932ad71bae42be58c6e1c6bd2f78553140a0adc13b44230d4",
+      "bytes": 74154,
+      "dimensions": [
+        880,
+        490
+      ],
+      "decodedFrames": 4,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        1100
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/caster-ko.gif",
+      "sha256": "aa38f3e2d41e6a13f1f582e909ce7e9a48df834f35c92a831164935d5ae4296e",
+      "bytes": 88442,
+      "dimensions": [
+        880,
+        490
+      ],
+      "decodedFrames": 4,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        1100
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/lifecycle.gif",
+      "sha256": "659e1746d407f43bf26d79665ceb2221b0854e2dec7d0f0081c28dbae3bcdd82",
+      "bytes": 353988,
+      "dimensions": [
+        720,
+        850
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/crowded-comparison.gif",
+      "sha256": "e6a03f95a1678f7f3ece2e40e960bf261f384212e3ae1642f8e727d23bb9ddae",
+      "bytes": 273382,
+      "dimensions": [
+        852,
+        1000
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/crowded-reduced.gif",
+      "sha256": "1bfd5932cb3f021a33f590cb2bfa721b99b5bd792b767e937c70612648b1c003",
+      "bytes": 285645,
+      "dimensions": [
+        852,
+        1000
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    }
+  ],
+  "preArtRemoteCheckpoint": "f61a3d4be2f64d6a66ecc68818aa25d8aa6c4b57",
+  "displayProposal": {
+    "fishLayer": 6,
+    "recipientRim": "outside current visible actor silhouette only; follow current pose/frame and flip, not this static Idle reference",
+    "rimWidthLogicalPx": 3,
+    "rimColor": "#69ffc3",
+    "lifetimeMs": 650,
+    "normal": "fish inward return after200ms; rim fades without scaling body",
+    "reduced": "same Tier shape/position; opacity-only fade",
+    "phoneViewport": [
+      852,
+      393
+    ],
+    "logicalStage": [
+      1120,
+      540
+    ],
+    "phoneScale": 0.7277777777777777,
+    "beneficiary": "second actor, P2 teammate; no marker on caster",
+    "runtimeIntegrated": false,
+    "gameplayChanged": false
+  }
+}

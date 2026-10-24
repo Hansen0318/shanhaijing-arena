@@ -1,0 +1,9 @@
+{
+  "cliPush": "FAIL: could not read Username for https://github.com; terminal prompts disabled",
+  "method": "connected GitHub API, base64 blobs verified against git hash-object, complete tree SHA comparison; non-force same-branch ref update",
+  "preArtRemoteCheckpoint": "f61a3d4be2f64d6a66ecc68818aa25d8aa6c4b57",
+  "preArtTree": "fa7353317c384c87ee2a89f70ece44758bf55b2a",
+  "localHistory": "local original checkpoint and equal-tree API checkpoint were merged without resetting; final authoritative remote commit determined by ref after publish",
+  "playerVisualApproval": false,
+  "runtimeIntegrated": false
+}

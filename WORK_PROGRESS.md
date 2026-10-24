@@ -1,3 +1,11 @@
+## 2026-10-25 — 游息薄荷綠／亮白修正版11GIF READY；唯一下一Gate＝玩家修正版視覺核准
+
+已完成正式/示意來源唯讀盤點：20招中P1/P2/P3共12招有正式action，引用PNG均存在；P4/P5無正式來源保留fallback。TelegraphPresenter仍無正式來源替代判斷，須在修正版視覺核准後讓正式呈現完整承接真預警再退對應幾何；固定褐色橢圓是場地輔助，正式狀態盾與P1/P2程式化被動不可誤刪。來源及55檔hash見docs/verification/P3_PASSIVE_RUNTIME/readability-revision/SOURCE_AUDIT.md與source-audit.json。
+
+沿核准PNG確定性衍生亮白雙魚／薄荷綠短紋，受益者短暫外輪廓亮邊、魚印前景；原色/尺度/anchor與全部approved bytes保護。完成11GIF（含原版/修正版同尺度852×393手機混戰、四Tier normal/reduced、左右、自療/他療/zero與650ms/KO/end/Restart/destroy腳本），入口docs/art/candidates/chiru/passive/readability-review-v1/REVIEW.md。全部明示美術模擬、非Runtime；313檢查及119編碼幀解碼/絕對時間像素核對PASS，來源alpha及原收據hash一致。原生單人自審，無獨立review。
+
+本Gate未改產品/既有approved來源、未Build/Browser/CI/Pages；舊證據僅按精確未改來源沿用，見readability-revision/reuse-proof.json，不拿舊1221/32+4/168宣稱新行為PASS。P3未COMPLETE，未建立Runtime玩家acceptance。唯一下一步：呈交並停待玩家核准本次修正版視覺/GIF；核准後才最小Runtime＋正式VFX退示意、必要真驗證與已授權正常部署，再待玩家遊戲核准。
+
 ## 2026-10-25 — 游息可讀性修正 pre-art checkpoint
 
 已fetch核對remote 3d156f62f75bdf8d6a8105d736ecb4a9cb1d4d16，PR#1 open/unmerged；本工作區fresh checkout且無未push成果。依玩家明確授權採原生單人、同分支，直接盤點正式/示意來源並沿核准PNG準備薄荷綠亮邊＋亮白雙魚預覽。現有Runtime/核准素材/舊收據不改，沿用原範圍證據，不重跑suite/Build/Browser/Pages。修正版預覽未核准，P3未COMPLETE；下一步＝完成來源盤點及同尺度混戰對照/必要GIF，呈交後停待玩家視覺核准。恢復紀錄：docs/verification/P3_PASSIVE_RUNTIME/readability-revision/recovery.json。

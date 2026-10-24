@@ -1,0 +1,1436 @@
+{
+  "status": "READONLY SOURCE AUDIT / NOT RUNTIME REPLACEMENT EVIDENCE",
+  "baseline": "3d156f62f75bdf8d6a8105d736ecb4a9cb1d4d16",
+  "skills": [
+    {
+      "character": "P1",
+      "category": "basic",
+      "abilityId": "P1.basic",
+      "actionKind": "action",
+      "formal": {
+        "animation": "lushu.battleBasic",
+        "anticipation": null,
+        "blade": {
+          "assetKey": "lushu.basicBlade",
+          "offset": [
+            176,
+            35
+          ],
+          "size": [
+            192,
+            160
+          ],
+          "layer": 4
+        },
+        "contact": {
+          "assetKey": "lushu.basicContact",
+          "offset": [
+            262,
+            61
+          ],
+          "size": [
+            169,
+            113
+          ],
+          "layer": 6
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": null,
+        "assets": [
+          {
+            "key": "lushu.basicBlade",
+            "path": "public/assets/special-runtime-v1/lushu-basicBlade.png",
+            "exists": true,
+            "sha256": "8e72c3121d3f95166c8c456fc58f08f49b55234717a88980d1c9100c57cca222"
+          },
+          {
+            "key": "lushu.basicContact",
+            "path": "public/assets/special-runtime-v1/lushu-basicContact.png",
+            "exists": true,
+            "sha256": "d52cfd9ecf8ed96f6650e0167f4bb963935782b8f9e0d052eccbabd5dbc978f8"
+          },
+          {
+            "key": "lushu.battleBasic",
+            "path": "public/assets/special-runtime-v1/lushu-battleBasic.png",
+            "exists": true,
+            "sha256": "ca24d04ea7d90d663440cf8440e7df4ea62089c23eef9e51d4fd200b6c978a5e"
+          }
+        ]
+      },
+      "telegraph": null,
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "abilityId": "P1.heavy",
+      "actionKind": "action",
+      "formal": {
+        "animation": "lushu.battleHeavy",
+        "anticipation": null,
+        "blade": {
+          "assetKey": "lushu.heavyWind",
+          "offset": [
+            42.5,
+            -84.5
+          ],
+          "size": [
+            345,
+            345
+          ],
+          "layer": 6,
+          "holdAfterResolveMs": 260
+        },
+        "contact": {
+          "assetKey": "lushu.heavyImpact",
+          "offset": [
+            -183.75,
+            -197.5
+          ],
+          "size": [
+            367.5,
+            245
+          ],
+          "layer": 7,
+          "attach": "target",
+          "retainOnNextCast": true
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": null,
+        "assets": [
+          {
+            "key": "lushu.heavyWind",
+            "path": "public/assets/special-runtime-v1/lushu-heavyWind.png",
+            "exists": true,
+            "sha256": "0660b40eeb9d64c7b2c37d92c281e078fdb127b849efdf3a1acd7607496a01df"
+          },
+          {
+            "key": "lushu.heavyImpact",
+            "path": "public/assets/special-runtime-v1/lushu-heavyImpact.png",
+            "exists": true,
+            "sha256": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65"
+          },
+          {
+            "key": "lushu.battleHeavy",
+            "path": "public/assets/special-runtime-v1/lushu-battleHeavy.png",
+            "exists": true,
+            "sha256": "37830cb6fafef9d05a7346f5c25b79dc60426b225809fdc6972c31d3e4d536c9"
+          }
+        ]
+      },
+      "telegraph": null,
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "abilityId": "P1.special",
+      "actionKind": "action",
+      "formal": {
+        "animation": "lushu.battleSpecial",
+        "anticipation": null,
+        "blade": {
+          "assetKey": "lushu.specialWind",
+          "offset": [
+            -16.367816091954026,
+            -38.568404563832274
+          ],
+          "size": [
+            128.73563218390805,
+            107.27969348659005
+          ],
+          "layer": 6,
+          "holdAfterResolveMs": 280
+        },
+        "contact": {
+          "assetKey": "lushu.specialImpact",
+          "offset": [
+            -67.04980842911878,
+            -66.85823754789273
+          ],
+          "size": [
+            134.09961685823757,
+            93.86973180076629
+          ],
+          "layer": 7,
+          "attach": "target",
+          "retainOnNextCast": true
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": null,
+        "assets": [
+          {
+            "key": "lushu.specialWind",
+            "path": "public/assets/special-runtime-v1/lushu-specialWind.png",
+            "exists": true,
+            "sha256": "bdd7d40b3e18e3660bd89b05209a636e933b4ad7350dc3b3f2d7a266ae47597d"
+          },
+          {
+            "key": "lushu.specialImpact",
+            "path": "public/assets/special-runtime-v1/lushu-specialImpact.png",
+            "exists": true,
+            "sha256": "a402af849601340993955c3d5b067d8b2fb1eaeed36028e069ff07f47f5f8174"
+          },
+          {
+            "key": "lushu.battleSpecial",
+            "path": "public/assets/special-runtime-v1/lushu-battleSpecial.png",
+            "exists": true,
+            "sha256": "b6ba5ee504eb4c54951e05400d3d33af6c2c53460a5ab57ea3231fa78b5ed9e3"
+          }
+        ]
+      },
+      "telegraph": null,
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "abilityId": "P1.awakening",
+      "actionKind": "staged",
+      "formal": {
+        "animation": "lushu.battleAwakening",
+        "anticipation": null,
+        "blade": null,
+        "contact": null,
+        "activation": null,
+        "stages": [
+          {
+            "startMs": 80,
+            "endMs": 135,
+            "contactHoldMs": 80,
+            "blade": {
+              "opacity": 0.85,
+              "assetKey": "lushu.awakeningASource",
+              "offset": [
+                -155.25559105431307,
+                61.26411075612356
+              ],
+              "size": [
+                520,
+                329
+              ],
+              "layer": 6
+            },
+            "contact": {
+              "assetKey": "lushu.awakeningAImpact",
+              "offset": [
+                -188.00312012480498,
+                -235.94383775351014
+              ],
+              "size": [
+                308,
+                248
+              ],
+              "layer": 7,
+              "attach": "target"
+            }
+          },
+          {
+            "startMs": 135,
+            "endMs": 280,
+            "contactHoldMs": 90,
+            "blade": {
+              "opacity": 0.85,
+              "assetKey": "lushu.awakeningBSource",
+              "offset": [
+                -104.62043795620437,
+                85
+              ],
+              "size": [
+                349,
+                264
+              ],
+              "layer": 6
+            },
+            "contact": {
+              "assetKey": "lushu.awakeningBImpact",
+              "offset": [
+                -208.4016393442623,
+                -284.8360655737705
+              ],
+              "size": [
+                385,
+                352
+              ],
+              "layer": 7,
+              "attach": "target"
+            }
+          },
+          {
+            "startMs": 280,
+            "endMs": 470,
+            "contactHoldMs": 130,
+            "blade": {
+              "opacity": 0.85,
+              "assetKey": "lushu.awakeningCSource",
+              "offset": [
+                -363.97388059701495,
+                100.14365671641787
+              ],
+              "size": [
+                847,
+                238.0625
+              ],
+              "layer": 6
+            },
+            "contact": {
+              "assetKey": "lushu.awakeningCImpact",
+              "offset": [
+                -348.125,
+                -436.25
+              ],
+              "size": [
+                678,
+                654
+              ],
+              "layer": 7,
+              "attach": "target"
+            }
+          }
+        ],
+        "hits": null,
+        "statusVisuals": null,
+        "assets": [
+          {
+            "key": "lushu.awakeningASource",
+            "path": "public/assets/special-runtime-v1/lushu-awakeningASource.png",
+            "exists": true,
+            "sha256": "c6ab35144a8010b1e177fb63e25a7d11a99b8167b3a36eaf96008381df3e5be2"
+          },
+          {
+            "key": "lushu.awakeningAImpact",
+            "path": "public/assets/special-runtime-v1/lushu-awakeningAImpact.png",
+            "exists": true,
+            "sha256": "000c059dd5e5ba482618e08ab1077cabafbbabd5dbec382c7ff28e2bf756e23a"
+          },
+          {
+            "key": "lushu.awakeningBSource",
+            "path": "public/assets/special-runtime-v1/lushu-awakeningBSource.png",
+            "exists": true,
+            "sha256": "22114932f165760d7087dbbcfe3a63b26a40cfeec4ce3392e94aaaa3fb0888b1"
+          },
+          {
+            "key": "lushu.awakeningBImpact",
+            "path": "public/assets/special-runtime-v1/lushu-awakeningBImpact.png",
+            "exists": true,
+            "sha256": "09c329d0744a53fd5ab59111ae448d60439a7285fe92adcc265ec0beea023a2a"
+          },
+          {
+            "key": "lushu.awakeningCSource",
+            "path": "public/assets/special-runtime-v1/lushu-awakeningCSource.png",
+            "exists": true,
+            "sha256": "b446a76c1b32d6810013c3d2f861149e5a6d6e40814a642e0d876b3dcca7eb24"
+          },
+          {
+            "key": "lushu.awakeningCImpact",
+            "path": "public/assets/special-runtime-v1/lushu-awakeningCImpact.png",
+            "exists": true,
+            "sha256": "c06432a64ca3fcde16f95fab3ce1cbbadcf394045ac39d2b8b42fea8e36b10db"
+          },
+          {
+            "key": "lushu.battleAwakening",
+            "path": "public/assets/special-runtime-v1/lushu-battleAwakening.png",
+            "exists": true,
+            "sha256": "ef9021316a7983ee77e15d550045e0454ecaa706f8325031c4949d38361f0abe"
+          }
+        ]
+      },
+      "telegraph": null,
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "abilityId": "P2.basic",
+      "actionKind": "action",
+      "formal": {
+        "animation": "botuo.basicPoses",
+        "anticipation": null,
+        "blade": {
+          "startMs": 160,
+          "assetKey": "botuo.basicSource",
+          "offset": [
+            51.375,
+            -10.449999999999989
+          ],
+          "size": [
+            146,
+            114
+          ],
+          "layer": 4,
+          "holdAfterResolveMs": 200
+        },
+        "contact": {
+          "durationMs": 200,
+          "assetKey": "botuo.basicContact",
+          "offset": [
+            -52,
+            -144.2
+          ],
+          "size": [
+            105,
+            115
+          ],
+          "layer": 6,
+          "attach": "target",
+          "retainOnNextCast": true
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": null,
+        "assets": [
+          {
+            "key": "botuo.basicSource",
+            "path": "public/assets/special-runtime-v1/botuo-basicSource.png",
+            "exists": true,
+            "sha256": "64eedf28ee64795b1348000a5972a53f3514a782a20567865d05c41c049aab52"
+          },
+          {
+            "key": "botuo.basicContact",
+            "path": "public/assets/special-runtime-v1/botuo-basicContact.png",
+            "exists": true,
+            "sha256": "2c86503c0b5ef1f4572651942e9b22103837ba3fda7c8ebd4f3e4cd95faf44bb"
+          },
+          {
+            "key": "botuo.basicPoses",
+            "path": "public/assets/special-runtime-v1/botuo-basicPoses.png",
+            "exists": true,
+            "sha256": "d6ea5204df99e37ec1bbe5bdf9b165d40a7aa1e6e6992d84e4cd3bcab870be57"
+          }
+        ]
+      },
+      "telegraph": null,
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "abilityId": "P2.heavy",
+      "actionKind": "action",
+      "formal": {
+        "animation": "botuo.heavyPoses",
+        "anticipation": null,
+        "blade": {
+          "startMs": 160,
+          "assetKey": "botuo.heavySource",
+          "offset": [
+            30,
+            1
+          ],
+          "size": [
+            230,
+            144
+          ],
+          "layer": 4,
+          "holdAfterResolveMs": 280
+        },
+        "contact": {
+          "durationMs": 280,
+          "assetKey": "botuo.heavyContact",
+          "offset": [
+            -102,
+            -152
+          ],
+          "size": [
+            204,
+            161
+          ],
+          "layer": 6,
+          "attach": "target",
+          "retainOnNextCast": true
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": null,
+        "assets": [
+          {
+            "key": "botuo.heavySource",
+            "path": "public/assets/botuo-heavy-runtime-v1/botuo-heavySource.png",
+            "exists": true,
+            "sha256": "4c17e65aee4fed9942914c0558f8dd2d32e921fed391fb34040c5d63a9284132"
+          },
+          {
+            "key": "botuo.heavyContact",
+            "path": "public/assets/botuo-heavy-runtime-v1/botuo-heavyContact.png",
+            "exists": true,
+            "sha256": "cc4496ce23ab43f3ecf89ab9410caa287c7c267d0da43f424cdcc7fe3cb1b92b"
+          },
+          {
+            "key": "botuo.heavyPoses",
+            "path": "public/assets/special-runtime-v1/botuo-heavyPoses.png",
+            "exists": true,
+            "sha256": "bdc06bd7d550f969cca551b15bb6de42bbcaa2255e84b7a9ab062b6564f5f429"
+          }
+        ]
+      },
+      "telegraph": {
+        "telegraphMs": 650,
+        "projectileTravelMs": 0,
+        "dodgeable": true,
+        "dangerShape": "circle",
+        "dangerRadius": 0.7,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "abilityId": "P2.special",
+      "actionKind": "utility",
+      "formal": {
+        "animation": "botuo.specialPoses",
+        "anticipation": null,
+        "blade": null,
+        "contact": null,
+        "activation": {
+          "assetKey": "botuo.specialActivation",
+          "size": [
+            320,
+            260
+          ],
+          "offset": [
+            0,
+            -88
+          ],
+          "layer": 4,
+          "durationMs": 320,
+          "fadeMs": 160,
+          "opacity": 1,
+          "reducedOpacity": 0.8
+        },
+        "stages": null,
+        "hits": null,
+        "statusVisuals": {
+          "primary": {
+            "assetKey": "botuo.specialState",
+            "styleId": "protective-guard",
+            "type": "mitigation",
+            "size": [
+              224,
+              234
+            ],
+            "offset": [
+              0,
+              -88
+            ],
+            "layer": 4,
+            "opacity": 0.9,
+            "reducedOpacity": 0.78,
+            "priority": 0
+          },
+          "boyi.ally": {
+            "assetKey": "botuo.specialState",
+            "styleId": "protective-guard",
+            "type": "mitigation",
+            "size": [
+              224,
+              234
+            ],
+            "offset": [
+              0,
+              -88
+            ],
+            "layer": 4,
+            "opacity": 0.9,
+            "reducedOpacity": 0.78,
+            "priority": 0
+          }
+        },
+        "assets": [
+          {
+            "key": "botuo.specialActivation",
+            "path": "public/assets/special-runtime-v1/botuo-specialActivation.png",
+            "exists": true,
+            "sha256": "37f6ea67c7ee29a846fa5f8546c19bf5493b9e849659c0c1688da38f8c5d2da7"
+          },
+          {
+            "key": "botuo.specialState",
+            "path": "public/assets/special-runtime-v1/botuo-specialState.png",
+            "exists": true,
+            "sha256": "d86bedae11b9517715c6f5b7cd32ec4c2e2f13d23316e8bb8637c42a7d81302a"
+          },
+          {
+            "key": "botuo.specialPoses",
+            "path": "public/assets/special-runtime-v1/botuo-specialPoses.png",
+            "exists": true,
+            "sha256": "3f7fed1a9b9d6f60aa9cf0522c0245af2d42145079e170ba6942817d894e5e90"
+          }
+        ]
+      },
+      "telegraph": null,
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "abilityId": "P2.awakening",
+      "actionKind": "area-observed",
+      "formal": {
+        "animation": "botuo.awakeningPoses",
+        "anticipation": null,
+        "blade": {
+          "assetKey": "botuo.awakeningRelease",
+          "offset": [
+            -161.5,
+            42.5
+          ],
+          "size": [
+            523,
+            283
+          ],
+          "layer": 4,
+          "attach": "fixed",
+          "holdAfterResolveMs": 360
+        },
+        "contact": {
+          "durationMs": 240,
+          "assetKey": "botuo.awakeningImpact",
+          "offset": [
+            -146.5,
+            -146.5
+          ],
+          "size": [
+            293,
+            293
+          ],
+          "layer": 7,
+          "attach": "target",
+          "retainOnNextCast": true
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": {
+          "boyi.team": {
+            "assetKey": "botuo.awakeningState",
+            "styleId": "earth-mitigation",
+            "type": "mitigation",
+            "size": [
+              232,
+              162
+            ],
+            "offset": [
+              0,
+              -10
+            ],
+            "layer": 4,
+            "opacity": 1,
+            "reducedOpacity": 0.48,
+            "priority": 1
+          }
+        },
+        "assets": [
+          {
+            "key": "botuo.awakeningState",
+            "path": "public/assets/botuo-awakening-runtime-v1/team-mitigation.png",
+            "exists": true,
+            "sha256": "65c55118804fa2f4a7c856901795eabe1551ccba951a41d52577c669215fe65d"
+          },
+          {
+            "key": "botuo.awakeningRelease",
+            "path": "public/assets/botuo-awakening-runtime-v1/radial-release.png",
+            "exists": true,
+            "sha256": "c9b326fe0f87974d3ae30396745941ad96ea4683d3ad8d3f56107fe3af78e8b6"
+          },
+          {
+            "key": "botuo.awakeningImpact",
+            "path": "public/assets/botuo-awakening-runtime-v1/victim-impact.png",
+            "exists": true,
+            "sha256": "c045ea121bd06632b0a384bccb2b3acc1d897c949af3f9c2e8f9ff18336a5aa0"
+          },
+          {
+            "key": "botuo.awakeningPoses",
+            "path": "public/assets/botuo-awakening-runtime-v1/poses.png",
+            "exists": true,
+            "sha256": "0c174a764a4d3a880fbf5d2e45a504cc786d62e5d9d1e41c78f5c567bc4490c6"
+          }
+        ]
+      },
+      "telegraph": {
+        "telegraphMs": 900,
+        "projectileTravelMs": 0,
+        "dodgeable": true,
+        "dangerShape": "circle",
+        "dangerRadius": 2.2,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "persistent": true,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "abilityId": "P3.basic",
+      "actionKind": "action",
+      "formal": {
+        "animation": "chiru.basicPoses",
+        "anticipation": {
+          "frameOffsets": [
+            [
+              88.5,
+              41
+            ],
+            [
+              82.5,
+              40
+            ],
+            [
+              107.5,
+              44
+            ],
+            [
+              87.5,
+              41
+            ]
+          ],
+          "assetKey": "chiru.basicCharge",
+          "offset": [
+            85.5,
+            41
+          ],
+          "size": [
+            69,
+            48
+          ],
+          "layer": 4
+        },
+        "blade": {
+          "targetOffset": [
+            0,
+            -95
+          ],
+          "lineRange": [
+            0.06402439024390244,
+            0.9451219512195121
+          ],
+          "assetKey": "chiru.basicArrow",
+          "offset": [
+            142,
+            68
+          ],
+          "size": [
+            328,
+            122
+          ],
+          "layer": 4,
+          "attach": "line"
+        },
+        "contact": {
+          "assetKey": "chiru.basicImpact",
+          "offset": [
+            -49.5,
+            -148
+          ],
+          "size": [
+            119,
+            82
+          ],
+          "layer": 6,
+          "attach": "target"
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": null,
+        "assets": [
+          {
+            "key": "chiru.basicCharge",
+            "path": "public/assets/chiru-basic-runtime-v1/charge.png",
+            "exists": true,
+            "sha256": "07902f7950d74db13966a21121cf78a16ffd68c19454890929b1d7a1dc201615"
+          },
+          {
+            "key": "chiru.basicArrow",
+            "path": "public/assets/chiru-basic-runtime-v1/arrow.png",
+            "exists": true,
+            "sha256": "00cae240ac1a17203b91e03e957dbb97929e8d89f3fefd1210ccfa92199c413b"
+          },
+          {
+            "key": "chiru.basicImpact",
+            "path": "public/assets/chiru-basic-runtime-v1/impact.png",
+            "exists": true,
+            "sha256": "d71a6a87ab0158e7d416a7fdb40f69a37a251269557b8e6b4179f3b5edee9481"
+          },
+          {
+            "key": "chiru.basicPoses",
+            "path": "public/assets/chiru-basic-runtime-v1/poses.png",
+            "exists": true,
+            "sha256": "8d023fba5f83619f2e05c70cf0753c196dbf2a31ede94bf167151ec91d728bd1"
+          }
+        ]
+      },
+      "telegraph": null,
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "abilityId": "P3.heavy",
+      "actionKind": "launched-line",
+      "formal": {
+        "animation": "chiru.heavyPoses",
+        "anticipation": {
+          "frameOffsets": [
+            [
+              31,
+              64
+            ],
+            [
+              26,
+              47
+            ],
+            [
+              109,
+              62
+            ],
+            [
+              94,
+              59
+            ]
+          ],
+          "assetKey": "chiru.heavyCharge",
+          "offset": [
+            31,
+            64
+          ],
+          "size": [
+            98,
+            68
+          ],
+          "layer": 4
+        },
+        "blade": {
+          "targetOffset": [
+            0,
+            -98
+          ],
+          "lineRange": [
+            0.03412073490813648,
+            0.9658792650918635
+          ],
+          "assetKey": "chiru.heavyColumn",
+          "offset": [
+            158,
+            96
+          ],
+          "size": [
+            381,
+            141
+          ],
+          "layer": 4,
+          "attach": "line"
+        },
+        "contact": {
+          "durationMs": 250,
+          "fullOpacityMs": 120,
+          "assetKey": "chiru.heavyImpact",
+          "offset": [
+            -107.12,
+            -218.7
+          ],
+          "size": [
+            206,
+            142
+          ],
+          "layer": 6,
+          "attach": "target"
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": null,
+        "assets": [
+          {
+            "key": "chiru.heavyCharge",
+            "path": "public/assets/chiru-heavy-runtime-v1/charge.png",
+            "exists": true,
+            "sha256": "b7910932e09f1e8b8ee9f2f5fe8a903c8fc1ed46c0187961bf776031cb749b28"
+          },
+          {
+            "key": "chiru.heavyColumn",
+            "path": "public/assets/chiru-heavy-runtime-v1/column.png",
+            "exists": true,
+            "sha256": "e039089c03bf48af302e372372f9711011288322752f130953a153db8a59d7da"
+          },
+          {
+            "key": "chiru.heavyImpact",
+            "path": "public/assets/chiru-heavy-runtime-v1/impact.png",
+            "exists": true,
+            "sha256": "adfc132b32dc0c161edb063eb32f3276777d5bc78dd05310515cfdb33ae23ed4"
+          },
+          {
+            "key": "chiru.heavyPoses",
+            "path": "public/assets/chiru-heavy-runtime-v1/poses.png",
+            "exists": true,
+            "sha256": "6f38bcf5e758814a62711a61da872a9db3382a98de7da750605ec848110542ed"
+          }
+        ]
+      },
+      "telegraph": {
+        "telegraphMs": 350,
+        "projectileTravelMs": 350,
+        "dodgeable": true,
+        "dangerShape": "lane",
+        "dangerRadius": 0.45,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "abilityId": "P3.special",
+      "actionKind": "healing",
+      "formal": {
+        "animation": "chiru.specialPoses",
+        "anticipation": null,
+        "blade": {
+          "assetKey": "chiru.specialCaster",
+          "offset": [
+            -7,
+            -66.75
+          ],
+          "size": [
+            250,
+            274
+          ],
+          "layer": 4
+        },
+        "contact": {
+          "durationMs": 440,
+          "fullOpacityMs": 360,
+          "assetKey": "chiru.specialRecipient",
+          "offset": [
+            -155,
+            -159.07999999999998
+          ],
+          "size": [
+            310,
+            194
+          ],
+          "layer": 4,
+          "attach": "target"
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": null,
+        "assets": [
+          {
+            "key": "chiru.specialCaster",
+            "path": "public/assets/chiru-special-runtime-v1/caster.png",
+            "exists": true,
+            "sha256": "217c75d6e8fda9e26ac5f8b2aeaa936dda7b02fff9cbf9912493791d961707e7"
+          },
+          {
+            "key": "chiru.specialRecipient",
+            "path": "public/assets/chiru-special-runtime-v1/recipient.png",
+            "exists": true,
+            "sha256": "ff13dfbb66bf1ea07ff9f16b8e7a632fb2d75e4e57ed8871da82327fab5331d2"
+          },
+          {
+            "key": "chiru.specialPoses",
+            "path": "public/assets/chiru-special-runtime-v1/poses.png",
+            "exists": true,
+            "sha256": "dc988ddb5a680c622f6e19507b72b5fb74c23bdd96c955fd4d48bbc7b1efbf2e"
+          }
+        ]
+      },
+      "telegraph": null,
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "abilityId": "P3.awakening",
+      "actionKind": "healing",
+      "formal": {
+        "animation": "chiru.awakeningPoses",
+        "anticipation": null,
+        "blade": {
+          "unfurlMs": 600,
+          "assetKey": "chiru.awakeningCaster",
+          "offset": [
+            -72,
+            -136.2
+          ],
+          "size": [
+            340,
+            340
+          ],
+          "layer": 4
+        },
+        "contact": {
+          "durationMs": 600,
+          "fullOpacityMs": 500,
+          "assetKey": "chiru.awakeningRecipient",
+          "offset": [
+            -125,
+            -205
+          ],
+          "size": [
+            250,
+            250
+          ],
+          "layer": 4,
+          "attach": "target"
+        },
+        "activation": null,
+        "stages": null,
+        "hits": null,
+        "statusVisuals": {
+          "chiru.support": {
+            "assetKey": "chiru.awakeningProtection",
+            "styleId": "water-membrane",
+            "type": "mitigation",
+            "size": [
+              171,
+              171
+            ],
+            "offset": [
+              0,
+              -72.9
+            ],
+            "layer": 4,
+            "opacity": 1,
+            "reducedOpacity": 1,
+            "priority": 0
+          }
+        },
+        "assets": [
+          {
+            "key": "chiru.awakeningProtection",
+            "path": "public/assets/chiru-awakening-runtime-v1/protection.png",
+            "exists": true,
+            "sha256": "f63824653f3f46d8c65db809a3db8d34a558ac7a572f4c4508575ef1b42e4fbb"
+          },
+          {
+            "key": "chiru.awakeningCaster",
+            "path": "public/assets/chiru-awakening-runtime-v1/caster.png",
+            "exists": true,
+            "sha256": "f29f2bcd1d9a9f1d046e1aeced3c67abfe63da8fe23609d630e9b71a25dbc1bb"
+          },
+          {
+            "key": "chiru.awakeningRecipient",
+            "path": "public/assets/chiru-awakening-runtime-v1/recipient.png",
+            "exists": true,
+            "sha256": "f9b95b16aaa12dfd528bdc2f1591c388bb4be8b1dcfd12ba3b04cf6b6019b77c"
+          },
+          {
+            "key": "chiru.awakeningPoses",
+            "path": "public/assets/chiru-awakening-runtime-v1/poses.png",
+            "exists": true,
+            "sha256": "da0399490a0a4bb70e605a9e0399c8c8f2bda5466155c5fd9ff10303d7fe69f8"
+          }
+        ]
+      },
+      "telegraph": null,
+      "persistent": false,
+      "decision": "Authored action path returns before generic cast fallback. Audit tactical warning separately; formal cast alone does not prove warning coverage."
+    },
+    {
+      "character": "P4",
+      "category": "basic",
+      "abilityId": "P4.basic",
+      "actionKind": "none",
+      "formal": null,
+      "telegraph": null,
+      "persistent": false,
+      "decision": "No approved action descriptor: retain generic fallback."
+    },
+    {
+      "character": "P4",
+      "category": "heavy",
+      "abilityId": "P4.heavy",
+      "actionKind": "none",
+      "formal": null,
+      "telegraph": {
+        "telegraphMs": 450,
+        "projectileTravelMs": 200,
+        "dodgeable": true,
+        "dangerShape": "lane",
+        "dangerRadius": 0.45,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "persistent": false,
+      "decision": "No approved action descriptor: retain generic fallback."
+    },
+    {
+      "character": "P4",
+      "category": "special",
+      "abilityId": "P4.special",
+      "actionKind": "none",
+      "formal": null,
+      "telegraph": {
+        "telegraphMs": 900,
+        "projectileTravelMs": 0,
+        "dodgeable": true,
+        "dangerShape": "circle",
+        "dangerRadius": 1.6,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "persistent": true,
+      "decision": "No approved action descriptor: retain generic fallback."
+    },
+    {
+      "character": "P4",
+      "category": "awakening",
+      "abilityId": "P4.awakening",
+      "actionKind": "none",
+      "formal": null,
+      "telegraph": {
+        "telegraphMs": 650,
+        "projectileTravelMs": 250,
+        "dodgeable": true,
+        "dangerShape": "circle",
+        "dangerRadius": 0.7,
+        "commitment": "locked",
+        "interruptible": false
+      },
+      "persistent": false,
+      "decision": "No approved action descriptor: retain generic fallback."
+    },
+    {
+      "character": "P5",
+      "category": "basic",
+      "abilityId": "P5.basic",
+      "actionKind": "none",
+      "formal": null,
+      "telegraph": null,
+      "persistent": false,
+      "decision": "No approved action descriptor: retain generic fallback."
+    },
+    {
+      "character": "P5",
+      "category": "heavy",
+      "abilityId": "P5.heavy",
+      "actionKind": "none",
+      "formal": null,
+      "telegraph": null,
+      "persistent": false,
+      "decision": "No approved action descriptor: retain generic fallback."
+    },
+    {
+      "character": "P5",
+      "category": "special",
+      "abilityId": "P5.special",
+      "actionKind": "none",
+      "formal": null,
+      "telegraph": null,
+      "persistent": false,
+      "decision": "No approved action descriptor: retain generic fallback."
+    },
+    {
+      "character": "P5",
+      "category": "awakening",
+      "abilityId": "P5.awakening",
+      "actionKind": "none",
+      "formal": null,
+      "telegraph": null,
+      "persistent": false,
+      "decision": "No approved action descriptor: retain generic fallback."
+    }
+  ],
+  "passives": [
+    {
+      "id": "P1.passive",
+      "implemented": true,
+      "presentation": {
+        "label": "疾行",
+        "style": "speed-streaks"
+      }
+    },
+    {
+      "id": "P2.passive",
+      "implemented": true,
+      "presentation": {
+        "label": "厚甲",
+        "style": "guard-plates"
+      }
+    },
+    {
+      "id": "P3.passive",
+      "implemented": true,
+      "presentation": {
+        "style": "paired-fish",
+        "duration": 0.65,
+        "assetKeys": [
+          "chiru.passiveT0",
+          "chiru.passiveT1",
+          "chiru.passiveT2",
+          "chiru.passiveT3"
+        ],
+        "size": [
+          180,
+          144
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "label": "游息"
+      }
+    },
+    {
+      "id": "P4.passive",
+      "implemented": false
+    },
+    {
+      "id": "P5.passive",
+      "implemented": false
+    }
+  ],
+  "sourceSha256": {
+    "public/assets/botuo-awakening-runtime-v1/poses.png": "0c174a764a4d3a880fbf5d2e45a504cc786d62e5d9d1e41c78f5c567bc4490c6",
+    "public/assets/botuo-awakening-runtime-v1/radial-release.png": "c9b326fe0f87974d3ae30396745941ad96ea4683d3ad8d3f56107fe3af78e8b6",
+    "public/assets/botuo-awakening-runtime-v1/team-mitigation.png": "65c55118804fa2f4a7c856901795eabe1551ccba951a41d52577c669215fe65d",
+    "public/assets/botuo-awakening-runtime-v1/victim-impact.png": "c045ea121bd06632b0a384bccb2b3acc1d897c949af3f9c2e8f9ff18336a5aa0",
+    "public/assets/botuo-heavy-runtime-v1/botuo-heavyContact.png": "cc4496ce23ab43f3ecf89ab9410caa287c7c267d0da43f424cdcc7fe3cb1b92b",
+    "public/assets/botuo-heavy-runtime-v1/botuo-heavySource.png": "4c17e65aee4fed9942914c0558f8dd2d32e921fed391fb34040c5d63a9284132",
+    "public/assets/chiru-awakening-runtime-v1/caster.png": "f29f2bcd1d9a9f1d046e1aeced3c67abfe63da8fe23609d630e9b71a25dbc1bb",
+    "public/assets/chiru-awakening-runtime-v1/poses.png": "da0399490a0a4bb70e605a9e0399c8c8f2bda5466155c5fd9ff10303d7fe69f8",
+    "public/assets/chiru-awakening-runtime-v1/protection.png": "f63824653f3f46d8c65db809a3db8d34a558ac7a572f4c4508575ef1b42e4fbb",
+    "public/assets/chiru-awakening-runtime-v1/recipient.png": "f9b95b16aaa12dfd528bdc2f1591c388bb4be8b1dcfd12ba3b04cf6b6019b77c",
+    "public/assets/chiru-basic-runtime-v1/arrow.png": "00cae240ac1a17203b91e03e957dbb97929e8d89f3fefd1210ccfa92199c413b",
+    "public/assets/chiru-basic-runtime-v1/charge.png": "07902f7950d74db13966a21121cf78a16ffd68c19454890929b1d7a1dc201615",
+    "public/assets/chiru-basic-runtime-v1/impact.png": "d71a6a87ab0158e7d416a7fdb40f69a37a251269557b8e6b4179f3b5edee9481",
+    "public/assets/chiru-basic-runtime-v1/poses.png": "8d023fba5f83619f2e05c70cf0753c196dbf2a31ede94bf167151ec91d728bd1",
+    "public/assets/chiru-heavy-runtime-v1/charge.png": "b7910932e09f1e8b8ee9f2f5fe8a903c8fc1ed46c0187961bf776031cb749b28",
+    "public/assets/chiru-heavy-runtime-v1/column.png": "e039089c03bf48af302e372372f9711011288322752f130953a153db8a59d7da",
+    "public/assets/chiru-heavy-runtime-v1/impact.png": "adfc132b32dc0c161edb063eb32f3276777d5bc78dd05310515cfdb33ae23ed4",
+    "public/assets/chiru-heavy-runtime-v1/poses.png": "6f38bcf5e758814a62711a61da872a9db3382a98de7da750605ec848110542ed",
+    "public/assets/chiru-special-runtime-v1/caster.png": "217c75d6e8fda9e26ac5f8b2aeaa936dda7b02fff9cbf9912493791d961707e7",
+    "public/assets/chiru-special-runtime-v1/poses.png": "dc988ddb5a680c622f6e19507b72b5fb74c23bdd96c955fd4d48bbc7b1efbf2e",
+    "public/assets/chiru-special-runtime-v1/recipient.png": "ff13dfbb66bf1ea07ff9f16b8e7a632fb2d75e4e57ed8871da82327fab5331d2",
+    "public/assets/special-runtime-v1/botuo-basicContact.png": "2c86503c0b5ef1f4572651942e9b22103837ba3fda7c8ebd4f3e4cd95faf44bb",
+    "public/assets/special-runtime-v1/botuo-basicPoses.png": "d6ea5204df99e37ec1bbe5bdf9b165d40a7aa1e6e6992d84e4cd3bcab870be57",
+    "public/assets/special-runtime-v1/botuo-basicSource.png": "64eedf28ee64795b1348000a5972a53f3514a782a20567865d05c41c049aab52",
+    "public/assets/special-runtime-v1/botuo-heavyPoses.png": "bdc06bd7d550f969cca551b15bb6de42bbcaa2255e84b7a9ab062b6564f5f429",
+    "public/assets/special-runtime-v1/botuo-specialActivation.png": "37f6ea67c7ee29a846fa5f8546c19bf5493b9e849659c0c1688da38f8c5d2da7",
+    "public/assets/special-runtime-v1/botuo-specialPoses.png": "3f7fed1a9b9d6f60aa9cf0522c0245af2d42145079e170ba6942817d894e5e90",
+    "public/assets/special-runtime-v1/botuo-specialState.png": "d86bedae11b9517715c6f5b7cd32ec4c2e2f13d23316e8bb8637c42a7d81302a",
+    "public/assets/special-runtime-v1/lushu-awakeningAImpact.png": "000c059dd5e5ba482618e08ab1077cabafbbabd5dbec382c7ff28e2bf756e23a",
+    "public/assets/special-runtime-v1/lushu-awakeningASource.png": "c6ab35144a8010b1e177fb63e25a7d11a99b8167b3a36eaf96008381df3e5be2",
+    "public/assets/special-runtime-v1/lushu-awakeningBImpact.png": "09c329d0744a53fd5ab59111ae448d60439a7285fe92adcc265ec0beea023a2a",
+    "public/assets/special-runtime-v1/lushu-awakeningBSource.png": "22114932f165760d7087dbbcfe3a63b26a40cfeec4ce3392e94aaaa3fb0888b1",
+    "public/assets/special-runtime-v1/lushu-awakeningCImpact.png": "c06432a64ca3fcde16f95fab3ce1cbbadcf394045ac39d2b8b42fea8e36b10db",
+    "public/assets/special-runtime-v1/lushu-awakeningCSource.png": "b446a76c1b32d6810013c3d2f861149e5a6d6e40814a642e0d876b3dcca7eb24",
+    "public/assets/special-runtime-v1/lushu-basicBlade.png": "8e72c3121d3f95166c8c456fc58f08f49b55234717a88980d1c9100c57cca222",
+    "public/assets/special-runtime-v1/lushu-basicContact.png": "d52cfd9ecf8ed96f6650e0167f4bb963935782b8f9e0d052eccbabd5dbc978f8",
+    "public/assets/special-runtime-v1/lushu-battleAwakening.png": "ef9021316a7983ee77e15d550045e0454ecaa706f8325031c4949d38361f0abe",
+    "public/assets/special-runtime-v1/lushu-battleBasic.png": "ca24d04ea7d90d663440cf8440e7df4ea62089c23eef9e51d4fd200b6c978a5e",
+    "public/assets/special-runtime-v1/lushu-battleHeavy.png": "37830cb6fafef9d05a7346f5c25b79dc60426b225809fdc6972c31d3e4d536c9",
+    "public/assets/special-runtime-v1/lushu-battleSpecial.png": "b6ba5ee504eb4c54951e05400d3d33af6c2c53460a5ab57ea3231fa78b5ed9e3",
+    "public/assets/special-runtime-v1/lushu-heavyImpact.png": "5a3823170ab524679c2230b52185d75034cceb469469d7f1752bad4320db3a65",
+    "public/assets/special-runtime-v1/lushu-heavyWind.png": "0660b40eeb9d64c7b2c37d92c281e078fdb127b849efdf3a1acd7607496a01df",
+    "public/assets/special-runtime-v1/lushu-specialImpact.png": "a402af849601340993955c3d5b067d8b2fb1eaeed36028e069ff07f47f5f8174",
+    "public/assets/special-runtime-v1/lushu-specialWind.png": "bdd7d40b3e18e3660bd89b05209a636e933b4ad7350dc3b3f2d7a266ae47597d",
+    "src/assets/battleDescriptors.js": "496af941a3f9d3fc813c6f98d2efc0e21dec8d2a8adbec53ef49a3a1135be688",
+    "src/assets/manifest.js": "bd1c6fb9505e5d15da8d07f12c0c3193d59a8fd43d827fccb4a83235e956be0c",
+    "src/combat/persistentAreas.js": "f1b3d4d59c2bea8f82e78a4e9cbe85a9b1175273a8de8aab515919fb25ffae68",
+    "src/combat/threats.js": "1d1568171a94fd52fdc2fd8a75d4e35ae5ff9eb1bc1dae4b050cf2d62609200c",
+    "src/roster/abilities.js": "1dd3f36147aa88c732e168333ed2179dd3078c22960902e2e9aeb4a363f3c7ec",
+    "src/roster/catalog.js": "cc7cfa6c13d55d5bbe80b2b8a798364a57202374f2a4856e07b523a3602b621b",
+    "src/runtime/ArenaScene.js": "c3269a772177c4b4e56721129416a2d826f98d0814e4de3e216e2a37fcb1232d",
+    "src/runtime/assetPresenter.js": "dcb417ed975a2a00c8ec02fbd9609ea555ac6a650137a15bd86f0bd954503bc2",
+    "src/runtime/passivePresenter.js": "7fcffa15e8b3c5fb8b51613e1f1a5b8cfea1ab0a7ce113fe0ffd44d0c0fa36dc",
+    "src/runtime/statusEffects.js": "078190c310d72b60bba4a4f14adce31ecc6165e0cb6e40d4a2c3ae8244d51b77",
+    "src/runtime/telegraphs.js": "0345e70c1ef491b15b6ff1cd431e1080dee7c7ec9d721bbb4eb09793c894fae1"
+  },
+  "actorGeometry": {
+    "P1": {
+      "idle": {
+        "source": "lushu.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 128
+          }
+        ],
+        "fps": 2.5,
+        "duration": 0.4,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9544198895027625
+        ],
+        "scale": 2
+      },
+      "displayRule": "72 * descriptor.scale * logical dimensions / max(logical dimensions)",
+      "record": {
+        "key": "lushu.battleIdle",
+        "type": "image",
+        "path": "assets/special-runtime-v1/lushu-battleIdle.png",
+        "width": 78,
+        "height": 121,
+        "bytes": 17934,
+        "fallback": "placeholder.battle",
+        "logicalWidth": 96,
+        "logicalHeight": 128
+      }
+    },
+    "P2": {
+      "idle": {
+        "source": "botuo.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 160,
+            "height": 160
+          }
+        ],
+        "fps": 2.5,
+        "duration": 0.4,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9875
+        ],
+        "scale": 2
+      },
+      "displayRule": "72 * descriptor.scale * logical dimensions / max(logical dimensions)",
+      "record": {
+        "key": "botuo.battleIdle",
+        "type": "image",
+        "path": "assets/special-runtime-v1/botuo-battleIdle.png",
+        "width": 156,
+        "height": 154,
+        "bytes": 47089,
+        "fallback": "placeholder.battle",
+        "logicalWidth": 160,
+        "logicalHeight": 160
+      }
+    },
+    "P3": {
+      "idle": {
+        "source": "chiru.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 160,
+            "height": 160
+          }
+        ],
+        "fps": 2.5,
+        "duration": 0.4,
+        "loop": true,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          1
+        ],
+        "scale": 2
+      },
+      "displayRule": "72 * descriptor.scale * logical dimensions / max(logical dimensions)",
+      "record": {
+        "key": "chiru.battleIdle",
+        "type": "image",
+        "path": "assets/special-runtime-v1/chiru-battleIdle.png",
+        "width": 148,
+        "height": 160,
+        "bytes": 44025,
+        "fallback": "placeholder.battle",
+        "logicalWidth": 160,
+        "logicalHeight": 160
+      }
+    },
+    "P4": {
+      "idle": {
+        "source": "jiuweihu.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 160,
+            "height": 137
+          }
+        ],
+        "fps": 1,
+        "duration": 1,
+        "loop": false,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9927007299270073
+        ],
+        "scale": 2
+      },
+      "displayRule": "72 * descriptor.scale * logical dimensions / max(logical dimensions)",
+      "record": {
+        "key": "jiuweihu.battleIdle",
+        "type": "image",
+        "path": "assets/special-runtime-v1/jiuweihu-battleIdle.png",
+        "width": 120,
+        "height": 137,
+        "bytes": 31803,
+        "fallback": "placeholder.battle",
+        "logicalWidth": 160,
+        "logicalHeight": 137
+      }
+    },
+    "P5": {
+      "idle": {
+        "source": "xingxing.battleIdle",
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 160,
+            "height": 134
+          }
+        ],
+        "fps": 1,
+        "duration": 1,
+        "loop": false,
+        "staticFrame": 0,
+        "origin": [
+          0.5,
+          0.9925373134328358
+        ],
+        "scale": 2
+      },
+      "displayRule": "72 * descriptor.scale * logical dimensions / max(logical dimensions)",
+      "record": {
+        "key": "xingxing.battleIdle",
+        "type": "image",
+        "path": "assets/special-runtime-v1/xingxing-battleIdle.png",
+        "width": 144,
+        "height": 132,
+        "bytes": 37591,
+        "fallback": "placeholder.battle",
+        "logicalWidth": 160,
+        "logicalHeight": 134
+      }
+    }
+  }
+}

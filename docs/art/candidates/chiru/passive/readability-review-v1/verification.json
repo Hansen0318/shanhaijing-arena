@@ -1,0 +1,2935 @@
+{
+  "status": "ART DERIVATIVE CHECKS PASS / REVISED VISUAL REVIEW PENDING",
+  "runtimeEvidence": false,
+  "reviewer": "native self-review, not independent",
+  "gifDecode": [
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-normal.gif",
+      "sha256": "b14f9d79db4cc98dc557d58f20078d157efba8d04f79d09f92b7233cac5191a2",
+      "bytes": 817165,
+      "dimensions": [
+        720,
+        850
+      ],
+      "decodedFrames": 15,
+      "decodedDurationsMs": [
+        400,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-reduced.gif",
+      "sha256": "ec4a5b477c2bc7021e887ee38a79900e3b41ccef0148255bbd625b853d5490cb",
+      "bytes": 814626,
+      "dimensions": [
+        720,
+        850
+      ],
+      "decodedFrames": 15,
+      "decodedDurationsMs": [
+        400,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/vfx-only.gif",
+      "sha256": "cdf61b5b4c5872cefaf7a440df5d82faf146b355ffd76f66c28def5d642755e1",
+      "bytes": 400339,
+      "dimensions": [
+        720,
+        850
+      ],
+      "decodedFrames": 15,
+      "decodedDurationsMs": [
+        400,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/directions-idle.gif",
+      "sha256": "086e1ec9bda6dabde1b595a072f58c3c5c25fec26c0b523a5d4343d7a501dd1a",
+      "bytes": 372014,
+      "dimensions": [
+        720,
+        490
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/other-recipient.gif",
+      "sha256": "da3561cef5fc1b2ae060fc82515186bf264c34b62822c411470898a172d44e39",
+      "bytes": 227944,
+      "dimensions": [
+        880,
+        490
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/self-zero.gif",
+      "sha256": "289909ce1a00837f2926a6bfae0a8e75b8e9be7e468639dc9d1695bb941bcb8a",
+      "bytes": 205365,
+      "dimensions": [
+        720,
+        490
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/recipient-ko.gif",
+      "sha256": "5e9bb8c1d86fe0f932ad71bae42be58c6e1c6bd2f78553140a0adc13b44230d4",
+      "bytes": 74154,
+      "dimensions": [
+        880,
+        490
+      ],
+      "decodedFrames": 4,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        1100
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/caster-ko.gif",
+      "sha256": "aa38f3e2d41e6a13f1f582e909ce7e9a48df834f35c92a831164935d5ae4296e",
+      "bytes": 88442,
+      "dimensions": [
+        880,
+        490
+      ],
+      "decodedFrames": 4,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        1100
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/lifecycle.gif",
+      "sha256": "659e1746d407f43bf26d79665ceb2221b0854e2dec7d0f0081c28dbae3bcdd82",
+      "bytes": 353988,
+      "dimensions": [
+        720,
+        850
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/crowded-comparison.gif",
+      "sha256": "e6a03f95a1678f7f3ece2e40e960bf261f384212e3ae1642f8e727d23bb9ddae",
+      "bytes": 273382,
+      "dimensions": [
+        852,
+        1000
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    },
+    {
+      "path": "docs/art/candidates/chiru/passive/readability-review-v1/crowded-reduced.gif",
+      "sha256": "1bfd5932cb3f021a33f590cb2bfa721b99b5bd792b767e937c70612648b1c003",
+      "bytes": 285645,
+      "dimensions": [
+        852,
+        1000
+      ],
+      "decodedFrames": 11,
+      "decodedDurationsMs": [
+        400,
+        250,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        750
+      ],
+      "durationMs": 1800,
+      "absoluteTimePixelMatch": true,
+      "fullDecode": true
+    }
+  ],
+  "alphaBoundsBySample": [
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 0,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 50,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 100,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 150,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 200,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 250,
+      "alphaBounds": [
+        40,
+        35,
+        164,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 300,
+      "alphaBounds": [
+        42,
+        37,
+        163,
+        137
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 350,
+      "alphaBounds": [
+        44,
+        38,
+        160,
+        134
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 400,
+      "alphaBounds": [
+        46,
+        40,
+        158,
+        133
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 450,
+      "alphaBounds": [
+        47,
+        41,
+        156,
+        131
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 500,
+      "alphaBounds": [
+        49,
+        43,
+        154,
+        129
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 550,
+      "alphaBounds": [
+        52,
+        44,
+        152,
+        127
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 600,
+      "alphaBounds": [
+        54,
+        46,
+        149,
+        126
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": false,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 0,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 50,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 100,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 150,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 200,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 250,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 300,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 350,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 400,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 450,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 500,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 550,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 600,
+      "alphaBounds": [
+        41,
+        37,
+        164,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": false,
+      "reduced": true,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 0,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 50,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 100,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 150,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 200,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 250,
+      "alphaBounds": [
+        36,
+        35,
+        160,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 300,
+      "alphaBounds": [
+        37,
+        37,
+        158,
+        137
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 350,
+      "alphaBounds": [
+        40,
+        38,
+        156,
+        134
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 400,
+      "alphaBounds": [
+        42,
+        40,
+        154,
+        133
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 450,
+      "alphaBounds": [
+        44,
+        41,
+        153,
+        131
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 500,
+      "alphaBounds": [
+        46,
+        43,
+        151,
+        129
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 550,
+      "alphaBounds": [
+        48,
+        44,
+        148,
+        127
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 600,
+      "alphaBounds": [
+        51,
+        46,
+        146,
+        126
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": false,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 0,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 50,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 100,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 150,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 200,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 250,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 300,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 350,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 400,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 450,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 500,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 550,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 600,
+      "alphaBounds": [
+        36,
+        37,
+        159,
+        138
+      ]
+    },
+    {
+      "tier": 0,
+      "left": true,
+      "reduced": true,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 0,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 50,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 100,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 150,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 200,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 250,
+      "alphaBounds": [
+        40,
+        35,
+        164,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 300,
+      "alphaBounds": [
+        42,
+        37,
+        163,
+        140
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 350,
+      "alphaBounds": [
+        44,
+        38,
+        160,
+        139
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 400,
+      "alphaBounds": [
+        46,
+        40,
+        158,
+        138
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 450,
+      "alphaBounds": [
+        47,
+        41,
+        156,
+        135
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 500,
+      "alphaBounds": [
+        49,
+        43,
+        154,
+        134
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 550,
+      "alphaBounds": [
+        52,
+        44,
+        152,
+        131
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 600,
+      "alphaBounds": [
+        54,
+        46,
+        149,
+        128
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": false,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 0,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 50,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 100,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 150,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 200,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 250,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 300,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 350,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 400,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 450,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 500,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 550,
+      "alphaBounds": [
+        39,
+        35,
+        166,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 600,
+      "alphaBounds": [
+        41,
+        37,
+        164,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": false,
+      "reduced": true,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 0,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 50,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 100,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 150,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 200,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 250,
+      "alphaBounds": [
+        36,
+        35,
+        160,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 300,
+      "alphaBounds": [
+        37,
+        37,
+        158,
+        140
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 350,
+      "alphaBounds": [
+        40,
+        38,
+        156,
+        139
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 400,
+      "alphaBounds": [
+        42,
+        40,
+        154,
+        138
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 450,
+      "alphaBounds": [
+        44,
+        41,
+        153,
+        135
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 500,
+      "alphaBounds": [
+        46,
+        43,
+        151,
+        134
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 550,
+      "alphaBounds": [
+        48,
+        44,
+        148,
+        131
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 600,
+      "alphaBounds": [
+        51,
+        46,
+        146,
+        128
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": false,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 0,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 50,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 100,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 150,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 200,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 250,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 300,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 350,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 400,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 450,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 500,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 550,
+      "alphaBounds": [
+        34,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 600,
+      "alphaBounds": [
+        36,
+        37,
+        159,
+        143
+      ]
+    },
+    {
+      "tier": 1,
+      "left": true,
+      "reduced": true,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 0,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 50,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 100,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 150,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 200,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 250,
+      "alphaBounds": [
+        40,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 300,
+      "alphaBounds": [
+        42,
+        37,
+        188,
+        140
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 350,
+      "alphaBounds": [
+        44,
+        38,
+        184,
+        139
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 400,
+      "alphaBounds": [
+        46,
+        40,
+        182,
+        138
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 450,
+      "alphaBounds": [
+        47,
+        41,
+        179,
+        135
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 500,
+      "alphaBounds": [
+        49,
+        43,
+        176,
+        134
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 550,
+      "alphaBounds": [
+        52,
+        44,
+        172,
+        131
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 600,
+      "alphaBounds": [
+        54,
+        46,
+        169,
+        128
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": false,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 0,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 50,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 100,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 150,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 200,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 250,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 300,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 350,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 400,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 450,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 500,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 550,
+      "alphaBounds": [
+        39,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 600,
+      "alphaBounds": [
+        41,
+        37,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": false,
+      "reduced": true,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 0,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 50,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 100,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 150,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 200,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 250,
+      "alphaBounds": [
+        9,
+        35,
+        160,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 300,
+      "alphaBounds": [
+        12,
+        37,
+        158,
+        140
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 350,
+      "alphaBounds": [
+        16,
+        38,
+        156,
+        139
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 400,
+      "alphaBounds": [
+        18,
+        40,
+        154,
+        138
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 450,
+      "alphaBounds": [
+        21,
+        41,
+        153,
+        135
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 500,
+      "alphaBounds": [
+        24,
+        43,
+        151,
+        134
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 550,
+      "alphaBounds": [
+        28,
+        44,
+        148,
+        131
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 600,
+      "alphaBounds": [
+        31,
+        46,
+        146,
+        128
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": false,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 0,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 50,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 100,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 150,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 200,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 250,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 300,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 350,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 400,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 450,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 500,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 550,
+      "alphaBounds": [
+        9,
+        35,
+        161,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 600,
+      "alphaBounds": [
+        9,
+        37,
+        159,
+        143
+      ]
+    },
+    {
+      "tier": 2,
+      "left": true,
+      "reduced": true,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 0,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 50,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 100,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 150,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 200,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 250,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 300,
+      "alphaBounds": [
+        12,
+        37,
+        188,
+        140
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 350,
+      "alphaBounds": [
+        15,
+        38,
+        184,
+        139
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 400,
+      "alphaBounds": [
+        17,
+        40,
+        182,
+        138
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 450,
+      "alphaBounds": [
+        20,
+        41,
+        179,
+        135
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 500,
+      "alphaBounds": [
+        23,
+        43,
+        176,
+        134
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 550,
+      "alphaBounds": [
+        28,
+        44,
+        172,
+        131
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 600,
+      "alphaBounds": [
+        31,
+        46,
+        169,
+        128
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": false,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 0,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 50,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 100,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 150,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 200,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 250,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 300,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 350,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 400,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 450,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 500,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 550,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 600,
+      "alphaBounds": [
+        9,
+        37,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": false,
+      "reduced": true,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 0,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 50,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 100,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 150,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 200,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 250,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 300,
+      "alphaBounds": [
+        12,
+        37,
+        188,
+        140
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 350,
+      "alphaBounds": [
+        16,
+        38,
+        185,
+        139
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 400,
+      "alphaBounds": [
+        18,
+        40,
+        183,
+        138
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 450,
+      "alphaBounds": [
+        21,
+        41,
+        180,
+        135
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 500,
+      "alphaBounds": [
+        24,
+        43,
+        177,
+        134
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 550,
+      "alphaBounds": [
+        28,
+        44,
+        172,
+        131
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 600,
+      "alphaBounds": [
+        31,
+        46,
+        169,
+        128
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": false,
+      "ageMs": 650,
+      "alphaBounds": null
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 0,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 50,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 100,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 150,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 200,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 250,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 300,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 350,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 400,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 450,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 500,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 550,
+      "alphaBounds": [
+        9,
+        35,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 600,
+      "alphaBounds": [
+        9,
+        37,
+        191,
+        143
+      ]
+    },
+    {
+      "tier": 3,
+      "left": true,
+      "reduced": true,
+      "ageMs": 650,
+      "alphaBounds": null
+    }
+  ],
+  "exactLeftMirror": true,
+  "idleReturnAtExpiry": true,
+  "zeroHasNoMark": true,
+  "styleReceiptAllHashesMatch": true,
+  "idleGeometry": {
+    "cell": [
+      320,
+      260
+    ],
+    "chestX": 158,
+    "hoverY": 203
+  },
+  "fxCell": [
+    200,
+    160
+  ],
+  "placement": [
+    58,
+    123
+  ],
+  "leftPlacement": [
+    62,
+    123
+  ],
+  "limitations": [
+    "No new gameplay/event/cleanup/renderer proof; all cases are scripted art simulations.",
+    "Runtime will need generic current-frame silhouette rim and loaded formal-source resolution, after visual approval.",
+    "Three-pixel rim is exterior-only; character pixels/scale/anchor unchanged.",
+    "Phone actors are static source PNGs; surrounding blue FX are fixed decorative samples from approved files."
+  ],
+  "sourceAlphaPreserved": true,
+  "allSourceHashesUnchanged": true,
+  "recipientRimExteriorOnly": true,
+  "phoneComparison": "Source-driven simulated logical density; NOT captured built runtime or physical device evidence"
+}
