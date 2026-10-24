@@ -1,0 +1,28 @@
+{
+  "remoteHead": "80408c41547a50e7bba25c7211608894d7227c54",
+  "remoteTree": "f3182d61af878e2b0fc0ac1c2be97e3f517aeee7",
+  "recursiveTreeTruncated": false,
+  "entries": 2644,
+  "strictDecode": true,
+  "loadTruncatedImages": false,
+  "candidates": [
+    {
+      "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/passive-style.png",
+      "bytes": 786444,
+      "sha256": "81227dea465be65e199aca0e109c6fd8f6c16b571de2e30271cae9bca7299b90",
+      "gitSha": "afcc98cce1cacf07a8fc992ab240e43cf061000b",
+      "remoteTreeMatch": true,
+      "fullDecode": false,
+      "error": "broken PNG file (bad header checksum in b'IDAT')"
+    },
+    {
+      "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/originals/passive-style.png",
+      "bytes": 786444,
+      "sha256": "f70454587253e3183b74640a5ecf3e3c4edc1172292eb27929a6181433cca956",
+      "gitSha": "d636366e055503df827d6d48010aefeef170ae37",
+      "remoteTreeMatch": true,
+      "fullDecode": false,
+      "error": "Truncated File Read"
+    }
+  ]
+}

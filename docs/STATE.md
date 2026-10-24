@@ -1,3 +1,11 @@
+## 2026-10-24 — Passive 游息正式接續；STYLE Gate ACTIVE
+
+本次玩家明確授權繼續Passive，上一階段「只記錄核准、不開始Passive」不再限制本次。潤澤及P1/P2/P3四主動核准保持；P3整角未完成。已恢復本機f2e0cb2（與remote80408c4完整tree一致），API重新核對HEAD/PR1open-unmerged/full tree，保留未push歷史及無關untracked。
+
+必要差異與舊候選完整解碼失敗證據見docs/verification/P3_PASSIVE_PREFLIGHT/{WORK_LOG.md,runtime-readonly.json,candidate-recovery.json}。舊雙魚候選/原圖均壞且Git SHA與remote相符，不改原檔；本次允許製作一張必要替代受益者樣式。沿核准游息8/12/16/20%、CD8、後排≥2、受益範圍4.2/HP≤60%與650ms視覺；不重審原數值、不把T2modifier當被動。
+
+當前唯一工作＝完成並呈交雙魚回流STYLE候選及Tier靜態差異，再停待玩家美術核准；尚未GIF/Runtime/部署，不存未見acceptance。產品/Collection/approved bytes不變，不重跑既有驗證。原生單人、同分支、不委派/新branch/worktree/TD/main merge/重置存檔；其餘硬規則保持。[skip ci]
+
 ## 2026-10-24 — 潤澤 PLAYER APPROVED／COMPLETE；Passive NEXT（尚未開始）
 
 玩家原文：「我核准，妳確認好就紀錄」。直接核准已呈交release f886207aeaba1f12f6598ffc8fc54b03c8c46646；精確收據 docs/art/approved/chiru/awakening/runtime-v1/acceptance.json，綁定原發布、1198測試／來源664、CI/local/public164、packing與既有美術收據hash。潤澤玩家遊戲Gate CLOSED／PLAYER VERIFIED，不重畫、不重審、不重跑相同來源測試或部署；release.json／REPORT原PENDING是呈交歷史，由本收據覆蓋，原證據bytes保持。

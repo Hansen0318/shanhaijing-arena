@@ -1,0 +1,55 @@
+{
+  "status": "READONLY GAP ANALYSIS / NOT IMPLEMENTED",
+  "reuse": {
+    "src/combat/battleSession.js:405-407": "current-max-hp heal basis, recipient.heal clamp and positive-only heal event; passive must bypass active heal modifiers",
+    "src/combat/battleSession.js:159": "session presentationEpoch and transient teardown",
+    "src/combat/battleSession.js:520-554": "existing ordered contact processing; inspect active-before-passive ordering when integrating",
+    "src/runtime/passivePresenter.js": "existing owner/actor lifecycle cleanup patterns; only speed-streaks/guard-plates today"
+  },
+  "gaps": {
+    "src/combat/passiveDefinition.js": "supports only ordinary-distance/spatial-pressure -> movement/mitigation status; add data opt-in rear-support + instant-heal later",
+    "src/combat/passiveRuntime.js": "no rear support low-health recipient selection, heal callback/event, independent positive-only CD or recipient ownership",
+    "src/roster/abilities.js": "P3.passive implemented:false",
+    "src/roster/tierEffects.js": "chiru.rear-heal still named 游息; rename display to approved 清流 only with completed runtime, preserve ID and modifier",
+    "src/runtime/passivePresenter.js": "no paired-fish recipient style yet"
+  },
+  "approvedContract": {
+    "nearestLivingEnemyMinimum": 2,
+    "requiresLivingEnemy": true,
+    "recipientRange": 4.2,
+    "recipientMaxHpRatio": 0.6,
+    "includeSelf": true,
+    "selection": "lowest hp/maxHp; stable instanceId tie",
+    "tierFractions": [
+      0.08,
+      0.12,
+      0.16,
+      0.2
+    ],
+    "cooldownSeconds": 8,
+    "cooldownStarts": "actual positive heal only",
+    "vfxLifetimeSeconds": 0.65,
+    "tierStrokeGroups": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "order": "damage/KO then active then passive re-evaluation",
+    "cleanup": [
+      "recipient KO",
+      "caster KO",
+      "expiry",
+      "end",
+      "Restart",
+      "destroy"
+    ],
+    "reducedMotion": "static tier-identifiable pieces fade, no spatial motion"
+  },
+  "notClaimed": [
+    "new runtime",
+    "new GIF approval",
+    "new deployment",
+    "new player art acceptance"
+  ]
+}
