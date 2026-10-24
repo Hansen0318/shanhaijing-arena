@@ -1,0 +1,106 @@
+{
+  "kind": "READ-ONLY DATA INSPECTION / NOT A NEW SESSION OR BROWSER TEST",
+  "sourceCommit": "01e11afbdcb5b57be0a44ce2360d8c4834568157",
+  "rows": [
+    {
+      "tier": "T0",
+      "id": "P3.awakening",
+      "windupMs": 0,
+      "resolvePolicy": null,
+      "targetingRule": "team_ally",
+      "cooldown": 14,
+      "effect": {
+        "coefficient": 0,
+        "kind": "heal",
+        "maxHpFraction": 0.16
+      },
+      "effects": []
+    },
+    {
+      "tier": "T1",
+      "id": "P3.awakening",
+      "windupMs": 0,
+      "resolvePolicy": null,
+      "targetingRule": "team_ally",
+      "cooldown": 12.88,
+      "effect": {
+        "coefficient": 0,
+        "kind": "heal",
+        "maxHpFraction": 0.16
+      },
+      "effects": []
+    },
+    {
+      "tier": "T2",
+      "id": "P3.awakening",
+      "windupMs": 0,
+      "resolvePolicy": null,
+      "targetingRule": "team_ally",
+      "cooldown": 11.76,
+      "effect": {
+        "coefficient": 0,
+        "kind": "heal",
+        "maxHpFraction": 0.16
+      },
+      "effects": [
+        {
+          "id": "chiru.rear-heal",
+          "name": "游息",
+          "kind": "heal",
+          "magnitude": 1.05,
+          "condition": {
+            "kind": "rear_range",
+            "min": 2,
+            "max": 4.2
+          },
+          "trigger": "modify"
+        }
+      ]
+    },
+    {
+      "tier": "T3",
+      "id": "P3.awakening",
+      "windupMs": 0,
+      "resolvePolicy": null,
+      "targetingRule": "team_ally",
+      "cooldown": 10.08,
+      "effect": {
+        "coefficient": 0,
+        "kind": "heal",
+        "maxHpFraction": 0.16
+      },
+      "effects": [
+        {
+          "id": "chiru.rear-heal",
+          "name": "游息",
+          "kind": "heal",
+          "magnitude": 1.05,
+          "condition": {
+            "kind": "rear_range",
+            "min": 2,
+            "max": 4.2
+          },
+          "trigger": "modify"
+        },
+        {
+          "id": "chiru.support",
+          "name": "澤被",
+          "kind": "protect",
+          "category": "awakening",
+          "recipient": "team",
+          "radius": 20,
+          "status": {
+            "type": "mitigation",
+            "magnitude": 0.10800000000000001,
+            "duration": 2.5,
+            "tierScaling": {
+              "duration": true,
+              "strength": true
+            }
+          },
+          "trigger": "cast"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "SPECIAL RUNTIME PLAYER APPROVED / SPECIAL COMPLETE / AWAKENING NEXT",
+  "recordedDate": "2026-10-24",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "我確定approved，妳紀錄，我要給新的work往下進行開發，妳提供prompts，要他無縫接軌直接往下開發",
+  "acceptedRelease": "de1b442414e09307dfc36c509bb533f0059f055d",
+  "presentedCheckpoint": "01e11afbdcb5b57be0a44ce2360d8c4834568157",
+  "scope": "Direct player approval of the presented deployed Special 回瀾 runtime and authorization for successor Work to proceed to Awakening 潤澤 first unfinished gate. Earlier F3/poses/VFX/GIF receipts remain immutable.",
+  "notClaimed": [
+    "Unreported device model, FPS or exhaustive physical-device/Tier testing",
+    "Unseen Awakening or Passive art/GIF/runtime approval",
+    "P3 whole-character completion"
+  ],
+  "evidenceSha256": {
+    "docs/verification/P3_SPECIAL_RUNTIME/release.json": "a7c8c723cc251f1bc461447a3de8bf2681b89d59553d8695c17c35c459bf9836",
+    "docs/verification/P3_SPECIAL_RUNTIME/REPORT.md": "6d8e525841acd7e46f3261b7466ae79d84d25d93761c016b82fcd2f595d9ed9f",
+    "docs/verification/P3_SPECIAL_RUNTIME/release-evidence.json": "69a1a3d35e3246046aafcea68edadab3a2ed90f8995a064d221056b4e29fb09a",
+    "docs/verification/P3_SPECIAL_RUNTIME/public-fingerprints.json": "106084b0bd8287055f3b04fae0d69170d41c2bad29326562a62802730e1d7443",
+    "docs/verification/P3_SPECIAL_RUNTIME/packing.json": "7af66145a492d140bb498b1c141fc0203a1ad818695d1193cf7d27b89382ed3c",
+    "docs/art/approved/chiru/special/composite-review-v1/acceptance.json": "273cec8a958d033f8139b8bca7c5991c158e628c76f8036b6059695f91d110be",
+    "docs/art/approved/chiru/special/f3-v3/acceptance.json": "f3bbd7fdc271b2a1d80379f50499e4674357929989917668b0f9c962c1f5cf6b"
+  }
+}

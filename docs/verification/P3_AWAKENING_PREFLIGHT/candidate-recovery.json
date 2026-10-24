@@ -1,0 +1,16 @@
+[
+  {
+    "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/awakening-f3.png",
+    "exists": true,
+    "sha256": "e243bc780bfba6230077acb561dcef2af5bffa10fd5eaf100e5fa6192c87bc13",
+    "fullDecode": false,
+    "error": "broken PNG file (bad header checksum in b'IDAT')"
+  },
+  {
+    "path": "docs/art/candidates/chiru/whole-character/f3-batch-v1/originals/awakening-f3.png",
+    "exists": true,
+    "sha256": "1626fedce68041051818a948650cbb2e1fa63021639ebc5fe4f7ca2169896977",
+    "fullDecode": false,
+    "error": "Truncated File Read"
+  }
+]

@@ -1,3 +1,13 @@
+## 2026-10-24 — Special 回瀾 PLAYER APPROVED／COMPLETE；新Work直接接 Awakening 潤澤 F3
+
+玩家：「我確定approved，妳紀錄，我要給新的work往下進行開發，妳提供prompts，要他無縫接軌直接往下開發」。直接核准已呈交release de1b442414e09307dfc36c509bb533f0059f055d，精確收據 docs/art/approved/chiru/special/runtime-v1/acceptance.json，綁定原發布／626來源／公開160／packing及既有美術收據hash。Special 遊戲Gate CLOSED／PLAYER VERIFIED，不重畫、不重審、不重跑相同來源測試或部署；不推稱未回報實機型號/FPS/全Tier實測。P1/P2 COMPLETE、P3 Basic/Heavy/Special已核准；P3整角仍未完成。
+
+下一Work直接接Awakening「潤澤」：必要實際差異核對（沿用保存證據）→雙臂高V／托冠差異化動作→單張F3候選→呈交停待玩家美術核准。不重問是否開始或原數值表。舊batch Awakening候選與original均嚴格解碼失敗，原檔/manifest保留，證據 docs/verification/P3_AWAKENING_PREFLIGHT/candidate-recovery.json；最新remote無後續有效候選時，可從核准identity/Idle重建一張新F3，不審壞圖、不重做前三招。實際資料唯讀差異與執行邊界見同目錄WORK_LOG.md、runtime-readonly.json。
+
+核准潤澤契約600ms／當前maxHp16/20/24/30%／CD14/12.88/11.76/10.08／T2後排+5%／T3澤被600ms時10.8%減傷2.5秒／360/240/300/300ms保持；本次未實作。全角色無FX可辨動作及Basic<Heavy<Special<Awakening同尺度場面規則保持，潤澤不複製回瀾單高托/單低展。下一入口 docs/handoffs/P3_CHIRU_AWAKENING_NEXT_WORK.md。
+
+原生單人、原分支feat/m0-combat-core-20260927、PR#1open/unmerged；不委派/新branch/worktree/TD/main merge/重置存檔。保護全部approved masters/收據/尺度/anchor/懸浮下緣/右canonical左mirror，普通Hit取消、無固定16MiB門檻與逐檔安全/兩下載/required/回收/destroy保持。逐招Basic→Heavy→Special→Awakening→Passive；未核准潤澤F3不做其餘素材/Runtime/部署，不做Passive；所有交接單一完整自足可複製code block。本次僅核准收據/文件[skip ci]，無產品變更、不重跑已通過驗證。下方Special待玩家驗收文字屬歷史，由本節覆蓋。
+
 ## 2026-10-24 — Special 回瀾正常部署／公開160核對PASS；唯一下一Gate＝玩家遊戲驗收
 
 Release de1b442414e09307dfc36c509bb533f0059f055d；正常Pages40066641696 build120791187136/deploy120792434168 SUCCESS。1166/1166、Build/102素材guard、626新來源guard PASS；Special真native32/built4、Basic與Heavy清晰版各native32/built4 PASS。P1/P2相容40066299488與獨立P240066299263 SUCCESS，相關產品來源完全相同沿用（有精確reuse proof）。CI/local160逐bytes一致，公開160/160（6fresh＋154相同path/bytes/hash沿用）PASS；發布及相容artifacts SHA256/ZIP CRC通過。完整證據 docs/verification/P3_SPECIAL_RUNTIME/REPORT.md。
