@@ -1,0 +1,37 @@
+{
+  "status": "PASSIVE GIF PLAYER APPROVED / RUNTIME AND DEPLOYMENT NEXT",
+  "recordedDate": "2026-10-24",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "我確認OK，確認有紀錄的話，我要開新的WORK接手，你提供PROMPTS",
+  "presentedCheckpoint": "7b61fec5e84f478b0d3cc1572c0c1cadfb9a93ce",
+  "scope": "Explicit approval of all nine presented Passive GIF simulations, authored normal/reduced Tier VFX, left/right Idle, recipient/self/zero and scripted lifecycle scenes. Successor Work authorized to implement this skill, perform necessary real verification and normal Pages deployment for player gameplay review.",
+  "notClaimed": [
+    "Runtime already integrated",
+    "Scripted cleanup is real engineering proof",
+    "Pages already deployed",
+    "Player gameplay acceptance or P3 whole-character completion"
+  ],
+  "evidenceSha256": {
+    "docs/art/candidates/chiru/passive/composite-review-v1/REVIEW.md": "f3304a673f30ab0ef2b7887ccc064643927dc279b1115e438b8aba24b48b592e",
+    "docs/art/candidates/chiru/passive/composite-review-v1/caster-ko.gif": "2011af3952ba57d58faa096f7334f10749ae8a7ab4a9e7783510fc3f0487569a",
+    "docs/art/candidates/chiru/passive/composite-review-v1/directions-idle.gif": "5605415ccc131aea60adfd3b24e05c0b582801820e8e419fa6bf5741aa7fdace",
+    "docs/art/candidates/chiru/passive/composite-review-v1/encoded-verification.json": "489197598f25630ed56771a7bb090071a030ac5a05e9f29cd18452ab118c62f5",
+    "docs/art/candidates/chiru/passive/composite-review-v1/lifecycle.gif": "5a6bbfe8e1c83cd4f3f8130762873fda20c136f92db11cb173f9ed3d7e6e5a36",
+    "docs/art/candidates/chiru/passive/composite-review-v1/manifest.json": "edca2076d0d06be54c51fdc93ae7fd7647f479eb97c045bfd265f6be9c39c293",
+    "docs/art/candidates/chiru/passive/composite-review-v1/other-recipient.gif": "64195bdeef63be49c3cd75f3b7c2565882458dcb554a8dd6ce58e4c9e5023930",
+    "docs/art/candidates/chiru/passive/composite-review-v1/prepare_gifs.py": "810b657a2544eb93c79663619d02cc102c4dd5a0f994aa6fc7030774a6715656",
+    "docs/art/candidates/chiru/passive/composite-review-v1/recipient-ko.gif": "ae4081c5e8b38e0540d6e7ab97b34461034775c7b9bcfd59b96a9b3b5b1b280c",
+    "docs/art/candidates/chiru/passive/composite-review-v1/self-zero.gif": "21ef4daeeb74d4d5e7578190d84539d709436e5d90b20c7db125a5c020cc8ce1",
+    "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal-1000.png": "d0ef5d3564540d91229318d1bbf9aa759eed2ea2a7a1435af0def5dcf45a921d",
+    "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal-1050.png": "dc81c9b3096a9d8d43199f25dd4d635fc774c4ee8e262ce6a2508ce3be71e92c",
+    "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal-400.png": "087560b9ac79f8228469e4d892d7c2a3b64d9487d3f8e13a2dd4c2043029bf8d",
+    "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal-700.png": "e42713842171638cdc184965cec074cbb14375e7eb6db97ec55cf6ffc63d18d8",
+    "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal.gif": "7b8497bc3feb16ebfde427824a78497724903d899e64ee1ff5ecd287a629c767",
+    "docs/art/candidates/chiru/passive/composite-review-v1/tiers-reduced.gif": "408a2ba7915c59c16136627e11f2c5da89d3dfe73439e72e3d6168a8b870f5ca",
+    "docs/art/candidates/chiru/passive/composite-review-v1/timeline.json": "7df2f5bf26a3474819e02d810365d08745c3b0f2b9868afbf81f66441d8e7d2c",
+    "docs/art/candidates/chiru/passive/composite-review-v1/verification.json": "7eedb9a29f7596c8f9e3f075b5d4a53a53bb179f82568badf3763b0fa1e574ae",
+    "docs/art/candidates/chiru/passive/composite-review-v1/verify_review.py": "f4e3cd1d2e5fa247ba3c0295a8ed198a5a53c85c0bf1c56ae0724b818c6f55da",
+    "docs/art/candidates/chiru/passive/composite-review-v1/vfx-only.gif": "8cfb499b1066ce3c04831b34a204f212a908dd3d4d4d241a9d4b6b3c73c61094",
+    "docs/art/candidates/chiru/passive/composite-review-v1/SHA256SUMS.json": "9d3a326a04805cc40f18e7ac924166c88c656da8cbaffb3de51c228ffd1c26f4"
+  }
+}

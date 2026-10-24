@@ -1,17 +1,31 @@
-# 游息 GIF 已呈交／等待玩家核准
+# 游息9GIF已玩家核准；直接接Runtime／部署
 
 ```text
-【山海經聯盟｜P3 赤鱬 Passive「游息」GIF Gate待玩家核准】
+【山海經聯盟｜P3 赤鱬 Passive「游息」無縫接續 Runtime 至部署】
+
 [角色任務]
-先從GitHub最新權威恢復第一個未完成Gate。9GIF已完成並呈交，尚無玩家GIF核准；未獲明確核准前只供審核，不Runtime/部署、不重生素材。若當前玩家訊息明確核准這組GIF，保存其原話及精確呈交檔案SHA256收據後，直接執行該次已授權後續工作，不重問是否開始。
+從 GitHub 最新權威狀態恢復，直接完成游息 Runtime、必要真驗證與正常 Pages 部署，提供遊戲網址供玩家測試。玩家已核准 STYLE 與完整9GIF，並授權新 Work 接續；不重問是否開始或允許部署，不停在接手報告。
+
 [背景資訊]
-Repository Hansen0318/shanhaijing-arena；唯一分支feat/m0-combat-core-20260927；PR1保持open/unmerged，不merge main。pre-art checkpoint cfa700133fb19f0f2a7ef8d291cbe509c35472c5，僅定位，先fetch最新HEAD與PR，核對/恢復本機未push工作，不覆蓋最新成果。P1/P2 COMPLETE，P3四主動已玩家核准；Passive STYLE收據docs/art/approved/chiru/passive/style-v2/acceptance.json有效；GIF/Runtime/部署未核准或完成，P3整角未完成。
+Repository：Hansen0318/shanhaijing-arena
+唯一分支：feat/m0-combat-core-20260927；PR #1 保持 open／unmerged，禁止 merge main。
+GIF呈交 checkpoint：7b61fec5e84f478b0d3cc1572c0c1cadfb9a93ce；核准 checkpoint 以本收據所在最新 remote commit 為準。先 fetch 最新 remote，核對並恢復本機未 push 工作，不以舊 checkpoint 覆蓋最新成果。
+核准收據：
+- docs/art/approved/chiru/passive/style-v2/acceptance.json
+- docs/art/approved/chiru/passive/composite-review-v1/acceptance.json
+P1／P2 COMPLETE；P3四主動已玩家核准。Passive GIF Gate CLOSED，Runtime／部署／玩家遊戲驗收未完成，P3整角未完成。舊manifest／REVIEW的PENDING僅歷史，保留原檔。
+
 [具體指令]
-讀AGENTS、WORK_PROGRESS/STATE最新段、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、2026-10-23-restore-sequential-skill-workflow決策、CHARACTER_ACTION_ART_WORKFLOW、M5C_ART_ANIMATION_VFX、本handoff、P3 whole-character spec第5/6節及spec-acceptance；沿用P3_PASSIVE_PREFLIGHT必要差異與舊損壞候選證據。
-本次9GIF入口docs/art/candidates/chiru/passive/composite-review-v1/REVIEW.md，manifest/timeline/verification/encoded-verification/SHA256SUMS與prepare_gifs.py/verify_review.py完整。核對原STYLE收據及所有來源hash；已核准雙魚、四Tier同尺度1/2/3/4組短紋和核准Idle不重生、不覆寫、不重審。9GIF全為腳本美術模擬，97編碼幀/224邊界取樣/46項檢查不能冒稱Runtime/真清理/手機PASS。
-GIF核准後的最小工程缺口：共用rear-support資格/最低HP比例與穩定instanceId選人、instant-heal正amount才起獨立CD、真recipient雙魚與所有權清理；沿用當前maxHp治療/正heal event與共用生命週期模式。不要重做整套前檢。T2 chiru.rear-heal只是modifier，真實作時僅改顯示名清流，ID/條件/幅度保持。
-核准游息契約：戰鬥中caster存活可行動未受控，有存活敵人且距最近≥2；固定4.2內存活同隊HP≤60%含自身，最低HP/maxHp優先，同值穩定instanceId；單次當前maxHp×8/12/16/20%，缺血封頂、不吃主動healing scale/回流/清流、不復活/暴擊/循環。正amount>0才起獨立8秒CD並畫真受益者；同刻傷害/KO→主動→重檢被動。650ms只視覺壽命；normal內收消散、reduced靜態淡出；recipientKO/casterKO/end/Restart/destroy清其擁有殘留，Restart新ready，重複destroy安全。
-後續Runtime需匿名資料opt-in、真Tier/敵我/多instance/CD/排序/正零治療/取消/清理及實際PNG呈現驗證，依實際來源影響決定最低必要回歸；相同來源不重跑四主動/Build/Browser/Pages。產品真實作完成才更新Collection純玩法文案、必要真驗證後正常Pages/公開指紋供玩家驗收，不把GIF核准當遊戲核准。
+1. 先讀 AGENTS.md、WORK_PROGRESS.md／docs/STATE.md 最新段落、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/decisions/2026-10-23-restore-sequential-skill-workflow.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_ART_ANIMATION_VFX.md、docs/handoffs/P3_CHIRU_PASSIVE_NEXT_WORK.md、docs/superpowers/specs/2026-10-23-chiru-whole-character-design.md 第5／6節、docs/verification/P3_CHARACTER_PREFLIGHT/spec-acceptance.json及上述收據。
+2. 沿用 docs/verification/P3_PASSIVE_PREFLIGHT/ 的 WORK_LOG、runtime-readonly、candidate-recovery、style-verification；以及 docs/verification/P3_PASSIVE_GIF/ 紀錄。只確認最新產品差異，不重做整套前檢。
+3. 逐hash核對並沿用 docs/art/candidates/chiru/passive/style-v2/ 與 composite-review-v1/ 的核准來源、9GIF、manifest、timeline、SHA256SUMS、verification及準備腳本。不重生、不覆寫、不重審STYLE／GIF／原數值；不從合成GIF擷取Runtime素材。沿核准PNG製作可追溯的必要Runtime衍生，保留來源與hash。維持Idle尺度、chestX158、hoverY203、懸浮下緣、右canonical／左mirror。
+4. 最小工程缺口：以共用資料opt-in擴充rear-support條件選人、instant-heal效果與獨立CD、真heal事件受益者雙魚呈現及所有權清理；沿用現有當前maxHp治療、正heal event與生命週期模式，不新增P3 ID特例。
+5. 精確契約：戰鬥中caster存活可行動未受控、有存活敵人、距最近敵人≥2.0；固定4.2內存活同隊HP≤60%含自身，最低HP/maxHp優先，同值按穩定instanceId。一次治療一位當前maxHp×8／12／16／20%，缺血封頂；不吃主動healing scale／回流／清流、不復活／暴擊／循環。真正amount>0才開始獨立8秒CD並畫真受益者印記。同刻先傷害／KO→主動效果→重檢被動；各instance獨立，冷卻不排隊補發。
+6. 真受益者VFX沿核准雙魚與四Tier同尺度1／2／3／4組短紋；正常650ms內收散去，reduced為同Tier原位靜態淡出。650ms只是視覺，沒有持續治療或減傷。受益者KO清附著印記、casterKO清其擁有殘留；end／Restart／destroy清狀態／token／VFX，Restart新ready，反覆destroy安全，已結算治療不回滾。不得把腳本GIF清理當工程PASS。
+7. 真實作完成才更新Collection純玩法文案；T2 chiru.rear-heal modifier僅將顯示名改為「清流」，保持ID／條件／幅度，不能冒充獨立被動。
+8. 驗證當前改動及真受影響範圍：匿名／重新命名資料opt-in、四Tier／敵我／多instance、距離與HP門檻／穩定選人、當前maxHp／缺血封頂／正零治療／獨立CD、同刻排序、控制／KO／Pause與各生命週期；真native及built呈現核准PNG、左右、normal／reduced、真他療／自療／zero與清理，手機Collection。依共用來源影響取得必要P1／P2及四主動相容證據；相同來源已通過部分沿用並保存精確reuse proof，不重跑無關suite／Build／Browser／Pages。產品來源變更必須有相符必要測試、Build／source guard、正常CI／Pages與CI-local／公開fingerprint，不能拿舊證據代替新行為。
+9. 完成後提供實際遊戲網址與最小玩家測試步驟，停待玩家遊戲核准；不提前建立Runtime玩家acceptance或標P3 COMPLETE。長工作與素材處理前保存coherent checkpoint，更新WORK_PROGRESS／STATE／WORK_LOG／handoff，同分支commit／push；CLI無認證用已連線GitHub API，逐blob Git SHA與完整tree核對，避免截斷素材。遇阻擋保存成果、真失敗證據及唯一下一步，不靜默重做。
+
 [約束條件]
-原生單人、不委派/新branch/worktree/TD/main merge/重置存檔。approved masters/收據bytes、P1/P2/P3四主動、尺度chestX158/hoverY203/懸浮下緣、右canonical左mirror保持。普通Hit永久取消；無固定16MiB總額，逐檔安全/兩下載/required/真失敗/所有權回收保留。不加戰場被動文字牌或角色間連線，不新造被動施法F1–F4。本次GIF未獲核准則停止於審核。長工作前與素材處理前checkpoint，更新進度/STATE/WORK_LOG/handoff，同分支commit/push。CLI無認證用connected API，逐blob SHA及完整tree核對，失敗保留證據。所有後續交接維持單一完整自足可複製code block。
+原生單人，不委派、不新branch／worktree、不動TD、不merge main、不重置存檔。保護全部approved masters／收據bytes、P1／P2與P3四主動的核准行為、尺度與anchor。普通Hit永久取消；無固定16MiB總額，逐檔安全、兩下載、required完整就緒、真失敗處理及所有權回收保持。不新增被動施法F1–F4、不加戰場被動文字牌或角色間連線。GIF核准不等於Runtime／部署／玩家遊戲核准。所有後續交接維持單一、自足、可一鍵複製code block。
 ```
