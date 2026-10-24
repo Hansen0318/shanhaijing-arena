@@ -1,0 +1,59 @@
+{
+  "releaseCommit": "f886207aeaba1f12f6598ffc8fc54b03c8c46646",
+  "workflowRun": 40088794102,
+  "jobs": [
+    {
+      "id": 120857037423,
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 120857587430,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "checks": [
+    {
+      "id": 40088794115,
+      "name": "P2 Awakening Native Verification",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "f886207aeaba1f12f6598ffc8fc54b03c8c46646",
+      "html_url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/40088794115"
+    },
+    {
+      "id": 40088794102,
+      "name": "M0 Pages Preview",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "f886207aeaba1f12f6598ffc8fc54b03c8c46646",
+      "html_url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/40088794102"
+    },
+    {
+      "id": 40088794098,
+      "name": "P1 Passive Native Verification",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "f886207aeaba1f12f6598ffc8fc54b03c8c46646",
+      "html_url": "https://github.com/Hansen0318/shanhaijing-arena/actions/runs/40088794098"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12557608387,
+      "name": "github-pages",
+      "sha256": "43c2a2b49cbe187e64426b9ee0a3716571ef05dd5ab4126b5c2853774fbefa00"
+    },
+    {
+      "id": 12557309499,
+      "name": "chiru-awakening-evidence",
+      "sha256": "cfefb9ec41e94fc86d2aa74c46e678dd07022999d294105ddb79d9d06dbaf062"
+    }
+  ],
+  "priorBrowserRun": 40087764606,
+  "playerGameAcceptance": "PENDING",
+  "passiveStarted": false
+}

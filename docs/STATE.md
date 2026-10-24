@@ -1,3 +1,11 @@
+## 2026-10-24 — 潤澤 Runtime／正常 Pages COMPLETE；唯一下一 Gate＝玩家遊戲驗收
+
+Release f886207aeaba1f12f6598ffc8fc54b03c8c46646；正常 Pages40088794102 build120857037423/deploy120857587430 SUCCESS。1198/1198、Build/106素材guard、來源664 PASS；潤澤真native32/built4及Basic/Heavy/Special各native32/built4有精確same-source reuse proof，發布freshP1 native16/built8、P2 native4/built2 PASS，獨立P1/P2 workflow亦SUCCESS。CI/local164逐bytes一致，公開164/164全部新下載核對PASS；完整證據 docs/verification/P3_AWAKENING_RUNTIME/REPORT.md。
+
+已完成generic600ms全隊真治療、當前maxHp四Tier比例、T2條件、同點T3真狀態保護、核准F1–F4／三類獨立VFX／正治療recipient及滿血僅保護、1200ms回Idle與保護各自到期；Collection同版本純玩法文案。全部approved bytes、P1/P2與前三招保持，普通Hit取消、無16MiB固定總額與逐檔安全／兩下載／required／回收保持。
+
+唯一下一步：呈交 https://hansen0318.github.io/shanhaijing-arena/?awakening=f886207 （隔離Lab加battleLab=1），橫向→LOW HP→Ally Tier T3→START→選赤鱬→A。工程PASS／已部署，不等於玩家核准；玩家遊戲驗收PENDING，未建Runtime acceptance、不開始Passive、不宣稱實機／FPS。原分支PR#1open/unmerged，單人不委派／新branch/worktree／TD／main merge／重置存檔。下方Runtime待辦為歷史，由本節覆蓋；本次僅發布證據文件[skip ci]。
+
 ## 2026-10-24 — 潤澤 Runtime checkpoint；正常 CI／真 Browser／Pages NEXT
 
 已恢復原工程與核准紀錄；以0e4dd71為基線完成generic600ms全隊治療、結算時T3保護、核准F1–F4／三類獨立VFX接入及Collection玩法文案。1197/1197與Build/106素材guard PASS；新增貼圖完整無損保留核准像素。尚未真Browser PASS／部署／玩家遊戲核准。本機缺Chromium且下載失敗證據已存，接既有正常CI的真native32/built4及相容/source gate，禁止略過。詳docs/verification/P3_AWAKENING_RUNTIME/WORK_LOG.md。全部approved bytes、P1/P2與前三招保持，PR#1open/unmerged，同分支單人，不Passive／新acceptance。下一唯一工作：正常CI真驗證，修實際失敗後Pages並核公開指紋，供玩家驗收。
