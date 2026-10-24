@@ -1,12 +1,12 @@
 {
-  "status": "PLAYER FEEDBACK / VISUAL READABILITY REVISION PENDING; NOT APPROVED",
+  "status": "VISUAL DIRECTION APPROVED / REVISED PREVIEW AND FORMAL VFX RETIREMENT NEXT; GAMEPLAY NOT APPROVED",
   "sourceCommit": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
   "normalPagesRun": 40105519923,
   "p1Run": 40105520061,
   "p2ExactSourceRun": 40104953768,
   "tests": 1221,
   "build": "PASS / 110 assets / 6391136 encoded bytes",
-  "next": "Discuss and select recipient visual readability proposal; audit schematic/field/telegraph layers against formal VFX retirement rule. Do not create player acceptance or modify approved source art.",
+  "next": "Recover latest remote; audit formal VFX versus schematic layers; prepare traceable mint-green rim + bright-white paired fish crowded same-scale comparison and revised GIF review. Preserve approved originals. Revised visual approval precedes Runtime integration, impacted true verification and normal Pages; then await player gameplay acceptance.",
   "playerRuntimeAcceptance": false,
   "p3Complete": false,
   "buildJob": 120906364692,
@@ -15,5 +15,11 @@
   "publicFiles": 168,
   "publicStatus": "PASS",
   "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&passive=b414e9f",
-  "playerFeedback": "docs/verification/P3_PASSIVE_RUNTIME/player-feedback-2026-10-25.md"
+  "playerFeedback": "docs/verification/P3_PASSIVE_RUNTIME/player-feedback-2026-10-25.md",
+  "visualDirection": {
+    "approved": true,
+    "date": "2026-10-25",
+    "playerQuote": "好，薄荷綠亮邊＋亮白雙魚。",
+    "scope": "Direction only; revised assets/GIF and Runtime gameplay remain unapproved."
+  }
 }
