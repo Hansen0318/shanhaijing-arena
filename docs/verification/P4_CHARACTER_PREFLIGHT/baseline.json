@@ -1,0 +1,1280 @@
+{
+  "schemaVersion": 1,
+  "status": "CURRENT_IMPLEMENTED_BASELINE_NOT_NEW_APPROVAL",
+  "reference": "b7d696a56c1547de43b09afbe21e7a0e3f24c384",
+  "characterId": "P4",
+  "formalActionDescriptors": null,
+  "passive": {
+    "id": "P4.passive",
+    "name": "惑心",
+    "category": "passive",
+    "description": "尚未開放。",
+    "effect": {},
+    "implemented": false
+  },
+  "baseAnimationDescriptors": {
+    "battleIdle": {
+      "source": "jiuweihu.battleIdle",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 160,
+          "height": 137
+        }
+      ],
+      "fps": 1,
+      "duration": 1,
+      "loop": false,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.9927007299270073
+      ],
+      "scale": 2
+    },
+    "battleMove": {
+      "source": "jiuweihu.battleMove",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 131,
+          "trim": [
+            160,
+            133,
+            20,
+            2
+          ]
+        },
+        {
+          "x": 120,
+          "y": 0,
+          "width": 114,
+          "height": 133,
+          "trim": [
+            160,
+            133,
+            23,
+            0
+          ]
+        },
+        {
+          "x": 234,
+          "y": 0,
+          "width": 124,
+          "height": 133,
+          "trim": [
+            160,
+            133,
+            18,
+            0
+          ]
+        },
+        {
+          "x": 358,
+          "y": 0,
+          "width": 117,
+          "height": 131,
+          "trim": [
+            160,
+            133,
+            21,
+            2
+          ]
+        }
+      ],
+      "fps": 10,
+      "duration": 0.4,
+      "loop": true,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.9924812030075187
+      ],
+      "scale": 2
+    },
+    "battleKo": {
+      "source": "jiuweihu.battleKo",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 512,
+          "height": 438
+        }
+      ],
+      "fps": 1,
+      "duration": 1,
+      "loop": false,
+      "staticFrame": 0,
+      "origin": [
+        0.5,
+        0.7990867579908676
+      ],
+      "scale": 2
+    }
+  },
+  "assets": {
+    "portraitSquare": "jiuweihu.portrait",
+    "collectionArt": "jiuweihu.identity",
+    "battleIdle": "jiuweihu.battleIdle",
+    "battleHit": "placeholder.battle",
+    "battleKo": "jiuweihu.battleKo",
+    "basicVfx": "placeholder.vfx",
+    "heavyVfx": "placeholder.vfx",
+    "specialVfx": "placeholder.vfx",
+    "awakeningVfx": "placeholder.vfx",
+    "battleMove": "jiuweihu.battleMove"
+  },
+  "projections": [
+    {
+      "tier": "T0",
+      "stats": {
+        "maxHp": 230,
+        "atk": 19,
+        "def": 4,
+        "moveSpeed": 1.7,
+        "attackSpeed": 1.05
+      },
+      "scales": {
+        "hp": 1,
+        "damage": 1,
+        "healing": 1,
+        "moveSpeed": 1,
+        "attackSpeed": 1,
+        "cooldown": 1,
+        "windup": 1,
+        "attackRange": 1,
+        "aoe": 1,
+        "mobilityDistance": 1,
+        "buffDuration": 1,
+        "defenseEffect": 1,
+        "controlDuration": 1,
+        "supportRange": 1,
+        "persistentMagnitude": 1
+      },
+      "aiProfile": {
+        "tag": "ranged_burst",
+        "aggression": 0.6,
+        "preferredRangeMin": 2.4,
+        "preferredRangeMax": 3.6,
+        "lateralVariation": 0.6,
+        "kiteTendency": 0.9,
+        "retreatHpThreshold": 0,
+        "reengageHpThreshold": 0.6,
+        "dangerRadius": 1.3,
+        "allyHealHpThreshold": 0.65,
+        "evadeTendency": 0.65,
+        "evadeReactionMs": 170,
+        "protectAllyWeight": 0,
+        "weakenedTargetWeight": 0.3,
+        "typeAdvantageWeight": 0.2,
+        "skillOpportunityWeight": 1.3,
+        "targetWeights": {
+          "distance": 1,
+          "threat": 0.2,
+          "isolation": 0.1
+        }
+      },
+      "effects": [],
+      "basicIntervalSeconds": 0.9523809523809523,
+      "abilities": {
+        "basic": {
+          "id": "P4.basic",
+          "name": "靈火",
+          "description": "中遠距靈火。",
+          "category": "basic",
+          "cooldown": 0,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.1,
+          "critMultiplier": 1.5,
+          "range": 4.2,
+          "minRange": 0.8,
+          "preferredRange": 2.8,
+          "maxRange": 4.2,
+          "targetingRule": "enemy",
+          "telegraph": null,
+          "effect": {
+            "coefficient": 1
+          },
+          "ai": {
+            "priority": 0
+          },
+          "tierScaling": {
+            "aoe": false,
+            "mobility": false,
+            "status": false,
+            "windup": false
+          }
+        },
+        "heavy": {
+          "id": "P4.heavy",
+          "name": "狐焰",
+          "description": "集中火焰重擊。",
+          "category": "heavy",
+          "cooldown": 3.5,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.2,
+          "critMultiplier": 1.75,
+          "range": 4.6,
+          "minRange": 1,
+          "preferredRange": 3,
+          "maxRange": 4.6,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 450,
+            "projectileTravelMs": 200,
+            "dodgeable": true,
+            "dangerShape": "lane",
+            "dangerRadius": 0.45,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 1.5
+          },
+          "ai": {
+            "priority": 20
+          },
+          "tierScaling": {
+            "aoe": true,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        },
+        "special": {
+          "id": "P4.special",
+          "name": "九焰散華",
+          "description": "目標周圍範圍傷害，各目標係數 1.35。",
+          "category": "special",
+          "cooldown": 7,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.15,
+          "critMultiplier": 1.75,
+          "range": 4.6,
+          "minRange": 1,
+          "preferredRange": 3.2,
+          "maxRange": 4.6,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 900,
+            "projectileTravelMs": 0,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 1.6,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 1.35,
+            "areaRadius": 1.6,
+            "areaCenter": "target"
+          },
+          "ai": {
+            "priority": 30,
+            "minTargets": 2
+          },
+          "tierScaling": {
+            "aoe": true,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        },
+        "awakening": {
+          "id": "P4.awakening",
+          "name": "青丘幻火",
+          "description": "遠距單體爆發，係數 2.50。",
+          "category": "awakening",
+          "cooldown": 13,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": false,
+          "critChance": 0,
+          "critMultiplier": 1,
+          "range": 5,
+          "minRange": 1.2,
+          "preferredRange": 3.5,
+          "maxRange": 5,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 650,
+            "projectileTravelMs": 250,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 0.7,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 2.5
+          },
+          "ai": {
+            "priority": 40
+          },
+          "tierScaling": {
+            "aoe": false,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        }
+      }
+    },
+    {
+      "tier": "T1",
+      "stats": {
+        "maxHp": 345,
+        "atk": 19,
+        "def": 4,
+        "moveSpeed": 1.7884,
+        "attackSpeed": 1.1340000000000001
+      },
+      "scales": {
+        "hp": 1.5,
+        "damage": 1.45,
+        "healing": 1.135,
+        "moveSpeed": 1.052,
+        "attackSpeed": 1.08,
+        "cooldown": 0.92,
+        "windup": 0.95,
+        "attackRange": 1.05,
+        "aoe": 1.04,
+        "mobilityDistance": 1.033,
+        "buffDuration": 1.052,
+        "defenseEffect": 1.05,
+        "controlDuration": 1.032,
+        "supportRange": 1.025,
+        "persistentMagnitude": 1.45
+      },
+      "aiProfile": {
+        "tag": "ranged_burst",
+        "aggression": 0.6,
+        "preferredRangeMin": 2.52,
+        "preferredRangeMax": 3.7800000000000002,
+        "lateralVariation": 0.6,
+        "kiteTendency": 0.9,
+        "retreatHpThreshold": 0,
+        "reengageHpThreshold": 0.6,
+        "dangerRadius": 1.3,
+        "allyHealHpThreshold": 0.65,
+        "evadeTendency": 0.65,
+        "evadeReactionMs": 170,
+        "protectAllyWeight": 0,
+        "weakenedTargetWeight": 0.3,
+        "typeAdvantageWeight": 0.2,
+        "skillOpportunityWeight": 1.3,
+        "targetWeights": {
+          "distance": 1,
+          "threat": 0.2,
+          "isolation": 0.1
+        }
+      },
+      "effects": [
+        {
+          "id": "fox.coverage",
+          "name": "狐火增幅",
+          "kind": "range",
+          "category": "special",
+          "magnitude": 1.1,
+          "trigger": "modify"
+        }
+      ],
+      "basicIntervalSeconds": 0.8818342151675485,
+      "abilities": {
+        "basic": {
+          "id": "P4.basic",
+          "name": "靈火",
+          "description": "中遠距靈火。",
+          "category": "basic",
+          "cooldown": 0,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.1,
+          "critMultiplier": 1.5,
+          "range": 4.41,
+          "minRange": 0.8400000000000001,
+          "preferredRange": 2.94,
+          "maxRange": 4.41,
+          "targetingRule": "enemy",
+          "telegraph": null,
+          "effect": {
+            "coefficient": 1
+          },
+          "ai": {
+            "priority": 0
+          },
+          "tierScaling": {
+            "aoe": false,
+            "mobility": false,
+            "status": false,
+            "windup": false
+          }
+        },
+        "heavy": {
+          "id": "P4.heavy",
+          "name": "狐焰",
+          "description": "集中火焰重擊。",
+          "category": "heavy",
+          "cooldown": 3.22,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.2,
+          "critMultiplier": 1.75,
+          "range": 4.83,
+          "minRange": 1.05,
+          "preferredRange": 3.1500000000000004,
+          "maxRange": 4.83,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 427.5,
+            "projectileTravelMs": 200,
+            "dodgeable": true,
+            "dangerShape": "lane",
+            "dangerRadius": 0.468,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 1.5
+          },
+          "ai": {
+            "priority": 20
+          },
+          "tierScaling": {
+            "aoe": true,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        },
+        "special": {
+          "id": "P4.special",
+          "name": "九焰散華",
+          "description": "目標周圍範圍傷害，各目標係數 1.35。",
+          "category": "special",
+          "cooldown": 6.44,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.15,
+          "critMultiplier": 1.75,
+          "range": 5.313000000000001,
+          "minRange": 1.1550000000000002,
+          "preferredRange": 3.696000000000001,
+          "maxRange": 5.313000000000001,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 855,
+            "projectileTravelMs": 0,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 1.8304000000000002,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 1.35,
+            "areaRadius": 1.8304000000000002,
+            "areaCenter": "target"
+          },
+          "ai": {
+            "priority": 30,
+            "minTargets": 2
+          },
+          "tierScaling": {
+            "aoe": true,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        },
+        "awakening": {
+          "id": "P4.awakening",
+          "name": "青丘幻火",
+          "description": "遠距單體爆發，係數 2.50。",
+          "category": "awakening",
+          "cooldown": 11.96,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": false,
+          "critChance": 0,
+          "critMultiplier": 1,
+          "range": 5.25,
+          "minRange": 1.26,
+          "preferredRange": 3.6750000000000003,
+          "maxRange": 5.25,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 617.5,
+            "projectileTravelMs": 250,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 0.7,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 2.5
+          },
+          "ai": {
+            "priority": 40
+          },
+          "tierScaling": {
+            "aoe": false,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        }
+      }
+    },
+    {
+      "tier": "T2",
+      "stats": {
+        "maxHp": 517.5,
+        "atk": 19,
+        "def": 4,
+        "moveSpeed": 1.8767999999999998,
+        "attackSpeed": 1.2348
+      },
+      "scales": {
+        "hp": 2.25,
+        "damage": 2.05,
+        "healing": 1.315,
+        "moveSpeed": 1.1039999999999999,
+        "attackSpeed": 1.176,
+        "cooldown": 0.84,
+        "windup": 0.9,
+        "attackRange": 1.1,
+        "aoe": 1.08,
+        "mobilityDistance": 1.066,
+        "buffDuration": 1.0975,
+        "defenseEffect": 1.1,
+        "controlDuration": 1.06,
+        "supportRange": 1.05,
+        "persistentMagnitude": 2.05
+      },
+      "aiProfile": {
+        "tag": "ranged_burst",
+        "aggression": 0.6,
+        "preferredRangeMin": 2.64,
+        "preferredRangeMax": 3.9600000000000004,
+        "lateralVariation": 0.6,
+        "kiteTendency": 0.9,
+        "retreatHpThreshold": 0,
+        "reengageHpThreshold": 0.6,
+        "dangerRadius": 1.3,
+        "allyHealHpThreshold": 0.65,
+        "evadeTendency": 0.65,
+        "evadeReactionMs": 170,
+        "protectAllyWeight": 0,
+        "weakenedTargetWeight": 0.3,
+        "typeAdvantageWeight": 0.2,
+        "skillOpportunityWeight": 1.3,
+        "targetWeights": {
+          "distance": 1,
+          "threat": 0.2,
+          "isolation": 0.1
+        }
+      },
+      "effects": [
+        {
+          "id": "fox.coverage",
+          "name": "狐火增幅",
+          "kind": "range",
+          "category": "special",
+          "magnitude": 1.1,
+          "trigger": "modify"
+        },
+        {
+          "id": "fox.pressure",
+          "name": "惑心追獵",
+          "kind": "damage",
+          "magnitude": 1.08,
+          "condition": {
+            "kind": "target_pressure",
+            "threshold": 0.35,
+            "radius": 1.4
+          },
+          "trigger": "modify"
+        }
+      ],
+      "basicIntervalSeconds": 0.8098477486232589,
+      "abilities": {
+        "basic": {
+          "id": "P4.basic",
+          "name": "靈火",
+          "description": "中遠距靈火。",
+          "category": "basic",
+          "cooldown": 0,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.1,
+          "critMultiplier": 1.5,
+          "range": 4.620000000000001,
+          "minRange": 0.8800000000000001,
+          "preferredRange": 3.08,
+          "maxRange": 4.620000000000001,
+          "targetingRule": "enemy",
+          "telegraph": null,
+          "effect": {
+            "coefficient": 1
+          },
+          "ai": {
+            "priority": 0
+          },
+          "tierScaling": {
+            "aoe": false,
+            "mobility": false,
+            "status": false,
+            "windup": false
+          }
+        },
+        "heavy": {
+          "id": "P4.heavy",
+          "name": "狐焰",
+          "description": "集中火焰重擊。",
+          "category": "heavy",
+          "cooldown": 2.94,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.2,
+          "critMultiplier": 1.75,
+          "range": 5.06,
+          "minRange": 1.1,
+          "preferredRange": 3.3000000000000003,
+          "maxRange": 5.06,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 405,
+            "projectileTravelMs": 200,
+            "dodgeable": true,
+            "dangerShape": "lane",
+            "dangerRadius": 0.48600000000000004,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 1.5
+          },
+          "ai": {
+            "priority": 20
+          },
+          "tierScaling": {
+            "aoe": true,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        },
+        "special": {
+          "id": "P4.special",
+          "name": "九焰散華",
+          "description": "目標周圍範圍傷害，各目標係數 1.35。",
+          "category": "special",
+          "cooldown": 5.88,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.15,
+          "critMultiplier": 1.75,
+          "range": 5.566000000000001,
+          "minRange": 1.2100000000000002,
+          "preferredRange": 3.8720000000000008,
+          "maxRange": 5.566000000000001,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 810,
+            "projectileTravelMs": 0,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 1.9008000000000003,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 1.35,
+            "areaRadius": 1.9008000000000003,
+            "areaCenter": "target"
+          },
+          "ai": {
+            "priority": 30,
+            "minTargets": 2
+          },
+          "tierScaling": {
+            "aoe": true,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        },
+        "awakening": {
+          "id": "P4.awakening",
+          "name": "青丘幻火",
+          "description": "遠距單體爆發，係數 2.50。",
+          "category": "awakening",
+          "cooldown": 10.92,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": false,
+          "critChance": 0,
+          "critMultiplier": 1,
+          "range": 5.5,
+          "minRange": 1.32,
+          "preferredRange": 3.8500000000000005,
+          "maxRange": 5.5,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 585,
+            "projectileTravelMs": 250,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 0.7,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 2.5
+          },
+          "ai": {
+            "priority": 40
+          },
+          "tierScaling": {
+            "aoe": false,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        }
+      }
+    },
+    {
+      "tier": "T3",
+      "stats": {
+        "maxHp": 862.5,
+        "atk": 19,
+        "def": 4,
+        "moveSpeed": 2.0094,
+        "attackSpeed": 1.386
+      },
+      "scales": {
+        "hp": 3.75,
+        "damage": 3.2,
+        "healing": 1.6600000000000001,
+        "moveSpeed": 1.182,
+        "attackSpeed": 1.3199999999999998,
+        "cooldown": 0.72,
+        "windup": 0.82,
+        "attackRange": 1.18,
+        "aoe": 1.15,
+        "mobilityDistance": 1.1099999999999999,
+        "buffDuration": 1.1625,
+        "defenseEffect": 1.175,
+        "controlDuration": 1.1,
+        "supportRange": 1.0899999999999999,
+        "persistentMagnitude": 3.2
+      },
+      "aiProfile": {
+        "tag": "ranged_burst",
+        "aggression": 0.6,
+        "preferredRangeMin": 2.832,
+        "preferredRangeMax": 4.248,
+        "lateralVariation": 0.6,
+        "kiteTendency": 0.9,
+        "retreatHpThreshold": 0,
+        "reengageHpThreshold": 0.6,
+        "dangerRadius": 1.3,
+        "allyHealHpThreshold": 0.65,
+        "evadeTendency": 0.65,
+        "evadeReactionMs": 170,
+        "protectAllyWeight": 0,
+        "weakenedTargetWeight": 0.3,
+        "typeAdvantageWeight": 0.2,
+        "skillOpportunityWeight": 1.3,
+        "targetWeights": {
+          "distance": 1,
+          "threat": 0.2,
+          "isolation": 0.1
+        }
+      },
+      "effects": [
+        {
+          "id": "fox.coverage",
+          "name": "狐火增幅",
+          "kind": "range",
+          "category": "special",
+          "magnitude": 1.1,
+          "trigger": "modify"
+        },
+        {
+          "id": "fox.pressure",
+          "name": "惑心追獵",
+          "kind": "damage",
+          "magnitude": 1.08,
+          "condition": {
+            "kind": "target_pressure",
+            "threshold": 0.35,
+            "radius": 1.4
+          },
+          "trigger": "modify"
+        },
+        {
+          "id": "fox.residual",
+          "name": "青丘餘焰",
+          "kind": "area",
+          "category": "awakening",
+          "trigger": "hit",
+          "area": {
+            "tierScaling": {
+              "aoe": true
+            },
+            "radius": 1.035,
+            "duration": 3,
+            "interval": 0.5,
+            "eligibility": "enemy",
+            "behavior": "periodic",
+            "coefficient": 0.12
+          }
+        }
+      ],
+      "basicIntervalSeconds": 0.7215007215007215,
+      "abilities": {
+        "basic": {
+          "id": "P4.basic",
+          "name": "靈火",
+          "description": "中遠距靈火。",
+          "category": "basic",
+          "cooldown": 0,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.1,
+          "critMultiplier": 1.5,
+          "range": 4.9559999999999995,
+          "minRange": 0.944,
+          "preferredRange": 3.304,
+          "maxRange": 4.9559999999999995,
+          "targetingRule": "enemy",
+          "telegraph": null,
+          "effect": {
+            "coefficient": 1
+          },
+          "ai": {
+            "priority": 0
+          },
+          "tierScaling": {
+            "aoe": false,
+            "mobility": false,
+            "status": false,
+            "windup": false
+          }
+        },
+        "heavy": {
+          "id": "P4.heavy",
+          "name": "狐焰",
+          "description": "集中火焰重擊。",
+          "category": "heavy",
+          "cooldown": 2.52,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.2,
+          "critMultiplier": 1.75,
+          "range": 5.427999999999999,
+          "minRange": 1.18,
+          "preferredRange": 3.54,
+          "maxRange": 5.427999999999999,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 369,
+            "projectileTravelMs": 200,
+            "dodgeable": true,
+            "dangerShape": "lane",
+            "dangerRadius": 0.5175,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 1.5
+          },
+          "ai": {
+            "priority": 20
+          },
+          "tierScaling": {
+            "aoe": true,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        },
+        "special": {
+          "id": "P4.special",
+          "name": "九焰散華",
+          "description": "目標周圍範圍傷害，各目標係數 1.35。",
+          "category": "special",
+          "cooldown": 5.04,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": true,
+          "critChance": 0.15,
+          "critMultiplier": 1.75,
+          "range": 5.9708,
+          "minRange": 1.298,
+          "preferredRange": 4.1536,
+          "maxRange": 5.9708,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 738,
+            "projectileTravelMs": 0,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 2.024,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 1.35,
+            "areaRadius": 2.024,
+            "areaCenter": "target"
+          },
+          "ai": {
+            "priority": 30,
+            "minTargets": 2
+          },
+          "tierScaling": {
+            "aoe": true,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        },
+        "awakening": {
+          "id": "P4.awakening",
+          "name": "青丘幻火",
+          "description": "遠距單體爆發，係數 2.50。",
+          "category": "awakening",
+          "cooldown": 9.36,
+          "windupMs": 0,
+          "unlockTier": 0,
+          "canCrit": false,
+          "critChance": 0,
+          "critMultiplier": 1,
+          "range": 5.8999999999999995,
+          "minRange": 1.416,
+          "preferredRange": 4.13,
+          "maxRange": 5.8999999999999995,
+          "targetingRule": "enemy",
+          "telegraph": {
+            "telegraphMs": 533,
+            "projectileTravelMs": 250,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 0.7,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "effect": {
+            "coefficient": 2.5
+          },
+          "ai": {
+            "priority": 40
+          },
+          "tierScaling": {
+            "aoe": false,
+            "mobility": false,
+            "status": false,
+            "windup": true
+          }
+        }
+      }
+    }
+  ],
+  "sourceBindings": [
+    {
+      "path": "src/assets/actionCalibration.js",
+      "gitBlobSha": "5024043861913635e529c75429bcdfee7a5715d4"
+    },
+    {
+      "path": "src/assets/actionPlayback.js",
+      "gitBlobSha": "d22a114498cffacaf271796fb5bea59fc16bad78"
+    },
+    {
+      "path": "src/assets/battleDescriptors.js",
+      "gitBlobSha": "2a03515a7c107d615b56a07f5f58fab366d62a1e"
+    },
+    {
+      "path": "src/assets/botuoAwakeningRuntime.js",
+      "gitBlobSha": "c04afcaa3ec005bbbd06cf038f02927f965ca2b3"
+    },
+    {
+      "path": "src/assets/botuoHeavyRuntime.js",
+      "gitBlobSha": "7f05a326b9471c2705630c6a17f34f5e0fbe9d39"
+    },
+    {
+      "path": "src/assets/botuoSpecialRuntime.js",
+      "gitBlobSha": "f415fc21eea59f7ac50337f9cc2a1fcb8241a502"
+    },
+    {
+      "path": "src/assets/cardPresentation.js",
+      "gitBlobSha": "264b13bb599af24dd77c4fd648a6699a2a4c6da0"
+    },
+    {
+      "path": "src/assets/chiruAwakeningRuntime.js",
+      "gitBlobSha": "abee5c427fb396d81324600264447106a7129b3f"
+    },
+    {
+      "path": "src/assets/chiruBasicRuntime.js",
+      "gitBlobSha": "8ebeda9bada4e215fbe46613d3dee99d2da18e63"
+    },
+    {
+      "path": "src/assets/chiruHeavyRuntime.js",
+      "gitBlobSha": "540e66fa9401a7d41a4339bd8daef6ed6ef01a2b"
+    },
+    {
+      "path": "src/assets/chiruSpecialRuntime.js",
+      "gitBlobSha": "96aa8f59753c5a1ab7d9e4d64fea64d8f5e8a7d2"
+    },
+    {
+      "path": "src/assets/descriptors.js",
+      "gitBlobSha": "68e4835eb615fd697cb3835a884279a99fdad615"
+    },
+    {
+      "path": "src/assets/framePacking.js",
+      "gitBlobSha": "acfe03c1a70df2aaccd11faba14b47c24329f25b"
+    },
+    {
+      "path": "src/assets/inspectionSlots.js",
+      "gitBlobSha": "c253674e18c65fd78c564b82bcd9886374b3d1e1"
+    },
+    {
+      "path": "src/assets/manifest.js",
+      "gitBlobSha": "4879cb234293d94bd84eb1bb77de1566eeb4283b"
+    },
+    {
+      "path": "src/assets/menuImage.js",
+      "gitBlobSha": "e156c27872ce087c8a48576b8f5b237ddb9ee5fd"
+    },
+    {
+      "path": "src/assets/playback.js",
+      "gitBlobSha": "2e1ff26ef63e63af3ad797b69e94b70028a9f3cf"
+    },
+    {
+      "path": "src/assets/resolver.js",
+      "gitBlobSha": "f9c23907aad104d6b668169e57eb2dc3da3ae03c"
+    },
+    {
+      "path": "src/assets/runtimePacking.js",
+      "gitBlobSha": "6718d97097705247461cfeedcf42de80711b08f9"
+    },
+    {
+      "path": "src/assets/schema.js",
+      "gitBlobSha": "d634d93d6a95931b4d099b60feaa42fcbabc2f0a"
+    },
+    {
+      "path": "src/assets/specialRuntimePacking.js",
+      "gitBlobSha": "7446a8e7854b57f41fbea711c0cc0bb76bb7c05b"
+    },
+    {
+      "path": "src/assets/textureRegions.js",
+      "gitBlobSha": "6e7a42394eb2aff5143620afcb43d5279e472a02"
+    },
+    {
+      "path": "src/assets/utilityPlayback.js",
+      "gitBlobSha": "7eb0d5923a959a46a26b569149ba9981ae50467f"
+    },
+    {
+      "path": "src/campaign/battleFactory.js",
+      "gitBlobSha": "c445d49194188ae1b9e65430b6675a51024e5ef9"
+    },
+    {
+      "path": "src/combat/ability.js",
+      "gitBlobSha": "00dc4d283b45371d8dceb8372b193112b9205a17"
+    },
+    {
+      "path": "src/combat/abilityMovement.js",
+      "gitBlobSha": "980cab0e6e5fd8f2f94d75c42bc280392cbad525"
+    },
+    {
+      "path": "src/combat/ai.js",
+      "gitBlobSha": "36f521b43c1e7cd482507f5c495e4f115b508016"
+    },
+    {
+      "path": "src/combat/aiProfiles.js",
+      "gitBlobSha": "acaa1e605b5c525e9b823a7756ff4a9a802e3660"
+    },
+    {
+      "path": "src/combat/areaSchema.js",
+      "gitBlobSha": "e9e6921b5256b5cc1eeda79d406734b316e5214b"
+    },
+    {
+      "path": "src/combat/battleRules.js",
+      "gitBlobSha": "f9a4662a83589613d98b19948e99dba42009b6d3"
+    },
+    {
+      "path": "src/combat/battleSession.js",
+      "gitBlobSha": "6b0d2664033110f87b1e6d62e620a16ba10e7f97"
+    },
+    {
+      "path": "src/combat/character.js",
+      "gitBlobSha": "9410de793b0e2c78c264faa6bce0e7370c4e4b53"
+    },
+    {
+      "path": "src/combat/combatResolver.js",
+      "gitBlobSha": "bb9575c104988efed9f8c357a8def332d1c902ff"
+    },
+    {
+      "path": "src/combat/controlHandoff.js",
+      "gitBlobSha": "02de15617077e36b3a7dc53e23b82708ae622519"
+    },
+    {
+      "path": "src/combat/effectTargeting.js",
+      "gitBlobSha": "83161848e6f081a2c038a23e6f83454410fe8682"
+    },
+    {
+      "path": "src/combat/headlessSimulation.js",
+      "gitBlobSha": "9509280fe842052aeca74ec0508e7b0f662d2603"
+    },
+    {
+      "path": "src/combat/lockedLine.js",
+      "gitBlobSha": "e94c45344744aae76c3983b3e5f6b7f33ab18473"
+    },
+    {
+      "path": "src/combat/passiveDefinition.js",
+      "gitBlobSha": "3db4131dca18738f2a7b33571499677e459ea67b"
+    },
+    {
+      "path": "src/combat/passiveMotion.js",
+      "gitBlobSha": "385acff8269d5a5022c4fb694004a87cfd32ef5f"
+    },
+    {
+      "path": "src/combat/passiveRuntime.js",
+      "gitBlobSha": "f1e75f126a33639479b6e64069624bb8d0d3991a"
+    },
+    {
+      "path": "src/combat/persistentAreas.js",
+      "gitBlobSha": "ce07bb8be64f4ac0eca9dc889b4cba3af091b123"
+    },
+    {
+      "path": "src/combat/seededRandom.js",
+      "gitBlobSha": "48e14c329dc9bebefd0d1aa97b7c5d389d43b237"
+    },
+    {
+      "path": "src/combat/stagedAction.js",
+      "gitBlobSha": "4885b85e7c3096f2a7575dc88ecedd1360702931"
+    },
+    {
+      "path": "src/combat/statusSchema.js",
+      "gitBlobSha": "cbb1492c67861d6335ddcb03e81797f5ac3de30a"
+    },
+    {
+      "path": "src/combat/statuses.js",
+      "gitBlobSha": "80c93d08e16ce2a731233e4d423ef1f98f646f8d"
+    },
+    {
+      "path": "src/combat/tacticalTargeting.js",
+      "gitBlobSha": "b26016335d678a90b17cfcbf174861b97e7a0c57"
+    },
+    {
+      "path": "src/combat/tactics.js",
+      "gitBlobSha": "e21e2984a6e65598be32b172bd5526761cc726e3"
+    },
+    {
+      "path": "src/combat/targeting.js",
+      "gitBlobSha": "9d186117073abf934d56ad5d541702de1f4cb0e8"
+    },
+    {
+      "path": "src/combat/threats.js",
+      "gitBlobSha": "db1eb3a19ecf39a355f8dab2f49b49b7d6c55e56"
+    },
+    {
+      "path": "src/combat/tierEffectRuntime.js",
+      "gitBlobSha": "7ee9a3b977b3e50e43031a771bf2510286893495"
+    },
+    {
+      "path": "src/combat/tierEffects.js",
+      "gitBlobSha": "290d3e040292200a621b32d3293d33191100d18a"
+    },
+    {
+      "path": "src/combat/tierScaling.js",
+      "gitBlobSha": "948ce8938b407f48f82d4ee3830dd5f247887e72"
+    },
+    {
+      "path": "src/combat/typeMultiplier.js",
+      "gitBlobSha": "dc452fa4e9e0d19c2736ac2a577cc07dd19bbf5a"
+    },
+    {
+      "path": "src/dev/battleLab/battleFactory.js",
+      "gitBlobSha": "2aeab4faaf7eaf2cec374e1aca84ec542ce528fd"
+    },
+    {
+      "path": "src/roster/abilities.js",
+      "gitBlobSha": "945c96ec64edd0b854e7460c23926fad888dc718"
+    },
+    {
+      "path": "src/roster/aiProfiles.js",
+      "gitBlobSha": "1c1bac33a089235e74d416e39c2eb5000312ad31"
+    },
+    {
+      "path": "src/roster/battlePresentation.js",
+      "gitBlobSha": "5b31d68249cf745e605a499d1666b42fe838d22d"
+    },
+    {
+      "path": "src/roster/catalog.js",
+      "gitBlobSha": "275225173f584488817781fa7255ffbe201f2cf6"
+    },
+    {
+      "path": "src/roster/persistence.js",
+      "gitBlobSha": "5691abbbd56e75a0d5ba5e49abcdcb47f20ba15a"
+    },
+    {
+      "path": "src/roster/style.css",
+      "gitBlobSha": "b92f42c6c04d6f19db5b5ccb0b83372523aee7de"
+    },
+    {
+      "path": "src/roster/team.js",
+      "gitBlobSha": "c5414167fe87dfe1e47f1391f1571d3898fb8091"
+    },
+    {
+      "path": "src/roster/tierEffects.js",
+      "gitBlobSha": "f4e978e953c9be4e234664e44082f10a6fb78ea7"
+    },
+    {
+      "path": "src/roster/tierScalingProfiles.js",
+      "gitBlobSha": "04cb42e17023c5ba775fab819cedbd94fca4fc92"
+    },
+    {
+      "path": "src/roster/typeIcons.js",
+      "gitBlobSha": "77cb64f0e0bcda9489bcadf9d0d211b61f893f5c"
+    },
+    {
+      "path": "src/roster/view.js",
+      "gitBlobSha": "d066dd54bdeb888ea4986af0c5fe9f6a17d23d3f"
+    },
+    {
+      "path": "src/runtime/ArenaScene.js",
+      "gitBlobSha": "0d450a99228fc798daf1f836a00fee1100891ede"
+    },
+    {
+      "path": "src/runtime/assetPresenter.js",
+      "gitBlobSha": "5c9448458d038146ab00135e05b7d5a80a89af8f"
+    },
+    {
+      "path": "src/runtime/passivePresenter.js",
+      "gitBlobSha": "0598d505cdb77b3eaa0c897ba5d30a0dd5dc2064"
+    }
+  ]
+}

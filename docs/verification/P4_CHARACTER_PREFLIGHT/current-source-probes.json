@@ -1,0 +1,567 @@
+{
+  "reference": "b7d696a56c1547de43b09afbe21e7a0e3f24c384",
+  "scope": "32 isolated current P4 casts; no browser, proposed passive or device verification",
+  "passed": 32,
+  "probes": [
+    {
+      "tier": "T0",
+      "tacticalEnabled": false,
+      "category": "basic",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 15,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T0",
+      "tacticalEnabled": false,
+      "category": "heavy",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 24.5,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T0",
+      "tacticalEnabled": false,
+      "category": "special",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 21.650000000000002,
+          "critical": false,
+          "eventAt": 0
+        },
+        {
+          "targetId": "e2",
+          "amount": 21.650000000000002,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T0",
+      "tacticalEnabled": false,
+      "category": "awakening",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 43.5,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T0",
+      "tacticalEnabled": true,
+      "category": "basic",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 15,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T0",
+      "tacticalEnabled": true,
+      "category": "heavy",
+      "expectedImpactMs": 650,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 24.5,
+          "critical": false,
+          "eventAt": 0.65
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T0",
+      "tacticalEnabled": true,
+      "category": "special",
+      "expectedImpactMs": 900,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 21.650000000000002,
+          "critical": false,
+          "eventAt": 0.9
+        },
+        {
+          "targetId": "e2",
+          "amount": 21.650000000000002,
+          "critical": false,
+          "eventAt": 0.9
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T0",
+      "tacticalEnabled": true,
+      "category": "awakening",
+      "expectedImpactMs": 900,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 43.5,
+          "critical": false,
+          "eventAt": 0.9
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": false,
+      "category": "basic",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 23.55,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": false,
+      "category": "heavy",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 37.324999999999996,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": false,
+      "category": "special",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 33.1925,
+          "critical": false,
+          "eventAt": 0
+        },
+        {
+          "targetId": "e2",
+          "amount": 33.1925,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": false,
+      "category": "awakening",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 64.875,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": true,
+      "category": "basic",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 23.55,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": true,
+      "category": "heavy",
+      "expectedImpactMs": 627.5,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 37.324999999999996,
+          "critical": false,
+          "eventAt": 0.6275
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": true,
+      "category": "special",
+      "expectedImpactMs": 855,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 33.1925,
+          "critical": false,
+          "eventAt": 0.855
+        },
+        {
+          "targetId": "e2",
+          "amount": 33.1925,
+          "critical": false,
+          "eventAt": 0.855
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T1",
+      "tacticalEnabled": true,
+      "category": "awakening",
+      "expectedImpactMs": 867.5,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 64.875,
+          "critical": false,
+          "eventAt": 0.8675
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": false,
+      "category": "basic",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 34.949999999999996,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": false,
+      "category": "heavy",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 54.425,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": false,
+      "category": "special",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 48.5825,
+          "critical": false,
+          "eventAt": 0
+        },
+        {
+          "targetId": "e2",
+          "amount": 48.5825,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": false,
+      "category": "awakening",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 93.37499999999999,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": true,
+      "category": "basic",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 34.949999999999996,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": true,
+      "category": "heavy",
+      "expectedImpactMs": 605,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 54.425,
+          "critical": false,
+          "eventAt": 0.605
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": true,
+      "category": "special",
+      "expectedImpactMs": 810,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 48.5825,
+          "critical": false,
+          "eventAt": 0.81
+        },
+        {
+          "targetId": "e2",
+          "amount": 48.5825,
+          "critical": false,
+          "eventAt": 0.81
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T2",
+      "tacticalEnabled": true,
+      "category": "awakening",
+      "expectedImpactMs": 835,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 93.37499999999999,
+          "critical": false,
+          "eventAt": 0.835
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": false,
+      "category": "basic",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 56.800000000000004,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": false,
+      "category": "heavy",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 87.2,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": false,
+      "category": "special",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 78.08000000000001,
+          "critical": false,
+          "eventAt": 0
+        },
+        {
+          "targetId": "e2",
+          "amount": 78.08000000000001,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": false,
+      "category": "awakening",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 148,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 1,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": true,
+      "category": "basic",
+      "expectedImpactMs": 0,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 56.800000000000004,
+          "critical": false,
+          "eventAt": 0
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": true,
+      "category": "heavy",
+      "expectedImpactMs": 569,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 87.2,
+          "critical": false,
+          "eventAt": 0.569
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": true,
+      "category": "special",
+      "expectedImpactMs": 738,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 78.08000000000001,
+          "critical": false,
+          "eventAt": 0.738
+        },
+        {
+          "targetId": "e2",
+          "amount": 78.08000000000001,
+          "critical": false,
+          "eventAt": 0.738
+        }
+      ],
+      "residualAreaCount": 0,
+      "passiveViews": 0
+    },
+    {
+      "tier": "T3",
+      "tacticalEnabled": true,
+      "category": "awakening",
+      "expectedImpactMs": 783,
+      "damageEvents": [
+        {
+          "targetId": "e1",
+          "amount": 148,
+          "critical": false,
+          "eventAt": 0.783
+        }
+      ],
+      "residualAreaCount": 1,
+      "passiveViews": 0
+    }
+  ]
+}

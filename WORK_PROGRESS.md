@@ -1,3 +1,13 @@
+## 2026-10-25 — P4九尾狐前檢與五招規格v1已完成；唯一下一Gate＝玩家規格審核
+
+已從b7d696a56c1547de43b09afbe21e7a0e3f24c384/tree9fdafb6e恢復原分支；PR#1 open/unmerged。P1/P2/P3 COMPLETE及全部核准base保持，不重審/重做。完成P4真來源68blob綁定、四Tier投影與32個隔離現況施放檢查PASS；不是新被動或Browser證據。來源與結果docs/verification/P4_CHARACTER_PREFLIGHT/{REPORT.md,baseline.json,current-source-probes.json,preflight.mjs,WORK_LOG.md}。
+
+新設計docs/superpowers/specs/2026-10-25-jiuweihu-whole-character-design.md及P4_CHARACTER_PREFLIGHT/proposal.json，PROPOSED / PLAYER REVIEW PENDING：保留四主動現行數值/射程/CD/兩模式時序，補正式動作/VFX；新獨立惑心於直接正傷害後控制一名存活真受擊敵人，T0–T3 .2/.3/.4/.5秒、成功施加才獨立CD8秒，排除殘焰/零傷/擊殺/免疫/遞迴；真target/status生命週期VFX。T2既有8% modifier與被動分開，顯示名孤焰追獵提案待審。完整五招/素材/Collection/同刻/控制/多instance/清理規格已保存。
+
+唯一下一Gate：呈交這份具體規格給玩家審核；未核准新設計，不建立acceptance、不做F3/GIF/Runtime/部署。核准後保存精確hash收據，才Basic→Heavy→Special→Awakening→Passive逐招F3/樣式→其餘姿勢/獨立VFX→GIF核准→Runtime/必要真驗證→正常Pages/public→玩家核准；P4完成前不做P5。新入口docs/handoffs/P4_JIUWEIHU_NEXT_WORK.md。所有後續交接仍單一完整自足可一鍵複製code block。
+
+本次純docs前檢/提案/進度[skip ci]，src/public/scripts/tests/依賴/workflows/approved收據不變，沒有Build/Browser/Pages/新美術或玩家核准；不重跑P1–P3及未變來源公開下載。原生單人、同分支feat/m0-combat-core-20260927，不委派/新branch/worktree/TD/main merge/存檔，普通Hit取消、全部approved bytes/尺度/anchor/mirror、正式退整層示意及素材安全/兩下載/required/回收規則保持。下方P4前檢NEXT是本次完成前歷史；本Gate SHA以包含本節的最新remote為準。
+
 ## 2026-10-25 — 玩家核准d346798；P3赤鱬COMPLETE；P4九尾狐規格前檢NEXT
 
 玩家：「我確認核准，紀錄 我要創新的work，提供prompts，讓她無縫接軌，直接繼續往下個開發」。明確核准已呈交d346798之最後游息/辨識與真正退示意Runtime遊戲Gate，精確收據docs/verification/SCHEMATIC_RETIREMENT/player-acceptance.json與docs/art/approved/chiru/passive/runtime-v1/acceptance.json。既有四主動與base/Idle/Move/KO接受保持，普通Hit永久取消；P3整角結案docs/verification/P3_CHARACTER_CLOSURE.json/.md。17份既有收據314個綁定中313當前相符、1舊整包流程在原SHA精確恢復並確認已被逐招決策取代，原receipt/現行流程均保持，無未解決差異。

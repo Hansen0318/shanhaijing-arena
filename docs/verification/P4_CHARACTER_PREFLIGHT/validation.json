@@ -1,0 +1,58 @@
+{
+  "status": "DOCS_AND_CURRENT_SOURCE_PREFLIGHT_PASS_NOT_PROPOSED_RUNTIME_PASS",
+  "baselineRef": "b7d696a56c1547de43b09afbe21e7a0e3f24c384",
+  "checks": {
+    "jsonParse": true,
+    "currentP4Casts": 32,
+    "sourceBlobBindings": 68,
+    "fourActiveNumbersPreserved": true,
+    "newDesignUnapproved": true,
+    "handoffSingleCodeBlock": true,
+    "docsOnlyDelta": true
+  },
+  "notRun": [
+    "Build",
+    "Browser",
+    "Pages",
+    "P1/P2/P3 test suites",
+    "public downloads",
+    "proposed passive runtime tests"
+  ],
+  "files": [
+    {
+      "path": "docs/verification/P4_CHARACTER_PREFLIGHT/baseline.json",
+      "sha256": "a4e8c8775cebba5cea6b8aca3aa3751c819e9b2c4986f2835935f2df30f6a23b",
+      "bytes": 34952
+    },
+    {
+      "path": "docs/verification/P4_CHARACTER_PREFLIGHT/proposal.json",
+      "sha256": "a34252d52dddc68a8ead4d1c608d6d77667b8c8c3c8b0bff194fd57a422c5e00",
+      "bytes": 14355
+    },
+    {
+      "path": "docs/verification/P4_CHARACTER_PREFLIGHT/current-source-probes.json",
+      "sha256": "0032dcf5f02230ddd833f8f0adaf7cb627abd2031f78ef221954b5c4f629a87c",
+      "bytes": 12259
+    },
+    {
+      "path": "docs/verification/P4_CHARACTER_PREFLIGHT/preflight.mjs",
+      "sha256": "04841f9814a8f0110f7b1b571cc928c62cd829e388282cb88ce8bbc082c4b9ee",
+      "bytes": 4743
+    },
+    {
+      "path": "docs/verification/P4_CHARACTER_PREFLIGHT/REPORT.md",
+      "sha256": "5de473f438f8ac9f8428499ddeb6a470b1f7ad06deb85fc4e52815b4ace7f1a7",
+      "bytes": 4150
+    },
+    {
+      "path": "docs/verification/P4_CHARACTER_PREFLIGHT/WORK_LOG.md",
+      "sha256": "f6732831541c9701fed420f305c4b2a6664a8c934b4d37a5840a8d3d9059b4df",
+      "bytes": 1437
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-25-jiuweihu-whole-character-design.md",
+      "sha256": "bc16721123947d8680d6d6745ca6bd286681d09b47bb1228d0547f3333bd5636",
+      "bytes": 18684
+    }
+  ]
+}

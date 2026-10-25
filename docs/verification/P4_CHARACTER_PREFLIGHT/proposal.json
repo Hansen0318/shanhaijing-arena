@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "version": "P4-whole-character-v1",
+  "status": "PROPOSED_PLAYER_REVIEW_PENDING",
+  "approved": false,
+  "implemented": false,
+  "baselineRef": "b7d696a56c1547de43b09afbe21e7a0e3f24c384",
+  "designPath": "docs/superpowers/specs/2026-10-25-jiuweihu-whole-character-design.md",
+  "preserveCurrentActiveMechanics": true,
+  "tiers": {
+    "T0": {
+      "stats": {
+        "maxHp": 230,
+        "atk": 19,
+        "def": 4,
+        "moveSpeed": 1.7,
+        "attackSpeed": 1.05
+      },
+      "basicIntervalSeconds": 0.9523809523809523,
+      "activeDamageScale": 1,
+      "persistentDamageScale": 1,
+      "abilities": {
+        "basic": {
+          "coefficient": 1,
+          "rawNeutralPreDefenseNonCritDamage": 19,
+          "cooldownSeconds": 0,
+          "minRangeForAI": 0.8,
+          "preferredRangeForAI": 2.8,
+          "maxRange": 4.2,
+          "windupMs": 0,
+          "tacticalImpactMs": 0,
+          "nonTacticalImpactMs": 0,
+          "telegraph": null,
+          "areaRadius": null,
+          "critChance": 0.1,
+          "critMultiplier": 1.5
+        },
+        "heavy": {
+          "coefficient": 1.5,
+          "rawNeutralPreDefenseNonCritDamage": 28.5,
+          "cooldownSeconds": 3.5,
+          "minRangeForAI": 1,
+          "preferredRangeForAI": 3,
+          "maxRange": 4.6,
+          "windupMs": 0,
+          "tacticalImpactMs": 650,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 450,
+            "projectileTravelMs": 200,
+            "dodgeable": true,
+            "dangerShape": "lane",
+            "dangerRadius": 0.45,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": null,
+          "critChance": 0.2,
+          "critMultiplier": 1.75
+        },
+        "special": {
+          "coefficient": 1.35,
+          "rawNeutralPreDefenseNonCritDamage": 25.650000000000002,
+          "cooldownSeconds": 7,
+          "minRangeForAI": 1,
+          "preferredRangeForAI": 3.2,
+          "maxRange": 4.6,
+          "windupMs": 0,
+          "tacticalImpactMs": 900,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 900,
+            "projectileTravelMs": 0,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 1.6,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": 1.6,
+          "critChance": 0.15,
+          "critMultiplier": 1.75
+        },
+        "awakening": {
+          "coefficient": 2.5,
+          "rawNeutralPreDefenseNonCritDamage": 47.5,
+          "cooldownSeconds": 13,
+          "minRangeForAI": 1.2,
+          "preferredRangeForAI": 3.5,
+          "maxRange": 5,
+          "windupMs": 0,
+          "tacticalImpactMs": 900,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 650,
+            "projectileTravelMs": 250,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 0.7,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": null,
+          "critChance": 0,
+          "critMultiplier": 1
+        }
+      }
+    },
+    "T1": {
+      "stats": {
+        "maxHp": 345,
+        "atk": 19,
+        "def": 4,
+        "moveSpeed": 1.7884,
+        "attackSpeed": 1.1340000000000001
+      },
+      "basicIntervalSeconds": 0.8818342151675485,
+      "activeDamageScale": 1.45,
+      "persistentDamageScale": 1.45,
+      "abilities": {
+        "basic": {
+          "coefficient": 1,
+          "rawNeutralPreDefenseNonCritDamage": 27.55,
+          "cooldownSeconds": 0,
+          "minRangeForAI": 0.8400000000000001,
+          "preferredRangeForAI": 2.94,
+          "maxRange": 4.41,
+          "windupMs": 0,
+          "tacticalImpactMs": 0,
+          "nonTacticalImpactMs": 0,
+          "telegraph": null,
+          "areaRadius": null,
+          "critChance": 0.1,
+          "critMultiplier": 1.5
+        },
+        "heavy": {
+          "coefficient": 1.5,
+          "rawNeutralPreDefenseNonCritDamage": 41.324999999999996,
+          "cooldownSeconds": 3.22,
+          "minRangeForAI": 1.05,
+          "preferredRangeForAI": 3.1500000000000004,
+          "maxRange": 4.83,
+          "windupMs": 0,
+          "tacticalImpactMs": 627.5,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 427.5,
+            "projectileTravelMs": 200,
+            "dodgeable": true,
+            "dangerShape": "lane",
+            "dangerRadius": 0.468,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": null,
+          "critChance": 0.2,
+          "critMultiplier": 1.75
+        },
+        "special": {
+          "coefficient": 1.35,
+          "rawNeutralPreDefenseNonCritDamage": 37.1925,
+          "cooldownSeconds": 6.44,
+          "minRangeForAI": 1.1550000000000002,
+          "preferredRangeForAI": 3.696000000000001,
+          "maxRange": 5.313000000000001,
+          "windupMs": 0,
+          "tacticalImpactMs": 855,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 855,
+            "projectileTravelMs": 0,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 1.8304000000000002,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": 1.8304000000000002,
+          "critChance": 0.15,
+          "critMultiplier": 1.75
+        },
+        "awakening": {
+          "coefficient": 2.5,
+          "rawNeutralPreDefenseNonCritDamage": 68.875,
+          "cooldownSeconds": 11.96,
+          "minRangeForAI": 1.26,
+          "preferredRangeForAI": 3.6750000000000003,
+          "maxRange": 5.25,
+          "windupMs": 0,
+          "tacticalImpactMs": 867.5,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 617.5,
+            "projectileTravelMs": 250,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 0.7,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": null,
+          "critChance": 0,
+          "critMultiplier": 1
+        }
+      }
+    },
+    "T2": {
+      "stats": {
+        "maxHp": 517.5,
+        "atk": 19,
+        "def": 4,
+        "moveSpeed": 1.8767999999999998,
+        "attackSpeed": 1.2348
+      },
+      "basicIntervalSeconds": 0.8098477486232589,
+      "activeDamageScale": 2.05,
+      "persistentDamageScale": 2.05,
+      "abilities": {
+        "basic": {
+          "coefficient": 1,
+          "rawNeutralPreDefenseNonCritDamage": 38.949999999999996,
+          "cooldownSeconds": 0,
+          "minRangeForAI": 0.8800000000000001,
+          "preferredRangeForAI": 3.08,
+          "maxRange": 4.620000000000001,
+          "windupMs": 0,
+          "tacticalImpactMs": 0,
+          "nonTacticalImpactMs": 0,
+          "telegraph": null,
+          "areaRadius": null,
+          "critChance": 0.1,
+          "critMultiplier": 1.5
+        },
+        "heavy": {
+          "coefficient": 1.5,
+          "rawNeutralPreDefenseNonCritDamage": 58.425,
+          "cooldownSeconds": 2.94,
+          "minRangeForAI": 1.1,
+          "preferredRangeForAI": 3.3000000000000003,
+          "maxRange": 5.06,
+          "windupMs": 0,
+          "tacticalImpactMs": 605,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 405,
+            "projectileTravelMs": 200,
+            "dodgeable": true,
+            "dangerShape": "lane",
+            "dangerRadius": 0.48600000000000004,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": null,
+          "critChance": 0.2,
+          "critMultiplier": 1.75
+        },
+        "special": {
+          "coefficient": 1.35,
+          "rawNeutralPreDefenseNonCritDamage": 52.5825,
+          "cooldownSeconds": 5.88,
+          "minRangeForAI": 1.2100000000000002,
+          "preferredRangeForAI": 3.8720000000000008,
+          "maxRange": 5.566000000000001,
+          "windupMs": 0,
+          "tacticalImpactMs": 810,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 810,
+            "projectileTravelMs": 0,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 1.9008000000000003,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": 1.9008000000000003,
+          "critChance": 0.15,
+          "critMultiplier": 1.75
+        },
+        "awakening": {
+          "coefficient": 2.5,
+          "rawNeutralPreDefenseNonCritDamage": 97.37499999999999,
+          "cooldownSeconds": 10.92,
+          "minRangeForAI": 1.32,
+          "preferredRangeForAI": 3.8500000000000005,
+          "maxRange": 5.5,
+          "windupMs": 0,
+          "tacticalImpactMs": 835,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 585,
+            "projectileTravelMs": 250,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 0.7,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": null,
+          "critChance": 0,
+          "critMultiplier": 1
+        }
+      }
+    },
+    "T3": {
+      "stats": {
+        "maxHp": 862.5,
+        "atk": 19,
+        "def": 4,
+        "moveSpeed": 2.0094,
+        "attackSpeed": 1.386
+      },
+      "basicIntervalSeconds": 0.7215007215007215,
+      "activeDamageScale": 3.2,
+      "persistentDamageScale": 3.2,
+      "abilities": {
+        "basic": {
+          "coefficient": 1,
+          "rawNeutralPreDefenseNonCritDamage": 60.800000000000004,
+          "cooldownSeconds": 0,
+          "minRangeForAI": 0.944,
+          "preferredRangeForAI": 3.304,
+          "maxRange": 4.9559999999999995,
+          "windupMs": 0,
+          "tacticalImpactMs": 0,
+          "nonTacticalImpactMs": 0,
+          "telegraph": null,
+          "areaRadius": null,
+          "critChance": 0.1,
+          "critMultiplier": 1.5
+        },
+        "heavy": {
+          "coefficient": 1.5,
+          "rawNeutralPreDefenseNonCritDamage": 91.2,
+          "cooldownSeconds": 2.52,
+          "minRangeForAI": 1.18,
+          "preferredRangeForAI": 3.54,
+          "maxRange": 5.427999999999999,
+          "windupMs": 0,
+          "tacticalImpactMs": 569,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 369,
+            "projectileTravelMs": 200,
+            "dodgeable": true,
+            "dangerShape": "lane",
+            "dangerRadius": 0.5175,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": null,
+          "critChance": 0.2,
+          "critMultiplier": 1.75
+        },
+        "special": {
+          "coefficient": 1.35,
+          "rawNeutralPreDefenseNonCritDamage": 82.08000000000001,
+          "cooldownSeconds": 5.04,
+          "minRangeForAI": 1.298,
+          "preferredRangeForAI": 4.1536,
+          "maxRange": 5.9708,
+          "windupMs": 0,
+          "tacticalImpactMs": 738,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 738,
+            "projectileTravelMs": 0,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 2.024,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": 2.024,
+          "critChance": 0.15,
+          "critMultiplier": 1.75
+        },
+        "awakening": {
+          "coefficient": 2.5,
+          "rawNeutralPreDefenseNonCritDamage": 152.0,
+          "cooldownSeconds": 9.36,
+          "minRangeForAI": 1.416,
+          "preferredRangeForAI": 4.13,
+          "maxRange": 5.8999999999999995,
+          "windupMs": 0,
+          "tacticalImpactMs": 783,
+          "nonTacticalImpactMs": 0,
+          "telegraph": {
+            "telegraphMs": 533,
+            "projectileTravelMs": 250,
+            "dodgeable": true,
+            "dangerShape": "circle",
+            "dangerRadius": 0.7,
+            "commitment": "locked",
+            "interruptible": false
+          },
+          "areaRadius": null,
+          "critChance": 0,
+          "critMultiplier": 1
+        }
+      }
+    }
+  },
+  "passive": {
+    "id": "P4.passive",
+    "name": "惑心",
+    "trigger": "positive-direct-active-damage-to-surviving-enemy",
+    "eligibleCategories": [
+      "basic",
+      "heavy",
+      "special",
+      "awakening"
+    ],
+    "excludeResidual": true,
+    "excludeRecursive": true,
+    "maxRecipientsPerActivation": 1,
+    "candidateOrder": [
+      "eventAt",
+      "actionSequence",
+      "targetInstanceId"
+    ],
+    "cooldownSeconds": 8,
+    "cooldownStarts": "successful-control-status-application",
+    "durationByTierSeconds": {
+      "T0": 0.2,
+      "T1": 0.3,
+      "T2": 0.4,
+      "T3": 0.5
+    },
+    "status": {
+      "type": "control",
+      "magnitude": 1,
+      "policy": "replace",
+      "key": "passive:bewilder",
+      "tierScaling": null
+    },
+    "readyAtBattleStart": true,
+    "queuePolicy": "settle-after-same-time-damage-and-KO-before-next-simulation-time",
+    "targetChoice": "first surviving eligible positive-hit recipient in stable event order; no retarget outside actual recipients",
+    "immunity": "existing steadfast rejects control; rejection spends no cooldown",
+    "multipleSources": "independent source cooldown and status; control is boolean union, no sum of durations",
+    "presentation": {
+      "attach": "actual-status-target",
+      "lifetime": "exact-status-record",
+      "tierSegments": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reducedMotion": "static fox-flame crests; identical lifetime",
+      "text": false
+    },
+    "newSharedMechanismRequired": true
+  },
+  "tierEffects": {
+    "T1": "preserve fox.coverage",
+    "T2": "preserve fox.pressure; Collection display name proposed 孤焰追獵; id and mechanics unchanged",
+    "T3": "preserve fox.residual fixed ground area, 3 seconds, 0.5 second interval; five pulses before expiry"
+  },
+  "lifecycle": "See design sections 5–7; no product change before design and per-skill art/GIF gates."
+}
