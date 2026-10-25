@@ -1,3 +1,11 @@
+## 2026-10-25 — P4 Basic靈火8GIF PLAYER APPROVED；新Work直接接Runtime／正常部署
+
+玩家原文：「確認approved，紀錄，我要創新的work，妳提供work 要繼續往下直接執行的prompts」。明確核准已呈交d31d2ed06dc2fe5d3fbd41ed9151f66fa3a41aa3之8GIF／四姿勢／獨立出手及真target裂花；精確SHA256收據docs/art/approved/jiuweihu/basic/composite-review-v1/acceptance.json，綁定49份呈交檔與所有protected inputs。GIF Gate CLOSED；原候選manifest/REVIEW/PENDING保留為呈交歷史，不重生、不重審spec/F3/姿勢/VFX/GIF，不改原bytes。
+
+唯一下一工作：新Work依核准spec做最小Basic共用觀察事件／action descriptor／優化PNG與獨立FX整合，兩模式真命中0ms、真命中同刻才target裂花、miss無target爆花；F3→F2→F1→F4 140/90/90/140ms只跟隨/收勢，不新增真蓄勢/飛行/傷害延遲。真renderer以核准Idle/Move解剖地標/ground/左右mirror校準，不把preview .115直接當Runtime尺度，不依尾焰外框fit；不改核准原圖或放大角色。完整已載入真action取代同record示意、缺來源才fallback。必要相符來源真驗證/正常CI-Pages/public後呈交遊戲網址，停待玩家遊戲驗收，不開始Heavy/P5/新Passive，不建Runtime acceptance。下一入口docs/handoffs/P4_JIUWEIHU_NEXT_WORK.md。
+
+本次只保存核准/進度/交接[skip ci]；沒有Runtime/Collection/部署，舊487素材檢查/112幀非新Runtime證據。不重跑來源未變P1–P3或Build/Browser/Pages。P1–P3 COMPLETE，P4整角未完成；同分支PR1open/unmerged、原生單人、不委派/新branch/worktree/TD/main merge/重置存檔/無關untracked；全部approved bytes/數值/尺度/anchor/mirror/普通Hit取消/素材安全/兩下載/required/回收與逐招流程保持。新Work部署已授權，不重問是否開始/部署；工程PASS不等於玩家遊戲核准。所有交接單一完整自足可複製code block。下方GIF待審由本收據覆蓋。
+
 ## 2026-10-25 — P4 Basic靈火8 GIF READY；唯一下一Gate＝玩家GIF審核
 
 已從e287e158恢復並沿用核准F3及有效F1/F2/F4原圖；獨立瞬發狐火/真target裂花以內建imagegen生成，原圖/prompt保存在composite-review-v1，來源checkpoint54d0434。完成全像素保留的padding masters、四同格透明cells/共同ground與解剖地標、左右mirror/靜態Idle-return。原F3 SHA256仍74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7。出手原圖左向，顯示衍生精確鏡像右向，指尖root經自查修正，不裁原alpha=1像素。
