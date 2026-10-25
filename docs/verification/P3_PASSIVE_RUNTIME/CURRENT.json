@@ -1,12 +1,12 @@
 {
-  "status": "REVISED VISUAL/GIF PLAYER APPROVED; RUNTIME AND FORMAL VFX REPLACEMENT NEXT",
+  "status": "FORMAL WARNING IMPLEMENTED; NEW SOURCE CI/PAGES/PUBLIC PENDING",
   "sourceCommit": "b414e9f079a985e4bf23283ffa5067abf5af9ac3",
   "normalPagesRun": 40105519923,
   "p1Run": 40105520061,
   "p2ExactSourceRun": 40104953768,
   "tests": 1221,
   "build": "PASS / 110 assets / 6391136 encoded bytes",
-  "next": "Successor implements revised beneficiary VFX and generic formal-versus-schematic phase replacement, true impacted verification, normal CI/Pages/public fingerprint; then wait for player gameplay acceptance.",
+  "next": "Complete normal CI including 96 actual WebGL warning cases per native/built, normal Pages and exact CI/local/public fingerprints; then player gameplay acceptance.",
   "playerRuntimeAcceptance": false,
   "p3Complete": false,
   "buildJob": 120906364692,
@@ -34,5 +34,10 @@
     "runtimeImplemented": true,
     "browserStatus": "PENDING normal CI"
   },
-  "revisionApproval": "docs/art/approved/chiru/passive/readability-review-v1/acceptance.json"
+  "revisionApproval": "docs/art/approved/chiru/passive/readability-review-v1/acceptance.json",
+  "warningRevision": {
+    "log": "docs/verification/FORMAL_WARNING_RUNTIME/WORK_LOG.md",
+    "playerAcceptance": false,
+    "deployed": false
+  }
 }

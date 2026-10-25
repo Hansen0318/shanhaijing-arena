@@ -1,3 +1,7 @@
+## 2026-10-25 — ACTIVE：正式warning替換已實作；新來源正常CI/Pages/public待完成
+
+本次玩家直接授權繼續VFX修正。最新WORK_PROGRESS/STATE與docs/verification/FORMAL_WARNING_RUNTIME/WORK_LOG.md優先：獨立ground-sigil-v1向量warning資料已補，完整真circle/capsule端點/敵我/impact/reduced由共用Presenter承接後取代對應舊線框；無來源/無效來源保留fallback，P4/P5與持續場域不誤刪。不是僅因action存在而刪warning。新96案WebGL native+built接正常CI，需實際成功/正常Pages/public指紋後呈交玩家；舊20招run40149990210 SUCCESS不是新warning證據。全部approved art/收據/尺度/戰鬥契約/盾水膜/場地保護，原生單人/原分支PR1 open/unmerged、不委派/新branch/worktree/TD/main merge/存檔。玩家未核准本新Runtime，P3未COMPLETE，不開始下一角色；不重畫素材或重做本已完成修正，先收斂真發布Gate。
+
 ## 2026-10-24 — 游息9 GIF PLAYER APPROVED；新Work直接接Runtime／部署
 
 玩家：「我確認OK，確認有紀錄的話，我要開新的WORK接手，你提供PROMPTS」。明確核准已呈交7b61fec5e84f478b0d3cc1572c0c1cadfb9a93ce之9GIF及游息視覺；精確hash收據docs/art/approved/chiru/passive/composite-review-v1/acceptance.json。GIF Gate CLOSED，授權新Work整合本招Runtime、必要真驗證與正常Pages部署供玩家遊戲驗收。不重生/重審STYLE/GIF/原數值；原manifest/REVIEW的PENDING是呈交歷史，原檔不改。腳本清理不是Runtime證據，玩家GIF核准不是遊戲核准；本次僅核准紀錄與交接，尚未Runtime/Collection/部署，P3整角未完成。

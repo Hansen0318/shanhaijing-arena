@@ -1,0 +1,14 @@
+{
+  "tests": {
+    "total": 1230,
+    "pass": 1230,
+    "fail": 0
+  },
+  "targeted": {
+    "pass": 10,
+    "fail": 0
+  },
+  "build": "PASS /110 assets /6378266 encoded bytes",
+  "browser": "LOCAL BLOCKED / normal CI pending",
+  "playerAcceptance": false
+}

@@ -84,7 +84,10 @@ export class ArenaScene extends Phaser.Scene {
     const visualAssets=this.visualAssets;this.ownCleanup(()=>visualAssets.destroy());
     const encounterActors=[...this.session.allies,...this.session.enemies];
     const encounterDefinitions=[...new Set(encounterActors.map(a=>this.session.characterDefinitions[a.definitionId]))];
-    this.telegraphs = new TelegraphPresenter(this,arenaToStage);
+    this.telegraphs = new TelegraphPresenter(this,arenaToStage,{
+      warningSource:threat=>{const actor=this.session.actorById(threat.sourceId);return this.session.characterDefinitions[actor?.definitionId]?.warningDescriptors?.[threat.category];},
+      reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false,
+    });
     this.ownCleanup(()=>this.telegraphs.destroy());
     this.ownCleanup(()=>this.damageNumbers.destroy());
     this.selectedId = this.labConfig?.selectedAllyId ?? 'a2';

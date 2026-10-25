@@ -80,6 +80,35 @@ try{
     const executed=q.executeAbility(caster,category,'player',target);paint();for(let n=0;n<100;n++){q.step(.025);paint();}const cleared=()=>qp.actorSprites.size===0&&qp.displays.size===0&&qp.actionEffects.size===0&&qp.overlaySprites.size===0&&qp.textureBytes===0;qp.destroy();qp.destroy();const observation={character:def.id,category,formal,executed,events,loaded,visibleFormal,visibleFallback,noDouble,cleanup:cleared(),keys,paintedFrames,renderer:sc.game.renderer.type,visibleTextures:[...visibleTextures]};result.push(observation);q.clearTransientCombat();if(!executed||events===0||!loaded||!observation.cleanup||paintedFrames===0||!(formal?visibleFormal&&noDouble:visibleFallback))throw Error('Actual skill observation failed: '+JSON.stringify(observation));
    }return result;
   });
+  if(!report.warnings){
+   report.warnings=await page.evaluate(()=>{
+    const sc=window.__chiruScene,defs=sc.session.characterDefinitions,project=sc.visualAssets.project,result=[];
+    const reader=()=>{const gl=sc.game.renderer.gl,w=gl.drawingBufferWidth,h=gl.drawingBufferHeight,bytes=new Uint8Array(w*h*4);gl.readPixels(0,0,w,h,gl.RGBA,gl.UNSIGNED_BYTE,bytes);return bytes;};
+    for(const id of ['P1','P2','P3'])for(const category of ['basic','heavy','special','awakening'])for(const shape of ['circle','lane'])for(const sourceTeamId of ['allies','enemies'])for(const reducedMotion of [false,true]){
+     const descriptor=defs[id].warningDescriptors[category],p=new sc.telegraphs.constructor(sc,project,{warningSource:()=>descriptor,reducedMotion});
+     const t={id:'formal-matrix',sourceTeamId,category,createdAtMs:0,impactAtMs:1000,geometry:{shape,origin:{x:3,y:-.4},center:{x:6,y:.4},radius:.6}};
+     p.render([],0);sc.game.step(performance.now(),0);const blank=reader();
+     p.render([t],200);const early=JSON.stringify(p.graphics.commandBuffer);sc.game.step(performance.now(),0);const pixels=reader();let changed=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i]!==blank[i]||pixels[i+1]!==blank[i+1]||pixels[i+2]!==blank[i+2])changed++;
+     p.render([t],800);const late=JSON.stringify(p.graphics.commandBuffer),view=p.presentations.get(t.id),mode=view.mode;
+     p.render([],800);const cleared=p.presentations.size===0;p.destroy();p.destroy();
+     const entry={character:id,category,shape,sourceTeamId,reducedMotion,mode,motif:view.motif,color:view.color,progress:view.progress,clockChanges:early!==late,paintedPixels:changed,cleared,closed:p.closed,renderer:sc.game.renderer.type};
+     result.push(entry);if(mode!=='formal'||changed<20||!entry.clockChanges||!cleared||!entry.closed)throw Error('Formal warning WebGL failed '+JSON.stringify(entry));
+    }
+    for(const source of [null,{renderer:'missing'}]){
+     const p=new sc.telegraphs.constructor(sc,project,{warningSource:()=>source});const t={id:'fallback',sourceTeamId:'enemies',category:'heavy',createdAtMs:0,impactAtMs:1000,geometry:{shape:'lane',origin:{x:3,y:0},center:{x:6,y:0},radius:.6}};
+     p.render([t],500);if(p.presentations.get(t.id).mode!=='fallback'||p.graphics.commandBuffer.length<10)throw Error('Missing warning source must retain fallback');p.destroy();
+    }
+    // Six simultaneous native vector warnings in the actual Arena, for visual review.
+    const sources=new Map(),threats=[];let n=0;
+    for(const id of ['P1','P2','P3'])for(const sourceTeamId of ['allies','enemies']){
+     const column=n%2,row=Math.floor(n/2),x=column?6:1,y=-2+row*1.3,idKey='review-'+n++;
+     sources.set(idKey,defs[id].warningDescriptors.heavy);threats.push({id:idKey,sourceTeamId,category:'heavy',createdAtMs:0,impactAtMs:1000,geometry:{shape:'lane',origin:{x,y},center:{x:x+2,y:y+.3},radius:.35}});
+    }
+    window.warningReview=new sc.telegraphs.constructor(sc,project,{warningSource:t=>sources.get(t.id)});window.warningReview.render(threats,700);sc.game.step(performance.now(),0);return result;
+   });
+   await page.locator('canvas').screenshot({path:path.join(out,(built?'built':'native')+'-formal-warnings.png')});
+   await page.evaluate(()=>{window.warningReview.destroy();delete window.warningReview;});
+  }
   await context.close();
  }
  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true}),page=await context.newPage();await page.goto(base);await page.locator('#orientation-gate:not([hidden])').waitFor();await page.setViewportSize({width:852,height:393});await page.locator('#orientation-gate[hidden]').waitFor({state:'attached'});await page.getByRole('button',{name:'COLLECTION',exact:true}).click();await page.locator('.collection-card[data-character-id="P3"]').click();const text=await page.locator('.collection-page').innerText();assert.match(text,/8%／12%／16%／20%/);assert.match(text,/4.2/);assert.match(text,/60%/);assert.match(text,/清流/);await page.screenshot({path:path.join(out,(built?'built':'native')+'-collection-phone.png')});report.collection={width:852,height:393,portraitGate:true,passive:true,modifier:true};await context.close();report.status='PASS';validateChiruPassiveBrowserReport(report,built);

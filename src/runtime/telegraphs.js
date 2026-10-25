@@ -1,4 +1,6 @@
 export {statusMarks} from './statusPresentation.js';
+import {resolveWarning} from '../assets/warningDescriptors.js';
+import {drawFormalWarning} from './formalWarnings.js';
 // Renderer reads shared battle-clock geometry; no tween or independent timer.
 export function telegraphProjection(threat,nowMs,project) {
  const g=threat.geometry,center=project(g.center),origin=project(g.origin);
@@ -7,10 +9,15 @@ export function telegraphProjection(threat,nowMs,project) {
 }
 export function persistentAreaProjection(area,nowSeconds,project){return telegraphProjection({...area,createdAtMs:area.startTime*1000,impactAtMs:area.expiryTime*1000},nowSeconds*1000,project);}
 export class TelegraphPresenter {
- constructor(scene,project){this.project=project;this.graphics=scene.add.graphics().setDepth(8);}
+ constructor(scene,project,{warningSource=()=>null,reducedMotion=false}={}){this.project=project;this.warningSource=warningSource;this.reducedMotion=reducedMotion;this.graphics=scene.add.graphics().setDepth(8);this.presentations=new Map();this.closed=false;}
  render(threats,nowMs,areas=[]){
-  const g=this.graphics;g.clear();
+  if(this.closed)return;
+  const g=this.graphics;g.clear();this.presentations.clear();
   for(const threat of [...areas.map(a=>({...a,persistent:true,createdAtMs:a.startTime*1000,impactAtMs:a.expiryTime*1000})),...threats]){const p=telegraphProjection(threat,nowMs,this.project),color=threat.persistent?(p.allied?0xbd87ef:0xff6478):(p.allied?0x73e5ff:0xffb347);
+   // Persistent areas own a different lifetime/source. A cast source never suppresses them.
+   let source=null;try{if(!threat.persistent)source=resolveWarning(this.warningSource(threat),p.shape);}catch{/* preserve warning on unavailable optional source */}
+   if(source){this.presentations.set(threat.id,drawFormalWarning(g,threat,p,source,this.project,this.reducedMotion));continue;}
+   this.presentations.set(threat.id,{mode:'fallback',color,progress:p.progress});
    if(p.shape==='circle'){
     g.fillStyle(color,.12+.12*p.progress).fillEllipse(p.center.x,p.center.y,p.radiusX*2,p.radiusY*2);
     g.lineStyle(6,0x172735,.95).strokeEllipse(p.center.x,p.center.y,p.radiusX*2,p.radiusY*2);
@@ -28,5 +35,5 @@ export class TelegraphPresenter {
    }
   }
  }
- destroy(){this.graphics.destroy();}
+ destroy(){if(this.closed)return;this.closed=true;this.presentations.clear();this.graphics.destroy();}
 }

@@ -1,0 +1,87 @@
+✖ explicit formal warning source replaces old capsule outlines and center line (1.710565ms)
+✖ formal coverage uses projected true capsule caps and circle under anisotropic projection (0.73003ms)
+✖ no source, invalid source and unsupported coverage preserve one original fallback (0.435772ms)
+✖ formal warning retains team distinction, impact progression, pause and bounded lifecycle (0.523477ms)
+✖ only explicitly authored warning descriptors resolve; future roster retains fallback (0.633656ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 148.648806
+
+✖ failing tests:
+
+test at tests/formalWarnings.test.js:14:1
+✖ explicit formal warning source replaces old capsule outlines and center line (1.710565ms)
+  AssertionError [ERR_ASSERTION]: developed skill needs a distinct warning source
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:16:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/formalWarnings.test.js:22:1
+✖ formal coverage uses projected true capsule caps and circle under anisotropic projection (0.73003ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'get')
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:26:38)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/formalWarnings.test.js:33:1
+✖ no source, invalid source and unsupported coverage preserve one original fallback (0.435772ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'get')
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:37:40)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/formalWarnings.test.js:40:1
+✖ formal warning retains team distinction, impact progression, pause and bounded lifecycle (0.523477ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'get')
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:45:38)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/formalWarnings.test.js:51:1
+✖ only explicitly authored warning descriptors resolve; future roster retains fallback (0.633656ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'ground-sigil-v1'
+
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:52:104)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'ground-sigil-v1',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

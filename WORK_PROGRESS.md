@@ -1,3 +1,11 @@
+## 2026-10-25 — 正式預警替換實作 checkpoint；正常CI／部署 ACTIVE
+
+已從最新0f24cae恢復，PR1 open/unmerged；前20招run40149990210已SUCCESS，不能當warning修正證據。根因是TelegraphPresenter沒有獨立warning來源。現新增ground-sigil-v1明確向量來源：鹿蜀風紋／猼訑岩紋／赤鱬水紋；真circle/lane capsule含端點先arena取樣再投影、敵我色/impact clock/reduced與清理完整承接，成功解析僅畫一份正式預警，退掉對應矩形/端圓/中心線。缺來源或未知renderer/shape/解析例外保留fallback；P4/P5及持續場域不誤刪。這是已授權修正的實作選擇，尚未玩家視覺或遊戲核准，不建acceptance。
+
+全部approved PNG/收據/角色尺度/四主動數值/游息契約/盾水膜/場地/存檔不改；原生單人、同分支、不委派/新branch/worktree/TD/main merge。RED→GREEN及初次兩個歷史hash fixture失敗/修復保存docs/verification/FORMAL_WARNING_RUNTIME；原收據/來源guard不放寬。最新完整1230/1230、Build110素材PASS，含最後新增來源例外/持續場域案。真96案warning native+built（含讀pixel）已接正常CI，尚未宣稱實跑成功；本機Chromium仍壞ZIP，失敗已保存。
+
+唯一下一步：新來源正常CI真96案warning＋20招/游息32+4/四主動/P1P2相容、必要修真失敗→正常Pages→CI-local-public指紋，再呈交遊戲網址停待玩家遊戲核准。P3未COMPLETE。詳細WORK_LOG與handoff，不重畫素材、不重做舊已通過來源。
+
 ## 2026-10-25 — 玩家截圖回報：藍橘預警線框仍未正式取代（未結案）
 
 玩家要求直接確認並修改游息及舊示意VFX。已核對IMG_2848：己方178/245=72.7%、205/320=64.1%、235/235=100%，此幀沒有HP≤60%合法受益者；游息新版PNG/當前幀薄荷輪廓已有公開相符來源證據，不能據此靜態幀認定沒有改。圖中藍橘膠囊線框明確來自TelegraphPresenter.render，前次保留必要命中預警，尚無正式warning來源承接，因此「正式cast/contact替代」不等於「圖中預警線框已替代」。前次整體完成表述須以本節澄清。
