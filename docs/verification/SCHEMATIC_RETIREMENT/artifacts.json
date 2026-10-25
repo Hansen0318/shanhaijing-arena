@@ -1,0 +1,78 @@
+[
+  {
+    "id": 12588140938,
+    "name": "github-pages",
+    "size_in_bytes": 13122365,
+    "url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12588140938",
+    "archive_download_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12588140938/zip",
+    "expired": false,
+    "created_at": "2026-10-25T05:14:19Z",
+    "expires_at": "2026-10-26T05:14:18Z",
+    "updated_at": "2026-10-25T05:14:19Z",
+    "digest": "sha256:abe40d2223f227bbf4dcb789e4fc4774841e59384a5b25ba8af32138fb874493",
+    "workflow_run": {
+      "id": 40163995446,
+      "repository_id": 1390686350,
+      "head_repository_id": 1390686350,
+      "head_branch": "feat/m0-combat-core-20260927",
+      "head_sha": "d346798cadf12efeada0f11e15f72c62a4d78eb6"
+    }
+  },
+  {
+    "id": 12588115966,
+    "name": "chiru-passive-evidence",
+    "size_in_bytes": 5129573,
+    "url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12588115966",
+    "archive_download_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12588115966/zip",
+    "expired": false,
+    "created_at": "2026-10-25T05:14:17Z",
+    "expires_at": "2027-01-23T05:01:11Z",
+    "updated_at": "2026-10-25T05:14:17Z",
+    "digest": "sha256:b3093b83b1f9dd89ee5074d567a08105379a2275ca51c511c6e6f8fca3a66c53",
+    "workflow_run": {
+      "id": 40163995446,
+      "repository_id": 1390686350,
+      "head_repository_id": 1390686350,
+      "head_branch": "feat/m0-combat-core-20260927",
+      "head_sha": "d346798cadf12efeada0f11e15f72c62a4d78eb6"
+    }
+  },
+  {
+    "id": 12587966288,
+    "name": "chiru-awakening-evidence",
+    "size_in_bytes": 7816011,
+    "url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12587966288",
+    "archive_download_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12587966288/zip",
+    "expired": false,
+    "created_at": "2026-10-25T05:14:15Z",
+    "expires_at": "2027-01-23T05:01:11Z",
+    "updated_at": "2026-10-25T05:14:15Z",
+    "digest": "sha256:ac15b3af9c460ae668e09945a8dff3a004200c1c68bbc288dc80da8378e17ba9",
+    "workflow_run": {
+      "id": 40163995446,
+      "repository_id": 1390686350,
+      "head_repository_id": 1390686350,
+      "head_branch": "feat/m0-combat-core-20260927",
+      "head_sha": "d346798cadf12efeada0f11e15f72c62a4d78eb6"
+    }
+  },
+  {
+    "id": 12587652138,
+    "name": "chiru-special-evidence",
+    "size_in_bytes": 4875034,
+    "url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12587652138",
+    "archive_download_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12587652138/zip",
+    "expired": false,
+    "created_at": "2026-10-25T05:10:43Z",
+    "expires_at": "2027-01-23T05:01:11Z",
+    "updated_at": "2026-10-25T05:10:43Z",
+    "digest": "sha256:e02e3d0b083cc03bf45c0e619fe7812e8e7ca84151f4269c34284a2eb30f99c0",
+    "workflow_run": {
+      "id": 40163995446,
+      "repository_id": 1390686350,
+      "head_repository_id": 1390686350,
+      "head_branch": "feat/m0-combat-core-20260927",
+      "head_sha": "d346798cadf12efeada0f11e15f72c62a4d78eb6"
+    }
+  }
+]

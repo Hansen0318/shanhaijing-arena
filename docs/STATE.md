@@ -1,3 +1,11 @@
+## 2026-10-25 — IMG_2864真正退示意修正已部署；正式水浪下零膠囊／箭頭／方塊
+
+發布d346798cadf12efeada0f11e15f72c62a4d78eb6；正常Pages40163995446/build121081184936/deploy121083539138 SUCCESS，獨立P1/P2 40163995418/40163995443 SUCCESS。完整1229/1229、96+96真WebGL零新增示意像素、Heavy四時段native/built共8張真圖（飛行真threat+正式水浪、命中真HP降低、同幀geometry=0）、20招/游息32+4/四主動各32+4/P1P2相容全部PASS。4artifact hash/CRC、隔離guard657/692/589及CI-local172 PASS；public172（3新變動檔fresh＋169相同path/bytes/hash綁前次fresh證據沿用）PASS。詳細docs/verification/SCHEMATIC_RETIREMENT/{REPORT.md,release.json,evidence/,source-guards.json,ci-local-build.json,public-fingerprints.json}。
+
+前38cdd8c ground-sigil膠囊/箭頭/方塊只是換皮示意，已依玩家IMG_2864直接改正撤掉；未有玩家核准，舊工程PASS不可當退示意。現以正式action完整真貼圖實際載入且TextureManager存在才撤該record整層示意；不再畫新幾何，缺來源才一份fallback。P4/P5未開發action、獨立持續場域/正式盾水膜/固定場地不誤刪。全部核准PNG/收據/尺度、Heavy水浪與真範圍/時序/傷害、游息契約不變。新決策docs/decisions/2026-10-25-retire-schematic-under-formal-actions.md優先，舊「需另畫幾何承接」實作已撤回。
+
+唯一下一Gate：呈交 https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&vfx=d346798 ，橫向進戰鬥選赤鱬→H，看正式水浪下不再有膠囊/箭頭/方塊；等待玩家遊戲核准或實際新回饋。工程/發布完成不是玩家驗收；不建新Runtime acceptance、不標P3 COMPLETE、不開始下一角色。來源未變不重跑本次已通過測試/Build/Browser/Pages/public；每次接續先fetch。原生單人、原分支PR1 open/unmerged、不委派/新branch/worktree/TD/main merge/存檔。此次純證據/規則/進度checkpoint[skip ci]；下方ACTIVE/未部署由本節覆蓋。
+
 ## 2026-10-25 — 玩家IMG_2864指出幾何示意仍在；撤掉ground-sigil，修正ACTIVE
 
 玩家直接要求確認赤鱬Heavy並改正。截圖正式水浪/爆浪已在，但38cdd8c新增的ground-sigil-v1膠囊/箭頭/方塊仍疊在下方；這只是換皮示意，前次工程PASS不是玩家核准或真正退示意。最新要求優先：撤掉未核准向量warning來源，改以真action完整已載入貼圖（含TextureManager存在）承接，跳過同record整個示意層；缺/無效/任一未載入才fallback。不是再畫新幾何，也不改threat ledger/命中範圍/時序/傷害。P4/P5無正式action與獨立持續場域仍各自保留必要fallback，核准PNG/收據/尺度/盾水膜/場地/存檔不變。

@@ -1,0 +1,29 @@
+{
+  "special": {
+    "status": "PASS",
+    "files": 657,
+    "tests": {
+      "total": 1229,
+      "pass": 1229,
+      "fail": 0
+    }
+  },
+  "awakening": {
+    "status": "PASS",
+    "files": 692,
+    "tests": {
+      "total": 1229,
+      "pass": 1229,
+      "fail": 0
+    }
+  },
+  "passive": {
+    "status": "PASS",
+    "files": 589,
+    "tests": {
+      "total": 1229,
+      "pass": 1229,
+      "fail": 0
+    }
+  }
+}

@@ -17,3 +17,6 @@
 真Browser改驗96案「正式圖已載入且新增幾何paintedPixels=0／commandBuffer等於clear」，實際缺水浪貼圖才恢復fallback；另新增真tactical BattleSession赤鱬Heavy蓄勢/飛行/命中/收招四個實際截圖，證明水浪與真damage存在、同幀geometry=0。不是另一組空場假效果圖。必須跑新來源正常CI/相容/Pages/public，舊96案畫出箭頭的PASS不可沿用。
 
 目前未宣稱新真Browser/部署/玩家核准；P3未COMPLETE。唯一下一Gate為正常CI真圖與必要修復、正常Pages/CI-local-public，再呈交玩家。
+
+## 完成紀錄
+最終d346798／正常Pages40163995446（build121081184936/deploy121083539138）SUCCESS；完整1229/1229、96+96真零geometry、8張Heavy四時段真圖、20招/游息/四主動/P1P2相容全部PASS。4artifact SHA/CRC與隔離guard657/692/589 PASS；CI/local172與public172（3fresh＋169相同path/bytes/hash精確沿用）PASS。核准圖/收據及戰鬥邏輯不變。編譯包中舊ground-sigil已移除。詳細REPORT/release/evidence；唯一下一Gate為玩家新遊戲驗收，P3仍未COMPLETE，不重跑本次已完相同來源。

@@ -1,20 +1,20 @@
 {
-  "status": "PLAYER SCREENSHOT REJECTS GEOMETRIC RESKIN / ACTUAL FORMAL ACTION RETIREMENT ACTIVE",
-  "sourceCommit": "38cdd8c607a74f304b66dc31b9b983f443048bc5",
-  "normalPagesRun": 40160079507,
-  "p1Run": 40160079501,
-  "p2ExactSourceRun": 40160079436,
-  "tests": 1231,
+  "status": "ACTUAL FORMAL ACTION SCHEMATIC RETIREMENT DEPLOYED / PLAYER GAMEPLAY ACCEPTANCE PENDING",
+  "sourceCommit": "d346798cadf12efeada0f11e15f72c62a4d78eb6",
+  "normalPagesRun": 40163995446,
+  "p1Run": 40163995418,
+  "p2ExactSourceRun": 40163995443,
+  "tests": 1229,
   "build": "PASS /110 assets /6378266 encoded bytes",
-  "next": "New source: verify zero schematic under actual loaded action artwork, real Heavy four-phase screenshots, normal CI/Pages/public; then player gameplay acceptance.",
+  "next": "Present d346798; wait for player gameplay acceptance or actual new feedback. No repeated unchanged-source verification or new character.",
   "playerRuntimeAcceptance": false,
   "p3Complete": false,
-  "buildJob": 121069659769,
-  "deployJob": 121072012132,
+  "buildJob": 121081184936,
+  "deployJob": 121083539138,
   "ciLocalFiles": 172,
   "publicFiles": 172,
-  "publicStatus": "PASS / all fresh",
-  "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&vfx=38cdd8c",
+  "publicStatus": "PASS /3 fresh +169 exact same-path bytes proof reuse",
+  "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&vfx=d346798",
   "playerFeedback": "docs/verification/P3_PASSIVE_RUNTIME/player-feedback-2026-10-25.md",
   "visualDirection": {
     "approved": true,
@@ -29,23 +29,27 @@
     "decodedFrames": 119,
     "runtimeEvidence": false,
     "deployed": true,
-    "localTests": 1231,
+    "localTests": 1229,
     "localBuild": "PASS /110 assets /6378266 bytes",
     "runtimeImplemented": true,
-    "browserStatus": "PASS /native32 built4 / warning96 each /20 skills each",
-    "normalPagesRun": 40160079507
+    "browserStatus": "PASS /true Heavy phases zero geometry +96 each /20 skills each",
+    "normalPagesRun": 40163995446
   },
   "revisionApproval": "docs/art/approved/chiru/passive/readability-review-v1/acceptance.json",
   "warningRevision": {
     "log": "docs/verification/FORMAL_WARNING_RUNTIME/REPORT.md",
     "playerAcceptance": false,
-    "deployed": true,
+    "deployed": false,
     "nativeCases": 96,
-    "builtCases": 96
+    "builtCases": 96,
+    "status": "RETIRED ground-sigil reskin; not player accepted"
   },
   "schematicRetirement": {
-    "log": "docs/verification/SCHEMATIC_RETIREMENT/WORK_LOG.md",
-    "deployed": false,
-    "playerAcceptance": false
+    "report": "docs/verification/SCHEMATIC_RETIREMENT/REPORT.md",
+    "deployed": true,
+    "playerAcceptance": false,
+    "nativeZeroGeometryCases": 96,
+    "builtZeroGeometryCases": 96,
+    "actualHeavyPhaseScreenshots": 8
   }
 }

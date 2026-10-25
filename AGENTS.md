@@ -1,3 +1,7 @@
+## 2026-10-25 — 最新：IMG_2864真正退示意已部署；只待玩家遊戲驗收
+
+產品d346798／正常Pages40163995446 SUCCESS。1229測試、96+96真零geometry、8張Heavy四時段實際畫面、20招/游息/四主動/P1P2真相容與guard657/692/589、CI-local/public172全部PASS（public3fresh＋169相同path/bytes/hash精確沿用）。前ground-sigil膠囊/箭頭/方塊只是換皮示意，已依最新玩家直接改正撤掉；不能恢復或把舊工程PASS當玩家核准。真action完整貼圖已載入且TextureManager存在時直接退該record整層示意；不另畫幾何。缺真來源才一份fallback；獨立場域/盾水膜/固定場地不誤刪，真戰鬥判定與approved bytes不變。入口docs/verification/SCHEMATIC_RETIREMENT/REPORT.md與最新WORK_PROGRESS/STATE/handoff；唯一下一Gate為玩家遊戲驗收或實際新回饋，P3未COMPLETE，不開始下一角色、不重驗來源未變成果。原生單人、同分支PR1 open-unmerged、不委派/新branch/worktree/TD/main merge/存檔。所有交接單一自足code block；每次繼續先fetch最新GitHub。下方ground-sigil/ACTIVE/未部署為歷史，由本節及最新decision覆蓋。
+
 ## 2026-10-25 — 玩家IMG_2864指出幾何示意仍在；撤掉ground-sigil，修正ACTIVE
 
 玩家直接要求確認赤鱬Heavy並改正。截圖正式水浪/爆浪已在，但38cdd8c新增的ground-sigil-v1膠囊/箭頭/方塊仍疊在下方；這只是換皮示意，前次工程PASS不是玩家核准或真正退示意。最新要求優先：撤掉未核准向量warning來源，改以真action完整已載入貼圖（含TextureManager存在）承接，跳過同record整個示意層；缺/無效/任一未載入才fallback。不是再畫新幾何，也不改threat ledger/命中範圍/時序/傷害。P4/P5無正式action與獨立持續場域仍各自保留必要fallback，核准PNG/收據/尺度/盾水膜/場地/存檔不變。

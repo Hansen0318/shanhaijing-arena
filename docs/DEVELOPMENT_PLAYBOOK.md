@@ -40,7 +40,7 @@ Release266114c46406e39c8501ccad370ce69bfe34f236/treeb6289ff292bd6de351ada7260c3b
 
 ## 2026-10-25 — 正式VFX退示意：預警來源與cast/contact分開
 
-正式預警必須有明確可解析的來源與支援shape，完整承接真circle/lane capsule（含端點）、敵我及impact共用clock，再取代同一record舊線框；不能由action/blade/contact存在直接推論。成功來源僅畫一份正式呈現，缺失/無效/不支援來源才用一份fallback。ground-sigil-v1是本次明確註冊的程式向量來源，不修改或重生核准PNG；未開發P4/P5與獨立持續場域仍保留各自必要呈現。真native/built WebGL需證明實際像素、normal/reduced、範圍與清理；不以靜態盤點或先前cast/contact驗證代替。詳細證據入口 verification/FORMAL_WARNING_RUNTIME/。最新發布狀態仍以WORK_PROGRESS/STATE為準；下方舊Basic起點均為歷史。
+依IMG_2864最新回報修正：正式動作及完整技能圖片實際載入/TextureManager存在時，撤掉同record整層示意；不得再以ground-sigil-v1膠囊/箭頭/方塊換皮冒稱完成。來源必須是解析成功且完整已載入的真圖片，不能只看ID、asset名或descriptor。缺/無效來源才用一份fallback；未開發P4/P5與獨立持續場域仍有各自必要呈現。真native/built WebGL須證明幾何零新增像素且同幀正式水浪可見、真命中傷害不變，詳verification/SCHEMATIC_RETIREMENT/。真範圍/時序不改；最新發布狀態以WORK_PROGRESS/STATE為準。
 
 
 ## 2026-10-23 — 最新玩家指令：撤銷整包開發，恢復逐招完整流程（最高優先）

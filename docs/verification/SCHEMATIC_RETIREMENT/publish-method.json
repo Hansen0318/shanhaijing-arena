@@ -1,0 +1,190 @@
+{
+  "method": "Connected GitHub Git objects; every blob Git SHA checked; complete local tree equals remote tree; expected-SHA non-force update",
+  "baseline": "edf530970e2e8e18d8291241827f05f0b51d2308",
+  "sourceCommit": "d346798cadf12efeada0f11e15f72c62a4d78eb6",
+  "tree": "aa874382636b8bda2bea0d803c7d367d37254ac7",
+  "blobs": [
+    {
+      "path": "AGENTS.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "ad7681ede5f22a7062806648021a1e1e7ccd6525"
+    },
+    {
+      "path": "WORK_PROGRESS.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "cfcecdb2e259216b926c357494a0a2a1e9f61279"
+    },
+    {
+      "path": "docs/CHARACTER_ACTION_ART_WORKFLOW.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "9d1871e40ba97a77a1bd103d91464147ab3efa70"
+    },
+    {
+      "path": "docs/DEVELOPMENT_PLAYBOOK.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "6381838e221a158b679fc2e12e5143cdc3fae6d0"
+    },
+    {
+      "path": "docs/M5C_ART_ANIMATION_VFX.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "619e3ecea7dd992bf6fb77e31f456850712b1ba7"
+    },
+    {
+      "path": "docs/STATE.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "3d98e326e0a866fc8833b5a5bef2187d14b3e42a"
+    },
+    {
+      "path": "docs/decisions/2026-10-25-retire-schematic-under-formal-actions.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "bb0b3fbcd072bc74229570625b5df8dd9d00b4e0"
+    },
+    {
+      "path": "docs/handoffs/P3_CHIRU_PASSIVE_NEXT_WORK.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "d912cac5e0ee7476ff773c59f38903c11a0e6403"
+    },
+    {
+      "path": "docs/verification/P3_PASSIVE_RUNTIME/CURRENT.json",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "99e840449600fb587580eee861bb5cc7edfaaea4"
+    },
+    {
+      "path": "docs/verification/SCHEMATIC_RETIREMENT/WORK_LOG.md",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "553ae6c34b0085cc2cf0a3eb8e45ffe1b97484e6"
+    },
+    {
+      "path": "docs/verification/SCHEMATIC_RETIREMENT/build.log",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "e02826fd9d36974dc5adc15a27e532ac6e07414d"
+    },
+    {
+      "path": "docs/verification/SCHEMATIC_RETIREMENT/first-suite-failures.tap.gz",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "2bf79012b22e9e0bebedc618706e5dfab137701f"
+    },
+    {
+      "path": "docs/verification/SCHEMATIC_RETIREMENT/green.tap",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "0baf1f3b652b924a150d983a31bcf2e36b6edb7c"
+    },
+    {
+      "path": "docs/verification/SCHEMATIC_RETIREMENT/local-validation.json",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "3ace65cab6f54bc185a80cae10ad8e59f3560780"
+    },
+    {
+      "path": "docs/verification/SCHEMATIC_RETIREMENT/player-IMG_2864.png",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "94f5f2afe76e7273c01169b64de1c00103339bac"
+    },
+    {
+      "path": "docs/verification/SCHEMATIC_RETIREMENT/player-feedback.json",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "142818f518067be0f3a78668583021fc92fd0a47"
+    },
+    {
+      "path": "docs/verification/SCHEMATIC_RETIREMENT/previous-test-sources.json",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "47be054377a372fa377fd5d9b80bfb4b90b595a6"
+    },
+    {
+      "path": "docs/verification/SCHEMATIC_RETIREMENT/red.tap",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "965270e4b2344fa83a76e17a70da6f105981fe69"
+    },
+    {
+      "path": "scripts/checkChiruPassiveBrowser.mjs",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "0529e77e3f38f2ea172fb9a463f715299ea266fa"
+    },
+    {
+      "path": "scripts/verifyChiruPassiveRelease.mjs",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "2249b492c4cd69f7bf78ab8e5c8c0f325565e423"
+    },
+    {
+      "path": "src/assets/battleDescriptors.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "2a03515a7c107d615b56a07f5f58fab366d62a1e"
+    },
+    {
+      "path": "src/assets/warningDescriptors.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": null
+    },
+    {
+      "path": "src/roster/catalog.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "275225173f584488817781fa7255ffbe201f2cf6"
+    },
+    {
+      "path": "src/runtime/ArenaScene.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "0d450a99228fc798daf1f836a00fee1100891ede"
+    },
+    {
+      "path": "src/runtime/assetPresenter.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "5c9448458d038146ab00135e05b7d5a80a89af8f"
+    },
+    {
+      "path": "src/runtime/formalWarnings.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": null
+    },
+    {
+      "path": "src/runtime/telegraphs.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "390d1acf6806ede8ba500777a3e968b8ecc87bea"
+    },
+    {
+      "path": "tests/chiruBrowserReuse.test.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "13ec85f76c7e35346d2876e0da57a8118d8e3539"
+    },
+    {
+      "path": "tests/formalWarnings.test.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "4f14f4da37c2caebfe60a4d374e068ccd448bc6b"
+    },
+    {
+      "path": "tests/passiveVfxReleaseEvidence.test.js",
+      "type": "blob",
+      "mode": "100644",
+      "sha": "e6b1205796cff6987606fec395d5205227e54c48"
+    }
+  ],
+  "branch": "feat/m0-combat-core-20260927",
+  "solo": true
+}

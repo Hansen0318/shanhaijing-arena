@@ -1,0 +1,2566 @@
+{
+  "kind": "Actual built Campaign→Stage→Team→Arena",
+  "physicalPhone": false,
+  "cases": [
+    {
+      "tier": "T0",
+      "enemy": false,
+      "reduced": false,
+      "sign": -1,
+      "renderer": 2,
+      "otherRecipient": true,
+      "actualHeal": true,
+      "approvedPng": true,
+      "fullOpacity": true,
+      "mirror": true,
+      "sameScale": true,
+      "bodyUnchanged": true,
+      "pause": true,
+      "inwardOrStatic": true,
+      "fade": true,
+      "textureKey": "visual.1.chiru.passiveT0",
+      "recipientRim": true,
+      "fishForeground": true,
+      "moveRim": true,
+      "actionRim": true,
+      "formalReplacement": true,
+      "warningRetention": true,
+      "screenshot": "built-T0-normal--1.png",
+      "expired": true,
+      "self": true,
+      "noRepeat": true,
+      "zero": true,
+      "recipientKo": true,
+      "casterKo": true,
+      "end": true,
+      "multiInstance": true,
+      "restart": true,
+      "destroy": true
+    },
+    {
+      "tier": "T0",
+      "enemy": false,
+      "reduced": false,
+      "sign": 1,
+      "renderer": 2,
+      "otherRecipient": true,
+      "actualHeal": true,
+      "approvedPng": true,
+      "fullOpacity": true,
+      "mirror": true,
+      "sameScale": true,
+      "bodyUnchanged": true,
+      "pause": true,
+      "inwardOrStatic": true,
+      "fade": true,
+      "textureKey": "visual.1.chiru.passiveT0",
+      "recipientRim": true,
+      "fishForeground": true,
+      "moveRim": true,
+      "actionRim": true,
+      "formalReplacement": true,
+      "warningRetention": true,
+      "screenshot": "built-T0-normal-1.png",
+      "expired": true,
+      "self": true,
+      "noRepeat": true,
+      "zero": true,
+      "recipientKo": true,
+      "casterKo": true,
+      "end": true,
+      "multiInstance": true,
+      "restart": true,
+      "destroy": true
+    },
+    {
+      "tier": "T0",
+      "enemy": false,
+      "reduced": true,
+      "sign": -1,
+      "renderer": 2,
+      "otherRecipient": true,
+      "actualHeal": true,
+      "approvedPng": true,
+      "fullOpacity": true,
+      "mirror": true,
+      "sameScale": true,
+      "bodyUnchanged": true,
+      "pause": true,
+      "inwardOrStatic": true,
+      "fade": true,
+      "textureKey": "visual.1.chiru.passiveT0",
+      "recipientRim": true,
+      "fishForeground": true,
+      "moveRim": true,
+      "actionRim": true,
+      "formalReplacement": true,
+      "warningRetention": true,
+      "screenshot": "built-T0-reduced--1.png",
+      "expired": true,
+      "self": true,
+      "noRepeat": true,
+      "zero": true,
+      "recipientKo": true,
+      "casterKo": true,
+      "end": true,
+      "multiInstance": true,
+      "restart": true,
+      "destroy": true
+    },
+    {
+      "tier": "T0",
+      "enemy": false,
+      "reduced": true,
+      "sign": 1,
+      "renderer": 2,
+      "otherRecipient": true,
+      "actualHeal": true,
+      "approvedPng": true,
+      "fullOpacity": true,
+      "mirror": true,
+      "sameScale": true,
+      "bodyUnchanged": true,
+      "pause": true,
+      "inwardOrStatic": true,
+      "fade": true,
+      "textureKey": "visual.1.chiru.passiveT0",
+      "recipientRim": true,
+      "fishForeground": true,
+      "moveRim": true,
+      "actionRim": true,
+      "formalReplacement": true,
+      "warningRetention": true,
+      "screenshot": "built-T0-reduced-1.png",
+      "expired": true,
+      "self": true,
+      "noRepeat": true,
+      "zero": true,
+      "recipientKo": true,
+      "casterKo": true,
+      "end": true,
+      "multiInstance": true,
+      "restart": true,
+      "destroy": true
+    }
+  ],
+  "errors": [],
+  "current": {
+    "tier": "T0",
+    "enemy": false,
+    "reduced": true,
+    "sign": 1,
+    "renderer": 2,
+    "otherRecipient": true,
+    "actualHeal": true,
+    "approvedPng": true,
+    "fullOpacity": true,
+    "mirror": true,
+    "sameScale": true,
+    "bodyUnchanged": true,
+    "pause": true,
+    "inwardOrStatic": true,
+    "fade": true,
+    "textureKey": "visual.1.chiru.passiveT0",
+    "recipientRim": true,
+    "fishForeground": true,
+    "moveRim": true,
+    "actionRim": true,
+    "formalReplacement": true,
+    "warningRetention": true,
+    "screenshot": "built-T0-reduced-1.png",
+    "expired": true,
+    "self": true,
+    "noRepeat": true,
+    "zero": true,
+    "recipientKo": true,
+    "casterKo": true,
+    "end": true,
+    "multiInstance": true,
+    "restart": true,
+    "destroy": true
+  },
+  "skills": [
+    {
+      "character": "P1",
+      "category": "basic",
+      "formal": true,
+      "executed": true,
+      "events": 2,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact"
+      ],
+      "paintedFrames": 7,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.3.lushu.basicBlade",
+        "visual.3.lushu.basicContact"
+      ]
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "formal": true,
+      "executed": true,
+      "events": 2,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact"
+      ],
+      "paintedFrames": 15,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.4.lushu.heavyWind",
+        "visual.4.lushu.heavyImpact"
+      ]
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "formal": true,
+      "executed": true,
+      "events": 2,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact"
+      ],
+      "paintedFrames": 17,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.5.lushu.specialWind",
+        "visual.5.lushu.specialImpact"
+      ]
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "formal": true,
+      "executed": true,
+      "events": 8,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "paintedFrames": 16,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.6.lushu.awakeningASource",
+        "visual.6.lushu.awakeningAImpact",
+        "visual.6.lushu.awakeningBSource",
+        "visual.6.lushu.awakeningBImpact",
+        "visual.6.lushu.awakeningCSource",
+        "visual.6.lushu.awakeningCImpact"
+      ]
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "formal": true,
+      "executed": true,
+      "events": 2,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "paintedFrames": 11,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.7.botuo.basicSource",
+        "visual.7.botuo.basicContact"
+      ]
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "formal": true,
+      "executed": true,
+      "events": 2,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "botuo.heavyPoses",
+        "botuo.heavySource",
+        "botuo.heavyContact"
+      ],
+      "paintedFrames": 12,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.8.botuo.heavySource",
+        "visual.8.botuo.heavyContact"
+      ]
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "formal": true,
+      "executed": true,
+      "events": 1,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "botuo.specialPoses",
+        "botuo.specialActivation",
+        "botuo.specialState",
+        "botuo.specialState"
+      ],
+      "paintedFrames": 13,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.9.botuo.specialActivation"
+      ]
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "formal": true,
+      "executed": true,
+      "events": 2,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "botuo.awakeningPoses",
+        "botuo.awakeningRelease",
+        "botuo.awakeningImpact",
+        "botuo.awakeningState"
+      ],
+      "paintedFrames": 15,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.10.botuo.awakeningRelease",
+        "visual.10.botuo.awakeningImpact"
+      ]
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "formal": true,
+      "executed": true,
+      "events": 2,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "chiru.basicPoses",
+        "chiru.basicCharge",
+        "chiru.basicArrow",
+        "chiru.basicImpact"
+      ],
+      "paintedFrames": 12,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.11.chiru.basicCharge",
+        "visual.11.chiru.basicArrow",
+        "visual.11.chiru.basicImpact"
+      ]
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "formal": true,
+      "executed": true,
+      "events": 3,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ],
+      "paintedFrames": 37,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.12.chiru.heavyCharge",
+        "visual.12.chiru.heavyColumn",
+        "visual.12.chiru.heavyImpact"
+      ]
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "formal": true,
+      "executed": true,
+      "events": 2,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "chiru.specialPoses",
+        "chiru.specialCaster",
+        "chiru.specialRecipient"
+      ],
+      "paintedFrames": 31,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.13.chiru.specialCaster",
+        "visual.13.chiru.specialRecipient"
+      ]
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "formal": true,
+      "executed": true,
+      "events": 2,
+      "loaded": true,
+      "visibleFormal": true,
+      "visibleFallback": false,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [
+        "chiru.awakeningPoses",
+        "chiru.awakeningCaster",
+        "chiru.awakeningRecipient",
+        "chiru.awakeningProtection"
+      ],
+      "paintedFrames": 48,
+      "renderer": 2,
+      "visibleTextures": [
+        "visual.14.chiru.awakeningCaster",
+        "visual.14.chiru.awakeningRecipient"
+      ]
+    },
+    {
+      "character": "P4",
+      "category": "basic",
+      "formal": false,
+      "executed": true,
+      "events": 1,
+      "loaded": true,
+      "visibleFormal": false,
+      "visibleFallback": true,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [],
+      "paintedFrames": 13,
+      "renderer": 2,
+      "visibleTextures": []
+    },
+    {
+      "character": "P4",
+      "category": "heavy",
+      "formal": false,
+      "executed": true,
+      "events": 1,
+      "loaded": true,
+      "visibleFormal": false,
+      "visibleFallback": true,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [],
+      "paintedFrames": 13,
+      "renderer": 2,
+      "visibleTextures": []
+    },
+    {
+      "character": "P4",
+      "category": "special",
+      "formal": false,
+      "executed": true,
+      "events": 1,
+      "loaded": true,
+      "visibleFormal": false,
+      "visibleFallback": true,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [],
+      "paintedFrames": 13,
+      "renderer": 2,
+      "visibleTextures": []
+    },
+    {
+      "character": "P4",
+      "category": "awakening",
+      "formal": false,
+      "executed": true,
+      "events": 1,
+      "loaded": true,
+      "visibleFormal": false,
+      "visibleFallback": true,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [],
+      "paintedFrames": 20,
+      "renderer": 2,
+      "visibleTextures": []
+    },
+    {
+      "character": "P5",
+      "category": "basic",
+      "formal": false,
+      "executed": true,
+      "events": 1,
+      "loaded": true,
+      "visibleFormal": false,
+      "visibleFallback": true,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [],
+      "paintedFrames": 13,
+      "renderer": 2,
+      "visibleTextures": []
+    },
+    {
+      "character": "P5",
+      "category": "heavy",
+      "formal": false,
+      "executed": true,
+      "events": 1,
+      "loaded": true,
+      "visibleFormal": false,
+      "visibleFallback": true,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [],
+      "paintedFrames": 13,
+      "renderer": 2,
+      "visibleTextures": []
+    },
+    {
+      "character": "P5",
+      "category": "special",
+      "formal": false,
+      "executed": true,
+      "events": 1,
+      "loaded": true,
+      "visibleFormal": false,
+      "visibleFallback": true,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [],
+      "paintedFrames": 13,
+      "renderer": 2,
+      "visibleTextures": []
+    },
+    {
+      "character": "P5",
+      "category": "awakening",
+      "formal": false,
+      "executed": true,
+      "events": 1,
+      "loaded": true,
+      "visibleFormal": false,
+      "visibleFallback": true,
+      "noDouble": true,
+      "cleanup": true,
+      "keys": [],
+      "paintedFrames": 20,
+      "renderer": 2,
+      "visibleTextures": []
+    }
+  ],
+  "warnings": [
+    {
+      "character": "P1",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleBasic",
+        "lushu.basicBlade",
+        "lushu.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleHeavy",
+        "lushu.heavyWind",
+        "lushu.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleSpecial",
+        "lushu.specialWind",
+        "lushu.specialImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P1",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "lushu.battleAwakening",
+        "lushu.awakeningASource",
+        "lushu.awakeningAImpact",
+        "lushu.awakeningBSource",
+        "lushu.awakeningBImpact",
+        "lushu.awakeningCSource",
+        "lushu.awakeningCImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.basicPoses",
+        "botuo.basicSource",
+        "botuo.basicContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.heavyPoses",
+        "botuo.heavySource",
+        "botuo.heavyContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.heavyPoses",
+        "botuo.heavySource",
+        "botuo.heavyContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.heavyPoses",
+        "botuo.heavySource",
+        "botuo.heavyContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.heavyPoses",
+        "botuo.heavySource",
+        "botuo.heavyContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.heavyPoses",
+        "botuo.heavySource",
+        "botuo.heavyContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.heavyPoses",
+        "botuo.heavySource",
+        "botuo.heavyContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.heavyPoses",
+        "botuo.heavySource",
+        "botuo.heavyContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.heavyPoses",
+        "botuo.heavySource",
+        "botuo.heavyContact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.specialPoses",
+        "botuo.specialActivation",
+        "botuo.specialState"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.specialPoses",
+        "botuo.specialActivation",
+        "botuo.specialState"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.specialPoses",
+        "botuo.specialActivation",
+        "botuo.specialState"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.specialPoses",
+        "botuo.specialActivation",
+        "botuo.specialState"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.specialPoses",
+        "botuo.specialActivation",
+        "botuo.specialState"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.specialPoses",
+        "botuo.specialActivation",
+        "botuo.specialState"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.specialPoses",
+        "botuo.specialActivation",
+        "botuo.specialState"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.specialPoses",
+        "botuo.specialActivation",
+        "botuo.specialState"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.awakeningPoses",
+        "botuo.awakeningState",
+        "botuo.awakeningRelease",
+        "botuo.awakeningImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.awakeningPoses",
+        "botuo.awakeningState",
+        "botuo.awakeningRelease",
+        "botuo.awakeningImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.awakeningPoses",
+        "botuo.awakeningState",
+        "botuo.awakeningRelease",
+        "botuo.awakeningImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.awakeningPoses",
+        "botuo.awakeningState",
+        "botuo.awakeningRelease",
+        "botuo.awakeningImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.awakeningPoses",
+        "botuo.awakeningState",
+        "botuo.awakeningRelease",
+        "botuo.awakeningImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.awakeningPoses",
+        "botuo.awakeningState",
+        "botuo.awakeningRelease",
+        "botuo.awakeningImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.awakeningPoses",
+        "botuo.awakeningState",
+        "botuo.awakeningRelease",
+        "botuo.awakeningImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P2",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "botuo.awakeningPoses",
+        "botuo.awakeningState",
+        "botuo.awakeningRelease",
+        "botuo.awakeningImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.basicPoses",
+        "chiru.basicCharge",
+        "chiru.basicArrow",
+        "chiru.basicImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.basicPoses",
+        "chiru.basicCharge",
+        "chiru.basicArrow",
+        "chiru.basicImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.basicPoses",
+        "chiru.basicCharge",
+        "chiru.basicArrow",
+        "chiru.basicImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.basicPoses",
+        "chiru.basicCharge",
+        "chiru.basicArrow",
+        "chiru.basicImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.basicPoses",
+        "chiru.basicCharge",
+        "chiru.basicArrow",
+        "chiru.basicImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.basicPoses",
+        "chiru.basicCharge",
+        "chiru.basicArrow",
+        "chiru.basicImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.basicPoses",
+        "chiru.basicCharge",
+        "chiru.basicArrow",
+        "chiru.basicImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "basic",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.basicPoses",
+        "chiru.basicCharge",
+        "chiru.basicArrow",
+        "chiru.basicImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "heavy",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.specialPoses",
+        "chiru.specialCaster",
+        "chiru.specialRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.specialPoses",
+        "chiru.specialCaster",
+        "chiru.specialRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.specialPoses",
+        "chiru.specialCaster",
+        "chiru.specialRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.specialPoses",
+        "chiru.specialCaster",
+        "chiru.specialRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.specialPoses",
+        "chiru.specialCaster",
+        "chiru.specialRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.specialPoses",
+        "chiru.specialCaster",
+        "chiru.specialRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.specialPoses",
+        "chiru.specialCaster",
+        "chiru.specialRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "special",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.specialPoses",
+        "chiru.specialCaster",
+        "chiru.specialRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.awakeningPoses",
+        "chiru.awakeningProtection",
+        "chiru.awakeningCaster",
+        "chiru.awakeningRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.awakeningPoses",
+        "chiru.awakeningProtection",
+        "chiru.awakeningCaster",
+        "chiru.awakeningRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.awakeningPoses",
+        "chiru.awakeningProtection",
+        "chiru.awakeningCaster",
+        "chiru.awakeningRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "shape": "circle",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.awakeningPoses",
+        "chiru.awakeningProtection",
+        "chiru.awakeningCaster",
+        "chiru.awakeningRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.awakeningPoses",
+        "chiru.awakeningProtection",
+        "chiru.awakeningCaster",
+        "chiru.awakeningRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "allies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.awakeningPoses",
+        "chiru.awakeningProtection",
+        "chiru.awakeningCaster",
+        "chiru.awakeningRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": false,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.awakeningPoses",
+        "chiru.awakeningProtection",
+        "chiru.awakeningCaster",
+        "chiru.awakeningRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    },
+    {
+      "character": "P3",
+      "category": "awakening",
+      "shape": "lane",
+      "sourceTeamId": "enemies",
+      "reducedMotion": true,
+      "mode": "formal-action",
+      "assetKeys": [
+        "chiru.awakeningPoses",
+        "chiru.awakeningProtection",
+        "chiru.awakeningCaster",
+        "chiru.awakeningRecipient"
+      ],
+      "clockChanges": true,
+      "paintedPixels": 0,
+      "noSchematic": true,
+      "cleared": true,
+      "closed": true,
+      "renderer": 2
+    }
+  ],
+  "heavyRetirement": {
+    "executed": true,
+    "source": {
+      "kind": "action-assets",
+      "assetKeys": [
+        "chiru.heavyPoses",
+        "chiru.heavyCharge",
+        "chiru.heavyColumn",
+        "chiru.heavyImpact"
+      ]
+    },
+    "samples": [
+      {
+        "phase": "startup",
+        "at": 0.15,
+        "threatCount": 1,
+        "modes": [
+          "formal-action"
+        ],
+        "noSchematic": true,
+        "formalVisible": [
+          "visual.2.chiru.heavyCharge"
+        ],
+        "damage": 0,
+        "bodyVisible": true
+      },
+      {
+        "phase": "flight",
+        "at": 0.5,
+        "threatCount": 1,
+        "modes": [
+          "formal-action"
+        ],
+        "noSchematic": true,
+        "formalVisible": [
+          "visual.2.chiru.heavyColumn"
+        ],
+        "damage": 0,
+        "bodyVisible": true
+      },
+      {
+        "phase": "contact",
+        "at": 0.705,
+        "threatCount": 0,
+        "modes": [],
+        "noSchematic": true,
+        "formalVisible": [
+          "visual.2.chiru.heavyColumn",
+          "visual.2.chiru.heavyImpact"
+        ],
+        "damage": 12.25,
+        "bodyVisible": true
+      },
+      {
+        "phase": "recovery",
+        "at": 1.1,
+        "threatCount": 0,
+        "modes": [],
+        "noSchematic": true,
+        "formalVisible": [],
+        "damage": 12.25,
+        "bodyVisible": true
+      }
+    ],
+    "renderer": 2
+  },
+  "collection": {
+    "width": 852,
+    "height": 393,
+    "portraitGate": true,
+    "passive": true,
+    "modifier": true
+  },
+  "status": "PASS"
+}

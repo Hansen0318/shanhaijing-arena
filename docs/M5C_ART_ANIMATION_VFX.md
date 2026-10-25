@@ -418,7 +418,7 @@ Metadata may define:
 - loop;
 - cleanup timing.
 
-Existing M6B telegraph/threat geometry remains authoritative for gameplay. A distinct formal warning source must carry the full circle/capsule footprint including endpoints, team distinction and impact clock before replacing the corresponding schematic warning. Once that source resolves, draw only the formal warning, never the old rectangle/endpoint rings/center line beneath it. A blade/contact asset does not constitute a warning source. Missing, invalid or unsupported warning sources retain one fallback. Independently owned persistent areas, shields and field guides are not retired by a cast-warning descriptor. Presentation never changes hit geometry/timing. The explicit ground-sigil-v1 vector sources and true native/built evidence are documented in verification/FORMAL_WARNING_RUNTIME/.
+Existing M6B telegraph/threat geometry remains authoritative for gameplay. Per the latest IMG_2864 correction, a successfully parsed formal action whose complete body/effect images are actually loaded and present in the TextureManager replaces the corresponding development warning geometry for that action. Do not add another capsule, arrow, diamond or range diagram underneath approved cast/flight/impact artwork. Names, IDs, descriptor presence and procedural reskins do not establish loaded artwork. Missing or invalid actual images retain one fallback. Independent persistent areas, shields and field guides retain their own ownership. This retirement changes presentation only, never the real threat ledger, range, hit timing or damage. Current proof is in verification/SCHEMATIC_RETIREMENT/.
 
 ## 5. Asset manifest and validation
 

@@ -1,0 +1,35 @@
+{
+  "executed": true,
+  "samples": [
+    {
+      "at": 0.15,
+      "threats": 1,
+      "damage": 0,
+      "events": [
+        "start"
+      ]
+    },
+    {
+      "at": 0.5,
+      "threats": 1,
+      "damage": 0,
+      "events": [
+        "release"
+      ]
+    },
+    {
+      "at": 0.705,
+      "threats": 0,
+      "damage": 8.8125,
+      "events": [
+        "resolve"
+      ]
+    },
+    {
+      "at": 1.1,
+      "threats": 0,
+      "damage": 8.8125,
+      "events": []
+    }
+  ]
+}

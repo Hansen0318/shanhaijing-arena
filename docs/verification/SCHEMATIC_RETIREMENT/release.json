@@ -1,0 +1,68 @@
+{
+  "status": "ENGINEERING / NORMAL PAGES / PUBLIC COMPLETE; PLAYER GAMEPLAY ACCEPTANCE PENDING",
+  "sourceCommit": "d346798cadf12efeada0f11e15f72c62a4d78eb6",
+  "tree": "aa874382636b8bda2bea0d803c7d367d37254ac7",
+  "normalPagesRun": 40163995446,
+  "buildJob": 121081184936,
+  "deployJob": 121083539138,
+  "independentP1Run": 40163995418,
+  "independentP2Run": 40163995443,
+  "tests": {
+    "total": 1229,
+    "pass": 1229,
+    "fail": 0
+  },
+  "schematicRetirement": {
+    "nativeCases": 96,
+    "builtCases": 96,
+    "addedSchematicPixels": 0,
+    "actualHeavyScreenshots": 8,
+    "phases": [
+      "startup",
+      "flight",
+      "contact",
+      "recovery"
+    ],
+    "actualThreatRetainedDuringFlight": true,
+    "formalWaveVisible": true,
+    "actualDamageAfterContact": true
+  },
+  "sourceGuards": {
+    "special": {
+      "status": "PASS",
+      "files": 657,
+      "tests": {
+        "total": 1229,
+        "pass": 1229,
+        "fail": 0
+      }
+    },
+    "awakening": {
+      "status": "PASS",
+      "files": 692,
+      "tests": {
+        "total": 1229,
+        "pass": 1229,
+        "fail": 0
+      }
+    },
+    "passive": {
+      "status": "PASS",
+      "files": 589,
+      "tests": {
+        "total": 1229,
+        "pass": 1229,
+        "fail": 0
+      }
+    }
+  },
+  "ciLocalFiles": 172,
+  "publicFiles": 172,
+  "publicFresh": 3,
+  "publicSamePathBytesReuse": 169,
+  "publicStatus": "PASS",
+  "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&vfx=d346798",
+  "playerRuntimeAcceptance": false,
+  "p3Complete": false,
+  "physicalPhoneTest": false
+}
