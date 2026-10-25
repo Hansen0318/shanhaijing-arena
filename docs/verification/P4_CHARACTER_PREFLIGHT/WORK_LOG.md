@@ -1,3 +1,9 @@
+## 2026-10-25 — P4 Basic Runtime ACTIVE / Gate R0 recovered
+
+Remote e0021dc952c148eef1c591bdc6808a75336885a0 / tree bf7bc633cb77865204d61fa33e6a3c86f4b617a9 verified by connected API and fetched clean original-branch clone. No local unpublished work. Approved 49-file receipt is binding; historical PENDING unchanged. Native single worker, no delegation/new branch/worktree. No product change or new verification yet.
+
+Next R1: generic observational instant Basic lifecycle and presentation-only follow-through, deterministic PNG packing calibrated against approved Idle/Move anatomy. Preserve 0ms damage, cadence, RNG and saves. Then targeted contracts/native+built, normal CI/Pages and fingerprint proof. Stop for player Basic Runtime acceptance; no Heavy/passive/P5, no unseen acceptance. All prior protection rules remain.
+
 ## 2026-10-25 — P4 Basic靈火8GIF PLAYER APPROVED；新Work直接接Runtime／正常部署
 
 玩家原文：「確認approved，紀錄，我要創新的work，妳提供work 要繼續往下直接執行的prompts」。明確核准已呈交d31d2ed06dc2fe5d3fbd41ed9151f66fa3a41aa3之8GIF／四姿勢／獨立出手及真target裂花；精確SHA256收據docs/art/approved/jiuweihu/basic/composite-review-v1/acceptance.json，綁定49份呈交檔與所有protected inputs。GIF Gate CLOSED；原候選manifest/REVIEW/PENDING保留為呈交歷史，不重生、不重審spec/F3/姿勢/VFX/GIF，不改原bytes。
