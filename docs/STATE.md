@@ -1,3 +1,11 @@
+## 2026-10-25 — P4 Basic靈火F3 PLAYER APPROVED；新Work接其餘姿勢／獨立VFX／GIF
+
+玩家：「我審核ok，要新的work繼續執行，確認有紀錄，就提供prompts給work直接往下執行」。明確核准已呈交819ae464ebcc721ea335b8d80998dcd606ab8d61之Basic靈火單張F3；精確收據docs/art/approved/jiuweihu/basic/f3-v1/acceptance.json，PNG SHA256 74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7，綁定原prompt/QA/manifest/REVIEW。F3 Gate CLOSED；原PNG與候選文件bytes不改，其舊PENDING由本收據覆蓋，不重生、不重審同圖。整角spec既有核准保持。
+
+唯一下一工作：新Work直接沿核准F3製作Basic F1/F2/F4及獨立手部瞬發／真target狐火裂花，安全共同解剖尺度/anchor/ground與左右mirror正規化，做normal/slow/noFX/mirror/Idle-return/miss/reduced與四Tier同尺度GIF，明示美術模擬、非Runtime。Basic兩模式真命中0ms，禁止因動作/VFX加蓄力、飛行或延遲傷害；miss不畫target命中花。原圖alpha=1邊緣保留，用透明padding/共同格衍生，不以alpha閾值刪像素。完成可審GIF與來源/時序/hash/解碼/邊界核對後呈交，停待玩家GIF核准；不做Runtime/Build/Browser/Pages，不開始Heavy或P5。
+
+本次僅收據/進度/新Work交接[skip ci]；產品與素材原bytes不改，不重跑P1–P3、32個P4現況probe/68來源綁定或公開下載。P1/P2/P3 COMPLETE、P4既有base/Idle/Move/KO保護；P4整角未完成。單人、原分支feat/m0-combat-core-20260927、PR1open/unmerged，不委派/新branch/worktree/TD/main merge/重置存檔/無關untracked；普通Hit取消、Basic<Heavy<Special<Awakening同尺度可辨/華麗層級、正式來源載入退同record整層示意/缺來源fallback/獨立場域不誤刪、逐檔安全/兩下載/required/所有權回收保持。唯一入口docs/handoffs/P4_JIUWEIHU_NEXT_WORK.md，交接仍單一完整自足codeblock。最新核准checkpoint以包含本節的remote為準。
+
 ## 2026-10-25 — P4 Basic靈火F3 v1已呈交；PLAYER ART REVIEW PENDING
 
 P4整角spec已由玩家「好我確認，紀錄後繼續」核准，收據docs/verification/P4_CHARACTER_PREFLIGHT/spec-acceptance.json、核准紀錄e721365a37b938a7cb2c8e749881cc4af4e8ec92。沿核准identity/Idle用內建imagegen完成Basic靈火單張本體F3：右向、單臂前點/另一臂收腰，無獨立特效。入口docs/art/candidates/jiuweihu/basic/f3-v1/{REVIEW.md,basic-f3.png,prompt.txt,qa.json}；原PNG1254×1254 RGBA1276964bytes，SHA256 74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7。原圖完整解碼、可見主體四邊留白、reference hash相符；極淡alpha=1觸左/下邊已明列QA，尚非Runtime safe pack，不刪原像素。原生單人自審，非獨立review。
