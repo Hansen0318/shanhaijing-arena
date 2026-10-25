@@ -1,3 +1,9 @@
+## 2026-10-25 — Basic independent VFX source checkpoint; GIF assembly ACTIVE
+
+Recovered latest e287e1582d76cb685190fe92f78822362e16f580, clean fresh original-branch checkout; PR1 open/unmerged. Existing F1/F2/F4 and approved F3 reused unchanged. Built-in imagegen generated separate hand-release and target split-flower PNGs with original prompts. Both fully decoded RGBA and visually inspected; raw faint-alpha edge pixels preserved. Hand release original points left; a deterministic horizontal-mirror display derivative will point right, not a new projectile. Padded derivatives next. New FX are PLAYER REVIEW PENDING.
+
+NEXT: common grounded anatomy-preserving pose cells, independent simultaneous 0ms release/contact, F3→F2→F1→F4 recovery, GIFs and encoded QA, then present and stop for player GIF approval. Native single-worker self-review. No product/approved bytes/Build/Browser/Pages/Heavy/P5 changed or rerun.
+
 ## 2026-10-25 — Basic F1/F2/F4 source checkpoint; VFX/GIF ACTIVE
 
 Three separate built-in imagegen body originals and prompts saved in docs/art/candidates/jiuweihu/basic/composite-review-v1/. Fully decoded and visually inspected: F3 full forward snap; F2 wrist-close follow-through; F1 bent-elbow follow-through; F4 lowered arm recovery. Approved F3 untouched. These are PLAYER REVIEW PENDING, no pose acceptance invented. The instant gameplay preview will order F3 at 0ms then F2/F1/F4, not play F1/F2 as required pre-hit windup. This is presentation-only.
