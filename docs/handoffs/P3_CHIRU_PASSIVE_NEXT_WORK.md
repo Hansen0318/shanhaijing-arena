@@ -8,6 +8,7 @@
 先讀最新AGENTS.md、WORK_PROGRESS.md與docs/STATE.md最上方、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/decisions/2026-10-23-restore-sequential-skill-workflow.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_ART_ANIMATION_VFX.md、docs/verification/P3_PASSIVE_RUNTIME/{CURRENT.json,REPORT.md,WORK_LOG.md,player-feedback-2026-10-25.md}、docs/verification/P3_PASSIVE_RUNTIME/readability-revision/{SOURCE_AUDIT.md,source-audit.json,reuse-proof.json}、docs/art/candidates/chiru/passive/readability-review-v1/{REVIEW.md,manifest.json,encoded-verification.json,SHA256SUMS.json,prepare_review.py}、docs/art/approved/chiru/passive/{style-v2,composite-review-v1,readability-review-v1}/acceptance.json，以及核准整角spec docs/superpowers/specs/2026-10-23-chiru-whole-character-design.md第5/6節。來源盤點是唯讀，不是已修復證據；若有新遠端差異，按實際差異恢復。
 
 [最新Runtime checkpoint]
+真CI40145248296第一案因Phaser4移除setTintFill失敗；已改現行API且真Tint元件RED→GREEN。讀runtime/ci-40145248296-native-failure.json；續新來源正常CI，不沿用首輪假PASS。
 安全remote e0b4b87；本機1224/1224與Build110素材PASS。正常CI新native/built/相容/Pages及public fingerprint為第一未完Gate；先修實際失敗，不重做PNG/Runtime或已通過suite。
 Runtime修正已在同分支checkpoint；不要重做已完成程式/PNG。先讀readability-revision/runtime/下實際RED/GREEN/初次suite及Chromium失敗，完成新來源驗證與正常發布。舊證據僅舊來源有效。
 

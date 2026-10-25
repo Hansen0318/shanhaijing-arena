@@ -39,7 +39,7 @@ export class PassivePresenter {
  // No texture copies, timers or fixed Idle silhouette; trim/anchor/mirror follow Phaser.
  renderRim(key,body,opacity){
   if(!body?.visible){for(const image of this.rims.get(key)??[])image.destroy();this.rims.delete(key);return;}
-  let images=this.rims.get(key);if(!images){images=Array.from({length:16},()=>this.scene.add.image(0,0,body.texture.key,body.frame.name).setTintFill(0x69ffc3));this.rims.set(key,images);}
+  let images=this.rims.get(key);if(!images){images=Array.from({length:16},()=>this.scene.add.image(0,0,body.texture.key,body.frame.name).setTint(0x69ffc3).setTintMode(1));this.rims.set(key,images);}
   images.forEach((image,i)=>{const angle=(i%8)*Math.PI/4,r=i<8?1.5:3;
    image.setTexture(body.texture.key,body.frame.name).setOrigin(body.originX,body.originY).setDisplaySize(body.displayWidth,body.displayHeight).setFlipX(body.flipX).setFlipY(body.flipY).setRotation(body.rotation).setPosition(body.x+Math.cos(angle)*r,body.y+Math.sin(angle)*r).setDepth(body.depth-.01).setAlpha(opacity).setVisible(true);
   });

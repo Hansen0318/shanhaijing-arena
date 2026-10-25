@@ -1,3 +1,7 @@
+## 2026-10-25 — 真CI首輪失敗已定位／Phaser4 tint RED→GREEN
+
+正常run40145248296：1224/1224與Build PASS；真native於第一案失敗，Pages skipped，絕不宣稱新Runtime PASS。根因Phaser4.2.1移除setTintFill(color)，回傳undefined；已改setTint(color).setTintMode(1/FILL)，測試直接使用安裝版Phaser Tint元件重現相同RED再GREEN，保留原失敗JSON與ZIP CRC。這是呈現API修正，非治療/數值/時序變更。新來源完整suite/Build及正常CI重新執行；第一未完Gate仍為真native+built/相容→正常Pages/public。P3未COMPLETE，玩家遊戲未核准。
+
 ## 2026-10-25 — 修正版本機1224/1224 PASS；正常CI真Browser／Pages ACTIVE
 
 安全remote checkpoint e0b4b87f85eaee2184fa77187034efa57b6d761f，逐29blob Git SHA與完整2568檔tree116f66dc118faa7ea6e7b0a8769c56e91c904771相符、非force更新ref；本機merge保留原提交歷史。新來源完整1224/1224 PASS，Build/110素材/6378266 bytes PASS；31項直接受影響檢查PASS。原13FAIL實證/RED-GREEN均保存；歷史收據未改。新增真native/built受益者當前Move/Action輪廓、魚印depth6、正式overlay載入替代/缺來源fallback、circle/lane敵我impact警示保留、多instance獨立治療清理檢查。尚未宣稱新Browser/CI/Pages/public PASS；本機Chromium壞ZIP實證已保存，改正常CI執行。唯一下一工作＝修復真CI失敗（如有）並完成正常Pages/逐檔public fingerprint，再交玩家核准。P3未COMPLETE；不建Runtime acceptance、不開始下一角色。

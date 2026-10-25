@@ -1,0 +1,9 @@
+{
+  "kind": "Native Phaser/WebGL with real BattleSession",
+  "physicalPhone": false,
+  "cases": [],
+  "errors": [],
+  "status": "FAIL",
+  "failure": "Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'setTexture')\n    at http://127.0.0.1:4207/shanhaijing-arena/src/runtime/passivePresenter.js:44:10\n    at Array.forEach (<anonymous>)\n    at PassivePresenter.renderRim (http://127.0.0.1:4207/shanhaijing-arena/src/runtime/passivePresenter.js:43:10)\n    at PassivePresenter.render (http://127.0.0.1:4207/shanhaijing-arena/src/runtime/passivePresenter.js:14:10)\n    at ArenaScene.applyFrame (http://127.0.0.1:4207/shanhaijing-arena/src/runtime/ArenaScene.js:651:27)\n    at paint (eval at evaluate (:311:30), <anonymous>:11:46)\n    at advance (eval at evaluate (:311:30), <anonymous>:11:131)\n    at eval (eval at evaluate (:311:30), <anonymous>:12:43)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+  "serverLog": "\n  \u001b[32m\u001b[1mVITE\u001b[22m v8.3.1\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m123\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m\n\n  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m4207\u001b[22m/shanhaijing-arena/\u001b[39m\n"
+}

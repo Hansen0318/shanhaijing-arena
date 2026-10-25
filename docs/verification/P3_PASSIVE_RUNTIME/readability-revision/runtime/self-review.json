@@ -1,0 +1,19 @@
+{
+  "status": "SELF REVIEW / native single worker",
+  "baseline": "e93122c1d67ac31cf1c5183f033d57f19309031d",
+  "release": "3f850b1053937a6f9dc0870ce2525a57bcec3a2a",
+  "protectedScopeDiff": "",
+  "protectedScopesUnchanged": true,
+  "combatMutation": false,
+  "warningSourceFinding": "All current authored action descriptors have no warning presentation asset. Existing gameplay warnings retained, never inferred from blade/contact. No invented warning art or false coverage claim.",
+  "replacementFinding": "Generic optional overlay is a loaded-source alternate on ONE VisualPlayback record; status fallback suppression requires successful texture registration. Required action textures still gate encounter readiness.",
+  "rimFinding": "Current visible actor frame/texture/origin/dimensions/flip/rotation copied to tinted backing images at depth body-.01; 3 logical px outer radius. Original actor never mutated; no generated texture or Idle reference used.",
+  "verification": {
+    "localTests": 1224,
+    "scopedTests": 31,
+    "build": "PASS /110 assets /6378266 bytes",
+    "browser": "PENDING true CI; local download failure saved"
+  },
+  "playerRuntimeAcceptance": false,
+  "p3Complete": false
+}

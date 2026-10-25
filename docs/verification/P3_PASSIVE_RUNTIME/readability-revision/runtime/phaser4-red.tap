@@ -1,0 +1,41 @@
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+`setTintFill(color)` is removed as of Phaser 4. Use setTint(color).setTintMode(Phaser.TintModes.FILL)` instead.
+✖ beneficiary rim follows live Move/Action frame and mirror without changing body; expires and destroys (2.444951ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90.225588
+
+✖ failing tests:
+
+test at tests/recipientRim.test.js:3:1
+✖ beneficiary rim follows live Move/Action frame and mirror without changing body; expires and destroys (2.444951ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'setTexture')
+      at file:///workspace/scratch/c53f643759e6/shanhaijing-arena/src/runtime/passivePresenter.js:44:10
+      at Array.forEach (<anonymous>)
+      at PassivePresenter.renderRim (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/src/runtime/passivePresenter.js:43:10)
+      at PassivePresenter.render (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/src/runtime/passivePresenter.js:14:10)
+      at paint (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/recipientRim.test.js:4:462)
+      at TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/recipientRim.test.js:5:2)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
