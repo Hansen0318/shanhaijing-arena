@@ -1,0 +1,156 @@
+[
+  {
+    "mirror": false,
+    "phase": "IDLE",
+    "sourcePhase": "IDLE",
+    "logicalStartMs": -450,
+    "logicalHoldMs": 450,
+    "playbackHoldMs": 450,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0
+  },
+  {
+    "mirror": false,
+    "phase": "F3",
+    "sourcePhase": "F3",
+    "logicalStartMs": 0,
+    "logicalHoldMs": 60,
+    "playbackHoldMs": 60,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 1
+  },
+  {
+    "mirror": false,
+    "phase": "F3",
+    "sourcePhase": "F3",
+    "logicalStartMs": 60,
+    "logicalHoldMs": 80,
+    "playbackHoldMs": 80,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0.65
+  },
+  {
+    "mirror": false,
+    "phase": "F2",
+    "sourcePhase": "F2",
+    "logicalStartMs": 140,
+    "logicalHoldMs": 90,
+    "playbackHoldMs": 90,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0.25
+  },
+  {
+    "mirror": false,
+    "phase": "F1",
+    "sourcePhase": "F1",
+    "logicalStartMs": 230,
+    "logicalHoldMs": 90,
+    "playbackHoldMs": 90,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0
+  },
+  {
+    "mirror": false,
+    "phase": "F4",
+    "sourcePhase": "F4",
+    "logicalStartMs": 320,
+    "logicalHoldMs": 140,
+    "playbackHoldMs": 140,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0
+  },
+  {
+    "mirror": false,
+    "phase": "IDLE",
+    "sourcePhase": "IDLE",
+    "logicalStartMs": 460,
+    "logicalHoldMs": 650,
+    "playbackHoldMs": 650,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0
+  },
+  {
+    "mirror": true,
+    "phase": "IDLE",
+    "sourcePhase": "IDLE",
+    "logicalStartMs": -450,
+    "logicalHoldMs": 450,
+    "playbackHoldMs": 450,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0
+  },
+  {
+    "mirror": true,
+    "phase": "F3",
+    "sourcePhase": "F3",
+    "logicalStartMs": 0,
+    "logicalHoldMs": 60,
+    "playbackHoldMs": 60,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 1
+  },
+  {
+    "mirror": true,
+    "phase": "F3",
+    "sourcePhase": "F3",
+    "logicalStartMs": 60,
+    "logicalHoldMs": 80,
+    "playbackHoldMs": 80,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0.65
+  },
+  {
+    "mirror": true,
+    "phase": "F2",
+    "sourcePhase": "F2",
+    "logicalStartMs": 140,
+    "logicalHoldMs": 90,
+    "playbackHoldMs": 90,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0.25
+  },
+  {
+    "mirror": true,
+    "phase": "F1",
+    "sourcePhase": "F1",
+    "logicalStartMs": 230,
+    "logicalHoldMs": 90,
+    "playbackHoldMs": 90,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0
+  },
+  {
+    "mirror": true,
+    "phase": "F4",
+    "sourcePhase": "F4",
+    "logicalStartMs": 320,
+    "logicalHoldMs": 140,
+    "playbackHoldMs": 140,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0
+  },
+  {
+    "mirror": true,
+    "phase": "IDLE",
+    "sourcePhase": "IDLE",
+    "logicalStartMs": 460,
+    "logicalHoldMs": 650,
+    "playbackHoldMs": 650,
+    "releaseAndHitAtMs": 0,
+    "hit": false,
+    "opacity": 0
+  }
+]

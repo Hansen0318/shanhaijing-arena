@@ -1,0 +1,358 @@
+{
+  "status": "F3 APPROVED; NEW POSES/VFX/GIF PLAYER REVIEW PENDING",
+  "generator": "Built-in imagegen for new FX; existing imagegen poses reused",
+  "sourceSha256": {
+    "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/basic-f1.png": "7f158273311209daf0de776fe6947dd85c7c726a87caeca2706e5b2170afa884",
+    "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/basic-f2.png": "f391dceaf2a0ae73b5866a57972607546c414185ab158763cf56d64e05c7d1a3",
+    "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/basic-f4.png": "8d8ce5558634f99b320abcaf6f01454724e420a7b6ff6187b29c8b69d683187d",
+    "docs/art/candidates/jiuweihu/basic/f3-v1/basic-f3.png": "74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7",
+    "docs/art/approved/jiuweihu/basic/f3-v1/acceptance.json": "28ed8e336e79cbddc6a920c38758932de5d930e0ebd203b89ed76cace2878c91",
+    "docs/verification/P4_CHARACTER_PREFLIGHT/spec-acceptance.json": "7e9891c1acfeb1e7707fb1017489aff83a7eb5f2496ee16a443add9ce30d7bda",
+    "public/assets/characters/jiuweihu/battleIdle.png": "394497ffa5314a4559fee10d58d799fab9be59b282a31bb3ffebb02670ed6640",
+    "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/hand-release.png": "5257ea16a6816d318b2c2e418a650dae3edc2617b24050396de66045d6002a0b",
+    "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/target-impact.png": "4b5153aab45c2817377e062d015aa091be5cd68d03ff59198fedf5a6cc8d79bc"
+  },
+  "poses": [
+    {
+      "frame": "F1",
+      "source": "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/basic-f1.png",
+      "sha256": "7f158273311209daf0de776fe6947dd85c7c726a87caeca2706e5b2170afa884",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.115,
+      "landmarks": {
+        "waist": [
+          798,
+          590
+        ],
+        "groundY": 1210,
+        "hand": [
+          1080,
+          439
+        ]
+      },
+      "translation": [
+        63,
+        51
+      ],
+      "alphaBounds": [
+        67,
+        59,
+        197,
+        192
+      ],
+      "margins": [
+        67,
+        59,
+        63,
+        28
+      ],
+      "allRawPixelsPreservedInPaddedMaster": true,
+      "hand": [
+        187,
+        101
+      ]
+    },
+    {
+      "frame": "F2",
+      "source": "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/basic-f2.png",
+      "sha256": "f391dceaf2a0ae73b5866a57972607546c414185ab158763cf56d64e05c7d1a3",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.115,
+      "landmarks": {
+        "waist": [
+          779,
+          589
+        ],
+        "groundY": 1210,
+        "hand": [
+          1180,
+          450
+        ]
+      },
+      "translation": [
+        65,
+        51
+      ],
+      "alphaBounds": [
+        67,
+        59,
+        206,
+        192
+      ],
+      "margins": [
+        67,
+        59,
+        54,
+        28
+      ],
+      "allRawPixelsPreservedInPaddedMaster": true,
+      "hand": [
+        201,
+        103
+      ]
+    },
+    {
+      "frame": "F3",
+      "source": "docs/art/candidates/jiuweihu/basic/f3-v1/basic-f3.png",
+      "sha256": "74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.115,
+      "landmarks": {
+        "waist": [
+          780,
+          588
+        ],
+        "groundY": 1210,
+        "hand": [
+          1173,
+          440
+        ]
+      },
+      "translation": [
+        65,
+        51
+      ],
+      "alphaBounds": [
+        68,
+        59,
+        207,
+        192
+      ],
+      "margins": [
+        68,
+        59,
+        53,
+        28
+      ],
+      "allRawPixelsPreservedInPaddedMaster": true,
+      "hand": [
+        200,
+        102
+      ]
+    },
+    {
+      "frame": "F4",
+      "source": "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/basic-f4.png",
+      "sha256": "8d8ce5558634f99b320abcaf6f01454724e420a7b6ff6187b29c8b69d683187d",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "scale": 0.115,
+      "landmarks": {
+        "waist": [
+          782,
+          588
+        ],
+        "groundY": 1210,
+        "hand": [
+          1122,
+          675
+        ]
+      },
+      "translation": [
+        65,
+        51
+      ],
+      "alphaBounds": [
+        68,
+        59,
+        201,
+        192
+      ],
+      "margins": [
+        68,
+        59,
+        59,
+        28
+      ],
+      "allRawPixelsPreservedInPaddedMaster": true,
+      "hand": [
+        194,
+        129
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "name": "hand-release",
+      "source": "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/hand-release.png",
+      "sha256": "5257ea16a6816d318b2c2e418a650dae3edc2617b24050396de66045d6002a0b",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceAlphaBounds": [
+        0,
+        37,
+        1506,
+        1024
+      ],
+      "padding": 96,
+      "displaySize": [
+        81,
+        57
+      ],
+      "scale": 0.046875,
+      "mirroredForRightFacing": true,
+      "rawPixelsPreserved": true
+    },
+    {
+      "name": "target-impact",
+      "source": "docs/art/candidates/jiuweihu/basic/composite-review-v1/originals/target-impact.png",
+      "sha256": "4b5153aab45c2817377e062d015aa091be5cd68d03ff59198fedf5a6cc8d79bc",
+      "sourceSize": [
+        1374,
+        1145
+      ],
+      "sourceAlphaBounds": [
+        25,
+        21,
+        1356,
+        1145
+      ],
+      "padding": 96,
+      "displaySize": [
+        107,
+        91
+      ],
+      "scale": 0.06841339155749636,
+      "mirroredForRightFacing": false,
+      "rawPixelsPreserved": true
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/art/candidates/jiuweihu/basic/composite-review-v1/jiuweihu-basic-normal.gif",
+      "sha256": "e386a0cf64ccab3f0055ae6e603ee879a8a86459bfb19ceae1c49c1ba36d771d",
+      "bytes": 338789,
+      "frames": 14,
+      "durationMs": 3120,
+      "size": [
+        780,
+        500
+      ],
+      "pixelTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/jiuweihu/basic/composite-review-v1/jiuweihu-basic-slow.gif",
+      "sha256": "580315320c3be8a0dca44baf343fc6e62627c17e569350016397c6f360f857c0",
+      "bytes": 340343,
+      "frames": 14,
+      "durationMs": 4960,
+      "size": [
+        780,
+        500
+      ],
+      "pixelTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/jiuweihu/basic/composite-review-v1/jiuweihu-basic-noFX.gif",
+      "sha256": "99495ee8a491514115fe1e1de0df25600a3ee632a8af565d3d55bd6ee6ecf5f8",
+      "bytes": 315072,
+      "frames": 14,
+      "durationMs": 3120,
+      "size": [
+        780,
+        500
+      ],
+      "pixelTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/jiuweihu/basic/composite-review-v1/jiuweihu-basic-miss.gif",
+      "sha256": "5c09d58b9e992eb0bc341aa1306248e1b1f564eceb7133eb837e7882342cbea3",
+      "bytes": 329765,
+      "frames": 14,
+      "durationMs": 3120,
+      "size": [
+        780,
+        500
+      ],
+      "pixelTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/jiuweihu/basic/composite-review-v1/jiuweihu-basic-reduced.gif",
+      "sha256": "ec50f8e5bf64af1f66f3c2beba9912103a89c435337185cf0a2cc7266426a899",
+      "bytes": 326378,
+      "frames": 14,
+      "durationMs": 3120,
+      "size": [
+        780,
+        500
+      ],
+      "pixelTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/jiuweihu/basic/composite-review-v1/jiuweihu-basic-four-tier.gif",
+      "sha256": "573d7e76c5b35c2358082603493cd8af52266563a5f05c836570b4fc9f61ae45",
+      "bytes": 333383,
+      "frames": 14,
+      "durationMs": 3120,
+      "size": [
+        780,
+        500
+      ],
+      "pixelTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/jiuweihu/basic/composite-review-v1/jiuweihu-basic-vfx-only.gif",
+      "sha256": "726a3d3e06d48396f364c78a78f9b34141fc7cdd78d246f0887f6c927c2a5b81",
+      "bytes": 166300,
+      "frames": 14,
+      "durationMs": 3120,
+      "size": [
+        780,
+        500
+      ],
+      "pixelTimingRoundTrip": "PASS"
+    },
+    {
+      "path": "docs/art/candidates/jiuweihu/basic/composite-review-v1/jiuweihu-basic-multi-instance.gif",
+      "sha256": "5492179df72f2239491de05276f6764d584b6fc4092d44f1d08ca3680d60ca5c",
+      "bytes": 524167,
+      "frames": 14,
+      "durationMs": 3120,
+      "size": [
+        780,
+        500
+      ],
+      "pixelTimingRoundTrip": "PASS"
+    }
+  ],
+  "logicalPoseOrder": [
+    "F3",
+    "F2",
+    "F1",
+    "F4"
+  ],
+  "poseHoldsMs": [
+    140,
+    90,
+    90,
+    140
+  ],
+  "resolveMs": 0,
+  "canvas": [
+    260,
+    220
+  ],
+  "ground": 190,
+  "anchorX": 155,
+  "limitations": [
+    "Art simulation, not Runtime, damage execution, mobile smoke or player acceptance",
+    "Uniform .115 source scale uses manually inspected body/ground landmarks; true renderer anatomy/anchor calibration remains Runtime gate",
+    "Tier panels use identical Basic art intentionally; stats/range/cadence differ in gameplay",
+    "Reduced version keeps static release cue briefly, then static approved Idle; no breathing loop",
+    "Raw alpha=1 pixels preserved in full padded masters; small lossless PNG derivatives use documented Lanczos resampling"
+  ],
+  "selfReview": "Native single worker; no independent reviewer"
+}

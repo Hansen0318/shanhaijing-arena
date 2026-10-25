@@ -1,3 +1,11 @@
+## 2026-10-25 — P4 Basic靈火8 GIF READY；唯一下一Gate＝玩家GIF審核
+
+已從e287e158恢復並沿用核准F3及有效F1/F2/F4原圖；獨立瞬發狐火/真target裂花以內建imagegen生成，原圖/prompt保存在composite-review-v1，來源checkpoint54d0434。完成全像素保留的padding masters、四同格透明cells/共同ground與解剖地標、左右mirror/靜態Idle-return。原F3 SHA256仍74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7。出手原圖左向，顯示衍生精確鏡像右向，指尖root經自查修正，不裁原alpha=1像素。
+
+8GIF：normal/slow/noFX/miss/reduced/four-Tier/VFX-only/multi-instance；全部明示美術模擬、非Runtime。釋放/真命中情境同0ms，F3→F2→F1→F4僅視覺跟隨/收勢140/90/90/140ms，沒有新增蓄力/飛行/延遲傷害。miss沒有target爆花，四Tier同角色/FX尺度且不虛構AoE或額外命中。487項素材/編碼/逐時像素檢查、8GIF112解碼幀/duration/hash PASS；明暗底/完整左右/出手位置自審完成。原生單人自審，無獨立review；真renderer解剖/anchor校準保留至Runtime Gate，非手機或真傷害驗證。
+
+入口docs/art/candidates/jiuweihu/basic/composite-review-v1/REVIEW.md、manifest.json、qa.json、SHA256SUMS；來源/核准收據及src/public/產品完全不變。不跑Build/Browser/Pages，不開始Heavy/P5。CLI無認證，connected GitHub API逐blob Git SHA與完整tree核對、expected-SHA非force更新ref。唯一下一Gate：呈交8GIF並停待玩家明確GIF核准；本次接續不是GIF/Runtime核准，不建新acceptance。核准後才Basic Runtime/必要真驗證/正常CI-Pages-public/玩家遊戲驗收。P1–P3 COMPLETE，P4整角未完；所有既有保護/逐招/退示意/素材安全/單人同分支PR1open-unmerged/不新branch-worktree-TD-main-存檔規則保持。[skip ci]
+
 ## 2026-10-25 — Basic independent VFX source checkpoint; GIF assembly ACTIVE
 
 Recovered latest e287e1582d76cb685190fe92f78822362e16f580, clean fresh original-branch checkout; PR1 open/unmerged. Existing F1/F2/F4 and approved F3 reused unchanged. Built-in imagegen generated separate hand-release and target split-flower PNGs with original prompts. Both fully decoded RGBA and visually inspected; raw faint-alpha edge pixels preserved. Hand release original points left; a deterministic horizontal-mirror display derivative will point right, not a new projectile. Padded derivatives next. New FX are PLAYER REVIEW PENDING.
