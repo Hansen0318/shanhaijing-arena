@@ -1,0 +1,54 @@
+diff --git a/.github/workflows/m0-pages-preview.yml b/.github/workflows/m0-pages-preview.yml
+index 500aa0a..d7ce758 100644
+--- a/.github/workflows/m0-pages-preview.yml
++++ b/.github/workflows/m0-pages-preview.yml
+@@ -184,8 +184,8 @@ jobs:
+         run: |
+           npm install --prefix "$ARENA_BROWSER_TOOL_ROOT" --no-save --package-lock=false playwright@1.62.1
+           node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
+-          if node scripts/reuseChiruBrowser.mjs special; then echo 'CHIRU_SPECIAL_REUSED=true' >> "$GITHUB_ENV"; fi
+-          if node scripts/reuseChiruBrowser.mjs awakening; then echo 'CHIRU_AWAKENING_REUSED=true' >> "$GITHUB_ENV"; fi
++          if node scripts/reuseChiruBrowser.mjs special --stage; then echo 'CHIRU_SPECIAL_REUSED=true' >> "$GITHUB_ENV"; fi
++          if node scripts/reuseChiruBrowser.mjs awakening --stage; then echo 'CHIRU_AWAKENING_REUSED=true' >> "$GITHUB_ENV"; fi
+       - name: Real Chiru Passive native and built verification
+         env:
+           ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/chiru-browser-tool
+diff --git a/scripts/reuseChiruBrowser.mjs b/scripts/reuseChiruBrowser.mjs
+index e8d93a4..a1e9414 100644
+--- a/scripts/reuseChiruBrowser.mjs
++++ b/scripts/reuseChiruBrowser.mjs
+@@ -1,15 +1,16 @@
+ // Exact-source evidence reuse only. Any absent or changed input falls back to fresh Chromium.
+-import assert from 'node:assert/strict';import {readFileSync,readdirSync} from 'node:fs';import {createHash} from 'node:crypto';import path from 'node:path';import {fileURLToPath} from 'node:url';
++import assert from 'node:assert/strict';import {readFileSync,readdirSync,existsSync,copyFileSync,mkdirSync} from 'node:fs';import {createHash} from 'node:crypto';import path from 'node:path';import {fileURLToPath} from 'node:url';
+ import {validateChiruSpecialBrowserReport} from './verifyChiruSpecialRelease.mjs';import {validateChiruBasicBrowserReport} from './verifyChiruBasicRelease.mjs';import {validateChiruHeavyClarityBrowserReport} from './verifyChiruHeavyClarityRelease.mjs';import {validateChiruAwakeningBrowserReport} from './verifyChiruAwakeningRelease.mjs';
+ const common=['scripts/verifyChiruBasicRelease.mjs','scripts/verifyChiruHeavyRelease.mjs','scripts/verifyChiruHeavyClarityRelease.mjs','scripts/verifyChiruSpecialRelease.mjs','scripts/verifyChiruAwakeningRelease.mjs'];
+ export function verifyChiruBrowserReuse(group,root=process.cwd()){
+  assert.ok(['special','awakening'].includes(group));const read=p=>readFileSync(path.join(root,p)),json=p=>JSON.parse(read(p)),sha=p=>createHash('sha256').update(read(p)).digest('hex'),walk=p=>readdirSync(path.join(root,p),{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(p+'/'+e.name):[p+'/'+e.name]);
+- const proof=json('docs/verification/P3_AWAKENING_RUNTIME/browser/reuse-proof.json');assert.equal(proof.status,'EXACT BROWSER SOURCE REUSE');assert.equal(proof.sourceCommit,'94b0d6ab3248904d9c343137f5138ec7ed3f7d0e');assert.equal(proof.workflowRun,40087764606);
++ const revision='docs/verification/P3_PASSIVE_RUNTIME/readability-revision/runtime/compatibility/',revised=existsSync(path.join(root,revision+'reuse-proof.json')),proof=json(revised?revision+'reuse-proof.json':'docs/verification/P3_AWAKENING_RUNTIME/browser/reuse-proof.json');assert.equal(proof.status,'EXACT BROWSER SOURCE REUSE');if(revised){assert.equal(proof.formatVersion,2);assert.match(proof.sourceCommit,/^[a-f0-9]{40}$/);assert.ok(Number.isSafeInteger(proof.workflowRun)&&proof.workflowRun>0);}else{assert.equal(proof.sourceCommit,'94b0d6ab3248904d9c343137f5138ec7ed3f7d0e');assert.equal(proof.workflowRun,40087764606);}
+  const drivers=group==='special'?['scripts/checkChiruSpecialBrowser.mjs','scripts/checkChiruHeavyClarityBrowser.mjs','scripts/checkChiruBasicBrowser.mjs']:['scripts/checkChiruAwakeningBrowser.mjs'];
+  const inputs=[...walk('src'),...walk('public'),'package.json','package-lock.json','index.html','vite.config.js',...common,...drivers].sort(),r=proof.groups[group];assert.deepEqual(Object.keys(r.sourceSha256).sort(),inputs);for(const [p,h]of Object.entries(r.sourceSha256))assert.equal(sha(p),h,p);
+- const dirs=group==='special'?['browser','heavy-compatibility','basic-compatibility'].map(x=>'docs/verification/P3_SPECIAL_RUNTIME/'+x):['docs/verification/P3_AWAKENING_RUNTIME/browser'];
++ const dirs=group==='special'?['browser','heavy-compatibility','basic-compatibility'].map(x=>(revised?revision+'chiru-special-evidence/':'docs/verification/P3_SPECIAL_RUNTIME/')+x):[(revised?revision+'chiru-awakening-evidence/':'docs/verification/P3_AWAKENING_RUNTIME/')+'browser'];
+  const expected=dirs.flatMap(d=>['native.json','built-entry.json'].map(n=>d+'/'+n)).sort();assert.deepEqual(Object.keys(r.reportSha256).sort(),expected);for(const [p,h]of Object.entries(r.reportSha256))assert.equal(sha(p),h,p);
++ if(revised){const renders=dirs.flatMap(d=>walk(d)).filter(p=>p.endsWith('.png')).sort();assert.deepEqual(Object.keys(r.renderSha256).sort(),renders);for(const [p,h]of Object.entries(r.renderSha256))assert.equal(sha(p),h,p);}
+  for(const built of [false,true]){const name=(built?'built-entry':'native')+'.json';if(group==='special'){validateChiruSpecialBrowserReport(json(dirs[0]+'/'+name),built);validateChiruHeavyClarityBrowserReport(json(dirs[1]+'/'+name),built);validateChiruBasicBrowserReport(json(dirs[2]+'/'+name),built);}else validateChiruAwakeningBrowserReport(json(dirs[0]+'/'+name),built);}
+- return {status:'PASS',group,sourceCommit:proof.sourceCommit,workflowRun:proof.workflowRun,inputs:inputs.length,reports:expected.length};
++ return {status:'PASS',group,sourceCommit:proof.sourceCommit,workflowRun:proof.workflowRun,inputs:inputs.length,reports:expected.length,...(revised?{copies:[...expected,...Object.keys(r.renderSha256)].map(source=>({source,destination:'docs/verification/P3_'+group.toUpperCase()+'_RUNTIME/'+source.slice((revision+'chiru-'+group+'-evidence/').length)}))}:{})};
+ }
+-if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){try{console.log(JSON.stringify(verifyChiruBrowserReuse(process.argv[2])));}catch(e){console.log('Fresh Browser required: '+e.message);process.exitCode=1;}}
++if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){try{const result=verifyChiruBrowserReuse(process.argv[2]);if(process.argv.includes('--stage')){assert.equal(process.env.CI,'true','evidence staging is CI-only');for(const {source,destination}of result.copies??[]){mkdirSync(path.dirname(destination),{recursive:true});copyFileSync(source,destination);}}console.log(JSON.stringify({...result,copies:undefined}));}catch(e){console.log('Fresh Browser required: '+e.message);process.exitCode=1;}}
+diff --git a/tests/chiruBrowserReuse.test.js b/tests/chiruBrowserReuse.test.js
+index d719d53..ba72f44 100644
+--- a/tests/chiruBrowserReuse.test.js
++++ b/tests/chiruBrowserReuse.test.js
+@@ -1,7 +1,7 @@
+ import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync,mkdtempSync,mkdirSync,copyFileSync,writeFileSync,rmSync} from 'node:fs';import path from 'node:path';import {tmpdir} from 'node:os';
+ const api=await import('../scripts/reuseChiruBrowser.mjs').catch(()=>({}));
+ test('exact Browser reuse validates complete current product/driver inputs and rejects altered source/report',()=>{
+- assert.equal(typeof api.verifyChiruBrowserReuse,'function');for(const group of ['special','awakening'])assert.throws(()=>api.verifyChiruBrowserReuse(group));
++ assert.equal(typeof api.verifyChiruBrowserReuse,'function');for(const group of ['special','awakening'])assert.equal(api.verifyChiruBrowserReuse(group).status,'PASS');
+  const base='docs/verification/P3_AWAKENING_RUNTIME/browser/reuse-proof.json',r=JSON.parse(readFileSync(base)),root=mkdtempSync(path.join(tmpdir(),'chiru-reuse-')),put=(p,b)=>{mkdirSync(path.dirname(path.join(root,p)),{recursive:true});writeFileSync(path.join(root,p),b);};
+  try{put(base,JSON.stringify(r));for(const p of new Set([...Object.keys(r.groups.awakening.sourceSha256),...Object.keys(r.groups.awakening.reportSha256)])){mkdirSync(path.dirname(path.join(root,p)),{recursive:true});const old=JSON.parse(readFileSync('docs/verification/P3_PASSIVE_RUNTIME/previous-test-sources.json'));if(old[p])put(p,Buffer.from(old[p],'base64'));else copyFileSync(p,path.join(root,p));}assert.equal(api.verifyChiruBrowserReuse('awakening',root).status,'PASS');
+  const p='src/combat/battleSession.js',original=readFileSync(path.join(root,p));put(p,'altered');assert.throws(()=>api.verifyChiruBrowserReuse('awakening',root));put(p,original);

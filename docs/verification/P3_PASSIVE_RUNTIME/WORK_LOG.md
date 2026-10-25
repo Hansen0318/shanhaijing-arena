@@ -85,3 +85,26 @@ RED→GREEN：generic overlay雙疊、魚印前景/Move+Action輪廓、正式狀
 
 正常run40145248296：1224/1224與Build PASS；真native於第一案失敗，Pages skipped，絕不宣稱新Runtime PASS。根因Phaser4.2.1移除setTintFill(color)，回傳undefined；已改setTint(color).setTintMode(1/FILL)，測試直接使用安裝版Phaser Tint元件重現相同RED再GREEN，保留原失敗JSON與ZIP CRC。這是呈現API修正，非治療/數值/時序變更。新來源完整suite/Build及正常CI重新執行；第一未完Gate仍為真native+built/相容→正常Pages/public。P3未COMPLETE，玩家遊戲未核准。
 
+
+## 2026-10-25 — 新真游息native32/built4 PASS；20招載入/呈現矩陣補齊中
+
+產品cc17ab8cfe1d2daafb48185a320a6b05c2ee92f5／正常run40145475734：新游息native32/built4步驟SUCCESS，含當前幀亮邊/Move/Action/敵我/左右/normal-reduced/multiInstance/正零自他療/清理與fallback/warning保留；尚未完成整體正常Pages/public。獨立P1run40145475755與P2run40145475732 SUCCESS。為滿足20招逐一實際Runtime核對，補真正CharacterState/BattleSession/AssetPresenter建構、20招executeAbility與真事件/載入貼圖/可見正式效果或fallback、同階段無雙疊及destroy的native+built矩陣；不是靜態盤點。此擴充driver僅syntax PASS、尚待CI實跑，不把舊32+4當20招PASS。
+
+第一未完Gate＝20招擴充矩陣真驗證及完整正常CI/Pages/public。沿用未改產品相符來源證據；任何新失敗保存真報告後修復。保持P3未COMPLETE/玩家未核准，全部approved masters與戰鬥契約不動。
+
+
+## 2026-10-25 — 正常Pages40145475734 SUCCESS；20招擴充驗證最後Gate
+
+產品cc17ab8cfe1d2daafb48185a320a6b05c2ee92f5：正常CI1224/1224、Build、游息與四主動各native32/built4、P1native16/built8、P2native4/built2及來源guard656/691/580全部PASS，Pages build121025754066/deploy121027827861 SUCCESS。CI/local172檔逐bytes/SHA256相符；公開fresh下載另存public-cc17.json實際結果，不預先推稱PASS。獨立P1/P2亦SUCCESS，11JSON/ZIPCRC/hash保存。沒有玩家遊戲核准，P3未COMPLETE。
+
+20招真executeAbility/loaded/visible/WebGL實際paint/無雙疊/cleanup矩陣已補（native及built），仍待新CI執行，不能用既有盤點或32/4冒充。為避免重跑來源未變的四主動，新增版本化exact-source reuse proof：從上述真CI artifacts保存報告與PNG；每個product/common driver/分組driver及每份report/PNG都有hash，且逐項與原release-evidence核對。共用reuse函式保留舊proof，新增嚴格新proof選擇；任何來源/報告/PNG缺失或變更走fresh Browser。新報告/PNG只在CI驗證成功後stage至CI工作副本，原repo已核准來源/收據不改。真RED→GREEN與防改來源/改報告/偽造hash結果測試PASS；全套1225/1225 PASS。唯一下一步＝正常CI的新20招/游息驗證、既有精確相容reuse與新source guard、正常Pages與public精確指紋，再呈交玩家。產品自cc17未變，不重畫或重做Runtime。
+
+
+## 2026-10-25 — 最新：產品已正常部署／172公開核對PASS；20招擴充CI NEXT
+
+已部署產品cc17ab8cfe1d2daafb48185a320a6b05c2ee92f5，正常CI/Pages40145475734 SUCCESS；游息及四主動各native32/built4、P1/P2相容SUCCESS，CI/local/public172逐bytes/SHA256一致且公開172均fresh下載。玩家尚未遊戲核准，P3未COMPLETE。
+
+20招native/built擴充driver已完成，原數值range誤讀為物件的fixture錯誤已依真欄位minRange/range修正；20組真CharacterState/BattleSession/施放/事件前檢PASS，尚待真WebGL矩陣。游息新版產品不再修改。為收斂最後Gate，撤回本次尚未發布的相容reuse優化；原共用reuse函式、workflow及其歷史測試恢復cc17原bytes。優化patch/試驗保存在runtime/deferred-reuse；下載完整截圖副本留本機，不把它當新的已發布修復。正常CI仍走原本fresh相容與正常Pages，不能跳過或冒用舊來源PASS。
+
+唯一下一步：推送此source-bound擴充driver，讀取真20招native/built及正常CI結果，修真失敗；Pages成功後比對CI/local/public精確指紋，供玩家遊戲核准。已部署版網址 https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&passive=cc17ab8 。不建立Runtime玩家acceptance、不開始下一角色。
+

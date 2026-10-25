@@ -1,0 +1,9 @@
+✔ new current-source compatibility reports reuse only exact verified sources and reject changed source or a forged result (206.429548ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 293.293694

@@ -1,0 +1,156 @@
+✖ new current-source compatibility reports reuse only exact verified sources and reject changed source or a forged result (6.29285ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.55993
+
+✖ failing tests:
+
+test at tests/chiruCompatibilityReuse.test.js:3:1
+✖ new current-source compatibility reports reuse only exact verified sources and reject changed source or a forged result (6.29285ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    [
+      'index.html',
+      'package-lock.json',
+      'package.json',
+      'public/assets/botuo-awakening-runtime-v1/poses.png',
+  ...
+      'public/assets/chiru-heavy-runtime-v1/poses.png',
+  -   'public/assets/chiru-passive-runtime-v1/T0.png',
+  -   'public/assets/chiru-passive-runtime-v1/T1.png',
+  -   'public/assets/chiru-passive-runtime-v1/T2.png',
+  -   'public/assets/chiru-passive-runtime-v1/T3.png',
+  -   'public/assets/chiru-passive-runtime-v2/T0.png',
+  -   'public/assets/chiru-passive-runtime-v2/T1.png',
+  -   'public/assets/chiru-passive-runtime-v2/T2.png',
+  -   'public/assets/chiru-passive-runtime-v2/T3.png',
+      'public/assets/chiru-special-runtime-v1/caster.png',
+      'public/assets/chiru-special-runtime-v1/poses.png',
+      'public/assets/chiru-special-runtime-v1/recipient.png',
+      'public/assets/pipeline/actor-strip.svg',
+      'public/assets/runtime-packing-v1/botuo-battleIdle.png',
+  
+      at verifyChiruBrowserReuse (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/scripts/reuseChiruBrowser.mjs:9:172)
+      at TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/chiruCompatibilityReuse.test.js:4:63)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [
+      'index.html',                                                       'package-lock.json',
+      'package.json',                                                     'public/assets/botuo-awakening-runtime-v1/poses.png',
+      'public/assets/botuo-awakening-runtime-v1/radial-release.png',      'public/assets/botuo-awakening-runtime-v1/team-mitigation.png',
+      'public/assets/botuo-awakening-runtime-v1/victim-impact.png',       'public/assets/botuo-basic-packing-v1/botuo-basicContact.png',
+      'public/assets/botuo-basic-packing-v1/botuo-basicPoses.png',        'public/assets/botuo-basic-packing-v1/botuo-basicSource.png',
+      'public/assets/botuo-basic-packing-v1/botuo-battleIdle.png',        'public/assets/botuo-basic-packing-v1/botuo-battleMove.png',
+      'public/assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png',     'public/assets/botuo-basic-packing-v1/jiuweihu-battleMove.png',
+      'public/assets/botuo-basic-packing-v1/lushu-awakeningCSource.png',  'public/assets/botuo-basic-packing-v1/xingxing-battleIdle.png',
+      'public/assets/botuo-basic-packing-v1/xingxing-battleKo.png',       'public/assets/botuo-basic-packing-v1/xingxing-battleMove.png',
+      'public/assets/botuo-heavy-runtime-v1/botuo-heavyContact.png',      'public/assets/botuo-heavy-runtime-v1/botuo-heavyPoses.png',
+      'public/assets/botuo-heavy-runtime-v1/botuo-heavySource.png',       'public/assets/botuo-heavy-runtime-v1/chiru-battleMove.png',
+      'public/assets/botuo-heavy-runtime-v1/jiuweihu-battleMove.png',     'public/assets/botuo-heavy-runtime-v1/xingxing-battleMove.png',
+      'public/assets/characters/botuo/battleIdle-4f.png',                 'public/assets/characters/botuo/battleIdle.png',
+      'public/assets/characters/botuo/battleKo-trimmed.png',              'public/assets/characters/botuo/battleKo.png',
+      'public/assets/characters/botuo/battleMove-4f.png',                 'public/assets/characters/botuo/identity.png',
+      'public/assets/characters/botuo/portrait.png',                      'public/assets/characters/chiru/battleIdle.png',
+      'public/assets/characters/chiru/battleKo.png',                      'public/assets/characters/chiru/battleMove-4f.png',
+      'public/assets/characters/chiru/identity.png',                      'public/assets/characters/chiru/portrait.png',
+      'public/assets/characters/jiuweihu/battleIdle.png',                 'public/assets/characters/jiuweihu/battleKo.png',
+      'public/assets/characters/jiuweihu/battleMove-4f.png',              'public/assets/characters/jiuweihu/identity.png',
+      'public/assets/characters/jiuweihu/portrait.png',                   'public/assets/characters/lushu/awakening-runtime-v1/A-impact.png',
+      'public/assets/characters/lushu/awakening-runtime-v1/A-source.png', 'public/assets/characters/lushu/awakening-runtime-v1/B-impact.png',
+      'public/assets/characters/lushu/awakening-runtime-v1/B-source.png', 'public/assets/characters/lushu/awakening-runtime-v1/C-impact.png',
+      'public/assets/characters/lushu/awakening-runtime-v1/C-source.png', 'public/assets/characters/lushu/awakening-runtime-v1/poses-5f.png',
+      'public/assets/characters/lushu/basic-blade.png',                   'public/assets/characters/lushu/basic-contact.png',
+      'public/assets/characters/lushu/battleBasic-4f.png',                'public/assets/characters/lushu/battleHeavy-4f.png',
+      'public/assets/characters/lushu/battleIdle-4f.png',                 'public/assets/characters/lushu/battleIdle-static.png',
+      'public/assets/characters/lushu/battleKo-trimmed.png',              'public/assets/characters/lushu/battleKo.png',
+      'public/assets/characters/lushu/battleMove-4f.png',                 'public/assets/characters/lushu/battleMove-trimmed.png',
+      'public/assets/characters/lushu/battleSpecial-4f.png',              'public/assets/characters/lushu/heavy-impact.png',
+      'public/assets/characters/lushu/heavy-wind.png',                    'public/assets/characters/lushu/identity.png',
+      'public/assets/characters/lushu/portrait-face.png',                 'public/assets/characters/lushu/special-impact.png',
+      'public/assets/characters/lushu/special-wind.png',                  'public/assets/characters/xingxing/battleIdle.png',
+      'public/assets/characters/xingxing/battleKo.png',                   'public/assets/characters/xingxing/battleMove-4f.png',
+      'public/assets/characters/xingxing/identity.png',                   'public/assets/characters/xingxing/portrait.png',
+      'public/assets/chiru-awakening-runtime-v1/caster.png',              'public/assets/chiru-awakening-runtime-v1/poses.png',
+      'public/assets/chiru-awakening-runtime-v1/protection.png',          'public/assets/chiru-awakening-runtime-v1/recipient.png',
+      'public/assets/chiru-basic-runtime-v1/arrow.png',                   'public/assets/chiru-basic-runtime-v1/charge.png',
+      'public/assets/chiru-basic-runtime-v1/impact.png',                  'public/assets/chiru-basic-runtime-v1/poses.png',
+      'public/assets/chiru-heavy-runtime-v1/charge.png',                  'public/assets/chiru-heavy-runtime-v1/column.png',
+      'public/assets/chiru-heavy-runtime-v1/impact.png',                  'public/assets/chiru-heavy-runtime-v1/poses.png',
+      'public/assets/chiru-special-runtime-v1/caster.png',                'public/assets/chiru-special-runtime-v1/poses.png',
+      'public/assets/chiru-special-runtime-v1/recipient.png',             'public/assets/pipeline/actor-strip.svg',
+      'public/assets/runtime-packing-v1/botuo-battleIdle.png',            'public/assets/runtime-packing-v1/chiru-battleMove.png',
+      'public/assets/runtime-packing-v1/jiuweihu-battleKo.png',           'public/assets/runtime-packing-v1/lushu-battleBasic.png',
+      'public/assets/runtime-packing-v1/lushu-battleHeavy.png',           'public/assets/runtime-packing-v1/lushu-battleSpecial.png',
+      'public/assets/special-runtime-v1/botuo-basicContact.png',          'public/assets/special-runtime-v1/botuo-basicPoses.png',
+      'public/assets/special-runtime-v1/botuo-basicSource.png',           'public/assets/special-runtime-v1/botuo-battleIdle.png',
+      'public/assets/special-runtime-v1/botuo-battleKo.png',              'public/assets/special-runtime-v1/botuo-battleMove.png',
+      'public/assets/special-runtime-v1/botuo-heavyPoses.png',            'public/assets/special-runtime-v1/botuo-specialActivation.png',
+      ... 189 more items
+    ],
+    expected: [
+      'index.html',                                                       'package-lock.json',
+      'package.json',                                                     'public/assets/botuo-awakening-runtime-v1/poses.png',
+      'public/assets/botuo-awakening-runtime-v1/radial-release.png',      'public/assets/botuo-awakening-runtime-v1/team-mitigation.png',
+      'public/assets/botuo-awakening-runtime-v1/victim-impact.png',       'public/assets/botuo-basic-packing-v1/botuo-basicContact.png',
+      'public/assets/botuo-basic-packing-v1/botuo-basicPoses.png',        'public/assets/botuo-basic-packing-v1/botuo-basicSource.png',
+      'public/assets/botuo-basic-packing-v1/botuo-battleIdle.png',        'public/assets/botuo-basic-packing-v1/botuo-battleMove.png',
+      'public/assets/botuo-basic-packing-v1/jiuweihu-battleIdle.png',     'public/assets/botuo-basic-packing-v1/jiuweihu-battleMove.png',
+      'public/assets/botuo-basic-packing-v1/lushu-awakeningCSource.png',  'public/assets/botuo-basic-packing-v1/xingxing-battleIdle.png',
+      'public/assets/botuo-basic-packing-v1/xingxing-battleKo.png',       'public/assets/botuo-basic-packing-v1/xingxing-battleMove.png',
+      'public/assets/botuo-heavy-runtime-v1/botuo-heavyContact.png',      'public/assets/botuo-heavy-runtime-v1/botuo-heavyPoses.png',
+      'public/assets/botuo-heavy-runtime-v1/botuo-heavySource.png',       'public/assets/botuo-heavy-runtime-v1/chiru-battleMove.png',
+      'public/assets/botuo-heavy-runtime-v1/jiuweihu-battleMove.png',     'public/assets/botuo-heavy-runtime-v1/xingxing-battleMove.png',
+      'public/assets/characters/botuo/battleIdle-4f.png',                 'public/assets/characters/botuo/battleIdle.png',
+      'public/assets/characters/botuo/battleKo-trimmed.png',              'public/assets/characters/botuo/battleKo.png',
+      'public/assets/characters/botuo/battleMove-4f.png',                 'public/assets/characters/botuo/identity.png',
+      'public/assets/characters/botuo/portrait.png',                      'public/assets/characters/chiru/battleIdle.png',
+      'public/assets/characters/chiru/battleKo.png',                      'public/assets/characters/chiru/battleMove-4f.png',
+      'public/assets/characters/chiru/identity.png',                      'public/assets/characters/chiru/portrait.png',
+      'public/assets/characters/jiuweihu/battleIdle.png',                 'public/assets/characters/jiuweihu/battleKo.png',
+      'public/assets/characters/jiuweihu/battleMove-4f.png',              'public/assets/characters/jiuweihu/identity.png',
+      'public/assets/characters/jiuweihu/portrait.png',                   'public/assets/characters/lushu/awakening-runtime-v1/A-impact.png',
+      'public/assets/characters/lushu/awakening-runtime-v1/A-source.png', 'public/assets/characters/lushu/awakening-runtime-v1/B-impact.png',
+      'public/assets/characters/lushu/awakening-runtime-v1/B-source.png', 'public/assets/characters/lushu/awakening-runtime-v1/C-impact.png',
+      'public/assets/characters/lushu/awakening-runtime-v1/C-source.png', 'public/assets/characters/lushu/awakening-runtime-v1/poses-5f.png',
+      'public/assets/characters/lushu/basic-blade.png',                   'public/assets/characters/lushu/basic-contact.png',
+      'public/assets/characters/lushu/battleBasic-4f.png',                'public/assets/characters/lushu/battleHeavy-4f.png',
+      'public/assets/characters/lushu/battleIdle-4f.png',                 'public/assets/characters/lushu/battleIdle-static.png',
+      'public/assets/characters/lushu/battleKo-trimmed.png',              'public/assets/characters/lushu/battleKo.png',
+      'public/assets/characters/lushu/battleMove-4f.png',                 'public/assets/characters/lushu/battleMove-trimmed.png',
+      'public/assets/characters/lushu/battleSpecial-4f.png',              'public/assets/characters/lushu/heavy-impact.png',
+      'public/assets/characters/lushu/heavy-wind.png',                    'public/assets/characters/lushu/identity.png',
+      'public/assets/characters/lushu/portrait-face.png',                 'public/assets/characters/lushu/special-impact.png',
+      'public/assets/characters/lushu/special-wind.png',                  'public/assets/characters/xingxing/battleIdle.png',
+      'public/assets/characters/xingxing/battleKo.png',                   'public/assets/characters/xingxing/battleMove-4f.png',
+      'public/assets/characters/xingxing/identity.png',                   'public/assets/characters/xingxing/portrait.png',
+      'public/assets/chiru-awakening-runtime-v1/caster.png',              'public/assets/chiru-awakening-runtime-v1/poses.png',
+      'public/assets/chiru-awakening-runtime-v1/protection.png',          'public/assets/chiru-awakening-runtime-v1/recipient.png',
+      'public/assets/chiru-basic-runtime-v1/arrow.png',                   'public/assets/chiru-basic-runtime-v1/charge.png',
+      'public/assets/chiru-basic-runtime-v1/impact.png',                  'public/assets/chiru-basic-runtime-v1/poses.png',
+      'public/assets/chiru-heavy-runtime-v1/charge.png',                  'public/assets/chiru-heavy-runtime-v1/column.png',
+      'public/assets/chiru-heavy-runtime-v1/impact.png',                  'public/assets/chiru-heavy-runtime-v1/poses.png',
+      'public/assets/chiru-passive-runtime-v1/T0.png',                    'public/assets/chiru-passive-runtime-v1/T1.png',
+      'public/assets/chiru-passive-runtime-v1/T2.png',                    'public/assets/chiru-passive-runtime-v1/T3.png',
+      'public/assets/chiru-passive-runtime-v2/T0.png',                    'public/assets/chiru-passive-runtime-v2/T1.png',
+      'public/assets/chiru-passive-runtime-v2/T2.png',                    'public/assets/chiru-passive-runtime-v2/T3.png',
+      'public/assets/chiru-special-runtime-v1/caster.png',                'public/assets/chiru-special-runtime-v1/poses.png',
+      'public/assets/chiru-special-runtime-v1/recipient.png',             'public/assets/pipeline/actor-strip.svg',
+      'public/assets/runtime-packing-v1/botuo-battleIdle.png',            'public/assets/runtime-packing-v1/chiru-battleMove.png',
+      'public/assets/runtime-packing-v1/jiuweihu-battleKo.png',           'public/assets/runtime-packing-v1/lushu-battleBasic.png',
+      'public/assets/runtime-packing-v1/lushu-battleHeavy.png',           'public/assets/runtime-packing-v1/lushu-battleSpecial.png',
+      ... 197 more items
+    ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

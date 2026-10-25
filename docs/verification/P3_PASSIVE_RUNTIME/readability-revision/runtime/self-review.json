@@ -9,11 +9,18 @@
   "replacementFinding": "Generic optional overlay is a loaded-source alternate on ONE VisualPlayback record; status fallback suppression requires successful texture registration. Required action textures still gate encounter readiness.",
   "rimFinding": "Current visible actor frame/texture/origin/dimensions/flip/rotation copied to tinted backing images at depth body-.01; 3 logical px outer radius. Original actor never mutated; no generated texture or Idle reference used.",
   "verification": {
-    "localTests": 1224,
+    "localTests": 1225,
     "scopedTests": 31,
     "build": "PASS /110 assets /6378266 bytes",
-    "browser": "PENDING true CI; local download failure saved"
+    "browser": "cc17 normal workflow40145475734 PASS: revised Passive32/4 + four active32/4 each + P1/P2; 20-skill extension pending",
+    "public": "cc17 CI/local/public172/172 exact fresh downloads PASS"
   },
   "playerRuntimeAcceptance": false,
-  "p3Complete": false
+  "p3Complete": false,
+  "actualRasterReview": {
+    "artifact": 12581191268,
+    "path": "readability-revision/runtime/browser/native-T3-normal-1.png",
+    "observed": "mint outer contour on real recipient current pose, white fish foreground below HP; caster original colors intact",
+    "physicalDevice": false
+  }
 }
