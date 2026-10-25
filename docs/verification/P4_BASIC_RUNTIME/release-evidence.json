@@ -205,7 +205,7 @@
     "scripts/captureLushuSpecialRuntime.mjs": "5c8005786e90b536ae5397d9c4234f89a5e5da75e3f87f8042b61ad867617191",
     "scripts/checkActorScaleBrowser.mjs": "f569ca52d463215d611567be56b5402472794439bbb0550e23efe3cc5604849e",
     "scripts/checkAssets.js": "e1029d0c834fa2d4a7e7261350209ed74f2c908d9680db88386421b838435f28",
-    "scripts/checkBotuoAwakeningBrowser.mjs": "c50de0497ec63ab6406214a6087ac4ba18ff1e8dc6314428140600f6fe6a7216",
+    "scripts/checkBotuoAwakeningBrowser.mjs": "6954daba1fcb1dfcb74ef5884f876046f10d60f8e5d1d2e5cf164a2739c46c07",
     "scripts/checkBotuoAwakeningScale.mjs": "2dd6c4b1d849d1028edd457669c74c156ea6edc4c9a8a570c14b070d47574f98",
     "scripts/checkBotuoBasicBrowser.mjs": "0ff16bb2fe3b572c9401915f55c77b91c4bfc7412e9d85cbb59ff58a032d7984",
     "scripts/checkBotuoHeavyBrowser.mjs": "2edcd2ca03703485c528be2c9ce8a06e0df83e9efc63b6cfe0e15b0c4c9788dd",

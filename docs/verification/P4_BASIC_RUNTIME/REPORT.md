@@ -9,3 +9,5 @@ Read latest WORK_LOG. Exact source/optimized asset manifest: packing.json; appro
 Raw initial CI report preserved: P4 native/built passed; old Chiru validator rejected13 formal skills against fixed12. Fixed verifier checks every real observation against descriptor; actual observations pass and tampered classification fails. The original CI is still FAIL and is not reused as a successful release.
 
 Single worker self-review only. Final normal CI, fresh source-affected compatibility and Pages/public fingerprint proof remain R3. No merge/main/newbranch/worktree/delegation. Stop for player's Basic game acceptance after successful deployment; do not create unseen Runtime receipt or start Heavy/P5.
+
+R3 verifier-only follow-up: independent P2 run40183463036 rejected old68-key snapshot against real71; exact3-PNG/507976byte delta migrated, local P2 native4/built2 PASS. No Runtime change. Normal latest CI/Pages remains pending.

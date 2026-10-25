@@ -2,7 +2,7 @@
 【最高優先：所有後續交接指令必須單一完整、自足、可一鍵複製code block】
 
 [當前 Gate]
-R2 local1251/Build/native32/built4 PASS; R3 final normal CI/Pages/public175 ACTIVE. Initial CI40182915206 failed legacy formal-count12 vs13; generic verifier fixed, original observations preserved. Read docs/verification/P4_BASIC_RUNTIME/WORK_LOG.md first and resume first incomplete Gate.
+R2 local1251/Build/native32/built4 PASS; R3 final normal CI/Pages/public175 ACTIVE. P2 stale inventory68→71/decoded+507976 corrected; local native4/built2 PASS; src/public/P4driver unchanged. Initial CI40182915206 failed legacy formal-count12 vs13; generic verifier fixed, original observations preserved. Read docs/verification/P4_BASIC_RUNTIME/WORK_LOG.md first and resume first incomplete Gate.
 
 [角色任務]
 接續Hansen0318/shanhaijing-arena。玩家已核准P4九尾狐Basic「靈火」四姿勢／獨立VFX／8GIF，直接完成Basic Runtime、必要真驗證及正常Pages部署，呈交遊戲驗收。原生單人，不重問開始或部署，不停在恢復報告。
