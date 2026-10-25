@@ -7,6 +7,9 @@
 
 先讀最新AGENTS.md、WORK_PROGRESS.md與docs/STATE.md最上方、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/decisions/2026-10-23-restore-sequential-skill-workflow.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_ART_ANIMATION_VFX.md、docs/verification/P3_PASSIVE_RUNTIME/{CURRENT.json,REPORT.md,WORK_LOG.md,player-feedback-2026-10-25.md}、docs/verification/P3_PASSIVE_RUNTIME/readability-revision/{SOURCE_AUDIT.md,source-audit.json,reuse-proof.json}、docs/art/candidates/chiru/passive/readability-review-v1/{REVIEW.md,manifest.json,encoded-verification.json,SHA256SUMS.json,prepare_review.py}、docs/art/approved/chiru/passive/{style-v2,composite-review-v1,readability-review-v1}/acceptance.json，以及核准整角spec docs/superpowers/specs/2026-10-23-chiru-whole-character-design.md第5/6節。來源盤點是唯讀，不是已修復證據；若有新遠端差異，按實際差異恢復。
 
+[最新Runtime checkpoint]
+Runtime修正已在同分支checkpoint；不要重做已完成程式/PNG。先讀readability-revision/runtime/下實際RED/GREEN/初次suite及Chromium失敗，完成新來源驗證與正常發布。舊證據僅舊來源有效。
+
 [玩家已核准與第一未完成Gate]
 玩家本次明確：「我核准，我要給新的work做，妳確認有紀錄，提供prompts，讓她接手修改被動的vfx和已開發多於的vfx到部署」。本次修正版薄荷綠亮邊＋亮白雙魚、同尺度混戰對照與11支GIF已核准；精確SHA256收據 docs/art/approved/chiru/passive/readability-review-v1/acceptance.json。原STYLE／原9GIF亦有各自核准收據。不要重審方向、重生已核准來源、重做GIF或前檢。P1/P2 COMPLETE，P3四主動已核准；舊游息Runtime release b414e9f079a985e4bf23283ffa5067abf5af9ac3，正常Pages40105519923 SUCCESS、1221測試、native32/built4、四主動/P1/P2相容、CI/local/public168都有原來源真證據。來源未改部分用精確reuse proof；新視覺與退示意絕不可拿舊證據冒稱PASS。當前第一未完成Gate＝最小Runtime實作，之後必要真驗證、正常CI/Pages/public指紋及供玩家遊戲測試；部署已授權，不再問允許部署。P3尚未COMPLETE，沒有修新版玩家遊戲acceptance。
 

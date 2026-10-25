@@ -1,10 +1,10 @@
 import {createAssetManifest,CHARACTER_SLOTS} from './schema.js';
 import {specialRuntimePacking} from './specialRuntimePacking.js';
 const entries=[
- {"key": "chiru.passiveT0", "type": "image", "path": "assets/chiru-passive-runtime-v1/T0.png", "width": 200, "height": 160, "bytes": 16945, "fallback": "placeholder.vfx"},
- {"key": "chiru.passiveT1", "type": "image", "path": "assets/chiru-passive-runtime-v1/T1.png", "width": 200, "height": 160, "bytes": 17170, "fallback": "placeholder.vfx"},
- {"key": "chiru.passiveT2", "type": "image", "path": "assets/chiru-passive-runtime-v1/T2.png", "width": 200, "height": 160, "bytes": 17411, "fallback": "placeholder.vfx"},
- {"key": "chiru.passiveT3", "type": "image", "path": "assets/chiru-passive-runtime-v1/T3.png", "width": 200, "height": 160, "bytes": 17603, "fallback": "placeholder.vfx"},
+ {"key": "chiru.passiveT0", "type": "image", "path": "assets/chiru-passive-runtime-v2/T0.png", "width": 200, "height": 160, "bytes": 13728, "fallback": "placeholder.vfx"},
+ {"key": "chiru.passiveT1", "type": "image", "path": "assets/chiru-passive-runtime-v2/T1.png", "width": 200, "height": 160, "bytes": 13967, "fallback": "placeholder.vfx"},
+ {"key": "chiru.passiveT2", "type": "image", "path": "assets/chiru-passive-runtime-v2/T2.png", "width": 200, "height": 160, "bytes": 14170, "fallback": "placeholder.vfx"},
+ {"key": "chiru.passiveT3", "type": "image", "path": "assets/chiru-passive-runtime-v2/T3.png", "width": 200, "height": 160, "bytes": 14394, "fallback": "placeholder.vfx"},
 
  {"key": "chiru.awakeningPoses", "type": "image", "path": "assets/chiru-awakening-runtime-v1/poses.png", "width": 656, "height": 176, "bytes": 147450, "fallback": "placeholder.battle"},
  {"key": "chiru.awakeningCaster", "type": "image", "path": "assets/chiru-awakening-runtime-v1/caster.png", "width": 340, "height": 340, "bytes": 181548, "fallback": "placeholder.vfx"},

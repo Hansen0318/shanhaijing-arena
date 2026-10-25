@@ -68,3 +68,10 @@ test('generic sprite effects retain pre-pack logical footprint rather than cropp
  const {p,a,frame}=await fixture();p.cast({actorId:a.instanceId,category:'heavy',origin:{x:0,y:0},target:{x:1,y:0}},rosterCatalog.P2,0,{presentation:{vfx:{form:'sprite',assetKey:'lushu.basicBlade',duration:.5}}});p.render(frame(),0,rosterCatalog);
  const image=[...p.displays.values()][0];assert.equal(image.displayWidth,80);assert.ok(Math.abs(image.displayHeight-80*81/97)<1e-9);assert.ok(image.frame);p.destroy();
 });
+
+test('status fallback is replaced only after the matching authored texture resolves',async()=>{
+ const {s,a,p,frame}=await fixture();s.executeAbility(a,'special','player');const defs={...rosterCatalog,P2:{...rosterCatalog.P2,assets:{...rosterCatalog.P2.assets,statusOverlays:{mitigation:'lushu.basicBlade'}}}},key=botuoSpecialAction.statusVisuals[Object.keys(botuoSpecialAction.statusVisuals)[0]].assetKey;
+ await p.loadKeys(['lushu.basicBlade']);const formal=p.textures.get(key);p.textures.delete(key);
+ p.renderOverlays(frame(),defs,s.statuses,0);assert.equal(p.overlaySprites.has(a.instanceId+'.mitigation'),true,'missing authored texture must leave fallback');assert.equal(authored(p).length,0);
+ p.textures.set(key,formal);p.renderOverlays(frame(),defs,s.statuses,0);assert.equal(p.overlaySprites.has(a.instanceId+'.mitigation'),false);assert.equal(authored(p).length,1);p.destroy();
+});

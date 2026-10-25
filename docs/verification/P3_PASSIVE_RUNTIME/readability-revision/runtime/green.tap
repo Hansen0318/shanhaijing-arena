@@ -1,0 +1,24 @@
+✔ presenter owns loaded textures and discards stale completion after shutdown (2.705057ms)
+✔ formal cast/hit/KO rendering is presentation-only and bounded; clear destroys displays (14.624473ms)
+✔ Lab inspection uses shared presenter without combat mutation (2.024678ms)
+✔ failed approved images reject readiness without mutating the real combat session (201.851141ms)
+✔ late flipbook texture replaces Graphics fallback with an image safely (2.219428ms)
+✔ encounter ability-only VFX loads on cast, with no unrelated ability load (2.42462ms)
+✔ target-attached VFX follows target and cleans when target KO (1.775448ms)
+✔ battle HUD portraits use shared side-based mirroring, not character-specific logic (0.751797ms)
+✔ executed formal HUD rendering keeps ally canonical, mirrors enemy, and reuses owned portraits (1.261588ms)
+✔ battle HUD uses shared face-first crop and preserves side-based enemy mirroring (0.340276ms)
+✔ missing living transient art keeps authored idle moving instead of freezing frame zero (0.306454ms)
+✔ Botuo living missing Hit/Cast and KO keep the approved static F1 (0.918859ms)
+✔ shared encounter loads portraits and idles first, then required Move/KO before readiness (0.680916ms)
+✔ loaded optional skill overlay replaces matching generic cast; unloaded overlay keeps one fallback (1.210411ms)
+✔ positive heal token attaches to recipient, exact mirror, normal inward/reduced static fade and both-owner cleanup (1.62939ms)
+✔ beneficiary rim follows live Move/Action frame and mirror without changing body; expires and destroys (2.548552ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 373.382535

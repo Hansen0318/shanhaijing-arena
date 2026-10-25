@@ -1,0 +1,69 @@
+{
+  "status": "LOSSLESS PASS",
+  "sourceSha256": {
+    "docs/art/candidates/chiru/passive/readability-review-v1/T0-style.png": "7a49f3c6dcbaff8217e56e04f2b8dcfbd443d0e4a319f010cda2c9a264384828",
+    "docs/art/candidates/chiru/passive/readability-review-v1/T1-style.png": "2085ba6168a0b952b3dc39f68a79be25dd8ff05af634d8dfe10453ff497b4794",
+    "docs/art/candidates/chiru/passive/readability-review-v1/T2-style.png": "0384528d5c1a99001093acdb8434b3580e5c8bae59db13010ba171b7158e3a6e",
+    "docs/art/candidates/chiru/passive/readability-review-v1/T3-style.png": "0cc1d8a6e3e4603d47fea5076ce4c1049466f502ecd9b4351e650be378ca220e"
+  },
+  "assets": [
+    {
+      "key": "chiru.passiveT0",
+      "type": "image",
+      "path": "assets/chiru-passive-runtime-v2/T0.png",
+      "width": 200,
+      "height": 160,
+      "bytes": 13728,
+      "fallback": "placeholder.vfx",
+      "sha256": "58bd181235a8d2b7188235a3a5629d611c18c0f0894e88989b2ffce3e6c235c6"
+    },
+    {
+      "key": "chiru.passiveT1",
+      "type": "image",
+      "path": "assets/chiru-passive-runtime-v2/T1.png",
+      "width": 200,
+      "height": 160,
+      "bytes": 13967,
+      "fallback": "placeholder.vfx",
+      "sha256": "66273c9fa25852f73a886918e4e4c6a0a50bc0c9b630cad869a1997311d93f79"
+    },
+    {
+      "key": "chiru.passiveT2",
+      "type": "image",
+      "path": "assets/chiru-passive-runtime-v2/T2.png",
+      "width": 200,
+      "height": 160,
+      "bytes": 14170,
+      "fallback": "placeholder.vfx",
+      "sha256": "403d4e0c678eeb20c1eebd0363baa25b330075531a6ad75094972351357615bb"
+    },
+    {
+      "key": "chiru.passiveT3",
+      "type": "image",
+      "path": "assets/chiru-passive-runtime-v2/T3.png",
+      "width": 200,
+      "height": 160,
+      "bytes": 14394,
+      "fallback": "placeholder.vfx",
+      "sha256": "62af398019570f576d0aa9a5ccfcd0f242a1dcd5935050ff689c5909db6f3cee"
+    }
+  ],
+  "sourcePivot": [
+    158,
+    203
+  ],
+  "sourcePlacement": [
+    58,
+    123
+  ],
+  "density": 0.9,
+  "decodedBytes": 512000,
+  "recipientRim": {
+    "source": "current visible actor frame",
+    "color": "#69ffc3",
+    "logicalRadius": 3,
+    "depth": "body depth minus .01",
+    "bodyMutation": false
+  },
+  "fishDepth": 6
+}

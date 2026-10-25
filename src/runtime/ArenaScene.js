@@ -77,10 +77,10 @@ export class ArenaScene extends Phaser.Scene {
     const battleSession=this.session;this.ownCleanup(()=>battleSession.clearTransientCombat());
     this.accumulatorSeconds = 0;
     this.actorViews = new Map();
-    this.passivePresenter=new PassivePresenter(this,{project:arenaToStage,effectImage:key=>this.visualAssets.effectImage(key),reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});
+    this.visualAssets=new AssetPresenter(this,{project:arenaToStage,reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});
+    this.passivePresenter=new PassivePresenter(this,{project:arenaToStage,effectImage:key=>this.visualAssets.effectImage(key),actorSprites:this.visualAssets.actorSprites,reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});
     const passivePresenter=this.passivePresenter;this.ownCleanup(()=>passivePresenter.destroy());
     this.damageNumbers = new DamageNumbers(this,arenaToStage);
-    this.visualAssets=new AssetPresenter(this,{project:arenaToStage,reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false});
     const visualAssets=this.visualAssets;this.ownCleanup(()=>visualAssets.destroy());
     const encounterActors=[...this.session.allies,...this.session.enemies];
     const encounterDefinitions=[...new Set(encounterActors.map(a=>this.session.characterDefinitions[a.definitionId]))];

@@ -105,10 +105,10 @@ export class AssetPresenter{
   if(this.actions.active.has(event.actorId)){this.clearAction(event.actorId,{preserveIndependent:true,preserveImpact:this.pendingImpactViews.get(event.actorId)?.sample.descriptor.contact.retainOnNextCast===true});this.states.delete(event.actorId);}
   const descriptor=characterVfx(character,event.category,ability);
   const target=event.target??event.origin,dx=target.x-event.origin.x,dy=target.y-event.origin.y,len=Math.hypot(dx,dy)||1;
-  this.playback.play(event.actorId,descriptor,event.origin,now,{targetId:event.targetId??null,target,direction:{x:dx/len,y:dy/len}});
+  const record=this.playback.play(event.actorId,descriptor,event.origin,now,{targetId:event.targetId??null,target,direction:{x:dx/len,y:dy/len}});
   // Presentation facing follows the actual attack/cast direction for the action window.
   if(Math.abs(dx)>1e-6)this.actionFacings.set(event.actorId,{flipX:dx<0,until:now+descriptor.duration});
-  const overlay=character?.assets?.skillOverlays?.[event.category];if(overlay)try{this.playback.play(event.actorId,vfxDescriptor({form:'sprite',assetKey:overlay,duration:descriptor.duration}),event.origin,now,{target});}catch{/* optional invalid art falls back to existing cast */}
+  const overlay=character?.assets?.skillOverlays?.[event.category];if(overlay&&record)try{record.replacement=vfxDescriptor({form:'sprite',assetKey:overlay,duration:descriptor.duration,attach:descriptor.attach});}catch{/* optional invalid art falls back to existing cast */}
   if(character?.animationDescriptors?.battleCast)this.setState(event.actorId,characterAnimation(character,'battleCast'),now,'battleCast');
   this.syncEffectPins();
  }
@@ -188,7 +188,7 @@ export class AssetPresenter{
   }
  }
  hit(event,character,now){if(!this.closed){this.setState(event.targetId,characterAnimation(character,'battleHit'),now,'battleHit');this.syncEffectPins();}}
- syncEffectPins(){const keys=[...this.playback.active.values()].flatMap(r=>[r.descriptor.assetKey,r.descriptor.animation?.source]);for(const state of this.states.values())if(['battleHit','battleCast'].includes(state.state))keys.push(state.descriptor.source);this.residency.setPins('effects',keys.filter(Boolean));this.demand(keys);}
+ syncEffectPins(){const keys=[...this.playback.active.values()].flatMap(r=>[r.descriptor.assetKey,r.descriptor.animation?.source,r.replacement?.assetKey]);for(const state of this.states.values())if(['battleHit','battleCast'].includes(state.state))keys.push(state.descriptor.source);this.residency.setPins('effects',keys.filter(Boolean));this.demand(keys);}
  async inspect(ownerId,character,slot,now){
   if(slot==='none'||this.closed)return;
   if(slot.endsWith('Vfx'))this.playback.play(ownerId,characterVfx(character,slot.slice(0,-3)),{x:0,y:0},now);
@@ -259,7 +259,7 @@ export class AssetPresenter{
   }
  }
  renderOverlays(frame,definitions,statuses,now){
-  if(this.closed)return;const valid=new Set(),keys=[],groups=statusEffectGroups(frame,definitions,statuses,now),authored=new Set(groups.flatMap(g=>g.records.map(r=>r.record.id)));
+  if(this.closed)return;const valid=new Set(),keys=[],groups=statusEffectGroups(frame,definitions,statuses,now),authored=new Set(groups.filter(g=>this.textures.has(g.style.assetKey)).flatMap(g=>g.records.map(r=>r.record.id)));
   for(const group of groups){
    const {id,target,style,recordIds}=group,key=style.assetKey;keys.push(key);if(!this.textures.has(key))continue;valid.add(id);let image=this.overlaySprites.get(id);
    if(image&&(this.overlayTextureKeys.get(id)!==key||!image.statusRecordIds?.some(k=>recordIds.includes(k)))){image.destroy();this.overlaySprites.delete(id);image=null;}
@@ -336,7 +336,7 @@ export class AssetPresenter{
   for(const [id,display] of this.displays)if(!ids.has(id)){display.destroy();this.displays.delete(id);this.displayKinds.delete(id);this.displayTextureKeys.delete(id);}
   this.syncEffectPins();
   for(const r of records){
-   const d=r.descriptor,elapsed=now-r.start,progress=this.reducedMotion?0:Math.min(1,elapsed/d.duration),source=positions.get(r.ownerId)??this.project(r.position),target=r.targetId?positions.get(r.targetId):r.target?this.project(r.target):source;
+   const d=r.replacement&&this.textures.has(r.replacement.assetKey)?r.replacement:r.descriptor,elapsed=now-r.start,progress=this.reducedMotion?0:Math.min(1,elapsed/d.duration),source=positions.get(r.ownerId)??this.project(r.position),target=r.targetId?positions.get(r.targetId):r.target?this.project(r.target):source;
    const anchor=d.attach==='target'?target:d.attach==='fixed'?this.project(r.position):source;
    let display=this.displays.get(r.id);const texture=this.textures.get(d.animation?.source??d.assetKey);
    const kind=texture?'image':'graphics';if(display&&this.displayKinds.get(r.id)!==kind){display.destroy();this.displays.delete(r.id);display=null;}

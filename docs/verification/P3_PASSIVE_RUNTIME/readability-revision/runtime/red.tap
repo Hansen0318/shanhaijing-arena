@@ -1,0 +1,65 @@
+✔ presenter owns loaded textures and discards stale completion after shutdown (1.839865ms)
+✔ formal cast/hit/KO rendering is presentation-only and bounded; clear destroys displays (10.613106ms)
+✔ Lab inspection uses shared presenter without combat mutation (1.720835ms)
+✔ failed approved images reject readiness without mutating the real combat session (162.253715ms)
+✔ late flipbook texture replaces Graphics fallback with an image safely (1.610199ms)
+✔ encounter ability-only VFX loads on cast, with no unrelated ability load (1.379299ms)
+✔ target-attached VFX follows target and cleans when target KO (1.107145ms)
+✔ battle HUD portraits use shared side-based mirroring, not character-specific logic (0.559898ms)
+✔ executed formal HUD rendering keeps ally canonical, mirrors enemy, and reuses owned portraits (0.810822ms)
+✔ battle HUD uses shared face-first crop and preserves side-based enemy mirroring (0.412505ms)
+✔ missing living transient art keeps authored idle moving instead of freezing frame zero (0.191314ms)
+✔ Botuo living missing Hit/Cast and KO keep the approved static F1 (0.858907ms)
+✔ shared encounter loads portraits and idles first, then required Move/KO before readiness (0.75633ms)
+✖ loaded optional skill overlay replaces matching generic cast; unloaded overlay keeps one fallback (1.704489ms)
+✖ beneficiary rim follows live Move/Action frame and mirror without changing body; expires and destroys (2.195351ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 13
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 326.80187
+
+✖ failing tests:
+
+test at tests/assetPresenter.test.js:109:1
+✖ loaded optional skill overlay replaces matching generic cast; unloaded overlay keeps one fallback (1.704489ms)
+  AssertionError [ERR_ASSERTION]: one fallback while overlay unavailable
+  
+  2 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/assetPresenter.test.js:112:71)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/recipientRim.test.js:3:1
+✖ beneficiary rim follows live Move/Action frame and mirror without changing body; expires and destroys (2.195351ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  4 !== 6
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/recipientRim.test.js:5:60)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 4,
+    expected: 6,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -105,3 +105,10 @@ test('shared encounter loads portraits and idles first, then required Move/KO be
  assert.ok(order.includes('xingxing.battleMove'),'move required before ready');
  p.destroy();
 });
+
+test('loaded optional skill overlay replaces matching generic cast; unloaded overlay keeps one fallback',async()=>{
+ const s=faithfulScene(),p=new api.AssetPresenter(s,{cache:createAssetCache({transport:async r=>({image:{width:r.width,height:r.height},bytes:r.bytes})})}),session=createLabBattleSession(createLabConfig()),character={...session.characterDefinitions[session.allies[0].definitionId],actionDescriptors:{},assets:{skillOverlays:{heavy:'placeholder.actor-strip'}}};
+ p.cast({actorId:'a1',category:'heavy',origin:{x:0,y:0},target:{x:1,y:0}},character,0);
+ p.render(session.snapshot(),.01,session.characterDefinitions);assert.equal(p.displays.size,1,'one fallback while overlay unavailable');
+ await p.whenIdle();p.render(session.snapshot(),.02,session.characterDefinitions);assert.equal(p.displays.size,1,'loaded overlay must replace, never stack');assert.equal([...p.displayKinds.values()][0],'image');p.destroy();
+});

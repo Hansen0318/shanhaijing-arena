@@ -1,0 +1,272 @@
+Actual first full-suite failure excerpts. Full original run:1224 tests/1211 pass/13 fail.
+
+not ok 103 - actual Arena create hides loading HUD and freezes countdown until Idle Move KO and portraits all ready
+  ---
+  duration_ms: 7.455461
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/arenaAssetReadiness.test.js:14:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/arenaAssetReadiness.test.js:14:341)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+
+not ok 104 - Lab skip countdown cannot bypass failed art gate; retry is usable and starts from same snapshot
+  ---
+  duration_ms: 3.273096
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/arenaAssetReadiness.test.js:17:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/arenaAssetReadiness.test.js:17:320)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+
+not ok 105 - actual Arena shutdown releases session/presenter/gate once even when both lifecycle events occur
+  ---
+  duration_ms: 2.818442
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/arenaAssetReadiness.test.js:18:43'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/arenaAssetReadiness.test.js:19:155)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+
+not ok 106 - actual Arena destroy releases session/presenter/gate once even when both lifecycle events occur
+  ---
+  duration_ms: 2.305522
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/arenaAssetReadiness.test.js:18:43'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/arenaAssetReadiness.test.js:19:155)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+
+not ok 130 - current runtime inventory passes actual file guard
+  ---
+  duration_ms: 7.246178
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/assetGuard.test.js:12:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 6378266
+    - 6391136
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 6391136
+  actual: 6378266
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/assetGuard.test.js:12:201)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+
+not ok 228 - Lab skip countdown and AI-only are scene-local; Campaign defaults remain intact
+  ---
+  duration_ms: 6.794334
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:32:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:34:97)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+
+not ok 229 - Lab manual uses shared session execution and fresh retry resets HP/CD/timer
+  ---
+  duration_ms: 2.15397
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:39:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:40:100)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+
+not ok 230 - Lab result owns only retry/back, rejects campaign callbacks and grants no reward
+  ---
+  duration_ms: 1.978186
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:45:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:48:4)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+
+not ok 231 - actual Arena pause freezes threat clock; restart/retry clears warnings and impact jobs
+  ---
+  duration_ms: 1.627189
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:54:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:55:99)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+
+not ok 232 - actual Arena pause and shutdown clear Tier statuses/areas before fresh Retry
+  ---
+  duration_ms: 4.045232
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:60:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleLabRuntime.test.js:61:125)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+
+not ok 243 - Restart runs fresh Arena create: all HP/CD/targets/AI/timer/countdown/formation/transients reset and damage cleans up
+  ---
+  duration_ms: 8.271745
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleRestart.test.js:49:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleRestart.test.js:50:125)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+
+not ok 244 - CONTINUE keeps same state/prior manual Pause; fresh Restart clears old menu/Pause but preserves orientation reason
+  ---
+  duration_ms: 2.731308
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleRestart.test.js:63:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'actorSprites')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    ArenaScene.create (evalmachine.<anonymous>:64:158)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/battleRestart.test.js:64:117)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+
+not ok 906 - historical accepted VFX release guard rejects changed sources and forged clean-copy or true-status VFX evidence
+  ---
+  duration_ms: 241.749378
+  type: 'test'
+  location: '/workspace/scratch/c53f643759e6/shanhaijing-arena/tests/passiveVfxReleaseEvidence.test.js:8:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    tests/assetPresenter.test.js
+    + actual - expected
+    
+    + '09f9c15458eefac0f0a7b8776eef81a22e461a25a91c2971e85a917d42fb5d12'
+    - 'f351b75b587bc8dd632c74ac5d10bcc14161947022e250b0b8d72143207d7806'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'f351b75b587bc8dd632c74ac5d10bcc14161947022e250b0b8d72143207d7806'
+  actual: '09f9c15458eefac0f0a7b8776eef81a22e461a25a91c2971e85a917d42fb5d12'
+  operator: 'strictEqual'
+  stack: |-
+    verifyPassiveVfxRelease (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/scripts/verifyPassiveVfxRelease.mjs:11:113)
+    TestContext.<anonymous> (file:///workspace/scratch/c53f643759e6/shanhaijing-arena/tests/passiveVfxReleaseEvidence.test.js:16:16)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.start (node:internal/test_runner/test:1262:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
