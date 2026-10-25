@@ -1,0 +1,30 @@
+{
+  "status": "PLAYER REPORT / NOT ACCEPTED",
+  "screenshot": "IMG_2848.png",
+  "passiveRuntimeChanged": true,
+  "friendlyHp": [
+    {
+      "hp": 178,
+      "maxHp": 245,
+      "percent": 72.6530612244898
+    },
+    {
+      "hp": 205,
+      "maxHp": 320,
+      "percent": 64.0625
+    },
+    {
+      "hp": 235,
+      "maxHp": 235,
+      "percent": 100
+    }
+  ],
+  "qualificationInThisFrame": "No friendly recipient at HP<=60%; this still frame cannot disprove revised passive visibility.",
+  "blueOrangeGeometrySource": "src/runtime/telegraphs.js TelegraphPresenter.render lane capsule endpoints, boundaries and center line",
+  "formalCastContactReplacementChanged": true,
+  "formalWarningReplacementImplemented": false,
+  "missingSource": "No explicit authored warning presentation that carries true capsule/circle extent, endpoints, team and impact progress.",
+  "next": "Create explicit source-driven formal warning coverage/presentation using actual geometry; verify native/built complete coverage and missing-source fallback before retiring corresponding old wire geometry. Do not silently delete necessary warnings or call cast/contact an authored warning.",
+  "playerAcceptance": false,
+  "p3Complete": false
+}

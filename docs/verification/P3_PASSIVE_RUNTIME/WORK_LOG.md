@@ -108,3 +108,10 @@ RED→GREEN：generic overlay雙疊、魚印前景/Move+Action輪廓、正式狀
 
 唯一下一步：推送此source-bound擴充driver，讀取真20招native/built及正常CI結果，修真失敗；Pages成功後比對CI/local/public精確指紋，供玩家遊戲核准。已部署版網址 https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&passive=cc17ab8 。不建立Runtime玩家acceptance、不開始下一角色。
 
+
+## 2026-10-25 — 玩家截圖回報：藍橘預警線框仍未正式取代（未結案）
+
+玩家要求直接確認並修改游息及舊示意VFX。已核對IMG_2848：己方178/245=72.7%、205/320=64.1%、235/235=100%，此幀沒有HP≤60%合法受益者；游息新版PNG/當前幀薄荷輪廓已有公開相符來源證據，不能據此靜態幀認定沒有改。圖中藍橘膠囊線框明確來自TelegraphPresenter.render，前次保留必要命中預警，尚無正式warning來源承接，因此「正式cast/contact替代」不等於「圖中預警線框已替代」。前次整體完成表述須以本節澄清。
+
+新增明確未完Gate：正式預警呈現須依來源資料完整承接circle/lane真範圍、端點、敵我與impact進度，成功解析及完整承接後才退掉對應舊線框；缺來源保留fallback。不能僅因有blade/contact刪預警，不刪正式盾/水膜或改場地。先完成必要正式warning來源/呈現契約，再真native/built與正常發布/公開指紋。20招CI40149990210仍在進行；即使其通過，也不能冒稱本新增warning缺口已修。沒有新玩家核准，P3未COMPLETE。詳細機器紀錄runtime/player-screenshot-2026-10-25.json。
+

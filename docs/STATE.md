@@ -1,3 +1,9 @@
+## 2026-10-25 — 玩家截圖回報：藍橘預警線框仍未正式取代（未結案）
+
+玩家要求直接確認並修改游息及舊示意VFX。已核對IMG_2848：己方178/245=72.7%、205/320=64.1%、235/235=100%，此幀沒有HP≤60%合法受益者；游息新版PNG/當前幀薄荷輪廓已有公開相符來源證據，不能據此靜態幀認定沒有改。圖中藍橘膠囊線框明確來自TelegraphPresenter.render，前次保留必要命中預警，尚無正式warning來源承接，因此「正式cast/contact替代」不等於「圖中預警線框已替代」。前次整體完成表述須以本節澄清。
+
+新增明確未完Gate：正式預警呈現須依來源資料完整承接circle/lane真範圍、端點、敵我與impact進度，成功解析及完整承接後才退掉對應舊線框；缺來源保留fallback。不能僅因有blade/contact刪預警，不刪正式盾/水膜或改場地。先完成必要正式warning來源/呈現契約，再真native/built與正常發布/公開指紋。20招CI40149990210仍在進行；即使其通過，也不能冒稱本新增warning缺口已修。沒有新玩家核准，P3未COMPLETE。詳細機器紀錄runtime/player-screenshot-2026-10-25.json。
+
 ## 2026-10-25 — 最新：產品已正常部署／172公開核對PASS；20招擴充CI NEXT
 
 已部署產品cc17ab8cfe1d2daafb48185a320a6b05c2ee92f5，正常CI/Pages40145475734 SUCCESS；游息及四主動各native32/built4、P1/P2相容SUCCESS，CI/local/public172逐bytes/SHA256一致且公開172均fresh下載。玩家尚未遊戲核准，P3未COMPLETE。
