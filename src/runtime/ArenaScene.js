@@ -85,8 +85,7 @@ export class ArenaScene extends Phaser.Scene {
     const encounterActors=[...this.session.allies,...this.session.enemies];
     const encounterDefinitions=[...new Set(encounterActors.map(a=>this.session.characterDefinitions[a.definitionId]))];
     this.telegraphs = new TelegraphPresenter(this,arenaToStage,{
-      warningSource:threat=>{const actor=this.session.actorById(threat.sourceId);return this.session.characterDefinitions[actor?.definitionId]?.warningDescriptors?.[threat.category];},
-      reducedMotion:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false,
+      formalSource:threat=>{const actor=this.session.actorById(threat.sourceId);return this.visualAssets.formalActionSource(this.session.characterDefinitions[actor?.definitionId],threat.category);},
     });
     this.ownCleanup(()=>this.telegraphs.destroy());
     this.ownCleanup(()=>this.damageNumbers.destroy());

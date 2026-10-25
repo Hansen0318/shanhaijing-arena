@@ -1,3 +1,9 @@
+## 2026-10-25 — 玩家IMG_2864指出幾何示意仍在；撤掉ground-sigil，修正ACTIVE
+
+玩家直接要求確認赤鱬Heavy並改正。截圖正式水浪/爆浪已在，但38cdd8c新增的ground-sigil-v1膠囊/箭頭/方塊仍疊在下方；這只是換皮示意，前次工程PASS不是玩家核准或真正退示意。最新要求優先：撤掉未核准向量warning來源，改以真action完整已載入貼圖（含TextureManager存在）承接，跳過同record整個示意層；缺/無效/任一未載入才fallback。不是再畫新幾何，也不改threat ledger/命中範圍/時序/傷害。P4/P5無正式action與獨立持續場域仍各自保留必要fallback，核准PNG/收據/尺度/盾水膜/場地/存檔不變。
+
+新RED→GREEN與9項針對檢查PASS，首次歷史fixture失敗/修復保存docs/verification/SCHEMATIC_RETIREMENT；新來源完整與正常CI/Pages/public待完成。新增96案必須驗證geometry實際零像素，及真Heavy蓄勢/飛行/命中/收招同幀正式水浪可見、真damage、無幾何的native+built畫面；不沿用舊「有畫出ground-sigil」PASS。唯一下一步是收斂新來源驗證/正常發布，再停待玩家遊戲驗收。P3未COMPLETE，沒有新acceptance；原生單人/同分支PR1 open-unmerged、不委派/新branch/worktree/TD/main merge/重置存檔。
+
 ## 2026-10-25 — 正式預警替換已正常部署／172公開fresh核對PASS；只待玩家遊戲驗收
 
 最終產品38cdd8c607a74f304b66dc31b9b983f443048bc5；正常Pages40160079507（build121069659769/deploy121072012132）SUCCESS，獨立P1/P2 40160079501/40160079436均SUCCESS。完整1231/1231、Build110素材、新warning真WebGL native96/built96、20招真施放native/built、游息32/4、四主動各32/4、P1 16/8與P2 4/2全部PASS。下載CI證據於隔離副本重驗來源guard659/694/585；4artifact hash/ZIP CRC PASS。CI/local/public172逐bytes/SHA256全相符，公開172全部fresh下載。詳細docs/verification/FORMAL_WARNING_RUNTIME/{REPORT.md,release.json,evidence/,source-guards.json,ci-local-build.json,public-fingerprints.json}。

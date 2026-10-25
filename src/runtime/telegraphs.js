@@ -1,6 +1,4 @@
 export {statusMarks} from './statusPresentation.js';
-import {resolveWarning} from '../assets/warningDescriptors.js';
-import {drawFormalWarning} from './formalWarnings.js';
 // Renderer reads shared battle-clock geometry; no tween or independent timer.
 export function telegraphProjection(threat,nowMs,project) {
  const g=threat.geometry,center=project(g.center),origin=project(g.origin);
@@ -9,14 +7,16 @@ export function telegraphProjection(threat,nowMs,project) {
 }
 export function persistentAreaProjection(area,nowSeconds,project){return telegraphProjection({...area,createdAtMs:area.startTime*1000,impactAtMs:area.expiryTime*1000},nowSeconds*1000,project);}
 export class TelegraphPresenter {
- constructor(scene,project,{warningSource=()=>null,reducedMotion=false}={}){this.project=project;this.warningSource=warningSource;this.reducedMotion=reducedMotion;this.graphics=scene.add.graphics().setDepth(8);this.presentations=new Map();this.closed=false;}
+ constructor(scene,project,{formalSource=()=>null}={}){this.project=project;this.formalSource=formalSource;this.graphics=scene.add.graphics().setDepth(8);this.presentations=new Map();this.closed=false;}
  render(threats,nowMs,areas=[]){
   if(this.closed)return;
   const g=this.graphics;g.clear();this.presentations.clear();
   for(const threat of [...areas.map(a=>({...a,persistent:true,createdAtMs:a.startTime*1000,impactAtMs:a.expiryTime*1000})),...threats]){const p=telegraphProjection(threat,nowMs,this.project),color=threat.persistent?(p.allied?0xbd87ef:0xff6478):(p.allied?0x73e5ff:0xffb347);
-   // Persistent areas own a different lifetime/source. A cast source never suppresses them.
-   let source=null;try{if(!threat.persistent)source=resolveWarning(this.warningSource(threat),p.shape);}catch{/* preserve warning on unavailable optional source */}
-   if(source){this.presentations.set(threat.id,drawFormalWarning(g,threat,p,source,this.project,this.reducedMotion));continue;}
+   // Actual loaded action/VFX artwork replaces the development warning layer.
+   // Do not replace rectangles with a new schematic made of dots/arrows/diamonds.
+   // Persistent areas retain their own source/lifetime and are not cast warnings.
+   let source=null;try{if(!threat.persistent)source=this.formalSource(threat);}catch{/* unavailable art retains one fallback */}
+   if(source?.kind==='action-assets'&&Array.isArray(source.assetKeys)&&source.assetKeys.length>=2){this.presentations.set(threat.id,{mode:'formal-action',assetKeys:source.assetKeys,progress:p.progress});continue;}
    this.presentations.set(threat.id,{mode:'fallback',color,progress:p.progress});
    if(p.shape==='circle'){
     g.fillStyle(color,.12+.12*p.progress).fillEllipse(p.center.x,p.center.y,p.radiusX*2,p.radiusY*2);

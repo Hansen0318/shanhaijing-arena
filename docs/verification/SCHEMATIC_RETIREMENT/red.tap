@@ -1,0 +1,215 @@
+✖ loaded formal Heavy sources retire all schematic commands throughout its warning lifetime (6.063129ms)
+✖ formal source gate requires all actual textures, never an asset name or procedural descriptor (0.421847ms)
+✖ missing or invalid formal sources retain one fallback and restore it after an actual texture loss (1.475827ms)
+✖ all developed action categories retire schematic geometry using shared source resolution (3.299659ms)
+✖ independent persistent areas, pause and cleanup retain their own ownership (0.363859ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 130.159715
+
+✖ failing tests:
+
+test at tests/formalWarnings.test.js:16:1
+✖ loaded formal Heavy sources retire all schematic commands throughout its warning lifetime (6.063129ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      [
+        'clear'
+      ],
+  +   [
+  +     'fillStyle',
+  +     7595519,
+  +     0.12
+  +   ],
+  +   [
+  +     'lineStyle',
+  +     3,
+  +     7595519,
+  +     1
+  +   ],
+  +   [
+  +     'beginPath'
+  +   ],
+  +   [
+  +     'moveTo',
+  +     1.8908589687336501,
+  +     0.4365641250653994
+  +   ],
+  +   [
+  +     'lineTo',
+  +     5.89085896873365,
+  +     1.4365641250653993
+  +   ],
+  +   [
+  +     'lineTo',
+  +     6.10914103126635,
+  +     0.5634358749346007
+  +   ],
+  +   [
+  +     'lineTo',
+  +     2.1091410312663497,
+  +     -0.4365641250653994
+  +   ],
+  +   [
+  +     'closePath'
+  +   ],
+  +   [
+  +     'fillPath'
+  +   ],
+  +   [
+  +     'strokePath'
+  +   ],
+  +   [
+  +     'fillStyle',
+  +     7595519,
+  +     0.12
+  +   ],
+  +   [
+  +     'fillEllipse',
+  +     2,
+  +     0,
+  +     0.9000000000000004,
+  +     0.8999999999999999
+  +   ],
+  +   [
+  +     'lineStyle',
+  +     3,
+  +     7595519,
+  +     1
+  +   ],
+  +   [
+  +     'strokeEllipse',
+  +     2,
+  +     0,
+  +     0.9000000000000004,
+  +     0.8999999999999999
+  +   ],
+  +   [
+  +     'fillStyle',
+  +     7595519,
+  +     0.12
+  +   ],
+  +   [
+  +     'fillEllipse',
+  +     6,
+  +     1,
+  +     0.9000000000000004,
+  +     0.8999999999999999
+  +   ],
+  +   [
+  +     'lineStyle',
+  +     3,
+  +     7595519,
+  +     1
+  +   ],
+  +   [
+  +     'strokeEllipse',
+  +     6,
+  +     1,
+  +     0.9000000000000004,
+  +     0.8999999999999999
+  +   ],
+  +   [
+  +     'lineStyle',
+  +     2,
+  +     16777215,
+  +     0.8
+  +   ],
+  +   [
+  +     'lineBetween',
+  +     2,
+  +     0,
+  +     6,
+  +     1
+  +   ]
+    ]
+
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:19:90)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ [ 'clear' ], [ 'fillStyle', 7595519, 0.12 ], [ 'lineStyle', 3, 7595519, 1 ], [ 'beginPath' ], [ 'moveTo', 1.8908589687336501, 0.4365641250653994 ], [ 'lineTo', 5.89085896873365, 1.4365641250653993 ], [ 'lineTo', 6.10914103126635, 0.5634358749346007 ], [ 'lineTo', 2.1091410312663497, -0.4365641250653994 ], [ 'closePath' ], [ 'fillPath' ], [ 'strokePath' ], [ 'fillStyle', 7595519, 0.12 ], [ 'fillEllipse', 2, 0, 0.9000000000000004, 0.8999999999999999 ], [ 'lineStyle', 3, 7595519, 1 ], [ 'strokeEllipse', 2, 0, 0.9000000000000004, 0.8999999999999999 ], [ 'fillStyle', 7595519, 0.12 ], [ 'fillEllipse', 6, 1, 0.9000000000000004, 0.8999999999999999 ], [ 'lineStyle', 3, 7595519, 1 ], [ 'strokeEllipse', 6, 1, 0.9000000000000004, 0.8999999999999999 ], [ 'lineStyle', 2, 16777215, 0.8 ], [ 'lineBetween', 2, 0, 6, 1 ] ],
+    expected: [ [ 'clear' ] ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/formalWarnings.test.js:22:1
+✖ formal source gate requires all actual textures, never an asset name or procedural descriptor (0.421847ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'undefined'
+  - 'function'
+
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:23:40)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/formalWarnings.test.js:29:1
+✖ missing or invalid formal sources retain one fallback and restore it after an actual texture loss (1.475827ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'fallback'
+  - 'formal-action'
+
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:33:95)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'fallback',
+    expected: 'formal-action',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/formalWarnings.test.js:36:1
+✖ all developed action categories retire schematic geometry using shared source resolution (3.299659ms)
+  TypeError [Error]: assets.formalActionSource is not a function
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:39:23)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests/formalWarnings.test.js:43:1
+✖ independent persistent areas, pause and cleanup retain their own ownership (0.363859ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'fallback'
+  - 'formal-action'
+
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:45:97)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'fallback',
+    expected: 'formal-action',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

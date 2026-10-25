@@ -1,3 +1,7 @@
+## 2026-10-25 — 最新玩家修正：正式技能已可用就撤整層示意，不能只換成另一套幾何
+
+IMG_2864已證明ground-sigil-v1膠囊/箭頭/方塊仍是正式水浪下的示意圖；不得把它當正式VFX替代完成或玩家核准。依最新玩家直接改正指令，真action descriptor完整貼圖已載入且TextureManager存在時，由核准動作/蓄勢/飛行/命中圖承接，撤掉同record所有示意幾何；不再要求另疊精確範圍框。真threat ledger/範圍/時序/傷害不變。缺任一真來源才一份fallback；獨立場域/正式狀態/固定場地不誤刪。詳細decisions/2026-10-25-retire-schematic-under-formal-actions.md。下方ground-sigil或要求完整幾何承接的舊段落與此衝突處由本節取代。
+
 ## 2026-10-24 — Heavy清晰版 PLAYER APPROVED／COMPLETE；新Work直接接Special回瀾
 
 玩家「確認ok，紀錄，接下來我要開新的work無縫接軌接手下面的，確認好進度規則流程，就給我prompts，我要他讀取後直接做下面的」明確核准已呈交release30423cc清晰版。精確hash收據 docs/art/approved/chiru/heavy/clarity-v1/acceptance.json；原整體Heavy/runtime-v1與所有美術收據保持。Basic及Heavy已PLAYER VERIFIED；P3整角未完成。新Work直接執行Special「回瀾」第一未完Gate：沿核准spec做必要差異核對→一張F3角色關鍵姿勢候選→呈交停待玩家核准。獨立接手入口 docs/handoffs/P3_CHIRU_SPECIAL_NEXT_WORK.md。

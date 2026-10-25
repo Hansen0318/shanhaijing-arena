@@ -35,8 +35,8 @@ try{
    const loadedOne=p.displays.size===1&&[...p.displayKinds.values()][0]==='image'&&[...p.displayTextureKeys.values()][0]===overlayKey;
    p.optionalFailures.add(overlayKey);p.textures.delete(overlayKey);paint();const missingFallback=p.displays.size===1&&[...p.displayKinds.values()][0]==='graphics';p.textures.set(overlayKey,loadedOverlay);p.optionalFailures.delete(overlayKey);paint();const replacedAgain=p.displays.size===1&&[...p.displayKinds.values()][0]==='image';p.playback.clear();paint();const formalReplacement=loadedOne&&missingFallback&&replacedAgain;
    const warnings=[];for(const shape of ['circle','lane'])for(const sourceTeamId of ['allies','enemies']){
-    const t={sourceId:a.instanceId,sourceTeamId,category:'heavy',createdAtMs:0,impactAtMs:1000,geometry:{shape,origin:{x:3,y:0},center:{x:6,y:0},radius:.6}};
-    sc.telegraphs.render([t],100);const early=JSON.stringify(sc.telegraphs.graphics.commandBuffer);sc.telegraphs.render([t],800);const late=JSON.stringify(sc.telegraphs.graphics.commandBuffer);warnings.push(early.length>10&&early!==late);
+    const t={id:'case-warning',sourceId:a.instanceId,sourceTeamId,category:'heavy',createdAtMs:0,impactAtMs:1000,geometry:{shape,origin:{x:3,y:0},center:{x:6,y:0},radius:.6}};
+    sc.telegraphs.render([],100);const empty=JSON.stringify(sc.telegraphs.graphics.commandBuffer);sc.telegraphs.render([t],100);const early=JSON.stringify(sc.telegraphs.graphics.commandBuffer);sc.telegraphs.render([t],800);const late=JSON.stringify(sc.telegraphs.graphics.commandBuffer);warnings.push(early===empty&&late===empty&&sc.telegraphs.presentations.get(t.id)?.mode==='formal-action');
    }paint();const warningRetention=warnings.every(Boolean);
    const otherRecipient=fx.fish.size===1&&view.active.targetId===b.instanceId,actualHeal=Math.abs(b.hp-before-b.maxHp*[.08,.12,.16,.2][Number(tier.slice(1))])<1e-8,approvedPng=image?.texture.key===texture.key,fullOpacity=image?.alpha===1,mirror=image?.flipX===(sign<0),sameScale=Math.abs(image?.displayWidth-180)<1e-8&&Math.abs(image?.displayHeight-144)<1e-8,bodyUnchanged=JSON.stringify(idleBefore)===JSON.stringify([idle.texture.key,idle.displayWidth,idle.displayHeight,idle.originX,idle.originY]);
    const rim=[...fx.rims.values()][0],body=p.actorSprites.get(b.instanceId),rimTracks=()=>rim?.length===16&&rim.every(i=>i.texture.key===body.texture.key&&i.frame.name===body.frame.name&&i.flipX===body.flipX&&i.originX===body.originX&&i.originY===body.originY&&i.displayWidth===body.displayWidth&&i.displayHeight===body.displayHeight&&i.tintTopLeft===0x69ffc3&&i.tintMode===1&&i.depth<body.depth);
@@ -82,32 +82,40 @@ try{
   });
   if(!report.warnings){
    report.warnings=await page.evaluate(()=>{
-    const sc=window.__chiruScene,defs=sc.session.characterDefinitions,project=sc.visualAssets.project,result=[];
-    const reader=()=>{const gl=sc.game.renderer.gl,w=gl.drawingBufferWidth,h=gl.drawingBufferHeight,bytes=new Uint8Array(w*h*4);gl.readPixels(0,0,w,h,gl.RGBA,gl.UNSIGNED_BYTE,bytes);return bytes;};
+    const sc=window.__chiruScene,defs=sc.session.characterDefinitions,assets=sc.visualAssets,project=assets.project,result=[];
+    const reader=()=>{const gl=sc.game.renderer.gl,bytes=new Uint8Array(gl.drawingBufferWidth*gl.drawingBufferHeight*4);gl.readPixels(0,0,gl.drawingBufferWidth,gl.drawingBufferHeight,gl.RGBA,gl.UNSIGNED_BYTE,bytes);return bytes;};
     for(const id of ['P1','P2','P3'])for(const category of ['basic','heavy','special','awakening'])for(const shape of ['circle','lane'])for(const sourceTeamId of ['allies','enemies'])for(const reducedMotion of [false,true]){
-     const descriptor=defs[id].warningDescriptors[category],p=new sc.telegraphs.constructor(sc,project,{warningSource:()=>descriptor,reducedMotion});
-     const t={id:'formal-matrix',sourceTeamId,category,createdAtMs:0,impactAtMs:1000,geometry:{shape,origin:{x:3,y:-.4},center:{x:6,y:.4},radius:.6}};
-     p.render([],0);sc.game.step(performance.now(),0);const blank=reader();
-     p.render([t],200);const early=JSON.stringify(p.graphics.commandBuffer);sc.game.step(performance.now(),0);const pixels=reader();let changed=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i]!==blank[i]||pixels[i+1]!==blank[i+1]||pixels[i+2]!==blank[i+2])changed++;
-     p.render([t],800);const late=JSON.stringify(p.graphics.commandBuffer),view=p.presentations.get(t.id),mode=view.mode;
+     const p=new sc.telegraphs.constructor(sc,project,{formalSource:()=>assets.formalActionSource(defs[id],category)});
+     const t={id:'retirement-matrix',sourceTeamId,category,createdAtMs:0,impactAtMs:1000,geometry:{shape,origin:{x:3,y:-.4},center:{x:6,y:.4},radius:.6}};
+     p.render([],0);const empty=JSON.stringify(p.graphics.commandBuffer);sc.game.step(performance.now(),0);const blank=reader();
+     p.render([t],200);const early=p.presentations.get(t.id).progress;sc.game.step(performance.now(),0);const pixels=reader();let changed=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i]!==blank[i]||pixels[i+1]!==blank[i+1]||pixels[i+2]!==blank[i+2])changed++;
+     p.render([t],800);const view=p.presentations.get(t.id),noSchematic=JSON.stringify(p.graphics.commandBuffer)===empty;
      p.render([],800);const cleared=p.presentations.size===0;p.destroy();p.destroy();
-     const entry={character:id,category,shape,sourceTeamId,reducedMotion,mode,motif:view.motif,color:view.color,progress:view.progress,clockChanges:early!==late,paintedPixels:changed,cleared,closed:p.closed,renderer:sc.game.renderer.type};
-     result.push(entry);if(mode!=='formal'||changed<20||!entry.clockChanges||!cleared||!entry.closed)throw Error('Formal warning WebGL failed '+JSON.stringify(entry));
+     const entry={character:id,category,shape,sourceTeamId,reducedMotion,mode:view.mode,assetKeys:view.assetKeys,clockChanges:early!==view.progress,paintedPixels:changed,noSchematic,cleared,closed:p.closed,renderer:sc.game.renderer.type};
+     result.push(entry);if(view.mode!=='formal-action'||changed!==0||!noSchematic||!entry.clockChanges||!cleared||!entry.closed)throw Error('Schematic retirement WebGL failed '+JSON.stringify(entry));
     }
-    for(const source of [null,{renderer:'missing'}]){
-     const p=new sc.telegraphs.constructor(sc,project,{warningSource:()=>source});const t={id:'fallback',sourceTeamId:'enemies',category:'heavy',createdAtMs:0,impactAtMs:1000,geometry:{shape:'lane',origin:{x:3,y:0},center:{x:6,y:0},radius:.6}};
-     p.render([t],500);if(p.presentations.get(t.id).mode!=='fallback'||p.graphics.commandBuffer.length<10)throw Error('Missing warning source must retain fallback');p.destroy();
-    }
-    // Six simultaneous native vector warnings in the actual Arena, for visual review.
-    const sources=new Map(),threats=[];let n=0;
-    for(const id of ['P1','P2','P3'])for(const sourceTeamId of ['allies','enemies']){
-     const column=n%2,row=Math.floor(n/2),x=column?6:1,y=-2+row*1.3,idKey='review-'+n++;
-     sources.set(idKey,defs[id].warningDescriptors.heavy);threats.push({id:idKey,sourceTeamId,category:'heavy',createdAtMs:0,impactAtMs:1000,geometry:{shape:'lane',origin:{x,y},center:{x:x+2,y:y+.3},radius:.35}});
-    }
-    window.warningReview=new sc.telegraphs.constructor(sc,project,{warningSource:t=>sources.get(t.id)});window.warningReview.render(threats,700);sc.game.step(performance.now(),0);return result;
+    const key=assets.formalActionSource(defs.P3,'heavy').assetKeys.find(k=>k.includes('Column')),loaded=assets.textures.get(key);
+    const p=new sc.telegraphs.constructor(sc,project,{formalSource:()=>assets.formalActionSource(defs.P3,'heavy')}),t={id:'missing-real-texture',sourceTeamId:'enemies',category:'heavy',createdAtMs:0,impactAtMs:1000,geometry:{shape:'lane',origin:{x:3,y:0},center:{x:6,y:0},radius:.6}};
+    assets.textures.delete(key);p.render([t],500);const missing=p.presentations.get(t.id).mode==='fallback'&&p.graphics.commandBuffer.length>10;assets.textures.set(key,loaded);p.render([t],500);if(!missing||p.presentations.get(t.id).mode!=='formal-action')throw Error('Actual missing texture must restore one fallback');p.destroy();
+    return result;
    });
-   await page.locator('canvas').screenshot({path:path.join(out,(built?'built':'native')+'-formal-warnings.png')});
-   await page.evaluate(()=>{window.warningReview.destroy();delete window.warningReview;});
+   report.heavyRetirement=await page.evaluate(()=>{
+    const sc=window.__chiruScene,s=sc.session,p=sc.visualAssets;sc.paused=true;sc.game.loop.sleep();s.clearTransientCombat();s.passives.clear();s.tacticalEnabled=true;sc.battleStarted=true;sc.preBattleRemaining=0;sc.preBattleGate.remaining=0;sc.countdownText.setVisible(false);
+    for(const a of s.actors){a.heal(a.maxHp);a.controlHandoff.resumeAfterMs=Infinity;s.holdPlayerControl(a.instanceId);s.setPlayerMovement(a.instanceId,{x:0,y:0});s.cadence.set(a.instanceId,99);for(const slot of Object.values(a.abilityState))Object.assign(slot,{phase:'cooldown',cooldownRemaining:99});a.x=a.teamId==='allies'?-1:10;a.y=1.5;}
+    const caster=s.actors.find(a=>a.teamId==='allies'&&a.definitionId==='P3'),target=s.enemies.find(a=>a.hp>0);caster.x=3;caster.y=0;target.x=6;target.y=0;Object.assign(caster.abilityState.heavy,{phase:'ready',cooldownRemaining:0});
+    p.playback.clear();for(const a of s.actors)p.clearAction(a.instanceId);sc.telegraphs.render([],s.elapsedSeconds*1000);const empty=JSON.stringify(sc.telegraphs.graphics.commandBuffer),before=target.hp,start=s.elapsedSeconds;
+    const paint=()=>{sc.renderCastEvents();sc.applyFrame(s.snapshot());sc.game.step(performance.now(),0);};
+    const executed=s.executeAbility(caster,'heavy','player',target);paint();window.heavyReview={sc,s,p,caster,target,start,before,empty,paint};
+    return {executed,source:p.formalActionSource(s.characterDefinitions[caster.definitionId],'heavy'),samples:[],renderer:sc.game.renderer.type};
+   });
+   for(const [phase,at]of [['startup',.15],['flight',.5],['contact',.705],['recovery',1.1]]){
+    const sample=await page.evaluate(({phase,at})=>{const {sc,s,p,caster,target,start,before,empty,paint}=window.heavyReview;s.step(Math.max(0,start+at-s.elapsedSeconds));paint();
+     const threats=s.threats.active(s.elapsedSeconds*1000),modes=[...sc.telegraphs.presentations.values()].map(v=>v.mode),effects=[...p.actionEffects.values()].flatMap(m=>[...m.values()]).concat([...p.stagedImpactSprites.values()]);
+     return {phase,at,threatCount:threats.length,modes,noSchematic:JSON.stringify(sc.telegraphs.graphics.commandBuffer)===empty,formalVisible:effects.filter(i=>i.visible&&i.alpha>0).map(i=>i.texture.key),damage:before-target.hp,bodyVisible:p.actorSprites.get(caster.instanceId)?.visible===true};
+    },{phase,at});
+    report.heavyRetirement.samples.push(sample);await page.locator('canvas').screenshot({path:path.join(out,(built?'built':'native')+'-heavy-no-schematic-'+phase+'.png')});
+   }
+   const h=report.heavyRetirement;assert.ok(h.executed&&h.source&&h.renderer===2);assert.ok(h.samples.every(s=>s.noSchematic&&s.bodyVisible&&s.modes.every(m=>m==='formal-action')));assert.ok(h.samples.find(s=>s.phase==='flight').threatCount>0);assert.ok(h.samples.find(s=>s.phase==='flight').formalVisible.length>0);assert.ok(h.samples.find(s=>s.phase==='contact').damage>0);
   }
   await context.close();
  }

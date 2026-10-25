@@ -1,3 +1,7 @@
+## 2026-10-25 — 最新玩家修正：正式技能已可用就撤整層示意，不能只換成另一套幾何
+
+IMG_2864已證明ground-sigil-v1膠囊/箭頭/方塊仍是正式水浪下的示意圖；不得把它當正式VFX替代完成或玩家核准。依最新玩家直接改正指令，真action descriptor完整貼圖已載入且TextureManager存在時，由核准動作/蓄勢/飛行/命中圖承接，撤掉同record所有示意幾何；不再要求另疊精確範圍框。真threat ledger/範圍/時序/傷害不變。缺任一真來源才一份fallback；獨立場域/正式狀態/固定場地不誤刪。詳細decisions/2026-10-25-retire-schematic-under-formal-actions.md。下方ground-sigil或要求完整幾何承接的舊段落與此衝突處由本節取代。
+
 ## 2026-10-24 — Special 回瀾 F3 v3 PLAYER APPROVED；新Work直接接其餘動作／獨立VFX／GIF
 
 玩家原文：「我確認ok，紀錄，我會開新的work無縫接軌接續，確認紀錄規則流程進度後給我prompts給新的work接續後，直接往下進行」。明確核准已呈交checkpoint777eeda1ea66f06ef9fde26abd8ef3f232b86082的Special F3 v3高托/低展姿勢。精確收據 `docs/art/approved/chiru/special/f3-v3/acceptance.json`；候選SHA256 1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8，imagegen原圖SHA256 47d456cef60db7515017734e7cacc3ba8ec61b65efcf5f1015c396c78bc60f41。F3 Gate CLOSED，保護原圖/透明padding圖/manifest/QA，不重畫、不重問核准；原manifest/REVIEW的PENDING是呈交歷史，由此收據覆蓋。v2與舊batch仍不採用、原封保留。

@@ -2,6 +2,9 @@
 【山海經聯盟｜正式預警替換已部署；新Work只接玩家遊戲驗收／實際新回饋】
 所有後續交接指令維持單一完整、自足、可一鍵複製的code block。
 
+[最高優先最新修正]
+IMG_2864玩家直接回報38cdd8c仍有示意膠囊/箭頭/方塊，前次ground-sigil只是換皮，未達要求；不是玩家核准。先讀docs/verification/SCHEMATIC_RETIREMENT/WORK_LOG.md與docs/decisions/2026-10-25-retire-schematic-under-formal-actions.md。修正已寫：撤向量來源，真action完整已載入且TextureManager存在才直接撤同record示意；缺圖fallback。新來源正常CI真零geometry/Heavy四時段畫面、Pages/public尚待，不沿用下方舊96案「畫得出幾何」證據。此項優先於下方舊「只等玩家核准」。不重做已寫程式，先完成新真驗證/部署，P3未COMPLETE。
+
 [恢復與保護]
 專案 Hansen0318/shanhaijing-arena。GitHub最新remote唯一權威；分支 feat/m0-combat-core-20260927；PR#1保持open/unmerged，禁止merge main。產品發布定位38cdd8c607a74f304b66dc31b9b983f443048bc5，之後純證據文件有新commit；先fetch最新HEAD，核對本機未push/tree，不拿定位SHA覆蓋新成果。原生單人、不委派、不新branch/worktree、不動TD、不重置存檔、不動無關untracked。
 先讀最新AGENTS、WORK_PROGRESS、docs/STATE頂端、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、docs/decisions/2026-10-23-restore-sequential-skill-workflow.md、CHARACTER_ACTION_ART_WORKFLOW、M5C_ART_ANIMATION_VFX，以及docs/verification/FORMAL_WARNING_RUNTIME/{REPORT.md,release.json,WORK_LOG.md,source-guards.json,ci-local-build.json,public-fingerprints.json,protected-sources.json,publish-method.json}與docs/verification/P3_PASSIVE_RUNTIME/CURRENT.json。

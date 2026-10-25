@@ -1,4 +1,3 @@
-import {windWarnings,stoneWarnings,waterWarnings} from '../assets/warningDescriptors.js';
 import {chiruAwakeningAction} from '../assets/chiruAwakeningRuntime.js';
 import {chiruSpecialAction} from '../assets/chiruSpecialRuntime.js';
 import {chiruHeavyAction} from '../assets/chiruHeavyRuntime.js';
@@ -30,7 +29,6 @@ const animationDescriptor=input=>validateAnimationDescriptor(repackAnimationRows
 const botuoIdleAnimation=animationDescriptor({source:'botuo.battleIdle',frames:[{x:0,y:0,width:160,height:160}],fps:2.5,loop:true,origin:[.5,158/160],scale:2,staticFrame:0});
 const presentation={
  P1:{
-  warningDescriptors:windWarnings,
   actionDescriptors:Object.freeze({basic:packedAction({
    animation:{source:'lushu.battleBasic',frames:[0,128,256,384].map(x=>({x,y:0,width:128,height:128})),duration:.4,loop:false,staticFrame:2,origin:[.5,.8369846715109296],scale:2.4731182795698925},
    frameDurationsMs:[120,60,100,120],impactFrame:2,coordinateSize:[384,384],
@@ -50,7 +48,6 @@ const presentation={
   })}),
  },
  P2:{
-  warningDescriptors:stoneWarnings,
   actionDescriptors:Object.freeze({basic:actionDescriptor(calibrateActionBody({
    animation:{source:'botuo.basicPoses',frames:[0,158,316,474].map(x=>({x,y:0,width:158,height:143})),duration:.57,loop:false,staticFrame:2,origin:[35/158,142.2/143],scale:158/72},
    frameDurationsMs:[160,90,160,160],impactFrame:2,coordinateSize:[158,143],
@@ -69,7 +66,6 @@ const presentation={
   })}),
  },
  P3:{
-  warningDescriptors:waterWarnings,
   actionDescriptors:Object.freeze({basic:actionDescriptor(chiruBasicAction),heavy:actionDescriptor(chiruHeavyAction),special:actionDescriptor(chiruSpecialAction),awakening:actionDescriptor(chiruAwakeningAction)}),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'chiru.portrait',collectionArt:'chiru.identity',battleIdle:'chiru.battleIdle',battleMove:'chiru.battleMove',battleKo:'chiru.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
