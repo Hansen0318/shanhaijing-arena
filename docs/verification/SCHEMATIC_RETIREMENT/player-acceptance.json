@@ -1,0 +1,33 @@
+{
+  "status": "PRESENTED d346798 RUNTIME PLAYER APPROVED / FINAL P3 GAMEPLAY GATE CLOSED",
+  "recordedDate": "2026-10-25",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "我確認核准，紀錄 我要創新的work，提供prompts，讓她無縫接軌，直接繼續往下個開發",
+  "presentedCheckpoint": "135faebbb1170105b308a504d92597d0fd250c12",
+  "acceptedRelease": "d346798cadf12efeada0f11e15f72c62a4d78eb6",
+  "scope": "Direct acceptance of the latest presented deployed runtime, including the remaining P3 passive/readability and actual schematic-retirement gameplay gate, with prior four active-skill approvals preserved. Authorizes next character development; does not approve unseen P4 designs/art/runtime.",
+  "notClaimed": [
+    "Unreported device model, FPS or exhaustive Tier/interrupt measurements",
+    "Approval of the superseded ground-sigil geometric reskin",
+    "Unseen P4 specification, art, GIF or runtime approval",
+    "A fresh test/build/browser/deployment in this approval-only slice"
+  ],
+  "evidenceSha256": {
+    "docs/verification/SCHEMATIC_RETIREMENT/release.json": "8b077308288bd7733143b10292ae8b2ebce4f5cbff7f96c66ca94f0a1f36fc41",
+    "docs/verification/SCHEMATIC_RETIREMENT/REPORT.md": "4cc9ab95e078f23aeadf4dc00c0bca68091050d1c6e340b98cc8cebf2b506abc",
+    "docs/verification/SCHEMATIC_RETIREMENT/source-guards.json": "2f3f52ff61d88dbf78e4795222e2e7eeadd8b3e0bca6f9f5ca7c92a54812dd8b",
+    "docs/verification/SCHEMATIC_RETIREMENT/ci-local-build.json": "8d62dc0b1471a9d7688714167a5a09a06633402f7bbeb1f674728a026d135676",
+    "docs/verification/SCHEMATIC_RETIREMENT/public-fingerprints.json": "008a3faec776fa2c6e8024764a86041fd9ebe63d6294c70bd60cfe3b47c4df98",
+    "docs/verification/SCHEMATIC_RETIREMENT/evidence-sha256.json": "b32d85f7c79823534a2fd17abd0afb6907a23808f0c018bcdde2ae2a7b40a964",
+    "docs/verification/SCHEMATIC_RETIREMENT/protected-sources.json": "985f7c12e71f37d6397c9ff111be3ed75a52c19f3e3a567b3bca5a8651f1e711",
+    "docs/art/approved/chiru/basic/runtime-v1/acceptance.json": "7e0892b9f71b643f8ea8ba86f7a15225c8343c6d46f5d62de22f071695871ffc",
+    "docs/art/approved/chiru/heavy/runtime-v1/acceptance.json": "fdddb1d69eed7008390365ecdadbe93db141670e9cab409654b4d53f8191ee69",
+    "docs/art/approved/chiru/heavy/clarity-v1/acceptance.json": "8a8673ca28e79084dcb7551eb4cf1f59811c02545719cbd75b29aacdfc085816",
+    "docs/art/approved/chiru/special/runtime-v1/acceptance.json": "c3db5ed9d70c653b9ff9f13d9d9959a92d937845ce91c9bdf7a7593a9bb5302c",
+    "docs/art/approved/chiru/awakening/runtime-v1/acceptance.json": "707dcd1b5896ea02eca0f4927716bf775478c90dc20adac616960e63db7d8589",
+    "docs/art/approved/chiru/passive/style-v2/acceptance.json": "0cef71ddfd9f2d761ab32c0be5a5547d0ab0fe4d75ae4213649779af97f1b9d0",
+    "docs/art/approved/chiru/passive/composite-review-v1/acceptance.json": "69f425160db7da89d928c4f8a40fad34043714ef4fadaf9a77af36a2caf7fd67",
+    "docs/art/approved/chiru/passive/readability-review-v1/acceptance.json": "ea79ce07d2da507374154f01b45d472bef67ce927df7e47e5838d094ddad6094",
+    "docs/verification/P3_CHARACTER_CLOSURE/acceptance-audit.json": "d372eef1591aa1c9d0d339037c3fe7dc03fb2176744514e39c5652d07c04a5e4"
+  }
+}

@@ -1,14 +1,14 @@
 {
-  "status": "ACTUAL FORMAL ACTION SCHEMATIC RETIREMENT DEPLOYED / PLAYER GAMEPLAY ACCEPTANCE PENDING",
+  "status": "PLAYER APPROVED / PASSIVE COMPLETE / P3 COMPLETE / P4 SPEC PREFLIGHT NEXT",
   "sourceCommit": "d346798cadf12efeada0f11e15f72c62a4d78eb6",
   "normalPagesRun": 40163995446,
   "p1Run": 40163995418,
   "p2ExactSourceRun": 40163995443,
   "tests": 1229,
   "build": "PASS /110 assets /6378266 encoded bytes",
-  "next": "Present d346798; wait for player gameplay acceptance or actual new feedback. No repeated unchanged-source verification or new character.",
-  "playerRuntimeAcceptance": false,
-  "p3Complete": false,
+  "next": "P4 九尾狐 mechanism preflight and full specification proposal; use P4_JIUWEIHU_NEXT_WORK.md. No repeat P3 verification.",
+  "playerRuntimeAcceptance": true,
+  "p3Complete": true,
   "buildJob": 121081184936,
   "deployJob": 121083539138,
   "ciLocalFiles": 172,
@@ -47,9 +47,11 @@
   "schematicRetirement": {
     "report": "docs/verification/SCHEMATIC_RETIREMENT/REPORT.md",
     "deployed": true,
-    "playerAcceptance": false,
+    "playerAcceptance": true,
     "nativeZeroGeometryCases": 96,
     "builtZeroGeometryCases": 96,
     "actualHeavyPhaseScreenshots": 8
-  }
+  },
+  "playerAcceptanceReceipt": "docs/verification/SCHEMATIC_RETIREMENT/player-acceptance.json",
+  "closure": "docs/verification/P3_CHARACTER_CLOSURE.json"
 }

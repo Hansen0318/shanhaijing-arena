@@ -1,0 +1,1729 @@
+{
+  "receipts": [
+    {
+      "receipt": "docs/art/approved/chiru/awakening/composite-review-v1/acceptance.json",
+      "sha256": "7a00de446f0ebc5b9b5b571b81c09bcf0e361a4103509c9d679d1f1017ffdef0",
+      "status": "AWAKENING POSES / INDEPENDENT VFX / 13 GIF PLAYER APPROVED",
+      "boundHashes": 68,
+      "checks": [
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/DESIGN.md",
+          "sha256": "397e0f58078f1158f46d6f5b83e41523e42cadc30a75a834e9795f2ceb744558",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/F1-padded-master.png",
+          "sha256": "b06f009862e172058b1a9d5fc1197a2d01c1a720a1d354ce1bb8a81b6197792d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/F1-safe-cell.png",
+          "sha256": "a1fb7ca6fda734d74aeff318cbd10228273a64a9fd34e8f5ac9fd8891c624170",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/F2-padded-master.png",
+          "sha256": "d874915cdb8003de9e4b0821256ecbb6a444dcbf97036de88eeba0533e0f94b9",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/F2-safe-cell.png",
+          "sha256": "e0d6517d2531231c81d0e5cac1e4214428d6d93230c9496dcb0073f5450df17e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/F3-padded-master.png",
+          "sha256": "7f23b33b22196ef59e0e996b4a901db5134280a0731f17f17d0e9ab511d3d340",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/F3-safe-cell.png",
+          "sha256": "7a5d3a83288509ff38edd0100870e8cf4913eb042561d5b8185aa35cbe165c01",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/F4-padded-master.png",
+          "sha256": "dda3ce35cb31138e52f682eb86f1152608d04786fcdd3e9b648190acaf33a563",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/F4-safe-cell.png",
+          "sha256": "dde66554b657c8e22c35b5cd332896da05faafcd1f421eafb510a03d2d95d719",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/QA_REPORT.md",
+          "sha256": "3c998d3a0198cdcc81a81e0794c8793ca3f7e2df859c35ceefe4d7afce0a5564",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/REVIEW.md",
+          "sha256": "f43e5638025b968074c8db8aa758f0e6593fa4d86448d8ab729405f8824b35e8",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/START_HERE.md",
+          "sha256": "df59625ffb32ed6bbc557f03dc944cdf0428fbbeeeb7ffbeac7a193ea3cfd252",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/WORK_HANDOFF.md",
+          "sha256": "236430a94376287a9c531f457a787f5e2781478ed6083446dcda05f5a8dc01d3",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/approved-idle-return-cell.png",
+          "sha256": "e0e00ad64ca81187b2e9e4115d02ca55cafd440a481b38cdc7c64044f80ec314",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/awakening-vs-special-noFX.gif",
+          "sha256": "b28caca67b45f09e37e952f590d54b585fd058b44a4f2d0ae0c1cb7c6bb93e93",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/awakening-vs-special-noFX.gif.timeline.json",
+          "sha256": "bcba96f09d1dc3b6ced0edafd13bac9354f741746082ba8bf9993189be946989",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/awakening-vs-special.gif",
+          "sha256": "e83bd207f09da4bc5032a8050601b8a583c36ac52c7277b2029007f14d23ad76",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/awakening-vs-special.gif.timeline.json",
+          "sha256": "c1239a1bf3d7ad74221596d9ea9049d27e6271df74487fa41bb29019b14dc63e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/caster-display.png",
+          "sha256": "13fc866051240b928385d891151f3cbf901a39eff81bdb5090e899120e79a9a6",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/caster-padded-master.png",
+          "sha256": "c4e8cd34a4006a784381a1aa239ca1825dc5650f96cdb56c43d7e495858a32b5",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-cancel-before600.gif",
+          "sha256": "b6e158cf67274673edb193ea2ab8a139974b0e2869608da058162299d9e44acd",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-cancel-before600.gif.timeline.json",
+          "sha256": "43532100529d1dc62cc474d70bae526b5a4710b3b258358539c2a2a3e2d13c7e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-full-hp-protection.gif",
+          "sha256": "58cb597382f30672281fc87c2f7ac19ab5d620c705901355dd0a95b1756a65a2",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-full-hp-protection.gif.timeline.json",
+          "sha256": "851a665cdf0ee0a7cd31397b5e80fbbde8aa4f894f9ef52540a3aa0729553881",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-fx-only.gif",
+          "sha256": "c995f34b5a931f2d0ac98b19ca5d19f5d3f426d5fb0c8a6f307565012812915a",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-fx-only.gif.timeline.json",
+          "sha256": "1b13e67872aae4435731063446f55bab05fa63357f0d39e21d42936a98f42855",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-idle-return.gif",
+          "sha256": "7051231baaee179ef2b58b2672096084001d3469ee71f7bbd4d836dee7785f93",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-idle-return.gif.timeline.json",
+          "sha256": "449c61b5d28ad32c2b09cf61273eb0863d278168309d041b7f0bce51e5d2d4c3",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-left-mirror.gif",
+          "sha256": "dd50a4606205f51298d2d7980dc75ce59c03a4efdd9f1020fdeb650540e980c7",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-left-mirror.gif.timeline.json",
+          "sha256": "c1239a1bf3d7ad74221596d9ea9049d27e6271df74487fa41bb29019b14dc63e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-noFX.gif",
+          "sha256": "3d7616b901205c95392bf3415731a30d897a7c51492d847b60d121371a9638b1",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-noFX.gif.timeline.json",
+          "sha256": "bcba96f09d1dc3b6ced0edafd13bac9354f741746082ba8bf9993189be946989",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-normal.gif",
+          "sha256": "1ff3cf75f49d02a316f4ac766f14cb6fec4f5d3f2b5686d7befd6da14a5224ce",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-normal.gif.timeline.json",
+          "sha256": "c1239a1bf3d7ad74221596d9ea9049d27e6271df74487fa41bb29019b14dc63e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-phone-390.gif",
+          "sha256": "d96daf8eb71b67a244fbe8bd980818ed5e06da605a2af75a96178ad4cf551de9",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-phone-390.gif.timeline.json",
+          "sha256": "c1239a1bf3d7ad74221596d9ea9049d27e6271df74487fa41bb29019b14dc63e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-reduced.gif",
+          "sha256": "34b20f8470c4a9b1b1f34dfbb339d258781ab880bb3bd313f866883b0c94783c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-reduced.gif.timeline.json",
+          "sha256": "1b13e67872aae4435731063446f55bab05fa63357f0d39e21d42936a98f42855",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-slow.gif",
+          "sha256": "835f2de15d519b2afb436f2f6a4d7344c8d8c21da72ee7d9864e4faceadd23bd",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-slow.gif.timeline.json",
+          "sha256": "105408ee18eaf9f41a6eb68134fa56321c3af8900cfab7860335e5c97cd20919",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-t3-positive.gif",
+          "sha256": "c2084567dee4f7906da548be4ff4e59a58acc486de60c8af7baa5767e02b8c02",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/chiru-awakening-t3-positive.gif.timeline.json",
+          "sha256": "1b13e67872aae4435731063446f55bab05fa63357f0d39e21d42936a98f42855",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/comparison-own-peaks.png",
+          "sha256": "87ad7b98813a5c97d534345d89cf6e0aaa0cc0ecd6981d81aa5f64bd4f38952a",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/comparison-peak-preview.png",
+          "sha256": "1a0e08526bc9c9aac091b4bebb90f34d5141aaeff1c50b6e700b1020d4edfa47",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/composite-light-dark-QA.png",
+          "sha256": "71de5c57c5822ff131d8122d4acd8ffd21bed31fb0e508998741c16a6704ac68",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/four-equal-cells.png",
+          "sha256": "3ac17ddaf67571be681c710a5d0b900237e53a2e816cde46446c1b361cacade2",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/four-skill-noFX-QA.png",
+          "sha256": "8b1096492ec76ce4a767b09530c1198969384d40f8aaa89e6fb35480e387d4c2",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/fx-light-dark-QA.png",
+          "sha256": "09a4ce6489505fd3c81ae7ccd0ebf312fe0a2aa3de4522cf585959ec7804e703",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/generation-inputs.json",
+          "sha256": "919587e4f55f6bf368989e37cf69cf2089366a73382976acefc82405e8641679",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/heal-peak-preview.png",
+          "sha256": "eb2beb3c150cdd14314bd194e0540ce16bab534ec33d3ea70c91c6bca5ec70af",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/manifest.json",
+          "sha256": "9a46ac430acdebcd0ed4420320ff86db7f84b011025b2bcc21f60e854af6b7e8",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/mirror-light-dark-QA.png",
+          "sha256": "4212654eb1a12c26b8e8e2aadbe34bfe743449632fbcd9142ed9a865e1623eac",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F1.png",
+          "sha256": "3df9ece9c9641417e2d70c1bed94691dfe22f3c23cfad62c8a0968e4ed666d84",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F2-attempt1.png",
+          "sha256": "adc3b085f0e4b216184921be7f8eab2274bd78bf9ceb05e4b1f543c72f339fa7",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F2.png",
+          "sha256": "472dd9a6a5725929217e5b8a7d6280e269158219d5cee78fb6c4c51e58f07ae8",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/F4.png",
+          "sha256": "7f29fd1f01b16c268a19924a7aaebf1d8fcf852b5abaa7c3a3402f9d20ddc892",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/caster.png",
+          "sha256": "366376f72c3c8c1e900711635cb1262ba4028b5d1844e43e18244fadf8a13b12",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/protection.png",
+          "sha256": "f4db86fed3c394fec62b88b03f840a36df2e5cc25733212a0cc8b74cb5b4ae62",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/originals/recipient.png",
+          "sha256": "a5ea9530bc30c5caa0fde33d23e03ad898172a19032a9be84a21c24426ef5b2e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/poses-light-dark-QA.png",
+          "sha256": "78f0f37f04805689c06b532149bc12c5d8678f4b77b11a21a89819989168c16d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/prepare_preview.py",
+          "sha256": "6db380f3eeaf4695e3f20a4a2c66a4cc7b646ab17aecacc998aab940b14b20ea",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/prompts.json",
+          "sha256": "ab77803fb2a19b91cc259bd5e53b74f80288a4f39e34f32fa9cc63081ec6ab12",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/protected-hashes.json",
+          "sha256": "66d6a027693c67e67ee49ffa4e61fbd9e7a525ca71dd1906f5003b69e92eeb5c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/protection-display.png",
+          "sha256": "ec94d953c064f3b17c78d6dfa60a94bf481401e1e8bbcd08e58ad53a6c9d81ee",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/protection-padded-master.png",
+          "sha256": "b3c94b9ac4a0936cae0007174ca1720088483205b8ab709ba7a9680f8c9aca38",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/recipient-display.png",
+          "sha256": "7c60cbd6de5bcf1143a60937f1b7d2072d5c6ae257b538ac9d31423f625bb842",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/recipient-padded-master.png",
+          "sha256": "a5c50163c66fb6660047114a8f02508ddb3abedee7e1e3cdbcddfa08df11ca87",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/checksums.json",
+          "sha256": "e83e1c0d3f619ad100bdfe202ad6621d038828c1f094078285052bff11fd8b03",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/awakening/f3-v2/acceptance.json",
+      "sha256": "ae5e05432e047faf674083280bd78c098568a890eba79c0ced1aaef290d2ca7f",
+      "status": "AWAKENING F3 v2 PLAYER ART APPROVED",
+      "boundHashes": 5,
+      "checks": [
+        {
+          "path": "docs/art/candidates/chiru/awakening/f3-v2/manifest.json",
+          "sha256": "61299b81e6d0a9a13a0e4374c7adc91aae7d0f98e86294e158dfec60e6bc5d2e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/f3-v2/prompt.txt",
+          "sha256": "400a56c8ba73b1dc6b09ba7b1f124cfbb5b9ed557ef65169a877366fbcb01686",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/f3-v2/REVIEW.md",
+          "sha256": "ff7f6d3035938be9906e59ce9051d7339838c15051e950eb23814701869614c1",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/f3-v2/prepare_qa.py",
+          "sha256": "c98e5a9b54a64f97c37da1f6e5c3573726302215d55f7f4188b3e0fe4c4d9347",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/f3-v2/checksums.sha256",
+          "sha256": "c9041440a3be504b11ba6b8196ac56830782d179cc2ca76a7d2690d6e569f320",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/awakening/runtime-v1/acceptance.json",
+      "sha256": "707dcd1b5896ea02eca0f4927716bf775478c90dc20adac616960e63db7d8589",
+      "status": "AWAKENING RUNTIME PLAYER APPROVED / AWAKENING COMPLETE / PASSIVE NEXT",
+      "boundHashes": 11,
+      "checks": [
+        {
+          "path": "docs/verification/P3_AWAKENING_RUNTIME/release.json",
+          "sha256": "b383c3db34108846775b11f069107f08e1952868c8731891a126e6b54d5794c8",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_AWAKENING_RUNTIME/REPORT.md",
+          "sha256": "f6cd227111e7616b506b1b96072003c30352f5c4f0eb761721262a6949d6d888",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_AWAKENING_RUNTIME/release-evidence.json",
+          "sha256": "53ab9c07952b772c52fe01828f3e68aa8526cb74e8b0cf403953da104d8c0aaf",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_AWAKENING_RUNTIME/public-fingerprints.json",
+          "sha256": "6ccc62b548a229a6fac2fff483cd5cf1024dab36e32e039b5b047085e02d5db8",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_AWAKENING_RUNTIME/ci-build-inventory.json",
+          "sha256": "dee383597621ac1d34da0775165c47fc14a173d9f8a54fcd7444af528ac1609c",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_AWAKENING_RUNTIME/packing.json",
+          "sha256": "4295c680da3fee6e0e01e97b735c7bd08ee26d4fad255df1a517dbc62d6a7e9b",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_AWAKENING_RUNTIME/browser/reuse-proof.json",
+          "sha256": "d700d945feefd83d120ba4dc4209bf7d655a1129a77812522745e69614f6978f",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_AWAKENING_RUNTIME/browser/native.json",
+          "sha256": "6eb3c7fb92cf42c0d1aa47d59b62ac8a3c92c518a197620e9167f12f816ae379",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_AWAKENING_RUNTIME/browser/built-entry.json",
+          "sha256": "78e0d910204588369d907c7e0e6fb369d852666e3991ecb370e17d4322edf5f2",
+          "match": true
+        },
+        {
+          "path": "docs/art/approved/chiru/awakening/composite-review-v1/acceptance.json",
+          "sha256": "7a00de446f0ebc5b9b5b571b81c09bcf0e361a4103509c9d679d1f1017ffdef0",
+          "match": true
+        },
+        {
+          "path": "docs/art/approved/chiru/awakening/f3-v2/acceptance.json",
+          "sha256": "ae5e05432e047faf674083280bd78c098568a890eba79c0ced1aaef290d2ca7f",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/basic/composite-review-v1/acceptance.json",
+      "sha256": "ce553fa39bbd76cf68d23ff0b5d178710269b59b2b36d8f344b9865f7e6943d5",
+      "status": "BASIC POSES / INDEPENDENT VFX / COMPOSITE GIF PLAYER APPROVED",
+      "boundHashes": 31,
+      "checks": [
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-reduced.gif.timeline.json",
+          "sha256": "22afade630a25a91ea473956faf859bbab53081edca782f78bc9312987499710",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-noFX.gif.timeline.json",
+          "sha256": "22afade630a25a91ea473956faf859bbab53081edca782f78bc9312987499710",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-miss.gif",
+          "sha256": "005d60eac36094c85eddb9032819e6e5cd4710db03619736f5e9b543f6e222db",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-normal.gif",
+          "sha256": "76e4f7db26a8f23b1c917209aa6cfcd1b1b23dc38b95cc5186929abfe0979f3c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/approved-idle-return-cell.png",
+          "sha256": "700d0e0d56732b174e04ca83d5ce97edbca3537273a4665e8210663a121f9ab2",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/F2-safe-cell.png",
+          "sha256": "2f8f66771b546e0936d8e85af3281b3e52e251aa0a2f70ea89d428c4391f855a",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/F1-safe-cell.png",
+          "sha256": "a905c2c07bae73973792c912e92f4b9abb9a81ad8d98d12aa6479ac37ed076b4",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/charge-display.png",
+          "sha256": "28d327e805c26a43859b872066b1c941de1e0e251f38d29ddf473e4ef347747d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/impact-display.png",
+          "sha256": "6fe7f2e8125cd8f1ae3ebf9f4ac7b09b0a7127118b6cf13413902f153244aed6",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/manifest.json",
+          "sha256": "c465150a48b4331f381217cb7171753fbc68387c0f19318a627c033f8181908c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/prepare_preview.py",
+          "sha256": "ab11d8be2c7d0ce4808a75d0cc595f544f4e727848dd752b58f16a96d8b8ded3",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-reduced.gif",
+          "sha256": "d6da37341357a879c6db9fd12a783b203a2206b50e1e539903ff2c93a9dc3099",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/poses-light-dark-QA.png",
+          "sha256": "fdb5c18803a81fba3010abea58fe8ab0370e467f5ece6d80df5d7031d72597e4",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-slow.gif",
+          "sha256": "caabd9bcd5293525319c87dd63a2a01568e8a89e40ed182266fb0fa348663e33",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-slow.gif.timeline.json",
+          "sha256": "acfb04b0a74c62db233e1444b0e97b88107ff7c4ca830b44c86945dca86f28de",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-miss.gif.timeline.json",
+          "sha256": "22afade630a25a91ea473956faf859bbab53081edca782f78bc9312987499710",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/F4-safe-cell.png",
+          "sha256": "92c7e589ce990ec59f66f988f875ba2ba56306c4b0d44df9c1bccf5b5d5933a8",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/prompts.json",
+          "sha256": "3317dbc33a39ca84ba296760f3233973e17561b44311c84fe849a2e3728dbf08",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/REVIEW.md",
+          "sha256": "df5af7bf9d04c44f99b0f4e92e51c424b72d1f07a77acf84794439bab73059f4",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/four-equal-cells.png",
+          "sha256": "ee5fcd552c499e026240605f796779594e3f2eb051589724360039f5dee9cdad",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-normal.gif.timeline.json",
+          "sha256": "22afade630a25a91ea473956faf859bbab53081edca782f78bc9312987499710",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/chiru-basic-noFX.gif",
+          "sha256": "6d48e083401b67525472577ee167f309966276f3c821dda0f3c8ef1c65161dd1",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/F3-safe-cell.png",
+          "sha256": "115349f6eed44a7f6d4c33269dbe6d7fdc572a34fa6dc32607312fa0e73f661f",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/arrow-display.png",
+          "sha256": "e96e622f9fca31f4895f57d777cd48b979cb1e1e98513b685ce927fa12111650",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/contact-preview.png",
+          "sha256": "58a07e731d8f9506406355f62b5dc0265977a8e4164b4d7ac4a340276e76372b",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/originals/F1.png",
+          "sha256": "4cf1440a570ed1e9d6f42747d3ad124d3dba3d6839c55696a1823860a26bf934",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/originals/charge.png",
+          "sha256": "9ad55ab47a95aa8af9874b48acb10e16cd760c18f00c924c6cc7db221c5c5615",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/originals/F2.png",
+          "sha256": "dd237e0f19e084a677f8a8f01d4894ece8b79bc6ef63e2f8d55fb5fe7cd6fe74",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/originals/impact.png",
+          "sha256": "4df301c6cc36910d834aa707f370486a2e80ab80e3de63c8aec7ce0144fa805d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/originals/arrow.png",
+          "sha256": "0a8480cd1246658774637e7636b4e0216597996be92b6d27bebea1ce0c56d31b",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/basic/composite-review-v1/originals/F4.png",
+          "sha256": "49378158cc3736063e0c4a2682184be1b0a87f1c32227e479011be8b4e97e7b8",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/basic/f3-v2/acceptance.json",
+      "sha256": "40984cd971c94b544f9f9f4dea032977ffef9618978307116e38df7c934409a3",
+      "status": "BASIC F3 v2 / PLAYER ART APPROVED",
+      "boundHashes": 0,
+      "checks": []
+    },
+    {
+      "receipt": "docs/art/approved/chiru/basic/runtime-v1/acceptance.json",
+      "sha256": "7e0892b9f71b643f8ea8ba86f7a15225c8343c6d46f5d62de22f071695871ffc",
+      "status": "BASIC RELEASE PLAYER APPROVED; HEAVY F3 REVIEW NEXT",
+      "boundHashes": 3,
+      "checks": [
+        {
+          "path": "docs/verification/P3_BASIC_RUNTIME/release.json",
+          "sha256": "f22ee50697c88029e28807183b40bb14f423e63877a45c2526f59601864e3df3",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_BASIC_RUNTIME/REPORT.md",
+          "sha256": "9b3975740f99e776d87949f8728bd3699bfb76c3238c09d97b4703ad64da9c75",
+          "match": true
+        },
+        {
+          "path": "docs/art/approved/chiru/basic/composite-review-v1/acceptance.json",
+          "sha256": "ce553fa39bbd76cf68d23ff0b5d178710269b59b2b36d8f344b9865f7e6943d5",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/heavy/clarity-v1/acceptance.json",
+      "sha256": "8a8673ca28e79084dcb7551eb4cf1f59811c02545719cbd75b29aacdfc085816",
+      "status": "HEAVY CLARITY PLAYER APPROVED / HEAVY COMPLETE / SPECIAL NEXT",
+      "boundHashes": 5,
+      "checks": [
+        {
+          "path": "docs/verification/P3_HEAVY_CLARITY/release.json",
+          "sha256": "4d4545223d7383bac340cdfb7bf586038ad6f93634d58dbfaa540875aa911bef",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_HEAVY_CLARITY/release-evidence.json",
+          "sha256": "a9bdda6ca15482d30384ba147ca94c31b1c42461e12f44dfc802237a4c214453",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_HEAVY_CLARITY/public-fingerprints.json",
+          "sha256": "01088fd888b3cef33e488cc320d9dd07137614bc608e4f5f6cc98863625e1206",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_HEAVY_CLARITY/packing.json",
+          "sha256": "22fac00c6f8764b8c29d484fcebdf9b1d233aa264595da8305661cfc9d735031",
+          "match": true
+        },
+        {
+          "path": "docs/art/approved/chiru/heavy/runtime-v1/acceptance.json",
+          "sha256": "fdddb1d69eed7008390365ecdadbe93db141670e9cab409654b4d53f8191ee69",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/heavy/composite-review-v1/acceptance.json",
+      "sha256": "0bce688d2389f1f387b13c405549c91e87824b2f46c53cc6b6d3ec7c75018454",
+      "status": "HEAVY POSES / INDEPENDENT VFX / GIF PLAYER APPROVED",
+      "boundHashes": 43,
+      "checks": [
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/F1-safe-cell.png",
+          "sha256": "8a1ea89405c406b724a75d5bc05d123687af895e2e84c211ae3f43e90a584d71",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/F2-safe-cell.png",
+          "sha256": "fb8da13ef8a925df7b3148e55cfa2f5ae1270d7f7d9ea79fb5b3369b2a6c203e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/F3-safe-cell.png",
+          "sha256": "b13552025f7b7b7d57ad85a1cadf6e8345241fab2a9d3280c123da67c2032881",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/F4-safe-cell.png",
+          "sha256": "e215fdb0e2667442239ad636474fb96533706c40f0e5d4bb6f0249b23059a01e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/REVIEW.md",
+          "sha256": "d656dbd8a4787bec2bac6329666b1332bc12ff20e040c49f9e32acc68774ab7c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/approved-idle-return-cell.png",
+          "sha256": "e0e00ad64ca81187b2e9e4115d02ca55cafd440a481b38cdc7c64044f80ec314",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/charge-display.png",
+          "sha256": "76d38fadbc5d0a4307f1a489c517d3ab1930c8b321a56d6107c2ac1280b8656d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/checksums.json",
+          "sha256": "1306dbeb8d2645592eb333a241f1776a60008dbe9d707e4d8c1b20bdff57cae6",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-idle-return.gif",
+          "sha256": "7c05eeba0212b29b32c968213e0d6a98fd8f2a4741ad2c8d8598667a3bffc0cf",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-idle-return.gif.timeline.json",
+          "sha256": "03b17bfd4c59b46a550e4811ead896622ff55d744ed7d3b9f23d161fa1b64b31",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-mirror.gif",
+          "sha256": "5c8a85c06ab1499c75ae159aa87905f241093b7ae88a822ff345ca8870cadc95",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-mirror.gif.timeline.json",
+          "sha256": "9cdbbfb923c88f265fdcb1969495ec62f3bf02aba0ce517ed90cd89316de4eee",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-miss.gif",
+          "sha256": "b617d45b44950b6cd704335ebe6171366cd08ebb041593c25c8fb8dec438b774",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-miss.gif.timeline.json",
+          "sha256": "03b17bfd4c59b46a550e4811ead896622ff55d744ed7d3b9f23d161fa1b64b31",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-noFX.gif",
+          "sha256": "7c05eeba0212b29b32c968213e0d6a98fd8f2a4741ad2c8d8598667a3bffc0cf",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-noFX.gif.timeline.json",
+          "sha256": "03b17bfd4c59b46a550e4811ead896622ff55d744ed7d3b9f23d161fa1b64b31",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-normal.gif",
+          "sha256": "b169c974a761e850fac53549414da3267cc9d0adcba359e806c6ffcfd750165a",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-normal.gif.timeline.json",
+          "sha256": "9cdbbfb923c88f265fdcb1969495ec62f3bf02aba0ce517ed90cd89316de4eee",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-reduced.gif",
+          "sha256": "c7974536baf787fb3227693487a762fc48abd9619d8d4cdcc3ebb066e4dbd42c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-reduced.gif.timeline.json",
+          "sha256": "9cdbbfb923c88f265fdcb1969495ec62f3bf02aba0ce517ed90cd89316de4eee",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-slow.gif",
+          "sha256": "8b3aa17becb03dc58989b1e35fbc6d61f42d22486af18f8b3c9a0c7a481f08d0",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/chiru-heavy-slow.gif.timeline.json",
+          "sha256": "804ed62669cc81d80cf0dd3b863741770085c0d97e1fdd23274fe52d74ee54b7",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/column-display.png",
+          "sha256": "aba1f5324d377e7c24256d2f99b588d9a80cb1406727cf1d0e8f32da9b2353db",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/contact-preview.png",
+          "sha256": "b35fcdbda708fddd4571601837db5461d37a153f6bf434e99eac5a6c36be4cc5",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/four-equal-cells.png",
+          "sha256": "0511f250c0c891867d0c940b2b162dea56c032b7ded09924ee984659c57d4355",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/fx-light-dark-QA.png",
+          "sha256": "54184744d5790762e51bf1ad8e38ec065e3de3ea8bc74ce44c3a638756543ac4",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic-noFX.gif",
+          "sha256": "7f109657d9c32e39d4d9eea866defcce62294c4e10b3bce5a24404e51e6cff93",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic-noFX.gif.timeline.json",
+          "sha256": "1d49a0c7f4f8dc206a4685773a158de565981360ee8254d66c25d57e06f41044",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic.gif",
+          "sha256": "d68c8ebed28b9b3006e4aad9af7774ca3565ed0f31024baa099425a0984a9d94",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/heavy-vs-basic.gif.timeline.json",
+          "sha256": "6029420207dd091a57ddacc569ec6d06d54dc04697989270c876dbfe05b51973",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/impact-display.png",
+          "sha256": "8093e1130da9065563ddab38818885f454c6d9ad03924c1d125a829f39919d6b",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/manifest.json",
+          "sha256": "c24b8970d432b720d8b4cf9b8c7d25646a8fbe024c2b6e54c323e04e0a5b54fd",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/normal-contact-sheet.png",
+          "sha256": "b21c858f6ac2beebe67d987da95ef64365ba3c886fcebf79c5c5aefc6843ab66",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F1.png",
+          "sha256": "f4e440af16e32ed745b44a091a4c77c8426f117c44c89a66cc21156aa84382a9",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F2.png",
+          "sha256": "8cd0da4da82e76892515e245c51d5c52f39636ba44eec0fa0281fd99b5555f02",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/F4.png",
+          "sha256": "211486c178da48c58b3cc8f7acfb8fba189724d621ec62f1ed37ccdf46666410",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/charge.png",
+          "sha256": "2a0f11be62c1b24a6de3c92eba343748b59bfabe638081f857ef091e64b3c13e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/column.png",
+          "sha256": "e7105c43de59a83d1dce94cafdb00e3071358a4ca2b1a2f705d1e994b367db72",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/originals/impact.png",
+          "sha256": "504f97c058d5716400da4367895402665eb14c81bcdc16774c733d5af1030e60",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/poses-light-dark-QA.png",
+          "sha256": "d66e98980ecf6e5bc846fbaaaea7c62960a8a71c1b0c9ee93f3c471158341786",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/prepare_preview.py",
+          "sha256": "d2b0fd57885f0d817d1916f1e2c5b8b20ccbc6a624b867cec48a0eaba9dc3083",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/prompts.json",
+          "sha256": "2fb550542f0f741fbc33499acf87c30485e47f4416b804fcdd3af8f162d4a871",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/heavy/composite-review-v1/tier-timeline.json",
+          "sha256": "53c60205f7e2d296fee9801223c1a597036a65c992bfdd1e81715762253a956c",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/heavy/f3-v3/acceptance.json",
+      "sha256": "c4c23e5020f90995e4919f306d9774b2e0bbef02ee4da447c638f8211166de38",
+      "status": "HEAVY F3 v3 PLAYER APPROVED",
+      "boundHashes": 0,
+      "checks": []
+    },
+    {
+      "receipt": "docs/art/approved/chiru/heavy/runtime-v1/acceptance.json",
+      "sha256": "fdddb1d69eed7008390365ecdadbe93db141670e9cab409654b4d53f8191ee69",
+      "status": "HEAVY OVERALL GAME EFFECT PLAYER APPROVED / CLARITY FOLLOW-UP AUTHORIZED",
+      "boundHashes": 4,
+      "checks": [
+        {
+          "path": "docs/verification/P3_HEAVY_RUNTIME/release.json",
+          "sha256": "8a20bdcf18932173ece74feed31930a1bc8ab34cce5a2e288ce83381560cbd92",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_HEAVY_RUNTIME/release-evidence.json",
+          "sha256": "3fc506d034b500dd8330357b9f75707878b1a18b7197b909e099fedf0eadee3b",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_HEAVY_RUNTIME/public-fingerprints.json",
+          "sha256": "d9d58f20ebfd593412376e0dbd0a275f6550d036e7a8cced36c9cee6c124220f",
+          "match": true
+        },
+        {
+          "path": "docs/art/approved/chiru/heavy/composite-review-v1/acceptance.json",
+          "sha256": "0bce688d2389f1f387b13c405549c91e87824b2f46c53cc6b6d3ec7c75018454",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/passive/composite-review-v1/acceptance.json",
+      "sha256": "69f425160db7da89d928c4f8a40fad34043714ef4fadaf9a77af36a2caf7fd67",
+      "status": "PASSIVE GIF PLAYER APPROVED / RUNTIME AND DEPLOYMENT NEXT",
+      "boundHashes": 21,
+      "checks": [
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/REVIEW.md",
+          "sha256": "f3304a673f30ab0ef2b7887ccc064643927dc279b1115e438b8aba24b48b592e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/caster-ko.gif",
+          "sha256": "2011af3952ba57d58faa096f7334f10749ae8a7ab4a9e7783510fc3f0487569a",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/directions-idle.gif",
+          "sha256": "5605415ccc131aea60adfd3b24e05c0b582801820e8e419fa6bf5741aa7fdace",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/encoded-verification.json",
+          "sha256": "489197598f25630ed56771a7bb090071a030ac5a05e9f29cd18452ab118c62f5",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/lifecycle.gif",
+          "sha256": "5a6bbfe8e1c83cd4f3f8130762873fda20c136f92db11cb173f9ed3d7e6e5a36",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/manifest.json",
+          "sha256": "edca2076d0d06be54c51fdc93ae7fd7647f479eb97c045bfd265f6be9c39c293",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/other-recipient.gif",
+          "sha256": "64195bdeef63be49c3cd75f3b7c2565882458dcb554a8dd6ce58e4c9e5023930",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/prepare_gifs.py",
+          "sha256": "810b657a2544eb93c79663619d02cc102c4dd5a0f994aa6fc7030774a6715656",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/recipient-ko.gif",
+          "sha256": "ae4081c5e8b38e0540d6e7ab97b34461034775c7b9bcfd59b96a9b3b5b1b280c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/self-zero.gif",
+          "sha256": "21ef4daeeb74d4d5e7578190d84539d709436e5d90b20c7db125a5c020cc8ce1",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal-1000.png",
+          "sha256": "d0ef5d3564540d91229318d1bbf9aa759eed2ea2a7a1435af0def5dcf45a921d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal-1050.png",
+          "sha256": "dc81c9b3096a9d8d43199f25dd4d635fc774c4ee8e262ce6a2508ce3be71e92c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal-400.png",
+          "sha256": "087560b9ac79f8228469e4d892d7c2a3b64d9487d3f8e13a2dd4c2043029bf8d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal-700.png",
+          "sha256": "e42713842171638cdc184965cec074cbb14375e7eb6db97ec55cf6ffc63d18d8",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/tiers-normal.gif",
+          "sha256": "7b8497bc3feb16ebfde427824a78497724903d899e64ee1ff5ecd287a629c767",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/tiers-reduced.gif",
+          "sha256": "408a2ba7915c59c16136627e11f2c5da89d3dfe73439e72e3d6168a8b870f5ca",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/timeline.json",
+          "sha256": "7df2f5bf26a3474819e02d810365d08745c3b0f2b9868afbf81f66441d8e7d2c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/verification.json",
+          "sha256": "7eedb9a29f7596c8f9e3f075b5d4a53a53bb179f82568badf3763b0fa1e574ae",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/verify_review.py",
+          "sha256": "f4e3cd1d2e5fa247ba3c0295a8ed198a5a53c85c0bf1c56ae0724b818c6f55da",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/vfx-only.gif",
+          "sha256": "8cfb499b1066ce3c04831b34a204f212a908dd3d4d4d241a9d4b6b3c73c61094",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/composite-review-v1/SHA256SUMS.json",
+          "sha256": "9d3a326a04805cc40f18e7ac924166c88c656da8cbaffb3de51c228ffd1c26f4",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/passive/readability-review-v1/acceptance.json",
+      "sha256": "ea79ce07d2da507374154f01b45d472bef67ce927df7e47e5838d094ddad6094",
+      "status": "REVISED PASSIVE VISUAL/GIF PLAYER APPROVED; RUNTIME REVISION NEXT",
+      "boundHashes": 33,
+      "checks": [
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/REVIEW.md",
+          "sha256": "066e8ea2f395b0714c40f8f3ac1205cddf4557c0f584325dfa1405ab3b809236",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/T0-strokes-mint.png",
+          "sha256": "7322c058f4b38a1e5f49196da9a82cd1787d3a9ddded3b7001a4f249d457dd68",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/T0-style.png",
+          "sha256": "7a49f3c6dcbaff8217e56e04f2b8dcfbd443d0e4a319f010cda2c9a264384828",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/T1-strokes-mint.png",
+          "sha256": "9059aab0434c59ee02ed2a8c00d6aa29d068db206ad2f1d1f789c887b8ebb6d2",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/T1-style.png",
+          "sha256": "2085ba6168a0b952b3dc39f68a79be25dd8ff05af634d8dfe10453ff497b4794",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/T2-strokes-mint.png",
+          "sha256": "9b262e3f6961c624efac5331c3328a89a85a77c4574d07a124c0881d0f2baa86",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/T2-style.png",
+          "sha256": "0384528d5c1a99001093acdb8434b3580e5c8bae59db13010ba171b7158e3a6e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/T3-strokes-mint.png",
+          "sha256": "553e76ad40d43244fb41868f6cd939727bad7464c39dff3d9e1a8605b9737eaa",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/T3-style.png",
+          "sha256": "0cc1d8a6e3e4603d47fea5076ce4c1049466f502ecd9b4351e650be378ca220e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/caster-ko.gif",
+          "sha256": "aa38f3e2d41e6a13f1f582e909ce7e9a48df834f35c92a831164935d5ae4296e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/crowded-comparison.gif",
+          "sha256": "e6a03f95a1678f7f3ece2e40e960bf261f384212e3ae1642f8e727d23bb9ddae",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/crowded-comparison.png",
+          "sha256": "8fd3d8fffd36d30d9fd97ed2337f7850aa5a735b65a4d556b6fd42c591ba6175",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/crowded-reduced.gif",
+          "sha256": "1bfd5932cb3f021a33f590cb2bfa721b99b5bd792b767e937c70612648b1c003",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/directions-idle.gif",
+          "sha256": "086e1ec9bda6dabde1b595a072f58c3c5c25fec26c0b523a5d4343d7a501dd1a",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/encoded-verification.json",
+          "sha256": "4bc410bd7899d5be4c99f5348a63b4862a9b60ca52fb3ef07701d0338f865824",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/idle-rim-reference-only.png",
+          "sha256": "85de32969a3d54c1e9c1967cb5f03b9619b4f0629ac6b2a05ef614a90f3fe9b8",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/lifecycle.gif",
+          "sha256": "659e1746d407f43bf26d79665ceb2221b0854e2dec7d0f0081c28dbae3bcdd82",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/manifest.json",
+          "sha256": "7cc401bc09cc306548744dddbaa8989e4fe580221e9d7e6e69052a8dea3eef96",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/other-recipient.gif",
+          "sha256": "da3561cef5fc1b2ae060fc82515186bf264c34b62822c411470898a172d44e39",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/paired-fish-white.png",
+          "sha256": "069a82ac19bfc68c9d557cf7680f5792d1cc7426dfa68c90f564cbb8edf68806",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/prepare_review.py",
+          "sha256": "885a3a8967e3548a5c993b90e6a0c3b380a0ff5b70a98b7988251ec2ea8c2a73",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/recipient-ko.gif",
+          "sha256": "5e9bb8c1d86fe0f932ad71bae42be58c6e1c6bd2f78553140a0adc13b44230d4",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/self-zero.gif",
+          "sha256": "289909ce1a00837f2926a6bfae0a8e75b8e9be7e468639dc9d1695bb941bcb8a",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-normal-1000.png",
+          "sha256": "bc29ba901804229a081bf6054d4fc415251931068d1e149a975ed65f8ea8b1fb",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-normal-1050.png",
+          "sha256": "dc81c9b3096a9d8d43199f25dd4d635fc774c4ee8e262ce6a2508ce3be71e92c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-normal-400.png",
+          "sha256": "9281085699524d3df827180c144fa096b0ba92a7a092631352cbb522b2c9496f",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-normal-700.png",
+          "sha256": "bc4675d33717f5f2687c2de05f4764745ed29a49516d0a8f9467348077cd7af1",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-normal.gif",
+          "sha256": "b14f9d79db4cc98dc557d58f20078d157efba8d04f79d09f92b7233cac5191a2",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/tiers-reduced.gif",
+          "sha256": "ec4a5b477c2bc7021e887ee38a79900e3b41ccef0148255bbd625b853d5490cb",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/timeline.json",
+          "sha256": "7df2f5bf26a3474819e02d810365d08745c3b0f2b9868afbf81f66441d8e7d2c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/verification.json",
+          "sha256": "c64774c7391d164ca4ce30e707758805bb92f5fa0cd9440bd06ca84f08062247",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/verify_review.py",
+          "sha256": "09d428df6ef3cdf79d124524dfee10f4493987a38b99e35a0376a947515cd8c7",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/readability-review-v1/vfx-only.gif",
+          "sha256": "cdf61b5b4c5872cefaf7a440df5d82faf146b355ffd76f66c28def5d642755e1",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/passive/style-v2/acceptance.json",
+      "sha256": "0cef71ddfd9f2d761ab32c0be5a5547d0ab0fe4d75ae4213649779af97f1b9d0",
+      "status": "PASSIVE STYLE PLAYER APPROVED / GIF NEXT",
+      "boundHashes": 21,
+      "checks": [
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/REVIEW.md",
+          "sha256": "b0495bb7fdaef2f5dde58a5e4d8d65b6a240ae8f180ceff2e51b4f0991822f31",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/T0-strokes.png",
+          "sha256": "6e5303d0a6ae0da3b48ffab7bbd349aad49770175905a005d53c8bf2a675ddd6",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/T0-style.png",
+          "sha256": "878b6400cdf2954969299e49480c16fdc0326a83d0978a1e61c91ad9130039d5",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/T1-strokes.png",
+          "sha256": "265f300653f7532eb7fbe08ca512273315eb3ab2aeac564ea055d4b6942d5776",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/T1-style.png",
+          "sha256": "73aa45f913a155a8d3616a45864c28e74fe4f4f7213c29294a3055ebc75f39b0",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/T2-strokes.png",
+          "sha256": "55a74d5a5aadc5fe158039884dcc777cecf236d0680493a6d401b3cf28a18aac",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/T2-style.png",
+          "sha256": "b3f14c57239bac1cb7927926c32cdc408df762261fed516af26665069a630194",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/T3-strokes.png",
+          "sha256": "87161c62c3497b30c0ff8e7abd17e7d579dcfa99bed4ff48f86c776bfbf00aa2",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/T3-style.png",
+          "sha256": "87fe93096fe5b5ecb2ceaee5f2ee66a18f998d717b7f4ed9ccdee47ebe3d1ddf",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/manifest.json",
+          "sha256": "8ecdac9eab4dabc063356e7971d84a9e2ea63b4c412fd960da60f73ebccffb4f",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/originals/paired-fish.png",
+          "sha256": "c674da1b061fe8c978c7721fb9b0a8746fdbcfc62a796709d9bc8bca9be41892",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/paired-fish-display.png",
+          "sha256": "d849cf74b81412a35774d8480f27b96dfe062f804308c13b16139de5091e9d43",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/paired-fish-padded.png",
+          "sha256": "06ea55291442af0251b4d5c16f75e3b39c642baf7d89f3095fce3e4012ba1c75",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/prepare_preview.py",
+          "sha256": "2bb3e58c5d632f425b1c3250fc2588da94d6f964baa66d2af38a5fefc29a4245",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/prompt.txt",
+          "sha256": "0beae3200053ab4f25493ab8ba2caf02b19ef8812010af2865e34c672d19dc80",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/recipient-placement-review.png",
+          "sha256": "69127f40188d53205f8d3752e5dfc3af41b3f4473439c0f0263701412395209e",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/passive/style-v2/tier-style-review.png",
+          "sha256": "a52c4903cba06acb9d6f69605ce4468566a52f543293bfbdbd385782b30d2981",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/awakening/composite-review-v1/approved-idle-return-cell.png",
+          "sha256": "e0e00ad64ca81187b2e9e4115d02ca55cafd440a481b38cdc7c64044f80ec314",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_PASSIVE_PREFLIGHT/candidate-recovery.json",
+          "sha256": "2d07a10eb8d9a9c189edebb85b272a55c2eaf44ecee595f981fcf8e34c213103",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_PASSIVE_PREFLIGHT/runtime-readonly.json",
+          "sha256": "f3f06eca091d07a7e1186d62b84b922f3b92bff382f95793fe8b37f9e31079ea",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_PASSIVE_PREFLIGHT/style-verification.json",
+          "sha256": "391ffe0c30c59ef6c5e2554faea77734bcfbe6b504c2b5626e09fa621eefbb03",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/special/composite-review-v1/acceptance.json",
+      "sha256": "273cec8a958d033f8139b8bca7c5991c158e628c76f8036b6059695f91d110be",
+      "status": "SPECIAL POSES / INDEPENDENT VFX / GIF PLAYER APPROVED",
+      "boundHashes": 55,
+      "checks": [
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/F1-padded-master.png",
+          "sha256": "8c803351c234d026576920a938f491fd9d69ddc1d9b76103bca86e696aed9b4d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/F1-safe-cell.png",
+          "sha256": "acaa049a7e08a4b43ab2d9fc439885744b239006a46ee8623f869d5552ce4d6d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/F2-padded-master.png",
+          "sha256": "a22527b1b32006a7743f0556840add211f4bca5d1b83a35c8fb0c15a949d6586",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/F2-safe-cell.png",
+          "sha256": "965daba7c7e124f173926b8d1dea5e80bd363600e0576cbe78c9edb2a59c586f",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/F3-padded-master.png",
+          "sha256": "1ca80dc4237cb43c810d465cc6be9f67df1d12f293eab8a359cdb0d09c273ac8",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/F3-safe-cell.png",
+          "sha256": "8547d1aeff74761b531d2989f40a5768b03b116829fa4dd232737160b4ff7947",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/F4-padded-master.png",
+          "sha256": "57bd718b379002b98f64c1f4f17e3e18db23f4747e731419d91b34e38fabefc5",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/F4-safe-cell.png",
+          "sha256": "f767a5203c98013d09ccdcc85fab957107e81bc9a83e58977525821d2f421e00",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/REVIEW.md",
+          "sha256": "093873f3bee5b199a9e294b4fa79c00d770fbf87abde3b6ded0c96a1e870e8fd",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/approved-idle-return-cell.png",
+          "sha256": "e0e00ad64ca81187b2e9e4115d02ca55cafd440a481b38cdc7c64044f80ec314",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/caster-display.png",
+          "sha256": "d11dc3fbde070b6a92e06435250cb2d33c21dee3a0b15999ac777c292f014332",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/caster-padded-master.png",
+          "sha256": "5a1b272fb4f21d5315e5926535e6ab1a97b3889de2975218560eed5f961ab8cf",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-fx-only.gif",
+          "sha256": "a427615aafa5c1b4700458412c8959651a25226dc171c3c5282609068e4a90a0",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-fx-only.gif.timeline.json",
+          "sha256": "05864d1e13ea7b4f168d8a9bf30e998842cd6a14bee2ff6058d763fba4147976",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-idle-return.gif",
+          "sha256": "d0a9263f352a5940c1c1807802c7795cb24aad10fd16008e3f7f9ceb3b44fed0",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-idle-return.gif.timeline.json",
+          "sha256": "c0ad968230c609da8395efc1dc4e803d2b96151f65775cdb44e2fd217d72e6f7",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-left-mirror.gif",
+          "sha256": "b67cd69f44dad0453e72aed7c3e062d591a771cb1078935fee506fb04ebc6941",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-left-mirror.gif.timeline.json",
+          "sha256": "05864d1e13ea7b4f168d8a9bf30e998842cd6a14bee2ff6058d763fba4147976",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-noFX.gif",
+          "sha256": "c58bee12e095079ecd31564306b52686891a1e672d983f786fc3f03d1268e2d1",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-noFX.gif.timeline.json",
+          "sha256": "a75ebf45166e2d08832941cd58772126548775cb9e1fbab1df67b7c389f6b5da",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-normal.gif",
+          "sha256": "8b90967509b96e82214f7c8ab7f64dd90f3b3476c432e7c050fd97b6cd328e24",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-normal.gif.timeline.json",
+          "sha256": "05864d1e13ea7b4f168d8a9bf30e998842cd6a14bee2ff6058d763fba4147976",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-phone-390.gif",
+          "sha256": "d211de8f5878965271dc66ce7420c54b77c46b77f93634f1a9b726838a02ac60",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-phone-390.gif.timeline.json",
+          "sha256": "05864d1e13ea7b4f168d8a9bf30e998842cd6a14bee2ff6058d763fba4147976",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-reduced.gif",
+          "sha256": "7ae3fb696bccac4db5b6d21aba1be9cbe2ec5ee9089b4c9f3d7fe0c22bcfd7be",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-reduced.gif.timeline.json",
+          "sha256": "05864d1e13ea7b4f168d8a9bf30e998842cd6a14bee2ff6058d763fba4147976",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-slow.gif",
+          "sha256": "f78eaf6e8db63ef915c0d9a5761ceec036c074a5f4bb7d783de4ffa0d73190fe",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-slow.gif.timeline.json",
+          "sha256": "1cfb4463fdcf66ff5d7049ce754ced8bfe0ba883c39847248d4d98f9ae5db5d9",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-zero-heal.gif",
+          "sha256": "1c7d6beeebaf4dbd57a8d4b51f5044ae6411c271b18f53d921f74d84646bda4c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/chiru-special-zero-heal.gif.timeline.json",
+          "sha256": "741c9e7c15ecfd22b3b35c02137b76bbf05ba227886719f64b4fa4c65863ae96",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/comparison-own-peaks.png",
+          "sha256": "66cffba534b83da5ee3de58f77509fc33cd21f1aa194b9cd72d8ff14949a1f95",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/comparison-peak-preview.png",
+          "sha256": "5dcd08a063e8f2ab275e94c2220e97c3fd1fdd4597449dd5c789b7bf36eadb32",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/composite-light-dark-QA.png",
+          "sha256": "0ccd7f28de2e92978a047fce9ef64811cd75c069b6a2792b34df162884d1bd29",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/four-equal-cells.png",
+          "sha256": "b5ad7b64d5b6c0168ad1e932ed6246525d915e7fb6dd42ec933cdcfab0d16bfa",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/fx-light-dark-QA.png",
+          "sha256": "9bd7e49bc9da1672a5ad5ce08ef95961cbb5943129252cc14efd7a290b1389a1",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/generation-inputs.json",
+          "sha256": "3bfda2cf112b6fd21a9729e803556170a3cce9ccd5db97bbfdab52249a647503",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/heal-peak-preview.png",
+          "sha256": "5c6664b4e0102c66850b67276b0d1177afc30d86a386f2e17dfb162660dc9432",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/manifest.json",
+          "sha256": "68a29d6287a27fc6bd6ff6c5bf99c3fe7ec0a15917a02f89b7fa3f6e97b0860c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/originals/F1.png",
+          "sha256": "1d1980d29b1a5aadc9642d59829e2e016ee13d17788b5a2018a4cb176d1d845a",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/originals/F2-attempt1.png",
+          "sha256": "66caa31aa4a7459599f88e7144f02e8cf769a56b34aed8f01097e74f39706bf7",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/originals/F2.png",
+          "sha256": "03be00e86a53af37d2351fb8cfa1ab30640e98109f5a57f9d36b216a1d8073e8",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/originals/F4.png",
+          "sha256": "33238f4b306b83c244d9d24981e0ed322f45deb8ccf8a3048c42b7c24cced980",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/originals/caster.png",
+          "sha256": "64f3bd6c0b5875882d1075d0e6295b2d2e1daf63c3de5bf85ec59598bca0fc42",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/originals/recipient.png",
+          "sha256": "cd3caa7c377b28e4eeccb42ee470825252f048f8b1aeaafffcfded87d8090093",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/poses-light-dark-QA.png",
+          "sha256": "5ea6c3c517efe2cf9a33cee30b84e055a78061d6059aa4eb6d284da59b4701e4",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/prepare_preview.py",
+          "sha256": "31f40190ea066adae239921852d322e7f8082e90714e371cebdf61267e5a0bf8",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/prompts.json",
+          "sha256": "f56fc25c4be74183ba5a070128e44328c54f21e742b42f9a3bce4e24eda6a69b",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/recipient-display.png",
+          "sha256": "cb8dfd09714eea8f43bc96e1a2a36a95357b733420cd423cbd668b33fc640a92",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/recipient-padded-master.png",
+          "sha256": "135bca58cc10e2067a0b8a79f0416362ff116b687feae6623bccb11a7fb43e63",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/sources-qa.json",
+          "sha256": "76e0f338772bc1a790dc7a0418f85d8dcf271d7321e65161c995be7f1b952773",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/special-vs-heavy-noFX.gif",
+          "sha256": "ea5ec12f0913bfafeb96dca4aaef7c2ba0c330c9480b1d8a779f5bad5526e4f1",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/special-vs-heavy-noFX.gif.timeline.json",
+          "sha256": "9f9119d0c8e3f01ff7ad40f9a86cb7c0c24f3e5a9db3de23bdd355a967bfb8b5",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/special-vs-heavy.gif",
+          "sha256": "480bde89f2f7c45f517df4dd52a8f0f9346e315caa11254afd7d283d9244c14b",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/special-vs-heavy.gif.timeline.json",
+          "sha256": "0827ec61e5d72b9deaffc170a085ca9d3b7a8dda30977b01415677a566b9c74d",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/composite-review-v1/checksums.json",
+          "sha256": "ffe5af2c857e748d5c382b8d5991710eb29ef4f513ec08764d3cedb5a7d804d5",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/special/f3-v3/acceptance.json",
+      "sha256": "f3bbd7fdc271b2a1d80379f50499e4674357929989917668b0f9c962c1f5cf6b",
+      "status": "SPECIAL F3 v3 PLAYER APPROVED",
+      "boundHashes": 3,
+      "checks": [
+        {
+          "path": "docs/art/candidates/chiru/special/f3-v3/manifest.json",
+          "sha256": "1222c3f1072835036b8a860225c654b4c55c00c4e3a6e98ce57d58101ecab7b3",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/f3-v3/prompt.txt",
+          "sha256": "d4e224bb743a46e0f30feeb87526773ddfd37b3a7f16e71e0ba3302d3b94453c",
+          "match": true
+        },
+        {
+          "path": "docs/art/candidates/chiru/special/f3-v3/REVIEW.md",
+          "sha256": "83afabf4927802d134b81e67a0a30aed3cf07aa32da70a95ea1cc52deb2c335e",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/art/approved/chiru/special/runtime-v1/acceptance.json",
+      "sha256": "c3db5ed9d70c653b9ff9f13d9d9959a92d937845ce91c9bdf7a7593a9bb5302c",
+      "status": "SPECIAL RUNTIME PLAYER APPROVED / SPECIAL COMPLETE / AWAKENING NEXT",
+      "boundHashes": 7,
+      "checks": [
+        {
+          "path": "docs/verification/P3_SPECIAL_RUNTIME/release.json",
+          "sha256": "a7c8c723cc251f1bc461447a3de8bf2681b89d59553d8695c17c35c459bf9836",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_SPECIAL_RUNTIME/REPORT.md",
+          "sha256": "6d8e525841acd7e46f3261b7466ae79d84d25d93761c016b82fcd2f595d9ed9f",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_SPECIAL_RUNTIME/release-evidence.json",
+          "sha256": "69a1a3d35e3246046aafcea68edadab3a2ed90f8995a064d221056b4e29fb09a",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_SPECIAL_RUNTIME/public-fingerprints.json",
+          "sha256": "106084b0bd8287055f3b04fae0d69170d41c2bad29326562a62802730e1d7443",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_SPECIAL_RUNTIME/packing.json",
+          "sha256": "7af66145a492d140bb498b1c141fc0203a1ad818695d1193cf7d27b89382ed3c",
+          "match": true
+        },
+        {
+          "path": "docs/art/approved/chiru/special/composite-review-v1/acceptance.json",
+          "sha256": "273cec8a958d033f8139b8bca7c5991c158e628c76f8036b6059695f91d110be",
+          "match": true
+        },
+        {
+          "path": "docs/art/approved/chiru/special/f3-v3/acceptance.json",
+          "sha256": "f3bbd7fdc271b2a1d80379f50499e4674357929989917668b0f9c962c1f5cf6b",
+          "match": true
+        }
+      ]
+    },
+    {
+      "receipt": "docs/verification/P3_CHARACTER_PREFLIGHT/spec-acceptance.json",
+      "sha256": "4016db7d517536917aea7fd19b0cc1ac138c81e8ccf58e6173627c953991bb5c",
+      "status": "PLAYER APPROVED PRESENTED WHOLE-CHARACTER SPECIFICATION; ART NOT YET REVIEWED",
+      "boundHashes": 4,
+      "checks": [
+        {
+          "path": "docs/superpowers/specs/2026-10-23-chiru-whole-character-design.md",
+          "sha256": "59eca3f8f3bf143be6ce08496bdff87ad0dc2e8c01577d2ce263e3aa4cca2e29",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_CHARACTER_PREFLIGHT/proposal.json",
+          "sha256": "87b9b1f9e262ca1f8729fb79c56ae6e97b80bf8a11d8bfbd5fabb2be7f8ec517",
+          "match": true
+        },
+        {
+          "path": "docs/verification/P3_CHARACTER_PREFLIGHT/baseline.json",
+          "sha256": "d39e70572e778d4f5c2691c692eb76b2cee71bd775909a83db59c83d7b4665d9",
+          "match": true
+        },
+        {
+          "path": "docs/decisions/2026-10-23-whole-character-batch-workflow.md",
+          "sha256": "f2d3e2386339707b998f857abb7f75f763e44f203c5b66ed189b799c995b0ea3",
+          "match": false
+        }
+      ]
+    }
+  ],
+  "mismatches": [
+    {
+      "receipt": "docs/verification/P3_CHARACTER_PREFLIGHT/spec-acceptance.json",
+      "path": "docs/decisions/2026-10-23-whole-character-batch-workflow.md"
+    }
+  ],
+  "status": "PASS /313 current bound hashes +1 historically recovered superseded workflow hash; no unresolved mismatch",
+  "currentMatches": 313,
+  "historicalResolutions": [
+    {
+      "receipt": "docs/verification/P3_CHARACTER_PREFLIGHT/spec-acceptance.json",
+      "path": "docs/decisions/2026-10-23-whole-character-batch-workflow.md",
+      "acceptedSource": "2d7730cb12587269bd43f69166d4b24554b724a2",
+      "acceptedSha256": "f2d3e2386339707b998f857abb7f75f763e44f203c5b66ed189b799c995b0ea3",
+      "recoveredFile": "docs/verification/P3_CHARACTER_CLOSURE/historical-spec-workflow.txt",
+      "currentSha256": "04bfe6ad4d54ba006ffafea3a6f63adafef2364ee5daa95225ab2d51d49d6a1f",
+      "reason": "Current file deliberately adds SUPERSEDED notice after player restored sequential flow; approved numeric spec remains valid. Original receipt and current sequential rule are both preserved.",
+      "supersedingDecision": "docs/decisions/2026-10-23-restore-sequential-skill-workflow.md"
+    }
+  ],
+  "unresolved": []
+}

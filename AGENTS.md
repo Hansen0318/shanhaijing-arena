@@ -1,3 +1,11 @@
+## 2026-10-25 — 玩家核准d346798；P3赤鱬COMPLETE；P4九尾狐規格前檢NEXT
+
+玩家：「我確認核准，紀錄 我要創新的work，提供prompts，讓她無縫接軌，直接繼續往下個開發」。明確核准已呈交d346798之最後游息/辨識與真正退示意Runtime遊戲Gate，精確收據docs/verification/SCHEMATIC_RETIREMENT/player-acceptance.json與docs/art/approved/chiru/passive/runtime-v1/acceptance.json。既有四主動與base/Idle/Move/KO接受保持，普通Hit永久取消；P3整角結案docs/verification/P3_CHARACTER_CLOSURE.json/.md。17份既有收據314個綁定中313當前相符、1舊整包流程在原SHA精確恢復並確認已被逐招決策取代，原receipt/現行流程均保持，無未解決差異。
+
+下一角色P4九尾狐，直接授權新Work做真機制前檢與完整五招/T0–T3/素材/Collection規格提案，交新設計審核；既有P4形象/Idle/Move/KO不重畫不重審。目前無正式actionDescriptors、獨立passive未實作、未見已核准P4技能spec；不能把接續授權當未見設計核准。spec核准後才Basic→Heavy→Special→Awakening→Passive逐招F3→其餘動作/獨立VFX→GIF核准→Runtime/必要真驗證→正常Pages→玩家核准。唯一新Work入口docs/handoffs/P4_JIUWEIHU_NEXT_WORK.md；若remote已有更新則從第一真未完Gate恢復，不重做。
+
+本次僅保存核准、行政結案及交接[skip ci]，未改產品/素材或開始P4設計/美術/Runtime；沿用原1229/Build/native+built/正常Pages40163995446/public172相符證據，不重跑工程或部署。P1/P2/P3 COMPLETE，原生單人/原分支PR1 open-unmerged、不委派/新branch/worktree/TD/main merge/存檔；所有approved bytes/尺度/anchor/mirror/真事件VFX/被動Tier/清理與素材安全規則保持。前ground-sigil換皮示意未獲核准且已撤回，不能恢復；正式真貼圖已可用時退同record示意，缺來源才fallback。交接一個完整自足code block，先fetch最新GitHub。下方P3未COMPLETE/等待玩家核准由本收據覆蓋。
+
 ## 2026-10-25 — 最新：IMG_2864真正退示意已部署；只待玩家遊戲驗收
 
 產品d346798／正常Pages40163995446 SUCCESS。1229測試、96+96真零geometry、8張Heavy四時段實際畫面、20招/游息/四主動/P1P2真相容與guard657/692/589、CI-local/public172全部PASS（public3fresh＋169相同path/bytes/hash精確沿用）。前ground-sigil膠囊/箭頭/方塊只是換皮示意，已依最新玩家直接改正撤掉；不能恢復或把舊工程PASS當玩家核准。真action完整貼圖已載入且TextureManager存在時直接退該record整層示意；不另畫幾何。缺真來源才一份fallback；獨立場域/盾水膜/固定場地不誤刪，真戰鬥判定與approved bytes不變。入口docs/verification/SCHEMATIC_RETIREMENT/REPORT.md與最新WORK_PROGRESS/STATE/handoff；唯一下一Gate為玩家遊戲驗收或實際新回饋，P3未COMPLETE，不開始下一角色、不重驗來源未變成果。原生單人、同分支PR1 open-unmerged、不委派/新branch/worktree/TD/main merge/存檔。所有交接單一自足code block；每次繼續先fetch最新GitHub。下方ground-sigil/ACTIVE/未部署為歷史，由本節及最新decision覆蓋。

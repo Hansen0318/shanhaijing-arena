@@ -1,3 +1,11 @@
+## 2026-10-25 — 玩家核准d346798；P3赤鱬COMPLETE；P4九尾狐規格前檢NEXT
+
+玩家：「我確認核准，紀錄 我要創新的work，提供prompts，讓她無縫接軌，直接繼續往下個開發」。明確核准已呈交d346798之最後游息/辨識與真正退示意Runtime遊戲Gate，精確收據docs/verification/SCHEMATIC_RETIREMENT/player-acceptance.json與docs/art/approved/chiru/passive/runtime-v1/acceptance.json。既有四主動與base/Idle/Move/KO接受保持，普通Hit永久取消；P3整角結案docs/verification/P3_CHARACTER_CLOSURE.json/.md。17份既有收據314個綁定中313當前相符、1舊整包流程在原SHA精確恢復並確認已被逐招決策取代，原receipt/現行流程均保持，無未解決差異。
+
+下一角色P4九尾狐，直接授權新Work做真機制前檢與完整五招/T0–T3/素材/Collection規格提案，交新設計審核；既有P4形象/Idle/Move/KO不重畫不重審。目前無正式actionDescriptors、獨立passive未實作、未見已核准P4技能spec；不能把接續授權當未見設計核准。spec核准後才Basic→Heavy→Special→Awakening→Passive逐招F3→其餘動作/獨立VFX→GIF核准→Runtime/必要真驗證→正常Pages→玩家核准。唯一新Work入口docs/handoffs/P4_JIUWEIHU_NEXT_WORK.md；若remote已有更新則從第一真未完Gate恢復，不重做。
+
+本次僅保存核准、行政結案及交接[skip ci]，未改產品/素材或開始P4設計/美術/Runtime；沿用原1229/Build/native+built/正常Pages40163995446/public172相符證據，不重跑工程或部署。P1/P2/P3 COMPLETE，原生單人/原分支PR1 open-unmerged、不委派/新branch/worktree/TD/main merge/存檔；所有approved bytes/尺度/anchor/mirror/真事件VFX/被動Tier/清理與素材安全規則保持。前ground-sigil換皮示意未獲核准且已撤回，不能恢復；正式真貼圖已可用時退同record示意，缺來源才fallback。交接一個完整自足code block，先fetch最新GitHub。下方P3未COMPLETE/等待玩家核准由本收據覆蓋。
+
 ## 2026-10-23 — Heavy 湧浪 F3 v3 PLAYER APPROVED；新 Work 接續其餘姿勢與獨立 VFX/GIF
 
 玩家原文：「我核准，紀錄規則進度流程，我會開新的work接手」。明確核准呈交checkpoint 5c555d9586a71ea6b0aa1e471c871dc4fd1144f2 的單張 Heavy F3 v3。精確收據 docs/art/approved/chiru/heavy/f3-v3/acceptance.json，圖源 docs/art/candidates/chiru/heavy/f3-v3/heavy-f3.png，SHA256 8943837f65e321bc2bd7290280af829801e9735cf3e3033300ba991314e694f6。F3 Gate CLOSED，不重畫、不重問；v2與舊batch不採用但保留。候選manifest的舊PENDING為呈交歷史，由新收據覆蓋，原檔/manifest不改。

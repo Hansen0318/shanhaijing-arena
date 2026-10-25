@@ -1,0 +1,54 @@
+{
+  "status": "P3 COMPLETE / PLAYER VERIFIED BY EXISTING BASE AND SKILL ACCEPTANCES PLUS LATEST RUNTIME APPROVAL",
+  "recordedDate": "2026-10-25",
+  "timezone": "Asia/Taipei",
+  "auditSourceHead": "135faebbb1170105b308a504d92597d0fd250c12",
+  "branch": "feat/m0-combat-core-20260927",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "merged": false
+  },
+  "playerStatement": "我確認核准，紀錄 我要創新的work，提供prompts，讓她無縫接軌，直接繼續往下個開發",
+  "acceptedRelease": "d346798cadf12efeada0f11e15f72c62a4d78eb6",
+  "receiptSha256": {
+    "docs/art/approved/chiru/basic/runtime-v1/acceptance.json": "7e0892b9f71b643f8ea8ba86f7a15225c8343c6d46f5d62de22f071695871ffc",
+    "docs/art/approved/chiru/heavy/runtime-v1/acceptance.json": "fdddb1d69eed7008390365ecdadbe93db141670e9cab409654b4d53f8191ee69",
+    "docs/art/approved/chiru/heavy/clarity-v1/acceptance.json": "8a8673ca28e79084dcb7551eb4cf1f59811c02545719cbd75b29aacdfc085816",
+    "docs/art/approved/chiru/special/runtime-v1/acceptance.json": "c3db5ed9d70c653b9ff9f13d9d9959a92d937845ce91c9bdf7a7593a9bb5302c",
+    "docs/art/approved/chiru/awakening/runtime-v1/acceptance.json": "707dcd1b5896ea02eca0f4927716bf775478c90dc20adac616960e63db7d8589",
+    "docs/art/approved/chiru/passive/runtime-v1/acceptance.json": "6714c1a03cca166eed78b34c39f1ca33d30264f07ed91370fc119827c28404db"
+  },
+  "baseAuthoritySha256": {
+    "docs/verification/M5C_B_CHIRU_STATIC_RUNTIME.md": "ce42dabba4c7701fc95cf0a935c6b6ad7f5353a5c70230fdbd8069b43396f2cd",
+    "docs/verification/M5C_B_CHIRU_LOCOMOTION.md": "bfb600bcec06679afbc4dbf4196a26199f8a75d841a3a6818387d68bd7c020be",
+    "docs/verification/M5C_B_CHIRU_KO.md": "f7f8833c0aee7afccf73a7755c517ea1852a43c5ae012104dabd9f8fbf603b02",
+    "docs/verification/P3_CHARACTER_CLOSURE/base-acceptance-authority.txt": "3b2676647094cbcf6b9bc28c4192fb7561be85af28745e2bc9d275bcaa600e8c"
+  },
+  "acceptanceAudit": "docs/verification/P3_CHARACTER_CLOSURE/acceptance-audit.json",
+  "auditSha256": "d372eef1591aa1c9d0d339037c3fe7dc03fb2176744514e39c5652d07c04a5e4",
+  "ordinaryHit": "PERMANENTLY CANCELLED",
+  "remainingP3Gate": [],
+  "scope": "Administrative aggregation of accepted base/scale/Move/KO/four active skills and latest passive/revision gameplay approval; no new physical-device measurement or repeated engineering.",
+  "next": {
+    "character": "P4 九尾狐",
+    "gate": "Mechanism preflight and full character specification proposal; first missing design gate",
+    "handoff": "docs/handoffs/P4_JIUWEIHU_NEXT_WORK.md",
+    "authorized": true,
+    "specPlayerApproved": false,
+    "newArtOrRuntimeStarted": false
+  },
+  "reusedEngineering": {
+    "source": "d346798cadf12efeada0f11e15f72c62a4d78eb6",
+    "normalPagesRun": 40163995446,
+    "tests": 1229,
+    "warningRetirementCases": [
+      96,
+      96
+    ],
+    "actualHeavyPhaseScreenshots": 8,
+    "publicFiles": 172,
+    "publicFresh": 3,
+    "publicExactSourceReuse": 169
+  }
+}
