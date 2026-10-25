@@ -40,18 +40,19 @@ try{
   report.current={tier,tactical,reduced,sign,...result};
   for(const k of ['zeroMs','noLock','cadence','release','contact','mirror','ground','anatomy','formal','missing','absentTexture','handRoot','targetAnchor','pause'])assert.equal(result[k],true,k);assert.equal(result.renderer,2);assert.equal(result.frame,'352.0.176.160');if(built)assert.equal(result.callbackUsed,true);
   if(built||tier==='T0'&&tactical){const file=`${built?'built':'native'}-${tier}-${reduced?'reduced':'normal'}-${sign}.png`;await page.locator('canvas').screenshot({path:path.join(out,file)});report.current.screenshot=file;}
-  const cleanup=await page.evaluate(({reduced,built})=>{
+  const capture=tier==='T0'&&tactical&&sign===1&&!reduced;
+  const cleanup=await page.evaluate(({reduced,built,capture})=>{
    const sc=window.__p4Scene,s=sc.session,p=sc.visualAssets,r=window.p4,a=s.actorById(r.actorId),t=s.actorById(r.targetId),paint=()=>{sc.renderCastEvents();sc.applyFrame(s.snapshot());sc.game.step(performance.now(),0);},at=ms=>{s.elapsedSeconds=r.startedAt+ms/1000;paint();};
-   const frames=[];for(const ms of [140,230,320]){at(ms);frames.push(p.actorSprites.get(a.instanceId).frame.name);}at(460);const idle=p.actorSprites.get(a.instanceId).texture.key.endsWith('jiuweihu.battleIdle');
-   const moveAt=(x,time)=>{a.x=x;s.elapsedSeconds=time;paint();};moveAt(5.02,s.elapsedSeconds+.01);const move=p.actorSprites.get(a.instanceId).texture.key.endsWith('jiuweihu.battleMove');
+   const screenshots=[],shot=name=>{if(capture)screenshots.push({name,data:sc.game.canvas.toDataURL('image/png').split(',')[1]});};const frames=[];for(const ms of [140,230,320]){at(ms);frames.push(p.actorSprites.get(a.instanceId).frame.name);shot('pose-'+ms);}at(460);shot('idle-return');const idle=p.actorSprites.get(a.instanceId).texture.key.endsWith('jiuweihu.battleIdle');
+   const moveAt=(x,time)=>{a.x=x;s.elapsedSeconds=time;paint();};moveAt(5.02,s.elapsedSeconds+.01);const move=p.actorSprites.get(a.instanceId).texture.key.endsWith('jiuweihu.battleMove');shot('move-return');
    const start=()=>{s.cadence.set(a.instanceId,0);s.executeAbility(a,'basic','player',t);paint();};
    t.x=15;const hp=t.hp;start();const miss=t.hp===hp&&p.actionEffects.get(a.instanceId)?.get('blade')?.visible===true&&p.stagedImpacts.size===0;
    t.x=7;start();const action=p.actions.active.get(a.instanceId);const multi=!built?s.allies.find(b=>b.definitionId==='P4'&&b!==a):null;let instances=true;if(multi){Object.assign(multi,{x:5,y:1});s.cadence.set(multi.instanceId,0);s.executeAbility(multi,'basic','player',t);paint();instances=p.actions.active.size===2&&p.actions.active.get(multi.instanceId).actionId!==action.actionId;}
    Object.assign(a.abilityState.heavy,{phase:'ready',cooldownRemaining:0});s.executeAbility(a,'heavy','player',t);paint();const overwrite=!p.actions.active.has(a.instanceId)&&!p.actionEffects.has(a.instanceId);
    s.clearTransientCombat();paint();const end=p.actions.active.size===0&&p.actionEffects.size===0&&p.stagedImpacts.size===0;
    start();a.damage(a.hp);paint();const ko=!p.actions.active.has(a.instanceId)&&!p.actionEffects.has(a.instanceId)&&![...p.stagedImpacts.values()].some(v=>v.ownerId===a.instanceId);
-   const contacts=p.stagedImpacts.size;window.oldP4=p;sc.scene.restart();sc.game.loop.wake();return {frames,idle,move,miss,instances,overwrite,end,ko,contacts};
-  },{reduced,built});Object.assign(report.current,cleanup);for(const k of ['idle','move','miss','instances','overwrite','end','ko'])assert.equal(cleanup[k],true,k);if(!reduced)assert.deepEqual(cleanup.frames,['176.0.176.160','0.0.176.160','528.0.176.160']);
+   const contacts=p.stagedImpacts.size;window.oldP4=p;sc.scene.restart();sc.game.loop.wake();return {frames,idle,move,miss,instances,overwrite,end,ko,contacts,screenshots};
+  },{reduced,built,capture});for(const im of cleanup.screenshots){await writeFile(path.join(out,`${built?'built':'native'}-${im.name}.png`),Buffer.from(im.data,'base64'));}delete cleanup.screenshots;Object.assign(report.current,cleanup);for(const k of ['idle','move','miss','instances','overwrite','end','ko'])assert.equal(cleanup[k],true,k);if(!reduced)assert.deepEqual(cleanup.frames,['176.0.176.160','0.0.176.160','528.0.176.160']);
   await page.waitForFunction(()=>window.__p4Scene?.visualAssets!==window.oldP4&&window.__p4Scene?.assetGate?.ready,null,{timeout:60000});report.current.restart=await page.evaluate(()=>{window.__p4Scene.paused=true;window.__p4Scene.game.loop.sleep();return window.oldP4.closed&&window.oldP4.textureBytes===0;});assert.equal(report.current.restart,true);
   const destroyed=await page.evaluate(()=>{const sc=window.__p4Scene,p=sc.visualAssets;p.destroy();p.destroy();return p.textureBytes===0&&p.actions.active.size===0&&p.stagedImpacts.size===0;});assert.equal(destroyed,true);report.current.destroy=destroyed;report.cases.push(report.current);delete report.current;await context.close();
  }

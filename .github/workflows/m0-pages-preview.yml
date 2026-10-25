@@ -192,6 +192,8 @@ jobs:
         run: |
           node scripts/checkJiuweihuBasicBrowser.mjs
           node scripts/checkJiuweihuBasicBrowser.mjs --built
+      - name: Bind Jiuweihu Basic renderer and build sources
+        run: node scripts/verifyJiuweihuBasicRelease.mjs --record
       - name: Preserve Jiuweihu Basic renderer evidence
         if: always()
         uses: actions/upload-artifact@v4

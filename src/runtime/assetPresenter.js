@@ -182,7 +182,7 @@ export class AssetPresenter{
  clearStagedImpacts(ownerId,{preserveIndependent=false}={}){for(const [key,r] of this.stagedImpacts)if(r.ownerId===ownerId&&!(preserveIndependent&&r.independent))this.removeStagedImpact(key);}
  renderStagedImpacts(alive,positions,now){
   for(const [key,r] of this.stagedImpacts){
-   const stage=r.descriptor.kind==='staged'?r.descriptor.stages[r.hitIndex]:{contact:r.descriptor.contact,contactHoldMs:r.descriptor.contact.durationMs??r.descriptor.frameDurationsMs[2]},hold=stage.contactHoldMs/1000,age=now-r.eventAt;
+   const stage=r.descriptor.kind==='staged'?r.descriptor.stages[r.hitIndex]:{contact:r.descriptor.contact,contactHoldMs:r.descriptor.contact.durationMs??r.descriptor.frameDurationsMs[2]},hold=(this.reducedMotion&&r.descriptor.kind==='instant-followthrough'?r.descriptor.frameDurationsMs[0]:stage.contactHoldMs)/1000,age=now-r.eventAt;
    if(!alive.has(r.ownerId)||r.targetId&&(!r.independent||r.descriptor.kind==='healing')&&!alive.has(r.targetId)||r.paintedAt!==null&&r.paintedAt!==now&&age+1e-9>=hold){this.removeStagedImpact(key);continue;}
    if(age<0)continue;
    const base=stage.contact,d=r.descriptor,growth=d.kind==='healing'&&!this.reducedMotion?Math.min(1,.84+.16*age/.08):1,spec=growth===1?base:{...base,size:base.size.map(n=>n*growth),offset:base.offset.map(n=>n*growth)},frame=d.animation.frames[0],width=72*d.animation.scale*frame.width/Math.max(frame.width,frame.height),height=72*d.animation.scale*frame.height/Math.max(frame.width,frame.height),sx=width/d.coordinateSize[0],sy=height/d.coordinateSize[1];
@@ -191,7 +191,7 @@ export class AssetPresenter{
    const anchor=r.targetId?positions.get(r.targetId)??this.project(r.target):this.project(r.target),x=spec.offset[0]+spec.size[0]/2,y=spec.offset[1]+spec.size[1]/2;
    // Event time controls normal expiry. A late first paint retains one confirmed cue;
    // the next distinct paint expires it, so stalls do not replay HP or extend lifetime.
-   if(r.paintedAt!==now)r.opacity=r.paintedAt===null&&age>=hold?1:spec.fullOpacityMs!==undefined?Math.max(0,Math.min(1,(hold-age)/(hold-spec.fullOpacityMs/1000))):this.reducedMotion&&(d.kind==='staged'||r.independent)?1:Math.max(0,1-age/hold);
+   if(r.paintedAt!==now)r.opacity=r.paintedAt===null&&age>=hold?1:d.kind==='instant-followthrough'?(this.reducedMotion?.7:age<.06?1:age<.14?.65:age<.23?.25:0):spec.fullOpacityMs!==undefined?Math.max(0,Math.min(1,(hold-age)/(hold-spec.fullOpacityMs/1000))):this.reducedMotion&&(d.kind==='staged'||r.independent)?1:Math.max(0,1-age/hold);
    image.actionId=r.actionId;image.hitIndex=r.hitIndex;image.eventAt=r.eventAt;
    image.setOrigin(.5,.5).setDisplaySize(spec.size[0]*sx,spec.size[1]*sy).setPosition(anchor.x+(r.flipX?-x:x)*sx,anchor.y+y*sy).setFlipX(r.flipX).setDepth(spec.layer).setAlpha(r.opacity).setVisible(true);r.paintedAt=now;
   }

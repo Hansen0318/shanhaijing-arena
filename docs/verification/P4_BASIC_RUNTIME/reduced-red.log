@@ -1,0 +1,49 @@
+✔ instant observed Basic T0/false: 0ms, one hit, cadence and no lock (7.659568ms)
+✔ instant observed Basic T0/true: 0ms, one hit, cadence and no lock (1.642002ms)
+✔ instant observed Basic T1/false: 0ms, one hit, cadence and no lock (2.912595ms)
+✔ instant observed Basic T1/true: 0ms, one hit, cadence and no lock (1.135264ms)
+✔ instant observed Basic T2/false: 0ms, one hit, cadence and no lock (2.304683ms)
+✔ instant observed Basic T2/true: 0ms, one hit, cadence and no lock (1.686147ms)
+✔ instant observed Basic T3/false: 0ms, one hit, cadence and no lock (1.549839ms)
+✔ instant observed Basic T3/true: 0ms, one hit, cadence and no lock (1.9479ms)
+✔ miss preserves no cadence and no fabricated hit/target burst (2.190421ms)
+✔ observational opt-in preserves exact HP/cadence/RNG and targeting versus legacy (14.866892ms)
+✔ approved pose order/holds, instant FX, reduced and overwrite without lock (1.429994ms)
+✔ instant presentation ownership cleanup: end/false (19.292708ms)
+✔ instant presentation ownership cleanup: control/false (17.156568ms)
+✔ instant presentation ownership cleanup: cancel/false (8.121737ms)
+✔ instant presentation ownership cleanup: overwrite/false (9.282508ms)
+✔ instant presentation ownership cleanup: KO/false (6.245934ms)
+✔ instant presentation ownership cleanup: end/true (5.457709ms)
+✔ instant presentation ownership cleanup: control/true (6.1948ms)
+✔ instant presentation ownership cleanup: cancel/true (6.208275ms)
+✔ instant presentation ownership cleanup: overwrite/true (9.017974ms)
+✔ instant presentation ownership cleanup: KO/true (8.198966ms)
+✖ reduced instant contact expires with the approved 140ms static cue (9.787724ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 21
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 315.22285
+
+✖ failing tests:
+
+test at tests/jiuweihuBasicRuntime.test.js:25:1
+✖ reduced instant contact expires with the approved 140ms static cue (9.787724ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:25:416)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
