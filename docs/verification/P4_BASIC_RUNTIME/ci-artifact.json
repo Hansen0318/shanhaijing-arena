@@ -1,0 +1,20 @@
+{
+  "id": 12594784088,
+  "node_id": "MDg6QXJ0aWZhY3QxMjU5NDc4NDA4OA==",
+  "name": "jiuweihu-basic-evidence",
+  "size_in_bytes": 3843608,
+  "url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12594784088",
+  "archive_download_url": "https://api.github.com/repos/Hansen0318/shanhaijing-arena/actions/artifacts/12594784088/zip",
+  "expired": false,
+  "digest": "sha256:80906632fca5328b9c505141a4f647f2bb64bb0a1fe1cb4046ffacf4b1c3ed83",
+  "created_at": "2026-10-25T10:15:37Z",
+  "updated_at": "2026-10-25T10:15:37Z",
+  "expires_at": "2027-01-23T10:12:19Z",
+  "workflow_run": {
+    "id": 40183802821,
+    "repository_id": 1390686350,
+    "head_repository_id": 1390686350,
+    "head_branch": "feat/m0-combat-core-20260927",
+    "head_sha": "270aea17a1e65954d1ceba06898a707ee4aac675"
+  }
+}

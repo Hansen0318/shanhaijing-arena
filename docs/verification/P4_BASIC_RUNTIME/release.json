@@ -1,0 +1,36 @@
+{
+  "status": "NORMAL CI/PAGES/PUBLIC PASS; PLAYER BASIC GAME ACCEPTANCE PENDING",
+  "sourceCommit": "270aea17a1e65954d1ceba06898a707ee4aac675",
+  "tree": "c70e381052611ccabb38d7e3b9908cc950eb64b0",
+  "runtimeSource": "6d2ef1bfeee35d089fd48edd8b5fdc9b459169c2",
+  "workflowRun": 40183802821,
+  "buildJob": 121140287488,
+  "deployJob": 121143484524,
+  "tests": {
+    "total": 1251,
+    "pass": 1251,
+    "fail": 0
+  },
+  "assetGuard": {
+    "files": 113,
+    "bytes": 6517435
+  },
+  "p4Browser": {
+    "native": 32,
+    "built": 4,
+    "renderer": "real Phaser/WebGL",
+    "physicalPhone": false
+  },
+  "ciLocalPublic": {
+    "total": 175,
+    "pass": 175,
+    "fail": 0,
+    "freshPublic": 6,
+    "exactReuse": 169
+  },
+  "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?basic=270aea1",
+  "labUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&basic=270aea1",
+  "playerAcceptance": "PENDING; no runtime acceptance receipt created",
+  "nextGate": "Present deployed Basic for player game acceptance; do not start Heavy/P5/passive",
+  "selfReview": "Native single worker; no independent reviewer per explicit no-delegation constraint"
+}

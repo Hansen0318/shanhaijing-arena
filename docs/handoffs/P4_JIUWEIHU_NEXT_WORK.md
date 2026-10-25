@@ -1,29 +1,14 @@
 ```text
 【最高優先：所有後續交接指令必須單一完整、自足、可一鍵複製code block】
-
-[當前 Gate]
-R2 local1251/Build/native32/built4 PASS; R3 final normal CI/Pages/public175 ACTIVE. P2 stale inventory68→71/decoded+507976 corrected; local native4/built2 PASS; src/public/P4driver unchanged. Initial CI40182915206 failed legacy formal-count12 vs13; generic verifier fixed, original observations preserved. Read docs/verification/P4_BASIC_RUNTIME/WORK_LOG.md first and resume first incomplete Gate.
-
 [角色任務]
-接續Hansen0318/shanhaijing-arena。玩家已核准P4九尾狐Basic「靈火」四姿勢／獨立VFX／8GIF，直接完成Basic Runtime、必要真驗證及正常Pages部署，呈交遊戲驗收。原生單人，不重問開始或部署，不停在恢復報告。
-
-[背景資訊與恢復]
-GitHub最新remote唯一權威。唯一分支feat/m0-combat-core-20260927，PR#1保持open/unmerged，禁止merge main。先fetch最新HEAD、比對本機未push及tree；核准呈交定位d31d2ed06dc2fe5d3fbd41ed9151f66fa3a41aa3不是最新HEAD，不覆蓋較新成果。CLI無認證用connected GitHub API，逐blob Git SHA/完整tree核對，expected-SHA非force更新ref。
-先讀AGENTS.md、WORK_PROGRESS.md及docs/STATE.md頂端、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_ART_ANIMATION_VFX.md；docs/decisions/2026-10-23-restore-sequential-skill-workflow.md及2026-10-25-retire-schematic-under-formal-actions.md。
-本角色：docs/superpowers/specs/2026-10-25-jiuweihu-whole-character-design.md；docs/verification/P4_CHARACTER_PREFLIGHT/{spec-acceptance.json,WORK_LOG.md,REPORT.md,baseline.json,proposal.json}；docs/art/approved/jiuweihu/basic/{f3-v1,composite-review-v1}/acceptance.json；docs/art/candidates/jiuweihu/basic/composite-review-v1/{REVIEW.md,manifest.json,qa.json,SHA256SUMS,prepare_preview.py}及其PNG/GIF/時序。
-
-[Chat已完成／核准範圍]
-49份呈交檔精確hash已綁定新收據，F3/其餘姿勢/兩組獨立FX/8GIF皆PLAYER APPROVED；不重生/重審或改原候選文件。原PENDING是歷史，由新收據覆蓋。487素材檢查/112解碼幀通過只屬美術預覽，不是新Runtime證據。P1–P3 COMPLETE，P4 base/Idle/Move/KO/spec保護；P4整角未完成。
-Work只承接不可替代的遊戲整合／真renderer校準／必要工程驗證與正常發布。
-
-[具體指令：唯一實作範圍]
-1. 沿既有共用能力補Basic觀察式start/resolve/actionId與descriptor opt-in、優化runtime PNG、四姿勢及獨立出手/真target FX。先核對現行差異，不重做已有效成果；禁止角色ID特例，不提前實作惑心或其餘招。
-2. 兩模式Basic真命中皆0ms。係數/射程/暴擊/RNG/Tier/cadence/選人/空放/傷害邏輯保持；出手與命中花依真事件同刻呈現，miss/無真命中無target花。不新增蓄力、飛行、延遲傷害、群傷或技能鎖。核准視覺順序F3→F2→F1→F4，各140/90/90/140ms只跟隨/收勢，後續合法動作可覆蓋，不改攻速；結束回原靜態Idle/實際Move。
-3. 用核准Idle/Move解剖地標、共同ground/anchor與右canonical左mirror校準真正renderer大小；preview .115不是最終Runtime scale，260×220 cells也不是可直接當原160格尺寸。不得按尾焰包圍框fit、任意放大/縮小角色或改原圖。沿用packing/trim/frame契約，保留原alpha=1的padded masters；遊戲用PNG，不載入GIF/高解析原圖。完整正式貼圖載入且TextureManager存在才撤同record整層示意，缺來源才一份fallback；獨立場域/盾水膜/固定場地不誤刪，禁止ground-sigil換皮。
-4. 同版本Collection只同步已實作Basic純玩法文案；其餘招/尚未開放被動不提前宣稱完成。維持逐檔安全/兩下載/required完整就緒/所有權回收，無16MiB固定總額。
-5. 最低必要新驗證：兩模式×四Tier即時傷害/cadence不變；hit/miss/真target事件、右左/normal-reduced、Idle/Move→action→返回的真解剖尺度/ground/FX位置、完整載入退示意/缺來源fallback、多instance與Pause/KO/取消/end/Restart/destroy清理。跑直接受影響測試及Build；只在共用來源有實際變動時補受影響既有角色相容，精確來源不變的舊證據沿用，不重跑全專案盤點。依專案正常CI要求取得native+built真畫面/事件證據，不以美術GIF替代。
-6. 正常CI/Pages成功後核對CI/local/public精確bytes/hash；未變公開來源依既有精確證據規則沿用。提供實際遊戲網址與最小玩家操作，停待Basic遊戲核准。部署已授權；工程PASS/已部署不是玩家驗收，不建立未見Runtime acceptance，不開始Heavy/P5。
-
-[約束與中斷]
-不委派、不新branch/worktree、不動TD、不合main、不重置存檔、不動無關untracked；全部核准masters/收據/尺度/ground/anchor/mirror/數值保護，普通Hit永久取消。長工作前與每短Gate同步WORK_PROGRESS/STATE/本角色WORK_LOG/handoff並commit/push，容量不足先保存第一未完Gate；純收據文件[skip ci]、產品發布走正常CI，不能跳過必要檢查。若remote已有較新Runtime/核准，直接從第一真正未完Gate恢復，不覆蓋或重做。
+接續Hansen0318/shanhaijing-arena。P4九尾狐Basic「靈火」Runtime與正常Pages已完成，唯一下一Gate＝呈交已部署遊戲、停待玩家Basic遊戲驗收。不要重做已完成整合或把工程PASS當玩家核准。
+[背景資訊]
+GitHub最新remote唯一權威；唯一分支feat/m0-combat-core-20260927，PR#1保持open/unmerged，不merge main。先fetch最新HEAD、核對本機未push/tree及無關untracked，任何定位SHA不是最新保證。成功發布270aea17a1e65954d1ceba06898a707ee4aac675/treec70e381052611ccabb38d7e3b9908cc950eb64b0；正常Pages40183802821/build121140287488/deploy121143484524 SUCCESS，同SHA獨立P1/P2相容SUCCESS。
+先讀最新AGENTS.md、WORK_PROGRESS.md、docs/STATE.md、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_ART_ANIMATION_VFX.md、docs/verification/P4_BASIC_RUNTIME/{WORK_LOG.md,REPORT.md,release.json,release-jobs.json,release-runs.json,release-evidence.json,ci-local-build.json,public-fingerprints.json}；本角色spec docs/superpowers/specs/2026-10-25-jiuweihu-whole-character-design.md、前檢WORK_LOG與spec收據、docs/art/approved/jiuweihu/basic/composite-review-v1/acceptance.json保持。
+[具體指令]
+1. 已完成1251測試、Build/113 guard、P4真native32/built4、共用來源受影響P1/P2/P3相容、CI/local/public175（6fresh+169精確沿用）；來源未變不再跑工程/Browser/部署/公開下載。原候選PENDING是歷史，由既有美術收據覆蓋；工程發布不是玩家Runtime核准，尚無Runtime acceptance。
+2. 已實作兩模式0ms真Basic/actionId/真target獨立花；miss無target花，傷害/射程/暴擊/RNG/Tier/cadence/選人不變。四姿勢F3→F2→F1→F4 140/90/90/140ms只收勢、可被合法新動作覆蓋、回原Idle/實際Move；正常FX230ms/reduced靜態140ms。真解剖密度.9/ground/anchor/右canonical左mirror保護，260×220預覽不是原160格，不按尾焰fit；遊戲使用3張優化PNG。
+3. 直接提供 https://hansen0318.github.io/shanhaijing-arena/?basic=270aea1 ，隔離驗收 https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&basic=270aea1 。橫向→ALLY TEAM任一slot選九尾狐→START→點其頭像→接敵看自動靈火，切左右與移動/停下驗證返回。停待玩家Basic遊戲明確核准；不重問是否開始，不建立未見Runtime acceptance，不開始Heavy/P5/惑心。若收到具體回饋，只修該實際問題並走必要新驗證/正常發布；若remote已有更新核准，按最新有效收據接第一未完Gate，不覆蓋或重做。
+[約束條件]
+P1–P3 COMPLETE，P4整角未完成；全部核准原圖/收據/數值/尺度/存檔保護。原生單人，不委派、不新branch/worktree、不動TD、不merge main、不重置存檔、不動無關untracked。普通Hit永久取消；完整正式貼圖已載入且TextureManager存在才撤同record整層示意，缺來源保留一份fallback，禁止ground-sigil換皮，不誤刪獨立場域/盾水膜/固定場地；逐檔安全/兩下載/required完整就緒/所有權回收維持。長工作前與短Gate同步WORK_PROGRESS/STATE/角色WORK_LOG/handoff並commit/push，純文件[skip ci]、新產品走正常流程。CLI無認證用connected GitHub API，逐blob Git SHA/完整tree核對，expected-SHA非force更新ref。容量不足先保存第一未完Gate。
 ```

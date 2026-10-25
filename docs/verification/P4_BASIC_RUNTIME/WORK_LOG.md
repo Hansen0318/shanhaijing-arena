@@ -1,3 +1,13 @@
+## 2026-10-25 — P4 Basic Runtime／正常 Pages COMPLETE；唯一下一 Gate＝玩家 Basic 遊戲驗收
+
+發布270aea17a1e65954d1ceba06898a707ee4aac675/treec70e381052611ccabb38d7e3b9908cc950eb64b0，正常Pages40183802821 build121140287488/deploy121143484524 SUCCESS；同SHA獨立P1被動40183802878、P2覺醒40183803056 SUCCESS。1251/1251測試、Build/113素材guard，P4真native32/built4、受影響P1/P2/P3相容與來源guard665/700/597全部PASS；CI/local175指紋相同，公開175/175（6fresh＋169相同path/bytes/hash精確沿用）PASS。證據docs/verification/P4_BASIC_RUNTIME/{REPORT.md,release.json,release-jobs.json,release-runs.json,ci-artifact.json,ci-local-build.json,public-fingerprints.json,browser/,ci-browser/}。
+
+已實作核准Basic四姿勢／獨立指尖出手與真target命中；兩模式0ms，不變傷害/暴擊/RNG/射程/四Tier/cadence/選人，F3→F2→F1→F4 140/90/90/140ms只視覺收勢，後續合法動作覆蓋、正常/reduced各自到期並回Idle/實際Move。真renderer .9解剖密度/共同ground/anchor/左右mirror已校準，PNG優化不按尾焰fit，不載GIF/高解析masters；正式完整真貼圖才退同record示意、缺來源fallback，獨立場域/護盾/固定場地不變。Collection僅同步已實作Basic純玩法，惑心尚未開放。
+
+全部核准原圖/49份GIF收據綁定/數值/尺度/存檔保持；原生單人自審，無獨立review或實體手機/FPS宣稱。最初CI固定正式招式12→實際13及P2貼圖68→71的舊快照失敗已保存並精確遷移，最新正常CI全部成功，未繞過檢查。P4_RUNTIME並非玩家核准；未建立Runtime acceptance，P4整角未完成，P1–P3 COMPLETE。
+
+唯一下一步：呈交 https://hansen0318.github.io/shanhaijing-arena/?basic=270aea1 ；隔離驗收加battleLab=1，橫向→ALLY TEAM任一slot選九尾狐→START→點九尾狐頭像→接敵觀察自動靈火，測左右與移動/停下返回。停待玩家Basic遊戲明確核准，不開始Heavy/P5/惑心；來源未變不重跑測試/Build/Browser/Pages/公開下載。原分支PR#1open/unmerged、不merge/main/委派/新branch-worktree/TD/重置存檔/無關untracked；所有交接單一完整自足codeblock。本次只保存成功發布證據與待玩家Gate[skip ci]。
+
 ## 2026-10-25 — R3 compatibility inventory snapshot corrected; Runtime unchanged
 
 Final Runtime source6d2ef1b/treeecc60df. P4 local native32/built4 and source-bound598/build175 remain PASS. Normal run40183462984 P4 real native/built passed; P2 independent40183463036 exposed a second stale inventory snapshot: native encounter now71 textures/23603220 decoded bytes, old68/23095244 plus exactly3 approved Basic PNGs/507976bytes. P2 built2 already passed. Only scripts/checkBotuoAwakeningBrowser.mjs expected inventory migrated; no runtime/stat/art changes. Fresh actual local P2 native4/built2 PASS, reports p2-compatibility/. Normal CI source-bound compatibility must complete after this verifier-only checkpoint; previous failed workflow remains recorded, never called successful.
