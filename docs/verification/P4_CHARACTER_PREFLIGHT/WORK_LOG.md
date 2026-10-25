@@ -1,3 +1,9 @@
+## 2026-10-25 — Basic remaining poses/VFX/GIF ACTIVE (native single worker)
+
+Recovered remote 2095215120c6108083b9d4604691d33efbcfc197; clean local tree, PR1 open/unmerged confirmed. Read latest required rules/spec/receipts; viewed approved F3, identity and Idle. F3 SHA256 remains 74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7. No later valid poses/FX/GIF found. No product changes or old engineering checks rerun.
+
+Execution: separately generate F1/F2/F4 from approved F3+Idle; separately generate hand instant foxfire and true-target split-flower. Normalize by anatomy landmarks and common ground, preserving all original F3 alpha pixels via padded derivatives. Build normal/slow/noFX/right-left/Idle-return/miss/reduced/four-Tier/multi-instance art-simulation GIFs, with release and confirmed impact at 0ms. Decode encoded GIFs and verify timing, source hashes, border safety and no bleed. Checkpoint sources before assembly. Stop for player GIF approval, no Runtime/Build/Browser/Pages/Heavy/P5. All prior protection rules remain.
+
 # P4 九尾狐 WORK_LOG
 
 ## 2026-10-25 — P4 Basic靈火F3 PLAYER APPROVED；新Work接其餘姿勢／獨立VFX／GIF

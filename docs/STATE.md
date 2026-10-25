@@ -1,3 +1,9 @@
+## 2026-10-25 — Basic remaining poses/VFX/GIF ACTIVE (native single worker)
+
+Recovered remote 2095215120c6108083b9d4604691d33efbcfc197; clean local tree, PR1 open/unmerged confirmed. Read latest required rules/spec/receipts; viewed approved F3, identity and Idle. F3 SHA256 remains 74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7. No later valid poses/FX/GIF found. No product changes or old engineering checks rerun.
+
+Execution: separately generate F1/F2/F4 from approved F3+Idle; separately generate hand instant foxfire and true-target split-flower. Normalize by anatomy landmarks and common ground, preserving all original F3 alpha pixels via padded derivatives. Build normal/slow/noFX/right-left/Idle-return/miss/reduced/four-Tier/multi-instance art-simulation GIFs, with release and confirmed impact at 0ms. Decode encoded GIFs and verify timing, source hashes, border safety and no bleed. Checkpoint sources before assembly. Stop for player GIF approval, no Runtime/Build/Browser/Pages/Heavy/P5. All prior protection rules remain.
+
 ## 2026-10-25 — P4 Basic靈火F3 PLAYER APPROVED；新Work接其餘姿勢／獨立VFX／GIF
 
 玩家：「我審核ok，要新的work繼續執行，確認有紀錄，就提供prompts給work直接往下執行」。明確核准已呈交819ae464ebcc721ea335b8d80998dcd606ab8d61之Basic靈火單張F3；精確收據docs/art/approved/jiuweihu/basic/f3-v1/acceptance.json，PNG SHA256 74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7，綁定原prompt/QA/manifest/REVIEW。F3 Gate CLOSED；原PNG與候選文件bytes不改，其舊PENDING由本收據覆蓋，不重生、不重審同圖。整角spec既有核准保持。
