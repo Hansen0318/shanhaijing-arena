@@ -56,8 +56,17 @@ export class ActionPlayback{
   if(d.blade.unfurlMs){const q=reducedMotion?1:Math.min(1,.32+.68*ms/d.blade.unfurlMs);w=d.blade.size[0]*(.72+.28*q);h=d.blade.size[1]*q;}else if(!reducedMotion){if(ms<200){w=275-65*ms/200;h=75+25*ms/200;}else if(ms<320){w=210+40*(ms-200)/120;h=100+(d.blade.size[1]-100)*(ms-200)/120;}}
   return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,bladeOpacity:Math.min(1,(total-ms)/80),contactOpacity:0,bladeGeometry:{size:[w,h],offset:[d.animation.origin[0]*d.coordinateSize[0]-w/2,d.animation.origin[1]*d.coordinateSize[1]-(d.blade.unfurlMs?.88:.875)*h]},...(r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
  }
+ sampleInstant(ownerId,r,now,reducedMotion){
+  const d=r.descriptor,ms=Math.max(0,now-r.startedAt)*1000,total=reducedMotion?d.frameDurationsMs[0]:d.frameDurationsMs.reduce((a,b)=>a+b,0);
+  if(ms+1e-7>=total){this.remove(ownerId);return null;}
+  const order=[2,1,0,3];let end=0;
+  const phase=d.frameDurationsMs.findIndex(n=>(end+=n)>ms+1e-7),frameIndex=reducedMotion?2:order[phase];
+  const opacity=reducedMotion?.7:ms<60?1:ms<140?.65:ms<230?.25:0;
+  return {actionId:r.actionId,descriptor:d,frameIndex,flipX:r.flipX,bladeOpacity:r.resolvedAt!==null?opacity:0,contactOpacity:0,...(r.contactTarget?{contactTarget:{...r.contactTarget}}:{})};
+ }
  sample(ownerId,now,reducedMotion=false){
   const r=this.active.get(ownerId);if(!r||!Number.isFinite(now))return null;
+  if(r.descriptor.kind==='instant-followthrough')return this.sampleInstant(ownerId,r,now,reducedMotion);
   if(r.descriptor.kind==='healing')return this.sampleHealing(ownerId,r,now,reducedMotion);
   if(r.descriptor.kind==='staged')return this.sampleStaged(ownerId,r,now);
   if(r.descriptor.kind==='launched-line')return this.sampleLaunched(ownerId,r,now,reducedMotion);

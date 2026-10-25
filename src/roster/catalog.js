@@ -1,3 +1,4 @@
+import {jiuweihuBasicAction} from '../assets/jiuweihuBasicRuntime.js';
 import {chiruAwakeningAction} from '../assets/chiruAwakeningRuntime.js';
 import {chiruSpecialAction} from '../assets/chiruSpecialRuntime.js';
 import {chiruHeavyAction} from '../assets/chiruHeavyRuntime.js';
@@ -80,6 +81,7 @@ const presentation={
   })}),
  },
  P4:{
+  actionDescriptors:Object.freeze({basic:actionDescriptor(jiuweihuBasicAction)}),
   assets:Object.freeze({...defaultCharacterAssets,portraitSquare:'jiuweihu.portrait',collectionArt:'jiuweihu.identity',battleIdle:'jiuweihu.battleIdle',battleMove:'jiuweihu.battleMove',battleKo:'jiuweihu.battleKo'}),
   animationDescriptors:Object.freeze({battleIdle:animationDescriptor({
    source:'jiuweihu.battleIdle',frames:[{x:0,y:0,width:160,height:160}],

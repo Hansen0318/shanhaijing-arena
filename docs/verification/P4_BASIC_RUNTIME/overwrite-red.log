@@ -1,0 +1,48 @@
+✔ instant observed Basic T0/false: 0ms, one hit, cadence and no lock (8.644994ms)
+✔ instant observed Basic T0/true: 0ms, one hit, cadence and no lock (1.478834ms)
+✔ instant observed Basic T1/false: 0ms, one hit, cadence and no lock (1.882067ms)
+✔ instant observed Basic T1/true: 0ms, one hit, cadence and no lock (1.125769ms)
+✔ instant observed Basic T2/false: 0ms, one hit, cadence and no lock (1.711433ms)
+✔ instant observed Basic T2/true: 0ms, one hit, cadence and no lock (1.899564ms)
+✔ instant observed Basic T3/false: 0ms, one hit, cadence and no lock (2.958495ms)
+✔ instant observed Basic T3/true: 0ms, one hit, cadence and no lock (1.733272ms)
+✔ miss preserves no cadence and no fabricated hit/target burst (1.567031ms)
+✔ observational opt-in preserves exact HP/cadence/RNG and targeting versus legacy (10.384359ms)
+✔ approved pose order/holds, instant FX, reduced and overwrite without lock (2.154242ms)
+✔ instant presentation ownership cleanup: end/false (22.374348ms)
+✔ instant presentation ownership cleanup: control/false (13.717134ms)
+✔ instant presentation ownership cleanup: cancel/false (9.687979ms)
+✔ instant presentation ownership cleanup: overwrite/false (8.805194ms)
+✔ instant presentation ownership cleanup: KO/false (8.591313ms)
+✔ instant presentation ownership cleanup: end/true (6.092881ms)
+✔ instant presentation ownership cleanup: control/true (17.926051ms)
+✔ instant presentation ownership cleanup: cancel/true (8.470507ms)
+✖ instant presentation ownership cleanup: overwrite/true (8.10551ms)
+✔ instant presentation ownership cleanup: KO/true (5.61439ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 322.65267
+
+✖ failing tests:
+
+test at tests/jiuweihuBasicRuntime.test.js:22:94
+✖ instant presentation ownership cleanup: overwrite/true (8.10551ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:23:630)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

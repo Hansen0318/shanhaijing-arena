@@ -24,5 +24,5 @@ test('P1 transparent-row Move/KO derivatives retain all original pixels and exac
  }
 });
 test('all-five Basic Heavy Special required textures remain fully resident across scenes',async()=>{
- const cache=createAssetCache({transport:pngTransport});for(let i=0;i<3;i++){const scene=assetScene(),p=new AssetPresenter(scene,{cache});await p.prepare(Object.values(rosterCatalog));assert.equal(p.textureBytes,22583244);assert.ok(p.textures.has('lushu.battleSpecial'));assert.ok(p.residency.snapshot().failed===0);assert.ok(Number.isFinite(scene.budget().peak));assert.ok(Number.isFinite(cache.diagnostics().highWaterBytes));p.destroy();assert.equal(scene.budget().bytes,0);}
+ const cache=createAssetCache({transport:pngTransport});for(let i=0;i<3;i++){const scene=assetScene(),p=new AssetPresenter(scene,{cache});await p.prepare(Object.values(rosterCatalog));assert.equal(p.textureBytes,23091220);assert.ok(p.textures.has('lushu.battleSpecial'));assert.ok(p.residency.snapshot().failed===0);assert.ok(Number.isFinite(scene.budget().peak));assert.ok(Number.isFinite(cache.diagnostics().highWaterBytes));p.destroy();assert.equal(scene.budget().bytes,0);}
 });

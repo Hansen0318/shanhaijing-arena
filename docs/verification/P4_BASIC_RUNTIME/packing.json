@@ -1,0 +1,142 @@
+{
+  "status": "PACK PASS / RENDERER CALIBRATION PENDING",
+  "commonCrop": [
+    48,
+    40,
+    176,
+    160
+  ],
+  "pixelScale": 0.9,
+  "idleLandmarks": {
+    "waist": [
+      103,
+      80
+    ],
+    "footY": 142,
+    "pivot": [
+      80,
+      151
+    ]
+  },
+  "actionLandmarks": {
+    "waist": [
+      107,
+      79
+    ],
+    "footY": 150,
+    "pivot": [
+      84,
+      159
+    ]
+  },
+  "decodedBytes": 507976,
+  "assets": [
+    {
+      "key": "jiuweihu.basicPoses",
+      "type": "image",
+      "path": "assets/jiuweihu-basic-runtime-v1/poses.png",
+      "width": 704,
+      "height": 160,
+      "bytes": 127094,
+      "fallback": "placeholder.battle",
+      "sha256": "f26c69f65a6299d171538ea15e5d0eb165fc1e50b84e8c9f196971e1f13283bb"
+    },
+    {
+      "key": "jiuweihu.basicRelease",
+      "type": "image",
+      "path": "assets/jiuweihu-basic-runtime-v1/hand-release.png",
+      "width": 81,
+      "height": 57,
+      "bytes": 3436,
+      "fallback": "placeholder.vfx",
+      "sha256": "a6bc9945bf97a81e5c7a848c92b9979dcd8b0a3d59706d96dd47ef1405da16b5"
+    },
+    {
+      "key": "jiuweihu.basicImpact",
+      "type": "image",
+      "path": "assets/jiuweihu-basic-runtime-v1/target-impact.png",
+      "width": 107,
+      "height": 91,
+      "bytes": 8639,
+      "fallback": "placeholder.vfx",
+      "sha256": "d70707e7572d3b21bb3dded181159d76e1cca9db233d63ca4779ab1f47ab48a9"
+    }
+  ],
+  "action": {
+    "kind": "instant-followthrough",
+    "animation": {
+      "source": "jiuweihu.basicPoses",
+      "frames": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 176,
+          "height": 160
+        },
+        {
+          "x": 176,
+          "y": 0,
+          "width": 176,
+          "height": 160
+        },
+        {
+          "x": 352,
+          "y": 0,
+          "width": 176,
+          "height": 160
+        },
+        {
+          "x": 528,
+          "y": 0,
+          "width": 176,
+          "height": 160
+        }
+      ],
+      "duration": 0.46,
+      "loop": false,
+      "staticFrame": 2,
+      "origin": [
+        0.4772727272727273,
+        0.99375
+      ],
+      "scale": 2.2
+    },
+    "frameDurationsMs": [
+      140,
+      90,
+      90,
+      140
+    ],
+    "impactFrame": 2,
+    "coordinateSize": [
+      176,
+      160
+    ],
+    "blade": {
+      "assetKey": "jiuweihu.basicRelease",
+      "offset": [
+        132.56,
+        31.79
+      ],
+      "size": [
+        81,
+        57
+      ],
+      "layer": 6
+    },
+    "contact": {
+      "assetKey": "jiuweihu.basicImpact",
+      "attach": "target",
+      "offset": [
+        -55.64,
+        -108.69
+      ],
+      "size": [
+        107,
+        91
+      ],
+      "layer": 7,
+      "durationMs": 230
+    }
+  }
+}

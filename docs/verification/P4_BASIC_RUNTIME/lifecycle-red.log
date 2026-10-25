@@ -1,0 +1,274 @@
+✖ instant observed Basic T0/false: 0ms, one hit, cadence and no lock (10.311801ms)
+✖ instant observed Basic T0/true: 0ms, one hit, cadence and no lock (1.749789ms)
+✖ instant observed Basic T1/false: 0ms, one hit, cadence and no lock (2.391524ms)
+✖ instant observed Basic T1/true: 0ms, one hit, cadence and no lock (1.734757ms)
+✖ instant observed Basic T2/false: 0ms, one hit, cadence and no lock (4.730903ms)
+✖ instant observed Basic T2/true: 0ms, one hit, cadence and no lock (2.044894ms)
+✖ instant observed Basic T3/false: 0ms, one hit, cadence and no lock (2.065242ms)
+✖ instant observed Basic T3/true: 0ms, one hit, cadence and no lock (1.985687ms)
+✖ miss preserves no cadence and no fabricated hit/target burst (1.276309ms)
+✔ observational opt-in preserves exact HP/cadence/RNG and targeting versus legacy (13.289895ms)
+✖ approved pose order/holds, instant FX, reduced and overwrite without lock (5.519288ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 1
+ℹ fail 10
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 317.542961
+
+✖ failing tests:
+
+test at tests/jiuweihuBasicRuntime.test.js:8:72
+✖ instant observed Basic T0/false: 0ms, one hit, cadence and no lock (10.311801ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:11:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/jiuweihuBasicRuntime.test.js:8:72
+✖ instant observed Basic T0/true: 0ms, one hit, cadence and no lock (1.749789ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:11:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/jiuweihuBasicRuntime.test.js:8:72
+✖ instant observed Basic T1/false: 0ms, one hit, cadence and no lock (2.391524ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:11:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/jiuweihuBasicRuntime.test.js:8:72
+✖ instant observed Basic T1/true: 0ms, one hit, cadence and no lock (1.734757ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:11:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/jiuweihuBasicRuntime.test.js:8:72
+✖ instant observed Basic T2/false: 0ms, one hit, cadence and no lock (4.730903ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:11:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/jiuweihuBasicRuntime.test.js:8:72
+✖ instant observed Basic T2/true: 0ms, one hit, cadence and no lock (2.044894ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:11:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/jiuweihuBasicRuntime.test.js:8:72
+✖ instant observed Basic T3/false: 0ms, one hit, cadence and no lock (2.065242ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:11:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/jiuweihuBasicRuntime.test.js:8:72
+✖ instant observed Basic T3/true: 0ms, one hit, cadence and no lock (1.985687ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:11:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/jiuweihuBasicRuntime.test.js:15:1
+✖ miss preserves no cadence and no fabricated hit/target burst (1.276309ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   undefined
+  -   'start',
+  -   'resolve'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:15:214)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ undefined ],
+    expected: [ 'start', 'resolve' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/jiuweihuBasicRuntime.test.js:17:1
+✖ approved pose order/holds, instant FX, reduced and overwrite without lock (5.519288ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(d)
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/1d4f74c11db9/shanhaijing-arena/tests/jiuweihuBasicRuntime.test.js:17:144)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

@@ -51,5 +51,5 @@ export function actionDescriptor(input,{manifest=assetManifest}={}){
   if(parsed.at(-1).endMs!==recoveryStartMs)throw new TypeError('Invalid staged recovery');
   return immutable({kind:'staged',animation,coordinateSize,durationMs,recoveryStartMs,phaseFrames,stages:parsed});
  }
- return immutable({...(['launched-line','healing'].includes(input.kind)?{kind:input.kind}:{}),...(input.kind==='healing'&&input.statusVisuals?{statusVisuals:statusVisualRules(input.statusVisuals,manifest)}:{}),...(input.kind==='area-observed'?{kind:'area-observed',statusVisuals:statusVisualRules(input.statusVisuals,manifest)}:{}),animation,frameDurationsMs,impactFrame,coordinateSize,...(input.anticipation?{anticipation:effect(input.anticipation)}:{}),blade:effect(input.blade),contact:effect(input.contact)});
+ return immutable({...(['launched-line','healing','instant-followthrough'].includes(input.kind)?{kind:input.kind}:{}),...(input.kind==='healing'&&input.statusVisuals?{statusVisuals:statusVisualRules(input.statusVisuals,manifest)}:{}),...(input.kind==='area-observed'?{kind:'area-observed',statusVisuals:statusVisualRules(input.statusVisuals,manifest)}:{}),animation,frameDurationsMs,impactFrame,coordinateSize,...(input.anticipation?{anticipation:effect(input.anticipation)}:{}),blade:effect(input.blade),contact:effect(input.contact)});
 }

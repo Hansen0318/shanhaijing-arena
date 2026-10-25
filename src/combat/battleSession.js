@@ -359,6 +359,9 @@ export class BattleSession {
     const target=resolveAbilityTarget(actor,definition,{...context,enemyTarget:requestedTarget??context.enemyTarget});
     if(!startAbility({caster:actor,slot,definition,target,source,ignoreRange:source==='player',allowNoTarget:source==='player'}))return false;
     if(category!=='basic')this.cancelAction(actor.instanceId,'new_ability');
+    // End only the opted-in cosmetic Basic follow-through on a legal later action.
+    const basicDefinition=this.actorAbilityDefinitions.get(actor.instanceId)[actorDefinition.abilities.basic];
+    if(category!=='basic'&&basicDefinition?.presentation?.actionLifecycle==='instant-observed')this.recordCast(actor,target,category,source,definition,false,{phase:'replace-followthrough',presentationOnly:true});
     const canHit=target&&canCharacterAct(target)&&isTargetInRange(actor,target,definition.range);
     if(canHit&&category==='basic')this.cadence.set(actor.instanceId,Math.max(TIER_SAFETY.basicInterval,1/actorDefinition.stats.attackSpeed));
     if(canHit)this.effects.trigger('cast',actor,target,category);
@@ -380,7 +383,7 @@ export class BattleSession {
     let applied=false;
     const delay=this.tacticalEnabled&&definition.telegraph&&definition.effect.coefficient>0&&canHit
       ?this.threats.create(actor,target,definition,this.elapsedSeconds*1000):null;
-    const impactPresentation=['existing-impact','area-observed'].includes(definition.presentation?.actionLifecycle)?{
+    const impactPresentation=['existing-impact','area-observed','instant-observed'].includes(definition.presentation?.actionLifecycle)?{
       actionId:`presentation.${++this.nextActionId}`,presentationEpoch:this.presentationEpoch,actorId:actor.instanceId,targetId:canHit?target.instanceId:null,definition,category,source,startedAt:this.elapsedSeconds,dueAt:delay?delay.impactAtMs/1000:this.elapsedSeconds,origin:{x:actor.x,y:actor.y},target:canHit?{x:target.x,y:target.y}:{x:actor.x+(aim.facingX===-1?-1:aim.facingX===1?1:(Math.sign(this.playerMovement.get(actor.instanceId)?.x)||(actor.teamId===this.allies[0].teamId?1:-1))),y:actor.y}
     }:null;
     this.recordImpactPresentation(impactPresentation,'start');
@@ -393,7 +396,7 @@ export class BattleSession {
     return true;
   }
 
-  observedHitContext(record){return record?.definition.presentation?.actionLifecycle==='area-observed'?{actionId:record.actionId,presentationEpoch:record.presentationEpoch}:{};}
+  observedHitContext(record){return ['area-observed','instant-observed'].includes(record?.definition.presentation?.actionLifecycle)?{actionId:record.actionId,presentationEpoch:record.presentationEpoch}:{};}
 
   applyAbilityEffects(actor,target,definition,category,source,context,geometry=null,hitContext={}) {
     const actorDefinition=this.definitionForActor(actor);let applied=false;

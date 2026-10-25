@@ -60,11 +60,12 @@ export class AssetPresenter{
  setState(ownerId,descriptor,now,state){this.states.set(ownerId,{descriptor,start:now,state});}
  cast(event,character,now,ability=null){
   if(this.closed)return;
+  if(event.phase==='replace-followthrough'){if((event.presentationEpoch??0)>=this.utility.epoch&&this.actions.active.get(event.actorId)?.descriptor.kind==='instant-followthrough'){this.clearAction(event.actorId,{preserveIndependent:true});this.states.delete(event.actorId);}return;}
   if((!event.phase||event.phase==='start')&&this.utility.staleStart(event,now))return;
   if(event.presentationOnly&&this.presentationEventKeys.has(event.actorId+'.'+event.actionId+'.'+event.phase))return;
   const utilityAction=characterAction(character,event.category);
   if(utilityAction?.kind==='area-observed'){this.castObservedArea(event,utilityAction,now);return;}
-  if(utilityAction?.kind==='healing'){if((event.presentationEpoch??0)<this.utility.epoch)return;this.resetPresentationEpoch(event.presentationEpoch);}
+  if(['healing','instant-followthrough'].includes(utilityAction?.kind)){if((event.presentationEpoch??0)<this.utility.epoch)return;this.resetPresentationEpoch(event.presentationEpoch);}
   const observed=this.utility.observe(event,utilityAction,now,this.facings.get(event.actorId)?.flipX??false);
   if(utilityAction?.kind==='utility'){
    if(observed){this.clearAction(event.actorId,{preserveIndependent:true,preserveImpact:false});this.states.delete(event.actorId);}return;
@@ -122,9 +123,9 @@ export class AssetPresenter{
  }
  resetPresentationEpoch(epoch){
   if(!Number.isInteger(epoch)||epoch<=this.utility.epoch)return;
-  for(const [id,r] of [...this.actions.active])if(['area-observed','healing'].includes(r.descriptor.kind))this.clearAction(id);
-  for(const [key,r] of [...this.stagedImpacts])if(['area-observed','healing'].includes(r.descriptor.kind))this.removeStagedImpact(key);
-  for(const [id,r] of [...this.bladeAfterglows])if(['area-observed','healing'].includes(r.sample.descriptor.kind))this.clearBladeAfterglow(id);
+  for(const [id,r] of [...this.actions.active])if(['area-observed','healing','instant-followthrough'].includes(r.descriptor.kind))this.clearAction(id);
+  for(const [key,r] of [...this.stagedImpacts])if(['area-observed','healing','instant-followthrough'].includes(r.descriptor.kind))this.removeStagedImpact(key);
+  for(const [id,r] of [...this.bladeAfterglows])if(['area-observed','healing','instant-followthrough'].includes(r.sample.descriptor.kind))this.clearBladeAfterglow(id);
   this.presentationEventKeys.clear();this.utility.resetEpoch(epoch);
  }
  castObservedArea(event,descriptor,now){
@@ -289,7 +290,7 @@ export class AssetPresenter{
   if(this.closed)return;const actors=[...frame.allies,...frame.enemies],alive=new Set(actors.filter(a=>a.hp>0).map(a=>a.instanceId)),positions=new Map(actors.map(a=>[a.instanceId,this.project(a)]));
   const stage=this.textures.get(this.stageAssetKey);if(stage&&!this.stageDisplay)this.stageDisplay=this.scene.add.image(0,0,stage.key).setOrigin(0,0).setDisplaySize(1120,540).setDepth(1);
   for(const actor of actors){const id=actor.instanceId,character=definitions[actor.definitionId];let state=this.states.get(id);
-   const hadAction=this.actions.active.has(id);if(actor.hp<=0)this.clearAction(id);
+   const hadAction=this.actions.active.has(id);if(actor.hp<=0||this.actions.active.get(id)?.descriptor.kind==='instant-followthrough'&&statuses?.controlled(id,now))this.clearAction(id);
    let action=actor.hp>0?this.actions.sample(id,now,this.reducedMotion):null;
    const impact=this.pendingImpactViews.get(id);
    if(impact){

@@ -2,7 +2,7 @@
 【最高優先：所有後續交接指令必須單一完整、自足、可一鍵複製code block】
 
 [當前 Gate]
-R0 recovered e0021dc/tree bf7bc633; R1 Runtime ACTIVE. Read docs/verification/P4_BASIC_RUNTIME/WORK_LOG.md first and resume first incomplete Gate.
+R1 Runtime integrated; R2 native/built renderer and new-source verification ACTIVE. Read docs/verification/P4_BASIC_RUNTIME/WORK_LOG.md first and resume first incomplete Gate.
 
 [角色任務]
 接續Hansen0318/shanhaijing-arena。玩家已核准P4九尾狐Basic「靈火」四姿勢／獨立VFX／8GIF，直接完成Basic Runtime、必要真驗證及正常Pages部署，呈交遊戲驗收。原生單人，不重問開始或部署，不停在恢復報告。

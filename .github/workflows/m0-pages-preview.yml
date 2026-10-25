@@ -186,6 +186,19 @@ jobs:
           node "$ARENA_BROWSER_TOOL_ROOT/node_modules/playwright/cli.js" install --with-deps chromium --only-shell
           if node scripts/reuseChiruBrowser.mjs special; then echo 'CHIRU_SPECIAL_REUSED=true' >> "$GITHUB_ENV"; fi
           if node scripts/reuseChiruBrowser.mjs awakening; then echo 'CHIRU_AWAKENING_REUSED=true' >> "$GITHUB_ENV"; fi
+      - name: Real Jiuweihu Basic native and built verification
+        env:
+          ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/chiru-browser-tool
+        run: |
+          node scripts/checkJiuweihuBasicBrowser.mjs
+          node scripts/checkJiuweihuBasicBrowser.mjs --built
+      - name: Preserve Jiuweihu Basic renderer evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jiuweihu-basic-evidence
+          path: docs/verification/P4_BASIC_RUNTIME/
+          if-no-files-found: error
       - name: Real Chiru Passive native and built verification
         env:
           ARENA_BROWSER_TOOL_ROOT: ${{ runner.temp }}/chiru-browser-tool
