@@ -75,3 +75,8 @@ RED→GREEN：generic overlay雙疊、魚印前景/Move+Action輪廓、正式狀
 
 唯一下一工作：完成新來源suite、補正式/缺來源/預警及四Tier敵我多instance/Move/Action/normal-reduced真native+built矩陣，按共用改動跑P1/P2/四主動相容、Build/source guard→正常CI/Pages→CI-local-public逐檔fingerprint→交遊戲網址停待玩家。部署已授權；未部署新修正、未有Runtime玩家acceptance、P3未COMPLETE。舊證據不代表新來源PASS。
 
+
+## 2026-10-25 — 修正版本機1224/1224 PASS；正常CI真Browser／Pages ACTIVE
+
+安全remote checkpoint e0b4b87f85eaee2184fa77187034efa57b6d761f，逐29blob Git SHA與完整2568檔tree116f66dc118faa7ea6e7b0a8769c56e91c904771相符、非force更新ref；本機merge保留原提交歷史。新來源完整1224/1224 PASS，Build/110素材/6378266 bytes PASS；31項直接受影響檢查PASS。原13FAIL實證/RED-GREEN均保存；歷史收據未改。新增真native/built受益者當前Move/Action輪廓、魚印depth6、正式overlay載入替代/缺來源fallback、circle/lane敵我impact警示保留、多instance獨立治療清理檢查。尚未宣稱新Browser/CI/Pages/public PASS；本機Chromium壞ZIP實證已保存，改正常CI執行。唯一下一工作＝修復真CI失敗（如有）並完成正常Pages/逐檔public fingerprint，再交玩家核准。P3未COMPLETE；不建Runtime acceptance、不開始下一角色。
+

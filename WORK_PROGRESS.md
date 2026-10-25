@@ -1,3 +1,7 @@
+## 2026-10-25 — 修正版本機1224/1224 PASS；正常CI真Browser／Pages ACTIVE
+
+安全remote checkpoint e0b4b87f85eaee2184fa77187034efa57b6d761f，逐29blob Git SHA與完整2568檔tree116f66dc118faa7ea6e7b0a8769c56e91c904771相符、非force更新ref；本機merge保留原提交歷史。新來源完整1224/1224 PASS，Build/110素材/6378266 bytes PASS；31項直接受影響檢查PASS。原13FAIL實證/RED-GREEN均保存；歷史收據未改。新增真native/built受益者當前Move/Action輪廓、魚印depth6、正式overlay載入替代/缺來源fallback、circle/lane敵我impact警示保留、多instance獨立治療清理檢查。尚未宣稱新Browser/CI/Pages/public PASS；本機Chromium壞ZIP實證已保存，改正常CI執行。唯一下一工作＝修復真CI失敗（如有）並完成正常Pages/逐檔public fingerprint，再交玩家核准。P3未COMPLETE；不建Runtime acceptance、不開始下一角色。
+
 ## 2026-10-25 — 修正版 Runtime checkpoint；新來源真驗證／部署未完成
 
 Remote recovery e93122c1d67ac31cf1c5183f033d57f19309031d；fresh clone / clean tree，PR1 API確認open/unmerged。原分支原生單人，不委派/新branch/worktree/TD/main/存檔。核准修正版PNG已無損包裝到runtime-v2，舊public及全部approved原bytes保持；魚印depth6，真受益者當前frame的16方向alpha膨脹副本在本體後形成3 logical px薄荷綠外緣，不修改本體像素/anchor/尺寸。

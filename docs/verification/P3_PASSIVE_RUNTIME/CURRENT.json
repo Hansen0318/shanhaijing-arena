@@ -28,7 +28,11 @@
     "gifs": 11,
     "decodedFrames": 119,
     "runtimeEvidence": false,
-    "deployed": false
+    "deployed": false,
+    "localTests": 1224,
+    "localBuild": "PASS /110 assets /6378266 bytes",
+    "runtimeImplemented": true,
+    "browserStatus": "PENDING normal CI"
   },
   "revisionApproval": "docs/art/approved/chiru/passive/readability-review-v1/acceptance.json"
 }

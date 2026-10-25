@@ -29,26 +29,39 @@ try{
    for(const entries of s.passives.entries.values())for(const e of entries){e.readyAt=0;e.visual=null;e.lastSupportCheck=undefined;}
    const paint=()=>{sc.renderCastEvents();sc.applyFrame(s.snapshot());sc.game.step(performance.now(),0);},advance=dt=>{s.step(dt);paint();};paint();const idle=p.actorSprites.get(a.instanceId),idleBefore=[idle.texture.key,idle.displayWidth,idle.displayHeight,idle.originX,idle.originY];
    b.damage(b.maxHp*.6);const before=b.hp;advance(.001);const view=s.passives.snapshot(s.elapsedSeconds).find(v=>v.instanceId===a.instanceId),image=[...fx.fish.values()][0],texture=p.textures.get(view.presentation.assetKeys[Number(tier.slice(1))]),position=sc.actorViews.get(b.instanceId).hpBar;
+
+   const overlayKey=[...p.textures.keys()].find(k=>k.endsWith('.basicBlade'))??[...p.textures.keys()].find(k=>k.endsWith('.basicContact')),loadedOverlay=p.textures.get(overlayKey),generic={assets:{skillOverlays:{heavy:overlayKey}}};
+   p.cast({actorId:a.instanceId,category:'heavy',origin:{x:a.x,y:a.y},target:{x:b.x,y:b.y}},generic,s.elapsedSeconds);paint();
+   const loadedOne=p.displays.size===1&&[...p.displayKinds.values()][0]==='image'&&[...p.displayTextureKeys.values()][0]===overlayKey;
+   p.optionalFailures.add(overlayKey);p.textures.delete(overlayKey);paint();const missingFallback=p.displays.size===1&&[...p.displayKinds.values()][0]==='graphics';p.textures.set(overlayKey,loadedOverlay);p.optionalFailures.delete(overlayKey);paint();const replacedAgain=p.displays.size===1&&[...p.displayKinds.values()][0]==='image';p.playback.clear();paint();const formalReplacement=loadedOne&&missingFallback&&replacedAgain;
+   const warnings=[];for(const shape of ['circle','lane'])for(const sourceTeamId of ['allies','enemies']){
+    const t={sourceId:a.instanceId,sourceTeamId,category:'heavy',createdAtMs:0,impactAtMs:1000,geometry:{shape,origin:{x:3,y:0},center:{x:6,y:0},radius:.6}};
+    sc.telegraphs.render([t],100);const early=JSON.stringify(sc.telegraphs.graphics.commandBuffer);sc.telegraphs.render([t],800);const late=JSON.stringify(sc.telegraphs.graphics.commandBuffer);warnings.push(early.length>10&&early!==late);
+   }paint();const warningRetention=warnings.every(Boolean);
    const otherRecipient=fx.fish.size===1&&view.active.targetId===b.instanceId,actualHeal=Math.abs(b.hp-before-b.maxHp*[.08,.12,.16,.2][Number(tier.slice(1))])<1e-8,approvedPng=image?.texture.key===texture.key,fullOpacity=image?.alpha===1,mirror=image?.flipX===(sign<0),sameScale=Math.abs(image?.displayWidth-180)<1e-8&&Math.abs(image?.displayHeight-144)<1e-8,bodyUnchanged=JSON.stringify(idleBefore)===JSON.stringify([idle.texture.key,idle.displayWidth,idle.displayHeight,idle.originX,idle.originY]);
    const rim=[...fx.rims.values()][0],body=p.actorSprites.get(b.instanceId),rimTracks=()=>rim?.length===16&&rim.every(i=>i.texture.key===body.texture.key&&i.frame.name===body.frame.name&&i.flipX===body.flipX&&i.originX===body.originX&&i.originY===body.originY&&i.displayWidth===body.displayWidth&&i.displayHeight===body.displayHeight&&i.tintTopLeft===0x69ffc3&&i.depth<body.depth);
    const recipientRim=rimTracks(),fishForeground=image.depth===6;
-   
+
    const originalBody=[body.texture.key,body.frame.name,body.displayWidth,body.displayHeight,body.originX,body.originY,body.flipX];
    const initial={x:image.x,y:image.y,w:image.displayWidth,h:image.displayHeight},state=JSON.stringify([s.elapsedSeconds,image.x,image.y,image.alpha,b.hp]);paint();const pause=state===JSON.stringify([s.elapsedSeconds,image.x,image.y,image.alpha,b.hp]);advance(.399);const inwardOrStatic=reduced?image.displayWidth===initial.w&&image.x===initial.x&&image.y===initial.y:image.displayWidth<initial.w,fade=image.alpha<1&&image.alpha>0;
-   
+
    b.x+=.01;paint();const moveRim=rimTracks()&&p.states.get(b.instanceId).state==='battleMove';
    const now=s.elapsedSeconds,event={actorId:b.instanceId,category:'basic',phase:'start',actionId:'readability-body',origin:{x:b.x,y:b.y},target:{x:foes[0].x,y:foes[0].y},attackTarget:{x:foes[0].x,y:foes[0].y},direction:{x:sign,y:0},startedAt:now,dueAt:now+.18,eventAt:now};p.cast(event,s.characterDefinitions[b.definitionId],now);paint();const actionRim=rimTracks()&&p.actions.active.has(b.instanceId);p.clearAction(b.instanceId);paint();
-   window.passiveProbe={sc,s,p,fx,a,b,other,paint,advance,initial};return {tier,enemy,reduced,sign,renderer:sc.game.renderer.type,otherRecipient,actualHeal,approvedPng,fullOpacity,mirror,sameScale,bodyUnchanged,pause,inwardOrStatic,fade,textureKey:texture.key,recipientRim,fishForeground,moveRim,actionRim};
+   window.passiveProbe={sc,s,p,fx,a,b,other,paint,advance,initial};return {tier,enemy,reduced,sign,renderer:sc.game.renderer.type,otherRecipient,actualHeal,approvedPng,fullOpacity,mirror,sameScale,bodyUnchanged,pause,inwardOrStatic,fade,textureKey:texture.key,recipientRim,fishForeground,moveRim,actionRim,formalReplacement,warningRetention};
   },{tier,enemy,reduced,sign});report.current=c;
   if(built||!enemy&&!reduced&&sign===1){c.screenshot=`${built?'built':'native'}-${tier}-${reduced?'reduced':'normal'}-${sign}.png`;await page.locator('canvas').screenshot({path:path.join(out,c.screenshot)});}
   Object.assign(c,await page.evaluate(()=>{
    const {sc,s,p,fx,a,b,other,paint,advance}=window.passiveProbe;advance(.25);const expired=fx.fish.size===0&&fx.rims.size===0;
-   const entry=s.passives.entries.get(a.instanceId)[0],ready=()=>{entry.readyAt=s.elapsedSeconds;entry.lastSupportCheck=undefined;};for(const x of s.actors)x.heal(x.maxHp);a.damage(a.maxHp*.6);ready();advance(.001);const self=fx.rims.size===1&&entry.visual?.targetId===a.instanceId&&fx.fish.size===1;
+
+   const entry=s.passives.entries.get(a.instanceId)[0],ready=()=>{entry.readyAt=s.elapsedSeconds;entry.lastSupportCheck=undefined;};
+   const rival=s.actors.find(x=>x.teamId!==a.teamId&&x.definitionId===a.definitionId),rivalTarget=rival?s.actors.find(x=>x.teamId===rival.teamId&&x!==rival):null;let multiInstance=true;
+   if(rival){for(const x of s.actors)x.heal(x.maxHp);const rivalEntry=s.passives.entries.get(rival.instanceId).find(e=>e.definition.trigger.kind==='rear-support');ready();rivalEntry.readyAt=s.elapsedSeconds;rivalEntry.lastSupportCheck=undefined;b.damage(b.maxHp*.6);rivalTarget.damage(rivalTarget.maxHp*.6);advance(.001);multiInstance=fx.fish.size===2&&fx.rims.size===2&&entry.visual.targetId===b.instanceId&&rivalEntry.visual.targetId===rivalTarget.instanceId;advance(.65);multiInstance=multiInstance&&fx.fish.size===0&&fx.rims.size===0;}
+   for(const x of s.actors)x.heal(x.maxHp);a.damage(a.maxHp*.6);ready();advance(.001);const self=fx.rims.size===1&&entry.visual?.targetId===a.instanceId&&fx.fish.size===1;
    const hp=a.hp;paint();const noRepeat=a.hp===hp;advance(.65);a.heal(a.maxHp);ready();advance(.001);const zero=fx.rims.size===0&&fx.fish.size===0&&entry.readyAt<s.elapsedSeconds;
    b.damage(b.maxHp*.6);ready();advance(.001);b.damage(b.hp);paint();const recipientKo=fx.rims.size===0&&fx.fish.size===0;
    other.damage(other.maxHp*.6);ready();advance(.001);const owned=fx.fish.size===1;a.damage(a.hp);paint();const casterKo=owned&&fx.rims.size===0&&fx.fish.size===0;
    const healed=other.hp;s.clearTransientCombat();paint();const end=fx.rims.size===0&&fx.fish.size===0&&s.passives.entries.size===0&&other.hp===healed;
-   window.oldPassive=fx;window.oldAssets=p;sc.scene.restart();sc.game.loop.wake();return {expired,self,noRepeat,zero,recipientKo,casterKo,end};
+   window.oldPassive=fx;window.oldAssets=p;sc.scene.restart();sc.game.loop.wake();return {expired,self,noRepeat,zero,recipientKo,casterKo,end,multiInstance};
   }));
   await page.waitForFunction(()=>window.__chiruScene?.passivePresenter!==window.oldPassive&&window.__chiruScene?.assetGate?.ready,null,{timeout:60000});c.restart=await page.evaluate(()=>{const sc=window.__chiruScene;sc.paused=true;sc.game.loop.sleep();return window.oldPassive.closed&&window.oldPassive.fish.size===0&&window.oldPassive.rims.size===0&&window.oldAssets.textureBytes===0&&sc.session.passives.snapshot(0).filter(v=>v.triggerKind==='rear-support').every(v=>v.readyAt===0&&!v.active);});
   c.destroy=await page.evaluate(()=>{const fx=window.__chiruScene.passivePresenter;fx.destroy();fx.destroy();return fx.closed&&fx.rims.size===0&&fx.fish.size===0;});report.cases.push(c);await context.close();
