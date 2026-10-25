@@ -14,7 +14,10 @@
 P1/P2/P3 COMPLETE；P3最後d346798已玩家核准，closure與最後兩份acceptance保持。原1229/Build/native+built/正常Pages40163995446/public172保留，不因新會話重跑/下載。舊整包流程hash已在原SHA恢復、被逐招決策取代，不是未解決差異。
 P4既有portrait/Collection/Idle/Move/KO已核准，不重畫/重審。當前無formal actionDescriptors，獨立passive尚未實作。前檢已完成68相關source Git blob綁定與32個P4現況隔離施放PASS，完整真四Tier投影及兩模式時序已保存；來源未變不重跑。不能把current probe當新被動/Browser/手機驗證。
 
-[當前唯一Gate]
+[已核准規格／最高優先最新狀態]
+玩家「好我確認，紀錄後繼續」已核准ea1b9e1呈交規格及隨後視覺要求說明。spec-acceptance.json綁定原spec/proposal/baseline hash；原PENDING是歷史，不重問同表核准。唯一下一工作是Basic靈火單張本體F3（單手短促前點、另一臂收身、九尾低幅偏後），沿既有identity/Idle/配件側別/原尺度製作並呈交玩家。未核准新F3，不能做其餘姿勢/VFX/GIF/Runtime/部署或Heavy。若已有更晚候選/核准則沿用，依WORK_LOG接第一未完Gate。以下未核准規格段落僅為呈交時歷史，已由本收據覆蓋。
+
+[原規格呈交歷史]
 規格v1是PROPOSED / PLAYER REVIEW PENDING，尚無玩家核准或acceptance。若最新remote仍此狀態，呈交具體五招提案並等待新設計審核，不製作F3/GIF/Runtime/部署，不重問是否開始P4、不只報告已讀規則。
 提案保留四主動既有數值/射程/CD/兩模式時序；Basic兩模式0ms，其他三招戰術延遲、非戰術0ms，不因畫面改真結算。T3固定餘焰半徑1.035/3秒/.5間隔/到期前5次，非跟身灼燒。
 新獨立惑心：四主動直接正傷害後，控制一名仍存活真受擊敵人，T0–T3 .2/.3/.4/.5秒，成功建立control才CD8秒，開戰ready；排除餘焰/遞迴/零傷/擊殺/免疫。實際target/status的1/2/3/4狐焰瓣依真狀態到期，無文字牌。完整同刻、排序、控制對pending/delayed/area、steadfast、多instance與清理契約見spec5.5–7。T2原惑心追獵只是8% modifier，顯示名孤焰追獵提案待審，ID/條件/幅度不改。

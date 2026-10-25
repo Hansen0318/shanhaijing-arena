@@ -1,0 +1,22 @@
+{
+  "status": "PLAYER APPROVED PRESENTED P4 WHOLE-CHARACTER SPECIFICATION; BASIC F3 NEXT",
+  "recordedDate": "2026-10-25",
+  "timezone": "Asia/Taipei",
+  "playerStatement": "好我確認，紀錄後繼續",
+  "precedingPlayerQuestion": "有依照規則，確保技能都能明顯辨識大場面華麗嗎",
+  "presentedCheckpoint": "ea1b9e1684d629b1f57a1321f8f9c7bb511d9914",
+  "scope": "Direct confirmation and continue reply after presented five-skill specification and clarification of mandatory distinct no-FX actions, same-scale Basic<Heavy<Special<Awakening escalation, separate cast/true-impact VFX, status-target ownership and per-skill review gates. Record specification approval and continue only to Basic 靈火 one F3 candidate.",
+  "notClaimed": [
+    "Player itemized every numeric field",
+    "Unseen F3 or remaining poses approved",
+    "Unseen independent VFX or GIF approved",
+    "Runtime or deployed game accepted"
+  ],
+  "evidenceSha256": {
+    "docs/superpowers/specs/2026-10-25-jiuweihu-whole-character-design.md": "bc16721123947d8680d6d6745ca6bd286681d09b47bb1228d0547f3333bd5636",
+    "docs/verification/P4_CHARACTER_PREFLIGHT/proposal.json": "a34252d52dddc68a8ead4d1c608d6d77667b8c8c3c8b0bff194fd57a422c5e00",
+    "docs/verification/P4_CHARACTER_PREFLIGHT/baseline.json": "a4e8c8775cebba5cea6b8aca3aa3751c819e9b2c4986f2835935f2df30f6a23b"
+  },
+  "preservePresentedBytes": true,
+  "workflow": "Basic→Heavy→Special→Awakening→Passive; each F3/style→remaining poses+independent VFX→GIF approval→Runtime/necessary verification→normal Pages/public→player game approval"
+}
