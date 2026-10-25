@@ -23,3 +23,6 @@
 - 本機Chromium下載得到壞ZIP，無本機真Browser PASS；失敗log保留，沿正常CI真native/built。
 - Browser driver新增96案：12明確來源×circle/lane×敵我×normal/reduced；實際WebGL讀pixel前後差異、clock變化、清理、缺來源fallback及六區同屏圖。與原20招真施放矩陣/游息32+4及四主動/P1/P2一起走正常CI。未實跑前不宣稱PASS。
 - 第一未完Gate：推送coherent checkpoint→新來源正常CI及任何真失敗修復→Pages→CI/local/public精確指紋→呈交玩家。未有玩家新Runtime核准、P3未COMPLETE。
+
+## 發布前自審：符紋邊界 RED→GREEN
+圓形wind起點的尖端在 .86r 環外再加 .216r，超出真半徑。新增逐頂點 containsDanger 測試先真失敗（glyph-red.tap），改 .74r 起點／reduced .55r、保留尖端空間後GREEN；不是改危險幾何。完整1231/1231、針對11/11與Build PASS。新來源必須重新正常CI，bb0fc51只作前一checkpoint，不能拿其Browser結果冒稱修正後PASS。

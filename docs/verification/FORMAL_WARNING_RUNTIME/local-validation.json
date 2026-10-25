@@ -1,11 +1,11 @@
 {
   "tests": {
-    "total": 1230,
-    "pass": 1230,
+    "total": 1231,
+    "pass": 1231,
     "fail": 0
   },
   "targeted": {
-    "pass": 10,
+    "pass": 11,
     "fail": 0
   },
   "build": "PASS /110 assets /6378266 encoded bytes",

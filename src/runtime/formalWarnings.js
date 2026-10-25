@@ -30,7 +30,8 @@ export function drawFormalWarning(g,threat,p,source,project,reducedMotion){
   g.fillStyle(color,.38+.40*p.progress);polygon(g,[outer[0],outer[1],inner[1],inner[0]].map(project));g.fillPath();
  }
  // Shared clock controls the inner seal; reduced-motion uses opacity only.
- const scale=reducedMotion?.62:.86-.45*p.progress,r=threat.geometry.radius*scale;
+ // Leave room for the glyph's own .216r tip inside the true circle boundary.
+ const scale=reducedMotion?.55:.74-.38*p.progress,r=threat.geometry.radius*scale;
  const count=source.marks;
  for(let i=0;i<count;i++){
   const theta=i*2*Math.PI/count,along=p.shape==='lane'?(i+1)/(count+1):.5;

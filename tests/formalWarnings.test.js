@@ -61,3 +61,12 @@ test('cast warning source does not suppress a persistent area and resolver failu
  const broken=fixture({warningSource:()=>{throw Error('source unavailable');}}).presenter;
  broken.render([threat],500);assert.equal(broken.presentations.get(threat.id).mode,'fallback');
 });
+test('every formal glyph stays within the true danger footprint even at the earliest clock',()=>{
+ for(const id of ['P1','P2','P3'])for(const shape of ['circle','lane'])for(const now of [0,500,1000]){
+  const source=rosterCatalog[id].warningDescriptors.awakening,calls=[];
+  const g=new Proxy({},{get:(o,k)=>(...args)=>{calls.push([k,...args]);return g;}});
+  const p=new TelegraphPresenter({add:{graphics:()=>g}},point=>point,{warningSource:()=>source});
+  const t={...threat,geometry:{...threat.geometry,shape}};p.render([t],now);
+  for(const [method,x,y]of calls)if(['moveTo','lineTo'].includes(method))assert.ok(containsDanger({x,y},{...t.geometry,radius:t.geometry.radius+1e-8}),`${id} ${shape} ${now} glyph outside danger`);
+ }
+});

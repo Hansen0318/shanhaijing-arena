@@ -1,0 +1,35 @@
+✔ explicit formal warning source replaces old capsule outlines and center line (2.682815ms)
+✔ formal coverage uses projected true capsule caps and circle under anisotropic projection (3.395697ms)
+✔ no source, invalid source and unsupported coverage preserve one original fallback (0.823019ms)
+✔ formal warning retains team distinction, impact progression, pause and bounded lifecycle (4.179156ms)
+✔ only explicitly authored warning descriptors resolve; future roster retains fallback (0.219918ms)
+✔ cast warning source does not suppress a persistent area and resolver failure retains warning (0.520846ms)
+✖ every formal glyph stays within the true danger footprint even at the earliest clock (1.808987ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 162.342858
+
+✖ failing tests:
+
+test at tests/formalWarnings.test.js:64:1
+✖ every formal glyph stays within the true danger footprint even at the earliest clock (1.808987ms)
+  AssertionError [ERR_ASSERTION]: P1 circle 0 glyph outside danger
+      at TestContext.<anonymous> (file:///workspace/scratch/bc43b4efa6cc/shanhaijing-arena/tests/formalWarnings.test.js:70:81)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
