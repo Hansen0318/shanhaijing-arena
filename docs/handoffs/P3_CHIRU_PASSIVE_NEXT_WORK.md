@@ -1,35 +1,27 @@
 ```text
-【山海經聯盟｜P3 游息修正版 Runtime＋正式VFX退示意至正常部署｜新Work無縫接手】
-所有後續交接指令必須維持單一完整、自足、可一鍵複製的code block。
+【山海經聯盟｜正式預警替換已部署；新Work只接玩家遊戲驗收／實際新回饋】
+所有後續交接指令維持單一完整、自足、可一鍵複製的code block。
 
-[角色與GitHub恢復]
-接續 Hansen0318/shanhaijing-arena；GitHub最新remote是唯一權威。唯一分支 feat/m0-combat-core-20260927；PR#1保持open/unmerged，禁止merge main。交接定位checkpoint e750c6e0444000a0a3ef2476eff3619a07e9f23a，但先fetch最新remote HEAD、核對本機未push工作及tree，不能用舊SHA覆蓋新成果。原生單人執行，不委派、不開新branch/worktree、不動TD、不重置存檔、不動無關untracked。
+[恢復與保護]
+專案 Hansen0318/shanhaijing-arena。GitHub最新remote唯一權威；分支 feat/m0-combat-core-20260927；PR#1保持open/unmerged，禁止merge main。產品發布定位38cdd8c607a74f304b66dc31b9b983f443048bc5，之後純證據文件有新commit；先fetch最新HEAD，核對本機未push/tree，不拿定位SHA覆蓋新成果。原生單人、不委派、不新branch/worktree、不動TD、不重置存檔、不動無關untracked。
+先讀最新AGENTS、WORK_PROGRESS、docs/STATE頂端、DEVELOPMENT_PLAYBOOK、PROJECT_BOUNDARIES、docs/decisions/2026-10-23-restore-sequential-skill-workflow.md、CHARACTER_ACTION_ART_WORKFLOW、M5C_ART_ANIMATION_VFX，以及docs/verification/FORMAL_WARNING_RUNTIME/{REPORT.md,release.json,WORK_LOG.md,source-guards.json,ci-local-build.json,public-fingerprints.json,protected-sources.json,publish-method.json}與docs/verification/P3_PASSIVE_RUNTIME/CURRENT.json。
 
-先讀最新AGENTS.md、WORK_PROGRESS.md與docs/STATE.md最上方、docs/DEVELOPMENT_PLAYBOOK.md、docs/PROJECT_BOUNDARIES.md、docs/decisions/2026-10-23-restore-sequential-skill-workflow.md、docs/CHARACTER_ACTION_ART_WORKFLOW.md、docs/M5C_ART_ANIMATION_VFX.md、docs/verification/P3_PASSIVE_RUNTIME/{CURRENT.json,REPORT.md,WORK_LOG.md,player-feedback-2026-10-25.md}、docs/verification/P3_PASSIVE_RUNTIME/readability-revision/{SOURCE_AUDIT.md,source-audit.json,reuse-proof.json}、docs/art/candidates/chiru/passive/readability-review-v1/{REVIEW.md,manifest.json,encoded-verification.json,SHA256SUMS.json,prepare_review.py}、docs/art/approved/chiru/passive/{style-v2,composite-review-v1,readability-review-v1}/acceptance.json，以及核准整角spec docs/superpowers/specs/2026-10-23-chiru-whole-character-design.md第5/6節。來源盤點是唯讀，不是已修復證據；若有新遠端差異，按實際差異恢復。
+[已完成，禁止重做]
+產品38cdd8c／tree baabc4421d7148371c3443e90f2cc5b9c2b68038；正常Pages40160079507/build121069659769/deploy121072012132 SUCCESS。獨立P1 40160079501及P2 40160079436 SUCCESS。
+完整1231/1231、Build110素材/6378266 bytes PASS；warning真WebGL native96/built96（12來源×circle/lane×敵我×normal/reduced，逐案readPixels、clock、cleanup）、20招真execute/載入/可見正式或fallback/無雙疊/清理native+built PASS；游息32/4、四主動各32/4、P1 16/8、P2 4/2均PASS。來源guard659/694/585下載CI後隔離副本重驗PASS；4artifact SHA256/ZIP CRC PASS；CI/local/public172逐bytes+SHA256相符，公開172全fresh。
+本機Chromium下載仍壞ZIP，但正常CI真Browser已完成，不能把舊本機阻擋當現在未完。bb0fc51/run40159904514被glyph邊界修正取代而取消；最終來源38cdd8c全部真驗證成功。歷史原收據/舊證據未被覆寫，新報告/兩張工程同屏圖在FORMAL_WARNING_RUNTIME/evidence/。
+不要重畫PNG、重審既有GIF/數值、重做游息亮邊或warning程式；沒有新來源/實際新回饋就不重跑suite/Build/Browser/Pages/public。
 
-[最新Runtime checkpoint]
-本次正式warning修正已實作checkpoint，先讀docs/verification/FORMAL_WARNING_RUNTIME/WORK_LOG.md；不要重做。獨立ground-sigil-v1向量來源及資料驅動替換已寫，缺來源fallback保持，96案真WebGL矩陣接入正常CI；當前唯一下一Gate是新來源正常CI/Pages/public後呈交玩家。舊20招run40149990210已SUCCESS但不是本新warning證據；舊「尚無warning來源」描述已由本修正覆蓋。P3未COMPLETE，玩家新遊戲核准仍待。
-最新玩家IMG_2848確認藍橘Telegraph膠囊線框仍未正式取代；新增未完Gate是正式warning完整承接真幾何/端點/敵我/impact後取代舊線框，不能把20招cast/contact PASS當warning已完成。游息此幀HP都>60%，未顯示符合條件。讀runtime/player-screenshot-2026-10-25.json；不宣稱兩項已結案。
-最新：cc17ab8已正常部署，公開172 fresh一致；20招擴充driver仍待真CI。range fixture已修為numeric minRange/range；尚未發布的reuse優化已撤回、原workflow/reuse恢復cc17 bytes，不恢復優化或重新製作素材。
-cc17ab8正常CI/Pages40145475734及32/4+四主動/P1/P2已成功、CI/local172相符；20招新矩陣仍待真CI。最新reuse proof嚴格綁定四主動未改來源及report/PNG，只省已通過相容；不能跳20招游息/source guard/正常Pages/public。
-cc17ab8產品游息32/4步驟成功、P1/P2獨立workflow成功；20招真executeAbility/loaded/visible/無雙疊矩陣新增待跑，先完成這一Gate及正常CI/Pages/public，不重做PNG或已通過產品修正。
-真CI40145248296第一案因Phaser4移除setTintFill失敗；已改現行API且真Tint元件RED→GREEN。讀runtime/ci-40145248296-native-failure.json；續新來源正常CI，不沿用首輪假PASS。
-安全remote e0b4b87；本機1224/1224與Build110素材PASS。正常CI新native/built/相容/Pages及public fingerprint為第一未完Gate；先修實際失敗，不重做PNG/Runtime或已通過suite。
-Runtime修正已在同分支checkpoint；不要重做已完成程式/PNG。先讀readability-revision/runtime/下實際RED/GREEN/初次suite及Chromium失敗，完成新來源驗證與正常發布。舊證據僅舊來源有效。
+[實際修正與永久規則]
+TelegraphPresenter原本無獨立warning來源，不能用cast/contact成功冒稱舊線框已退。現在warningDescriptors與ground-sigil-v1明確程式向量來源：鹿蜀風紋／猼訑岩紋／赤鱬水紋；依sourceId→真definition→category解析，不判角色ID。真circle/capsule含兩端在arena取樣後投影，完整危險區、分段亮邊、敵我及impact共用clock接手，成功只畫一份，舊矩形/端點圓框/中心線退出。內部glyph逐頂點不超真危險邊界；normal內收、reduced只以透明亮度表示clock，Pause/消失/冪等destroy正確。
+缺來源、無效renderer/motif/color/marks、shape不支援或解析例外才保留一份fallback。P4/P5無正式warning，必要fallback仍在；持續場域、P1/P2正式被動、P2盾、P3水膜及固定場地各有獨立來源，不可誤刪。正式action/blade/contact存在不等於正式warning可用，後續角色需自己完整warning來源與真驗證後才退對應示意。
+全部approved art/收據/public PNG、尺度/anchor/懸浮下緣/右canonical左mirror與戰鬥邏輯/治療/命中時序不變；普通Hit永久取消、無固定16MiB總額，但逐檔安全/兩下載/required/所有權回收保持。Collection只寫實際玩法；逐招Basic→Heavy→Special→Awakening→Passive完整流程保持。
 
-[玩家已核准與第一未完成Gate]
-玩家本次明確：「我核准，我要給新的work做，妳確認有紀錄，提供prompts，讓她接手修改被動的vfx和已開發多於的vfx到部署」。本次修正版薄荷綠亮邊＋亮白雙魚、同尺度混戰對照與11支GIF已核准；精確SHA256收據 docs/art/approved/chiru/passive/readability-review-v1/acceptance.json。原STYLE／原9GIF亦有各自核准收據。不要重審方向、重生已核准來源、重做GIF或前檢。P1/P2 COMPLETE，P3四主動已核准；舊游息Runtime release b414e9f079a985e4bf23283ffa5067abf5af9ac3，正常Pages40105519923 SUCCESS、1221測試、native32/built4、四主動/P1/P2相容、CI/local/public168都有原來源真證據。來源未改部分用精確reuse proof；新視覺與退示意絕不可拿舊證據冒稱PASS。當前第一未完成Gate＝最小Runtime實作，之後必要真驗證、正常CI/Pages/public指紋及供玩家遊戲測試；部署已授權，不再問允許部署。P3尚未COMPLETE，沒有修新版玩家遊戲acceptance。
-
-[Runtime修正]
-1. 游息真amount>0的受益者當前可見pose/frame生成短暫薄荷綠外輪廓亮邊，魚印亮白，青綠短紋四Tier同尺度1/2/3/4組；參照核准review包中可追溯PNG與顯示方案。不能把idle-rim-reference-only.png當固定Runtime sprite：必須跟隨任意真受益者姿勢、Move/Action、左右mirror及敵我多instance。角色本體像素、尺度、anchor、懸浮下緣不變；魚印前景、低於預警與HP，不加全身遮罩/文字牌/連線。normal沿0–200ms清楚顯示、200–650ms內收淡出；reduced原位靜態同Tier淡出，650ms清空。只在真正受益者顯示；self/other/zero、Pause、recipientKO/casterKO、到期、end/Restart/destroy和重複destroy正確。遊戲直接讀PNG及metadata，不讀合成GIF。必要時先用針對性失敗測試定位，再做共用來源修正；無角色ID特例。
-2. 已開發正式技能同一招同一階段/狀態的正式VFX成功解析時取代多餘示意，不能雙疊；正式資源未成功解析才保留對應fallback。按來源與事件資料共用判斷，不憑角色ID、截圖或僅有assetKey判斷。盤點涵蓋caster startup/飛行/真命中/持續狀態/命中預警/場地：source-audit列出20招、12個有正式action。P1/P2已核准程式化被動、P2正式盾與P3正式水膜不得當示意刪除。ArenaScene固定褐色橢圓及中線是場地輔助，保留。TelegraphPresenter目前無正式warning涵蓋判斷；對必要circle/lane capsule端點/範圍、敵我色與impact進度，必須讓正式呈現完整承接後才退掉對應示意幾何；缺正式預警來源時保留必要gameplay warning。不可把正式cast/blade/contact存在直接當作預警已覆蓋，也不擴大成場地重設計。檢查src/runtime/{assetPresenter,telegraphs,ArenaScene,statusEffects,passivePresenter}.js與src/assets/battleDescriptors.js，保護既有戰鬥命中時序。
-
-[不可變游息契約／保護]
-戰鬥中caster存活可行動未受控、有活敵且最近敵距≥2.0；固定4.2內存活同隊含自身HP≤60%，最低HP/maxHp優先，同值穩定instanceId；一次治療一人，恢復受益者當前maxHp×8/12/16/20%，缺血封頂。正amount才起各instance獨立8秒CD，不排隊；不吃主動healing scale/回流/清流、不復活/暴擊/循環。同刻傷害/KO→主動→重新檢查被動。已結算治療不回滾。保護P1/P2/P3四主動、全部approved masters/收據原bytes、Idle尺度chestX158/hoverY203/懸浮下緣、右canonical/左mirror；普通Hit永久取消。T2 chiru.rear-heal維持顯示名清流，ID/條件/幅度不動。無固定16MiB總額；逐檔安全、兩下載、required完整就緒及所有權回收保持。Collection只寫已實作玩法，不虛寫新效果。維持Basic→Heavy→Special→Awakening→Passive逐招完整流程，不啟動下一角色。
-
-[最低必要真驗證與部署]
-新來源先做針對性RED→GREEN，之後真native與built檢查正式VFX成功取代同階段示意/無雙疊、正式來源缺失fallback、真warning覆蓋/保留資訊；游息四Tier/敵我/多instance/左右/normal-reduced、自療/他療/zero、Pause/KO/650ms到期/end/Restart/destroy與手機Collection。依共用來源影響補P1/P2及P3四主動相容；保留既有匿名資料opt-in、選人、門檻、當前maxHp、CD、同刻排序的相符測試。產品來源改動須跑必要測試、Build/source guard、正常CI/Pages（不得skip部署）及CI-local-public精確fingerprint；記錄任何真失敗與修復，不拿美術模擬當Runtime驗證。提供實際網址及橫向→HEAL TEST→Ally Tier T3→START→觀察真受益者標記及正式VFX、Restart/T0最小測試步驟後停待玩家遊戲核准，不提前標P3 COMPLETE。
+[唯一下一Gate]
+這次向量warning是已授權實作選擇，工程與發布成功不是玩家視覺/遊戲核准。P1/P2與P3四主動既有核准保持；P3游息與修正版Runtime尚待玩家新遊戲驗收，P3未COMPLETE，不建立未核准acceptance、不開始下一角色。
+先呈交已部署網址 https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&vfx=38cdd8c 。橫向→HEAL TEST→Ally Tier T3→START，觀察游息真受益者薄荷綠亮邊/亮白雙魚，以及鹿蜀/猼訑/赤鱬正式預警；Restart/T0比較。P4/P5未開發warning仍保留必要fallback，不能誤稱所有角色舊線框都已刪光。等待玩家明確遊戲核准，收到後保存綁定實際發布與收據hash的Runtime acceptance，再依規則做P3結案；有實際新回饋則只追查和修該回饋，不預先重驗舊成果。
+游息條件仍為caster存活可行動未受控、有活敵且最近敵距≥2.0；4.2內同隊含自身HP≤60%，最低HP/maxHp優先/同值穩定instanceId，一次一人、當前maxHp×8/12/16/20%缺血封頂，正amount才各instance獨立8秒CD；不吃主動scale/modifier/復活/暴擊/循環。同刻傷害KO→主動→重新檢查被動。零治療不畫魚印；已結算不回滾，650ms/KO/end/Restart/destroy清理。
 
 [保存]
-在長驗證前保存coherent checkpoint；每Gate更新WORK_PROGRESS、STATE、本招WORK_LOG與此單一自足handoff，同分支commit/push。CLI無認證時用connected GitHub API，每個blob核Git SHA、完整tree核對、非force更新ref。若被阻擋，先保存成果及真失敗證據，留下唯一下一步，不靜默重做原STYLE/GIF/產品舊驗證。修新版玩家遊戲核准前不建立Runtime acceptance。
+每次繼續先確認最新規則/進度；有實際新工作才更新必要文件、同分支commit/push。純收據/證據文件[skip ci]，不重跑來源未變工程。CLI無認證時用connected GitHub API逐blob Git SHA與完整tree核對、expected-SHA非force更新ref。仍保護PR1 open/unmerged，所有接手指令單一自足code block。
 ```

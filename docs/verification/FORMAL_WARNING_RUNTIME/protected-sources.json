@@ -1,0 +1,27 @@
+{
+  "approvedArtAndReceipts": {
+    "status": "UNCHANGED",
+    "gitDiffExit": 0,
+    "paths": [
+      "docs/art"
+    ]
+  },
+  "runtimeImages": {
+    "status": "UNCHANGED",
+    "gitDiffExit": 0,
+    "paths": [
+      "public"
+    ]
+  },
+  "combatMechanics": {
+    "status": "UNCHANGED",
+    "gitDiffExit": 0,
+    "paths": [
+      "src/combat"
+    ]
+  },
+  "postReleaseProductChanges": {
+    "status": "NONE",
+    "gitDiffExit": 0
+  }
+}

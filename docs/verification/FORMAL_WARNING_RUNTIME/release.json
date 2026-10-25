@@ -1,0 +1,96 @@
+{
+  "status": "ENGINEERING AND NORMAL PAGES COMPLETE / PLAYER GAMEPLAY ACCEPTANCE PENDING",
+  "sourceCommit": "38cdd8c607a74f304b66dc31b9b983f443048bc5",
+  "tree": "baabc4421d7148371c3443e90f2cc5b9c2b68038",
+  "normalPagesRun": 40160079507,
+  "buildJob": 121069659769,
+  "deployJob": 121072012132,
+  "independentP1Run": 40160079501,
+  "independentP2Run": 40160079436,
+  "workflowStatus": "SUCCESS",
+  "tests": {
+    "total": 1231,
+    "pass": 1231,
+    "fail": 0
+  },
+  "native": {
+    "passiveCases": 32,
+    "skillMatrix": 20,
+    "formalWarningCases": 96
+  },
+  "built": {
+    "passiveCases": 4,
+    "skillMatrix": 20,
+    "formalWarningCases": 96
+  },
+  "compatibility": {
+    "basic": [
+      32,
+      4
+    ],
+    "heavy": [
+      32,
+      4
+    ],
+    "special": [
+      32,
+      4
+    ],
+    "awakening": [
+      32,
+      4
+    ],
+    "p1": [
+      16,
+      8
+    ],
+    "p2": [
+      4,
+      2
+    ]
+  },
+  "sourceGuards": {
+    "special": {
+      "status": "PASS",
+      "files": 659,
+      "tests": {
+        "total": 1231,
+        "pass": 1231,
+        "fail": 0
+      }
+    },
+    "awakening": {
+      "status": "PASS",
+      "files": 694,
+      "tests": {
+        "total": 1231,
+        "pass": 1231,
+        "fail": 0
+      }
+    },
+    "passive": {
+      "status": "PASS",
+      "files": 585,
+      "tests": {
+        "total": 1231,
+        "pass": 1231,
+        "fail": 0
+      }
+    }
+  },
+  "ciLocalFiles": 172,
+  "publicFreshFiles": 172,
+  "publicStatus": "PASS",
+  "playerRuntimeAcceptance": false,
+  "p3Complete": false,
+  "physicalPhoneTest": false,
+  "gameUrl": "https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&vfx=38cdd8c",
+  "attempts": [
+    {
+      "source": "bb0fc51e6c61f652f63f224821cc166e0a915003",
+      "run": 40159904514,
+      "conclusion": "cancelled",
+      "reason": "Superseded by glyph-footprint correction; not reused as final-source proof."
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+## 2026-10-25 — 最新權威：正式warning替換已發布；唯一下一Gate是玩家遊戲驗收
+
+產品38cdd8c／正常Pages40160079507 SUCCESS；1231測試、warning native96/built96、20招與游息/四主動/P1P2真相容、來源guard659/694/585及CI-local-public172全PASS（public全fresh）。正式ground-sigil-v1來源已完整承接真circle/capsule端點/敵我/impact/reduced後取代舊矩形/端圓/中心線，缺/無效來源才保留fallback；P4/P5、持續場域、盾水膜、場地不可誤刪。新程式向量樣式尚待玩家遊戲驗收，不能假稱美術/Runtime核准。全部approved art/收據/尺度/戰鬥契約保持。詳細docs/verification/FORMAL_WARNING_RUNTIME/REPORT.md與最新WORK_PROGRESS/STATE；不重做已完修正或來源未變驗證/部署，只呈交遊戲網址停待核准。P3未COMPLETE，不開始下一角色；原生單人/同分支PR1 open-unmerged、不委派/新branch/worktree/TD/main merge/存檔。所有交接單一自足code block；每次接續先fetch最新GitHub。下方ACTIVE/未部署為歷史，由本節覆蓋。
+
 ## 2026-10-25 — ACTIVE：正式warning替換已實作；新來源正常CI/Pages/public待完成
 
 本次玩家直接授權繼續VFX修正。最新WORK_PROGRESS/STATE與docs/verification/FORMAL_WARNING_RUNTIME/WORK_LOG.md優先：獨立ground-sigil-v1向量warning資料已補，完整真circle/capsule端點/敵我/impact/reduced由共用Presenter承接後取代對應舊線框；無來源/無效來源保留fallback，P4/P5與持續場域不誤刪。不是僅因action存在而刪warning。新96案WebGL native+built接正常CI，需實際成功/正常Pages/public指紋後呈交玩家；舊20招run40149990210 SUCCESS不是新warning證據。全部approved art/收據/尺度/戰鬥契約/盾水膜/場地保護，原生單人/原分支PR1 open/unmerged、不委派/新branch/worktree/TD/main merge/存檔。玩家未核准本新Runtime，P3未COMPLETE，不開始下一角色；不重畫素材或重做本已完成修正，先收斂真發布Gate。

@@ -1,0 +1,21 @@
+{
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/special/release-evidence.json": "94f0cfdfcae6a18b828000450a51e1def2c8289e61a7cee726e553b0d4443252",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/special/browser/native.json": "e9697ac3e30562a8fa99230d285058b33ef55102cfaaf256dbdc86e70dbc5217",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/special/browser/built-entry.json": "46d3c3b6e58ad45478db2478e4b610facd31823a1be912a48819e36851890611",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/special/heavy-compatibility/native.json": "7ff1c8c3882861ee31402bfae52798931f2dbe094fffaf96efc2c53057874d1f",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/special/heavy-compatibility/built-entry.json": "91f5f75fa81590e83814fffc09f92885962350c44fc42b0deeb0c2c3ea356ef1",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/special/basic-compatibility/native.json": "235a80fdf082e5b0184b8bde8d804b8a5f2dfdfa8e1caff434b05ccb3b3c4baf",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/special/basic-compatibility/built-entry.json": "f7ab5f544f9384d36a8db7c114e8ffe1442825d05f8c0d5a3aa5099f31a9094f",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/awakening/release-evidence.json": "2c574fd3efe5e9f41e2b3b3aaf6dd438c21475be8491e4e8c03cbcef73e66702",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/awakening/browser/native.json": "6eb3c7fb92cf42c0d1aa47d59b62ac8a3c92c518a197620e9167f12f816ae379",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/awakening/browser/built-entry.json": "78e0d910204588369d907c7e0e6fb369d852666e3991ecb370e17d4322edf5f2",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/awakening/p1-compatibility/native.json": "eca69294913856cee56508b5af888d5e8ee11788e9ed20a1dbb90039e72e6bfa",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/awakening/p1-compatibility/built-entry.json": "f175ba121105ec1706640fd5bd5b18ffe3f48ee31c7010f35d4c70790dc07e88",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/awakening/p2-compatibility/native.json": "eb9d923573a0fd7623806be85712e6876ab9a7cf84a8676888cee070362d6390",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/awakening/p2-compatibility/built-entry.json": "670ad23cf63782953ec460fef3e1728c30b9f7b79013e1abf87d55b29f8c2610",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/passive/release-evidence.json": "052257297b51691fa55cfe6963c37d1153498c9eef264344fe2be85e47badbe3",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/passive/browser/native.json": "2a0a01f577581e287973d63d3952a4d26d4a13ac0c11092d0253897a97872c7c",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/passive/browser/built-entry.json": "f1bca5e5a1d0b30ddc1b8680e68f16b111fd3c797104ec5851ff9f66e038ccff",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/passive/browser/native-formal-warnings.png": "960c71d4484632803eb344f2314514fddb9dfe26dc2a428b0c4c8db23b9a44cc",
+  "docs/verification/FORMAL_WARNING_RUNTIME/evidence/passive/browser/built-formal-warnings.png": "e6c099e180ef8eb9cb5646416a68eb56d16dad8349d6264e4a58b5ad05941c20"
+}

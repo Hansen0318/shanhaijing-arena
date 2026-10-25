@@ -414,7 +414,7 @@ Metadata may define:
 - loop;
 - cleanup timing.
 
-Existing M6B telegraph/threat geometry remains authoritative for gameplay. Formal VFX may visually replace or decorate placeholder warnings, but cannot alter hit geometry/timing by itself.
+Existing M6B telegraph/threat geometry remains authoritative for gameplay. A distinct formal warning source must carry the full circle/capsule footprint including endpoints, team distinction and impact clock before replacing the corresponding schematic warning. Once that source resolves, draw only the formal warning, never the old rectangle/endpoint rings/center line beneath it. A blade/contact asset does not constitute a warning source. Missing, invalid or unsupported warning sources retain one fallback. Independently owned persistent areas, shields and field guides are not retired by a cast-warning descriptor. Presentation never changes hit geometry/timing. The explicit ground-sigil-v1 vector sources and true native/built evidence are documented in verification/FORMAL_WARNING_RUNTIME/.
 
 ## 5. Asset manifest and validation
 

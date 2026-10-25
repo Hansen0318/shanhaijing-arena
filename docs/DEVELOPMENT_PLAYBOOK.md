@@ -34,6 +34,11 @@ Release266114c46406e39c8501ccad370ce69bfe34f236/treeb6289ff292bd6de351ada7260c3b
 
 # Development Playbook
 
+## 2026-10-25 — 正式VFX退示意：預警來源與cast/contact分開
+
+正式預警必須有明確可解析的來源與支援shape，完整承接真circle/lane capsule（含端點）、敵我及impact共用clock，再取代同一record舊線框；不能由action/blade/contact存在直接推論。成功來源僅畫一份正式呈現，缺失/無效/不支援來源才用一份fallback。ground-sigil-v1是本次明確註冊的程式向量來源，不修改或重生核准PNG；未開發P4/P5與獨立持續場域仍保留各自必要呈現。真native/built WebGL需證明實際像素、normal/reduced、範圍與清理；不以靜態盤點或先前cast/contact驗證代替。詳細證據入口 verification/FORMAL_WARNING_RUNTIME/。最新發布狀態仍以WORK_PROGRESS/STATE為準；下方舊Basic起點均為歷史。
+
+
 ## 2026-10-23 — 最新玩家指令：撤銷整包開發，恢復逐招完整流程（最高優先）
 
 **權威最新決策：** `docs/decisions/2026-10-23-restore-sequential-skill-workflow.md`。玩家明確撤銷2026-10-23舊整角「同時四招F3＋被動樣式／整包GIF／整包Runtime／一次發布」要求，因Work容量與對話長度限制，恢復 **Basic → Heavy → Special → Awakening → Passive**；每一招各自完成F3審核→其他動作/獨立VFX→GIF審核→Runtime/真驗證→正常Pages部署→玩家實機核准→保存收據與GitHub checkpoint，**才繼續下一招**。可跨多個短Work，不能等五招才發布。過去同日整包計畫、handoff、decision為歷史，與本新決策衝突處以本節和新decision為準。

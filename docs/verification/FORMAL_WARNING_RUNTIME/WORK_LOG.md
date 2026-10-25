@@ -26,3 +26,6 @@
 
 ## 發布前自審：符紋邊界 RED→GREEN
 圓形wind起點的尖端在 .86r 環外再加 .216r，超出真半徑。新增逐頂點 containsDanger 測試先真失敗（glyph-red.tap），改 .74r 起點／reduced .55r、保留尖端空間後GREEN；不是改危險幾何。完整1231/1231、針對11/11與Build PASS。新來源必須重新正常CI，bb0fc51只作前一checkpoint，不能拿其Browser結果冒稱修正後PASS。
+
+## 最終發布完成
+最終來源38cdd8c，正常run40160079507/build121069659769/deploy121072012132 SUCCESS；完整1231/1231、新warning96+96、游息32+4、20招native/built及四主動/P1P2相容全部PASS。獨立P1/P2均SUCCESS；三guard659/694/585在隔離副本重新驗證PASS，4artifact SHA256/ZIP CRC PASS，CI/local/public172全部相符且public172全fresh。完整收據release.json、REPORT.md與evidence/；歷史證據未覆寫。工程與部署已完成，唯一下一Gate為玩家遊戲驗收；P3未COMPLETE、未建立新acceptance。

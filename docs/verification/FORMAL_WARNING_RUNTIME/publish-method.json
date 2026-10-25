@@ -1,0 +1,185 @@
+{
+  "method": "Connected GitHub Git objects; each blob checked against local Git hash; complete local write-tree equals remote created tree; non-force expected-SHA ref update",
+  "baseline": "0f24cae19866eb51176c0d5f5a29c40d40c3e0bd",
+  "commits": [
+    {
+      "sha": "bb0fc51e6c61f652f63f224821cc166e0a915003",
+      "tree": "a975c93ae7615c6466a33153439d6be66c414ff2",
+      "blobs": [
+        {
+          "path": "AGENTS.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "dcd4cab8c8fe3be8196ce8c133a8f5007a00cb95"
+        },
+        {
+          "path": "WORK_PROGRESS.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e344e8a19afb24d27639479be2cc6adc43f1e5b6"
+        },
+        {
+          "path": "docs/STATE.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "48f6ad0d734c44f693bee52b1cfe0a1b4e028006"
+        },
+        {
+          "path": "docs/handoffs/P3_CHIRU_PASSIVE_NEXT_WORK.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "21b8bab0046b147784ea463db87422133d832404"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/WORK_LOG.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2b7cf2725a6fd4d503599e02723d2e54b0972c32"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/build.log",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7c476c6f8b224e920138a35aea03802f58f99d61"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/chromium-install-failure.log",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "5cc5103fab1b0c969ed0cda85f6e6d422e55594c"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/first-suite-failures.tap.gz",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "61c8ab40fd7db995181f26353c9edfee8db12a33"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/local-validation.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e73fa826a5275c5b40f19a34b2c613a7082b69df"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/previous-test-sources.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b1030bb1949e3bcaa4aaa34d76d0c884e90fbf0d"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/red.tap",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "543f7a313e3cb82abf3c2195f567a181704665fa"
+        },
+        {
+          "path": "docs/verification/P3_PASSIVE_RUNTIME/CURRENT.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a2642f6dad538ed794619af033efb055a40e67e5"
+        },
+        {
+          "path": "scripts/checkChiruPassiveBrowser.mjs",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "dfe319fa9506502675bb5e1c779278771407e49b"
+        },
+        {
+          "path": "scripts/verifyChiruPassiveRelease.mjs",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "804d5df478d0f91ed142fb8db98bcd2b82b4ba09"
+        },
+        {
+          "path": "src/assets/warningDescriptors.js",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c3321564c7b7a2e879b97c1d5af36d4accdcaefe"
+        },
+        {
+          "path": "src/roster/catalog.js",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "92d54ec29984ab8fecb41b8088e73e2efa69a5fb"
+        },
+        {
+          "path": "src/runtime/ArenaScene.js",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "113d302372268c80a5af780dc9fee50316dc6b12"
+        },
+        {
+          "path": "src/runtime/formalWarnings.js",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3ce53de70bf23f82336cab05ef46987a7fafed55"
+        },
+        {
+          "path": "src/runtime/telegraphs.js",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3a965abd45229d66a23ef53cf2869836948967ec"
+        },
+        {
+          "path": "tests/chiruBrowserReuse.test.js",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "5cb7c605b071ecd066aa4725a6a65a88bc24613d"
+        },
+        {
+          "path": "tests/formalWarnings.test.js",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ac1f9a43ceac3662abb09ad69af2b632b651c830"
+        },
+        {
+          "path": "tests/passiveVfxReleaseEvidence.test.js",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9a5b30131ea08e58baa08add09e4c846954af218"
+        }
+      ]
+    },
+    {
+      "sha": "38cdd8c607a74f304b66dc31b9b983f443048bc5",
+      "tree": "baabc4421d7148371c3443e90f2cc5b9c2b68038",
+      "blobs": [
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/WORK_LOG.md",
+          "sha": "2087aece8b39be655da9789ac868b4c5455e66c9"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/build.log",
+          "sha": "a976e90d4b42c65eeb883dee0d7fe2a20b6f86f2"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/glyph-green.tap",
+          "sha": "6f4dd8ea0c158e1e046c42d2d01ff8d5830f7638"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/glyph-red.tap",
+          "sha": "a4e1b71e0bfbdca16b985c8c54d764c8b9e378c8"
+        },
+        {
+          "path": "docs/verification/FORMAL_WARNING_RUNTIME/local-validation.json",
+          "sha": "84799e9f17a491e0a42f343d5cdf52f8c1c4ab6a"
+        },
+        {
+          "path": "src/runtime/formalWarnings.js",
+          "sha": "99f35ac5fc61669e34de95b1c6265c97da3b0285"
+        },
+        {
+          "path": "tests/formalWarnings.test.js",
+          "sha": "cd8667b66892938499411c379abf2bea04b296b5"
+        }
+      ]
+    }
+  ],
+  "branch": "feat/m0-combat-core-20260927",
+  "pullRequest": {
+    "number": 1,
+    "state": "open",
+    "merged": false
+  },
+  "solo": true
+}

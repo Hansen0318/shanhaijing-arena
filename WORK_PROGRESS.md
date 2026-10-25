@@ -1,3 +1,11 @@
+## 2026-10-25 — 正式預警替換已正常部署／172公開fresh核對PASS；只待玩家遊戲驗收
+
+最終產品38cdd8c607a74f304b66dc31b9b983f443048bc5；正常Pages40160079507（build121069659769/deploy121072012132）SUCCESS，獨立P1/P2 40160079501/40160079436均SUCCESS。完整1231/1231、Build110素材、新warning真WebGL native96/built96、20招真施放native/built、游息32/4、四主動各32/4、P1 16/8與P2 4/2全部PASS。下載CI證據於隔離副本重驗來源guard659/694/585；4artifact hash/ZIP CRC PASS。CI/local/public172逐bytes/SHA256全相符，公開172全部fresh下載。詳細docs/verification/FORMAL_WARNING_RUNTIME/{REPORT.md,release.json,evidence/,source-guards.json,ci-local-build.json,public-fingerprints.json}。
+
+藍橘舊膠囊線框根因已修：獨立ground-sigil-v1明確向量來源完整承接真circle/capsule端點/敵我/impact/reduced後，取代同record矩形/端點圓框/中心線，沒有雙疊。鹿蜀風紋／猼訑岩紋／赤鱬水紋是本次直接授權的實作選擇，尚未玩家視覺/遊戲核准；缺/無效/不支援來源保留fallback，P4/P5、獨立持續場域、正式盾水膜及固定場地不誤刪。所有approved PNG/收據/尺度/戰鬥邏輯/游息契約保持。首輪歷史fixture與glyph超界的真RED/GREEN、Chromium壞ZIP及前checkpoint取消均保存，不冒用舊來源。
+
+唯一下一Gate＝呈交 https://hansen0318.github.io/shanhaijing-arena/?battleLab=1&vfx=38cdd8c ，橫向→HEAL TEST→Ally Tier T3→START，觀察真受益者亮邊雙魚及三已開發角色正式預警，Restart/T0比較，停待玩家遊戲核准。不建Runtime acceptance、不標P3 COMPLETE、不開始下一角色；來源未變不重跑本次已通過測試/Build/Browser/Pages/公開下載。原生單人、原分支PR1 open/unmerged、不委派/新branch/worktree/TD/main merge/存檔。每次繼續仍先fetch最新GitHub規則/進度。此為發布證據/流程純文件checkpoint[skip ci]，下方未完/禁止發布文字由本節覆蓋。
+
 ## 2026-10-25 — 正式預警替換實作 checkpoint；正常CI／部署 ACTIVE
 
 已從最新0f24cae恢復，PR1 open/unmerged；前20招run40149990210已SUCCESS，不能當warning修正證據。根因是TelegraphPresenter沒有獨立warning來源。現新增ground-sigil-v1明確向量來源：鹿蜀風紋／猼訑岩紋／赤鱬水紋；真circle/lane capsule含端點先arena取樣再投影、敵我色/impact clock/reduced與清理完整承接，成功解析僅畫一份正式預警，退掉對應矩形/端圓/中心線。缺來源或未知renderer/shape/解析例外保留fallback；P4/P5及持續場域不誤刪。這是已授權修正的實作選擇，尚未玩家視覺或遊戲核准，不建acceptance。
