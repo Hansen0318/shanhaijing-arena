@@ -1,0 +1,62 @@
+{
+  "status": "F3 ART CANDIDATE ONLY; PLAYER REVIEW PENDING; NOT RUNTIME PACK",
+  "source": "basic-f3.png",
+  "sha256": "74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7",
+  "bytes": 1276964,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "fullyDecoded": true,
+  "alphaNonzeroBbox": [
+    0,
+    19,
+    1234,
+    1254
+  ],
+  "alphaAbove1Bbox": [
+    44,
+    84,
+    1220,
+    1210
+  ],
+  "visibleMarginsAlphaAbove1": [
+    44,
+    84,
+    34,
+    44
+  ],
+  "edgeAlphaMax": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "sourcePreserved": "Exact copy of generated original; no resizing, cropping, recoloring or deletion of faint pixels",
+  "knownPackagingNote": "Some original alpha=1 pixels touch left/bottom canvas edges. Visible silhouette alpha>1 has clear margins; no runtime/frame safety claim. Preserve original; later deterministic padded/common-anchor derivative must contain every pixel before GIF/runtime.",
+  "visualSelfReview": {
+    "singleCharacterSinglePose": true,
+    "canonicalFacingRight": true,
+    "longFoxMuzzleNotHumanFace": true,
+    "creamRedBlackGoldIdentity": true,
+    "oneForwardArmOtherTucked": true,
+    "groundedFeetVisible": true,
+    "groupedNineTailIdentity": "Grouped masses as approved reference, not nine separately countable tips; final player acceptance pending",
+    "independentFXAbsent": true,
+    "noTextOrUI": true,
+    "details": "Pose is visibly different from approved Idle. Raw generation has richer contour/fur detail than tiny Idle; tiny-scale readability and normalization remain later GIF/runtime gates, not claimed here."
+  },
+  "referenceSha256": {
+    "public/assets/characters/jiuweihu/identity.png": "f8fe054e7a0de50d66e62081ec0fd53e493674cd707d5f2e28be098ab277dd0d",
+    "public/assets/characters/jiuweihu/battleIdle.png": "394497ffa5314a4559fee10d58d799fab9be59b282a31bb3ffebb02670ed6640"
+  },
+  "notApproved": [
+    "F3 candidate",
+    "F1/F2/F4",
+    "independent VFX",
+    "GIF",
+    "Runtime",
+    "Pages release"
+  ]
+}

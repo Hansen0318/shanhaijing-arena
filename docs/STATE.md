@@ -1,3 +1,11 @@
+## 2026-10-25 — P4 Basic靈火F3 v1已呈交；PLAYER ART REVIEW PENDING
+
+P4整角spec已由玩家「好我確認，紀錄後繼續」核准，收據docs/verification/P4_CHARACTER_PREFLIGHT/spec-acceptance.json、核准紀錄e721365a37b938a7cb2c8e749881cc4af4e8ec92。沿核准identity/Idle用內建imagegen完成Basic靈火單張本體F3：右向、單臂前點/另一臂收腰，無獨立特效。入口docs/art/candidates/jiuweihu/basic/f3-v1/{REVIEW.md,basic-f3.png,prompt.txt,qa.json}；原PNG1254×1254 RGBA1276964bytes，SHA256 74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7。原圖完整解碼、可見主體四邊留白、reference hash相符；極淡alpha=1觸左/下邊已明列QA，尚非Runtime safe pack，不刪原像素。原生單人自審，非獨立review。
+
+唯一下一Gate：玩家審這張F3，不能把spec核准當新圖核准。核准後保存此PNG精確hash收據，才F1/F2/F4與獨立出手/真命中VFX→GIF核准→Runtime/必要真驗證→正常Pages/public→玩家遊戲核准，再Heavy。若有更晚核准/候選則按有效成果接續，不重生原圖。單手瞬發Basic兩模式真結算0ms，不加假蓄力/飛行傷害；本圖不是完整招式華麗VFX完成證據。
+
+本次只生成候選與保存文件[skip ci]，src/public/核准masters/既有收據/尺度anchor/ground/mirror/存檔不改；未生成其他姿勢/VFX/GIF、未Runtime/Build/Browser/Pages，P1–P3與既有32現況probe/68來源綁定沿用不重跑。P4整角未完成，未開Heavy/P5；原分支PR1 open/unmerged、原生單人、不委派/新branch/worktree/TD/main merge/重置存檔。普通Hit取消、正式整層示意退休、逐檔安全/兩下載/required/所有權回收與單一完整codeblock交接規則保持。最新checkpoint以包含本節的remote為準。
+
 ## 2026-10-25 — P4五招規格 PLAYER APPROVED；Basic靈火單張F3 NEXT
 
 玩家先確認「有依照規則，確保技能都能明顯辨識大場面華麗嗎」，收到無FX動作差異/同尺度Basic<Heavy<Special<Awakening/獨立施法與真命中VFX/真target狀態生命週期與GIF驗收說明後，回覆「好我確認，紀錄後繼續」。依此保存已呈交ea1b9e1規格核准，精確收據docs/verification/P4_CHARACTER_PREFLIGHT/spec-acceptance.json綁定spec/proposal/baseline SHA256，原呈交bytes不改；其PENDING僅為原呈交歷史。不得再要求同版整表核准，也不把本次接續當未見美術/GIF/Runtime核准。

@@ -1,0 +1,29 @@
+{
+  "status": "CANDIDATE_PLAYER_REVIEW_PENDING",
+  "generator": "built-in imagegen",
+  "generatedOriginal": "basic-f3.png",
+  "generatedOriginalSha256": "74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7",
+  "specAcceptance": "docs/verification/P4_CHARACTER_PREFLIGHT/spec-acceptance.json",
+  "specApprovalCheckpoint": "e721365a37b938a7cb2c8e749881cc4af4e8ec92",
+  "files": {
+    "basic-f3.png": {
+      "bytes": 1276964,
+      "sha256": "74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7"
+    },
+    "prompt.txt": {
+      "bytes": 2929,
+      "sha256": "b06a8804ea845453fdaeb035a0ffbc029eda4c30b71fb3f856873ee9d47ed24c"
+    },
+    "qa.json": {
+      "bytes": 2006,
+      "sha256": "05dfd1d9beb0f5567c58dc831a1234b7e7a699f0441eb3ef0250129dd0cfc210"
+    },
+    "REVIEW.md": {
+      "bytes": 1543,
+      "sha256": "596682bde579b02ea4b152450d4b33fa176a2ec2938513f81720a6f8342bf84d"
+    }
+  },
+  "sourceEdits": false,
+  "runtimeReady": false,
+  "nextGate": "Player F3 art approval"
+}

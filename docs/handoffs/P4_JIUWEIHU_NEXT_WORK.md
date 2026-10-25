@@ -14,7 +14,10 @@
 P1/P2/P3 COMPLETE；P3最後d346798已玩家核准，closure與最後兩份acceptance保持。原1229/Build/native+built/正常Pages40163995446/public172保留，不因新會話重跑/下載。舊整包流程hash已在原SHA恢復、被逐招決策取代，不是未解決差異。
 P4既有portrait/Collection/Idle/Move/KO已核准，不重畫/重審。當前無formal actionDescriptors，獨立passive尚未實作。前檢已完成68相關source Git blob綁定與32個P4現況隔離施放PASS，完整真四Tier投影及兩模式時序已保存；來源未變不重跑。不能把current probe當新被動/Browser/手機驗證。
 
-[已核准規格／最高優先最新狀態]
+[最新唯一Gate：Basic靈火F3玩家美術審核]
+既有有效候選docs/art/candidates/jiuweihu/basic/f3-v1/basic-f3.png已呈交，SHA256 74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7；讀同目錄REVIEW/prompt/qa。不要重生此候選或直接做其他姿勢/VFX/GIF/Runtime/部署。先依最新remote核對是否已有本圖acceptance；沒有則呈交F3等待玩家明確核准。收到核准才存本PNG hash收據，沿此圖做其餘Basic動作/獨立VFX/GIF，不重審整角spec。原圖極淡alpha=1觸左/下邊已記錄，尚未Runtime包裝，後續確定性padding/common-anchor處理不得刪改原圖。以下F3 NEXT為生成前歷史，本段優先。
+
+[已核准規格／生成前紀錄]
 玩家「好我確認，紀錄後繼續」已核准ea1b9e1呈交規格及隨後視覺要求說明。spec-acceptance.json綁定原spec/proposal/baseline hash；原PENDING是歷史，不重問同表核准。唯一下一工作是Basic靈火單張本體F3（單手短促前點、另一臂收身、九尾低幅偏後），沿既有identity/Idle/配件側別/原尺度製作並呈交玩家。未核准新F3，不能做其餘姿勢/VFX/GIF/Runtime/部署或Heavy。若已有更晚候選/核准則沿用，依WORK_LOG接第一未完Gate。以下未核准規格段落僅為呈交時歷史，已由本收據覆蓋。
 
 [原規格呈交歷史]
