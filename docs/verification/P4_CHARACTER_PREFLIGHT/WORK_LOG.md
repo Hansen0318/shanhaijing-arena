@@ -1,3 +1,9 @@
+## 2026-10-25 — Basic F1/F2/F4 source checkpoint; VFX/GIF ACTIVE
+
+Three separate built-in imagegen body originals and prompts saved in docs/art/candidates/jiuweihu/basic/composite-review-v1/. Fully decoded and visually inspected: F3 full forward snap; F2 wrist-close follow-through; F1 bent-elbow follow-through; F4 lowered arm recovery. Approved F3 untouched. These are PLAYER REVIEW PENDING, no pose acceptance invented. The instant gameplay preview will order F3 at 0ms then F2/F1/F4, not play F1/F2 as required pre-hit windup. This is presentation-only.
+
+NEXT: independent hand release and true-target split-flower VFX, common anatomy/ground padded derivatives, normal/slow/noFX/mirror/Idle-return/miss/reduced/fourTier/multi-instance GIFs, encoded timing/pixel/hash QA; present links and stop for player GIF approval. No Runtime/Build/Browser/Pages/src/public/Collection/Heavy/P5 changes. Native single-worker self-review only. Preserve all prior rules and receipts.
+
 ## 2026-10-25 — Basic remaining poses/VFX/GIF ACTIVE (native single worker)
 
 Recovered remote 2095215120c6108083b9d4604691d33efbcfc197; clean local tree, PR1 open/unmerged confirmed. Read latest required rules/spec/receipts; viewed approved F3, identity and Idle. F3 SHA256 remains 74f4a86bb8ae78ff8d805a400e8bdf8b023d86512fc6f0cb33b9beb62d1328b7. No later valid poses/FX/GIF found. No product changes or old engineering checks rerun.

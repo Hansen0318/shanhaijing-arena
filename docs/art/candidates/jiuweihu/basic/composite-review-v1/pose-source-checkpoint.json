@@ -1,0 +1,79 @@
+{
+  "status": "F1/F2/F4 GENERATED; VFX/GIF IN PROGRESS; NOT PLAYER APPROVED",
+  "generator": "built-in imagegen",
+  "approvedF3Unchanged": true,
+  "sources": [
+    {
+      "file": "basic-f1.png",
+      "sha256": "7f158273311209daf0de776fe6947dd85c7c726a87caeca2706e5b2170afa884",
+      "gitBlob": null,
+      "bytes": 1272045,
+      "mode": "RGBA",
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaBbox": [
+        0,
+        20,
+        1222,
+        1230
+      ],
+      "edgesMax": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "review": "author visually inspected; player pending; full padded packaging next"
+    },
+    {
+      "file": "basic-f2.png",
+      "sha256": "f391dceaf2a0ae73b5866a57972607546c414185ab158763cf56d64e05c7d1a3",
+      "gitBlob": null,
+      "bytes": 1294715,
+      "mode": "RGBA",
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaBbox": [
+        0,
+        26,
+        1240,
+        1254
+      ],
+      "edgesMax": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "review": "author visually inspected; player pending; full padded packaging next"
+    },
+    {
+      "file": "basic-f4.png",
+      "sha256": "8d8ce5558634f99b320abcaf6f01454724e420a7b6ff6187b29c8b69d683187d",
+      "gitBlob": null,
+      "bytes": 1306939,
+      "mode": "RGBA",
+      "size": [
+        1254,
+        1254
+      ],
+      "alphaBbox": [
+        41,
+        23,
+        1226,
+        1217
+      ],
+      "edgesMax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "review": "author visually inspected; player pending; full padded packaging next"
+    }
+  ]
+}

@@ -15,7 +15,7 @@ AGENTS.md、WORK_PROGRESS.md、docs/STATE.md頂端、docs/DEVELOPMENT_PLAYBOOK.m
 P1/P2/P3 COMPLETE，P4 base/portrait/Collection/Idle/Move/KO已核准。原P3 1229/Build/native+built/正常Pages40163995446/public172及P4現況32probe/68來源綁定僅沿用原來源證據，不重跑/重下載。P3舊整包流程hash已核對且被逐招取代，不是未解決差異。若remote已有更晚有效成果/核准，沿用並接第一真正未完Gate。
 
 [本Work唯一範圍：Basic動作／獨立VFX／GIF]
-恢復checkpoint：2095215；已實際檢視F3/identity/Idle，remaining poses/VFX/GIF ACTIVE。接最新WORK_LOG第一未完Gate，不重做核准F3。
+恢復checkpoint：625e41b；F1/F2/F4原圖與prompt已在composite-review-v1保存並自審，未玩家核准。下一工作為獨立VFX及安全正規化/GIF；不要重生已有效三張來源或核准F3。
 1. 實際檢視核准F3及public/assets/characters/jiuweihu/{identity,battleIdle}.png與尺度/packed-frame資料。保留狐形長吻、乳白/暖紅/黑金、九尾分組、配件側別、解剖尺度、anchor/ground、右canonical左mirror。沿F3用內建imagegen分別製作F1/F2/F4，不重畫F3、不做其他招式、不用同張變形冒充不同動作。
 2. 製作獨立手部瞬發狐火及真target狐火裂花。Basic單手短促前點，不變成Heavy雙手推射/Special橫掃/Awakening高V。出手及命中各自清楚有力，符合Basic<Heavy<Special<Awakening同尺度可辨與華麗層級，禁止放大角色/真範圍。
 3. Basic兩模式真命中0ms，係數/射程/暴擊/攻速/Tier照核准spec，不能因動作/VFX加真蓄力/飛行/延遲傷害。F3只是視覺key pose，不自動等於新命中時間。normal預覽清楚呈現0ms瞬發釋放/真接觸，其他動作為呈現跟隨/收勢；若展示預備姿勢須標示純美術示意，不冒充必經遊戲windup。miss無target爆花，不假造穿透/AoE/九連擊/被動效果。
